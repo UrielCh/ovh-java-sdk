@@ -1,0 +1,55 @@
+package net.minidev.ovh.api.veeamcloudconnect;
+
+/**
+ * Details about Veeam Cloud Connect offer
+ */
+public class OvhOfferCapabilities {
+	/**
+	 * Are data replicated over two storages
+	 *
+	 * canBeNull
+	 */
+	public Boolean replication;
+
+	/**
+	 * Is wan accelerator enabled
+	 *
+	 * canBeNull
+	 */
+	public Boolean wanAccelerator;
+
+	/**
+	 * Is account allowed to add new repositories
+	 *
+	 * canBeNull
+	 */
+	public Boolean multiStorages;
+
+	/**
+	 * Max number of repositories you can add on your account
+	 *
+	 * canBeNull
+	 */
+	public Long maxStoragesCount;
+
+	/**
+	 * Maximum quota you can apply on your repositories in GB
+	 *
+	 * canBeNull
+	 */
+	public Long maxQuota;
+
+	/**
+	 * Included storage per vm
+	 *
+	 * canBeNull
+	 */
+	public Long vmCapacity;
+
+	/**
+	 * Default quota applied on new repositories in GB
+	 *
+	 * canBeNull
+	 */
+	public Long defaultQuota;
+}
