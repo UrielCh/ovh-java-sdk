@@ -1,10 +1,10 @@
 # ovh-java-sdk
 [![Build Status](https://travis-ci.org/UrielCh/ovh-java-sdk.svg?branch=master)](https://travis-ci.org/UrielCh/ovh-java-sdk)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/net.minidev/ovh-java-sdk./badge.svg?style=flat-square)](https://maven-badges.herokuapp.com/maven-central/net.minidev/ovh-java-sdk./)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/net.minidev/ovh-java-sdk./badge.svg?style=flat-square)](https://maven-badges.herokuapp.com/maven-central/net.minidev/ovh-java-sdk/)
 
 The complet java SDK for OVH services. Each service had his own java SDK. you can use a couples of service:
     
-  	<dependency>
+		<dependency>
 			<groupId>net.minidev</groupId>
 			<artifactId>ovh-java-sdk-domain</artifactId>
 			<version>1.0.0</version>
