@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
-<project
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
-	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.minidev</groupId>
 	<artifactId>ovh-java-sdk-pom</artifactId>
@@ -28,8 +27,111 @@
 			</roles>
 		</developer>
 	</developers>
-	<!-- The module section in pom.xml is auto generated. No manual changes 
-		are allowed -->
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
+	<profiles>
+		<profile>
+			<id>release-sign-artifacts</id>
+			<activation>
+				<property>
+					<!-- will be set by the release plugin upon performing mvn release:perform -->
+					<name>performRelease</name>
+					<value>true</value>
+				</property>
+			</activation>
+			<properties>
+				<!--<gpg.keyname>8E322ED0</gpg.keyname> -->
+				<!-- 2C8DF6EC Loosed Key -->
+				<gpg.keyname>2C8DF6EC</gpg.keyname>
+				<!-- <gpg.keyname>Uriel Chemouni (dev) <uchemouni@gmail.com></gpg.keyname> -->
+				<!-- GPG Key ID to use for signing -->
+			</properties>
+			<build>
+				<plugins>
+					<!-- Enable signing of the artifacts For gpg:sign-and-deploy-file it's 
+						necessary to have a <server> with the repositoryId provided or id="remote-repository" 
+						defined in settings.xml (it contains the repository's login, psw) Signing: 
+						mvn gpg:sign-and-deploy-file -DpomFile=target/myapp-1.0.pom -Dfile=target/myapp-1.0.jar 
+						-Durl=http://oss.sonatype.org/content/repositories/malyvelky/ -DrepositoryId=sonatype_oss 
+						Note normally it uses the defaul key but we can ovveride it by either setting 
+						the property gpg.keyname (done in this POM) or by providing -Dkeyname=66AE163A 
+						on the command line. OR directly w/ gpg (remove space in - -): gpg -u 66AE163A 
+						- -sign - -detach-sign -a target/dbunit-embeddedderby-parenttest.jar Note: 
+						"mvn gpg:sign" results in NPE with v 1.o-a.-4, use "mvn package gpg:sign" 
+						instead; see the issue MGPG-18 -->
+					<plugin> <!-- updated on 29/07/2015 -->
+						<!-- mvn deploy -Dmaven.javadoc.skip=true -DperformRelease=true -Dgpg.passphrase=Password -->
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+
+						<version>1.6</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<!-- Publish also javadocs when releasing - required by Sonatype -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<!-- Release Plugin (Update version in POM before/after release, create 
+						tag, deploy) to try: mvn release:prepare -DdryRun=true && mvn release:clean 
+						to perform: mvn release:prepare release:perform Read http://nexus.sonatype.org/oss-repository-hosting.html#3 
+						for instructions on releasing to this project's Sonatype repository -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-release-plugin</artifactId>
+						<version>2.5.2</version>
+						<configuration>
+							<mavenExecutorId>forked-path</mavenExecutorId>
+							<arguments>-Psonatype-oss-release</arguments>
+							<autoVersionSubmodules>false</autoVersionSubmodules>
+							<useReleaseProfile>false</useReleaseProfile>
+							<releaseProfiles>release</releaseProfiles>
+							<goals>deploy</goals>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>include-sources</id>
+			<build>
+				<resources>
+					<resource>
+						<targetPath>/</targetPath>
+						<filtering>true</filtering>
+						<directory>src/main/java</directory>
+						<includes>
+							<include>**/*.java</include>
+						</includes>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+	</profiles>
 	<modules>
 		<module>ovh-java-sdk</module>
 		<module>ovh-java-sdk-allDom</module>
