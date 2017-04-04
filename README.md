@@ -58,10 +58,14 @@ of cours you get the same results.
 
 # function naming
 
-Calls have the same name thant they REST URL, juer replace special chars by _ and postfix the result by the http method name ex:
+Calls have the same name thant they REST URL, just replace special chars by _ and postfix the result by the http method name ex:
+
     POST /telephony/{billingAccount}/conference/{serviceName}/participants/{id}/mute
+
 will be named:
+
     billingAccount_conference_serviceName_participants_id_mute_POST(billingAccount, serviceName, id, ...)
+
 so that you can easily guesse all the function names.
 
 # services:
