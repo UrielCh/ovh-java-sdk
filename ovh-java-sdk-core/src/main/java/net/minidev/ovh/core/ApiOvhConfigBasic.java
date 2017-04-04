@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 // import net.minidev.sos.res.Res;
 
 public class ApiOvhConfigBasic extends ApiOvhConfig {
+	private final static String configFiles = "./ovh.conf, ~/.ovh/config, ~/ovh.conf or /etc/ovh.conf";
 	/**
 	 * log
 	 */
@@ -113,23 +114,31 @@ public class ApiOvhConfigBasic extends ApiOvhConfig {
 			log.error("invalid Consumer_key_storage {}", path);
 	}
 
+	static int e1 = 0;
+
 	/**
 	 * storage for previous CK
 	 * @return
 	 */
 	protected File gettmpStore(String nic) {
 		if (consumer_key_storage == null || !consumer_key_storage.isDirectory()) {
-			log.error("no cert directory, can not save CK");
+			if (e1 == 0) {
+				e1++;
+				log.error(
+						"No cert directory, can not save consumer_key! please set `consumer_key_storage` variable to a valid directory in your {}, or in your environ variale OVH_CONSUMER_KEY_STORAGE",
+						configFiles);
+			}
 			return null;
 		}
 		return new File(consumer_key_storage, nic + ".ck.txt");
+
 	}
-	
+
 	@Override
 	protected String getCK() {
 		return default_CK;
 	}
-	
+
 	@Override
 	protected String getCK(String nic) throws IOException {
 		File lastKey = gettmpStore(nic);
@@ -162,8 +171,16 @@ public class ApiOvhConfigBasic extends ApiOvhConfig {
 		return endpoint;
 	}
 
+	static int e2 = 0;
+
 	@Override
 	public String getApplicationKey() {
+		if (applicationKey.equals("iE3vL3mgAtLZg00l") && e2 == 0) {
+			e2++;
+			log.error(
+					"no applicationKey, using the defaut one create a key, and set `application_key' and 'application_secret` variable in your {}, or in your environ variales OVH_APPLICATION_KEY and OVH_APPLICATION_SECRET",
+					configFiles);
+		}
 		return applicationKey;
 	}
 

@@ -88,6 +88,10 @@ public class ApiOvhCore {
 		this.password = password;
 	}
 
+	public static ApiOvhCore getInstance(String ac, String password) {
+		return getInstance(ac, password, 900);
+	}
+
 	public static ApiOvhCore getInstance(String ac, String password, int timeInSec) {
 		ApiOvhCore core = cache.get(ac);
 		if (core != null)

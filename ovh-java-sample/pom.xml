@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>net.minidev</groupId>
+		<artifactId>ovh-java-sdk-pom</artifactId>
+		<version>0.9</version>
+	</parent>
+	<artifactId>ovh-java-sample</artifactId>
+	<name>OVH SDK For Java</name>
+	<description>DESC.</description>
+	<url>https://github.com/UrielCh/ovh-java-sdk</url>
+	<dependencies>
+		<dependency>
+			<artifactId>ovh-java-sdk</artifactId>
+			<groupId>net.minidev</groupId>
+			<optional>false</optional>
+			<version>${ovhjavasdk.version}</version>
+		</dependency>
+	</dependencies>
+</project>
