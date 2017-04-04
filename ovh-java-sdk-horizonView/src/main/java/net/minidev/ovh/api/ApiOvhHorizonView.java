@@ -44,7 +44,7 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /horizonView/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] Domain of the service
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {

@@ -42,7 +42,7 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /dedicated/housing/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your Housing bay
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
@@ -184,7 +184,7 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /dedicated/housing/{serviceName}/features/backupFTP/access/{ipBlock}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your Housing bay
 	 * @param ipBlock [required] The IP Block specific to this ACL
 	 */

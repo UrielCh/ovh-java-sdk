@@ -45,7 +45,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /dbaas/queue/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal ID of your Queue app
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {

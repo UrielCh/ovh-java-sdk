@@ -68,7 +68,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /domain/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your domain
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
@@ -94,7 +94,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /domain/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your domain
 	 */
 	public void serviceName_PUT(String serviceName, OvhDomain body) throws IOException {
@@ -564,7 +564,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /domain/zone/{zoneName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param zoneName [required] The internal name of your zone
 	 */
 	public void zone_zoneName_serviceInfos_PUT(String zoneName, OvhService body) throws IOException {
@@ -672,7 +672,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /domain/zone/{zoneName}/redirection/{id}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param zoneName [required] The internal name of your zone
 	 * @param id [required] Id of the object
 	 */
@@ -775,7 +775,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /domain/zone/{zoneName}/record/{id}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param zoneName [required] The internal name of your zone
 	 * @param id [required] Id of the object
 	 */
@@ -859,7 +859,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /domain/zone/{zoneName}/soa
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param zoneName [required] The internal name of your zone
 	 */
 	public void zone_zoneName_soa_PUT(String zoneName, OvhSoa body) throws IOException {
@@ -1030,7 +1030,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /domain/zone/{zoneName}/dynHost/record/{id}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param zoneName [required] The internal name of your zone
 	 * @param id [required] Id of the object
 	 */
@@ -1111,7 +1111,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /domain/zone/{zoneName}/dynHost/login/{login}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param zoneName [required] The internal name of your zone
 	 * @param login [required] Login
 	 */

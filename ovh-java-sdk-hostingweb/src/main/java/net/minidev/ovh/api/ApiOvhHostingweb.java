@@ -89,7 +89,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /hosting/web/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your hosting
 	 */
 	public void serviceName_PUT(String serviceName, OvhService body) throws IOException {
@@ -203,7 +203,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /hosting/web/{serviceName}/email
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your hosting
 	 */
 	public void serviceName_email_PUT(String serviceName, OvhEmail body) throws IOException {
@@ -332,7 +332,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /hosting/web/{serviceName}/user/{login}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param login [required] Login used to connect on FTP and SSH
 	 */
@@ -687,7 +687,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /hosting/web/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your hosting
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, net.minidev.ovh.api.services.OvhService body) throws IOException {
@@ -839,7 +839,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /hosting/web/{serviceName}/userLogs/{login}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param login [required] The userLogs login used to connect to logs.ovh.net
 	 */
@@ -1524,7 +1524,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /hosting/web/{serviceName}/cron/{id}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param id [required] Cron's id
 	 */
@@ -1569,7 +1569,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /hosting/web/{serviceName}/attachedDomain/{domain}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param domain [required] Domain linked (fqdn)
 	 */

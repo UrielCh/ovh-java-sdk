@@ -44,7 +44,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /caas/registry/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal ID of your project
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
@@ -70,7 +70,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 * Create user
 	 * 
 	 * REST: POST /caas/registry/{serviceName}/users
-	 * @param null [required] A registry user account
+	 * @param body [required] A registry user account
 	 * @param serviceName [required] Service name
 	 */
 	public OvhUser serviceName_users_POST(String serviceName, OvhInputUser body) throws IOException {
@@ -163,7 +163,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 * Create namespace
 	 * 
 	 * REST: POST /caas/registry/{serviceName}/namespaces
-	 * @param null [required] A namespace in which a user can either read, write or delete images
+	 * @param body [required] A namespace in which a user can either read, write or delete images
 	 * @param serviceName [required] Service name
 	 */
 	public OvhNamespace serviceName_namespaces_POST(String serviceName, OvhInputNamespace body) throws IOException {
@@ -267,7 +267,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 * Update image
 	 * 
 	 * REST: PUT /caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}
-	 * @param null [required] A container image
+	 * @param body [required] A container image
 	 * @param imageId [required] Image id
 	 * @param namespaceId [required] Namespace id
 	 * @param serviceName [required] Service name
@@ -287,7 +287,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 * REST: POST /caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/permissions
 	 * @param imageId [required] Image id
 	 * @param namespaceId [required] Namespace id
-	 * @param null [required] Permissions of a user over a namespace
+	 * @param body [required] Permissions of a user over a namespace
 	 * @param serviceName [required] Service name
 	 */
 	public OvhPermissions serviceName_namespaces_namespaceId_images_imageId_permissions_POST(String serviceName, String namespaceId, String imageId, OvhInputPermissions body) throws IOException {
@@ -394,7 +394,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 * 
 	 * REST: POST /caas/registry/{serviceName}/namespaces/{namespaceId}/permissions
 	 * @param namespaceId [required] Namespace id
-	 * @param null [required] Permissions of a user over a namespace
+	 * @param body [required] Permissions of a user over a namespace
 	 * @param serviceName [required] Service name
 	 */
 	public OvhPermissions serviceName_namespaces_namespaceId_permissions_POST(String serviceName, String namespaceId, OvhInputPermissions body) throws IOException {

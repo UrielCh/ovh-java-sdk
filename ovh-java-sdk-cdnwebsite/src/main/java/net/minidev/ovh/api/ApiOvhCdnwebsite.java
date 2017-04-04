@@ -44,7 +44,7 @@ public class ApiOvhCdnwebsite extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /cdn/website/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your CDN Website offer
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {

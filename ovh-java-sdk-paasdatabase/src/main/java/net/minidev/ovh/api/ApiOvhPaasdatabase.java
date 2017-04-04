@@ -54,7 +54,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /paas/database/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] Your database project's name
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
@@ -80,7 +80,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /paas/database/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] Your database project's name
 	 */
 	public void serviceName_PUT(String serviceName, net.minidev.ovh.api.paas.database.OvhService body) throws IOException {
@@ -261,7 +261,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /paas/database/{serviceName}/instance/{instanceId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
 	 */
@@ -364,7 +364,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /paas/database/{serviceName}/instance/{instanceId}/whitelist/{ip}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
 	 * @param ip [required] The whitelisted IP in your instance
@@ -896,7 +896,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /paas/database/{serviceName}/instance/{instanceId}/grant/{grantId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
 	 * @param grantId [required] Grant id

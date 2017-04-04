@@ -39,7 +39,7 @@ public class ApiOvhFreefax extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /freefax/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] Freefax number
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
@@ -65,7 +65,7 @@ public class ApiOvhFreefax extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /freefax/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] Freefax number
 	 */
 	public void serviceName_PUT(String serviceName, OvhFreefaxProperties body) throws IOException {
@@ -91,7 +91,7 @@ public class ApiOvhFreefax extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /freefax/{serviceName}/voicemail
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] Freefax number
 	 */
 	public void serviceName_voicemail_PUT(String serviceName, OvhVoicemailProperties body) throws IOException {

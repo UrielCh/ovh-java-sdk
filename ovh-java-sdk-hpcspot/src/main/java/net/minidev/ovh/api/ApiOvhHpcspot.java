@@ -38,7 +38,7 @@ public class ApiOvhHpcspot extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /hpcspot/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your HPC Spot account
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {

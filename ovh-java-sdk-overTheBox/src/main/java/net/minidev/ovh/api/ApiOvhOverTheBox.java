@@ -47,7 +47,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /overTheBox/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your overTheBox offer
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
@@ -73,7 +73,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /overTheBox/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your overTheBox offer
 	 */
 	public void serviceName_PUT(String serviceName, net.minidev.ovh.api.overthebox.OvhService body) throws IOException {

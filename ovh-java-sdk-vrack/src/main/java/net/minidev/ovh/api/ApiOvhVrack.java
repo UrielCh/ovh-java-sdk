@@ -50,7 +50,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /vrack/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your vrack
 	 */
 	public void serviceName_PUT(String serviceName, OvhVrack body) throws IOException {
@@ -485,7 +485,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /vrack/{serviceName}/dedicatedConnect/{name}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your vrack
 	 * @param name [required] A name for your dedicatedConnect link
 	 */

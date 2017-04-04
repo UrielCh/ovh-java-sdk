@@ -50,7 +50,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /cdn/dedicated/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your CDN offer
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
@@ -107,7 +107,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /cdn/dedicated/{serviceName}/domains/{domain}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your CDN offer
 	 * @param domain [required] Domain of this object
 	 */
@@ -332,7 +332,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your CDN offer
 	 * @param domain [required] Domain of this object
 	 * @param cacheRuleId [required] Id for this cache rule

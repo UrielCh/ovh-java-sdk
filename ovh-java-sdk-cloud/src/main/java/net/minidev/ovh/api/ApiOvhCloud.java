@@ -99,7 +99,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /cloud/{serviceName}/pca/{pcaServiceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your public cloud passport
 	 * @param pcaServiceName [required] The internal name of your PCA offer
 	 */
@@ -144,7 +144,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /cloud/{serviceName}/pca/{pcaServiceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your public cloud passport
 	 * @param pcaServiceName [required] The internal name of your PCA offer
 	 */
@@ -256,7 +256,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /cloud/{serviceName}/pca/{pcaServiceName}/sessions/{sessionId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your public cloud passport
 	 * @param pcaServiceName [required] The internal name of your PCA offer
 	 * @param sessionId [required] Session ID
@@ -453,7 +453,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /cloud/project/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The project id
 	 */
 	public void project_serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
@@ -479,7 +479,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /cloud/project/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The project id
 	 */
 	public void project_serviceName_PUT(String serviceName, OvhProject body) throws IOException {
@@ -1026,7 +1026,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /cloud/project/{serviceName}/alerting/{id}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The project id
 	 * @param id [required] Alerting unique UUID
 	 */

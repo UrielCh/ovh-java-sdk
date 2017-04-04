@@ -43,7 +43,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /paas/monitoring/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal ID of your monitoring instance
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
@@ -70,7 +70,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 * 
 	 * REST: POST /paas/monitoring/{serviceName}/deploy
 	 * @param serviceName [required] service name
-	 * @param null [required] A Shinken-based monitoring service
+	 * @param body [required] A Shinken-based monitoring service
 	 */
 	public net.minidev.ovh.api.monitoring.OvhService serviceName_deploy_POST(String serviceName, net.minidev.ovh.api.monitoring.OvhService body) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/deploy";
@@ -221,7 +221,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 * REST: POST /paas/monitoring/{serviceName}/resource/{resourceType}
 	 * @param resourceType [required] resource type
 	 * @param serviceName [required] service name
-	 * @param null [required] Shinken resource (e.g. Host, Service, Contact, etc)
+	 * @param body [required] Shinken resource (e.g. Host, Service, Contact, etc)
 	 */
 	public OvhResource serviceName_resource_resourceType_POST(String serviceName, String resourceType, OvhResource body) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/resource/{resourceType}";
@@ -269,7 +269,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 * @param resourceType [required] resource type
 	 * @param resourceId [required] resource id
 	 * @param serviceName [required] service name
-	 * @param null [required] Shinken resource (e.g. Host, Service, Contact, etc)
+	 * @param body [required] Shinken resource (e.g. Host, Service, Contact, etc)
 	 */
 	public OvhResource serviceName_resource_resourceType_resourceId_PUT(String serviceName, String resourceType, String resourceId, OvhResource body) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/resource/{resourceType}/{resourceId}";
@@ -302,7 +302,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 * REST: POST /paas/monitoring/{serviceName}/resource/{resourceType}/batch
 	 * @param resourceType [required] resource type
 	 * @param serviceName [required] service name
-	 * @param null [required] Batch of resource configuration sets
+	 * @param body [required] Batch of resource configuration sets
 	 */
 	public void serviceName_resource_resourceType_batch_POST(String serviceName, String resourceType, OvhConfig[] body) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/resource/{resourceType}/batch";
@@ -329,7 +329,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 * 
 	 * REST: PUT /paas/monitoring/{serviceName}/config/timezone
 	 * @param serviceName [required] service name
-	 * @param null [required] Configuration of the timezone
+	 * @param body [required] Configuration of the timezone
 	 */
 	public OvhTimezoneConfig serviceName_config_timezone_PUT(String serviceName, OvhTimezoneConfig body) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/config/timezone";
@@ -356,7 +356,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 * 
 	 * REST: PUT /paas/monitoring/{serviceName}/config/firewall
 	 * @param serviceName [required] service name
-	 * @param null [required] Configuration of the firewall
+	 * @param body [required] Configuration of the firewall
 	 */
 	public OvhFirewallConfig serviceName_config_firewall_PUT(String serviceName, OvhFirewallConfig body) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/config/firewall";
@@ -383,7 +383,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 * 
 	 * REST: PUT /paas/monitoring/{serviceName}/config/nsca
 	 * @param serviceName [required] service name
-	 * @param null [required] Configuration for the NSCA receiver
+	 * @param body [required] Configuration for the NSCA receiver
 	 */
 	public OvhNscaConfig serviceName_config_nsca_PUT(String serviceName, OvhNscaConfig body) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/config/nsca";

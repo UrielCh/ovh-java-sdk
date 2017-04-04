@@ -44,7 +44,7 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /license/windows/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The name of your Windows license
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
@@ -70,7 +70,7 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /license/windows/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The name of your Windows license
 	 */
 	public void serviceName_PUT(String serviceName, OvhWindows body) throws IOException {

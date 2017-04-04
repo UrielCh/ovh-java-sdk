@@ -114,7 +114,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 */
@@ -144,7 +144,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/protocol
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 */
@@ -242,7 +242,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 */
@@ -323,7 +323,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 * @param sharedEmailAddress [required] Default email for this shared mailbox
@@ -665,7 +665,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/domain/{domainName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 * @param domainName [required] Domain name
@@ -734,7 +734,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/domain/{domainName}/disclaimer
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 * @param domainName [required] Domain name
@@ -917,7 +917,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 * @param path [required] Path for public folder
@@ -1009,7 +1009,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}/permission/{allowedAccountId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 * @param path [required] Path for public folder
@@ -1142,7 +1142,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/protocol
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 * @param primaryEmailAddress [required] Default email for this mailbox
@@ -1176,7 +1176,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 * @param primaryEmailAddress [required] Default email for this mailbox
@@ -1814,7 +1814,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/device/{identity}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 * @param identity [required] Exchange identity
@@ -1942,7 +1942,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/externalContact/{externalEmailAddress}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 * @param externalEmailAddress [required] Contact email
@@ -2076,7 +2076,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 * @param mailingListAddress [required] The mailing list address
@@ -2674,7 +2674,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 * @param resourceEmailAddress [required] resource as email

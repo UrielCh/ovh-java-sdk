@@ -72,7 +72,7 @@ public class ApiOvhSms extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /sms/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your SMS offer
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
@@ -98,7 +98,7 @@ public class ApiOvhSms extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /sms/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your SMS offer
 	 */
 	public void serviceName_PUT(String serviceName, OvhAccount body) throws IOException {
@@ -460,7 +460,7 @@ public class ApiOvhSms extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /sms/{serviceName}/senders/{sender}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param sender [required] The sms sender
 	 */
@@ -661,7 +661,7 @@ public class ApiOvhSms extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /sms/{serviceName}/users/{login}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param login [required] The sms user login
 	 */
@@ -840,7 +840,7 @@ public class ApiOvhSms extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /sms/{serviceName}/users/{login}/receivers/{slotId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param login [required] The sms user login
 	 * @param slotId [required] Slot number id
@@ -1054,7 +1054,7 @@ public class ApiOvhSms extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /sms/{serviceName}/templatesControl/{name}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param name [required] Name of the template
 	 */
@@ -1484,7 +1484,7 @@ public class ApiOvhSms extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /sms/{serviceName}/receivers/{slotId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param slotId [required] Slot number id
 	 */
@@ -1669,7 +1669,7 @@ public class ApiOvhSms extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /sms/{serviceName}/phonebooks/{bookKey}/phonebookContact/{id}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param bookKey [required] Identifier of the phonebook
 	 * @param id [required] Contact identifier
@@ -1717,7 +1717,7 @@ public class ApiOvhSms extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /sms/{serviceName}/phonebooks/{bookKey}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param bookKey [required] Identifier of the phonebook
 	 */
@@ -1833,7 +1833,7 @@ public class ApiOvhSms extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /sms/virtualNumbers/{number}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param number [required] Your virtual number
 	 */
 	public void virtualNumbers_number_serviceInfos_PUT(String number, OvhService body) throws IOException {

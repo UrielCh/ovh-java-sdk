@@ -77,7 +77,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /pack/xdsl/{packName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param packName [required] The internal name of your pack
 	 */
 	public void packName_serviceInfos_PUT(String packName, OvhService body) throws IOException {
@@ -174,7 +174,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /pack/xdsl/{packName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param packName [required] The internal name of your pack
 	 */
 	public void packName_PUT(String packName, OvhPackAdsl body) throws IOException {

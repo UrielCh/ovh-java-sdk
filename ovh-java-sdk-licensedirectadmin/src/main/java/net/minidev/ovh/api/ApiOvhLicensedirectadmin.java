@@ -43,7 +43,7 @@ public class ApiOvhLicensedirectadmin extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /license/directadmin/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The name of your DirectAdmin license
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
@@ -69,7 +69,7 @@ public class ApiOvhLicensedirectadmin extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /license/directadmin/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The name of your DirectAdmin license
 	 */
 	public void serviceName_PUT(String serviceName, OvhDirectAdmin body) throws IOException {

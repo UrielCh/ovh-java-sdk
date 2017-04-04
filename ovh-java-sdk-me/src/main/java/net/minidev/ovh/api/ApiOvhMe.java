@@ -115,7 +115,7 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /me
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 */
 	public void PUT(OvhNichandle body) throws IOException {
 		String qPath = "/me";
@@ -234,7 +234,7 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /me/document/{id}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param id [required] Document id
 	 */
 	public void document_id_PUT(String id, OvhDocument body) throws IOException {
@@ -361,7 +361,7 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /me/subAccount/{id}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param id [required] Id of the object
 	 */
 	public void subAccount_id_PUT(Long id, OvhSubAccount body) throws IOException {
@@ -643,7 +643,7 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /me/subscription/{subscriptionType}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param subscriptionType [required] The type of subscription
 	 */
 	public void subscription_subscriptionType_PUT(String subscriptionType, OvhSubscription body) throws IOException {
@@ -697,7 +697,7 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /me/installationTemplate/{templateName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param templateName [required] This template name
 	 */
 	public void installationTemplate_templateName_PUT(String templateName, OvhTemplates body) throws IOException {
@@ -767,7 +767,7 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /me/installationTemplate/{templateName}/partitionScheme/{schemeName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param templateName [required] This template name
 	 * @param schemeName [required] name of this partitioning scheme
 	 */
@@ -857,7 +857,7 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /me/installationTemplate/{templateName}/partitionScheme/{schemeName}/partition/{mountpoint}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param templateName [required] This template name
 	 * @param schemeName [required] name of this partitioning scheme
 	 * @param mountpoint [required] partition mount point
@@ -945,7 +945,7 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /me/installationTemplate/{templateName}/partitionScheme/{schemeName}/hardwareRaid/{name}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param templateName [required] This template name
 	 * @param schemeName [required] name of this partitioning scheme
 	 * @param name [required] Hardware RAID name
@@ -1111,7 +1111,7 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /me/autorenew
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 */
 	public void autorenew_PUT(OvhNicAutorenewInfos body) throws IOException {
 		String qPath = "/me/autorenew";
@@ -1448,7 +1448,7 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /me/accessRestriction/ip/{id}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param id [required] The Id of the restriction
 	 */
 	public void accessRestriction_ip_id_PUT(Long id, OvhIpRestriction body) throws IOException {
@@ -1484,7 +1484,7 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /me/accessRestriction/ipDefaultRule
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 */
 	public void accessRestriction_ipDefaultRule_PUT(OvhIpRestrictionDefaultRule body) throws IOException {
 		String qPath = "/me/accessRestriction/ipDefaultRule";
@@ -1678,7 +1678,7 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /me/fidelityAccount
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 */
 	public void fidelityAccount_PUT(OvhFidelityAccount body) throws IOException {
 		String qPath = "/me/fidelityAccount";
@@ -1919,7 +1919,7 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /me/paymentMean/paypal/{id}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param id [required] Id of the object
 	 */
 	public void paymentMean_paypal_id_PUT(Long id, OvhPaypal body) throws IOException {
@@ -2004,7 +2004,7 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /me/paymentMean/bankAccount/{id}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param id [required] Id of the object
 	 */
 	public void paymentMean_bankAccount_id_PUT(Long id, OvhBankAccount body) throws IOException {
@@ -2083,7 +2083,7 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /me/paymentMean/creditCard/{id}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param id [required] Id of the object
 	 */
 	public void paymentMean_creditCard_id_PUT(Long id, OvhCreditCard body) throws IOException {
@@ -2164,7 +2164,7 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /me/ovhAccount/{ovhAccountId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param ovhAccountId [required]
 	 */
 	public void ovhAccount_ovhAccountId_PUT(String ovhAccountId, OvhOvhAccount body) throws IOException {
@@ -2256,7 +2256,7 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /me/task/domain/{id}/argument/{key}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param id [required] Id of the task
 	 * @param key [required] Key of the argument
 	 */
@@ -2501,7 +2501,7 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /me/ipOrganisation/{organisationId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param organisationId [required]
 	 */
 	public void ipOrganisation_organisationId_PUT(String organisationId, OvhIpv4Org body) throws IOException {
@@ -2538,7 +2538,7 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /me/sshKey/{keyName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param keyName [required] Name of this public SSH key
 	 */
 	public void sshKey_keyName_PUT(String keyName, OvhSshKey body) throws IOException {

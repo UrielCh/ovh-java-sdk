@@ -41,7 +41,7 @@ public class ApiOvhLicensecloudLinux extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /license/cloudLinux/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The name of your CloudLinux license
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {

@@ -39,7 +39,7 @@ public class ApiOvhCdnwebstorage extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /cdn/webstorage/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your CDN Static offer
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {

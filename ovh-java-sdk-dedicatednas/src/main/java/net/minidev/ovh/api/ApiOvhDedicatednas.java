@@ -43,7 +43,7 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /dedicated/nas/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your storage
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
@@ -69,7 +69,7 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /dedicated/nas/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your storage
 	 */
 	public void serviceName_PUT(String serviceName, OvhNas body) throws IOException {
@@ -233,7 +233,7 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /dedicated/nas/{serviceName}/partition/{partitionName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
 	 */

@@ -71,7 +71,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /dedicatedCloud/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] Domain of the service
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
@@ -110,7 +110,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /dedicatedCloud/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] Domain of the service
 	 */
 	public void serviceName_PUT(String serviceName, OvhDedicatedCloud body) throws IOException {
@@ -170,7 +170,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /dedicatedCloud/{serviceName}/datacenter/{datacenterId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
 	 */
@@ -1271,7 +1271,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /dedicatedCloud/{serviceName}/allowedNetwork/{networkAccessId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] Domain of the service
 	 * @param networkAccessId [required]
 	 */
@@ -1498,7 +1498,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /dedicatedCloud/{serviceName}/user/{userId}/right/{rightId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] Domain of the service
 	 * @param userId [required]
 	 * @param rightId [required]

@@ -64,7 +64,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /email/domain/{domain}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param domain [required] Name of your domain name
 	 */
 	public void domain_serviceInfos_PUT(String domain, OvhService body) throws IOException {
@@ -292,7 +292,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /email/domain/{domain}/responder/{account}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param domain [required] Name of your domain name
 	 * @param account [required] Name of account
 	 */
@@ -492,7 +492,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /email/domain/{domain}/account/{accountName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param domain [required] Name of your domain name
 	 * @param accountName [required] Name of account
 	 */
@@ -1077,7 +1077,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /email/domain/{domain}/mailingList/{name}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param domain [required] Name of your domain name
 	 * @param name [required] Name of mailing list
 	 */
@@ -1346,7 +1346,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /email/domain/delegatedAccount/{email}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param email [required] Email
 	 */
 	public void delegatedAccount_email_PUT(String email, OvhAccountDelegated body) throws IOException {
@@ -1372,7 +1372,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /email/domain/delegatedAccount/{email}/responder
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param email [required] Email
 	 */
 	public void delegatedAccount_email_responder_PUT(String email, OvhResponderAccount body) throws IOException {

@@ -115,7 +115,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /dedicated/server/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
 	public void serviceName_PUT(String serviceName, OvhDedicated body) throws IOException {
@@ -760,7 +760,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /dedicated/server/{serviceName}/burst
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
 	public void serviceName_burst_PUT(String serviceName, OvhServerBurst body) throws IOException {
@@ -1012,7 +1012,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /dedicated/server/{serviceName}/serviceMonitoring/{monitoringId}/alert/email/{alertId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param monitoringId [required] This monitoring id
 	 * @param alertId [required] This monitoring id
@@ -1103,7 +1103,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /dedicated/server/{serviceName}/serviceMonitoring/{monitoringId}/alert/sms/{alertId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param monitoringId [required] This monitoring id
 	 * @param alertId [required] Id of this alert
@@ -1151,7 +1151,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /dedicated/server/{serviceName}/serviceMonitoring/{monitoringId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param monitoringId [required] This monitoring id
 	 */
@@ -1229,7 +1229,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /dedicated/server/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
@@ -1257,7 +1257,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /dedicated/server/{serviceName}/secondaryDnsDomains/{domain}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param domain [required] domain on slave server
 	 */
@@ -1478,7 +1478,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /dedicated/server/{serviceName}/features/firewall
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
 	public void serviceName_features_firewall_PUT(String serviceName, OvhFirewall body) throws IOException {
@@ -1606,7 +1606,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /dedicated/server/{serviceName}/features/backupFTP/access/{ipBlock}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param ipBlock [required] The IP Block specific to this ACL
 	 */
@@ -2006,7 +2006,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /dedicated/server/{serviceName}/spla/{id}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param id [required] License id
 	 */

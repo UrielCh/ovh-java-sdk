@@ -57,7 +57,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /dbaas/timeseries/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your timeseries project
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
@@ -83,7 +83,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /dbaas/timeseries/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your timeseries project
 	 */
 	public void serviceName_PUT(String serviceName, OvhProject body) throws IOException {

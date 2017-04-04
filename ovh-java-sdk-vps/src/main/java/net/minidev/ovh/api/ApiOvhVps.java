@@ -87,7 +87,7 @@ public class ApiOvhVps extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /vps/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
 	public void serviceName_PUT(String serviceName, OvhVPS body) throws IOException {
@@ -172,7 +172,7 @@ public class ApiOvhVps extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /vps/{serviceName}/ips/{ipAddress}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param ipAddress [required] The effective ip address of the Ip object
 	 */
@@ -530,7 +530,7 @@ public class ApiOvhVps extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /vps/{serviceName}/backupftp/access/{ipBlock}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param ipBlock [required] The IP Block specific to this ACL
 	 */
@@ -688,7 +688,7 @@ public class ApiOvhVps extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /vps/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
@@ -716,7 +716,7 @@ public class ApiOvhVps extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /vps/{serviceName}/secondaryDnsDomains/{domain}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param domain [required] domain on slave server
 	 */
@@ -987,7 +987,7 @@ public class ApiOvhVps extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /vps/{serviceName}/snapshot
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
 	public void serviceName_snapshot_PUT(String serviceName, OvhSnapshot body) throws IOException {
@@ -1080,7 +1080,7 @@ public class ApiOvhVps extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /vps/{serviceName}/disks/{id}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param id [required] Id of the object
 	 */

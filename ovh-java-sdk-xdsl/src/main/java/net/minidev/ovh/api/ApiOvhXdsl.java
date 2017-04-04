@@ -83,7 +83,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /xdsl/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
@@ -109,7 +109,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /xdsl/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
 	public void serviceName_PUT(String serviceName, OvhAccess body) throws IOException {
@@ -376,7 +376,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /xdsl/{serviceName}/modem
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
 	public void serviceName_modem_PUT(String serviceName, OvhModem body) throws IOException {
@@ -574,7 +574,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /xdsl/{serviceName}/modem/lan/{lanName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param lanName [required] Name of the LAN
 	 */
@@ -621,7 +621,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param lanName [required] Name of the LAN
 	 * @param dhcpName [required] Name of the DHCP
@@ -698,7 +698,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}/DHCPStaticAddresses/{MACAddress}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param lanName [required] Name of the LAN
 	 * @param dhcpName [required] Name of the DHCP
@@ -824,7 +824,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /xdsl/{serviceName}/modem/portMappings/{name}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param name [required] Name of the port mapping entry
 	 */
@@ -939,7 +939,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /xdsl/{serviceName}/modem/wifi/{wifiName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param wifiName [required] Name of the Wifi
 	 */
@@ -1348,7 +1348,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /xdsl/{serviceName}/monitoringNotifications/{id}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param id [required] Id of the object
 	 */
@@ -1449,7 +1449,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /xdsl/{serviceName}/rma/{id}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param id [required] Return merchandise authorisation identifier
 	 */
@@ -1586,7 +1586,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /xdsl/spare/{spare}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param spare [required] The internal name of your spare
 	 */
 	public void spare_spare_serviceInfos_PUT(String spare, OvhService body) throws IOException {

@@ -1765,7 +1765,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /order/email/exchange/{organizationName}/service/{exchangeService}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 */

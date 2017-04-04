@@ -41,7 +41,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /sslGateway/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your SSL Gateway
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
@@ -81,7 +81,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /sslGateway/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your SSL Gateway
 	 */
 	public void serviceName_PUT(String serviceName, OvhSslGateway body) throws IOException {
@@ -293,7 +293,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /sslGateway/{serviceName}/server/{id}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your SSL Gateway
 	 * @param id [required] Id of your server
 	 */

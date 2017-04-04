@@ -297,7 +297,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 */
 	public void billingAccount_PUT(String billingAccount, OvhBillingAccount body) throws IOException {
@@ -400,7 +400,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/timeCondition/{serviceName}/options
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
@@ -471,7 +471,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/timeCondition/{serviceName}/condition/{id}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 * @param id [required] Id of the object
@@ -567,7 +567,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/abbreviatedNumber/{abbreviatedNumber}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param abbreviatedNumber [required] The abbreviated number which must start with "7" and must have a length of 3 or 4 digits
 	 */
@@ -611,7 +611,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/voicemail/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
@@ -743,7 +743,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/voicemail/{serviceName}/settings
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
@@ -943,7 +943,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/easyPabx/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
@@ -973,7 +973,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/easyPabx/{serviceName}/hunting
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
@@ -1044,7 +1044,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/easyPabx/{serviceName}/hunting/agent/{agentNumber}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 * @param agentNumber [required] The phone number of the agent
@@ -1092,7 +1092,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/easyPabx/{serviceName}/hunting/tones
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
@@ -1169,7 +1169,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/line/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
@@ -1216,7 +1216,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/line/{serviceName}/options
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
@@ -1368,7 +1368,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/line/{serviceName}/abbreviatedNumber/{abbreviatedNumber}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 * @param abbreviatedNumber [required] The abbreviated number which must start with "2" and must have a length of 3 or 4 digits
@@ -1914,7 +1914,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/line/{serviceName}/phone
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
@@ -2045,7 +2045,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/line/{serviceName}/phone/phonebook/{bookKey}/phonebookContact/{id}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 * @param bookKey [required] Identifier of the phonebook
@@ -2099,7 +2099,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/line/{serviceName}/phone/phonebook/{bookKey}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 * @param bookKey [required] Identifier of the phonebook
@@ -2236,7 +2236,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/line/{serviceName}/phone/functionKey/{keyNum}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 * @param keyNum [required] The number of the function key
@@ -2361,7 +2361,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/line/{serviceName}/phone/rma/{id}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 * @param id [required] Return merchandise authorisation identifier
@@ -2488,7 +2488,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/line/{serviceName}/tones
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
@@ -2627,7 +2627,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/phonebook/{bookKey}/phonebookContact/{id}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param bookKey [required] Identifier of the phonebook
 	 * @param id [required] Contact identifier
@@ -2675,7 +2675,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/phonebook/{bookKey}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param bookKey [required] Identifier of the phonebook
 	 */
@@ -2754,7 +2754,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/service/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
@@ -3037,7 +3037,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/service/{serviceName}/directory
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
@@ -3334,7 +3334,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/scheduler/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
@@ -3436,7 +3436,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/scheduler/{serviceName}/events/{uid}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 * @param uid [required] The unique ICS event identifier
@@ -3495,7 +3495,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 */
 	public void billingAccount_serviceInfos_PUT(String billingAccount, OvhService body) throws IOException {
@@ -3540,7 +3540,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/number/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required] Name of the service
 	 */
@@ -3843,7 +3843,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/vxml/{serviceName}/settings
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
@@ -3886,7 +3886,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/redirect/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
@@ -4053,7 +4053,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/fax/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
@@ -4210,7 +4210,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/fax/{serviceName}/settings
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
@@ -4537,7 +4537,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/conference/{serviceName}/settings
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
@@ -4580,7 +4580,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/miniPabx/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
@@ -4610,7 +4610,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/miniPabx/{serviceName}/hunting
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
@@ -4681,7 +4681,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/miniPabx/{serviceName}/hunting/agent/{agentNumber}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 * @param agentNumber [required] The phone number of the agent
@@ -4729,7 +4729,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/miniPabx/{serviceName}/tones
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
@@ -4887,7 +4887,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/easyHunting/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
@@ -4965,7 +4965,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/easyHunting/{serviceName}/screenListConditions
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
@@ -5036,7 +5036,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/easyHunting/{serviceName}/screenListConditions/conditions/{conditionId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 * @param conditionId [required]
@@ -5084,7 +5084,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/easyHunting/{serviceName}/hunting
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
@@ -5157,7 +5157,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/easyHunting/{serviceName}/hunting/agent/{agentId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 * @param agentId [required]
@@ -5429,7 +5429,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/easyHunting/{serviceName}/hunting/agent/{agentId}/queue/{queueId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 * @param agentId [required]
@@ -5732,7 +5732,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/easyHunting/{serviceName}/hunting/queue/{queueId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 * @param queueId [required]
@@ -5985,7 +5985,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/easyHunting/{serviceName}/hunting/queue/{queueId}/agent/{agentId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 * @param queueId [required]
@@ -6120,7 +6120,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/easyHunting/{serviceName}/timeConditions
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
@@ -6193,7 +6193,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/easyHunting/{serviceName}/timeConditions/conditions/{conditionId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 * @param conditionId [required]
@@ -6348,7 +6348,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/screen/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
@@ -6482,7 +6482,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/ovhPabx/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
@@ -6603,7 +6603,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/ovhPabx/{serviceName}/menu/{menuId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 * @param menuId [required]
@@ -6698,7 +6698,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/ovhPabx/{serviceName}/menu/{menuId}/entry/{entryId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 * @param menuId [required]
@@ -6750,7 +6750,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/ovhPabx/{serviceName}/hunting
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
@@ -6823,7 +6823,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/agent/{agentId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 * @param agentId [required]
@@ -7095,7 +7095,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/agent/{agentId}/queue/{queueId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 * @param agentId [required]
@@ -7398,7 +7398,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/queue/{queueId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 * @param queueId [required]
@@ -7651,7 +7651,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/queue/{queueId}/agent/{agentId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 * @param queueId [required]
@@ -7822,7 +7822,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/ovhPabx/{serviceName}/tts/{id}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 * @param id [required]
@@ -7872,7 +7872,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/ovhPabx/{serviceName}/dialplan/{dialplanId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 * @param dialplanId [required]
@@ -7967,7 +7967,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/ovhPabx/{serviceName}/dialplan/{dialplanId}/extension/{extensionId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 * @param dialplanId [required]
@@ -8158,7 +8158,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/ovhPabx/{serviceName}/dialplan/{dialplanId}/extension/{extensionId}/rule/{ruleId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 * @param dialplanId [required]
@@ -8265,7 +8265,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/ovhPabx/{serviceName}/dialplan/{dialplanId}/extension/{extensionId}/conditionTime/{conditionId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 * @param dialplanId [required]
@@ -8421,7 +8421,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/{billingAccount}/ddi/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
@@ -8480,7 +8480,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/lines/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] Your line number
 	 */
 	public void lines_serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
@@ -8608,7 +8608,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/aliases/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] Your line number
 	 */
 	public void aliases_serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
@@ -8689,7 +8689,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/spare/{spare}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param spare [required] The internal name of your spare
 	 */
 	public void spare_spare_serviceInfos_PUT(String spare, OvhService body) throws IOException {
@@ -8781,7 +8781,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /telephony/trunks/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] Your trunk number
 	 */
 	public void trunks_serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {

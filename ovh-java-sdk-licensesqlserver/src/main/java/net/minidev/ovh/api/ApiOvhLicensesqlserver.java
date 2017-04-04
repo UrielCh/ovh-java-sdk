@@ -41,7 +41,7 @@ public class ApiOvhLicensesqlserver extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /license/sqlserver/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The name of your SQL Server license
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {

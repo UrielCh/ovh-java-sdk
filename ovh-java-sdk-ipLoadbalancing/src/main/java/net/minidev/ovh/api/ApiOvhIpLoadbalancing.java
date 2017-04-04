@@ -70,7 +70,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /ipLoadbalancing/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
@@ -110,7 +110,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /ipLoadbalancing/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
 	public void serviceName_PUT(String serviceName, OvhIp body) throws IOException {
@@ -194,7 +194,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /ipLoadbalancing/{serviceName}/frontend/{id}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param id [required] Id of your frontend
 	 */
@@ -334,7 +334,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /ipLoadbalancing/{serviceName}/backend/{id}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param id [required] Id of your backend
 	 */
@@ -431,7 +431,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /ipLoadbalancing/{serviceName}/backend/{id}/server/{linkId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param id [required] Id of your backend
 	 * @param linkId [required] Id of your backend/server link
@@ -580,7 +580,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /ipLoadbalancing/{serviceName}/http/frontend/{frontendId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param frontendId [required] Id of your frontend
 	 */
@@ -663,7 +663,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /ipLoadbalancing/{serviceName}/http/farm/{farmId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param farmId [required] Id of your farm
 	 */
@@ -766,7 +766,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /ipLoadbalancing/{serviceName}/http/farm/{farmId}/server/{serverId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param farmId [required] Id of your farm
 	 * @param serverId [required] Id of your server
@@ -903,7 +903,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /ipLoadbalancing/{serviceName}/udp/frontend/{frontendId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param frontendId [required] Id of your frontend
 	 */
@@ -980,7 +980,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /ipLoadbalancing/{serviceName}/udp/farm/{farmId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param farmId [required] Id of your farm
 	 */
@@ -1067,7 +1067,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /ipLoadbalancing/{serviceName}/udp/farm/{farmId}/server/{serverId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param farmId [required] Id of your farm
 	 * @param serverId [required] Id of your server
@@ -1152,7 +1152,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /ipLoadbalancing/{serviceName}/server/{id}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param id [required] Id of your server
 	 */
@@ -1374,7 +1374,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /ipLoadbalancing/{serviceName}/tcp/frontend/{frontendId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param frontendId [required] Id of your frontend
 	 */
@@ -1457,7 +1457,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /ipLoadbalancing/{serviceName}/tcp/farm/{farmId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param farmId [required] Id of your farm
 	 */
@@ -1556,7 +1556,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /ipLoadbalancing/{serviceName}/tcp/farm/{farmId}/server/{serverId}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param farmId [required] Id of your farm
 	 * @param serverId [required] Id of your server

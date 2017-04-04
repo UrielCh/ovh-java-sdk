@@ -60,7 +60,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /cluster/hadoop/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your cluster
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
@@ -360,7 +360,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /cluster/hadoop/{serviceName}/user/{username}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your cluster
 	 * @param username [required] The username of the User
 	 */
@@ -480,7 +480,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /cluster/hadoop/{serviceName}/networkAcl/{block}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your cluster
 	 * @param block [required] IP Block to allow
 	 */

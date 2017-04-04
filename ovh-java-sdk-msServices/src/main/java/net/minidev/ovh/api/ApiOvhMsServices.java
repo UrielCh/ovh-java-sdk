@@ -49,7 +49,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /msServices/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 */
 	public void serviceName_PUT(String serviceName, OvhActiveDirectoryOrganizationalUnit body) throws IOException {
@@ -137,7 +137,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /msServices/{serviceName}/account/{userPrincipalName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 * @param userPrincipalName [required] User Principal Name
 	 */
@@ -167,7 +167,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /msServices/{serviceName}/account/{userPrincipalName}/sharepoint
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 * @param userPrincipalName [required] User Principal Name
 	 */
@@ -245,7 +245,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /msServices/{serviceName}/account/{userPrincipalName}/exchange
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 * @param userPrincipalName [required] User Principal Name
 	 */
@@ -305,7 +305,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /msServices/{serviceName}/sharepoint
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 */
 	public void serviceName_sharepoint_PUT(String serviceName, OvhSharepointService body) throws IOException {
@@ -427,7 +427,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /msServices/{serviceName}/exchange
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 */
 	public void serviceName_exchange_PUT(String serviceName, OvhExchangeService body) throws IOException {

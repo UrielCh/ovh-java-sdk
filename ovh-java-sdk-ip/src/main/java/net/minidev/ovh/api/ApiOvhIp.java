@@ -106,7 +106,7 @@ public class ApiOvhIp extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /ip/{ip}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param ip [required]
 	 */
 	public void ip_PUT(String ip, OvhIp body) throws IOException {
@@ -207,7 +207,7 @@ public class ApiOvhIp extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /ip/{ip}/ripe
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param ip [required]
 	 */
 	public void ip_ripe_PUT(String ip, OvhRipeInfos body) throws IOException {
@@ -460,7 +460,7 @@ public class ApiOvhIp extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /ip/{ip}/mitigationProfiles/{ipMitigationProfile}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param ip [required]
 	 * @param ipMitigationProfile [required]
 	 */
@@ -690,7 +690,7 @@ public class ApiOvhIp extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /ip/{ip}/mitigation/{ipOnMitigation}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param ip [required]
 	 * @param ipOnMitigation [required]
 	 */
@@ -913,7 +913,7 @@ public class ApiOvhIp extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /ip/{ip}/game/{ipOnGame}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param ip [required]
 	 * @param ipOnGame [required]
 	 */
@@ -1058,7 +1058,7 @@ public class ApiOvhIp extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /ip/{ip}/firewall/{ipOnFirewall}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param ip [required]
 	 * @param ipOnFirewall [required]
 	 */
@@ -1182,7 +1182,7 @@ public class ApiOvhIp extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /ip/loadBalancing/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
 	public void loadBalancing_serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
@@ -1304,7 +1304,7 @@ public class ApiOvhIp extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /ip/loadBalancing/{serviceName}/backend/{backend}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param backend [required] IP of your backend
 	 */
@@ -1443,7 +1443,7 @@ public class ApiOvhIp extends ApiOvhBase {
 	 * Add a new port redirection
 	 * 
 	 * REST: POST /ip/loadBalancing/{serviceName}/portsRedirection
-	 * @param null [required] The port you want to redirect to
+	 * @param body [required] The port you want to redirect to
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
 	public OvhLoadBalancingTask loadBalancing_serviceName_portsRedirection_POST(String serviceName, OvhLoadBalancingPort body) throws IOException {
@@ -1552,7 +1552,7 @@ public class ApiOvhIp extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /ip/service/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP services
 	 */
 	public void service_serviceName_PUT(String serviceName, OvhServiceIp body) throws IOException {

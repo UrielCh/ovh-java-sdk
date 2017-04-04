@@ -42,7 +42,7 @@ public class ApiOvhLicenseworklight extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /license/worklight/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The name of your WorkLight license
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
@@ -68,7 +68,7 @@ public class ApiOvhLicenseworklight extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /license/worklight/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The name of your WorkLight license
 	 */
 	public void serviceName_PUT(String serviceName, OvhWorkLight body) throws IOException {

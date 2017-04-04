@@ -46,7 +46,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /router/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your Router offer
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
@@ -121,7 +121,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /router/{serviceName}/network/{ipNet}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your Router offer
 	 * @param ipNet [required] Gateway IP / CIDR Netmask
 	 */
@@ -296,7 +296,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /router/{serviceName}/privateLink/{peerServiceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your Router offer
 	 * @param peerServiceName [required] Service name of the other side of this link
 	 */
@@ -443,7 +443,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /router/{serviceName}/vpn/{id}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your Router offer
 	 * @param id [required]
 	 */

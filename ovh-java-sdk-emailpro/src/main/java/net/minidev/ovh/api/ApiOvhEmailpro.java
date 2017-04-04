@@ -61,7 +61,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /email/pro/{service}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param service [required] The internal name of your pro organization
 	 */
 	public void service_serviceInfos_PUT(String service, OvhService body) throws IOException {
@@ -87,7 +87,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /email/pro/{service}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param service [required] The internal name of your pro organization
 	 */
 	public void service_PUT(String service, net.minidev.ovh.api.email.pro.OvhService body) throws IOException {
@@ -132,7 +132,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /email/pro/{service}/account/{email}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
 	 */
@@ -621,7 +621,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /email/pro/{service}/externalContact/{externalEmailAddress}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param service [required] The internal name of your pro organization
 	 * @param externalEmailAddress [required] Contact email
 	 */
@@ -666,7 +666,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /email/pro/{service}/domain/{domainName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param service [required] The internal name of your pro organization
 	 * @param domainName [required] Domain name
 	 */
@@ -727,7 +727,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /email/pro/{service}/domain/{domainName}/disclaimer
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param service [required] The internal name of your pro organization
 	 * @param domainName [required] Domain name
 	 */

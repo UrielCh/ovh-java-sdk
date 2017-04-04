@@ -43,7 +43,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /saas/csp2/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The unique identifier of your Office service
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
@@ -85,7 +85,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /saas/csp2/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The unique identifier of your Office service
 	 */
 	public void serviceName_PUT(String serviceName, OvhOfficeTenant body) throws IOException {

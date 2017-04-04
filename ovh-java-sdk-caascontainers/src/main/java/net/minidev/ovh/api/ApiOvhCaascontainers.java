@@ -45,7 +45,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /caas/containers/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal ID of your project
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
@@ -71,7 +71,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	 * Update the custom SSL certificate and private
 	 * 
 	 * REST: PUT /caas/containers/{serviceName}/ssl
-	 * @param null [required] A custom SSL certificate associated to a Docker PaaS environment
+	 * @param body [required] A custom SSL certificate associated to a Docker PaaS environment
 	 * @param serviceName [required] service name
 	 */
 	public OvhCustomSslMessage serviceName_ssl_PUT(String serviceName, OvhInputCustomSsl body) throws IOException {
@@ -140,7 +140,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	 * Associate the stack with some credentials to an authenticated registry.
 	 * 
 	 * REST: POST /caas/containers/{serviceName}/registry/credentials
-	 * @param null [required] Credentials providing authentication to an external registry
+	 * @param body [required] Credentials providing authentication to an external registry
 	 * @param serviceName [required] service name
 	 */
 	public OvhRegistryCredentials serviceName_registry_credentials_POST(String serviceName, OvhInputCustomSsl body) throws IOException {
@@ -167,7 +167,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	 * Update the registry credentials.
 	 * 
 	 * REST: PUT /caas/containers/{serviceName}/registry/credentials/{credentialsId}
-	 * @param null [required] Credentials providing authentication to an external registry
+	 * @param body [required] Credentials providing authentication to an external registry
 	 * @param credentialsId [required] credentials id
 	 * @param serviceName [required] service name
 	 */
@@ -242,7 +242,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	 * REST: PUT /caas/containers/{serviceName}/frameworks/{frameworkId}/password
 	 * @param frameworkId [required] framework id
 	 * @param serviceName [required] service name
-	 * @param null [required] The new framework password
+	 * @param body [required] The new framework password
 	 */
 	public void serviceName_frameworks_frameworkId_password_PUT(String serviceName, String frameworkId, OvhPassword body) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/frameworks/{frameworkId}/password";

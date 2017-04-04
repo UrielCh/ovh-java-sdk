@@ -49,7 +49,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /hosting/privateDatabase/{serviceName}/serviceInfos
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your private database
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
@@ -75,7 +75,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 	 * Alter this object properties
 	 * 
 	 * REST: PUT /hosting/privateDatabase/{serviceName}
-	 * @param null [required] New object properties
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your private database
 	 */
 	public void serviceName_PUT(String serviceName, net.minidev.ovh.api.hosting.privatedatabase.OvhService body) throws IOException {
