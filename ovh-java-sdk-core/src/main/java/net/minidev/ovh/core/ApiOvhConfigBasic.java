@@ -32,13 +32,13 @@ public class ApiOvhConfigBasic extends ApiOvhConfig {
 	// make dynamique
 	protected String endpoint = "https://api.ovh.com/1.0";
 	/**
-	 * your application key
+	 * your application key or by default the key from api.ovh.com
 	 */
-	protected String applicationKey;
+	protected String applicationKey = "iE3vL3mgAtLZg00l";
 	/**
-	 * ApplicationSecret
+	 * ApplicationSecret or by default the key from api.ovh.com
 	 */
-	protected String appSecret;
+	protected String applicationSecret = "Gkmuh6Ce0SzxEAgexCA3zMkFGEWCwmqp";
 	/**
 	 * CK for single account usage
 	 */
@@ -76,7 +76,7 @@ public class ApiOvhConfigBasic extends ApiOvhConfig {
 		if (env.containsKey("OVH_APPLICATION_KEY"))
 			applicationKey = System.getenv("OVH_APPLICATION_KEY");
 		if (env.containsKey("OVH_APPLICATION_SECRET"))
-			appSecret = System.getenv("OVH_APPLICATION_SECRET");
+			applicationSecret = System.getenv("OVH_APPLICATION_SECRET");
 		if (env.containsKey("OVH_CONSUMER_KEY"))
 			default_CK = System.getenv("OVH_CONSUMER_KEY");
 		if (env.containsKey("OVH_REDIRECTION"))
@@ -93,7 +93,7 @@ public class ApiOvhConfigBasic extends ApiOvhConfig {
 			// get the values
 			endpoint = config.getProperty("endpoint", endpoint);
 			applicationKey = config.getProperty("application_key", applicationKey);
-			appSecret = config.getProperty("application_secret", appSecret);
+			applicationSecret = config.getProperty("application_secret", applicationSecret);
 			default_CK = config.getProperty("consumer_key", default_CK);
 			redirection = config.getProperty("redirection", redirection);
 			setConsumerKeyStorage(config.getProperty("consumer_key_storage", null));
@@ -174,7 +174,7 @@ public class ApiOvhConfigBasic extends ApiOvhConfig {
 
 	@Override
 	public String getAppSecret() {
-		return appSecret;
+		return applicationSecret;
 	}
 
 }

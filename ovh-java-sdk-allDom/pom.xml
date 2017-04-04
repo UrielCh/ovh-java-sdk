@@ -6,13 +6,14 @@
 	<parent>
 		<groupId>net.minidev</groupId>
 		<artifactId>ovh-java-sdk-pom</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
+		<version>0.9</version>
 	</parent>
-	<groupId>net.minidev</groupId>
 	<artifactId>ovh-java-sdk-allDom</artifactId>
 	<name>OVH Java SDK for OVH allDom</name>
-	<description>DESC</description>
+	<description>OVH SDK for allDom</description>
 	<url>https://github.com/UrielCh/ovh-java-sdk</url>
+	<!-- The dependencies section in pom.xml is auto generated. No manual changes 
+		are allowed -->
 	<dependencies>
 		<dependency>
 			<artifactId>ovh-java-sdk-core</artifactId>
