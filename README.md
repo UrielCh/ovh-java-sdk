@@ -64,7 +64,7 @@ will be named:
     billingAccount_conference_serviceName_participants_id_mute_POST(billingAccount, serviceName, id, ...)
 so that you can easily guesse all the function names.
 
-# sercives:
+# services:
 all servicise are present exepth auth, that is unbunded in the main ovh-java-sdk-core.
 
 # authentification
