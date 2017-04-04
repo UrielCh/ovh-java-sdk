@@ -15,6 +15,7 @@ public class ListDoms {
 		}
 		String nic = args[0];
 		String password = args[1];
+		list2(nic, password);
 	}
 
 	public static void list1(String nic, String password) throws Exception {
@@ -31,7 +32,6 @@ public class ListDoms {
 	public static void list2(String nic, String password) throws Exception {
 		ApiOvhCore core = ApiOvhCore.getInstance(nic, password);
 		ApiOvhDomain api = new ApiOvhDomain(core);
-
 		int c = 0;
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
