@@ -355,12 +355,13 @@ public class ApiOvhCore {
 				if (credentialError && failure < 5) {
 					if (nic == null) {
 						log.error("{} and no nic/password provided, reconnection aboard", errorCode);
-					} else if (this.consumerKey.equals(CK)) {
+					} else {
+						this.consumerKey.equals(CK);
 						config.invalidateConsumerKey(nic, CK);
 						failure++;
 						login(this.nic, this.password, this.timeInSec);
+						continue;
 					}
-					// continue;
 				}
 				// 
 				if ("QUERY_TIME_OUT".equals(errorCode) && failure < 5) {
