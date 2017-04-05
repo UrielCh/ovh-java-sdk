@@ -1448,7 +1448,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	}
 
 	/**
-	 * Enable the given Private Cloud user 
+	 * Enable the given Private Cloud user
 	 * 
 	 * REST: POST /dedicatedCloud/{serviceName}/user/{userId}/enable
 	 * @param serviceName [required] Domain of the service
@@ -1618,7 +1618,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	}
 
 	/**
-	 * Disable the given Private Cloud user 
+	 * Disable the given Private Cloud user
 	 * 
 	 * REST: POST /dedicatedCloud/{serviceName}/user/{userId}/disable
 	 * @param serviceName [required] Domain of the service

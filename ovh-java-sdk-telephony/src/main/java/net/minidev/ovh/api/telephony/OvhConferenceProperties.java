@@ -66,4 +66,11 @@ public class OvhConferenceProperties {
 	 * canBeNull && readOnly
 	 */
 	public OvhConferenceLanguageEnum language;
+
+	/**
+	 * True if you want to receive a white-labelled mail report of your conference
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean whiteLabelReport;
 }

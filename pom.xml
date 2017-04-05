@@ -244,6 +244,7 @@
 		<module>ovh-java-sdk-paasmonitoring</module>
 		<module>ovh-java-sdk-paastimeseries</module>
 		<module>ovh-java-sdk-packxdsl</module>
+		<module>ovh-java-sdk-partners</module>
 		<module>ovh-java-sdk-price</module>
 		<module>ovh-java-sdk-router</module>
 		<module>ovh-java-sdk-saascsp2</module>

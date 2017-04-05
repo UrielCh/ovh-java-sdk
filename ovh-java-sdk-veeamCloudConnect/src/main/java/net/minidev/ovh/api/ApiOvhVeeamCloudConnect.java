@@ -121,7 +121,7 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 	}
 
 	/**
-	 * Delete this backup Repository. 
+	 * Delete this backup Repository.
 	 * 
 	 * REST: DELETE /veeamCloudConnect/{serviceName}/backupRepository/{inventoryName}
 	 * @param serviceName [required] Domain of the service

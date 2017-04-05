@@ -155,16 +155,18 @@ public class ApiOvhSupport extends ApiOvhBase {
 	 * List support tickets identifiers for this service
 	 * 
 	 * REST: GET /support/tickets
-	 * @param minCreationDate [required] Minimum creation date
 	 * @param subject [required] Search by ticket subject
 	 * @param status [required] Status of ticket
 	 * @param serviceName [required] Ticket message service name
+	 * @param archived [required] Search archived tickets
+	 * @param minCreationDate [required] Minimum creation date
 	 * @param maxCreationDate [required] Maximum creation date
-	 * @param category [required] Search by ticket category
 	 * @param product [required] Search by ticket product
+	 * @param category [required] Search by ticket category
 	 */
-	public ArrayList<Long> tickets_GET(OvhTicketCategoryEnum category, Date maxCreationDate, Date minCreationDate, OvhTicketProductEnum product, String serviceName, OvhTicketStatusEnum status, String subject) throws IOException {
+	public ArrayList<Long> tickets_GET(Boolean archived, OvhTicketCategoryEnum category, Date maxCreationDate, Date minCreationDate, OvhTicketProductEnum product, String serviceName, OvhTicketStatusEnum status, String subject) throws IOException {
 		String qPath = "/support/tickets";
+		qPath = query(qPath, "archived", archived);
 		qPath = query(qPath, "category", category);
 		qPath = query(qPath, "maxCreationDate", maxCreationDate);
 		qPath = query(qPath, "minCreationDate", minCreationDate);

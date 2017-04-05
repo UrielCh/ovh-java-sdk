@@ -1,27 +1,29 @@
 package net.minidev.ovh.api.dedicated.server.backup;
 
+import net.minidev.ovh.api.complextype.OvhUnitAndValue;
+
 /**
  * A structure describing quota associated to the current container
  */
 public class OvhBackupQuota {
 	/**
-	 * The space currently used on your cloud backup in gigabytes.
+	 * Volume r/w bandwidth limit: read/write volume offered per month on the container.
 	 *
 	 * canBeNull
 	 */
-	public Long usageGB;
+	public OvhUnitAndValue<Long> maxBandwidth;
 
 	/**
-	 * Container quota in gigabytes.
+	 * Volume usage.
 	 *
 	 * canBeNull
 	 */
-	public Long maxSizeGB;
+	public OvhUnitAndValue<Long> storageUsed;
 
 	/**
-	 * Cumulated read/write bandwidth in gigabytes per month for the container.
+	 * Container max size.
 	 *
 	 * canBeNull
 	 */
-	public Long freeBandwidthGB;
+	public OvhUnitAndValue<Long> maxStorage;
 }

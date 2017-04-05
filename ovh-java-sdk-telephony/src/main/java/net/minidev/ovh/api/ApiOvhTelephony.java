@@ -3719,6 +3719,21 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	}
 
 	/**
+	 * Indicates whether or not the portability date can be changed
+	 * 
+	 * REST: GET /telephony/{billingAccount}/portability/{id}/dateCanBeChanged
+	 * @param billingAccount [required] The name of your billingAccount
+	 * @param id [required] The ID of the portability
+	 */
+	public Boolean billingAccount_portability_id_dateCanBeChanged_GET(String billingAccount, Long id) throws IOException {
+		String qPath = "/telephony/{billingAccount}/portability/{id}/dateCanBeChanged";
+		qPath = qPath.replace("{billingAccount}", billingAccount);
+		qPath = qPath.replace("{id}", id.toString());
+		String resp = exec("GET", qPath);
+		return convertTo(resp, Boolean.class);
+	}
+
+	/**
 	 * Indicates the current status of the portability, with a list of steps
 	 * 
 	 * REST: GET /telephony/{billingAccount}/portability/{id}/status
@@ -3733,6 +3748,78 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		return convertTo(resp, t17);
 	}
 	private static TypeReference<ArrayList<OvhPortabilityStep>> t17 = new TypeReference<ArrayList<OvhPortabilityStep>>() {};
+
+	/**
+	 * Indicates whether or not the portability can be cancelled
+	 * 
+	 * REST: GET /telephony/{billingAccount}/portability/{id}/canBeCancelled
+	 * @param billingAccount [required] The name of your billingAccount
+	 * @param id [required] The ID of the portability
+	 */
+	public Boolean billingAccount_portability_id_canBeCancelled_GET(String billingAccount, Long id) throws IOException {
+		String qPath = "/telephony/{billingAccount}/portability/{id}/canBeCancelled";
+		qPath = qPath.replace("{billingAccount}", billingAccount);
+		qPath = qPath.replace("{id}", id.toString());
+		String resp = exec("GET", qPath);
+		return convertTo(resp, Boolean.class);
+	}
+
+	/**
+	 * Ask to execute the portability
+	 * 
+	 * REST: POST /telephony/{billingAccount}/portability/{id}/execute
+	 * @param billingAccount [required] The name of your billingAccount
+	 * @param id [required] The ID of the portability
+	 */
+	public void billingAccount_portability_id_execute_POST(String billingAccount, Long id) throws IOException {
+		String qPath = "/telephony/{billingAccount}/portability/{id}/execute";
+		qPath = qPath.replace("{billingAccount}", billingAccount);
+		qPath = qPath.replace("{id}", id.toString());
+		exec("POST", qPath);
+	}
+
+	/**
+	 * Ask to change the portability date
+	 * 
+	 * REST: POST /telephony/{billingAccount}/portability/{id}/changeDate
+	 * @param billingAccount [required] The name of your billingAccount
+	 * @param id [required] The ID of the portability
+	 */
+	public void billingAccount_portability_id_changeDate_POST(String billingAccount, Long id) throws IOException {
+		String qPath = "/telephony/{billingAccount}/portability/{id}/changeDate";
+		qPath = qPath.replace("{billingAccount}", billingAccount);
+		qPath = qPath.replace("{id}", id.toString());
+		exec("POST", qPath);
+	}
+
+	/**
+	 * Indicates whether or not the portability can be executed
+	 * 
+	 * REST: GET /telephony/{billingAccount}/portability/{id}/canBeExecuted
+	 * @param billingAccount [required] The name of your billingAccount
+	 * @param id [required] The ID of the portability
+	 */
+	public Boolean billingAccount_portability_id_canBeExecuted_GET(String billingAccount, Long id) throws IOException {
+		String qPath = "/telephony/{billingAccount}/portability/{id}/canBeExecuted";
+		qPath = qPath.replace("{billingAccount}", billingAccount);
+		qPath = qPath.replace("{id}", id.toString());
+		String resp = exec("GET", qPath);
+		return convertTo(resp, Boolean.class);
+	}
+
+	/**
+	 * Ask to cancel the portability
+	 * 
+	 * REST: POST /telephony/{billingAccount}/portability/{id}/cancel
+	 * @param billingAccount [required] The name of your billingAccount
+	 * @param id [required] The ID of the portability
+	 */
+	public void billingAccount_portability_id_cancel_POST(String billingAccount, Long id) throws IOException {
+		String qPath = "/telephony/{billingAccount}/portability/{id}/cancel";
+		qPath = qPath.replace("{billingAccount}", billingAccount);
+		qPath = qPath.replace("{id}", id.toString());
+		exec("POST", qPath);
+	}
 
 	/**
 	 * Check if security deposit transfer is possible between two billing accounts

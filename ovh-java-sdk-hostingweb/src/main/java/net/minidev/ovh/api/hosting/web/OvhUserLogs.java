@@ -1,11 +1,19 @@
 package net.minidev.ovh.api.hosting.web;
 
 import java.util.Date;
+import net.minidev.ovh.api.hosting.web.userlogs.OvhStatusEnum;
 
 /**
  * Hosting users logs
  */
 public class OvhUserLogs {
+	/**
+	 * OwnLogs where this userLogs will be enable. Default : main domain ownlogs
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long ownLogsId;
+
 	/**
 	 * Description field for you
 	 *
@@ -26,4 +34,11 @@ public class OvhUserLogs {
 	 * canBeNull && readOnly
 	 */
 	public String login;
+
+	/**
+	 * Status of this userLogs
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhStatusEnum status;
 }

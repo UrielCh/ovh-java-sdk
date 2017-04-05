@@ -7,6 +7,7 @@ import java.util.HashMap;
 import net.minidev.ovh.api.dedicated.server.OvhMrtgPeriodEnum;
 import net.minidev.ovh.api.dedicated.server.OvhMrtgTimestampValue;
 import net.minidev.ovh.api.dedicated.server.OvhMrtgTypeEnum;
+import net.minidev.ovh.api.services.OvhNonExpiringService;
 import net.minidev.ovh.api.vrack.OvhAllowedDedicatedServerInterfaces;
 import net.minidev.ovh.api.vrack.OvhAllowedServices;
 import net.minidev.ovh.api.vrack.OvhCloudProject;
@@ -36,6 +37,19 @@ public class ApiOvhVrack extends ApiOvhBase {
 	/**
 	 * Get this object properties
 	 * 
+	 * REST: GET /vrack/{serviceName}/serviceInfos
+	 * @param serviceName [required] The internal name of your vrack
+	 */
+	public OvhNonExpiringService serviceName_serviceInfos_GET(String serviceName) throws IOException {
+		String qPath = "/vrack/{serviceName}/serviceInfos";
+		qPath = qPath.replace("{serviceName}", serviceName);
+		String resp = exec("GET", qPath);
+		return convertTo(resp, OvhNonExpiringService.class);
+	}
+
+	/**
+	 * Get this object properties
+	 * 
 	 * REST: GET /vrack/{serviceName}
 	 * @param serviceName [required] The internal name of your vrack
 	 */
@@ -60,66 +74,6 @@ public class ApiOvhVrack extends ApiOvhBase {
 	}
 
 	/**
-	 * vrack dedicated cloud (VmNetwork)
-	 * 
-	 * REST: GET /vrack/{serviceName}/dedicatedCloud
-	 * @param serviceName [required] The internal name of your vrack
-	 */
-	public ArrayList<String> serviceName_dedicatedCloud_GET(String serviceName) throws IOException {
-		String qPath = "/vrack/{serviceName}/dedicatedCloud";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
-		return convertTo(resp, t1);
-	}
-	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
-
-	/**
-	 * add a dedicatedCloud (VmNetwork) to this vrack
-	 * 
-	 * REST: POST /vrack/{serviceName}/dedicatedCloud
-	 * @param dedicatedCloud [required]
-	 * @param serviceName [required] The internal name of your vrack
-	 */
-	public OvhTask serviceName_dedicatedCloud_POST(String serviceName, String dedicatedCloud) throws IOException {
-		String qPath = "/vrack/{serviceName}/dedicatedCloud";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "dedicatedCloud", dedicatedCloud);
-		String resp = exec("POST", qPath, o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 * 
-	 * REST: GET /vrack/{serviceName}/dedicatedCloud/{dedicatedCloud}
-	 * @param serviceName [required] The internal name of your vrack
-	 * @param dedicatedCloud [required] your dedicated cloud service
-	 */
-	public OvhDedicatedCloud serviceName_dedicatedCloud_dedicatedCloud_GET(String serviceName, String dedicatedCloud) throws IOException {
-		String qPath = "/vrack/{serviceName}/dedicatedCloud/{dedicatedCloud}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{dedicatedCloud}", dedicatedCloud);
-		String resp = exec("GET", qPath);
-		return convertTo(resp, OvhDedicatedCloud.class);
-	}
-
-	/**
-	 * remove this dedicatedCloud (VmNetwork) from this vrack
-	 * 
-	 * REST: DELETE /vrack/{serviceName}/dedicatedCloud/{dedicatedCloud}
-	 * @param serviceName [required] The internal name of your vrack
-	 * @param dedicatedCloud [required] your dedicated cloud service
-	 */
-	public OvhTask serviceName_dedicatedCloud_dedicatedCloud_DELETE(String serviceName, String dedicatedCloud) throws IOException {
-		String qPath = "/vrack/{serviceName}/dedicatedCloud/{dedicatedCloud}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{dedicatedCloud}", dedicatedCloud);
-		String resp = exec("DELETE", qPath);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
 	 * vrack for legacy vrack
 	 * 
 	 * REST: GET /vrack/{serviceName}/legacyVrack
@@ -131,6 +85,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 		String resp = exec("GET", qPath);
 		return convertTo(resp, t1);
 	}
+	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
 
 	/**
 	 * add a legacy vrack (vrackXXXX) to this vrack (pn-XXXX)
@@ -272,231 +227,6 @@ public class ApiOvhVrack extends ApiOvhBase {
 	}
 
 	/**
-	 * vrack tasks
-	 * 
-	 * REST: GET /vrack/{serviceName}/task
-	 * @param serviceName [required] The internal name of your vrack
-	 */
-	public ArrayList<Long> serviceName_task_GET(String serviceName) throws IOException {
-		String qPath = "/vrack/{serviceName}/task";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
-		return convertTo(resp, t3);
-	}
-	private static TypeReference<ArrayList<Long>> t3 = new TypeReference<ArrayList<Long>>() {};
-
-	/**
-	 * Get this object properties
-	 * 
-	 * REST: GET /vrack/{serviceName}/task/{taskId}
-	 * @param serviceName [required] The internal name of your vrack
-	 * @param taskId [required]
-	 */
-	public OvhTask serviceName_task_taskId_GET(String serviceName, Long taskId) throws IOException {
-		String qPath = "/vrack/{serviceName}/task/{taskId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{taskId}", taskId.toString());
-		String resp = exec("GET", qPath);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Vracks allowed for your dedicatedCloud datacenter
-	 * 
-	 * REST: GET /vrack/{serviceName}/dedicatedCloudDatacenter/{datacenter}/allowedVrack
-	 * @param serviceName [required] The internal name of your vrack
-	 * @param datacenter [required] Your dedicatedCloud datacenter name
-	 */
-	public ArrayList<String> serviceName_dedicatedCloudDatacenter_datacenter_allowedVrack_GET(String serviceName, String datacenter) throws IOException {
-		String qPath = "/vrack/{serviceName}/dedicatedCloudDatacenter/{datacenter}/allowedVrack";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenter}", datacenter);
-		String resp = exec("GET", qPath);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Get this object properties
-	 * 
-	 * REST: GET /vrack/{serviceName}/dedicatedCloudDatacenter/{datacenter}
-	 * @param serviceName [required] The internal name of your vrack
-	 * @param datacenter [required] Your dedicatedCloud datacenter name
-	 */
-	public OvhPccDatacenter serviceName_dedicatedCloudDatacenter_datacenter_GET(String serviceName, String datacenter) throws IOException {
-		String qPath = "/vrack/{serviceName}/dedicatedCloudDatacenter/{datacenter}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenter}", datacenter);
-		String resp = exec("GET", qPath);
-		return convertTo(resp, OvhPccDatacenter.class);
-	}
-
-	/**
-	 * Move your dedicatedCloud datacenter from a Vrack to another
-	 * 
-	 * REST: POST /vrack/{serviceName}/dedicatedCloudDatacenter/{datacenter}/move
-	 * @param targetServiceName [required] The internal name of your target vrack
-	 * @param serviceName [required] The internal name of your vrack
-	 * @param datacenter [required] Your dedicatedCloud datacenter name
-	 */
-	public OvhTask serviceName_dedicatedCloudDatacenter_datacenter_move_POST(String serviceName, String datacenter, String targetServiceName) throws IOException {
-		String qPath = "/vrack/{serviceName}/dedicatedCloudDatacenter/{datacenter}/move";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenter}", datacenter);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "targetServiceName", targetServiceName);
-		String resp = exec("POST", qPath, o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * vrack dedicated cloud datacenter
-	 * 
-	 * REST: GET /vrack/{serviceName}/dedicatedCloudDatacenter
-	 * @param serviceName [required] The internal name of your vrack
-	 */
-	public ArrayList<String> serviceName_dedicatedCloudDatacenter_GET(String serviceName) throws IOException {
-		String qPath = "/vrack/{serviceName}/dedicatedCloudDatacenter";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * List all services allowed in this vrack
-	 * 
-	 * REST: GET /vrack/{serviceName}/allowedServices
-	 * @param serviceName [required] The internal name of your vrack
-	 */
-	public OvhAllowedServices serviceName_allowedServices_GET(String serviceName) throws IOException {
-		String qPath = "/vrack/{serviceName}/allowedServices";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
-		return convertTo(resp, OvhAllowedServices.class);
-	}
-
-	/**
-	 * vrack for dedicated server
-	 * 
-	 * REST: GET /vrack/{serviceName}/dedicatedServer
-	 * @param serviceName [required] The internal name of your vrack
-	 */
-	public ArrayList<String> serviceName_dedicatedServer_GET(String serviceName) throws IOException {
-		String qPath = "/vrack/{serviceName}/dedicatedServer";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * add a dedicated server to this vrack
-	 * 
-	 * REST: POST /vrack/{serviceName}/dedicatedServer
-	 * @param dedicatedServer [required] Dedicated server to add
-	 * @param serviceName [required] The internal name of your vrack
-	 */
-	public OvhTask serviceName_dedicatedServer_POST(String serviceName, String dedicatedServer) throws IOException {
-		String qPath = "/vrack/{serviceName}/dedicatedServer";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "dedicatedServer", dedicatedServer);
-		String resp = exec("POST", qPath, o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 * 
-	 * REST: GET /vrack/{serviceName}/dedicatedServer/{dedicatedServer}
-	 * @param serviceName [required] The internal name of your vrack
-	 * @param dedicatedServer [required] Dedicated Server
-	 */
-	public OvhDedicatedServer serviceName_dedicatedServer_dedicatedServer_GET(String serviceName, String dedicatedServer) throws IOException {
-		String qPath = "/vrack/{serviceName}/dedicatedServer/{dedicatedServer}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{dedicatedServer}", dedicatedServer);
-		String resp = exec("GET", qPath);
-		return convertTo(resp, OvhDedicatedServer.class);
-	}
-
-	/**
-	 * remove this server from this vrack
-	 * 
-	 * REST: DELETE /vrack/{serviceName}/dedicatedServer/{dedicatedServer}
-	 * @param serviceName [required] The internal name of your vrack
-	 * @param dedicatedServer [required] Dedicated Server
-	 */
-	public OvhTask serviceName_dedicatedServer_dedicatedServer_DELETE(String serviceName, String dedicatedServer) throws IOException {
-		String qPath = "/vrack/{serviceName}/dedicatedServer/{dedicatedServer}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{dedicatedServer}", dedicatedServer);
-		String resp = exec("DELETE", qPath);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Retrieve vrack traffic graph values
-	 * 
-	 * REST: GET /vrack/{serviceName}/dedicatedServer/{dedicatedServer}/mrtg
-	 * @param period [required] mrtg period
-	 * @param type [required] mrtg type
-	 * @param serviceName [required] The internal name of your vrack
-	 * @param dedicatedServer [required] Dedicated Server
-	 */
-	public ArrayList<OvhMrtgTimestampValue> serviceName_dedicatedServer_dedicatedServer_mrtg_GET(String serviceName, String dedicatedServer, OvhMrtgPeriodEnum period, OvhMrtgTypeEnum type) throws IOException {
-		String qPath = "/vrack/{serviceName}/dedicatedServer/{dedicatedServer}/mrtg";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{dedicatedServer}", dedicatedServer);
-		qPath = query(qPath, "period", period);
-		qPath = query(qPath, "type", type);
-		String resp = exec("GET", qPath);
-		return convertTo(resp, t4);
-	}
-	private static TypeReference<ArrayList<OvhMrtgTimestampValue>> t4 = new TypeReference<ArrayList<OvhMrtgTimestampValue>>() {};
-
-	/**
-	 * vrack dedicated connect
-	 * 
-	 * REST: GET /vrack/{serviceName}/dedicatedConnect
-	 * @param serviceName [required] The internal name of your vrack
-	 */
-	public ArrayList<String> serviceName_dedicatedConnect_GET(String serviceName) throws IOException {
-		String qPath = "/vrack/{serviceName}/dedicatedConnect";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Get this object properties
-	 * 
-	 * REST: GET /vrack/{serviceName}/dedicatedConnect/{name}
-	 * @param serviceName [required] The internal name of your vrack
-	 * @param name [required] A name for your dedicatedConnect link
-	 */
-	public OvhDedicatedConnect serviceName_dedicatedConnect_name_GET(String serviceName, String name) throws IOException {
-		String qPath = "/vrack/{serviceName}/dedicatedConnect/{name}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{name}", name);
-		String resp = exec("GET", qPath);
-		return convertTo(resp, OvhDedicatedConnect.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 * 
-	 * REST: PUT /vrack/{serviceName}/dedicatedConnect/{name}
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your vrack
-	 * @param name [required] A name for your dedicatedConnect link
-	 */
-	public void serviceName_dedicatedConnect_name_PUT(String serviceName, String name, OvhDedicatedConnect body) throws IOException {
-		String qPath = "/vrack/{serviceName}/dedicatedConnect/{name}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{name}", name);
-		exec("PUT", qPath, body);
-	}
-
-	/**
 	 * Details for all dedicated server interfaces in this vrack
 	 * 
 	 * REST: GET /vrack/{serviceName}/dedicatedServerInterfaceDetails
@@ -506,9 +236,9 @@ public class ApiOvhVrack extends ApiOvhBase {
 		String qPath = "/vrack/{serviceName}/dedicatedServerInterfaceDetails";
 		qPath = qPath.replace("{serviceName}", serviceName);
 		String resp = exec("GET", qPath);
-		return convertTo(resp, t5);
+		return convertTo(resp, t3);
 	}
-	private static TypeReference<ArrayList<OvhAllowedDedicatedServerInterfaces>> t5 = new TypeReference<ArrayList<OvhAllowedDedicatedServerInterfaces>>() {};
+	private static TypeReference<ArrayList<OvhAllowedDedicatedServerInterfaces>> t3 = new TypeReference<ArrayList<OvhAllowedDedicatedServerInterfaces>>() {};
 
 	/**
 	 * vrack for dedicated server interface
@@ -626,6 +356,290 @@ public class ApiOvhVrack extends ApiOvhBase {
 		qPath = qPath.replace("{project}", project);
 		String resp = exec("DELETE", qPath);
 		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * vrack dedicated cloud (VmNetwork)
+	 * 
+	 * REST: GET /vrack/{serviceName}/dedicatedCloud
+	 * @param serviceName [required] The internal name of your vrack
+	 */
+	public ArrayList<String> serviceName_dedicatedCloud_GET(String serviceName) throws IOException {
+		String qPath = "/vrack/{serviceName}/dedicatedCloud";
+		qPath = qPath.replace("{serviceName}", serviceName);
+		String resp = exec("GET", qPath);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * add a dedicatedCloud (VmNetwork) to this vrack
+	 * 
+	 * REST: POST /vrack/{serviceName}/dedicatedCloud
+	 * @param dedicatedCloud [required]
+	 * @param serviceName [required] The internal name of your vrack
+	 */
+	public OvhTask serviceName_dedicatedCloud_POST(String serviceName, String dedicatedCloud) throws IOException {
+		String qPath = "/vrack/{serviceName}/dedicatedCloud";
+		qPath = qPath.replace("{serviceName}", serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "dedicatedCloud", dedicatedCloud);
+		String resp = exec("POST", qPath, o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 * 
+	 * REST: GET /vrack/{serviceName}/dedicatedCloud/{dedicatedCloud}
+	 * @param serviceName [required] The internal name of your vrack
+	 * @param dedicatedCloud [required] your dedicated cloud service
+	 */
+	public OvhDedicatedCloud serviceName_dedicatedCloud_dedicatedCloud_GET(String serviceName, String dedicatedCloud) throws IOException {
+		String qPath = "/vrack/{serviceName}/dedicatedCloud/{dedicatedCloud}";
+		qPath = qPath.replace("{serviceName}", serviceName);
+		qPath = qPath.replace("{dedicatedCloud}", dedicatedCloud);
+		String resp = exec("GET", qPath);
+		return convertTo(resp, OvhDedicatedCloud.class);
+	}
+
+	/**
+	 * remove this dedicatedCloud (VmNetwork) from this vrack
+	 * 
+	 * REST: DELETE /vrack/{serviceName}/dedicatedCloud/{dedicatedCloud}
+	 * @param serviceName [required] The internal name of your vrack
+	 * @param dedicatedCloud [required] your dedicated cloud service
+	 */
+	public OvhTask serviceName_dedicatedCloud_dedicatedCloud_DELETE(String serviceName, String dedicatedCloud) throws IOException {
+		String qPath = "/vrack/{serviceName}/dedicatedCloud/{dedicatedCloud}";
+		qPath = qPath.replace("{serviceName}", serviceName);
+		qPath = qPath.replace("{dedicatedCloud}", dedicatedCloud);
+		String resp = exec("DELETE", qPath);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * vrack tasks
+	 * 
+	 * REST: GET /vrack/{serviceName}/task
+	 * @param serviceName [required] The internal name of your vrack
+	 */
+	public ArrayList<Long> serviceName_task_GET(String serviceName) throws IOException {
+		String qPath = "/vrack/{serviceName}/task";
+		qPath = qPath.replace("{serviceName}", serviceName);
+		String resp = exec("GET", qPath);
+		return convertTo(resp, t4);
+	}
+	private static TypeReference<ArrayList<Long>> t4 = new TypeReference<ArrayList<Long>>() {};
+
+	/**
+	 * Get this object properties
+	 * 
+	 * REST: GET /vrack/{serviceName}/task/{taskId}
+	 * @param serviceName [required] The internal name of your vrack
+	 * @param taskId [required]
+	 */
+	public OvhTask serviceName_task_taskId_GET(String serviceName, Long taskId) throws IOException {
+		String qPath = "/vrack/{serviceName}/task/{taskId}";
+		qPath = qPath.replace("{serviceName}", serviceName);
+		qPath = qPath.replace("{taskId}", taskId.toString());
+		String resp = exec("GET", qPath);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Vracks allowed for your dedicatedCloud datacenter
+	 * 
+	 * REST: GET /vrack/{serviceName}/dedicatedCloudDatacenter/{datacenter}/allowedVrack
+	 * @param serviceName [required] The internal name of your vrack
+	 * @param datacenter [required] Your dedicatedCloud datacenter name
+	 */
+	public ArrayList<String> serviceName_dedicatedCloudDatacenter_datacenter_allowedVrack_GET(String serviceName, String datacenter) throws IOException {
+		String qPath = "/vrack/{serviceName}/dedicatedCloudDatacenter/{datacenter}/allowedVrack";
+		qPath = qPath.replace("{serviceName}", serviceName);
+		qPath = qPath.replace("{datacenter}", datacenter);
+		String resp = exec("GET", qPath);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Get this object properties
+	 * 
+	 * REST: GET /vrack/{serviceName}/dedicatedCloudDatacenter/{datacenter}
+	 * @param serviceName [required] The internal name of your vrack
+	 * @param datacenter [required] Your dedicatedCloud datacenter name
+	 */
+	public OvhPccDatacenter serviceName_dedicatedCloudDatacenter_datacenter_GET(String serviceName, String datacenter) throws IOException {
+		String qPath = "/vrack/{serviceName}/dedicatedCloudDatacenter/{datacenter}";
+		qPath = qPath.replace("{serviceName}", serviceName);
+		qPath = qPath.replace("{datacenter}", datacenter);
+		String resp = exec("GET", qPath);
+		return convertTo(resp, OvhPccDatacenter.class);
+	}
+
+	/**
+	 * Move your dedicatedCloud datacenter from a Vrack to another
+	 * 
+	 * REST: POST /vrack/{serviceName}/dedicatedCloudDatacenter/{datacenter}/move
+	 * @param targetServiceName [required] The internal name of your target vrack
+	 * @param serviceName [required] The internal name of your vrack
+	 * @param datacenter [required] Your dedicatedCloud datacenter name
+	 */
+	public OvhTask serviceName_dedicatedCloudDatacenter_datacenter_move_POST(String serviceName, String datacenter, String targetServiceName) throws IOException {
+		String qPath = "/vrack/{serviceName}/dedicatedCloudDatacenter/{datacenter}/move";
+		qPath = qPath.replace("{serviceName}", serviceName);
+		qPath = qPath.replace("{datacenter}", datacenter);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "targetServiceName", targetServiceName);
+		String resp = exec("POST", qPath, o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * vrack dedicated cloud datacenter
+	 * 
+	 * REST: GET /vrack/{serviceName}/dedicatedCloudDatacenter
+	 * @param serviceName [required] The internal name of your vrack
+	 */
+	public ArrayList<String> serviceName_dedicatedCloudDatacenter_GET(String serviceName) throws IOException {
+		String qPath = "/vrack/{serviceName}/dedicatedCloudDatacenter";
+		qPath = qPath.replace("{serviceName}", serviceName);
+		String resp = exec("GET", qPath);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * vrack dedicated connect
+	 * 
+	 * REST: GET /vrack/{serviceName}/dedicatedConnect
+	 * @param serviceName [required] The internal name of your vrack
+	 */
+	public ArrayList<String> serviceName_dedicatedConnect_GET(String serviceName) throws IOException {
+		String qPath = "/vrack/{serviceName}/dedicatedConnect";
+		qPath = qPath.replace("{serviceName}", serviceName);
+		String resp = exec("GET", qPath);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Get this object properties
+	 * 
+	 * REST: GET /vrack/{serviceName}/dedicatedConnect/{name}
+	 * @param serviceName [required] The internal name of your vrack
+	 * @param name [required] A name for your dedicatedConnect link
+	 */
+	public OvhDedicatedConnect serviceName_dedicatedConnect_name_GET(String serviceName, String name) throws IOException {
+		String qPath = "/vrack/{serviceName}/dedicatedConnect/{name}";
+		qPath = qPath.replace("{serviceName}", serviceName);
+		qPath = qPath.replace("{name}", name);
+		String resp = exec("GET", qPath);
+		return convertTo(resp, OvhDedicatedConnect.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 * 
+	 * REST: PUT /vrack/{serviceName}/dedicatedConnect/{name}
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your vrack
+	 * @param name [required] A name for your dedicatedConnect link
+	 */
+	public void serviceName_dedicatedConnect_name_PUT(String serviceName, String name, OvhDedicatedConnect body) throws IOException {
+		String qPath = "/vrack/{serviceName}/dedicatedConnect/{name}";
+		qPath = qPath.replace("{serviceName}", serviceName);
+		qPath = qPath.replace("{name}", name);
+		exec("PUT", qPath, body);
+	}
+
+	/**
+	 * vrack for dedicated server
+	 * 
+	 * REST: GET /vrack/{serviceName}/dedicatedServer
+	 * @param serviceName [required] The internal name of your vrack
+	 */
+	public ArrayList<String> serviceName_dedicatedServer_GET(String serviceName) throws IOException {
+		String qPath = "/vrack/{serviceName}/dedicatedServer";
+		qPath = qPath.replace("{serviceName}", serviceName);
+		String resp = exec("GET", qPath);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * add a dedicated server to this vrack
+	 * 
+	 * REST: POST /vrack/{serviceName}/dedicatedServer
+	 * @param dedicatedServer [required] Dedicated server to add
+	 * @param serviceName [required] The internal name of your vrack
+	 */
+	public OvhTask serviceName_dedicatedServer_POST(String serviceName, String dedicatedServer) throws IOException {
+		String qPath = "/vrack/{serviceName}/dedicatedServer";
+		qPath = qPath.replace("{serviceName}", serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "dedicatedServer", dedicatedServer);
+		String resp = exec("POST", qPath, o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 * 
+	 * REST: GET /vrack/{serviceName}/dedicatedServer/{dedicatedServer}
+	 * @param serviceName [required] The internal name of your vrack
+	 * @param dedicatedServer [required] Dedicated Server
+	 */
+	public OvhDedicatedServer serviceName_dedicatedServer_dedicatedServer_GET(String serviceName, String dedicatedServer) throws IOException {
+		String qPath = "/vrack/{serviceName}/dedicatedServer/{dedicatedServer}";
+		qPath = qPath.replace("{serviceName}", serviceName);
+		qPath = qPath.replace("{dedicatedServer}", dedicatedServer);
+		String resp = exec("GET", qPath);
+		return convertTo(resp, OvhDedicatedServer.class);
+	}
+
+	/**
+	 * remove this server from this vrack
+	 * 
+	 * REST: DELETE /vrack/{serviceName}/dedicatedServer/{dedicatedServer}
+	 * @param serviceName [required] The internal name of your vrack
+	 * @param dedicatedServer [required] Dedicated Server
+	 */
+	public OvhTask serviceName_dedicatedServer_dedicatedServer_DELETE(String serviceName, String dedicatedServer) throws IOException {
+		String qPath = "/vrack/{serviceName}/dedicatedServer/{dedicatedServer}";
+		qPath = qPath.replace("{serviceName}", serviceName);
+		qPath = qPath.replace("{dedicatedServer}", dedicatedServer);
+		String resp = exec("DELETE", qPath);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Retrieve vrack traffic graph values
+	 * 
+	 * REST: GET /vrack/{serviceName}/dedicatedServer/{dedicatedServer}/mrtg
+	 * @param period [required] mrtg period
+	 * @param type [required] mrtg type
+	 * @param serviceName [required] The internal name of your vrack
+	 * @param dedicatedServer [required] Dedicated Server
+	 */
+	public ArrayList<OvhMrtgTimestampValue> serviceName_dedicatedServer_dedicatedServer_mrtg_GET(String serviceName, String dedicatedServer, OvhMrtgPeriodEnum period, OvhMrtgTypeEnum type) throws IOException {
+		String qPath = "/vrack/{serviceName}/dedicatedServer/{dedicatedServer}/mrtg";
+		qPath = qPath.replace("{serviceName}", serviceName);
+		qPath = qPath.replace("{dedicatedServer}", dedicatedServer);
+		qPath = query(qPath, "period", period);
+		qPath = query(qPath, "type", type);
+		String resp = exec("GET", qPath);
+		return convertTo(resp, t5);
+	}
+	private static TypeReference<ArrayList<OvhMrtgTimestampValue>> t5 = new TypeReference<ArrayList<OvhMrtgTimestampValue>>() {};
+
+	/**
+	 * List all services allowed in this vrack
+	 * 
+	 * REST: GET /vrack/{serviceName}/allowedServices
+	 * @param serviceName [required] The internal name of your vrack
+	 */
+	public OvhAllowedServices serviceName_allowedServices_GET(String serviceName) throws IOException {
+		String qPath = "/vrack/{serviceName}/allowedServices";
+		qPath = qPath.replace("{serviceName}", serviceName);
+		String resp = exec("GET", qPath);
+		return convertTo(resp, OvhAllowedServices.class);
 	}
 
 	/**

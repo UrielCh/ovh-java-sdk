@@ -216,7 +216,7 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	}
 
 	/**
-	 * Delete this access point 
+	 * Delete this access point
 	 * 
 	 * REST: DELETE /horizonView/{serviceName}/accessPoint/{accessPointId}
 	 * @param serviceName [required] Domain of the service
@@ -245,7 +245,7 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	private static TypeReference<ArrayList<String>> t3 = new TypeReference<ArrayList<String>>() {};
 
 	/**
-	 * Create a new customer user 
+	 * Create a new customer user
 	 * 
 	 * REST: POST /horizonView/{serviceName}/customerUser
 	 * @param email [required] Email for your new user in Active diRectory.

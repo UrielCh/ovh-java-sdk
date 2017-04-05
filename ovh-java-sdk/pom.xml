@@ -332,6 +332,12 @@
 			<version>${ovhjavasdk.version}</version>
 		</dependency>
 		<dependency>
+			<artifactId>ovh-java-sdk-partners</artifactId>
+			<groupId>net.minidev</groupId>
+			<optional>false</optional>
+			<version>${ovhjavasdk.version}</version>
+		</dependency>
+		<dependency>
 			<artifactId>ovh-java-sdk-price</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>

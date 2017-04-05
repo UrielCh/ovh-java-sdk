@@ -25,6 +25,7 @@ import net.minidev.ovh.api.hosting.web.OvhModuleList;
 import net.minidev.ovh.api.hosting.web.OvhOfferCapabilitiesEnum;
 import net.minidev.ovh.api.hosting.web.OvhOfferEnum;
 import net.minidev.ovh.api.hosting.web.OvhOvhConfig;
+import net.minidev.ovh.api.hosting.web.OvhOwnLogs;
 import net.minidev.ovh.api.hosting.web.OvhRequestActionEnum;
 import net.minidev.ovh.api.hosting.web.OvhService;
 import net.minidev.ovh.api.hosting.web.OvhSsl;
@@ -805,15 +806,17 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 * 
 	 * REST: POST /hosting/web/{serviceName}/userLogs
 	 * @param password [required] The new userLogs password
+	 * @param ownLogsId [required] OwnLogs where this userLogs will be enable. Default : main domain ownlogs
 	 * @param description [required] Description field for you
 	 * @param login [required] The userLogs login used to connect to logs.ovh.net
 	 * @param serviceName [required] The internal name of your hosting
 	 */
-	public String serviceName_userLogs_POST(String serviceName, String password, String description, String login) throws IOException {
+	public String serviceName_userLogs_POST(String serviceName, String password, Long ownLogsId, String description, String login) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/userLogs";
 		qPath = qPath.replace("{serviceName}", serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "password", password);
+		addBody(o, "ownLogsId", ownLogsId);
 		addBody(o, "description", description);
 		addBody(o, "login", login);
 		String resp = exec("POST", qPath, o);
@@ -1651,6 +1654,34 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 		addBody(o, "path", path);
 		String resp = exec("POST", qPath, o);
 		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Own Logs linked to your hosting
+	 * 
+	 * REST: GET /hosting/web/{serviceName}/ownLogs
+	 * @param serviceName [required] The internal name of your hosting
+	 */
+	public ArrayList<Long> serviceName_ownLogs_GET(String serviceName) throws IOException {
+		String qPath = "/hosting/web/{serviceName}/ownLogs";
+		qPath = qPath.replace("{serviceName}", serviceName);
+		String resp = exec("GET", qPath);
+		return convertTo(resp, t5);
+	}
+
+	/**
+	 * Get this object properties
+	 * 
+	 * REST: GET /hosting/web/{serviceName}/ownLogs/{id}
+	 * @param serviceName [required] The internal name of your hosting
+	 * @param id [required] Id of the object
+	 */
+	public OvhOwnLogs serviceName_ownLogs_id_GET(String serviceName, Long id) throws IOException {
+		String qPath = "/hosting/web/{serviceName}/ownLogs/{id}";
+		qPath = qPath.replace("{serviceName}", serviceName);
+		qPath = qPath.replace("{id}", id.toString());
+		String resp = exec("GET", qPath);
+		return convertTo(resp, OvhOwnLogs.class);
 	}
 
 	/**

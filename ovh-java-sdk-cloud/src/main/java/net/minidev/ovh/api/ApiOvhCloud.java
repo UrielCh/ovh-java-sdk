@@ -40,6 +40,7 @@ import net.minidev.ovh.api.cloud.pca.OvhTaskStateEnum;
 import net.minidev.ovh.api.cloud.pca.OvhTaskTypeEnum;
 import net.minidev.ovh.api.cloud.project.OvhBill;
 import net.minidev.ovh.api.cloud.project.OvhNewProject;
+import net.minidev.ovh.api.cloud.project.OvhNewProjectInfo;
 import net.minidev.ovh.api.cloud.project.OvhProjectUsage;
 import net.minidev.ovh.api.cloud.quota.OvhQuotas;
 import net.minidev.ovh.api.cloud.region.OvhRegionDetail;
@@ -402,6 +403,17 @@ public class ApiOvhCloud extends ApiOvhBase {
 		String qPath = "/cloud";
 		String resp = exec("GET", qPath);
 		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Get information about a cloud project creation
+	 * 
+	 * REST: GET /cloud/createProjectInfo
+	 */
+	public OvhNewProjectInfo createProjectInfo_GET() throws IOException {
+		String qPath = "/cloud/createProjectInfo";
+		String resp = exec("GET", qPath);
+		return convertTo(resp, OvhNewProjectInfo.class);
 	}
 
 	/**
