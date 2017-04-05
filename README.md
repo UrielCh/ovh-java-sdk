@@ -1,9 +1,10 @@
-<p align="center">
+<img src="https://api.ovh.com/images/ovh-under-construction.png" alt="OVH logo" height="100" align="left"/>
+
+# Ovh-java-sdk
 [![Build Status](https://travis-ci.org/UrielCh/ovh-java-sdk.svg?branch=master)](https://travis-ci.org/UrielCh/ovh-java-sdk)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/net.minidev/ovh-java-sdk./badge.svg?style=flat-square)](https://maven-badges.herokuapp.com/maven-central/net.minidev/ovh-java-sdk/)
-</p>
-<img src="https://api.ovh.com/images/ovh-under-construction.png" alt="OVH logo" height="100" align="left"/>
-# Ovh-java-sdk
+
+
 The complete java SDK for OVH services. Each service had his own java SDK. you can use a couples of service:
     
 	<dependency>
