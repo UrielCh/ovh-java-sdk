@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>net.minidev</groupId>
 		<artifactId>ovh-java-sdk-pom</artifactId>
-		<version>0.9.1-SNAPSHOT</version>
+		<version>0.9.1</version>
 	</parent>
 	<artifactId>ovh-java-sdk-hostingreseller</artifactId>
 	<name>OVH Java SDK for OVH hostingreseller</name>
