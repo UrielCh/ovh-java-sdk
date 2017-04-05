@@ -1,6 +1,8 @@
 package net.minidev.ovh.core;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -20,11 +22,20 @@ public abstract class ApiOvhBase {
 	protected String query(String url, String name, Object value) {
 		if (value == null)
 			return url;
-		if (url.contains("?"))
-			url = url + "&" + name + "=" + value;
-		else
-			url = url + "?" + name + "=" + value;
-		return url;
+		StringBuilder sb = new StringBuilder(url);
+		sb.append(url.contains("?") ? "&" : "?");
+		sb.append(name);
+		sb.append("=");
+		if (value instanceof Date) {
+			// Expecting ISO 8601 data
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
+			String s = sdf.format((Date) value);
+			s = s.replaceAll("([+-])([0-9]{2})(00)$", "$1$2:$3");
+			sb.append(s);
+		} else {
+			sb.append(value);
+		}
+		return sb.toString();
 	}
 
 	public String execN(String method, String query) throws IOException {
