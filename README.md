@@ -1,7 +1,9 @@
-# ovh-java-sdk
+<p align="center">
 [![Build Status](https://travis-ci.org/UrielCh/ovh-java-sdk.svg?branch=master)](https://travis-ci.org/UrielCh/ovh-java-sdk)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/net.minidev/ovh-java-sdk./badge.svg?style=flat-square)](https://maven-badges.herokuapp.com/maven-central/net.minidev/ovh-java-sdk/)
-
+</p>
+<img src="https://api.ovh.com/images/ovh-under-construction.png" alt="OVH logo" height="100" align="left"/>
+# Ovh-java-sdk
 The complete java SDK for OVH services. Each service had his own java SDK. you can use a couples of service:
     
 	<dependency>
@@ -35,7 +37,8 @@ List all your domain with their expiration date.
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
     for (String serviceName : api.domain.GET(null)) {
         OvhService service = api.domain.serviceName_serviceInfos_GET(serviceName);
-        System.out.printf("%s status:%s expire on:%s\n", serviceName, service.status.toString(), sdf.format(service.expiration));
+        System.out.printf("%s status:%s expire on:%s\n", serviceName,
+	    service.status.toString(), sdf.format(service.expiration));
     }
 
 by default you will the the folling error:
@@ -54,7 +57,8 @@ List all your domain with their expiration date, only using `ovh-java-sdk-domain
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
     for (String serviceName : api.GET(null)) {
         OvhService service = api.serviceName_serviceInfos_GET(serviceName);
-        System.out.printf("%s status:%s expire on:%s\n", serviceName, service.status.toString(), sdf.format(service.expiration));
+        System.out.printf("%s status:%s expire on:%s\n", serviceName,
+	    service.status.toString(), sdf.format(service.expiration));
     }
 
 you get the same results.
