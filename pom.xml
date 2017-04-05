@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.minidev</groupId>
 	<artifactId>ovh-java-sdk-pom</artifactId>
-	<version>0.9</version>
+	<version>0.9.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>OVH SDK for Java</name>
 	<description>OVH ...</description>
@@ -191,7 +191,6 @@
 		</profile>
 	</profiles>
 	<modules>
-		<module>ovh-java-sdk</module>
 		<module>ovh-java-sdk-allDom</module>
 		<module>ovh-java-sdk-core</module>
 		<module>ovh-java-sdk-caascontainers</module>
@@ -260,6 +259,8 @@
 		<module>ovh-java-sdk-vps</module>
 		<module>ovh-java-sdk-vrack</module>
 		<module>ovh-java-sdk-xdsl</module>
+		<module>ovh-java-sdk</module>
+
 	</modules>
 	<scm>
 		<url>https://github.com/UrielCh/ovh-java-sdk.git</url>
@@ -296,7 +297,6 @@
 				<artifactId>html</artifactId>
 				<version>1.0.7</version>
 			</dependency>
-
 			<dependency>
 				<groupId>commons-io</groupId>
 				<artifactId>commons-io</artifactId>
