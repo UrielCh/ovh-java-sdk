@@ -23,13 +23,13 @@ Or you can load them all with a single dependency:
 		<version>1.0.0</version>
 	</dependency>
 
-But it's not recomended, exepted if you use them all.
+But it's not recomended, excepted if you use them all.
 
 # Usage sample
 
 ## Using the all in one SDK:
 
-List all your domain with they expiration date.
+List all your domain with their expiration date.
 
     ApiOvh api = ApiOvh.getInstance(nic, password);
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -39,13 +39,15 @@ List all your domain with they expiration date.
     }
 
 by default you will the the folling error:
+
     [main] ERROR net.minidev.ovh.core.ApiOvhConfigBasic - No cert directory, can not save consumer_key! please set `consumer_key_storage` variable to a valid directory in your ./ovh.conf, ~/.ovh/config, ~/ovh.conf or /etc/ovh.conf, or in your environ variale OVH_CONSUMER_KEY_STORAGE
     [main] ERROR net.minidev.ovh.core.ApiOvhConfigBasic - no applicationKey, using the defaut one create a key, and set `application_key` and `application_secret` variable in your ./ovh.conf, ~/.ovh/config, ~/ovh.conf or /etc/ovh.conf, or in your environ variales OVH_APPLICATION_KEY and OVH_APPLICATION_SECRET
-
 
 because you need ton configure your ovh access, but it will work.
 
 ## Using ApiOvhDomain:
+
+List all your domain with their expiration date, only using `ovh-java-sdk-domain` dependence.
 
     ApiOvhCore core = ApiOvhCore.getInstance(nic, password);
     ApiOvhDomain api = new ApiOvhDomain(core);
@@ -55,28 +57,35 @@ because you need ton configure your ovh access, but it will work.
         System.out.printf("%s status:%s expire on:%s\n", serviceName, service.status.toString(), sdf.format(service.expiration));
     }
 
-of cours you get the same results.
+you get the same results.
 
 # Function naming
 
-Calls have the same name thant they REST URL, just replace special chars by _ and postfix the result by the http method name ex:
+Java method have the same name that their REST URL, just replace special chars by _ and postfix the result by the uppercased http method ex:
 
     POST /telephony/{billingAccount}/conference/{serviceName}/participants/{id}/mute
+    GET  /telephony/{billingAccount}/abbreviatedNumber/{abbreviatedNumber}
 
 will be named:
 
     billingAccount_conference_serviceName_participants_id_mute_POST(billingAccount, serviceName, id, ...)
+    billingAccount_abbreviatedNumber_abbreviatedNumber_GET(billingAccount, abbreviatedNumber)
+    
+so that you can easily guest all the function names.
 
-so that you can easily guesse all the function names.
+ * the namespace are removed form the method name.
+ * using the main `ApiOvh` fron `ovh-java-sdk` this called is available through `apiOvh.telephony.billingAccount_abbreviatedNumber_abbreviatedNumber_GET`
 
 # Services:
-all servicise are present exepth auth, that is unbunded in the main ovh-java-sdk-core.
+all servicise are present exepth auth, that is embedded in the main `ovh-java-sdk-core` artefefact.
 
 # Authentification
 
 you can use:
-- a user/password auth in your code
-- a nic / CK
+- a `user`/`password` auth in your code, in this case the API generate CK on demande for 15 minutes, and renew then if needed.
+- a `nic`/`CK`, in this case you can only use a single account. (will be available in the version 1.0)
 
 # About the API:
-- this api had been build to use multi account in the same time.
+- this api is the public version of the Api used to manage resource fron the biggest OVH customer.
+- the first version of our API had never been released for the sake of ovh. (We outaged OVH a couple of times with the previous version)
+- this api had been build to use multiple account in the same time.
