@@ -21,9 +21,9 @@ public abstract class ApiOvhConfig {
 
 	protected abstract String getCK();
 
-	protected abstract String getCK(String nic) throws IOException;
+	protected abstract String getConsumerKey(String nic) throws IOException;
 
-	protected abstract void setCK(String nic, String CK) throws IOException;
+	protected abstract void setConsumerKey(String nic, String CK) throws IOException;
 
-	protected abstract boolean invalidateCK(String nic, String CK) throws IOException;
+	protected abstract boolean invalidateConsumerKey(String nic, String CK) throws IOException;
 }

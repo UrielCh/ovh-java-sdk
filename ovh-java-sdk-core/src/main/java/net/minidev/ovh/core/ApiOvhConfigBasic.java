@@ -140,7 +140,7 @@ public class ApiOvhConfigBasic extends ApiOvhConfig {
 	}
 
 	@Override
-	protected String getCK(String nic) throws IOException {
+	protected String getConsumerKey(String nic) throws IOException {
 		if (nic == null)
 			return null;
 		File lastKey = gettmpStore(nic);
@@ -151,20 +151,20 @@ public class ApiOvhConfigBasic extends ApiOvhConfig {
 	}
 
 	@Override
-	protected void setCK(String nic, String CK) throws IOException {
+	protected void setConsumerKey(String nic, String consumerKey) throws IOException {
 		File lastKey = gettmpStore(nic);
 		if (lastKey != null)
-			FileUtils.write(lastKey, CK, Charset.defaultCharset());
+			FileUtils.write(lastKey, consumerKey, Charset.defaultCharset());
 	}
 
 	@Override
-	protected boolean invalidateCK(String nic, String CK) throws IOException {
-		String old = getCK(nic);
-		if (old == null)
+	protected boolean invalidateConsumerKey(String nic, String consumerKey) throws IOException {
+		String oldCK = getConsumerKey(nic);
+		if (oldCK == null)
 			return false;
-		if (!CK.equals(old))
+		if (!consumerKey.equals(oldCK))
 			return false;
-		log.info("invalidate CK {} for nic {}", CK, nic);
+		log.info("invalidate CK {} for nic {}", consumerKey, nic);
 		return gettmpStore(nic).delete();
 	}
 

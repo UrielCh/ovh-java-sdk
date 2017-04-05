@@ -45,7 +45,7 @@ public class ApiOvhCore {
 	/**
 	 * consumerKey
 	 */
-	private String CK = null;
+	private String consumerKey = null;
 
 	// nic / passwor auth
 	private String nic;
@@ -99,8 +99,8 @@ public class ApiOvhCore {
 	 */
 	public static ApiOvhCore getInstance() {
 		ApiOvhCore core = new ApiOvhCore();
-		core.CK = core.config.getCK();
-		if (core.CK == null) {
+		core.consumerKey = core.config.getCK();
+		if (core.consumerKey == null) {
 			log.error("no consumerKey present in your ovh.cong (consumer_key) or environement (OVH_CONSUMER_KEY)");
 			return null;
 		}
@@ -109,12 +109,12 @@ public class ApiOvhCore {
 
 	/**
 	 * Connect to the OVH API using a consumerKey
-	 * @param ck the consumerKey
+	 * @param consumerKey the consumerKey
 	 * @return an ApiOvhCore authenticate by consumerKey
 	 */
-	public static ApiOvhCore getInstance(String ck) {
+	public static ApiOvhCore getInstance(String consumerKey) {
 		ApiOvhCore core = new ApiOvhCore();
-		core.CK = ck;
+		core.consumerKey = consumerKey;
 		return core;
 	}
 
@@ -154,7 +154,7 @@ public class ApiOvhCore {
 	public ApiOvhCore clone() {
 		ApiOvhCore api = new ApiOvhCore();
 		// api.AS = this.AS;
-		api.CK = this.CK;
+		api.consumerKey = this.consumerKey;
 		return api;
 	}
 
@@ -193,9 +193,9 @@ public class ApiOvhCore {
 		this.timeInSec = timeInSec;
 		int retry = 10;
 
-		String lastKey = config.getCK(nic);
+		String lastKey = config.getConsumerKey(nic);
 		if (lastKey != null) {
-			this.CK = lastKey;
+			this.consumerKey = lastKey;
 			return true;
 		}
 		// CK;
@@ -221,10 +221,10 @@ public class ApiOvhCore {
 	 */
 	private boolean loginInternal(String nic, String password, int timeInSec) throws IOException {
 		synchronized (nic.intern()) {
-			String oldCK = config.getCK(nic);
-			if (oldCK != null && CK != null && !oldCK.equals(CK)) {
+			String oldCK = config.getConsumerKey(nic);
+			if (oldCK != null && consumerKey != null && !oldCK.equals(consumerKey)) {
 				// a new CK is available try it first.
-				CK = oldCK;
+				consumerKey = oldCK;
 				return true;
 			}
 			OvhCredential token = requestToken();
@@ -247,8 +247,8 @@ public class ApiOvhCore {
 			if (body.contains("Too much requests"))
 				return false;
 			if (body.contains("<p>The document has moved <a href=\"" + config.getRedirection() + "\">here</a>.</p>")) {
-				CK = token.consumerKey;
-				config.setCK(nic, CK);
+				consumerKey = token.consumerKey;
+				config.setConsumerKey(nic, consumerKey);
 				return true;
 			}
 			log.error("Error missing redirect in body:{}", body);
@@ -308,7 +308,7 @@ public class ApiOvhCore {
 		String response = "";
 		// retry loop
 		while (true) {
-			String CK = this.CK;
+			String CK = this.consumerKey;
 			Navigator nav = getNavigator();
 			nav.setTimeOut(600000);
 			nav.setCnxTimeOut(600000);
@@ -355,8 +355,8 @@ public class ApiOvhCore {
 				if (credentialError && failure < 5) {
 					if (nic == null) {
 						log.error("{} and no nic/password provided, reconnection aboard", errorCode);
-					} else if (this.CK.equals(CK)) {
-						config.invalidateCK(nic, CK);
+					} else if (this.consumerKey.equals(CK)) {
+						config.invalidateConsumerKey(nic, CK);
 						failure++;
 						login(this.nic, this.password, this.timeInSec);
 					}
