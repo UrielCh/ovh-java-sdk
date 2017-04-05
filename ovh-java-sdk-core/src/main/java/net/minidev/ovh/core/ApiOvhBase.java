@@ -17,6 +17,8 @@ public abstract class ApiOvhBase {
 
 	public ApiOvhBase(ApiOvhCore core) {
 		this.core = core;
+		if (core == null)
+			throw new NullPointerException("core can not be null");
 	}
 
 	protected String query(String url, String name, Object value) {

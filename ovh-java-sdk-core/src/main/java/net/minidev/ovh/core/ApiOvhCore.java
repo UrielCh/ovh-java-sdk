@@ -92,6 +92,32 @@ public class ApiOvhCore {
 		return getInstance(ac, password, 900);
 	}
 
+	/**
+	 * Connect to the OVH API using a consumerKey contains in your ohv config file or environement variable
+	 * @param ck the consumerKey
+	 * @return an ApiOvhCore authenticate by consumerKey
+	 */
+	public static ApiOvhCore getInstance() {
+		ApiOvhCore core = new ApiOvhCore();
+		core.CK = core.config.getCK();
+		if (core.CK == null) {
+			log.error("no consumerKey present in your ovh.cong (consumer_key) or environement (OVH_CONSUMER_KEY)");
+			return null;
+		}
+		return core;
+	}
+
+	/**
+	 * Connect to the OVH API using a consumerKey
+	 * @param ck the consumerKey
+	 * @return an ApiOvhCore authenticate by consumerKey
+	 */
+	public static ApiOvhCore getInstance(String ck) {
+		ApiOvhCore core = new ApiOvhCore();
+		core.CK = ck;
+		return core;
+	}
+
 	public static ApiOvhCore getInstance(String ac, String password, int timeInSec) {
 		ApiOvhCore core = cache.get(ac);
 		if (core != null)
@@ -269,7 +295,7 @@ public class ApiOvhCore {
 			log.error("CNX TIME OUT");
 			data = execInternal(method, query, payload, needAuth);
 		} catch (IOException e2) {
-			log.error("API OVH DEVUG ERROR", e2);
+			log.error("API OVH ERROR", e2);
 			throw e2;
 		}
 		return data;
@@ -324,18 +350,23 @@ public class ApiOvhCore {
 				Map<String, Object> obj = ApiOvhUtils.mapper.readValue(response, t2);
 				String errorCode = (String) obj.get("errorCode");
 
-				if ("INVALID_CREDENTIAL".equals(errorCode) && failure < 5) {
-					if (this.CK.equals(CK)) {
+				boolean credentialError = "INVALID_CREDENTIAL".equals(errorCode) || "NOT_CREDENTIAL".equals(errorCode);
+
+				if (credentialError && failure < 5) {
+					if (nic == null) {
+						log.error("{} and no nic/password provided, reconnection aboard", errorCode);
+					} else if (this.CK.equals(CK)) {
 						config.invalidateCK(nic, CK);
 						failure++;
 						login(this.nic, this.password, this.timeInSec);
 					}
-					continue;
+					// continue;
 				}
+				// 
 				if ("QUERY_TIME_OUT".equals(errorCode) && failure < 5) {
 					failure++;
 					continue;
-				}
+				} // NOT_CREDENTIAL
 				throw new IOException(query + " return: " + ApiOvhUtils.mapper.writeValueAsString(obj));
 			}
 			break;

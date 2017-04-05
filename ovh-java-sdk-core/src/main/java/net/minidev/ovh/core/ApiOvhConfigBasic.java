@@ -141,6 +141,8 @@ public class ApiOvhConfigBasic extends ApiOvhConfig {
 
 	@Override
 	protected String getCK(String nic) throws IOException {
+		if (nic == null)
+			return null;
 		File lastKey = gettmpStore(nic);
 		if (lastKey != null && lastKey.exists()) {
 			return FileUtils.readFileToString(lastKey, Charset.defaultCharset());
