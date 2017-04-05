@@ -2,32 +2,34 @@
 [![Build Status](https://travis-ci.org/UrielCh/ovh-java-sdk.svg?branch=master)](https://travis-ci.org/UrielCh/ovh-java-sdk)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/net.minidev/ovh-java-sdk./badge.svg?style=flat-square)](https://maven-badges.herokuapp.com/maven-central/net.minidev/ovh-java-sdk/)
 
-The complet java SDK for OVH services. Each service had his own java SDK. you can use a couples of service:
+The complete java SDK for OVH services. Each service had his own java SDK. you can use a couples of service:
     
-		<dependency>
-			<groupId>net.minidev</groupId>
-			<artifactId>ovh-java-sdk-domain</artifactId>
-			<version>1.0.0</version>
-		</dependency>
-		<dependency>
-			<groupId>net.minidev</groupId>
-			<artifactId>ovh-java-sdk-order</artifactId>
-			<version>1.0.0</version>
-		</dependency>
+	<dependency>
+		<groupId>net.minidev</groupId>
+		<artifactId>ovh-java-sdk-domain</artifactId>
+		<version>1.0.0</version>
+	</dependency>
+	<dependency>
+		<groupId>net.minidev</groupId>
+		<artifactId>ovh-java-sdk-order</artifactId>
+		<version>1.0.0</version>
+	</dependency>
 
-or you can load them all with a single dependency:
+Or you can load them all with a single dependency:
 
-		<dependency>
-			<groupId>net.minidev</groupId>
-			<artifactId>ovh-java-sdk</artifactId>
-			<version>1.0.0</version>
-		</dependency>
+	<dependency>
+		<groupId>net.minidev</groupId>
+		<artifactId>ovh-java-sdk</artifactId>
+		<version>1.0.0</version>
+	</dependency>
 
-but it's not recomended exepted if you use them all.
+But it's not recomended, exepted if you use them all.
 
-# usage sample
+# Usage sample
 
 ## Using the all in one SDK:
+
+List all your domain with they expiration date.
 
     ApiOvh api = ApiOvh.getInstance(nic, password);
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -36,10 +38,9 @@ but it's not recomended exepted if you use them all.
         System.out.printf("%s status:%s expire on:%s\n", serviceName, service.status.toString(), sdf.format(service.expiration));
     }
 
-
 by default you will the the folling error:
     [main] ERROR net.minidev.ovh.core.ApiOvhConfigBasic - No cert directory, can not save consumer_key! please set `consumer_key_storage` variable to a valid directory in your ./ovh.conf, ~/.ovh/config, ~/ovh.conf or /etc/ovh.conf, or in your environ variale OVH_CONSUMER_KEY_STORAGE
-    [main] ERROR net.minidev.ovh.core.ApiOvhConfigBasic - no applicationKey, using the defaut one create a key, and set `application_key' and 'application_secret` variable in your ./ovh.conf, ~/.ovh/config, ~/ovh.conf or /etc/ovh.conf, or in your environ variales OVH_APPLICATION_KEY and OVH_APPLICATION_SECRET
+    [main] ERROR net.minidev.ovh.core.ApiOvhConfigBasic - no applicationKey, using the defaut one create a key, and set `application_key` and `application_secret` variable in your ./ovh.conf, ~/.ovh/config, ~/ovh.conf or /etc/ovh.conf, or in your environ variales OVH_APPLICATION_KEY and OVH_APPLICATION_SECRET
 
 
 because you need ton configure your ovh access, but it will work.
@@ -56,7 +57,7 @@ because you need ton configure your ovh access, but it will work.
 
 of cours you get the same results.
 
-# function naming
+# Function naming
 
 Calls have the same name thant they REST URL, just replace special chars by _ and postfix the result by the http method name ex:
 
@@ -68,14 +69,14 @@ will be named:
 
 so that you can easily guesse all the function names.
 
-# services:
+# Services:
 all servicise are present exepth auth, that is unbunded in the main ovh-java-sdk-core.
 
-# authentification
+# Authentification
 
 you can use:
 - a user/password auth in your code
 - a nic / CK
 
-# about the API:
+# About the API:
 - this api had been build to use multi account in the same time.
