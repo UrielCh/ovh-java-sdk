@@ -64,6 +64,21 @@ List all your domain with their expiration date, only using `ovh-java-sdk-domain
 
 you get the same results.
 
+## Configuration file
+the configuration is loaded from the following files in this order:
+1. ovh.conf *in the current directory*
+2. ~/.ovh/config 
+3. ~/ovh.conf
+4. /etc/ovh.conf
+
+the configutation file can contains those values:
+* `endpoint` entry point if usong a single endpoint
+* `application_key` your application key
+* `application_secret` your application secret
+* `consumer_key` your consumer key (CK) if you are using a single account
+* `redirection` the redirection linked to your `application_key`
+* `consumer_key_storage` a directory to store your CK in multi account mode.
+
 # Function naming
 
 Java method have the same name that their REST URL, just replace special chars by _ and postfix the result by the uppercased http method ex:
@@ -82,23 +97,22 @@ so that you can easily guest all the function names.
  * using the main `ApiOvh` fron `ovh-java-sdk` this called is available through `apiOvh.telephony.billingAccount_abbreviatedNumber_abbreviatedNumber_GET`
 
 # Services:
-all servicise are present exepth auth, that is embedded in the main `ovh-java-sdk-core` artefefact.
+All servicise are present exepted `ovh-java-sdk-auth`, that one is embedded in the main `ovh-java-sdk-core` artefact.
 
 # Authentification
 
-you can use:
+You can use:
 - a `user`/`password` auth in your code, in this case the API generate CK on demande for 15 minutes, and renew then if needed.
 - a `nic`/`CK`, in this case you can only use a single account. (will be available in the version 1.0)
 
 # About the API:
-- this api is the public version of the Api used to manage resource fron the biggest OVH customer.
-- the first version of our API had never been released for the sake of ovh. (We outaged OVH a couple of times with the previous version)
-- this api had been build to use multiple account in the same time.
+- This api is the public version of the Api used to manage resource fron the biggest OVH customer.
+- The first version of our API had never been released for the sake of ovh. (We outaged OVH a couple of times with the previous version)
+- This api had been build to use multiple account in the same time.
 
 # Supported APIs
-Try the official API [api Ovh europe](https://eu.api.ovh.com/)
+Try the official API [api Ovh europe](https://eu.api.ovh.com/).
 
 # License
-
 3-Clause BSD
 
