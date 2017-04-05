@@ -2,7 +2,7 @@
 
 # Ovh-java-sdk
 [![Build Status](https://travis-ci.org/UrielCh/ovh-java-sdk.svg?branch=master)](https://travis-ci.org/UrielCh/ovh-java-sdk)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/net.minidev/ovh-java-sdk./badge.svg?style=flat-square)](https://maven-badges.herokuapp.com/maven-central/net.minidev/ovh-java-sdk/)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/net.minidev/ovh-java-sdk/badge.svg?style=flat-square)](https://maven-badges.herokuapp.com/maven-central/net.minidev/ovh-java-sdk/)
 
 
 The complete java SDK for OVH services.
