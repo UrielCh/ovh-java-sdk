@@ -83,7 +83,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cloud/{serviceName}/pca/{pcaServiceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your public cloud passport
 	 * @param pcaServiceName [required] The internal name of your PCA offer
@@ -98,7 +98,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /cloud/{serviceName}/pca/{pcaServiceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your public cloud passport
@@ -113,7 +113,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * View account current total sessions usage (bytes)
-	 * 
+	 *
 	 * REST: GET /cloud/{serviceName}/pca/{pcaServiceName}/usage
 	 * @param serviceName [required] The internal name of your public cloud passport
 	 * @param pcaServiceName [required] The internal name of your PCA offer
@@ -128,7 +128,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cloud/{serviceName}/pca/{pcaServiceName}
 	 * @param serviceName [required] The internal name of your public cloud passport
 	 * @param pcaServiceName [required] The internal name of your PCA offer
@@ -143,7 +143,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /cloud/{serviceName}/pca/{pcaServiceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your public cloud passport
@@ -158,7 +158,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * cloud archives tasks for account
-	 * 
+	 *
 	 * REST: GET /cloud/{serviceName}/pca/{pcaServiceName}/tasks
 	 * @param todoDate_to [required] Filter the value of todoDate property (<=)
 	 * @param function [required] Filter the value of function property (=)
@@ -182,7 +182,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Create a cloud archives task
-	 * 
+	 *
 	 * REST: POST /cloud/{serviceName}/pca/{pcaServiceName}/tasks
 	 * @param sessionId [required] cloud archives session identifier
 	 * @param taskFunction [required] cloud archives task type
@@ -204,7 +204,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cloud/{serviceName}/pca/{pcaServiceName}/tasks/{taskId}
 	 * @param serviceName [required] The internal name of your public cloud passport
 	 * @param pcaServiceName [required] The internal name of your PCA offer
@@ -221,7 +221,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * cloud archives sessions for account
-	 * 
+	 *
 	 * REST: GET /cloud/{serviceName}/pca/{pcaServiceName}/sessions
 	 * @param name [required] Filter the value of name property (like)
 	 * @param serviceName [required] The internal name of your public cloud passport
@@ -238,7 +238,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cloud/{serviceName}/pca/{pcaServiceName}/sessions/{sessionId}
 	 * @param serviceName [required] The internal name of your public cloud passport
 	 * @param pcaServiceName [required] The internal name of your PCA offer
@@ -255,7 +255,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /cloud/{serviceName}/pca/{pcaServiceName}/sessions/{sessionId}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your public cloud passport
@@ -272,7 +272,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Create a delete task for all files in session
-	 * 
+	 *
 	 * REST: DELETE /cloud/{serviceName}/pca/{pcaServiceName}/sessions/{sessionId}
 	 * @param serviceName [required] The internal name of your public cloud passport
 	 * @param pcaServiceName [required] The internal name of your PCA offer
@@ -289,7 +289,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * cloud archives files in session
-	 * 
+	 *
 	 * REST: GET /cloud/{serviceName}/pca/{pcaServiceName}/sessions/{sessionId}/files
 	 * @param name [required] Filter the value of name property (like)
 	 * @param serviceName [required] The internal name of your public cloud passport
@@ -308,7 +308,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cloud/{serviceName}/pca/{pcaServiceName}/sessions/{sessionId}/files/{fileId}
 	 * @param serviceName [required] The internal name of your public cloud passport
 	 * @param pcaServiceName [required] The internal name of your PCA offer
@@ -327,7 +327,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Create a restore task for session
-	 * 
+	 *
 	 * REST: POST /cloud/{serviceName}/pca/{pcaServiceName}/sessions/{sessionId}/restore
 	 * @param serviceName [required] The internal name of your public cloud passport
 	 * @param pcaServiceName [required] The internal name of your PCA offer
@@ -344,7 +344,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cloud/{serviceName}/pca/{pcaServiceName}/billing/{billingId}
 	 * @param serviceName [required] The internal name of your public cloud passport
 	 * @param pcaServiceName [required] The internal name of your PCA offer
@@ -361,7 +361,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * cloud Archives billing items
-	 * 
+	 *
 	 * REST: GET /cloud/{serviceName}/pca/{pcaServiceName}/billing
 	 * @param date_to [required] Filter the value of date property (<=)
 	 * @param date_from [required] Filter the value of date property (>=)
@@ -383,7 +383,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /cloud/{serviceName}/pca
 	 * @param serviceName [required] The internal name of your public cloud passport
 	 */
@@ -396,7 +396,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /cloud
 	 */
 	public ArrayList<String> GET() throws IOException {
@@ -407,7 +407,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get information about a cloud project creation
-	 * 
+	 *
 	 * REST: GET /cloud/createProjectInfo
 	 */
 	public OvhNewProjectInfo createProjectInfo_GET() throws IOException {
@@ -418,7 +418,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Start a new cloud project
-	 * 
+	 *
 	 * REST: POST /cloud/createProject
 	 * @param catalogVersion [required] Select the catalog you need. Set null for the latest catalog.
 	 * @param voucher [required] Voucher code
@@ -436,7 +436,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get project quotas
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/quota
 	 * @param serviceName [required] Project id
 	 */
@@ -450,7 +450,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/serviceInfos
 	 * @param serviceName [required] The project id
 	 */
@@ -463,7 +463,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /cloud/project/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The project id
@@ -476,7 +476,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}
 	 * @param serviceName [required] The project id
 	 */
@@ -489,7 +489,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /cloud/project/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The project id
@@ -502,7 +502,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get public networks
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/network/public
 	 * @param serviceName [required] Service name
 	 */
@@ -516,7 +516,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get private networks
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/network/private
 	 * @param serviceName [required] Service name
 	 */
@@ -529,7 +529,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Create a new network
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/network/private
 	 * @param name [required] Network name
 	 * @param regions [required] Region where to activate private network. No parameters means all region
@@ -549,7 +549,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Delete private network
-	 * 
+	 *
 	 * REST: DELETE /cloud/project/{serviceName}/network/private/{networkId}
 	 * @param networkId [required] Network id
 	 * @param serviceName [required] Project name
@@ -563,7 +563,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get private network
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/network/private/{networkId}
 	 * @param networkId [required] Network id
 	 * @param serviceName [required] Service name
@@ -578,7 +578,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Rename private network
-	 * 
+	 *
 	 * REST: PUT /cloud/project/{serviceName}/network/private/{networkId}
 	 * @param name [required] name
 	 * @param networkId [required] Network id
@@ -595,7 +595,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Activate private network in a new region
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/network/private/{networkId}/region
 	 * @param networkId [required] Network id
 	 * @param region [required] Region to active on your network
@@ -613,7 +613,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get network subnets
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/network/private/{networkId}/subnet
 	 * @param networkId [required] Network id
 	 * @param serviceName [required] Service name
@@ -629,7 +629,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Create a new network subnet
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/network/private/{networkId}/subnet
 	 * @param dhcp [required] Enable DHCP
 	 * @param end [required] Last IP for this region (eg: 192.168.1.24)
@@ -657,7 +657,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Delete a network subnet
-	 * 
+	 *
 	 * REST: DELETE /cloud/project/{serviceName}/network/private/{networkId}/subnet/{subnetId}
 	 * @param networkId [required] Network id
 	 * @param serviceName [required] Project id
@@ -673,7 +673,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get ips
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/ip
 	 * @param serviceName [required] Project id
 	 */
@@ -687,7 +687,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get failover ips
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/ip/failover
 	 * @param serviceName [required] Project id
 	 */
@@ -701,7 +701,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get failover ip
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/ip/failover/{id}
 	 * @param id [required] Ip id
 	 * @param serviceName [required] Project id
@@ -716,7 +716,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Attach failover ip to an instance
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/ip/failover/{id}/attach
 	 * @param id [required] Ip id
 	 * @param instanceId [required] Attach failover ip to instance
@@ -734,7 +734,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Terminate your service
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/terminate
 	 * @param serviceName [required] The project id
 	 */
@@ -747,7 +747,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Launch a contact change procedure
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/changeContact
 	 * @param contactAdmin The contact to set as admin contact
 	 * @param contactTech The contact to set as tech contact
@@ -767,7 +767,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get your consumption forecast
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/forecast
 	 * @param serviceName [required] Service name
 	 * @param toDate [required] Forecast until date
@@ -782,7 +782,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get all users
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/user
 	 * @param serviceName [required] Service name
 	 */
@@ -796,7 +796,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Create user
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/user
 	 * @param description [required] User description
 	 * @param serviceName [required] Service name
@@ -812,7 +812,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Regenerate user password
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/user/{userId}/regeneratePassword
 	 * @param serviceName [required] Service name
 	 * @param userId [required] User id
@@ -827,7 +827,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Delete user
-	 * 
+	 *
 	 * REST: DELETE /cloud/project/{serviceName}/user/{userId}
 	 * @param serviceName [required] Service name
 	 * @param userId [required] User id
@@ -841,7 +841,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get user details
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/user/{userId}
 	 * @param serviceName [required] Service name
 	 * @param userId [required] User id
@@ -856,7 +856,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get RC file of OpenStack
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/user/{userId}/openrc
 	 * @param region [required] Region
 	 * @param serviceName [required] Service name
@@ -873,7 +873,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get token for user
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/user/{userId}/token
 	 * @param password [required] User password
 	 * @param serviceName [required] Service name
@@ -891,7 +891,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get your project consumption
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/consumption
 	 * @param to [required] Get usage to
 	 * @param from [required] Get usage from
@@ -908,7 +908,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Delete a snapshot
-	 * 
+	 *
 	 * REST: DELETE /cloud/project/{serviceName}/snapshot/{snapshotId}
 	 * @param serviceName [required] Project id
 	 * @param snapshotId [required] Snapshot id
@@ -923,7 +923,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get snapshot details
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/snapshot/{snapshotId}
 	 * @param serviceName [required] Project id
 	 * @param snapshotId [required] Snapshot id
@@ -938,7 +938,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get snapshots
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/snapshot
 	 * @param flavorType [required] Get compatible snapshots with flavor type
 	 * @param region [required] Region
@@ -956,7 +956,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Manage alerts on your consumption
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/alerting
 	 * @param serviceName [required] The project id
 	 */
@@ -969,7 +969,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Add new alert
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/alerting
 	 * @param email [required] Email to contact
 	 * @param monthlyThreshold [required] Monthly threshold for this alerting in currency
@@ -989,7 +989,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * See alerts
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/alerting/{id}/alert
 	 * @param serviceName [required] The project id
 	 * @param id [required] Alerting unique UUID
@@ -1004,7 +1004,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/alerting/{id}/alert/{alertId}
 	 * @param serviceName [required] The project id
 	 * @param id [required] Alerting unique UUID
@@ -1021,7 +1021,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/alerting/{id}
 	 * @param serviceName [required] The project id
 	 * @param id [required] Alerting unique UUID
@@ -1036,7 +1036,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /cloud/project/{serviceName}/alerting/{id}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The project id
@@ -1051,7 +1051,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Delete alerting
-	 * 
+	 *
 	 * REST: DELETE /cloud/project/{serviceName}/alerting/{id}
 	 * @param serviceName [required] The project id
 	 * @param id [required] Alerting unique UUID
@@ -1065,7 +1065,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get flavors
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/flavor
 	 * @param region [required] Flavor region
 	 * @param serviceName [required] Service name
@@ -1081,7 +1081,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get flavor
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/flavor/{flavorId}
 	 * @param flavorId [required] Flavor id
 	 * @param serviceName [required] Service name
@@ -1096,7 +1096,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get usage forecast
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/usage/forecast
 	 * @param serviceName [required] Service name
 	 */
@@ -1109,7 +1109,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Usage information on your project
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/usage/history
 	 * @param from [required] Filter results having date superior to from
 	 * @param serviceName [required] Service name
@@ -1127,7 +1127,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Usage information details
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/usage/history/{usageId}
 	 * @param serviceName [required] Service name
 	 * @param usageId [required] Usage id
@@ -1142,7 +1142,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get current usage
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/usage/current
 	 * @param serviceName [required] Service name
 	 */
@@ -1155,7 +1155,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get volumes
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/volume
 	 * @param region [required] Volume region
 	 * @param serviceName [required] Project id
@@ -1171,7 +1171,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Create a volume
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/volume
 	 * @param description [required] Volume description
 	 * @param imageId [required] Id of image to create a bootable volume
@@ -1199,7 +1199,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Delete a volume
-	 * 
+	 *
 	 * REST: DELETE /cloud/project/{serviceName}/volume/{volumeId}
 	 * @param serviceName [required] Project id
 	 * @param volumeId [required] Volume id
@@ -1213,7 +1213,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get volume details
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/volume/{volumeId}
 	 * @param serviceName [required] Project id
 	 * @param volumeId [required] Volume id
@@ -1228,7 +1228,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Update a volume
-	 * 
+	 *
 	 * REST: PUT /cloud/project/{serviceName}/volume/{volumeId}
 	 * @param description [required] Volume description
 	 * @param name [required] Volume name
@@ -1248,7 +1248,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Detach a volume from an instance
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/volume/{volumeId}/detach
 	 * @param instanceId [required] Instance id
 	 * @param serviceName [required] Service name
@@ -1266,7 +1266,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Extend a volume
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/volume/{volumeId}/upsize
 	 * @param serviceName [required] Service name
 	 * @param size [required] New volume size (in GiB) (must be greater than current one)
@@ -1284,7 +1284,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Snapshot a volume
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/volume/{volumeId}/snapshot
 	 * @param description [required] Snapshot description
 	 * @param name [required] Snapshot name
@@ -1304,7 +1304,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Attach a volume on an instance
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/volume/{volumeId}/attach
 	 * @param instanceId [required] Instance id
 	 * @param serviceName [required] Service name
@@ -1322,7 +1322,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Delete a volume snapshot
-	 * 
+	 *
 	 * REST: DELETE /cloud/project/{serviceName}/volume/snapshot/{snapshotId}
 	 * @param serviceName [required] Project id
 	 * @param snapshotId [required] Snapshot id
@@ -1336,7 +1336,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get volume snapshot details
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/volume/snapshot/{snapshotId}
 	 * @param serviceName [required] Project id
 	 * @param snapshotId [required]
@@ -1351,7 +1351,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get volume snapshots
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/volume/snapshot
 	 * @param region [required] Snapshots region
 	 * @param serviceName [required] Project id
@@ -1367,7 +1367,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get ACL on your cloud project
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/acl
 	 * @param type [required] Filter the value of type property (=)
 	 * @param serviceName [required] The project id
@@ -1382,7 +1382,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Create new ACL
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/acl
 	 * @param accountId [required] Deleguates rights to
 	 * @param type [required] Acl type
@@ -1400,7 +1400,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/acl/{accountId}
 	 * @param serviceName [required] The project id
 	 * @param accountId [required] OVH customer unique identifier
@@ -1415,7 +1415,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Delete ACL
-	 * 
+	 *
 	 * REST: DELETE /cloud/project/{serviceName}/acl/{accountId}
 	 * @param serviceName [required] The project id
 	 * @param accountId [required] OVH customer unique identifier
@@ -1429,7 +1429,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get your credit
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/credit
 	 * @param serviceName [required] The project id
 	 */
@@ -1442,7 +1442,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Add credit to your project
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/credit
 	 * @param code [required] Voucher code
 	 * @param serviceName [required] The project id
@@ -1457,7 +1457,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/credit/{id}
 	 * @param serviceName [required] The project id
 	 * @param id [required] Credit id
@@ -1472,7 +1472,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get regions
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/region
 	 * @param serviceName [required] Service name
 	 */
@@ -1485,7 +1485,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get region
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/region/{regionName}
 	 * @param regionName [required] Region name
 	 * @param serviceName [required] Service name
@@ -1500,7 +1500,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Confirm termination of your service
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/confirmTermination
 	 * @param reason Reason of your termination request
 	 * @param commentary Commentary about your termination request
@@ -1520,7 +1520,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get instances
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/instance
 	 * @param region [required] Instance region
 	 * @param serviceName [required] Project id
@@ -1536,7 +1536,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Create a new instance
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/instance
 	 * @param flavorId [required] Instance flavor id
 	 * @param groupId [required] Start instance in group
@@ -1570,7 +1570,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get the detail of a group
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/instance/group
 	 * @param region [required] Instance region
 	 * @param serviceName [required] Project id
@@ -1586,7 +1586,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Create a group
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/instance/group
 	 * @param name [required] instance group name
 	 * @param region [required] Instance region
@@ -1606,7 +1606,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Delete a group
-	 * 
+	 *
 	 * REST: DELETE /cloud/project/{serviceName}/instance/group/{groupId}
 	 * @param groupId [required] Group id
 	 * @param serviceName [required] Project name
@@ -1620,7 +1620,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get all groups
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/instance/group/{groupId}
 	 * @param groupId [required] Instance group id
 	 * @param region [required] Instance region
@@ -1637,7 +1637,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Resume a suspended instance
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/instance/{instanceId}/resume
 	 * @param instanceId [required] Instance id
 	 * @param serviceName [required] Service name
@@ -1651,7 +1651,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Delete an instance
-	 * 
+	 *
 	 * REST: DELETE /cloud/project/{serviceName}/instance/{instanceId}
 	 * @param instanceId [required] Instance id
 	 * @param serviceName [required] Project name
@@ -1665,7 +1665,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get instance
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/instance/{instanceId}
 	 * @param instanceId [required] Instance id
 	 * @param serviceName [required] Project id
@@ -1680,7 +1680,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Alter an instance
-	 * 
+	 *
 	 * REST: PUT /cloud/project/{serviceName}/instance/{instanceId}
 	 * @param instanceId [required] Instance id
 	 * @param instanceName [required] Instance new name
@@ -1697,7 +1697,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Reinstall an instance
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/instance/{instanceId}/reinstall
 	 * @param imageId [required] Image to reinstall
 	 * @param instanceId [required] Instance id
@@ -1715,7 +1715,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Reboot an instance
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/instance/{instanceId}/reboot
 	 * @param instanceId [required] Instance id
 	 * @param serviceName [required] Service name
@@ -1732,7 +1732,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get VNC access to your instance
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/instance/{instanceId}/vnc
 	 * @param instanceId [required] Instance id
 	 * @param serviceName [required] Project id
@@ -1747,7 +1747,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Enable or disable rescue mode
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/instance/{instanceId}/rescueMode
 	 * @param imageId [required] Image to boot on
 	 * @param instanceId [required] Instance id
@@ -1767,7 +1767,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Migrate your instance to another flavor
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/instance/{instanceId}/resize
 	 * @param flavorId [required] Flavor id
 	 * @param instanceId [required] Instance id
@@ -1785,7 +1785,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Return many statistics about the virtual machine for a given period
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/instance/{instanceId}/monitoring
 	 * @param instanceId [required] Instance id
 	 * @param period [required] The period the statistics are fetched for
@@ -1804,7 +1804,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get interfaces
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/instance/{instanceId}/interface
 	 * @param instanceId [required] Instance id
 	 * @param serviceName [required] Service name
@@ -1820,7 +1820,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Create interface on an instance and attached it to a network
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/instance/{instanceId}/interface
 	 * @param instanceId [required] Instance id
 	 * @param ip [required] Static ip (Can only be defined for private networks)
@@ -1840,7 +1840,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Delete an interface
-	 * 
+	 *
 	 * REST: DELETE /cloud/project/{serviceName}/instance/{instanceId}/interface/{interfaceId}
 	 * @param instanceId [required] Instance id
 	 * @param interfaceId [required] Interface id
@@ -1856,7 +1856,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get interface
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/instance/{instanceId}/interface/{interfaceId}
 	 * @param instanceId [required] Instance id
 	 * @param interfaceId [required] Interface id
@@ -1873,7 +1873,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Snapshot an instance
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/instance/{instanceId}/snapshot
 	 * @param instanceId [required] Instance id
 	 * @param serviceName [required] Service name
@@ -1890,7 +1890,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Active monthly billing on instance
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/instance/{instanceId}/activeMonthlyBilling
 	 * @param instanceId [required] Instance id
 	 * @param serviceName [required] Service name
@@ -1905,7 +1905,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Create multiple instances
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/instance/bulk
 	 * @param flavorId [required] Instance flavor id
 	 * @param groupId [required] Start instance in group
@@ -1941,7 +1941,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get images
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/image
 	 * @param flavorType [required] Get compatible images with flavor type
 	 * @param osType [required] Image OS
@@ -1960,7 +1960,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get image
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/image/{imageId}
 	 * @param imageId [required] Image id
 	 * @param serviceName [required] Project id
@@ -1975,7 +1975,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Request more quota on your /cloud project
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/unleash
 	 * @param serviceName [required] The project id
 	 */
@@ -1987,7 +1987,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get vrack where this project is associated
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/vrack
 	 * @param serviceName [required] The project id
 	 */
@@ -2000,7 +2000,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get SSH keys
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/sshkey
 	 * @param region [required] Region
 	 * @param serviceName [required] Project name
@@ -2016,7 +2016,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Create SSH key
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/sshkey
 	 * @param name [required] SSH key name
 	 * @param publicKey [required] SSH public key
@@ -2036,7 +2036,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Delete SSH key
-	 * 
+	 *
 	 * REST: DELETE /cloud/project/{serviceName}/sshkey/{keyId}
 	 * @param keyId [required] SSH key id
 	 * @param serviceName [required] Project name
@@ -2050,7 +2050,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get SSH key
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/sshkey/{keyId}
 	 * @param keyId [required] SSH key id
 	 * @param serviceName [required] Project name
@@ -2065,7 +2065,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Cancel project creation
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/cancel
 	 * @param serviceName [required] The project id
 	 */
@@ -2077,7 +2077,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get storage containers
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/storage
 	 * @param serviceName [required] Service name
 	 */
@@ -2091,7 +2091,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Create container
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/storage
 	 * @param archive [required] Archive container flag
 	 * @param containerName [required] Container name
@@ -2111,7 +2111,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Delete container
-	 * 
+	 *
 	 * REST: DELETE /cloud/project/{serviceName}/storage/{containerId}
 	 * @param containerId [required] Container id
 	 * @param serviceName [required] Service name
@@ -2125,7 +2125,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get storage container
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/storage/{containerId}
 	 * @param containerId [required] Container id
 	 * @param serviceName [required] Service name
@@ -2140,7 +2140,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Delete CORS support on your container
-	 * 
+	 *
 	 * REST: DELETE /cloud/project/{serviceName}/storage/{containerId}/cors
 	 * @param containerId [required] Container id
 	 * @param origin [required] Delete this origin
@@ -2156,7 +2156,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Add CORS support on your container
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/storage/{containerId}/cors
 	 * @param containerId [required] Container id
 	 * @param origin [required] Allow this origin
@@ -2173,7 +2173,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Deploy your container files as a static web site
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/storage/{containerId}/static
 	 * @param containerId [required] Container id
 	 * @param serviceName [required] Service name
@@ -2187,7 +2187,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get a public temporary URL to access to one of your object
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/storage/{containerId}/publicUrl
 	 * @param containerId [required] Container ID
 	 * @param expirationDate [required] Temporary URL expiration
@@ -2207,7 +2207,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Access to storage API
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/storage/access
 	 * @param serviceName [required] Service name
 	 */
@@ -2220,7 +2220,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Access to storage API
-	 * 
+	 *
 	 * REST: POST /cloud/project/{serviceName}/storage/access
 	 * @param serviceName [required] Service name
 	 */
@@ -2233,7 +2233,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get your project bills
-	 * 
+	 *
 	 * REST: GET /cloud/project/{serviceName}/bill
 	 * @param to [required] Get bills to
 	 * @param from [required] Get bills from
@@ -2251,7 +2251,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /cloud/project
 	 */
 	public ArrayList<String> project_GET() throws IOException {
@@ -2262,7 +2262,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 
 	/**
 	 * Get services prices
-	 * 
+	 *
 	 * REST: GET /cloud/price
 	 * @param flavorId [required] OVH cloud flavor id
 	 * @param region [required] Region

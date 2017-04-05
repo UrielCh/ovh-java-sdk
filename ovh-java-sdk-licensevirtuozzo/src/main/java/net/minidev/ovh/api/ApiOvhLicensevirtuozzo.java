@@ -29,7 +29,7 @@ public class ApiOvhLicensevirtuozzo extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /license/virtuozzo/{serviceName}/serviceInfos
 	 * @param serviceName [required] The name of your Virtuozzo license
 	 */
@@ -42,7 +42,7 @@ public class ApiOvhLicensevirtuozzo extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /license/virtuozzo/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The name of your Virtuozzo license
@@ -55,7 +55,7 @@ public class ApiOvhLicensevirtuozzo extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /license/virtuozzo/{serviceName}
 	 * @param serviceName [required] The name of your Virtuozzo license
 	 */
@@ -68,7 +68,7 @@ public class ApiOvhLicensevirtuozzo extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /license/virtuozzo/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The name of your Virtuozzo license
@@ -81,7 +81,7 @@ public class ApiOvhLicensevirtuozzo extends ApiOvhBase {
 
 	/**
 	 * tasks linked to this license
-	 * 
+	 *
 	 * REST: GET /license/virtuozzo/{serviceName}/tasks
 	 * @param status [required] Filter the value of status property (=)
 	 * @param action [required] Filter the value of action property (=)
@@ -99,7 +99,7 @@ public class ApiOvhLicensevirtuozzo extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /license/virtuozzo/{serviceName}/tasks/{taskId}
 	 * @param serviceName [required] The name of your Virtuozzo license
 	 * @param taskId [required] This Task id
@@ -114,7 +114,7 @@ public class ApiOvhLicensevirtuozzo extends ApiOvhBase {
 
 	/**
 	 * Returns an array of ips where the license can be moved to
-	 * 
+	 *
 	 * REST: GET /license/virtuozzo/{serviceName}/allowedDestinationIp
 	 * @param serviceName [required] The name of your Virtuozzo license
 	 */
@@ -128,7 +128,7 @@ public class ApiOvhLicensevirtuozzo extends ApiOvhBase {
 
 	/**
 	 * Confirm termination of your service
-	 * 
+	 *
 	 * REST: POST /license/virtuozzo/{serviceName}/confirmTermination
 	 * @param reason Reason of your termination request
 	 * @param commentary Commentary about your termination request
@@ -148,7 +148,7 @@ public class ApiOvhLicensevirtuozzo extends ApiOvhBase {
 
 	/**
 	 * Terminate your service
-	 * 
+	 *
 	 * REST: POST /license/virtuozzo/{serviceName}/terminate
 	 * @param serviceName [required] The name of your Virtuozzo license
 	 */
@@ -161,7 +161,7 @@ public class ApiOvhLicensevirtuozzo extends ApiOvhBase {
 
 	/**
 	 * Will tell if the ip can accept the license
-	 * 
+	 *
 	 * REST: GET /license/virtuozzo/{serviceName}/canLicenseBeMovedTo
 	 * @param destinationIp [required] The Ip on which you want to move this license
 	 * @param serviceName [required] The name of your Virtuozzo license
@@ -176,7 +176,7 @@ public class ApiOvhLicensevirtuozzo extends ApiOvhBase {
 
 	/**
 	 * Move this license to another Ip
-	 * 
+	 *
 	 * REST: POST /license/virtuozzo/{serviceName}/changeIp
 	 * @param destinationIp [required] The Ip on which you want to move this license
 	 * @param serviceName [required] The name of your Virtuozzo license
@@ -192,7 +192,7 @@ public class ApiOvhLicensevirtuozzo extends ApiOvhBase {
 
 	/**
 	 * Options linked to this license
-	 * 
+	 *
 	 * REST: GET /license/virtuozzo/{serviceName}/option
 	 * @param label [required] Filter the value of label property (=)
 	 * @param serviceName [required] The name of your Virtuozzo license
@@ -208,7 +208,7 @@ public class ApiOvhLicensevirtuozzo extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /license/virtuozzo/{serviceName}/option/{label}
 	 * @param serviceName [required] The name of your Virtuozzo license
 	 * @param label [required] This option designation
@@ -223,7 +223,7 @@ public class ApiOvhLicensevirtuozzo extends ApiOvhBase {
 
 	/**
 	 * release this Option
-	 * 
+	 *
 	 * REST: DELETE /license/virtuozzo/{serviceName}/option/{label}
 	 * @param serviceName [required] The name of your Virtuozzo license
 	 * @param label [required] This option designation
@@ -238,7 +238,7 @@ public class ApiOvhLicensevirtuozzo extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /license/virtuozzo
 	 */
 	public ArrayList<String> GET() throws IOException {
@@ -249,7 +249,7 @@ public class ApiOvhLicensevirtuozzo extends ApiOvhBase {
 
 	/**
 	 * Get the orderable Virtuozzo versions
-	 * 
+	 *
 	 * REST: GET /license/virtuozzo/orderableVersions
 	 * @param ip [required] Your license Ip
 	 */

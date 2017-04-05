@@ -57,7 +57,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your SMS offer
 	 */
@@ -70,7 +70,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /sms/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your SMS offer
@@ -83,7 +83,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 */
@@ -96,7 +96,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /sms/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your SMS offer
@@ -109,7 +109,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Describe filter exceptions in sms sending from a specific receiver.
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/exceptions
 	 * @param receiver [required] The receiver number to check
 	 * @param serviceName [required] The internal name of your SMS offer
@@ -125,7 +125,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Virtual numbers associated to the sms account
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/virtualNumbers
 	 * @param serviceName [required] The internal name of your SMS offer
 	 */
@@ -139,7 +139,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Sms sent associated to the sms account
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/virtualNumbers/{number}/outgoing
 	 * @param receiver [required] Filter the value of receiver property (=)
 	 * @param differedDelivery [required] Filter the value of differedDelivery property (=)
@@ -171,7 +171,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/virtualNumbers/{number}/outgoing/{id}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param number [required] The virtual number
@@ -188,7 +188,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Delete the sms outgoing history given
-	 * 
+	 *
 	 * REST: DELETE /sms/{serviceName}/virtualNumbers/{number}/outgoing/{id}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param number [required] The virtual number
@@ -204,7 +204,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/virtualNumbers/{number}/outgoing/{id}/hlr
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param number [required] The virtual number
@@ -221,7 +221,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/virtualNumbers/{number}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param number [required] The virtual number
@@ -236,7 +236,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Sms in pending associated to the sms account
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/virtualNumbers/{number}/jobs
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param number [required] The virtual number
@@ -251,7 +251,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Add one or several sending jobs
-	 * 
+	 *
 	 * REST: POST /sms/{serviceName}/virtualNumbers/{number}/jobs
 	 * @param priority [required] [default=high] The priority of the message
 	 * @param validityPeriod [required] [default=2880] The maximum time -in minute(s)- before the message is dropped
@@ -289,7 +289,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/virtualNumbers/{number}/jobs/{id}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param number [required] The virtual number
@@ -306,7 +306,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Delete the sms job given (stop sending)
-	 * 
+	 *
 	 * REST: DELETE /sms/{serviceName}/virtualNumbers/{number}/jobs/{id}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param number [required] The virtual number
@@ -322,7 +322,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/virtualNumbers/{number}/chatAccess
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param number [required] The virtual number
@@ -337,7 +337,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Create a new web access for this ressource
-	 * 
+	 *
 	 * REST: POST /sms/{serviceName}/virtualNumbers/{number}/chatAccess
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param number [required] The virtual number
@@ -352,7 +352,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Delete the given web access
-	 * 
+	 *
 	 * REST: DELETE /sms/{serviceName}/virtualNumbers/{number}/chatAccess
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param number [required] The virtual number
@@ -366,7 +366,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Sms received associated to the sms account
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/virtualNumbers/{number}/incoming
 	 * @param sender [required] Filter the value of sender property (=)
 	 * @param tag [required] Filter the value of tag property (=)
@@ -389,7 +389,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/virtualNumbers/{number}/incoming/{id}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param number [required] The virtual number
@@ -406,7 +406,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Delete the sms incoming history given
-	 * 
+	 *
 	 * REST: DELETE /sms/{serviceName}/virtualNumbers/{number}/incoming/{id}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param number [required] The virtual number
@@ -422,7 +422,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get the /me/document id generated
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/document
 	 * @param tag [required] Select sms with a specific identifier group tag
 	 * @param wayType [required] specify outgoing or incoming sms
@@ -443,7 +443,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/senders/{sender}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param sender [required] The sms sender
@@ -458,7 +458,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /sms/{serviceName}/senders/{sender}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your SMS offer
@@ -473,7 +473,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Delete the sms sender given
-	 * 
+	 *
 	 * REST: DELETE /sms/{serviceName}/senders/{sender}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param sender [required] The sms sender
@@ -487,7 +487,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Validate a given sender with an activation code.
-	 * 
+	 *
 	 * REST: POST /sms/{serviceName}/senders/{sender}/validate
 	 * @param code [required] The validation code
 	 * @param serviceName [required] The internal name of your SMS offer
@@ -504,7 +504,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Senders allowed associated to the sms account
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/senders
 	 * @param serviceName [required] The internal name of your SMS offer
 	 */
@@ -517,7 +517,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Create the sms sender given
-	 * 
+	 *
 	 * REST: POST /sms/{serviceName}/senders
 	 * @param sender [required] The sender (alpha or phone number)
 	 * @param reason [required] Message seen by the moderator
@@ -537,7 +537,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Users associated to the sms account
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/users
 	 * @param serviceName [required] The internal name of your SMS offer
 	 */
@@ -550,7 +550,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Create a new user for an sms account
-	 * 
+	 *
 	 * REST: POST /sms/{serviceName}/users
 	 * @param password [required] The sms password
 	 * @param login [required] The sms login
@@ -567,7 +567,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Sms sent associated to the sms user
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/users/{login}/outgoing
 	 * @param receiver [required] Filter the value of receiver property (=)
 	 * @param differedDelivery [required] Filter the value of differedDelivery property (=)
@@ -594,7 +594,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/users/{login}/outgoing/{id}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param login [required] The sms user login
@@ -611,7 +611,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Delete the sms outgoing history given
-	 * 
+	 *
 	 * REST: DELETE /sms/{serviceName}/users/{login}/outgoing/{id}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param login [required] The sms user login
@@ -627,7 +627,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/users/{login}/outgoing/{id}/hlr
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param login [required] The sms user login
@@ -644,7 +644,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/users/{login}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param login [required] The sms user login
@@ -659,7 +659,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /sms/{serviceName}/users/{login}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your SMS offer
@@ -674,7 +674,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Delete the sms user given
-	 * 
+	 *
 	 * REST: DELETE /sms/{serviceName}/users/{login}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param login [required] The sms user login
@@ -688,7 +688,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Sms in pending associated to the sms user
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/users/{login}/jobs
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param login [required] The sms user login
@@ -703,7 +703,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Add one or several sending jobs
-	 * 
+	 *
 	 * REST: POST /sms/{serviceName}/users/{login}/jobs
 	 * @param noStopClause [required] Do not display STOP clause in the message, this requires that this is not an advertising message
 	 * @param priority [required] [default=high] The priority of the message
@@ -747,7 +747,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/users/{login}/jobs/{id}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param login [required] The sms user login
@@ -764,7 +764,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Delete the sms job given (stop sending)
-	 * 
+	 *
 	 * REST: DELETE /sms/{serviceName}/users/{login}/jobs/{id}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param login [required] The sms user login
@@ -780,7 +780,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Receivers preloaded from text or csv document file
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/users/{login}/receivers
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param login [required] The sms user login
@@ -795,7 +795,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Add a new document of csv receivers
-	 * 
+	 *
 	 * REST: POST /sms/{serviceName}/users/{login}/receivers
 	 * @param documentId [required] ID of the /me/document file you want to import
 	 * @param csvUrl [required] URL of the file you want to import
@@ -821,7 +821,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/users/{login}/receivers/{slotId}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param login [required] The sms user login
@@ -838,7 +838,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /sms/{serviceName}/users/{login}/receivers/{slotId}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your SMS offer
@@ -855,7 +855,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Delete the document from the slot
-	 * 
+	 *
 	 * REST: DELETE /sms/{serviceName}/users/{login}/receivers/{slotId}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param login [required] The sms user login
@@ -871,7 +871,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get the document data container
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/users/{login}/receivers/{slotId}/csv
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param login [required] The sms user login
@@ -888,7 +888,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Clean the invalid and inactive receivers in the document by requesting HLR on each receiver. A report is sent by e-mail at the end of the operation.
-	 * 
+	 *
 	 * REST: POST /sms/{serviceName}/users/{login}/receivers/{slotId}/clean
 	 * @param freemium [required] Limit checks to syntaxical validation
 	 * @param priceOnly [required] Only get action's price in credits without executing it
@@ -910,7 +910,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get the /me/document id generated
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/users/{login}/document
 	 * @param tag [required] Select sms with a specific identifier group tag
 	 * @param wayType [required] specify outgoing or incoming sms
@@ -933,7 +933,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Sms received associated to the sms user
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/users/{login}/incoming
 	 * @param sender [required] Filter the value of sender property (=)
 	 * @param tag [required] Filter the value of tag property (=)
@@ -952,7 +952,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/users/{login}/incoming/{id}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param login [required] The sms user login
@@ -969,7 +969,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Delete the sms incoming history given
-	 * 
+	 *
 	 * REST: DELETE /sms/{serviceName}/users/{login}/incoming/{id}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param login [required] The sms user login
@@ -985,7 +985,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * The senders that are attached to your personal informations or OVH services and that can be automatically validated
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/sendersAvailableForValidation
 	 * @param referer [required] Information type
 	 * @param serviceName [required] The internal name of your SMS offer
@@ -1001,7 +1001,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Template pattern filled up for moderation (Needed to send in US country)
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/templatesControl
 	 * @param serviceName [required] The internal name of your SMS offer
 	 */
@@ -1014,7 +1014,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Create the sms template control given
-	 * 
+	 *
 	 * REST: POST /sms/{serviceName}/templatesControl
 	 * @param reason [required] Message seen by the moderator
 	 * @param name [required] Name of the template
@@ -1037,7 +1037,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/templatesControl/{name}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param name [required] Name of the template
@@ -1052,7 +1052,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /sms/{serviceName}/templatesControl/{name}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your SMS offer
@@ -1067,7 +1067,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Delete the sms template control
-	 * 
+	 *
 	 * REST: DELETE /sms/{serviceName}/templatesControl/{name}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param name [required] Name of the template
@@ -1081,7 +1081,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Attempt a new validation after moderation refusal
-	 * 
+	 *
 	 * REST: POST /sms/{serviceName}/templatesControl/{name}/relaunchValidation
 	 * @param description [required] Template description
 	 * @param message [required] Message pattern to be moderated. Use "#VALUE#" format for dynamic text area
@@ -1100,7 +1100,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Numbers blacklisted associated to the sms account
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/blacklists
 	 * @param serviceName [required] The internal name of your SMS offer
 	 */
@@ -1113,7 +1113,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/blacklists/{number}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param number [required] The sms number blacklisted
@@ -1128,7 +1128,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Delete the blacklisted sms number given
-	 * 
+	 *
 	 * REST: DELETE /sms/{serviceName}/blacklists/{number}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param number [required] The sms number blacklisted
@@ -1142,7 +1142,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Sms in pending associated to the sms account
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/jobs
 	 * @param serviceName [required] The internal name of your SMS offer
 	 */
@@ -1155,7 +1155,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Add one or several sending jobs
-	 * 
+	 *
 	 * REST: POST /sms/{serviceName}/jobs
 	 * @param noStopClause [required] Do not display STOP clause in the message, this requires that this is not an advertising message
 	 * @param priority [required] [default=high] The priority of the message
@@ -1197,7 +1197,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/jobs/{id}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param id [required] Id of the object
@@ -1212,7 +1212,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Delete the sms job given (stop sending)
-	 * 
+	 *
 	 * REST: DELETE /sms/{serviceName}/jobs/{id}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param id [required] Id of the object
@@ -1226,7 +1226,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Sms received associated to the sms account
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/incoming
 	 * @param sender [required] Filter the value of sender property (=)
 	 * @param tag [required] Filter the value of tag property (=)
@@ -1247,7 +1247,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/incoming/{id}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param id [required] Id of the object
@@ -1262,7 +1262,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Delete the sms incoming history given
-	 * 
+	 *
 	 * REST: DELETE /sms/{serviceName}/incoming/{id}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param id [required] Id of the object
@@ -1276,7 +1276,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Describe SMS offers available.
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/seeOffers
 	 * @param countryDestination [required] Filter to have the country destination
 	 * @param countryCurrencyPrice [required] Filter to have the currency country prices
@@ -1296,7 +1296,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Sms sent associated to the sms account
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/outgoing
 	 * @param receiver [required] Filter the value of receiver property (=)
 	 * @param differedDelivery [required] Filter the value of differedDelivery property (=)
@@ -1325,7 +1325,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/outgoing/{id}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param id [required] Id of the object
@@ -1340,7 +1340,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Delete the sms outgoing history given
-	 * 
+	 *
 	 * REST: DELETE /sms/{serviceName}/outgoing/{id}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param id [required] Id of the object
@@ -1354,7 +1354,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/outgoing/{id}/hlr
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param id [required] Id of the object
@@ -1369,7 +1369,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Home Location Register informations. Give informations about a given cellular phone.
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/hlr
 	 * @param serviceName [required] The internal name of your SMS offer
 	 */
@@ -1382,7 +1382,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Add one or several sending hlr lookup request
-	 * 
+	 *
 	 * REST: POST /sms/{serviceName}/hlr
 	 * @param receivers [required] The receivers
 	 * @param receiversDocumentUrl [required] The receivers document url link in csv format
@@ -1400,7 +1400,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/hlr/{id}/operator
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param id [required] HLR id
@@ -1415,7 +1415,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/hlr/{id}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param id [required] HLR id
@@ -1430,7 +1430,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Receivers preloaded from text or csv document file
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/receivers
 	 * @param serviceName [required] The internal name of your SMS offer
 	 */
@@ -1443,7 +1443,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Add a new document of csv receivers
-	 * 
+	 *
 	 * REST: POST /sms/{serviceName}/receivers
 	 * @param documentId [required] ID of the /me/document file you want to import
 	 * @param csvUrl [required] URL of the file you want to import
@@ -1467,7 +1467,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/receivers/{slotId}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param slotId [required] Slot number id
@@ -1482,7 +1482,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /sms/{serviceName}/receivers/{slotId}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your SMS offer
@@ -1497,7 +1497,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Delete the document from the slot
-	 * 
+	 *
 	 * REST: DELETE /sms/{serviceName}/receivers/{slotId}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param slotId [required] Slot number id
@@ -1511,7 +1511,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get the document data container
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/receivers/{slotId}/csv
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param slotId [required] Slot number id
@@ -1526,7 +1526,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Clean the invalid and inactive receivers in the document by requesting HLR on each receiver. A report is sent by e-mail at the end of the operation.
-	 * 
+	 *
 	 * REST: POST /sms/{serviceName}/receivers/{slotId}/clean
 	 * @param freemium [required] Limit checks to syntaxical validation
 	 * @param priceOnly [required] Only get action's price in credits without executing it
@@ -1546,7 +1546,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Operations on a SMS service
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/task
 	 * @param status [required] Filter the value of status property (=)
 	 * @param serviceName [required] The internal name of your SMS offer
@@ -1561,7 +1561,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/task/{taskId}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param taskId [required]
@@ -1576,7 +1576,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Return phonebooks associated to this account
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/phonebooks
 	 * @param serviceName [required] The internal name of your SMS offer
 	 */
@@ -1589,7 +1589,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Add a phonebook. Return the bookKey.
-	 * 
+	 *
 	 * REST: POST /sms/{serviceName}/phonebooks
 	 * @param name [required] Name of the wanted phonebook
 	 * @param serviceName [required] The internal name of your SMS offer
@@ -1605,7 +1605,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Phonebook contacts
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/phonebooks/{bookKey}/phonebookContact
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param bookKey [required] Identifier of the phonebook
@@ -1620,7 +1620,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Create a phonebook contact. Return identifier of the phonebook contact.
-	 * 
+	 *
 	 * REST: POST /sms/{serviceName}/phonebooks/{bookKey}/phonebookContact
 	 * @param homeMobile [required] Home mobile phone number of the contact
 	 * @param workMobile [required] Mobile phone office number of the contact
@@ -1650,7 +1650,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/phonebooks/{bookKey}/phonebookContact/{id}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param bookKey [required] Identifier of the phonebook
@@ -1667,7 +1667,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /sms/{serviceName}/phonebooks/{bookKey}/phonebookContact/{id}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your SMS offer
@@ -1684,7 +1684,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Delete a phonebook contact
-	 * 
+	 *
 	 * REST: DELETE /sms/{serviceName}/phonebooks/{bookKey}/phonebookContact/{id}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param bookKey [required] Identifier of the phonebook
@@ -1700,7 +1700,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/phonebooks/{bookKey}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param bookKey [required] Identifier of the phonebook
@@ -1715,7 +1715,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /sms/{serviceName}/phonebooks/{bookKey}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your SMS offer
@@ -1730,7 +1730,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Delete a phonebook
-	 * 
+	 *
 	 * REST: DELETE /sms/{serviceName}/phonebooks/{bookKey}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 * @param bookKey [required] Identifier of the phonebook
@@ -1744,7 +1744,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Export the phonebook's contacts
-	 * 
+	 *
 	 * REST: GET /sms/{serviceName}/phonebooks/{bookKey}/export
 	 * @param format [required] Format of the file
 	 * @param serviceName [required] The internal name of your SMS offer
@@ -1761,7 +1761,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Import a contacts file. Supported formats are Excel (.xls and .xlsx) and CSV
-	 * 
+	 *
 	 * REST: POST /sms/{serviceName}/phonebooks/{bookKey}/import
 	 * @param documentId [required] ID of the /me/document file you want to import
 	 * @param serviceName [required] The internal name of your SMS offer
@@ -1779,7 +1779,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Credit transfer between two sms accounts.
-	 * 
+	 *
 	 * REST: POST /sms/{serviceName}/transferCredits
 	 * @param credits [required] Amount of credits to transfer.
 	 * @param smsAccountTarget [required] Sms account destination.
@@ -1796,7 +1796,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /sms
 	 */
 	public ArrayList<String> GET() throws IOException {
@@ -1807,7 +1807,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /sms/virtualNumbers
 	 */
 	public ArrayList<String> virtualNumbers_GET() throws IOException {
@@ -1818,7 +1818,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sms/virtualNumbers/{number}/serviceInfos
 	 * @param number [required] Your virtual number
 	 */
@@ -1831,7 +1831,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /sms/virtualNumbers/{number}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param number [required] Your virtual number
@@ -1844,7 +1844,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sms/virtualNumbers/{number}
 	 * @param number [required] Your virtual number
 	 */
@@ -1857,7 +1857,7 @@ public class ApiOvhSms extends ApiOvhBase {
 
 	/**
 	 * Get informations about the given ptt code
-	 * 
+	 *
 	 * REST: GET /sms/ptts
 	 * @param ptt [required] The premium transaction tracking code
 	 */

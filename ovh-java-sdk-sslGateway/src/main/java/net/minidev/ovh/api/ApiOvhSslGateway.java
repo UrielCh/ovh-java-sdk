@@ -26,7 +26,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sslGateway/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your SSL Gateway
 	 */
@@ -39,7 +39,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /sslGateway/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your SSL Gateway
@@ -52,7 +52,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 
 	/**
 	 * Renew your SSL certificates
-	 * 
+	 *
 	 * REST: POST /sslGateway/{serviceName}/renewCertificate
 	 * @param serviceName [required] The internal name of your SSL Gateway
 	 */
@@ -66,7 +66,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sslGateway/{serviceName}
 	 * @param serviceName [required] The internal name of your SSL Gateway
 	 */
@@ -79,7 +79,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /sslGateway/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your SSL Gateway
@@ -92,7 +92,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 
 	/**
 	 * Confirm termination of your service
-	 * 
+	 *
 	 * REST: POST /sslGateway/{serviceName}/confirmTermination
 	 * @param reason Reason of your termination request
 	 * @param commentary Commentary about your termination request
@@ -112,7 +112,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 
 	/**
 	 * Terminate your service
-	 * 
+	 *
 	 * REST: POST /sslGateway/{serviceName}/terminate
 	 * @param serviceName [required] The internal name of your SSL Gateway
 	 */
@@ -125,7 +125,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 
 	/**
 	 * Task for this SSL Gateway
-	 * 
+	 *
 	 * REST: GET /sslGateway/{serviceName}/task
 	 * @param serviceName [required] The internal name of your SSL Gateway
 	 */
@@ -139,7 +139,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sslGateway/{serviceName}/task/{id}
 	 * @param serviceName [required] The internal name of your SSL Gateway
 	 * @param id [required] Id of the task
@@ -154,7 +154,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 
 	/**
 	 * Ip subnet used by OVH to nat requests to your SSL Gateway backends.
-	 * 
+	 *
 	 * REST: GET /sslGateway/{serviceName}/natIp
 	 * @param serviceName [required] The internal name of your SSL Gateway
 	 */
@@ -167,7 +167,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 
 	/**
 	 * Launch a contact change procedure
-	 * 
+	 *
 	 * REST: POST /sslGateway/{serviceName}/changeContact
 	 * @param contactAdmin The contact to set as admin contact
 	 * @param contactTech The contact to set as tech contact
@@ -187,7 +187,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 
 	/**
 	 * Domains attached to your SSL Gateway
-	 * 
+	 *
 	 * REST: GET /sslGateway/{serviceName}/domain
 	 * @param serviceName [required] The internal name of your SSL Gateway
 	 */
@@ -200,7 +200,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 
 	/**
 	 * Attach a new domain to your SSL Gateway
-	 * 
+	 *
 	 * REST: POST /sslGateway/{serviceName}/domain
 	 * @param domain [required] Domain to attach
 	 * @param serviceName [required] The internal name of your SSL Gateway
@@ -216,7 +216,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sslGateway/{serviceName}/domain/{id}
 	 * @param serviceName [required] The internal name of your SSL Gateway
 	 * @param id [required] Id of your domain
@@ -231,7 +231,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 
 	/**
 	 * Detach a domain from your SSL Gateway
-	 * 
+	 *
 	 * REST: DELETE /sslGateway/{serviceName}/domain/{id}
 	 * @param serviceName [required] The internal name of your SSL Gateway
 	 * @param id [required] Id of your domain
@@ -245,7 +245,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 
 	/**
 	 * Servers attached to your SSL Gateway
-	 * 
+	 *
 	 * REST: GET /sslGateway/{serviceName}/server
 	 * @param serviceName [required] The internal name of your SSL Gateway
 	 */
@@ -258,7 +258,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 
 	/**
 	 * Add a new server to your SSL Gateway
-	 * 
+	 *
 	 * REST: POST /sslGateway/{serviceName}/server
 	 * @param address [required] IPv4 address of your server
 	 * @param port [required] Port of your server
@@ -276,7 +276,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /sslGateway/{serviceName}/server/{id}
 	 * @param serviceName [required] The internal name of your SSL Gateway
 	 * @param id [required] Id of your server
@@ -291,7 +291,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /sslGateway/{serviceName}/server/{id}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your SSL Gateway
@@ -306,7 +306,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 
 	/**
 	 * Remove a server
-	 * 
+	 *
 	 * REST: DELETE /sslGateway/{serviceName}/server/{id}
 	 * @param serviceName [required] The internal name of your SSL Gateway
 	 * @param id [required] Id of your server
@@ -320,7 +320,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /sslGateway
 	 */
 	public ArrayList<String> GET() throws IOException {
@@ -331,7 +331,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 
 	/**
 	 * Check domain eligibility. Return list of eligible IP(s) for this domain.
-	 * 
+	 *
 	 * REST: GET /sslGateway/eligibility
 	 * @param domain [required] domain to check eligibility for SSL Gateway offer
 	 */

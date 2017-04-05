@@ -29,7 +29,7 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /license/windows/{serviceName}/serviceInfos
 	 * @param serviceName [required] The name of your Windows license
 	 */
@@ -42,7 +42,7 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /license/windows/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The name of your Windows license
@@ -55,7 +55,7 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /license/windows/{serviceName}
 	 * @param serviceName [required] The name of your Windows license
 	 */
@@ -68,7 +68,7 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /license/windows/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The name of your Windows license
@@ -81,7 +81,7 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 
 	/**
 	 * tasks linked to this license
-	 * 
+	 *
 	 * REST: GET /license/windows/{serviceName}/tasks
 	 * @param status [required] Filter the value of status property (=)
 	 * @param action [required] Filter the value of action property (=)
@@ -99,7 +99,7 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /license/windows/{serviceName}/tasks/{taskId}
 	 * @param serviceName [required] The name of your Windows license
 	 * @param taskId [required] This Task id
@@ -114,7 +114,7 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 
 	/**
 	 * Confirm termination of your service
-	 * 
+	 *
 	 * REST: POST /license/windows/{serviceName}/confirmTermination
 	 * @param reason Reason of your termination request
 	 * @param commentary Commentary about your termination request
@@ -134,7 +134,7 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 
 	/**
 	 * Terminate your service
-	 * 
+	 *
 	 * REST: POST /license/windows/{serviceName}/terminate
 	 * @param serviceName [required] The name of your Windows license
 	 */
@@ -147,7 +147,7 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 
 	/**
 	 * Link your own sql server license to this Windows license
-	 * 
+	 *
 	 * REST: POST /license/windows/{serviceName}/sqlServer
 	 * @param licenseId [required] Your license serial number
 	 * @param version [required] Your license version
@@ -165,7 +165,7 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 
 	/**
 	 * options attached to this license
-	 * 
+	 *
 	 * REST: GET /license/windows/{serviceName}/option
 	 * @param serviceName [required] The name of your Windows license
 	 */
@@ -179,7 +179,7 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /license/windows/{serviceName}/option/{label}
 	 * @param serviceName [required] The name of your Windows license
 	 * @param label [required] This option designation
@@ -194,7 +194,7 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 
 	/**
 	 * release this Option
-	 * 
+	 *
 	 * REST: DELETE /license/windows/{serviceName}/option/{label}
 	 * @param serviceName [required] The name of your Windows license
 	 * @param label [required] This option designation
@@ -209,7 +209,7 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /license/windows
 	 */
 	public ArrayList<String> GET() throws IOException {
@@ -221,7 +221,7 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 
 	/**
 	 * Get the orderable Windows versions
-	 * 
+	 *
 	 * REST: GET /license/windows/orderableVersions
 	 * @param ip [required] Your license Ip
 	 */

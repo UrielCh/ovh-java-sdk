@@ -26,7 +26,7 @@ public class ApiOvhLicensesqlserver extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /license/sqlserver/{serviceName}/serviceInfos
 	 * @param serviceName [required] The name of your SQL Server license
 	 */
@@ -39,7 +39,7 @@ public class ApiOvhLicensesqlserver extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /license/sqlserver/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The name of your SQL Server license
@@ -52,7 +52,7 @@ public class ApiOvhLicensesqlserver extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /license/sqlserver/{serviceName}
 	 * @param serviceName [required] The name of your SQL Server license
 	 */
@@ -65,7 +65,7 @@ public class ApiOvhLicensesqlserver extends ApiOvhBase {
 
 	/**
 	 * Tasks linked to this license
-	 * 
+	 *
 	 * REST: GET /license/sqlserver/{serviceName}/tasks
 	 * @param status [required] Filter the value of status property (=)
 	 * @param action [required] Filter the value of action property (=)
@@ -83,7 +83,7 @@ public class ApiOvhLicensesqlserver extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /license/sqlserver/{serviceName}/tasks/{taskId}
 	 * @param serviceName [required] The name of your SQL Server license
 	 * @param taskId [required] This Task id
@@ -98,7 +98,7 @@ public class ApiOvhLicensesqlserver extends ApiOvhBase {
 
 	/**
 	 * Confirm termination of your service
-	 * 
+	 *
 	 * REST: POST /license/sqlserver/{serviceName}/confirmTermination
 	 * @param reason Reason of your termination request
 	 * @param commentary Commentary about your termination request
@@ -118,7 +118,7 @@ public class ApiOvhLicensesqlserver extends ApiOvhBase {
 
 	/**
 	 * Terminate your service
-	 * 
+	 *
 	 * REST: POST /license/sqlserver/{serviceName}/terminate
 	 * @param serviceName [required] The name of your SQL Server license
 	 */
@@ -131,7 +131,7 @@ public class ApiOvhLicensesqlserver extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /license/sqlserver
 	 */
 	public ArrayList<String> GET() throws IOException {
@@ -143,7 +143,7 @@ public class ApiOvhLicensesqlserver extends ApiOvhBase {
 
 	/**
 	 * Get the orderable Sql Server versions
-	 * 
+	 *
 	 * REST: GET /license/sqlserver/orderableVersions
 	 * @param ip [required] Your license Ip
 	 */

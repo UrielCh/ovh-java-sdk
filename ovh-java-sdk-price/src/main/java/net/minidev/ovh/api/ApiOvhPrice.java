@@ -17,7 +17,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/bhs1a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -30,7 +30,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/bhs1a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -43,7 +43,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/bhs1a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -56,7 +56,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/bhs1a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -69,7 +69,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/bhs1a/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -82,7 +82,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/bhs1a/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -95,7 +95,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/bhs1a/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -108,7 +108,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/bhs1a/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -121,7 +121,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/rbx2b/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -134,7 +134,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/rbx2b/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -147,7 +147,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/rbx2b/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -160,7 +160,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/rbx2b/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -173,7 +173,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/rbx2b/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -186,7 +186,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/rbx2b/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -199,7 +199,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/rbx2b/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -212,7 +212,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/rbx2b/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -225,7 +225,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/sbg1a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -238,7 +238,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/sbg1a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -251,7 +251,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/sbg1a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -264,7 +264,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/sbg1a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -277,7 +277,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/sbg1a/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -290,7 +290,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/sbg1a/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -303,7 +303,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/sbg1a/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -316,7 +316,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/sbg1a/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -329,7 +329,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/rbx2a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -342,7 +342,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/rbx2a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -355,7 +355,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/rbx2a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -368,7 +368,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/rbx2a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -381,7 +381,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/rbx2a/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -394,7 +394,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/rbx2a/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -407,7 +407,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/rbx2a/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -420,7 +420,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/rbx2a/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -433,7 +433,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/bhs1a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -446,7 +446,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/bhs1a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -459,7 +459,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/bhs1a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -472,7 +472,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/bhs1a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -485,7 +485,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/bhs1a/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -498,7 +498,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/bhs1a/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -511,7 +511,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/bhs1a/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -524,7 +524,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/bhs1a/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -537,7 +537,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/rbx2b/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -550,7 +550,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/rbx2b/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -563,7 +563,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/rbx2b/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -576,7 +576,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/rbx2b/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -589,7 +589,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/rbx2b/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -602,7 +602,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/rbx2b/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -615,7 +615,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/rbx2b/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -628,7 +628,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/rbx2b/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -641,7 +641,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/sbg1a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -654,7 +654,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/sbg1a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -667,7 +667,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/sbg1a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -680,7 +680,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/sbg1a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -693,7 +693,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/sbg1a/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -706,7 +706,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/sbg1a/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -719,7 +719,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/sbg1a/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -732,7 +732,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/sbg1a/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -745,7 +745,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/rbx2a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -758,7 +758,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/rbx2a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -771,7 +771,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/rbx2a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -784,7 +784,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/rbx2a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -797,7 +797,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/rbx2a/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -810,7 +810,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/rbx2a/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -823,7 +823,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/rbx2a/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -836,7 +836,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v7/rbx2a/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -849,7 +849,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/bhs1a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -862,7 +862,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/bhs1a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -875,7 +875,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/bhs1a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -888,7 +888,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/bhs1a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -901,7 +901,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/bhs1a/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -914,7 +914,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/bhs1a/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -927,7 +927,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/bhs1a/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -940,7 +940,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/bhs1a/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -953,7 +953,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/rbx2b/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -966,7 +966,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/rbx2b/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -979,7 +979,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/rbx2b/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -992,7 +992,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/rbx2b/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1005,7 +1005,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/rbx2b/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1018,7 +1018,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/rbx2b/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1031,7 +1031,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/rbx2b/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1044,7 +1044,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/rbx2b/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1057,7 +1057,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/sbg1a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1070,7 +1070,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/sbg1a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1083,7 +1083,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/sbg1a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1096,7 +1096,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/sbg1a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1109,7 +1109,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/sbg1a/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1122,7 +1122,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/sbg1a/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1135,7 +1135,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/sbg1a/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1148,7 +1148,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/sbg1a/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1161,7 +1161,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/rbx2a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1174,7 +1174,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/rbx2a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1187,7 +1187,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/rbx2a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1200,7 +1200,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/rbx2a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1213,7 +1213,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/rbx2a/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1226,7 +1226,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/rbx2a/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1239,7 +1239,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/rbx2a/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1252,7 +1252,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v1/rbx2a/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1265,7 +1265,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/bhs1a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1278,7 +1278,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/bhs1a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1291,7 +1291,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/bhs1a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1304,7 +1304,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/bhs1a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1317,7 +1317,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/bhs1a/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1330,7 +1330,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/bhs1a/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1343,7 +1343,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/bhs1a/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1356,7 +1356,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/bhs1a/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1369,7 +1369,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/rbx2b/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1382,7 +1382,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/rbx2b/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1395,7 +1395,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/rbx2b/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1408,7 +1408,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/rbx2b/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1421,7 +1421,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/rbx2b/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1434,7 +1434,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/rbx2b/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1447,7 +1447,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/rbx2b/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1460,7 +1460,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/rbx2b/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1473,7 +1473,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/sbg1a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1486,7 +1486,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/sbg1a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1499,7 +1499,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/sbg1a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1512,7 +1512,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/sbg1a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1525,7 +1525,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/sbg1a/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1538,7 +1538,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/sbg1a/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1551,7 +1551,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/sbg1a/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1564,7 +1564,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/sbg1a/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1577,7 +1577,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/rbx2a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1590,7 +1590,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/rbx2a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1603,7 +1603,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/rbx2a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1616,7 +1616,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/rbx2a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1629,7 +1629,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/rbx2a/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1642,7 +1642,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/rbx2a/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1655,7 +1655,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/rbx2a/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1668,7 +1668,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v4/rbx2a/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1681,7 +1681,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/bhs1a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1694,7 +1694,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/bhs1a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1707,7 +1707,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/bhs1a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1720,7 +1720,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/bhs1a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1733,7 +1733,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/bhs1a/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1746,7 +1746,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/bhs1a/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1759,7 +1759,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/bhs1a/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1772,7 +1772,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/bhs1a/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1785,7 +1785,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/rbx2b/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1798,7 +1798,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/rbx2b/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1811,7 +1811,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/rbx2b/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1824,7 +1824,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/rbx2b/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1837,7 +1837,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/rbx2b/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1850,7 +1850,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/rbx2b/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1863,7 +1863,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/rbx2b/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1876,7 +1876,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/rbx2b/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1889,7 +1889,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/sbg1a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1902,7 +1902,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/sbg1a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1915,7 +1915,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/sbg1a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1928,7 +1928,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/sbg1a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1941,7 +1941,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/sbg1a/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1954,7 +1954,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/sbg1a/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1967,7 +1967,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/sbg1a/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -1980,7 +1980,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/sbg1a/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -1993,7 +1993,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/rbx2a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2006,7 +2006,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/rbx2a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2019,7 +2019,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/rbx2a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2032,7 +2032,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/rbx2a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2045,7 +2045,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/rbx2a/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2058,7 +2058,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/rbx2a/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2071,7 +2071,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/rbx2a/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2084,7 +2084,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v2/rbx2a/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2097,7 +2097,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/bhs1a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2110,7 +2110,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/bhs1a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2123,7 +2123,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/bhs1a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2136,7 +2136,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/bhs1a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2149,7 +2149,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/bhs1a/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2162,7 +2162,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/bhs1a/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2175,7 +2175,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/bhs1a/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2188,7 +2188,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/bhs1a/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2201,7 +2201,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/rbx2b/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2214,7 +2214,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/rbx2b/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2227,7 +2227,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/rbx2b/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2240,7 +2240,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/rbx2b/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2253,7 +2253,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/rbx2b/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2266,7 +2266,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/rbx2b/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2279,7 +2279,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/rbx2b/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2292,7 +2292,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/rbx2b/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2305,7 +2305,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/sbg1a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2318,7 +2318,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/sbg1a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2331,7 +2331,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/sbg1a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2344,7 +2344,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/sbg1a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2357,7 +2357,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/sbg1a/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2370,7 +2370,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/sbg1a/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2383,7 +2383,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/sbg1a/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2396,7 +2396,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/sbg1a/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2409,7 +2409,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/rbx2a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2422,7 +2422,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/rbx2a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2435,7 +2435,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/rbx2a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2448,7 +2448,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/rbx2a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2461,7 +2461,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/rbx2a/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2474,7 +2474,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/rbx2a/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2487,7 +2487,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/rbx2a/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2500,7 +2500,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2014v1/rbx2a/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2513,7 +2513,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/bhs1a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2526,7 +2526,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/bhs1a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2539,7 +2539,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/bhs1a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2552,7 +2552,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/bhs1a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2565,7 +2565,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/bhs1a/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2578,7 +2578,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/bhs1a/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2591,7 +2591,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/bhs1a/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2604,7 +2604,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/bhs1a/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2617,7 +2617,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/rbx2b/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2630,7 +2630,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/rbx2b/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2643,7 +2643,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/rbx2b/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2656,7 +2656,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/rbx2b/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2669,7 +2669,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/rbx2b/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2682,7 +2682,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/rbx2b/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2695,7 +2695,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/rbx2b/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2708,7 +2708,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/rbx2b/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2721,7 +2721,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/sbg1a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2734,7 +2734,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/sbg1a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2747,7 +2747,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/sbg1a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2760,7 +2760,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/sbg1a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2773,7 +2773,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/sbg1a/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2786,7 +2786,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/sbg1a/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2799,7 +2799,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/sbg1a/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2812,7 +2812,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/sbg1a/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2825,7 +2825,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/rbx2a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2838,7 +2838,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/rbx2a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2851,7 +2851,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/rbx2a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2864,7 +2864,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/rbx2a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2877,7 +2877,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/rbx2a/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2890,7 +2890,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/rbx2a/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2903,7 +2903,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/rbx2a/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2916,7 +2916,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v2/rbx2a/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2929,7 +2929,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/bhs1a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2942,7 +2942,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/bhs1a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2955,7 +2955,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/bhs1a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2968,7 +2968,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/bhs1a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -2981,7 +2981,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/bhs1a/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -2994,7 +2994,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/bhs1a/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3007,7 +3007,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/bhs1a/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3020,7 +3020,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/bhs1a/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3033,7 +3033,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/rbx2b/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3046,7 +3046,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/rbx2b/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3059,7 +3059,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/rbx2b/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3072,7 +3072,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/rbx2b/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3085,7 +3085,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/rbx2b/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3098,7 +3098,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/rbx2b/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3111,7 +3111,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/rbx2b/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3124,7 +3124,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/rbx2b/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3137,7 +3137,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/sbg1a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3150,7 +3150,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/sbg1a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3163,7 +3163,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/sbg1a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3176,7 +3176,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/sbg1a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3189,7 +3189,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/sbg1a/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3202,7 +3202,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/sbg1a/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3215,7 +3215,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/sbg1a/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3228,7 +3228,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/sbg1a/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3241,7 +3241,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/rbx2a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3254,7 +3254,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/rbx2a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3267,7 +3267,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/rbx2a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3280,7 +3280,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/rbx2a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3293,7 +3293,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/rbx2a/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3306,7 +3306,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/rbx2a/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3319,7 +3319,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/rbx2a/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3332,7 +3332,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/rbx2a/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3345,7 +3345,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2013v1/bhs1a/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3358,7 +3358,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2013v1/bhs1a/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3371,7 +3371,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2013v1/bhs1a/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3384,7 +3384,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2013v1/bhs1a/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3397,7 +3397,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2013v1/sbg1a/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3410,7 +3410,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2013v1/sbg1a/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3423,7 +3423,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2013v1/sbg1a/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3436,7 +3436,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2013v1/sbg1a/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3449,7 +3449,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2013v1/rbx2a/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3462,7 +3462,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2013v1/rbx2a/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3475,7 +3475,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2013v1/rbx2a/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3488,7 +3488,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2013v1/rbx2a/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3501,7 +3501,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/bhs1a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3514,7 +3514,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/bhs1a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3527,7 +3527,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/bhs1a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3540,7 +3540,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/bhs1a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3553,7 +3553,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/bhs1a/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3566,7 +3566,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/bhs1a/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3579,7 +3579,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/bhs1a/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3592,7 +3592,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/bhs1a/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3605,7 +3605,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/rbx2b/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3618,7 +3618,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/rbx2b/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3631,7 +3631,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/rbx2b/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3644,7 +3644,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/rbx2b/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3657,7 +3657,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/rbx2b/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3670,7 +3670,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/rbx2b/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3683,7 +3683,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/rbx2b/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3696,7 +3696,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/rbx2b/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3709,7 +3709,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/sbg1a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3722,7 +3722,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/sbg1a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3735,7 +3735,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/sbg1a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3748,7 +3748,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/sbg1a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3761,7 +3761,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/sbg1a/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3774,7 +3774,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/sbg1a/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3787,7 +3787,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/sbg1a/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3800,7 +3800,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/sbg1a/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3813,7 +3813,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/rbx2a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3826,7 +3826,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/rbx2a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3839,7 +3839,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/rbx2a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3852,7 +3852,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/rbx2a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3865,7 +3865,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/rbx2a/enterprise/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3878,7 +3878,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/rbx2a/enterprise/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3891,7 +3891,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/rbx2a/enterprise/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3904,7 +3904,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
-	 * 
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v5/rbx2a/enterprise/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
@@ -3917,7 +3917,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of VPS Cloud
-	 * 
+	 *
 	 * REST: GET /price/vps/cloud/model/{modelName}
 	 * @param modelName [required] Model
 	 */
@@ -3930,7 +3930,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of VPS Cloud Options
-	 * 
+	 *
 	 * REST: GET /price/vps/cloud/option/{optionName}
 	 * @param optionName [required] Option
 	 */
@@ -3943,7 +3943,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of VPS Cloud 2014
-	 * 
+	 *
 	 * REST: GET /price/vps/2014v1/cloud/model/{modelName}
 	 * @param modelName [required] Model
 	 */
@@ -3956,7 +3956,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of VPS Cloud Options 2014
-	 * 
+	 *
 	 * REST: GET /price/vps/2014v1/cloud/option/{optionName}
 	 * @param optionName [required] Option
 	 */
@@ -3969,7 +3969,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of VPS Classic 2014
-	 * 
+	 *
 	 * REST: GET /price/vps/2014v1/classic/model/{modelName}
 	 * @param modelName [required] Model
 	 */
@@ -3982,7 +3982,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of VPS Low Latency
-	 * 
+	 *
 	 * REST: GET /price/vps/lowlat/model/{modelName}
 	 * @param modelName [required] Model
 	 */
@@ -3995,7 +3995,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of VPS Classic 2013
-	 * 
+	 *
 	 * REST: GET /price/vps/2013v1/cloud/model/{modelName}
 	 * @param modelName [required] Model
 	 */
@@ -4008,7 +4008,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of VPS Cloud Options 2013
-	 * 
+	 *
 	 * REST: GET /price/vps/2013v1/cloud/option/{optionName}
 	 * @param optionName [required] Option
 	 */
@@ -4021,7 +4021,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of VPS Low Latency 2013
-	 * 
+	 *
 	 * REST: GET /price/vps/2013v1/lowlat/model/{modelName}
 	 * @param modelName [required] Model
 	 */
@@ -4034,7 +4034,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of VPS Cloud 2013
-	 * 
+	 *
 	 * REST: GET /price/vps/2013v1/classic/model/{modelName}
 	 * @param modelName [required] Model
 	 */
@@ -4047,7 +4047,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of VPS Classic
-	 * 
+	 *
 	 * REST: GET /price/vps/classic/model/{modelName}
 	 * @param modelName [required] Model
 	 */
@@ -4060,7 +4060,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of VPS Cloud 2015
-	 * 
+	 *
 	 * REST: GET /price/vps/2015v1/cloud/model/{modelName}
 	 * @param modelName [required] Model
 	 */
@@ -4073,7 +4073,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of VPS Cloud Options 2015/2016
-	 * 
+	 *
 	 * REST: GET /price/vps/2015v1/cloud/option/{optionName}
 	 * @param optionName [required] Option
 	 */
@@ -4086,7 +4086,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of VPS Cloud RAM 2016
-	 * 
+	 *
 	 * REST: GET /price/vps/2015v1/cloudram/model/{modelName}
 	 * @param modelName [required] Model
 	 */
@@ -4099,7 +4099,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of VPS Cloud RAM Options 2015/2016
-	 * 
+	 *
 	 * REST: GET /price/vps/2015v1/cloudram/option/{optionName}
 	 * @param optionName [required] Option
 	 */
@@ -4112,7 +4112,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of VPS SSD 2015
-	 * 
+	 *
 	 * REST: GET /price/vps/2015v1/ssd/model/{modelName}
 	 * @param modelName [required] Model
 	 */
@@ -4125,7 +4125,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of VPS SSD Options 2015/2016
-	 * 
+	 *
 	 * REST: GET /price/vps/2015v1/ssd/option/{optionName}
 	 * @param optionName [required] Option
 	 */
@@ -4138,7 +4138,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get the price for cdn option
-	 * 
+	 *
 	 * REST: GET /price/hosting/web/cdn/{cdnName}
 	 * @param cdnName [required] Cdn
 	 */
@@ -4151,7 +4151,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get the price for hosted ssl option
-	 * 
+	 *
 	 * REST: GET /price/hosting/web/ssl/{sslName}
 	 * @param sslName [required] Ssl
 	 */
@@ -4164,7 +4164,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get the price for extra sql perso option
-	 * 
+	 *
 	 * REST: GET /price/hosting/web/extraSqlPerso/{extraSqlPersoName}
 	 * @param extraSqlPersoName [required] ExtraSqlPerso
 	 */
@@ -4177,7 +4177,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get the price for a private database
-	 * 
+	 *
 	 * REST: GET /price/hosting/privateDatabase/{privateDatabaseName}
 	 * @param privateDatabaseName [required] PrivateDatabase
 	 */
@@ -4190,7 +4190,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get the monthly price for an office license
-	 * 
+	 *
 	 * REST: GET /price/license/office/{officeName}
 	 * @param officeName [required] Office
 	 */
@@ -4203,7 +4203,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of zone options
-	 * 
+	 *
 	 * REST: GET /price/domain/zone/option/{optionName}
 	 * @param optionName [required] Option
 	 */
@@ -4216,7 +4216,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get the price of address move option fee
-	 * 
+	 *
 	 * REST: GET /price/xdsl/addressMove/fee/{option}
 	 * @param option [required] The option name
 	 */
@@ -4229,7 +4229,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get the price of IPv4 options
-	 * 
+	 *
 	 * REST: GET /price/xdsl/options/ipv4/{ipRange}
 	 * @param ipRange [required] The range of the IPv4
 	 */
@@ -4242,7 +4242,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get the price of options installation fee
-	 * 
+	 *
 	 * REST: GET /price/xdsl/options/installation/{option}
 	 * @param option [required] The option
 	 */
@@ -4255,7 +4255,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get the price of line action
-	 * 
+	 *
 	 * REST: GET /price/xdsl/options/line/{lineAction}
 	 * @param lineAction [required] The type of line action
 	 */
@@ -4268,7 +4268,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get the price of xdsl offers
-	 * 
+	 *
 	 * REST: GET /price/xdsl/offers/{offersName}
 	 * @param offersName [required] The name of the offer
 	 */
@@ -4281,7 +4281,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get the price of options installation fee
-	 * 
+	 *
 	 * REST: GET /price/xdsl/installation/{offer}
 	 * @param offer [required] The offer
 	 */
@@ -4294,7 +4294,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get the monthly price for an Office 365 license
-	 * 
+	 *
 	 * REST: GET /price/saas/csp2/license/{licenseName}
 	 * @param licenseName [required] License
 	 */
@@ -4307,7 +4307,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get the price of Nas HA offers
-	 * 
+	 *
 	 * REST: GET /price/dedicated/nasha/model/{modelName}
 	 * @param modelName [required] capacity in gigabit of Nas Ha
 	 */
@@ -4320,7 +4320,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of available firewall models
-	 * 
+	 *
 	 * REST: GET /price/dedicated/server/firewall/{firewallModel}
 	 * @param firewallModel [required] Model of firewall
 	 */
@@ -4333,7 +4333,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of IPs
-	 * 
+	 *
 	 * REST: GET /price/dedicated/server/ip/{routedTo}
 	 * @param routedTo [required] Ip
 	 */
@@ -4346,7 +4346,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of backup storage offer
-	 * 
+	 *
 	 * REST: GET /price/dedicated/server/backupStorage/{capacity}
 	 * @param capacity [required] Capacity in gigabytes of backup storage offer
 	 */
@@ -4359,7 +4359,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get price of anti-DDos Pro option
-	 * 
+	 *
 	 * REST: GET /price/dedicated/server/antiDDoSPro/{commercialRange}
 	 * @param commercialRange [required] commercial range of your dedicated server
 	 */
@@ -4372,7 +4372,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get the price of overTheBox offers
-	 * 
+	 *
 	 * REST: GET /price/overTheBox/offer/{offerName}
 	 * @param offerName [required] The name of the offer
 	 */
@@ -4385,7 +4385,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get the price of a HPC Spot Account for 1 month
-	 * 
+	 *
 	 * REST: GET /price/hpcspot/account/subscription/{subscriptionName}
 	 * @param subscriptionName [required] Subscription
 	 */
@@ -4398,7 +4398,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get the price of a RESERVATION consumption for 1 hour
-	 * 
+	 *
 	 * REST: GET /price/hpcspot/consumption/reservation/{reference}
 	 * @param reference [required] The reference of the RESERVATION consumption
 	 */
@@ -4411,7 +4411,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get the price of a SESSION consumption for 1 hour
-	 * 
+	 *
 	 * REST: GET /price/hpcspot/consumption/session/{reference}
 	 * @param reference [required] The reference of the SESSION consumption
 	 */
@@ -4424,7 +4424,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 
 	/**
 	 * Get the price of a JOB consumption for 1 hour
-	 * 
+	 *
 	 * REST: GET /price/hpcspot/consumption/job/{reference}
 	 * @param reference [required] The reference of the JOB consumption
 	 */

@@ -27,7 +27,7 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 
 	/**
 	 * Create a new OVH identifier
-	 * 
+	 *
 	 * REST: POST /newAccount
 	 * @param firstname [required]
 	 * @param vat [required]
@@ -85,7 +85,7 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 
 	/**
 	 * All available areas for a given country
-	 * 
+	 *
 	 * REST: GET /newAccount/area
 	 * @param country [required]
 	 */
@@ -99,7 +99,7 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 
 	/**
 	 * Give all the rules to follow in order to create an OVH identifier
-	 * 
+	 *
 	 * REST: GET /newAccount/creationRules
 	 * @param country [required]
 	 * @param ovhSubsidiary [required]
@@ -118,7 +118,7 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 
 	/**
 	 * All available corporation types for a given country
-	 * 
+	 *
 	 * REST: GET /newAccount/corporationType
 	 * @param country [required]
 	 */
@@ -131,7 +131,7 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 
 	/**
 	 * All available legal forms for a given country
-	 * 
+	 *
 	 * REST: GET /newAccount/legalform
 	 * @param country [required]
 	 */
@@ -144,7 +144,7 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 
 	/**
 	 * All available countries for an ovh company and an ovh subsidiary
-	 * 
+	 *
 	 * REST: GET /newAccount/countries
 	 * @param ovhSubsidiary [required]
 	 * @param ovhCompany [required]

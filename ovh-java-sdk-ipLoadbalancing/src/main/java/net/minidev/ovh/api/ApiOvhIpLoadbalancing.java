@@ -55,7 +55,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
@@ -68,7 +68,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /ipLoadbalancing/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -81,7 +81,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * List of available zones you can attach a server to your iplb from
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/availableServerZones
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
@@ -95,7 +95,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
@@ -108,7 +108,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /ipLoadbalancing/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -121,7 +121,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Frontends for this iplb
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/frontend
 	 * @param zone [required] Filter the value of zone property (=)
 	 * @param defaultBackendId [required] Filter the value of defaultBackendId property (=)
@@ -141,7 +141,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Add a new frontend on your iplb
-	 * 
+	 *
 	 * REST: POST /ipLoadbalancing/{serviceName}/frontend
 	 * @param defaultSslId [required] Default ssl served to your customer
 	 * @param disabled [required] Disable your frontend. Set to 'false' if null
@@ -177,7 +177,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/frontend/{id}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param id [required] Id of your frontend
@@ -192,7 +192,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /ipLoadbalancing/{serviceName}/frontend/{id}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -207,7 +207,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Delete a frontend
-	 * 
+	 *
 	 * REST: DELETE /ipLoadbalancing/{serviceName}/frontend/{id}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param id [required] Id of your frontend
@@ -221,7 +221,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Zone for this iplb
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/zone
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
@@ -234,7 +234,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/zone/{name}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param name [required] Name of your zone
@@ -249,7 +249,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Delete a zone
-	 * 
+	 *
 	 * REST: DELETE /ipLoadbalancing/{serviceName}/zone/{name}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param name [required] Name of your zone
@@ -263,7 +263,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * List all failover ip routed to this IPLB
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/failover
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
@@ -276,7 +276,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Backends for this iplb
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/backend
 	 * @param zone [required] Filter the value of zone property (=)
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -291,7 +291,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Add a new backend on your iplb
-	 * 
+	 *
 	 * REST: POST /ipLoadbalancing/{serviceName}/backend
 	 * @param balance [required] Load balancing algorithm. 'roundrobin' if null
 	 * @param zone [required] Zone of your backend.
@@ -317,7 +317,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/backend/{id}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param id [required] Id of your backend
@@ -332,7 +332,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /ipLoadbalancing/{serviceName}/backend/{id}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -347,7 +347,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Delete a backend
-	 * 
+	 *
 	 * REST: DELETE /ipLoadbalancing/{serviceName}/backend/{id}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param id [required] Id of your backend
@@ -361,7 +361,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Backend/Servers links
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/backend/{id}/server
 	 * @param cookie [required] Filter the value of cookie property (like)
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -378,7 +378,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Add a server to a backend
-	 * 
+	 *
 	 * REST: POST /ipLoadbalancing/{serviceName}/backend/{id}/server
 	 * @param ssl [required] SSL ciphering. Probes will also be sent ciphered. Set to 'false' if null
 	 * @param cookie [required] Set the cookie value used when 'cookie' stickiness is set in backend
@@ -412,7 +412,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/backend/{id}/server/{linkId}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param id [required] Id of your backend
@@ -429,7 +429,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /ipLoadbalancing/{serviceName}/backend/{id}/server/{linkId}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -446,7 +446,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Delete a server from a backend
-	 * 
+	 *
 	 * REST: DELETE /ipLoadbalancing/{serviceName}/backend/{id}/server/{linkId}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param id [required] Id of your backend
@@ -462,7 +462,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Terminate your service
-	 * 
+	 *
 	 * REST: POST /ipLoadbalancing/{serviceName}/terminate
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
@@ -475,7 +475,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Ip subnet used by OVH to nat requests on your IPLB to your backends. You must ensure that your backends are not part of a network that overlap with this one
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/natIp
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
@@ -488,7 +488,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Launch a contact change procedure
-	 * 
+	 *
 	 * REST: POST /ipLoadbalancing/{serviceName}/changeContact
 	 * @param contactAdmin The contact to set as admin contact
 	 * @param contactTech The contact to set as tech contact
@@ -508,7 +508,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * HTTP frontends for this iplb
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/http/frontend
 	 * @param defaultFarmId [required] Filter the value of defaultFarmId property (=)
 	 * @param zone [required] Filter the value of zone property (=)
@@ -527,7 +527,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Add a new http frontend on your iplb
-	 * 
+	 *
 	 * REST: POST /ipLoadbalancing/{serviceName}/http/frontend
 	 * @param defaultSslId [required] Default ssl served to your customer
 	 * @param disabled [required] Disable your frontend. Set to 'false' if null
@@ -563,7 +563,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/http/frontend/{frontendId}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param frontendId [required] Id of your frontend
@@ -578,7 +578,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /ipLoadbalancing/{serviceName}/http/frontend/{frontendId}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -593,7 +593,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Delete an HTTP frontend
-	 * 
+	 *
 	 * REST: DELETE /ipLoadbalancing/{serviceName}/http/frontend/{frontendId}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param frontendId [required] Id of your frontend
@@ -607,7 +607,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * HTTP Farm for this iplb
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/http/farm
 	 * @param zone [required] Filter the value of zone property (=)
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -622,7 +622,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Add a new HTTP Farm on your iplb
-	 * 
+	 *
 	 * REST: POST /ipLoadbalancing/{serviceName}/http/farm
 	 * @param balance [required] Load balancing algorithm. 'roundrobin' if null
 	 * @param zone [required] Zone of your farm
@@ -646,7 +646,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/http/farm/{farmId}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param farmId [required] Id of your farm
@@ -661,7 +661,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /ipLoadbalancing/{serviceName}/http/farm/{farmId}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -676,7 +676,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Delete an HTTP Farm
-	 * 
+	 *
 	 * REST: DELETE /ipLoadbalancing/{serviceName}/http/farm/{farmId}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param farmId [required] Id of your farm
@@ -690,7 +690,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * HTTP Farm's Servers
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/http/farm/{farmId}/server
 	 * @param status [required] Filter the value of status property (=)
 	 * @param cookie [required] Filter the value of cookie property (like)
@@ -711,7 +711,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Add a server to an HTTP Farm
-	 * 
+	 *
 	 * REST: POST /ipLoadbalancing/{serviceName}/http/farm/{farmId}/server
 	 * @param ssl [required] SSL ciphering. Probes will also be sent ciphered. Set to 'false' if null
 	 * @param status [required] Status attached to your server
@@ -747,7 +747,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/http/farm/{farmId}/server/{serverId}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param farmId [required] Id of your farm
@@ -764,7 +764,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /ipLoadbalancing/{serviceName}/http/farm/{farmId}/server/{serverId}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -781,7 +781,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Delete a server from an HTTP Farm
-	 * 
+	 *
 	 * REST: DELETE /ipLoadbalancing/{serviceName}/http/farm/{farmId}/server/{serverId}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param farmId [required] Id of your farm
@@ -797,7 +797,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Get the effective state of your IPLB instances on IPLB servers
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/instancesState
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
@@ -811,7 +811,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Apply the configuration to your iplb
-	 * 
+	 *
 	 * REST: POST /ipLoadbalancing/{serviceName}/refresh
 	 * @param zone [required] The zone(s) of your iplb
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -827,7 +827,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Order a free certificate. We order and deliver it for you
-	 * 
+	 *
 	 * REST: POST /ipLoadbalancing/{serviceName}/freeCertificate
 	 * @param fqdn [required] The FQDN for which you want a free certificate. A DCV (Domain Control Validation) http request will be made to http://your_domain.abc, make sure this domain exists and resolves to your iplb ip before ordering
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -843,7 +843,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * UDP frontends for this iplb
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/udp/frontend
 	 * @param defaultFarmId [required] Filter the value of defaultFarmId property (=)
 	 * @param zone [required] Filter the value of zone property (=)
@@ -862,7 +862,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Add a new UDP frontend on your iplb
-	 * 
+	 *
 	 * REST: POST /ipLoadbalancing/{serviceName}/udp/frontend
 	 * @param disabled [required] Disable your frontend. Set to 'false' if null
 	 * @param defaultFarmId [required] Default UDP Farm of your frontend
@@ -886,7 +886,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/udp/frontend/{frontendId}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param frontendId [required] Id of your frontend
@@ -901,7 +901,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /ipLoadbalancing/{serviceName}/udp/frontend/{frontendId}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -916,7 +916,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Delete an UDP frontend
-	 * 
+	 *
 	 * REST: DELETE /ipLoadbalancing/{serviceName}/udp/frontend/{frontendId}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param frontendId [required] Id of your frontend
@@ -930,7 +930,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * UDP Farm for this iplb
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/udp/farm
 	 * @param zone [required] Filter the value of zone property (=)
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -945,7 +945,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Add a new UDP Farm on your iplb
-	 * 
+	 *
 	 * REST: POST /ipLoadbalancing/{serviceName}/udp/farm
 	 * @param zone [required] Zone of your farm
 	 * @param port [required] Port attached to your farm ([1..65535]). Inherited from frontend if null
@@ -963,7 +963,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/udp/farm/{farmId}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param farmId [required] Id of your farm
@@ -978,7 +978,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /ipLoadbalancing/{serviceName}/udp/farm/{farmId}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -993,7 +993,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Delete an UDP Farm
-	 * 
+	 *
 	 * REST: DELETE /ipLoadbalancing/{serviceName}/udp/farm/{farmId}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param farmId [required] Id of your farm
@@ -1007,7 +1007,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * UDP Farm's Servers
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/udp/farm/{farmId}/server
 	 * @param status [required] Filter the value of status property (=)
 	 * @param address [required] Filter the value of address property (=)
@@ -1026,7 +1026,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Add a server to an UDP Farm
-	 * 
+	 *
 	 * REST: POST /ipLoadbalancing/{serviceName}/udp/farm/{farmId}/server
 	 * @param status [required] Status attached to your server
 	 * @param address [required] Address of your server
@@ -1048,7 +1048,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/udp/farm/{farmId}/server/{serverId}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param farmId [required] Id of your farm
@@ -1065,7 +1065,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /ipLoadbalancing/{serviceName}/udp/farm/{farmId}/server/{serverId}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -1082,7 +1082,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Delete a server from an UDP Farm
-	 * 
+	 *
 	 * REST: DELETE /ipLoadbalancing/{serviceName}/udp/farm/{farmId}/server/{serverId}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param farmId [required] Id of your farm
@@ -1098,7 +1098,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Servers for this iplb
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/server
 	 * @param status [required] Filter the value of status property (=)
 	 * @param zone [required] Filter the value of zone property (=)
@@ -1117,7 +1117,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Add a new server on your iplb
-	 * 
+	 *
 	 * REST: POST /ipLoadbalancing/{serviceName}/server
 	 * @param status [required] Status of your server
 	 * @param address [required] Address of your server
@@ -1135,7 +1135,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/server/{id}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param id [required] Id of your server
@@ -1150,7 +1150,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /ipLoadbalancing/{serviceName}/server/{id}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -1165,7 +1165,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Delete a server
-	 * 
+	 *
 	 * REST: DELETE /ipLoadbalancing/{serviceName}/server/{id}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param id [required] Id of your server
@@ -1179,7 +1179,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * List of servers you can attach to your iplb
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/allowedServers
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
@@ -1193,7 +1193,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Available farm types
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/availableFarmType
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
@@ -1206,7 +1206,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Ssl for this iplb
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/ssl
 	 * @param serial [required] Filter the value of serial property (like)
 	 * @param fingerprint [required] Filter the value of fingerprint property (like)
@@ -1225,7 +1225,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Add a new ssl certificate on your iplb
-	 * 
+	 *
 	 * REST: POST /ipLoadbalancing/{serviceName}/ssl
 	 * @param chain [required] Certificate chain
 	 * @param certificate [required] Certificate
@@ -1245,7 +1245,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/ssl/{id}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param id [required] Id of your ssl certificate
@@ -1260,7 +1260,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Delete a ssl certificate
-	 * 
+	 *
 	 * REST: DELETE /ipLoadbalancing/{serviceName}/ssl/{id}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param id [required] Id of your ssl certificate
@@ -1274,7 +1274,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * List of defined frontends, and whether they are HTTP, TCP or UDP
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/definedFrontends
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
@@ -1288,7 +1288,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Confirm termination of your service
-	 * 
+	 *
 	 * REST: POST /ipLoadbalancing/{serviceName}/confirmTermination
 	 * @param reason Reason of your termination request
 	 * @param commentary Commentary about your termination request
@@ -1308,7 +1308,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * TCP frontends for this iplb
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/tcp/frontend
 	 * @param defaultFarmId [required] Filter the value of defaultFarmId property (=)
 	 * @param zone [required] Filter the value of zone property (=)
@@ -1327,7 +1327,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Add a new TCP frontend on your iplb
-	 * 
+	 *
 	 * REST: POST /ipLoadbalancing/{serviceName}/tcp/frontend
 	 * @param defaultSslId [required] Default ssl served to your customer
 	 * @param disabled [required] Disable your frontend. Set to 'false' if null
@@ -1357,7 +1357,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/tcp/frontend/{frontendId}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param frontendId [required] Id of your frontend
@@ -1372,7 +1372,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /ipLoadbalancing/{serviceName}/tcp/frontend/{frontendId}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -1387,7 +1387,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Delete an TCP frontend
-	 * 
+	 *
 	 * REST: DELETE /ipLoadbalancing/{serviceName}/tcp/frontend/{frontendId}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param frontendId [required] Id of your frontend
@@ -1401,7 +1401,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * TCP Farm for this iplb
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/tcp/farm
 	 * @param zone [required] Filter the value of zone property (=)
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -1416,7 +1416,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Add a new TCP Farm on your iplb
-	 * 
+	 *
 	 * REST: POST /ipLoadbalancing/{serviceName}/tcp/farm
 	 * @param balance [required] Load balancing algorithm. 'roundrobin' if null
 	 * @param zone [required] Zone of your farm
@@ -1440,7 +1440,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/tcp/farm/{farmId}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param farmId [required] Id of your farm
@@ -1455,7 +1455,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /ipLoadbalancing/{serviceName}/tcp/farm/{farmId}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -1470,7 +1470,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Delete a TCP Farm
-	 * 
+	 *
 	 * REST: DELETE /ipLoadbalancing/{serviceName}/tcp/farm/{farmId}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param farmId [required] Id of your farm
@@ -1484,7 +1484,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * TCP Farm's Servers
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/tcp/farm/{farmId}/server
 	 * @param status [required] Filter the value of status property (=)
 	 * @param address [required] Filter the value of address property (=)
@@ -1503,7 +1503,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Add a server to a TCP Farm
-	 * 
+	 *
 	 * REST: POST /ipLoadbalancing/{serviceName}/tcp/farm/{farmId}/server
 	 * @param ssl [required] SSL ciphering. Probes will also be sent ciphered. Set to 'false' if null
 	 * @param status [required] Status attached to your server
@@ -1537,7 +1537,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/tcp/farm/{farmId}/server/{serverId}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param farmId [required] Id of your farm
@@ -1554,7 +1554,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /ipLoadbalancing/{serviceName}/tcp/farm/{farmId}/server/{serverId}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -1571,7 +1571,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Delete a server from a TCP Farm
-	 * 
+	 *
 	 * REST: DELETE /ipLoadbalancing/{serviceName}/tcp/farm/{farmId}/server/{serverId}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param farmId [required] Id of your farm
@@ -1587,7 +1587,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Task for this iplb
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/task
 	 * @param action [required] Filter the value of action property (=)
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -1602,7 +1602,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/task/{id}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param id [required] Id of the task
@@ -1617,7 +1617,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * List of defined farms, and whether they are HTTP, TCP or UDP
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/definedFarms
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
@@ -1631,7 +1631,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * Available frontend type
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/availableFrontendType
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
@@ -1644,7 +1644,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing
 	 */
 	public ArrayList<String> GET() throws IOException {
@@ -1655,7 +1655,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 
 	/**
 	 * List of zone available for an IP load balancing
-	 * 
+	 *
 	 * REST: GET /ipLoadbalancing/availableZones
 	 */
 	public ArrayList<String> availableZones_GET() throws IOException {

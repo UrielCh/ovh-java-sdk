@@ -30,7 +30,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /caas/containers/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal ID of your project
 	 */
@@ -43,7 +43,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /caas/containers/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal ID of your project
@@ -56,7 +56,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 
 	/**
 	 * Inspect the argument stack
-	 * 
+	 *
 	 * REST: GET /caas/containers/{serviceName}
 	 * @param serviceName [required] service name
 	 */
@@ -69,7 +69,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 
 	/**
 	 * Update the custom SSL certificate and private
-	 * 
+	 *
 	 * REST: PUT /caas/containers/{serviceName}/ssl
 	 * @param body [required] A custom SSL certificate associated to a Docker PaaS environment
 	 * @param serviceName [required] service name
@@ -83,7 +83,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 
 	/**
 	 * Delete the custom SSL certificate and private key associated to the stack
-	 * 
+	 *
 	 * REST: DELETE /caas/containers/{serviceName}/ssl
 	 * @param serviceName [required] service name
 	 */
@@ -96,7 +96,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 
 	/**
 	 * Inspect the custom SSL certificate and private
-	 * 
+	 *
 	 * REST: GET /caas/containers/{serviceName}/ssl
 	 * @param serviceName [required] service name
 	 */
@@ -109,7 +109,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 
 	/**
 	 * List the id of the registered slave instances
-	 * 
+	 *
 	 * REST: GET /caas/containers/{serviceName}/slaves
 	 * @param serviceName [required] service name
 	 */
@@ -123,7 +123,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 
 	/**
 	 * Inspect the argument user slave instance
-	 * 
+	 *
 	 * REST: GET /caas/containers/{serviceName}/slaves/{slaveId}
 	 * @param slaveId [required] slave id
 	 * @param serviceName [required] service name
@@ -138,7 +138,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 
 	/**
 	 * Associate the stack with some credentials to an authenticated registry.
-	 * 
+	 *
 	 * REST: POST /caas/containers/{serviceName}/registry/credentials
 	 * @param body [required] Credentials providing authentication to an external registry
 	 * @param serviceName [required] service name
@@ -152,7 +152,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 
 	/**
 	 * List the registry credentials associated to the stack.
-	 * 
+	 *
 	 * REST: GET /caas/containers/{serviceName}/registry/credentials
 	 * @param serviceName [required] service name
 	 */
@@ -165,7 +165,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 
 	/**
 	 * Update the registry credentials.
-	 * 
+	 *
 	 * REST: PUT /caas/containers/{serviceName}/registry/credentials/{credentialsId}
 	 * @param body [required] Credentials providing authentication to an external registry
 	 * @param credentialsId [required] credentials id
@@ -181,7 +181,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 
 	/**
 	 * Inspect the image registry credentials associated to the stack
-	 * 
+	 *
 	 * REST: GET /caas/containers/{serviceName}/registry/credentials/{credentialsId}
 	 * @param credentialsId [required] credentials id
 	 * @param serviceName [required] service name
@@ -196,7 +196,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 
 	/**
 	 * Delete the registry credentials.
-	 * 
+	 *
 	 * REST: DELETE /caas/containers/{serviceName}/registry/credentials/{credentialsId}
 	 * @param credentialsId [required] credentials id
 	 * @param serviceName [required] service name
@@ -210,7 +210,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 
 	/**
 	 * List the frameworks installed on the argument stack
-	 * 
+	 *
 	 * REST: GET /caas/containers/{serviceName}/frameworks
 	 * @param serviceName [required] service name
 	 */
@@ -223,7 +223,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 
 	/**
 	 * Inspect the stack framework
-	 * 
+	 *
 	 * REST: GET /caas/containers/{serviceName}/frameworks/{frameworkId}
 	 * @param frameworkId [required] framework id
 	 * @param serviceName [required] service name
@@ -238,7 +238,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 
 	/**
 	 * Update the framework access password
-	 * 
+	 *
 	 * REST: PUT /caas/containers/{serviceName}/frameworks/{frameworkId}/password
 	 * @param frameworkId [required] framework id
 	 * @param serviceName [required] service name
@@ -253,7 +253,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 
 	/**
 	 * List apps in the framework
-	 * 
+	 *
 	 * REST: GET /caas/containers/{serviceName}/frameworks/{frameworkId}/apps
 	 * @param frameworkId [required] framework id
 	 * @param serviceName [required] service name
@@ -268,7 +268,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 
 	/**
 	 * Launch a contact change procedure
-	 * 
+	 *
 	 * REST: POST /caas/containers/{serviceName}/changeContact
 	 * @param contactAdmin The contact to set as admin contact
 	 * @param contactTech The contact to set as tech contact
@@ -289,7 +289,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 
 	/**
 	 * List all the installable Mesos frameworks
-	 * 
+	 *
 	 * REST: GET /caas/containers/{serviceName}/availableFrameworks
 	 * @param serviceName [required] service name
 	 */
@@ -302,7 +302,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /caas/containers
 	 */
 	public ArrayList<String> GET() throws IOException {
@@ -313,7 +313,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 
 	/**
 	 * List the /cloud flavors available for the Docker PaaS slaves
-	 * 
+	 *
 	 * REST: GET /caas/containers/slaves/flavors
 	 */
 	public ArrayList<String> slaves_flavors_GET() throws IOException {
@@ -324,7 +324,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 
 	/**
 	 * Inspect the argument slave flavor
-	 * 
+	 *
 	 * REST: GET /caas/containers/slaves/flavors/{flavorId}
 	 * @param flavorId [required] flavor id
 	 */

@@ -68,7 +68,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -81,7 +81,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /xdsl/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your XDSL offer
@@ -94,7 +94,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -107,7 +107,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /xdsl/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your XDSL offer
@@ -120,7 +120,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * List the radius connection logs
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/radiusConnectionLogs
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -134,7 +134,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/incident
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -147,7 +147,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get various statistics about this access
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/statistics
 	 * @param period [required]
 	 * @param type [required]
@@ -165,7 +165,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Renew PPP password and send the PPP login informations to the e-mail of the nicAdmin
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/requestPPPLoginMail
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -177,7 +177,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * The lines of the access
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/lines
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -191,7 +191,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/lines/{number}
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param number [required] The number of the line
@@ -206,7 +206,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get various statistics about the line
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/lines/{number}/statistics
 	 * @param period [required]
 	 * @param type [required]
@@ -225,7 +225,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Update and get advanced diagnostic of the line
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/lines/{number}/diagnostic/run
 	 * @param actionsDone [required] Customer possible actions
 	 * @param faultType [required] [default=noSync] Line diagnostic type. Depends of problem
@@ -247,7 +247,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Cancel line diagnostic if possible
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/lines/{number}/diagnostic/cancel
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param number [required] The number of the line
@@ -261,7 +261,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/lines/{number}/dslamPort
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param number [required] The number of the line
@@ -276,7 +276,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * List all availables profiles for this port
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/lines/{number}/dslamPort/availableProfiles
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param number [required] The number of the line
@@ -292,7 +292,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Reset the port on the DSLAM
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/lines/{number}/dslamPort/reset
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param number [required] The number of the line
@@ -307,7 +307,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Change the profile of the port
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/lines/{number}/dslamPort/changeProfile
 	 * @param dslamProfileId [required] The id of the xdsl.DslamLineProfile
 	 * @param serviceName [required] The internal name of your XDSL offer
@@ -325,7 +325,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get the logs emitted by the DSLAM for this port
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/lines/{number}/dslamPort/logs
 	 * @param limit [required] [default=50]
 	 * @param serviceName [required] The internal name of your XDSL offer
@@ -343,7 +343,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Switch this access to total deconsolidation
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/requestTotalDeconsolidation
 	 * @param rio [required] A token to prove the ownership of the line number, needed to port the number
 	 * @param noPortability [required] Do not port the number
@@ -361,7 +361,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/modem
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -374,7 +374,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /xdsl/{serviceName}/modem
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your XDSL offer
@@ -387,7 +387,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Change the status of the Upnp on modem
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/modem/upnp
 	 * @param upnp [required] the new status of the upnp service
 	 * @param serviceName [required] The internal name of your XDSL offer
@@ -403,7 +403,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get the status of the Upnp on modem
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/modem/upnp
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -416,7 +416,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Change the status of the ftp service on modem
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/modem/ftp
 	 * @param ftp [required] the new status of the ftp service
 	 * @param serviceName [required] The internal name of your XDSL offer
@@ -432,7 +432,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get the status of ftp service on modem
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/modem/ftp
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -445,7 +445,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Change the status of the sip alg service on modem
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/modem/sipAlg
 	 * @param sipAlg [required] the new status of the sip alg service
 	 * @param serviceName [required] The internal name of your XDSL offer
@@ -461,7 +461,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get the status of sip alg service on modem
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/modem/sipAlg
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -474,7 +474,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Change the status of contentSharing on modem
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/modem/contentSharing
 	 * @param contentSharing [required] the new status of the contentSharing service
 	 * @param serviceName [required] The internal name of your XDSL offer
@@ -490,7 +490,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get the status of contentSharing on modem
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/modem/contentSharing
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -503,7 +503,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Reset the modem to its default configuration
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/modem/reset
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -516,7 +516,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Refresh the list of connected devices on the modem
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/modem/refreshConnectedDevices
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -529,7 +529,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Remove all the current port mapping rules and set the same config as the access given in parameters
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/modem/duplicatePortMappingConfig
 	 * @param accessName [required] The access name with the config you want to duplicate
 	 * @param serviceName [required] The internal name of your XDSL offer
@@ -544,7 +544,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * List of LANs on this modem
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/modem/lan
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -557,7 +557,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/modem/lan/{lanName}
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param lanName [required] Name of the LAN
@@ -572,7 +572,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /xdsl/{serviceName}/modem/lan/{lanName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your XDSL offer
@@ -587,7 +587,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * List of DHCP on this modem
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/modem/lan/{lanName}/dhcp
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param lanName [required] Name of the LAN
@@ -602,7 +602,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param lanName [required] Name of the LAN
@@ -619,7 +619,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your XDSL offer
@@ -636,7 +636,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * List of DHCP Static Address of this modem
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}/DHCPStaticAddresses
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param lanName [required] Name of the LAN
@@ -653,7 +653,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Add a DHCP static lease
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}/DHCPStaticAddresses
 	 * @param MACAddress [required] The MAC address of the device
 	 * @param IPAddress [required] The IP address of the device
@@ -677,7 +677,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}/DHCPStaticAddresses/{MACAddress}
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param lanName [required] Name of the LAN
@@ -696,7 +696,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}/DHCPStaticAddresses/{MACAddress}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your XDSL offer
@@ -715,7 +715,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Delete this port mapping
-	 * 
+	 *
 	 * REST: DELETE /xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}/DHCPStaticAddresses/{MACAddress}
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param lanName [required] Name of the LAN
@@ -734,7 +734,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Reboot the modem
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/modem/reboot
 	 * @param todoDate [required] Date when the reboot will start
 	 * @param serviceName [required] The internal name of your XDSL offer
@@ -750,7 +750,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * get general Modem information
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/modem/retrieveInfo
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -764,7 +764,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * List of PortMappings on this modem
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/modem/portMappings
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -777,7 +777,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Add a port mapping
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/modem/portMappings
 	 * @param protocol [required] Protocol of the port mapping (TCP / UDP)
 	 * @param name [required] Name of the port mapping entry
@@ -807,7 +807,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/modem/portMappings/{name}
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param name [required] Name of the port mapping entry
@@ -822,7 +822,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /xdsl/{serviceName}/modem/portMappings/{name}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your XDSL offer
@@ -837,7 +837,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Delete this port mapping
-	 * 
+	 *
 	 * REST: DELETE /xdsl/{serviceName}/modem/portMappings/{name}
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param name [required] Name of the port mapping entry
@@ -852,7 +852,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * List of devices connected on this modem
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/modem/connectedDevices
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -865,7 +865,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/modem/connectedDevices/{macAddress}
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param macAddress [required] MAC address of the device
@@ -880,7 +880,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Change the status of the Bloc IP on modem
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/modem/blocIp
 	 * @param status [required] the new status of the bloc ip service
 	 * @param serviceName [required] The internal name of your XDSL offer
@@ -896,7 +896,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get the status of the Bloc IP on modem
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/modem/blocIp
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -909,7 +909,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * List of WLANs on this modem
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/modem/wifi
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -922,7 +922,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/modem/wifi/{wifiName}
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param wifiName [required] Name of the Wifi
@@ -937,7 +937,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /xdsl/{serviceName}/modem/wifi/{wifiName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your XDSL offer
@@ -952,7 +952,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Change the status of callWaiting on modem
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/modem/callWaiting
 	 * @param callWaiting [required] the new status of the callWaiting service
 	 * @param serviceName [required] The internal name of your XDSL offer
@@ -968,7 +968,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get the status of callWaiting on modem
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/modem/callWaiting
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -981,7 +981,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Remove all the current port mapping rules
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/modem/resetPortMappingConfig
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -993,7 +993,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Launch a contact change procedure
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/changeContact
 	 * @param contactAdmin The contact to set as admin contact
 	 * @param contactTech The contact to set as tech contact
@@ -1014,7 +1014,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * List available LNS for this access
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/availableLns
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -1028,7 +1028,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * List of IPs addresses for this access
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/ips
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -1041,7 +1041,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Order an extra /29 range of IPv4 addresses
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/ips
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -1054,7 +1054,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/ips/{ip}
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param ip [required] The IP address
@@ -1069,7 +1069,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Stop renewing this extra IPv4 option
-	 * 
+	 *
 	 * REST: DELETE /xdsl/{serviceName}/ips/{ip}
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param ip [required] The IP address
@@ -1083,7 +1083,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get information about the ongoing resiliation
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/resiliationFollowup
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -1096,7 +1096,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Check if the access can migrate in PPP for the migration IPoE to PPP
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/canMigrateToPPP
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -1109,7 +1109,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Change the status of the IPv6 for this access
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/ipv6
 	 * @param enabled [required] Should the IPv6 be enabled ?
 	 * @param serviceName [required] The internal name of your XDSL offer
@@ -1125,7 +1125,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Migrate the access from IPoE protocol to PPP
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/migrateToPPP
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -1137,7 +1137,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Tasks scheduled for this access
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/tasks
 	 * @param function [required] Filter the value of function property (=)
 	 * @param status [required] Filter the value of status property (=)
@@ -1154,7 +1154,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/tasks/{id}
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param id [required] Id of the object
@@ -1169,7 +1169,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Delete the task in problem from the results
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/tasks/{id}/archive
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param id [required] Id of the object
@@ -1183,7 +1183,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Give the price to requestTotalDeconsolidation on the access
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/totalDeconsolidationTerms
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -1196,7 +1196,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get information about the ongoing resiliation
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/canCancelResiliation
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -1209,7 +1209,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Change the LNS of the access
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/changeLns
 	 * @param lnsName [required] The name from xdsl.Lns
 	 * @param serviceName [required] The internal name of your XDSL offer
@@ -1225,7 +1225,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Informations about the extra IP range during address move
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/addressMove/extraIpRange
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -1238,7 +1238,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Initiate the extra IP range migration
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/addressMove/extraIpRangeMove
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -1251,7 +1251,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get the status of the order
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/orderFollowup
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -1265,7 +1265,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/pendingAction
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -1278,7 +1278,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Cancel the ongoing resiliation
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/cancelResiliation
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -1290,7 +1290,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * List the notifications for this access
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/monitoringNotifications
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -1303,7 +1303,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Add a notification
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/monitoringNotifications
 	 * @param smsAccount [required] The SMS account which will be debited for each sent SMS, if the type is sms
 	 * @param email [required] The e-mail address, if type is mail
@@ -1331,7 +1331,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/monitoringNotifications/{id}
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param id [required] Id of the object
@@ -1346,7 +1346,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /xdsl/{serviceName}/monitoringNotifications/{id}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your XDSL offer
@@ -1361,7 +1361,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Delete this notification
-	 * 
+	 *
 	 * REST: DELETE /xdsl/{serviceName}/monitoringNotifications/{id}
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param id [required] Id of the object
@@ -1375,7 +1375,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Resiliate the access
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/resiliate
 	 * @param resiliationSurvey [required] Comment about resiliation reasons
 	 * @param resiliationDate [required] The desired resiliation date
@@ -1393,7 +1393,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/diagnostic
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -1406,7 +1406,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Run diagnostic on the access
-	 * 
+	 *
 	 * REST: POST /xdsl/{serviceName}/diagnostic
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -1419,7 +1419,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Return Merchandise Authorisation associated
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/rma
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
@@ -1432,7 +1432,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/rma/{id}
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param id [required] Return merchandise authorisation identifier
@@ -1447,7 +1447,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /xdsl/{serviceName}/rma/{id}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your XDSL offer
@@ -1462,7 +1462,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Cancel the rma
-	 * 
+	 *
 	 * REST: DELETE /xdsl/{serviceName}/rma/{id}
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param id [required] Return merchandise authorisation identifier
@@ -1476,7 +1476,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get resiliation terms
-	 * 
+	 *
 	 * REST: GET /xdsl/{serviceName}/resiliationTerms
 	 * @param resiliationDate [required] The desired resiliation date
 	 * @param serviceName [required] The internal name of your XDSL offer
@@ -1491,7 +1491,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /xdsl
 	 */
 	public ArrayList<String> GET() throws IOException {
@@ -1502,7 +1502,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get the streets from a city inseeCode and partial street name
-	 * 
+	 *
 	 * REST: GET /xdsl/eligibility/streets
 	 * @param partialName [required] The partial name to match against the name of the street
 	 * @param inseeCode [required] The inseeCode of the city
@@ -1518,7 +1518,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get the cities from a zipCode
-	 * 
+	 *
 	 * REST: GET /xdsl/eligibility/cities
 	 * @param zipCode [required] The zipCode of the city
 	 */
@@ -1532,7 +1532,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * List of incidents
-	 * 
+	 *
 	 * REST: GET /xdsl/incidents
 	 * @param creationDate [required] Filter the value of creationDate property (>)
 	 * @param endDate [required] Filter the value of endDate property (<)
@@ -1547,7 +1547,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /xdsl/incidents/{id}
 	 * @param id [required] ID of the incident
 	 */
@@ -1560,7 +1560,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /xdsl/spare
 	 */
 	public ArrayList<String> spare_GET() throws IOException {
@@ -1571,7 +1571,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /xdsl/spare/{spare}/serviceInfos
 	 * @param spare [required] The internal name of your spare
 	 */
@@ -1584,7 +1584,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /xdsl/spare/{spare}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param spare [required] The internal name of your spare
@@ -1597,7 +1597,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /xdsl/spare/{spare}
 	 * @param spare [required] The internal name of your spare
 	 */
@@ -1610,7 +1610,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Delete the spare as if it was not belonging to OVH anymore
-	 * 
+	 *
 	 * REST: DELETE /xdsl/spare/{spare}
 	 * @param spare [required] The internal name of your spare
 	 */
@@ -1622,7 +1622,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Replace the modem by its spare
-	 * 
+	 *
 	 * REST: POST /xdsl/spare/{spare}/replace
 	 * @param domain [required] The modem to replace by the spare
 	 * @param spare [required] The internal name of your spare
@@ -1637,7 +1637,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Return the list of brand compatible to be replaced
-	 * 
+	 *
 	 * REST: GET /xdsl/spare/{spare}/compatibleReplacement
 	 * @param spare [required] The internal name of your spare
 	 */
@@ -1650,7 +1650,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Return the broken equipment in instantRefund
-	 * 
+	 *
 	 * REST: POST /xdsl/spare/{spare}/returnMerchandise
 	 * @param spare [required] The internal name of your spare
 	 */
@@ -1662,7 +1662,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 
 	/**
 	 * Get all available spare brands
-	 * 
+	 *
 	 * REST: GET /xdsl/spare/brands
 	 */
 	public ArrayList<String> spare_brands_GET() throws IOException {

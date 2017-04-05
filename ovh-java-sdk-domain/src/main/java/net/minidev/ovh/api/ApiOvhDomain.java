@@ -53,7 +53,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /domain/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your domain
 	 */
@@ -66,7 +66,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /domain/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your domain
@@ -79,7 +79,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /domain/{serviceName}
 	 * @param serviceName [required] The internal name of your domain
 	 */
@@ -92,7 +92,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /domain/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your domain
@@ -105,7 +105,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Return authInfo code if the domain is unlocked
-	 * 
+	 *
 	 * REST: GET /domain/{serviceName}/authInfo
 	 * @param serviceName [required] The internal name of your domain
 	 */
@@ -118,7 +118,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Activate the DNS zone for this domain
-	 * 
+	 *
 	 * REST: POST /domain/{serviceName}/activateZone
 	 * @param minimized [required] Create only mandatory records
 	 * @param serviceName [required] The internal name of your domain
@@ -133,7 +133,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Domain pending tasks
-	 * 
+	 *
 	 * REST: GET /domain/{serviceName}/task
 	 * @param function [required] Filter the value of function property (like)
 	 * @param status [required] Filter the value of status property (=)
@@ -151,7 +151,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /domain/{serviceName}/task/{id}
 	 * @param serviceName [required] The internal name of your domain
 	 * @param id [required] Id of the object
@@ -166,7 +166,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Relaunch the task
-	 * 
+	 *
 	 * REST: POST /domain/{serviceName}/task/{id}/relaunch
 	 * @param serviceName [required] The internal name of your domain
 	 * @param id [required] Id of the object
@@ -180,7 +180,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Accelerate the task
-	 * 
+	 *
 	 * REST: POST /domain/{serviceName}/task/{id}/accelerate
 	 * @param serviceName [required] The internal name of your domain
 	 * @param id [required] Id of the object
@@ -194,7 +194,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Cancel the task
-	 * 
+	 *
 	 * REST: POST /domain/{serviceName}/task/{id}/cancel
 	 * @param serviceName [required] The internal name of your domain
 	 * @param id [required] Id of the object
@@ -208,7 +208,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * List of whois obfuscators
-	 * 
+	 *
 	 * REST: GET /domain/{serviceName}/owo
 	 * @param field [required] Filter the value of field property (=)
 	 * @param serviceName [required] The internal name of your domain
@@ -224,7 +224,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Add whois obfuscators
-	 * 
+	 *
 	 * REST: POST /domain/{serviceName}/owo
 	 * @param fields [required] Fields to obfuscate
 	 * @param serviceName [required] The internal name of your domain
@@ -240,7 +240,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /domain/{serviceName}/owo/{field}
 	 * @param serviceName [required] The internal name of your domain
 	 * @param field [required] Obfuscated field
@@ -255,7 +255,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Delete a whois obfuscator
-	 * 
+	 *
 	 * REST: DELETE /domain/{serviceName}/owo/{field}
 	 * @param serviceName [required] The internal name of your domain
 	 * @param field [required] Obfuscated field
@@ -269,7 +269,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Launch a contact change procedure
-	 * 
+	 *
 	 * REST: POST /domain/{serviceName}/changeContact
 	 * @param contactAdmin The contact to set as admin contact
 	 * @param contactTech The contact to set as tech contact
@@ -289,7 +289,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Schedule an outgoing transfer task for this domain (.uk only)
-	 * 
+	 *
 	 * REST: POST /domain/{serviceName}/ukOutgoingTransfer
 	 * @param tag [required] Tag of the new registrar
 	 * @param serviceName [required] The internal name of your domain
@@ -305,7 +305,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * List of glue record
-	 * 
+	 *
 	 * REST: GET /domain/{serviceName}/glueRecord
 	 * @param host [required] Filter the value of host property (like)
 	 * @param serviceName [required] The internal name of your domain
@@ -321,7 +321,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Create a glue record
-	 * 
+	 *
 	 * REST: POST /domain/{serviceName}/glueRecord
 	 * @param ips [required] Ips of the glue record
 	 * @param host [required] Host of the glue record
@@ -339,7 +339,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /domain/{serviceName}/glueRecord/{host}
 	 * @param serviceName [required] The internal name of your domain
 	 * @param host [required] Host of the glue record
@@ -354,7 +354,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Delete the glue record
-	 * 
+	 *
 	 * REST: DELETE /domain/{serviceName}/glueRecord/{host}
 	 * @param serviceName [required] The internal name of your domain
 	 * @param host [required] Host of the glue record
@@ -369,7 +369,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Update the glue record
-	 * 
+	 *
 	 * REST: POST /domain/{serviceName}/glueRecord/{host}/update
 	 * @param ips [required] Ips of the glue record
 	 * @param serviceName [required] The internal name of your domain
@@ -387,7 +387,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * List of domain's DS Records
-	 * 
+	 *
 	 * REST: GET /domain/{serviceName}/dsRecord
 	 * @param flags [required] Filter the value of flags property (=)
 	 * @param status [required] Filter the value of status property (=)
@@ -404,7 +404,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Update DS records
-	 * 
+	 *
 	 * REST: POST /domain/{serviceName}/dsRecord
 	 * @param keys [required] New Keys
 	 * @param serviceName [required] The internal name of your domain
@@ -420,7 +420,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /domain/{serviceName}/dsRecord/{id}
 	 * @param serviceName [required] The internal name of your domain
 	 * @param id [required] Id of the object
@@ -435,7 +435,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Update DNS servers
-	 * 
+	 *
 	 * REST: POST /domain/{serviceName}/nameServers/update
 	 * @param nameServers [required] New name servers
 	 * @param serviceName [required] The internal name of your domain
@@ -451,7 +451,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * List of current name servers
-	 * 
+	 *
 	 * REST: GET /domain/{serviceName}/nameServer
 	 * @param serviceName [required] The internal name of your domain
 	 */
@@ -464,7 +464,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Add new name server
-	 * 
+	 *
 	 * REST: POST /domain/{serviceName}/nameServer
 	 * @param nameServer [required] New name server
 	 * @param serviceName [required] The internal name of your domain
@@ -480,7 +480,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /domain/{serviceName}/nameServer/{id}
 	 * @param serviceName [required] The internal name of your domain
 	 * @param id [required] Id of the object
@@ -495,7 +495,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Delete a name server
-	 * 
+	 *
 	 * REST: DELETE /domain/{serviceName}/nameServer/{id}
 	 * @param serviceName [required] The internal name of your domain
 	 * @param id [required] Id of the object
@@ -510,7 +510,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Get name server status
-	 * 
+	 *
 	 * REST: POST /domain/{serviceName}/nameServer/{id}/status
 	 * @param serviceName [required] The internal name of your domain
 	 * @param id [required] Id of the object
@@ -525,7 +525,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /domain
 	 * @param whoisOwner Filter the value of whoisOwner property (=)
 	 */
@@ -538,7 +538,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /domain/zone
 	 */
 	public ArrayList<String> zone_GET() throws IOException {
@@ -549,7 +549,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /domain/zone/{zoneName}/serviceInfos
 	 * @param zoneName [required] The internal name of your zone
 	 */
@@ -562,7 +562,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /domain/zone/{zoneName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param zoneName [required] The internal name of your zone
@@ -575,7 +575,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /domain/zone/{zoneName}
 	 * @param zoneName [required] The internal name of your zone
 	 */
@@ -588,7 +588,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Zone status
-	 * 
+	 *
 	 * REST: GET /domain/zone/{zoneName}/status
 	 * @param zoneName [required] The internal name of your zone
 	 */
@@ -601,7 +601,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Terminate your service
-	 * 
+	 *
 	 * REST: POST /domain/zone/{zoneName}/terminate
 	 * @param zoneName [required] The internal name of your zone
 	 */
@@ -614,7 +614,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Redirections
-	 * 
+	 *
 	 * REST: GET /domain/zone/{zoneName}/redirection
 	 * @param subDomain [required] Filter the value of subDomain property (like)
 	 * @param zoneName [required] The internal name of your zone
@@ -629,7 +629,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Create a new redirection (Don't forget to refresh the zone)
-	 * 
+	 *
 	 * REST: POST /domain/zone/{zoneName}/redirection
 	 * @param keywords [required] Keywords for invisible redirection
 	 * @param target [required] Target of the redirection
@@ -655,7 +655,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /domain/zone/{zoneName}/redirection/{id}
 	 * @param zoneName [required] The internal name of your zone
 	 * @param id [required] Id of the object
@@ -670,7 +670,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /domain/zone/{zoneName}/redirection/{id}
 	 * @param body [required] New object properties
 	 * @param zoneName [required] The internal name of your zone
@@ -685,7 +685,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Delete a redirection (Don't forget to refresh the zone)
-	 * 
+	 *
 	 * REST: DELETE /domain/zone/{zoneName}/redirection/{id}
 	 * @param zoneName [required] The internal name of your zone
 	 * @param id [required] Id of the object
@@ -699,7 +699,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Launch a contact change procedure
-	 * 
+	 *
 	 * REST: POST /domain/zone/{zoneName}/changeContact
 	 * @param contactAdmin The contact to set as admin contact
 	 * @param contactTech The contact to set as tech contact
@@ -719,7 +719,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Records of the zone
-	 * 
+	 *
 	 * REST: GET /domain/zone/{zoneName}/record
 	 * @param fieldType [required] Filter the value of fieldType property (like)
 	 * @param subDomain [required] Filter the value of subDomain property (like)
@@ -736,7 +736,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Create a new DNS record (Don't forget to refresh the zone)
-	 * 
+	 *
 	 * REST: POST /domain/zone/{zoneName}/record
 	 * @param target [required] Resource record target
 	 * @param ttl [required] Resource record ttl
@@ -758,7 +758,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /domain/zone/{zoneName}/record/{id}
 	 * @param zoneName [required] The internal name of your zone
 	 * @param id [required] Id of the object
@@ -773,7 +773,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /domain/zone/{zoneName}/record/{id}
 	 * @param body [required] New object properties
 	 * @param zoneName [required] The internal name of your zone
@@ -788,7 +788,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Delete a DNS record (Don't forget to refresh the zone)
-	 * 
+	 *
 	 * REST: DELETE /domain/zone/{zoneName}/record/{id}
 	 * @param zoneName [required] The internal name of your zone
 	 * @param id [required] Id of the object
@@ -802,7 +802,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Reset the DNS zone
-	 * 
+	 *
 	 * REST: POST /domain/zone/{zoneName}/reset
 	 * @param DnsRecords [required] Records that will be set after reset
 	 * @param minimized [required] Create only mandatory records
@@ -819,7 +819,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Apply zone modification on DNS servers
-	 * 
+	 *
 	 * REST: POST /domain/zone/{zoneName}/refresh
 	 * @param zoneName [required] The internal name of your zone
 	 */
@@ -831,7 +831,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Export zone
-	 * 
+	 *
 	 * REST: GET /domain/zone/{zoneName}/export
 	 * @param zoneName [required] The internal name of your zone
 	 */
@@ -844,7 +844,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /domain/zone/{zoneName}/soa
 	 * @param zoneName [required] The internal name of your zone
 	 */
@@ -857,7 +857,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /domain/zone/{zoneName}/soa
 	 * @param body [required] New object properties
 	 * @param zoneName [required] The internal name of your zone
@@ -870,7 +870,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Domain pending tasks
-	 * 
+	 *
 	 * REST: GET /domain/zone/{zoneName}/task
 	 * @param function [required] Filter the value of function property (like)
 	 * @param status [required] Filter the value of status property (=)
@@ -887,7 +887,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /domain/zone/{zoneName}/task/{id}
 	 * @param zoneName [required] The internal name of your zone
 	 * @param id [required] Id of the object
@@ -902,7 +902,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Relaunch the task
-	 * 
+	 *
 	 * REST: POST /domain/zone/{zoneName}/task/{id}/relaunch
 	 * @param zoneName [required] The internal name of your zone
 	 * @param id [required] Id of the object
@@ -916,7 +916,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Accelerate the task
-	 * 
+	 *
 	 * REST: POST /domain/zone/{zoneName}/task/{id}/accelerate
 	 * @param zoneName [required] The internal name of your zone
 	 * @param id [required] Id of the object
@@ -930,7 +930,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Cancel the task
-	 * 
+	 *
 	 * REST: POST /domain/zone/{zoneName}/task/{id}/cancel
 	 * @param zoneName [required] The internal name of your zone
 	 * @param id [required] Id of the object
@@ -944,7 +944,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Confirm termination of your service
-	 * 
+	 *
 	 * REST: POST /domain/zone/{zoneName}/confirmTermination
 	 * @param reason Reason of your termination request
 	 * @param commentary Commentary about your termination request
@@ -964,7 +964,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Import zone
-	 * 
+	 *
 	 * REST: POST /domain/zone/{zoneName}/import
 	 * @param zoneFile [required] Zone file that will be imported
 	 * @param zoneName [required] The internal name of your zone
@@ -980,7 +980,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * DynHost' records
-	 * 
+	 *
 	 * REST: GET /domain/zone/{zoneName}/dynHost/record
 	 * @param subDomain [required] Filter the value of subDomain property (like)
 	 * @param zoneName [required] The internal name of your zone
@@ -995,7 +995,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Create a new DynHost record (Don't forget to refresh the zone)
-	 * 
+	 *
 	 * REST: POST /domain/zone/{zoneName}/dynHost/record
 	 * @param ip [required] Ip address of the DynHost record
 	 * @param subDomain [required] Subdomain of the DynHost record
@@ -1013,7 +1013,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /domain/zone/{zoneName}/dynHost/record/{id}
 	 * @param zoneName [required] The internal name of your zone
 	 * @param id [required] Id of the object
@@ -1028,7 +1028,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /domain/zone/{zoneName}/dynHost/record/{id}
 	 * @param body [required] New object properties
 	 * @param zoneName [required] The internal name of your zone
@@ -1043,7 +1043,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Delete a DynHost record (Don't forget to refresh the zone)
-	 * 
+	 *
 	 * REST: DELETE /domain/zone/{zoneName}/dynHost/record/{id}
 	 * @param zoneName [required] The internal name of your zone
 	 * @param id [required] Id of the object
@@ -1057,7 +1057,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * DynHost' logins
-	 * 
+	 *
 	 * REST: GET /domain/zone/{zoneName}/dynHost/login
 	 * @param subDomain [required] Filter the value of subDomain property (like)
 	 * @param login [required] Filter the value of login property (like)
@@ -1074,7 +1074,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Create a new DynHost login
-	 * 
+	 *
 	 * REST: POST /domain/zone/{zoneName}/dynHost/login
 	 * @param password [required] Password of the login
 	 * @param loginSuffix [required] Suffix that will be concatenated to the zoneName to create the login
@@ -1094,7 +1094,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /domain/zone/{zoneName}/dynHost/login/{login}
 	 * @param zoneName [required] The internal name of your zone
 	 * @param login [required] Login
@@ -1109,7 +1109,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /domain/zone/{zoneName}/dynHost/login/{login}
 	 * @param body [required] New object properties
 	 * @param zoneName [required] The internal name of your zone
@@ -1124,7 +1124,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Delete a DynHost login
-	 * 
+	 *
 	 * REST: DELETE /domain/zone/{zoneName}/dynHost/login/{login}
 	 * @param zoneName [required] The internal name of your zone
 	 * @param login [required] Login
@@ -1138,7 +1138,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Change password of the DynHost login
-	 * 
+	 *
 	 * REST: POST /domain/zone/{zoneName}/dynHost/login/{login}/changePassword
 	 * @param password [required] New password of the DynHost login
 	 * @param zoneName [required] The internal name of your zone
@@ -1155,7 +1155,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /domain/zone/{zoneName}/dnssec
 	 * @param zoneName [required] The internal name of your zone
 	 */
@@ -1168,7 +1168,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Enable Dnssec
-	 * 
+	 *
 	 * REST: POST /domain/zone/{zoneName}/dnssec
 	 * @param zoneName [required] The internal name of your zone
 	 */
@@ -1180,7 +1180,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Disable Dnssec
-	 * 
+	 *
 	 * REST: DELETE /domain/zone/{zoneName}/dnssec
 	 * @param zoneName [required] The internal name of your zone
 	 */
@@ -1192,7 +1192,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * List all the extensions for a specific country
-	 * 
+	 *
 	 * REST: GET /domain/data/extension
 	 * @param country [required] Country targeted
 	 */
@@ -1205,7 +1205,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Retrieve all association information according to Afnic
-	 * 
+	 *
 	 * REST: GET /domain/data/afnicAssociationInformation
 	 */
 	public ArrayList<Long> data_afnicAssociationInformation_GET() throws IOException {
@@ -1216,7 +1216,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Post a new association information according to Afnic
-	 * 
+	 *
 	 * REST: POST /domain/data/afnicAssociationInformation
 	 * @param declarationDate [required] Date of the declaration of the association
 	 * @param publicationDate [required] Date of the publication of the declaration of the association
@@ -1238,7 +1238,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Retrieve an association information according to Afnic
-	 * 
+	 *
 	 * REST: GET /domain/data/afnicAssociationInformation/{associationInformationId}
 	 * @param associationInformationId [required] Association Information ID
 	 */
@@ -1251,7 +1251,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Retrieve information about a SMD file
-	 * 
+	 *
 	 * REST: GET /domain/data/smd/{smdId}
 	 * @param smdId [required] SMD ID
 	 */
@@ -1264,7 +1264,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Modify an existing SMD file
-	 * 
+	 *
 	 * REST: PUT /domain/data/smd/{smdId}
 	 * @param smdId [required] SMD ID
 	 * @param data [required] SMD content file
@@ -1280,7 +1280,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Delete a SMD file
-	 * 
+	 *
 	 * REST: DELETE /domain/data/smd/{smdId}
 	 * @param smdId [required] SMD ID
 	 */
@@ -1292,7 +1292,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * List all your SMD files
-	 * 
+	 *
 	 * REST: GET /domain/data/smd
 	 * @param protectedLabels_label [required] Filter the value of protectedLabels.label property (=)
 	 */
@@ -1305,7 +1305,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Post a new SMD file
-	 * 
+	 *
 	 * REST: POST /domain/data/smd
 	 * @param data [required] SMD content file
 	 */
@@ -1319,7 +1319,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Retrieve all your Pro Contact
-	 * 
+	 *
 	 * REST: GET /domain/data/proContact
 	 */
 	public ArrayList<Long> data_proContact_GET() throws IOException {
@@ -1330,7 +1330,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Post new information about .pro contact information
-	 * 
+	 *
 	 * REST: POST /domain/data/proContact
 	 * @param jobDescription [required] Description of your job
 	 * @param authority [required] Authority that certify your profesional status
@@ -1352,7 +1352,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Retrieve information about a Pro Contact
-	 * 
+	 *
 	 * REST: GET /domain/data/proContact/{proContactId}
 	 * @param proContactId [required] ProContact ID
 	 */
@@ -1365,7 +1365,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Retrieve claim notices associated to a domain
-	 * 
+	 *
 	 * REST: GET /domain/data/claimNotice
 	 * @param domain [required] Domain name
 	 */
@@ -1378,7 +1378,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Retrieve all corporation trademark information according to Afnic
-	 * 
+	 *
 	 * REST: GET /domain/data/afnicCorporationTrademarkInformation
 	 */
 	public ArrayList<Long> data_afnicCorporationTrademarkInformation_GET() throws IOException {
@@ -1389,7 +1389,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Post a new corporation trademark information according to Afnic
-	 * 
+	 *
 	 * REST: POST /domain/data/afnicCorporationTrademarkInformation
 	 * @param inpiNumber [required] Number of the Inpi declaration
 	 * @param inpiTrademarkOwner [required] Owner of the trademark
@@ -1407,7 +1407,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * Retrieve a corporation trademark information according to Afnic
-	 * 
+	 *
 	 * REST: GET /domain/data/afnicCorporationTrademarkInformation/{afnicCorporationTrademarkId}
 	 * @param afnicCorporationTrademarkId [required] Corporation Inpi Information ID
 	 */
@@ -1420,7 +1420,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 
 	/**
 	 * List all the rules for a specific cartId/itemId
-	 * 
+	 *
 	 * REST: GET /domain/rules
 	 * @param cartId [required] Cart ID concerned for the rules
 	 * @param itemId [required] Item ID concerned for the rules

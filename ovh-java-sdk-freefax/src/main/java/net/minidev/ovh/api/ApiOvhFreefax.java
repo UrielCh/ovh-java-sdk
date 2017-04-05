@@ -24,7 +24,7 @@ public class ApiOvhFreefax extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /freefax/{serviceName}/serviceInfos
 	 * @param serviceName [required] Freefax number
 	 */
@@ -37,7 +37,7 @@ public class ApiOvhFreefax extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /freefax/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] Freefax number
@@ -50,7 +50,7 @@ public class ApiOvhFreefax extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /freefax/{serviceName}
 	 * @param serviceName [required] Freefax number
 	 */
@@ -63,7 +63,7 @@ public class ApiOvhFreefax extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /freefax/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] Freefax number
@@ -76,7 +76,7 @@ public class ApiOvhFreefax extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /freefax/{serviceName}/voicemail
 	 * @param serviceName [required] Freefax number
 	 */
@@ -89,7 +89,7 @@ public class ApiOvhFreefax extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /freefax/{serviceName}/voicemail
 	 * @param body [required] New object properties
 	 * @param serviceName [required] Freefax number
@@ -102,7 +102,7 @@ public class ApiOvhFreefax extends ApiOvhBase {
 
 	/**
 	 * Disable/Enable voicemail. Available only if the line has fax capabilities
-	 * 
+	 *
 	 * REST: POST /freefax/{serviceName}/voicemail/changeRouting
 	 * @param routing [required] Activate or Desactivate voicemail on the line
 	 * @param serviceName [required] Freefax number
@@ -117,7 +117,7 @@ public class ApiOvhFreefax extends ApiOvhBase {
 
 	/**
 	 * Change the voicemail password. It must be 4 digit
-	 * 
+	 *
 	 * REST: POST /freefax/{serviceName}/voicemail/changePassword
 	 * @param password [required] The password
 	 * @param serviceName [required] Freefax number
@@ -132,7 +132,7 @@ public class ApiOvhFreefax extends ApiOvhBase {
 
 	/**
 	 * Get the status of the voicemail. Available only if the line has fax capabilities
-	 * 
+	 *
 	 * REST: GET /freefax/{serviceName}/voicemail/routing
 	 * @param serviceName [required] Freefax number
 	 */
@@ -145,7 +145,7 @@ public class ApiOvhFreefax extends ApiOvhBase {
 
 	/**
 	 * Generates a new password for your fax account
-	 * 
+	 *
 	 * REST: POST /freefax/{serviceName}/changePassword
 	 * @param serviceName [required] Freefax number
 	 */
@@ -158,7 +158,7 @@ public class ApiOvhFreefax extends ApiOvhBase {
 
 	/**
 	 * Main service attached to freefax
-	 * 
+	 *
 	 * REST: GET /freefax/{serviceName}/mainService
 	 * @param serviceName [required] Freefax number
 	 */
@@ -171,7 +171,7 @@ public class ApiOvhFreefax extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /freefax
 	 */
 	public ArrayList<String> GET() throws IOException {
@@ -183,7 +183,7 @@ public class ApiOvhFreefax extends ApiOvhBase {
 
 	/**
 	 * Get the credit balance and the remaining pages available for all our freefax
-	 * 
+	 *
 	 * REST: GET /freefax/credits
 	 */
 	public OvhBalanceInformations credits_GET() throws IOException {

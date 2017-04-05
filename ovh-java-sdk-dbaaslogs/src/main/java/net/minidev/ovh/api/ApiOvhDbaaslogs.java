@@ -48,7 +48,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal ID of your Logs pack
 	 */
@@ -61,7 +61,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /dbaas/logs/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal ID of your Logs pack
@@ -74,7 +74,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return the service object of connected identity.
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}
 	 * @param serviceName [required]
 	 */
@@ -87,7 +87,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Update the service contact
-	 * 
+	 *
 	 * REST: PUT /dbaas/logs/{serviceName}
 	 * @param serviceName [required]
 	 * @param contactId [required]
@@ -103,7 +103,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return the list of registered input attached to the logged user
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/input
 	 * @param serviceName [required]
 	 */
@@ -117,7 +117,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Register a new input object
-	 * 
+	 *
 	 * REST: POST /dbaas/logs/{serviceName}/input
 	 * @param serviceName [required]
 	 * @param engineId [required]
@@ -145,7 +145,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Schedule the restart of specified input
-	 * 
+	 *
 	 * REST: POST /dbaas/logs/{serviceName}/input/{inputId}/restart
 	 * @param serviceName [required]
 	 * @param inputId [required]
@@ -160,7 +160,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Remove the specified input object
-	 * 
+	 *
 	 * REST: DELETE /dbaas/logs/{serviceName}/input/{inputId}
 	 * @param serviceName [required]
 	 * @param inputId [required]
@@ -175,7 +175,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return details of specified input
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/input/{inputId}
 	 * @param serviceName [required]
 	 * @param inputId [required]
@@ -190,7 +190,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Update information of specified input object
-	 * 
+	 *
 	 * REST: PUT /dbaas/logs/{serviceName}/input/{inputId}
 	 * @param serviceName [required]
 	 * @param inputId [required]
@@ -220,7 +220,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Schedule the end of specified input
-	 * 
+	 *
 	 * REST: POST /dbaas/logs/{serviceName}/input/{inputId}/end
 	 * @param serviceName [required]
 	 * @param inputId [required]
@@ -235,7 +235,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * List all network UUID allowed to join input
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/input/{inputId}/allowedNetwork
 	 * @param serviceName [required]
 	 * @param inputId [required]
@@ -250,7 +250,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Allow an ip to join input
-	 * 
+	 *
 	 * REST: POST /dbaas/logs/{serviceName}/input/{inputId}/allowedNetwork
 	 * @param serviceName [required]
 	 * @param inputId [required]
@@ -268,7 +268,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Remove the specified IP from the list of allowed networks
-	 * 
+	 *
 	 * REST: DELETE /dbaas/logs/{serviceName}/input/{inputId}/allowedNetwork/{allowedNetworkId}
 	 * @param serviceName [required]
 	 * @param inputId [required]
@@ -285,7 +285,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * List all network UUID allowed to join input
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/input/{inputId}/allowedNetwork/{allowedNetworkId}
 	 * @param serviceName [required]
 	 * @param inputId [required]
@@ -302,7 +302,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return the list of urls of specified input
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/input/{inputId}/url
 	 * @param serviceName [required]
 	 * @param inputId [required]
@@ -318,7 +318,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return actions of specified input
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/input/{inputId}/action
 	 * @param serviceName [required]
 	 * @param inputId [required]
@@ -334,7 +334,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return the flowgger configuration
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/input/{inputId}/configuration/flowgger
 	 * @param serviceName [required]
 	 * @param inputId [required]
@@ -349,7 +349,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Update the flowgger configuration
-	 * 
+	 *
 	 * REST: PUT /dbaas/logs/{serviceName}/input/{inputId}/configuration/flowgger
 	 * @param serviceName [required]
 	 * @param inputId [required]
@@ -375,7 +375,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return the logstash configuration
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/input/{inputId}/configuration/logstash
 	 * @param serviceName [required]
 	 * @param inputId [required]
@@ -390,7 +390,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Update the logstash configuration
-	 * 
+	 *
 	 * REST: PUT /dbaas/logs/{serviceName}/input/{inputId}/configuration/logstash
 	 * @param serviceName [required]
 	 * @param inputId [required]
@@ -412,7 +412,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Validate configuration of specified input
-	 * 
+	 *
 	 * REST: POST /dbaas/logs/{serviceName}/input/{inputId}/configtest
 	 * @param serviceName [required]
 	 * @param inputId [required]
@@ -427,7 +427,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return the config test operation result
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/input/{inputId}/configtest/result
 	 * @param serviceName [required]
 	 * @param inputId [required]
@@ -442,7 +442,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Schedule the start of specified input
-	 * 
+	 *
 	 * REST: POST /dbaas/logs/{serviceName}/input/{inputId}/start
 	 * @param serviceName [required]
 	 * @param inputId [required]
@@ -457,7 +457,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return the subscribed offer
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/offer
 	 * @param serviceName [required]
 	 */
@@ -470,7 +470,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Remove specified elasticsearch index
-	 * 
+	 *
 	 * REST: DELETE /dbaas/logs/{serviceName}/output/elasticsearch/index/{indexId}
 	 * @param serviceName [required]
 	 * @param indexId [required]
@@ -485,7 +485,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return specified elasticsearch index
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/elasticsearch/index/{indexId}
 	 * @param serviceName [required]
 	 * @param indexId [required]
@@ -500,7 +500,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Update specified elasticsearch index
-	 * 
+	 *
 	 * REST: PUT /dbaas/logs/{serviceName}/output/elasticsearch/index/{indexId}
 	 * @param serviceName [required]
 	 * @param indexId [required]
@@ -520,7 +520,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return the list of urls of specified graylog stream
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/elasticsearch/index/{indexId}/url
 	 * @param serviceName [required]
 	 * @param indexId [required]
@@ -535,7 +535,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return the list of elasticsearch indexes
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/elasticsearch/index
 	 * @param serviceName [required]
 	 */
@@ -548,7 +548,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Register a new elasticsearch index
-	 * 
+	 *
 	 * REST: POST /dbaas/logs/{serviceName}/output/elasticsearch/index
 	 * @param serviceName [required]
 	 * @param description [required]
@@ -568,7 +568,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return the list of alias for connected user
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/elasticsearch/alias
 	 * @param serviceName [required]
 	 */
@@ -581,7 +581,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Register a new elasticsearch alias
-	 * 
+	 *
 	 * REST: POST /dbaas/logs/{serviceName}/output/elasticsearch/alias
 	 * @param serviceName [required]
 	 * @param description [required]
@@ -601,7 +601,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Remove specified elasticsearch alias
-	 * 
+	 *
 	 * REST: DELETE /dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}
 	 * @param serviceName [required]
 	 * @param aliasId [required]
@@ -616,7 +616,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return specified elasticsearch alias
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}
 	 * @param serviceName [required]
 	 * @param aliasId [required]
@@ -631,7 +631,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Update specified elasticsearch alias
-	 * 
+	 *
 	 * REST: PUT /dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}
 	 * @param serviceName [required]
 	 * @param aliasId [required]
@@ -651,7 +651,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return the list of urls of specified graylog stream
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}/url
 	 * @param serviceName [required]
 	 * @param aliasId [required]
@@ -666,7 +666,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return the list of graylog streams attached to specified         elasticsearch alias
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}/stream
 	 * @param serviceName [required]
 	 * @param aliasId [required]
@@ -681,7 +681,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Attach a graylog stream to specified elasticsearch alias
-	 * 
+	 *
 	 * REST: POST /dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}/stream
 	 * @param serviceName [required]
 	 * @param aliasId [required]
@@ -699,7 +699,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Detach a graylog stream from specified elasticsearch alias
-	 * 
+	 *
 	 * REST: DELETE /dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}/stream/{streamId}
 	 * @param serviceName [required]
 	 * @param aliasId [required]
@@ -716,7 +716,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return the list of graylog streams
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/stream
 	 * @param serviceName [required]
 	 */
@@ -729,7 +729,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Register a new graylog stream
-	 * 
+	 *
 	 * REST: POST /dbaas/logs/{serviceName}/output/graylog/stream
 	 * @param serviceName [required]
 	 * @param description [required]
@@ -749,7 +749,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return the list of configured alerts of specified graylog stream
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/alert
 	 * @param serviceName [required]
 	 * @param streamId [required]
@@ -764,7 +764,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Register a new alert on specified graylog stream
-	 * 
+	 *
 	 * REST: POST /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/alert
 	 * @param serviceName [required]
 	 * @param streamId [required]
@@ -800,7 +800,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Remove alert from specified graylog stream
-	 * 
+	 *
 	 * REST: DELETE /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/alert/{alertId}
 	 * @param serviceName [required]
 	 * @param streamId [required]
@@ -817,7 +817,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return details of specified graylog stream alert
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/alert/{alertId}
 	 * @param serviceName [required]
 	 * @param streamId [required]
@@ -834,7 +834,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Update alert information of specified graylog stream
-	 * 
+	 *
 	 * REST: PUT /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/alert/{alertId}
 	 * @param serviceName [required]
 	 * @param streamId [required]
@@ -872,7 +872,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Remove specified graylog stream
-	 * 
+	 *
 	 * REST: DELETE /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}
 	 * @param serviceName [required]
 	 * @param streamId [required]
@@ -887,7 +887,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return details of specified graylog stream
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}
 	 * @param serviceName [required]
 	 * @param streamId [required]
@@ -902,7 +902,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Update information of specified graylog stream
-	 * 
+	 *
 	 * REST: PUT /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}
 	 * @param serviceName [required]
 	 * @param streamId [required]
@@ -924,7 +924,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return the list of urls of specified graylog stream
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/url
 	 * @param serviceName [required]
 	 * @param streamId [required]
@@ -939,7 +939,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return the list of rules of specified graylog stream
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/rule
 	 * @param serviceName [required]
 	 * @param streamId [required]
@@ -954,7 +954,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return details of specified graylog stream rule
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/rule/{ruleId}
 	 * @param serviceName [required]
 	 * @param streamId [required]
@@ -972,7 +972,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return the list graylog dashboards
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/dashboard
 	 * @param serviceName [required]
 	 */
@@ -985,7 +985,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Register a new graylog dashboard
-	 * 
+	 *
 	 * REST: POST /dbaas/logs/{serviceName}/output/graylog/dashboard
 	 * @param serviceName [required]
 	 * @param description [required]
@@ -1005,7 +1005,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Remove specified graylog dashboard
-	 * 
+	 *
 	 * REST: DELETE /dbaas/logs/{serviceName}/output/graylog/dashboard/{dashboardId}
 	 * @param serviceName [required]
 	 * @param dashboardId [required]
@@ -1020,7 +1020,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return details of specified graylog dashboard
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/dashboard/{dashboardId}
 	 * @param serviceName [required]
 	 * @param dashboardId [required]
@@ -1035,7 +1035,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Update information of specified graylog dashboard
-	 * 
+	 *
 	 * REST: PUT /dbaas/logs/{serviceName}/output/graylog/dashboard/{dashboardId}
 	 * @param serviceName [required]
 	 * @param dashboardId [required]
@@ -1057,7 +1057,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Copy all widgets from specified dashboard to a new one
-	 * 
+	 *
 	 * REST: POST /dbaas/logs/{serviceName}/output/graylog/dashboard/{dashboardId}/duplicate
 	 * @param serviceName [required]
 	 * @param dashboardId [required]
@@ -1081,7 +1081,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return the list of urls of specified graylog dashboard
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/dashboard/{dashboardId}/url
 	 * @param serviceName [required]
 	 * @param dashboardId [required]
@@ -1096,7 +1096,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Launch a contact change procedure
-	 * 
+	 *
 	 * REST: POST /dbaas/logs/{serviceName}/changeContact
 	 * @param contactAdmin The contact to set as admin contact
 	 * @param contactTech The contact to set as tech contact
@@ -1117,7 +1117,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Initiate a password change procedure.
-	 * 
+	 *
 	 * REST: POST /dbaas/logs/{serviceName}/user/changePassword
 	 * @param serviceName [required]
 	 */
@@ -1130,7 +1130,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return platform useful urls.
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/url
 	 * @param serviceName [required]
 	 */
@@ -1143,7 +1143,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return IOT credentials
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/metrics
 	 * @param serviceName [required]
 	 */
@@ -1156,7 +1156,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Latest operations
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/operation
 	 * @param serviceName [required]
 	 */
@@ -1169,7 +1169,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return details of specified operation
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/operation/{operationId}
 	 * @param serviceName [required]
 	 * @param operationId [required]
@@ -1184,7 +1184,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return the subscribed additional options
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/option
 	 * @param serviceName [required]
 	 */
@@ -1197,7 +1197,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return details of a subscribed option
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/option/{optionId}
 	 * @param serviceName [required]
 	 * @param optionId [required]
@@ -1212,7 +1212,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return the list of service tokens
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/token
 	 * @param serviceName [required]
 	 */
@@ -1225,7 +1225,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Add a new token
-	 * 
+	 *
 	 * REST: POST /dbaas/logs/{serviceName}/token
 	 * @param serviceName [required]
 	 * @param name [required]
@@ -1241,7 +1241,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Delete the given token
-	 * 
+	 *
 	 * REST: DELETE /dbaas/logs/{serviceName}/token/{tokenId}
 	 * @param serviceName [required]
 	 * @param tokenId [required]
@@ -1256,7 +1256,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Get the given token
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/token/{tokenId}
 	 * @param serviceName [required]
 	 * @param tokenId [required]
@@ -1271,7 +1271,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Remove specified role
-	 * 
+	 *
 	 * REST: DELETE /dbaas/logs/{serviceName}/role/{roleId}
 	 * @param serviceName [required]
 	 * @param roleId [required]
@@ -1286,7 +1286,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return details of specified role
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/role/{roleId}
 	 * @param serviceName [required]
 	 * @param roleId [required]
@@ -1301,7 +1301,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Update information of specified role
-	 * 
+	 *
 	 * REST: PUT /dbaas/logs/{serviceName}/role/{roleId}
 	 * @param serviceName [required]
 	 * @param roleId [required]
@@ -1323,7 +1323,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return the member list of specified role
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/role/{roleId}/member
 	 * @param serviceName [required]
 	 * @param roleId [required]
@@ -1338,7 +1338,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Append user into the member list of specified role
-	 * 
+	 *
 	 * REST: POST /dbaas/logs/{serviceName}/role/{roleId}/member
 	 * @param serviceName [required]
 	 * @param roleId [required]
@@ -1356,7 +1356,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Remove user from the member list of specified role
-	 * 
+	 *
 	 * REST: DELETE /dbaas/logs/{serviceName}/role/{roleId}/member/{username}
 	 * @param serviceName [required]
 	 * @param roleId [required]
@@ -1373,7 +1373,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return the list of permissions of specified role
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/role/{roleId}/permission
 	 * @param serviceName [required]
 	 * @param roleId [required]
@@ -1388,7 +1388,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Append a elasticsearch index permission to role
-	 * 
+	 *
 	 * REST: POST /dbaas/logs/{serviceName}/role/{roleId}/permission/index
 	 * @param serviceName [required]
 	 * @param roleId [required]
@@ -1406,7 +1406,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Remove specified permission
-	 * 
+	 *
 	 * REST: DELETE /dbaas/logs/{serviceName}/role/{roleId}/permission/{permissionId}
 	 * @param serviceName [required]
 	 * @param roleId [required]
@@ -1423,7 +1423,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return details of specified permission
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/role/{roleId}/permission/{permissionId}
 	 * @param serviceName [required]
 	 * @param roleId [required]
@@ -1441,7 +1441,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Append a graylog stream permission to role
-	 * 
+	 *
 	 * REST: POST /dbaas/logs/{serviceName}/role/{roleId}/permission/stream
 	 * @param serviceName [required]
 	 * @param roleId [required]
@@ -1459,7 +1459,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Append a elasticsearch alias permission to role
-	 * 
+	 *
 	 * REST: POST /dbaas/logs/{serviceName}/role/{roleId}/permission/alias
 	 * @param serviceName [required]
 	 * @param roleId [required]
@@ -1477,7 +1477,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Append a graylog dashboard permission to role
-	 * 
+	 *
 	 * REST: POST /dbaas/logs/{serviceName}/role/{roleId}/permission/dashboard
 	 * @param serviceName [required]
 	 * @param roleId [required]
@@ -1495,7 +1495,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return the list of roles
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/{serviceName}/role
 	 * @param serviceName [required]
 	 */
@@ -1508,7 +1508,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Register a new role
-	 * 
+	 *
 	 * REST: POST /dbaas/logs/{serviceName}/role
 	 * @param serviceName [required]
 	 * @param name [required]
@@ -1528,7 +1528,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /dbaas/logs
 	 */
 	public ArrayList<String> GET() throws IOException {
@@ -1539,7 +1539,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return the list of available input engines
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/input/engine
 	 */
 	public ArrayList<String> input_engine_GET() throws IOException {
@@ -1550,7 +1550,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 
 	/**
 	 * Return details of specified input engine
-	 * 
+	 *
 	 * REST: GET /dbaas/logs/input/engine/{engineId}
 	 * @param engineId [required]
 	 */

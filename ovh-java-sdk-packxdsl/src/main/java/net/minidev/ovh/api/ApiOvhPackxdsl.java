@@ -50,7 +50,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /pack/xdsl
 	 */
 	public ArrayList<String> GET() throws IOException {
@@ -62,7 +62,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/serviceInfos
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -75,7 +75,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /pack/xdsl/{packName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param packName [required] The internal name of your pack
@@ -88,7 +88,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Check if the email address is available for service creation
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/exchangeLite/options/isEmailAvailable
 	 * @param email [required] Email
 	 * @param packName [required] The internal name of your pack
@@ -103,7 +103,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/exchangeLite/services/{domain}
 	 * @param packName [required] The internal name of your pack
 	 * @param domain [required]
@@ -118,7 +118,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Exchange lite services
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/exchangeLite/services
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -131,7 +131,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Activate a exchange lite service
-	 * 
+	 *
 	 * REST: POST /pack/xdsl/{packName}/exchangeLite/services
 	 * @param email [required] Email address
 	 * @param initials [required] Initials
@@ -159,7 +159,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -172,7 +172,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /pack/xdsl/{packName}
 	 * @param body [required] New object properties
 	 * @param packName [required] The internal name of your pack
@@ -185,7 +185,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Get information about the ongoing resiliation
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/resiliationFollowUp
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -198,7 +198,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Allowed shipping addresses given a context
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/shippingAddresses
 	 * @param context [required] Context
 	 * @param packName [required] The internal name of your pack
@@ -214,7 +214,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/hubic/services/{domain}
 	 * @param packName [required] The internal name of your pack
 	 * @param domain [required]
@@ -229,7 +229,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Hubic perso services
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/hubic/services
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -242,7 +242,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Give the condition to unpack service from pack
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/subServices/{domain}/keepServiceTerms
 	 * @param packName [required] The internal name of your pack
 	 * @param domain [required]
@@ -257,7 +257,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/subServices/{domain}
 	 * @param packName [required] The internal name of your pack
 	 * @param domain [required]
@@ -272,7 +272,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * List services contained in the pack
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/subServices
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -285,7 +285,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Get the available domains
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/siteBuilderFull/options/domains
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -299,7 +299,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Get the available templates
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/siteBuilderFull/options/templates
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -313,7 +313,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Sitebuilder full services
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/siteBuilderFull/services
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -326,7 +326,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Activate a sitebuilder full service
-	 * 
+	 *
 	 * REST: POST /pack/xdsl/{packName}/siteBuilderFull/services
 	 * @param domain [required] Domain name
 	 * @param subdomain [required] Subdomain
@@ -346,7 +346,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Launch a contact change procedure
-	 * 
+	 *
 	 * REST: POST /pack/xdsl/{packName}/changeContact
 	 * @param contactAdmin The contact to set as admin contact
 	 * @param contactTech The contact to set as tech contact
@@ -367,7 +367,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Get the available domains
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/exchangeIndividual/options/domains
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -380,7 +380,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Check if the email address is available for service creation
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/exchangeIndividual/options/isEmailAvailable
 	 * @param email [required] Email
 	 * @param packName [required] The internal name of your pack
@@ -395,7 +395,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Exchange services
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/exchangeIndividual/services
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -408,7 +408,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Activate an exchange service
-	 * 
+	 *
 	 * REST: POST /pack/xdsl/{packName}/exchangeIndividual/services
 	 * @param email [required] Email address
 	 * @param password [required] Password
@@ -426,7 +426,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * VOIP billing accounts
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/voipBillingAccount/services
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -439,7 +439,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Get available shipping addresses
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/voipLine/options/shippingAddresses
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -452,7 +452,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Create a new shippingId to be used for voipLine service creation
-	 * 
+	 *
 	 * REST: POST /pack/xdsl/{packName}/voipLine/options/customShippingAddress
 	 * @param zipCode [required] Zip code
 	 * @param firstName [required] First name
@@ -476,7 +476,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Get available hardwares
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/voipLine/options/hardwares
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -490,7 +490,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/voipLine/services/{domain}
 	 * @param packName [required] The internal name of your pack
 	 * @param domain [required]
@@ -505,7 +505,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * VOIP line services
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/voipLine/services
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -518,7 +518,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Activate a voip line service
-	 * 
+	 *
 	 * REST: POST /pack/xdsl/{packName}/voipLine/services
 	 * @param shippingId [required] Shipping ID for the order
 	 * @param hardwareNames [required] List of names from hardwares call
@@ -538,7 +538,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Get the available tlds for domain order
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/domain/options/tlds
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -551,7 +551,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Domain services
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/domain/services
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -564,7 +564,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Activate a domain service
-	 * 
+	 *
 	 * REST: POST /pack/xdsl/{packName}/domain/services
 	 * @param tld [required] TLD of the domain
 	 * @param domain [required] Domain name
@@ -586,7 +586,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/exchangeAccount/services/{domain}
 	 * @param packName [required] The internal name of your pack
 	 * @param domain [required]
@@ -601,7 +601,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Exchange 2013 services
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/exchangeAccount/services
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -614,7 +614,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Get the hostedemail available domains
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/hostedEmail/options/domains
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -627,7 +627,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Hosted email services
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/hostedEmail/services
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -640,7 +640,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Activate an hosted email service
-	 * 
+	 *
 	 * REST: POST /pack/xdsl/{packName}/hostedEmail/services
 	 * @param email [required] Email address
 	 * @param password [required] Password
@@ -658,7 +658,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Tasks scheduled for this pack
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/tasks
 	 * @param function [required] Filter the value of function property (=)
 	 * @param status [required] Filter the value of status property (=)
@@ -675,7 +675,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/tasks/{id}
 	 * @param packName [required] The internal name of your pack
 	 * @param id [required] Id of the object
@@ -690,7 +690,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Migrate to the selected offer
-	 * 
+	 *
 	 * REST: POST /pack/xdsl/{packName}/migration/migrate
 	 * @param acceptContracts [required] You explicitly accept the terms of the contract corresponding to your new offer
 	 * @param subServicesToDelete [required] List of domains of services to delete if needed
@@ -716,7 +716,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Get the possibilities of migration offers available
-	 * 
+	 *
 	 * REST: POST /pack/xdsl/{packName}/migration/offers
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -730,7 +730,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * VOIP ecofax service
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/voipEcofax/services
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -743,7 +743,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Activate a voicefax service
-	 * 
+	 *
 	 * REST: POST /pack/xdsl/{packName}/voipEcofax/services
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -756,7 +756,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Informations about the services included in the pack
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/services
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -770,7 +770,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Exchange 2013 organization services
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/exchangeOrganization/services
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -783,7 +783,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Check if the resiliation can be cancelled
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/canCancelResiliation
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -796,7 +796,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Creates a task to generate a new promotion code
-	 * 
+	 *
 	 * REST: POST /pack/xdsl/{packName}/promotionCode/generate
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -809,7 +809,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Get informations about the promotion code generation
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/promotionCode/capabilities
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -822,7 +822,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Eligibility to move the access
-	 * 
+	 *
 	 * REST: POST /pack/xdsl/{packName}/addressMove/eligibility
 	 * @param lineNumber [required] The line number to test, if no address
 	 * @param address [required] The address to test, if no lineNumber
@@ -841,7 +841,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Move the access to another address
-	 * 
+	 *
 	 * REST: POST /pack/xdsl/{packName}/addressMove/move
 	 * @param provider [required] Provider of the new line
 	 * @param keepCurrentNumber [required] Whether or not the current number should be kept
@@ -868,7 +868,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Cancel the ongoing resiliation
-	 * 
+	 *
 	 * REST: POST /pack/xdsl/{packName}/cancelResiliation
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -880,7 +880,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * xDSL access services
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/xdslAccess/services
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -893,7 +893,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Get the available domains
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/siteBuilderStart/options/domains
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -906,7 +906,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Get the available templates
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/siteBuilderStart/options/templates
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -919,7 +919,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Sitebuilder start services
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/siteBuilderStart/services
 	 * @param packName [required] The internal name of your pack
 	 */
@@ -932,7 +932,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Activate a sitebuilder full service
-	 * 
+	 *
 	 * REST: POST /pack/xdsl/{packName}/siteBuilderStart/services
 	 * @param domain [required] Domain name
 	 * @param subdomain [required] Subdomain
@@ -952,7 +952,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Resiliate the pack
-	 * 
+	 *
 	 * REST: POST /pack/xdsl/{packName}/resiliate
 	 * @param resiliationSurvey [required] Comment about resiliation reasons
 	 * @param servicesToKeep [required] Ids of service you will keep on resiliation. (you can get it with /pack/xdsl/{packName}/subServices)
@@ -972,7 +972,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 
 	/**
 	 * Get resiliation terms
-	 * 
+	 *
 	 * REST: GET /pack/xdsl/{packName}/resiliationTerms
 	 * @param resiliationDate [required] The desired resiliation date
 	 * @param packName [required] The internal name of your pack

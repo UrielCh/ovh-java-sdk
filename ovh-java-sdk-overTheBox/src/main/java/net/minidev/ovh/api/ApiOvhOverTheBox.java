@@ -32,7 +32,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /overTheBox/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your overTheBox offer
 	 */
@@ -45,7 +45,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /overTheBox/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your overTheBox offer
@@ -58,7 +58,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /overTheBox/{serviceName}
 	 * @param serviceName [required] The internal name of your overTheBox offer
 	 */
@@ -71,7 +71,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /overTheBox/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your overTheBox offer
@@ -84,7 +84,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 
 	/**
 	 * Resiliate a service
-	 * 
+	 *
 	 * REST: DELETE /overTheBox/{serviceName}
 	 * @param serviceName [required] The internal name of your overTheBox offer
 	 */
@@ -96,7 +96,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 
 	/**
 	 * List of tasks scheduled for this service
-	 * 
+	 *
 	 * REST: GET /overTheBox/{serviceName}/tasks
 	 * @param status [required] Filter the value of status property (=)
 	 * @param name [required] Filter the value of name property (=)
@@ -114,7 +114,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /overTheBox/{serviceName}/tasks/{taskId}
 	 * @param serviceName [required] The internal name of your overTheBox offer
 	 * @param taskId [required] The id of the task
@@ -129,7 +129,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /overTheBox/{serviceName}/device
 	 * @param serviceName [required] The internal name of your overTheBox offer
 	 */
@@ -142,7 +142,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 
 	/**
 	 * Unlink a device from a service
-	 * 
+	 *
 	 * REST: DELETE /overTheBox/{serviceName}/device
 	 * @param serviceName [required] The internal name of your overTheBox offer
 	 */
@@ -154,7 +154,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 
 	/**
 	 * List the available device actions
-	 * 
+	 *
 	 * REST: GET /overTheBox/{serviceName}/device/availableActions
 	 * @param serviceName [required] The internal name of your overTheBox offer
 	 */
@@ -168,7 +168,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 
 	/**
 	 * List of actions scheduled for this device
-	 * 
+	 *
 	 * REST: GET /overTheBox/{serviceName}/device/actions
 	 * @param status [required] Filter the value of status property (=)
 	 * @param name [required] Filter the value of name property (=)
@@ -185,7 +185,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 
 	/**
 	 * Create a device action on the device
-	 * 
+	 *
 	 * REST: POST /overTheBox/{serviceName}/device/actions
 	 * @param name [required] Name of the action
 	 * @param serviceName [required] The internal name of your overTheBox offer
@@ -201,7 +201,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /overTheBox/{serviceName}/device/actions/{actionId}
 	 * @param serviceName [required] The internal name of your overTheBox offer
 	 * @param actionId [required] The id of the action
@@ -216,7 +216,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 
 	/**
 	 * Create a group of actions to restore a given backup
-	 * 
+	 *
 	 * REST: POST /overTheBox/{serviceName}/device/restoreBackup
 	 * @param backupId [required] The id of the backup to restore
 	 * @param serviceName [required] The internal name of your overTheBox offer
@@ -233,7 +233,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 
 	/**
 	 * Generate a temporary url to retrieve device logs
-	 * 
+	 *
 	 * REST: POST /overTheBox/{serviceName}/device/logs
 	 * @param serviceName [required] The internal name of your overTheBox offer
 	 */
@@ -246,7 +246,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 
 	/**
 	 * Create an action to generate a backup
-	 * 
+	 *
 	 * REST: POST /overTheBox/{serviceName}/device/backup
 	 * @param serviceName [required] The internal name of your overTheBox offer
 	 */
@@ -259,7 +259,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 
 	/**
 	 * Launch a contact change procedure
-	 * 
+	 *
 	 * REST: POST /overTheBox/{serviceName}/changeContact
 	 * @param contactAdmin The contact to set as admin contact
 	 * @param contactTech The contact to set as tech contact
@@ -280,7 +280,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 
 	/**
 	 * List available release channels for this service
-	 * 
+	 *
 	 * REST: GET /overTheBox/{serviceName}/availableReleaseChannels
 	 * @param serviceName [required] The internal name of your overTheBox offer
 	 */
@@ -293,7 +293,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 
 	/**
 	 * List of remote accesses for the service
-	 * 
+	 *
 	 * REST: GET /overTheBox/{serviceName}/remoteAccesses
 	 * @param serviceName [required] The internal name of your overTheBox offer
 	 */
@@ -306,7 +306,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 
 	/**
 	 * Create a new remote access for the service
-	 * 
+	 *
 	 * REST: POST /overTheBox/{serviceName}/remoteAccesses
 	 * @param exposedPort [required] The port that the device will expose
 	 * @param allowedIp [required] IP block from which the remote access will be allowed (the default value is the IP from which the call is made)
@@ -328,7 +328,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 
 	/**
 	 * Authorize the remote access
-	 * 
+	 *
 	 * REST: POST /overTheBox/{serviceName}/remoteAccesses/{remoteAccessId}/authorize
 	 * @param serviceName [required] The internal name of your overTheBox offer
 	 * @param remoteAccessId [required] The id of the remote access
@@ -342,7 +342,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /overTheBox/{serviceName}/remoteAccesses/{remoteAccessId}
 	 * @param serviceName [required] The internal name of your overTheBox offer
 	 * @param remoteAccessId [required] The id of the remote access
@@ -357,7 +357,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 
 	/**
 	 * Delete a remote access
-	 * 
+	 *
 	 * REST: DELETE /overTheBox/{serviceName}/remoteAccesses/{remoteAccessId}
 	 * @param serviceName [required] The internal name of your overTheBox offer
 	 * @param remoteAccessId [required] The id of the remote access
@@ -371,7 +371,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 
 	/**
 	 * List of backups for this service
-	 * 
+	 *
 	 * REST: GET /overTheBox/{serviceName}/backups
 	 * @param serviceName [required] The internal name of your overTheBox offer
 	 */
@@ -384,7 +384,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /overTheBox/{serviceName}/backups/{backupId}
 	 * @param serviceName [required] The internal name of your overTheBox offer
 	 * @param backupId [required] The id of the backup
@@ -399,7 +399,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 
 	/**
 	 * Link a device to this service
-	 * 
+	 *
 	 * REST: POST /overTheBox/{serviceName}/linkDevice
 	 * @param deviceId [required] The id of the device
 	 * @param serviceName [required] The internal name of your overTheBox offer
@@ -414,7 +414,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 
 	/**
 	 * Cancel the resiliation of the Service
-	 * 
+	 *
 	 * REST: POST /overTheBox/{serviceName}/cancelResiliation
 	 * @param serviceName [required] The internal name of your overTheBox offer
 	 */
@@ -426,7 +426,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /overTheBox
 	 */
 	public ArrayList<String> GET() throws IOException {
@@ -437,7 +437,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 
 	/**
 	 * List the available offers for the new call
-	 * 
+	 *
 	 * REST: GET /overTheBox/availableOffers
 	 */
 	public ArrayList<OvhOfferEnum> availableOffers_GET() throws IOException {
@@ -449,7 +449,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 
 	/**
 	 * Get the list of devices connected from the same IP address
-	 * 
+	 *
 	 * REST: POST /overTheBox/devices
 	 */
 	public ArrayList<OvhDeviceForRegistration> devices_POST() throws IOException {

@@ -49,7 +49,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/serviceInfos
 	 * @param domain [required] Name of your domain name
 	 */
@@ -62,7 +62,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /email/domain/{domain}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param domain [required] Name of your domain name
@@ -75,7 +75,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * List all quotas for this domain
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/quota
 	 * @param domain [required] Name of your domain name
 	 */
@@ -88,7 +88,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}
 	 * @param domain [required] Name of your domain name
 	 */
@@ -101,7 +101,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Terminate your email service
-	 * 
+	 *
 	 * REST: POST /email/domain/{domain}/terminate
 	 * @param domain [required] Name of your domain name
 	 */
@@ -114,7 +114,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get redirections
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/redirection
 	 * @param to [required] Email of redirection target
 	 * @param from [required] Name of redirection
@@ -132,7 +132,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Create new redirection in server
-	 * 
+	 *
 	 * REST: POST /email/domain/{domain}/redirection
 	 * @param to [required] Target of account
 	 * @param localCopy [required] If true keep a local copy
@@ -152,7 +152,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/redirection/{id}
 	 * @param domain [required] Name of your domain name
 	 * @param id [required]
@@ -167,7 +167,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Delete an existing redirection in server
-	 * 
+	 *
 	 * REST: DELETE /email/domain/{domain}/redirection/{id}
 	 * @param domain [required] Name of your domain name
 	 * @param id [required]
@@ -182,7 +182,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Change redirection
-	 * 
+	 *
 	 * REST: POST /email/domain/{domain}/redirection/{id}/changeRedirection
 	 * @param to [required] Target of account
 	 * @param domain [required] Name of your domain name
@@ -200,7 +200,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Launch a contact change procedure
-	 * 
+	 *
 	 * REST: POST /email/domain/{domain}/changeContact
 	 * @param contactAdmin The contact to set as admin contact
 	 * @param contactTech The contact to set as tech contact
@@ -221,7 +221,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Summary for this domain
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/summary
 	 * @param domain [required] Name of your domain name
 	 */
@@ -234,7 +234,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get responders
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/responder
 	 * @param account [required] Responder name
 	 * @param domain [required] Name of your domain name
@@ -249,7 +249,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Create new responder in server
-	 * 
+	 *
 	 * REST: POST /email/domain/{domain}/responder
 	 * @param copy [required] If true, emails will be copy to emailToCopy address
 	 * @param copyTo [required] Account where copy emails
@@ -275,7 +275,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/responder/{account}
 	 * @param domain [required] Name of your domain name
 	 * @param account [required] Name of account
@@ -290,7 +290,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /email/domain/{domain}/responder/{account}
 	 * @param body [required] New object properties
 	 * @param domain [required] Name of your domain name
@@ -305,7 +305,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Delete an existing responder in server
-	 * 
+	 *
 	 * REST: DELETE /email/domain/{domain}/responder/{account}
 	 * @param domain [required] Name of your domain name
 	 * @param account [required] Name of account
@@ -320,7 +320,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Recommended domain DNS records
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/recommendedDNSRecords
 	 * @param domain [required] Name of your domain name
 	 */
@@ -334,7 +334,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Domain MX filter
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/dnsMXFilter
 	 * @param subDomain [required] Sub domain
 	 * @param domain [required] Name of your domain name
@@ -349,7 +349,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get ACL on your domain
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/acl
 	 * @param domain [required] Name of your domain name
 	 */
@@ -362,7 +362,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Create new ACL
-	 * 
+	 *
 	 * REST: POST /email/domain/{domain}/acl
 	 * @param accountId [required] Deleguates rights to
 	 * @param domain [required] Name of your domain name
@@ -378,7 +378,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/acl/{accountId}
 	 * @param domain [required] Name of your domain name
 	 * @param accountId [required] OVH customer unique identifier
@@ -393,7 +393,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Delete ACL
-	 * 
+	 *
 	 * REST: DELETE /email/domain/{domain}/acl/{accountId}
 	 * @param domain [required] Name of your domain name
 	 * @param accountId [required] OVH customer unique identifier
@@ -407,7 +407,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get accounts
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/account
 	 * @param description [required] Account description
 	 * @param accountName [required] Account name
@@ -424,7 +424,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Create new mailbox in server
-	 * 
+	 *
 	 * REST: POST /email/domain/{domain}/account
 	 * @param password [required] Account password
 	 * @param description [required] Description Account
@@ -446,7 +446,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * usage of account
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/account/{accountName}/usage
 	 * @param domain [required] Name of your domain name
 	 * @param accountName [required] Name of account
@@ -461,7 +461,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Update usage of account
-	 * 
+	 *
 	 * REST: POST /email/domain/{domain}/account/{accountName}/updateUsage
 	 * @param domain [required] Name of your domain name
 	 * @param accountName [required] Name of account
@@ -475,7 +475,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/account/{accountName}
 	 * @param domain [required] Name of your domain name
 	 * @param accountName [required] Name of account
@@ -490,7 +490,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /email/domain/{domain}/account/{accountName}
 	 * @param body [required] New object properties
 	 * @param domain [required] Name of your domain name
@@ -505,7 +505,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Delete an existing mailbox in server
-	 * 
+	 *
 	 * REST: DELETE /email/domain/{domain}/account/{accountName}
 	 * @param domain [required] Name of your domain name
 	 * @param accountName [required] Name of account
@@ -520,7 +520,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get filters
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/account/{accountName}/filter
 	 * @param domain [required] Name of your domain name
 	 * @param accountName [required] Name of account
@@ -535,7 +535,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Create new filter for account
-	 * 
+	 *
 	 * REST: POST /email/domain/{domain}/account/{accountName}/filter
 	 * @param priority [required] Priority of filter
 	 * @param value [required] Rule parameter of filter
@@ -567,7 +567,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/account/{accountName}/filter/{name}
 	 * @param domain [required] Name of your domain name
 	 * @param accountName [required] Name of account
@@ -584,7 +584,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Delete an existing filter
-	 * 
+	 *
 	 * REST: DELETE /email/domain/{domain}/account/{accountName}/filter/{name}
 	 * @param domain [required] Name of your domain name
 	 * @param accountName [required] Name of account
@@ -602,7 +602,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Change filter activity
-	 * 
+	 *
 	 * REST: POST /email/domain/{domain}/account/{accountName}/filter/{name}/changeActivity
 	 * @param activity [required] New activity
 	 * @param domain [required] Name of your domain name
@@ -622,7 +622,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get rules
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/account/{accountName}/filter/{name}/rule
 	 * @param domain [required] Name of your domain name
 	 * @param accountName [required] Name of account
@@ -639,7 +639,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Create new rule for filter
-	 * 
+	 *
 	 * REST: POST /email/domain/{domain}/account/{accountName}/filter/{name}/rule
 	 * @param value [required] Rule parameter of filter
 	 * @param operand [required] Rule of filter
@@ -663,7 +663,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/account/{accountName}/filter/{name}/rule/{id}
 	 * @param domain [required] Name of your domain name
 	 * @param accountName [required] Name of account
@@ -682,7 +682,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Delete an existing filter
-	 * 
+	 *
 	 * REST: DELETE /email/domain/{domain}/account/{accountName}/filter/{name}/rule/{id}
 	 * @param domain [required] Name of your domain name
 	 * @param accountName [required] Name of account
@@ -701,7 +701,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Change filter priority
-	 * 
+	 *
 	 * REST: POST /email/domain/{domain}/account/{accountName}/filter/{name}/changePriority
 	 * @param priority [required] New priority
 	 * @param domain [required] Name of your domain name
@@ -721,7 +721,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Change mailbox password (length : [9;30], no space at begin and end, no accent)
-	 * 
+	 *
 	 * REST: POST /email/domain/{domain}/account/{accountName}/changePassword
 	 * @param password [required] New password
 	 * @param domain [required] Name of your domain name
@@ -739,7 +739,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get delegations
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/account/{accountName}/delegation
 	 * @param domain [required] Name of your domain name
 	 * @param accountName [required] Name of account
@@ -754,7 +754,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Create delegation for this account
-	 * 
+	 *
 	 * REST: POST /email/domain/{domain}/account/{accountName}/delegation
 	 * @param accountId [required] OVH customer unique identifier
 	 * @param domain [required] Name of your domain name
@@ -772,7 +772,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/account/{accountName}/delegation/{accountId}
 	 * @param domain [required] Name of your domain name
 	 * @param accountName [required] Name of account
@@ -789,7 +789,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Delete an existing delegation
-	 * 
+	 *
 	 * REST: DELETE /email/domain/{domain}/account/{accountName}/delegation/{accountId}
 	 * @param domain [required] Name of your domain name
 	 * @param accountName [required] Name of account
@@ -806,7 +806,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Domain MX records
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/dnsMXRecords
 	 * @param subDomain [required] Sub domain
 	 * @param domain [required] Name of your domain name
@@ -821,7 +821,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get responder tasks
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/task/responder
 	 * @param account [required] Name of responder
 	 * @param domain [required] Name of your domain name
@@ -836,7 +836,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/task/responder/{id}
 	 * @param domain [required] Name of your domain name
 	 * @param id [required] Id of task
@@ -851,7 +851,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get filter tasks
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/task/filter
 	 * @param account [required] Account name
 	 * @param domain [required] Name of your domain name
@@ -866,7 +866,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/task/filter/{id}
 	 * @param domain [required] Name of your domain name
 	 * @param id [required] Id of task
@@ -881,7 +881,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get account tasks
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/task/account
 	 * @param name [required] Account name
 	 * @param domain [required] Name of your domain name
@@ -896,7 +896,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/task/account/{id}
 	 * @param domain [required] Name of your domain name
 	 * @param id [required] Id of task
@@ -911,7 +911,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get Mailing List tasks
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/task/mailinglist
 	 * @param account [required] Account name
 	 * @param domain [required] Name of your domain name
@@ -926,7 +926,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/task/mailinglist/{id}
 	 * @param domain [required] Name of your domain name
 	 * @param id [required]
@@ -941,7 +941,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get redirection tasks
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/task/redirection
 	 * @param account [required] Account name
 	 * @param domain [required] Name of your domain name
@@ -956,7 +956,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/task/redirection/{id}
 	 * @param domain [required] Name of your domain name
 	 * @param id [required] Id of task
@@ -971,7 +971,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Confirm termination of your email service
-	 * 
+	 *
 	 * REST: POST /email/domain/{domain}/confirmTermination
 	 * @param commentary [required] Commentary about your termination request
 	 * @param reason [required] Reason of your termination request
@@ -991,7 +991,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Create delegation of domain with same nic than V3
-	 * 
+	 *
 	 * REST: POST /email/domain/{domain}/migrateDelegationV3toV6
 	 * @param domain [required] Name of your domain name
 	 */
@@ -1003,7 +1003,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get mailing lists
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/mailingList
 	 * @param name [required] Mailing list name
 	 * @param domain [required] Name of your domain name
@@ -1018,7 +1018,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Create new mailingList
-	 * 
+	 *
 	 * REST: POST /email/domain/{domain}/mailingList
 	 * @param replyTo [required] Email to reply of mailing list
 	 * @param options [required] Options of mailing list
@@ -1042,7 +1042,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Send moderators list and subscribers list of this mailing list by email
-	 * 
+	 *
 	 * REST: POST /email/domain/{domain}/mailingList/{name}/sendListByEmail
 	 * @param email [required] Email destination
 	 * @param domain [required] Name of your domain name
@@ -1060,7 +1060,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/mailingList/{name}
 	 * @param domain [required] Name of your domain name
 	 * @param name [required] Name of mailing list
@@ -1075,7 +1075,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /email/domain/{domain}/mailingList/{name}
 	 * @param body [required] New object properties
 	 * @param domain [required] Name of your domain name
@@ -1090,7 +1090,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Delete existing Mailing list
-	 * 
+	 *
 	 * REST: DELETE /email/domain/{domain}/mailingList/{name}
 	 * @param domain [required] Name of your domain name
 	 * @param name [required] Name of mailing list
@@ -1105,7 +1105,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Change mailing list options
-	 * 
+	 *
 	 * REST: POST /email/domain/{domain}/mailingList/{name}/changeOptions
 	 * @param options [required] Options of mailing list
 	 * @param domain [required] Name of your domain name
@@ -1123,7 +1123,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * List of moderators
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/mailingList/{name}/moderator
 	 * @param email [required] Moderator email
 	 * @param domain [required] Name of your domain name
@@ -1140,7 +1140,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Add moderator to mailing list
-	 * 
+	 *
 	 * REST: POST /email/domain/{domain}/mailingList/{name}/moderator
 	 * @param email [required] Email of moderator
 	 * @param domain [required] Name of your domain name
@@ -1158,7 +1158,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/mailingList/{name}/moderator/{email}
 	 * @param domain [required] Name of your domain name
 	 * @param name [required] Name of mailing list
@@ -1175,7 +1175,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Delete existing moderator
-	 * 
+	 *
 	 * REST: DELETE /email/domain/{domain}/mailingList/{name}/moderator/{email}
 	 * @param domain [required] Name of your domain name
 	 * @param name [required] Name of mailing list
@@ -1192,7 +1192,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * List of subscribers
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/mailingList/{name}/subscriber
 	 * @param email [required] Subscriber email
 	 * @param domain [required] Name of your domain name
@@ -1209,7 +1209,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Add subscriber to mailing list
-	 * 
+	 *
 	 * REST: POST /email/domain/{domain}/mailingList/{name}/subscriber
 	 * @param email [required] Email of subscriber
 	 * @param domain [required] Name of your domain name
@@ -1227,7 +1227,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/domain/{domain}/mailingList/{name}/subscriber/{email}
 	 * @param domain [required] Name of your domain name
 	 * @param name [required] Name of mailing list
@@ -1244,7 +1244,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Delete existing subscriber
-	 * 
+	 *
 	 * REST: DELETE /email/domain/{domain}/mailingList/{name}/subscriber/{email}
 	 * @param domain [required] Name of your domain name
 	 * @param name [required] Name of mailing list
@@ -1261,7 +1261,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Change MX filter, so change MX DNS records
-	 * 
+	 *
 	 * REST: POST /email/domain/{domain}/changeDnsMXFilter
 	 * @param mxFilter [required] New MX filter
 	 * @param subDomain [required] Sub domain
@@ -1280,7 +1280,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /email/domain
 	 */
 	public ArrayList<String> GET() throws IOException {
@@ -1291,7 +1291,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Delegated emails
-	 * 
+	 *
 	 * REST: GET /email/domain/delegatedAccount
 	 * @param domain [required] Domain of email address
 	 * @param accountName [required] Name of email address
@@ -1306,7 +1306,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * usage of account
-	 * 
+	 *
 	 * REST: POST /email/domain/delegatedAccount/{email}/usage
 	 * @param email [required] Email
 	 */
@@ -1319,7 +1319,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Update usage of account
-	 * 
+	 *
 	 * REST: POST /email/domain/delegatedAccount/{email}/updateUsage
 	 * @param email [required] Email
 	 */
@@ -1331,7 +1331,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/domain/delegatedAccount/{email}
 	 * @param email [required] Email
 	 */
@@ -1344,7 +1344,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /email/domain/delegatedAccount/{email}
 	 * @param body [required] New object properties
 	 * @param email [required] Email
@@ -1357,7 +1357,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/domain/delegatedAccount/{email}/responder
 	 * @param email [required] Email
 	 */
@@ -1370,7 +1370,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /email/domain/delegatedAccount/{email}/responder
 	 * @param body [required] New object properties
 	 * @param email [required] Email
@@ -1383,7 +1383,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Create new responder in server
-	 * 
+	 *
 	 * REST: POST /email/domain/delegatedAccount/{email}/responder
 	 * @param copy [required] If true, emails will be copy to emailToCopy address
 	 * @param copyTo [required] Account where copy emails
@@ -1407,7 +1407,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Delete an existing responder in server
-	 * 
+	 *
 	 * REST: DELETE /email/domain/delegatedAccount/{email}/responder
 	 * @param email [required] Email
 	 */
@@ -1420,7 +1420,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get filters
-	 * 
+	 *
 	 * REST: GET /email/domain/delegatedAccount/{email}/filter
 	 * @param email [required] Email
 	 */
@@ -1433,7 +1433,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Create new filter for account
-	 * 
+	 *
 	 * REST: POST /email/domain/delegatedAccount/{email}/filter
 	 * @param priority [required] Priority of filter
 	 * @param value [required] Rule parameter of filter
@@ -1463,7 +1463,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/domain/delegatedAccount/{email}/filter/{name}
 	 * @param email [required] Email
 	 * @param name [required] Filter name
@@ -1478,7 +1478,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Delete an existing filter
-	 * 
+	 *
 	 * REST: DELETE /email/domain/delegatedAccount/{email}/filter/{name}
 	 * @param email [required] Email
 	 * @param name [required] Filter name
@@ -1493,7 +1493,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Change filter activity
-	 * 
+	 *
 	 * REST: POST /email/domain/delegatedAccount/{email}/filter/{name}/changeActivity
 	 * @param activity [required] New activity
 	 * @param email [required] Email
@@ -1511,7 +1511,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get rules
-	 * 
+	 *
 	 * REST: GET /email/domain/delegatedAccount/{email}/filter/{name}/rule
 	 * @param email [required] Email
 	 * @param name [required] Filter name
@@ -1526,7 +1526,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Create new rule for filter
-	 * 
+	 *
 	 * REST: POST /email/domain/delegatedAccount/{email}/filter/{name}/rule
 	 * @param value [required] Rule parameter of filter
 	 * @param operand [required] Rule of filter
@@ -1548,7 +1548,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/domain/delegatedAccount/{email}/filter/{name}/rule/{id}
 	 * @param email [required] Email
 	 * @param name [required] Filter name
@@ -1565,7 +1565,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Delete an existing filter
-	 * 
+	 *
 	 * REST: DELETE /email/domain/delegatedAccount/{email}/filter/{name}/rule/{id}
 	 * @param email [required] Email
 	 * @param name [required] Filter name
@@ -1582,7 +1582,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Change filter priority
-	 * 
+	 *
 	 * REST: POST /email/domain/delegatedAccount/{email}/filter/{name}/changePriority
 	 * @param priority [required] New priority
 	 * @param email [required] Email
@@ -1600,7 +1600,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Change mailbox password (length : [9;30], no space at begin and end, no accent)
-	 * 
+	 *
 	 * REST: POST /email/domain/delegatedAccount/{email}/changePassword
 	 * @param password [required] New password
 	 * @param email [required] Email
@@ -1616,7 +1616,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 
 	/**
 	 * Get limits of mailing list
-	 * 
+	 *
 	 * REST: GET /email/domain/mailingListLimits
 	 * @param moderatorMessage [required] If true, messages are moderate
 	 */

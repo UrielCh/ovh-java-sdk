@@ -28,7 +28,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /saas/csp2/{serviceName}/serviceInfos
 	 * @param serviceName [required] The unique identifier of your Office service
 	 */
@@ -41,7 +41,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /saas/csp2/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The unique identifier of your Office service
@@ -54,7 +54,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 
 	/**
 	 * Get the usage statistics over the chose period
-	 * 
+	 *
 	 * REST: GET /saas/csp2/{serviceName}/usageStatistics
 	 * @param timePeriod [required] The period to query
 	 * @param serviceName [required] The unique identifier of your Office service
@@ -70,7 +70,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /saas/csp2/{serviceName}
 	 * @param serviceName [required] The unique identifier of your Office service
 	 */
@@ -83,7 +83,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /saas/csp2/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The unique identifier of your Office service
@@ -96,7 +96,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 
 	/**
 	 * Changes the tenant administrator's password
-	 * 
+	 *
 	 * REST: POST /saas/csp2/{serviceName}/changeAdministratorPassword
 	 * @param newPassword [required] New password for the tenant administrator
 	 * @param serviceName [required] The unique identifier of your Office service
@@ -112,7 +112,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 
 	/**
 	 * Automatically sets up an OVH-hosted domain of yours for your office365 services. Note, this requires the domain to not have any interfering MX/SRV/TXT records
-	 * 
+	 *
 	 * REST: POST /saas/csp2/{serviceName}/configureDomain
 	 * @param supportedServices [required] Services that your domain needs to be configured with
 	 * @param domain [required] Your OVH-hosted domain to configure
@@ -130,7 +130,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 
 	/**
 	 * Pending tasks of this tenant
-	 * 
+	 *
 	 * REST: GET /saas/csp2/{serviceName}/task
 	 * @param serviceName [required] The unique identifier of your Office service
 	 */
@@ -144,7 +144,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /saas/csp2/{serviceName}/task/{id}
 	 * @param serviceName [required] The unique identifier of your Office service
 	 * @param id [required] Unique identifier of the task
@@ -159,7 +159,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 
 	/**
 	 * Licenses available for order
-	 * 
+	 *
 	 * REST: GET /saas/csp2/{serviceName}/orderableLicenses
 	 * @param serviceName [required] The unique identifier of your Office service
 	 */
@@ -172,7 +172,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /saas/csp2/{serviceName}/orderableLicenses/{id}
 	 * @param serviceName [required] The unique identifier of your Office service
 	 * @param id [required] License unique identifier
@@ -187,7 +187,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 
 	/**
 	 * Get the curren billing period's usage peak for each subscription
-	 * 
+	 *
 	 * REST: GET /saas/csp2/{serviceName}/billingPeriodPeaks
 	 * @param serviceName [required] The unique identifier of your Office service
 	 */
@@ -200,7 +200,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 
 	/**
 	 * Subscriptions associated to this office tenant
-	 * 
+	 *
 	 * REST: GET /saas/csp2/{serviceName}/subscription
 	 * @param serviceName [required] The unique identifier of your Office service
 	 */
@@ -213,7 +213,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 
 	/**
 	 * Add a subscription to this tenant
-	 * 
+	 *
 	 * REST: POST /saas/csp2/{serviceName}/subscription
 	 * @param licenseId [required] License's type unique identifier
 	 * @param quantity [required] Quantity of licenses to order
@@ -231,7 +231,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /saas/csp2/{serviceName}/subscription/{id}
 	 * @param serviceName [required] The unique identifier of your Office service
 	 * @param id [required] Subscription's unique identifier
@@ -246,7 +246,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 
 	/**
 	 * Delete a subscription from this tenant
-	 * 
+	 *
 	 * REST: DELETE /saas/csp2/{serviceName}/subscription/{id}
 	 * @param serviceName [required] The unique identifier of your Office service
 	 * @param id [required] Subscription's unique identifier
@@ -261,7 +261,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 
 	/**
 	 * Change the quantity of seats in the subscription
-	 * 
+	 *
 	 * REST: POST /saas/csp2/{serviceName}/subscription/{id}/changeQuantity
 	 * @param quantity [required] New seat quantity
 	 * @param serviceName [required] The unique identifier of your Office service
@@ -279,7 +279,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /saas/csp2
 	 */
 	public ArrayList<String> GET() throws IOException {

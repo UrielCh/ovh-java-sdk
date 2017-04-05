@@ -34,7 +34,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /msServices/{serviceName}
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 */
@@ -47,7 +47,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /msServices/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your Active Directory organization
@@ -60,7 +60,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 
 	/**
 	 * active directory UPN suffix
-	 * 
+	 *
 	 * REST: GET /msServices/{serviceName}/upnSuffix
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 */
@@ -74,7 +74,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 
 	/**
 	 * Create new UPN suffix
-	 * 
+	 *
 	 * REST: POST /msServices/{serviceName}/upnSuffix
 	 * @param suffix [required] UPN suffix to create
 	 * @param serviceName [required] The internal name of your Active Directory organization
@@ -90,7 +90,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /msServices/{serviceName}/upnSuffix/{suffix}
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 * @param suffix [required] UPN suffix
@@ -105,7 +105,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 
 	/**
 	 * Delete existing UPN suffix
-	 * 
+	 *
 	 * REST: DELETE /msServices/{serviceName}/upnSuffix/{suffix}
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 * @param suffix [required] UPN suffix
@@ -120,7 +120,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /msServices/{serviceName}/account/{userPrincipalName}
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 * @param userPrincipalName [required] User Principal Name
@@ -135,7 +135,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /msServices/{serviceName}/account/{userPrincipalName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your Active Directory organization
@@ -150,7 +150,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /msServices/{serviceName}/account/{userPrincipalName}/sharepoint
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 * @param userPrincipalName [required] User Principal Name
@@ -165,7 +165,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /msServices/{serviceName}/account/{userPrincipalName}/sharepoint
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your Active Directory organization
@@ -180,7 +180,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 
 	/**
 	 * On-demand MySite clearance
-	 * 
+	 *
 	 * REST: POST /msServices/{serviceName}/account/{userPrincipalName}/sharepoint/clearSpace
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 * @param userPrincipalName [required] User Principal Name
@@ -195,7 +195,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 
 	/**
 	 * Configure sharepoint account to be operational
-	 * 
+	 *
 	 * REST: POST /msServices/{serviceName}/account/{userPrincipalName}/sharepoint/configure
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 * @param userPrincipalName [required] User Principal Name
@@ -210,7 +210,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 
 	/**
 	 * Change account password
-	 * 
+	 *
 	 * REST: POST /msServices/{serviceName}/account/{userPrincipalName}/changePassword
 	 * @param password [required] new password
 	 * @param serviceName [required] The internal name of your Active Directory organization
@@ -228,7 +228,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /msServices/{serviceName}/account/{userPrincipalName}/exchange
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 * @param userPrincipalName [required] User Principal Name
@@ -243,7 +243,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /msServices/{serviceName}/account/{userPrincipalName}/exchange
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your Active Directory organization
@@ -258,7 +258,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 
 	/**
 	 * Configure mailbox to be operational
-	 * 
+	 *
 	 * REST: POST /msServices/{serviceName}/account/{userPrincipalName}/exchange/configure
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 * @param userPrincipalName [required] User Principal Name
@@ -273,7 +273,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 
 	/**
 	 * Accounts associated to this Active Directory service
-	 * 
+	 *
 	 * REST: GET /msServices/{serviceName}/account
 	 * @param id [required] Filter the value of id property (like)
 	 * @param userPrincipalName [required] Filter the value of userPrincipalName property (like)
@@ -290,7 +290,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /msServices/{serviceName}/sharepoint
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 */
@@ -303,7 +303,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /msServices/{serviceName}/sharepoint
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your Active Directory organization
@@ -316,7 +316,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 
 	/**
 	 * Restore administrator rights
-	 * 
+	 *
 	 * REST: POST /msServices/{serviceName}/sharepoint/restoreAdminRights
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 */
@@ -329,7 +329,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 
 	/**
 	 * Pending actions
-	 * 
+	 *
 	 * REST: GET /msServices/{serviceName}/sharepoint/task
 	 * @param function [required] Filter the value of function property (like)
 	 * @param status [required] Filter the value of status property (=)
@@ -347,7 +347,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /msServices/{serviceName}/sharepoint/task/{id}
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 * @param id [required] Task id
@@ -362,7 +362,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 
 	/**
 	 * Get active licenses for specific period of time
-	 * 
+	 *
 	 * REST: GET /msServices/{serviceName}/sharepoint/license
 	 * @param period [required] Period of time used to determine sharepoint account license statistics
 	 * @param license [required] License type
@@ -380,7 +380,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 
 	/**
 	 * Pending actions
-	 * 
+	 *
 	 * REST: GET /msServices/{serviceName}/task
 	 * @param function [required] Filter the value of function property (=)
 	 * @param status [required] Filter the value of status property (=)
@@ -397,7 +397,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /msServices/{serviceName}/task/{id}
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 * @param id [required] Task id
@@ -412,7 +412,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /msServices/{serviceName}/exchange
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 */
@@ -425,7 +425,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /msServices/{serviceName}/exchange
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your Active Directory organization
@@ -438,7 +438,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 
 	/**
 	 * Pending actions
-	 * 
+	 *
 	 * REST: GET /msServices/{serviceName}/exchange/task
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 */
@@ -451,7 +451,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /msServices/{serviceName}/exchange/task/{id}
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 * @param id [required] Task id
@@ -466,7 +466,7 @@ public class ApiOvhMsServices extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /msServices
 	 */
 	public ArrayList<String> GET() throws IOException {

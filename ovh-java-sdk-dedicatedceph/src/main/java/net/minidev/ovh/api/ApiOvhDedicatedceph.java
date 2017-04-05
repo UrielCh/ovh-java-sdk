@@ -23,7 +23,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/ceph/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal ID of your ceph cluster
 	 */
@@ -36,7 +36,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /dedicated/ceph/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal ID of your ceph cluster
@@ -49,7 +49,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 
 	/**
 	 * Get cluster details
-	 * 
+	 *
 	 * REST: GET /dedicated/ceph/{serviceName}
 	 * @param serviceName [required] ID of cluster
 	 */
@@ -62,7 +62,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 
 	/**
 	 * Update cluster details
-	 * 
+	 *
 	 * REST: PUT /dedicated/ceph/{serviceName}
 	 * @param serviceName [required] ID of cluster
 	 * @param crushTunables [required] Tunables of cluster
@@ -80,7 +80,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 
 	/**
 	 * Delete single IP ACL
-	 * 
+	 *
 	 * REST: DELETE /dedicated/ceph/{serviceName}/acl/{aclId}
 	 * @param serviceName [required] ID of cluster
 	 * @param aclId [required] ID of ACL
@@ -95,7 +95,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 
 	/**
 	 * Get details about IP ACL
-	 * 
+	 *
 	 * REST: GET /dedicated/ceph/{serviceName}/acl/{aclId}
 	 * @param serviceName [required] ID of cluster
 	 * @param aclId [required] ID of ACL
@@ -110,7 +110,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 
 	/**
 	 * Create one or more new IP ACLs
-	 * 
+	 *
 	 * REST: POST /dedicated/ceph/{serviceName}/acl
 	 * @param serviceName [required] ID of cluster
 	 * @param aclList [required] List of new ACLs
@@ -126,7 +126,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 
 	/**
 	 * Get list of all IP ACLs in a cluster
-	 * 
+	 *
 	 * REST: GET /dedicated/ceph/{serviceName}/acl
 	 * @param serviceName [required] ID of cluster
 	 */
@@ -140,7 +140,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 
 	/**
 	 * List tasks in progress
-	 * 
+	 *
 	 * REST: GET /dedicated/ceph/{serviceName}/task
 	 * @param serviceName [required] ID of cluster
 	 */
@@ -153,7 +153,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 
 	/**
 	 * Get task details
-	 * 
+	 *
 	 * REST: GET /dedicated/ceph/{serviceName}/task/{taskId}
 	 * @param serviceName [required] ID of cluster
 	 * @param taskId [required] ID of task
@@ -168,7 +168,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 
 	/**
 	 * Get cluster health
-	 * 
+	 *
 	 * REST: GET /dedicated/ceph/{serviceName}/health
 	 * @param serviceName [required] ID of cluster
 	 */
@@ -181,7 +181,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 
 	/**
 	 * Launch a contact change procedure
-	 * 
+	 *
 	 * REST: POST /dedicated/ceph/{serviceName}/changeContact
 	 * @param contactAdmin The contact to set as admin contact
 	 * @param contactTech The contact to set as tech contact
@@ -202,7 +202,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 
 	/**
 	 * Create a new ceph pool
-	 * 
+	 *
 	 * REST: POST /dedicated/ceph/{serviceName}/pool
 	 * @param serviceName [required] ID of cluster
 	 * @param poolName [required] Name of new pool
@@ -218,7 +218,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 
 	/**
 	 * Get list of all pools in a cluster
-	 * 
+	 *
 	 * REST: GET /dedicated/ceph/{serviceName}/pool
 	 * @param serviceName [required] ID of cluster
 	 */
@@ -231,7 +231,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 
 	/**
 	 * Delete a single ceph pool
-	 * 
+	 *
 	 * REST: DELETE /dedicated/ceph/{serviceName}/pool/{poolName}
 	 * @param serviceName [required] ID of cluster
 	 * @param poolName [required] name of ceph pool
@@ -246,7 +246,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 
 	/**
 	 * Get details about an existing ceph pool
-	 * 
+	 *
 	 * REST: GET /dedicated/ceph/{serviceName}/pool/{poolName}
 	 * @param serviceName [required] ID of cluster
 	 * @param poolName [required] name of pool
@@ -261,7 +261,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 
 	/**
 	 * Create a new ceph user
-	 * 
+	 *
 	 * REST: POST /dedicated/ceph/{serviceName}/user
 	 * @param serviceName [required] ID of cluster
 	 * @param userName [required] Name of new user
@@ -277,7 +277,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 
 	/**
 	 * Get list of all users in a cluster
-	 * 
+	 *
 	 * REST: GET /dedicated/ceph/{serviceName}/user
 	 * @param serviceName [required] ID of cluster
 	 */
@@ -290,7 +290,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 
 	/**
 	 * Delete an existing single ceph user
-	 * 
+	 *
 	 * REST: DELETE /dedicated/ceph/{serviceName}/user/{userName}
 	 * @param userName [required] Name of ceph user
 	 * @param serviceName [required] ID of cluster
@@ -305,7 +305,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 
 	/**
 	 * Get details about a ceph user
-	 * 
+	 *
 	 * REST: GET /dedicated/ceph/{serviceName}/user/{userName}
 	 * @param userName [required] Name of ceph user
 	 * @param serviceName [required] ID of cluster
@@ -320,7 +320,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 
 	/**
 	 * List user-pool permissions
-	 * 
+	 *
 	 * REST: GET /dedicated/ceph/{serviceName}/user/{userName}/pool
 	 * @param userName [required] Name of ceph user
 	 * @param serviceName [required] ID of cluster
@@ -335,7 +335,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 
 	/**
 	 * Update user-pool permission for single pool
-	 * 
+	 *
 	 * REST: PUT /dedicated/ceph/{serviceName}/user/{userName}/pool
 	 * @param userName [required] Name of ceph user
 	 * @param serviceName [required] ID of cluster
@@ -363,7 +363,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 
 	/**
 	 * Create new user-pool permissions. All old permissions will be cleared
-	 * 
+	 *
 	 * REST: POST /dedicated/ceph/{serviceName}/user/{userName}/pool
 	 * @param userName [required] Name of ceph user
 	 * @param serviceName [required] ID of cluster
@@ -381,7 +381,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 
 	/**
 	 * Clear user-pool permission for single pool
-	 * 
+	 *
 	 * REST: DELETE /dedicated/ceph/{serviceName}/user/{userName}/pool/{poolName}
 	 * @param userName [required] Name of ceph user
 	 * @param serviceName [required] ID of cluster
@@ -398,7 +398,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /dedicated/ceph
 	 */
 	public ArrayList<String> GET() throws IOException {

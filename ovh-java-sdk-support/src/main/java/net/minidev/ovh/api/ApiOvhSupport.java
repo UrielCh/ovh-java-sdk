@@ -28,7 +28,7 @@ public class ApiOvhSupport extends ApiOvhBase {
 
 	/**
 	 * Create a new ticket
-	 * 
+	 *
 	 * REST: POST /support/tickets/create
 	 * @param subcategory [required] Ticket message subcategory
 	 * @param body [required] Ticket message body
@@ -54,7 +54,7 @@ public class ApiOvhSupport extends ApiOvhBase {
 
 	/**
 	 * Get ticket
-	 * 
+	 *
 	 * REST: GET /support/tickets/{ticketId}
 	 * @param ticketId [required] internal identifier ticket
 	 */
@@ -67,7 +67,7 @@ public class ApiOvhSupport extends ApiOvhBase {
 
 	/**
 	 * Reply to ticket
-	 * 
+	 *
 	 * REST: POST /support/tickets/{ticketId}/reply
 	 * @param ticketId [required] internal ticket identifier
 	 * @param body [required] text body of ticket response
@@ -82,7 +82,7 @@ public class ApiOvhSupport extends ApiOvhBase {
 
 	/**
 	 * Get ticket messages
-	 * 
+	 *
 	 * REST: GET /support/tickets/{ticketId}/messages
 	 * @param ticketId [required] internal ticket identifier
 	 */
@@ -96,7 +96,7 @@ public class ApiOvhSupport extends ApiOvhBase {
 
 	/**
 	 * Reopen a ticket
-	 * 
+	 *
 	 * REST: POST /support/tickets/{ticketId}/reopen
 	 * @param ticketId [required] internal ticket identifier
 	 * @param body [required] ticket reopen reason
@@ -111,7 +111,7 @@ public class ApiOvhSupport extends ApiOvhBase {
 
 	/**
 	 * Close ticket
-	 * 
+	 *
 	 * REST: POST /support/tickets/{ticketId}/close
 	 * @param ticketId [required] internal ticket identifier
 	 */
@@ -123,7 +123,7 @@ public class ApiOvhSupport extends ApiOvhBase {
 
 	/**
 	 * Checks whether ticket can be scored
-	 * 
+	 *
 	 * REST: GET /support/tickets/{ticketId}/canBeScored
 	 * @param ticketId [required] internal ticket identifier
 	 */
@@ -136,7 +136,7 @@ public class ApiOvhSupport extends ApiOvhBase {
 
 	/**
 	 * Set ticket score
-	 * 
+	 *
 	 * REST: POST /support/tickets/{ticketId}/score
 	 * @param ticketId [required] internal ticket identifier
 	 * @param scoreComment [required] ticket comment about the score
@@ -153,7 +153,7 @@ public class ApiOvhSupport extends ApiOvhBase {
 
 	/**
 	 * List support tickets identifiers for this service
-	 * 
+	 *
 	 * REST: GET /support/tickets
 	 * @param subject [required] Search by ticket subject
 	 * @param status [required] Status of ticket

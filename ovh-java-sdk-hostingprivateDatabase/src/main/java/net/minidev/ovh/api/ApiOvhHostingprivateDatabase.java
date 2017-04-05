@@ -34,7 +34,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/privateDatabase/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your private database
 	 */
@@ -47,7 +47,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /hosting/privateDatabase/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your private database
@@ -60,7 +60,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/privateDatabase/{serviceName}
 	 * @param serviceName [required] The internal name of your private database
 	 */
@@ -73,7 +73,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /hosting/privateDatabase/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your private database
@@ -86,7 +86,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Change the private database engine version
-	 * 
+	 *
 	 * REST: POST /hosting/privateDatabase/{serviceName}/changeVersion
 	 * @param version [required] Private database versions
 	 * @param serviceName [required] The internal name of your private database
@@ -102,7 +102,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Dumps available for your private database service
-	 * 
+	 *
 	 * REST: GET /hosting/privateDatabase/{serviceName}/dump
 	 * @param databaseName [required] Filter the value of databaseName property (like)
 	 * @param serviceName [required] The internal name of your private database
@@ -118,7 +118,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/privateDatabase/{serviceName}/dump/{dumpId}
 	 * @param serviceName [required] The internal name of your private database
 	 * @param dumpId [required] Dump id
@@ -133,7 +133,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Delete dump before expiration date
-	 * 
+	 *
 	 * REST: DELETE /hosting/privateDatabase/{serviceName}/dump/{dumpId}
 	 * @param serviceName [required] The internal name of your private database
 	 * @param dumpId [required] Dump id
@@ -148,7 +148,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Request the restore from this dump
-	 * 
+	 *
 	 * REST: POST /hosting/privateDatabase/{serviceName}/dump/{dumpId}/restore
 	 * @param databaseName [required] The database where you want to restore this dump
 	 * @param serviceName [required] The internal name of your private database
@@ -166,7 +166,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Terminate your service
-	 * 
+	 *
 	 * REST: POST /hosting/privateDatabase/{serviceName}/terminate
 	 * @param serviceName [required] The internal name of your private database
 	 */
@@ -179,7 +179,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * List linked webs
-	 * 
+	 *
 	 * REST: GET /hosting/privateDatabase/{serviceName}/webs
 	 * @param serviceName [required] The internal name of your private database
 	 */
@@ -193,7 +193,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Launch a contact change procedure
-	 * 
+	 *
 	 * REST: POST /hosting/privateDatabase/{serviceName}/changeContact
 	 * @param contactAdmin The contact to set as admin contact
 	 * @param contactTech The contact to set as tech contact
@@ -213,7 +213,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Synchronize your informations from your private database
-	 * 
+	 *
 	 * REST: POST /hosting/privateDatabase/{serviceName}/refresh
 	 * @param serviceName [required] The internal name of your private database
 	 */
@@ -226,7 +226,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Get the availables versions for this private database
-	 * 
+	 *
 	 * REST: GET /hosting/privateDatabase/{serviceName}/availableVersions
 	 * @param serviceName [required] The internal name of your private database
 	 */
@@ -240,7 +240,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * User allowed to connect on your databases
-	 * 
+	 *
 	 * REST: GET /hosting/privateDatabase/{serviceName}/user
 	 * @param serviceName [required] The internal name of your private database
 	 */
@@ -253,7 +253,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Create a new user on your service
-	 * 
+	 *
 	 * REST: POST /hosting/privateDatabase/{serviceName}/user
 	 * @param password [required] Password for the new user ( alphanumeric and 8 characters minimum )
 	 * @param userName [required] User name used to connect on your databases
@@ -271,7 +271,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/privateDatabase/{serviceName}/user/{userName}
 	 * @param serviceName [required] The internal name of your private database
 	 * @param userName [required] User name used to connect to your databases
@@ -286,7 +286,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Delete a user
-	 * 
+	 *
 	 * REST: DELETE /hosting/privateDatabase/{serviceName}/user/{userName}
 	 * @param serviceName [required] The internal name of your private database
 	 * @param userName [required] User name used to connect to your databases
@@ -301,7 +301,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Request a change password for a user
-	 * 
+	 *
 	 * REST: POST /hosting/privateDatabase/{serviceName}/user/{userName}/changePassword
 	 * @param password [required] The new user password ( alphanumeric and 8 characters minimum )
 	 * @param serviceName [required] The internal name of your private database
@@ -319,7 +319,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * User grant's on your databases
-	 * 
+	 *
 	 * REST: GET /hosting/privateDatabase/{serviceName}/user/{userName}/grant
 	 * @param serviceName [required] The internal name of your private database
 	 * @param userName [required] User name used to connect to your databases
@@ -334,7 +334,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Add grant on a database
-	 * 
+	 *
 	 * REST: POST /hosting/privateDatabase/{serviceName}/user/{userName}/grant
 	 * @param databaseName [required] Database name where add grant
 	 * @param grant [required] Grant you want set on the database for this user
@@ -354,7 +354,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/privateDatabase/{serviceName}/user/{userName}/grant/{databaseName}
 	 * @param serviceName [required] The internal name of your private database
 	 * @param userName [required] User name used to connect to your databases
@@ -371,7 +371,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Delete a grant on a database
-	 * 
+	 *
 	 * REST: DELETE /hosting/privateDatabase/{serviceName}/user/{userName}/grant/{databaseName}
 	 * @param serviceName [required] The internal name of your private database
 	 * @param userName [required] User name used to connect to your databases
@@ -388,7 +388,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Update user grant
-	 * 
+	 *
 	 * REST: POST /hosting/privateDatabase/{serviceName}/user/{userName}/grant/{databaseName}/update
 	 * @param grant [required] Grant you want set on the database for this user
 	 * @param serviceName [required] The internal name of your private database
@@ -408,7 +408,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Change your ftp admin password
-	 * 
+	 *
 	 * REST: POST /hosting/privateDatabase/{serviceName}/changeFtpPassword
 	 * @param password [required] New ftp admin password ( alphanumeric and 8 characters minimum )
 	 * @param serviceName [required] The internal name of your private database
@@ -424,7 +424,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Restart the private database
-	 * 
+	 *
 	 * REST: POST /hosting/privateDatabase/{serviceName}/restart
 	 * @param serviceName [required] The internal name of your private database
 	 */
@@ -437,7 +437,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Tasks attached to your private database service
-	 * 
+	 *
 	 * REST: GET /hosting/privateDatabase/{serviceName}/tasks
 	 * @param function [required] Filter the value of function property (=)
 	 * @param status [required] Filter the value of status property (=)
@@ -454,7 +454,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/privateDatabase/{serviceName}/tasks/{id}
 	 * @param serviceName [required] The internal name of your private database
 	 * @param id [required] The id of the task
@@ -469,7 +469,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Stop the private database
-	 * 
+	 *
 	 * REST: POST /hosting/privateDatabase/{serviceName}/stop
 	 * @param serviceName [required] The internal name of your private database
 	 */
@@ -482,7 +482,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Confirm termination of your service
-	 * 
+	 *
 	 * REST: POST /hosting/privateDatabase/{serviceName}/confirmTermination
 	 * @param reason Reason of your termination request
 	 * @param commentary Commentary about your termination request
@@ -502,7 +502,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Databases linked to your private database service
-	 * 
+	 *
 	 * REST: GET /hosting/privateDatabase/{serviceName}/database
 	 * @param serviceName [required] The internal name of your private database
 	 */
@@ -515,7 +515,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Create a new database on your private database service
-	 * 
+	 *
 	 * REST: POST /hosting/privateDatabase/{serviceName}/database
 	 * @param databaseName [required] Name of your new database
 	 * @param serviceName [required] The internal name of your private database
@@ -531,7 +531,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/privateDatabase/{serviceName}/database/{databaseName}
 	 * @param serviceName [required] The internal name of your private database
 	 * @param databaseName [required] Database name
@@ -546,7 +546,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Delete the database
-	 * 
+	 *
 	 * REST: DELETE /hosting/privateDatabase/{serviceName}/database/{databaseName}
 	 * @param serviceName [required] The internal name of your private database
 	 * @param databaseName [required] Database name
@@ -561,7 +561,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Dump available for your databases
-	 * 
+	 *
 	 * REST: GET /hosting/privateDatabase/{serviceName}/database/{databaseName}/dump
 	 * @param creationDate [required] Filter the value of creationDate property (like)
 	 * @param deletionDate [required] Filter the value of deletionDate property (like)
@@ -580,7 +580,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Request the dump of this database ( an email will be send with a link available 30 days )
-	 * 
+	 *
 	 * REST: POST /hosting/privateDatabase/{serviceName}/database/{databaseName}/dump
 	 * @param sendEmail [required] Send an email when dump will be available? Default: false
 	 * @param serviceName [required] The internal name of your private database
@@ -598,7 +598,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/privateDatabase/{serviceName}/database/{databaseName}/dump/{id}
 	 * @param serviceName [required] The internal name of your private database
 	 * @param databaseName [required] Database name
@@ -615,7 +615,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Delete dump before expiration date
-	 * 
+	 *
 	 * REST: DELETE /hosting/privateDatabase/{serviceName}/database/{databaseName}/dump/{id}
 	 * @param serviceName [required] The internal name of your private database
 	 * @param databaseName [required] Database name
@@ -632,7 +632,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Request the restore from this dump
-	 * 
+	 *
 	 * REST: POST /hosting/privateDatabase/{serviceName}/database/{databaseName}/dump/{id}/restore
 	 * @param serviceName [required] The internal name of your private database
 	 * @param databaseName [required] Database name
@@ -649,7 +649,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Request the import in this database
-	 * 
+	 *
 	 * REST: POST /hosting/privateDatabase/{serviceName}/database/{databaseName}/import
 	 * @param documentId [required] Documents ID of the dump from /me/documents
 	 * @param sendEmail [required] Send an email when the import will be done? Default: false
@@ -671,7 +671,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Create a new database/user and grant it
-	 * 
+	 *
 	 * REST: POST /hosting/privateDatabase/{serviceName}/databaseWizard
 	 * @param password [required] Password for the new user ( alphanumeric and 8 characters minimum )
 	 * @param databaseName [required] Name of your new database
@@ -693,7 +693,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/privateDatabase/{serviceName}/config
 	 * @param serviceName [required] The internal name of your private database
 	 */
@@ -706,7 +706,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Update the configuration
-	 * 
+	 *
 	 * REST: POST /hosting/privateDatabase/{serviceName}/config/update
 	 * @param parameters [required] Array of instance configuration parameters
 	 * @param serviceName [required] The internal name of your private database
@@ -722,7 +722,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * Start the private database
-	 * 
+	 *
 	 * REST: POST /hosting/privateDatabase/{serviceName}/start
 	 * @param serviceName [required] The internal name of your private database
 	 */
@@ -735,7 +735,7 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /hosting/privateDatabase
 	 */
 	public ArrayList<String> GET() throws IOException {

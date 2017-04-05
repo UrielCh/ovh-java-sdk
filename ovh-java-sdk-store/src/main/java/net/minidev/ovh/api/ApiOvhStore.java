@@ -24,7 +24,7 @@ public class ApiOvhStore extends ApiOvhBase {
 
 	/**
 	 * List current customer documents
-	 * 
+	 *
 	 * REST: GET /store/document
 	 */
 	public ArrayList<OvhDocument> document_GET() throws IOException {
@@ -36,7 +36,7 @@ public class ApiOvhStore extends ApiOvhBase {
 
 	/**
 	 * Create a document
-	 * 
+	 *
 	 * REST: POST /store/document
 	 * @param name [required] Name of the document
 	 * @param tags [required] Optional tags for document
@@ -52,7 +52,7 @@ public class ApiOvhStore extends ApiOvhBase {
 
 	/**
 	 * Add CORS support on your container
-	 * 
+	 *
 	 * REST: POST /store/document/cors
 	 * @param origin [required] Allow this origin
 	 */
@@ -65,7 +65,7 @@ public class ApiOvhStore extends ApiOvhBase {
 
 	/**
 	 * Get document info
-	 * 
+	 *
 	 * REST: GET /store/document/{documentId}
 	 * @param documentId [required] Id of the document to fetch
 	 */
@@ -78,7 +78,7 @@ public class ApiOvhStore extends ApiOvhBase {
 
 	/**
 	 * Delete document
-	 * 
+	 *
 	 * REST: DELETE /store/document/{documentId}
 	 * @param documentId [required] Id of the object to delete
 	 */
@@ -91,7 +91,7 @@ public class ApiOvhStore extends ApiOvhBase {
 
 	/**
 	 * List current customer contacts
-	 * 
+	 *
 	 * REST: GET /store/contact
 	 */
 	public ArrayList<OvhContact> contact_GET() throws IOException {
@@ -103,7 +103,7 @@ public class ApiOvhStore extends ApiOvhBase {
 
 	/**
 	 * Create a 'marketplace' contact for current nic
-	 * 
+	 *
 	 * REST: POST /store/contact
 	 * @param title [required] Title
 	 * @param firstname [required] First name
@@ -135,7 +135,7 @@ public class ApiOvhStore extends ApiOvhBase {
 
 	/**
 	 * Get contact details
-	 * 
+	 *
 	 * REST: GET /store/contact/{contactId}
 	 * @param contactId [required] Id of the contact to fetch
 	 */
@@ -148,7 +148,7 @@ public class ApiOvhStore extends ApiOvhBase {
 
 	/**
 	 * Edit contact information
-	 * 
+	 *
 	 * REST: PUT /store/contact/{contactId}
 	 * @param contactId [required] Id of the contact to fetch
 	 * @param title [required] Title
@@ -182,7 +182,7 @@ public class ApiOvhStore extends ApiOvhBase {
 
 	/**
 	 * Remove an existing contact
-	 * 
+	 *
 	 * REST: DELETE /store/contact/{contactId}
 	 * @param contactId [required] Id of the contact to remove
 	 */
@@ -195,7 +195,7 @@ public class ApiOvhStore extends ApiOvhBase {
 
 	/**
 	 * List document associated with contact
-	 * 
+	 *
 	 * REST: GET /store/contact/{contactId}/document
 	 * @param contactId [required] Id of the contact to fetch
 	 */
@@ -209,7 +209,7 @@ public class ApiOvhStore extends ApiOvhBase {
 
 	/**
 	 * Add a document to a contact
-	 * 
+	 *
 	 * REST: POST /store/contact/{contactId}/document
 	 * @param documentId [required] Document id to link
 	 * @param contactId [required] Id of the contact to fetch
@@ -225,7 +225,7 @@ public class ApiOvhStore extends ApiOvhBase {
 
 	/**
 	 * Unlink a document from a contact
-	 * 
+	 *
 	 * REST: DELETE /store/contact/{contactId}/document/{documentId}
 	 * @param contactId [required] Id of the contact to fetch
 	 * @param documentId [required] Id of the document
@@ -240,7 +240,7 @@ public class ApiOvhStore extends ApiOvhBase {
 
 	/**
 	 * List current customer partners
-	 * 
+	 *
 	 * REST: GET /store/partner
 	 */
 	public ArrayList<OvhPartner> partner_GET() throws IOException {
@@ -252,7 +252,7 @@ public class ApiOvhStore extends ApiOvhBase {
 
 	/**
 	 * Create a 'marketplace' partner for current nic
-	 * 
+	 *
 	 * REST: POST /store/partner
 	 * @param legalForm [required] Legal form
 	 * @param organisationName [required] Organisation name
@@ -296,7 +296,7 @@ public class ApiOvhStore extends ApiOvhBase {
 
 	/**
 	 * Get partner info
-	 * 
+	 *
 	 * REST: GET /store/partner/{partnerId}
 	 * @param partnerId [required] Id of the partner
 	 */
@@ -309,7 +309,7 @@ public class ApiOvhStore extends ApiOvhBase {
 
 	/**
 	 * Edit partner info
-	 * 
+	 *
 	 * REST: PUT /store/partner/{partnerId}
 	 * @param partnerId [required] Id of the partner
 	 * @param legalForm [required] Legal form
@@ -355,7 +355,7 @@ public class ApiOvhStore extends ApiOvhBase {
 
 	/**
 	 * Delete partner
-	 * 
+	 *
 	 * REST: DELETE /store/partner/{partnerId}
 	 * @param partnerId [required] Id of the object to fetch
 	 */
@@ -368,7 +368,7 @@ public class ApiOvhStore extends ApiOvhBase {
 
 	/**
 	 * List document associated with partner
-	 * 
+	 *
 	 * REST: GET /store/partner/{partnerId}/document
 	 * @param partnerId [required] Id of the partner
 	 */
@@ -381,7 +381,7 @@ public class ApiOvhStore extends ApiOvhBase {
 
 	/**
 	 * Add a document to a partner
-	 * 
+	 *
 	 * REST: POST /store/partner/{partnerId}/document
 	 * @param documentId [required] Document id to link
 	 * @param partnerId [required] Id of the partner
@@ -397,7 +397,7 @@ public class ApiOvhStore extends ApiOvhBase {
 
 	/**
 	 * Unlink a document from a partner
-	 * 
+	 *
 	 * REST: DELETE /store/partner/{partnerId}/document/{documentId}
 	 * @param partnerId [required] Id of the partner
 	 * @param documentId [required] Id of the document
@@ -412,7 +412,7 @@ public class ApiOvhStore extends ApiOvhBase {
 
 	/**
 	 * List partner's products
-	 * 
+	 *
 	 * REST: GET /store/partner/{partnerId}/product
 	 * @param partnerId [required] Id of the partner
 	 */
@@ -426,7 +426,7 @@ public class ApiOvhStore extends ApiOvhBase {
 
 	/**
 	 * Create a new product for partner
-	 * 
+	 *
 	 * REST: POST /store/partner/{partnerId}/product
 	 * @param partnerId [required] Id of the partner
 	 * @param description [required] Description of product
@@ -448,7 +448,7 @@ public class ApiOvhStore extends ApiOvhBase {
 
 	/**
 	 * Get partner info
-	 * 
+	 *
 	 * REST: GET /store/partner/{partnerId}/product/{productId}
 	 * @param partnerId [required] Id of the partner
 	 * @param productId [required] Id of the product
@@ -463,7 +463,7 @@ public class ApiOvhStore extends ApiOvhBase {
 
 	/**
 	 * Edit product info
-	 * 
+	 *
 	 * REST: PUT /store/partner/{partnerId}/product/{productId}
 	 * @param partnerId [required] Id of the partner
 	 * @param productId [required] Id of the product
@@ -487,7 +487,7 @@ public class ApiOvhStore extends ApiOvhBase {
 
 	/**
 	 * Delete product
-	 * 
+	 *
 	 * REST: DELETE /store/partner/{partnerId}/product/{productId}
 	 * @param partnerId [required] Id of the partner
 	 * @param productId [required] Id of the product
@@ -502,7 +502,7 @@ public class ApiOvhStore extends ApiOvhBase {
 
 	/**
 	 * List document associated with product
-	 * 
+	 *
 	 * REST: GET /store/partner/{partnerId}/product/{productId}/document
 	 * @param partnerId [required] Id of the partner
 	 * @param productId [required] Id of the product
@@ -517,7 +517,7 @@ public class ApiOvhStore extends ApiOvhBase {
 
 	/**
 	 * Add a document to a product
-	 * 
+	 *
 	 * REST: POST /store/partner/{partnerId}/product/{productId}/document
 	 * @param documentId [required] Document id to link
 	 * @param partnerId [required] Id of the partner
@@ -535,7 +535,7 @@ public class ApiOvhStore extends ApiOvhBase {
 
 	/**
 	 * Unlink a document from a product
-	 * 
+	 *
 	 * REST: DELETE /store/partner/{partnerId}/product/{productId}/document/{documentId}
 	 * @param partnerId [required] Id of the partner
 	 * @param productId [required] Id of the product

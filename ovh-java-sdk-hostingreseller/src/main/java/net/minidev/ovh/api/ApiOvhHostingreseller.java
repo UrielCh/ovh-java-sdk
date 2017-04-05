@@ -24,7 +24,7 @@ public class ApiOvhHostingreseller extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/reseller/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your reseller service
 	 */
@@ -37,7 +37,7 @@ public class ApiOvhHostingreseller extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /hosting/reseller/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your reseller service
@@ -50,7 +50,7 @@ public class ApiOvhHostingreseller extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/reseller/{serviceName}
 	 * @param serviceName [required] The internal name of your reseller service
 	 */
@@ -63,7 +63,7 @@ public class ApiOvhHostingreseller extends ApiOvhBase {
 
 	/**
 	 * Restart instance
-	 * 
+	 *
 	 * REST: POST /hosting/reseller/{serviceName}/reboot
 	 * @param serviceName [required] The internal name of your reseller service
 	 * @param hard [required] Force a hard reboot
@@ -78,7 +78,7 @@ public class ApiOvhHostingreseller extends ApiOvhBase {
 
 	/**
 	 * Reinstall instance
-	 * 
+	 *
 	 * REST: POST /hosting/reseller/{serviceName}/reinstall
 	 * @param serviceName [required] The internal name of your reseller service
 	 */
@@ -91,7 +91,7 @@ public class ApiOvhHostingreseller extends ApiOvhBase {
 
 	/**
 	 * Change language of the Plesk instance
-	 * 
+	 *
 	 * REST: POST /hosting/reseller/{serviceName}/language
 	 * @param serviceName [required] The internal name of your reseller service
 	 * @param language [required] Locale value
@@ -107,7 +107,7 @@ public class ApiOvhHostingreseller extends ApiOvhBase {
 
 	/**
 	 * Get reset instance password url
-	 * 
+	 *
 	 * REST: GET /hosting/reseller/{serviceName}/resetPasswordUrl
 	 * @param serviceName [required] The internal name of your reseller service
 	 */
@@ -120,7 +120,7 @@ public class ApiOvhHostingreseller extends ApiOvhBase {
 
 	/**
 	 * Get list of tasks
-	 * 
+	 *
 	 * REST: GET /hosting/reseller/{serviceName}/task
 	 * @param serviceName [required] The internal name of your reseller service
 	 */
@@ -134,7 +134,7 @@ public class ApiOvhHostingreseller extends ApiOvhBase {
 
 	/**
 	 * Get task information given its id
-	 * 
+	 *
 	 * REST: GET /hosting/reseller/{serviceName}/task/{taskId}
 	 * @param serviceName [required] The internal name of your reseller service
 	 * @param taskId [required] Task id to retrieve
@@ -149,7 +149,7 @@ public class ApiOvhHostingreseller extends ApiOvhBase {
 
 	/**
 	 * Set new reverse to ip
-	 * 
+	 *
 	 * REST: POST /hosting/reseller/{serviceName}/reverse
 	 * @param serviceName [required] The internal name of your reseller service
 	 * @param reverse [required] Domain to set the ip reverse
@@ -165,7 +165,7 @@ public class ApiOvhHostingreseller extends ApiOvhBase {
 
 	/**
 	 * Launch a contact change procedure
-	 * 
+	 *
 	 * REST: POST /hosting/reseller/{serviceName}/changeContact
 	 * @param contactAdmin The contact to set as admin contact
 	 * @param contactTech The contact to set as tech contact
@@ -186,7 +186,7 @@ public class ApiOvhHostingreseller extends ApiOvhBase {
 
 	/**
 	 * Change user email
-	 * 
+	 *
 	 * REST: POST /hosting/reseller/{serviceName}/email
 	 * @param serviceName [required] The internal name of your reseller service
 	 * @param email [required] New email
@@ -202,7 +202,7 @@ public class ApiOvhHostingreseller extends ApiOvhBase {
 
 	/**
 	 * Detail of a snapshot
-	 * 
+	 *
 	 * REST: GET /hosting/reseller/{serviceName}/snapshot/{snapshotId}
 	 * @param serviceName [required] The internal name of your reseller service
 	 * @param snapshotId [required] Snapshot targeted
@@ -217,7 +217,7 @@ public class ApiOvhHostingreseller extends ApiOvhBase {
 
 	/**
 	 * Restore a snapshot
-	 * 
+	 *
 	 * REST: POST /hosting/reseller/{serviceName}/snapshot/{snapshotId}/restore
 	 * @param serviceName [required] The internal name of your reseller service
 	 * @param snapshotId [required] Snapshot to restore
@@ -232,7 +232,7 @@ public class ApiOvhHostingreseller extends ApiOvhBase {
 
 	/**
 	 * List instance's current snapshots
-	 * 
+	 *
 	 * REST: GET /hosting/reseller/{serviceName}/snapshot
 	 * @param serviceName [required] The internal name of your reseller service
 	 */
@@ -246,7 +246,7 @@ public class ApiOvhHostingreseller extends ApiOvhBase {
 
 	/**
 	 * Make manual snapshot
-	 * 
+	 *
 	 * REST: POST /hosting/reseller/{serviceName}/snapshot
 	 * @param serviceName [required] The internal name of your reseller service
 	 */
@@ -259,7 +259,7 @@ public class ApiOvhHostingreseller extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /hosting/reseller
 	 */
 	public ArrayList<String> GET() throws IOException {

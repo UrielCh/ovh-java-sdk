@@ -22,7 +22,7 @@ public class ApiOvhDedicatedinstallationTemplate extends ApiOvhBase {
 
 	/**
 	 * OVH operating system installation templates
-	 * 
+	 *
 	 * REST: GET /dedicated/installationTemplate
 	 */
 	public ArrayList<String> GET() throws IOException {
@@ -34,7 +34,7 @@ public class ApiOvhDedicatedinstallationTemplate extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/installationTemplate/{templateName}
 	 * @param templateName [required] This template name
 	 */
@@ -47,7 +47,7 @@ public class ApiOvhDedicatedinstallationTemplate extends ApiOvhBase {
 
 	/**
 	 * Partitioning schemes available on this template
-	 * 
+	 *
 	 * REST: GET /dedicated/installationTemplate/{templateName}/partitionScheme
 	 * @param templateName [required] This template name
 	 */
@@ -60,7 +60,7 @@ public class ApiOvhDedicatedinstallationTemplate extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/installationTemplate/{templateName}/partitionScheme/{schemeName}
 	 * @param templateName [required] This template name
 	 * @param schemeName [required] name of this partitioning scheme
@@ -75,7 +75,7 @@ public class ApiOvhDedicatedinstallationTemplate extends ApiOvhBase {
 
 	/**
 	 * Partitions defined in this partitioning scheme
-	 * 
+	 *
 	 * REST: GET /dedicated/installationTemplate/{templateName}/partitionScheme/{schemeName}/partition
 	 * @param templateName [required] This template name
 	 * @param schemeName [required] name of this partitioning scheme
@@ -90,7 +90,7 @@ public class ApiOvhDedicatedinstallationTemplate extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/installationTemplate/{templateName}/partitionScheme/{schemeName}/partition/{mountpoint}
 	 * @param templateName [required] This template name
 	 * @param schemeName [required] name of this partitioning scheme
@@ -107,7 +107,7 @@ public class ApiOvhDedicatedinstallationTemplate extends ApiOvhBase {
 
 	/**
 	 * Hardware RAIDs defined in this partitioning scheme
-	 * 
+	 *
 	 * REST: GET /dedicated/installationTemplate/{templateName}/partitionScheme/{schemeName}/hardwareRaid
 	 * @param templateName [required] This template name
 	 * @param schemeName [required] name of this partitioning scheme
@@ -122,7 +122,7 @@ public class ApiOvhDedicatedinstallationTemplate extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/installationTemplate/{templateName}/partitionScheme/{schemeName}/hardwareRaid/{name}
 	 * @param templateName [required] This template name
 	 * @param schemeName [required] name of this partitioning scheme

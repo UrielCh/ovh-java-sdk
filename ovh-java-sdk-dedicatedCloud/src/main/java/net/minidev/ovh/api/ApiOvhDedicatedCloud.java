@@ -56,7 +56,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/serviceInfos
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -69,7 +69,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /dedicatedCloud/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] Domain of the service
@@ -82,7 +82,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get the current password policy for your Private Cloud
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/passwordPolicy
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -95,7 +95,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -108,7 +108,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /dedicatedCloud/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] Domain of the service
@@ -121,7 +121,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Datacenters associated with this Private Cloud
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/datacenter
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -135,7 +135,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Add a new Datacenter in your Private Cloud
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/datacenter
 	 * @param commercialRangeName [required] The commercial range of this new datacenter. You can see what commercial ranges are orderable on this API section : /dedicatedCloud/commercialRange/
 	 * @param vrackName [required] Name of the Vrack link to the new datacenter.
@@ -153,7 +153,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/datacenter/{datacenterId}
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
@@ -168,7 +168,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /dedicatedCloud/{serviceName}/datacenter/{datacenterId}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] Domain of the service
@@ -183,7 +183,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Remove this Datacenter from your Private Cloud. (It has to be empty in order to be removable)
-	 * 
+	 *
 	 * REST: DELETE /dedicatedCloud/{serviceName}/datacenter/{datacenterId}
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
@@ -198,7 +198,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Order a new hourly Host in a given Datacenter
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/orderNewHostHourly
 	 * @param name [required] Host profile you want to order
 	 * @param serviceName [required] Domain of the service
@@ -216,7 +216,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Tasks associated with this Datacenter
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/task
 	 * @param name [required] Filter the value of name property (like)
 	 * @param state [required] Filter the value of state property (=)
@@ -235,7 +235,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/task/{taskId}
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
@@ -252,7 +252,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Change the execution date of a maintenance. Works only if task type is maintenance and if it has not started yet.
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/task/{taskId}/changeMaintenanceExecutionDate
 	 * @param executionDate [required] The new execution date
 	 * @param serviceName [required] Domain of the service
@@ -272,7 +272,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * List available filers in a given Private Cloud Datacenter
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/orderableFilerProfiles
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
@@ -288,7 +288,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Filers associated with this Datacenter
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/filer
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
@@ -303,7 +303,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/filer/{filerId}
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
@@ -320,7 +320,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Remove the filer from your Private Cloud.
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/filer/{filerId}/remove
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
@@ -337,7 +337,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Tasks associated with this Filer
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/filer/{filerId}/task
 	 * @param name [required] Filter the value of name property (like)
 	 * @param state [required] Filter the value of state property (=)
@@ -358,7 +358,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/filer/{filerId}/task/{taskId}
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
@@ -377,7 +377,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Change the execution date of a maintenance. Works only if task type is maintenance and if it has not started yet.
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/filer/{filerId}/task/{taskId}/changeMaintenanceExecutionDate
 	 * @param executionDate [required] The new execution date
 	 * @param serviceName [required] Domain of the service
@@ -399,7 +399,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Hourly consumption associated with this Filer
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/filer/{filerId}/hourlyConsumption
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
@@ -416,7 +416,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/host/{hostId}
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
@@ -433,7 +433,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Remove the host from your Private Cloud.
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/host/{hostId}/remove
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
@@ -450,7 +450,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Tasks associated with this Host
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/host/{hostId}/task
 	 * @param name [required] Filter the value of name property (like)
 	 * @param state [required] Filter the value of state property (=)
@@ -471,7 +471,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/host/{hostId}/task/{taskId}
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
@@ -490,7 +490,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Change the execution date of a maintenance. Works only if task type is maintenance and if it has not started yet.
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/host/{hostId}/task/{taskId}/changeMaintenanceExecutionDate
 	 * @param executionDate [required] The new execution date
 	 * @param serviceName [required] Domain of the service
@@ -512,7 +512,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Hourly consumption associated with this host.
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/host/{hostId}/hourlyConsumption
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
@@ -529,7 +529,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Hosts associated with this Datacenter
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/host
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
@@ -544,7 +544,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Virtual machiness associated with this Datacenter
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
@@ -559,7 +559,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
@@ -576,7 +576,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}/backupJob
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
@@ -593,7 +593,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Edit a backup job
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}/backupJob
 	 * @param backupDays [required] List of days your Virtual Machine will be backuped
 	 * @param serviceName [required] Domain of the service
@@ -613,7 +613,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Enable backup solution on this virtual Machine
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}/backupJob/enable
 	 * @param backupDays [required] Backup offer type
 	 * @param serviceName [required] Domain of the service
@@ -633,7 +633,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Restore point associated to this Backup Job
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}/backupJob/restorePoints
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
@@ -650,7 +650,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}/backupJob/restorePoints/{restorePointId}
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
@@ -669,7 +669,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Restore this restore point
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}/backupJob/restorePoints/{restorePointId}/restore
 	 * @param filerId [required] Id of the filer where we should restore this Backup.
 	 * @param serviceName [required] Domain of the service
@@ -691,7 +691,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Disable backup solution on this virtual Machine
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}/backupJob/disable
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
@@ -708,7 +708,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Order a new hourly Filer in a given Datacenter
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/orderNewFilerHourly
 	 * @param name [required] Filer profile you want to order
 	 * @param serviceName [required] Domain of the service
@@ -726,7 +726,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * List available hosts in a given Private Cloud Datacenter
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/orderableHostProfiles
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
@@ -742,7 +742,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/backup
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
@@ -757,7 +757,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Edit the backup on a Private Cloud
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/backup
 	 * @param restorePointInReport [required] RestorePoint number on mail report
 	 * @param backupOffer [required] Backup offer type
@@ -789,7 +789,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Enable backup solution on a Private Cloud
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/backup/enable
 	 * @param backupOffer [required] Backup offer type
 	 * @param serviceName [required] Domain of the service
@@ -807,7 +807,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Disable backup solution on a Private Cloud
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/backup/disable
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
@@ -822,7 +822,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Check if Hipaa option can be disabled
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/hipaa/canBeDisabled
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -835,7 +835,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/hipaa
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -848,7 +848,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Enable Hipaa option
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/hipaa/enable
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -861,7 +861,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Check if Hipaa option can be enabled
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/hipaa/canBeEnabled
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -874,7 +874,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Disable Hipaa option
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/hipaa/disable
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -887,7 +887,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Ip Blocks attached to this Private Cloud
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/ip
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -901,7 +901,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/ip/{network}
 	 * @param serviceName [required] Domain of the service
 	 * @param network [required] IP ex: 213.186.33.34/24
@@ -916,7 +916,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Tasks associated with this Filer
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/ip/{network}/task
 	 * @param name [required] Filter the value of name property (like)
 	 * @param state [required] Filter the value of state property (=)
@@ -935,7 +935,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/ip/{network}/task/{taskId}
 	 * @param serviceName [required] Domain of the service
 	 * @param network [required] IP ex: 213.186.33.34/24
@@ -952,7 +952,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Change the execution date of a maintenance. Works only if task type is maintenance and if it has not started yet.
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/ip/{network}/task/{taskId}/changeMaintenanceExecutionDate
 	 * @param executionDate [required] The new execution date
 	 * @param serviceName [required] Domain of the service
@@ -972,7 +972,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Check if Nsx option can be disabled
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/nsx/canBeDisabled
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -985,7 +985,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/nsx
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -998,7 +998,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Enable Nsx option
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/nsx/enable
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -1011,7 +1011,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Check if Nsx option can be enabled
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/nsx/canBeEnabled
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -1024,7 +1024,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Disable Nsx option
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/nsx/disable
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -1037,7 +1037,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Terminate your service
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/terminate
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -1050,7 +1050,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get the name of the commercial ranges compliant with your Private Cloud
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/commercialRange/compliance
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -1063,7 +1063,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get the name of the commercial ranges orderable in your Private Cloud
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/commercialRange/orderable
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -1076,7 +1076,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Filers mounted on all Datacenters of your Private Cloud Vsphere
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/filer
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -1089,7 +1089,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/filer/{filerId}
 	 * @param serviceName [required] Domain of the service
 	 * @param filerId [required] Filer Id
@@ -1104,7 +1104,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Remove the filer from your Private Cloud.
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/filer/{filerId}/remove
 	 * @param serviceName [required] Domain of the service
 	 * @param filerId [required] Filer Id
@@ -1119,7 +1119,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Tasks associated with this Filer
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/filer/{filerId}/task
 	 * @param name [required] Filter the value of name property (like)
 	 * @param state [required] Filter the value of state property (=)
@@ -1138,7 +1138,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/filer/{filerId}/task/{taskId}
 	 * @param serviceName [required] Domain of the service
 	 * @param filerId [required] Filer Id
@@ -1155,7 +1155,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Change the execution date of a maintenance. Works only if task type is maintenance and if it has not started yet.
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/filer/{filerId}/task/{taskId}/changeMaintenanceExecutionDate
 	 * @param executionDate [required] The new execution date
 	 * @param serviceName [required] Domain of the service
@@ -1175,7 +1175,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Hourly consumption associated with this Filer
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/filer/{filerId}/hourlyConsumption
 	 * @param serviceName [required] Domain of the service
 	 * @param filerId [required] Filer Id
@@ -1190,7 +1190,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Launch a contact change procedure
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/changeContact
 	 * @param contactAdmin The contact to set as admin contact
 	 * @param contactTech The contact to set as tech contact
@@ -1210,7 +1210,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get the new Prices for your Private Cloud
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/newPrices
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -1223,7 +1223,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Networks allowed to access to this Private Cloud management interface
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/allowedNetwork
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -1236,7 +1236,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Create a new Allowed network for your dedicatedCloud
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/allowedNetwork
 	 * @param network [required] Network name, e.g. 123.100.200.0/32
 	 * @param description [required] Description for your ACL
@@ -1254,7 +1254,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/allowedNetwork/{networkAccessId}
 	 * @param serviceName [required] Domain of the service
 	 * @param networkAccessId [required]
@@ -1269,7 +1269,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /dedicatedCloud/{serviceName}/allowedNetwork/{networkAccessId}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] Domain of the service
@@ -1284,7 +1284,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Remove this network from your Private Cloud
-	 * 
+	 *
 	 * REST: DELETE /dedicatedCloud/{serviceName}/allowedNetwork/{networkAccessId}
 	 * @param serviceName [required] Domain of the service
 	 * @param networkAccessId [required]
@@ -1299,7 +1299,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Tasks associated with this Filer
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/allowedNetwork/{networkAccessId}/task
 	 * @param name [required] Filter the value of name property (like)
 	 * @param state [required] Filter the value of state property (=)
@@ -1318,7 +1318,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/allowedNetwork/{networkAccessId}/task/{taskId}
 	 * @param serviceName [required] Domain of the service
 	 * @param networkAccessId [required]
@@ -1335,7 +1335,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Change the execution date of a maintenance. Works only if task type is maintenance and if it has not started yet.
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/allowedNetwork/{networkAccessId}/task/{taskId}/changeMaintenanceExecutionDate
 	 * @param executionDate [required] The new execution date
 	 * @param serviceName [required] Domain of the service
@@ -1355,7 +1355,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Upgrade your hypervisor to the next released version
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/upgradeHypervisor
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -1368,7 +1368,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Private Cloud users
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/user
 	 * @param name [required] Filter the value of name property (like)
 	 * @param serviceName [required] Domain of the service
@@ -1383,7 +1383,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Create a new User in your Private Cloud
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/user
 	 * @param firstName [required] First name of the user
 	 * @param canAddRessource [required] Is this User able to add ressources in the Datacenter he has access ? (default is no right to add ressource)
@@ -1419,7 +1419,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/user/{userId}
 	 * @param serviceName [required] Domain of the service
 	 * @param userId [required]
@@ -1434,7 +1434,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Remove a given user from your Private Cloud
-	 * 
+	 *
 	 * REST: DELETE /dedicatedCloud/{serviceName}/user/{userId}
 	 * @param serviceName [required] Domain of the service
 	 * @param userId [required]
@@ -1449,7 +1449,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Enable the given Private Cloud user
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/user/{userId}/enable
 	 * @param serviceName [required] Domain of the service
 	 * @param userId [required]
@@ -1464,7 +1464,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * User rights in a given Datacenters
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/user/{userId}/right
 	 * @param serviceName [required] Domain of the service
 	 * @param userId [required]
@@ -1479,7 +1479,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/user/{userId}/right/{rightId}
 	 * @param serviceName [required] Domain of the service
 	 * @param userId [required]
@@ -1496,7 +1496,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /dedicatedCloud/{serviceName}/user/{userId}/right/{rightId}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] Domain of the service
@@ -1513,7 +1513,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Change Private Cloud user properties
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/user/{userId}/changeProperties
 	 * @param firstName [required] First name of the user
 	 * @param fullAdminRo [required] Defines if the user is a full admin in readonly
@@ -1545,7 +1545,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Change Private Cloud user password
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/user/{userId}/changePassword
 	 * @param password [required] New password for this Private Cloud user. It must fits your Private Cloud password policy. If this field is empty, a random password will be generated and sent by email.
 	 * @param serviceName [required] Domain of the service
@@ -1563,7 +1563,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Tasks associated with this User
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/user/{userId}/task
 	 * @param name [required] Filter the value of name property (like)
 	 * @param state [required] Filter the value of state property (=)
@@ -1582,7 +1582,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/user/{userId}/task/{taskId}
 	 * @param serviceName [required] Domain of the service
 	 * @param userId [required]
@@ -1599,7 +1599,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Change the execution date of a maintenance. Works only if task type is maintenance and if it has not started yet.
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/user/{userId}/task/{taskId}/changeMaintenanceExecutionDate
 	 * @param executionDate [required] The new execution date
 	 * @param serviceName [required] Domain of the service
@@ -1619,7 +1619,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Disable the given Private Cloud user
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/user/{userId}/disable
 	 * @param serviceName [required] Domain of the service
 	 * @param userId [required]
@@ -1634,7 +1634,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/capabilities
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -1647,7 +1647,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Robots that can run on this Private Cloud
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/robot
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -1660,7 +1660,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/robot/{name}
 	 * @param serviceName [required] Domain of the service
 	 * @param name [required] The name of this robot
@@ -1675,7 +1675,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Check if PCI-DSS option can be disabled
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/pcidss/canBeDisabled
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -1688,7 +1688,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/pcidss
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -1701,7 +1701,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Enable PCI-DSS option
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/pcidss/enable
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -1714,7 +1714,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Check if PCI-DSS option can be enabled
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/pcidss/canBeEnabled
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -1727,7 +1727,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Disable PCI-DSS option
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/pcidss/disable
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -1740,7 +1740,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Confirm termination of your service
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/confirmTermination
 	 * @param reason Reason of your termination request
 	 * @param commentary Commentary about your termination request
@@ -1760,7 +1760,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Tasks associated with this Private Cloud
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/task
 	 * @param name [required] Filter the value of name property (like)
 	 * @param state [required] Filter the value of state property (=)
@@ -1777,7 +1777,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/task/{taskId}
 	 * @param serviceName [required] Domain of the service
 	 * @param taskId [required] Task id
@@ -1792,7 +1792,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Change the execution date of a maintenance. Works only if task type is maintenance and if it has not started yet.
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/task/{taskId}/changeMaintenanceExecutionDate
 	 * @param executionDate [required] The new execution date
 	 * @param serviceName [required] Domain of the service
@@ -1810,7 +1810,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Private Cloud vlans
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/vlan
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -1823,7 +1823,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/vlan/{vlanId}
 	 * @param serviceName [required] Domain of the service
 	 * @param vlanId [required]
@@ -1838,7 +1838,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Check if vRealize Operations option can be disabled
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/vrops/canBeDisabled
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -1851,7 +1851,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/vrops
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -1864,7 +1864,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Enable vRealize Operations option
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/vrops/enable
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -1877,7 +1877,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Check if vRealize Operations option can be enabled
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/vrops/canBeEnabled
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -1890,7 +1890,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Disable vRealize Operations option
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/vrops/disable
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -1903,7 +1903,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Order a new hourly Filer mounted in every Datacenter of a given Private Cloud
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/orderNewFilerHourly
 	 * @param name [required] Filer profile you want to order
 	 * @param serviceName [required] Domain of the service
@@ -1919,7 +1919,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * This Private Cloud vrack
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/vrack
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -1932,7 +1932,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/vrack/{vrack}
 	 * @param serviceName [required] Domain of the service
 	 * @param vrack [required] vrack name
@@ -1947,7 +1947,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * remove this dedicatedCloud (VmNetwork) from this vrack
-	 * 
+	 *
 	 * REST: DELETE /dedicatedCloud/{serviceName}/vrack/{vrack}
 	 * @param serviceName [required] Domain of the service
 	 * @param vrack [required] vrack name
@@ -1962,7 +1962,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get the countries you can select in /order/dedicatedCloud/{serviceName}/ip
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/orderableIpCountries
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -1976,7 +1976,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Check if Hds option can be disabled
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/hds/canBeDisabled
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -1989,7 +1989,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/hds
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -2002,7 +2002,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Enable Hds option
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/hds/enable
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -2015,7 +2015,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Check if Hds option can be enabled
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/hds/canBeEnabled
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -2028,7 +2028,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Disable Hds option
-	 * 
+	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/hds/disable
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -2041,7 +2041,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud
 	 */
 	public ArrayList<String> GET() throws IOException {
@@ -2052,7 +2052,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * List of commercial Ranges available in a Dedicated Cloud
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/commercialRange
 	 */
 	public ArrayList<String> commercialRange_GET() throws IOException {
@@ -2063,7 +2063,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicatedCloud/commercialRange/{commercialRangeName}
 	 * @param commercialRangeName [required] The name of this commercial range
 	 */

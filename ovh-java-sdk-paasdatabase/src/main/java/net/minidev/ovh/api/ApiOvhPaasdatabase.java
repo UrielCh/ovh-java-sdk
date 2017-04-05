@@ -39,7 +39,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /paas/database/{serviceName}/serviceInfos
 	 * @param serviceName [required] Your database project's name
 	 */
@@ -52,7 +52,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /paas/database/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] Your database project's name
@@ -65,7 +65,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /paas/database/{serviceName}
 	 * @param serviceName [required] Your database project's name
 	 */
@@ -78,7 +78,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /paas/database/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] Your database project's name
@@ -91,7 +91,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Dumps linked to your project
-	 * 
+	 *
 	 * REST: GET /paas/database/{serviceName}/dump
 	 * @param instanceId [required] Filter the value of instanceId property (=)
 	 * @param creationDate [required] Filter the value of creationDate property (<)
@@ -115,7 +115,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /paas/database/{serviceName}/dump/{dumpId}
 	 * @param serviceName [required] Your database project's name
 	 * @param dumpId [required] Dump id
@@ -130,7 +130,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Delete the dump
-	 * 
+	 *
 	 * REST: DELETE /paas/database/{serviceName}/dump/{dumpId}
 	 * @param serviceName [required] Your database project's name
 	 * @param dumpId [required] Dump id
@@ -145,7 +145,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Request the restore from this dump
-	 * 
+	 *
 	 * REST: POST /paas/database/{serviceName}/dump/{dumpId}/restore
 	 * @param instanceId [required] The instanceId where you want to restore this dump
 	 * @param databaseName [required] The databaseName where you want to restore this dump
@@ -165,7 +165,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Tasks linked your project
-	 * 
+	 *
 	 * REST: GET /paas/database/{serviceName}/task
 	 * @param function [required] Filter the value of function property (=)
 	 * @param status [required] Filter the value of status property (=)
@@ -182,7 +182,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /paas/database/{serviceName}/task/{taskId}
 	 * @param serviceName [required] Your database project's name
 	 * @param taskId [required] Task id
@@ -197,7 +197,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Instances linked to your project
-	 * 
+	 *
 	 * REST: GET /paas/database/{serviceName}/instance
 	 * @param status [required] Filter the value of status property (=)
 	 * @param serviceName [required] Your database project's name
@@ -212,7 +212,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Create new instance
-	 * 
+	 *
 	 * REST: POST /paas/database/{serviceName}/instance
 	 * @param parameters [required] Array of instance creation parameters
 	 * @param serviceName [required] Your database project's name
@@ -229,7 +229,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Restart the instance
-	 * 
+	 *
 	 * REST: POST /paas/database/{serviceName}/instance/{instanceId}/restart
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
@@ -244,7 +244,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /paas/database/{serviceName}/instance/{instanceId}
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
@@ -259,7 +259,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /paas/database/{serviceName}/instance/{instanceId}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] Your database project's name
@@ -274,7 +274,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Delete instance
-	 * 
+	 *
 	 * REST: DELETE /paas/database/{serviceName}/instance/{instanceId}
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
@@ -289,7 +289,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Stop the instance
-	 * 
+	 *
 	 * REST: POST /paas/database/{serviceName}/instance/{instanceId}/stop
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
@@ -304,7 +304,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * The whitelist configuration (used to access to your instance)
-	 * 
+	 *
 	 * REST: GET /paas/database/{serviceName}/instance/{instanceId}/whitelist
 	 * @param status [required] Filter the value of status property (=)
 	 * @param serviceName [required] Your database project's name
@@ -321,7 +321,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Create a new IP whitelist
-	 * 
+	 *
 	 * REST: POST /paas/database/{serviceName}/instance/{instanceId}/whitelist
 	 * @param ip [required] The IP to whitelist in your instance
 	 * @param name [required] Custom name for your Whitelisted IP
@@ -345,7 +345,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /paas/database/{serviceName}/instance/{instanceId}/whitelist/{ip}
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
@@ -362,7 +362,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /paas/database/{serviceName}/instance/{instanceId}/whitelist/{ip}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] Your database project's name
@@ -379,7 +379,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Delete ain IP whitelist
-	 * 
+	 *
 	 * REST: DELETE /paas/database/{serviceName}/instance/{instanceId}/whitelist/{ip}
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
@@ -396,7 +396,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Databases available in your instance
-	 * 
+	 *
 	 * REST: GET /paas/database/{serviceName}/instance/{instanceId}/database
 	 * @param status [required] Filter the value of status property (=)
 	 * @param serviceName [required] Your database project's name
@@ -413,7 +413,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Create a new database on your instance
-	 * 
+	 *
 	 * REST: POST /paas/database/{serviceName}/instance/{instanceId}/database
 	 * @param databaseName [required] Name of your new database
 	 * @param serviceName [required] Your database project's name
@@ -431,7 +431,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /paas/database/{serviceName}/instance/{instanceId}/database/{databaseName}
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
@@ -448,7 +448,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Delete the database
-	 * 
+	 *
 	 * REST: DELETE /paas/database/{serviceName}/instance/{instanceId}/database/{databaseName}
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
@@ -465,7 +465,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /paas/database/{serviceName}/instance/{instanceId}/database/{databaseName}/extension/{extensionName}
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
@@ -484,7 +484,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Enable an extension on a database
-	 * 
+	 *
 	 * REST: POST /paas/database/{serviceName}/instance/{instanceId}/database/{databaseName}/extension/{extensionName}/enable
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
@@ -503,7 +503,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Disable an extension from a database
-	 * 
+	 *
 	 * REST: POST /paas/database/{serviceName}/instance/{instanceId}/database/{databaseName}/extension/{extensionName}/disable
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
@@ -522,7 +522,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Extensions linked to your database
-	 * 
+	 *
 	 * REST: GET /paas/database/{serviceName}/instance/{instanceId}/database/{databaseName}/extension
 	 * @param status [required] Filter the value of status property (=)
 	 * @param extensionName [required] Filter the value of extensionName property (like)
@@ -543,7 +543,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Dump available for your database
-	 * 
+	 *
 	 * REST: GET /paas/database/{serviceName}/instance/{instanceId}/database/{databaseName}/dump
 	 * @param creationDate [required] Filter the value of creationDate property (<)
 	 * @param status [required] Filter the value of status property (=)
@@ -566,7 +566,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Request the dump of this database
-	 * 
+	 *
 	 * REST: POST /paas/database/{serviceName}/instance/{instanceId}/database/{databaseName}/dump
 	 * @param email [required] Email used when the dump will be available ? ( Default: null, can be nic-adm or nic-tech )
 	 * @param name [required] A description name for your dump
@@ -588,7 +588,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /paas/database/{serviceName}/instance/{instanceId}/database/{databaseName}/dump/{dumpId}
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
@@ -607,7 +607,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Delete dump before expiration date
-	 * 
+	 *
 	 * REST: DELETE /paas/database/{serviceName}/instance/{instanceId}/database/{databaseName}/dump/{dumpId}
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
@@ -626,7 +626,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Request the restore of this dump
-	 * 
+	 *
 	 * REST: POST /paas/database/{serviceName}/instance/{instanceId}/database/{databaseName}/dump/{dumpId}/restore
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
@@ -645,7 +645,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Resize the instance (by migrating the offer)
-	 * 
+	 *
 	 * REST: POST /paas/database/{serviceName}/instance/{instanceId}/resize
 	 * @param offerName [required] Name of the new offer you want to resize your instance to
 	 * @param serviceName [required] Your database project's name
@@ -663,7 +663,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Change the ftp password of the instance
-	 * 
+	 *
 	 * REST: POST /paas/database/{serviceName}/instance/{instanceId}/changeSftpPassword
 	 * @param password [required] The new password ( alphanumeric, 8 characters minimum and 31 max )
 	 * @param serviceName [required] Your database project's name
@@ -681,7 +681,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Users allowed to connect on a databases of an instance
-	 * 
+	 *
 	 * REST: GET /paas/database/{serviceName}/instance/{instanceId}/user
 	 * @param status [required] Filter the value of status property (=)
 	 * @param serviceName [required] Your database project's name
@@ -698,7 +698,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Create a new user on your databases
-	 * 
+	 *
 	 * REST: POST /paas/database/{serviceName}/instance/{instanceId}/user
 	 * @param password [required] Password for this new user ( alphanumeric, 8 characters minimum and 31 max )
 	 * @param userName [required] User name used to connect on your databases
@@ -718,7 +718,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /paas/database/{serviceName}/instance/{instanceId}/user/{userName}
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
@@ -735,7 +735,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Delete a user
-	 * 
+	 *
 	 * REST: DELETE /paas/database/{serviceName}/instance/{instanceId}/user/{userName}
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
@@ -752,7 +752,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Request a password change for a user
-	 * 
+	 *
 	 * REST: POST /paas/database/{serviceName}/instance/{instanceId}/user/{userName}/changePassword
 	 * @param password [required] The new password ( alphanumeric, 8 characters minimum and 31 max )
 	 * @param serviceName [required] Your database project's name
@@ -772,7 +772,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Upgrade the instance with a new image
-	 * 
+	 *
 	 * REST: POST /paas/database/{serviceName}/instance/{instanceId}/upgrade
 	 * @param imageName [required] Name of the new image that you want for your instance to use
 	 * @param serviceName [required] Your database project's name
@@ -790,7 +790,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /paas/database/{serviceName}/instance/{instanceId}/configuration
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
@@ -805,7 +805,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Update the instance configuration
-	 * 
+	 *
 	 * REST: POST /paas/database/{serviceName}/instance/{instanceId}/configuration/update
 	 * @param parameters [required] Array of instance configuration parameters
 	 * @param serviceName [required] Your database project's name
@@ -823,7 +823,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Start the instance
-	 * 
+	 *
 	 * REST: POST /paas/database/{serviceName}/instance/{instanceId}/start
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
@@ -838,7 +838,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Grants of sql users on your sql databases
-	 * 
+	 *
 	 * REST: GET /paas/database/{serviceName}/instance/{instanceId}/grant
 	 * @param status [required] Filter the value of status property (=)
 	 * @param serviceName [required] Your database project's name
@@ -855,7 +855,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Add a grant on a database
-	 * 
+	 *
 	 * REST: POST /paas/database/{serviceName}/instance/{instanceId}/grant
 	 * @param databaseName [required] Database's name for this grant
 	 * @param grantType [required] Grant type
@@ -877,7 +877,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /paas/database/{serviceName}/instance/{instanceId}/grant/{grantId}
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
@@ -894,7 +894,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /paas/database/{serviceName}/instance/{instanceId}/grant/{grantId}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] Your database project's name
@@ -911,7 +911,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Delete a grant on a database
-	 * 
+	 *
 	 * REST: DELETE /paas/database/{serviceName}/instance/{instanceId}/grant/{grantId}
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
@@ -928,7 +928,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /paas/database
 	 */
 	public ArrayList<String> GET() throws IOException {
@@ -939,7 +939,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Name of all available offers
-	 * 
+	 *
 	 * REST: GET /paas/database/offer
 	 * @param status [required] Filter the value of status property (=)
 	 */
@@ -952,7 +952,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /paas/database/offer/{offerName}
 	 * @param offerName [required] Offer name
 	 */
@@ -965,7 +965,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Name of all available regions
-	 * 
+	 *
 	 * REST: GET /paas/database/region
 	 * @param status [required] Filter the value of status property (=)
 	 */
@@ -978,7 +978,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /paas/database/region/{regionName}
 	 * @param regionName [required] Region name
 	 */
@@ -991,7 +991,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Name of all available images
-	 * 
+	 *
 	 * REST: GET /paas/database/image
 	 * @param status [required] Filter the value of status property (=)
 	 * @param type [required] Filter the value of type property (=)
@@ -1006,7 +1006,7 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /paas/database/image/{imageName}
 	 * @param imageName [required] Image name
 	 */

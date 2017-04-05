@@ -26,7 +26,7 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /deskaas/{serviceName}/serviceInfos
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -39,7 +39,7 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /deskaas/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] Domain of the service
@@ -52,7 +52,7 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 
 	/**
 	 * Get the current password policy for your Desktop As A Service
-	 * 
+	 *
 	 * REST: GET /deskaas/{serviceName}/passwordPolicy
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -65,7 +65,7 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /deskaas/{serviceName}
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -78,7 +78,7 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 
 	/**
 	 * Reboot the Operating system of the Cloud Desktop.
-	 * 
+	 *
 	 * REST: POST /deskaas/{serviceName}/reboot
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -91,7 +91,7 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 
 	/**
 	 * New console access
-	 * 
+	 *
 	 * REST: POST /deskaas/{serviceName}/console
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -104,7 +104,7 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 
 	/**
 	 * Terminate your service
-	 * 
+	 *
 	 * REST: POST /deskaas/{serviceName}/terminate
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -117,7 +117,7 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 
 	/**
 	 * Confirm termination of your service
-	 * 
+	 *
 	 * REST: POST /deskaas/{serviceName}/confirmTermination
 	 * @param reason Reason of your termination request
 	 * @param commentary Commentary about your termination request
@@ -137,7 +137,7 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 
 	/**
 	 * Tasks associated with this Desktop As A Service
-	 * 
+	 *
 	 * REST: GET /deskaas/{serviceName}/task
 	 * @param state [required] Filter the value of state property (=)
 	 * @param serviceName [required] Domain of the service
@@ -153,7 +153,7 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /deskaas/{serviceName}/task/{taskId}
 	 * @param serviceName [required] Domain of the service
 	 * @param taskId [required] Task id
@@ -168,7 +168,7 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 
 	/**
 	 * Launch a contact change procedure
-	 * 
+	 *
 	 * REST: POST /deskaas/{serviceName}/changeContact
 	 * @param contactAdmin The contact to set as admin contact
 	 * @param contactTech The contact to set as tech contact
@@ -188,7 +188,7 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 
 	/**
 	 * Refresh the Operating system of the Desktop As A Service. All your personnal data are kept.
-	 * 
+	 *
 	 * REST: POST /deskaas/{serviceName}/refresh
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -201,7 +201,7 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /deskaas/{serviceName}/user
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -214,7 +214,7 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 
 	/**
 	 * Change Desktop As A Service user properties
-	 * 
+	 *
 	 * REST: POST /deskaas/{serviceName}/user/changeProperties
 	 * @param email [required]
 	 * @param serviceName [required] Domain of the service
@@ -230,7 +230,7 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 
 	/**
 	 * Change Desktop As A Service user password
-	 * 
+	 *
 	 * REST: POST /deskaas/{serviceName}/user/changePassword
 	 * @param password [required] New password for this Desktop As A Service user. It must fits your Desktop As A Service password policy. If this field is empty, a random password will be generated and sent by email.
 	 * @param serviceName [required] Domain of the service
@@ -246,7 +246,7 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 
 	/**
 	 * Tasks associated with this User
-	 * 
+	 *
 	 * REST: GET /deskaas/{serviceName}/user/task
 	 * @param state [required] Filter the value of state property (=)
 	 * @param serviceName [required] Domain of the service
@@ -261,7 +261,7 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /deskaas/{serviceName}/user/task/{taskId}
 	 * @param serviceName [required] Domain of the service
 	 * @param taskId [required] Task id
@@ -276,7 +276,7 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 
 	/**
 	 * Change the Virtual Desktop alias
-	 * 
+	 *
 	 * REST: POST /deskaas/{serviceName}/changeAlias
 	 * @param alias [required] New alias of Desktop As A Service
 	 * @param serviceName [required] Domain of the service
@@ -292,7 +292,7 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 
 	/**
 	 * Upgrading the Desktop As A Service to another profile. The Virtual Desktop will not be available during upgrade and has to be restarted. You cannot downgrade a Virtual Desktop
-	 * 
+	 *
 	 * REST: POST /deskaas/{serviceName}/upgrade
 	 * @param newReference [required] New reference of Desktop As A Service
 	 * @param planCode [required] New plan of Desktop As A Service
@@ -310,7 +310,7 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /deskaas
 	 */
 	public ArrayList<String> GET() throws IOException {

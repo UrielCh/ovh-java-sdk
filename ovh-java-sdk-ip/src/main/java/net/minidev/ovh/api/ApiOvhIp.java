@@ -71,7 +71,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Your OVH IPs
-	 * 
+	 *
 	 * REST: GET /ip
 	 * @param ip [required] Filter the value of ip property (contains or equals)
 	 * @param routedTo_serviceName [required] Filter the value of routedTo.serviceName property (like)
@@ -91,7 +91,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ip/{ip}
 	 * @param ip [required]
 	 */
@@ -104,7 +104,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /ip/{ip}
 	 * @param body [required] New object properties
 	 * @param ip [required]
@@ -117,7 +117,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Move this IP to another service
-	 * 
+	 *
 	 * REST: POST /ip/{ip}/move
 	 * @param nexthop [required] Nexthop of destination service
 	 * @param to [required] Service destination
@@ -135,7 +135,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * List services available as a destination
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/move
 	 * @param ip [required]
 	 */
@@ -148,7 +148,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * ARP blocked IP
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/arp
 	 * @param state [required] Filter the value of state property (=)
 	 * @param ip [required]
@@ -163,7 +163,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/arp/{ipBlocked}
 	 * @param ip [required]
 	 * @param ipBlocked [required] your IP
@@ -178,7 +178,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Unblock this IP
-	 * 
+	 *
 	 * REST: POST /ip/{ip}/arp/{ipBlocked}/unblock
 	 * @param ip [required]
 	 * @param ipBlocked [required] your IP
@@ -192,7 +192,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/ripe
 	 * @param ip [required]
 	 */
@@ -205,7 +205,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /ip/{ip}/ripe
 	 * @param body [required] New object properties
 	 * @param ip [required]
@@ -218,7 +218,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Delete a failover IP
-	 * 
+	 *
 	 * REST: POST /ip/{ip}/terminate
 	 * @param ip [required]
 	 */
@@ -231,7 +231,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Change organisation of this IP
-	 * 
+	 *
 	 * REST: POST /ip/{ip}/changeOrg
 	 * @param organisation [required] Your organisation id (RIPE_XXXX) to add on block informations
 	 * @param ip [required]
@@ -247,7 +247,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Park this IP
-	 * 
+	 *
 	 * REST: POST /ip/{ip}/park
 	 * @param ip [required]
 	 */
@@ -260,7 +260,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Ip spamming
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/spam
 	 * @param state [required] Filter the value of state property (=)
 	 * @param ip [required]
@@ -275,7 +275,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/spam/{ipSpamming}
 	 * @param ip [required]
 	 * @param ipSpamming [required] IP address which is sending spam
@@ -290,7 +290,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Release the ip from anti-spam system
-	 * 
+	 *
 	 * REST: POST /ip/{ip}/spam/{ipSpamming}/unblock
 	 * @param ip [required]
 	 * @param ipSpamming [required] IP address which is sending spam
@@ -305,7 +305,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Get statistics about the email traffic
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/spam/{ipSpamming}/stats
 	 * @param to [required] End date
 	 * @param from [required] Start date
@@ -325,7 +325,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Reverse delegation on IPv6 subnet
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/delegation
 	 * @param ip [required]
 	 */
@@ -338,7 +338,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Add target for reverse delegation on IPv6 subnet
-	 * 
+	 *
 	 * REST: POST /ip/{ip}/delegation
 	 * @param target [required] Target for reverse delegation on IPv6
 	 * @param ip [required]
@@ -354,7 +354,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/delegation/{target}
 	 * @param ip [required]
 	 * @param target [required] NS target for delegation
@@ -369,7 +369,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Delete a target for reverse delegation on IPv6 subnet
-	 * 
+	 *
 	 * REST: DELETE /ip/{ip}/delegation/{target}
 	 * @param ip [required]
 	 * @param target [required] NS target for delegation
@@ -383,7 +383,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/migrationToken
 	 * @param ip [required]
 	 */
@@ -396,7 +396,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Generate a migration token
-	 * 
+	 *
 	 * REST: POST /ip/{ip}/migrationToken
 	 * @param customerId [required] destination customer ID
 	 * @param ip [required]
@@ -412,7 +412,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Manage mitigation profile on your IPs
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/mitigationProfiles
 	 * @param ip [required]
 	 */
@@ -425,7 +425,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Create new profile for one of your ip
-	 * 
+	 *
 	 * REST: POST /ip/{ip}/mitigationProfiles
 	 * @param ipMitigationProfile [required]
 	 * @param autoMitigationTimeOut [required] Delay to wait before remove ip from auto mitigation after an attack
@@ -443,7 +443,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/mitigationProfiles/{ipMitigationProfile}
 	 * @param ip [required]
 	 * @param ipMitigationProfile [required]
@@ -458,7 +458,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /ip/{ip}/mitigationProfiles/{ipMitigationProfile}
 	 * @param body [required] New object properties
 	 * @param ip [required]
@@ -473,7 +473,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Delete mitigation profile
-	 * 
+	 *
 	 * REST: DELETE /ip/{ip}/mitigationProfiles/{ipMitigationProfile}
 	 * @param ip [required]
 	 * @param ipMitigationProfile [required]
@@ -487,7 +487,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * IP tasks
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/task
 	 * @param function [required] Filter the value of function property (=)
 	 * @param status [required] Filter the value of status property (=)
@@ -505,7 +505,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/task/{taskId}
 	 * @param ip [required]
 	 * @param taskId [required] the id of the task
@@ -520,7 +520,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * WorkLight licenses associated to this IP
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/license/worklight
 	 * @param ipAddress [required] Filter the value of ipAddress property (=)
 	 * @param ip [required]
@@ -535,7 +535,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Cloud Linux licenses associated to this IP
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/license/cloudLinux
 	 * @param ipAddress [required] Filter the value of ipAddress property (=)
 	 * @param ip [required]
@@ -550,7 +550,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * DirectAdmin licenses associated to this IP
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/license/directadmin
 	 * @param ipAddress [required] Filter the value of ipAddress property (=)
 	 * @param ip [required]
@@ -565,7 +565,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Windows licenses associated to this IP
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/license/windows
 	 * @param ipAddress [required] Filter the value of ipAddress property (=)
 	 * @param ip [required]
@@ -580,7 +580,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Virtuozzo licenses associated to this IP
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/license/virtuozzo
 	 * @param ipAddress [required] Filter the value of ipAddress property (=)
 	 * @param ip [required]
@@ -595,7 +595,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Cpanel licenses associated to this IP
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/license/cpanel
 	 * @param ipAddress [required] Filter the value of ipAddress property (=)
 	 * @param ip [required]
@@ -610,7 +610,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * SQL Server licenses associated to this IP
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/license/sqlserver
 	 * @param ipAddress [required] Filter the value of ipAddress property (=)
 	 * @param ip [required]
@@ -625,7 +625,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Plesk licenses associated to this IP
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/license/plesk
 	 * @param ipAddress [required] Filter the value of ipAddress property (=)
 	 * @param ip [required]
@@ -640,7 +640,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Ip under mitigation
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/mitigation
 	 * @param auto [required] Filter the value of auto property (=)
 	 * @param state [required] Filter the value of state property (=)
@@ -657,7 +657,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * AntiDDOS option. Add new IP on permanent mitigation
-	 * 
+	 *
 	 * REST: POST /ip/{ip}/mitigation
 	 * @param ipOnMitigation [required]
 	 * @param ip [required]
@@ -673,7 +673,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/mitigation/{ipOnMitigation}
 	 * @param ip [required]
 	 * @param ipOnMitigation [required]
@@ -688,7 +688,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /ip/{ip}/mitigation/{ipOnMitigation}
 	 * @param body [required] New object properties
 	 * @param ip [required]
@@ -703,7 +703,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * AntiDDOS option. Delete IP from mitigation
-	 * 
+	 *
 	 * REST: DELETE /ip/{ip}/mitigation/{ipOnMitigation}
 	 * @param ip [required]
 	 * @param ipOnMitigation [required]
@@ -718,7 +718,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * AntiDDOS option. Get statistics about your traffic in and out during this mitigation
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/mitigation/{ipOnMitigation}/stats
 	 * @param to [required] End date
 	 * @param from [required] Start date
@@ -740,7 +740,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * AntiDDOS option. Get top stream on your ip on a specific timestamp
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/mitigation/{ipOnMitigation}/topStream
 	 * @param date [required] Date to view top traffic
 	 * @param scale [required] Scale of aggregation
@@ -760,7 +760,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Reverse on your ip
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/reverse
 	 * @param ip [required]
 	 */
@@ -773,7 +773,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Add reverse on an ip
-	 * 
+	 *
 	 * REST: POST /ip/{ip}/reverse
 	 * @param ipReverse [required]
 	 * @param reverse [required]
@@ -791,7 +791,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/reverse/{ipReverse}
 	 * @param ip [required]
 	 * @param ipReverse [required]
@@ -806,7 +806,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Delete a reverse on one IP
-	 * 
+	 *
 	 * REST: DELETE /ip/{ip}/reverse/{ipReverse}
 	 * @param ip [required]
 	 * @param ipReverse [required]
@@ -820,7 +820,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Anti-Hack blocked IP
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/antihack
 	 * @param state [required] Filter the value of state property (=)
 	 * @param ip [required]
@@ -835,7 +835,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/antihack/{ipBlocked}
 	 * @param ip [required]
 	 * @param ipBlocked [required] your IP
@@ -850,7 +850,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Unblock this IP
-	 * 
+	 *
 	 * REST: POST /ip/{ip}/antihack/{ipBlocked}/unblock
 	 * @param ip [required]
 	 * @param ipBlocked [required] your IP
@@ -864,7 +864,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Ip under anti-phishing
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/phishing
 	 * @param ipOnAntiphishing [required] Filter the value of ipOnAntiphishing property (within or equals)
 	 * @param state [required] Filter the value of state property (=)
@@ -881,7 +881,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/phishing/{id}
 	 * @param ip [required]
 	 * @param id [required] Internal ID of the phishing entry
@@ -896,7 +896,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/game/{ipOnGame}
 	 * @param ip [required]
 	 * @param ipOnGame [required]
@@ -911,7 +911,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /ip/{ip}/game/{ipOnGame}
 	 * @param body [required] New object properties
 	 * @param ip [required]
@@ -926,7 +926,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * IDs of rules configured for this IP
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/game/{ipOnGame}/rule
 	 * @param ip [required]
 	 * @param ipOnGame [required]
@@ -941,7 +941,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Add new rule on your IP
-	 * 
+	 *
 	 * REST: POST /ip/{ip}/game/{ipOnGame}/rule
 	 * @param protocol [required] The protocol running behind the given port
 	 * @param ports [required] The UDP port range to apply the rule on
@@ -961,7 +961,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/game/{ipOnGame}/rule/{id}
 	 * @param ip [required]
 	 * @param ipOnGame [required]
@@ -978,7 +978,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Delete rule
-	 * 
+	 *
 	 * REST: DELETE /ip/{ip}/game/{ipOnGame}/rule/{id}
 	 * @param ip [required]
 	 * @param ipOnGame [required]
@@ -995,7 +995,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Ip under game anti-ddos
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/game
 	 * @param ip [required]
 	 */
@@ -1008,7 +1008,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Ip under firewall
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/firewall
 	 * @param state [required] Filter the value of state property (=)
 	 * @param enabled [required] Filter the value of enabled property (=)
@@ -1025,7 +1025,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * AntiDDOS option. Add new IP on firewall
-	 * 
+	 *
 	 * REST: POST /ip/{ip}/firewall
 	 * @param ipOnFirewall [required]
 	 * @param ip [required]
@@ -1041,7 +1041,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/firewall/{ipOnFirewall}
 	 * @param ip [required]
 	 * @param ipOnFirewall [required]
@@ -1056,7 +1056,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /ip/{ip}/firewall/{ipOnFirewall}
 	 * @param body [required] New object properties
 	 * @param ip [required]
@@ -1071,7 +1071,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * AntiDDOS option. Delete IP and rules from firewall
-	 * 
+	 *
 	 * REST: DELETE /ip/{ip}/firewall/{ipOnFirewall}
 	 * @param ip [required]
 	 * @param ipOnFirewall [required]
@@ -1086,7 +1086,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Rules for this IP
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/firewall/{ipOnFirewall}/rule
 	 * @param state [required] Filter the value of state property (=)
 	 * @param ip [required]
@@ -1103,7 +1103,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * AntiDDOS option. Add new rule on your IP
-	 * 
+	 *
 	 * REST: POST /ip/{ip}/firewall/{ipOnFirewall}/rule
 	 * @param tcpOption [required] Option on your rule. Can only be used with TCP protocol
 	 * @param source [required] Source ip for your rule. Any if not set
@@ -1133,7 +1133,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ip/{ip}/firewall/{ipOnFirewall}/rule/{sequence}
 	 * @param ip [required]
 	 * @param ipOnFirewall [required]
@@ -1150,7 +1150,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * AntiDDOS option. Delete rule
-	 * 
+	 *
 	 * REST: DELETE /ip/{ip}/firewall/{ipOnFirewall}/rule/{sequence}
 	 * @param ip [required]
 	 * @param ipOnFirewall [required]
@@ -1167,7 +1167,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ip/loadBalancing/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
@@ -1180,7 +1180,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /ip/loadBalancing/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -1193,7 +1193,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Import your own ssl certificate on your IP load balancing. Ssl option is needed to use this url.
-	 * 
+	 *
 	 * REST: POST /ip/loadBalancing/{serviceName}/importCustomSsl
 	 * @param chain [required] certificate chain
 	 * @param certificate [required] certificate
@@ -1213,7 +1213,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ip/loadBalancing/{serviceName}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
@@ -1226,7 +1226,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * List of backends you can attach to your IP
-	 * 
+	 *
 	 * REST: GET /ip/loadBalancing/{serviceName}/allowedBackends
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
@@ -1239,7 +1239,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Ip subnet used by OVH to nat requests on your ip lb to your backends. You must ensure that your backends are not part of a network that overlap with this one.
-	 * 
+	 *
 	 * REST: GET /ip/loadBalancing/{serviceName}/internalNatIp
 	 * @param zone [required] one of your ip loadbalancing's zone
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -1254,7 +1254,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Backends for this IP load balancing
-	 * 
+	 *
 	 * REST: GET /ip/loadBalancing/{serviceName}/backend
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
@@ -1267,7 +1267,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Add a new backend on your IP load balancing
-	 * 
+	 *
 	 * REST: POST /ip/loadBalancing/{serviceName}/backend
 	 * @param weight [required] Weight of the backend on its zone, must be between 1 and 100
 	 * @param ipBackend [required] IP of your backend
@@ -1287,7 +1287,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ip/loadBalancing/{serviceName}/backend/{backend}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param backend [required] IP of your backend
@@ -1302,7 +1302,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /ip/loadBalancing/{serviceName}/backend/{backend}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -1317,7 +1317,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Remove a backend IP
-	 * 
+	 *
 	 * REST: DELETE /ip/loadBalancing/{serviceName}/backend/{backend}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param backend [required] IP of your backend
@@ -1332,7 +1332,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Set or unset the backend as a backup of another backend. Requests will be directed to the backup only if the main backend is in probe fail
-	 * 
+	 *
 	 * REST: POST /ip/loadBalancing/{serviceName}/backend/{backend}/backupState
 	 * @param mainBackendIp [required] Main backend ip, must be in the same zone as the backup
 	 * @param backupStateSet [required] Set or unset the backend as backup. mainBackendIp is optional in case of unset
@@ -1352,7 +1352,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Set the weight of a backend. For instance, if backend A has a weight of 8 and backup B was a weight of 16, backend B will receive twice more connections as backend A. Backends must be on the same POP for the weight parameter to take effect between them.
-	 * 
+	 *
 	 * REST: POST /ip/loadBalancing/{serviceName}/backend/{backend}/setWeight
 	 * @param weight [required] weight of the backend, must be between 1 and 100, default is 8
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -1370,7 +1370,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Task list associated with this IP
-	 * 
+	 *
 	 * REST: GET /ip/loadBalancing/{serviceName}/task
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
@@ -1383,7 +1383,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ip/loadBalancing/{serviceName}/task/{taskId}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param taskId [required] Identifier of your task
@@ -1398,7 +1398,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Restore OVH' ssl certificate on your IP load balancing. Ssl option is needed to use this url. (A DCV mail will be sent to postmaster@your-domain.abc)
-	 * 
+	 *
 	 * REST: POST /ip/loadBalancing/{serviceName}/restoreSsl
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
@@ -1411,7 +1411,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Set Stickiness type. 'ipSource' will stick clients to a backend by their source ip, 'cookie' will stick them by inserting a cookie, 'none' is to set no stickiness
-	 * 
+	 *
 	 * REST: POST /ip/loadBalancing/{serviceName}/stickiness
 	 * @param stickiness [required] The stickiness you want on your IP LoadBalancing
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -1427,7 +1427,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Get all srcPort
-	 * 
+	 *
 	 * REST: GET /ip/loadBalancing/{serviceName}/portsRedirection
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
@@ -1441,7 +1441,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Add a new port redirection
-	 * 
+	 *
 	 * REST: POST /ip/loadBalancing/{serviceName}/portsRedirection
 	 * @param body [required] The port you want to redirect to
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -1455,7 +1455,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Get the value for the given srcPort
-	 * 
+	 *
 	 * REST: GET /ip/loadBalancing/{serviceName}/portsRedirection/{srcPort}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param srcPort [required] The port you want to redirect from
@@ -1470,7 +1470,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Delete a port redirection
-	 * 
+	 *
 	 * REST: DELETE /ip/loadBalancing/{serviceName}/portsRedirection/{srcPort}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param srcPort [required] The port you want to redirect from
@@ -1485,7 +1485,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Ip subnet used to send probes to your backends
-	 * 
+	 *
 	 * REST: GET /ip/loadBalancing/{serviceName}/probeIp
 	 * @param zone [required] one of your ip loadbalancing's zone
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -1500,7 +1500,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Switch to ipLoadbalancing next-gen API. Benefits : additionnals probes, DDOS protection.
-	 * 
+	 *
 	 * REST: POST /ip/loadBalancing/{serviceName}/switchToIplbNextGenerationApi
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
@@ -1513,7 +1513,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /ip/loadBalancing
 	 */
 	public ArrayList<String> loadBalancing_GET() throws IOException {
@@ -1524,7 +1524,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ip/service/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your IP services
 	 */
@@ -1537,7 +1537,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ip/service/{serviceName}
 	 * @param serviceName [required] The internal name of your IP services
 	 */
@@ -1550,7 +1550,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /ip/service/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP services
@@ -1563,7 +1563,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Confirm termination of your service
-	 * 
+	 *
 	 * REST: POST /ip/service/{serviceName}/confirmTermination
 	 * @param reason Reason of your termination request
 	 * @param commentary Commentary about your termination request
@@ -1583,7 +1583,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Terminate your service
-	 * 
+	 *
 	 * REST: POST /ip/service/{serviceName}/terminate
 	 * @param serviceName [required] The internal name of your IP services
 	 */
@@ -1596,7 +1596,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * Launch a contact change procedure
-	 * 
+	 *
 	 * REST: POST /ip/service/{serviceName}/changeContact
 	 * @param contactAdmin The contact to set as admin contact
 	 * @param contactTech The contact to set as tech contact
@@ -1616,7 +1616,7 @@ public class ApiOvhIp extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /ip/service
 	 */
 	public ArrayList<String> service_GET() throws IOException {

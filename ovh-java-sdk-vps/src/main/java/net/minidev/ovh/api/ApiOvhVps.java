@@ -58,7 +58,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Return all active options for the virtual server
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/activeOptions
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -72,7 +72,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -85,7 +85,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /vps/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your VPS offer
@@ -98,7 +98,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/datacenter
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -111,7 +111,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Return all models the virtual server can be upgraded to
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/availableUpgrade
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -125,7 +125,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Create a snapshot of the Virtual Server if the snapshot option is enabled and if there is no existing snapshot
-	 * 
+	 *
 	 * REST: POST /vps/{serviceName}/createSnapshot
 	 * @param description [required] A textual description for your snapshot
 	 * @param serviceName [required] The internal name of your VPS offer
@@ -141,7 +141,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Ips associated to this virtual server
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/ips
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -155,7 +155,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/ips/{ipAddress}
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param ipAddress [required] The effective ip address of the Ip object
@@ -170,7 +170,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /vps/{serviceName}/ips/{ipAddress}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your VPS offer
@@ -185,7 +185,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Release a given Ip (Additional Ip)
-	 * 
+	 *
 	 * REST: DELETE /vps/{serviceName}/ips/{ipAddress}
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param ipAddress [required] The effective ip address of the Ip object
@@ -199,7 +199,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/veeam
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -212,7 +212,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Veeam restore points for the VPS
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/veeam/restorePoints
 	 * @param creationTime [required] Filter the value of creationTime property (like)
 	 * @param serviceName [required] The internal name of your VPS offer
@@ -228,7 +228,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/veeam/restorePoints/{id}
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param id [required] Id of the object
@@ -243,7 +243,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Creates a VPS.Task that will restore the given restorePoint
-	 * 
+	 *
 	 * REST: POST /vps/{serviceName}/veeam/restorePoints/{id}/restore
 	 * @param changePassword [required] (Full only) Change the restored VPS root password when done
 	 * @param export [required] (Except full) The export method for your restore - defaults to both
@@ -265,7 +265,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/veeam/restoredBackup
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -278,7 +278,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Creates a VPS.Task that will unmount the backup
-	 * 
+	 *
 	 * REST: DELETE /vps/{serviceName}/veeam/restoredBackup
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -291,7 +291,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Return all models for the range of the virtual server
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/models
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -304,7 +304,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Reinstall the virtual server
-	 * 
+	 *
 	 * REST: POST /vps/{serviceName}/reinstall
 	 * @param sshKey [required] SSH key names to pre-install on your VPS (name from /me/sshKey)
 	 * @param language [required] Distribution language. default : en
@@ -328,7 +328,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Tasks associated to this virtual server
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/tasks
 	 * @param type [required] Filter the value of type property (=)
 	 * @param state [required] Filter the value of state property (=)
@@ -345,7 +345,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/tasks/{id}
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param id [required] Id of the object
@@ -360,7 +360,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Confirm termination of your service
-	 * 
+	 *
 	 * REST: POST /vps/{serviceName}/confirmTermination
 	 * @param reason Reason of your termination request
 	 * @param commentary Commentary about your termination request
@@ -380,7 +380,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/distribution
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -393,7 +393,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * List available softwares for this template Id
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/distribution/software
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -406,7 +406,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/distribution/software/{softwareId}
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param softwareId [required]
@@ -421,7 +421,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Return many statistics about the virtual machine for a given period
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/monitoring
 	 * @param period [required] The period the statistics are fetched for
 	 * @param type [required] The type of statistic to be fetched
@@ -439,7 +439,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/backupftp
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -452,7 +452,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Change your Backup FTP password
-	 * 
+	 *
 	 * REST: POST /vps/{serviceName}/backupftp/password
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -465,7 +465,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Get all IP blocks that can be used in the ACL
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/backupftp/authorizableBlocks
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -478,7 +478,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * List of IP blocks (and protocols to allow on these blocks) authorized on your backup FTP
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/backupftp/access
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -491,7 +491,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Create a new Backup FTP ACL
-	 * 
+	 *
 	 * REST: POST /vps/{serviceName}/backupftp/access
 	 * @param ftp [required] Wether to allow the FTP protocol for this ACL
 	 * @param ipBlock [required] The IP Block specific to this ACL. It musts belong to your server.
@@ -513,7 +513,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/backupftp/access/{ipBlock}
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param ipBlock [required] The IP Block specific to this ACL
@@ -528,7 +528,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /vps/{serviceName}/backupftp/access/{ipBlock}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your VPS offer
@@ -543,7 +543,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Revoke this ACL
-	 * 
+	 *
 	 * REST: DELETE /vps/{serviceName}/backupftp/access/{ipBlock}
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param ipBlock [required] The IP Block specific to this ACL
@@ -558,7 +558,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Return the necessary informations to open a VNC connection to your VPS
-	 * 
+	 *
 	 * REST: POST /vps/{serviceName}/openConsoleAccess
 	 * @param protocol [required] The console protocol you want
 	 * @param serviceName [required] The internal name of your VPS offer
@@ -574,7 +574,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Request the machine to start
-	 * 
+	 *
 	 * REST: POST /vps/{serviceName}/start
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -587,7 +587,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Start the process in order to set the root password of the virtual machine. Be careful, in case of Cloud model, a reboot is mandatory.
-	 * 
+	 *
 	 * REST: POST /vps/{serviceName}/setPassword
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -600,7 +600,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Templates available for this virtual server
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/templates
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -613,7 +613,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/templates/{id}
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param id [required] Id of the object
@@ -628,7 +628,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * List available softwares for this template Id
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/templates/{id}/software
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param id [required] Id of the object
@@ -643,7 +643,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/templates/{id}/software/{softwareId}
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param id [required] Id of the object
@@ -660,7 +660,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Return the VPS console URL
-	 * 
+	 *
 	 * REST: POST /vps/{serviceName}/getConsoleUrl
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -673,7 +673,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -686,7 +686,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /vps/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your VPS offer
@@ -699,7 +699,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/secondaryDnsDomains/{domain}
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param domain [required] domain on slave server
@@ -714,7 +714,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /vps/{serviceName}/secondaryDnsDomains/{domain}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your VPS offer
@@ -729,7 +729,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * remove this domain
-	 * 
+	 *
 	 * REST: DELETE /vps/{serviceName}/secondaryDnsDomains/{domain}
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param domain [required] domain on slave server
@@ -743,7 +743,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * domain name server informations
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/secondaryDnsDomains/{domain}/dnsServer
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param domain [required] domain on slave server
@@ -758,7 +758,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * List of secondary dns domain name
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/secondaryDnsDomains
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -771,7 +771,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * add a domain on secondary dns
-	 * 
+	 *
 	 * REST: POST /vps/{serviceName}/secondaryDnsDomains
 	 * @param domain [required] The domain to add
 	 * @param ip [required]
@@ -788,7 +788,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Get the countries you can select for your IPs geolocation
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/ipCountryAvailable
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -802,7 +802,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Give the status of the services of the main IP
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/status
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -815,7 +815,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Launch a contact change procedure
-	 * 
+	 *
 	 * REST: POST /vps/{serviceName}/changeContact
 	 * @param contactAdmin The contact to set as admin contact
 	 * @param contactTech The contact to set as tech contact
@@ -835,7 +835,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Create a VPS.Task that will umount a restored backup on your VPS
-	 * 
+	 *
 	 * REST: POST /vps/{serviceName}/automatedBackup/detachBackup
 	 * @param restorePoint [required] restorePoint fetched in /vps/{serviceName}/automatedBackup/attachedBackup
 	 * @param serviceName [required] The internal name of your VPS offer
@@ -851,7 +851,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/automatedBackup
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -864,7 +864,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Get available Restore Points
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/automatedBackup/restorePoints
 	 * @param state [required] The state of the restore point
 	 * @param serviceName [required] The internal name of your VPS offer
@@ -880,7 +880,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Creates a VPS.Task that will restore the given restorePoint
-	 * 
+	 *
 	 * REST: POST /vps/{serviceName}/automatedBackup/restore
 	 * @param changePassword [required] [default=0] Only with restore full on VPS Cloud 2014
 	 * @param type [required] [default=file] file: Attach/export restored disk to your current VPS - full: Replace your current VPS by the given restorePoint
@@ -900,7 +900,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Backup attached to your VPS
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/automatedBackup/attachedBackup
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -914,7 +914,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Return many statistics about the virtual machine at that time
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/use
 	 * @param type [required] The type of statistic to be fetched
 	 * @param serviceName [required] The internal name of your VPS offer
@@ -930,7 +930,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * List of VPS options
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/option
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -943,7 +943,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/option/{option}
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param option [required] The option name
@@ -958,7 +958,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Release a given option
-	 * 
+	 *
 	 * REST: DELETE /vps/{serviceName}/option/{option}
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param option [required] The option name
@@ -972,7 +972,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/snapshot
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -985,7 +985,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /vps/{serviceName}/snapshot
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your VPS offer
@@ -998,7 +998,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Creates a vps.Task that will delete the Snapshot
-	 * 
+	 *
 	 * REST: DELETE /vps/{serviceName}/snapshot
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -1011,7 +1011,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Revert the Virtual Server to this snapshot
-	 * 
+	 *
 	 * REST: POST /vps/{serviceName}/snapshot/revert
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -1024,7 +1024,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Request a reboot of the machine
-	 * 
+	 *
 	 * REST: POST /vps/{serviceName}/reboot
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -1037,7 +1037,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Request the machine to stop
-	 * 
+	 *
 	 * REST: POST /vps/{serviceName}/stop
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -1050,7 +1050,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Disks associated to this virtual server
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/disks
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -1063,7 +1063,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/disks/{id}
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param id [required] Id of the object
@@ -1078,7 +1078,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /vps/{serviceName}/disks/{id}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your VPS offer
@@ -1093,7 +1093,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Return many statistics about the disk for a given period
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/disks/{id}/monitoring
 	 * @param period [required] The period the statistics are fetched for
 	 * @param type [required] The type of statistic to be fetched
@@ -1112,7 +1112,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Return many statistics about the disk at that time
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/disks/{id}/use
 	 * @param type [required] The type of statistic to be fetched
 	 * @param serviceName [required] The internal name of your VPS offer
@@ -1129,7 +1129,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * Secondary nameServer available for your Server
-	 * 
+	 *
 	 * REST: GET /vps/{serviceName}/secondaryDnsNameServerAvailable
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -1142,7 +1142,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /vps
 	 */
 	public ArrayList<String> GET() throws IOException {
@@ -1153,7 +1153,7 @@ public class ApiOvhVps extends ApiOvhBase {
 
 	/**
 	 * List all the datacenters for a specific country
-	 * 
+	 *
 	 * REST: GET /vps/datacenter
 	 * @param country [required] Country targeted
 	 */

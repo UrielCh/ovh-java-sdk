@@ -41,7 +41,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/nasha/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your storage
 	 */
@@ -54,7 +54,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /dedicated/nasha/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your storage
@@ -67,7 +67,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/nasha/{serviceName}
 	 * @param serviceName [required] The internal name of your storage
 	 */
@@ -80,7 +80,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /dedicated/nasha/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your storage
@@ -93,7 +93,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Confirm termination of your service
-	 * 
+	 *
 	 * REST: POST /dedicated/nasha/{serviceName}/confirmTermination
 	 * @param reason Reason of your termination request
 	 * @param commentary Commentary about your termination request
@@ -113,7 +113,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Terminate your service
-	 * 
+	 *
 	 * REST: POST /dedicated/nasha/{serviceName}/terminate
 	 * @param serviceName [required] The internal name of your storage
 	 */
@@ -126,7 +126,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * View task list
-	 * 
+	 *
 	 * REST: GET /dedicated/nasha/{serviceName}/task
 	 * @param status [required] Filter the value of status property (=)
 	 * @param operation [required] Filter the value of operation property (=)
@@ -144,7 +144,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/nasha/{serviceName}/task/{taskId}
 	 * @param serviceName [required] The internal name of your storage
 	 * @param taskId [required] id of the task
@@ -159,7 +159,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Launch a contact change procedure
-	 * 
+	 *
 	 * REST: POST /dedicated/nasha/{serviceName}/changeContact
 	 * @param contactAdmin The contact to set as admin contact
 	 * @param contactTech The contact to set as tech contact
@@ -179,7 +179,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Delete the vrack container
-	 * 
+	 *
 	 * REST: DELETE /dedicated/nasha/{serviceName}/vrack
 	 * @param serviceName [required] The internal name of your storage
 	 */
@@ -192,7 +192,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Return statistics about the nas
-	 * 
+	 *
 	 * REST: GET /dedicated/nasha/{serviceName}/use
 	 * @param type [required] The type of statistic to be fetched
 	 * @param serviceName [required] The internal name of your storage
@@ -208,7 +208,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Get partition list
-	 * 
+	 *
 	 * REST: GET /dedicated/nasha/{serviceName}/partition
 	 * @param serviceName [required] The internal name of your storage
 	 */
@@ -222,7 +222,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Create a new partition
-	 * 
+	 *
 	 * REST: POST /dedicated/nasha/{serviceName}/partition
 	 * @param protocol [required] NFS|CIFS|NFS_CIFS
 	 * @param partitionName [required] Partition name
@@ -242,7 +242,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Get quota for this partition
-	 * 
+	 *
 	 * REST: GET /dedicated/nasha/{serviceName}/partition/{partitionName}/quota
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
@@ -257,7 +257,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Set a new quota
-	 * 
+	 *
 	 * REST: POST /dedicated/nasha/{serviceName}/partition/{partitionName}/quota
 	 * @param uid [required] the uid to set quota on
 	 * @param size [required] the size to set in MB
@@ -277,7 +277,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/nasha/{serviceName}/partition/{partitionName}/quota/{uid}
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
@@ -294,7 +294,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Delete a given quota
-	 * 
+	 *
 	 * REST: DELETE /dedicated/nasha/{serviceName}/partition/{partitionName}/quota/{uid}
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
@@ -311,7 +311,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/nasha/{serviceName}/partition/{partitionName}
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
@@ -326,7 +326,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /dedicated/nasha/{serviceName}/partition/{partitionName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your storage
@@ -341,7 +341,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Delete this partition
-	 * 
+	 *
 	 * REST: DELETE /dedicated/nasha/{serviceName}/partition/{partitionName}
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
@@ -356,7 +356,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Get all RIPE/ARIN blocks that can be used in the ACL
-	 * 
+	 *
 	 * REST: GET /dedicated/nasha/{serviceName}/partition/{partitionName}/authorizableBlocks
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
@@ -371,7 +371,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/nasha/{serviceName}/partition/{partitionName}/options
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
@@ -386,7 +386,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Setup options
-	 * 
+	 *
 	 * REST: POST /dedicated/nasha/{serviceName}/partition/{partitionName}/options
 	 * @param recordsize [required] ZFS recordsize
 	 * @param sync [required] sync setting
@@ -408,7 +408,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * get ACL for this partition
-	 * 
+	 *
 	 * REST: GET /dedicated/nasha/{serviceName}/partition/{partitionName}/access
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
@@ -423,7 +423,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Add a new ACL entry
-	 * 
+	 *
 	 * REST: POST /dedicated/nasha/{serviceName}/partition/{partitionName}/access
 	 * @param ip [required] Ip or block to add
 	 * @param type [required] ACL type
@@ -443,7 +443,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/nasha/{serviceName}/partition/{partitionName}/access/{ip}
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
@@ -460,7 +460,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Delete an ACL entry
-	 * 
+	 *
 	 * REST: DELETE /dedicated/nasha/{serviceName}/partition/{partitionName}/access/{ip}
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
@@ -477,7 +477,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Get custom snapshots for this partition
-	 * 
+	 *
 	 * REST: GET /dedicated/nasha/{serviceName}/partition/{partitionName}/customSnapshot
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
@@ -492,7 +492,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Create a new snapshot
-	 * 
+	 *
 	 * REST: POST /dedicated/nasha/{serviceName}/partition/{partitionName}/customSnapshot
 	 * @param expiration [required] optional expiration date/time, in iso8601 format
 	 * @param name [required] the name of the snapshot
@@ -512,7 +512,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/nasha/{serviceName}/partition/{partitionName}/customSnapshot/{name}
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
@@ -529,7 +529,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Delete a given snapshot
-	 * 
+	 *
 	 * REST: DELETE /dedicated/nasha/{serviceName}/partition/{partitionName}/customSnapshot/{name}
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
@@ -546,7 +546,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Return statistics about the partition
-	 * 
+	 *
 	 * REST: GET /dedicated/nasha/{serviceName}/partition/{partitionName}/use
 	 * @param type [required] The type of statistic to be fetched
 	 * @param serviceName [required] The internal name of your storage
@@ -563,7 +563,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Get all IPs that can be used in the ACL
-	 * 
+	 *
 	 * REST: GET /dedicated/nasha/{serviceName}/partition/{partitionName}/authorizableIps
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
@@ -578,7 +578,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Get scheduled snapshot types for this partition
-	 * 
+	 *
 	 * REST: GET /dedicated/nasha/{serviceName}/partition/{partitionName}/snapshot
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
@@ -594,7 +594,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Schedule a new snapshot type
-	 * 
+	 *
 	 * REST: POST /dedicated/nasha/{serviceName}/partition/{partitionName}/snapshot
 	 * @param snapshotType [required] Snapshot interval to add
 	 * @param serviceName [required] The internal name of your storage
@@ -612,7 +612,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/nasha/{serviceName}/partition/{partitionName}/snapshot/{snapshotType}
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
@@ -629,7 +629,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Delete a given snapshot
-	 * 
+	 *
 	 * REST: DELETE /dedicated/nasha/{serviceName}/partition/{partitionName}/snapshot/{snapshotType}
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
@@ -646,7 +646,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /dedicated/nasha
 	 */
 	public ArrayList<String> GET() throws IOException {
@@ -657,7 +657,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 
 	/**
 	 * Get availabilities of nasha offer
-	 * 
+	 *
 	 * REST: GET /dedicated/nasha/availabilities
 	 */
 	public ArrayList<OvhNasHAAvailabilities> availabilities_GET() throws IOException {

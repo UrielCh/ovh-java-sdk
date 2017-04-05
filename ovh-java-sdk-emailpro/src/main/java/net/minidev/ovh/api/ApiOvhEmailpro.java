@@ -34,7 +34,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /email/pro
 	 */
 	public ArrayList<String> GET() throws IOException {
@@ -46,7 +46,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/pro/{service}/serviceInfos
 	 * @param service [required] The internal name of your pro organization
 	 */
@@ -59,7 +59,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /email/pro/{service}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param service [required] The internal name of your pro organization
@@ -72,7 +72,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/pro/{service}
 	 * @param service [required] The internal name of your pro organization
 	 */
@@ -85,7 +85,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /email/pro/{service}
 	 * @param body [required] New object properties
 	 * @param service [required] The internal name of your pro organization
@@ -98,7 +98,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Accounts associated to this pro service
-	 * 
+	 *
 	 * REST: GET /email/pro/{service}/account
 	 * @param primaryEmailAddress [required] Filter the value of primaryEmailAddress property (like)
 	 * @param id [required] Filter the value of id property (like)
@@ -115,7 +115,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/pro/{service}/account/{email}
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
@@ -130,7 +130,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /email/pro/{service}/account/{email}
 	 * @param body [required] New object properties
 	 * @param service [required] The internal name of your pro organization
@@ -145,7 +145,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Delete existing mailbox in pro server
-	 * 
+	 *
 	 * REST: DELETE /email/pro/{service}/account/{email}
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
@@ -160,7 +160,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Pending task for this mailbox
-	 * 
+	 *
 	 * REST: GET /email/pro/{service}/account/{email}/tasks
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
@@ -176,7 +176,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/pro/{service}/account/{email}/tasks/{id}
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
@@ -193,7 +193,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Change mailbox password
-	 * 
+	 *
 	 * REST: POST /email/pro/{service}/account/{email}/changePassword
 	 * @param password [required] new password
 	 * @param service [required] The internal name of your pro organization
@@ -211,7 +211,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Terminate account at expiration date
-	 * 
+	 *
 	 * REST: POST /email/pro/{service}/account/{email}/terminate
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
@@ -226,7 +226,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/pro/{service}/account/{email}/diagnostics
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
@@ -241,7 +241,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Create new diagnosis request
-	 * 
+	 *
 	 * REST: POST /email/pro/{service}/account/{email}/diagnostics
 	 * @param password [required] Account password
 	 * @param service [required] The internal name of your pro organization
@@ -259,7 +259,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * SendOnBehalfTo granted users for this mailbox
-	 * 
+	 *
 	 * REST: GET /email/pro/{service}/account/{email}/sendOnBehalfTo
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
@@ -274,7 +274,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Allow another user to Send On Behalf To mails from this mailbox
-	 * 
+	 *
 	 * REST: POST /email/pro/{service}/account/{email}/sendOnBehalfTo
 	 * @param allowAccountId [required] Account id to allow to send On Behalf To mails from this mailbox
 	 * @param service [required] The internal name of your pro organization
@@ -292,7 +292,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/pro/{service}/account/{email}/sendOnBehalfTo/{allowedAccountId}
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
@@ -309,7 +309,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Delete allowed user for SendOnBehalfTo
-	 * 
+	 *
 	 * REST: DELETE /email/pro/{service}/account/{email}/sendOnBehalfTo/{allowedAccountId}
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
@@ -326,7 +326,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Full access granted users for this mailbox
-	 * 
+	 *
 	 * REST: GET /email/pro/{service}/account/{email}/fullAccess
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
@@ -341,7 +341,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Allow full access to a user
-	 * 
+	 *
 	 * REST: POST /email/pro/{service}/account/{email}/fullAccess
 	 * @param allowedAccountId [required] User to give full access
 	 * @param service [required] The internal name of your pro organization
@@ -359,7 +359,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/pro/{service}/account/{email}/fullAccess/{allowedAccountId}
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
@@ -376,7 +376,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Revoke full access
-	 * 
+	 *
 	 * REST: DELETE /email/pro/{service}/account/{email}/fullAccess/{allowedAccountId}
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
@@ -393,7 +393,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Aliases associated to this mailbox
-	 * 
+	 *
 	 * REST: GET /email/pro/{service}/account/{email}/alias
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
@@ -408,7 +408,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Create new alias
-	 * 
+	 *
 	 * REST: POST /email/pro/{service}/account/{email}/alias
 	 * @param alias [required] Alias
 	 * @param service [required] The internal name of your pro organization
@@ -426,7 +426,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/pro/{service}/account/{email}/alias/{alias}
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
@@ -443,7 +443,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Delete existing alias
-	 * 
+	 *
 	 * REST: DELETE /email/pro/{service}/account/{email}/alias/{alias}
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
@@ -460,7 +460,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Send as granted users for this mailbox
-	 * 
+	 *
 	 * REST: GET /email/pro/{service}/account/{email}/sendAs
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
@@ -475,7 +475,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Allow another user to send mails from this mailbox
-	 * 
+	 *
 	 * REST: POST /email/pro/{service}/account/{email}/sendAs
 	 * @param allowAccountId [required] Account id to allow to send mails from this mailbox
 	 * @param service [required] The internal name of your pro organization
@@ -493,7 +493,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/pro/{service}/account/{email}/sendAs/{allowedAccountId}
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
@@ -510,7 +510,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Delete allowed user for sendAs
-	 * 
+	 *
 	 * REST: DELETE /email/pro/{service}/account/{email}/sendAs/{allowedAccountId}
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
@@ -527,7 +527,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Pending actions
-	 * 
+	 *
 	 * REST: GET /email/pro/{service}/task
 	 * @param service [required] The internal name of your pro organization
 	 */
@@ -540,7 +540,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/pro/{service}/task/{id}
 	 * @param service [required] The internal name of your pro organization
 	 * @param id [required] Task id
@@ -555,7 +555,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * External contacts for this service
-	 * 
+	 *
 	 * REST: GET /email/pro/{service}/externalContact
 	 * @param firstName [required] Filter the value of firstName property (like)
 	 * @param id [required] Filter the value of id property (like)
@@ -578,7 +578,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * create new external contact
-	 * 
+	 *
 	 * REST: POST /email/pro/{service}/externalContact
 	 * @param initials [required] Contact initials
 	 * @param firstName [required] Contact first name
@@ -604,7 +604,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/pro/{service}/externalContact/{externalEmailAddress}
 	 * @param service [required] The internal name of your pro organization
 	 * @param externalEmailAddress [required] Contact email
@@ -619,7 +619,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /email/pro/{service}/externalContact/{externalEmailAddress}
 	 * @param body [required] New object properties
 	 * @param service [required] The internal name of your pro organization
@@ -634,7 +634,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * delete external contact
-	 * 
+	 *
 	 * REST: DELETE /email/pro/{service}/externalContact/{externalEmailAddress}
 	 * @param service [required] The internal name of your pro organization
 	 * @param externalEmailAddress [required] Contact email
@@ -649,7 +649,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/pro/{service}/domain/{domainName}
 	 * @param service [required] The internal name of your pro organization
 	 * @param domainName [required] Domain name
@@ -664,7 +664,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /email/pro/{service}/domain/{domainName}
 	 * @param body [required] New object properties
 	 * @param service [required] The internal name of your pro organization
@@ -679,7 +679,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Delete existing domain in pro services
-	 * 
+	 *
 	 * REST: DELETE /email/pro/{service}/domain/{domainName}
 	 * @param service [required] The internal name of your pro organization
 	 * @param domainName [required] Domain name
@@ -694,7 +694,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Get diclaimer attributes to substitute with Active Directory properties
-	 * 
+	 *
 	 * REST: GET /email/pro/{service}/domain/{domainName}/disclaimerAttribute
 	 * @param service [required] The internal name of your pro organization
 	 * @param domainName [required] Domain name
@@ -710,7 +710,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/pro/{service}/domain/{domainName}/disclaimer
 	 * @param service [required] The internal name of your pro organization
 	 * @param domainName [required] Domain name
@@ -725,7 +725,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /email/pro/{service}/domain/{domainName}/disclaimer
 	 * @param body [required] New object properties
 	 * @param service [required] The internal name of your pro organization
@@ -740,7 +740,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Create organization disclaimer of each email
-	 * 
+	 *
 	 * REST: POST /email/pro/{service}/domain/{domainName}/disclaimer
 	 * @param outsideOnly [required] Activate the disclaimer only for external emails
 	 * @param content [required] Signature, added at the bottom of your organization emails
@@ -760,7 +760,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Delete existing organization disclaimer
-	 * 
+	 *
 	 * REST: DELETE /email/pro/{service}/domain/{domainName}/disclaimer
 	 * @param service [required] The internal name of your pro organization
 	 * @param domainName [required] Domain name
@@ -775,7 +775,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Domains associated to this service
-	 * 
+	 *
 	 * REST: GET /email/pro/{service}/domain
 	 * @param state [required] Filter the value of state property (=)
 	 * @param service [required] The internal name of your pro organization
@@ -790,7 +790,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Create new domain in pro services
-	 * 
+	 *
 	 * REST: POST /email/pro/{service}/domain
 	 * @param mxRelay [required] If specified, emails to not existing address will be redirected to that domain
 	 * @param configureAutodiscover [required] If you host domain in OVH we can configure autodiscover record automatically
@@ -814,7 +814,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Update spam and virus flags on all active accounts
-	 * 
+	 *
 	 * REST: POST /email/pro/{service}/updateFlagsOnAllAccounts
 	 * @param service [required] The internal name of your pro organization
 	 */
@@ -826,7 +826,7 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/pro/{service}/server
 	 * @param service [required] The internal name of your pro organization
 	 */

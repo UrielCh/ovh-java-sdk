@@ -27,7 +27,7 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /license/office/{serviceName}/serviceInfos
 	 * @param serviceName [required] The unique identifier of your Office service
 	 */
@@ -40,7 +40,7 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /license/office/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The unique identifier of your Office service
@@ -53,7 +53,7 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 
 	/**
 	 * Shows the licenses usage statistics for the given time period.
-	 * 
+	 *
 	 * REST: GET /license/office/{serviceName}/usageStatistics
 	 * @param to [required] Period's end point.
 	 * @param from [required] Period's start point.
@@ -71,7 +71,7 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /license/office/{serviceName}
 	 * @param serviceName [required] The unique identifier of your Office service
 	 */
@@ -84,7 +84,7 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /license/office/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The unique identifier of your Office service
@@ -97,7 +97,7 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /license/office/{serviceName}/domain/{domainName}
 	 * @param serviceName [required] The unique identifier of your Office service
 	 * @param domainName [required] Domain name
@@ -112,7 +112,7 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 
 	/**
 	 * Domain associated to this office tenant
-	 * 
+	 *
 	 * REST: GET /license/office/{serviceName}/domain
 	 * @param serviceName [required] The unique identifier of your Office service
 	 */
@@ -126,7 +126,7 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 
 	/**
 	 * Accounts associated to this office tenant
-	 * 
+	 *
 	 * REST: GET /license/office/{serviceName}/user
 	 * @param firstName [required] Filter the value of firstName property (like)
 	 * @param lastName [required] Filter the value of lastName property (like)
@@ -145,7 +145,7 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 
 	/**
 	 * Create new office user
-	 * 
+	 *
 	 * REST: POST /license/office/{serviceName}/user
 	 * @param firstName [required] Account first name
 	 * @param domain [required] Office domain
@@ -169,7 +169,7 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /license/office/{serviceName}/user/{activationEmail}
 	 * @param serviceName [required] The unique identifier of your Office service
 	 * @param activationEmail [required] Email used to activate Microsoft Office
@@ -184,7 +184,7 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 
 	/**
 	 * Delete existing office user
-	 * 
+	 *
 	 * REST: DELETE /license/office/{serviceName}/user/{activationEmail}
 	 * @param serviceName [required] The unique identifier of your Office service
 	 * @param activationEmail [required] Email used to activate Microsoft Office
@@ -199,7 +199,7 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 
 	/**
 	 * Change or reset  user's password
-	 * 
+	 *
 	 * REST: POST /license/office/{serviceName}/user/{activationEmail}/changePassword
 	 * @param password [required] New password or empty to receive a generated password by email
 	 * @param shouldSendMail [required] Specify if the new password should be send via email or not.
@@ -221,7 +221,7 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /license/office
 	 */
 	public ArrayList<String> GET() throws IOException {

@@ -19,7 +19,7 @@ public class ApiOvhDistributionimage extends ApiOvhBase {
 
 	/**
 	 * List images for a service
-	 * 
+	 *
 	 * REST: GET /distribution/image/{serviceType}
 	 * @param serviceType [required] service type name
 	 */
@@ -33,7 +33,7 @@ public class ApiOvhDistributionimage extends ApiOvhBase {
 
 	/**
 	 * Show image details
-	 * 
+	 *
 	 * REST: GET /distribution/image/{serviceType}/{imageName}
 	 * @param serviceType [required] service type name
 	 * @param imageName [required] image name

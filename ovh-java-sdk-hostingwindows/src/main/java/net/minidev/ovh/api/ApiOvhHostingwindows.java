@@ -20,7 +20,7 @@ public class ApiOvhHostingwindows extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/windows/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your hosting
 	 */
@@ -33,7 +33,7 @@ public class ApiOvhHostingwindows extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /hosting/windows/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your hosting
@@ -46,7 +46,7 @@ public class ApiOvhHostingwindows extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/windows/{serviceName}
 	 * @param serviceName [required] The internal name of your hosting
 	 */
@@ -59,7 +59,7 @@ public class ApiOvhHostingwindows extends ApiOvhBase {
 
 	/**
 	 * Launch a contact change procedure
-	 * 
+	 *
 	 * REST: POST /hosting/windows/{serviceName}/changeContact
 	 * @param contactAdmin The contact to set as admin contact
 	 * @param contactTech The contact to set as tech contact
@@ -80,7 +80,7 @@ public class ApiOvhHostingwindows extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /hosting/windows
 	 */
 	public ArrayList<String> GET() throws IOException {

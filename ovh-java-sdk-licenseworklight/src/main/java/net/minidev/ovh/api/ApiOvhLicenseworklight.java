@@ -27,7 +27,7 @@ public class ApiOvhLicenseworklight extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /license/worklight/{serviceName}/serviceInfos
 	 * @param serviceName [required] The name of your WorkLight license
 	 */
@@ -40,7 +40,7 @@ public class ApiOvhLicenseworklight extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /license/worklight/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The name of your WorkLight license
@@ -53,7 +53,7 @@ public class ApiOvhLicenseworklight extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /license/worklight/{serviceName}
 	 * @param serviceName [required] The name of your WorkLight license
 	 */
@@ -66,7 +66,7 @@ public class ApiOvhLicenseworklight extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /license/worklight/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The name of your WorkLight license
@@ -79,7 +79,7 @@ public class ApiOvhLicenseworklight extends ApiOvhBase {
 
 	/**
 	 * Tasks linked to this license
-	 * 
+	 *
 	 * REST: GET /license/worklight/{serviceName}/tasks
 	 * @param status [required] Filter the value of status property (=)
 	 * @param action [required] Filter the value of action property (=)
@@ -97,7 +97,7 @@ public class ApiOvhLicenseworklight extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /license/worklight/{serviceName}/tasks/{taskId}
 	 * @param serviceName [required] The name of your WorkLight license
 	 * @param taskId [required] This Task id
@@ -112,7 +112,7 @@ public class ApiOvhLicenseworklight extends ApiOvhBase {
 
 	/**
 	 * Returns an array of ips where the license can be moved to
-	 * 
+	 *
 	 * REST: GET /license/worklight/{serviceName}/allowedDestinationIp
 	 * @param serviceName [required] The name of your WorkLight license
 	 */
@@ -126,7 +126,7 @@ public class ApiOvhLicenseworklight extends ApiOvhBase {
 
 	/**
 	 * Confirm termination of your service
-	 * 
+	 *
 	 * REST: POST /license/worklight/{serviceName}/confirmTermination
 	 * @param reason Reason of your termination request
 	 * @param commentary Commentary about your termination request
@@ -146,7 +146,7 @@ public class ApiOvhLicenseworklight extends ApiOvhBase {
 
 	/**
 	 * Terminate your service
-	 * 
+	 *
 	 * REST: POST /license/worklight/{serviceName}/terminate
 	 * @param serviceName [required] The name of your WorkLight license
 	 */
@@ -159,7 +159,7 @@ public class ApiOvhLicenseworklight extends ApiOvhBase {
 
 	/**
 	 * Will tell if the ip can accept the license
-	 * 
+	 *
 	 * REST: GET /license/worklight/{serviceName}/canLicenseBeMovedTo
 	 * @param destinationIp [required] The Ip on which you want to move this license
 	 * @param serviceName [required] The name of your WorkLight license
@@ -174,7 +174,7 @@ public class ApiOvhLicenseworklight extends ApiOvhBase {
 
 	/**
 	 * Move this license to another Ip
-	 * 
+	 *
 	 * REST: POST /license/worklight/{serviceName}/changeIp
 	 * @param destinationIp [required] The Ip on which you want to move this license
 	 * @param serviceName [required] The name of your WorkLight license
@@ -190,7 +190,7 @@ public class ApiOvhLicenseworklight extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /license/worklight
 	 */
 	public ArrayList<String> GET() throws IOException {
@@ -201,7 +201,7 @@ public class ApiOvhLicenseworklight extends ApiOvhBase {
 
 	/**
 	 * Get the orderable WorkLight versions
-	 * 
+	 *
 	 * REST: GET /license/worklight/orderableVersions
 	 * @param ip [required] Your license Ip
 	 */

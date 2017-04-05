@@ -31,7 +31,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /router/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your Router offer
 	 */
@@ -44,7 +44,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /router/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your Router offer
@@ -57,7 +57,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /router/{serviceName}
 	 * @param serviceName [required] The internal name of your Router offer
 	 */
@@ -70,7 +70,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 
 	/**
 	 * Networks mounted on this Router
-	 * 
+	 *
 	 * REST: GET /router/{serviceName}/network
 	 * @param serviceName [required] The internal name of your Router offer
 	 */
@@ -84,7 +84,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 
 	/**
 	 * Add a network to your router
-	 * 
+	 *
 	 * REST: POST /router/{serviceName}/network
 	 * @param vlanTag [required] Vlan tag from range 1 to 4094 or NULL for untagged traffic
 	 * @param ipNet [required] Gateway IP / CIDR Netmask, (e.g. 192.168.1.254/24)
@@ -104,7 +104,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /router/{serviceName}/network/{ipNet}
 	 * @param serviceName [required] The internal name of your Router offer
 	 * @param ipNet [required] Gateway IP / CIDR Netmask
@@ -119,7 +119,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /router/{serviceName}/network/{ipNet}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your Router offer
@@ -134,7 +134,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 
 	/**
 	 * Remove this network from your router
-	 * 
+	 *
 	 * REST: DELETE /router/{serviceName}/network/{ipNet}
 	 * @param serviceName [required] The internal name of your Router offer
 	 * @param ipNet [required] Gateway IP / CIDR Netmask
@@ -149,7 +149,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 
 	/**
 	 * Confirm termination of your service
-	 * 
+	 *
 	 * REST: POST /router/{serviceName}/confirmTermination
 	 * @param reason Reason of your termination request
 	 * @param commentary Commentary about your termination request
@@ -169,7 +169,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 
 	/**
 	 * Terminate your service
-	 * 
+	 *
 	 * REST: POST /router/{serviceName}/terminate
 	 * @param serviceName [required] The internal name of your Router offer
 	 */
@@ -182,7 +182,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 
 	/**
 	 * Tasks for this Router
-	 * 
+	 *
 	 * REST: GET /router/{serviceName}/task
 	 * @param function [required] Filter the value of function property (=)
 	 * @param status [required] Filter the value of status property (=)
@@ -200,7 +200,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /router/{serviceName}/task/{id}
 	 * @param serviceName [required] The internal name of your Router offer
 	 * @param id [required]
@@ -215,7 +215,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 
 	/**
 	 * Private links set up on this router
-	 * 
+	 *
 	 * REST: GET /router/{serviceName}/privateLink
 	 * @param serviceName [required] The internal name of your Router offer
 	 */
@@ -228,7 +228,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 
 	/**
 	 * Add a new Private Link to your Router service
-	 * 
+	 *
 	 * REST: POST /router/{serviceName}/privateLink
 	 * @param peerServiceName [required] serviceName of the router service you want to create a private link with
 	 * @param name [required] Your memory-friendly name for this private link
@@ -246,7 +246,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /router/{serviceName}/privateLink/{peerServiceName}/request
 	 * @param serviceName [required] The internal name of your Router offer
 	 * @param peerServiceName [required] Service name of the other side of this link
@@ -261,7 +261,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 
 	/**
 	 * Accept, reject or cancel a pending request
-	 * 
+	 *
 	 * REST: POST /router/{serviceName}/privateLink/{peerServiceName}/request/manage
 	 * @param action [required]
 	 * @param serviceName [required] The internal name of your Router offer
@@ -279,7 +279,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /router/{serviceName}/privateLink/{peerServiceName}
 	 * @param serviceName [required] The internal name of your Router offer
 	 * @param peerServiceName [required] Service name of the other side of this link
@@ -294,7 +294,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /router/{serviceName}/privateLink/{peerServiceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your Router offer
@@ -309,7 +309,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 
 	/**
 	 * Remove an existing Private Link from your Router service
-	 * 
+	 *
 	 * REST: DELETE /router/{serviceName}/privateLink/{peerServiceName}
 	 * @param serviceName [required] The internal name of your Router offer
 	 * @param peerServiceName [required] Service name of the other side of this link
@@ -324,7 +324,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 
 	/**
 	 * Routes set up in a Private Link
-	 * 
+	 *
 	 * REST: GET /router/{serviceName}/privateLink/{peerServiceName}/route
 	 * @param serviceName [required] The internal name of your Router offer
 	 * @param peerServiceName [required] Service name of the other side of this link
@@ -339,7 +339,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 
 	/**
 	 * Add a new outgoing route to your router
-	 * 
+	 *
 	 * REST: POST /router/{serviceName}/privateLink/{peerServiceName}/route
 	 * @param network [required] Network to be routed outside your router (CIDR format, e.g. 10.1.0.0./16
 	 * @param serviceName [required] The internal name of your Router offer
@@ -357,7 +357,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /router/{serviceName}/privateLink/{peerServiceName}/route/{network}
 	 * @param serviceName [required] The internal name of your Router offer
 	 * @param peerServiceName [required] Service name of the other side of this link
@@ -374,7 +374,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 
 	/**
 	 * Delete an existing route from your router
-	 * 
+	 *
 	 * REST: DELETE /router/{serviceName}/privateLink/{peerServiceName}/route/{network}
 	 * @param serviceName [required] The internal name of your Router offer
 	 * @param peerServiceName [required] Service name of the other side of this link
@@ -391,7 +391,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 
 	/**
 	 * VPN associated with this Router
-	 * 
+	 *
 	 * REST: GET /router/{serviceName}/vpn
 	 * @param serviceName [required] The internal name of your Router offer
 	 */
@@ -404,7 +404,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 
 	/**
 	 * Add a VPN to your router
-	 * 
+	 *
 	 * REST: POST /router/{serviceName}/vpn
 	 * @param psk [required] Your PSK key
 	 * @param clientIp [required] IP you will be connecting from / NULL (allow all)
@@ -426,7 +426,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /router/{serviceName}/vpn/{id}
 	 * @param serviceName [required] The internal name of your Router offer
 	 * @param id [required]
@@ -441,7 +441,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /router/{serviceName}/vpn/{id}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your Router offer
@@ -456,7 +456,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 
 	/**
 	 * Delete a VPN from your router
-	 * 
+	 *
 	 * REST: DELETE /router/{serviceName}/vpn/{id}
 	 * @param serviceName [required] The internal name of your Router offer
 	 * @param id [required]
@@ -471,7 +471,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 
 	/**
 	 * Change your VPN's PSK
-	 * 
+	 *
 	 * REST: POST /router/{serviceName}/vpn/{id}/setPsk
 	 * @param psk [required] Your PSK key
 	 * @param serviceName [required] The internal name of your Router offer
@@ -489,7 +489,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /router
 	 */
 	public ArrayList<String> GET() throws IOException {

@@ -72,7 +72,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /email/exchange
 	 */
 	public ArrayList<String> GET() throws IOException {
@@ -84,7 +84,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service
 	 * @param organizationName [required] The internal name of your exchange organization
 	 */
@@ -97,7 +97,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/serviceInfos
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -112,7 +112,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -127,7 +127,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/protocol
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -142,7 +142,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/protocol
 	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -157,7 +157,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Exchange account id subscribed to ActiveSync quarantine notifications
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/protocol/activeSyncMailNotification
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -173,7 +173,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Subscribe new address to ActiveSync quarantine notifications
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/protocol/activeSyncMailNotification
 	 * @param notifiedAccountId [required] Exchange Account Id
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -191,7 +191,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/protocol/activeSyncMailNotification/{notifiedAccountId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -208,7 +208,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Unubscribe address from ActiveSync quarantine notifications
-	 * 
+	 *
 	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/protocol/activeSyncMailNotification/{notifiedAccountId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -225,7 +225,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -240,7 +240,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}
 	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -255,7 +255,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Shared accounts associated to this exchange service
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount
 	 * @param sharedEmailAddress [required] Filter the value of sharedEmailAddress property (like)
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -272,7 +272,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Create new shared mailbox in exchange server
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount
 	 * @param initials [required] Shared account initials
 	 * @param firstName [required] Shared account first name
@@ -304,7 +304,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -321,7 +321,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}
 	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -338,7 +338,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Delete existing shared mailbox in exchange server
-	 * 
+	 *
 	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -355,7 +355,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Pending task for this mailbox
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/tasks
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -372,7 +372,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/tasks/{id}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -391,7 +391,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * SendOnBehalfTo granted users for this shared mailbox
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendOnBehalfTo
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -408,7 +408,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Allow another user to Send On Behalf To mails from this shared mailbox
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendOnBehalfTo
 	 * @param allowAccountId [required] Account id to allow to send On Behalf To mails from this shared mailbox
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -428,7 +428,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendOnBehalfTo/{allowedAccountId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -447,7 +447,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Delete allowed user for SendOnBehalfTo
-	 * 
+	 *
 	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendOnBehalfTo/{allowedAccountId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -466,7 +466,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Full access granted users for this shared mailbox
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/fullAccess
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -483,7 +483,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Allow full access to a user
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/fullAccess
 	 * @param allowedAccountId [required] User to give full access
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -503,7 +503,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/fullAccess/{allowedAccountId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -522,7 +522,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Revoke full access
-	 * 
+	 *
 	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/fullAccess/{allowedAccountId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -541,7 +541,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Send as granted users for this shared mailbox
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendAs
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -558,7 +558,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Allow another user to send mails from this shared mailbox
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendAs
 	 * @param allowAccountId [required] Account id to allow to send mails from this shared mailbox
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -578,7 +578,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendAs/{allowedAccountId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -597,7 +597,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Delete allowed user for sendAs
-	 * 
+	 *
 	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendAs/{allowedAccountId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -616,7 +616,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get public folder quota usage in total available space
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/publicFolderQuota
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -631,7 +631,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get DCV emails if your ssl will expire in next 30 days
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/dcvEmails
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -646,7 +646,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/domain/{domainName}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -663,7 +663,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/domain/{domainName}
 	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -680,7 +680,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Delete existing domain in exchange services
-	 * 
+	 *
 	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/domain/{domainName}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -697,7 +697,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get diclaimer attributes to substitute with Active Directory properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/domain/{domainName}/disclaimerAttribute
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -715,7 +715,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/domain/{domainName}/disclaimer
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -732,7 +732,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/domain/{domainName}/disclaimer
 	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -749,7 +749,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Create organization disclaimer of each email
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/domain/{domainName}/disclaimer
 	 * @param outsideOnly [required] Activate the disclaimer only for external emails
 	 * @param content [required] Signature, added at the bottom of your organization emails
@@ -771,7 +771,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Delete existing organization disclaimer
-	 * 
+	 *
 	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/domain/{domainName}/disclaimer
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -788,7 +788,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Domains associated to this service
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/domain
 	 * @param main [required] Filter the value of main property (like)
 	 * @param state [required] Filter the value of state property (=)
@@ -807,7 +807,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Create new domain in exchange services
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/domain
 	 * @param mxRelay [required] If specified, emails to not existing address will be redirected to that domain
 	 * @param configureAutodiscover [required] If you host domain in OVH we can configure autodiscover record automatically
@@ -837,7 +837,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Renew SSL if it will expire in next 30 days
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/renewSSL
 	 * @param dcv [required] DCV email require for order ssl varification process
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -855,7 +855,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Public folders associated to this service
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/publicFolder
 	 * @param path [required] Filter the value of path property (like)
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -872,7 +872,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Create organization public folder
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/publicFolder
 	 * @param quota [required] Quota for public folder in MB
 	 * @param anonymousPermission [required] [default=none] Access right for the guest users
@@ -898,7 +898,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -915,7 +915,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}
 	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -932,7 +932,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Delete existing organization public folder
-	 * 
+	 *
 	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -949,7 +949,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Public folder permission
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}/permission
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -966,7 +966,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Create public folder permission
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}/permission
 	 * @param allowedAccountId [required] Account id to have access to public folder
 	 * @param accessRights [required] Access rights to be set for the account
@@ -988,7 +988,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}/permission/{allowedAccountId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1007,7 +1007,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}/permission/{allowedAccountId}
 	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -1026,7 +1026,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Delete existing permission from public folder
-	 * 
+	 *
 	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}/permission/{allowedAccountId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1045,7 +1045,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/server
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1060,7 +1060,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Accounts associated to this exchange service
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account
 	 * @param primaryEmailAddress [required] Filter the value of primaryEmailAddress property (like)
 	 * @param accountLicense [required] Filter the value of accountLicense property (=)
@@ -1081,7 +1081,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Create new mailbox in exchange server
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/account
 	 * @param initials [required] Account initials
 	 * @param firstName [required] Account first name
@@ -1123,7 +1123,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/protocol
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1140,7 +1140,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/protocol
 	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -1157,7 +1157,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1174,7 +1174,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}
 	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -1191,7 +1191,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Delete existing mailbox in exchange server
-	 * 
+	 *
 	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1208,7 +1208,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Pending task for this mailbox
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/tasks
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1225,7 +1225,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/tasks/{id}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1244,7 +1244,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Change mailbox password
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/changePassword
 	 * @param password [required] new password
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -1264,7 +1264,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Terminate account at expiration date
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/terminate
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1281,7 +1281,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/exportURL
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1298,7 +1298,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Generate temporary url to PST file
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/exportURL
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1315,7 +1315,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/diagnostics
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1332,7 +1332,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Create new diagnosis request
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/diagnostics
 	 * @param password [required] Account password
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -1352,7 +1352,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * SendOnBehalfTo granted users for this mailbox
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/sendOnBehalfTo
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1369,7 +1369,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Allow another user to Send On Behalf To mails from this mailbox
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/sendOnBehalfTo
 	 * @param allowAccountId [required] Account id to allow to send On Behalf To mails from this mailbox
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -1389,7 +1389,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/sendOnBehalfTo/{allowedAccountId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1408,7 +1408,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Delete allowed user for SendOnBehalfTo
-	 * 
+	 *
 	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/sendOnBehalfTo/{allowedAccountId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1427,7 +1427,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Full access granted users for this mailbox
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/fullAccess
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1444,7 +1444,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Allow full access to a user
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/fullAccess
 	 * @param allowedAccountId [required] User to give full access
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -1464,7 +1464,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/fullAccess/{allowedAccountId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1483,7 +1483,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Revoke full access
-	 * 
+	 *
 	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/fullAccess/{allowedAccountId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1502,7 +1502,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/export
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1519,7 +1519,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Request PST file for the account
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/export
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1536,7 +1536,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Remove request of PST file
-	 * 
+	 *
 	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/export
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1553,7 +1553,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/outlookURL
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1570,7 +1570,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Generate outlook url
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/outlookURL
 	 * @param language [required] Language of outlook
 	 * @param version [required] Version of outlook
@@ -1592,7 +1592,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Aliases associated to this mailbox
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/alias
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1609,7 +1609,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Create new alias
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/alias
 	 * @param alias [required] Alias
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -1629,7 +1629,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/alias/{alias}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1648,7 +1648,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Delete existing alias
-	 * 
+	 *
 	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/alias/{alias}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1667,7 +1667,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Send as granted users for this mailbox
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/sendAs
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1684,7 +1684,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Allow another user to send mails from this mailbox
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/sendAs
 	 * @param allowAccountId [required] Account id to allow to send mails from this mailbox
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -1704,7 +1704,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/sendAs/{allowedAccountId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1723,7 +1723,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Delete allowed user for sendAs
-	 * 
+	 *
 	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/sendAs/{allowedAccountId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1742,7 +1742,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Pending actions
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/task
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1757,7 +1757,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/task/{id}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1774,7 +1774,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * List of your ActiveSync devices registered on this Exchange service
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/device
 	 * @param identity [required] Filter the value of identity property (like)
 	 * @param IMEI [required] Filter the value of IMEI property (like)
@@ -1795,7 +1795,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/device/{identity}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1812,7 +1812,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/device/{identity}
 	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -1829,7 +1829,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Executes a factory reset on the device. THIS OPERATION CANNOT BE REVERSED, ALL DATA ON THE DEVICE WILL BE LOST.
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/device/{identity}/clearDevice
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1846,7 +1846,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get active licenses for specific period of time
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/license
 	 * @param license [required] License type
 	 * @param toDate [required] Get active licenses until date
@@ -1868,7 +1868,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * External contacts for this service
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/externalContact
 	 * @param firstName [required] Filter the value of firstName property (like)
 	 * @param id [required] Filter the value of id property (like)
@@ -1893,7 +1893,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * create new external contact
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/externalContact
 	 * @param initials [required] Contact initials
 	 * @param firstName [required] Contact first name
@@ -1923,7 +1923,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/externalContact/{externalEmailAddress}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1940,7 +1940,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/externalContact/{externalEmailAddress}
 	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -1957,7 +1957,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * delete external contact
-	 * 
+	 *
 	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/externalContact/{externalEmailAddress}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1974,7 +1974,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Show available outlooks
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/outlookAvailability
 	 * @param outlookLanguage [required] Language version of outlook
 	 * @param outlookVersion [required] OS version of outlook
@@ -1994,7 +1994,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Update spam and virus flags on all active accounts
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/updateFlagsOnAllAccounts
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2008,7 +2008,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Mailing list for this service
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList
 	 * @param mailingListAddress [required] Filter the value of mailingListAddress property (like)
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -2025,7 +2025,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Add mailing list
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/mailingList
 	 * @param joinRestriction [required] Join restriction policy
 	 * @param departRestriction [required] Depart restriction policy
@@ -2057,7 +2057,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2074,7 +2074,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}
 	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -2091,7 +2091,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Delete mailing list
-	 * 
+	 *
 	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2108,7 +2108,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Mailing list account member
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/member/account
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2125,7 +2125,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Add new mailing list member
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/member/account
 	 * @param memberContactId [required] Member contact id
 	 * @param memberAccountId [required] Member account id
@@ -2147,7 +2147,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/member/account/{memberAccountId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2166,7 +2166,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Delete mailing list member
-	 * 
+	 *
 	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/member/account/{memberAccountId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2185,7 +2185,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Mailing list contact member
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/member/contact
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2202,7 +2202,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Add new mailing list member
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/member/contact
 	 * @param memberContactId [required] Member contact id
 	 * @param memberAccountId [required] Member account id
@@ -2224,7 +2224,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/member/contact/{memberContactId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2243,7 +2243,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Delete mailing list member
-	 * 
+	 *
 	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/member/contact/{memberContactId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2262,7 +2262,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * sendOnBehalfTo
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendOnBehalfTo
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2279,7 +2279,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Allow another user to Send aso mails from this mailing list
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendOnBehalfTo
 	 * @param allowAccountId [required] Account id to allow to send as mails from this mailing list
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -2299,7 +2299,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendOnBehalfTo/{allowedAccountId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2318,7 +2318,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Delete allowed user for SendOnBehalfTo
-	 * 
+	 *
 	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendOnBehalfTo/{allowedAccountId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2337,7 +2337,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Aliases associated to this mailingList
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/alias
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2354,7 +2354,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Create new alias
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/alias
 	 * @param alias [required] Alias
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -2374,7 +2374,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/alias/{alias}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2393,7 +2393,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Delete existing alias
-	 * 
+	 *
 	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/alias/{alias}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2412,7 +2412,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Mailing list account manager
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/manager/account
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2429,7 +2429,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Add new mailing list manager
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/manager/account
 	 * @param managerAccountId [required] Manager account id
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -2449,7 +2449,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/manager/account/{managerAccountId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2468,7 +2468,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Delete mailing list manager
-	 * 
+	 *
 	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/manager/account/{managerAccountId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2487,7 +2487,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * sendAs
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendAs
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2504,7 +2504,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Allow another user to Send aso mails from this mailing list
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendAs
 	 * @param allowAccountId [required] Account id to allow to send as mails from this mailing list
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -2524,7 +2524,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendAs/{allowedAccountId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2543,7 +2543,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Delete allowed user for SendAs
-	 * 
+	 *
 	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendAs/{allowedAccountId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2562,7 +2562,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Activate Sharepoint infra connected to this exchange service
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/activateSharepoint
 	 * @param primaryEmailAddress [required] primary email address of a user that will be admin of sharepoint (You will not be able to change it!)
 	 * @param subDomain [required] sub domain that will be used for Your sharepoint infra (You will not be able to change it!)
@@ -2582,7 +2582,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get shared account quota usage in total available space
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccountQuota
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2597,7 +2597,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Update device list
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/updateDeviceList
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2612,7 +2612,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Resource account associated to this service
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/resourceAccount
 	 * @param resourceEmailAddress [required] Filter the value of resourceEmailAddress property (like)
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -2629,7 +2629,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * create new resource account in exchange server
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/resourceAccount
 	 * @param resourceEmailAddress [required] resource address
 	 * @param allowConflict [required] resource can be scheduled by more than one person during the same time period
@@ -2655,7 +2655,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2672,7 +2672,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}
 	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -2689,7 +2689,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * delete existing resource account in exchange server
-	 * 
+	 *
 	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2706,7 +2706,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Resource account manager
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}/delegate
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2723,7 +2723,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * add new resource account delegate in exchange server
-	 * 
+	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}/delegate
 	 * @param allowedAccountId [required] delegate's account id
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -2743,7 +2743,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}/delegate/{allowedAccountId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2762,7 +2762,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 
 	/**
 	 * delete existing resource account delegate in exchange server
-	 * 
+	 *
 	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}/delegate/{allowedAccountId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service

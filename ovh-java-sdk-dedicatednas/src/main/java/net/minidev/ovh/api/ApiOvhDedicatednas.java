@@ -28,7 +28,7 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/nas/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your storage
 	 */
@@ -41,7 +41,7 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /dedicated/nas/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your storage
@@ -54,7 +54,7 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/nas/{serviceName}
 	 * @param serviceName [required] The internal name of your storage
 	 */
@@ -67,7 +67,7 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /dedicated/nas/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your storage
@@ -80,7 +80,7 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 
 	/**
 	 * View task list
-	 * 
+	 *
 	 * REST: GET /dedicated/nas/{serviceName}/task
 	 * @param status [required] Filter the value of status property (=)
 	 * @param operation [required] Filter the value of operation property (=)
@@ -98,7 +98,7 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/nas/{serviceName}/task/{taskId}
 	 * @param serviceName [required] The internal name of your storage
 	 * @param taskId [required] id of the task
@@ -113,7 +113,7 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 
 	/**
 	 * Get partition list
-	 * 
+	 *
 	 * REST: GET /dedicated/nas/{serviceName}/partition
 	 * @param serviceName [required] The internal name of your storage
 	 */
@@ -127,7 +127,7 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 
 	/**
 	 * Create a  new partition
-	 * 
+	 *
 	 * REST: POST /dedicated/nas/{serviceName}/partition
 	 * @param protocol [required]
 	 * @param partitionName [required] Partition name
@@ -147,7 +147,7 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 
 	/**
 	 * Get quota for this partition
-	 * 
+	 *
 	 * REST: GET /dedicated/nas/{serviceName}/partition/{partitionName}/quota
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
@@ -162,7 +162,7 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 
 	/**
 	 * Set a new quota
-	 * 
+	 *
 	 * REST: POST /dedicated/nas/{serviceName}/partition/{partitionName}/quota
 	 * @param uid [required] the uid to set quota on
 	 * @param size [required] the size to set in MB
@@ -182,7 +182,7 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/nas/{serviceName}/partition/{partitionName}/quota/{uid}
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
@@ -199,7 +199,7 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 
 	/**
 	 * Delete a given quota
-	 * 
+	 *
 	 * REST: DELETE /dedicated/nas/{serviceName}/partition/{partitionName}/quota/{uid}
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
@@ -216,7 +216,7 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/nas/{serviceName}/partition/{partitionName}
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
@@ -231,7 +231,7 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /dedicated/nas/{serviceName}/partition/{partitionName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your storage
@@ -246,7 +246,7 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 
 	/**
 	 * Delete this partition
-	 * 
+	 *
 	 * REST: DELETE /dedicated/nas/{serviceName}/partition/{partitionName}
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
@@ -261,7 +261,7 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 
 	/**
 	 * Get all IPs that can be used in the ACL
-	 * 
+	 *
 	 * REST: GET /dedicated/nas/{serviceName}/partition/{partitionName}/authorizableIps
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
@@ -276,7 +276,7 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 
 	/**
 	 * get ACL for this partition
-	 * 
+	 *
 	 * REST: GET /dedicated/nas/{serviceName}/partition/{partitionName}/access
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
@@ -291,7 +291,7 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 
 	/**
 	 * Add an Acl to this  partition
-	 * 
+	 *
 	 * REST: POST /dedicated/nas/{serviceName}/partition/{partitionName}/access
 	 * @param ip [required] Ip to add
 	 * @param serviceName [required] The internal name of your storage
@@ -309,7 +309,7 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/nas/{serviceName}/partition/{partitionName}/access/{ip}
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
@@ -326,7 +326,7 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 
 	/**
 	 * Delete a given snapshot
-	 * 
+	 *
 	 * REST: DELETE /dedicated/nas/{serviceName}/partition/{partitionName}/access/{ip}
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
@@ -343,7 +343,7 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /dedicated/nas
 	 */
 	public ArrayList<String> GET() throws IOException {

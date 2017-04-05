@@ -101,7 +101,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'quota' option
-	 * 
+	 *
 	 * REST: GET /order/cdn/dedicated/{serviceName}/quota
 	 * @param quota [required] quota number in TB that will be added to the CDN service
 	 * @param serviceName [required] The internal name of your CDN offer
@@ -117,7 +117,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/cdn/dedicated/{serviceName}/quota/{duration}
 	 * @param quota [required] quota number in TB that will be added to the CDN service
 	 * @param serviceName [required] The internal name of your CDN offer
@@ -134,7 +134,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/cdn/dedicated/{serviceName}/quota/{duration}
 	 * @param quota [required] quota number in TB that will be added to the CDN service
 	 * @param serviceName [required] The internal name of your CDN offer
@@ -152,7 +152,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed options
-	 * 
+	 *
 	 * REST: GET /order/cdn/dedicated/{serviceName}
 	 * @param serviceName [required] The internal name of your CDN offer
 	 */
@@ -165,7 +165,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'cacheRule' option
-	 * 
+	 *
 	 * REST: GET /order/cdn/dedicated/{serviceName}/cacheRule
 	 * @param cacheRule [required] cache rule upgrade option to 100 or 1000
 	 * @param serviceName [required] The internal name of your CDN offer
@@ -180,7 +180,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/cdn/dedicated/{serviceName}/cacheRule/{duration}
 	 * @param cacheRule [required] cache rule upgrade option to 100 or 1000
 	 * @param serviceName [required] The internal name of your CDN offer
@@ -197,7 +197,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/cdn/dedicated/{serviceName}/cacheRule/{duration}
 	 * @param cacheRule [required] cache rule upgrade option to 100 or 1000
 	 * @param serviceName [required] The internal name of your CDN offer
@@ -215,7 +215,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'backend' option
-	 * 
+	 *
 	 * REST: GET /order/cdn/dedicated/{serviceName}/backend
 	 * @param backend [required] Backend number that will be ordered
 	 * @param serviceName [required] The internal name of your CDN offer
@@ -230,7 +230,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/cdn/dedicated/{serviceName}/backend/{duration}
 	 * @param backend [required] Backend number that will be ordered
 	 * @param serviceName [required] The internal name of your CDN offer
@@ -247,7 +247,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/cdn/dedicated/{serviceName}/backend/{duration}
 	 * @param backend [required] Backend number that will be ordered
 	 * @param serviceName [required] The internal name of your CDN offer
@@ -265,7 +265,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/cdn/dedicated
 	 */
 	public ArrayList<String> cdn_dedicated_GET() throws IOException {
@@ -276,7 +276,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'new' option
-	 * 
+	 *
 	 * REST: GET /order/cdn/dedicated/new
 	 */
 	public ArrayList<String> cdn_dedicated_new_GET() throws IOException {
@@ -287,7 +287,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/cdn/dedicated/new/{duration}
 	 * @param duration [required] Duration
 	 */
@@ -300,7 +300,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/cdn/dedicated/new/{duration}
 	 * @param duration [required] Duration
 	 */
@@ -313,7 +313,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/cdn/webstorage/{serviceName}/traffic
 	 * @param bandwidth [required] Traffic in TB that will be added to the cdn.webstorage service
 	 * @param serviceName [required] The internal name of your CDN Static offer
@@ -328,7 +328,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/cdn/webstorage/{serviceName}/traffic
 	 * @param bandwidth [required] Traffic in TB that will be added to the cdn.webstorage service
 	 * @param serviceName [required] The internal name of your CDN Static offer
@@ -344,7 +344,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed options
-	 * 
+	 *
 	 * REST: GET /order/cdn/webstorage/{serviceName}
 	 * @param serviceName [required] The internal name of your CDN Static offer
 	 */
@@ -357,7 +357,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'storage' option
-	 * 
+	 *
 	 * REST: GET /order/cdn/webstorage/{serviceName}/storage
 	 * @param storage [required] Storage option that will be ordered
 	 * @param serviceName [required] The internal name of your CDN Static offer
@@ -372,7 +372,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/cdn/webstorage/{serviceName}/storage/{duration}
 	 * @param storage [required] Storage option that will be ordered
 	 * @param serviceName [required] The internal name of your CDN Static offer
@@ -389,7 +389,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/cdn/webstorage/{serviceName}/storage/{duration}
 	 * @param storage [required] Storage option that will be ordered
 	 * @param serviceName [required] The internal name of your CDN Static offer
@@ -407,7 +407,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/cdn/webstorage
 	 */
 	public ArrayList<String> cdn_webstorage_GET() throws IOException {
@@ -418,7 +418,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed options
-	 * 
+	 *
 	 * REST: GET /order/sms/{serviceName}
 	 * @param serviceName [required] The internal name of your SMS offer
 	 */
@@ -431,7 +431,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/sms/{serviceName}/credits
 	 * @param quantity [required] Sms credit quantity
 	 * @param serviceName [required] The internal name of your SMS offer
@@ -446,7 +446,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/sms/{serviceName}/credits
 	 * @param quantity [required] Sms credit quantity
 	 * @param serviceName [required] The internal name of your SMS offer
@@ -462,7 +462,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/sms
 	 */
 	public ArrayList<String> sms_GET() throws IOException {
@@ -473,7 +473,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/sms/new
 	 * @param quantity [required] Sms credit quantity
 	 */
@@ -486,7 +486,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/sms/new
 	 * @param quantity [required] Sms credit quantity
 	 */
@@ -500,7 +500,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Retrieve list of catalog name
-	 * 
+	 *
 	 * REST: GET /order/catalog/formatted
 	 */
 	public ArrayList<String> catalog_formatted_GET() throws IOException {
@@ -511,7 +511,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Retrieve information of catalog
-	 * 
+	 *
 	 * REST: GET /order/catalog/formatted/{catalogName}
 	 * @param catalogName [required] Catalog name you want to consult.
 	 * @param ovhSubsidiary [required] Subsidiary of the country you want to consult catalog
@@ -526,7 +526,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/telephony
 	 */
 	public ArrayList<String> telephony_GET() throws IOException {
@@ -537,7 +537,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed options
-	 * 
+	 *
 	 * REST: GET /order/telephony/{billingAccount}
 	 * @param billingAccount [required] The name of your billingAccount
 	 */
@@ -550,7 +550,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/telephony/{billingAccount}/securityDeposit
 	 * @param amount [required] The amount, in euros, to credit to the current security deposit
 	 * @param billingAccount [required] The name of your billingAccount
@@ -565,7 +565,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/telephony/{billingAccount}/securityDeposit
 	 * @param amount [required] The amount, in euros, to credit to the current security deposit
 	 * @param billingAccount [required] The name of your billingAccount
@@ -581,7 +581,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/telephony/{billingAccount}/numberSpecial
 	 * @param firstname [required] Contact firstname
 	 * @param typology [required] Special range typology
@@ -634,7 +634,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/telephony/{billingAccount}/numberSpecial
 	 * @param firstname [required] Contact firstname
 	 * @param typology [required] Special range typology
@@ -688,7 +688,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/telephony/{billingAccount}/accessories
 	 * @param retractation [required] Retractation rights if set
 	 * @param shippingContactId [required] Shipping contact information id from /me entry point
@@ -709,7 +709,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/telephony/{billingAccount}/accessories
 	 * @param retractation [required] Retractation rights if set
 	 * @param shippingContactId [required] Shipping contact information id from /me entry point
@@ -731,7 +731,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/telephony/{billingAccount}/portability
 	 * @param socialReason [required] Your social reason
 	 * @param rio [required] RIO of the number for individual offer
@@ -798,7 +798,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/telephony/{billingAccount}/portability
 	 * @param socialReason [required] Your social reason
 	 * @param rio [required] RIO of the number for individual offer
@@ -866,7 +866,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/telephony/{billingAccount}/numberNogeographic
 	 * @param firstname [required] Contact firstname
 	 * @param ape [required] Company ape
@@ -917,7 +917,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/telephony/{billingAccount}/numberNogeographic
 	 * @param firstname [required] Contact firstname
 	 * @param ape [required] Company ape
@@ -969,7 +969,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/telephony/{billingAccount}/accessory
 	 * @param retractation [required] Retractation rights if set
 	 * @param shippingContactId [required] Shipping contact information id from /me entry point
@@ -992,7 +992,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/telephony/{billingAccount}/accessory
 	 * @param retractation [required] Retractation rights if set
 	 * @param shippingContactId [required] Shipping contact information id from /me entry point
@@ -1016,7 +1016,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/telephony/{billingAccount}/numberGeographic
 	 * @param firstname [required] Contact firstname
 	 * @param ape [required] Company ape
@@ -1069,7 +1069,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/telephony/{billingAccount}/numberGeographic
 	 * @param firstname [required] Contact firstname
 	 * @param ape [required] Company ape
@@ -1123,7 +1123,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/telephony/{billingAccount}/line
 	 * @param shippingContactId [required] Shipping contact information id from /me entry point
 	 * @param types [required] Number type. Set several types for each line per phone
@@ -1158,7 +1158,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/telephony/{billingAccount}/line
 	 * @param shippingContactId [required] Shipping contact information id from /me entry point
 	 * @param types [required] Number type. Set several types for each line per phone
@@ -1194,7 +1194,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/telephony/lines/{serviceName}/addSimultaneousLines
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param quantity [required] The quantity of extra simultaneous lines to add
@@ -1211,7 +1211,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/telephony/lines/{serviceName}/addSimultaneousLines
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param quantity [required] The quantity of extra simultaneous lines to add
@@ -1229,7 +1229,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed options
-	 * 
+	 *
 	 * REST: GET /order/telephony/lines/{serviceName}
 	 * @param serviceName [required] Your line number
 	 */
@@ -1242,7 +1242,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/telephony/lines/{serviceName}/hardware
 	 * @param retractation [required] Retractation rights if set
 	 * @param shippingContactId [required] Shipping contact information id from /me entry point
@@ -1263,7 +1263,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/telephony/lines/{serviceName}/hardware
 	 * @param retractation [required] Retractation rights if set
 	 * @param shippingContactId [required] Shipping contact information id from /me entry point
@@ -1285,7 +1285,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/telephony/lines
 	 */
 	public ArrayList<String> telephony_lines_GET() throws IOException {
@@ -1296,7 +1296,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/telephony/new
 	 */
 	public OvhOrder telephony_new_GET() throws IOException {
@@ -1307,7 +1307,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/telephony/new
 	 */
 	public OvhOrder telephony_new_POST() throws IOException {
@@ -1318,7 +1318,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/telephony/spare/new
 	 * @param shippingContactId [required] Shipping contact information id from /me entry point
 	 * @param mondialRelayId [required] Use /supply/mondialRelay entry point to specify a relay point and ignore shipping contact address information entry.
@@ -1337,7 +1337,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/telephony/spare/new
 	 * @param shippingContactId [required] Shipping contact information id from /me entry point
 	 * @param mondialRelayId [required] Use /supply/mondialRelay entry point to specify a relay point and ignore shipping contact address information entry.
@@ -1357,7 +1357,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/telephony/trunks/{serviceName}/addSimultaneousLines
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param quantity [required] The quantity of extra simultaneous lines to add
@@ -1374,7 +1374,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/telephony/trunks/{serviceName}/addSimultaneousLines
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param quantity [required] The quantity of extra simultaneous lines to add
@@ -1392,7 +1392,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed options
-	 * 
+	 *
 	 * REST: GET /order/telephony/trunks/{serviceName}
 	 * @param serviceName [required] Your trunk number
 	 */
@@ -1405,7 +1405,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/telephony/trunks/{serviceName}/hardware
 	 * @param retractation [required] Retractation rights if set
 	 * @param shippingContactId [required] Shipping contact information id from /me entry point
@@ -1426,7 +1426,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/telephony/trunks/{serviceName}/hardware
 	 * @param retractation [required] Retractation rights if set
 	 * @param shippingContactId [required] Shipping contact information id from /me entry point
@@ -1448,7 +1448,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/telephony/trunks
 	 */
 	public ArrayList<String> telephony_trunks_GET() throws IOException {
@@ -1459,7 +1459,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed options
-	 * 
+	 *
 	 * REST: GET /order/ip/loadBalancing/{serviceName}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
@@ -1472,7 +1472,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/ip/loadBalancing/{serviceName}/ssl
 	 * @param domain [required] The domain for which you want an SSL option. A DCV mail will be sent at postmaster@your_domain.abc, make sure this address exists before ordering
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -1487,7 +1487,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/ip/loadBalancing/{serviceName}/ssl
 	 * @param domain [required] The domain for which you want an SSL option. A DCV mail will be sent at postmaster@your_domain.abc, make sure this address exists before ordering
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -1503,7 +1503,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/ip/loadBalancing/{serviceName}/pop
 	 * @param pop [required] The domain of the ip Load Balancing you want to add pop on
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -1518,7 +1518,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/ip/loadBalancing/{serviceName}/pop
 	 * @param pop [required] The domain of the ip Load Balancing you want to add pop on
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -1534,7 +1534,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/ip/loadBalancing
 	 */
 	public ArrayList<String> ip_loadBalancing_GET() throws IOException {
@@ -1545,7 +1545,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'new' option
-	 * 
+	 *
 	 * REST: GET /order/ip/loadBalancing/new
 	 * @param pop [required] The pop(s) you want your IP LoadBalancing on
 	 */
@@ -1558,7 +1558,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/ip/loadBalancing/new/{duration}
 	 * @param pop [required] The pop(s) you want your IP LoadBalancing on
 	 * @param duration [required] Duration
@@ -1573,7 +1573,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/ip/loadBalancing/new/{duration}
 	 * @param pop [required] The pop(s) you want your IP LoadBalancing on
 	 * @param duration [required] Duration
@@ -1589,7 +1589,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/email/pro
 	 */
 	public ArrayList<String> email_pro_GET() throws IOException {
@@ -1600,7 +1600,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed options
-	 * 
+	 *
 	 * REST: GET /order/email/pro/{service}
 	 * @param service [required] The internal name of your pro organization
 	 */
@@ -1613,7 +1613,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'account' option
-	 * 
+	 *
 	 * REST: GET /order/email/pro/{service}/account
 	 * @param number [required] Number of Accounts to order
 	 * @param service [required] The internal name of your pro organization
@@ -1628,7 +1628,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/email/pro/{service}/account/{duration}
 	 * @param number [required] Number of Accounts to order
 	 * @param service [required] The internal name of your pro organization
@@ -1645,7 +1645,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/email/pro/{service}/account/{duration}
 	 * @param number [required] Number of Accounts to order
 	 * @param service [required] The internal name of your pro organization
@@ -1663,7 +1663,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/email/domain
 	 */
 	public ArrayList<String> email_domain_GET() throws IOException {
@@ -1674,7 +1674,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'new' option
-	 * 
+	 *
 	 * REST: GET /order/email/domain/new
 	 * @param domain [required] Domain name which will be linked to this mx account
 	 * @param offer [required] Offer for your new mx account
@@ -1689,7 +1689,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/email/domain/new/{duration}
 	 * @param domain [required] Domain name which will be linked to this mx account
 	 * @param offer [required] Offer for your new mx account
@@ -1706,7 +1706,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/email/domain/new/{duration}
 	 * @param domain [required] Domain name which will be linked to this mx account
 	 * @param offer [required] Offer for your new mx account
@@ -1724,7 +1724,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/email/exchange
 	 */
 	public ArrayList<String> email_exchange_GET() throws IOException {
@@ -1735,7 +1735,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/email/exchange/{organizationName}/service
 	 * @param organizationName [required] The internal name of your exchange organization
 	 */
@@ -1748,7 +1748,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /order/email/exchange/{organizationName}/service/{exchangeService}/serviceInfos
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1763,7 +1763,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /order/email/exchange/{organizationName}/service/{exchangeService}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
@@ -1778,7 +1778,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed options
-	 * 
+	 *
 	 * REST: GET /order/email/exchange/{organizationName}/service/{exchangeService}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -1793,7 +1793,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'accountUpgrade' option
-	 * 
+	 *
 	 * REST: GET /order/email/exchange/{organizationName}/service/{exchangeService}/accountUpgrade
 	 * @param primaryEmailAddress [required] The account you wish to upgrade
 	 * @param newQuota [required] New storage quota for that account
@@ -1812,7 +1812,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/email/exchange/{organizationName}/service/{exchangeService}/accountUpgrade/{duration}
 	 * @param primaryEmailAddress [required] The account you wish to upgrade
 	 * @param newQuota [required] New storage quota for that account
@@ -1833,7 +1833,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/email/exchange/{organizationName}/service/{exchangeService}/accountUpgrade/{duration}
 	 * @param primaryEmailAddress [required] The account you wish to upgrade
 	 * @param newQuota [required] New storage quota for that account
@@ -1855,7 +1855,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'outlook' option
-	 * 
+	 *
 	 * REST: GET /order/email/exchange/{organizationName}/service/{exchangeService}/outlook
 	 * @param licence [required] Outlook version
 	 * @param primaryEmailAddress [required] Primary email address for account which You want to buy an outlook
@@ -1874,7 +1874,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/email/exchange/{organizationName}/service/{exchangeService}/outlook/{duration}
 	 * @param licence [required] Outlook version
 	 * @param primaryEmailAddress [required] Primary email address for account which You want to buy an outlook
@@ -1895,7 +1895,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/email/exchange/{organizationName}/service/{exchangeService}/outlook/{duration}
 	 * @param licence [required] Outlook version
 	 * @param primaryEmailAddress [required] Primary email address for account which You want to buy an outlook
@@ -1917,7 +1917,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'account' option
-	 * 
+	 *
 	 * REST: GET /order/email/exchange/{organizationName}/service/{exchangeService}/account
 	 * @param number [required] Number of Accounts to order
 	 * @param licence [required] Licence type for the account
@@ -1938,7 +1938,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/email/exchange/{organizationName}/service/{exchangeService}/account/{duration}
 	 * @param number [required] Number of Accounts to order
 	 * @param licence [required] Licence type for the account
@@ -1961,7 +1961,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/email/exchange/{organizationName}/service/{exchangeService}/account/{duration}
 	 * @param number [required] Number of Accounts to order
 	 * @param licence [required] Licence type for the account
@@ -1985,7 +1985,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/email/exchange/{organizationName}/service/{exchangeService}/upgrade
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2000,7 +2000,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/email/exchange/{organizationName}/service/{exchangeService}/upgrade
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2015,7 +2015,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/email/exchange/{organizationName}/service/{exchangeService}/diskSpace
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2030,7 +2030,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/email/exchange/{organizationName}/service/{exchangeService}/diskSpace
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
@@ -2045,7 +2045,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed options
-	 * 
+	 *
 	 * REST: GET /order/cloud/project/{serviceName}
 	 * @param serviceName [required] The project id
 	 */
@@ -2058,7 +2058,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/cloud/project/{serviceName}/credit
 	 * @param amount [required] Amount to add in your cloud credit
 	 * @param serviceName [required] The project id
@@ -2073,7 +2073,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/cloud/project/{serviceName}/credit
 	 * @param amount [required] Amount to add in your cloud credit
 	 * @param serviceName [required] The project id
@@ -2089,7 +2089,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/cloud/project/{serviceName}/ip
 	 * @param country [required] IP geolocation
 	 * @param instanceId [required] Instance id where ip will be routed to
@@ -2108,7 +2108,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/cloud/project/{serviceName}/ip
 	 * @param country [required] IP geolocation
 	 * @param instanceId [required] Instance id where ip will be routed to
@@ -2128,7 +2128,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/cloud/project
 	 */
 	public ArrayList<String> cloud_project_GET() throws IOException {
@@ -2139,7 +2139,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/domain/zone
 	 */
 	public ArrayList<String> domain_zone_GET() throws IOException {
@@ -2150,7 +2150,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed options
-	 * 
+	 *
 	 * REST: GET /order/domain/zone/{zoneName}
 	 * @param zoneName [required] The internal name of your zone
 	 */
@@ -2163,7 +2163,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'dnsAnycast' option
-	 * 
+	 *
 	 * REST: GET /order/domain/zone/{zoneName}/dnsAnycast
 	 * @param zoneName [required] The internal name of your zone
 	 */
@@ -2176,7 +2176,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/domain/zone/{zoneName}/dnsAnycast/{duration}
 	 * @param zoneName [required] The internal name of your zone
 	 * @param duration [required] Duration
@@ -2191,7 +2191,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/domain/zone/{zoneName}/dnsAnycast/{duration}
 	 * @param zoneName [required] The internal name of your zone
 	 * @param duration [required] Duration
@@ -2206,7 +2206,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/domain/zone/new
 	 * @param zoneName [required] Name of the zone to create
 	 * @param minimized [required] Create only mandatory records
@@ -2221,7 +2221,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/domain/zone/new
 	 * @param zoneName [required] Name of the zone to create
 	 * @param minimized [required] Create only mandatory records
@@ -2237,7 +2237,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/freefax/new
 	 * @param quantity [required] Fax quantity possibilities to purchase
 	 */
@@ -2250,7 +2250,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/freefax/new
 	 * @param quantity [required] Fax quantity possibilities to purchase
 	 */
@@ -2264,7 +2264,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Retrieve available offers to upgrade your service to
-	 * 
+	 *
 	 * REST: GET /order/upgrade/cephaas/{serviceName}
 	 * @param serviceName [required] The internal ID of Ceph service
 	 */
@@ -2278,7 +2278,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get a provisional order for the selected upgrade of your service
-	 * 
+	 *
 	 * REST: GET /order/upgrade/cephaas/{serviceName}/{planCode}
 	 * @param planCode [required] Plan code of the offer you want to upgrade to
 	 * @param quantity [required] Quantity you want to upgrade to
@@ -2295,7 +2295,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Perform the requested upgrade of your service
-	 * 
+	 *
 	 * REST: POST /order/upgrade/cephaas/{serviceName}/{planCode}
 	 * @param planCode [required] Plan code of the offer you want to upgrade to
 	 * @param quantity [required] Quantity you want to upgrade to
@@ -2313,7 +2313,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/upgrade/cephaas
 	 */
 	public ArrayList<String> upgrade_cephaas_GET() throws IOException {
@@ -2324,7 +2324,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Retrieve available offers to upgrade your service to
-	 * 
+	 *
 	 * REST: GET /order/upgrade/sslGateway/{serviceName}
 	 * @param serviceName [required] The internal ID of SSL Gateway service
 	 */
@@ -2337,7 +2337,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get a provisional order for the selected upgrade of your service
-	 * 
+	 *
 	 * REST: GET /order/upgrade/sslGateway/{serviceName}/{planCode}
 	 * @param planCode [required] Plan code of the offer you want to upgrade to
 	 * @param quantity [required] Quantity you want to upgrade to
@@ -2354,7 +2354,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Perform the requested upgrade of your service
-	 * 
+	 *
 	 * REST: POST /order/upgrade/sslGateway/{serviceName}/{planCode}
 	 * @param planCode [required] Plan code of the offer you want to upgrade to
 	 * @param quantity [required] Quantity you want to upgrade to
@@ -2372,7 +2372,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/upgrade/sslGateway
 	 */
 	public ArrayList<String> upgrade_sslGateway_GET() throws IOException {
@@ -2383,7 +2383,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'new' option
-	 * 
+	 *
 	 * REST: GET /order/saas/csp2/new
 	 * @param officeBusinessQuantity [required] Number of prepaid office business license
 	 * @param officeProPlusQuantity [required] Number of prepaid office pro plus license
@@ -2400,7 +2400,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/saas/csp2/new/{duration}
 	 * @param officeBusinessQuantity [required] Number of prepaid office business license
 	 * @param officeProPlusQuantity [required] Number of prepaid office pro plus license
@@ -2419,7 +2419,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/saas/csp2/new/{duration}
 	 * @param officeBusinessQuantity [required] Number of prepaid office business license
 	 * @param officeProPlusQuantity [required] Number of prepaid office pro plus license
@@ -2439,7 +2439,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed options
-	 * 
+	 *
 	 * REST: GET /order/dedicated/housing/{serviceName}
 	 * @param serviceName [required] The internal name of your Housing bay
 	 */
@@ -2452,7 +2452,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'APC' option
-	 * 
+	 *
 	 * REST: GET /order/dedicated/housing/{serviceName}/APC
 	 * @param serviceName [required] The internal name of your Housing bay
 	 */
@@ -2465,7 +2465,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/dedicated/housing/{serviceName}/APC/{duration}
 	 * @param serviceName [required] The internal name of your Housing bay
 	 * @param duration [required] Duration
@@ -2480,7 +2480,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/dedicated/housing/{serviceName}/APC/{duration}
 	 * @param serviceName [required] The internal name of your Housing bay
 	 * @param duration [required] Duration
@@ -2495,7 +2495,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/dedicated/housing
 	 */
 	public ArrayList<String> dedicated_housing_GET() throws IOException {
@@ -2506,7 +2506,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'kvmExpress' option
-	 * 
+	 *
 	 * REST: GET /order/dedicated/server/{serviceName}/kvmExpress
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -2519,7 +2519,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/dedicated/server/{serviceName}/kvmExpress/{duration}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param duration [required] Duration
@@ -2534,7 +2534,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/dedicated/server/{serviceName}/kvmExpress/{duration}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param duration [required] Duration
@@ -2549,7 +2549,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed options
-	 * 
+	 *
 	 * REST: GET /order/dedicated/server/{serviceName}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -2562,7 +2562,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'professionalUse' option
-	 * 
+	 *
 	 * REST: GET /order/dedicated/server/{serviceName}/professionalUse
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -2575,7 +2575,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/dedicated/server/{serviceName}/professionalUse/{duration}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param duration [required] Duration
@@ -2590,7 +2590,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/dedicated/server/{serviceName}/professionalUse/{duration}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param duration [required] Duration
@@ -2605,7 +2605,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'usbKey' option
-	 * 
+	 *
 	 * REST: GET /order/dedicated/server/{serviceName}/usbKey
 	 * @param capacity [required] Capacity in gigabytes
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -2620,7 +2620,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/dedicated/server/{serviceName}/usbKey/{duration}
 	 * @param capacity [required] Capacity in gigabytes
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -2637,7 +2637,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/dedicated/server/{serviceName}/usbKey/{duration}
 	 * @param capacity [required] Capacity in gigabytes
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -2655,7 +2655,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'ip' option
-	 * 
+	 *
 	 * REST: GET /order/dedicated/server/{serviceName}/ip
 	 * @param organisationId [required] Your organisation id to add on block informations
 	 * @param country [required] IP localization
@@ -2676,7 +2676,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/dedicated/server/{serviceName}/ip/{duration}
 	 * @param organisationId [required] Your organisation id to add on block informations
 	 * @param country [required] IP localization
@@ -2699,7 +2699,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/dedicated/server/{serviceName}/ip/{duration}
 	 * @param organisationId [required] Your organisation id to add on block informations
 	 * @param country [required] IP localization
@@ -2723,7 +2723,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'backupStorage' option
-	 * 
+	 *
 	 * REST: GET /order/dedicated/server/{serviceName}/backupStorage
 	 * @param capacity [required] The capacity in gigabytes of your backup storage
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -2738,7 +2738,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/dedicated/server/{serviceName}/backupStorage/{duration}
 	 * @param capacity [required] The capacity in gigabytes of your backup storage
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -2755,7 +2755,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/dedicated/server/{serviceName}/backupStorage/{duration}
 	 * @param capacity [required] The capacity in gigabytes of your backup storage
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -2773,7 +2773,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'ipMigration' option
-	 * 
+	 *
 	 * REST: GET /order/dedicated/server/{serviceName}/ipMigration
 	 * @param ip [required] The IP to move to this server
 	 * @param token [required] IP migration token
@@ -2790,7 +2790,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/dedicated/server/{serviceName}/ipMigration/{duration}
 	 * @param ip [required] The IP to move to this server
 	 * @param token [required] IP migration token
@@ -2809,7 +2809,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/dedicated/server/{serviceName}/ipMigration/{duration}
 	 * @param ip [required] The IP to move to this server
 	 * @param token [required] IP migration token
@@ -2829,7 +2829,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'kvm' option
-	 * 
+	 *
 	 * REST: GET /order/dedicated/server/{serviceName}/kvm
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -2842,7 +2842,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/dedicated/server/{serviceName}/kvm/{duration}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param duration [required] Duration
@@ -2857,7 +2857,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/dedicated/server/{serviceName}/kvm/{duration}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param duration [required] Duration
@@ -2872,7 +2872,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'feature' option
-	 * 
+	 *
 	 * REST: GET /order/dedicated/server/{serviceName}/feature
 	 * @param feature [required] the feature
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -2887,7 +2887,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/dedicated/server/{serviceName}/feature/{duration}
 	 * @param feature [required] the feature
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -2904,7 +2904,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/dedicated/server/{serviceName}/feature/{duration}
 	 * @param feature [required] the feature
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -2922,7 +2922,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'staticIP' option
-	 * 
+	 *
 	 * REST: GET /order/dedicated/server/{serviceName}/staticIP
 	 * @param country [required] Ip localization
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -2937,7 +2937,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/dedicated/server/{serviceName}/staticIP/{duration}
 	 * @param country [required] Ip localization
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -2954,7 +2954,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/dedicated/server/{serviceName}/staticIP/{duration}
 	 * @param country [required] Ip localization
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -2972,7 +2972,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'failoverIP' option
-	 * 
+	 *
 	 * REST: GET /order/dedicated/server/{serviceName}/failoverIP
 	 * @param country [required] Ip localization
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -2987,7 +2987,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/dedicated/server/{serviceName}/failoverIP/{duration}
 	 * @param country [required] Ip localization
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -3004,7 +3004,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/dedicated/server/{serviceName}/failoverIP/{duration}
 	 * @param country [required] Ip localization
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -3022,7 +3022,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'bandwidth' option
-	 * 
+	 *
 	 * REST: GET /order/dedicated/server/{serviceName}/bandwidth
 	 * @param bandwidth [required] Bandwidth to allocate
 	 * @param type [required] bandwidth type
@@ -3039,7 +3039,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/dedicated/server/{serviceName}/bandwidth/{duration}
 	 * @param bandwidth [required] Bandwidth to allocate
 	 * @param type [required] bandwidth type
@@ -3058,7 +3058,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/dedicated/server/{serviceName}/bandwidth/{duration}
 	 * @param bandwidth [required] Bandwidth to allocate
 	 * @param type [required] bandwidth type
@@ -3078,7 +3078,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'firewall' option
-	 * 
+	 *
 	 * REST: GET /order/dedicated/server/{serviceName}/firewall
 	 * @param firewallModel [required] Firewall type
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -3093,7 +3093,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/dedicated/server/{serviceName}/firewall/{duration}
 	 * @param firewallModel [required] Firewall type
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -3110,7 +3110,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/dedicated/server/{serviceName}/firewall/{duration}
 	 * @param firewallModel [required] Firewall type
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -3128,7 +3128,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/dedicated/server
 	 */
 	public ArrayList<String> dedicated_server_GET() throws IOException {
@@ -3139,7 +3139,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'new' option
-	 * 
+	 *
 	 * REST: GET /order/dedicated/nasha/new
 	 * @param datacenter [required] Nas HA localization
 	 * @param model [required] Capacity of Nas HA offer
@@ -3154,7 +3154,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/dedicated/nasha/new/{duration}
 	 * @param datacenter [required] Nas HA localization
 	 * @param model [required] Capacity of Nas HA offer
@@ -3171,7 +3171,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/dedicated/nasha/new/{duration}
 	 * @param datacenter [required] Nas HA localization
 	 * @param model [required] Capacity of Nas HA offer
@@ -3189,7 +3189,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about additional Horizon View offer for your service
-	 * 
+	 *
 	 * REST: GET /order/cartServiceOption/vdi/{serviceName}
 	 * @param serviceName [required] The internal ID of Horizon View service
 	 */
@@ -3203,7 +3203,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post an additional Horizon View option in your cart
-	 * 
+	 *
 	 * REST: POST /order/cartServiceOption/vdi/{serviceName}
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the additional Horizon View offer
@@ -3227,7 +3227,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/cartServiceOption/vdi
 	 */
 	public ArrayList<String> cartServiceOption_vdi_GET() throws IOException {
@@ -3238,7 +3238,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about additional Web Hosting offer for your service
-	 * 
+	 *
 	 * REST: GET /order/cartServiceOption/webHosting/{serviceName}
 	 * @param serviceName [required] The internal ID of Web Hosting service
 	 */
@@ -3251,7 +3251,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post an additional Web Hosting option in your cart
-	 * 
+	 *
 	 * REST: POST /order/cartServiceOption/webHosting/{serviceName}
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the additional Web Hosting offer
@@ -3275,7 +3275,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/cartServiceOption/webHosting
 	 */
 	public ArrayList<String> cartServiceOption_webHosting_GET() throws IOException {
@@ -3286,7 +3286,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about additional Logs offer for your service
-	 * 
+	 *
 	 * REST: GET /order/cartServiceOption/logs/{serviceName}
 	 * @param serviceName [required] The internal ID of Logs service
 	 */
@@ -3299,7 +3299,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post an additional Logs option in your cart
-	 * 
+	 *
 	 * REST: POST /order/cartServiceOption/logs/{serviceName}
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the additional Logs offer
@@ -3323,7 +3323,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/cartServiceOption/logs
 	 */
 	public ArrayList<String> cartServiceOption_logs_GET() throws IOException {
@@ -3334,7 +3334,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about additional SSL Gateway offer for your service
-	 * 
+	 *
 	 * REST: GET /order/cartServiceOption/sslGateway/{serviceName}
 	 * @param serviceName [required] The internal ID of SSL Gateway service
 	 */
@@ -3347,7 +3347,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post an additional SSL Gateway option in your cart
-	 * 
+	 *
 	 * REST: POST /order/cartServiceOption/sslGateway/{serviceName}
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the additional SSL Gateway offer
@@ -3371,7 +3371,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/cartServiceOption/sslGateway
 	 */
 	public ArrayList<String> cartServiceOption_sslGateway_GET() throws IOException {
@@ -3382,7 +3382,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about additional Docker offer for your service
-	 * 
+	 *
 	 * REST: GET /order/cartServiceOption/docker/{serviceName}
 	 * @param serviceName [required] The internal ID of Docker service
 	 */
@@ -3395,7 +3395,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post an additional Docker option in your cart
-	 * 
+	 *
 	 * REST: POST /order/cartServiceOption/docker/{serviceName}
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the additional Docker offer
@@ -3419,7 +3419,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/cartServiceOption/docker
 	 */
 	public ArrayList<String> cartServiceOption_docker_GET() throws IOException {
@@ -3430,7 +3430,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about additional Domain offer for your service
-	 * 
+	 *
 	 * REST: GET /order/cartServiceOption/domain/{serviceName}
 	 * @param serviceName [required] The internal ID of Domain service
 	 */
@@ -3443,7 +3443,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post an additional Domain option in your cart
-	 * 
+	 *
 	 * REST: POST /order/cartServiceOption/domain/{serviceName}
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the additional Domain offer
@@ -3467,7 +3467,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/cartServiceOption/domain
 	 * @param whoisOwner Filter the value of whoisOwner property (=)
 	 */
@@ -3480,7 +3480,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about additional Sharepoint offer for your service
-	 * 
+	 *
 	 * REST: GET /order/cartServiceOption/sharepoint/{serviceName}
 	 * @param serviceName [required] The internal ID of Sharepoint service
 	 */
@@ -3493,7 +3493,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post an additional Sharepoint option in your cart
-	 * 
+	 *
 	 * REST: POST /order/cartServiceOption/sharepoint/{serviceName}
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the additional Sharepoint offer
@@ -3517,7 +3517,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/cartServiceOption/sharepoint
 	 */
 	public ArrayList<String> cartServiceOption_sharepoint_GET() throws IOException {
@@ -3528,7 +3528,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List of your OVH order carts
-	 * 
+	 *
 	 * REST: GET /order/cart
 	 * @param description [required] Filter the value of description property (=)
 	 */
@@ -3541,7 +3541,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create a new OVH order cart
-	 * 
+	 *
 	 * REST: POST /order/cart
 	 * @param description [required] Description of your cart
 	 * @param expire [required] Time of expiration of the cart
@@ -3559,7 +3559,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Retrieve information about a specific cart
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}
 	 * @param cartId [required] Cart identifier
 	 */
@@ -3572,7 +3572,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Modify information about a specific cart
-	 * 
+	 *
 	 * REST: PUT /order/cart/{cartId}
 	 * @param cartId [required] Cart identifier
 	 * @param description [required] Description of your cart
@@ -3590,7 +3590,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Delete a cart
-	 * 
+	 *
 	 * REST: DELETE /order/cart/{cartId}
 	 * @param cartId [required] Cart identifier
 	 */
@@ -3602,7 +3602,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about Desk As A Service offers
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/deskaas
 	 * @param cartId [required] Cart identifier
 	 */
@@ -3615,7 +3615,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new Desk as a service item in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/deskaas
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Desk as a Service offer
@@ -3637,7 +3637,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about VoIP offers
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/telephony
 	 * @param cartId [required] Cart identifier
 	 */
@@ -3650,7 +3650,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new VoIP item in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/telephony
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the VoIP offer
@@ -3672,7 +3672,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about VoIP options
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/telephony/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the VoIP you want to consult options
@@ -3687,7 +3687,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new VoIP option in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/telephony/options
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Cart item to be linked
@@ -3711,7 +3711,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about Horizon View offers
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/vdi
 	 * @param cartId [required] Cart identifier
 	 */
@@ -3724,7 +3724,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new Horizon View item in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/vdi
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Horizon View offer
@@ -3746,7 +3746,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about Horizon View options
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/vdi/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Horizon View you want to consult options
@@ -3761,7 +3761,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new Horizon View option in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/vdi/options
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Cart item to be linked
@@ -3785,7 +3785,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List all the items of a cart
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/item
 	 * @param cartId [required] Cart identifier
 	 */
@@ -3799,7 +3799,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Retrieve all required configuration item of the cart item
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/item/{itemId}/requiredConfiguration
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Product item identifier
@@ -3815,7 +3815,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Retrieve information about a specific item of a cart
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/item/{itemId}
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Product item identifier
@@ -3830,7 +3830,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Update some values on a cart item
-	 * 
+	 *
 	 * REST: PUT /order/cart/{cartId}/item/{itemId}
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Product item identifier
@@ -3850,7 +3850,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Delete an item from a cart
-	 * 
+	 *
 	 * REST: DELETE /order/cart/{cartId}/item/{itemId}
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Product item identifier
@@ -3864,7 +3864,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Retrieve all configuration item of the cart item
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/item/{itemId}/configuration
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Product item identifier
@@ -3881,7 +3881,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Setup configuration item for the product
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/item/{itemId}/configuration
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Product item identifier
@@ -3901,7 +3901,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Retrieve configuration item
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/item/{itemId}/configuration/{configurationId}
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Product item identifier
@@ -3918,7 +3918,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Delete configuration item
-	 * 
+	 *
 	 * REST: DELETE /order/cart/{cartId}/item/{itemId}/configuration/{configurationId}
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Product item identifier
@@ -3934,7 +3934,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about Domain Restore
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/domainRestore
 	 * @param cartId [required] Cart identifier
 	 * @param domain [required] Domain name requested
@@ -3949,7 +3949,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about Reseller offers
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/reseller
 	 * @param cartId [required] Cart identifier
 	 */
@@ -3962,7 +3962,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new Reseller offer item in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/reseller
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of Reseller offer (planCode)
@@ -3984,7 +3984,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about a timeseries offer
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/dbaasTimeseries
 	 * @param cartId [required] Cart identifier
 	 */
@@ -3997,7 +3997,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new timeseries offer item in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/dbaasTimeseries
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the timeseries offer
@@ -4019,7 +4019,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about Dedicated Discover server offers
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/discover
 	 * @param cartId [required] Cart identifier
 	 */
@@ -4032,7 +4032,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new Dedicated Discover server item in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/discover
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Dedicated Discover server offer
@@ -4054,7 +4054,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about Dedicated Discover server options
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/discover/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Dedicated Discover server you want to consult options
@@ -4069,7 +4069,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new Dedicated Discover server option in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/discover/options
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Cart item to be linked
@@ -4093,7 +4093,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about Hosting Reseller offers
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/hostingReseller
 	 * @param cartId [required] Cart identifier
 	 */
@@ -4106,7 +4106,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new Hosting Reseller item in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/hostingReseller
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Hosting Reseller offer
@@ -4128,7 +4128,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about Office 365 licenses
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/office365
 	 * @param cartId [required] Cart identifier
 	 */
@@ -4141,7 +4141,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new Office 365 item in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/office365
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Office365 license
@@ -4163,7 +4163,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about Office 365 options
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/office365/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of a Office 365 main offer
@@ -4178,7 +4178,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new Office 365 option in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/office365/options
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Cart item to be linked
@@ -4202,7 +4202,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about Sharepoint offers
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/sharepoint
 	 * @param cartId [required] Cart identifier
 	 */
@@ -4215,7 +4215,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new Sharepoint offer item in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/sharepoint
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of Sharepoint offer (planCode)
@@ -4237,7 +4237,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about Sharepoint options
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/sharepoint/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of a Sharepoint main offer
@@ -4252,7 +4252,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new Sharepoint option in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/sharepoint/options
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Cart item to be linked
@@ -4276,7 +4276,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Assign a shopping cart to an loggedin client
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/assign
 	 * @param cartId [required] Cart identifier
 	 */
@@ -4288,7 +4288,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Retrieve coupons associated to cart
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/coupon
 	 * @param cartId [required] Cart identifier
 	 */
@@ -4301,7 +4301,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Add a new coupon to cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/coupon
 	 * @param cartId [required] Cart identifier
 	 * @param coupon [required] Coupon identifier
@@ -4317,7 +4317,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Delete a coupon from cart
-	 * 
+	 *
 	 * REST: DELETE /order/cart/{cartId}/coupon
 	 * @param cartId [required] Cart identifier
 	 * @param coupon [required] Coupon identifier
@@ -4331,7 +4331,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about SSL Comodo offers
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/sslComodo
 	 * @param cartId [required] Cart identifier
 	 */
@@ -4344,7 +4344,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new SSL Comodo item in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/sslComodo
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the SSL Comodo offer
@@ -4366,7 +4366,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about SSL Comodo options
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/sslComodo/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the SSL Comodo you want to consult options
@@ -4381,7 +4381,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new SSL Comodo option in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/sslComodo/options
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Cart item to be linked
@@ -4405,7 +4405,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about SMS offers
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/sms
 	 * @param cartId [required] Cart identifier
 	 */
@@ -4418,7 +4418,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new SMS item in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/sms
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the SMS offer
@@ -4440,7 +4440,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about CaaS Registry offers
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/registry
 	 * @param cartId [required] Cart identifier
 	 */
@@ -4453,7 +4453,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new CaaS Registry item in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/registry
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the CaaS Registry offer
@@ -4475,7 +4475,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about Logs offers
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/logs
 	 * @param cartId [required] Cart identifier
 	 */
@@ -4488,7 +4488,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new Logs item in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/logs
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Logs offer
@@ -4510,7 +4510,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about Logs options
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/logs/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Logs you want to consult options
@@ -4525,7 +4525,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new Logs option in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/logs/options
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Cart item to be linked
@@ -4549,7 +4549,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about SSL Gateway offers
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/sslGateway
 	 * @param cartId [required] Cart identifier
 	 */
@@ -4562,7 +4562,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new SSL Gateway item in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/sslGateway
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the SSL Gateway offer
@@ -4584,7 +4584,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about SSL Gateway options
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/sslGateway/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the SSL Gateway you want to consult options
@@ -4599,7 +4599,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new SSL Gateway option in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/sslGateway/options
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Cart item to be linked
@@ -4623,7 +4623,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about Docker offers
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/docker
 	 * @param cartId [required] Cart identifier
 	 */
@@ -4636,7 +4636,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new Docker item in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/docker
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Docker offer
@@ -4658,7 +4658,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about Docker options
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/docker/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Docker you want to consult options
@@ -4673,7 +4673,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new Docker option in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/docker/options
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Cart item to be linked
@@ -4697,7 +4697,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about SaaS CSP2 offers
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/csp2
 	 * @param cartId [required] Cart identifier
 	 */
@@ -4710,7 +4710,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new SaaS CSP2 offer item in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/csp2
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of SaaS CSP2 offer (planCode)
@@ -4732,7 +4732,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about SaaS CSP2 options
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/csp2/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of a SaaS CSP2 main offer
@@ -4747,7 +4747,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new SaaS CSP2 option in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/csp2/options
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Cart item to be linked
@@ -4771,7 +4771,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about a domain name
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/domain
 	 * @param cartId [required] Cart identifier
 	 * @param domain [required] Domain name requested
@@ -4787,7 +4787,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new domain in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/domain
 	 * @param cartId [required] Cart identifier
 	 * @param domain [required] Domain name to order
@@ -4809,7 +4809,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about domain names options
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/domain/options
 	 * @param cartId [required] Cart identifier
 	 * @param domain [required] Domain name linked to the option
@@ -4824,7 +4824,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new domain name option in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/domain/options
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Cart item to be linked
@@ -4848,7 +4848,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get a summary of your current order
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/summary
 	 * @param cartId [required] Cart identifier
 	 */
@@ -4861,7 +4861,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about a domain name transfer
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/domainTransfer
 	 * @param cartId [required] Cart identifier
 	 * @param domain [required] Domain name requested
@@ -4876,7 +4876,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new domain tranfer in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/domainTransfer
 	 * @param cartId [required] Cart identifier
 	 * @param domain [required] Domain name to order
@@ -4898,7 +4898,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about domain names transfer options
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/domainTransfer/options
 	 * @param cartId [required] Cart identifier
 	 * @param domain [required] Domain name linked to the option
@@ -4913,7 +4913,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new domain name transfer option in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/domainTransfer/options
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Cart item to be linked
@@ -4937,7 +4937,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about a dedicated server
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/dedicated
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Filter the value of planCode property (=)
@@ -4954,7 +4954,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new dedicated server item in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/dedicated
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of a dedicated server offer
@@ -4976,7 +4976,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about dedicated server options
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/dedicated/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of a dedicated server offer
@@ -4993,7 +4993,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new dedicated server option in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/dedicated/options
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Cart item to be linked
@@ -5017,7 +5017,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about VPS offers
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/vps
 	 * @param cartId [required] Cart identifier
 	 */
@@ -5030,7 +5030,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new VPS item in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/vps
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the VPS offer
@@ -5052,7 +5052,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about VPS options
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/vps/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the VPS you want to consult options
@@ -5067,7 +5067,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new VPS option in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/vps/options
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Cart item to be linked
@@ -5091,7 +5091,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about Ceph as a Service offers
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/cephaas
 	 * @param cartId [required] Cart identifier
 	 */
@@ -5104,7 +5104,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new Ceph as a Service item in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/cephaas
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Ceph as a Service offer
@@ -5126,7 +5126,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about Ceph as a Service options
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/cephaas/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Ceph as a Service you want to consult options
@@ -5141,7 +5141,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new Ceph as a Service option in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/cephaas/options
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Cart item to be linked
@@ -5165,7 +5165,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about webHosting offers
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/webHosting
 	 * @param cartId [required] Cart identifier
 	 */
@@ -5179,7 +5179,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new webHosting item in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/webHosting
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the webHosting offer
@@ -5201,7 +5201,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about webHosting options
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/webHosting/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the webHosting you want to consult options
@@ -5216,7 +5216,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new webHosting option in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/webHosting/options
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Cart item to be linked
@@ -5240,7 +5240,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about IP Load-Balancing offers
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/ipLoadbalancing
 	 * @param cartId [required] Cart identifier
 	 */
@@ -5253,7 +5253,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new IP Load-Balancing item in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/ipLoadbalancing
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the IP Load-Balancing offer
@@ -5275,7 +5275,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about IP Load-Balancing options
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/ipLoadbalancing/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the IP Load-Balancing you want to consult options
@@ -5290,7 +5290,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new IP Load-Balancing option in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/ipLoadbalancing/options
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Cart item to be linked
@@ -5314,7 +5314,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about PaaS Database offers
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/paasdb
 	 * @param cartId [required] Cart identifier
 	 */
@@ -5327,7 +5327,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new PaaS Database item in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/paasdb
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the PaaS Database offer
@@ -5349,7 +5349,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information for your cart
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/checkout
 	 * @param cartId [required] Cart identifier
 	 */
@@ -5362,7 +5362,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Validate your shopping and create order
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/checkout
 	 * @param cartId [required] Cart identifier
 	 * @param waiveRetractationPeriod [required] Indicates that order will be processed with waiving retractation period
@@ -5378,7 +5378,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about PaaS Monitoring offers
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/paasmon
 	 * @param cartId [required] Cart identifier
 	 */
@@ -5391,7 +5391,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new PaaS Monitoring item in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/paasmon
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the PaaS Monitoring offer
@@ -5413,7 +5413,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about Domain packs offers (AllDom)
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/domainPacks
 	 * @param cartId [required] Cart identifier
 	 * @param domain [required] Domain name requested
@@ -5429,7 +5429,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new Domain Packs item (AllDom) in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/domainPacks
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Domain Packs offer (AllDom)
@@ -5453,7 +5453,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about EmailPro offers
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/emailpro
 	 * @param cartId [required] Cart identifier
 	 */
@@ -5466,7 +5466,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new EmailPro item in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/emailpro
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the EmailPro offer
@@ -5488,7 +5488,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about EmailPro options
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/emailpro/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the EmailPro you want to consult options
@@ -5503,7 +5503,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new EmailPro option in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/emailpro/options
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Cart item to be linked
@@ -5527,7 +5527,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about PaaS Queue offers
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/paasqueue
 	 * @param cartId [required] Cart identifier
 	 */
@@ -5540,7 +5540,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new PaaS Queue item in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/paasqueue
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the PaaS Queue offer
@@ -5562,7 +5562,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about Exchange offers
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/exchange
 	 * @param cartId [required] Cart identifier
 	 */
@@ -5575,7 +5575,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new Exchange item in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/exchange
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Exchange offer
@@ -5597,7 +5597,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about Exchange options
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/exchange/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Exchange you want to consult options
@@ -5612,7 +5612,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new Exchange option in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/exchange/options
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Cart item to be linked
@@ -5636,7 +5636,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about Exchange Enterprise offers
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/exchangeEnterprise
 	 * @param cartId [required] Cart identifier
 	 */
@@ -5649,7 +5649,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new Exchange Enterprise item in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/exchangeEnterprise
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Exchange Enterprise offer
@@ -5671,7 +5671,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get informations about Exchange Enterprise options
-	 * 
+	 *
 	 * REST: GET /order/cart/{cartId}/exchangeEnterprise/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Exchange Enterprise offer you want to consult options
@@ -5686,7 +5686,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Post a new Exchange Enterprise option in your cart
-	 * 
+	 *
 	 * REST: POST /order/cart/{cartId}/exchangeEnterprise/options
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Cart item offer parent of the option
@@ -5710,7 +5710,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed options
-	 * 
+	 *
 	 * REST: GET /order/veeamCloudConnect/{serviceName}
 	 * @param serviceName [required]
 	 */
@@ -5723,7 +5723,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'upgrade' option
-	 * 
+	 *
 	 * REST: GET /order/veeamCloudConnect/{serviceName}/upgrade
 	 * @param offer [required] The offer on which you want to be upgraded
 	 * @param serviceName [required]
@@ -5738,7 +5738,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/veeamCloudConnect/{serviceName}/upgrade/{duration}
 	 * @param offer [required] The offer on which you want to be upgraded
 	 * @param serviceName [required]
@@ -5755,7 +5755,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/veeamCloudConnect/{serviceName}/upgrade/{duration}
 	 * @param offer [required] The offer on which you want to be upgraded
 	 * @param serviceName [required]
@@ -5773,7 +5773,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/veeamCloudConnect
 	 */
 	public ArrayList<String> veeamCloudConnect_GET() throws IOException {
@@ -5784,7 +5784,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed options
-	 * 
+	 *
 	 * REST: GET /order/dedicatedCloud/{serviceName}
 	 * @param serviceName [required]
 	 */
@@ -5797,7 +5797,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'ip' option
-	 * 
+	 *
 	 * REST: GET /order/dedicatedCloud/{serviceName}/ip
 	 * @param usage [required] Basic information of how will this bloc be used (as "web","ssl","cloud" or other things)
 	 * @param country [required] This Ip block country
@@ -5822,7 +5822,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/dedicatedCloud/{serviceName}/ip/{duration}
 	 * @param usage [required] Basic information of how will this bloc be used (as "web","ssl","cloud" or other things)
 	 * @param country [required] This Ip block country
@@ -5849,7 +5849,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/dedicatedCloud/{serviceName}/ip/{duration}
 	 * @param usage [required] Basic information of how will this bloc be used (as "web","ssl","cloud" or other things)
 	 * @param country [required] This Ip block country
@@ -5877,7 +5877,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'filer' option
-	 * 
+	 *
 	 * REST: GET /order/dedicatedCloud/{serviceName}/filer
 	 * @param quantity [required] Quantity of filer you want to order (default 1)
 	 * @param name [required] Filer profile you want to order ("name" field in a profile returned by /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/orderableFilerProfiles)
@@ -5896,7 +5896,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/dedicatedCloud/{serviceName}/filer/{duration}
 	 * @param quantity [required] Quantity of filer you want to order (default 1)
 	 * @param name [required] Filer profile you want to order ("name" field in a profile returned by /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/orderableFilerProfiles)
@@ -5917,7 +5917,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/dedicatedCloud/{serviceName}/filer/{duration}
 	 * @param quantity [required] Quantity of filer you want to order (default 1)
 	 * @param name [required] Filer profile you want to order ("name" field in a profile returned by /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/orderableFilerProfiles)
@@ -5939,7 +5939,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'host' option
-	 * 
+	 *
 	 * REST: GET /order/dedicatedCloud/{serviceName}/host
 	 * @param quantity [required] Quantity of hosts you want to order (default 1)
 	 * @param name [required] Host profile you want to order ("name" field of a Profile returned by /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/orderableHostProfiles)
@@ -5958,7 +5958,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/dedicatedCloud/{serviceName}/host/{duration}
 	 * @param quantity [required] Quantity of hosts you want to order (default 1)
 	 * @param name [required] Host profile you want to order ("name" field of a Profile returned by /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/orderableHostProfiles)
@@ -5979,7 +5979,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/dedicatedCloud/{serviceName}/host/{duration}
 	 * @param quantity [required] Quantity of hosts you want to order (default 1)
 	 * @param name [required] Host profile you want to order ("name" field of a Profile returned by /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/orderableHostProfiles)
@@ -6001,7 +6001,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'upgradeRessource' option
-	 * 
+	 *
 	 * REST: GET /order/dedicatedCloud/{serviceName}/upgradeRessource
 	 * @param upgradedRessourceId [required] The id of a particular ressource you want to upgrade in your Private Cloud (useless for "all" UpgradeRessourceTypeEnum)
 	 * @param upgradedRessourceType [required] The type of ressource you want to upgrade.
@@ -6020,7 +6020,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/dedicatedCloud/{serviceName}/upgradeRessource/{duration}
 	 * @param upgradedRessourceId [required] The id of a particular ressource you want to upgrade in your Private Cloud (useless for "all" UpgradeRessourceTypeEnum)
 	 * @param upgradedRessourceType [required] The type of ressource you want to upgrade.
@@ -6041,7 +6041,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/dedicatedCloud/{serviceName}/upgradeRessource/{duration}
 	 * @param upgradedRessourceId [required] The id of a particular ressource you want to upgrade in your Private Cloud (useless for "all" UpgradeRessourceTypeEnum)
 	 * @param upgradedRessourceType [required] The type of ressource you want to upgrade.
@@ -6063,7 +6063,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/dedicatedCloud/{serviceName}/spla
 	 * @param serviceName [required]
 	 */
@@ -6076,7 +6076,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/dedicatedCloud/{serviceName}/spla
 	 * @param serviceName [required]
 	 */
@@ -6089,7 +6089,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'additionalBandwidth' option
-	 * 
+	 *
 	 * REST: GET /order/dedicatedCloud/{serviceName}/additionalBandwidth
 	 * @param bandwidth [required] How much additional bandwidth do you want ?
 	 * @param serviceName [required]
@@ -6104,7 +6104,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/dedicatedCloud/{serviceName}/additionalBandwidth/{duration}
 	 * @param bandwidth [required] How much additional bandwidth do you want ?
 	 * @param serviceName [required]
@@ -6121,7 +6121,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/dedicatedCloud/{serviceName}/additionalBandwidth/{duration}
 	 * @param bandwidth [required] How much additional bandwidth do you want ?
 	 * @param serviceName [required]
@@ -6139,7 +6139,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/dedicatedCloud
 	 */
 	public ArrayList<String> dedicatedCloud_GET() throws IOException {
@@ -6150,7 +6150,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed options
-	 * 
+	 *
 	 * REST: GET /order/vps/{serviceName}
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -6163,7 +6163,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'ftpbackup' option
-	 * 
+	 *
 	 * REST: GET /order/vps/{serviceName}/ftpbackup
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -6176,7 +6176,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/vps/{serviceName}/ftpbackup/{duration}
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param duration [required] Duration
@@ -6191,7 +6191,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/vps/{serviceName}/ftpbackup/{duration}
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param duration [required] Duration
@@ -6206,7 +6206,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'ip' option
-	 * 
+	 *
 	 * REST: GET /order/vps/{serviceName}/ip
 	 * @param country [required] Choose a geolocation for your IP Address
 	 * @param number [required] Number of IPs to order
@@ -6223,7 +6223,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/vps/{serviceName}/ip/{duration}
 	 * @param country [required] Choose a geolocation for your IP Address
 	 * @param number [required] Number of IPs to order
@@ -6242,7 +6242,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/vps/{serviceName}/ip/{duration}
 	 * @param country [required] Choose a geolocation for your IP Address
 	 * @param number [required] Number of IPs to order
@@ -6262,7 +6262,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'windows' option
-	 * 
+	 *
 	 * REST: GET /order/vps/{serviceName}/windows
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -6275,7 +6275,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/vps/{serviceName}/windows/{duration}
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param duration [required] Duration
@@ -6290,7 +6290,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/vps/{serviceName}/windows/{duration}
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param duration [required] Duration
@@ -6305,7 +6305,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'additionalDisk' option
-	 * 
+	 *
 	 * REST: GET /order/vps/{serviceName}/additionalDisk
 	 * @param additionalDiskSize [required] Size of the additional disk
 	 * @param serviceName [required] The internal name of your VPS offer
@@ -6320,7 +6320,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/vps/{serviceName}/additionalDisk/{duration}
 	 * @param additionalDiskSize [required] Size of the additional disk
 	 * @param serviceName [required] The internal name of your VPS offer
@@ -6337,7 +6337,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/vps/{serviceName}/additionalDisk/{duration}
 	 * @param additionalDiskSize [required] Size of the additional disk
 	 * @param serviceName [required] The internal name of your VPS offer
@@ -6355,7 +6355,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'cpanel' option
-	 * 
+	 *
 	 * REST: GET /order/vps/{serviceName}/cpanel
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -6368,7 +6368,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/vps/{serviceName}/cpanel/{duration}
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param duration [required] Duration
@@ -6383,7 +6383,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/vps/{serviceName}/cpanel/{duration}
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param duration [required] Duration
@@ -6398,7 +6398,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'automatedBackup' option
-	 * 
+	 *
 	 * REST: GET /order/vps/{serviceName}/automatedBackup
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -6411,7 +6411,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/vps/{serviceName}/automatedBackup/{duration}
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param duration [required] Duration
@@ -6426,7 +6426,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/vps/{serviceName}/automatedBackup/{duration}
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param duration [required] Duration
@@ -6441,7 +6441,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'upgrade' option
-	 * 
+	 *
 	 * REST: GET /order/vps/{serviceName}/upgrade
 	 * @param model [required] Model
 	 * @param serviceName [required] The internal name of your VPS offer
@@ -6456,7 +6456,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/vps/{serviceName}/upgrade/{duration}
 	 * @param model [required] Model
 	 * @param serviceName [required] The internal name of your VPS offer
@@ -6473,7 +6473,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/vps/{serviceName}/upgrade/{duration}
 	 * @param model [required] Model
 	 * @param serviceName [required] The internal name of your VPS offer
@@ -6491,7 +6491,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'snapshot' option
-	 * 
+	 *
 	 * REST: GET /order/vps/{serviceName}/snapshot
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -6504,7 +6504,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/vps/{serviceName}/snapshot/{duration}
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param duration [required] Duration
@@ -6519,7 +6519,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/vps/{serviceName}/snapshot/{duration}
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param duration [required] Duration
@@ -6534,7 +6534,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'veeam' option
-	 * 
+	 *
 	 * REST: GET /order/vps/{serviceName}/veeam
 	 * @param serviceName [required] The internal name of your VPS offer
 	 */
@@ -6547,7 +6547,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/vps/{serviceName}/veeam/{duration}
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param duration [required] Duration
@@ -6562,7 +6562,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/vps/{serviceName}/veeam/{duration}
 	 * @param serviceName [required] The internal name of your VPS offer
 	 * @param duration [required] Duration
@@ -6577,7 +6577,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'plesk' option
-	 * 
+	 *
 	 * REST: GET /order/vps/{serviceName}/plesk
 	 * @param domainNumber [required] Domain number you want to order a licence for
 	 * @param serviceName [required] The internal name of your VPS offer
@@ -6592,7 +6592,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/vps/{serviceName}/plesk/{duration}
 	 * @param domainNumber [required] Domain number you want to order a licence for
 	 * @param serviceName [required] The internal name of your VPS offer
@@ -6609,7 +6609,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/vps/{serviceName}/plesk/{duration}
 	 * @param domainNumber [required] Domain number you want to order a licence for
 	 * @param serviceName [required] The internal name of your VPS offer
@@ -6627,7 +6627,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/vps
 	 */
 	public ArrayList<String> vps_GET() throws IOException {
@@ -6638,7 +6638,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed options
-	 * 
+	 *
 	 * REST: GET /order/hosting/web/{serviceName}
 	 * @param serviceName [required] The internal name of your hosting
 	 */
@@ -6651,7 +6651,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'cdn' option
-	 * 
+	 *
 	 * REST: GET /order/hosting/web/{serviceName}/cdn
 	 * @param offer [required] Cdn offers you can add to your hosting
 	 * @param serviceName [required] The internal name of your hosting
@@ -6666,7 +6666,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/hosting/web/{serviceName}/cdn/{duration}
 	 * @param offer [required] Cdn offers you can add to your hosting
 	 * @param serviceName [required] The internal name of your hosting
@@ -6683,7 +6683,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/hosting/web/{serviceName}/cdn/{duration}
 	 * @param offer [required] Cdn offers you can add to your hosting
 	 * @param serviceName [required] The internal name of your hosting
@@ -6701,7 +6701,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'bandwidth' option
-	 * 
+	 *
 	 * REST: GET /order/hosting/web/{serviceName}/bandwidth
 	 * @param traffic [required] Available offers to increase bandwidth quota (unit: GB)
 	 * @param serviceName [required] The internal name of your hosting
@@ -6716,7 +6716,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/hosting/web/{serviceName}/bandwidth/{duration}
 	 * @param traffic [required] Available offers to increase bandwidth quota (unit: GB)
 	 * @param serviceName [required] The internal name of your hosting
@@ -6733,7 +6733,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/hosting/web/{serviceName}/bandwidth/{duration}
 	 * @param traffic [required] Available offers to increase bandwidth quota (unit: GB)
 	 * @param serviceName [required] The internal name of your hosting
@@ -6751,7 +6751,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'changeMainDomain' option
-	 * 
+	 *
 	 * REST: GET /order/hosting/web/{serviceName}/changeMainDomain
 	 * @param domain [required] New domain for change the main domain
 	 * @param mxplan [required] MX plan linked to the odl main domain
@@ -6768,7 +6768,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/hosting/web/{serviceName}/changeMainDomain/{duration}
 	 * @param domain [required] New domain for change the main domain
 	 * @param mxplan [required] MX plan linked to the odl main domain
@@ -6787,7 +6787,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/hosting/web/{serviceName}/changeMainDomain/{duration}
 	 * @param domain [required] New domain for change the main domain
 	 * @param mxplan [required] MX plan linked to the odl main domain
@@ -6807,7 +6807,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'ssl' option
-	 * 
+	 *
 	 * REST: GET /order/hosting/web/{serviceName}/ssl
 	 * @param serviceName [required] The internal name of your hosting
 	 */
@@ -6820,7 +6820,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/hosting/web/{serviceName}/ssl/{duration}
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param duration [required] Duration
@@ -6835,7 +6835,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/hosting/web/{serviceName}/ssl/{duration}
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param duration [required] Duration
@@ -6850,7 +6850,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'extraSqlPerso' option
-	 * 
+	 *
 	 * REST: GET /order/hosting/web/{serviceName}/extraSqlPerso
 	 * @param offer [required] Offers you can add to your hosting
 	 * @param serviceName [required] The internal name of your hosting
@@ -6865,7 +6865,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/hosting/web/{serviceName}/extraSqlPerso/{duration}
 	 * @param offer [required] Offers you can add to your hosting
 	 * @param serviceName [required] The internal name of your hosting
@@ -6882,7 +6882,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/hosting/web/{serviceName}/extraSqlPerso/{duration}
 	 * @param offer [required] Offers you can add to your hosting
 	 * @param serviceName [required] The internal name of your hosting
@@ -6900,7 +6900,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'upgrade' option
-	 * 
+	 *
 	 * REST: GET /order/hosting/web/{serviceName}/upgrade
 	 * @param waiveRetractationPeriod [required] Indicates that order will be processed with waiving retractation period
 	 * @param offer [required] New offers for your hosting account
@@ -6917,7 +6917,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/hosting/web/{serviceName}/upgrade/{duration}
 	 * @param waiveRetractationPeriod [required] Indicates that order will be processed with waiving retractation period
 	 * @param offer [required] New offers for your hosting account
@@ -6936,7 +6936,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/hosting/web/{serviceName}/upgrade/{duration}
 	 * @param waiveRetractationPeriod [required] Indicates that order will be processed with waiving retractation period
 	 * @param offer [required] New offers for your hosting account
@@ -6956,7 +6956,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/hosting/web
 	 */
 	public ArrayList<String> hosting_web_GET() throws IOException {
@@ -6967,7 +6967,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'new' option
-	 * 
+	 *
 	 * REST: GET /order/hosting/web/new
 	 * @param waiveRetractationPeriod [required] Indicates that order will be processed with waiving retractation period
 	 * @param dnsZone [required] Dns zone modification possibilities ( by default : RESET_ALL )
@@ -6988,7 +6988,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/hosting/web/new/{duration}
 	 * @param waiveRetractationPeriod [required] Indicates that order will be processed with waiving retractation period
 	 * @param dnsZone [required] Dns zone modification possibilities ( by default : RESET_ALL )
@@ -7011,7 +7011,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/hosting/web/new/{duration}
 	 * @param waiveRetractationPeriod [required] Indicates that order will be processed with waiving retractation period
 	 * @param dnsZone [required] Dns zone modification possibilities ( by default : RESET_ALL )
@@ -7035,7 +7035,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed options
-	 * 
+	 *
 	 * REST: GET /order/hosting/privateDatabase/{serviceName}
 	 * @param serviceName [required] The internal name of your private database
 	 */
@@ -7048,7 +7048,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'ram' option
-	 * 
+	 *
 	 * REST: GET /order/hosting/privateDatabase/{serviceName}/ram
 	 * @param ram [required] Private database ram size
 	 * @param serviceName [required] The internal name of your private database
@@ -7063,7 +7063,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/hosting/privateDatabase/{serviceName}/ram/{duration}
 	 * @param ram [required] Private database ram size
 	 * @param serviceName [required] The internal name of your private database
@@ -7080,7 +7080,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/hosting/privateDatabase/{serviceName}/ram/{duration}
 	 * @param ram [required] Private database ram size
 	 * @param serviceName [required] The internal name of your private database
@@ -7098,7 +7098,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/hosting/privateDatabase
 	 */
 	public ArrayList<String> hosting_privateDatabase_GET() throws IOException {
@@ -7109,7 +7109,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'new' option
-	 * 
+	 *
 	 * REST: GET /order/hosting/privateDatabase/new
 	 * @param datacenter [required] Datacenter to deploy this new private database
 	 * @param version [required] Private database available versions
@@ -7126,7 +7126,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/hosting/privateDatabase/new/{duration}
 	 * @param datacenter [required] Datacenter to deploy this new private database
 	 * @param version [required] Private database available versions
@@ -7145,7 +7145,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/hosting/privateDatabase/new/{duration}
 	 * @param datacenter [required] Datacenter to deploy this new private database
 	 * @param version [required] Private database available versions
@@ -7165,7 +7165,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed options
-	 * 
+	 *
 	 * REST: GET /order/ipLoadbalancing/{serviceName}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
@@ -7178,7 +7178,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/ipLoadbalancing/{serviceName}/ssl
 	 * @param fqdn [required] The FQDN for which you want an SSL option. A DCV (Domain Control Validation) http request will be made to http://your_domain.abc, make sure this domain exists and resolves to your iplb ip before ordering
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -7193,7 +7193,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/ipLoadbalancing/{serviceName}/ssl
 	 * @param fqdn [required] The FQDN for which you want an SSL option. A DCV (Domain Control Validation) http request will be made to http://your_domain.abc, make sure this domain exists and resolves to your iplb ip before ordering
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -7209,7 +7209,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'zone' option
-	 * 
+	 *
 	 * REST: GET /order/ipLoadbalancing/{serviceName}/zone
 	 * @param zone [required] Zones name you want to add to your iplb. You can check what zone are available on this API section : /ipLoadbalancing/availableZones
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -7224,7 +7224,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/ipLoadbalancing/{serviceName}/zone/{duration}
 	 * @param zone [required] Zones name you want to add to your iplb. You can check what zone are available on this API section : /ipLoadbalancing/availableZones
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -7241,7 +7241,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/ipLoadbalancing/{serviceName}/zone/{duration}
 	 * @param zone [required] Zones name you want to add to your iplb. You can check what zone are available on this API section : /ipLoadbalancing/availableZones
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -7259,7 +7259,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/ipLoadbalancing
 	 */
 	public ArrayList<String> ipLoadbalancing_GET() throws IOException {
@@ -7270,7 +7270,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'new' option
-	 * 
+	 *
 	 * REST: GET /order/ipLoadbalancing/new
 	 * @param zone [required] The zone(s) of your iplb. You can check what zone are available on this API section : /ipLoadbalancing/availableZones
 	 */
@@ -7283,7 +7283,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/ipLoadbalancing/new/{duration}
 	 * @param zone [required] The zone(s) of your iplb. You can check what zone are available on this API section : /ipLoadbalancing/availableZones
 	 * @param duration [required] Duration
@@ -7298,7 +7298,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/ipLoadbalancing/new/{duration}
 	 * @param zone [required] The zone(s) of your iplb. You can check what zone are available on this API section : /ipLoadbalancing/availableZones
 	 * @param duration [required] Duration
@@ -7314,7 +7314,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed options
-	 * 
+	 *
 	 * REST: GET /order/license/worklight/{serviceName}
 	 * @param serviceName [required] The name of your WorkLight license
 	 */
@@ -7327,7 +7327,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'upgrade' option
-	 * 
+	 *
 	 * REST: GET /order/license/worklight/{serviceName}/upgrade
 	 * @param version [required] This license version
 	 * @param serviceName [required] The name of your WorkLight license
@@ -7342,7 +7342,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/license/worklight/{serviceName}/upgrade/{duration}
 	 * @param version [required] This license version
 	 * @param serviceName [required] The name of your WorkLight license
@@ -7359,7 +7359,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/license/worklight/{serviceName}/upgrade/{duration}
 	 * @param version [required] This license version
 	 * @param serviceName [required] The name of your WorkLight license
@@ -7377,7 +7377,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/license/worklight
 	 */
 	public ArrayList<String> license_worklight_GET() throws IOException {
@@ -7388,7 +7388,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'new' option
-	 * 
+	 *
 	 * REST: GET /order/license/worklight/new
 	 * @param lessThan1000Users [required] Does your company have less than 1000 potential users
 	 * @param version [required] This license version
@@ -7405,7 +7405,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/license/worklight/new/{duration}
 	 * @param lessThan1000Users [required] Does your company have less than 1000 potential users
 	 * @param version [required] This license version
@@ -7424,7 +7424,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/license/worklight/new/{duration}
 	 * @param lessThan1000Users [required] Does your company have less than 1000 potential users
 	 * @param version [required] This license version
@@ -7444,7 +7444,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'new' option
-	 * 
+	 *
 	 * REST: GET /order/license/cloudLinux/new
 	 * @param version [required] This license version
 	 * @param ip [required] Ip on which this license would be installed (for dedicated your main server Ip)
@@ -7459,7 +7459,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/license/cloudLinux/new/{duration}
 	 * @param version [required] This license version
 	 * @param ip [required] Ip on which this license would be installed (for dedicated your main server Ip)
@@ -7476,7 +7476,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/license/cloudLinux/new/{duration}
 	 * @param version [required] This license version
 	 * @param ip [required] Ip on which this license would be installed (for dedicated your main server Ip)
@@ -7494,7 +7494,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed options
-	 * 
+	 *
 	 * REST: GET /order/license/windows/{serviceName}
 	 * @param serviceName [required] The name of your Windows license
 	 */
@@ -7507,7 +7507,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'upgrade' option
-	 * 
+	 *
 	 * REST: GET /order/license/windows/{serviceName}/upgrade
 	 * @param sqlVersion [required] The SQL Server version to enable on this license Windows license
 	 * @param version [required] The windows version you want to enable on your windows license
@@ -7524,7 +7524,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/license/windows/{serviceName}/upgrade/{duration}
 	 * @param sqlVersion [required] The SQL Server version to enable on this license Windows license
 	 * @param version [required] The windows version you want to enable on your windows license
@@ -7543,7 +7543,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/license/windows/{serviceName}/upgrade/{duration}
 	 * @param sqlVersion [required] The SQL Server version to enable on this license Windows license
 	 * @param version [required] The windows version you want to enable on your windows license
@@ -7563,7 +7563,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/license/windows
 	 */
 	public ArrayList<String> license_windows_GET() throws IOException {
@@ -7574,7 +7574,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'new' option
-	 * 
+	 *
 	 * REST: GET /order/license/windows/new
 	 * @param sqlVersion [required] The SQL Server version to enable on this license Windows license
 	 * @param serviceType [required] # DEPRECATED # The kind of service on which this license will be used # Will not be used, keeped only for compatibility #
@@ -7593,7 +7593,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/license/windows/new/{duration}
 	 * @param sqlVersion [required] The SQL Server version to enable on this license Windows license
 	 * @param serviceType [required] # DEPRECATED # The kind of service on which this license will be used # Will not be used, keeped only for compatibility #
@@ -7614,7 +7614,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/license/windows/new/{duration}
 	 * @param sqlVersion [required] The SQL Server version to enable on this license Windows license
 	 * @param serviceType [required] # DEPRECATED # The kind of service on which this license will be used # Will not be used, keeped only for compatibility #
@@ -7636,7 +7636,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'new' option
-	 * 
+	 *
 	 * REST: GET /order/license/directadmin/new
 	 * @param serviceType [required] # DEPRECATED # The kind of service on which this license will be used # Will not be used, keeped only for compatibility #
 	 * @param version [required] This license version
@@ -7653,7 +7653,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/license/directadmin/new/{duration}
 	 * @param serviceType [required] # DEPRECATED # The kind of service on which this license will be used # Will not be used, keeped only for compatibility #
 	 * @param version [required] This license version
@@ -7672,7 +7672,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/license/directadmin/new/{duration}
 	 * @param serviceType [required] # DEPRECATED # The kind of service on which this license will be used # Will not be used, keeped only for compatibility #
 	 * @param version [required] This license version
@@ -7692,7 +7692,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed options
-	 * 
+	 *
 	 * REST: GET /order/license/virtuozzo/{serviceName}
 	 * @param serviceName [required] The name of your Virtuozzo license
 	 */
@@ -7705,7 +7705,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'upgrade' option
-	 * 
+	 *
 	 * REST: GET /order/license/virtuozzo/{serviceName}/upgrade
 	 * @param containerNumber [required] How much container is this license able to manage ...
 	 * @param serviceName [required] The name of your Virtuozzo license
@@ -7720,7 +7720,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/license/virtuozzo/{serviceName}/upgrade/{duration}
 	 * @param containerNumber [required] How much container is this license able to manage ...
 	 * @param serviceName [required] The name of your Virtuozzo license
@@ -7737,7 +7737,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/license/virtuozzo/{serviceName}/upgrade/{duration}
 	 * @param containerNumber [required] How much container is this license able to manage ...
 	 * @param serviceName [required] The name of your Virtuozzo license
@@ -7755,7 +7755,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/license/virtuozzo
 	 */
 	public ArrayList<String> license_virtuozzo_GET() throws IOException {
@@ -7766,7 +7766,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'new' option
-	 * 
+	 *
 	 * REST: GET /order/license/virtuozzo/new
 	 * @param serviceType [required] # DEPRECATED # The kind of service on which this license will be used # Will not be used, keeped only for compatibility #
 	 * @param containerNumber [required] How much container is this license able to manage ...
@@ -7785,7 +7785,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/license/virtuozzo/new/{duration}
 	 * @param serviceType [required] # DEPRECATED # The kind of service on which this license will be used # Will not be used, keeped only for compatibility #
 	 * @param containerNumber [required] How much container is this license able to manage ...
@@ -7806,7 +7806,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/license/virtuozzo/new/{duration}
 	 * @param serviceType [required] # DEPRECATED # The kind of service on which this license will be used # Will not be used, keeped only for compatibility #
 	 * @param containerNumber [required] How much container is this license able to manage ...
@@ -7828,7 +7828,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'new' option
-	 * 
+	 *
 	 * REST: GET /order/license/cpanel/new
 	 * @param serviceType [required] # DEPRECATED # The kind of service on which this license will be used # Will not be used, keeped only for compatibility #
 	 * @param version [required] This license version
@@ -7845,7 +7845,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/license/cpanel/new/{duration}
 	 * @param serviceType [required] # DEPRECATED # The kind of service on which this license will be used # Will not be used, keeped only for compatibility #
 	 * @param version [required] This license version
@@ -7864,7 +7864,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/license/cpanel/new/{duration}
 	 * @param serviceType [required] # DEPRECATED # The kind of service on which this license will be used # Will not be used, keeped only for compatibility #
 	 * @param version [required] This license version
@@ -7884,7 +7884,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'new' option
-	 * 
+	 *
 	 * REST: GET /order/license/office/new
 	 * @param officeBusinessQuantity [required] Number of prepaid office business license
 	 * @param officeProPlusQuantity [required] Number of prepaid office pro plus license
@@ -7901,7 +7901,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/license/office/new/{duration}
 	 * @param officeBusinessQuantity [required] Number of prepaid office business license
 	 * @param officeProPlusQuantity [required] Number of prepaid office pro plus license
@@ -7920,7 +7920,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/license/office/new/{duration}
 	 * @param officeBusinessQuantity [required] Number of prepaid office business license
 	 * @param officeProPlusQuantity [required] Number of prepaid office pro plus license
@@ -7940,7 +7940,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed options
-	 * 
+	 *
 	 * REST: GET /order/license/sqlserver/{serviceName}
 	 * @param serviceName [required] The name of your SQL Server license
 	 */
@@ -7953,7 +7953,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'upgrade' option
-	 * 
+	 *
 	 * REST: GET /order/license/sqlserver/{serviceName}/upgrade
 	 * @param version [required] This license version
 	 * @param serviceName [required] The name of your SQL Server license
@@ -7968,7 +7968,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/license/sqlserver/{serviceName}/upgrade/{duration}
 	 * @param version [required] This license version
 	 * @param serviceName [required] The name of your SQL Server license
@@ -7985,7 +7985,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/license/sqlserver/{serviceName}/upgrade/{duration}
 	 * @param version [required] This license version
 	 * @param serviceName [required] The name of your SQL Server license
@@ -8003,7 +8003,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/license/sqlserver
 	 */
 	public ArrayList<String> license_sqlserver_GET() throws IOException {
@@ -8014,7 +8014,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'new' option
-	 * 
+	 *
 	 * REST: GET /order/license/sqlserver/new
 	 * @param version [required] This license version
 	 * @param ip [required] Ip on which this license would be installed (for dedicated your main server Ip)
@@ -8029,7 +8029,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/license/sqlserver/new/{duration}
 	 * @param version [required] This license version
 	 * @param ip [required] Ip on which this license would be installed (for dedicated your main server Ip)
@@ -8046,7 +8046,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/license/sqlserver/new/{duration}
 	 * @param version [required] This license version
 	 * @param ip [required] Ip on which this license would be installed (for dedicated your main server Ip)
@@ -8064,7 +8064,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed options
-	 * 
+	 *
 	 * REST: GET /order/license/plesk/{serviceName}
 	 * @param serviceName [required] The name of your Plesk license
 	 */
@@ -8077,7 +8077,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'upgrade' option
-	 * 
+	 *
 	 * REST: GET /order/license/plesk/{serviceName}/upgrade
 	 * @param version [required] This license version
 	 * @param resellerManagement [required] Reseller management option activation
@@ -8108,7 +8108,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/license/plesk/{serviceName}/upgrade/{duration}
 	 * @param version [required] This license version
 	 * @param resellerManagement [required] Reseller management option activation
@@ -8141,7 +8141,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/license/plesk/{serviceName}/upgrade/{duration}
 	 * @param version [required] This license version
 	 * @param resellerManagement [required] Reseller management option activation
@@ -8175,7 +8175,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/license/plesk
 	 */
 	public ArrayList<String> license_plesk_GET() throws IOException {
@@ -8186,7 +8186,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'new' option
-	 * 
+	 *
 	 * REST: GET /order/license/plesk/new
 	 * @param version [required] This license version
 	 * @param ip [required] Ip on which this license would be installed
@@ -8217,7 +8217,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/license/plesk/new/{duration}
 	 * @param version [required] This license version
 	 * @param ip [required] Ip on which this license would be installed
@@ -8250,7 +8250,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/license/plesk/new/{duration}
 	 * @param version [required] This license version
 	 * @param ip [required] Ip on which this license would be installed
@@ -8284,7 +8284,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'new' option
-	 * 
+	 *
 	 * REST: GET /order/router/new
 	 * @param vrack [required] The name of your vrack
 	 */
@@ -8297,7 +8297,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/router/new/{duration}
 	 * @param vrack [required] The name of your vrack
 	 * @param duration [required] Duration
@@ -8312,7 +8312,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/router/new/{duration}
 	 * @param vrack [required] The name of your vrack
 	 * @param duration [required] Duration
@@ -8328,7 +8328,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed options
-	 * 
+	 *
 	 * REST: GET /order/vrack/{serviceName}
 	 * @param serviceName [required] The internal name of your vrack
 	 */
@@ -8341,7 +8341,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /order/vrack
 	 */
 	public ArrayList<String> vrack_GET() throws IOException {
@@ -8352,7 +8352,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/vrack/new
 	 * @param quantity [required] Number of vrack you want to order
 	 */
@@ -8365,7 +8365,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/vrack/new
 	 * @param quantity [required] Number of vrack you want to order
 	 */
@@ -8379,7 +8379,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/xdsl/spare/new
 	 * @param shippingContactId [required] Shipping contact information id from /me entry point
 	 * @param mondialRelayId [required] Use /supply/mondialRelay entry point to specify a relay point and ignore shipping contact address information entry.
@@ -8398,7 +8398,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/xdsl/spare/new
 	 * @param shippingContactId [required] Shipping contact information id from /me entry point
 	 * @param mondialRelayId [required] Use /supply/mondialRelay entry point to specify a relay point and ignore shipping contact address information entry.
@@ -8418,7 +8418,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'new' option
-	 * 
+	 *
 	 * REST: GET /order/overTheBox/new
 	 * @param deviceId [required] The id of the device
 	 * @param voucher [required] An optional voucher
@@ -8435,7 +8435,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/overTheBox/new/{duration}
 	 * @param deviceId [required] The id of the device
 	 * @param voucher [required] An optional voucher
@@ -8454,7 +8454,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/overTheBox/new/{duration}
 	 * @param deviceId [required] The id of the device
 	 * @param voucher [required] An optional voucher
@@ -8474,7 +8474,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get allowed durations for 'new' option
-	 * 
+	 *
 	 * REST: GET /order/hpcspot/new
 	 */
 	public ArrayList<String> hpcspot_new_GET() throws IOException {
@@ -8485,7 +8485,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Get prices and contracts information
-	 * 
+	 *
 	 * REST: GET /order/hpcspot/new/{duration}
 	 * @param duration [required] Duration
 	 */
@@ -8498,7 +8498,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 
 	/**
 	 * Create order
-	 * 
+	 *
 	 * REST: POST /order/hpcspot/new/{duration}
 	 * @param duration [required] Duration
 	 */

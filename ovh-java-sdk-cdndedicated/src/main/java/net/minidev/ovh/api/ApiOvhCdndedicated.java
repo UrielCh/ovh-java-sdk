@@ -35,7 +35,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cdn/dedicated/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your CDN offer
 	 */
@@ -48,7 +48,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /cdn/dedicated/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your CDN offer
@@ -61,7 +61,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Return quota history
-	 * 
+	 *
 	 * REST: GET /cdn/dedicated/{serviceName}/quota
 	 * @param period [required]
 	 * @param serviceName [required] The internal name of your CDN offer
@@ -77,7 +77,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cdn/dedicated/{serviceName}
 	 * @param serviceName [required] The internal name of your CDN offer
 	 */
@@ -90,7 +90,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cdn/dedicated/{serviceName}/domains/{domain}
 	 * @param serviceName [required] The internal name of your CDN offer
 	 * @param domain [required] Domain of this object
@@ -105,7 +105,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /cdn/dedicated/{serviceName}/domains/{domain}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your CDN offer
@@ -120,7 +120,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Remove a domain from the CDN
-	 * 
+	 *
 	 * REST: DELETE /cdn/dedicated/{serviceName}/domains/{domain}
 	 * @param serviceName [required] The internal name of your CDN offer
 	 * @param domain [required] Domain of this object
@@ -135,7 +135,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Backend associated to the domain
-	 * 
+	 *
 	 * REST: GET /cdn/dedicated/{serviceName}/domains/{domain}/backends
 	 * @param serviceName [required] The internal name of your CDN offer
 	 * @param domain [required] Domain of this object
@@ -151,7 +151,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Add a backend IP
-	 * 
+	 *
 	 * REST: POST /cdn/dedicated/{serviceName}/domains/{domain}/backends
 	 * @param ip [required] IP to add to backends list
 	 * @param serviceName [required] The internal name of your CDN offer
@@ -169,7 +169,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cdn/dedicated/{serviceName}/domains/{domain}/backends/{ip}
 	 * @param serviceName [required] The internal name of your CDN offer
 	 * @param domain [required] Domain of this object
@@ -186,7 +186,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Remove a backend IP
-	 * 
+	 *
 	 * REST: DELETE /cdn/dedicated/{serviceName}/domains/{domain}/backends/{ip}
 	 * @param serviceName [required] The internal name of your CDN offer
 	 * @param domain [required] Domain of this object
@@ -203,7 +203,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Task associated to the domain
-	 * 
+	 *
 	 * REST: GET /cdn/dedicated/{serviceName}/domains/{domain}/tasks
 	 * @param serviceName [required] The internal name of your CDN offer
 	 * @param domain [required] Domain of this object
@@ -219,7 +219,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cdn/dedicated/{serviceName}/domains/{domain}/tasks/{taskId}
 	 * @param serviceName [required] The internal name of your CDN offer
 	 * @param domain [required] Domain of this object
@@ -236,7 +236,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Flush all cache
-	 * 
+	 *
 	 * REST: POST /cdn/dedicated/{serviceName}/domains/{domain}/flush
 	 * @param serviceName [required] The internal name of your CDN offer
 	 * @param domain [required] Domain of this object
@@ -251,7 +251,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Return stats about a domain
-	 * 
+	 *
 	 * REST: GET /cdn/dedicated/{serviceName}/domains/{domain}/statistics
 	 * @param period [required]
 	 * @param value [required]
@@ -272,7 +272,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Cache rules associated to the domain
-	 * 
+	 *
 	 * REST: GET /cdn/dedicated/{serviceName}/domains/{domain}/cacheRules
 	 * @param fileMatch [required] Filter the value of fileMatch property (like)
 	 * @param serviceName [required] The internal name of your CDN offer
@@ -289,7 +289,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Add a cache rule to a domain
-	 * 
+	 *
 	 * REST: POST /cdn/dedicated/{serviceName}/domains/{domain}/cacheRules
 	 * @param cacheType [required] Type of cache rule to add to the domain
 	 * @param ttl [required] ttl for cache rule to add to the domain
@@ -313,7 +313,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}
 	 * @param serviceName [required] The internal name of your CDN offer
 	 * @param domain [required] Domain of this object
@@ -330,7 +330,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your CDN offer
@@ -347,7 +347,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Remove cache rule
-	 * 
+	 *
 	 * REST: DELETE /cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}
 	 * @param serviceName [required] The internal name of your CDN offer
 	 * @param domain [required] Domain of this object
@@ -364,7 +364,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Task associated to the cache rule
-	 * 
+	 *
 	 * REST: GET /cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}/tasks
 	 * @param serviceName [required] The internal name of your CDN offer
 	 * @param domain [required] Domain of this object
@@ -381,7 +381,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}/tasks/{taskId}
 	 * @param serviceName [required] The internal name of your CDN offer
 	 * @param domain [required] Domain of this object
@@ -400,7 +400,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Flush the cache
-	 * 
+	 *
 	 * REST: POST /cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}/flush
 	 * @param serviceName [required] The internal name of your CDN offer
 	 * @param domain [required] Domain of this object
@@ -417,7 +417,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Domains associated to this anycast
-	 * 
+	 *
 	 * REST: GET /cdn/dedicated/{serviceName}/domains
 	 * @param serviceName [required] The internal name of your CDN offer
 	 */
@@ -430,7 +430,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Add a domain on CDN
-	 * 
+	 *
 	 * REST: POST /cdn/dedicated/{serviceName}/domains
 	 * @param domain [required] domain name to add on CDN
 	 * @param serviceName [required] The internal name of your CDN offer
@@ -446,7 +446,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cdn/dedicated/{serviceName}/ssl
 	 * @param serviceName [required] The internal name of your CDN offer
 	 */
@@ -459,7 +459,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Add a SSL on CDN or Generate a Lets Encrypt certificate
-	 * 
+	 *
 	 * REST: POST /cdn/dedicated/{serviceName}/ssl
 	 * @param chain [required] certificate chain (empty for lets encrypt generation)
 	 * @param certificate [required] certificate (empty for lets encrypt generation)
@@ -481,7 +481,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Remove SSL of the CDN
-	 * 
+	 *
 	 * REST: DELETE /cdn/dedicated/{serviceName}/ssl
 	 * @param serviceName [required] The internal name of your CDN offer
 	 */
@@ -494,7 +494,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Task associated to the ssl
-	 * 
+	 *
 	 * REST: GET /cdn/dedicated/{serviceName}/ssl/tasks
 	 * @param function [required] Filter the value of function property (=)
 	 * @param status [required] Filter the value of status property (=)
@@ -511,7 +511,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cdn/dedicated/{serviceName}/ssl/tasks/{taskId}
 	 * @param serviceName [required] The internal name of your CDN offer
 	 * @param taskId [required]
@@ -526,7 +526,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Update an existing SSL with a custom certificate
-	 * 
+	 *
 	 * REST: POST /cdn/dedicated/{serviceName}/ssl/update
 	 * @param chain [required] certificate chain
 	 * @param certificate [required] certificate
@@ -546,7 +546,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /cdn/dedicated
 	 */
 	public ArrayList<String> GET() throws IOException {
@@ -557,7 +557,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * List of CDN Pops
-	 * 
+	 *
 	 * REST: GET /cdn/dedicated/pops
 	 */
 	public ArrayList<String> pops_GET() throws IOException {
@@ -568,7 +568,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cdn/dedicated/pops/{name}
 	 * @param name [required] Name of the pop
 	 */

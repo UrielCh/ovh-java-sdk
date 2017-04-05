@@ -28,7 +28,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /paas/monitoring/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal ID of your monitoring instance
 	 */
@@ -41,7 +41,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /paas/monitoring/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal ID of your monitoring instance
@@ -54,7 +54,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 
 	/**
 	 * Get a specific monitoring service.
-	 * 
+	 *
 	 * REST: GET /paas/monitoring/{serviceName}
 	 * @param serviceName [required] service name
 	 */
@@ -67,7 +67,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 
 	/**
 	 * Deploy a specific monitoring service.
-	 * 
+	 *
 	 * REST: POST /paas/monitoring/{serviceName}/deploy
 	 * @param serviceName [required] service name
 	 * @param body [required] A Shinken-based monitoring service
@@ -81,7 +81,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 
 	/**
 	 * Get all backends.
-	 * 
+	 *
 	 * REST: GET /paas/monitoring/{serviceName}/backend
 	 * @param serviceName [required] service name
 	 */
@@ -95,7 +95,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 
 	/**
 	 * Get a specific backend.
-	 * 
+	 *
 	 * REST: GET /paas/monitoring/{serviceName}/backend/{backendId}
 	 * @param backendId [required] backend id
 	 * @param serviceName [required] service name
@@ -110,7 +110,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 
 	/**
 	 * Confirm termination of your service
-	 * 
+	 *
 	 * REST: POST /paas/monitoring/{serviceName}/confirmTermination
 	 * @param reason Reason of your termination request
 	 * @param commentary Commentary about your termination request
@@ -130,7 +130,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 
 	/**
 	 * Terminate your service
-	 * 
+	 *
 	 * REST: POST /paas/monitoring/{serviceName}/terminate
 	 * @param serviceName [required] The internal ID of your monitoring instance
 	 */
@@ -143,7 +143,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 
 	/**
 	 * Launch a contact change procedure
-	 * 
+	 *
 	 * REST: POST /paas/monitoring/{serviceName}/changeContact
 	 * @param contactAdmin The contact to set as admin contact
 	 * @param contactTech The contact to set as tech contact
@@ -164,7 +164,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 
 	/**
 	 * Apply the resources of a monitoring service.
-	 * 
+	 *
 	 * REST: POST /paas/monitoring/{serviceName}/resource/apply
 	 * @param serviceName [required] service name
 	 */
@@ -176,7 +176,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 
 	/**
 	 * Get all resources of the specified type of resources.
-	 * 
+	 *
 	 * REST: GET /paas/monitoring/{serviceName}/resource
 	 * @param serviceName [required] service name
 	 */
@@ -189,7 +189,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 
 	/**
 	 * Test the validity of a monitoring service resources.
-	 * 
+	 *
 	 * REST: POST /paas/monitoring/{serviceName}/resource/test
 	 * @param serviceName [required] service name
 	 */
@@ -202,7 +202,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 
 	/**
 	 * Get all resources of the specified type of resources.
-	 * 
+	 *
 	 * REST: GET /paas/monitoring/{serviceName}/resource/{resourceType}
 	 * @param resourceType [required] resource type
 	 * @param serviceName [required] service name
@@ -217,7 +217,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 
 	/**
 	 * Add a new resource to a monitoring service.
-	 * 
+	 *
 	 * REST: POST /paas/monitoring/{serviceName}/resource/{resourceType}
 	 * @param resourceType [required] resource type
 	 * @param serviceName [required] service name
@@ -233,7 +233,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 
 	/**
 	 * Delete all resources of the specified type.
-	 * 
+	 *
 	 * REST: DELETE /paas/monitoring/{serviceName}/resource/{resourceType}
 	 * @param resourceType [required] resource type
 	 * @param serviceName [required] service name
@@ -247,7 +247,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 
 	/**
 	 * Get a specific resource.
-	 * 
+	 *
 	 * REST: GET /paas/monitoring/{serviceName}/resource/{resourceType}/{resourceId}
 	 * @param resourceType [required] resource type
 	 * @param resourceId [required] resource id
@@ -264,7 +264,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 
 	/**
 	 * Update a resource of a monitoring service.
-	 * 
+	 *
 	 * REST: PUT /paas/monitoring/{serviceName}/resource/{resourceType}/{resourceId}
 	 * @param resourceType [required] resource type
 	 * @param resourceId [required] resource id
@@ -282,7 +282,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 
 	/**
 	 * Remove a resource of a monitoring service.
-	 * 
+	 *
 	 * REST: DELETE /paas/monitoring/{serviceName}/resource/{resourceType}/{resourceId}
 	 * @param resourceType [required] resource type
 	 * @param resourceId [required] resource id
@@ -298,7 +298,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 
 	/**
 	 * Post at once all the resources of a type.
-	 * 
+	 *
 	 * REST: POST /paas/monitoring/{serviceName}/resource/{resourceType}/batch
 	 * @param resourceType [required] resource type
 	 * @param serviceName [required] service name
@@ -313,7 +313,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 
 	/**
 	 * Get the timezone configuration of a monitoring service.
-	 * 
+	 *
 	 * REST: GET /paas/monitoring/{serviceName}/config/timezone
 	 * @param serviceName [required] service name
 	 */
@@ -326,7 +326,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 
 	/**
 	 * Update the NSCA configuration of a monitoring service.
-	 * 
+	 *
 	 * REST: PUT /paas/monitoring/{serviceName}/config/timezone
 	 * @param serviceName [required] service name
 	 * @param body [required] Configuration of the timezone
@@ -340,7 +340,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 
 	/**
 	 * Get the firewall configuration of a monitoring service.
-	 * 
+	 *
 	 * REST: GET /paas/monitoring/{serviceName}/config/firewall
 	 * @param serviceName [required] service name
 	 */
@@ -353,7 +353,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 
 	/**
 	 * Update the NSCA configuration of a monitoring service.
-	 * 
+	 *
 	 * REST: PUT /paas/monitoring/{serviceName}/config/firewall
 	 * @param serviceName [required] service name
 	 * @param body [required] Configuration of the firewall
@@ -367,7 +367,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 
 	/**
 	 * Get the NSCA configuration of a monitoring service.
-	 * 
+	 *
 	 * REST: GET /paas/monitoring/{serviceName}/config/nsca
 	 * @param serviceName [required] service name
 	 */
@@ -380,7 +380,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 
 	/**
 	 * Update the NSCA configuration of a monitoring service.
-	 * 
+	 *
 	 * REST: PUT /paas/monitoring/{serviceName}/config/nsca
 	 * @param serviceName [required] service name
 	 * @param body [required] Configuration for the NSCA receiver
@@ -394,7 +394,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /paas/monitoring
 	 */
 	public ArrayList<String> GET() throws IOException {

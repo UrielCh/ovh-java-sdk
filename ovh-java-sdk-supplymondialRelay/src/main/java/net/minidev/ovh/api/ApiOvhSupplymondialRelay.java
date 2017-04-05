@@ -19,7 +19,7 @@ public class ApiOvhSupplymondialRelay extends ApiOvhBase {
 
 	/**
 	 * Find the 10 nearest MondialRelay points from address or city.
-	 * 
+	 *
 	 * REST: POST /supply/mondialRelay
 	 * @param country [required] ISO country code
 	 * @param city [required] City

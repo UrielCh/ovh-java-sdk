@@ -26,7 +26,7 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /veeamCloudConnect/{serviceName}/serviceInfos
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -39,7 +39,7 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /veeamCloudConnect/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] Domain of the service
@@ -52,7 +52,7 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /veeamCloudConnect/{serviceName}
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -65,7 +65,7 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 
 	/**
 	 * List the possible upgrades on your Veeam Cloud Connect account
-	 * 
+	 *
 	 * REST: GET /veeamCloudConnect/{serviceName}/orderableUpgrade
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -79,7 +79,7 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 
 	/**
 	 * Veeam Backup Repository linked to this Veeam Cloud Connect account
-	 * 
+	 *
 	 * REST: GET /veeamCloudConnect/{serviceName}/backupRepository
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -93,7 +93,7 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 
 	/**
 	 * Add a new Backup Repository to your professional account
-	 * 
+	 *
 	 * REST: POST /veeamCloudConnect/{serviceName}/backupRepository
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -107,7 +107,7 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /veeamCloudConnect/{serviceName}/backupRepository/{inventoryName}
 	 * @param serviceName [required] Domain of the service
 	 * @param inventoryName [required] The inventory name of your backup repository
@@ -122,7 +122,7 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 
 	/**
 	 * Delete this backup Repository.
-	 * 
+	 *
 	 * REST: DELETE /veeamCloudConnect/{serviceName}/backupRepository/{inventoryName}
 	 * @param serviceName [required] Domain of the service
 	 * @param inventoryName [required] The inventory name of your backup repository
@@ -137,7 +137,7 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 
 	/**
 	 * Change your quota
-	 * 
+	 *
 	 * REST: POST /veeamCloudConnect/{serviceName}/backupRepository/{inventoryName}/upgradeQuota
 	 * @param newQuota [required] my new quota in GB
 	 * @param serviceName [required] Domain of the service
@@ -155,7 +155,7 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 
 	/**
 	 * Show capabilities of your current offer
-	 * 
+	 *
 	 * REST: GET /veeamCloudConnect/{serviceName}/capabilities
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -168,7 +168,7 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 
 	/**
 	 * Tasks associated with Cloud Tenant
-	 * 
+	 *
 	 * REST: GET /veeamCloudConnect/{serviceName}/task
 	 * @param name [required] Filter the value of name property (like)
 	 * @param state [required] Filter the value of state property (=)
@@ -186,7 +186,7 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /veeamCloudConnect/{serviceName}/task/{taskId}
 	 * @param serviceName [required] Domain of the service
 	 * @param taskId [required]
@@ -201,7 +201,7 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /veeamCloudConnect
 	 */
 	public ArrayList<String> GET() throws IOException {

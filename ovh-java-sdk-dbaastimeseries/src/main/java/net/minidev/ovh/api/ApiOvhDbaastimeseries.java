@@ -28,7 +28,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Get quotas
-	 * 
+	 *
 	 * REST: GET /dbaas/timeseries/{serviceName}/quota
 	 * @param serviceName [required] Service Name
 	 */
@@ -42,7 +42,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dbaas/timeseries/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your timeseries project
 	 */
@@ -55,7 +55,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /dbaas/timeseries/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your timeseries project
@@ -68,7 +68,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dbaas/timeseries/{serviceName}
 	 * @param serviceName [required] The internal name of your timeseries project
 	 */
@@ -81,7 +81,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /dbaas/timeseries/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your timeseries project
@@ -94,7 +94,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Get keys for a project
-	 * 
+	 *
 	 * REST: GET /dbaas/timeseries/{serviceName}/key
 	 * @param serviceName [required] Service Name
 	 */
@@ -108,7 +108,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Create a key for a project
-	 * 
+	 *
 	 * REST: POST /dbaas/timeseries/{serviceName}/key
 	 * @param serviceName [required] Service Name
 	 * @param description [required] Description
@@ -128,7 +128,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Get a key
-	 * 
+	 *
 	 * REST: GET /dbaas/timeseries/{serviceName}/key/{keyId}
 	 * @param serviceName [required] Service Name
 	 * @param keyId [required] Key id
@@ -143,7 +143,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Create a key
-	 * 
+	 *
 	 * REST: PUT /dbaas/timeseries/{serviceName}/key/{keyId}
 	 * @param serviceName [required] Service Name
 	 * @param keyId [required] Key id
@@ -165,7 +165,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Delete a OpenTSDB token
-	 * 
+	 *
 	 * REST: DELETE /dbaas/timeseries/{serviceName}/key/{keyId}
 	 * @param serviceName [required] Service Name
 	 * @param keyId [required] Key id
@@ -180,7 +180,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Launch a contact change procedure
-	 * 
+	 *
 	 * REST: POST /dbaas/timeseries/{serviceName}/changeContact
 	 * @param contactAdmin The contact to set as admin contact
 	 * @param contactTech The contact to set as tech contact
@@ -201,7 +201,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Setup a project
-	 * 
+	 *
 	 * REST: POST /dbaas/timeseries/{serviceName}/setup
 	 * @param serviceName [required] Service Name
 	 * @param displayName [required] Project name
@@ -225,7 +225,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Get consumption
-	 * 
+	 *
 	 * REST: GET /dbaas/timeseries/{serviceName}/consumption
 	 * @param serviceName [required] Service Name
 	 */
@@ -239,7 +239,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Get OpenTSDB tokens
-	 * 
+	 *
 	 * REST: GET /dbaas/timeseries/{serviceName}/token/opentsdb
 	 * @param serviceName [required] Service Name
 	 */
@@ -253,7 +253,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Create a OpenTSDB token
-	 * 
+	 *
 	 * REST: POST /dbaas/timeseries/{serviceName}/token/opentsdb
 	 * @param serviceName [required] Service Name
 	 * @param description [required]
@@ -273,7 +273,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Get a OpenTSDB token
-	 * 
+	 *
 	 * REST: GET /dbaas/timeseries/{serviceName}/token/opentsdb/{tokenId}
 	 * @param serviceName [required] Service Name
 	 * @param tokenId [required] token id
@@ -288,7 +288,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Delete an OpenTSDB token
-	 * 
+	 *
 	 * REST: DELETE /dbaas/timeseries/{serviceName}/token/opentsdb/{tokenId}
 	 * @param serviceName [required] Service Name
 	 * @param tokenId [required] token id
@@ -303,7 +303,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /dbaas/timeseries
 	 */
 	public ArrayList<String> GET() throws IOException {
@@ -315,7 +315,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Get available regions
-	 * 
+	 *
 	 * REST: GET /dbaas/timeseries/region
 	 */
 	public ArrayList<OvhRegion> region_GET() throws IOException {

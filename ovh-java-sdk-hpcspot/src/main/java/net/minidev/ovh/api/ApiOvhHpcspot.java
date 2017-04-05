@@ -23,7 +23,7 @@ public class ApiOvhHpcspot extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hpcspot/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your HPC Spot account
 	 */
@@ -36,7 +36,7 @@ public class ApiOvhHpcspot extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /hpcspot/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your HPC Spot account
@@ -49,7 +49,7 @@ public class ApiOvhHpcspot extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hpcspot/{serviceName}
 	 * @param serviceName [required] The internal name of your HPC Spot account
 	 */
@@ -62,7 +62,7 @@ public class ApiOvhHpcspot extends ApiOvhBase {
 
 	/**
 	 * Details of the consumption of your account
-	 * 
+	 *
 	 * REST: GET /hpcspot/{serviceName}/consumption
 	 * @param hpcspotItemId [required] Filter the value of hpcspotItemId property (=)
 	 * @param hpcspotItemEndDate_to [required] Filter the value of hpcspotItemEndDate property (<=)
@@ -86,7 +86,7 @@ public class ApiOvhHpcspot extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hpcspot/{serviceName}/consumption/{id}
 	 * @param serviceName [required] The internal name of your HPC Spot account
 	 * @param id [required] ID of the detail
@@ -101,7 +101,7 @@ public class ApiOvhHpcspot extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /hpcspot
 	 */
 	public ArrayList<String> GET() throws IOException {

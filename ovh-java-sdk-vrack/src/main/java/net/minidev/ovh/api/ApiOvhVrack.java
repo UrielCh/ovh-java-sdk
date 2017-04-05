@@ -36,7 +36,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /vrack/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your vrack
 	 */
@@ -49,7 +49,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /vrack/{serviceName}
 	 * @param serviceName [required] The internal name of your vrack
 	 */
@@ -62,7 +62,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /vrack/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your vrack
@@ -75,7 +75,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * vrack for legacy vrack
-	 * 
+	 *
 	 * REST: GET /vrack/{serviceName}/legacyVrack
 	 * @param serviceName [required] The internal name of your vrack
 	 */
@@ -89,7 +89,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * add a legacy vrack (vrackXXXX) to this vrack (pn-XXXX)
-	 * 
+	 *
 	 * REST: POST /vrack/{serviceName}/legacyVrack
 	 * @param legacyVrack [required]
 	 * @param serviceName [required] The internal name of your vrack
@@ -105,7 +105,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /vrack/{serviceName}/legacyVrack/{legacyVrack}
 	 * @param serviceName [required] The internal name of your vrack
 	 * @param legacyVrack [required] your legacy vrack service
@@ -120,7 +120,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * remove this legacy vrack (vrackXXXX) from this vrack (pn-XXXX)
-	 * 
+	 *
 	 * REST: DELETE /vrack/{serviceName}/legacyVrack/{legacyVrack}
 	 * @param serviceName [required] The internal name of your vrack
 	 * @param legacyVrack [required] your legacy vrack service
@@ -135,7 +135,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * vrack for IP blocks
-	 * 
+	 *
 	 * REST: GET /vrack/{serviceName}/ip
 	 * @param serviceName [required] The internal name of your vrack
 	 */
@@ -148,7 +148,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * add an IP block to this vrack
-	 * 
+	 *
 	 * REST: POST /vrack/{serviceName}/ip
 	 * @param block [required] Your IP block
 	 * @param serviceName [required] The internal name of your vrack
@@ -164,7 +164,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * Zone available to announce your block
-	 * 
+	 *
 	 * REST: GET /vrack/{serviceName}/ip/{ip}/availableZone
 	 * @param serviceName [required] The internal name of your vrack
 	 * @param ip [required] Your IP block
@@ -180,7 +180,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /vrack/{serviceName}/ip/{ip}
 	 * @param serviceName [required] The internal name of your vrack
 	 * @param ip [required] Your IP block
@@ -195,7 +195,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * remove this IP block from this vrack
-	 * 
+	 *
 	 * REST: DELETE /vrack/{serviceName}/ip/{ip}
 	 * @param serviceName [required] The internal name of your vrack
 	 * @param ip [required] Your IP block
@@ -210,7 +210,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * Announce IP to zone for vrack
-	 * 
+	 *
 	 * REST: POST /vrack/{serviceName}/ip/{ip}/announceInZone
 	 * @param zone [required] Zone to announce in
 	 * @param serviceName [required] The internal name of your vrack
@@ -228,7 +228,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * Details for all dedicated server interfaces in this vrack
-	 * 
+	 *
 	 * REST: GET /vrack/{serviceName}/dedicatedServerInterfaceDetails
 	 * @param serviceName [required] The internal name of your vrack
 	 */
@@ -242,7 +242,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * vrack for dedicated server interface
-	 * 
+	 *
 	 * REST: GET /vrack/{serviceName}/dedicatedServerInterface
 	 * @param serviceName [required] The internal name of your vrack
 	 */
@@ -255,7 +255,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * add a dedicated server interface to this vrack
-	 * 
+	 *
 	 * REST: POST /vrack/{serviceName}/dedicatedServerInterface
 	 * @param dedicatedServerInterface [required] Dedicated server interface to add
 	 * @param serviceName [required] The internal name of your vrack
@@ -271,7 +271,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /vrack/{serviceName}/dedicatedServerInterface/{dedicatedServerInterface}
 	 * @param serviceName [required] The internal name of your vrack
 	 * @param dedicatedServerInterface [required] Dedicated Server Interface
@@ -286,7 +286,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * remove this server interface from this vrack
-	 * 
+	 *
 	 * REST: DELETE /vrack/{serviceName}/dedicatedServerInterface/{dedicatedServerInterface}
 	 * @param serviceName [required] The internal name of your vrack
 	 * @param dedicatedServerInterface [required] Dedicated Server Interface
@@ -301,7 +301,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * vrack for publicCloud project
-	 * 
+	 *
 	 * REST: GET /vrack/{serviceName}/cloudProject
 	 * @param serviceName [required] The internal name of your vrack
 	 */
@@ -314,7 +314,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * add a publicCloud project to this vrack
-	 * 
+	 *
 	 * REST: POST /vrack/{serviceName}/cloudProject
 	 * @param project [required] publicCloud project to add
 	 * @param serviceName [required] The internal name of your vrack
@@ -330,7 +330,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /vrack/{serviceName}/cloudProject/{project}
 	 * @param serviceName [required] The internal name of your vrack
 	 * @param project [required] publicCloud project
@@ -345,7 +345,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * remove this publicCloud project from this vrack
-	 * 
+	 *
 	 * REST: DELETE /vrack/{serviceName}/cloudProject/{project}
 	 * @param serviceName [required] The internal name of your vrack
 	 * @param project [required] publicCloud project
@@ -360,7 +360,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * vrack dedicated cloud (VmNetwork)
-	 * 
+	 *
 	 * REST: GET /vrack/{serviceName}/dedicatedCloud
 	 * @param serviceName [required] The internal name of your vrack
 	 */
@@ -373,7 +373,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * add a dedicatedCloud (VmNetwork) to this vrack
-	 * 
+	 *
 	 * REST: POST /vrack/{serviceName}/dedicatedCloud
 	 * @param dedicatedCloud [required]
 	 * @param serviceName [required] The internal name of your vrack
@@ -389,7 +389,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /vrack/{serviceName}/dedicatedCloud/{dedicatedCloud}
 	 * @param serviceName [required] The internal name of your vrack
 	 * @param dedicatedCloud [required] your dedicated cloud service
@@ -404,7 +404,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * remove this dedicatedCloud (VmNetwork) from this vrack
-	 * 
+	 *
 	 * REST: DELETE /vrack/{serviceName}/dedicatedCloud/{dedicatedCloud}
 	 * @param serviceName [required] The internal name of your vrack
 	 * @param dedicatedCloud [required] your dedicated cloud service
@@ -419,7 +419,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * vrack tasks
-	 * 
+	 *
 	 * REST: GET /vrack/{serviceName}/task
 	 * @param serviceName [required] The internal name of your vrack
 	 */
@@ -433,7 +433,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /vrack/{serviceName}/task/{taskId}
 	 * @param serviceName [required] The internal name of your vrack
 	 * @param taskId [required]
@@ -448,7 +448,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * Vracks allowed for your dedicatedCloud datacenter
-	 * 
+	 *
 	 * REST: GET /vrack/{serviceName}/dedicatedCloudDatacenter/{datacenter}/allowedVrack
 	 * @param serviceName [required] The internal name of your vrack
 	 * @param datacenter [required] Your dedicatedCloud datacenter name
@@ -463,7 +463,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /vrack/{serviceName}/dedicatedCloudDatacenter/{datacenter}
 	 * @param serviceName [required] The internal name of your vrack
 	 * @param datacenter [required] Your dedicatedCloud datacenter name
@@ -478,7 +478,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * Move your dedicatedCloud datacenter from a Vrack to another
-	 * 
+	 *
 	 * REST: POST /vrack/{serviceName}/dedicatedCloudDatacenter/{datacenter}/move
 	 * @param targetServiceName [required] The internal name of your target vrack
 	 * @param serviceName [required] The internal name of your vrack
@@ -496,7 +496,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * vrack dedicated cloud datacenter
-	 * 
+	 *
 	 * REST: GET /vrack/{serviceName}/dedicatedCloudDatacenter
 	 * @param serviceName [required] The internal name of your vrack
 	 */
@@ -509,7 +509,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * vrack dedicated connect
-	 * 
+	 *
 	 * REST: GET /vrack/{serviceName}/dedicatedConnect
 	 * @param serviceName [required] The internal name of your vrack
 	 */
@@ -522,7 +522,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /vrack/{serviceName}/dedicatedConnect/{name}
 	 * @param serviceName [required] The internal name of your vrack
 	 * @param name [required] A name for your dedicatedConnect link
@@ -537,7 +537,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /vrack/{serviceName}/dedicatedConnect/{name}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your vrack
@@ -552,7 +552,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * vrack for dedicated server
-	 * 
+	 *
 	 * REST: GET /vrack/{serviceName}/dedicatedServer
 	 * @param serviceName [required] The internal name of your vrack
 	 */
@@ -565,7 +565,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * add a dedicated server to this vrack
-	 * 
+	 *
 	 * REST: POST /vrack/{serviceName}/dedicatedServer
 	 * @param dedicatedServer [required] Dedicated server to add
 	 * @param serviceName [required] The internal name of your vrack
@@ -581,7 +581,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /vrack/{serviceName}/dedicatedServer/{dedicatedServer}
 	 * @param serviceName [required] The internal name of your vrack
 	 * @param dedicatedServer [required] Dedicated Server
@@ -596,7 +596,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * remove this server from this vrack
-	 * 
+	 *
 	 * REST: DELETE /vrack/{serviceName}/dedicatedServer/{dedicatedServer}
 	 * @param serviceName [required] The internal name of your vrack
 	 * @param dedicatedServer [required] Dedicated Server
@@ -611,7 +611,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * Retrieve vrack traffic graph values
-	 * 
+	 *
 	 * REST: GET /vrack/{serviceName}/dedicatedServer/{dedicatedServer}/mrtg
 	 * @param period [required] mrtg period
 	 * @param type [required] mrtg type
@@ -631,7 +631,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * List all services allowed in this vrack
-	 * 
+	 *
 	 * REST: GET /vrack/{serviceName}/allowedServices
 	 * @param serviceName [required] The internal name of your vrack
 	 */
@@ -644,7 +644,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /vrack
 	 */
 	public ArrayList<String> GET() throws IOException {

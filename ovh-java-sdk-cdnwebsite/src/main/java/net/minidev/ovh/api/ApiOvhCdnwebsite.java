@@ -29,7 +29,7 @@ public class ApiOvhCdnwebsite extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cdn/website/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your CDN Website offer
 	 */
@@ -42,7 +42,7 @@ public class ApiOvhCdnwebsite extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /cdn/website/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your CDN Website offer
@@ -55,7 +55,7 @@ public class ApiOvhCdnwebsite extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cdn/website/{serviceName}
 	 * @param serviceName [required] The internal name of your CDN Website offer
 	 */
@@ -68,7 +68,7 @@ public class ApiOvhCdnwebsite extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cdn/website/{serviceName}/zone
 	 * @param serviceName [required] The internal name of your CDN Website offer
 	 */
@@ -81,7 +81,7 @@ public class ApiOvhCdnwebsite extends ApiOvhBase {
 
 	/**
 	 * Configure a zone on CDN
-	 * 
+	 *
 	 * REST: POST /cdn/website/{serviceName}/zone
 	 * @param zone [required] zone DNS name to add on CDN
 	 * @param serviceName [required] The internal name of your CDN Website offer
@@ -97,7 +97,7 @@ public class ApiOvhCdnwebsite extends ApiOvhBase {
 
 	/**
 	 * Remove a zone from the CDN
-	 * 
+	 *
 	 * REST: DELETE /cdn/website/{serviceName}/zone
 	 * @param serviceName [required] The internal name of your CDN Website offer
 	 */
@@ -110,7 +110,7 @@ public class ApiOvhCdnwebsite extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cdn/website/{serviceName}/zone/domains/{domain}
 	 * @param serviceName [required] The internal name of your CDN Website offer
 	 * @param domain [required]
@@ -125,7 +125,7 @@ public class ApiOvhCdnwebsite extends ApiOvhBase {
 
 	/**
 	 * Remove a domain from the CDN
-	 * 
+	 *
 	 * REST: DELETE /cdn/website/{serviceName}/zone/domains/{domain}
 	 * @param serviceName [required] The internal name of your CDN Website offer
 	 * @param domain [required]
@@ -140,7 +140,7 @@ public class ApiOvhCdnwebsite extends ApiOvhBase {
 
 	/**
 	 * Task associated to this domain
-	 * 
+	 *
 	 * REST: GET /cdn/website/{serviceName}/zone/domains/{domain}/tasks
 	 * @param serviceName [required] The internal name of your CDN Website offer
 	 * @param domain [required]
@@ -156,7 +156,7 @@ public class ApiOvhCdnwebsite extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cdn/website/{serviceName}/zone/domains/{domain}/tasks/{taskId}
 	 * @param serviceName [required] The internal name of your CDN Website offer
 	 * @param domain [required]
@@ -173,7 +173,7 @@ public class ApiOvhCdnwebsite extends ApiOvhBase {
 
 	/**
 	 * Flush all cache
-	 * 
+	 *
 	 * REST: POST /cdn/website/{serviceName}/zone/domains/{domain}/flush
 	 * @param serviceName [required] The internal name of your CDN Website offer
 	 * @param domain [required]
@@ -188,7 +188,7 @@ public class ApiOvhCdnwebsite extends ApiOvhBase {
 
 	/**
 	 * Get statistics about request on CDN, bandwidth value in Bytes
-	 * 
+	 *
 	 * REST: GET /cdn/website/{serviceName}/zone/domains/{domain}/statistics
 	 * @param period [required]
 	 * @param value [required]
@@ -210,7 +210,7 @@ public class ApiOvhCdnwebsite extends ApiOvhBase {
 
 	/**
 	 * Domain associated to this zone
-	 * 
+	 *
 	 * REST: GET /cdn/website/{serviceName}/zone/domains
 	 * @param serviceName [required] The internal name of your CDN Website offer
 	 */
@@ -224,7 +224,7 @@ public class ApiOvhCdnwebsite extends ApiOvhBase {
 
 	/**
 	 * Configure a domain on CDN
-	 * 
+	 *
 	 * REST: POST /cdn/website/{serviceName}/zone/domains
 	 * @param domain [required] domain to add on CDN
 	 * @param serviceName [required] The internal name of your CDN Website offer
@@ -240,7 +240,7 @@ public class ApiOvhCdnwebsite extends ApiOvhBase {
 
 	/**
 	 * Backend associated to this zone
-	 * 
+	 *
 	 * REST: GET /cdn/website/{serviceName}/zone/backends
 	 * @param serviceName [required] The internal name of your CDN Website offer
 	 */
@@ -253,7 +253,7 @@ public class ApiOvhCdnwebsite extends ApiOvhBase {
 
 	/**
 	 * Configure a backend on the zone
-	 * 
+	 *
 	 * REST: POST /cdn/website/{serviceName}/zone/backends
 	 * @param ipv4 [required] ip to configure on the zone
 	 * @param serviceName [required] The internal name of your CDN Website offer
@@ -269,7 +269,7 @@ public class ApiOvhCdnwebsite extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cdn/website/{serviceName}/zone/backends/{ipv4}
 	 * @param serviceName [required] The internal name of your CDN Website offer
 	 * @param ipv4 [required]
@@ -284,7 +284,7 @@ public class ApiOvhCdnwebsite extends ApiOvhBase {
 
 	/**
 	 * Remove a backend from the zone
-	 * 
+	 *
 	 * REST: DELETE /cdn/website/{serviceName}/zone/backends/{ipv4}
 	 * @param serviceName [required] The internal name of your CDN Website offer
 	 * @param ipv4 [required]
@@ -299,7 +299,7 @@ public class ApiOvhCdnwebsite extends ApiOvhBase {
 
 	/**
 	 * Task associated to this backend
-	 * 
+	 *
 	 * REST: GET /cdn/website/{serviceName}/zone/backends/{ipv4}/tasks
 	 * @param serviceName [required] The internal name of your CDN Website offer
 	 * @param ipv4 [required]
@@ -314,7 +314,7 @@ public class ApiOvhCdnwebsite extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cdn/website/{serviceName}/zone/backends/{ipv4}/tasks/{taskId}
 	 * @param serviceName [required] The internal name of your CDN Website offer
 	 * @param ipv4 [required]
@@ -331,7 +331,7 @@ public class ApiOvhCdnwebsite extends ApiOvhBase {
 
 	/**
 	 * Task associated to this zone
-	 * 
+	 *
 	 * REST: GET /cdn/website/{serviceName}/zone/tasks
 	 * @param serviceName [required] The internal name of your CDN Website offer
 	 */
@@ -344,7 +344,7 @@ public class ApiOvhCdnwebsite extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cdn/website/{serviceName}/zone/tasks/{taskId}
 	 * @param serviceName [required] The internal name of your CDN Website offer
 	 * @param taskId [required]
@@ -359,7 +359,7 @@ public class ApiOvhCdnwebsite extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /cdn/website
 	 */
 	public ArrayList<String> GET() throws IOException {

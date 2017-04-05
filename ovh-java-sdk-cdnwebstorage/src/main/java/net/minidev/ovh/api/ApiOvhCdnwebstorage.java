@@ -24,7 +24,7 @@ public class ApiOvhCdnwebstorage extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cdn/webstorage/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your CDN Static offer
 	 */
@@ -37,7 +37,7 @@ public class ApiOvhCdnwebstorage extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /cdn/webstorage/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your CDN Static offer
@@ -50,7 +50,7 @@ public class ApiOvhCdnwebstorage extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cdn/webstorage/{serviceName}
 	 * @param serviceName [required] The internal name of your CDN Static offer
 	 */
@@ -63,7 +63,7 @@ public class ApiOvhCdnwebstorage extends ApiOvhBase {
 
 	/**
 	 * Return stats about bandwidth consumption
-	 * 
+	 *
 	 * REST: GET /cdn/webstorage/{serviceName}/statistics
 	 * @param period [required]
 	 * @param type [required]
@@ -81,7 +81,7 @@ public class ApiOvhCdnwebstorage extends ApiOvhBase {
 
 	/**
 	 * Gives for customer credentials to accesss swift account
-	 * 
+	 *
 	 * REST: GET /cdn/webstorage/{serviceName}/credentials
 	 * @param serviceName [required] The internal name of your CDN Static offer
 	 */
@@ -94,7 +94,7 @@ public class ApiOvhCdnwebstorage extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /cdn/webstorage
 	 */
 	public ArrayList<String> GET() throws IOException {

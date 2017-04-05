@@ -19,7 +19,7 @@ public class ApiOvhAuth extends ApiOvhBase {
 
 	/**
 	 * Get the current credential details
-	 * 
+	 *
 	 * REST: GET /auth/currentCredential
 	 */
 	public OvhCredential currentCredential_GET() throws IOException {
@@ -30,7 +30,7 @@ public class ApiOvhAuth extends ApiOvhBase {
 
 	/**
 	 * Get the current time of the OVH servers, since UNIX epoch
-	 * 
+	 *
 	 * REST: GET /auth/time
 	 */
 	public Long time_GET() throws IOException {
@@ -41,7 +41,7 @@ public class ApiOvhAuth extends ApiOvhBase {
 
 	/**
 	 * Expire current credential
-	 * 
+	 *
 	 * REST: POST /auth/logout
 	 */
 	public void logout_POST() throws IOException {
@@ -51,7 +51,7 @@ public class ApiOvhAuth extends ApiOvhBase {
 
 	/**
 	 * Request a new credential for your application
-	 * 
+	 *
 	 * REST: POST /auth/credential
 	 * @param accessRules [required] Access required for your application
 	 * @param redirection [required] Where you want to redirect the user after sucessfull authentication

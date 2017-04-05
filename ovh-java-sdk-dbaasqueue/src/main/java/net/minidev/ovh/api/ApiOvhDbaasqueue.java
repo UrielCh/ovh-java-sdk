@@ -30,7 +30,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dbaas/queue/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal ID of your Queue app
 	 */
@@ -43,7 +43,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /dbaas/queue/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal ID of your Queue app
@@ -56,7 +56,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * List all topics of the application
-	 * 
+	 *
 	 * REST: GET /dbaas/queue/{serviceName}/topic
 	 * @param serviceName [required] Application ID
 	 */
@@ -70,7 +70,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * Create a topic
-	 * 
+	 *
 	 * REST: POST /dbaas/queue/{serviceName}/topic
 	 * @param serviceName [required] Application ID
 	 * @param id [required] Topic ID
@@ -90,7 +90,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * Get a topic
-	 * 
+	 *
 	 * REST: GET /dbaas/queue/{serviceName}/topic/{topicId}
 	 * @param serviceName [required] Application ID
 	 * @param topicId [required] Topic ID
@@ -105,7 +105,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * Update a topic configuration
-	 * 
+	 *
 	 * REST: PUT /dbaas/queue/{serviceName}/topic/{topicId}
 	 * @param serviceName [required] Application ID
 	 * @param topicId [required] Topic ID
@@ -122,7 +122,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * Delete a topic
-	 * 
+	 *
 	 * REST: DELETE /dbaas/queue/{serviceName}/topic/{topicId}
 	 * @param serviceName [required] Application ID
 	 * @param topicId [required] Topic ID
@@ -136,7 +136,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * Get an application
-	 * 
+	 *
 	 * REST: GET /dbaas/queue/{serviceName}
 	 * @param serviceName [required] Application ID
 	 */
@@ -149,7 +149,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * Update an application
-	 * 
+	 *
 	 * REST: PUT /dbaas/queue/{serviceName}
 	 * @param serviceName [required] Application ID
 	 * @param name [required] Application name
@@ -165,7 +165,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * List all regions ID
-	 * 
+	 *
 	 * REST: GET /dbaas/queue/{serviceName}/region
 	 * @param serviceName [required] Application ID
 	 */
@@ -178,7 +178,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * Get one region
-	 * 
+	 *
 	 * REST: GET /dbaas/queue/{serviceName}/region/{regionId}
 	 * @param serviceName [required] Application ID
 	 * @param regionId [required] Region ID
@@ -193,7 +193,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * Launch a contact change procedure
-	 * 
+	 *
 	 * REST: POST /dbaas/queue/{serviceName}/changeContact
 	 * @param contactAdmin The contact to set as admin contact
 	 * @param contactTech The contact to set as tech contact
@@ -214,7 +214,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * Create a key
-	 * 
+	 *
 	 * REST: POST /dbaas/queue/{serviceName}/key
 	 * @param serviceName [required] Application ID
 	 * @param name [required] Key name
@@ -230,7 +230,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * List all keys of the application
-	 * 
+	 *
 	 * REST: GET /dbaas/queue/{serviceName}/key
 	 * @param serviceName [required] Application ID
 	 */
@@ -243,7 +243,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * Get a key
-	 * 
+	 *
 	 * REST: GET /dbaas/queue/{serviceName}/key/{keyId}
 	 * @param serviceName [required] Application ID
 	 * @param keyId [required] Key ID
@@ -258,7 +258,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * Update a key name
-	 * 
+	 *
 	 * REST: PUT /dbaas/queue/{serviceName}/key/{keyId}
 	 * @param serviceName [required] Application ID
 	 * @param keyId [required] Key ID
@@ -276,7 +276,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * Delete a key
-	 * 
+	 *
 	 * REST: DELETE /dbaas/queue/{serviceName}/key/{keyId}
 	 * @param serviceName [required] Application ID
 	 * @param keyId [required] Key ID
@@ -290,7 +290,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * Generate a new key secret
-	 * 
+	 *
 	 * REST: POST /dbaas/queue/{serviceName}/key/{keyId}/changeSecret
 	 * @param serviceName [required] Application ID
 	 * @param keyId [required] Key ID
@@ -305,7 +305,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * Configure an application
-	 * 
+	 *
 	 * REST: POST /dbaas/queue/{serviceName}/configure
 	 * @param serviceName [required] Application ID
 	 * @param name [required] Application name
@@ -323,7 +323,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * Create a user
-	 * 
+	 *
 	 * REST: POST /dbaas/queue/{serviceName}/user
 	 * @param serviceName [required] Application ID
 	 * @param name [required] User name
@@ -341,7 +341,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * List all users of the application
-	 * 
+	 *
 	 * REST: GET /dbaas/queue/{serviceName}/user
 	 * @param serviceName [required] Application ID
 	 */
@@ -354,7 +354,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * Get user roles
-	 * 
+	 *
 	 * REST: GET /dbaas/queue/{serviceName}/user/{userId}/roles
 	 * @param serviceName [required] Application ID
 	 * @param userId [required] User ID
@@ -369,7 +369,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * Add a role to a user
-	 * 
+	 *
 	 * REST: POST /dbaas/queue/{serviceName}/user/{userId}/roles
 	 * @param serviceName [required] Application ID
 	 * @param userId [required] User ID
@@ -387,7 +387,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * Delete a role from a user's ones
-	 * 
+	 *
 	 * REST: DELETE /dbaas/queue/{serviceName}/user/{userId}/roles/{role}
 	 * @param serviceName [required] Application ID
 	 * @param userId [required] User ID
@@ -403,7 +403,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * Get a user
-	 * 
+	 *
 	 * REST: GET /dbaas/queue/{serviceName}/user/{userId}
 	 * @param serviceName [required] Application ID
 	 * @param userId [required] User ID
@@ -418,7 +418,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * Delete a user
-	 * 
+	 *
 	 * REST: DELETE /dbaas/queue/{serviceName}/user/{userId}
 	 * @param serviceName [required] Application ID
 	 * @param userId [required] User ID
@@ -432,7 +432,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * Generate a new user password
-	 * 
+	 *
 	 * REST: POST /dbaas/queue/{serviceName}/user/{userId}/changePassword
 	 * @param serviceName [required] Application ID
 	 * @param userId [required] User ID
@@ -447,7 +447,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * Get metrics account
-	 * 
+	 *
 	 * REST: GET /dbaas/queue/{serviceName}/metrics/account
 	 * @param serviceName [required] Application ID
 	 */
@@ -460,7 +460,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * List all roles of the application
-	 * 
+	 *
 	 * REST: GET /dbaas/queue/{serviceName}/role
 	 * @param serviceName [required] Application ID
 	 */
@@ -473,7 +473,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * Create a role
-	 * 
+	 *
 	 * REST: POST /dbaas/queue/{serviceName}/role
 	 * @param serviceName [required] Application ID
 	 * @param name [required] Role name
@@ -495,7 +495,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * Get a role
-	 * 
+	 *
 	 * REST: GET /dbaas/queue/{serviceName}/role/{roleName}
 	 * @param serviceName [required] Application ID
 	 * @param roleName [required] Role name
@@ -510,7 +510,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * Update a role
-	 * 
+	 *
 	 * REST: PUT /dbaas/queue/{serviceName}/role/{roleName}
 	 * @param serviceName [required] Application ID
 	 * @param roleName [required] Role name
@@ -534,7 +534,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * Delete a role
-	 * 
+	 *
 	 * REST: DELETE /dbaas/queue/{serviceName}/role/{roleName}
 	 * @param serviceName [required] Application ID
 	 * @param roleName [required] Role name
@@ -548,7 +548,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /dbaas/queue
 	 */
 	public ArrayList<String> GET() throws IOException {

@@ -34,7 +34,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Get informations about the order of one cluster
-	 * 
+	 *
 	 * REST: GET /cluster/hadoop/orderInformations
 	 */
 	public OvhOrderInformations orderInformations_GET() throws IOException {
@@ -45,7 +45,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cluster/hadoop/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your cluster
 	 */
@@ -58,7 +58,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /cluster/hadoop/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your cluster
@@ -71,7 +71,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cluster/hadoop/{serviceName}
 	 * @param serviceName [required] The internal name of your cluster
 	 */
@@ -84,7 +84,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Terminate your service. THE CLUSTER WILL BE DELETED. ALL YOUR DATA WILL BE LOST
-	 * 
+	 *
 	 * REST: POST /cluster/hadoop/{serviceName}/terminate
 	 * @param serviceName [required] The internal name of your cluster
 	 */
@@ -97,7 +97,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Get the current node consumptions that you will billed for on the next bill
-	 * 
+	 *
 	 * REST: GET /cluster/hadoop/{serviceName}/nodeConsumptions
 	 * @param serviceName [required] The internal name of your cluster
 	 */
@@ -111,7 +111,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Nodes of the Cluster
-	 * 
+	 *
 	 * REST: GET /cluster/hadoop/{serviceName}/node
 	 * @param softwareProfile [required] Filter the value of softwareProfile property (=)
 	 * @param serviceName [required] The internal name of your cluster
@@ -127,7 +127,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cluster/hadoop/{serviceName}/node/{hostname}
 	 * @param serviceName [required] The internal name of your cluster
 	 * @param hostname [required] Hostname of the node
@@ -142,7 +142,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Remove this Node from the Cluster
-	 * 
+	 *
 	 * REST: DELETE /cluster/hadoop/{serviceName}/node/{hostname}
 	 * @param serviceName [required] The internal name of your cluster
 	 * @param hostname [required] Hostname of the node
@@ -157,7 +157,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Decommission the node and all the services on it
-	 * 
+	 *
 	 * REST: POST /cluster/hadoop/{serviceName}/node/{hostname}/decommission
 	 * @param serviceName [required] The internal name of your cluster
 	 * @param hostname [required] Hostname of the node
@@ -172,7 +172,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Roles (ie set of Hadoop services) of the Node
-	 * 
+	 *
 	 * REST: GET /cluster/hadoop/{serviceName}/node/{hostname}/role
 	 * @param serviceName [required] The internal name of your cluster
 	 * @param hostname [required] Hostname of the node
@@ -188,7 +188,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Add the Role to the Node
-	 * 
+	 *
 	 * REST: POST /cluster/hadoop/{serviceName}/node/{hostname}/role
 	 * @param type [required] Role name
 	 * @param serviceName [required] The internal name of your cluster
@@ -206,7 +206,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Restart the role on the node (THIS ACTION WILL RESTART OTHER DEPENDANT ROLES)
-	 * 
+	 *
 	 * REST: POST /cluster/hadoop/{serviceName}/node/{hostname}/role/{type}/restart
 	 * @param serviceName [required] The internal name of your cluster
 	 * @param hostname [required] Hostname of the node
@@ -223,7 +223,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cluster/hadoop/{serviceName}/node/{hostname}/role/{type}
 	 * @param serviceName [required] The internal name of your cluster
 	 * @param hostname [required] Hostname of the node
@@ -240,7 +240,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Remove this Role from the Node
-	 * 
+	 *
 	 * REST: DELETE /cluster/hadoop/{serviceName}/node/{hostname}/role/{type}
 	 * @param serviceName [required] The internal name of your cluster
 	 * @param hostname [required] Hostname of the node
@@ -257,7 +257,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Stop the role on the node (THIS ACTION WILL STOP OTHER DEPENDANT ROLES)
-	 * 
+	 *
 	 * REST: POST /cluster/hadoop/{serviceName}/node/{hostname}/role/{type}/stop
 	 * @param serviceName [required] The internal name of your cluster
 	 * @param hostname [required] Hostname of the node
@@ -274,7 +274,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Start the role on the node
-	 * 
+	 *
 	 * REST: POST /cluster/hadoop/{serviceName}/node/{hostname}/role/{type}/start
 	 * @param serviceName [required] The internal name of your cluster
 	 * @param hostname [required] Hostname of the node
@@ -291,7 +291,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Recommission the node and all the services on it
-	 * 
+	 *
 	 * REST: POST /cluster/hadoop/{serviceName}/node/{hostname}/recommission
 	 * @param serviceName [required] The internal name of your cluster
 	 * @param hostname [required] Hostname of the node
@@ -306,7 +306,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Users associated with this Hadoop Cluster
-	 * 
+	 *
 	 * REST: GET /cluster/hadoop/{serviceName}/user
 	 * @param serviceName [required] The internal name of your cluster
 	 */
@@ -319,7 +319,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Add an User to your cluster
-	 * 
+	 *
 	 * REST: POST /cluster/hadoop/{serviceName}/user
 	 * @param hue [required] Whether or not the User is allowed to access to the Hue interface
 	 * @param clouderaManager [required] Whether or not the User is allowed to access to the Cloudera Manager interface
@@ -343,7 +343,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cluster/hadoop/{serviceName}/user/{username}
 	 * @param serviceName [required] The internal name of your cluster
 	 * @param username [required] The username of the User
@@ -358,7 +358,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /cluster/hadoop/{serviceName}/user/{username}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your cluster
@@ -373,7 +373,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Remove this User
-	 * 
+	 *
 	 * REST: DELETE /cluster/hadoop/{serviceName}/user/{username}
 	 * @param serviceName [required] The internal name of your cluster
 	 * @param username [required] The username of the User
@@ -388,7 +388,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Reset the password for a given Hadoop Cluster User
-	 * 
+	 *
 	 * REST: POST /cluster/hadoop/{serviceName}/user/{username}/resetPassword
 	 * @param password [required] Password of the User
 	 * @param serviceName [required] The internal name of your cluster
@@ -406,7 +406,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * List of orderable Node profiles
-	 * 
+	 *
 	 * REST: GET /cluster/hadoop/{serviceName}/orderableNodeProfiles
 	 * @param serviceName [required] The internal name of your cluster
 	 */
@@ -419,7 +419,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Restart the Cloudera Manager Hadoop Cluster (THIS ACTION WILL RESTART EVERY SERVICE)
-	 * 
+	 *
 	 * REST: POST /cluster/hadoop/{serviceName}/restart
 	 * @param serviceName [required] The internal name of your cluster
 	 */
@@ -432,7 +432,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Network ACL associated with this Hadoop Cluster
-	 * 
+	 *
 	 * REST: GET /cluster/hadoop/{serviceName}/networkAcl
 	 * @param serviceName [required] The internal name of your cluster
 	 */
@@ -445,7 +445,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Add an ACL to your cluster
-	 * 
+	 *
 	 * REST: POST /cluster/hadoop/{serviceName}/networkAcl
 	 * @param block [required] IP block to allow
 	 * @param description [required] Free description
@@ -463,7 +463,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cluster/hadoop/{serviceName}/networkAcl/{block}
 	 * @param serviceName [required] The internal name of your cluster
 	 * @param block [required] IP Block to allow
@@ -478,7 +478,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /cluster/hadoop/{serviceName}/networkAcl/{block}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your cluster
@@ -493,7 +493,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Remove this ACL
-	 * 
+	 *
 	 * REST: DELETE /cluster/hadoop/{serviceName}/networkAcl/{block}
 	 * @param serviceName [required] The internal name of your cluster
 	 * @param block [required] IP Block to allow
@@ -508,7 +508,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Detailed description for each Node profile
-	 * 
+	 *
 	 * REST: GET /cluster/hadoop/{serviceName}/nodeBillingProfiles
 	 * @param serviceName [required] The internal name of your cluster
 	 */
@@ -522,7 +522,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Stop a Cloudera Manager Hadoop Cluster (THIS ACTION WILL STOP EVERY SERVICE)
-	 * 
+	 *
 	 * REST: POST /cluster/hadoop/{serviceName}/stop
 	 * @param serviceName [required] The internal name of your cluster
 	 */
@@ -535,7 +535,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Tasks associated with this Hadoop Cluster
-	 * 
+	 *
 	 * REST: GET /cluster/hadoop/{serviceName}/task
 	 * @param status [required] Filter the value of status property (=)
 	 * @param serviceName [required] The internal name of your cluster
@@ -551,7 +551,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /cluster/hadoop/{serviceName}/task/{taskId}
 	 * @param serviceName [required] The internal name of your cluster
 	 * @param taskId [required]
@@ -566,7 +566,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Restart a Cloudera Manager service (THIS ACTION WILL RESTART OTHER DEPENDANT SERVICES)
-	 * 
+	 *
 	 * REST: POST /cluster/hadoop/{serviceName}/service/restart
 	 * @param service [required] Name of the service to be restarted
 	 * @param serviceName [required] The internal name of your cluster
@@ -582,7 +582,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Stop a Cloudera Manager service (THIS ACTION WILL STOP OTHER DEPENDANT SERVICES)
-	 * 
+	 *
 	 * REST: POST /cluster/hadoop/{serviceName}/service/stop
 	 * @param service [required] Name of the service to be stopped
 	 * @param serviceName [required] The internal name of your cluster
@@ -598,7 +598,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Start a Cloudera Manager service
-	 * 
+	 *
 	 * REST: POST /cluster/hadoop/{serviceName}/service/start
 	 * @param service [required] Name of the service to be started
 	 * @param serviceName [required] The internal name of your cluster
@@ -614,7 +614,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Get the current consumptions that you will billed for on the next bill
-	 * 
+	 *
 	 * REST: GET /cluster/hadoop/{serviceName}/consumptions
 	 * @param serviceName [required] The internal name of your cluster
 	 */
@@ -627,7 +627,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Order a new node in the cluster
-	 * 
+	 *
 	 * REST: POST /cluster/hadoop/{serviceName}/orderNewNodeHourly
 	 * @param nodeProfile [required] Node profile you want to order
 	 * @param serviceName [required] The internal name of your cluster
@@ -643,7 +643,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Start the Cloudera Manager Hadoop Cluster
-	 * 
+	 *
 	 * REST: POST /cluster/hadoop/{serviceName}/start
 	 * @param serviceName [required] The internal name of your cluster
 	 */
@@ -656,7 +656,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /cluster/hadoop
 	 */
 	public ArrayList<String> GET() throws IOException {
@@ -667,7 +667,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 
 	/**
 	 * Get the orderable node profiles and their characteristics
-	 * 
+	 *
 	 * REST: GET /cluster/hadoop/orderableNodeProfiles
 	 */
 	public ArrayList<OvhNodeBillingProfile> orderableNodeProfiles_GET() throws IOException {

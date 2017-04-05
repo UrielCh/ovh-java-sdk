@@ -20,7 +20,7 @@ public class ApiOvhEmailimapCopy extends ApiOvhBase {
 
 	/**
 	 * Copy messages between two mailboxes
-	 * 
+	 *
 	 * REST: POST /email/imapCopy
 	 * @param to [required] Where you want to put messages
 	 * @param from [required] Where you have messages
@@ -36,7 +36,7 @@ public class ApiOvhEmailimapCopy extends ApiOvhBase {
 
 	/**
 	 * get information of task
-	 * 
+	 *
 	 * REST: GET /email/imapCopy/task
 	 * @param id [required] Id of task
 	 * @param secretKey [required] Secret key of task

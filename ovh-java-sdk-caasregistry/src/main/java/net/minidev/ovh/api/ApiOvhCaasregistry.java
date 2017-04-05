@@ -29,7 +29,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /caas/registry/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal ID of your project
 	 */
@@ -42,7 +42,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /caas/registry/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal ID of your project
@@ -55,7 +55,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 
 	/**
 	 * Inspect service.
-	 * 
+	 *
 	 * REST: GET /caas/registry/{serviceName}
 	 * @param serviceName [required] Service name
 	 */
@@ -68,7 +68,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 
 	/**
 	 * Create user
-	 * 
+	 *
 	 * REST: POST /caas/registry/{serviceName}/users
 	 * @param body [required] A registry user account
 	 * @param serviceName [required] Service name
@@ -82,7 +82,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 
 	/**
 	 * List users
-	 * 
+	 *
 	 * REST: GET /caas/registry/{serviceName}/users
 	 * @param serviceName [required] Service name
 	 */
@@ -96,7 +96,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 
 	/**
 	 * Delete user
-	 * 
+	 *
 	 * REST: DELETE /caas/registry/{serviceName}/users/{userId}
 	 * @param serviceName [required] Service name
 	 * @param userId [required] User id
@@ -110,7 +110,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 
 	/**
 	 * Inspect user
-	 * 
+	 *
 	 * REST: GET /caas/registry/{serviceName}/users/{userId}
 	 * @param serviceName [required] Service name
 	 * @param userId [required] User id
@@ -125,7 +125,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 
 	/**
 	 * Update user password
-	 * 
+	 *
 	 * REST: POST /caas/registry/{serviceName}/users/{userId}/changePassword
 	 * @param serviceName [required] Service name
 	 * @param userId [required] User id
@@ -140,7 +140,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 
 	/**
 	 * Launch a contact change procedure
-	 * 
+	 *
 	 * REST: POST /caas/registry/{serviceName}/changeContact
 	 * @param contactAdmin The contact to set as admin contact
 	 * @param contactTech The contact to set as tech contact
@@ -161,7 +161,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 
 	/**
 	 * Create namespace
-	 * 
+	 *
 	 * REST: POST /caas/registry/{serviceName}/namespaces
 	 * @param body [required] A namespace in which a user can either read, write or delete images
 	 * @param serviceName [required] Service name
@@ -175,7 +175,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 
 	/**
 	 * List namespace
-	 * 
+	 *
 	 * REST: GET /caas/registry/{serviceName}/namespaces
 	 * @param serviceName [required] Service name
 	 */
@@ -188,7 +188,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 
 	/**
 	 * Delete namespace
-	 * 
+	 *
 	 * REST: DELETE /caas/registry/{serviceName}/namespaces/{namespaceId}
 	 * @param namespaceId [required] Namespace id
 	 * @param serviceName [required] Service name
@@ -202,7 +202,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 
 	/**
 	 * Inspect namespace
-	 * 
+	 *
 	 * REST: GET /caas/registry/{serviceName}/namespaces/{namespaceId}
 	 * @param namespaceId [required] Namespace id
 	 * @param serviceName [required] Service name
@@ -217,7 +217,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 
 	/**
 	 * List all images in namespace
-	 * 
+	 *
 	 * REST: GET /caas/registry/{serviceName}/namespaces/{namespaceId}/images
 	 * @param namespaceId [required] Namespace id
 	 * @param serviceName [required] Service name
@@ -232,7 +232,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 
 	/**
 	 * Delete image
-	 * 
+	 *
 	 * REST: DELETE /caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}
 	 * @param imageId [required] Image id
 	 * @param namespaceId [required] Namespace id
@@ -248,7 +248,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 
 	/**
 	 * Inspect image
-	 * 
+	 *
 	 * REST: GET /caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}
 	 * @param imageId [required] Image id
 	 * @param namespaceId [required] Namespace id
@@ -265,7 +265,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 
 	/**
 	 * Update image
-	 * 
+	 *
 	 * REST: PUT /caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}
 	 * @param body [required] A container image
 	 * @param imageId [required] Image id
@@ -283,7 +283,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 
 	/**
 	 * Create image permissions
-	 * 
+	 *
 	 * REST: POST /caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/permissions
 	 * @param imageId [required] Image id
 	 * @param namespaceId [required] Namespace id
@@ -301,7 +301,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 
 	/**
 	 * List image permissions
-	 * 
+	 *
 	 * REST: GET /caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/permissions
 	 * @param imageId [required] Image id
 	 * @param namespaceId [required] Namespace id
@@ -318,7 +318,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 
 	/**
 	 * Delete image permissions.
-	 * 
+	 *
 	 * REST: DELETE /caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/permissions/{permissionId}
 	 * @param imageId [required] Image id
 	 * @param namespaceId [required] Namespace id
@@ -336,7 +336,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 
 	/**
 	 * Inspect image permissions
-	 * 
+	 *
 	 * REST: GET /caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/permissions/{permissionId}
 	 * @param imageId [required] Image id
 	 * @param namespaceId [required] Namespace id
@@ -355,7 +355,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 
 	/**
 	 * Inspect image tag
-	 * 
+	 *
 	 * REST: GET /caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/tags/{tagId}
 	 * @param imageId [required] Image id
 	 * @param namespaceId [required] Namespace id
@@ -374,7 +374,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 
 	/**
 	 * List image tags
-	 * 
+	 *
 	 * REST: GET /caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/tags
 	 * @param imageId [required] Image id
 	 * @param namespaceId [required] Namespace id
@@ -391,7 +391,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 
 	/**
 	 * Create namespace permissions
-	 * 
+	 *
 	 * REST: POST /caas/registry/{serviceName}/namespaces/{namespaceId}/permissions
 	 * @param namespaceId [required] Namespace id
 	 * @param body [required] Permissions of a user over a namespace
@@ -407,7 +407,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 
 	/**
 	 * List namespace permissions
-	 * 
+	 *
 	 * REST: GET /caas/registry/{serviceName}/namespaces/{namespaceId}/permissions
 	 * @param namespaceId [required] Namespace id
 	 * @param serviceName [required] Service name
@@ -422,7 +422,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 
 	/**
 	 * Delete namespace permissions
-	 * 
+	 *
 	 * REST: DELETE /caas/registry/{serviceName}/namespaces/{namespaceId}/permissions/{permissionId}
 	 * @param namespaceId [required] Namespace id
 	 * @param permissionId [required] Permission id
@@ -438,7 +438,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 
 	/**
 	 * Inspect permission
-	 * 
+	 *
 	 * REST: GET /caas/registry/{serviceName}/namespaces/{namespaceId}/permissions/{permissionId}
 	 * @param namespaceId [required] Namespace id
 	 * @param permissionId [required] Permission id
@@ -455,7 +455,7 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /caas/registry
 	 */
 	public ArrayList<String> GET() throws IOException {

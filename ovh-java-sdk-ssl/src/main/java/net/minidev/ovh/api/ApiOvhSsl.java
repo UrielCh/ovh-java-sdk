@@ -21,7 +21,7 @@ public class ApiOvhSsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ssl/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your SSL service
 	 */
@@ -34,7 +34,7 @@ public class ApiOvhSsl extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /ssl/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your SSL service
@@ -47,7 +47,7 @@ public class ApiOvhSsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ssl/{serviceName}
 	 * @param serviceName [required] The internal name of your SSL service
 	 */
@@ -60,7 +60,7 @@ public class ApiOvhSsl extends ApiOvhBase {
 
 	/**
 	 * Tasks associated to this ssl
-	 * 
+	 *
 	 * REST: GET /ssl/{serviceName}/tasks
 	 * @param serviceName [required] The internal name of your SSL service
 	 */
@@ -74,7 +74,7 @@ public class ApiOvhSsl extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /ssl/{serviceName}/tasks/{taskId}
 	 * @param serviceName [required] The internal name of your SSL service
 	 * @param taskId [required]
@@ -89,7 +89,7 @@ public class ApiOvhSsl extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /ssl
 	 */
 	public ArrayList<String> GET() throws IOException {

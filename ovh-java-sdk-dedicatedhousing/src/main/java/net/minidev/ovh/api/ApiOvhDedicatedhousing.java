@@ -27,7 +27,7 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/housing/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your Housing bay
 	 */
@@ -40,7 +40,7 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /dedicated/housing/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your Housing bay
@@ -53,7 +53,7 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/housing/{serviceName}
 	 * @param serviceName [required] The internal name of your Housing bay
 	 */
@@ -66,7 +66,7 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/housing/{serviceName}/features/backupFTP
 	 * @param serviceName [required] The internal name of your Housing bay
 	 */
@@ -79,7 +79,7 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 
 	/**
 	 * Create a new Backup FTP space
-	 * 
+	 *
 	 * REST: POST /dedicated/housing/{serviceName}/features/backupFTP
 	 * @param serviceName [required] The internal name of your Housing bay
 	 */
@@ -92,7 +92,7 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 
 	/**
 	 * Terminate your Backup FTP service, ALL DATA WILL BE PERMANENTLY DELETED
-	 * 
+	 *
 	 * REST: DELETE /dedicated/housing/{serviceName}/features/backupFTP
 	 * @param serviceName [required] The internal name of your Housing bay
 	 */
@@ -105,7 +105,7 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 
 	/**
 	 * Change your Backup FTP password
-	 * 
+	 *
 	 * REST: POST /dedicated/housing/{serviceName}/features/backupFTP/password
 	 * @param serviceName [required] The internal name of your Housing bay
 	 */
@@ -118,7 +118,7 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 
 	/**
 	 * Get all IP blocks that can be used in the ACL
-	 * 
+	 *
 	 * REST: GET /dedicated/housing/{serviceName}/features/backupFTP/authorizableBlocks
 	 * @param serviceName [required] The internal name of your Housing bay
 	 */
@@ -132,7 +132,7 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 
 	/**
 	 * List of IP blocks (and protocols to allow on these blocks) authorized on your backup FTP
-	 * 
+	 *
 	 * REST: GET /dedicated/housing/{serviceName}/features/backupFTP/access
 	 * @param serviceName [required] The internal name of your Housing bay
 	 */
@@ -145,7 +145,7 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 
 	/**
 	 * Create a new Backup FTP ACL
-	 * 
+	 *
 	 * REST: POST /dedicated/housing/{serviceName}/features/backupFTP/access
 	 * @param ftp [required] Wether to allow the FTP protocol for this ACL
 	 * @param ipBlock [required] The IP Block specific to this ACL. It musts belong to your server.
@@ -167,7 +167,7 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/housing/{serviceName}/features/backupFTP/access/{ipBlock}
 	 * @param serviceName [required] The internal name of your Housing bay
 	 * @param ipBlock [required] The IP Block specific to this ACL
@@ -182,7 +182,7 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /dedicated/housing/{serviceName}/features/backupFTP/access/{ipBlock}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your Housing bay
@@ -197,7 +197,7 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 
 	/**
 	 * Revoke this ACL
-	 * 
+	 *
 	 * REST: DELETE /dedicated/housing/{serviceName}/features/backupFTP/access/{ipBlock}
 	 * @param serviceName [required] The internal name of your Housing bay
 	 * @param ipBlock [required] The IP Block specific to this ACL
@@ -212,7 +212,7 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 
 	/**
 	 * Is an APC orderable for this housing bay
-	 * 
+	 *
 	 * REST: GET /dedicated/housing/{serviceName}/orderable/APC
 	 * @param serviceName [required] The internal name of your Housing bay
 	 */
@@ -225,7 +225,7 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 
 	/**
 	 * View task list
-	 * 
+	 *
 	 * REST: GET /dedicated/housing/{serviceName}/task
 	 * @param function [required] Filter the value of function property (=)
 	 * @param status [required] Filter the value of status property (=)
@@ -243,7 +243,7 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/housing/{serviceName}/task/{taskId}
 	 * @param serviceName [required] The internal name of your Housing bay
 	 * @param taskId [required] the id of the task
@@ -258,7 +258,7 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 
 	/**
 	 * this action stop the task progression if it's possible
-	 * 
+	 *
 	 * REST: POST /dedicated/housing/{serviceName}/task/{taskId}/cancel
 	 * @param serviceName [required] The internal name of your Housing bay
 	 * @param taskId [required] the id of the task
@@ -272,7 +272,7 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /dedicated/housing
 	 */
 	public ArrayList<String> GET() throws IOException {

@@ -27,7 +27,7 @@ public class ApiOvhPaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Get quotas
-	 * 
+	 *
 	 * REST: GET /paas/timeseries/{serviceName}/quota
 	 * @param serviceName [required] Service Name
 	 */
@@ -41,7 +41,7 @@ public class ApiOvhPaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /paas/timeseries/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your timeseries project
 	 */
@@ -54,7 +54,7 @@ public class ApiOvhPaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /paas/timeseries/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your timeseries project
@@ -67,7 +67,7 @@ public class ApiOvhPaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /paas/timeseries/{serviceName}
 	 * @param serviceName [required] The internal name of your timeseries project
 	 */
@@ -80,7 +80,7 @@ public class ApiOvhPaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /paas/timeseries/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your timeseries project
@@ -93,7 +93,7 @@ public class ApiOvhPaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Setup a project
-	 * 
+	 *
 	 * REST: POST /paas/timeseries/{serviceName}/setup
 	 * @param serviceName [required] Service Name
 	 * @param displayName [required] Project name
@@ -117,7 +117,7 @@ public class ApiOvhPaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Get consumption
-	 * 
+	 *
 	 * REST: GET /paas/timeseries/{serviceName}/consumption
 	 * @param serviceName [required] Service Name
 	 */
@@ -131,7 +131,7 @@ public class ApiOvhPaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Get keys for a project
-	 * 
+	 *
 	 * REST: GET /paas/timeseries/{serviceName}/key
 	 * @param serviceName [required] Service Name
 	 */
@@ -145,7 +145,7 @@ public class ApiOvhPaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Create a key for a project
-	 * 
+	 *
 	 * REST: POST /paas/timeseries/{serviceName}/key
 	 * @param serviceName [required] Service Name
 	 * @param description [required] Description
@@ -165,7 +165,7 @@ public class ApiOvhPaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Get a key
-	 * 
+	 *
 	 * REST: GET /paas/timeseries/{serviceName}/key/{keyId}
 	 * @param serviceName [required] Service Name
 	 * @param keyId [required] Key id
@@ -180,7 +180,7 @@ public class ApiOvhPaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Create a key
-	 * 
+	 *
 	 * REST: PUT /paas/timeseries/{serviceName}/key/{keyId}
 	 * @param serviceName [required] Service Name
 	 * @param keyId [required] Key id
@@ -202,7 +202,7 @@ public class ApiOvhPaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Delete a OpenTSDB token
-	 * 
+	 *
 	 * REST: DELETE /paas/timeseries/{serviceName}/key/{keyId}
 	 * @param serviceName [required] Service Name
 	 * @param keyId [required] Key id
@@ -217,7 +217,7 @@ public class ApiOvhPaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Launch a contact change procedure
-	 * 
+	 *
 	 * REST: POST /paas/timeseries/{serviceName}/changeContact
 	 * @param contactAdmin The contact to set as admin contact
 	 * @param contactTech The contact to set as tech contact
@@ -238,7 +238,7 @@ public class ApiOvhPaastimeseries extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /paas/timeseries
 	 */
 	public ArrayList<String> GET() throws IOException {
@@ -250,7 +250,7 @@ public class ApiOvhPaastimeseries extends ApiOvhBase {
 
 	/**
 	 * Get available regions
-	 * 
+	 *
 	 * REST: GET /paas/timeseries/region
 	 */
 	public ArrayList<OvhRegion> region_GET() throws IOException {

@@ -100,7 +100,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -113,7 +113,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /dedicated/server/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -126,7 +126,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Merge a splitted block and route it to the choosen server. You cannot undo this operation
-	 * 
+	 *
 	 * REST: POST /dedicated/server/{serviceName}/ipBlockMerge
 	 * @param block [required] The splitted block you want to merge
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -142,7 +142,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/statistics
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -155,7 +155,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get server opened connections
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/statistics/connection
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -169,7 +169,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Retrieve RTM graph values
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/statistics/chart
 	 * @param period [required] chart period
 	 * @param type [required] RTM chart type
@@ -186,7 +186,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get server cpu informations
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/statistics/cpu
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -199,7 +199,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get server PCI devices informations
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/statistics/pci
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -213,7 +213,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Server disks
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/statistics/disk
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -227,7 +227,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/statistics/disk/{disk}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param disk [required] Disk
@@ -242,7 +242,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get disk smart informations
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/statistics/disk/{disk}/smart
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param disk [required] Disk
@@ -257,7 +257,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get server process
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/statistics/process
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -271,7 +271,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get server os informations
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/statistics/os
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -284,7 +284,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Server raid informations
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/statistics/raid
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -297,7 +297,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/statistics/raid/{unit}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param unit [required] Raid unit
@@ -312,7 +312,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Raid unit volumes
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/statistics/raid/{unit}/volume
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param unit [required] Raid unit
@@ -327,7 +327,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/statistics/raid/{unit}/volume/{volume}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param unit [required] Raid unit
@@ -344,7 +344,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Raid unit volume ports
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/statistics/raid/{unit}/volume/{volume}/port
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param unit [required] Raid unit
@@ -361,7 +361,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/statistics/raid/{unit}/volume/{volume}/port/{port}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param unit [required] Raid unit
@@ -380,7 +380,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get server memory informations
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/statistics/memory
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -394,7 +394,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get server load
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/statistics/load
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -407,7 +407,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Server partitions
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/statistics/partition
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -420,7 +420,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/statistics/partition/{partition}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param partition [required] Partition
@@ -435,7 +435,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Retrieve partition charts
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/statistics/partition/{partition}/chart
 	 * @param period [required] chart period
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -452,7 +452,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get server motherboard hardware informations
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/statistics/motherboard
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -465,7 +465,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * technical intervention history
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/intervention
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -479,7 +479,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/intervention/{interventionId}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param interventionId [required] The intervention id
@@ -494,7 +494,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * List all ip from server
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/ips
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -507,7 +507,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Virtual MAC addresses of the server
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/virtualMac
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -520,7 +520,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Add a virtual mac to an IP address
-	 * 
+	 *
 	 * REST: POST /dedicated/server/{serviceName}/virtualMac
 	 * @param virtualMachineName [required] Friendly name of your Virtual Machine behind this IP/MAC
 	 * @param ipAddress [required] Ip address to link with this virtualMac
@@ -540,7 +540,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/virtualMac/{macAddress}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param macAddress [required] Virtual MAC address in 00:00:00:00:00:00 format
@@ -555,7 +555,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * List of IPs associated to this Virtual MAC
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/virtualMac/{macAddress}/virtualAddress
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param macAddress [required] Virtual MAC address in 00:00:00:00:00:00 format
@@ -570,7 +570,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Add an IP to this Virtual MAC
-	 * 
+	 *
 	 * REST: POST /dedicated/server/{serviceName}/virtualMac/{macAddress}/virtualAddress
 	 * @param virtualMachineName [required] Friendly name of your Virtual Machine behind this IP/MAC
 	 * @param ipAddress [required] IP address to link to this virtual MAC
@@ -590,7 +590,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/virtualMac/{macAddress}/virtualAddress/{ipAddress}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param macAddress [required] Virtual MAC address in 00:00:00:00:00:00 format
@@ -607,7 +607,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Remove this ip from virtual mac , if you remove the last linked Ip, virtualmac will be deleted
-	 * 
+	 *
 	 * REST: DELETE /dedicated/server/{serviceName}/virtualMac/{macAddress}/virtualAddress/{ipAddress}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param macAddress [required] Virtual MAC address in 00:00:00:00:00:00 format
@@ -624,7 +624,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * DNS field to temporarily add to your zone so that we can verify you are the owner of this domain
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/secondaryDnsNameDomainToken
 	 * @param domain [required] The domain to check
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -639,7 +639,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get hardware RAID size for a given configuration
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/install/hardwareRaidSize
 	 * @param templateName [required] Template name
 	 * @param partitionSchemeName [required] Partition scheme name
@@ -656,7 +656,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Retrieve hardware RAID profile
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/install/hardwareRaidProfile
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -669,7 +669,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Retrieve compatible  install templates names
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/install/compatibleTemplates
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -682,7 +682,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Gives some capabilities regarding the template for the current dedicated server.
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/install/templateCapabilities
 	 * @param templateName [required]
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -697,7 +697,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get installation status
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/install/status
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -710,7 +710,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Retrieve compatible  install template partitions scheme
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/install/compatibleTemplatePartitionSchemes
 	 * @param templateName [required]
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -725,7 +725,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Start an install
-	 * 
+	 *
 	 * REST: POST /dedicated/server/{serviceName}/install/start
 	 * @param templateName [required] Template name
 	 * @param partitionSchemeName [required] Partition scheme name
@@ -745,7 +745,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/burst
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -758,7 +758,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /dedicated/server/{serviceName}/burst
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -771,7 +771,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Confirm termination of your service
-	 * 
+	 *
 	 * REST: POST /dedicated/server/{serviceName}/confirmTermination
 	 * @param reason Reason of your termination request
 	 * @param commentary Commentary about your termination request
@@ -791,7 +791,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Server Vracks
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/vrack
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -804,7 +804,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/vrack/{vrack}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param vrack [required] vrack name
@@ -819,7 +819,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * remove this server from this vrack
-	 * 
+	 *
 	 * REST: DELETE /dedicated/server/{serviceName}/vrack/{vrack}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param vrack [required] vrack name
@@ -834,7 +834,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Retrieve vrack traffic graph values
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/vrack/{vrack}/mrtg
 	 * @param period [required] mrtg period
 	 * @param type [required] mrtg type
@@ -854,7 +854,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Server compatibles netboots
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/boot
 	 * @param bootType [required] Filter the value of bootType property (=)
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -869,7 +869,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/boot/{bootId}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param bootId [required] boot id
@@ -884,7 +884,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Option used on this netboot
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/boot/{bootId}/option
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param bootId [required] boot id
@@ -900,7 +900,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/boot/{bootId}/option/{option}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param bootId [required] boot id
@@ -917,7 +917,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Service monitoring details
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/serviceMonitoring
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -930,7 +930,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Add a new service monitoring
-	 * 
+	 *
 	 * REST: POST /dedicated/server/{serviceName}/serviceMonitoring
 	 * @param protocol [required] The protocol to use
 	 * @param challengeText [required] The expected return
@@ -958,7 +958,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Service monitoring alert by email
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/serviceMonitoring/{monitoringId}/alert/email
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param monitoringId [required] This monitoring id
@@ -973,7 +973,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Add a new email alert
-	 * 
+	 *
 	 * REST: POST /dedicated/server/{serviceName}/serviceMonitoring/{monitoringId}/alert/email
 	 * @param email [required] Alert destination
 	 * @param language [required] Alert language
@@ -993,7 +993,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/serviceMonitoring/{monitoringId}/alert/email/{alertId}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param monitoringId [required] This monitoring id
@@ -1010,7 +1010,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /dedicated/server/{serviceName}/serviceMonitoring/{monitoringId}/alert/email/{alertId}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -1027,7 +1027,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Remove this Email alert monitoring
-	 * 
+	 *
 	 * REST: DELETE /dedicated/server/{serviceName}/serviceMonitoring/{monitoringId}/alert/email/{alertId}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param monitoringId [required] This monitoring id
@@ -1043,7 +1043,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Service monitoring alert by SMS
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/serviceMonitoring/{monitoringId}/alert/sms
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param monitoringId [required] This monitoring id
@@ -1058,7 +1058,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Create a SMS alert
-	 * 
+	 *
 	 * REST: POST /dedicated/server/{serviceName}/serviceMonitoring/{monitoringId}/alert/sms
 	 * @param smsAccount [required] Your SMS account
 	 * @param phoneNumberTo [required] Alert destination
@@ -1084,7 +1084,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/serviceMonitoring/{monitoringId}/alert/sms/{alertId}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param monitoringId [required] This monitoring id
@@ -1101,7 +1101,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /dedicated/server/{serviceName}/serviceMonitoring/{monitoringId}/alert/sms/{alertId}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -1118,7 +1118,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Remove this SMS alert
-	 * 
+	 *
 	 * REST: DELETE /dedicated/server/{serviceName}/serviceMonitoring/{monitoringId}/alert/sms/{alertId}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param monitoringId [required] This monitoring id
@@ -1134,7 +1134,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/serviceMonitoring/{monitoringId}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param monitoringId [required] This monitoring id
@@ -1149,7 +1149,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /dedicated/server/{serviceName}/serviceMonitoring/{monitoringId}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -1164,7 +1164,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Remove this service monitoring
-	 * 
+	 *
 	 * REST: DELETE /dedicated/server/{serviceName}/serviceMonitoring/{monitoringId}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param monitoringId [required] This monitoring id
@@ -1178,7 +1178,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Move an Ip failover to this server
-	 * 
+	 *
 	 * REST: POST /dedicated/server/{serviceName}/ipMove
 	 * @param ip [required] The ip to move to this server
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -1194,7 +1194,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Ask for a broken HDD replacement
-	 * 
+	 *
 	 * REST: POST /dedicated/server/{serviceName}/support/replace/hardDiskDrive
 	 * @param disks [required] If 'inverse' is set as 'false', the list of HDD TO REPLACE. If 'inverse' is set as 'true', the list of HDD TO NOT REPLACE.
 	 * @param comment [required] User comment
@@ -1214,7 +1214,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -1227,7 +1227,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /dedicated/server/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -1240,7 +1240,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/secondaryDnsDomains/{domain}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param domain [required] domain on slave server
@@ -1255,7 +1255,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /dedicated/server/{serviceName}/secondaryDnsDomains/{domain}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -1270,7 +1270,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * remove this domain
-	 * 
+	 *
 	 * REST: DELETE /dedicated/server/{serviceName}/secondaryDnsDomains/{domain}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param domain [required] domain on slave server
@@ -1284,7 +1284,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * domain name server informations
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/secondaryDnsDomains/{domain}/dnsServer
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param domain [required] domain on slave server
@@ -1299,7 +1299,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * List of secondary dns domain name
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/secondaryDnsDomains
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -1312,7 +1312,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * add a domain on secondary dns
-	 * 
+	 *
 	 * REST: POST /dedicated/server/{serviceName}/secondaryDnsDomains
 	 * @param domain [required] The domain to add
 	 * @param ip [required]
@@ -1329,7 +1329,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Retrieve available country for IP order
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/ipCountryAvailable
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -1343,7 +1343,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Terminate your service
-	 * 
+	 *
 	 * REST: POST /dedicated/server/{serviceName}/terminate
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -1356,7 +1356,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Launch a contact change procedure
-	 * 
+	 *
 	 * REST: POST /dedicated/server/{serviceName}/changeContact
 	 * @param contactAdmin The contact to set as admin contact
 	 * @param contactTech The contact to set as tech contact
@@ -1376,7 +1376,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Retrieve traffic graph values
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/mrtg
 	 * @param period [required] mrtg period
 	 * @param type [required] mrtg type
@@ -1393,7 +1393,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * List of dedicated server options
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/option
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -1407,7 +1407,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/option/{option}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param option [required] The option name
@@ -1422,7 +1422,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Release a given option
-	 * 
+	 *
 	 * REST: DELETE /dedicated/server/{serviceName}/option/{option}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param option [required] The option name
@@ -1436,7 +1436,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Check if given IP can be moved to this server
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/ipCanBeMovedTo
 	 * @param ip [required] The ip to move to this server
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -1450,7 +1450,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Hard reboot this server
-	 * 
+	 *
 	 * REST: POST /dedicated/server/{serviceName}/reboot
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -1463,7 +1463,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/features/firewall
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -1476,7 +1476,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /dedicated/server/{serviceName}/features/firewall
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -1489,7 +1489,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/features/backupFTP
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -1502,7 +1502,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Create a new Backup FTP space
-	 * 
+	 *
 	 * REST: POST /dedicated/server/{serviceName}/features/backupFTP
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -1515,7 +1515,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Terminate your Backup FTP service, ALL DATA WILL BE PERMANENTLY DELETED
-	 * 
+	 *
 	 * REST: DELETE /dedicated/server/{serviceName}/features/backupFTP
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -1528,7 +1528,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Change your Backup FTP password
-	 * 
+	 *
 	 * REST: POST /dedicated/server/{serviceName}/features/backupFTP/password
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -1541,7 +1541,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get all IP blocks that can be used in the ACL
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/features/backupFTP/authorizableBlocks
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -1554,7 +1554,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * List of IP blocks (and protocols to allow on these blocks) authorized on your backup FTP
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/features/backupFTP/access
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -1567,7 +1567,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Create a new Backup FTP ACL
-	 * 
+	 *
 	 * REST: POST /dedicated/server/{serviceName}/features/backupFTP/access
 	 * @param ftp [required] Wether to allow the FTP protocol for this ACL
 	 * @param ipBlock [required] The IP Block specific to this ACL. It musts belong to your server.
@@ -1589,7 +1589,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/features/backupFTP/access/{ipBlock}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param ipBlock [required] The IP Block specific to this ACL
@@ -1604,7 +1604,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /dedicated/server/{serviceName}/features/backupFTP/access/{ipBlock}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -1619,7 +1619,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Revoke this ACL
-	 * 
+	 *
 	 * REST: DELETE /dedicated/server/{serviceName}/features/backupFTP/access/{ipBlock}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param ipBlock [required] The IP Block specific to this ACL
@@ -1634,7 +1634,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/features/ipmi
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -1647,7 +1647,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Launch test on KVM IPMI interface
-	 * 
+	 *
 	 * REST: POST /dedicated/server/{serviceName}/features/ipmi/test
 	 * @param ttl [required] Result time to live in minutes
 	 * @param type [required] Test to make on KVM IPMI interface
@@ -1665,7 +1665,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Result of http, ping and identification tests on IPMI interface
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/features/ipmi/test
 	 * @param type [required] Test type result on KVM IPMI interface
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -1680,7 +1680,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Reset KVM IPMI interface
-	 * 
+	 *
 	 * REST: POST /dedicated/server/{serviceName}/features/ipmi/resetInterface
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -1693,7 +1693,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Request an acces on KVM IPMI interface
-	 * 
+	 *
 	 * REST: POST /dedicated/server/{serviceName}/features/ipmi/access
 	 * @param ipToAllow [required] IP to allow connection from for this IPMI session
 	 * @param sshKey [required] SSH key name to allow access on KVM/IP interface with (name from /me/sshKey)
@@ -1715,7 +1715,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * IPMI access method
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/features/ipmi/access
 	 * @param type [required] IPMI console access
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -1730,7 +1730,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Reset KVM IPMI sessions
-	 * 
+	 *
 	 * REST: POST /dedicated/server/{serviceName}/features/ipmi/resetSessions
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -1743,7 +1743,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/features/kvm
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -1756,7 +1756,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Dedicated server todos
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/task
 	 * @param function [required] Filter the value of function property (=)
 	 * @param status [required] Filter the value of status property (=)
@@ -1773,7 +1773,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/task/{taskId}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param taskId [required] the id of the task
@@ -1788,7 +1788,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * this action stop the task progression if it's possible
-	 * 
+	 *
 	 * REST: POST /dedicated/server/{serviceName}/task/{taskId}/cancel
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param taskId [required] the id of the task
@@ -1802,7 +1802,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Is a KVM express orderable with your server
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/orderable/kvmExpress
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -1815,7 +1815,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Is professional use orderable with your server
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/orderable/professionalUse
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -1828,7 +1828,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get IP orderable with your server.
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/orderable/ip
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -1841,7 +1841,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get USB keys orderable with your server
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/orderable/usbKey
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -1854,7 +1854,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get the backup storage orderable with your server.
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/orderable/backupStorage
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -1867,7 +1867,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Is a KVM orderable with your server
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/orderable/kvm
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -1880,7 +1880,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Is this feature orderable with your server
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/orderable/feature
 	 * @param feature [required] the feature
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -1895,7 +1895,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get bandwidth orderable with your server.
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/orderable/bandwidth
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -1908,7 +1908,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Add your existing windows license serial to this dedicated server. Will be manageable in /license/windows.
-	 * 
+	 *
 	 * REST: POST /dedicated/server/{serviceName}/license/windows
 	 * @param licenseId [required] Your license serial number
 	 * @param version [required] Your license version
@@ -1926,7 +1926,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get the windows SQL server license compliant with your server.
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/license/compliantWindowsSqlServer
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -1940,7 +1940,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get the windows license compliant with your server.
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/license/compliantWindows
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -1954,7 +1954,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Your own SPLA licenses attached to this dedicated server
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/spla
 	 * @param status [required] Filter the value of status property (=)
 	 * @param type [required] Filter the value of type property (=)
@@ -1971,7 +1971,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Add a new SPLA license
-	 * 
+	 *
 	 * REST: POST /dedicated/server/{serviceName}/spla
 	 * @param type [required] License type
 	 * @param serialNumber [required] License serial number
@@ -1989,7 +1989,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/spla/{id}
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param id [required] License id
@@ -2004,7 +2004,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /dedicated/server/{serviceName}/spla/{id}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your dedicated server
@@ -2019,7 +2019,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Revoke an SPLA license
-	 * 
+	 *
 	 * REST: POST /dedicated/server/{serviceName}/spla/{id}/revoke
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param id [required] License id
@@ -2033,7 +2033,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Retrieve network informations about this dedicated server
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/specifications/network
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -2046,7 +2046,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Retrieve IP capabilities about this dedicated server
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/specifications/ip
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -2059,7 +2059,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Retrieve hardware informations about this dedicated server
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/specifications/hardware
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -2072,7 +2072,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * Secondary nameServer available for your Server
-	 * 
+	 *
 	 * REST: GET /dedicated/server/{serviceName}/secondaryDnsNameServerAvailable
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
@@ -2085,7 +2085,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /dedicated/server
 	 */
 	public ArrayList<String> GET() throws IOException {
@@ -2096,7 +2096,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 
 	/**
 	 * List the availability of dedicated server
-	 * 
+	 *
 	 * REST: GET /dedicated/server/availabilities
 	 * @param country [required] The subsidiary company where the availability is requested
 	 * @param hardware [required] The kind of hardware which is requested

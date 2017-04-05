@@ -21,7 +21,7 @@ public class ApiOvhAllDom extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /allDom/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your allDom
 	 */
@@ -34,7 +34,7 @@ public class ApiOvhAllDom extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /allDom/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your allDom
@@ -47,7 +47,7 @@ public class ApiOvhAllDom extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /allDom/{serviceName}
 	 * @param serviceName [required] The internal name of your allDom
 	 */
@@ -60,7 +60,7 @@ public class ApiOvhAllDom extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /allDom/{serviceName}/domain/{domain}
 	 * @param serviceName [required] The internal name of your allDom
 	 * @param domain [required] Domain name
@@ -75,7 +75,7 @@ public class ApiOvhAllDom extends ApiOvhBase {
 
 	/**
 	 * Domains attached to this allDom
-	 * 
+	 *
 	 * REST: GET /allDom/{serviceName}/domain
 	 * @param domain [required] Filter the value of domain property (like)
 	 * @param serviceName [required] The internal name of your allDom
@@ -91,7 +91,7 @@ public class ApiOvhAllDom extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /allDom
 	 */
 	public ArrayList<String> GET() throws IOException {

@@ -20,7 +20,7 @@ public class ApiOvhStackmis extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /stack/mis/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your MIS service
 	 */
@@ -33,7 +33,7 @@ public class ApiOvhStackmis extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /stack/mis/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your MIS service
@@ -46,7 +46,7 @@ public class ApiOvhStackmis extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /stack/mis/{serviceName}
 	 * @param serviceName [required] The internal name of your MIS service
 	 */
@@ -59,7 +59,7 @@ public class ApiOvhStackmis extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /stack/mis
 	 */
 	public ArrayList<String> GET() throws IOException {

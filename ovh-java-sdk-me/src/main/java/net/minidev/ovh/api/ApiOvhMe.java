@@ -102,7 +102,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me
 	 */
 	public OvhNichandle GET() throws IOException {
@@ -113,7 +113,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /me
 	 * @param body [required] New object properties
 	 */
@@ -124,7 +124,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List of all your IPXE scripts
-	 * 
+	 *
 	 * REST: GET /me/ipxeScript
 	 */
 	public ArrayList<String> ipxeScript_GET() throws IOException {
@@ -136,7 +136,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Add an IPXE script
-	 * 
+	 *
 	 * REST: POST /me/ipxeScript
 	 * @param script [required] Content of your IPXE script
 	 * @param name [required] name of your script
@@ -154,7 +154,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/ipxeScript/{name}
 	 * @param name [required] Name of this script
 	 */
@@ -167,7 +167,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Remove this IPXE Script
-	 * 
+	 *
 	 * REST: DELETE /me/ipxeScript/{name}
 	 * @param name [required] Name of this script
 	 */
@@ -179,7 +179,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List of documents added in your account
-	 * 
+	 *
 	 * REST: GET /me/document
 	 */
 	public ArrayList<String> document_GET() throws IOException {
@@ -190,7 +190,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Create new document
-	 * 
+	 *
 	 * REST: POST /me/document
 	 * @param name [required] File name
 	 * @param tags [required] File tags
@@ -206,7 +206,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Add CORS support on your container
-	 * 
+	 *
 	 * REST: POST /me/document/cors
 	 * @param origin [required] Allow this origin
 	 */
@@ -219,7 +219,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/document/{id}
 	 * @param id [required] Document id
 	 */
@@ -232,7 +232,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /me/document/{id}
 	 * @param body [required] New object properties
 	 * @param id [required] Document id
@@ -245,7 +245,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Delete a document
-	 * 
+	 *
 	 * REST: DELETE /me/document/{id}
 	 * @param id [required] Document id
 	 */
@@ -257,7 +257,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List active SLA
-	 * 
+	 *
 	 * REST: GET /me/sla
 	 */
 	public ArrayList<Long> sla_GET() throws IOException {
@@ -269,7 +269,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Ask for SLA application
-	 * 
+	 *
 	 * REST: POST /me/sla/{id}/apply
 	 * @param id [required] Id of the object
 	 */
@@ -281,7 +281,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Check whether this SLA can be applied on your services
-	 * 
+	 *
 	 * REST: GET /me/sla/{id}/canBeApplied
 	 * @param id [required] Id of the object
 	 */
@@ -294,7 +294,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/sla/{id}
 	 * @param id [required] Id of the object
 	 */
@@ -307,7 +307,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get services impacted by this SLA
-	 * 
+	 *
 	 * REST: GET /me/sla/{id}/services
 	 * @param id [required] Id of the object
 	 */
@@ -321,7 +321,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List of sub-accounts
-	 * 
+	 *
 	 * REST: GET /me/subAccount
 	 */
 	public ArrayList<Long> subAccount_GET() throws IOException {
@@ -332,7 +332,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Create a new sub-account
-	 * 
+	 *
 	 * REST: POST /me/subAccount
 	 * @param description [required] Description of the new sub-account
 	 */
@@ -346,7 +346,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/subAccount/{id}
 	 * @param id [required] Id of the object
 	 */
@@ -359,7 +359,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /me/subAccount/{id}
 	 * @param body [required] New object properties
 	 * @param id [required] Id of the object
@@ -372,7 +372,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Create a consumer key for the current application
-	 * 
+	 *
 	 * REST: POST /me/subAccount/{id}/createConsumerKey
 	 * @param id [required] Id of the object
 	 */
@@ -385,7 +385,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List of all the orders the logged account has
-	 * 
+	 *
 	 * REST: GET /me/order
 	 * @param date_to [required] Filter the value of date property (<=)
 	 * @param date_from [required] Filter the value of date property (>=)
@@ -400,7 +400,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Return main data about the object the processing of the order generated
-	 * 
+	 *
 	 * REST: GET /me/order/{orderId}/paymentMeans
 	 * @param orderId [required]
 	 */
@@ -413,7 +413,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/order/{orderId}
 	 * @param orderId [required]
 	 */
@@ -426,7 +426,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/order/{orderId}/debt
 	 * @param orderId [required]
 	 */
@@ -439,7 +439,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Create an order in order to pay this order's debt
-	 * 
+	 *
 	 * REST: POST /me/order/{orderId}/debt/pay
 	 * @param orderId [required]
 	 */
@@ -452,7 +452,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * All operations related to these debts
-	 * 
+	 *
 	 * REST: GET /me/order/{orderId}/debt/operation
 	 * @param orderId [required]
 	 */
@@ -465,7 +465,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/order/{orderId}/debt/operation/{operationId}
 	 * @param orderId [required]
 	 * @param operationId [required]
@@ -480,7 +480,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Return main data about the object related to this debt operation
-	 * 
+	 *
 	 * REST: GET /me/order/{orderId}/debt/operation/{operationId}/associatedObject
 	 * @param orderId [required]
 	 * @param operationId [required]
@@ -495,7 +495,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/order/{orderId}/payment
 	 * @param orderId [required]
 	 */
@@ -508,7 +508,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/order/{orderId}/refund
 	 * @param orderId [required]
 	 */
@@ -521,7 +521,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Return status of order
-	 * 
+	 *
 	 * REST: GET /me/order/{orderId}/status
 	 * @param orderId [required]
 	 */
@@ -534,7 +534,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Give access to all entries of the order
-	 * 
+	 *
 	 * REST: GET /me/order/{orderId}/details
 	 * @param orderId [required]
 	 */
@@ -547,7 +547,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/order/{orderId}/details/{orderDetailId}
 	 * @param orderId [required]
 	 * @param orderDetailId [required]
@@ -562,7 +562,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List of registered payment mean you can use to pay this order
-	 * 
+	 *
 	 * REST: GET /me/order/{orderId}/availableRegisteredPaymentMean
 	 * @param orderId [required]
 	 */
@@ -576,7 +576,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Pay with an already registered payment mean
-	 * 
+	 *
 	 * REST: POST /me/order/{orderId}/payWithRegisteredPaymentMean
 	 * @param paymentMean [required] The registered payment mean you want to use
 	 * @param orderId [required]
@@ -591,7 +591,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/order/{orderId}/bill
 	 * @param orderId [required]
 	 */
@@ -604,7 +604,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Return main data about the object the processing of the order generated
-	 * 
+	 *
 	 * REST: GET /me/order/{orderId}/associatedObject
 	 * @param orderId [required]
 	 */
@@ -617,7 +617,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List of all OVH things you can subscribe to
-	 * 
+	 *
 	 * REST: GET /me/subscription
 	 */
 	public ArrayList<String> subscription_GET() throws IOException {
@@ -628,7 +628,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/subscription/{subscriptionType}
 	 * @param subscriptionType [required] The type of subscription
 	 */
@@ -641,7 +641,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /me/subscription/{subscriptionType}
 	 * @param body [required] New object properties
 	 * @param subscriptionType [required] The type of subscription
@@ -654,7 +654,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Your customized operating system installation templates
-	 * 
+	 *
 	 * REST: GET /me/installationTemplate
 	 */
 	public ArrayList<String> installationTemplate_GET() throws IOException {
@@ -665,7 +665,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Create a template
-	 * 
+	 *
 	 * REST: POST /me/installationTemplate
 	 * @param defaultLanguage [required]
 	 * @param name [required] Your template name
@@ -682,7 +682,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/installationTemplate/{templateName}
 	 * @param templateName [required] This template name
 	 */
@@ -695,7 +695,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /me/installationTemplate/{templateName}
 	 * @param body [required] New object properties
 	 * @param templateName [required] This template name
@@ -708,7 +708,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * remove this template
-	 * 
+	 *
 	 * REST: DELETE /me/installationTemplate/{templateName}
 	 * @param templateName [required] This template name
 	 */
@@ -720,7 +720,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Partitioning schemes available on this template
-	 * 
+	 *
 	 * REST: GET /me/installationTemplate/{templateName}/partitionScheme
 	 * @param templateName [required] This template name
 	 */
@@ -733,7 +733,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Add a scheme of partition
-	 * 
+	 *
 	 * REST: POST /me/installationTemplate/{templateName}/partitionScheme
 	 * @param priority [required] on a reinstall, if a partitioning scheme is not specified, the one with the higher priority will be used by default, among all the compatible partitioning schemes (given the underlying hardware specifications)
 	 * @param name [required] name of this partitioning scheme
@@ -750,7 +750,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/installationTemplate/{templateName}/partitionScheme/{schemeName}
 	 * @param templateName [required] This template name
 	 * @param schemeName [required] name of this partitioning scheme
@@ -765,7 +765,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /me/installationTemplate/{templateName}/partitionScheme/{schemeName}
 	 * @param body [required] New object properties
 	 * @param templateName [required] This template name
@@ -780,7 +780,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * remove this scheme of partition
-	 * 
+	 *
 	 * REST: DELETE /me/installationTemplate/{templateName}/partitionScheme/{schemeName}
 	 * @param templateName [required] This template name
 	 * @param schemeName [required] name of this partitioning scheme
@@ -794,7 +794,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Partitions defined in this partitioning scheme
-	 * 
+	 *
 	 * REST: GET /me/installationTemplate/{templateName}/partitionScheme/{schemeName}/partition
 	 * @param templateName [required] This template name
 	 * @param schemeName [required] name of this partitioning scheme
@@ -809,7 +809,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Add a partition in this partitioning scheme
-	 * 
+	 *
 	 * REST: POST /me/installationTemplate/{templateName}/partitionScheme/{schemeName}/partition
 	 * @param volumeName [required] The volume name needed for proxmox distribution
 	 * @param raid [required]
@@ -838,7 +838,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/installationTemplate/{templateName}/partitionScheme/{schemeName}/partition/{mountpoint}
 	 * @param templateName [required] This template name
 	 * @param schemeName [required] name of this partitioning scheme
@@ -855,7 +855,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /me/installationTemplate/{templateName}/partitionScheme/{schemeName}/partition/{mountpoint}
 	 * @param body [required] New object properties
 	 * @param templateName [required] This template name
@@ -872,7 +872,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * remove this partition
-	 * 
+	 *
 	 * REST: DELETE /me/installationTemplate/{templateName}/partitionScheme/{schemeName}/partition/{mountpoint}
 	 * @param templateName [required] This template name
 	 * @param schemeName [required] name of this partitioning scheme
@@ -888,7 +888,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Hardware RAIDs defined in this partitioning scheme
-	 * 
+	 *
 	 * REST: GET /me/installationTemplate/{templateName}/partitionScheme/{schemeName}/hardwareRaid
 	 * @param templateName [required] This template name
 	 * @param schemeName [required] name of this partitioning scheme
@@ -903,7 +903,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Add an hardware RAID in this partitioning scheme
-	 * 
+	 *
 	 * REST: POST /me/installationTemplate/{templateName}/partitionScheme/{schemeName}/hardwareRaid
 	 * @param disks [required] Disk list. Syntax is cX:dY for disks and [cX:dY, cX:dY] for groups. With X and Y resp. the controler id and the disk id.
 	 * @param step [required] Specifies the creation order of the hardware RAID
@@ -926,7 +926,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/installationTemplate/{templateName}/partitionScheme/{schemeName}/hardwareRaid/{name}
 	 * @param templateName [required] This template name
 	 * @param schemeName [required] name of this partitioning scheme
@@ -943,7 +943,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /me/installationTemplate/{templateName}/partitionScheme/{schemeName}/hardwareRaid/{name}
 	 * @param body [required] New object properties
 	 * @param templateName [required] This template name
@@ -960,7 +960,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Remove this RAID
-	 * 
+	 *
 	 * REST: DELETE /me/installationTemplate/{templateName}/partitionScheme/{schemeName}/hardwareRaid/{name}
 	 * @param templateName [required] This template name
 	 * @param schemeName [required] name of this partitioning scheme
@@ -976,7 +976,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Check the integrity of this template
-	 * 
+	 *
 	 * REST: POST /me/installationTemplate/{templateName}/checkIntegrity
 	 * @param templateName [required] This template name
 	 */
@@ -988,7 +988,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List of all the refunds the logged account has
-	 * 
+	 *
 	 * REST: GET /me/refund
 	 * @param orderId [required] Filter the value of orderId property (=)
 	 * @param date_to [required] Filter the value of date property (<=)
@@ -1005,7 +1005,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/refund/{refundId}
 	 * @param refundId [required]
 	 */
@@ -1018,7 +1018,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/refund/{refundId}/payment
 	 * @param refundId [required]
 	 */
@@ -1031,7 +1031,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/refund/{refundId}/details/{refundDetailId}
 	 * @param refundId [required]
 	 * @param refundDetailId [required]
@@ -1046,7 +1046,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Give access to all entries of the refund
-	 * 
+	 *
 	 * REST: GET /me/refund/{refundId}/details
 	 * @param refundId [required]
 	 */
@@ -1059,7 +1059,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Verify existing voucher
-	 * 
+	 *
 	 * REST: POST /me/voucher/checkValidity
 	 * @param voucher [required] Voucher value
 	 */
@@ -1073,7 +1073,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Initiate a password change procedure
-	 * 
+	 *
 	 * REST: POST /me/changePassword
 	 */
 	public void changePassword_POST() throws IOException {
@@ -1083,7 +1083,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Request a password recover
-	 * 
+	 *
 	 * REST: POST /me/passwordRecover
 	 * @param ovhId [required] Your OVH Account Id
 	 * @param ovhCompany [required] Company of your OVH Account Id
@@ -1098,7 +1098,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/autorenew
 	 */
 	public OvhNicAutorenewInfos autorenew_GET() throws IOException {
@@ -1109,7 +1109,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /me/autorenew
 	 * @param body [required] New object properties
 	 */
@@ -1120,7 +1120,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Activate auto renew for this nic
-	 * 
+	 *
 	 * REST: POST /me/autorenew
 	 * @param renewDay [required] Day of autorenew
 	 */
@@ -1133,7 +1133,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/accessRestriction/backupCode
 	 */
 	public OvhSOTPAccount accessRestriction_backupCode_GET() throws IOException {
@@ -1144,7 +1144,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Add a SOTP access restriction
-	 * 
+	 *
 	 * REST: POST /me/accessRestriction/backupCode
 	 */
 	public OvhSOTPSecret accessRestriction_backupCode_POST() throws IOException {
@@ -1155,7 +1155,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Delete this Two-Factor
-	 * 
+	 *
 	 * REST: DELETE /me/accessRestriction/backupCode
 	 */
 	public void accessRestriction_backupCode_DELETE() throws IOException {
@@ -1165,7 +1165,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Enable this SOTP account
-	 * 
+	 *
 	 * REST: POST /me/accessRestriction/backupCode/enable
 	 * @param code [required] OTP code given by the application
 	 */
@@ -1178,7 +1178,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Validate your SOTP account
-	 * 
+	 *
 	 * REST: POST /me/accessRestriction/backupCode/validate
 	 * @param code [required] OTP code given by the application
 	 */
@@ -1192,7 +1192,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Disable this SOTP account
-	 * 
+	 *
 	 * REST: POST /me/accessRestriction/backupCode/disable
 	 * @param code [required] OTP code given by the application
 	 */
@@ -1205,7 +1205,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List of Sms accounts
-	 * 
+	 *
 	 * REST: GET /me/accessRestriction/sms
 	 */
 	public ArrayList<Long> accessRestriction_sms_GET() throws IOException {
@@ -1216,7 +1216,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Add a SMS access restriction
-	 * 
+	 *
 	 * REST: POST /me/accessRestriction/sms
 	 * @param phone [required] Cell phone number to register
 	 */
@@ -1230,7 +1230,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Send a SMS to this account
-	 * 
+	 *
 	 * REST: POST /me/accessRestriction/sms/{id}/sendCode
 	 * @param id [required] The Id of the restriction
 	 */
@@ -1243,7 +1243,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/accessRestriction/sms/{id}
 	 * @param id [required] The Id of the restriction
 	 */
@@ -1256,7 +1256,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Delete this Two-Factor
-	 * 
+	 *
 	 * REST: DELETE /me/accessRestriction/sms/{id}
 	 * @param id [required] The Id of the restriction
 	 */
@@ -1268,7 +1268,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Enable this SMS account
-	 * 
+	 *
 	 * REST: POST /me/accessRestriction/sms/{id}/enable
 	 * @param code [required] SMS code send by a cellphone
 	 * @param id [required] The Id of the restriction
@@ -1283,7 +1283,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Validate your SMS account
-	 * 
+	 *
 	 * REST: POST /me/accessRestriction/sms/{id}/validate
 	 * @param code [required] SMS code send to a cellphone
 	 * @param id [required] The Id of the restriction
@@ -1298,7 +1298,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Disable this SMS account
-	 * 
+	 *
 	 * REST: POST /me/accessRestriction/sms/{id}/disable
 	 * @param code [required] SMS code send by a cellphone
 	 * @param id [required] The Id of the restriction
@@ -1313,7 +1313,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List of TOTP accounts
-	 * 
+	 *
 	 * REST: GET /me/accessRestriction/totp
 	 */
 	public ArrayList<Long> accessRestriction_totp_GET() throws IOException {
@@ -1324,7 +1324,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Add a TOTP access restriction
-	 * 
+	 *
 	 * REST: POST /me/accessRestriction/totp
 	 */
 	public OvhTOTPSecret accessRestriction_totp_POST() throws IOException {
@@ -1335,7 +1335,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/accessRestriction/totp/{id}
 	 * @param id [required] The Id of the restriction
 	 */
@@ -1348,7 +1348,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Delete this Two-Factor
-	 * 
+	 *
 	 * REST: DELETE /me/accessRestriction/totp/{id}
 	 * @param id [required] The Id of the restriction
 	 */
@@ -1360,7 +1360,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Enable this TOTP account
-	 * 
+	 *
 	 * REST: POST /me/accessRestriction/totp/{id}/enable
 	 * @param code [required] OTP code given by the application
 	 * @param id [required] The Id of the restriction
@@ -1375,7 +1375,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Validate your TOTP account
-	 * 
+	 *
 	 * REST: POST /me/accessRestriction/totp/{id}/validate
 	 * @param code [required] OTP code given by the application
 	 * @param id [required] The Id of the restriction
@@ -1390,7 +1390,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Disable this TOTP account
-	 * 
+	 *
 	 * REST: POST /me/accessRestriction/totp/{id}/disable
 	 * @param code [required] OTP code given by the application
 	 * @param id [required] The Id of the restriction
@@ -1405,7 +1405,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List of IP restrictions
-	 * 
+	 *
 	 * REST: GET /me/accessRestriction/ip
 	 */
 	public ArrayList<Long> accessRestriction_ip_GET() throws IOException {
@@ -1416,7 +1416,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Add an IP access restriction
-	 * 
+	 *
 	 * REST: POST /me/accessRestriction/ip
 	 * @param ip [required] An IP range where we will apply the rule
 	 * @param warning [required] Send an email if someone try to access with this IP address
@@ -1433,7 +1433,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/accessRestriction/ip/{id}
 	 * @param id [required] The Id of the restriction
 	 */
@@ -1446,7 +1446,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /me/accessRestriction/ip/{id}
 	 * @param body [required] New object properties
 	 * @param id [required] The Id of the restriction
@@ -1459,7 +1459,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Delete this restriction rule
-	 * 
+	 *
 	 * REST: DELETE /me/accessRestriction/ip/{id}
 	 * @param id [required] The Id of the restriction
 	 */
@@ -1471,7 +1471,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/accessRestriction/ipDefaultRule
 	 */
 	public OvhIpRestrictionDefaultRule accessRestriction_ipDefaultRule_GET() throws IOException {
@@ -1482,7 +1482,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /me/accessRestriction/ipDefaultRule
 	 * @param body [required] New object properties
 	 */
@@ -1493,7 +1493,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Retrieve all contact that you created
-	 * 
+	 *
 	 * REST: GET /me/contact
 	 */
 	public ArrayList<Long> contact_GET() throws IOException {
@@ -1504,7 +1504,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Create a new contact
-	 * 
+	 *
 	 * REST: POST /me/contact
 	 * @param address [required] Address of the contact
 	 * @param cellPhone [required] Cellphone number
@@ -1556,7 +1556,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Retrieve information about a contact
-	 * 
+	 *
 	 * REST: GET /me/contact/{contactId}
 	 * @param contactId [required] Contact Identifier
 	 */
@@ -1569,7 +1569,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Update an existing contact
-	 * 
+	 *
 	 * REST: PUT /me/contact/{contactId}
 	 * @param contactId [required] Contact Identifier
 	 * @param address [required] Address of the contact
@@ -1623,7 +1623,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Display mandatory/read-only informations of a contact
-	 * 
+	 *
 	 * REST: GET /me/contact/{contactId}/fields
 	 * @param contactId [required] Contact Identifier
 	 */
@@ -1637,7 +1637,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/fidelityAccount/movements/{movementId}
 	 * @param movementId [required]
 	 */
@@ -1650,7 +1650,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List of entries of the fidelity account
-	 * 
+	 *
 	 * REST: GET /me/fidelityAccount/movements
 	 * @param date_to [required] Filter the value of date property (<=)
 	 * @param date_from [required] Filter the value of date property (>=)
@@ -1665,7 +1665,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/fidelityAccount
 	 */
 	public OvhFidelityAccount fidelityAccount_GET() throws IOException {
@@ -1676,7 +1676,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /me/fidelityAccount
 	 * @param body [required] New object properties
 	 */
@@ -1687,7 +1687,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Generate an order that can be paid in order to credit the fidelity account
-	 * 
+	 *
 	 * REST: POST /me/fidelityAccount/creditOrder
 	 * @param amount [required] The amount of points you want to credit your fidelity account of
 	 */
@@ -1701,7 +1701,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * VIP Status of this account
-	 * 
+	 *
 	 * REST: GET /me/vipStatus
 	 */
 	public OvhVipStatus vipStatus_GET() throws IOException {
@@ -1712,7 +1712,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Initiate an email change procedure
-	 * 
+	 *
 	 * REST: POST /me/changeEmail
 	 * @param newEmail [required] New email to associate to your account
 	 */
@@ -1726,7 +1726,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List of your Api Application
-	 * 
+	 *
 	 * REST: GET /me/api/application
 	 */
 	public ArrayList<Long> api_application_GET() throws IOException {
@@ -1737,7 +1737,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/api/application/{applicationId}
 	 * @param applicationId [required]
 	 */
@@ -1750,7 +1750,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Remove this application. It will revoke all credential belonging to this application.
-	 * 
+	 *
 	 * REST: DELETE /me/api/application/{applicationId}
 	 * @param applicationId [required]
 	 */
@@ -1762,7 +1762,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List of Api calls done on services you have access to
-	 * 
+	 *
 	 * REST: GET /me/api/logs/services
 	 */
 	public ArrayList<Long> api_logs_services_GET() throws IOException {
@@ -1773,7 +1773,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/api/logs/services/{logId}
 	 * @param logId [required]
 	 */
@@ -1786,7 +1786,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List of Api calls done with your account
-	 * 
+	 *
 	 * REST: GET /me/api/logs/self
 	 */
 	public ArrayList<Long> api_logs_self_GET() throws IOException {
@@ -1797,7 +1797,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/api/logs/self/{logId}
 	 * @param logId [required]
 	 */
@@ -1810,7 +1810,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List of your Api Credentials
-	 * 
+	 *
 	 * REST: GET /me/api/credential
 	 * @param status [required] Filter the value of status property (=)
 	 * @param applicationId [required] Filter the value of applicationId property (like)
@@ -1825,7 +1825,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/api/credential/{credentialId}
 	 * @param credentialId [required]
 	 */
@@ -1838,7 +1838,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Remove this credential
-	 * 
+	 *
 	 * REST: DELETE /me/api/credential/{credentialId}
 	 * @param credentialId [required]
 	 */
@@ -1850,7 +1850,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/api/credential/{credentialId}/application
 	 * @param credentialId [required]
 	 */
@@ -1863,7 +1863,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List of Paypal accounts usable for payments on this account
-	 * 
+	 *
 	 * REST: GET /me/paymentMean/paypal
 	 */
 	public ArrayList<Long> paymentMean_paypal_GET() throws IOException {
@@ -1874,7 +1874,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Enable payment through a new PayPal account
-	 * 
+	 *
 	 * REST: POST /me/paymentMean/paypal
 	 * @param returnUrl [required] Callback URL where the customer will be redirected to after validation
 	 * @param setDefault [required] Set as default payment mean once validated
@@ -1892,7 +1892,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Choose this Paypal agreement as your default payment mean. Will cancel the previous choice.
-	 * 
+	 *
 	 * REST: POST /me/paymentMean/paypal/{id}/chooseAsDefaultPaymentMean
 	 * @param id [required] Id of the object
 	 */
@@ -1904,7 +1904,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/paymentMean/paypal/{id}
 	 * @param id [required] Id of the object
 	 */
@@ -1917,7 +1917,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /me/paymentMean/paypal/{id}
 	 * @param body [required] New object properties
 	 * @param id [required] Id of the object
@@ -1930,7 +1930,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Disable payment through this PayPal account
-	 * 
+	 *
 	 * REST: DELETE /me/paymentMean/paypal/{id}
 	 * @param id [required] Id of the object
 	 */
@@ -1942,7 +1942,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List of bank accounts
-	 * 
+	 *
 	 * REST: GET /me/paymentMean/bankAccount
 	 * @param state [required] Filter the value of state property (=)
 	 */
@@ -1955,7 +1955,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Enable payment through a new account
-	 * 
+	 *
 	 * REST: POST /me/paymentMean/bankAccount
 	 * @param iban [required] Account's IBAN
 	 * @param ownerAddress [required] Account owner's address
@@ -1977,7 +1977,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Choose this bank account as your default payment mean. Will cancel the previous choice.
-	 * 
+	 *
 	 * REST: POST /me/paymentMean/bankAccount/{id}/chooseAsDefaultPaymentMean
 	 * @param id [required] Id of the object
 	 */
@@ -1989,7 +1989,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/paymentMean/bankAccount/{id}
 	 * @param id [required] Id of the object
 	 */
@@ -2002,7 +2002,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /me/paymentMean/bankAccount/{id}
 	 * @param body [required] New object properties
 	 * @param id [required] Id of the object
@@ -2015,7 +2015,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Disable payment through this account
-	 * 
+	 *
 	 * REST: DELETE /me/paymentMean/bankAccount/{id}
 	 * @param id [required] Id of the object
 	 */
@@ -2027,7 +2027,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List of credit cards
-	 * 
+	 *
 	 * REST: GET /me/paymentMean/creditCard
 	 */
 	public ArrayList<Long> paymentMean_creditCard_GET() throws IOException {
@@ -2038,7 +2038,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Add a new credit card
-	 * 
+	 *
 	 * REST: POST /me/paymentMean/creditCard
 	 * @param returnUrl [required] Callback URL where the customer will be redirected to after validation
 	 * @param setDefault [required] Set as default payment mean once validated
@@ -2056,7 +2056,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Choose this credit card as your default payment mean. Will cancel the previous choice.
-	 * 
+	 *
 	 * REST: POST /me/paymentMean/creditCard/{id}/chooseAsDefaultPaymentMean
 	 * @param id [required] Id of the object
 	 */
@@ -2068,7 +2068,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/paymentMean/creditCard/{id}
 	 * @param id [required] Id of the object
 	 */
@@ -2081,7 +2081,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /me/paymentMean/creditCard/{id}
 	 * @param body [required] New object properties
 	 * @param id [required] Id of the object
@@ -2094,7 +2094,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Disable payment through this credit card
-	 * 
+	 *
 	 * REST: DELETE /me/paymentMean/creditCard/{id}
 	 * @param id [required] Id of the object
 	 */
@@ -2106,7 +2106,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List of OVH accounts the logged account has
-	 * 
+	 *
 	 * REST: GET /me/ovhAccount
 	 */
 	public ArrayList<String> ovhAccount_GET() throws IOException {
@@ -2117,7 +2117,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/ovhAccount/{ovhAccountId}/movements/{movementId}
 	 * @param ovhAccountId [required]
 	 * @param movementId [required]
@@ -2132,7 +2132,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Details about an entry of the OVH account
-	 * 
+	 *
 	 * REST: GET /me/ovhAccount/{ovhAccountId}/movements
 	 * @param date_to [required] Filter the value of date property (<=)
 	 * @param date_from [required] Filter the value of date property (>=)
@@ -2149,7 +2149,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/ovhAccount/{ovhAccountId}
 	 * @param ovhAccountId [required]
 	 */
@@ -2162,7 +2162,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /me/ovhAccount/{ovhAccountId}
 	 * @param body [required] New object properties
 	 * @param ovhAccountId [required]
@@ -2175,7 +2175,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Generate an order that can be paid in order to credit the OVH account
-	 * 
+	 *
 	 * REST: POST /me/ovhAccount/{ovhAccountId}/creditOrder
 	 * @param amount [required] The amount in cents you want to credit your account of
 	 * @param ovhAccountId [required]
@@ -2191,7 +2191,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Transfer money from ovhAccount to your bank account
-	 * 
+	 *
 	 * REST: POST /me/ovhAccount/{ovhAccountId}/retrieveMoney
 	 * @param amount [required] The amount in cents you want to transfer
 	 * @param bankAccountId [required] A valid bank account
@@ -2209,7 +2209,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List of domain task
-	 * 
+	 *
 	 * REST: GET /me/task/domain
 	 * @param domain [required] Filter the value of domain property (like)
 	 * @param function [required] Filter the value of function property (like)
@@ -2226,7 +2226,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List of arguments
-	 * 
+	 *
 	 * REST: GET /me/task/domain/{id}/argument
 	 * @param id [required] Id of the task
 	 */
@@ -2239,7 +2239,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/task/domain/{id}/argument/{key}
 	 * @param id [required] Id of the task
 	 * @param key [required] Key of the argument
@@ -2254,7 +2254,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /me/task/domain/{id}/argument/{key}
 	 * @param body [required] New object properties
 	 * @param id [required] Id of the task
@@ -2269,7 +2269,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/task/domain/{id}
 	 * @param id [required] Id of the task
 	 */
@@ -2282,7 +2282,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Relaunch the task
-	 * 
+	 *
 	 * REST: POST /me/task/domain/{id}/relaunch
 	 * @param id [required] Id of the task
 	 */
@@ -2294,7 +2294,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Accelerate the task
-	 * 
+	 *
 	 * REST: POST /me/task/domain/{id}/accelerate
 	 * @param id [required] Id of the task
 	 */
@@ -2306,7 +2306,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Cancel the task
-	 * 
+	 *
 	 * REST: POST /me/task/domain/{id}/cancel
 	 * @param id [required] Id of the task
 	 */
@@ -2318,7 +2318,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List of email change tasks you are involved in
-	 * 
+	 *
 	 * REST: GET /me/task/emailChange
 	 * @param state [required] Filter the value of state property (like)
 	 */
@@ -2331,7 +2331,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/task/emailChange/{id}
 	 * @param id [required]
 	 */
@@ -2344,7 +2344,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Accept this change request
-	 * 
+	 *
 	 * REST: POST /me/task/emailChange/{id}/accept
 	 * @param token [required] The token you received by email for this request
 	 * @param id [required]
@@ -2359,7 +2359,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Refuse this change request
-	 * 
+	 *
 	 * REST: POST /me/task/emailChange/{id}/refuse
 	 * @param token [required] The token you received by email for this request
 	 * @param id [required]
@@ -2374,7 +2374,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List of service contact change tasks you are involved in
-	 * 
+	 *
 	 * REST: GET /me/task/contactChange
 	 * @param toAccount [required] Filter the value of toAccount property (like)
 	 * @param askingAccount [required] Filter the value of askingAccount property (like)
@@ -2391,7 +2391,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/task/contactChange/{id}
 	 * @param id [required]
 	 */
@@ -2404,7 +2404,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Accept this change request
-	 * 
+	 *
 	 * REST: POST /me/task/contactChange/{id}/accept
 	 * @param token [required] The token you received by email for this request
 	 * @param id [required]
@@ -2419,7 +2419,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * This call will send you a new email, containing a new token
-	 * 
+	 *
 	 * REST: POST /me/task/contactChange/{id}/resendEmail
 	 * @param id [required]
 	 */
@@ -2431,7 +2431,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Refuse this change request
-	 * 
+	 *
 	 * REST: POST /me/task/contactChange/{id}/refuse
 	 * @param token [required] The token you received by email for this request
 	 * @param id [required]
@@ -2446,7 +2446,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List of organisations
-	 * 
+	 *
 	 * REST: GET /me/ipOrganisation
 	 */
 	public ArrayList<String> ipOrganisation_GET() throws IOException {
@@ -2457,7 +2457,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Add an organisation
-	 * 
+	 *
 	 * REST: POST /me/ipOrganisation
 	 * @param country [required]
 	 * @param firstname [required]
@@ -2486,7 +2486,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/ipOrganisation/{organisationId}
 	 * @param organisationId [required]
 	 */
@@ -2499,7 +2499,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /me/ipOrganisation/{organisationId}
 	 * @param body [required] New object properties
 	 * @param organisationId [required]
@@ -2512,7 +2512,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List available payment methods in this Nic's country
-	 * 
+	 *
 	 * REST: GET /me/availableAutomaticPaymentMeans
 	 */
 	public OvhAutomaticPaymentMean availableAutomaticPaymentMeans_GET() throws IOException {
@@ -2523,7 +2523,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/sshKey/{keyName}
 	 * @param keyName [required] Name of this public SSH key
 	 */
@@ -2536,7 +2536,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /me/sshKey/{keyName}
 	 * @param body [required] New object properties
 	 * @param keyName [required] Name of this public SSH key
@@ -2549,7 +2549,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Remove this public SSH key
-	 * 
+	 *
 	 * REST: DELETE /me/sshKey/{keyName}
 	 * @param keyName [required] Name of this public SSH key
 	 */
@@ -2561,7 +2561,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List of your public SSH keys
-	 * 
+	 *
 	 * REST: GET /me/sshKey
 	 */
 	public ArrayList<String> sshKey_GET() throws IOException {
@@ -2572,7 +2572,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Add a new public SSH key
-	 * 
+	 *
 	 * REST: POST /me/sshKey
 	 * @param key [required] ASCII encoded public SSH key to add
 	 * @param keyName [required] name of the new public SSH key
@@ -2587,7 +2587,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List of all your email notifications
-	 * 
+	 *
 	 * REST: GET /me/notification/email/history
 	 */
 	public ArrayList<Long> notification_email_history_GET() throws IOException {
@@ -2598,7 +2598,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/notification/email/history/{id}
 	 * @param id [required] Id of the object
 	 */
@@ -2611,7 +2611,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List of mailing list you can subscribe
-	 * 
+	 *
 	 * REST: GET /me/mailingList/availableLists
 	 */
 	public ArrayList<String> mailingList_availableLists_GET() throws IOException {
@@ -2622,7 +2622,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Subscribe an email to a restricted mailing list
-	 * 
+	 *
 	 * REST: POST /me/mailingList/subscribe
 	 * @param email [required] Email you want to subscribe to
 	 * @param mailingList [required] Mailing list
@@ -2637,7 +2637,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/debtAccount
 	 */
 	public OvhBalance debtAccount_GET() throws IOException {
@@ -2648,7 +2648,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * All debts related to your account
-	 * 
+	 *
 	 * REST: GET /me/debtAccount/debt
 	 */
 	public ArrayList<Long> debtAccount_debt_GET() throws IOException {
@@ -2659,7 +2659,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/debtAccount/debt/{debtId}
 	 * @param debtId [required]
 	 */
@@ -2672,7 +2672,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Create an order in order to pay this order's debt
-	 * 
+	 *
 	 * REST: POST /me/debtAccount/debt/{debtId}/pay
 	 * @param debtId [required]
 	 */
@@ -2685,7 +2685,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * All operations related to these debts
-	 * 
+	 *
 	 * REST: GET /me/debtAccount/debt/{debtId}/operation
 	 * @param debtId [required]
 	 */
@@ -2698,7 +2698,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/debtAccount/debt/{debtId}/operation/{operationId}
 	 * @param debtId [required]
 	 * @param operationId [required]
@@ -2713,7 +2713,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Return main data about the object related to this debt operation
-	 * 
+	 *
 	 * REST: GET /me/debtAccount/debt/{debtId}/operation/{operationId}/associatedObject
 	 * @param debtId [required]
 	 * @param operationId [required]
@@ -2728,7 +2728,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Create an order in order to pay all your due debts
-	 * 
+	 *
 	 * REST: POST /me/debtAccount/pay
 	 */
 	public OvhOrder debtAccount_pay_POST() throws IOException {
@@ -2739,7 +2739,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Change xdsl settings linked to the nichandle
-	 * 
+	 *
 	 * REST: POST /me/xdsl/setting
 	 * @param resellerFastModemShipping [required] Send the modem as soon as possible, do not wait the xdsl line to be active
 	 */
@@ -2752,7 +2752,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get xdsl settings linked to the nichandle
-	 * 
+	 *
 	 * REST: GET /me/xdsl/setting
 	 */
 	public OvhSetting xdsl_setting_GET() throws IOException {
@@ -2763,7 +2763,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List of contracts signed between you and OVH
-	 * 
+	 *
 	 * REST: GET /me/agreements
 	 * @param agreed [required] Filter the value of agreed property (like)
 	 * @param contractId [required] Filter the value of contractId property (like)
@@ -2778,7 +2778,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/agreements/{id}
 	 * @param id [required] Id of the contract
 	 */
@@ -2791,7 +2791,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/agreements/{id}/contract
 	 * @param id [required] Id of the contract
 	 */
@@ -2804,7 +2804,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Accept this contract
-	 * 
+	 *
 	 * REST: POST /me/agreements/{id}/accept
 	 * @param id [required] Id of the contract
 	 */
@@ -2817,7 +2817,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * List of all the bills the logged account has
-	 * 
+	 *
 	 * REST: GET /me/bill
 	 * @param orderId [required] Filter the value of orderId property (=)
 	 * @param date_to [required] Filter the value of date property (<=)
@@ -2834,7 +2834,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/bill/{billId}
 	 * @param billId [required]
 	 */
@@ -2847,7 +2847,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/bill/{billId}/debt
 	 * @param billId [required]
 	 */
@@ -2860,7 +2860,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Create an order in order to pay this order's debt
-	 * 
+	 *
 	 * REST: POST /me/bill/{billId}/debt/pay
 	 * @param billId [required]
 	 */
@@ -2873,7 +2873,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * All operations related to these debts
-	 * 
+	 *
 	 * REST: GET /me/bill/{billId}/debt/operation
 	 * @param billId [required]
 	 */
@@ -2886,7 +2886,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/bill/{billId}/debt/operation/{operationId}
 	 * @param billId [required]
 	 * @param operationId [required]
@@ -2901,7 +2901,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Return main data about the object related to this debt operation
-	 * 
+	 *
 	 * REST: GET /me/bill/{billId}/debt/operation/{operationId}/associatedObject
 	 * @param billId [required]
 	 * @param operationId [required]
@@ -2916,7 +2916,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/bill/{billId}/payment
 	 * @param billId [required]
 	 */
@@ -2929,7 +2929,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /me/bill/{billId}/details/{billDetailId}
 	 * @param billId [required]
 	 * @param billDetailId [required]
@@ -2944,7 +2944,7 @@ public class ApiOvhMe extends ApiOvhBase {
 
 	/**
 	 * Give access to all entries of the bill
-	 * 
+	 *
 	 * REST: GET /me/bill/{billId}/details
 	 * @param billId [required]
 	 */

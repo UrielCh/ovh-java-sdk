@@ -29,7 +29,7 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /horizonView/{serviceName}/serviceInfos
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -42,7 +42,7 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /horizonView/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] Domain of the service
@@ -55,7 +55,7 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /horizonView/{serviceName}
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -68,7 +68,7 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 
 	/**
 	 * Confirm termination of your service
-	 * 
+	 *
 	 * REST: POST /horizonView/{serviceName}/confirmTermination
 	 * @param reason Reason of your termination request
 	 * @param commentary Commentary about your termination request
@@ -88,7 +88,7 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 
 	/**
 	 * Terminate your service
-	 * 
+	 *
 	 * REST: POST /horizonView/{serviceName}/terminate
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -101,7 +101,7 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 
 	/**
 	 * Tasks associated with this Dedicated Horizon
-	 * 
+	 *
 	 * REST: GET /horizonView/{serviceName}/task
 	 * @param state [required] Filter the value of state property (=)
 	 * @param serviceName [required] Domain of the service
@@ -117,7 +117,7 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /horizonView/{serviceName}/task/{taskId}
 	 * @param serviceName [required] Domain of the service
 	 * @param taskId [required] Task id
@@ -132,7 +132,7 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 
 	/**
 	 * Your Cloud Desktop Infrastructure hosts
-	 * 
+	 *
 	 * REST: GET /horizonView/{serviceName}/host
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -145,7 +145,7 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /horizonView/{serviceName}/host/{id}
 	 * @param serviceName [required] Domain of the service
 	 * @param id [required] Host ids
@@ -160,7 +160,7 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 
 	/**
 	 * Delete this host
-	 * 
+	 *
 	 * REST: DELETE /horizonView/{serviceName}/host/{id}
 	 * @param serviceName [required] Domain of the service
 	 * @param id [required] Host ids
@@ -176,7 +176,7 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 
 	/**
 	 * Pool associated with this Dedicated Horizon
-	 * 
+	 *
 	 * REST: GET /horizonView/{serviceName}/accessPoint
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -189,7 +189,7 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 
 	/**
 	 * Add new access point to create a new network
-	 * 
+	 *
 	 * REST: POST /horizonView/{serviceName}/accessPoint
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -202,7 +202,7 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /horizonView/{serviceName}/accessPoint/{accessPointId}
 	 * @param serviceName [required] Domain of the service
 	 * @param accessPointId [required] Pool id
@@ -217,7 +217,7 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 
 	/**
 	 * Delete this access point
-	 * 
+	 *
 	 * REST: DELETE /horizonView/{serviceName}/accessPoint/{accessPointId}
 	 * @param serviceName [required] Domain of the service
 	 * @param accessPointId [required] Pool id
@@ -232,7 +232,7 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 
 	/**
 	 * Account to access to your pool
-	 * 
+	 *
 	 * REST: GET /horizonView/{serviceName}/customerUser
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -246,7 +246,7 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 
 	/**
 	 * Create a new customer user
-	 * 
+	 *
 	 * REST: POST /horizonView/{serviceName}/customerUser
 	 * @param email [required] Email for your new user in Active diRectory.
 	 * @param password [required] New password for this Horizon View user. It must fits your HaaS password policy. If this field is empty, a random password will be generated and sent to your  email.
@@ -266,7 +266,7 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /horizonView/{serviceName}/customerUser/{username}
 	 * @param serviceName [required] Domain of the service
 	 * @param username [required] Customer username of your HaaS User
@@ -281,7 +281,7 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 
 	/**
 	 * Delete this Customer User
-	 * 
+	 *
 	 * REST: DELETE /horizonView/{serviceName}/customerUser/{username}
 	 * @param serviceName [required] Domain of the service
 	 * @param username [required] Customer username of your HaaS User
@@ -296,7 +296,7 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 
 	/**
 	 * Change Horizon View Customer  user password
-	 * 
+	 *
 	 * REST: POST /horizonView/{serviceName}/customerUser/{username}/changePassword
 	 * @param password [required] New password for this Horizon View user. It must fits your HaaS password policy. If this field is empty, a random password will be generated and sent to you by email.
 	 * @param serviceName [required] Domain of the service
@@ -314,7 +314,7 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /horizonView/{serviceName}/user
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -327,7 +327,7 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 
 	/**
 	 * Change horizon view user properties
-	 * 
+	 *
 	 * REST: POST /horizonView/{serviceName}/user/changeProperties
 	 * @param email [required] Change email of your admin user
 	 * @param serviceName [required] Domain of the service
@@ -343,7 +343,7 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 
 	/**
 	 * Change Horizon View user password
-	 * 
+	 *
 	 * REST: POST /horizonView/{serviceName}/user/changePassword
 	 * @param password [required] New password for this Horizon View user. It must fits your HaaS password policy. If this field is empty, a random password will be generated and sent to you by email.
 	 * @param serviceName [required] Domain of the service
@@ -359,7 +359,7 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 
 	/**
 	 * Your Cloud Desktop Infrastructure storages
-	 * 
+	 *
 	 * REST: GET /horizonView/{serviceName}/storage
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -372,7 +372,7 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /horizonView/{serviceName}/storage/{id}
 	 * @param serviceName [required] Domain of the service
 	 * @param id [required] Storage ids
@@ -387,7 +387,7 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 
 	/**
 	 * Delete this storage
-	 * 
+	 *
 	 * REST: DELETE /horizonView/{serviceName}/storage/{id}
 	 * @param serviceName [required] Domain of the service
 	 * @param id [required] Storage ids
@@ -402,7 +402,7 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /horizonView
 	 */
 	public ArrayList<String> GET() throws IOException {

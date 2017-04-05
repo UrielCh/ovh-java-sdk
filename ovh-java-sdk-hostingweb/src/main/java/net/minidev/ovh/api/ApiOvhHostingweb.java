@@ -75,7 +75,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}
 	 * @param serviceName [required] The internal name of your hosting
 	 */
@@ -88,7 +88,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /hosting/web/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your hosting
@@ -101,7 +101,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/cdn/serviceInfos
 	 * @param serviceName [required] The internal name of your hosting
 	 */
@@ -114,7 +114,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/cdn/serviceInfosUpdate
 	 * @param renew [required] Renew type
 	 * @param serviceName [required] The internal name of your hosting
@@ -129,7 +129,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/cdn
 	 * @param serviceName [required] The internal name of your hosting
 	 */
@@ -142,7 +142,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Terminate your cdn sub service
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/cdn/terminate
 	 * @param serviceName [required] The internal name of your hosting
 	 */
@@ -155,7 +155,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Get statistics about this web hosting
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/statistics
 	 * @param period [required]
 	 * @param type [required]
@@ -173,7 +173,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Request specific operation for your email
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/email/request
 	 * @param action [required] Action you want to request
 	 * @param serviceName [required] The internal name of your hosting
@@ -189,7 +189,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/email
 	 * @param serviceName [required] The internal name of your hosting
 	 */
@@ -202,7 +202,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /hosting/web/{serviceName}/email
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your hosting
@@ -215,7 +215,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Request the history volume of email sent
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/email/volumes
 	 * @param serviceName [required] The internal name of your hosting
 	 */
@@ -229,7 +229,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Request the last bounces
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/email/bounces
 	 * @param limit [required] Maximum bounces limit ( default : 20 / max : 100 )
 	 * @param serviceName [required] The internal name of your hosting
@@ -245,7 +245,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * List available database version following a type
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/databaseAvailableVersion
 	 * @param type [required] Type of the database
 	 * @param serviceName [required] The internal name of your hosting
@@ -260,7 +260,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Migrate ovh.org subdomain for old 60free and demo1g offers
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/migrateMyOvhOrg
 	 * @param destinationServiceName [required] Name of the service name that will have the ovh.org subdomain migrated
 	 * @param serviceName [required] The internal name of your hosting
@@ -276,7 +276,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * User allowed to connect into your hosting
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/user
 	 * @param home [required] Filter the value of home property (like)
 	 * @param login [required] Filter the value of login property (like)
@@ -294,7 +294,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Create new ftp/ssh user
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/user
 	 * @param password [required] Password
 	 * @param sshState [required] Ssh state for this user. Default: none
@@ -316,7 +316,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/user/{login}
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param login [required] Login used to connect on FTP and SSH
@@ -331,7 +331,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /hosting/web/{serviceName}/user/{login}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your hosting
@@ -346,7 +346,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Delete ftp/ssh user
-	 * 
+	 *
 	 * REST: DELETE /hosting/web/{serviceName}/user/{login}
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param login [required] Login used to connect on FTP and SSH
@@ -361,7 +361,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Request a password change
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/user/{login}/changePassword
 	 * @param password [required] The user's new password
 	 * @param serviceName [required] The internal name of your hosting
@@ -379,7 +379,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Restore this snapshot ALL CURRENT DATA WILL BE REPLACED BY YOUR SNAPSHOT
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/restoreSnapshot
 	 * @param backup [required] The backup you want to restore
 	 * @param serviceName [required] The internal name of your hosting
@@ -395,7 +395,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Request specific operation for your hosting
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/request
 	 * @param action [required] Action you want to request
 	 * @param serviceName [required] The internal name of your hosting
@@ -411,7 +411,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Tasks attached to your hosting
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/tasks
 	 * @param function [required] Filter the value of function property (like)
 	 * @param status [required] Filter the value of status property (=)
@@ -429,7 +429,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/tasks/{id}
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param id [required] the id of the task
@@ -444,7 +444,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Confirm termination of your service
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/confirmTermination
 	 * @param reason Reason of your termination request
 	 * @param commentary Commentary about your termination request
@@ -464,7 +464,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/freedom/{domain}
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param domain [required] Freedom domain
@@ -479,7 +479,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Delete the freedom
-	 * 
+	 *
 	 * REST: DELETE /hosting/web/{serviceName}/freedom/{domain}
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param domain [required] Freedom domain
@@ -493,7 +493,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Freedom linked to this hosting account
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/freedom
 	 * @param status [required] Filter the value of status property (=)
 	 * @param serviceName [required] The internal name of your hosting
@@ -508,7 +508,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * History of your hosting boost
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/boostHistory
 	 * @param date [required] Filter the value of date property (=)
 	 * @param serviceName [required] The internal name of your hosting
@@ -524,7 +524,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/boostHistory/{date}
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param date [required] The date when the change has been requested
@@ -539,7 +539,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * User of multidomain independent allowed on your hosting
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/indy
 	 * @param login [required] Filter the value of login property (like)
 	 * @param serviceName [required] The internal name of your hosting
@@ -554,7 +554,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/indy/{login}
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param login [required] Login of the multidomain independent user
@@ -569,7 +569,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Sqlperso linked to your hosting
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/extraSqlPerso
 	 * @param serviceName [required] The internal name of your hosting
 	 */
@@ -582,7 +582,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/extraSqlPerso/{name}/serviceInfos
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param name [required] The extraSqlPerso option name
@@ -597,7 +597,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/extraSqlPerso/{name}/serviceInfosUpdate
 	 * @param renew [required] Renew type
 	 * @param serviceName [required] The internal name of your hosting
@@ -614,7 +614,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/extraSqlPerso/{name}
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param name [required] The extraSqlPerso option name
@@ -629,7 +629,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Get databases linked with this option
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/extraSqlPerso/{name}/databases
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param name [required] The extraSqlPerso option name
@@ -644,7 +644,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Terminate your extraSqlPerso sub service
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/extraSqlPerso/{name}/terminate
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param name [required] The extraSqlPerso option name
@@ -659,7 +659,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * List available cron language
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/cronAvailableLanguage
 	 * @param serviceName [required] The internal name of your hosting
 	 */
@@ -673,7 +673,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your hosting
 	 */
@@ -686,7 +686,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /hosting/web/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your hosting
@@ -699,7 +699,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * List linked privateDatabases
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/privateDatabases
 	 * @param serviceName [required] The internal name of your hosting
 	 */
@@ -712,7 +712,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * List available database you can install
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/databaseCreationCapabilities
 	 * @param serviceName [required] The internal name of your hosting
 	 */
@@ -726,7 +726,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Allows you to boost your offer.
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/requestBoost
 	 * @param offer [required] The boost offer of your choice. Set to null to disable boost.
 	 * @param serviceName [required] The internal name of your hosting
@@ -742,7 +742,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Terminate your service
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/terminate
 	 * @param serviceName [required] The internal name of your hosting
 	 */
@@ -755,7 +755,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Launch a contact change procedure
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/changeContact
 	 * @param contactAdmin The contact to set as admin contact
 	 * @param contactTech The contact to set as tech contact
@@ -775,7 +775,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Synchronize the configuration listing with content on your hosting
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/ovhConfigRefresh
 	 * @param serviceName [required] The internal name of your hosting
 	 */
@@ -788,7 +788,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * User allowed to connect into your logs interface
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/userLogs
 	 * @param login [required] Filter the value of login property (like)
 	 * @param serviceName [required] The internal name of your hosting
@@ -803,7 +803,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Create new userLogs
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/userLogs
 	 * @param password [required] The new userLogs password
 	 * @param ownLogsId [required] OwnLogs where this userLogs will be enable. Default : main domain ownlogs
@@ -825,7 +825,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/userLogs/{login}
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param login [required] The userLogs login used to connect to logs.ovh.net
@@ -840,7 +840,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /hosting/web/{serviceName}/userLogs/{login}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your hosting
@@ -855,7 +855,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Delete the userLogs
-	 * 
+	 *
 	 * REST: DELETE /hosting/web/{serviceName}/userLogs/{login}
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param login [required] The userLogs login used to connect to logs.ovh.net
@@ -870,7 +870,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Request a password change
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/userLogs/{login}/changePassword
 	 * @param password [required] The new userLogs password
 	 * @param serviceName [required] The internal name of your hosting
@@ -888,7 +888,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Use to link an external domain. ( This token has to be insert into a TXT field on your dns zone with ovhcontrol subdomain )
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/token
 	 * @param serviceName [required] The internal name of your hosting
 	 */
@@ -901,7 +901,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Module installed on your hosting
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/module
 	 * @param serviceName [required] The internal name of your hosting
 	 */
@@ -914,7 +914,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Install a new module
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/module
 	 * @param domain [required] On which domain the module has to be available (it can be a multidomain or a subdomain) - if not set, the module will be available on your serviceName domain
 	 * @param language [required] The language to set to your module
@@ -942,7 +942,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/module/{id}
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param id [required] Installation ID
@@ -957,7 +957,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Delete a module installed
-	 * 
+	 *
 	 * REST: DELETE /hosting/web/{serviceName}/module/{id}
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param id [required] Installation ID
@@ -972,7 +972,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Generate a new admin password for your module
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/module/{id}/changePassword
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param id [required] Installation ID
@@ -987,7 +987,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * List available privateDatabase you can install
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/privateDatabaseCreationCapabilities
 	 * @param serviceName [required] The internal name of your hosting
 	 */
@@ -1000,7 +1000,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/ssl
 	 * @param serviceName [required] The internal name of your hosting
 	 */
@@ -1013,7 +1013,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Create the free default HostedSsl OR import your proper SSL on your hosting
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/ssl
 	 * @param chain [required] If you want import your proper SSL, give the chain linked to the associated certificate (optional)
 	 * @param certificate [required] If you want import your proper SSL, give the certificate here and the associated key after (optional)
@@ -1033,7 +1033,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Delete the HostedSsl on your hosting
-	 * 
+	 *
 	 * REST: DELETE /hosting/web/{serviceName}/ssl
 	 * @param serviceName [required] The internal name of your hosting
 	 */
@@ -1046,7 +1046,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Request the regeneration of your HostedSsl
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/ssl/regenerate
 	 * @param serviceName [required] The internal name of your hosting
 	 */
@@ -1059,7 +1059,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Get domains linked to this HostedSsl
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/ssl/domains
 	 * @param serviceName [required] The internal name of your hosting
 	 */
@@ -1072,7 +1072,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Get a temporary token to access the your web hosting logs interface
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/userLogsToken
 	 * @param remoteCheck [required] Whether to limit the use of the token to the remote IPv4 of API caller
 	 * @param attachedDomain [required] Specific attached domain to be included in the scope of your token
@@ -1091,7 +1091,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Activate an included private database on your hosting offer
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/activatePrivateDatabase
 	 * @param version [required] Private database available versions
 	 * @param ram [required] The private database ram size included in your offer
@@ -1109,7 +1109,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * List available database type
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/databaseAvailableType
 	 * @param serviceName [required] The internal name of your hosting
 	 */
@@ -1123,7 +1123,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Databases linked to your hosting
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/database
 	 * @param mode [required] Filter the value of mode property (=)
 	 * @param user [required] Filter the value of user property (like)
@@ -1146,7 +1146,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Install new database
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/database
 	 * @param quota [required] Quota assign to your database. Only for extraSql
 	 * @param password [required] Database password
@@ -1172,7 +1172,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Request specific operation for your database
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/database/{name}/request
 	 * @param action [required] Action you want to request
 	 * @param serviceName [required] The internal name of your hosting
@@ -1190,7 +1190,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/database/{name}
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param name [required] Database name (like mydb.mysql.db or mydb.postgres.db)
@@ -1205,7 +1205,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Delete database
-	 * 
+	 *
 	 * REST: DELETE /hosting/web/{serviceName}/database/{name}
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param name [required] Database name (like mydb.mysql.db or mydb.postgres.db)
@@ -1220,7 +1220,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Dump available for your databases
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/database/{name}/dump
 	 * @param creationDate [required] Filter the value of creationDate property (like)
 	 * @param type [required] Filter the value of type property (=)
@@ -1241,7 +1241,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Request the dump from your database
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/database/{name}/dump
 	 * @param date [required] The date you want to dump
 	 * @param sendEmail [required] Send an email when dump will be available? Default: true
@@ -1261,7 +1261,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/database/{name}/dump/{id}
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param name [required] Database name (like mydb.mysql.db or mydb.postgres.db)
@@ -1278,7 +1278,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Delete dump before expiration date
-	 * 
+	 *
 	 * REST: DELETE /hosting/web/{serviceName}/database/{name}/dump/{id}
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param name [required] Database name (like mydb.mysql.db or mydb.postgres.db)
@@ -1295,7 +1295,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Request the restore from this dump
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/database/{name}/dump/{id}/restore
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param name [required] Database name (like mydb.mysql.db or mydb.postgres.db)
@@ -1312,7 +1312,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Get statistics about this database
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/database/{name}/statistics
 	 * @param period [required] Available periods for statistics
 	 * @param type [required] Types of statistics available for the database
@@ -1331,7 +1331,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Dump available for your databases
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/database/{name}/dumps
 	 * @param creationDate [required] Filter the value of creationDate property (like)
 	 * @param type [required] Filter the value of type property (=)
@@ -1352,7 +1352,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/database/{name}/dumps/{id}
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param name [required] Database name (like mydb.mysql.db or mydb.postgres.db)
@@ -1369,7 +1369,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Delete dump before expiration date
-	 * 
+	 *
 	 * REST: DELETE /hosting/web/{serviceName}/database/{name}/dumps/{id}
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param name [required] Database name (like mydb.mysql.db or mydb.postgres.db)
@@ -1386,7 +1386,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Request the restore from this dump
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/database/{name}/dumps/{id}/restore
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param name [required] Database name (like mydb.mysql.db or mydb.postgres.db)
@@ -1403,7 +1403,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Request a password change
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/database/{name}/changePassword
 	 * @param password [required] The new database password
 	 * @param serviceName [required] The internal name of your hosting
@@ -1421,7 +1421,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Request the restore from your database backup
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/database/{name}/restore
 	 * @param date [required] The date you want to dump
 	 * @param sendEmail [required] Send an email when the restore will be done? Default: false
@@ -1441,7 +1441,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Import a dump from an specific file uploaded with /me/documents
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/database/{name}/import
 	 * @param documentId [required] Documents ID of the dump from /me/documents
 	 * @param sendEmail [required] Send an email when the import will be done? Default: false
@@ -1463,7 +1463,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Crons on your hosting
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/cron
 	 * @param email [required] Filter the value of email property (like)
 	 * @param language [required] Filter the value of language property (=)
@@ -1484,7 +1484,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Create new cron
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/cron
 	 * @param frequency [required] Frequency ( crontab format ) define for the script ( minutes are ignored )
 	 * @param email [required] Email used to receive error log ( stderr )
@@ -1510,7 +1510,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/cron/{id}
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param id [required] Cron's id
@@ -1525,7 +1525,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /hosting/web/{serviceName}/cron/{id}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your hosting
@@ -1540,7 +1540,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Delete cron
-	 * 
+	 *
 	 * REST: DELETE /hosting/web/{serviceName}/cron/{id}
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param id [required] Cron's id
@@ -1555,7 +1555,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/attachedDomain/{domain}
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param domain [required] Domain linked (fqdn)
@@ -1570,7 +1570,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Alter this object properties
-	 * 
+	 *
 	 * REST: PUT /hosting/web/{serviceName}/attachedDomain/{domain}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your hosting
@@ -1585,7 +1585,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Unlink domain from hosting
-	 * 
+	 *
 	 * REST: DELETE /hosting/web/{serviceName}/attachedDomain/{domain}
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param domain [required] Domain linked (fqdn)
@@ -1600,7 +1600,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Purge cache for this attached domain
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/attachedDomain/{domain}/purgeCache
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param domain [required] Domain linked (fqdn)
@@ -1615,7 +1615,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Domains or subdomains attached to your hosting
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/attachedDomain
 	 * @param domain [required] Filter the value of domain property (like)
 	 * @param path [required] Filter the value of path property (like)
@@ -1632,7 +1632,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Link a domain to this hosting
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/attachedDomain
 	 * @param cdn [required] Is linked to the hosting cdn
 	 * @param domain [required] Domain to link
@@ -1658,7 +1658,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Own Logs linked to your hosting
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/ownLogs
 	 * @param serviceName [required] The internal name of your hosting
 	 */
@@ -1671,7 +1671,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/ownLogs/{id}
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param id [required] Id of the object
@@ -1686,7 +1686,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Configuration used on your hosting
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/ovhConfig
 	 * @param historical [required] Filter the value of historical property (=)
 	 * @param path [required] Filter the value of path property (like)
@@ -1703,7 +1703,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Apply a new configuration on this path
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/ovhConfig/{id}/changeConfiguration
 	 * @param environment [required] Environment configuration you want
 	 * @param httpFirewall [required] Configuration you want for http firewall
@@ -1729,7 +1729,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/web/{serviceName}/ovhConfig/{id}
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param id [required] Configuration's id
@@ -1744,7 +1744,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Rollback to an old configuration
-	 * 
+	 *
 	 * REST: POST /hosting/web/{serviceName}/ovhConfig/{id}/rollback
 	 * @param rollbackId [required] The configuration's id you want to rollback
 	 * @param serviceName [required] The internal name of your hosting
@@ -1762,7 +1762,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * List available services
-	 * 
+	 *
 	 * REST: GET /hosting/web
 	 */
 	public ArrayList<String> GET() throws IOException {
@@ -1773,7 +1773,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Find hosting service linked to a domain
-	 * 
+	 *
 	 * REST: GET /hosting/web/attachedDomain
 	 * @param domain [required] Domain used into web hosting attached Domains
 	 */
@@ -1786,7 +1786,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Get offer capabilities
-	 * 
+	 *
 	 * REST: GET /hosting/web/offerCapabilities
 	 * @param offer [required] Describe offer capabilities
 	 */
@@ -1799,7 +1799,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Get available offer
-	 * 
+	 *
 	 * REST: GET /hosting/web/availableOffer
 	 * @param domain [required] Domain you want to add or upgrade a hosting
 	 */
@@ -1813,7 +1813,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * IDs of all modules available
-	 * 
+	 *
 	 * REST: GET /hosting/web/moduleList
 	 * @param latest [required] Filter the value of latest property (=)
 	 * @param active [required] Filter the value of active property (=)
@@ -1830,7 +1830,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 
 	/**
 	 * Get this object properties
-	 * 
+	 *
 	 * REST: GET /hosting/web/moduleList/{id}
 	 * @param id [required] The ID of the module
 	 */
