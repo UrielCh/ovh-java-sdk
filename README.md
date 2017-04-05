@@ -94,3 +94,11 @@ you can use:
 - this api is the public version of the Api used to manage resource fron the biggest OVH customer.
 - the first version of our API had never been released for the sake of ovh. (We outaged OVH a couple of times with the previous version)
 - this api had been build to use multiple account in the same time.
+
+# Supported APIs
+Try the official API [api Ovh europe](https://eu.api.ovh.com/)
+
+# License
+
+3-Clause BSD
+
