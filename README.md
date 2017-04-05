@@ -104,8 +104,10 @@ All services are present excepted `ovh-java-sdk-auth`, that one is embedded in t
 # Authentication
 
 You can use:
-- a `user`/`password`: in this case the API generates CK on demand for 15 minutes, and renew them if needed.
-- a `nic`/`CK`: in this case you can only use a single account. (will be available in the version 1.0)
+- a `user`/`password`: in this case the API generates ConsumerKey on demand for TTL_IN_SEC, and renew them if needed. `ApiOvhCore.getInstance("nic", "password", TTL_IN_SEC)`
+- a `ConsumerKey`: provided by your code. `ApiOvhCore.getInstance("My__consumer___key")` (available in version 0.9.1)
+- a `ConsumerKey`: provided in your configuration, in this case you can only use a single account.
+`ApiOvhCore.getInstance()` (available in version 0.9.1)
 
 # About the API:
 - This api is the public version of the Api used to manage the biggest OVH customer resources.
