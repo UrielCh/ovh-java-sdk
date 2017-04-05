@@ -104,11 +104,11 @@ All services are present excepted `ovh-java-sdk-auth`, that one is embedded in t
 # Authentication
 
 You can use:
-- a `user`/`password`: in this case the API generate CK on demande for 15 minutes, and renew them if needed.
+- a `user`/`password`: in this case the API generates CK on demand for 15 minutes, and renew them if needed.
 - a `nic`/`CK`: in this case you can only use a single account. (will be available in the version 1.0)
 
 # About the API:
-- This api is the public version of the Api used to manage resource from the biggest OVH customer.
+- This api is the public version of the Api used to manage the biggest OVH customer resources.
 - The first version of our API had never been released for the sake of ovh. (We outaged OVH a couple of times with the previous version)
 - This api had been built to use multiple accounts in the same time.
 
