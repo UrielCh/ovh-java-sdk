@@ -1,18 +1,18 @@
 package net.minidev.ovh.core;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.SocketTimeoutException;
+import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import org.apache.http.client.methods.HttpDelete;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.methods.HttpPut;
-import org.apache.http.conn.ConnectTimeoutException;
-import org.apache.http.entity.StringEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -139,12 +139,14 @@ public class ApiOvhCore {
 		return core;
 	}
 
-	private Navigator getNavigator() {
-		Navigator nav = new Navigator();
-		nav.setHeader("X-Ovh-Application", config.getApplicationKey());
-		nav.setHeader("Content-type", "application/json");
-		nav.cnxRetry = 3;
-		return nav;
+	private HttpURLConnection getRequest(String method, URL url) throws IOException {
+		HttpURLConnection request = (HttpURLConnection) url.openConnection();
+		request.setRequestMethod(method);
+		request.setReadTimeout(60000);
+		request.setConnectTimeout(60000);
+		request.setRequestProperty("Content-Type", "application/json");
+		request.setRequestProperty("X-Ovh-Application", config.getApplicationKey());
+		return request;
 	}
 
 	public String getNic() {
@@ -188,6 +190,7 @@ public class ApiOvhCore {
 			// using CK only, no autologin			
 			return false;
 		}
+		nic = nic.toLowerCase();
 		this.nic = nic;
 		this.password = password;
 		this.timeInSec = timeInSec;
@@ -291,7 +294,7 @@ public class ApiOvhCore {
 			data = execInternal(method, query, payload, needAuth);
 		} catch (OVHServiceException e0) {
 			throw e0;
-		} catch (ConnectTimeoutException e1) {
+		} catch (SocketTimeoutException e1) {
 			log.error("CNX TIME OUT");
 			data = execInternal(method, query, payload, needAuth);
 		} catch (IOException e2) {
@@ -303,39 +306,45 @@ public class ApiOvhCore {
 
 	private String execInternal(final String method, final String query, final Object payload, boolean needAuth) throws IOException {
 		String txt = ApiOvhUtils.objectJsonBody(payload);
-		String URL = config.getEndpoint() + query;
+		URL url = new URL(config.getEndpoint() + query);
 		int failure = 0;
 		String response = "";
 		// retry loop
 		while (true) {
 			String CK = this.consumerKey;
-			Navigator nav = getNavigator();
-			nav.setTimeOut(600000);
-			nav.setCnxTimeOut(600000);
-			nav.setMaxSize(4 * 1024 * 1024);
+			HttpURLConnection request = getRequest(method, url);
 			if (needAuth) {
 				String timestamp = getTimestamp();
-				String toHash = config.getAppSecret() + "+" + CK + "+" + method + "+" + URL + "+" + txt + "+" + timestamp;
+				String toHash = config.getAppSecret() + "+" + CK + "+" + method + "+" + url + "+" + txt + "+" + timestamp;
 				String sig = "$1$" + ApiOvhUtils.digestSha1(toHash.getBytes(UTF8));
-				nav.setHeader("X-Ovh-Timestamp", timestamp);
-				nav.setHeader("X-Ovh-Signature", sig);
-				nav.setHeader("X-Ovh-Consumer", CK);
+				request.setRequestProperty("X-Ovh-Timestamp", timestamp);
+				request.setRequestProperty("X-Ovh-Signature", sig);
+				request.setRequestProperty("X-Ovh-Consumer", CK);
 			}
-			if (method.equals("GET")) {
-				HttpGet mtd = new HttpGet(URL);
-				response = nav.getBody(mtd);
-			} else if (method.equals("PUT")) {
-				HttpPut mtd = new HttpPut(URL);
-				mtd.setEntity(new StringEntity(txt, UTF8));
-				response = nav.getBody(mtd);
-			} else if (method.equals("POST")) {
-				HttpPost mtd = new HttpPost(URL);
-				mtd.setEntity(new StringEntity(txt, UTF8));
-				response = nav.getBody(mtd);
-			} else if (method.equals("DELETE")) {
-				HttpDelete mtd = new HttpDelete(URL);
-				response = nav.getBody(mtd);
+			if (txt != null && txt.length() > 0) {
+				request.setDoOutput(true);
+				DataOutputStream out = new DataOutputStream(request.getOutputStream());
+				out.writeBytes(txt);
+				out.flush();
+				out.close();
 			}
+
+			String inputLine;
+			BufferedReader in;
+			int responseCode = request.getResponseCode();
+			if (responseCode == 200) {
+				in = new BufferedReader(new InputStreamReader(request.getInputStream()));
+			} else {
+				in = new BufferedReader(new InputStreamReader(request.getErrorStream()));
+			}
+
+			// build response
+			StringBuilder responseSb = new StringBuilder();
+			while ((inputLine = in.readLine()) != null) {
+				responseSb.append(inputLine);
+			}
+			in.close();
+			response = responseSb.toString();
 			// XML response
 			if (response.startsWith("<") && response.contains("<title>500 Internal Server Error</title>")) {
 				ApiOvhUtils.sleep(500);
@@ -378,13 +387,13 @@ public class ApiOvhCore {
 			Object message1 = obj.get("message");
 			String message = (String) message1;
 			if ("This service is expired".equals(message))
-				throw new OVHServiceException(URL, message);
+				throw new OVHServiceException(url.toString(), message);
 			if ("This service does not exist".equals(message))
-				throw new OVHServiceException(URL, message);
+				throw new OVHServiceException(url.toString(), message);
 			if (message.startsWith("The requested object"))
 				// The requested object (id = 10884320) does not exist
-				throw new OVHServiceException(URL, message);
-			throw new IOException(method + " " + URL + " " + txt + " return: " + message);
+				throw new OVHServiceException(url.toString(), message);
+			throw new IOException(method + " " + url + " " + txt + " return: " + message);
 		}
 		return response;
 	}

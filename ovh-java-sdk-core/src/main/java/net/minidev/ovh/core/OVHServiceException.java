@@ -14,7 +14,7 @@ public class OVHServiceException extends IOException {
 	}
 	
 	public boolean isExpired() {
-		return "This Service is expired".equals(message);
+		return "This service is expired".equalsIgnoreCase(message);
 	}
 	
 	public boolean isNonExists() {
