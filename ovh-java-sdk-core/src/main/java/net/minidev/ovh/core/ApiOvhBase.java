@@ -18,6 +18,10 @@ public abstract class ApiOvhBase {
 			throw new NullPointerException("core can not be null");
 	}
 
+	public ApiOvhCore getCore() {
+		return core;
+	}
+
 	protected StringBuilder query(StringBuilder sb, String name, Object value) {
 		if (value == null)
 			return sb;

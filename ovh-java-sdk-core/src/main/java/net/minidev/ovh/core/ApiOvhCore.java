@@ -13,6 +13,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
@@ -32,11 +33,34 @@ import net.minidev.ovh.api.auth.OvhCredential;
 import net.minidev.ovh.api.auth.OvhMethodEnum;
 
 public class ApiOvhCore {
+	// shared map
+	TreeMap<String, TreeMap<String, OphApiHandler>> mtdHandler;
+
+	/**
+	 * register and handlet linked to a method
+	 * @param method GET PUT POST DELETE or ALL
+	 * @param url
+	 * @param handler
+	 */
+	public void registerHandler(String method, String url, OphApiHandler handler) {
+		if (mtdHandler == null)
+			mtdHandler = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
+
+		TreeMap<String, OphApiHandler> reg;
+		if (method == null)
+			method = "ALL";
+		reg = mtdHandler.get(method);
+		if (reg == null) {
+			reg = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
+			mtdHandler.put(method, reg);
+		}
+		reg.put(url, handler);
+	}
+
+	private ApiOvhConfig config;
 	/**
 	 * log
 	 */
-	private ApiOvhConfig config;
-
 	private final static Logger log = LoggerFactory.getLogger(ApiOvhCore.class);
 	/**
 	 * encoding
@@ -159,8 +183,12 @@ public class ApiOvhCore {
 
 	public ApiOvhCore clone() {
 		ApiOvhCore api = new ApiOvhCore();
-		// api.AS = this.AS;
 		api.consumerKey = this.consumerKey;
+		api.nic = this.nic;
+		api.password = this.password;
+		api.timeInSec = this.timeInSec;
+		api.timeOffset = this.timeOffset;
+		api.mtdHandler = this.mtdHandler;
 		return api;
 	}
 
@@ -311,19 +339,36 @@ public class ApiOvhCore {
 	public String exec(String apiPath, String method, String query, Object payload, boolean needAuth) throws IOException {
 		if (payload == null)
 			payload = "";
-		String data = null;
+		String responseText = null;
 		try {
-			data = execInternal(method, query, payload, needAuth);
+			responseText = execInternal(method, query, payload, needAuth);
 		} catch (OVHServiceException e0) {
 			throw e0;
 		} catch (SocketTimeoutException e1) {
 			log.error("CNX TIME OUT");
-			data = execInternal(method, query, payload, needAuth);
+			responseText = execInternal(method, query, payload, needAuth);
 		} catch (IOException e2) {
 			log.error("API OVH ERROR", e2);
 			throw e2;
 		}
-		return data;
+		if (mtdHandler != null) {
+			for (String mtd : new String[] { method, "ALL" }) {
+				TreeMap<String, OphApiHandler> handlers = null;
+				OphApiHandler handler = null;
+				handlers = mtdHandler.get(mtd);
+				if (handlers == null)
+					continue;
+				handler = handlers.get(apiPath);
+				if (handler == null)
+					continue;
+				try {
+					handler.accept(method, method, payload, responseText);
+				} catch (Exception e) {
+					log.warn("Handler throw exeption on {} {} : {}", method, method, e);
+				}
+			}
+		}
+		return responseText;
 	}
 
 	private String execInternal(final String method, final String query, final Object payload, boolean needAuth) throws IOException {

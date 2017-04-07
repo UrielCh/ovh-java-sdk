@@ -9,6 +9,15 @@
 	<name>OVH SDK for Java</name>
 	<description>OVH ...</description>
 	<url>https://github.com/UrielCh/ovh-java-sdk</url>
+	<properties>
+		<ovhjavasdk.version>${project.version}</ovhjavasdk.version>
+		<jackson.version>2.6.6</jackson.version>
+		<junit.version>4.12</junit.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jre.version>1.8</jre.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
 	<licenses>
 		<license>
 			<name>BSD 3-clause "New" or "Revised" License</name>
@@ -278,31 +287,6 @@
 	<scm>
 		<url>https://github.com/UrielCh/ovh-java-sdk.git</url>
 	</scm>
-	<properties>
-		<ovhjavasdk.version>${project.version}</ovhjavasdk.version>
-		<jackson.version>2.6.6</jackson.version>
-		<junit.version>4.12</junit.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<jre.version>1.6</jre.version>
-	</properties>
-
-	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.6.0</version>
-					<configuration>
-						<source>${jre.version}</source>
-						<target>${jre.version}</target>
-						<encoding>UTF-8</encoding>
-						<forceJavacCompilerUse>true</forceJavacCompilerUse>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-	</build>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
