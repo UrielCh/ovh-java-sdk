@@ -6,6 +6,8 @@ import java.security.NoSuchAlgorithmException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,8 +16,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import net.minidev.net.Navigator;
 
 public class ApiOvhUtils {
 	/**
@@ -62,8 +62,13 @@ public class ApiOvhUtils {
 
 	public void createApplication(String nic, String password) throws IOException {
 		String url = "https://eu.api.ovh.com/createApp/";
-		Navigator nav = new Navigator();
-		String body = nav.doPost(url, "nic=" + nic, "password=" + password, "applicationName=One Shoot Token", "applicationDescription=One Shoot Token");
+		Document doc = Jsoup.connect(url)
+				.data("nic", nic)
+				.data("password", password)
+				.data("applicationName", "One Shoot Token")
+				.data("applicationDescription", "One Shoot Token")
+				.post();
+		String body = doc.toString();
 		Pattern extract = Pattern.compile(" Application (\\w+)<pre><name>([^<]+)</name></pre>");
 		Matcher m = extract.matcher(body);
 		String Key = null;

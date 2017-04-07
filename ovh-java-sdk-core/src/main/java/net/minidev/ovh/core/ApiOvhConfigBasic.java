@@ -1,13 +1,15 @@
 package net.minidev.ovh.core;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.charset.Charset;
+import java.io.InputStreamReader;
 import java.util.Map;
 import java.util.Properties;
 
-import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -145,7 +147,15 @@ public class ApiOvhConfigBasic extends ApiOvhConfig {
 			return null;
 		File lastKey = gettmpStore(nic);
 		if (lastKey != null && lastKey.exists()) {
-			return FileUtils.readFileToString(lastKey, Charset.defaultCharset());
+			BufferedReader in = null;
+			try {
+				in = new BufferedReader(new InputStreamReader(new FileInputStream(lastKey)));
+				return in.readLine();
+			} catch (Exception e) {
+			} finally {
+				if (in != null)
+					in.close();
+			}
 		}
 		return null;
 	}
@@ -153,8 +163,16 @@ public class ApiOvhConfigBasic extends ApiOvhConfig {
 	@Override
 	protected void setConsumerKey(String nic, String consumerKey) throws IOException {
 		File lastKey = gettmpStore(nic);
-		if (lastKey != null)
-			FileUtils.write(lastKey, consumerKey, Charset.defaultCharset());
+		if (lastKey != null) {
+			BufferedWriter bw = null;
+			try {
+				bw = new BufferedWriter(new FileWriter(lastKey));
+				bw.write(consumerKey);
+			} catch (Exception e) {
+			} finally {
+				bw.close();
+			}
+		}
 	}
 
 	@Override

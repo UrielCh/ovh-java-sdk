@@ -3,6 +3,7 @@ package net.minidev.ovh.core;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.SocketTimeoutException;
@@ -13,14 +14,17 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import org.jsoup.Connection;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.nodes.FormElement;
+import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 
-import net.minidev.html.HtmlForm;
-import net.minidev.html.HtmlForms;
-import net.minidev.net.Navigator;
 //import net.minidev.ovh.api.ApiOvh;
 import net.minidev.ovh.api.ApiOvhAuth;
 import net.minidev.ovh.api.auth.OvhAccessRule;
@@ -232,30 +236,48 @@ public class ApiOvhCore {
 			}
 			OvhCredential token = requestToken();
 			log.info("validationUrl Url:{}", token.validationUrl);
-			Navigator nav = new Navigator();
-			String html = nav.getBody(token.validationUrl);
+
+			Document doc = Jsoup.connect(token.validationUrl).get();
+			String html = doc.toString();
 			if (html.contains("Too much requests"))
 				return false;
-			HtmlForms frms = new HtmlForms(html);
-			HtmlForm frm = frms.getBigestForm();
-			if (frm == null) {
-				log.error("NO FRAME in: {}", html);
-				return false;
+
+			Element st = doc.getElementById("sT");
+			FormElement form = null;
+
+			for (Element elm : st.parents()) {
+				// "form".equalsIgnoreCase(elm.tagName())
+				if (elm instanceof FormElement) {
+					form = (FormElement) elm;
+					break;
+				}
 			}
-			int n = frm.size(); // frmName:null frmId:null Action:null (NbField:5)
-			frm.getEntryByPosition(n - 3).value = nic;
-			frm.getEntryByPosition(n - 2).value = password;
-			frm.getEntryByPosition(n - 1).value = Integer.toString(timeInSec);
-			String body = frm.call(nav, token.validationUrl);
-			if (body.contains("Too much requests"))
-				return false;
-			if (body.contains("<p>The document has moved <a href=\"" + config.getRedirection() + "\">here</a>.</p>")) {
+			Elements inputs = form.select("input");
+			Connection validForm = Jsoup.connect(token.validationUrl);
+			validForm.followRedirects(false);
+			for (Element e : inputs) {
+				String value = e.attr("value");
+				String type = e.attr("type");
+				if ("text".equals(type))
+					value = nic;
+				else if ("password".equals(type))
+					value = password;
+				validForm.data(e.attr("name"), value);
+			}
+			validForm.data("duration", Integer.toString(timeInSec));
+			Document doc2 = validForm.post();
+			Elements p = doc2.select("p");
+			if ("The document has moved here.".equals(p.text())) {
 				consumerKey = token.consumerKey;
 				config.setConsumerKey(nic, consumerKey);
 				return true;
 			}
-			log.error("Error missing redirect in body:{}", body);
-			// FileUtils.write(new File("/tmp/zarbie.html"), body);
+
+			String error = doc2.select("div.error").text();
+			if (error != null && error.length() > 0)
+				log.error("Login Error:{}", error);
+			else
+				log.error("Error missing redirect in body:{}", doc2.toString());
 			return false;
 		}
 	}
@@ -330,14 +352,9 @@ public class ApiOvhCore {
 			}
 
 			String inputLine;
-			BufferedReader in;
 			int responseCode = request.getResponseCode();
-			if (responseCode == 200) {
-				in = new BufferedReader(new InputStreamReader(request.getInputStream()));
-			} else {
-				in = new BufferedReader(new InputStreamReader(request.getErrorStream()));
-			}
-
+			InputStream stream = (responseCode == 200) ? request.getInputStream() : request.getErrorStream();
+			BufferedReader in = new BufferedReader(new InputStreamReader(stream));
 			// build response
 			StringBuilder responseSb = new StringBuilder();
 			while ((inputLine = in.readLine()) != null) {
