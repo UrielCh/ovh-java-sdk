@@ -15,7 +15,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/sslGateway
  * version:1.0
  */
@@ -35,7 +35,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/sslGateway/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -51,7 +51,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/sslGateway/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -65,7 +65,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 	public ArrayList<String> serviceName_renewCertificate_POST(String serviceName) throws IOException {
 		String qPath = "/sslGateway/{serviceName}/renewCertificate";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
@@ -81,7 +81,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 	public OvhSslGateway serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/sslGateway/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhSslGateway.class);
 	}
 
@@ -97,7 +97,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 	public void serviceName_PUT(String serviceName, OvhSslGateway body) throws IOException {
 		String qPath = "/sslGateway/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -118,7 +118,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 		addBody(o, "reason", reason);
 		addBody(o, "commentary", commentary);
 		addBody(o, "token", token);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -133,7 +133,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 	public String serviceName_terminate_POST(String serviceName) throws IOException {
 		String qPath = "/sslGateway/{serviceName}/terminate";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, String.class);
 	}
 
@@ -148,7 +148,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 	public ArrayList<Long> serviceName_task_GET(String serviceName) throws IOException {
 		String qPath = "/sslGateway/{serviceName}/task";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
@@ -165,7 +165,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 	public OvhTask serviceName_task_id_GET(String serviceName, Long id) throws IOException {
 		String qPath = "/sslGateway/{serviceName}/task/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -180,7 +180,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 	public ArrayList<String> serviceName_natIp_GET(String serviceName) throws IOException {
 		String qPath = "/sslGateway/{serviceName}/natIp";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -202,7 +202,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 		addBody(o, "contactAdmin", contactAdmin);
 		addBody(o, "contactTech", contactTech);
 		addBody(o, "contactBilling", contactBilling);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, t2);
 	}
 
@@ -217,7 +217,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 	public ArrayList<Long> serviceName_domain_GET(String serviceName) throws IOException {
 		String qPath = "/sslGateway/{serviceName}/domain";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -235,7 +235,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "domain", domain);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhDomain.class);
 	}
 
@@ -251,7 +251,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 	public OvhDomain serviceName_domain_id_GET(String serviceName, Long id) throws IOException {
 		String qPath = "/sslGateway/{serviceName}/domain/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhDomain.class);
 	}
 
@@ -267,7 +267,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 	public void serviceName_domain_id_DELETE(String serviceName, Long id) throws IOException {
 		String qPath = "/sslGateway/{serviceName}/domain/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -281,7 +281,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 	public ArrayList<Long> serviceName_server_GET(String serviceName) throws IOException {
 		String qPath = "/sslGateway/{serviceName}/server";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -301,7 +301,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "address", address);
 		addBody(o, "port", port);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhServer.class);
 	}
 
@@ -317,7 +317,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 	public OvhServer serviceName_server_id_GET(String serviceName, Long id) throws IOException {
 		String qPath = "/sslGateway/{serviceName}/server/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhServer.class);
 	}
 
@@ -334,7 +334,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 	public void serviceName_server_id_PUT(String serviceName, Long id, OvhServer body) throws IOException {
 		String qPath = "/sslGateway/{serviceName}/server/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -349,7 +349,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 	public void serviceName_server_id_DELETE(String serviceName, Long id) throws IOException {
 		String qPath = "/sslGateway/{serviceName}/server/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -362,7 +362,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/sslGateway";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -378,7 +378,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 		String qPath = "/sslGateway/eligibility";
 		StringBuilder sb = path(qPath);
 		query(sb, "domain", domain);
-		String resp = execN("GET", sb.toString());
+		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhEligibilityStatus.class);
 	}
 }

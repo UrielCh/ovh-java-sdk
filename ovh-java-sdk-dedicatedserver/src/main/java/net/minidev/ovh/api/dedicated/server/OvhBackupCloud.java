@@ -1,6 +1,7 @@
 package net.minidev.ovh.api.dedicated.server;
 
 import net.minidev.ovh.api.dedicated.server.backup.OvhBackupContainer;
+import net.minidev.ovh.api.dedicated.server.backup.OvhBackupStatus;
 
 /**
  * Backup Cloud assigned to this server
@@ -32,5 +33,5 @@ public class OvhBackupCloud {
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String status;
+	public OvhBackupStatus status;
 }

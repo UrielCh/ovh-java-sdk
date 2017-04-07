@@ -169,7 +169,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/telephony
  * version:1.0
  */
@@ -188,7 +188,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		String qPath = "/telephony/availableDefaultSipDomains";
 		StringBuilder sb = path(qPath);
 		query(sb, "type", type);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<OvhDefaultSipDomains>> t1 = new TypeReference<ArrayList<OvhDefaultSipDomains>>() {};
@@ -201,7 +201,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/telephony";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};
@@ -214,7 +214,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> currentOrderIds_GET() throws IOException {
 		String qPath = "/telephony/currentOrderIds";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 	private static TypeReference<ArrayList<Long>> t3 = new TypeReference<ArrayList<Long>>() {};
@@ -231,7 +231,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath);
 		query(sb, "axiom", axiom);
 		query(sb, "country", country);
-		String resp = execN("GET", sb.toString());
+		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t4);
 	}
 	private static TypeReference<ArrayList<OvhNumberDetailedZone>> t4 = new TypeReference<ArrayList<OvhNumberDetailedZone>>() {};
@@ -252,7 +252,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		query(sb, "range", range);
 		query(sb, "type", type);
 		query(sb, "zone", zone);
-		String resp = execN("GET", sb.toString());
+		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t5);
 	}
 	private static TypeReference<ArrayList<OvhSpecificNumber>> t5 = new TypeReference<ArrayList<OvhSpecificNumber>>() {};
@@ -269,7 +269,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath);
 		query(sb, "axiom", axiom);
 		query(sb, "country", country);
-		String resp = execN("GET", sb.toString());
+		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -283,7 +283,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		String qPath = "/telephony/number/ranges";
 		StringBuilder sb = path(qPath);
 		query(sb, "country", country);
-		String resp = execN("GET", sb.toString());
+		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -296,7 +296,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhBillingAccount billingAccount_GET(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}";
 		StringBuilder sb = path(qPath, billingAccount);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhBillingAccount.class);
 	}
 
@@ -310,7 +310,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_PUT(String billingAccount, OvhBillingAccount body) throws IOException {
 		String qPath = "/telephony/{billingAccount}";
 		StringBuilder sb = path(qPath, billingAccount);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -326,7 +326,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount);
 		query(sb, "details", details);
 		query(sb, "reason", reason);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -338,7 +338,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Date> billingAccount_historyTollfreeConsumption_GET(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/historyTollfreeConsumption";
 		StringBuilder sb = path(qPath, billingAccount);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t6);
 	}
 	private static TypeReference<ArrayList<Date>> t6 = new TypeReference<ArrayList<Date>>() {};
@@ -353,7 +353,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhHistoryTollfreeConsumption billingAccount_historyTollfreeConsumption_date_GET(String billingAccount, java.util.Date date) throws IOException {
 		String qPath = "/telephony/{billingAccount}/historyTollfreeConsumption/{date}";
 		StringBuilder sb = path(qPath, billingAccount, date);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhHistoryTollfreeConsumption.class);
 	}
 
@@ -367,7 +367,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhPcsFile billingAccount_historyTollfreeConsumption_date_document_GET(String billingAccount, java.util.Date date) throws IOException {
 		String qPath = "/telephony/{billingAccount}/historyTollfreeConsumption/{date}/document";
 		StringBuilder sb = path(qPath, billingAccount, date);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPcsFile.class);
 	}
 
@@ -381,7 +381,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhGenericScreen billingAccount_timeCondition_serviceName_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/timeCondition/{serviceName}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhGenericScreen.class);
 	}
 
@@ -395,7 +395,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTimeConditionOptions billingAccount_timeCondition_serviceName_options_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/timeCondition/{serviceName}/options";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTimeConditionOptions.class);
 	}
 
@@ -410,7 +410,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_timeCondition_serviceName_options_PUT(String billingAccount, String serviceName, OvhTimeConditionOptions body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/timeCondition/{serviceName}/options";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -423,7 +423,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_timeCondition_serviceName_condition_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/timeCondition/{serviceName}/condition";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -446,7 +446,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "policy", policy);
 		addBody(o, "day", day);
 		addBody(o, "hourBegin", hourBegin);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTimeCondition.class);
 	}
 
@@ -461,7 +461,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTimeCondition billingAccount_timeCondition_serviceName_condition_id_GET(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/timeCondition/{serviceName}/condition/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTimeCondition.class);
 	}
 
@@ -477,7 +477,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_timeCondition_serviceName_condition_id_PUT(String billingAccount, String serviceName, Long id, OvhTimeCondition body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/timeCondition/{serviceName}/condition/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -491,7 +491,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_timeCondition_serviceName_condition_id_DELETE(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/timeCondition/{serviceName}/condition/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -503,7 +503,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> billingAccount_timeCondition_GET(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/timeCondition";
 		StringBuilder sb = path(qPath, billingAccount);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -516,7 +516,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_abbreviatedNumber_GET(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/abbreviatedNumber";
 		StringBuilder sb = path(qPath, billingAccount);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -538,7 +538,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "abbreviatedNumber", abbreviatedNumber);
 		addBody(o, "name", name);
 		addBody(o, "surname", surname);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhAbbreviatedNumberGroup.class);
 	}
 
@@ -552,7 +552,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhAbbreviatedNumberGroup billingAccount_abbreviatedNumber_abbreviatedNumber_GET(String billingAccount, Long abbreviatedNumber) throws IOException {
 		String qPath = "/telephony/{billingAccount}/abbreviatedNumber/{abbreviatedNumber}";
 		StringBuilder sb = path(qPath, billingAccount, abbreviatedNumber);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhAbbreviatedNumberGroup.class);
 	}
 
@@ -567,7 +567,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_abbreviatedNumber_abbreviatedNumber_PUT(String billingAccount, Long abbreviatedNumber, OvhAbbreviatedNumberGroup body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/abbreviatedNumber/{abbreviatedNumber}";
 		StringBuilder sb = path(qPath, billingAccount, abbreviatedNumber);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -580,7 +580,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_abbreviatedNumber_abbreviatedNumber_DELETE(String billingAccount, Long abbreviatedNumber) throws IOException {
 		String qPath = "/telephony/{billingAccount}/abbreviatedNumber/{abbreviatedNumber}";
 		StringBuilder sb = path(qPath, billingAccount, abbreviatedNumber);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -593,7 +593,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhVoicemail billingAccount_voicemail_serviceName_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/voicemail/{serviceName}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhVoicemail.class);
 	}
 
@@ -608,7 +608,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_voicemail_serviceName_PUT(String billingAccount, String serviceName, OvhVoicemail body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/voicemail/{serviceName}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -623,7 +623,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		String qPath = "/telephony/{billingAccount}/voicemail/{serviceName}/directories";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		query(sb, "dir", dir);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -638,7 +638,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhVoicemailMessages billingAccount_voicemail_serviceName_directories_id_GET(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/voicemail/{serviceName}/directories/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhVoicemailMessages.class);
 	}
 
@@ -653,7 +653,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_voicemail_serviceName_directories_id_DELETE(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/voicemail/{serviceName}/directories/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -670,7 +670,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "dir", dir);
-		exec("POST", sb.toString(), o);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -686,7 +686,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		String qPath = "/telephony/{billingAccount}/voicemail/{serviceName}/directories/{id}/download";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
 		query(sb, "format", format);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPcsFile.class);
 	}
 
@@ -700,7 +700,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_voicemail_serviceName_migrateOnNewVersion_POST(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/voicemail/{serviceName}/migrateOnNewVersion";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("POST", sb.toString());
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
@@ -713,7 +713,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhVoicemailProperties billingAccount_voicemail_serviceName_settings_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/voicemail/{serviceName}/settings";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhVoicemailProperties.class);
 	}
 
@@ -728,7 +728,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_voicemail_serviceName_settings_PUT(String billingAccount, String serviceName, OvhVoicemailProperties body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/voicemail/{serviceName}/settings";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -744,7 +744,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "routing", routing);
-		exec("POST", sb.toString(), o);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -760,7 +760,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "password", password);
-		exec("POST", sb.toString(), o);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -773,7 +773,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhVoicefaxRoutingEnum billingAccount_voicemail_serviceName_settings_routing_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/voicemail/{serviceName}/settings/routing";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhVoicefaxRoutingEnum.class);
 	}
 
@@ -789,7 +789,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		String qPath = "/telephony/{billingAccount}/voicemail/{serviceName}/greetings";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		query(sb, "dir", dir);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -808,7 +808,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "documentId", documentId);
 		addBody(o, "dir", dir);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, Long.class);
 	}
 
@@ -823,7 +823,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhVoicemailGreetings billingAccount_voicemail_serviceName_greetings_id_GET(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/voicemail/{serviceName}/greetings/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhVoicemailGreetings.class);
 	}
 
@@ -838,7 +838,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_voicemail_serviceName_greetings_id_DELETE(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/voicemail/{serviceName}/greetings/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -855,7 +855,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "dir", dir);
-		exec("POST", sb.toString(), o);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -871,7 +871,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		String qPath = "/telephony/{billingAccount}/voicemail/{serviceName}/greetings/{id}/download";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
 		query(sb, "format", format);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPcsFile.class);
 	}
 
@@ -884,7 +884,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> billingAccount_voicemail_GET(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/voicemail";
 		StringBuilder sb = path(qPath, billingAccount);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -898,7 +898,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhEasyPabx billingAccount_easyPabx_serviceName_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyPabx/{serviceName}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhEasyPabx.class);
 	}
 
@@ -913,7 +913,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_easyPabx_serviceName_PUT(String billingAccount, String serviceName, OvhEasyPabx body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyPabx/{serviceName}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -926,7 +926,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhEasyPabxHunting billingAccount_easyPabx_serviceName_hunting_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyPabx/{serviceName}/hunting";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhEasyPabxHunting.class);
 	}
 
@@ -941,7 +941,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_easyPabx_serviceName_hunting_PUT(String billingAccount, String serviceName, OvhEasyPabxHunting body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyPabx/{serviceName}/hunting";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -954,7 +954,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> billingAccount_easyPabx_serviceName_hunting_agent_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyPabx/{serviceName}/hunting/agent";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -977,7 +977,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "position", position);
 		addBody(o, "logged", logged);
 		addBody(o, "noReplyTimer", noReplyTimer);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhEasyMiniPabxHuntingAgent.class);
 	}
 
@@ -992,7 +992,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhEasyMiniPabxHuntingAgent billingAccount_easyPabx_serviceName_hunting_agent_agentNumber_GET(String billingAccount, String serviceName, String agentNumber) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyPabx/{serviceName}/hunting/agent/{agentNumber}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentNumber);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhEasyMiniPabxHuntingAgent.class);
 	}
 
@@ -1008,7 +1008,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_easyPabx_serviceName_hunting_agent_agentNumber_PUT(String billingAccount, String serviceName, String agentNumber, OvhEasyMiniPabxHuntingAgent body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyPabx/{serviceName}/hunting/agent/{agentNumber}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentNumber);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1022,7 +1022,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_easyPabx_serviceName_hunting_agent_agentNumber_DELETE(String billingAccount, String serviceName, String agentNumber) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyPabx/{serviceName}/hunting/agent/{agentNumber}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentNumber);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -1035,7 +1035,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTones billingAccount_easyPabx_serviceName_hunting_tones_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyPabx/{serviceName}/hunting/tones";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTones.class);
 	}
 
@@ -1050,7 +1050,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_easyPabx_serviceName_hunting_tones_PUT(String billingAccount, String serviceName, OvhTones body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyPabx/{serviceName}/hunting/tones";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1068,7 +1068,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "url", url);
 		addBody(o, "type", type);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1081,7 +1081,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> billingAccount_easyPabx_GET(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyPabx";
 		StringBuilder sb = path(qPath, billingAccount);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -1094,7 +1094,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<OvhPrice> billingAccount_amountSecurityDeposit_GET(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/amountSecurityDeposit";
 		StringBuilder sb = path(qPath, billingAccount);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t7);
 	}
 	private static TypeReference<ArrayList<OvhPrice>> t7 = new TypeReference<ArrayList<OvhPrice>>() {};
@@ -1109,7 +1109,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhLine billingAccount_line_serviceName_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhLine.class);
 	}
 
@@ -1124,7 +1124,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_line_serviceName_PUT(String billingAccount, String serviceName, OvhLine body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1140,7 +1140,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "quantityRemove", quantityRemove);
-		exec("POST", sb.toString(), o);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -1153,7 +1153,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhLineOptions billingAccount_line_serviceName_options_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/options";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhLineOptions.class);
 	}
 
@@ -1168,7 +1168,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_line_serviceName_options_PUT(String billingAccount, String serviceName, OvhLineOptions body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/options";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1181,7 +1181,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public String billingAccount_line_serviceName_options_defaultCodecs_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/options/defaultCodecs";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, String.class);
 	}
 
@@ -1195,7 +1195,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> billingAccount_line_serviceName_options_availableCodecs_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/options/availableCodecs";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -1209,7 +1209,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhLineOffer billingAccount_line_serviceName_offer_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/offer";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhLineOffer.class);
 	}
 
@@ -1227,7 +1227,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		query(sb, "timeframe", timeframe);
 		query(sb, "type", type);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t8);
 	}
 	private static TypeReference<OvhUnitAndValues<OvhTimestampAndValue>> t8 = new TypeReference<OvhUnitAndValues<OvhTimestampAndValue>>() {};
@@ -1242,7 +1242,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<OvhLinePhone> billingAccount_line_serviceName_phoneCanBeAssociable_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/phoneCanBeAssociable";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t9);
 	}
 	private static TypeReference<ArrayList<OvhLinePhone>> t9 = new TypeReference<ArrayList<OvhLinePhone>>() {};
@@ -1257,7 +1257,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_line_serviceName_abbreviatedNumber_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/abbreviatedNumber";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -1280,7 +1280,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "abbreviatedNumber", abbreviatedNumber);
 		addBody(o, "name", name);
 		addBody(o, "surname", surname);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhAbbreviatedNumber.class);
 	}
 
@@ -1295,7 +1295,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhAbbreviatedNumber billingAccount_line_serviceName_abbreviatedNumber_abbreviatedNumber_GET(String billingAccount, String serviceName, Long abbreviatedNumber) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/abbreviatedNumber/{abbreviatedNumber}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, abbreviatedNumber);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhAbbreviatedNumber.class);
 	}
 
@@ -1311,7 +1311,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_line_serviceName_abbreviatedNumber_abbreviatedNumber_PUT(String billingAccount, String serviceName, Long abbreviatedNumber, OvhAbbreviatedNumber body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/abbreviatedNumber/{abbreviatedNumber}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, abbreviatedNumber);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1325,7 +1325,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_line_serviceName_abbreviatedNumber_abbreviatedNumber_DELETE(String billingAccount, String serviceName, Long abbreviatedNumber) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/abbreviatedNumber/{abbreviatedNumber}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, abbreviatedNumber);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -1338,7 +1338,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_line_serviceName_click2CallUser_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/click2CallUser";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -1357,7 +1357,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "password", password);
 		addBody(o, "login", login);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, Long.class);
 	}
 
@@ -1372,7 +1372,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhClick2CallUser billingAccount_line_serviceName_click2CallUser_id_GET(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/click2CallUser/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhClick2CallUser.class);
 	}
 
@@ -1387,7 +1387,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_line_serviceName_click2CallUser_id_DELETE(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/click2CallUser/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -1406,7 +1406,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "callingNumber", callingNumber);
 		addBody(o, "calledNumber", calledNumber);
-		exec("POST", sb.toString(), o);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -1423,7 +1423,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "password", password);
-		exec("POST", sb.toString(), o);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -1436,7 +1436,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<OvhDatetimeAndIpvalue> billingAccount_line_serviceName_ips_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/ips";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t10);
 	}
 	private static TypeReference<ArrayList<OvhDatetimeAndIpvalue>> t10 = new TypeReference<ArrayList<OvhDatetimeAndIpvalue>>() {};
@@ -1451,7 +1451,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> billingAccount_line_serviceName_automaticCall_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/automaticCall";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -1482,7 +1482,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "isAnonymous", isAnonymous);
 		addBody(o, "dialplan", dialplan);
 		addBody(o, "timeout", timeout);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -1497,7 +1497,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhCallsGenerated billingAccount_line_serviceName_automaticCall_identifier_GET(String billingAccount, String serviceName, String identifier) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/automaticCall/{identifier}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, identifier);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhCallsGenerated.class);
 	}
 
@@ -1511,7 +1511,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_line_serviceName_unblock_POST(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/unblock";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("POST", sb.toString());
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
@@ -1527,7 +1527,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "macAddress", macAddress);
-		exec("POST", sb.toString(), o);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -1540,7 +1540,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_line_serviceName_cancelConvertToNumber_POST(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/cancelConvertToNumber";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("POST", sb.toString());
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
@@ -1553,7 +1553,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<OvhRegistrationInformations> billingAccount_line_serviceName_lastRegistrations_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/lastRegistrations";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t11);
 	}
 	private static TypeReference<ArrayList<OvhRegistrationInformations>> t11 = new TypeReference<ArrayList<OvhRegistrationInformations>>() {};
@@ -1568,7 +1568,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_line_serviceName_calls_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/calls";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -1583,7 +1583,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxHuntingQueueLiveCalls billingAccount_line_serviceName_calls_id_GET(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/calls/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxHuntingQueueLiveCalls.class);
 	}
 
@@ -1598,7 +1598,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTask billingAccount_line_serviceName_calls_id_hangup_POST(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/calls/{id}/hangup";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1616,7 +1616,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "number", number);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1634,7 +1634,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "number", number);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1649,7 +1649,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTask billingAccount_line_serviceName_calls_id_hold_POST(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/calls/{id}/hold";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1669,7 +1669,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "whisperingMode", whisperingMode);
 		addBody(o, "number", number);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1687,7 +1687,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "number", number);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1708,7 +1708,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "callingNumber", callingNumber);
 		addBody(o, "calledNumber", calledNumber);
 		addBody(o, "intercom", intercom);
-		exec("POST", sb.toString(), o);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -1721,7 +1721,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_line_serviceName_records_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/records";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -1736,7 +1736,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxRecord billingAccount_line_serviceName_records_id_GET(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/records/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxRecord.class);
 	}
 
@@ -1751,7 +1751,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_line_serviceName_records_id_DELETE(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/records/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -1764,7 +1764,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOfferTask billingAccount_line_serviceName_convertToNumber_POST(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/convertToNumber";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhOfferTask.class);
 	}
 
@@ -1781,7 +1781,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "password", password);
-		exec("POST", sb.toString(), o);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -1794,7 +1794,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhPhone billingAccount_line_serviceName_phone_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/phone";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPhone.class);
 	}
 
@@ -1809,7 +1809,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_line_serviceName_phone_PUT(String billingAccount, String serviceName, OvhPhone body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/phone";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1822,7 +1822,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTask billingAccount_line_serviceName_phone_reboot_POST(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/phone/reboot";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1836,7 +1836,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> billingAccount_line_serviceName_phone_phonebook_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/phone/phonebook";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -1853,7 +1853,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "name", name);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -1868,7 +1868,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_line_serviceName_phone_phonebook_bookKey_phonebookContact_GET(String billingAccount, String serviceName, String bookKey) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/phone/phonebook/{bookKey}/phonebookContact";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, bookKey);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -1898,7 +1898,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "homePhone", homePhone);
 		addBody(o, "workPhone", workPhone);
 		addBody(o, "surname", surname);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, Long.class);
 	}
 
@@ -1914,7 +1914,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhPhonebookContact billingAccount_line_serviceName_phone_phonebook_bookKey_phonebookContact_id_GET(String billingAccount, String serviceName, String bookKey, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/phone/phonebook/{bookKey}/phonebookContact/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, bookKey, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPhonebookContact.class);
 	}
 
@@ -1931,7 +1931,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_line_serviceName_phone_phonebook_bookKey_phonebookContact_id_PUT(String billingAccount, String serviceName, String bookKey, Long id, OvhPhonebookContact body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/phone/phonebook/{bookKey}/phonebookContact/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, bookKey, id);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1946,7 +1946,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_line_serviceName_phone_phonebook_bookKey_phonebookContact_id_DELETE(String billingAccount, String serviceName, String bookKey, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/phone/phonebook/{bookKey}/phonebookContact/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, bookKey, id);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -1960,7 +1960,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhPhonebook billingAccount_line_serviceName_phone_phonebook_bookKey_GET(String billingAccount, String serviceName, String bookKey) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/phone/phonebook/{bookKey}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, bookKey);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPhonebook.class);
 	}
 
@@ -1976,7 +1976,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_line_serviceName_phone_phonebook_bookKey_PUT(String billingAccount, String serviceName, String bookKey, OvhPhonebook body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/phone/phonebook/{bookKey}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, bookKey);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1990,7 +1990,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_line_serviceName_phone_phonebook_bookKey_DELETE(String billingAccount, String serviceName, String bookKey) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/phone/phonebook/{bookKey}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, bookKey);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -2006,7 +2006,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/phone/phonebook/{bookKey}/export";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, bookKey);
 		query(sb, "format", format);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPcsFile.class);
 	}
 
@@ -2024,7 +2024,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName, bookKey);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "documentId", documentId);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -2041,7 +2041,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "ip", ip);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhResetPhoneInfo.class);
 	}
 
@@ -2055,7 +2055,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTask billingAccount_line_serviceName_phone_refreshScreen_POST(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/phone/refreshScreen";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -2069,7 +2069,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_line_serviceName_phone_functionKey_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/phone/functionKey";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -2084,7 +2084,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhFunctionKey billingAccount_line_serviceName_phone_functionKey_keyNum_GET(String billingAccount, String serviceName, Long keyNum) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/phone/functionKey/{keyNum}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, keyNum);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhFunctionKey.class);
 	}
 
@@ -2100,7 +2100,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_line_serviceName_phone_functionKey_keyNum_PUT(String billingAccount, String serviceName, Long keyNum, OvhFunctionKey body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/phone/functionKey/{keyNum}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, keyNum);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -2114,7 +2114,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> billingAccount_line_serviceName_phone_functionKey_keyNum_availableFunction_GET(String billingAccount, String serviceName, Long keyNum) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/phone/functionKey/{keyNum}/availableFunction";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, keyNum);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -2128,7 +2128,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<OvhHardwareOffer> billingAccount_line_serviceName_phone_merchandiseAvailable_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/phone/merchandiseAvailable";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t12);
 	}
 	private static TypeReference<ArrayList<OvhHardwareOffer>> t12 = new TypeReference<ArrayList<OvhHardwareOffer>>() {};
@@ -2148,7 +2148,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "newConfigurations", newConfigurations);
 		addBody(o, "autoReboot", autoReboot);
-		exec("POST", sb.toString(), o);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -2161,7 +2161,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> billingAccount_line_serviceName_phone_rma_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/phone/rma";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -2184,7 +2184,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "newMerchandise", newMerchandise);
 		addBody(o, "mondialRelayId", mondialRelayId);
 		addBody(o, "type", type);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhRmaReturn.class);
 	}
 
@@ -2199,7 +2199,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhRma billingAccount_line_serviceName_phone_rma_id_GET(String billingAccount, String serviceName, String id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/phone/rma/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhRma.class);
 	}
 
@@ -2215,7 +2215,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_line_serviceName_phone_rma_id_PUT(String billingAccount, String serviceName, String id, OvhRma body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/phone/rma/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -2229,7 +2229,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_line_serviceName_phone_rma_id_DELETE(String billingAccount, String serviceName, String id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/phone/rma/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -2245,7 +2245,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "macAddress", macAddress);
-		exec("POST", sb.toString(), o);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -2258,7 +2258,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> billingAccount_line_serviceName_availableSipDomains_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/availableSipDomains";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -2275,7 +2275,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "mode", mode);
-		exec("POST", sb.toString(), o);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -2288,7 +2288,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public Long billingAccount_line_serviceName_maximumAvailableSimultaneousLines_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/maximumAvailableSimultaneousLines";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, Long.class);
 	}
 
@@ -2302,7 +2302,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public Boolean billingAccount_line_serviceName_canChangePassword_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/canChangePassword";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, Boolean.class);
 	}
 
@@ -2316,7 +2316,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTones billingAccount_line_serviceName_tones_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/tones";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTones.class);
 	}
 
@@ -2331,7 +2331,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_line_serviceName_tones_PUT(String billingAccount, String serviceName, OvhTones body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/tones";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -2349,7 +2349,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "url", url);
 		addBody(o, "type", type);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -2362,7 +2362,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> billingAccount_line_GET(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line";
 		StringBuilder sb = path(qPath, billingAccount);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -2375,7 +2375,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> billingAccount_phonebook_GET(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/phonebook";
 		StringBuilder sb = path(qPath, billingAccount);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -2391,7 +2391,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "name", name);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -2405,7 +2405,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_phonebook_bookKey_phonebookContact_GET(String billingAccount, String bookKey) throws IOException {
 		String qPath = "/telephony/{billingAccount}/phonebook/{bookKey}/phonebookContact";
 		StringBuilder sb = path(qPath, billingAccount, bookKey);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -2434,7 +2434,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "homePhone", homePhone);
 		addBody(o, "workPhone", workPhone);
 		addBody(o, "surname", surname);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, Long.class);
 	}
 
@@ -2449,7 +2449,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhPhonebookContact billingAccount_phonebook_bookKey_phonebookContact_id_GET(String billingAccount, String bookKey, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/phonebook/{bookKey}/phonebookContact/{id}";
 		StringBuilder sb = path(qPath, billingAccount, bookKey, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPhonebookContact.class);
 	}
 
@@ -2465,7 +2465,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_phonebook_bookKey_phonebookContact_id_PUT(String billingAccount, String bookKey, Long id, OvhPhonebookContact body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/phonebook/{bookKey}/phonebookContact/{id}";
 		StringBuilder sb = path(qPath, billingAccount, bookKey, id);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -2479,7 +2479,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_phonebook_bookKey_phonebookContact_id_DELETE(String billingAccount, String bookKey, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/phonebook/{bookKey}/phonebookContact/{id}";
 		StringBuilder sb = path(qPath, billingAccount, bookKey, id);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -2492,7 +2492,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhPhonebookMaster billingAccount_phonebook_bookKey_GET(String billingAccount, String bookKey) throws IOException {
 		String qPath = "/telephony/{billingAccount}/phonebook/{bookKey}";
 		StringBuilder sb = path(qPath, billingAccount, bookKey);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPhonebookMaster.class);
 	}
 
@@ -2507,7 +2507,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_phonebook_bookKey_PUT(String billingAccount, String bookKey, OvhPhonebookMaster body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/phonebook/{bookKey}";
 		StringBuilder sb = path(qPath, billingAccount, bookKey);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -2520,7 +2520,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_phonebook_bookKey_DELETE(String billingAccount, String bookKey) throws IOException {
 		String qPath = "/telephony/{billingAccount}/phonebook/{bookKey}";
 		StringBuilder sb = path(qPath, billingAccount, bookKey);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -2535,7 +2535,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		String qPath = "/telephony/{billingAccount}/phonebook/{bookKey}/export";
 		StringBuilder sb = path(qPath, billingAccount, bookKey);
 		query(sb, "format", format);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPcsFile.class);
 	}
 
@@ -2552,7 +2552,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, bookKey);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "documentId", documentId);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -2566,7 +2566,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTelephonyService billingAccount_service_serviceName_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/service/{serviceName}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTelephonyService.class);
 	}
 
@@ -2581,7 +2581,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_service_serviceName_PUT(String billingAccount, String serviceName, OvhTelephonyService body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/service/{serviceName}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -2598,7 +2598,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		query(sb, "details", details);
 		query(sb, "reason", reason);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -2621,7 +2621,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		query(sb, "destinationType", destinationType);
 		query(sb, "planType", planType);
 		query(sb, "wayType", wayType);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -2636,7 +2636,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhVoiceConsumption billingAccount_service_serviceName_voiceConsumption_consumptionId_GET(String billingAccount, String serviceName, Long consumptionId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/service/{serviceName}/voiceConsumption/{consumptionId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, consumptionId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhVoiceConsumption.class);
 	}
 
@@ -2651,7 +2651,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhCallDiagnostics billingAccount_service_serviceName_voiceConsumption_consumptionId_callDiagnostics_GET(String billingAccount, String serviceName, Long consumptionId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/service/{serviceName}/voiceConsumption/{consumptionId}/callDiagnostics";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, consumptionId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhCallDiagnostics.class);
 	}
 
@@ -2665,7 +2665,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOfferChange billingAccount_service_serviceName_offerChange_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/service/{serviceName}/offerChange";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOfferChange.class);
 	}
 
@@ -2682,7 +2682,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "offer", offer);
-		exec("POST", sb.toString(), o);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -2695,7 +2695,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_service_serviceName_offerChange_DELETE(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/service/{serviceName}/offerChange";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -2718,7 +2718,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		query(sb, "destinationType", destinationType);
 		query(sb, "planType", planType);
 		query(sb, "wayType", wayType);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -2733,7 +2733,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhPreviousVoiceConsumption billingAccount_service_serviceName_previousVoiceConsumption_consumptionId_GET(String billingAccount, String serviceName, Long consumptionId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/service/{serviceName}/previousVoiceConsumption/{consumptionId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, consumptionId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPreviousVoiceConsumption.class);
 	}
 
@@ -2747,7 +2747,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_service_serviceName_cancelTermination_POST(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/service/{serviceName}/cancelTermination";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("POST", sb.toString());
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
@@ -2766,7 +2766,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		query(sb, "action", action);
 		query(sb, "serviceType", serviceType);
 		query(sb, "status", status);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -2781,7 +2781,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTask billingAccount_service_serviceName_task_taskId_GET(String billingAccount, String serviceName, Long taskId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/service/{serviceName}/task/{taskId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, taskId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -2799,7 +2799,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		query(sb, "creationDatetime.from", creationDatetime_from);
 		query(sb, "creationDatetime.to", creationDatetime_to);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -2814,7 +2814,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhRepaymentConsumption billingAccount_service_serviceName_repaymentConsumption_consumptionId_GET(String billingAccount, String serviceName, Long consumptionId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/service/{serviceName}/repaymentConsumption/{consumptionId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, consumptionId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhRepaymentConsumption.class);
 	}
 
@@ -2828,7 +2828,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhDirectoryInfo billingAccount_service_serviceName_directory_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/service/{serviceName}/directory";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhDirectoryInfo.class);
 	}
 
@@ -2843,7 +2843,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_service_serviceName_directory_PUT(String billingAccount, String serviceName, OvhDirectoryInfo body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/service/{serviceName}/directory";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -2856,7 +2856,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<OvhDirectoryWayType> billingAccount_service_serviceName_directory_getWayTypes_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/service/{serviceName}/directory/getWayTypes";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t13);
 	}
 	private static TypeReference<ArrayList<OvhDirectoryWayType>> t13 = new TypeReference<ArrayList<OvhDirectoryWayType>>() {};
@@ -2873,7 +2873,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		String qPath = "/telephony/{billingAccount}/service/{serviceName}/directory/getDirectoryServiceCode";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		query(sb, "apeCode", apeCode);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t14);
 	}
 	private static TypeReference<ArrayList<OvhDirectoryHeadingPJ>> t14 = new TypeReference<ArrayList<OvhDirectoryHeadingPJ>>() {};
@@ -2891,7 +2891,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "entrepriseNumber", entrepriseNumber);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhEntrepriseNumberInformationsTask.class);
 	}
 
@@ -2911,7 +2911,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		query(sb, "creationDatetime.from", creationDatetime_from);
 		query(sb, "creationDatetime.to", creationDatetime_to);
 		query(sb, "wayType", wayType);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -2926,7 +2926,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhFaxConsumption billingAccount_service_serviceName_faxConsumption_consumptionId_GET(String billingAccount, String serviceName, Long consumptionId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/service/{serviceName}/faxConsumption/{consumptionId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, consumptionId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhFaxConsumption.class);
 	}
 
@@ -2946,7 +2946,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		query(sb, "action", action);
 		query(sb, "status", status);
 		query(sb, "type", type);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -2961,7 +2961,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOfferTask billingAccount_service_serviceName_offerTask_taskId_GET(String billingAccount, String serviceName, Long taskId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/service/{serviceName}/offerTask/{taskId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, taskId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOfferTask.class);
 	}
 
@@ -2975,7 +2975,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhEventToken billingAccount_service_serviceName_eventToken_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/service/{serviceName}/eventToken";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhEventToken.class);
 	}
 
@@ -2992,7 +2992,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "expiration", expiration);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -3006,7 +3006,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_service_serviceName_eventToken_DELETE(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/service/{serviceName}/eventToken";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -3022,7 +3022,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "billingAccountDestination", billingAccountDestination);
-		exec("POST", sb.toString(), o);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -3037,7 +3037,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		String qPath = "/telephony/{billingAccount}/service/{serviceName}/diagnosticReports";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		query(sb, "dayInterval", dayInterval);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t15);
 	}
 	private static TypeReference<ArrayList<OvhDiagnosticReport>> t15 = new TypeReference<ArrayList<OvhDiagnosticReport>>() {};
@@ -3052,7 +3052,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<OvhLineOffer> billingAccount_service_serviceName_offerChanges_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/service/{serviceName}/offerChanges";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t16);
 	}
 	private static TypeReference<ArrayList<OvhLineOffer>> t16 = new TypeReference<ArrayList<OvhLineOffer>>() {};
@@ -3066,7 +3066,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> billingAccount_service_GET(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/service";
 		StringBuilder sb = path(qPath, billingAccount);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -3082,7 +3082,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "billingAccountSite", billingAccountSite);
-		exec("POST", sb.toString(), o);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -3094,7 +3094,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public String billingAccount_billingAccountSite_GET(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/billingAccountSite";
 		StringBuilder sb = path(qPath, billingAccount);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, String.class);
 	}
 
@@ -3108,7 +3108,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhScheduler billingAccount_scheduler_serviceName_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/scheduler/{serviceName}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhScheduler.class);
 	}
 
@@ -3123,7 +3123,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_scheduler_serviceName_PUT(String billingAccount, String serviceName, OvhScheduler body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/scheduler/{serviceName}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -3139,7 +3139,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "url", url);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -3163,7 +3163,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		query(sb, "dateEnd.to", dateEnd_to);
 		query(sb, "dateStart.from", dateStart_from);
 		query(sb, "dateStart.to", dateStart_to);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -3190,7 +3190,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "dateEnd", dateEnd);
 		addBody(o, "title", title);
 		addBody(o, "description", description);
-		exec("POST", sb.toString(), o);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -3204,7 +3204,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhSchedulerEvent billingAccount_scheduler_serviceName_events_uid_GET(String billingAccount, String serviceName, String uid) throws IOException {
 		String qPath = "/telephony/{billingAccount}/scheduler/{serviceName}/events/{uid}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, uid);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhSchedulerEvent.class);
 	}
 
@@ -3220,7 +3220,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_scheduler_serviceName_events_uid_PUT(String billingAccount, String serviceName, String uid, OvhSchedulerEvent body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/scheduler/{serviceName}/events/{uid}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, uid);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -3234,7 +3234,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_scheduler_serviceName_events_uid_DELETE(String billingAccount, String serviceName, String uid) throws IOException {
 		String qPath = "/telephony/{billingAccount}/scheduler/{serviceName}/events/{uid}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, uid);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -3246,7 +3246,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> billingAccount_scheduler_GET(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/scheduler";
 		StringBuilder sb = path(qPath, billingAccount);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -3259,7 +3259,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhService billingAccount_serviceInfos_GET(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/serviceInfos";
 		StringBuilder sb = path(qPath, billingAccount);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -3273,7 +3273,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_serviceInfos_PUT(String billingAccount, OvhService body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/serviceInfos";
 		StringBuilder sb = path(qPath, billingAccount);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -3290,7 +3290,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "amount", amount);
 		addBody(o, "billingAccountDestination", billingAccountDestination);
-		exec("POST", sb.toString(), o);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -3303,7 +3303,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhNumber billingAccount_number_serviceName_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/number/{serviceName}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhNumber.class);
 	}
 
@@ -3318,7 +3318,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_number_serviceName_PUT(String billingAccount, String serviceName, OvhNumber body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/number/{serviceName}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -3331,7 +3331,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhLineOffersAndContracts billingAccount_number_serviceName_convertToLineAvailableOffers_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/number/{serviceName}/convertToLineAvailableOffers";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhLineOffersAndContracts.class);
 	}
 
@@ -3348,7 +3348,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "offer", offer);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOfferTask.class);
 	}
 
@@ -3362,7 +3362,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_number_serviceName_cancelConvertToLine_POST(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/number/{serviceName}/cancelConvertToLine";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("POST", sb.toString());
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
@@ -3378,7 +3378,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "featureType", featureType);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -3391,7 +3391,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> billingAccount_number_GET(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/number";
 		StringBuilder sb = path(qPath, billingAccount);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -3411,7 +3411,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "contactAdmin", contactAdmin);
 		addBody(o, "contactTech", contactTech);
 		addBody(o, "contactBilling", contactBilling);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, t3);
 	}
 
@@ -3427,7 +3427,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "billingAccountDestination", billingAccountDestination);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, Boolean.class);
 	}
 
@@ -3440,7 +3440,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhEventToken billingAccount_eventToken_GET(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/eventToken";
 		StringBuilder sb = path(qPath, billingAccount);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhEventToken.class);
 	}
 
@@ -3456,7 +3456,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "expiration", expiration);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -3469,7 +3469,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_eventToken_DELETE(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/eventToken";
 		StringBuilder sb = path(qPath, billingAccount);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -3481,7 +3481,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_portability_GET(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/portability";
 		StringBuilder sb = path(qPath, billingAccount);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -3495,7 +3495,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhPortability billingAccount_portability_id_GET(String billingAccount, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/portability/{id}";
 		StringBuilder sb = path(qPath, billingAccount, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPortability.class);
 	}
 
@@ -3509,7 +3509,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public Boolean billingAccount_portability_id_dateCanBeChanged_GET(String billingAccount, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/portability/{id}/dateCanBeChanged";
 		StringBuilder sb = path(qPath, billingAccount, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, Boolean.class);
 	}
 
@@ -3523,7 +3523,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<OvhPortabilityStep> billingAccount_portability_id_status_GET(String billingAccount, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/portability/{id}/status";
 		StringBuilder sb = path(qPath, billingAccount, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t17);
 	}
 	private static TypeReference<ArrayList<OvhPortabilityStep>> t17 = new TypeReference<ArrayList<OvhPortabilityStep>>() {};
@@ -3538,7 +3538,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public Boolean billingAccount_portability_id_canBeCancelled_GET(String billingAccount, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/portability/{id}/canBeCancelled";
 		StringBuilder sb = path(qPath, billingAccount, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, Boolean.class);
 	}
 
@@ -3552,7 +3552,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_portability_id_execute_POST(String billingAccount, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/portability/{id}/execute";
 		StringBuilder sb = path(qPath, billingAccount, id);
-		exec("POST", sb.toString());
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
@@ -3565,7 +3565,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_portability_id_changeDate_POST(String billingAccount, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/portability/{id}/changeDate";
 		StringBuilder sb = path(qPath, billingAccount, id);
-		exec("POST", sb.toString());
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
@@ -3578,7 +3578,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public Boolean billingAccount_portability_id_canBeExecuted_GET(String billingAccount, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/portability/{id}/canBeExecuted";
 		StringBuilder sb = path(qPath, billingAccount, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, Boolean.class);
 	}
 
@@ -3592,7 +3592,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_portability_id_cancel_POST(String billingAccount, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/portability/{id}/cancel";
 		StringBuilder sb = path(qPath, billingAccount, id);
-		exec("POST", sb.toString());
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
@@ -3604,7 +3604,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Date> billingAccount_historyRepaymentConsumption_GET(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/historyRepaymentConsumption";
 		StringBuilder sb = path(qPath, billingAccount);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t6);
 	}
 
@@ -3620,7 +3620,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "billingNumber", billingNumber);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhHistoryRepaymentConsumption.class);
 	}
 
@@ -3634,7 +3634,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhHistoryRepaymentConsumption billingAccount_historyRepaymentConsumption_date_GET(String billingAccount, java.util.Date date) throws IOException {
 		String qPath = "/telephony/{billingAccount}/historyRepaymentConsumption/{date}";
 		StringBuilder sb = path(qPath, billingAccount, date);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhHistoryRepaymentConsumption.class);
 	}
 
@@ -3648,7 +3648,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhPcsFile billingAccount_historyRepaymentConsumption_date_document_GET(String billingAccount, java.util.Date date) throws IOException {
 		String qPath = "/telephony/{billingAccount}/historyRepaymentConsumption/{date}/document";
 		StringBuilder sb = path(qPath, billingAccount, date);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPcsFile.class);
 	}
 
@@ -3662,7 +3662,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhVxml billingAccount_vxml_serviceName_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/vxml/{serviceName}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhVxml.class);
 	}
 
@@ -3676,7 +3676,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhVxmlProperties billingAccount_vxml_serviceName_settings_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/vxml/{serviceName}/settings";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhVxmlProperties.class);
 	}
 
@@ -3691,7 +3691,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_vxml_serviceName_settings_PUT(String billingAccount, String serviceName, OvhVxmlProperties body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/vxml/{serviceName}/settings";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -3703,7 +3703,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> billingAccount_vxml_GET(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/vxml";
 		StringBuilder sb = path(qPath, billingAccount);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -3717,7 +3717,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhRedirect billingAccount_redirect_serviceName_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/redirect/{serviceName}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhRedirect.class);
 	}
 
@@ -3732,7 +3732,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_redirect_serviceName_PUT(String billingAccount, String serviceName, OvhRedirect body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/redirect/{serviceName}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -3748,7 +3748,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "destination", destination);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -3761,7 +3761,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> billingAccount_redirect_GET(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/redirect";
 		StringBuilder sb = path(qPath, billingAccount);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -3775,7 +3775,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhRsva billingAccount_rsva_serviceName_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/rsva/{serviceName}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhRsva.class);
 	}
 
@@ -3789,7 +3789,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhDetailedRateCodeInformation billingAccount_rsva_serviceName_scheduledRateCode_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/rsva/{serviceName}/scheduledRateCode";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhDetailedRateCodeInformation.class);
 	}
 
@@ -3806,7 +3806,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "rateCode", rateCode);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhDetailedRateCodeInformation.class);
 	}
 
@@ -3820,7 +3820,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<OvhRateCodeInformation> billingAccount_rsva_serviceName_allowedRateCodes_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/rsva/{serviceName}/allowedRateCodes";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t18);
 	}
 	private static TypeReference<ArrayList<OvhRateCodeInformation>> t18 = new TypeReference<ArrayList<OvhRateCodeInformation>>() {};
@@ -3835,7 +3835,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhDetailedRateCodeInformation billingAccount_rsva_serviceName_currentRateCode_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/rsva/{serviceName}/currentRateCode";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhDetailedRateCodeInformation.class);
 	}
 
@@ -3849,7 +3849,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_rsva_serviceName_cancelScheduledRateCode_POST(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/rsva/{serviceName}/cancelScheduledRateCode";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("POST", sb.toString());
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
@@ -3861,7 +3861,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> billingAccount_rsva_GET(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/rsva";
 		StringBuilder sb = path(qPath, billingAccount);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -3875,7 +3875,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhFax billingAccount_fax_serviceName_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/fax/{serviceName}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhFax.class);
 	}
 
@@ -3890,7 +3890,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_fax_serviceName_PUT(String billingAccount, String serviceName, OvhFax body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/fax/{serviceName}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -3903,7 +3903,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_fax_serviceName_campaigns_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/fax/{serviceName}/campaigns";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -3932,7 +3932,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "sendDate", sendDate);
 		addBody(o, "name", name);
 		addBody(o, "sendType", sendType);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhFaxCampaign.class);
 	}
 
@@ -3947,7 +3947,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhFaxCampaignDetail billingAccount_fax_serviceName_campaigns_id_detail_GET(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/fax/{serviceName}/campaigns/{id}/detail";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhFaxCampaignDetail.class);
 	}
 
@@ -3962,7 +3962,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhFaxCampaign billingAccount_fax_serviceName_campaigns_id_GET(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/fax/{serviceName}/campaigns/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhFaxCampaign.class);
 	}
 
@@ -3977,7 +3977,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_fax_serviceName_campaigns_id_DELETE(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/fax/{serviceName}/campaigns/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -3991,7 +3991,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_fax_serviceName_campaigns_id_stop_POST(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/fax/{serviceName}/campaigns/{id}/stop";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		exec("POST", sb.toString());
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
@@ -4005,7 +4005,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_fax_serviceName_campaigns_id_start_POST(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/fax/{serviceName}/campaigns/{id}/start";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		exec("POST", sb.toString());
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
@@ -4018,7 +4018,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhFaxProperties billingAccount_fax_serviceName_settings_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/fax/{serviceName}/settings";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhFaxProperties.class);
 	}
 
@@ -4033,7 +4033,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_fax_serviceName_settings_PUT(String billingAccount, String serviceName, OvhFaxProperties body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/fax/{serviceName}/settings";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -4049,7 +4049,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "password", password);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -4064,7 +4064,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public String billingAccount_fax_serviceName_settings_newPassword_POST(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/fax/{serviceName}/settings/newPassword";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, String.class);
 	}
 
@@ -4085,7 +4085,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "pdfUrl", pdfUrl);
 		addBody(o, "dateSchedule", dateSchedule);
 		addBody(o, "recipients", recipients);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -4098,7 +4098,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> billingAccount_fax_GET(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/fax";
 		StringBuilder sb = path(qPath, billingAccount);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -4112,7 +4112,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhConference billingAccount_conference_serviceName_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/conference/{serviceName}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhConference.class);
 	}
 
@@ -4126,7 +4126,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTask billingAccount_conference_serviceName_unlock_POST(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/conference/{serviceName}/unlock";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -4140,7 +4140,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_conference_serviceName_participants_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/conference/{serviceName}/participants";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -4158,7 +4158,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "value", value);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -4173,7 +4173,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhConferenceParticipants billingAccount_conference_serviceName_participants_id_GET(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/conference/{serviceName}/participants/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhConferenceParticipants.class);
 	}
 
@@ -4188,7 +4188,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTask billingAccount_conference_serviceName_participants_id_unmute_POST(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/conference/{serviceName}/participants/{id}/unmute";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -4203,7 +4203,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTask billingAccount_conference_serviceName_participants_id_mute_POST(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/conference/{serviceName}/participants/{id}/mute";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -4218,7 +4218,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTask billingAccount_conference_serviceName_participants_id_kick_POST(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/conference/{serviceName}/participants/{id}/kick";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -4233,7 +4233,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTask billingAccount_conference_serviceName_participants_id_deaf_POST(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/conference/{serviceName}/participants/{id}/deaf";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -4248,7 +4248,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTask billingAccount_conference_serviceName_participants_id_undeaf_POST(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/conference/{serviceName}/participants/{id}/undeaf";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -4262,7 +4262,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_conference_serviceName_histories_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/conference/{serviceName}/histories";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -4277,7 +4277,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhConferenceHistory billingAccount_conference_serviceName_histories_id_GET(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/conference/{serviceName}/histories/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhConferenceHistory.class);
 	}
 
@@ -4291,7 +4291,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTask billingAccount_conference_serviceName_lock_POST(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/conference/{serviceName}/lock";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -4305,7 +4305,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhConferenceInformations billingAccount_conference_serviceName_informations_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/conference/{serviceName}/informations";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhConferenceInformations.class);
 	}
 
@@ -4319,7 +4319,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhConferenceProperties billingAccount_conference_serviceName_settings_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/conference/{serviceName}/settings";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhConferenceProperties.class);
 	}
 
@@ -4334,7 +4334,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_conference_serviceName_settings_PUT(String billingAccount, String serviceName, OvhConferenceProperties body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/conference/{serviceName}/settings";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -4346,7 +4346,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> billingAccount_conference_GET(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/conference";
 		StringBuilder sb = path(qPath, billingAccount);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -4360,7 +4360,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhMiniPabx billingAccount_miniPabx_serviceName_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/miniPabx/{serviceName}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhMiniPabx.class);
 	}
 
@@ -4375,7 +4375,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_miniPabx_serviceName_PUT(String billingAccount, String serviceName, OvhMiniPabx body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/miniPabx/{serviceName}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -4388,7 +4388,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhMiniPabxHunting billingAccount_miniPabx_serviceName_hunting_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/miniPabx/{serviceName}/hunting";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhMiniPabxHunting.class);
 	}
 
@@ -4403,7 +4403,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_miniPabx_serviceName_hunting_PUT(String billingAccount, String serviceName, OvhMiniPabxHunting body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/miniPabx/{serviceName}/hunting";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -4416,7 +4416,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> billingAccount_miniPabx_serviceName_hunting_agent_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/miniPabx/{serviceName}/hunting/agent";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -4439,7 +4439,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "position", position);
 		addBody(o, "logged", logged);
 		addBody(o, "noReplyTimer", noReplyTimer);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhEasyMiniPabxHuntingAgent.class);
 	}
 
@@ -4454,7 +4454,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhEasyMiniPabxHuntingAgent billingAccount_miniPabx_serviceName_hunting_agent_agentNumber_GET(String billingAccount, String serviceName, String agentNumber) throws IOException {
 		String qPath = "/telephony/{billingAccount}/miniPabx/{serviceName}/hunting/agent/{agentNumber}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentNumber);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhEasyMiniPabxHuntingAgent.class);
 	}
 
@@ -4470,7 +4470,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_miniPabx_serviceName_hunting_agent_agentNumber_PUT(String billingAccount, String serviceName, String agentNumber, OvhEasyMiniPabxHuntingAgent body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/miniPabx/{serviceName}/hunting/agent/{agentNumber}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentNumber);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -4484,7 +4484,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_miniPabx_serviceName_hunting_agent_agentNumber_DELETE(String billingAccount, String serviceName, String agentNumber) throws IOException {
 		String qPath = "/telephony/{billingAccount}/miniPabx/{serviceName}/hunting/agent/{agentNumber}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentNumber);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -4497,7 +4497,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTones billingAccount_miniPabx_serviceName_tones_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/miniPabx/{serviceName}/tones";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTones.class);
 	}
 
@@ -4512,7 +4512,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_miniPabx_serviceName_tones_PUT(String billingAccount, String serviceName, OvhTones body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/miniPabx/{serviceName}/tones";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -4530,7 +4530,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "url", url);
 		addBody(o, "type", type);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -4543,7 +4543,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> billingAccount_miniPabx_GET(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/miniPabx";
 		StringBuilder sb = path(qPath, billingAccount);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -4556,7 +4556,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<OvhPrice> billingAccount_allowedCreditThreshold_GET(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/allowedCreditThreshold";
 		StringBuilder sb = path(qPath, billingAccount);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t7);
 	}
 
@@ -4569,7 +4569,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Date> billingAccount_historyConsumption_GET(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/historyConsumption";
 		StringBuilder sb = path(qPath, billingAccount);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t6);
 	}
 
@@ -4583,7 +4583,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhHistoryConsumption billingAccount_historyConsumption_date_GET(String billingAccount, java.util.Date date) throws IOException {
 		String qPath = "/telephony/{billingAccount}/historyConsumption/{date}";
 		StringBuilder sb = path(qPath, billingAccount, date);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhHistoryConsumption.class);
 	}
 
@@ -4600,7 +4600,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		String qPath = "/telephony/{billingAccount}/historyConsumption/{date}/document";
 		StringBuilder sb = path(qPath, billingAccount, date);
 		query(sb, "extension", extension);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPcsFile.class);
 	}
 
@@ -4616,7 +4616,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		String qPath = "/telephony/{billingAccount}/historyConsumption/{date}/file";
 		StringBuilder sb = path(qPath, billingAccount, date);
 		query(sb, "extension", extension);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPcsFile.class);
 	}
 
@@ -4635,7 +4635,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "name", name);
 		addBody(o, "url", url);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -4649,7 +4649,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhEasyHunting billingAccount_easyHunting_serviceName_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhEasyHunting.class);
 	}
 
@@ -4664,7 +4664,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_easyHunting_serviceName_PUT(String billingAccount, String serviceName, OvhEasyHunting body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -4677,7 +4677,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_easyHunting_serviceName_records_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/records";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -4692,7 +4692,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxRecord billingAccount_easyHunting_serviceName_records_id_GET(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/records/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxRecord.class);
 	}
 
@@ -4707,7 +4707,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_easyHunting_serviceName_records_id_DELETE(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/records/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -4720,7 +4720,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhEasyHuntingScreenListsConditionsSettings billingAccount_easyHunting_serviceName_screenListConditions_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/screenListConditions";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhEasyHuntingScreenListsConditionsSettings.class);
 	}
 
@@ -4735,7 +4735,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_easyHunting_serviceName_screenListConditions_PUT(String billingAccount, String serviceName, OvhEasyHuntingScreenListsConditionsSettings body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/screenListConditions";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -4750,7 +4750,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/screenListConditions/conditions";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		query(sb, "screenListType", screenListType);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -4771,7 +4771,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "destinationNumber", destinationNumber);
 		addBody(o, "callerIdNumber", callerIdNumber);
 		addBody(o, "screenListType", screenListType);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhEasyHuntingScreenListsConditions.class);
 	}
 
@@ -4786,7 +4786,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhEasyHuntingScreenListsConditions billingAccount_easyHunting_serviceName_screenListConditions_conditions_conditionId_GET(String billingAccount, String serviceName, Long conditionId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/screenListConditions/conditions/{conditionId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, conditionId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhEasyHuntingScreenListsConditions.class);
 	}
 
@@ -4802,7 +4802,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_easyHunting_serviceName_screenListConditions_conditions_conditionId_PUT(String billingAccount, String serviceName, Long conditionId, OvhEasyHuntingScreenListsConditions body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/screenListConditions/conditions/{conditionId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, conditionId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -4816,7 +4816,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_easyHunting_serviceName_screenListConditions_conditions_conditionId_DELETE(String billingAccount, String serviceName, Long conditionId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/screenListConditions/conditions/{conditionId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, conditionId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -4829,7 +4829,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxHunting billingAccount_easyHunting_serviceName_hunting_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxHunting.class);
 	}
 
@@ -4844,7 +4844,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_easyHunting_serviceName_hunting_PUT(String billingAccount, String serviceName, OvhOvhPabxHunting body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -4857,7 +4857,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_easyHunting_serviceName_hunting_agent_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/agent";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -4882,7 +4882,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "simultaneousLines", simultaneousLines);
 		addBody(o, "status", status);
 		addBody(o, "timeout", timeout);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOvhPabxHuntingAgent.class);
 	}
 
@@ -4897,7 +4897,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxHuntingAgent billingAccount_easyHunting_serviceName_hunting_agent_agentId_GET(String billingAccount, String serviceName, Long agentId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/agent/{agentId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxHuntingAgent.class);
 	}
 
@@ -4913,7 +4913,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_easyHunting_serviceName_hunting_agent_agentId_PUT(String billingAccount, String serviceName, Long agentId, OvhOvhPabxHuntingAgent body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/agent/{agentId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -4927,7 +4927,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_easyHunting_serviceName_hunting_agent_agentId_DELETE(String billingAccount, String serviceName, Long agentId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/agent/{agentId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -4941,7 +4941,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_easyHunting_serviceName_hunting_agent_agentId_calls_GET(String billingAccount, String serviceName, Long agentId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/agent/{agentId}/calls";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -4957,7 +4957,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxHuntingQueueLiveCalls billingAccount_easyHunting_serviceName_hunting_agent_agentId_calls_id_GET(String billingAccount, String serviceName, Long agentId, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/agent/{agentId}/calls/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxHuntingQueueLiveCalls.class);
 	}
 
@@ -4973,7 +4973,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTask billingAccount_easyHunting_serviceName_hunting_agent_agentId_calls_id_hangup_POST(String billingAccount, String serviceName, Long agentId, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/agent/{agentId}/calls/{id}/hangup";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId, id);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -4992,7 +4992,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId, id);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "number", number);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -5011,7 +5011,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId, id);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "number", number);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -5027,7 +5027,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTask billingAccount_easyHunting_serviceName_hunting_agent_agentId_calls_id_hold_POST(String billingAccount, String serviceName, Long agentId, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/agent/{agentId}/calls/{id}/hold";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId, id);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -5048,7 +5048,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "whisperingMode", whisperingMode);
 		addBody(o, "number", number);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -5067,7 +5067,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId, id);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "number", number);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -5082,7 +5082,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxHuntingAgentLiveStatus billingAccount_easyHunting_serviceName_hunting_agent_agentId_liveStatus_GET(String billingAccount, String serviceName, Long agentId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/agent/{agentId}/liveStatus";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxHuntingAgentLiveStatus.class);
 	}
 
@@ -5097,7 +5097,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_easyHunting_serviceName_hunting_agent_agentId_queue_GET(String billingAccount, String serviceName, Long agentId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/agent/{agentId}/queue";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -5117,7 +5117,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "queueId", queueId);
 		addBody(o, "position", position);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOvhPabxHuntingAgentQueue.class);
 	}
 
@@ -5133,7 +5133,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxHuntingAgentQueue billingAccount_easyHunting_serviceName_hunting_agent_agentId_queue_queueId_GET(String billingAccount, String serviceName, Long agentId, Long queueId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/agent/{agentId}/queue/{queueId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId, queueId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxHuntingAgentQueue.class);
 	}
 
@@ -5150,7 +5150,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_easyHunting_serviceName_hunting_agent_agentId_queue_queueId_PUT(String billingAccount, String serviceName, Long agentId, Long queueId, OvhOvhPabxHuntingAgentQueue body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/agent/{agentId}/queue/{queueId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId, queueId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -5165,7 +5165,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_easyHunting_serviceName_hunting_agent_agentId_queue_queueId_DELETE(String billingAccount, String serviceName, Long agentId, Long queueId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/agent/{agentId}/queue/{queueId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId, queueId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -5180,7 +5180,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxHuntingAgentLiveStatus billingAccount_easyHunting_serviceName_hunting_agent_agentId_queue_queueId_liveStatus_GET(String billingAccount, String serviceName, Long agentId, Long queueId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/agent/{agentId}/queue/{queueId}/liveStatus";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId, queueId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxHuntingAgentLiveStatus.class);
 	}
 
@@ -5195,7 +5195,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhEventToken billingAccount_easyHunting_serviceName_hunting_agent_agentId_eventToken_GET(String billingAccount, String serviceName, Long agentId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/agent/{agentId}/eventToken";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhEventToken.class);
 	}
 
@@ -5213,7 +5213,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "expiration", expiration);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -5228,7 +5228,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_easyHunting_serviceName_hunting_agent_agentId_eventToken_DELETE(String billingAccount, String serviceName, Long agentId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/agent/{agentId}/eventToken";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -5242,7 +5242,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhBannerAccess billingAccount_easyHunting_serviceName_hunting_agent_agentId_bannerAccess_GET(String billingAccount, String serviceName, Long agentId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/agent/{agentId}/bannerAccess";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhBannerAccess.class);
 	}
 
@@ -5257,7 +5257,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhBannerAccess billingAccount_easyHunting_serviceName_hunting_agent_agentId_bannerAccess_POST(String billingAccount, String serviceName, Long agentId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/agent/{agentId}/bannerAccess";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhBannerAccess.class);
 	}
 
@@ -5272,7 +5272,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_easyHunting_serviceName_hunting_agent_agentId_bannerAccess_DELETE(String billingAccount, String serviceName, Long agentId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/agent/{agentId}/bannerAccess";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -5285,7 +5285,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_easyHunting_serviceName_hunting_customStatus_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/customStatus";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -5306,7 +5306,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "color", color);
 		addBody(o, "name", name);
 		addBody(o, "description", description);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOvhPabxCustomStatus.class);
 	}
 
@@ -5321,7 +5321,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxCustomStatus billingAccount_easyHunting_serviceName_hunting_customStatus_id_GET(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/customStatus/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxCustomStatus.class);
 	}
 
@@ -5336,7 +5336,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_easyHunting_serviceName_hunting_customStatus_id_DELETE(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/customStatus/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -5349,7 +5349,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_easyHunting_serviceName_hunting_queue_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/queue";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -5390,7 +5390,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "actionOnOverflowParam", actionOnOverflowParam);
 		addBody(o, "recordDisablingLanguage", recordDisablingLanguage);
 		addBody(o, "actionOnClosureParam", actionOnClosureParam);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOvhPabxHuntingQueue.class);
 	}
 
@@ -5405,7 +5405,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxHuntingQueue billingAccount_easyHunting_serviceName_hunting_queue_queueId_GET(String billingAccount, String serviceName, Long queueId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/queue/{queueId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxHuntingQueue.class);
 	}
 
@@ -5421,7 +5421,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_easyHunting_serviceName_hunting_queue_queueId_PUT(String billingAccount, String serviceName, Long queueId, OvhOvhPabxHuntingQueue body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/queue/{queueId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -5435,7 +5435,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_easyHunting_serviceName_hunting_queue_queueId_DELETE(String billingAccount, String serviceName, Long queueId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/queue/{queueId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -5449,7 +5449,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_easyHunting_serviceName_hunting_queue_queueId_liveCalls_GET(String billingAccount, String serviceName, Long queueId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/queue/{queueId}/liveCalls";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -5465,7 +5465,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxHuntingQueueLiveCalls billingAccount_easyHunting_serviceName_hunting_queue_queueId_liveCalls_id_GET(String billingAccount, String serviceName, Long queueId, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/queue/{queueId}/liveCalls/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxHuntingQueueLiveCalls.class);
 	}
 
@@ -5481,7 +5481,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTask billingAccount_easyHunting_serviceName_hunting_queue_queueId_liveCalls_id_hangup_POST(String billingAccount, String serviceName, Long queueId, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/queue/{queueId}/liveCalls/{id}/hangup";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId, id);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -5500,7 +5500,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId, id);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "number", number);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -5519,7 +5519,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId, id);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "number", number);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -5535,7 +5535,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTask billingAccount_easyHunting_serviceName_hunting_queue_queueId_liveCalls_id_hold_POST(String billingAccount, String serviceName, Long queueId, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/queue/{queueId}/liveCalls/{id}/hold";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId, id);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -5556,7 +5556,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "whisperingMode", whisperingMode);
 		addBody(o, "number", number);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -5575,7 +5575,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId, id);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "number", number);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -5590,7 +5590,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_easyHunting_serviceName_hunting_queue_queueId_agent_GET(String billingAccount, String serviceName, Long queueId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/queue/{queueId}/agent";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -5608,7 +5608,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "position", position);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOvhPabxHuntingAgentQueue.class);
 	}
 
@@ -5624,7 +5624,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxHuntingAgentQueue billingAccount_easyHunting_serviceName_hunting_queue_queueId_agent_agentId_GET(String billingAccount, String serviceName, Long queueId, Long agentId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/queue/{queueId}/agent/{agentId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId, agentId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxHuntingAgentQueue.class);
 	}
 
@@ -5641,7 +5641,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_easyHunting_serviceName_hunting_queue_queueId_agent_agentId_PUT(String billingAccount, String serviceName, Long queueId, Long agentId, OvhOvhPabxHuntingAgentQueue body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/queue/{queueId}/agent/{agentId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId, agentId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -5656,7 +5656,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_easyHunting_serviceName_hunting_queue_queueId_agent_agentId_DELETE(String billingAccount, String serviceName, Long queueId, Long agentId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/queue/{queueId}/agent/{agentId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId, agentId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -5671,7 +5671,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxHuntingAgentLiveStatus billingAccount_easyHunting_serviceName_hunting_queue_queueId_agent_agentId_liveStatus_GET(String billingAccount, String serviceName, Long queueId, Long agentId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/queue/{queueId}/agent/{agentId}/liveStatus";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId, agentId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxHuntingAgentLiveStatus.class);
 	}
 
@@ -5686,7 +5686,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxHuntingQueueLiveStatistics billingAccount_easyHunting_serviceName_hunting_queue_queueId_liveStatistics_GET(String billingAccount, String serviceName, Long queueId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/queue/{queueId}/liveStatistics";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxHuntingQueueLiveStatistics.class);
 	}
 
@@ -5700,7 +5700,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhEventToken billingAccount_easyHunting_serviceName_hunting_eventToken_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/eventToken";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhEventToken.class);
 	}
 
@@ -5717,7 +5717,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "expiration", expiration);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -5731,7 +5731,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_easyHunting_serviceName_hunting_eventToken_DELETE(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/hunting/eventToken";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -5744,7 +5744,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhEasyHuntingTimeConditionsSettings billingAccount_easyHunting_serviceName_timeConditions_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/timeConditions";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhEasyHuntingTimeConditionsSettings.class);
 	}
 
@@ -5759,7 +5759,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_easyHunting_serviceName_timeConditions_PUT(String billingAccount, String serviceName, OvhEasyHuntingTimeConditionsSettings body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/timeConditions";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -5774,7 +5774,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/timeConditions/conditions";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		query(sb, "policy", policy);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -5797,7 +5797,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "timeTo", timeTo);
 		addBody(o, "weekDay", weekDay);
 		addBody(o, "policy", policy);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhEasyHuntingTimeConditions.class);
 	}
 
@@ -5812,7 +5812,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhEasyHuntingTimeConditions billingAccount_easyHunting_serviceName_timeConditions_conditions_conditionId_GET(String billingAccount, String serviceName, Long conditionId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/timeConditions/conditions/{conditionId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, conditionId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhEasyHuntingTimeConditions.class);
 	}
 
@@ -5828,7 +5828,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_easyHunting_serviceName_timeConditions_conditions_conditionId_PUT(String billingAccount, String serviceName, Long conditionId, OvhEasyHuntingTimeConditions body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/timeConditions/conditions/{conditionId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, conditionId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -5842,7 +5842,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_easyHunting_serviceName_timeConditions_conditions_conditionId_DELETE(String billingAccount, String serviceName, Long conditionId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/timeConditions/conditions/{conditionId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, conditionId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -5855,7 +5855,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_easyHunting_serviceName_sound_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/sound";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -5870,7 +5870,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxSound billingAccount_easyHunting_serviceName_sound_soundId_GET(String billingAccount, String serviceName, Long soundId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/sound/{soundId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, soundId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxSound.class);
 	}
 
@@ -5885,7 +5885,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_easyHunting_serviceName_sound_soundId_DELETE(String billingAccount, String serviceName, Long soundId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting/{serviceName}/sound/{soundId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, soundId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -5897,7 +5897,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> billingAccount_easyHunting_GET(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/easyHunting";
 		StringBuilder sb = path(qPath, billingAccount);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -5910,7 +5910,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_cancelTermination_POST(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/cancelTermination";
 		StringBuilder sb = path(qPath, billingAccount);
-		exec("POST", sb.toString());
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
@@ -5928,7 +5928,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		query(sb, "action", action);
 		query(sb, "serviceType", serviceType);
 		query(sb, "status", status);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -5942,7 +5942,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTask billingAccount_task_taskId_GET(String billingAccount, Long taskId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/task/{taskId}";
 		StringBuilder sb = path(qPath, billingAccount, taskId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -5961,7 +5961,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		query(sb, "action", action);
 		query(sb, "status", status);
 		query(sb, "type", type);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -5975,7 +5975,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOfferTask billingAccount_offerTask_taskId_GET(String billingAccount, Long taskId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/offerTask/{taskId}";
 		StringBuilder sb = path(qPath, billingAccount, taskId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOfferTask.class);
 	}
 
@@ -5989,7 +5989,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhScreen billingAccount_screen_serviceName_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/screen/{serviceName}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhScreen.class);
 	}
 
@@ -6004,7 +6004,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_screen_serviceName_PUT(String billingAccount, String serviceName, OvhScreen body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/screen/{serviceName}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -6017,7 +6017,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_screen_serviceName_screenLists_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/screen/{serviceName}/screenLists";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -6038,7 +6038,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "callNumber", callNumber);
 		addBody(o, "type", type);
 		addBody(o, "nature", nature);
-		exec("POST", sb.toString(), o);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -6052,7 +6052,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhScreenList billingAccount_screen_serviceName_screenLists_id_GET(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/screen/{serviceName}/screenLists/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhScreenList.class);
 	}
 
@@ -6067,7 +6067,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_screen_serviceName_screenLists_id_DELETE(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/screen/{serviceName}/screenLists/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -6079,7 +6079,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> billingAccount_screen_GET(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/screen";
 		StringBuilder sb = path(qPath, billingAccount);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -6100,7 +6100,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "documentId", documentId);
 		addBody(o, "name", name);
 		addBody(o, "url", url);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -6114,7 +6114,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabx billingAccount_ovhPabx_serviceName_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabx.class);
 	}
 
@@ -6129,7 +6129,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_PUT(String billingAccount, String serviceName, OvhOvhPabx body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -6142,7 +6142,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_ovhPabx_serviceName_records_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/records";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -6157,7 +6157,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxRecord billingAccount_ovhPabx_serviceName_records_id_GET(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/records/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxRecord.class);
 	}
 
@@ -6172,7 +6172,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_records_id_DELETE(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/records/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -6185,7 +6185,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_ovhPabx_serviceName_menu_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/menu";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -6210,7 +6210,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "greetSoundTts", greetSoundTts);
 		addBody(o, "invalidSoundTts", invalidSoundTts);
 		addBody(o, "greetSound", greetSound);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOvhPabxMenu.class);
 	}
 
@@ -6225,7 +6225,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxMenu billingAccount_ovhPabx_serviceName_menu_menuId_GET(String billingAccount, String serviceName, Long menuId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/menu/{menuId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, menuId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxMenu.class);
 	}
 
@@ -6241,7 +6241,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_menu_menuId_PUT(String billingAccount, String serviceName, Long menuId, OvhOvhPabxMenu body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/menu/{menuId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, menuId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -6255,7 +6255,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_menu_menuId_DELETE(String billingAccount, String serviceName, Long menuId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/menu/{menuId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, menuId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -6269,7 +6269,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_ovhPabx_serviceName_menu_menuId_entry_GET(String billingAccount, String serviceName, Long menuId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/menu/{menuId}/entry";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, menuId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -6293,7 +6293,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "action", action);
 		addBody(o, "position", position);
 		addBody(o, "dtmf", dtmf);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOvhPabxMenuEntry.class);
 	}
 
@@ -6309,7 +6309,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxMenuEntry billingAccount_ovhPabx_serviceName_menu_menuId_entry_entryId_GET(String billingAccount, String serviceName, Long menuId, Long entryId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/menu/{menuId}/entry/{entryId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, menuId, entryId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxMenuEntry.class);
 	}
 
@@ -6326,7 +6326,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_menu_menuId_entry_entryId_PUT(String billingAccount, String serviceName, Long menuId, Long entryId, OvhOvhPabxMenuEntry body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/menu/{menuId}/entry/{entryId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, menuId, entryId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -6341,7 +6341,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_menu_menuId_entry_entryId_DELETE(String billingAccount, String serviceName, Long menuId, Long entryId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/menu/{menuId}/entry/{entryId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, menuId, entryId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -6354,7 +6354,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxHunting billingAccount_ovhPabx_serviceName_hunting_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxHunting.class);
 	}
 
@@ -6369,7 +6369,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_hunting_PUT(String billingAccount, String serviceName, OvhOvhPabxHunting body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -6382,7 +6382,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_ovhPabx_serviceName_hunting_agent_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/agent";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -6407,7 +6407,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "simultaneousLines", simultaneousLines);
 		addBody(o, "status", status);
 		addBody(o, "timeout", timeout);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOvhPabxHuntingAgent.class);
 	}
 
@@ -6422,7 +6422,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxHuntingAgent billingAccount_ovhPabx_serviceName_hunting_agent_agentId_GET(String billingAccount, String serviceName, Long agentId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/agent/{agentId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxHuntingAgent.class);
 	}
 
@@ -6438,7 +6438,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_hunting_agent_agentId_PUT(String billingAccount, String serviceName, Long agentId, OvhOvhPabxHuntingAgent body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/agent/{agentId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -6452,7 +6452,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_hunting_agent_agentId_DELETE(String billingAccount, String serviceName, Long agentId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/agent/{agentId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -6466,7 +6466,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_ovhPabx_serviceName_hunting_agent_agentId_calls_GET(String billingAccount, String serviceName, Long agentId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/agent/{agentId}/calls";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -6482,7 +6482,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxHuntingQueueLiveCalls billingAccount_ovhPabx_serviceName_hunting_agent_agentId_calls_id_GET(String billingAccount, String serviceName, Long agentId, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/agent/{agentId}/calls/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxHuntingQueueLiveCalls.class);
 	}
 
@@ -6498,7 +6498,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTask billingAccount_ovhPabx_serviceName_hunting_agent_agentId_calls_id_hangup_POST(String billingAccount, String serviceName, Long agentId, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/agent/{agentId}/calls/{id}/hangup";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId, id);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -6517,7 +6517,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId, id);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "number", number);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -6536,7 +6536,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId, id);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "number", number);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -6552,7 +6552,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTask billingAccount_ovhPabx_serviceName_hunting_agent_agentId_calls_id_hold_POST(String billingAccount, String serviceName, Long agentId, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/agent/{agentId}/calls/{id}/hold";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId, id);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -6573,7 +6573,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "whisperingMode", whisperingMode);
 		addBody(o, "number", number);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -6592,7 +6592,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId, id);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "number", number);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -6607,7 +6607,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxHuntingAgentLiveStatus billingAccount_ovhPabx_serviceName_hunting_agent_agentId_liveStatus_GET(String billingAccount, String serviceName, Long agentId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/agent/{agentId}/liveStatus";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxHuntingAgentLiveStatus.class);
 	}
 
@@ -6622,7 +6622,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_ovhPabx_serviceName_hunting_agent_agentId_queue_GET(String billingAccount, String serviceName, Long agentId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/agent/{agentId}/queue";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -6642,7 +6642,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "queueId", queueId);
 		addBody(o, "position", position);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOvhPabxHuntingAgentQueue.class);
 	}
 
@@ -6658,7 +6658,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxHuntingAgentQueue billingAccount_ovhPabx_serviceName_hunting_agent_agentId_queue_queueId_GET(String billingAccount, String serviceName, Long agentId, Long queueId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/agent/{agentId}/queue/{queueId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId, queueId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxHuntingAgentQueue.class);
 	}
 
@@ -6675,7 +6675,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_hunting_agent_agentId_queue_queueId_PUT(String billingAccount, String serviceName, Long agentId, Long queueId, OvhOvhPabxHuntingAgentQueue body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/agent/{agentId}/queue/{queueId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId, queueId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -6690,7 +6690,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_hunting_agent_agentId_queue_queueId_DELETE(String billingAccount, String serviceName, Long agentId, Long queueId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/agent/{agentId}/queue/{queueId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId, queueId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -6705,7 +6705,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxHuntingAgentLiveStatus billingAccount_ovhPabx_serviceName_hunting_agent_agentId_queue_queueId_liveStatus_GET(String billingAccount, String serviceName, Long agentId, Long queueId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/agent/{agentId}/queue/{queueId}/liveStatus";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId, queueId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxHuntingAgentLiveStatus.class);
 	}
 
@@ -6720,7 +6720,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhEventToken billingAccount_ovhPabx_serviceName_hunting_agent_agentId_eventToken_GET(String billingAccount, String serviceName, Long agentId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/agent/{agentId}/eventToken";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhEventToken.class);
 	}
 
@@ -6738,7 +6738,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "expiration", expiration);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -6753,7 +6753,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_hunting_agent_agentId_eventToken_DELETE(String billingAccount, String serviceName, Long agentId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/agent/{agentId}/eventToken";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -6767,7 +6767,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhBannerAccess billingAccount_ovhPabx_serviceName_hunting_agent_agentId_bannerAccess_GET(String billingAccount, String serviceName, Long agentId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/agent/{agentId}/bannerAccess";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhBannerAccess.class);
 	}
 
@@ -6782,7 +6782,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhBannerAccess billingAccount_ovhPabx_serviceName_hunting_agent_agentId_bannerAccess_POST(String billingAccount, String serviceName, Long agentId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/agent/{agentId}/bannerAccess";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhBannerAccess.class);
 	}
 
@@ -6797,7 +6797,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_hunting_agent_agentId_bannerAccess_DELETE(String billingAccount, String serviceName, Long agentId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/agent/{agentId}/bannerAccess";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, agentId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -6810,7 +6810,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_ovhPabx_serviceName_hunting_customStatus_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/customStatus";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -6831,7 +6831,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "color", color);
 		addBody(o, "name", name);
 		addBody(o, "description", description);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOvhPabxCustomStatus.class);
 	}
 
@@ -6846,7 +6846,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxCustomStatus billingAccount_ovhPabx_serviceName_hunting_customStatus_id_GET(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/customStatus/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxCustomStatus.class);
 	}
 
@@ -6861,7 +6861,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_hunting_customStatus_id_DELETE(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/customStatus/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -6874,7 +6874,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_ovhPabx_serviceName_hunting_queue_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/queue";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -6915,7 +6915,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "actionOnOverflowParam", actionOnOverflowParam);
 		addBody(o, "recordDisablingLanguage", recordDisablingLanguage);
 		addBody(o, "actionOnClosureParam", actionOnClosureParam);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOvhPabxHuntingQueue.class);
 	}
 
@@ -6930,7 +6930,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxHuntingQueue billingAccount_ovhPabx_serviceName_hunting_queue_queueId_GET(String billingAccount, String serviceName, Long queueId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/queue/{queueId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxHuntingQueue.class);
 	}
 
@@ -6946,7 +6946,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_hunting_queue_queueId_PUT(String billingAccount, String serviceName, Long queueId, OvhOvhPabxHuntingQueue body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/queue/{queueId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -6960,7 +6960,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_hunting_queue_queueId_DELETE(String billingAccount, String serviceName, Long queueId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/queue/{queueId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -6974,7 +6974,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_ovhPabx_serviceName_hunting_queue_queueId_liveCalls_GET(String billingAccount, String serviceName, Long queueId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/queue/{queueId}/liveCalls";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -6990,7 +6990,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxHuntingQueueLiveCalls billingAccount_ovhPabx_serviceName_hunting_queue_queueId_liveCalls_id_GET(String billingAccount, String serviceName, Long queueId, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/queue/{queueId}/liveCalls/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxHuntingQueueLiveCalls.class);
 	}
 
@@ -7006,7 +7006,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTask billingAccount_ovhPabx_serviceName_hunting_queue_queueId_liveCalls_id_hangup_POST(String billingAccount, String serviceName, Long queueId, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/queue/{queueId}/liveCalls/{id}/hangup";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId, id);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -7025,7 +7025,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId, id);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "number", number);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -7044,7 +7044,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId, id);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "number", number);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -7060,7 +7060,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTask billingAccount_ovhPabx_serviceName_hunting_queue_queueId_liveCalls_id_hold_POST(String billingAccount, String serviceName, Long queueId, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/queue/{queueId}/liveCalls/{id}/hold";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId, id);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -7081,7 +7081,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "whisperingMode", whisperingMode);
 		addBody(o, "number", number);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -7100,7 +7100,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId, id);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "number", number);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -7115,7 +7115,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_ovhPabx_serviceName_hunting_queue_queueId_agent_GET(String billingAccount, String serviceName, Long queueId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/queue/{queueId}/agent";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -7133,7 +7133,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "position", position);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOvhPabxHuntingAgentQueue.class);
 	}
 
@@ -7149,7 +7149,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxHuntingAgentQueue billingAccount_ovhPabx_serviceName_hunting_queue_queueId_agent_agentId_GET(String billingAccount, String serviceName, Long queueId, Long agentId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/queue/{queueId}/agent/{agentId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId, agentId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxHuntingAgentQueue.class);
 	}
 
@@ -7166,7 +7166,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_hunting_queue_queueId_agent_agentId_PUT(String billingAccount, String serviceName, Long queueId, Long agentId, OvhOvhPabxHuntingAgentQueue body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/queue/{queueId}/agent/{agentId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId, agentId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -7181,7 +7181,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_hunting_queue_queueId_agent_agentId_DELETE(String billingAccount, String serviceName, Long queueId, Long agentId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/queue/{queueId}/agent/{agentId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId, agentId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -7196,7 +7196,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxHuntingAgentLiveStatus billingAccount_ovhPabx_serviceName_hunting_queue_queueId_agent_agentId_liveStatus_GET(String billingAccount, String serviceName, Long queueId, Long agentId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/queue/{queueId}/agent/{agentId}/liveStatus";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId, agentId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxHuntingAgentLiveStatus.class);
 	}
 
@@ -7211,7 +7211,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxHuntingQueueLiveStatistics billingAccount_ovhPabx_serviceName_hunting_queue_queueId_liveStatistics_GET(String billingAccount, String serviceName, Long queueId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/queue/{queueId}/liveStatistics";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, queueId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxHuntingQueueLiveStatistics.class);
 	}
 
@@ -7225,7 +7225,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhEventToken billingAccount_ovhPabx_serviceName_hunting_eventToken_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/eventToken";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhEventToken.class);
 	}
 
@@ -7242,7 +7242,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "expiration", expiration);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -7256,7 +7256,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_hunting_eventToken_DELETE(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/hunting/eventToken";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -7269,7 +7269,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_ovhPabx_serviceName_tts_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/tts";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -7288,7 +7288,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "voice", voice);
 		addBody(o, "text", text);
-		exec("POST", sb.toString(), o);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -7302,7 +7302,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxTts billingAccount_ovhPabx_serviceName_tts_id_GET(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/tts/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxTts.class);
 	}
 
@@ -7318,7 +7318,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_tts_id_PUT(String billingAccount, String serviceName, Long id, OvhOvhPabxTts body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/tts/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -7332,7 +7332,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_tts_id_DELETE(String billingAccount, String serviceName, Long id) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/tts/{id}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -7346,7 +7346,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxDialplan billingAccount_ovhPabx_serviceName_dialplan_dialplanId_GET(String billingAccount, String serviceName, Long dialplanId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/dialplan/{dialplanId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, dialplanId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxDialplan.class);
 	}
 
@@ -7362,7 +7362,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_dialplan_dialplanId_PUT(String billingAccount, String serviceName, Long dialplanId, OvhOvhPabxDialplan body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/dialplan/{dialplanId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, dialplanId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -7376,7 +7376,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_dialplan_dialplanId_DELETE(String billingAccount, String serviceName, Long dialplanId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/dialplan/{dialplanId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, dialplanId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -7390,7 +7390,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_ovhPabx_serviceName_dialplan_dialplanId_extension_GET(String billingAccount, String serviceName, Long dialplanId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/dialplan/{dialplanId}/extension";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, dialplanId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -7414,7 +7414,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "screenListType", screenListType);
 		addBody(o, "position", position);
 		addBody(o, "schedulerCategory", schedulerCategory);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOvhPabxDialplanExtension.class);
 	}
 
@@ -7430,7 +7430,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxDialplanExtension billingAccount_ovhPabx_serviceName_dialplan_dialplanId_extension_extensionId_GET(String billingAccount, String serviceName, Long dialplanId, Long extensionId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/dialplan/{dialplanId}/extension/{extensionId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, dialplanId, extensionId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxDialplanExtension.class);
 	}
 
@@ -7447,7 +7447,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_dialplan_dialplanId_extension_extensionId_PUT(String billingAccount, String serviceName, Long dialplanId, Long extensionId, OvhOvhPabxDialplanExtension body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/dialplan/{dialplanId}/extension/{extensionId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, dialplanId, extensionId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -7462,7 +7462,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_dialplan_dialplanId_extension_extensionId_DELETE(String billingAccount, String serviceName, Long dialplanId, Long extensionId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/dialplan/{dialplanId}/extension/{extensionId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, dialplanId, extensionId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -7477,7 +7477,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_ovhPabx_serviceName_dialplan_dialplanId_extension_extensionId_conditionScreenList_GET(String billingAccount, String serviceName, Long dialplanId, Long extensionId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/dialplan/{dialplanId}/extension/{extensionId}/conditionScreenList";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, dialplanId, extensionId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -7500,7 +7500,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "destinationNumber", destinationNumber);
 		addBody(o, "callerIdNumber", callerIdNumber);
 		addBody(o, "screenListType", screenListType);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOvhPabxDialplanExtensionConditionScreenList.class);
 	}
 
@@ -7517,7 +7517,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxDialplanExtensionConditionScreenList billingAccount_ovhPabx_serviceName_dialplan_dialplanId_extension_extensionId_conditionScreenList_conditionId_GET(String billingAccount, String serviceName, Long dialplanId, Long extensionId, Long conditionId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/dialplan/{dialplanId}/extension/{extensionId}/conditionScreenList/{conditionId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, dialplanId, extensionId, conditionId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxDialplanExtensionConditionScreenList.class);
 	}
 
@@ -7534,7 +7534,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_dialplan_dialplanId_extension_extensionId_conditionScreenList_conditionId_DELETE(String billingAccount, String serviceName, Long dialplanId, Long extensionId, Long conditionId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/dialplan/{dialplanId}/extension/{extensionId}/conditionScreenList/{conditionId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, dialplanId, extensionId, conditionId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -7549,7 +7549,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_ovhPabx_serviceName_dialplan_dialplanId_extension_extensionId_rule_GET(String billingAccount, String serviceName, Long dialplanId, Long extensionId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/dialplan/{dialplanId}/extension/{extensionId}/rule";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, dialplanId, extensionId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -7574,7 +7574,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "actionParam", actionParam);
 		addBody(o, "action", action);
 		addBody(o, "position", position);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOvhPabxDialplanExtensionRule.class);
 	}
 
@@ -7591,7 +7591,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxDialplanExtensionRule billingAccount_ovhPabx_serviceName_dialplan_dialplanId_extension_extensionId_rule_ruleId_GET(String billingAccount, String serviceName, Long dialplanId, Long extensionId, Long ruleId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/dialplan/{dialplanId}/extension/{extensionId}/rule/{ruleId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, dialplanId, extensionId, ruleId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxDialplanExtensionRule.class);
 	}
 
@@ -7609,7 +7609,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_dialplan_dialplanId_extension_extensionId_rule_ruleId_PUT(String billingAccount, String serviceName, Long dialplanId, Long extensionId, Long ruleId, OvhOvhPabxDialplanExtensionRule body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/dialplan/{dialplanId}/extension/{extensionId}/rule/{ruleId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, dialplanId, extensionId, ruleId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -7625,7 +7625,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_dialplan_dialplanId_extension_extensionId_rule_ruleId_DELETE(String billingAccount, String serviceName, Long dialplanId, Long extensionId, Long ruleId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/dialplan/{dialplanId}/extension/{extensionId}/rule/{ruleId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, dialplanId, extensionId, ruleId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -7640,7 +7640,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_ovhPabx_serviceName_dialplan_dialplanId_extension_extensionId_conditionTime_GET(String billingAccount, String serviceName, Long dialplanId, Long extensionId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/dialplan/{dialplanId}/extension/{extensionId}/conditionTime";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, dialplanId, extensionId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -7663,7 +7663,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "timeFrom", timeFrom);
 		addBody(o, "timeTo", timeTo);
 		addBody(o, "weekDay", weekDay);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOvhPabxDialplanExtensionConditionTime.class);
 	}
 
@@ -7680,7 +7680,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxDialplanExtensionConditionTime billingAccount_ovhPabx_serviceName_dialplan_dialplanId_extension_extensionId_conditionTime_conditionId_GET(String billingAccount, String serviceName, Long dialplanId, Long extensionId, Long conditionId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/dialplan/{dialplanId}/extension/{extensionId}/conditionTime/{conditionId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, dialplanId, extensionId, conditionId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxDialplanExtensionConditionTime.class);
 	}
 
@@ -7698,7 +7698,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_dialplan_dialplanId_extension_extensionId_conditionTime_conditionId_PUT(String billingAccount, String serviceName, Long dialplanId, Long extensionId, Long conditionId, OvhOvhPabxDialplanExtensionConditionTime body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/dialplan/{dialplanId}/extension/{extensionId}/conditionTime/{conditionId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, dialplanId, extensionId, conditionId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -7714,7 +7714,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_dialplan_dialplanId_extension_extensionId_conditionTime_conditionId_DELETE(String billingAccount, String serviceName, Long dialplanId, Long extensionId, Long conditionId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/dialplan/{dialplanId}/extension/{extensionId}/conditionTime/{conditionId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, dialplanId, extensionId, conditionId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -7727,7 +7727,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_ovhPabx_serviceName_dialplan_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/dialplan";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -7750,7 +7750,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "name", name);
 		addBody(o, "transferTimeout", transferTimeout);
 		addBody(o, "anonymousRejection", anonymousRejection);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOvhPabxDialplan.class);
 	}
 
@@ -7764,7 +7764,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<Long> billingAccount_ovhPabx_serviceName_sound_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/sound";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -7779,7 +7779,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhOvhPabxSound billingAccount_ovhPabx_serviceName_sound_soundId_GET(String billingAccount, String serviceName, Long soundId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/sound/{soundId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, soundId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOvhPabxSound.class);
 	}
 
@@ -7794,7 +7794,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ovhPabx_serviceName_sound_soundId_DELETE(String billingAccount, String serviceName, Long soundId) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx/{serviceName}/sound/{soundId}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName, soundId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -7806,7 +7806,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> billingAccount_ovhPabx_GET(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ovhPabx";
 		StringBuilder sb = path(qPath, billingAccount);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -7820,7 +7820,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhDdi billingAccount_ddi_serviceName_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ddi/{serviceName}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhDdi.class);
 	}
 
@@ -7835,7 +7835,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void billingAccount_ddi_serviceName_PUT(String billingAccount, String serviceName, OvhDdi body) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ddi/{serviceName}";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -7851,7 +7851,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "destination", destination);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -7864,7 +7864,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> billingAccount_ddi_GET(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/ddi";
 		StringBuilder sb = path(qPath, billingAccount);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -7877,7 +7877,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhService lines_serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/telephony/lines/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -7891,7 +7891,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void lines_serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/telephony/lines/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -7903,7 +7903,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTelephonyGenericService lines_serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/telephony/lines/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTelephonyGenericService.class);
 	}
 
@@ -7923,7 +7923,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "contactAdmin", contactAdmin);
 		addBody(o, "contactTech", contactTech);
 		addBody(o, "contactBilling", contactBilling);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, t3);
 	}
 
@@ -7935,7 +7935,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> lines_GET() throws IOException {
 		String qPath = "/telephony/lines";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -7949,7 +7949,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		String qPath = "/telephony/accessories";
 		StringBuilder sb = path(qPath);
 		query(sb, "country", country);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t19);
 	}
 	private static TypeReference<ArrayList<OvhAccessoryOffer>> t19 = new TypeReference<ArrayList<OvhAccessoryOffer>>() {};
@@ -7964,7 +7964,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		String qPath = "/telephony/searchServices";
 		StringBuilder sb = path(qPath);
 		query(sb, "axiom", axiom);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t20);
 	}
 	private static TypeReference<ArrayList<OvhTelephonySearchService>> t20 = new TypeReference<ArrayList<OvhTelephonySearchService>>() {};
@@ -7984,7 +7984,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "country", country);
 		addBody(o, "domain", domain);
 		addBody(o, "type", type);
-		exec("POST", sb.toString(), o);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -7997,7 +7997,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		String qPath = "/telephony/fax/offers";
 		StringBuilder sb = path(qPath);
 		query(sb, "country", country);
-		String resp = execN("GET", sb.toString());
+		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t16);
 	}
 
@@ -8010,7 +8010,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhService aliases_serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/telephony/aliases/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -8024,7 +8024,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void aliases_serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/telephony/aliases/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -8036,7 +8036,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTelephonyGenericService aliases_serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/telephony/aliases/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTelephonyGenericService.class);
 	}
 
@@ -8056,7 +8056,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "contactAdmin", contactAdmin);
 		addBody(o, "contactTech", contactTech);
 		addBody(o, "contactBilling", contactBilling);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, t3);
 	}
 
@@ -8068,7 +8068,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> aliases_GET() throws IOException {
 		String qPath = "/telephony/aliases";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -8080,7 +8080,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> spare_GET() throws IOException {
 		String qPath = "/telephony/spare";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -8093,7 +8093,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhService spare_spare_serviceInfos_GET(String spare) throws IOException {
 		String qPath = "/telephony/spare/{spare}/serviceInfos";
 		StringBuilder sb = path(qPath, spare);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -8107,7 +8107,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void spare_spare_serviceInfos_PUT(String spare, OvhService body) throws IOException {
 		String qPath = "/telephony/spare/{spare}/serviceInfos";
 		StringBuilder sb = path(qPath, spare);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -8119,7 +8119,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTelephonySpare spare_spare_GET(String spare) throws IOException {
 		String qPath = "/telephony/spare/{spare}";
 		StringBuilder sb = path(qPath, spare);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTelephonySpare.class);
 	}
 
@@ -8132,7 +8132,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void spare_spare_DELETE(String spare) throws IOException {
 		String qPath = "/telephony/spare/{spare}";
 		StringBuilder sb = path(qPath, spare);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -8149,7 +8149,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "domain", domain);
 		addBody(o, "ip", ip);
-		exec("POST", sb.toString(), o);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -8161,7 +8161,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> spare_spare_compatibleReplacement_GET(String spare) throws IOException {
 		String qPath = "/telephony/spare/{spare}/compatibleReplacement";
 		StringBuilder sb = path(qPath, spare);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -8173,7 +8173,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> spare_brands_GET() throws IOException {
 		String qPath = "/telephony/spare/brands";
 		StringBuilder sb = path(qPath);
-		String resp = execN("GET", sb.toString());
+		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -8186,7 +8186,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhService trunks_serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/telephony/trunks/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -8200,7 +8200,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public void trunks_serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/telephony/trunks/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -8212,7 +8212,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public OvhTelephonyGenericService trunks_serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/telephony/trunks/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTelephonyGenericService.class);
 	}
 
@@ -8232,7 +8232,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		addBody(o, "contactAdmin", contactAdmin);
 		addBody(o, "contactTech", contactTech);
 		addBody(o, "contactBilling", contactBilling);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, t3);
 	}
 
@@ -8244,7 +8244,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	public ArrayList<String> trunks_GET() throws IOException {
 		String qPath = "/telephony/trunks";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -8258,7 +8258,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		String qPath = "/telephony/line/offers";
 		StringBuilder sb = path(qPath);
 		query(sb, "country", country);
-		String resp = execN("GET", sb.toString());
+		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t16);
 	}
 
@@ -8274,7 +8274,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath);
 		query(sb, "country", country);
 		query(sb, "offer", offer);
-		String resp = execN("GET", sb.toString());
+		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t9);
 	}
 }

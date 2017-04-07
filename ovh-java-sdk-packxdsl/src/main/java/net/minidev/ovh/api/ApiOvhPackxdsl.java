@@ -39,7 +39,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/pack/xdsl
  * version:1.0
  */
@@ -56,7 +56,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/pack/xdsl";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
@@ -70,7 +70,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public OvhService packName_serviceInfos_GET(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/serviceInfos";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -84,7 +84,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public void packName_serviceInfos_PUT(String packName, OvhService body) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/serviceInfos";
 		StringBuilder sb = path(qPath, packName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -98,7 +98,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 		String qPath = "/pack/xdsl/{packName}/exchangeLite/options/isEmailAvailable";
 		StringBuilder sb = path(qPath, packName);
 		query(sb, "email", email);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, Boolean.class);
 	}
 
@@ -112,7 +112,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public OvhExchangeLiteService packName_exchangeLite_services_domain_GET(String packName, String domain) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/exchangeLite/services/{domain}";
 		StringBuilder sb = path(qPath, packName, domain);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhExchangeLiteService.class);
 	}
 
@@ -125,7 +125,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public ArrayList<String> packName_exchangeLite_services_GET(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/exchangeLite/services";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -154,7 +154,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 		addBody(o, "lastName", lastName);
 		addBody(o, "antispam", antispam);
 		addBody(o, "displayName", displayName);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -167,7 +167,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public OvhPackAdsl packName_GET(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPackAdsl.class);
 	}
 
@@ -181,7 +181,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public void packName_PUT(String packName, OvhPackAdsl body) throws IOException {
 		String qPath = "/pack/xdsl/{packName}";
 		StringBuilder sb = path(qPath, packName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -193,7 +193,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public OvhResiliationFollowUpDetail packName_resiliationFollowUp_GET(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/resiliationFollowUp";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhResiliationFollowUpDetail.class);
 	}
 
@@ -208,7 +208,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 		String qPath = "/pack/xdsl/{packName}/shippingAddresses";
 		StringBuilder sb = path(qPath, packName);
 		query(sb, "context", context);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<OvhShippingAddress>> t2 = new TypeReference<ArrayList<OvhShippingAddress>>() {};
@@ -223,7 +223,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public OvhHubic packName_hubic_services_domain_GET(String packName, String domain) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/hubic/services/{domain}";
 		StringBuilder sb = path(qPath, packName, domain);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhHubic.class);
 	}
 
@@ -236,7 +236,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public ArrayList<String> packName_hubic_services_GET(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/hubic/services";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -250,7 +250,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public OvhUnpackTerms packName_subServices_domain_keepServiceTerms_GET(String packName, String domain) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/subServices/{domain}/keepServiceTerms";
 		StringBuilder sb = path(qPath, packName, domain);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhUnpackTerms.class);
 	}
 
@@ -264,7 +264,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public net.minidev.ovh.api.pack.xdsl.OvhService packName_subServices_domain_GET(String packName, String domain) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/subServices/{domain}";
 		StringBuilder sb = path(qPath, packName, domain);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, net.minidev.ovh.api.pack.xdsl.OvhService.class);
 	}
 
@@ -277,7 +277,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public ArrayList<String> packName_subServices_GET(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/subServices";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -290,7 +290,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public ArrayList<OvhSiteBuilderDomain> packName_siteBuilderFull_options_domains_GET(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/siteBuilderFull/options/domains";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 	private static TypeReference<ArrayList<OvhSiteBuilderDomain>> t3 = new TypeReference<ArrayList<OvhSiteBuilderDomain>>() {};
@@ -304,7 +304,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public ArrayList<OvhSiteBuilderTemplate> packName_siteBuilderFull_options_templates_GET(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/siteBuilderFull/options/templates";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t4);
 	}
 	private static TypeReference<ArrayList<OvhSiteBuilderTemplate>> t4 = new TypeReference<ArrayList<OvhSiteBuilderTemplate>>() {};
@@ -318,7 +318,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public ArrayList<String> packName_siteBuilderFull_services_GET(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/siteBuilderFull/services";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -338,7 +338,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 		addBody(o, "domain", domain);
 		addBody(o, "subdomain", subdomain);
 		addBody(o, "templateId", templateId);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -358,7 +358,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 		addBody(o, "contactAdmin", contactAdmin);
 		addBody(o, "contactTech", contactTech);
 		addBody(o, "contactBilling", contactBilling);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, t5);
 	}
 	private static TypeReference<ArrayList<Long>> t5 = new TypeReference<ArrayList<Long>>() {};
@@ -372,7 +372,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public ArrayList<String> packName_exchangeIndividual_options_domains_GET(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/exchangeIndividual/options/domains";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -387,7 +387,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 		String qPath = "/pack/xdsl/{packName}/exchangeIndividual/options/isEmailAvailable";
 		StringBuilder sb = path(qPath, packName);
 		query(sb, "email", email);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, Boolean.class);
 	}
 
@@ -400,7 +400,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public ArrayList<String> packName_exchangeIndividual_services_GET(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/exchangeIndividual/services";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -419,7 +419,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "email", email);
 		addBody(o, "password", password);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -432,7 +432,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public ArrayList<String> packName_voipBillingAccount_services_GET(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/voipBillingAccount/services";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -445,7 +445,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public ArrayList<OvhShippingAddress> packName_voipLine_options_shippingAddresses_GET(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/voipLine/options/shippingAddresses";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -469,7 +469,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 		addBody(o, "cityName", cityName);
 		addBody(o, "address", address);
 		addBody(o, "lastName", lastName);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, Long.class);
 	}
 
@@ -482,7 +482,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public ArrayList<OvhVoIPHardware> packName_voipLine_options_hardwares_GET(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/voipLine/options/hardwares";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t6);
 	}
 	private static TypeReference<ArrayList<OvhVoIPHardware>> t6 = new TypeReference<ArrayList<OvhVoIPHardware>>() {};
@@ -497,7 +497,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public OvhVoipLineService packName_voipLine_services_domain_GET(String packName, String domain) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/voipLine/services/{domain}";
 		StringBuilder sb = path(qPath, packName, domain);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhVoipLineService.class);
 	}
 
@@ -510,7 +510,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public ArrayList<String> packName_voipLine_services_GET(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/voipLine/services";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -530,7 +530,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 		addBody(o, "shippingId", shippingId);
 		addBody(o, "hardwareNames", hardwareNames);
 		addBody(o, "mondialRelayId", mondialRelayId);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhVoIPLineOrder.class);
 	}
 
@@ -543,7 +543,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public ArrayList<String> packName_domain_options_tlds_GET(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/domain/options/tlds";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -556,7 +556,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public ArrayList<String> packName_domain_services_GET(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/domain/services";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -578,7 +578,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 		addBody(o, "domain", domain);
 		addBody(o, "authInfo", authInfo);
 		addBody(o, "action", action);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -592,7 +592,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public OvhExchangeAccountService packName_exchangeAccount_services_domain_GET(String packName, String domain) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/exchangeAccount/services/{domain}";
 		StringBuilder sb = path(qPath, packName, domain);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhExchangeAccountService.class);
 	}
 
@@ -605,7 +605,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public ArrayList<String> packName_exchangeAccount_services_GET(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/exchangeAccount/services";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -618,7 +618,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public ArrayList<String> packName_hostedEmail_options_domains_GET(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/hostedEmail/options/domains";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -631,7 +631,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public ArrayList<String> packName_hostedEmail_services_GET(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/hostedEmail/services";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -649,7 +649,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "email", email);
 		addBody(o, "password", password);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -666,7 +666,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 		StringBuilder sb = path(qPath, packName);
 		query(sb, "function", function);
 		query(sb, "status", status);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t5);
 	}
 
@@ -680,7 +680,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public OvhTask packName_tasks_id_GET(String packName, Long id) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/tasks/{id}";
 		StringBuilder sb = path(qPath, packName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -706,7 +706,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 		addBody(o, "nicShipping", nicShipping);
 		addBody(o, "offerName", offerName);
 		addBody(o, "mondialRelayId", mondialRelayId);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -719,7 +719,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public OvhAsyncTask<OvhMigrationOfferResponse> packName_migration_offers_POST(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/migration/offers";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, t7);
 	}
 	private static TypeReference<OvhAsyncTask<OvhMigrationOfferResponse>> t7 = new TypeReference<OvhAsyncTask<OvhMigrationOfferResponse>>() {};
@@ -733,7 +733,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public ArrayList<String> packName_voipEcofax_services_GET(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/voipEcofax/services";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -746,7 +746,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public OvhTask packName_voipEcofax_services_POST(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/voipEcofax/services";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -759,7 +759,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public ArrayList<OvhServiceInformation> packName_services_GET(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/services";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t8);
 	}
 	private static TypeReference<ArrayList<OvhServiceInformation>> t8 = new TypeReference<ArrayList<OvhServiceInformation>>() {};
@@ -773,7 +773,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public ArrayList<String> packName_exchangeOrganization_services_GET(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/exchangeOrganization/services";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -786,7 +786,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public Boolean packName_canCancelResiliation_GET(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/canCancelResiliation";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, Boolean.class);
 	}
 
@@ -799,7 +799,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public OvhTask packName_promotionCode_generate_POST(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/promotionCode/generate";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -812,7 +812,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public OvhCapabilities packName_promotionCode_capabilities_GET(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/promotionCode/capabilities";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhCapabilities.class);
 	}
 
@@ -830,7 +830,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "lineNumber", lineNumber);
 		addBody(o, "address", address);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, t9);
 	}
 	private static TypeReference<OvhAsyncTask<OvhEligibility>> t9 = new TypeReference<OvhAsyncTask<OvhEligibility>>() {};
@@ -857,7 +857,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 		addBody(o, "offerCode", offerCode);
 		addBody(o, "creation", creation);
 		addBody(o, "landline", landline);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, t10);
 	}
 	private static TypeReference<OvhAsyncTask<Long>> t10 = new TypeReference<OvhAsyncTask<Long>>() {};
@@ -871,7 +871,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public void packName_cancelResiliation_POST(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/cancelResiliation";
 		StringBuilder sb = path(qPath, packName);
-		exec("POST", sb.toString());
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
@@ -883,7 +883,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public ArrayList<String> packName_xdslAccess_services_GET(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/xdslAccess/services";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -896,7 +896,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public ArrayList<OvhSiteBuilderDomain> packName_siteBuilderStart_options_domains_GET(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/siteBuilderStart/options/domains";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -909,7 +909,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public ArrayList<OvhSiteBuilderTemplate> packName_siteBuilderStart_options_templates_GET(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/siteBuilderStart/options/templates";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t4);
 	}
 
@@ -922,7 +922,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	public ArrayList<String> packName_siteBuilderStart_services_GET(String packName) throws IOException {
 		String qPath = "/pack/xdsl/{packName}/siteBuilderStart/services";
 		StringBuilder sb = path(qPath, packName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -942,7 +942,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 		addBody(o, "domain", domain);
 		addBody(o, "subdomain", subdomain);
 		addBody(o, "templateId", templateId);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -962,7 +962,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 		addBody(o, "resiliationSurvey", resiliationSurvey);
 		addBody(o, "servicesToKeep", servicesToKeep);
 		addBody(o, "resiliationDate", resiliationDate);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhResiliationFollowUpDetail.class);
 	}
 
@@ -977,7 +977,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 		String qPath = "/pack/xdsl/{packName}/resiliationTerms";
 		StringBuilder sb = path(qPath, packName);
 		query(sb, "resiliationDate", resiliationDate);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhResiliationTerms.class);
 	}
 }

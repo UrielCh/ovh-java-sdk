@@ -57,7 +57,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/xdsl
  * version:1.0
  */
@@ -75,7 +75,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -89,7 +89,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/xdsl/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -101,7 +101,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhAccess serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhAccess.class);
 	}
 
@@ -115,7 +115,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public void serviceName_PUT(String serviceName, OvhAccess body) throws IOException {
 		String qPath = "/xdsl/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -127,7 +127,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public ArrayList<OvhRadiusConnectionLog> serviceName_radiusConnectionLogs_GET(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/radiusConnectionLogs";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<OvhRadiusConnectionLog>> t1 = new TypeReference<ArrayList<OvhRadiusConnectionLog>>() {};
@@ -141,7 +141,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhIncident serviceName_incident_GET(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/incident";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhIncident.class);
 	}
 
@@ -158,7 +158,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "period", period);
 		query(sb, "type", type);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<OvhUnitAndValues<OvhTimestampAndValue>> t2 = new TypeReference<OvhUnitAndValues<OvhTimestampAndValue>>() {};
@@ -172,7 +172,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public void serviceName_requestPPPLoginMail_POST(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/requestPPPLoginMail";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("POST", sb.toString());
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
@@ -184,7 +184,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public ArrayList<String> serviceName_lines_GET(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/lines";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 	private static TypeReference<ArrayList<String>> t3 = new TypeReference<ArrayList<String>>() {};
@@ -199,7 +199,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhLine serviceName_lines_number_GET(String serviceName, String number) throws IOException {
 		String qPath = "/xdsl/{serviceName}/lines/{number}";
 		StringBuilder sb = path(qPath, serviceName, number);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhLine.class);
 	}
 
@@ -217,7 +217,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName, number);
 		query(sb, "period", period);
 		query(sb, "type", type);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -240,7 +240,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		addBody(o, "actionsDone", actionsDone);
 		addBody(o, "faultType", faultType);
 		addBody(o, "answers", answers);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhDiagnostic.class);
 	}
 
@@ -256,7 +256,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public void serviceName_lines_number_diagnostic_cancel_POST(String serviceName, String number) throws IOException {
 		String qPath = "/xdsl/{serviceName}/lines/{number}/diagnostic/cancel";
 		StringBuilder sb = path(qPath, serviceName, number);
-		exec("POST", sb.toString());
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
@@ -269,7 +269,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhDslamPort serviceName_lines_number_dslamPort_GET(String serviceName, String number) throws IOException {
 		String qPath = "/xdsl/{serviceName}/lines/{number}/dslamPort";
 		StringBuilder sb = path(qPath, serviceName, number);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhDslamPort.class);
 	}
 
@@ -283,7 +283,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public ArrayList<OvhDslamLineProfile> serviceName_lines_number_dslamPort_availableProfiles_GET(String serviceName, String number) throws IOException {
 		String qPath = "/xdsl/{serviceName}/lines/{number}/dslamPort/availableProfiles";
 		StringBuilder sb = path(qPath, serviceName, number);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t4);
 	}
 	private static TypeReference<ArrayList<OvhDslamLineProfile>> t4 = new TypeReference<ArrayList<OvhDslamLineProfile>>() {};
@@ -298,7 +298,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhTask serviceName_lines_number_dslamPort_reset_POST(String serviceName, String number) throws IOException {
 		String qPath = "/xdsl/{serviceName}/lines/{number}/dslamPort/reset";
 		StringBuilder sb = path(qPath, serviceName, number);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -315,7 +315,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName, number);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "dslamProfileId", dslamProfileId);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -331,7 +331,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		String qPath = "/xdsl/{serviceName}/lines/{number}/dslamPort/logs";
 		StringBuilder sb = path(qPath, serviceName, number);
 		query(sb, "limit", limit);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t5);
 	}
 	private static TypeReference<ArrayList<OvhDslamPortLog>> t5 = new TypeReference<ArrayList<OvhDslamPortLog>>() {};
@@ -350,7 +350,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "rio", rio);
 		addBody(o, "noPortability", noPortability);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -363,7 +363,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhModem serviceName_modem_GET(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhModem.class);
 	}
 
@@ -377,7 +377,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public void serviceName_modem_PUT(String serviceName, OvhModem body) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -392,7 +392,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "upnp", upnp);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -405,7 +405,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhServiceStatusEnum serviceName_modem_upnp_GET(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/upnp";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhServiceStatusEnum.class);
 	}
 
@@ -421,7 +421,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "ftp", ftp);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -434,7 +434,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhServiceStatusEnum serviceName_modem_ftp_GET(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/ftp";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhServiceStatusEnum.class);
 	}
 
@@ -450,7 +450,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "sipAlg", sipAlg);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -463,7 +463,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhServiceStatusEnum serviceName_modem_sipAlg_GET(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/sipAlg";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhServiceStatusEnum.class);
 	}
 
@@ -479,7 +479,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "contentSharing", contentSharing);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -492,7 +492,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhServiceStatusEnum serviceName_modem_contentSharing_GET(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/contentSharing";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhServiceStatusEnum.class);
 	}
 
@@ -505,7 +505,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhTask serviceName_modem_reset_POST(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/reset";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -518,7 +518,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhTask serviceName_modem_refreshConnectedDevices_POST(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/refreshConnectedDevices";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -534,7 +534,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "accessName", accessName);
-		exec("POST", sb.toString(), o);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -546,7 +546,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public ArrayList<String> serviceName_modem_lan_GET(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/lan";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -560,7 +560,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhLAN serviceName_modem_lan_lanName_GET(String serviceName, String lanName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/lan/{lanName}";
 		StringBuilder sb = path(qPath, serviceName, lanName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhLAN.class);
 	}
 
@@ -575,7 +575,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public void serviceName_modem_lan_lanName_PUT(String serviceName, String lanName, OvhLAN body) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/lan/{lanName}";
 		StringBuilder sb = path(qPath, serviceName, lanName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -588,7 +588,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public ArrayList<String> serviceName_modem_lan_lanName_dhcp_GET(String serviceName, String lanName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/lan/{lanName}/dhcp";
 		StringBuilder sb = path(qPath, serviceName, lanName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -603,7 +603,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhDHCP serviceName_modem_lan_lanName_dhcp_dhcpName_GET(String serviceName, String lanName, String dhcpName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}";
 		StringBuilder sb = path(qPath, serviceName, lanName, dhcpName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhDHCP.class);
 	}
 
@@ -619,7 +619,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public void serviceName_modem_lan_lanName_dhcp_dhcpName_PUT(String serviceName, String lanName, String dhcpName, OvhDHCP body) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}";
 		StringBuilder sb = path(qPath, serviceName, lanName, dhcpName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -633,7 +633,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public ArrayList<String> serviceName_modem_lan_lanName_dhcp_dhcpName_DHCPStaticAddresses_GET(String serviceName, String lanName, String dhcpName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}/DHCPStaticAddresses";
 		StringBuilder sb = path(qPath, serviceName, lanName, dhcpName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -655,7 +655,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		addBody(o, "MACAddress", MACAddress);
 		addBody(o, "IPAddress", IPAddress);
 		addBody(o, "name", name);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhDHCPStaticAddress.class);
 	}
 
@@ -671,7 +671,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhDHCPStaticAddress serviceName_modem_lan_lanName_dhcp_dhcpName_DHCPStaticAddresses_MACAddress_GET(String serviceName, String lanName, String dhcpName, String MACAddress) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}/DHCPStaticAddresses/{MACAddress}";
 		StringBuilder sb = path(qPath, serviceName, lanName, dhcpName, MACAddress);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhDHCPStaticAddress.class);
 	}
 
@@ -688,7 +688,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public void serviceName_modem_lan_lanName_dhcp_dhcpName_DHCPStaticAddresses_MACAddress_PUT(String serviceName, String lanName, String dhcpName, String MACAddress, OvhDHCPStaticAddress body) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}/DHCPStaticAddresses/{MACAddress}";
 		StringBuilder sb = path(qPath, serviceName, lanName, dhcpName, MACAddress);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -703,7 +703,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhTask serviceName_modem_lan_lanName_dhcp_dhcpName_DHCPStaticAddresses_MACAddress_DELETE(String serviceName, String lanName, String dhcpName, String MACAddress) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}/DHCPStaticAddresses/{MACAddress}";
 		StringBuilder sb = path(qPath, serviceName, lanName, dhcpName, MACAddress);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -719,7 +719,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "todoDate", todoDate);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -732,7 +732,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhAsyncTask<OvhModemInfo> serviceName_modem_retrieveInfo_POST(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/retrieveInfo";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, t6);
 	}
 	private static TypeReference<OvhAsyncTask<OvhModemInfo>> t6 = new TypeReference<OvhAsyncTask<OvhModemInfo>>() {};
@@ -746,7 +746,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public ArrayList<String> serviceName_modem_portMappings_GET(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/portMappings";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -776,7 +776,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		addBody(o, "internalClient", internalClient);
 		addBody(o, "internalPort", internalPort);
 		addBody(o, "allowedRemoteIp", allowedRemoteIp);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhPortMapping.class);
 	}
 
@@ -790,7 +790,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhPortMapping serviceName_modem_portMappings_name_GET(String serviceName, String name) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/portMappings/{name}";
 		StringBuilder sb = path(qPath, serviceName, name);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPortMapping.class);
 	}
 
@@ -805,7 +805,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public void serviceName_modem_portMappings_name_PUT(String serviceName, String name, OvhPortMapping body) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/portMappings/{name}";
 		StringBuilder sb = path(qPath, serviceName, name);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -818,7 +818,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhTask serviceName_modem_portMappings_name_DELETE(String serviceName, String name) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/portMappings/{name}";
 		StringBuilder sb = path(qPath, serviceName, name);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -831,7 +831,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public ArrayList<String> serviceName_modem_connectedDevices_GET(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/connectedDevices";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -845,7 +845,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhConnectedDevice serviceName_modem_connectedDevices_macAddress_GET(String serviceName, String macAddress) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/connectedDevices/{macAddress}";
 		StringBuilder sb = path(qPath, serviceName, macAddress);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhConnectedDevice.class);
 	}
 
@@ -861,7 +861,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "status", status);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -874,7 +874,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhServiceStatusEnum serviceName_modem_blocIp_GET(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/blocIp";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhServiceStatusEnum.class);
 	}
 
@@ -887,7 +887,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public ArrayList<String> serviceName_modem_wifi_GET(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/wifi";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -901,7 +901,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhWLAN serviceName_modem_wifi_wifiName_GET(String serviceName, String wifiName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/wifi/{wifiName}";
 		StringBuilder sb = path(qPath, serviceName, wifiName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhWLAN.class);
 	}
 
@@ -916,7 +916,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public void serviceName_modem_wifi_wifiName_PUT(String serviceName, String wifiName, OvhWLAN body) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/wifi/{wifiName}";
 		StringBuilder sb = path(qPath, serviceName, wifiName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -931,7 +931,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "callWaiting", callWaiting);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -944,7 +944,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhServiceStatusEnum serviceName_modem_callWaiting_GET(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/callWaiting";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhServiceStatusEnum.class);
 	}
 
@@ -957,7 +957,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public void serviceName_modem_resetPortMappingConfig_POST(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/resetPortMappingConfig";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("POST", sb.toString());
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
@@ -976,7 +976,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		addBody(o, "contactAdmin", contactAdmin);
 		addBody(o, "contactTech", contactTech);
 		addBody(o, "contactBilling", contactBilling);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, t7);
 	}
 	private static TypeReference<ArrayList<Long>> t7 = new TypeReference<ArrayList<Long>>() {};
@@ -990,7 +990,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public ArrayList<OvhLns> serviceName_availableLns_GET(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/availableLns";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t8);
 	}
 	private static TypeReference<ArrayList<OvhLns>> t8 = new TypeReference<ArrayList<OvhLns>>() {};
@@ -1004,7 +1004,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public ArrayList<String> serviceName_ips_GET(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/ips";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -1017,7 +1017,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhTask serviceName_ips_POST(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/ips";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1031,7 +1031,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhIP serviceName_ips_ip_GET(String serviceName, String ip) throws IOException {
 		String qPath = "/xdsl/{serviceName}/ips/{ip}";
 		StringBuilder sb = path(qPath, serviceName, ip);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhIP.class);
 	}
 
@@ -1045,7 +1045,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public void serviceName_ips_ip_DELETE(String serviceName, String ip) throws IOException {
 		String qPath = "/xdsl/{serviceName}/ips/{ip}";
 		StringBuilder sb = path(qPath, serviceName, ip);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -1057,7 +1057,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhResiliationFollowUpDetail serviceName_resiliationFollowup_GET(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/resiliationFollowup";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhResiliationFollowUpDetail.class);
 	}
 
@@ -1070,7 +1070,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhPPPMigrationInfo serviceName_canMigrateToPPP_GET(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/canMigrateToPPP";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPPPMigrationInfo.class);
 	}
 
@@ -1086,7 +1086,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "enabled", enabled);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1099,7 +1099,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public void serviceName_migrateToPPP_POST(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/migrateToPPP";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("POST", sb.toString());
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
@@ -1115,7 +1115,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "function", function);
 		query(sb, "status", status);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t7);
 	}
 
@@ -1129,7 +1129,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhTask serviceName_tasks_id_GET(String serviceName, Long id) throws IOException {
 		String qPath = "/xdsl/{serviceName}/tasks/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1143,7 +1143,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public void serviceName_tasks_id_archive_POST(String serviceName, Long id) throws IOException {
 		String qPath = "/xdsl/{serviceName}/tasks/{id}/archive";
 		StringBuilder sb = path(qPath, serviceName, id);
-		exec("POST", sb.toString());
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
@@ -1155,7 +1155,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhDeconsolidationTerms serviceName_totalDeconsolidationTerms_GET(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/totalDeconsolidationTerms";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhDeconsolidationTerms.class);
 	}
 
@@ -1168,7 +1168,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public Boolean serviceName_canCancelResiliation_GET(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/canCancelResiliation";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, Boolean.class);
 	}
 
@@ -1184,7 +1184,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "lnsName", lnsName);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1197,7 +1197,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhExtraIpRangeMove serviceName_addressMove_extraIpRange_GET(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/addressMove/extraIpRange";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhExtraIpRangeMove.class);
 	}
 
@@ -1210,7 +1210,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhTask serviceName_addressMove_extraIpRangeMove_POST(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/addressMove/extraIpRangeMove";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1223,7 +1223,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public ArrayList<OvhStep> serviceName_orderFollowup_GET(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/orderFollowup";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t9);
 	}
 	private static TypeReference<ArrayList<OvhStep>> t9 = new TypeReference<ArrayList<OvhStep>>() {};
@@ -1237,7 +1237,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhPendingAction serviceName_pendingAction_GET(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/pendingAction";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPendingAction.class);
 	}
 
@@ -1250,7 +1250,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public void serviceName_cancelResiliation_POST(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/cancelResiliation";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("POST", sb.toString());
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
@@ -1262,7 +1262,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public ArrayList<Long> serviceName_monitoringNotifications_GET(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/monitoringNotifications";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t7);
 	}
 
@@ -1290,7 +1290,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		addBody(o, "allowIncident", allowIncident);
 		addBody(o, "type", type);
 		addBody(o, "phone", phone);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhMonitoringNotification.class);
 	}
 
@@ -1304,7 +1304,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhMonitoringNotification serviceName_monitoringNotifications_id_GET(String serviceName, Long id) throws IOException {
 		String qPath = "/xdsl/{serviceName}/monitoringNotifications/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhMonitoringNotification.class);
 	}
 
@@ -1319,7 +1319,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public void serviceName_monitoringNotifications_id_PUT(String serviceName, Long id, OvhMonitoringNotification body) throws IOException {
 		String qPath = "/xdsl/{serviceName}/monitoringNotifications/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1332,7 +1332,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public void serviceName_monitoringNotifications_id_DELETE(String serviceName, Long id) throws IOException {
 		String qPath = "/xdsl/{serviceName}/monitoringNotifications/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -1349,7 +1349,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "resiliationSurvey", resiliationSurvey);
 		addBody(o, "resiliationDate", resiliationDate);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhResiliationFollowUpDetail.class);
 	}
 
@@ -1362,7 +1362,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhAccessDiagnostic serviceName_diagnostic_GET(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/diagnostic";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhAccessDiagnostic.class);
 	}
 
@@ -1375,7 +1375,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhTask serviceName_diagnostic_POST(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/diagnostic";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1388,7 +1388,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public ArrayList<String> serviceName_rma_GET(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/rma";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -1402,7 +1402,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhRma serviceName_rma_id_GET(String serviceName, String id) throws IOException {
 		String qPath = "/xdsl/{serviceName}/rma/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhRma.class);
 	}
 
@@ -1417,7 +1417,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public void serviceName_rma_id_PUT(String serviceName, String id, OvhRma body) throws IOException {
 		String qPath = "/xdsl/{serviceName}/rma/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1430,7 +1430,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public void serviceName_rma_id_DELETE(String serviceName, String id) throws IOException {
 		String qPath = "/xdsl/{serviceName}/rma/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -1444,7 +1444,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		String qPath = "/xdsl/{serviceName}/resiliationTerms";
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "resiliationDate", resiliationDate);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhResiliationTerms.class);
 	}
 
@@ -1456,7 +1456,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/xdsl";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -1472,7 +1472,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		StringBuilder sb = path(qPath);
 		query(sb, "inseeCode", inseeCode);
 		query(sb, "partialName", partialName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t10);
 	}
 	private static TypeReference<ArrayList<OvhStreet>> t10 = new TypeReference<ArrayList<OvhStreet>>() {};
@@ -1487,7 +1487,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		String qPath = "/xdsl/eligibility/cities";
 		StringBuilder sb = path(qPath);
 		query(sb, "zipCode", zipCode);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t11);
 	}
 	private static TypeReference<ArrayList<OvhCity>> t11 = new TypeReference<ArrayList<OvhCity>>() {};
@@ -1504,7 +1504,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		StringBuilder sb = path(qPath);
 		query(sb, "creationDate", creationDate);
 		query(sb, "endDate", endDate);
-		String resp = execN("GET", sb.toString());
+		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t7);
 	}
 
@@ -1517,7 +1517,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhIncident incidents_id_GET(Long id) throws IOException {
 		String qPath = "/xdsl/incidents/{id}";
 		StringBuilder sb = path(qPath, id);
-		String resp = execN("GET", sb.toString());
+		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhIncident.class);
 	}
 
@@ -1529,7 +1529,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public ArrayList<String> spare_GET() throws IOException {
 		String qPath = "/xdsl/spare";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -1542,7 +1542,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhService spare_spare_serviceInfos_GET(String spare) throws IOException {
 		String qPath = "/xdsl/spare/{spare}/serviceInfos";
 		StringBuilder sb = path(qPath, spare);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -1556,7 +1556,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public void spare_spare_serviceInfos_PUT(String spare, OvhService body) throws IOException {
 		String qPath = "/xdsl/spare/{spare}/serviceInfos";
 		StringBuilder sb = path(qPath, spare);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1568,7 +1568,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public OvhXdslSpare spare_spare_GET(String spare) throws IOException {
 		String qPath = "/xdsl/spare/{spare}";
 		StringBuilder sb = path(qPath, spare);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhXdslSpare.class);
 	}
 
@@ -1581,7 +1581,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public void spare_spare_DELETE(String spare) throws IOException {
 		String qPath = "/xdsl/spare/{spare}";
 		StringBuilder sb = path(qPath, spare);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -1596,7 +1596,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		StringBuilder sb = path(qPath, spare);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "domain", domain);
-		exec("POST", sb.toString(), o);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -1608,7 +1608,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public ArrayList<String> spare_spare_compatibleReplacement_GET(String spare) throws IOException {
 		String qPath = "/xdsl/spare/{spare}/compatibleReplacement";
 		StringBuilder sb = path(qPath, spare);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -1621,7 +1621,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public void spare_spare_returnMerchandise_POST(String spare) throws IOException {
 		String qPath = "/xdsl/spare/{spare}/returnMerchandise";
 		StringBuilder sb = path(qPath, spare);
-		exec("POST", sb.toString());
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
@@ -1632,7 +1632,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	public ArrayList<String> spare_brands_GET() throws IOException {
 		String qPath = "/xdsl/spare/brands";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 }

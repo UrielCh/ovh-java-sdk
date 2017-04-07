@@ -18,7 +18,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/license/windows
  * version:1.0
  */
@@ -36,7 +36,7 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/license/windows/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -50,7 +50,7 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/license/windows/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -62,7 +62,7 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 	public OvhWindows serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/license/windows/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhWindows.class);
 	}
 
@@ -76,7 +76,7 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 	public void serviceName_PUT(String serviceName, OvhWindows body) throws IOException {
 		String qPath = "/license/windows/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -92,7 +92,7 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "action", action);
 		query(sb, "status", status);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
@@ -107,7 +107,7 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 	public OvhTask serviceName_tasks_taskId_GET(String serviceName, Long taskId) throws IOException {
 		String qPath = "/license/windows/{serviceName}/tasks/{taskId}";
 		StringBuilder sb = path(qPath, serviceName, taskId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -127,7 +127,7 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 		addBody(o, "reason", reason);
 		addBody(o, "commentary", commentary);
 		addBody(o, "token", token);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -140,7 +140,7 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 	public String serviceName_terminate_POST(String serviceName) throws IOException {
 		String qPath = "/license/windows/{serviceName}/terminate";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, String.class);
 	}
 
@@ -158,7 +158,7 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "licenseId", licenseId);
 		addBody(o, "version", version);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -171,7 +171,7 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 	public ArrayList<OvhOptionLabel> serviceName_option_GET(String serviceName) throws IOException {
 		String qPath = "/license/windows/{serviceName}/option";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<OvhOptionLabel>> t2 = new TypeReference<ArrayList<OvhOptionLabel>>() {};
@@ -186,7 +186,7 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 	public OvhOption serviceName_option_label_GET(String serviceName, net.minidev.ovh.api.license.OvhOptionLabel label) throws IOException {
 		String qPath = "/license/windows/{serviceName}/option/{label}";
 		StringBuilder sb = path(qPath, serviceName, label);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOption.class);
 	}
 
@@ -200,7 +200,7 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 	public OvhTask serviceName_option_label_DELETE(String serviceName, net.minidev.ovh.api.license.OvhOptionLabel label) throws IOException {
 		String qPath = "/license/windows/{serviceName}/option/{label}";
 		StringBuilder sb = path(qPath, serviceName, label);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -212,7 +212,7 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/license/windows";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 	private static TypeReference<ArrayList<String>> t3 = new TypeReference<ArrayList<String>>() {};
@@ -227,7 +227,7 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 		String qPath = "/license/windows/orderableVersions";
 		StringBuilder sb = path(qPath);
 		query(sb, "ip", ip);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t4);
 	}
 	private static TypeReference<ArrayList<OvhWindowsOrderConfiguration>> t4 = new TypeReference<ArrayList<OvhWindowsOrderConfiguration>>() {};

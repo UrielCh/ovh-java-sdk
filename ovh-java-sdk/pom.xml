@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>net.minidev</groupId>
 		<artifactId>ovh-java-sdk-pom</artifactId>
-		<version>0.9.2</version>
+		<version>0.9.3</version>
 	</parent>
 	<artifactId>ovh-java-sdk</artifactId>
 	<name>OVH SDK For Java</name>
@@ -423,6 +423,78 @@
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-xdsl</artifactId>
+			<groupId>net.minidev</groupId>
+			<optional>false</optional>
+			<version>${ovhjavasdk.version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>ovh-java-sdk-instance</artifactId>
+			<groupId>net.minidev</groupId>
+			<optional>false</optional>
+			<version>${ovhjavasdk.version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>ovh-java-sdk-volume</artifactId>
+			<groupId>net.minidev</groupId>
+			<optional>false</optional>
+			<version>${ovhjavasdk.version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>ovh-java-sdk-ssh</artifactId>
+			<groupId>net.minidev</groupId>
+			<optional>false</optional>
+			<version>${ovhjavasdk.version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>ovh-java-sdk-iot</artifactId>
+			<groupId>net.minidev</groupId>
+			<optional>false</optional>
+			<version>${ovhjavasdk.version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>ovh-java-sdk-time</artifactId>
+			<groupId>net.minidev</groupId>
+			<optional>false</optional>
+			<version>${ovhjavasdk.version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>ovh-java-sdk-flavor</artifactId>
+			<groupId>net.minidev</groupId>
+			<optional>false</optional>
+			<version>${ovhjavasdk.version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>ovh-java-sdk-image</artifactId>
+			<groupId>net.minidev</groupId>
+			<optional>false</optional>
+			<version>${ovhjavasdk.version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>ovh-java-sdk-region</artifactId>
+			<groupId>net.minidev</groupId>
+			<optional>false</optional>
+			<version>${ovhjavasdk.version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>ovh-java-sdk-project</artifactId>
+			<groupId>net.minidev</groupId>
+			<optional>false</optional>
+			<version>${ovhjavasdk.version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>ovh-java-sdk-storage</artifactId>
+			<groupId>net.minidev</groupId>
+			<optional>false</optional>
+			<version>${ovhjavasdk.version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>ovh-java-sdk-token</artifactId>
+			<groupId>net.minidev</groupId>
+			<optional>false</optional>
+			<version>${ovhjavasdk.version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>ovh-java-sdk-launch</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
 			<version>${ovhjavasdk.version}</version>

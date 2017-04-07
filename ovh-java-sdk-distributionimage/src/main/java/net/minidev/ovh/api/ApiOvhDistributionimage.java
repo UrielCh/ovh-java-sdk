@@ -8,7 +8,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/distribution/image
  * version:1.0
  */
@@ -28,7 +28,7 @@ public class ApiOvhDistributionimage extends ApiOvhBase {
 	public ArrayList<String> serviceType_GET(net.minidev.ovh.api.distribution.image.OvhService serviceType) throws IOException {
 		String qPath = "/distribution/image/{serviceType}";
 		StringBuilder sb = path(qPath, serviceType);
-		String resp = execN("GET", sb.toString());
+		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
@@ -45,7 +45,7 @@ public class ApiOvhDistributionimage extends ApiOvhBase {
 	public OvhImage serviceType_imageName_GET(net.minidev.ovh.api.distribution.image.OvhService serviceType, String imageName) throws IOException {
 		String qPath = "/distribution/image/{serviceType}/{imageName}";
 		StringBuilder sb = path(qPath, serviceType, imageName);
-		String resp = execN("GET", sb.toString());
+		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhImage.class);
 	}
 }

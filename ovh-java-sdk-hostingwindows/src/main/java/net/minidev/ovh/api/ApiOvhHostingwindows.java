@@ -9,7 +9,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/hosting/windows
  * version:1.0
  */
@@ -28,7 +28,7 @@ public class ApiOvhHostingwindows extends ApiOvhBase {
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/hosting/windows/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -43,7 +43,7 @@ public class ApiOvhHostingwindows extends ApiOvhBase {
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/hosting/windows/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -56,7 +56,7 @@ public class ApiOvhHostingwindows extends ApiOvhBase {
 	public net.minidev.ovh.api.hosting.windows.OvhService serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/hosting/windows/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, net.minidev.ovh.api.hosting.windows.OvhService.class);
 	}
 
@@ -77,7 +77,7 @@ public class ApiOvhHostingwindows extends ApiOvhBase {
 		addBody(o, "contactAdmin", contactAdmin);
 		addBody(o, "contactTech", contactTech);
 		addBody(o, "contactBilling", contactBilling);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
@@ -91,7 +91,7 @@ public class ApiOvhHostingwindows extends ApiOvhBase {
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/hosting/windows";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};

@@ -13,7 +13,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/store
  * version:1.0
  */
@@ -32,7 +32,7 @@ public class ApiOvhStore extends ApiOvhBase {
 	public ArrayList<OvhDocument> document_GET() throws IOException {
 		String qPath = "/store/document";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<OvhDocument>> t1 = new TypeReference<ArrayList<OvhDocument>>() {};
@@ -52,7 +52,7 @@ public class ApiOvhStore extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "name", name);
 		addBody(o, "tags", tags);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhDocument.class);
 	}
 
@@ -69,7 +69,7 @@ public class ApiOvhStore extends ApiOvhBase {
 		StringBuilder sb = path(qPath);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "origin", origin);
-		exec("POST", sb.toString(), o);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -83,7 +83,7 @@ public class ApiOvhStore extends ApiOvhBase {
 	public OvhDocument document_documentId_GET(String documentId) throws IOException {
 		String qPath = "/store/document/{documentId}";
 		StringBuilder sb = path(qPath, documentId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhDocument.class);
 	}
 
@@ -98,7 +98,7 @@ public class ApiOvhStore extends ApiOvhBase {
 	public String document_documentId_DELETE(String documentId) throws IOException {
 		String qPath = "/store/document/{documentId}";
 		StringBuilder sb = path(qPath, documentId);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, String.class);
 	}
 
@@ -112,7 +112,7 @@ public class ApiOvhStore extends ApiOvhBase {
 	public ArrayList<OvhContact> contact_GET() throws IOException {
 		String qPath = "/store/contact";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<OvhContact>> t2 = new TypeReference<ArrayList<OvhContact>>() {};
@@ -148,7 +148,7 @@ public class ApiOvhStore extends ApiOvhBase {
 		addBody(o, "province", province);
 		addBody(o, "city", city);
 		addBody(o, "phone", phone);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhContact.class);
 	}
 
@@ -163,7 +163,7 @@ public class ApiOvhStore extends ApiOvhBase {
 	public OvhContact contact_contactId_GET(String contactId) throws IOException {
 		String qPath = "/store/contact/{contactId}";
 		StringBuilder sb = path(qPath, contactId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhContact.class);
 	}
 
@@ -199,7 +199,7 @@ public class ApiOvhStore extends ApiOvhBase {
 		addBody(o, "province", province);
 		addBody(o, "city", city);
 		addBody(o, "phone", phone);
-		String resp = exec("PUT", sb.toString(), o);
+		String resp = exec(qPath, "PUT", sb.toString(), o);
 		return convertTo(resp, OvhContact.class);
 	}
 
@@ -214,7 +214,7 @@ public class ApiOvhStore extends ApiOvhBase {
 	public String contact_contactId_DELETE(String contactId) throws IOException {
 		String qPath = "/store/contact/{contactId}";
 		StringBuilder sb = path(qPath, contactId);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, String.class);
 	}
 
@@ -229,7 +229,7 @@ public class ApiOvhStore extends ApiOvhBase {
 	public ArrayList<String> contact_contactId_document_GET(String contactId) throws IOException {
 		String qPath = "/store/contact/{contactId}/document";
 		StringBuilder sb = path(qPath, contactId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 	private static TypeReference<ArrayList<String>> t3 = new TypeReference<ArrayList<String>>() {};
@@ -248,7 +248,7 @@ public class ApiOvhStore extends ApiOvhBase {
 		StringBuilder sb = path(qPath, contactId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "documentId", documentId);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, t3);
 	}
 
@@ -264,7 +264,7 @@ public class ApiOvhStore extends ApiOvhBase {
 	public ArrayList<String> contact_contactId_document_documentId_DELETE(String contactId, String documentId) throws IOException {
 		String qPath = "/store/contact/{contactId}/document/{documentId}";
 		StringBuilder sb = path(qPath, contactId, documentId);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -278,7 +278,7 @@ public class ApiOvhStore extends ApiOvhBase {
 	public ArrayList<OvhPartner> partner_GET() throws IOException {
 		String qPath = "/store/partner";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t4);
 	}
 	private static TypeReference<ArrayList<OvhPartner>> t4 = new TypeReference<ArrayList<OvhPartner>>() {};
@@ -326,7 +326,7 @@ public class ApiOvhStore extends ApiOvhBase {
 		addBody(o, "category", category);
 		addBody(o, "province", province);
 		addBody(o, "contact", contact);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhPartner.class);
 	}
 
@@ -341,7 +341,7 @@ public class ApiOvhStore extends ApiOvhBase {
 	public OvhPartner partner_partnerId_GET(String partnerId) throws IOException {
 		String qPath = "/store/partner/{partnerId}";
 		StringBuilder sb = path(qPath, partnerId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPartner.class);
 	}
 
@@ -389,7 +389,7 @@ public class ApiOvhStore extends ApiOvhBase {
 		addBody(o, "otherDetails", otherDetails);
 		addBody(o, "province", province);
 		addBody(o, "contact", contact);
-		String resp = exec("PUT", sb.toString(), o);
+		String resp = exec(qPath, "PUT", sb.toString(), o);
 		return convertTo(resp, OvhPartner.class);
 	}
 
@@ -404,7 +404,7 @@ public class ApiOvhStore extends ApiOvhBase {
 	public String partner_partnerId_DELETE(String partnerId) throws IOException {
 		String qPath = "/store/partner/{partnerId}";
 		StringBuilder sb = path(qPath, partnerId);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, String.class);
 	}
 
@@ -419,7 +419,7 @@ public class ApiOvhStore extends ApiOvhBase {
 	public ArrayList<String> partner_partnerId_document_GET(String partnerId) throws IOException {
 		String qPath = "/store/partner/{partnerId}/document";
 		StringBuilder sb = path(qPath, partnerId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -437,7 +437,7 @@ public class ApiOvhStore extends ApiOvhBase {
 		StringBuilder sb = path(qPath, partnerId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "documentId", documentId);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, t3);
 	}
 
@@ -453,7 +453,7 @@ public class ApiOvhStore extends ApiOvhBase {
 	public ArrayList<String> partner_partnerId_document_documentId_DELETE(String partnerId, String documentId) throws IOException {
 		String qPath = "/store/partner/{partnerId}/document/{documentId}";
 		StringBuilder sb = path(qPath, partnerId, documentId);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -468,7 +468,7 @@ public class ApiOvhStore extends ApiOvhBase {
 	public ArrayList<OvhEditResponse> partner_partnerId_product_GET(String partnerId) throws IOException {
 		String qPath = "/store/partner/{partnerId}/product";
 		StringBuilder sb = path(qPath, partnerId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t5);
 	}
 	private static TypeReference<ArrayList<OvhEditResponse>> t5 = new TypeReference<ArrayList<OvhEditResponse>>() {};
@@ -493,7 +493,7 @@ public class ApiOvhStore extends ApiOvhBase {
 		addBody(o, "name", name);
 		addBody(o, "otherDetails", otherDetails);
 		addBody(o, "category", category);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhEditResponse.class);
 	}
 
@@ -509,7 +509,7 @@ public class ApiOvhStore extends ApiOvhBase {
 	public OvhEditResponse partner_partnerId_product_productId_GET(String partnerId, String productId) throws IOException {
 		String qPath = "/store/partner/{partnerId}/product/{productId}";
 		StringBuilder sb = path(qPath, partnerId, productId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhEditResponse.class);
 	}
 
@@ -534,7 +534,7 @@ public class ApiOvhStore extends ApiOvhBase {
 		addBody(o, "name", name);
 		addBody(o, "category", category);
 		addBody(o, "otherDetails", otherDetails);
-		String resp = exec("PUT", sb.toString(), o);
+		String resp = exec(qPath, "PUT", sb.toString(), o);
 		return convertTo(resp, OvhEditResponse.class);
 	}
 
@@ -550,7 +550,7 @@ public class ApiOvhStore extends ApiOvhBase {
 	public String partner_partnerId_product_productId_DELETE(String partnerId, String productId) throws IOException {
 		String qPath = "/store/partner/{partnerId}/product/{productId}";
 		StringBuilder sb = path(qPath, partnerId, productId);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, String.class);
 	}
 
@@ -566,7 +566,7 @@ public class ApiOvhStore extends ApiOvhBase {
 	public ArrayList<String> partner_partnerId_product_productId_document_GET(String partnerId, String productId) throws IOException {
 		String qPath = "/store/partner/{partnerId}/product/{productId}/document";
 		StringBuilder sb = path(qPath, partnerId, productId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -585,7 +585,7 @@ public class ApiOvhStore extends ApiOvhBase {
 		StringBuilder sb = path(qPath, partnerId, productId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "documentId", documentId);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, t3);
 	}
 
@@ -602,7 +602,7 @@ public class ApiOvhStore extends ApiOvhBase {
 	public ArrayList<String> partner_partnerId_product_productId_document_documentId_DELETE(String partnerId, String productId, String documentId) throws IOException {
 		String qPath = "/store/partner/{partnerId}/product/{productId}/document/{documentId}";
 		StringBuilder sb = path(qPath, partnerId, productId, documentId);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 }

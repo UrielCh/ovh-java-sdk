@@ -20,7 +20,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/router
  * version:1.0
  */
@@ -38,7 +38,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/router/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -52,7 +52,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/router/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -64,7 +64,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 	public OvhRouter serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/router/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhRouter.class);
 	}
 
@@ -77,7 +77,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 	public ArrayList<String> serviceName_network_GET(String serviceName) throws IOException {
 		String qPath = "/router/{serviceName}/network";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
@@ -98,7 +98,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 		addBody(o, "vlanTag", vlanTag);
 		addBody(o, "ipNet", ipNet);
 		addBody(o, "description", description);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -112,7 +112,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 	public OvhNetwork serviceName_network_ipNet_GET(String serviceName, String ipNet) throws IOException {
 		String qPath = "/router/{serviceName}/network/{ipNet}";
 		StringBuilder sb = path(qPath, serviceName, ipNet);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhNetwork.class);
 	}
 
@@ -127,7 +127,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 	public void serviceName_network_ipNet_PUT(String serviceName, String ipNet, OvhNetwork body) throws IOException {
 		String qPath = "/router/{serviceName}/network/{ipNet}";
 		StringBuilder sb = path(qPath, serviceName, ipNet);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -140,7 +140,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 	public OvhTask serviceName_network_ipNet_DELETE(String serviceName, String ipNet) throws IOException {
 		String qPath = "/router/{serviceName}/network/{ipNet}";
 		StringBuilder sb = path(qPath, serviceName, ipNet);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -160,7 +160,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 		addBody(o, "reason", reason);
 		addBody(o, "commentary", commentary);
 		addBody(o, "token", token);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -173,7 +173,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 	public String serviceName_terminate_POST(String serviceName) throws IOException {
 		String qPath = "/router/{serviceName}/terminate";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, String.class);
 	}
 
@@ -190,7 +190,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "function", function);
 		query(sb, "status", status);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
@@ -205,7 +205,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 	public OvhTask serviceName_task_id_GET(String serviceName, Long id) throws IOException {
 		String qPath = "/router/{serviceName}/task/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -218,7 +218,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 	public ArrayList<String> serviceName_privateLink_GET(String serviceName) throws IOException {
 		String qPath = "/router/{serviceName}/privateLink";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -236,7 +236,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "peerServiceName", peerServiceName);
 		addBody(o, "name", name);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -250,7 +250,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 	public OvhPrivateLinkRequest serviceName_privateLink_peerServiceName_request_GET(String serviceName, String peerServiceName) throws IOException {
 		String qPath = "/router/{serviceName}/privateLink/{peerServiceName}/request";
 		StringBuilder sb = path(qPath, serviceName, peerServiceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrivateLinkRequest.class);
 	}
 
@@ -267,7 +267,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName, peerServiceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "action", action);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -281,7 +281,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 	public OvhPrivateLink serviceName_privateLink_peerServiceName_GET(String serviceName, String peerServiceName) throws IOException {
 		String qPath = "/router/{serviceName}/privateLink/{peerServiceName}";
 		StringBuilder sb = path(qPath, serviceName, peerServiceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrivateLink.class);
 	}
 
@@ -296,7 +296,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 	public void serviceName_privateLink_peerServiceName_PUT(String serviceName, String peerServiceName, OvhPrivateLink body) throws IOException {
 		String qPath = "/router/{serviceName}/privateLink/{peerServiceName}";
 		StringBuilder sb = path(qPath, serviceName, peerServiceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -309,7 +309,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 	public OvhTask serviceName_privateLink_peerServiceName_DELETE(String serviceName, String peerServiceName) throws IOException {
 		String qPath = "/router/{serviceName}/privateLink/{peerServiceName}";
 		StringBuilder sb = path(qPath, serviceName, peerServiceName);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -323,7 +323,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 	public ArrayList<String> serviceName_privateLink_peerServiceName_route_GET(String serviceName, String peerServiceName) throws IOException {
 		String qPath = "/router/{serviceName}/privateLink/{peerServiceName}/route";
 		StringBuilder sb = path(qPath, serviceName, peerServiceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -340,7 +340,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName, peerServiceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "network", network);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -355,7 +355,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 	public OvhPrivateLinkRoute serviceName_privateLink_peerServiceName_route_network_GET(String serviceName, String peerServiceName, String network) throws IOException {
 		String qPath = "/router/{serviceName}/privateLink/{peerServiceName}/route/{network}";
 		StringBuilder sb = path(qPath, serviceName, peerServiceName, network);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrivateLinkRoute.class);
 	}
 
@@ -370,7 +370,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 	public OvhTask serviceName_privateLink_peerServiceName_route_network_DELETE(String serviceName, String peerServiceName, String network) throws IOException {
 		String qPath = "/router/{serviceName}/privateLink/{peerServiceName}/route/{network}";
 		StringBuilder sb = path(qPath, serviceName, peerServiceName, network);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -383,7 +383,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 	public ArrayList<Long> serviceName_vpn_GET(String serviceName) throws IOException {
 		String qPath = "/router/{serviceName}/vpn";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -405,7 +405,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 		addBody(o, "clientIp", clientIp);
 		addBody(o, "serverPrivNet", serverPrivNet);
 		addBody(o, "clientPrivNet", clientPrivNet);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhVpn.class);
 	}
 
@@ -419,7 +419,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 	public OvhVpn serviceName_vpn_id_GET(String serviceName, Long id) throws IOException {
 		String qPath = "/router/{serviceName}/vpn/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhVpn.class);
 	}
 
@@ -434,7 +434,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 	public void serviceName_vpn_id_PUT(String serviceName, Long id, OvhVpn body) throws IOException {
 		String qPath = "/router/{serviceName}/vpn/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -447,7 +447,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 	public OvhTask serviceName_vpn_id_DELETE(String serviceName, Long id) throws IOException {
 		String qPath = "/router/{serviceName}/vpn/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -464,7 +464,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName, id);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "psk", psk);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -476,7 +476,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/router";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 }

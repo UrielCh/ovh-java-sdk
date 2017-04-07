@@ -8,7 +8,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/auth
  * version:1.0
  */
@@ -25,7 +25,7 @@ public class ApiOvhAuth extends ApiOvhBase {
 	public OvhCredential currentCredential_GET() throws IOException {
 		String qPath = "/auth/currentCredential";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhCredential.class);
 	}
 
@@ -37,7 +37,7 @@ public class ApiOvhAuth extends ApiOvhBase {
 	public Long time_GET() throws IOException {
 		String qPath = "/auth/time";
 		StringBuilder sb = path(qPath);
-		String resp = execN("GET", sb.toString());
+		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, Long.class);
 	}
 
@@ -49,7 +49,7 @@ public class ApiOvhAuth extends ApiOvhBase {
 	public void logout_POST() throws IOException {
 		String qPath = "/auth/logout";
 		StringBuilder sb = path(qPath);
-		exec("POST", sb.toString());
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
@@ -65,7 +65,7 @@ public class ApiOvhAuth extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "accessRules", accessRules);
 		addBody(o, "redirection", redirection);
-		String resp = execN("POST", sb.toString(), o);
+		String resp = execN(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, net.minidev.ovh.api.auth.OvhCredential.class);
 	}
 }

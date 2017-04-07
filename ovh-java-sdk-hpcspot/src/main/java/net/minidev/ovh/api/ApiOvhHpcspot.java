@@ -12,7 +12,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/hpcspot
  * version:1.0
  */
@@ -30,7 +30,7 @@ public class ApiOvhHpcspot extends ApiOvhBase {
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/hpcspot/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -44,7 +44,7 @@ public class ApiOvhHpcspot extends ApiOvhBase {
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/hpcspot/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -56,7 +56,7 @@ public class ApiOvhHpcspot extends ApiOvhBase {
 	public OvhAccount serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/hpcspot/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhAccount.class);
 	}
 
@@ -79,7 +79,7 @@ public class ApiOvhHpcspot extends ApiOvhBase {
 		query(sb, "hpcspotItemId", hpcspotItemId);
 		query(sb, "orderId", orderId);
 		query(sb, "type", type);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
@@ -94,7 +94,7 @@ public class ApiOvhHpcspot extends ApiOvhBase {
 	public OvhConsumption serviceName_consumption_id_GET(String serviceName, Long id) throws IOException {
 		String qPath = "/hpcspot/{serviceName}/consumption/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhConsumption.class);
 	}
 
@@ -106,7 +106,7 @@ public class ApiOvhHpcspot extends ApiOvhBase {
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/hpcspot";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};

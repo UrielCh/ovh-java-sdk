@@ -308,7 +308,7 @@ public class ApiOvhCore {
 	 * @return
 	 * @throws IOException
 	 */
-	public String exec(String method, String query, Object payload, boolean needAuth) throws IOException {
+	public String exec(String apiPath, String method, String query, Object payload, boolean needAuth) throws IOException {
 		if (payload == null)
 			payload = "";
 		String data = null;

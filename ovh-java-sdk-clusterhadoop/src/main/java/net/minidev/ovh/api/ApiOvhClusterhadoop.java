@@ -23,7 +23,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/cluster/hadoop
  * version:1.0
  */
@@ -40,7 +40,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public OvhOrderInformations orderInformations_GET() throws IOException {
 		String qPath = "/cluster/hadoop/orderInformations";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOrderInformations.class);
 	}
 
@@ -53,7 +53,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -67,7 +67,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -79,7 +79,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public OvhHadoop serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhHadoop.class);
 	}
 
@@ -92,7 +92,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public OvhTask serviceName_terminate_POST(String serviceName) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}/terminate";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -105,7 +105,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public ArrayList<OvhNodeConsumption> serviceName_nodeConsumptions_GET(String serviceName) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}/nodeConsumptions";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<OvhNodeConsumption>> t1 = new TypeReference<ArrayList<OvhNodeConsumption>>() {};
@@ -121,7 +121,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 		String qPath = "/cluster/hadoop/{serviceName}/node";
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "softwareProfile", softwareProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};
@@ -136,7 +136,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public OvhNode serviceName_node_hostname_GET(String serviceName, String hostname) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}/node/{hostname}";
 		StringBuilder sb = path(qPath, serviceName, hostname);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhNode.class);
 	}
 
@@ -150,7 +150,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public OvhTask serviceName_node_hostname_DELETE(String serviceName, String hostname) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}/node/{hostname}";
 		StringBuilder sb = path(qPath, serviceName, hostname);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -164,7 +164,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public OvhTask serviceName_node_hostname_decommission_POST(String serviceName, String hostname) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}/node/{hostname}/decommission";
 		StringBuilder sb = path(qPath, serviceName, hostname);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -178,7 +178,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public ArrayList<OvhRoleTypeEnum> serviceName_node_hostname_role_GET(String serviceName, String hostname) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}/node/{hostname}/role";
 		StringBuilder sb = path(qPath, serviceName, hostname);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 	private static TypeReference<ArrayList<OvhRoleTypeEnum>> t3 = new TypeReference<ArrayList<OvhRoleTypeEnum>>() {};
@@ -196,7 +196,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName, hostname);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "type", type);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -211,7 +211,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public OvhTask serviceName_node_hostname_role_type_restart_POST(String serviceName, String hostname, net.minidev.ovh.api.cluster.hadoop.OvhRoleTypeEnum type) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}/node/{hostname}/role/{type}/restart";
 		StringBuilder sb = path(qPath, serviceName, hostname, type);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -226,7 +226,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public OvhRole serviceName_node_hostname_role_type_GET(String serviceName, String hostname, net.minidev.ovh.api.cluster.hadoop.OvhRoleTypeEnum type) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}/node/{hostname}/role/{type}";
 		StringBuilder sb = path(qPath, serviceName, hostname, type);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhRole.class);
 	}
 
@@ -241,7 +241,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public OvhTask serviceName_node_hostname_role_type_DELETE(String serviceName, String hostname, net.minidev.ovh.api.cluster.hadoop.OvhRoleTypeEnum type) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}/node/{hostname}/role/{type}";
 		StringBuilder sb = path(qPath, serviceName, hostname, type);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -256,7 +256,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public OvhTask serviceName_node_hostname_role_type_stop_POST(String serviceName, String hostname, net.minidev.ovh.api.cluster.hadoop.OvhRoleTypeEnum type) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}/node/{hostname}/role/{type}/stop";
 		StringBuilder sb = path(qPath, serviceName, hostname, type);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -271,7 +271,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public OvhTask serviceName_node_hostname_role_type_start_POST(String serviceName, String hostname, net.minidev.ovh.api.cluster.hadoop.OvhRoleTypeEnum type) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}/node/{hostname}/role/{type}/start";
 		StringBuilder sb = path(qPath, serviceName, hostname, type);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -285,7 +285,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public OvhTask serviceName_node_hostname_recommission_POST(String serviceName, String hostname) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}/node/{hostname}/recommission";
 		StringBuilder sb = path(qPath, serviceName, hostname);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -298,7 +298,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public ArrayList<String> serviceName_user_GET(String serviceName) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}/user";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -322,7 +322,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 		addBody(o, "password", password);
 		addBody(o, "httpFrontend", httpFrontend);
 		addBody(o, "username", username);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -336,7 +336,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public OvhUser serviceName_user_username_GET(String serviceName, String username) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}/user/{username}";
 		StringBuilder sb = path(qPath, serviceName, username);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhUser.class);
 	}
 
@@ -351,7 +351,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public void serviceName_user_username_PUT(String serviceName, String username, OvhUser body) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}/user/{username}";
 		StringBuilder sb = path(qPath, serviceName, username);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -364,7 +364,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public OvhTask serviceName_user_username_DELETE(String serviceName, String username) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}/user/{username}";
 		StringBuilder sb = path(qPath, serviceName, username);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -381,7 +381,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName, username);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "password", password);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -394,7 +394,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public ArrayList<String> serviceName_orderableNodeProfiles_GET(String serviceName) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}/orderableNodeProfiles";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -407,7 +407,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public OvhTask serviceName_restart_POST(String serviceName) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}/restart";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -420,7 +420,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public ArrayList<String> serviceName_networkAcl_GET(String serviceName) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}/networkAcl";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -438,7 +438,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "block", block);
 		addBody(o, "description", description);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -452,7 +452,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public OvhNetworkAcl serviceName_networkAcl_block_GET(String serviceName, String block) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}/networkAcl/{block}";
 		StringBuilder sb = path(qPath, serviceName, block);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhNetworkAcl.class);
 	}
 
@@ -467,7 +467,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public void serviceName_networkAcl_block_PUT(String serviceName, String block, OvhNetworkAcl body) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}/networkAcl/{block}";
 		StringBuilder sb = path(qPath, serviceName, block);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -480,7 +480,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public OvhTask serviceName_networkAcl_block_DELETE(String serviceName, String block) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}/networkAcl/{block}";
 		StringBuilder sb = path(qPath, serviceName, block);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -493,7 +493,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public ArrayList<OvhNodeBillingProfile> serviceName_nodeBillingProfiles_GET(String serviceName) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}/nodeBillingProfiles";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t4);
 	}
 	private static TypeReference<ArrayList<OvhNodeBillingProfile>> t4 = new TypeReference<ArrayList<OvhNodeBillingProfile>>() {};
@@ -507,7 +507,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public OvhTask serviceName_stop_POST(String serviceName) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}/stop";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -522,7 +522,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 		String qPath = "/cluster/hadoop/{serviceName}/task";
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "status", status);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t5);
 	}
 	private static TypeReference<ArrayList<Long>> t5 = new TypeReference<ArrayList<Long>>() {};
@@ -537,7 +537,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public OvhTask serviceName_task_taskId_GET(String serviceName, Long taskId) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}/task/{taskId}";
 		StringBuilder sb = path(qPath, serviceName, taskId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -553,7 +553,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "service", service);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -569,7 +569,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "service", service);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -585,7 +585,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "service", service);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -598,7 +598,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public OvhClusterConsumption serviceName_consumptions_GET(String serviceName) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}/consumptions";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhClusterConsumption.class);
 	}
 
@@ -614,7 +614,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "nodeProfile", nodeProfile);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -627,7 +627,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public OvhTask serviceName_start_POST(String serviceName) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}/start";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -639,7 +639,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/cluster/hadoop";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -651,7 +651,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public ArrayList<OvhNodeBillingProfile> orderableNodeProfiles_GET() throws IOException {
 		String qPath = "/cluster/hadoop/orderableNodeProfiles";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t4);
 	}
 }

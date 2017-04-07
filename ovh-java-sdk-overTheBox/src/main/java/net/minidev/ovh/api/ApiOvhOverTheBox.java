@@ -21,7 +21,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/overTheBox
  * version:1.0
  */
@@ -39,7 +39,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/overTheBox/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -53,7 +53,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/overTheBox/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -65,7 +65,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	public net.minidev.ovh.api.overthebox.OvhService serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/overTheBox/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, net.minidev.ovh.api.overthebox.OvhService.class);
 	}
 
@@ -79,7 +79,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	public void serviceName_PUT(String serviceName, net.minidev.ovh.api.overthebox.OvhService body) throws IOException {
 		String qPath = "/overTheBox/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -91,7 +91,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	public void serviceName_DELETE(String serviceName) throws IOException {
 		String qPath = "/overTheBox/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -107,7 +107,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "name", name);
 		query(sb, "status", status);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
@@ -122,7 +122,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	public OvhTask serviceName_tasks_taskId_GET(String serviceName, String taskId) throws IOException {
 		String qPath = "/overTheBox/{serviceName}/tasks/{taskId}";
 		StringBuilder sb = path(qPath, serviceName, taskId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -135,7 +135,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	public OvhDevice serviceName_device_GET(String serviceName) throws IOException {
 		String qPath = "/overTheBox/{serviceName}/device";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhDevice.class);
 	}
 
@@ -148,7 +148,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	public void serviceName_device_DELETE(String serviceName) throws IOException {
 		String qPath = "/overTheBox/{serviceName}/device";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -160,7 +160,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	public ArrayList<OvhAvailableDeviceAction> serviceName_device_availableActions_GET(String serviceName) throws IOException {
 		String qPath = "/overTheBox/{serviceName}/device/availableActions";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<OvhAvailableDeviceAction>> t2 = new TypeReference<ArrayList<OvhAvailableDeviceAction>>() {};
@@ -178,7 +178,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "name", name);
 		query(sb, "status", status);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -194,7 +194,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "name", name);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhDeviceAction.class);
 	}
 
@@ -208,7 +208,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	public OvhDeviceAction serviceName_device_actions_actionId_GET(String serviceName, String actionId) throws IOException {
 		String qPath = "/overTheBox/{serviceName}/device/actions/{actionId}";
 		StringBuilder sb = path(qPath, serviceName, actionId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhDeviceAction.class);
 	}
 
@@ -226,7 +226,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "backupId", backupId);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, t3);
 	}
 	private static TypeReference<ArrayList<OvhDeviceAction>> t3 = new TypeReference<ArrayList<OvhDeviceAction>>() {};
@@ -242,7 +242,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	public OvhTemporaryLogsLink serviceName_device_logs_POST(String serviceName) throws IOException {
 		String qPath = "/overTheBox/{serviceName}/device/logs";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTemporaryLogsLink.class);
 	}
 
@@ -257,7 +257,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	public OvhDeviceAction serviceName_device_backup_POST(String serviceName) throws IOException {
 		String qPath = "/overTheBox/{serviceName}/device/backup";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhDeviceAction.class);
 	}
 
@@ -277,7 +277,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 		addBody(o, "contactAdmin", contactAdmin);
 		addBody(o, "contactTech", contactTech);
 		addBody(o, "contactBilling", contactBilling);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, t4);
 	}
 	private static TypeReference<ArrayList<Long>> t4 = new TypeReference<ArrayList<Long>>() {};
@@ -291,7 +291,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	public ArrayList<String> serviceName_availableReleaseChannels_GET(String serviceName) throws IOException {
 		String qPath = "/overTheBox/{serviceName}/availableReleaseChannels";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -304,7 +304,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	public ArrayList<String> serviceName_remoteAccesses_GET(String serviceName) throws IOException {
 		String qPath = "/overTheBox/{serviceName}/remoteAccesses";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -326,7 +326,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 		addBody(o, "allowedIp", allowedIp);
 		addBody(o, "publicKey", publicKey);
 		addBody(o, "expirationDate", expirationDate);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhRemoteAccess.class);
 	}
 
@@ -340,7 +340,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	public void serviceName_remoteAccesses_remoteAccessId_authorize_POST(String serviceName, String remoteAccessId) throws IOException {
 		String qPath = "/overTheBox/{serviceName}/remoteAccesses/{remoteAccessId}/authorize";
 		StringBuilder sb = path(qPath, serviceName, remoteAccessId);
-		exec("POST", sb.toString());
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
@@ -353,7 +353,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	public OvhRemoteAccess serviceName_remoteAccesses_remoteAccessId_GET(String serviceName, String remoteAccessId) throws IOException {
 		String qPath = "/overTheBox/{serviceName}/remoteAccesses/{remoteAccessId}";
 		StringBuilder sb = path(qPath, serviceName, remoteAccessId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhRemoteAccess.class);
 	}
 
@@ -367,7 +367,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	public void serviceName_remoteAccesses_remoteAccessId_DELETE(String serviceName, String remoteAccessId) throws IOException {
 		String qPath = "/overTheBox/{serviceName}/remoteAccesses/{remoteAccessId}";
 		StringBuilder sb = path(qPath, serviceName, remoteAccessId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -381,7 +381,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	public ArrayList<String> serviceName_backups_GET(String serviceName) throws IOException {
 		String qPath = "/overTheBox/{serviceName}/backups";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -397,7 +397,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	public OvhBackup serviceName_backups_backupId_GET(String serviceName, String backupId) throws IOException {
 		String qPath = "/overTheBox/{serviceName}/backups/{backupId}";
 		StringBuilder sb = path(qPath, serviceName, backupId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhBackup.class);
 	}
 
@@ -413,7 +413,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "deviceId", deviceId);
-		exec("POST", sb.toString(), o);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -425,7 +425,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	public void serviceName_cancelResiliation_POST(String serviceName) throws IOException {
 		String qPath = "/overTheBox/{serviceName}/cancelResiliation";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("POST", sb.toString());
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
@@ -436,7 +436,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/overTheBox";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -448,7 +448,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	public ArrayList<OvhOfferEnum> availableOffers_GET() throws IOException {
 		String qPath = "/overTheBox/availableOffers";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t5);
 	}
 	private static TypeReference<ArrayList<OvhOfferEnum>> t5 = new TypeReference<ArrayList<OvhOfferEnum>>() {};
@@ -461,7 +461,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	public ArrayList<OvhDeviceForRegistration> devices_POST() throws IOException {
 		String qPath = "/overTheBox/devices";
 		StringBuilder sb = path(qPath);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, t6);
 	}
 	private static TypeReference<ArrayList<OvhDeviceForRegistration>> t6 = new TypeReference<ArrayList<OvhDeviceForRegistration>>() {};

@@ -17,7 +17,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/support
  * version:1.0
  */
@@ -49,7 +49,7 @@ public class ApiOvhSupport extends ApiOvhBase {
 		addBody(o, "category", category);
 		addBody(o, "product", product);
 		addBody(o, "type", type);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhNewMessageInfo.class);
 	}
 
@@ -62,7 +62,7 @@ public class ApiOvhSupport extends ApiOvhBase {
 	public OvhTicket tickets_ticketId_GET(Long ticketId) throws IOException {
 		String qPath = "/support/tickets/{ticketId}";
 		StringBuilder sb = path(qPath, ticketId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTicket.class);
 	}
 
@@ -78,7 +78,7 @@ public class ApiOvhSupport extends ApiOvhBase {
 		StringBuilder sb = path(qPath, ticketId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "body", body);
-		exec("POST", sb.toString(), o);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -90,7 +90,7 @@ public class ApiOvhSupport extends ApiOvhBase {
 	public ArrayList<OvhMessage> tickets_ticketId_messages_GET(Long ticketId) throws IOException {
 		String qPath = "/support/tickets/{ticketId}/messages";
 		StringBuilder sb = path(qPath, ticketId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<OvhMessage>> t1 = new TypeReference<ArrayList<OvhMessage>>() {};
@@ -107,7 +107,7 @@ public class ApiOvhSupport extends ApiOvhBase {
 		StringBuilder sb = path(qPath, ticketId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "body", body);
-		exec("POST", sb.toString(), o);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -119,7 +119,7 @@ public class ApiOvhSupport extends ApiOvhBase {
 	public void tickets_ticketId_close_POST(Long ticketId) throws IOException {
 		String qPath = "/support/tickets/{ticketId}/close";
 		StringBuilder sb = path(qPath, ticketId);
-		exec("POST", sb.toString());
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
@@ -131,7 +131,7 @@ public class ApiOvhSupport extends ApiOvhBase {
 	public Boolean tickets_ticketId_canBeScored_GET(Long ticketId) throws IOException {
 		String qPath = "/support/tickets/{ticketId}/canBeScored";
 		StringBuilder sb = path(qPath, ticketId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, Boolean.class);
 	}
 
@@ -149,7 +149,7 @@ public class ApiOvhSupport extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "scoreComment", scoreComment);
 		addBody(o, "score", score);
-		exec("POST", sb.toString(), o);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -176,7 +176,7 @@ public class ApiOvhSupport extends ApiOvhBase {
 		query(sb, "serviceName", serviceName);
 		query(sb, "status", status);
 		query(sb, "subject", subject);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};

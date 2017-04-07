@@ -10,7 +10,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/ssl
  * version:1.0
  */
@@ -30,7 +30,7 @@ public class ApiOvhSsl extends ApiOvhBase {
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/ssl/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -46,7 +46,7 @@ public class ApiOvhSsl extends ApiOvhBase {
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/ssl/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -60,7 +60,7 @@ public class ApiOvhSsl extends ApiOvhBase {
 	public OvhCertificate serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/ssl/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhCertificate.class);
 	}
 
@@ -75,7 +75,7 @@ public class ApiOvhSsl extends ApiOvhBase {
 	public ArrayList<Long> serviceName_tasks_GET(String serviceName) throws IOException {
 		String qPath = "/ssl/{serviceName}/tasks";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
@@ -92,7 +92,7 @@ public class ApiOvhSsl extends ApiOvhBase {
 	public OvhOperation serviceName_tasks_taskId_GET(String serviceName, Long taskId) throws IOException {
 		String qPath = "/ssl/{serviceName}/tasks/{taskId}";
 		StringBuilder sb = path(qPath, serviceName, taskId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -106,7 +106,7 @@ public class ApiOvhSsl extends ApiOvhBase {
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/ssl";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};

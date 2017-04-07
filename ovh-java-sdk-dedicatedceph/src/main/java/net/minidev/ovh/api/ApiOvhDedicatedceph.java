@@ -12,7 +12,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/dedicated/ceph
  * version:1.0
  */
@@ -32,7 +32,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/dedicated/ceph/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -48,7 +48,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/dedicated/ceph/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -62,7 +62,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 	public OvhResponse serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/dedicated/ceph/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhResponse.class);
 	}
 
@@ -82,7 +82,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "crushTunables", crushTunables);
 		addBody(o, "label", label);
-		String resp = exec("PUT", sb.toString(), o);
+		String resp = exec(qPath, "PUT", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -98,7 +98,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 	public String serviceName_acl_aclId_DELETE(String serviceName, String aclId) throws IOException {
 		String qPath = "/dedicated/ceph/{serviceName}/acl/{aclId}";
 		StringBuilder sb = path(qPath, serviceName, aclId);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, String.class);
 	}
 
@@ -114,7 +114,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 	public OvhResponse serviceName_acl_aclId_GET(String serviceName, String aclId) throws IOException {
 		String qPath = "/dedicated/ceph/{serviceName}/acl/{aclId}";
 		StringBuilder sb = path(qPath, serviceName, aclId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhResponse.class);
 	}
 
@@ -132,7 +132,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "aclList", aclList);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -147,7 +147,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 	public ArrayList<OvhResponse> serviceName_acl_GET(String serviceName) throws IOException {
 		String qPath = "/dedicated/ceph/{serviceName}/acl";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<OvhResponse>> t1 = new TypeReference<ArrayList<OvhResponse>>() {};
@@ -163,7 +163,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 	public ArrayList<OvhResponse> serviceName_task_GET(String serviceName) throws IOException {
 		String qPath = "/dedicated/ceph/{serviceName}/task";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -179,7 +179,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 	public ArrayList<OvhResponse> serviceName_task_taskId_GET(String serviceName, String taskId) throws IOException {
 		String qPath = "/dedicated/ceph/{serviceName}/task/{taskId}";
 		StringBuilder sb = path(qPath, serviceName, taskId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -194,7 +194,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 	public OvhResponse serviceName_health_GET(String serviceName) throws IOException {
 		String qPath = "/dedicated/ceph/{serviceName}/health";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhResponse.class);
 	}
 
@@ -216,7 +216,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 		addBody(o, "contactAdmin", contactAdmin);
 		addBody(o, "contactTech", contactTech);
 		addBody(o, "contactBilling", contactBilling);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
@@ -235,7 +235,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "poolName", poolName);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -250,7 +250,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 	public ArrayList<OvhResponse> serviceName_pool_GET(String serviceName) throws IOException {
 		String qPath = "/dedicated/ceph/{serviceName}/pool";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -266,7 +266,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 	public String serviceName_pool_poolName_DELETE(String serviceName, String poolName) throws IOException {
 		String qPath = "/dedicated/ceph/{serviceName}/pool/{poolName}";
 		StringBuilder sb = path(qPath, serviceName, poolName);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, String.class);
 	}
 
@@ -282,7 +282,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 	public OvhResponse serviceName_pool_poolName_GET(String serviceName, String poolName) throws IOException {
 		String qPath = "/dedicated/ceph/{serviceName}/pool/{poolName}";
 		StringBuilder sb = path(qPath, serviceName, poolName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhResponse.class);
 	}
 
@@ -300,7 +300,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "userName", userName);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -315,7 +315,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 	public ArrayList<OvhResponse> serviceName_user_GET(String serviceName) throws IOException {
 		String qPath = "/dedicated/ceph/{serviceName}/user";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -331,7 +331,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 	public String serviceName_user_userName_DELETE(String serviceName, String userName) throws IOException {
 		String qPath = "/dedicated/ceph/{serviceName}/user/{userName}";
 		StringBuilder sb = path(qPath, serviceName, userName);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, String.class);
 	}
 
@@ -347,7 +347,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 	public OvhResponse serviceName_user_userName_GET(String serviceName, String userName) throws IOException {
 		String qPath = "/dedicated/ceph/{serviceName}/user/{userName}";
 		StringBuilder sb = path(qPath, serviceName, userName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhResponse.class);
 	}
 
@@ -363,7 +363,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 	public ArrayList<OvhResponse> serviceName_user_userName_pool_GET(String serviceName, String userName) throws IOException {
 		String qPath = "/dedicated/ceph/{serviceName}/user/{userName}/pool";
 		StringBuilder sb = path(qPath, serviceName, userName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -392,7 +392,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 		addBody(o, "read", read);
 		addBody(o, "poolName", poolName);
 		addBody(o, "classRead", classRead);
-		String resp = exec("PUT", sb.toString(), o);
+		String resp = exec(qPath, "PUT", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -411,7 +411,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName, userName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "permissions", permissions);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -428,7 +428,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 	public String serviceName_user_userName_pool_poolName_DELETE(String serviceName, String userName, String poolName) throws IOException {
 		String qPath = "/dedicated/ceph/{serviceName}/user/{userName}/pool/{poolName}";
 		StringBuilder sb = path(qPath, serviceName, userName, poolName);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, String.class);
 	}
 
@@ -442,7 +442,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/dedicated/ceph";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 	private static TypeReference<ArrayList<String>> t3 = new TypeReference<ArrayList<String>>() {};

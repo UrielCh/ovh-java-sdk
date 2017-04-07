@@ -17,7 +17,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/paas/monitoring
  * version:1.0
  */
@@ -37,7 +37,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -53,7 +53,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -67,7 +67,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	public net.minidev.ovh.api.monitoring.OvhService serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, net.minidev.ovh.api.monitoring.OvhService.class);
 	}
 
@@ -83,7 +83,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	public net.minidev.ovh.api.monitoring.OvhService serviceName_deploy_POST(String serviceName, net.minidev.ovh.api.monitoring.OvhService body) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/deploy";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("POST", sb.toString(), body);
+		String resp = exec(qPath, "POST", sb.toString(), body);
 		return convertTo(resp, net.minidev.ovh.api.monitoring.OvhService.class);
 	}
 
@@ -98,7 +98,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	public ArrayList<String> serviceName_backend_GET(String serviceName) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/backend";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
@@ -115,7 +115,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	public OvhBackend serviceName_backend_backendId_GET(String serviceName, String backendId) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/backend/{backendId}";
 		StringBuilder sb = path(qPath, serviceName, backendId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhBackend.class);
 	}
 
@@ -137,7 +137,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 		addBody(o, "reason", reason);
 		addBody(o, "commentary", commentary);
 		addBody(o, "token", token);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -152,7 +152,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	public String serviceName_terminate_POST(String serviceName) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/terminate";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, String.class);
 	}
 
@@ -174,7 +174,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 		addBody(o, "contactAdmin", contactAdmin);
 		addBody(o, "contactTech", contactTech);
 		addBody(o, "contactBilling", contactBilling);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
@@ -190,7 +190,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	public void serviceName_resource_apply_POST(String serviceName) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/resource/apply";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("POST", sb.toString());
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
@@ -204,7 +204,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	public ArrayList<String> serviceName_resource_GET(String serviceName) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/resource";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -219,7 +219,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	public OvhTestConfigResult serviceName_resource_test_POST(String serviceName) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/resource/test";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTestConfigResult.class);
 	}
 
@@ -235,7 +235,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	public ArrayList<String> serviceName_resource_resourceType_GET(String serviceName, String resourceType) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/resource/{resourceType}";
 		StringBuilder sb = path(qPath, serviceName, resourceType);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -252,7 +252,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	public OvhResource serviceName_resource_resourceType_POST(String serviceName, String resourceType, OvhResource body) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/resource/{resourceType}";
 		StringBuilder sb = path(qPath, serviceName, resourceType);
-		String resp = exec("POST", sb.toString(), body);
+		String resp = exec(qPath, "POST", sb.toString(), body);
 		return convertTo(resp, OvhResource.class);
 	}
 
@@ -268,7 +268,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	public void serviceName_resource_resourceType_DELETE(String serviceName, String resourceType) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/resource/{resourceType}";
 		StringBuilder sb = path(qPath, serviceName, resourceType);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -284,7 +284,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	public OvhResource serviceName_resource_resourceType_resourceId_GET(String serviceName, String resourceType, String resourceId) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/resource/{resourceType}/{resourceId}";
 		StringBuilder sb = path(qPath, serviceName, resourceType, resourceId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhResource.class);
 	}
 
@@ -302,7 +302,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	public OvhResource serviceName_resource_resourceType_resourceId_PUT(String serviceName, String resourceType, String resourceId, OvhResource body) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/resource/{resourceType}/{resourceId}";
 		StringBuilder sb = path(qPath, serviceName, resourceType, resourceId);
-		String resp = exec("PUT", sb.toString(), body);
+		String resp = exec(qPath, "PUT", sb.toString(), body);
 		return convertTo(resp, OvhResource.class);
 	}
 
@@ -319,7 +319,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	public void serviceName_resource_resourceType_resourceId_DELETE(String serviceName, String resourceType, String resourceId) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/resource/{resourceType}/{resourceId}";
 		StringBuilder sb = path(qPath, serviceName, resourceType, resourceId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -335,7 +335,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	public void serviceName_resource_resourceType_batch_POST(String serviceName, String resourceType, OvhConfig[] body) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/resource/{resourceType}/batch";
 		StringBuilder sb = path(qPath, serviceName, resourceType);
-		exec("POST", sb.toString(), body);
+		exec(qPath, "POST", sb.toString(), body);
 	}
 
 	/**
@@ -349,7 +349,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	public OvhTimezoneConfig serviceName_config_timezone_GET(String serviceName) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/config/timezone";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTimezoneConfig.class);
 	}
 
@@ -365,7 +365,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	public OvhTimezoneConfig serviceName_config_timezone_PUT(String serviceName, OvhTimezoneConfig body) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/config/timezone";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("PUT", sb.toString(), body);
+		String resp = exec(qPath, "PUT", sb.toString(), body);
 		return convertTo(resp, OvhTimezoneConfig.class);
 	}
 
@@ -380,7 +380,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	public OvhFirewallConfig serviceName_config_firewall_GET(String serviceName) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/config/firewall";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhFirewallConfig.class);
 	}
 
@@ -396,7 +396,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	public OvhFirewallConfig serviceName_config_firewall_PUT(String serviceName, OvhFirewallConfig body) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/config/firewall";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("PUT", sb.toString(), body);
+		String resp = exec(qPath, "PUT", sb.toString(), body);
 		return convertTo(resp, OvhFirewallConfig.class);
 	}
 
@@ -411,7 +411,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	public OvhNscaConfig serviceName_config_nsca_GET(String serviceName) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/config/nsca";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhNscaConfig.class);
 	}
 
@@ -427,7 +427,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	public OvhNscaConfig serviceName_config_nsca_PUT(String serviceName, OvhNscaConfig body) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/config/nsca";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("PUT", sb.toString(), body);
+		String resp = exec(qPath, "PUT", sb.toString(), body);
 		return convertTo(resp, OvhNscaConfig.class);
 	}
 
@@ -441,7 +441,7 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/paas/monitoring";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 }

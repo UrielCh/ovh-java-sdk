@@ -16,7 +16,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/license/office
  * version:1.0
  */
@@ -34,7 +34,7 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/license/office/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -48,7 +48,7 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/license/office/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -64,7 +64,7 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "from", from);
 		query(sb, "to", to);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<OvhStatistics>> t1 = new TypeReference<ArrayList<OvhStatistics>>() {};
@@ -78,7 +78,7 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 	public OvhOfficeTenant serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/license/office/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOfficeTenant.class);
 	}
 
@@ -92,7 +92,7 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 	public void serviceName_PUT(String serviceName, OvhOfficeTenant body) throws IOException {
 		String qPath = "/license/office/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -105,7 +105,7 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 	public OvhOfficeDomain serviceName_domain_domainName_GET(String serviceName, String domainName) throws IOException {
 		String qPath = "/license/office/{serviceName}/domain/{domainName}";
 		StringBuilder sb = path(qPath, serviceName, domainName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOfficeDomain.class);
 	}
 
@@ -118,7 +118,7 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 	public ArrayList<String> serviceName_domain_GET(String serviceName) throws IOException {
 		String qPath = "/license/office/{serviceName}/domain";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};
@@ -138,7 +138,7 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 		query(sb, "activationEmail", activationEmail);
 		query(sb, "firstName", firstName);
 		query(sb, "lastName", lastName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -162,7 +162,7 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 		addBody(o, "licence", licence);
 		addBody(o, "lastName", lastName);
 		addBody(o, "login", login);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOfficeTask.class);
 	}
 
@@ -176,7 +176,7 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 	public OvhOfficeUser serviceName_user_activationEmail_GET(String serviceName, String activationEmail) throws IOException {
 		String qPath = "/license/office/{serviceName}/user/{activationEmail}";
 		StringBuilder sb = path(qPath, serviceName, activationEmail);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOfficeUser.class);
 	}
 
@@ -190,7 +190,7 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 	public OvhOfficeTask serviceName_user_activationEmail_DELETE(String serviceName, String activationEmail) throws IOException {
 		String qPath = "/license/office/{serviceName}/user/{activationEmail}";
 		StringBuilder sb = path(qPath, serviceName, activationEmail);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhOfficeTask.class);
 	}
 
@@ -211,7 +211,7 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 		addBody(o, "password", password);
 		addBody(o, "shouldSendMail", shouldSendMail);
 		addBody(o, "notifyEmail", notifyEmail);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOfficeTask.class);
 	}
 
@@ -223,7 +223,7 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/license/office";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 }

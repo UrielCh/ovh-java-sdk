@@ -6,7 +6,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/price
  * version:1.0
  */
@@ -24,7 +24,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_bhs1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.bhs1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/bhs1a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -37,7 +37,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_bhs1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.bhs1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/bhs1a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -50,7 +50,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_bhs1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.bhs1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/bhs1a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -63,7 +63,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_bhs1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.bhs1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/bhs1a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -76,7 +76,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_bhs1a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.bhs1a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/bhs1a/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -89,7 +89,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_bhs1a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.bhs1a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/bhs1a/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -102,7 +102,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_bhs1a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.bhs1a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/bhs1a/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -115,7 +115,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_bhs1a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.bhs1a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/bhs1a/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -128,7 +128,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_rbx2b_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.rbx2b.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/rbx2b/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -141,7 +141,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_rbx2b_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.rbx2b.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/rbx2b/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -154,7 +154,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_rbx2b_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.rbx2b.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/rbx2b/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -167,7 +167,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_rbx2b_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.rbx2b.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/rbx2b/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -180,7 +180,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_rbx2b_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.rbx2b.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/rbx2b/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -193,7 +193,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_rbx2b_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.rbx2b.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/rbx2b/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -206,7 +206,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_rbx2b_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.rbx2b.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/rbx2b/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -219,7 +219,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_rbx2b_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.rbx2b.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/rbx2b/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -232,7 +232,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_sbg1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.sbg1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/sbg1a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -245,7 +245,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_sbg1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.sbg1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/sbg1a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -258,7 +258,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_sbg1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.sbg1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/sbg1a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -271,7 +271,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_sbg1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.sbg1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/sbg1a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -284,7 +284,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_sbg1a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.sbg1a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/sbg1a/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -297,7 +297,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_sbg1a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.sbg1a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/sbg1a/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -310,7 +310,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_sbg1a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.sbg1a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/sbg1a/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -323,7 +323,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_sbg1a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.sbg1a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/sbg1a/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -336,7 +336,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_rbx2a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.rbx2a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/rbx2a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -349,7 +349,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_rbx2a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.rbx2a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/rbx2a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -362,7 +362,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_rbx2a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.rbx2a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/rbx2a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -375,7 +375,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_rbx2a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.rbx2a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/rbx2a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -388,7 +388,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_rbx2a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.rbx2a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/rbx2a/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -401,7 +401,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_rbx2a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.rbx2a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/rbx2a/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -414,7 +414,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_rbx2a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.rbx2a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/rbx2a/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -427,7 +427,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v6_rbx2a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.rbx2a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/rbx2a/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -440,7 +440,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_bhs1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.bhs1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/bhs1a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -453,7 +453,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_bhs1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.bhs1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/bhs1a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -466,7 +466,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_bhs1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.bhs1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/bhs1a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -479,7 +479,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_bhs1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.bhs1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/bhs1a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -492,7 +492,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_bhs1a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.bhs1a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/bhs1a/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -505,7 +505,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_bhs1a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.bhs1a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/bhs1a/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -518,7 +518,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_bhs1a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.bhs1a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/bhs1a/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -531,7 +531,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_bhs1a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.bhs1a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/bhs1a/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -544,7 +544,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_rbx2b_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.rbx2b.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/rbx2b/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -557,7 +557,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_rbx2b_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.rbx2b.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/rbx2b/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -570,7 +570,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_rbx2b_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.rbx2b.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/rbx2b/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -583,7 +583,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_rbx2b_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.rbx2b.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/rbx2b/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -596,7 +596,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_rbx2b_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.rbx2b.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/rbx2b/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -609,7 +609,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_rbx2b_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.rbx2b.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/rbx2b/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -622,7 +622,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_rbx2b_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.rbx2b.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/rbx2b/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -635,7 +635,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_rbx2b_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.rbx2b.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/rbx2b/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -648,7 +648,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_sbg1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.sbg1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/sbg1a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -661,7 +661,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_sbg1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.sbg1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/sbg1a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -674,7 +674,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_sbg1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.sbg1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/sbg1a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -687,7 +687,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_sbg1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.sbg1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/sbg1a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -700,7 +700,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_sbg1a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.sbg1a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/sbg1a/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -713,7 +713,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_sbg1a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.sbg1a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/sbg1a/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -726,7 +726,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_sbg1a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.sbg1a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/sbg1a/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -739,7 +739,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_sbg1a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.sbg1a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/sbg1a/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -752,7 +752,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_rbx2a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.rbx2a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/rbx2a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -765,7 +765,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_rbx2a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.rbx2a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/rbx2a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -778,7 +778,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_rbx2a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.rbx2a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/rbx2a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -791,7 +791,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_rbx2a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.rbx2a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/rbx2a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -804,7 +804,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_rbx2a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.rbx2a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/rbx2a/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -817,7 +817,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_rbx2a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.rbx2a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/rbx2a/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -830,7 +830,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_rbx2a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.rbx2a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/rbx2a/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -843,7 +843,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v7_rbx2a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v7.rbx2a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v7/rbx2a/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -856,7 +856,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_bhs1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.bhs1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/bhs1a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -869,7 +869,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_bhs1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.bhs1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/bhs1a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -882,7 +882,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_bhs1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.bhs1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/bhs1a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -895,7 +895,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_bhs1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.bhs1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/bhs1a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -908,7 +908,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_bhs1a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.bhs1a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/bhs1a/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -921,7 +921,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_bhs1a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.bhs1a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/bhs1a/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -934,7 +934,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_bhs1a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.bhs1a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/bhs1a/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -947,7 +947,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_bhs1a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.bhs1a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/bhs1a/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -960,7 +960,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_rbx2b_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2b.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/rbx2b/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -973,7 +973,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_rbx2b_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2b.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/rbx2b/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -986,7 +986,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_rbx2b_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2b.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/rbx2b/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -999,7 +999,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_rbx2b_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2b.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/rbx2b/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1012,7 +1012,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_rbx2b_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2b.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/rbx2b/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1025,7 +1025,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_rbx2b_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2b.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/rbx2b/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1038,7 +1038,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_rbx2b_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2b.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/rbx2b/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1051,7 +1051,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_rbx2b_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2b.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/rbx2b/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1064,7 +1064,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_sbg1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.sbg1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/sbg1a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1077,7 +1077,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_sbg1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.sbg1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/sbg1a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1090,7 +1090,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_sbg1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.sbg1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/sbg1a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1103,7 +1103,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_sbg1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.sbg1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/sbg1a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1116,7 +1116,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_sbg1a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.sbg1a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/sbg1a/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1129,7 +1129,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_sbg1a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.sbg1a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/sbg1a/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1142,7 +1142,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_sbg1a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.sbg1a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/sbg1a/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1155,7 +1155,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_sbg1a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.sbg1a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/sbg1a/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1168,7 +1168,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_rbx2a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/rbx2a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1181,7 +1181,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_rbx2a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/rbx2a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1194,7 +1194,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_rbx2a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/rbx2a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1207,7 +1207,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_rbx2a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/rbx2a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1220,7 +1220,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_rbx2a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/rbx2a/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1233,7 +1233,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_rbx2a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/rbx2a/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1246,7 +1246,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_rbx2a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/rbx2a/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1259,7 +1259,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v1_rbx2a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v1/rbx2a/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1272,7 +1272,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_bhs1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.bhs1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/bhs1a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1285,7 +1285,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_bhs1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.bhs1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/bhs1a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1298,7 +1298,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_bhs1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.bhs1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/bhs1a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1311,7 +1311,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_bhs1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.bhs1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/bhs1a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1324,7 +1324,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_bhs1a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.bhs1a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/bhs1a/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1337,7 +1337,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_bhs1a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.bhs1a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/bhs1a/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1350,7 +1350,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_bhs1a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.bhs1a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/bhs1a/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1363,7 +1363,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_bhs1a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.bhs1a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/bhs1a/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1376,7 +1376,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_rbx2b_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.rbx2b.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/rbx2b/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1389,7 +1389,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_rbx2b_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.rbx2b.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/rbx2b/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1402,7 +1402,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_rbx2b_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.rbx2b.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/rbx2b/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1415,7 +1415,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_rbx2b_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.rbx2b.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/rbx2b/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1428,7 +1428,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_rbx2b_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.rbx2b.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/rbx2b/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1441,7 +1441,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_rbx2b_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.rbx2b.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/rbx2b/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1454,7 +1454,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_rbx2b_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.rbx2b.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/rbx2b/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1467,7 +1467,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_rbx2b_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.rbx2b.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/rbx2b/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1480,7 +1480,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_sbg1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.sbg1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/sbg1a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1493,7 +1493,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_sbg1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.sbg1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/sbg1a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1506,7 +1506,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_sbg1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.sbg1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/sbg1a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1519,7 +1519,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_sbg1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.sbg1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/sbg1a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1532,7 +1532,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_sbg1a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.sbg1a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/sbg1a/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1545,7 +1545,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_sbg1a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.sbg1a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/sbg1a/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1558,7 +1558,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_sbg1a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.sbg1a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/sbg1a/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1571,7 +1571,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_sbg1a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.sbg1a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/sbg1a/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1584,7 +1584,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_rbx2a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.rbx2a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/rbx2a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1597,7 +1597,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_rbx2a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.rbx2a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/rbx2a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1610,7 +1610,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_rbx2a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.rbx2a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/rbx2a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1623,7 +1623,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_rbx2a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.rbx2a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/rbx2a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1636,7 +1636,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_rbx2a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.rbx2a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/rbx2a/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1649,7 +1649,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_rbx2a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.rbx2a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/rbx2a/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1662,7 +1662,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_rbx2a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.rbx2a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/rbx2a/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1675,7 +1675,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v4_rbx2a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v4.rbx2a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v4/rbx2a/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1688,7 +1688,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_bhs1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.bhs1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/bhs1a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1701,7 +1701,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_bhs1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.bhs1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/bhs1a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1714,7 +1714,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_bhs1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.bhs1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/bhs1a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1727,7 +1727,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_bhs1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.bhs1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/bhs1a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1740,7 +1740,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_bhs1a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.bhs1a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/bhs1a/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1753,7 +1753,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_bhs1a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.bhs1a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/bhs1a/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1766,7 +1766,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_bhs1a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.bhs1a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/bhs1a/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1779,7 +1779,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_bhs1a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.bhs1a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/bhs1a/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1792,7 +1792,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_rbx2b_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.rbx2b.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/rbx2b/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1805,7 +1805,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_rbx2b_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.rbx2b.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/rbx2b/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1818,7 +1818,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_rbx2b_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.rbx2b.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/rbx2b/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1831,7 +1831,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_rbx2b_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.rbx2b.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/rbx2b/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1844,7 +1844,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_rbx2b_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.rbx2b.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/rbx2b/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1857,7 +1857,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_rbx2b_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.rbx2b.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/rbx2b/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1870,7 +1870,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_rbx2b_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.rbx2b.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/rbx2b/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1883,7 +1883,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_rbx2b_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.rbx2b.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/rbx2b/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1896,7 +1896,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_sbg1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.sbg1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/sbg1a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1909,7 +1909,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_sbg1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.sbg1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/sbg1a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1922,7 +1922,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_sbg1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.sbg1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/sbg1a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1935,7 +1935,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_sbg1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.sbg1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/sbg1a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1948,7 +1948,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_sbg1a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.sbg1a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/sbg1a/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1961,7 +1961,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_sbg1a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.sbg1a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/sbg1a/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1974,7 +1974,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_sbg1a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.sbg1a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/sbg1a/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -1987,7 +1987,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_sbg1a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.sbg1a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/sbg1a/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2000,7 +2000,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_rbx2a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.rbx2a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/rbx2a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2013,7 +2013,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_rbx2a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.rbx2a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/rbx2a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2026,7 +2026,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_rbx2a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.rbx2a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/rbx2a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2039,7 +2039,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_rbx2a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.rbx2a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/rbx2a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2052,7 +2052,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_rbx2a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.rbx2a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/rbx2a/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2065,7 +2065,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_rbx2a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.rbx2a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/rbx2a/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2078,7 +2078,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_rbx2a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.rbx2a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/rbx2a/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2091,7 +2091,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v2_rbx2a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v2.rbx2a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v2/rbx2a/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2104,7 +2104,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_bhs1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.bhs1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/bhs1a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2117,7 +2117,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_bhs1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.bhs1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/bhs1a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2130,7 +2130,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_bhs1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.bhs1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/bhs1a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2143,7 +2143,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_bhs1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.bhs1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/bhs1a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2156,7 +2156,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_bhs1a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.bhs1a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/bhs1a/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2169,7 +2169,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_bhs1a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.bhs1a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/bhs1a/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2182,7 +2182,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_bhs1a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.bhs1a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/bhs1a/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2195,7 +2195,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_bhs1a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.bhs1a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/bhs1a/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2208,7 +2208,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_rbx2b_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.rbx2b.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/rbx2b/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2221,7 +2221,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_rbx2b_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.rbx2b.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/rbx2b/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2234,7 +2234,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_rbx2b_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.rbx2b.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/rbx2b/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2247,7 +2247,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_rbx2b_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.rbx2b.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/rbx2b/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2260,7 +2260,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_rbx2b_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.rbx2b.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/rbx2b/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2273,7 +2273,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_rbx2b_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.rbx2b.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/rbx2b/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2286,7 +2286,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_rbx2b_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.rbx2b.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/rbx2b/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2299,7 +2299,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_rbx2b_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.rbx2b.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/rbx2b/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2312,7 +2312,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_sbg1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.sbg1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/sbg1a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2325,7 +2325,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_sbg1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.sbg1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/sbg1a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2338,7 +2338,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_sbg1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.sbg1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/sbg1a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2351,7 +2351,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_sbg1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.sbg1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/sbg1a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2364,7 +2364,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_sbg1a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.sbg1a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/sbg1a/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2377,7 +2377,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_sbg1a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.sbg1a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/sbg1a/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2390,7 +2390,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_sbg1a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.sbg1a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/sbg1a/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2403,7 +2403,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_sbg1a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.sbg1a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/sbg1a/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2416,7 +2416,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_rbx2a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.rbx2a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/rbx2a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2429,7 +2429,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_rbx2a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.rbx2a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/rbx2a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2442,7 +2442,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_rbx2a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.rbx2a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/rbx2a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2455,7 +2455,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_rbx2a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.rbx2a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/rbx2a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2468,7 +2468,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_rbx2a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.rbx2a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/rbx2a/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2481,7 +2481,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_rbx2a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.rbx2a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/rbx2a/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2494,7 +2494,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_rbx2a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.rbx2a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/rbx2a/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2507,7 +2507,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2014v1_rbx2a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2014v1.rbx2a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2014v1/rbx2a/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2520,7 +2520,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_bhs1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.bhs1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/bhs1a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2533,7 +2533,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_bhs1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.bhs1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/bhs1a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2546,7 +2546,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_bhs1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.bhs1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/bhs1a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2559,7 +2559,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_bhs1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.bhs1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/bhs1a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2572,7 +2572,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_bhs1a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.bhs1a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/bhs1a/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2585,7 +2585,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_bhs1a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.bhs1a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/bhs1a/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2598,7 +2598,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_bhs1a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.bhs1a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/bhs1a/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2611,7 +2611,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_bhs1a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.bhs1a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/bhs1a/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2624,7 +2624,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_rbx2b_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.rbx2b.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/rbx2b/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2637,7 +2637,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_rbx2b_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.rbx2b.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/rbx2b/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2650,7 +2650,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_rbx2b_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.rbx2b.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/rbx2b/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2663,7 +2663,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_rbx2b_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.rbx2b.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/rbx2b/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2676,7 +2676,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_rbx2b_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.rbx2b.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/rbx2b/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2689,7 +2689,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_rbx2b_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.rbx2b.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/rbx2b/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2702,7 +2702,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_rbx2b_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.rbx2b.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/rbx2b/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2715,7 +2715,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_rbx2b_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.rbx2b.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/rbx2b/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2728,7 +2728,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_sbg1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.sbg1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/sbg1a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2741,7 +2741,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_sbg1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.sbg1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/sbg1a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2754,7 +2754,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_sbg1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.sbg1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/sbg1a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2767,7 +2767,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_sbg1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.sbg1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/sbg1a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2780,7 +2780,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_sbg1a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.sbg1a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/sbg1a/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2793,7 +2793,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_sbg1a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.sbg1a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/sbg1a/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2806,7 +2806,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_sbg1a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.sbg1a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/sbg1a/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2819,7 +2819,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_sbg1a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.sbg1a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/sbg1a/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2832,7 +2832,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_rbx2a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.rbx2a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/rbx2a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2845,7 +2845,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_rbx2a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.rbx2a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/rbx2a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2858,7 +2858,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_rbx2a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.rbx2a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/rbx2a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2871,7 +2871,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_rbx2a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.rbx2a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/rbx2a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2884,7 +2884,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_rbx2a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.rbx2a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/rbx2a/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2897,7 +2897,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_rbx2a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.rbx2a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/rbx2a/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2910,7 +2910,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_rbx2a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.rbx2a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/rbx2a/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2923,7 +2923,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v2_rbx2a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v2.rbx2a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v2/rbx2a/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2936,7 +2936,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_bhs1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.bhs1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/bhs1a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2949,7 +2949,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_bhs1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.bhs1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/bhs1a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2962,7 +2962,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_bhs1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.bhs1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/bhs1a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2975,7 +2975,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_bhs1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.bhs1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/bhs1a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -2988,7 +2988,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_bhs1a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.bhs1a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/bhs1a/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3001,7 +3001,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_bhs1a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.bhs1a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/bhs1a/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3014,7 +3014,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_bhs1a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.bhs1a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/bhs1a/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3027,7 +3027,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_bhs1a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.bhs1a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/bhs1a/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3040,7 +3040,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_rbx2b_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.rbx2b.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/rbx2b/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3053,7 +3053,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_rbx2b_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.rbx2b.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/rbx2b/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3066,7 +3066,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_rbx2b_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.rbx2b.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/rbx2b/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3079,7 +3079,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_rbx2b_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.rbx2b.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/rbx2b/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3092,7 +3092,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_rbx2b_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.rbx2b.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/rbx2b/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3105,7 +3105,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_rbx2b_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.rbx2b.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/rbx2b/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3118,7 +3118,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_rbx2b_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.rbx2b.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/rbx2b/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3131,7 +3131,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_rbx2b_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.rbx2b.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/rbx2b/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3144,7 +3144,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_sbg1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.sbg1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/sbg1a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3157,7 +3157,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_sbg1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.sbg1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/sbg1a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3170,7 +3170,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_sbg1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.sbg1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/sbg1a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3183,7 +3183,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_sbg1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.sbg1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/sbg1a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3196,7 +3196,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_sbg1a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.sbg1a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/sbg1a/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3209,7 +3209,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_sbg1a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.sbg1a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/sbg1a/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3222,7 +3222,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_sbg1a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.sbg1a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/sbg1a/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3235,7 +3235,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_sbg1a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.sbg1a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/sbg1a/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3248,7 +3248,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_rbx2a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.rbx2a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/rbx2a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3261,7 +3261,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_rbx2a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.rbx2a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/rbx2a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3274,7 +3274,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_rbx2a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.rbx2a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/rbx2a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3287,7 +3287,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_rbx2a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.rbx2a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/rbx2a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3300,7 +3300,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_rbx2a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.rbx2a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/rbx2a/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3313,7 +3313,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_rbx2a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.rbx2a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/rbx2a/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3326,7 +3326,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_rbx2a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.rbx2a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/rbx2a/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3339,7 +3339,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v3_rbx2a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v3.rbx2a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v3/rbx2a/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3352,7 +3352,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2013v1_bhs1a_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2013v1.bhs1a.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2013v1/bhs1a/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3365,7 +3365,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2013v1_bhs1a_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2013v1.bhs1a.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2013v1/bhs1a/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3378,7 +3378,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2013v1_bhs1a_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2013v1.bhs1a.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2013v1/bhs1a/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3391,7 +3391,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2013v1_bhs1a_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2013v1.bhs1a.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2013v1/bhs1a/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3404,7 +3404,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2013v1_sbg1a_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2013v1.sbg1a.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2013v1/sbg1a/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3417,7 +3417,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2013v1_sbg1a_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2013v1.sbg1a.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2013v1/sbg1a/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3430,7 +3430,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2013v1_sbg1a_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2013v1.sbg1a.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2013v1/sbg1a/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3443,7 +3443,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2013v1_sbg1a_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2013v1.sbg1a.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2013v1/sbg1a/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3456,7 +3456,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2013v1_rbx2a_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2013v1.rbx2a.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2013v1/rbx2a/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3469,7 +3469,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2013v1_rbx2a_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2013v1.rbx2a.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2013v1/rbx2a/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3482,7 +3482,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2013v1_rbx2a_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2013v1.rbx2a.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2013v1/rbx2a/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3495,7 +3495,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2013v1_rbx2a_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2013v1.rbx2a.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2013v1/rbx2a/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3508,7 +3508,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_bhs1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.bhs1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/bhs1a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3521,7 +3521,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_bhs1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.bhs1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/bhs1a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3534,7 +3534,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_bhs1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.bhs1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/bhs1a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3547,7 +3547,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_bhs1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.bhs1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/bhs1a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3560,7 +3560,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_bhs1a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.bhs1a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/bhs1a/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3573,7 +3573,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_bhs1a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.bhs1a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/bhs1a/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3586,7 +3586,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_bhs1a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.bhs1a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/bhs1a/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3599,7 +3599,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_bhs1a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.bhs1a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/bhs1a/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3612,7 +3612,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_rbx2b_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2b.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/rbx2b/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3625,7 +3625,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_rbx2b_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2b.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/rbx2b/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3638,7 +3638,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_rbx2b_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2b.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/rbx2b/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3651,7 +3651,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_rbx2b_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2b.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/rbx2b/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3664,7 +3664,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_rbx2b_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2b.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/rbx2b/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3677,7 +3677,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_rbx2b_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2b.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/rbx2b/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3690,7 +3690,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_rbx2b_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2b.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/rbx2b/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3703,7 +3703,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_rbx2b_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2b.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/rbx2b/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3716,7 +3716,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_sbg1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.sbg1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/sbg1a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3729,7 +3729,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_sbg1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.sbg1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/sbg1a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3742,7 +3742,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_sbg1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.sbg1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/sbg1a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3755,7 +3755,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_sbg1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.sbg1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/sbg1a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3768,7 +3768,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_sbg1a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.sbg1a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/sbg1a/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3781,7 +3781,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_sbg1a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.sbg1a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/sbg1a/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3794,7 +3794,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_sbg1a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.sbg1a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/sbg1a/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3807,7 +3807,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_sbg1a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.sbg1a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/sbg1a/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3820,7 +3820,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_rbx2a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/rbx2a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3833,7 +3833,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_rbx2a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/rbx2a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3846,7 +3846,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_rbx2a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/rbx2a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3859,7 +3859,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_rbx2a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/rbx2a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3872,7 +3872,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_rbx2a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/rbx2a/enterprise/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3885,7 +3885,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_rbx2a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/rbx2a/enterprise/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3898,7 +3898,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_rbx2a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/rbx2a/enterprise/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3911,7 +3911,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicatedCloud_2016v5_rbx2a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v5/rbx2a/enterprise/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3925,7 +3925,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice vps_cloud_model_modelName_GET(net.minidev.ovh.api.price.vps.cloud.OvhModelEnum modelName) throws IOException {
 		String qPath = "/price/vps/cloud/model/{modelName}";
 		StringBuilder sb = path(qPath, modelName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3939,7 +3939,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice vps_cloud_option_optionName_GET(net.minidev.ovh.api.price.vps.cloud.OvhOptionEnum optionName) throws IOException {
 		String qPath = "/price/vps/cloud/option/{optionName}";
 		StringBuilder sb = path(qPath, optionName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3952,7 +3952,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice vps_2014v1_cloud_model_modelName_GET(net.minidev.ovh.api.price.vps._2014v1.cloud.OvhModelEnum modelName) throws IOException {
 		String qPath = "/price/vps/2014v1/cloud/model/{modelName}";
 		StringBuilder sb = path(qPath, modelName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3965,7 +3965,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice vps_2014v1_cloud_option_optionName_GET(net.minidev.ovh.api.price.vps._2014v1.cloud.OvhOptionEnum optionName) throws IOException {
 		String qPath = "/price/vps/2014v1/cloud/option/{optionName}";
 		StringBuilder sb = path(qPath, optionName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3978,7 +3978,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice vps_2014v1_classic_model_modelName_GET(net.minidev.ovh.api.price.vps._2014v1.classic.OvhModelEnum modelName) throws IOException {
 		String qPath = "/price/vps/2014v1/classic/model/{modelName}";
 		StringBuilder sb = path(qPath, modelName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -3992,7 +3992,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice vps_lowlat_model_modelName_GET(net.minidev.ovh.api.price.vps.lowlat.OvhModelEnum modelName) throws IOException {
 		String qPath = "/price/vps/lowlat/model/{modelName}";
 		StringBuilder sb = path(qPath, modelName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4005,7 +4005,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice vps_2013v1_cloud_model_modelName_GET(net.minidev.ovh.api.price.vps._2013v1.cloud.OvhModelEnum modelName) throws IOException {
 		String qPath = "/price/vps/2013v1/cloud/model/{modelName}";
 		StringBuilder sb = path(qPath, modelName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4018,7 +4018,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice vps_2013v1_cloud_option_optionName_GET(net.minidev.ovh.api.price.vps._2013v1.cloud.OvhOptionEnum optionName) throws IOException {
 		String qPath = "/price/vps/2013v1/cloud/option/{optionName}";
 		StringBuilder sb = path(qPath, optionName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4031,7 +4031,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice vps_2013v1_lowlat_model_modelName_GET(net.minidev.ovh.api.price.vps._2013v1.lowlat.OvhModelEnum modelName) throws IOException {
 		String qPath = "/price/vps/2013v1/lowlat/model/{modelName}";
 		StringBuilder sb = path(qPath, modelName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4044,7 +4044,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice vps_2013v1_classic_model_modelName_GET(net.minidev.ovh.api.price.vps._2013v1.classic.OvhModelEnum modelName) throws IOException {
 		String qPath = "/price/vps/2013v1/classic/model/{modelName}";
 		StringBuilder sb = path(qPath, modelName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4058,7 +4058,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice vps_classic_model_modelName_GET(net.minidev.ovh.api.price.vps.classic.OvhModelEnum modelName) throws IOException {
 		String qPath = "/price/vps/classic/model/{modelName}";
 		StringBuilder sb = path(qPath, modelName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4071,7 +4071,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice vps_2015v1_cloud_model_modelName_GET(net.minidev.ovh.api.price.vps._2015v1.cloud.OvhModelEnum modelName) throws IOException {
 		String qPath = "/price/vps/2015v1/cloud/model/{modelName}";
 		StringBuilder sb = path(qPath, modelName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4084,7 +4084,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice vps_2015v1_cloud_option_optionName_GET(net.minidev.ovh.api.price.vps._2015v1.cloud.OvhOptionEnum optionName) throws IOException {
 		String qPath = "/price/vps/2015v1/cloud/option/{optionName}";
 		StringBuilder sb = path(qPath, optionName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4097,7 +4097,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice vps_2015v1_cloudram_model_modelName_GET(net.minidev.ovh.api.price.vps._2015v1.cloudram.OvhModelEnum modelName) throws IOException {
 		String qPath = "/price/vps/2015v1/cloudram/model/{modelName}";
 		StringBuilder sb = path(qPath, modelName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4110,7 +4110,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice vps_2015v1_cloudram_option_optionName_GET(net.minidev.ovh.api.price.vps._2015v1.cloudram.OvhOptionEnum optionName) throws IOException {
 		String qPath = "/price/vps/2015v1/cloudram/option/{optionName}";
 		StringBuilder sb = path(qPath, optionName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4123,7 +4123,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice vps_2015v1_ssd_model_modelName_GET(net.minidev.ovh.api.price.vps._2015v1.ssd.OvhModelEnum modelName) throws IOException {
 		String qPath = "/price/vps/2015v1/ssd/model/{modelName}";
 		StringBuilder sb = path(qPath, modelName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4136,7 +4136,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice vps_2015v1_ssd_option_optionName_GET(net.minidev.ovh.api.price.vps._2015v1.ssd.OvhOptionEnum optionName) throws IOException {
 		String qPath = "/price/vps/2015v1/ssd/option/{optionName}";
 		StringBuilder sb = path(qPath, optionName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4149,7 +4149,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice hosting_web_cdn_cdnName_GET(net.minidev.ovh.api.price.hosting.web.OvhCdnEnum cdnName) throws IOException {
 		String qPath = "/price/hosting/web/cdn/{cdnName}";
 		StringBuilder sb = path(qPath, cdnName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4162,7 +4162,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice hosting_web_ssl_sslName_GET(net.minidev.ovh.api.price.hosting.web.OvhSslEnum sslName) throws IOException {
 		String qPath = "/price/hosting/web/ssl/{sslName}";
 		StringBuilder sb = path(qPath, sslName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4175,7 +4175,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice hosting_web_extraSqlPerso_extraSqlPersoName_GET(net.minidev.ovh.api.price.hosting.web.OvhExtraSqlPersoEnum extraSqlPersoName) throws IOException {
 		String qPath = "/price/hosting/web/extraSqlPerso/{extraSqlPersoName}";
 		StringBuilder sb = path(qPath, extraSqlPersoName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4188,7 +4188,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice hosting_privateDatabase_privateDatabaseName_GET(net.minidev.ovh.api.price.hosting.OvhPrivateDatabaseEnum privateDatabaseName) throws IOException {
 		String qPath = "/price/hosting/privateDatabase/{privateDatabaseName}";
 		StringBuilder sb = path(qPath, privateDatabaseName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4201,7 +4201,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice license_office_officeName_GET(net.minidev.ovh.api.price.license.OvhOfficeEnum officeName) throws IOException {
 		String qPath = "/price/license/office/{officeName}";
 		StringBuilder sb = path(qPath, officeName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4214,7 +4214,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice domain_zone_option_optionName_GET(net.minidev.ovh.api.price.domain.zone.OvhOptionEnum optionName) throws IOException {
 		String qPath = "/price/domain/zone/option/{optionName}";
 		StringBuilder sb = path(qPath, optionName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4227,7 +4227,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice xdsl_addressMove_fee_option_GET(net.minidev.ovh.api.price.xdsl.addressmove.OvhFeeEnum option) throws IOException {
 		String qPath = "/price/xdsl/addressMove/fee/{option}";
 		StringBuilder sb = path(qPath, option);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4240,7 +4240,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice xdsl_options_ipv4_ipRange_GET(net.minidev.ovh.api.price.xdsl.options.OvhIpv4Enum ipRange) throws IOException {
 		String qPath = "/price/xdsl/options/ipv4/{ipRange}";
 		StringBuilder sb = path(qPath, ipRange);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4253,7 +4253,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice xdsl_options_installation_option_GET(net.minidev.ovh.api.price.xdsl.options.OvhInstallationEnum option) throws IOException {
 		String qPath = "/price/xdsl/options/installation/{option}";
 		StringBuilder sb = path(qPath, option);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4266,7 +4266,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice xdsl_options_line_lineAction_GET(net.minidev.ovh.api.price.xdsl.options.OvhLineEnum lineAction) throws IOException {
 		String qPath = "/price/xdsl/options/line/{lineAction}";
 		StringBuilder sb = path(qPath, lineAction);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4279,7 +4279,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice xdsl_offers_offersName_GET(net.minidev.ovh.api.price.xdsl.OvhOffersEnum offersName) throws IOException {
 		String qPath = "/price/xdsl/offers/{offersName}";
 		StringBuilder sb = path(qPath, offersName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4292,7 +4292,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice xdsl_installation_offer_GET(net.minidev.ovh.api.price.xdsl.OvhInstallationEnum offer) throws IOException {
 		String qPath = "/price/xdsl/installation/{offer}";
 		StringBuilder sb = path(qPath, offer);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4305,7 +4305,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice saas_csp2_license_licenseName_GET(net.minidev.ovh.api.price.saas.csp2.OvhLicenseEnum licenseName) throws IOException {
 		String qPath = "/price/saas/csp2/license/{licenseName}";
 		StringBuilder sb = path(qPath, licenseName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4318,7 +4318,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicated_nasha_model_modelName_GET(net.minidev.ovh.api.price.dedicated.nasha.OvhModelEnum modelName) throws IOException {
 		String qPath = "/price/dedicated/nasha/model/{modelName}";
 		StringBuilder sb = path(qPath, modelName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4331,7 +4331,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicated_server_firewall_firewallModel_GET(net.minidev.ovh.api.price.dedicated.server.OvhFirewallEnum firewallModel) throws IOException {
 		String qPath = "/price/dedicated/server/firewall/{firewallModel}";
 		StringBuilder sb = path(qPath, firewallModel);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4344,7 +4344,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicated_server_ip_routedTo_GET(net.minidev.ovh.api.price.dedicated.server.OvhIpEnum routedTo) throws IOException {
 		String qPath = "/price/dedicated/server/ip/{routedTo}";
 		StringBuilder sb = path(qPath, routedTo);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4357,7 +4357,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicated_server_backupStorage_capacity_GET(net.minidev.ovh.api.price.dedicated.server.OvhBackupStorageEnum capacity) throws IOException {
 		String qPath = "/price/dedicated/server/backupStorage/{capacity}";
 		StringBuilder sb = path(qPath, capacity);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4370,7 +4370,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice dedicated_server_antiDDoSPro_commercialRange_GET(net.minidev.ovh.api.price.dedicated.server.OvhAntiDDoSProEnum commercialRange) throws IOException {
 		String qPath = "/price/dedicated/server/antiDDoSPro/{commercialRange}";
 		StringBuilder sb = path(qPath, commercialRange);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4383,7 +4383,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice overTheBox_offer_offerName_GET(net.minidev.ovh.api.price.overthebox.OvhOfferEnum offerName) throws IOException {
 		String qPath = "/price/overTheBox/offer/{offerName}";
 		StringBuilder sb = path(qPath, offerName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4396,7 +4396,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice hpcspot_account_subscription_subscriptionName_GET(net.minidev.ovh.api.price.hpcspot.account.OvhSubscriptionEnum subscriptionName) throws IOException {
 		String qPath = "/price/hpcspot/account/subscription/{subscriptionName}";
 		StringBuilder sb = path(qPath, subscriptionName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4409,7 +4409,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice hpcspot_consumption_reservation_reference_GET(net.minidev.ovh.api.price.hpcspot.consumption.OvhReservationEnum reference) throws IOException {
 		String qPath = "/price/hpcspot/consumption/reservation/{reference}";
 		StringBuilder sb = path(qPath, reference);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4422,7 +4422,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice hpcspot_consumption_session_reference_GET(net.minidev.ovh.api.price.hpcspot.consumption.OvhSessionEnum reference) throws IOException {
 		String qPath = "/price/hpcspot/consumption/session/{reference}";
 		StringBuilder sb = path(qPath, reference);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 
@@ -4435,7 +4435,7 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice hpcspot_consumption_job_reference_GET(net.minidev.ovh.api.price.hpcspot.consumption.OvhJobEnum reference) throws IOException {
 		String qPath = "/price/hpcspot/consumption/job/{reference}";
 		StringBuilder sb = path(qPath, reference);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}
 }

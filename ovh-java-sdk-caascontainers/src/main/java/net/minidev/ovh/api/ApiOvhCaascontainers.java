@@ -19,7 +19,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/caas/containers
  * version:1.0
  */
@@ -39,7 +39,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -55,7 +55,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -69,7 +69,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	public OvhStack serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/caas/containers/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhStack.class);
 	}
 
@@ -85,7 +85,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	public OvhCustomSslMessage serviceName_ssl_PUT(String serviceName, OvhInputCustomSsl body) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/ssl";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("PUT", sb.toString(), body);
+		String resp = exec(qPath, "PUT", sb.toString(), body);
 		return convertTo(resp, OvhCustomSslMessage.class);
 	}
 
@@ -100,7 +100,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	public OvhCustomSslMessage serviceName_ssl_DELETE(String serviceName) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/ssl";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhCustomSslMessage.class);
 	}
 
@@ -115,7 +115,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	public OvhCustomSsl serviceName_ssl_GET(String serviceName) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/ssl";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhCustomSsl.class);
 	}
 
@@ -130,7 +130,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	public ArrayList<String> serviceName_slaves_GET(String serviceName) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/slaves";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
@@ -147,7 +147,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	public OvhSlave serviceName_slaves_slaveId_GET(String serviceName, String slaveId) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/slaves/{slaveId}";
 		StringBuilder sb = path(qPath, serviceName, slaveId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhSlave.class);
 	}
 
@@ -163,7 +163,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	public OvhRegistryCredentials serviceName_registry_credentials_POST(String serviceName, OvhInputCustomSsl body) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/registry/credentials";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("POST", sb.toString(), body);
+		String resp = exec(qPath, "POST", sb.toString(), body);
 		return convertTo(resp, OvhRegistryCredentials.class);
 	}
 
@@ -178,7 +178,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	public ArrayList<String> serviceName_registry_credentials_GET(String serviceName) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/registry/credentials";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -195,7 +195,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	public OvhRegistryCredentials serviceName_registry_credentials_credentialsId_PUT(String serviceName, String credentialsId, OvhInputCustomSsl body) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/registry/credentials/{credentialsId}";
 		StringBuilder sb = path(qPath, serviceName, credentialsId);
-		String resp = exec("PUT", sb.toString(), body);
+		String resp = exec(qPath, "PUT", sb.toString(), body);
 		return convertTo(resp, OvhRegistryCredentials.class);
 	}
 
@@ -211,7 +211,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	public OvhRegistryCredentials serviceName_registry_credentials_credentialsId_GET(String serviceName, String credentialsId) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/registry/credentials/{credentialsId}";
 		StringBuilder sb = path(qPath, serviceName, credentialsId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhRegistryCredentials.class);
 	}
 
@@ -227,7 +227,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	public void serviceName_registry_credentials_credentialsId_DELETE(String serviceName, String credentialsId) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/registry/credentials/{credentialsId}";
 		StringBuilder sb = path(qPath, serviceName, credentialsId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -241,7 +241,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	public ArrayList<String> serviceName_frameworks_GET(String serviceName) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/frameworks";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -257,7 +257,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	public OvhFramework serviceName_frameworks_frameworkId_GET(String serviceName, String frameworkId) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/frameworks/{frameworkId}";
 		StringBuilder sb = path(qPath, serviceName, frameworkId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhFramework.class);
 	}
 
@@ -274,7 +274,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	public void serviceName_frameworks_frameworkId_password_PUT(String serviceName, String frameworkId, OvhPassword body) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/frameworks/{frameworkId}/password";
 		StringBuilder sb = path(qPath, serviceName, frameworkId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -289,7 +289,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	public OvhApplication serviceName_frameworks_frameworkId_apps_GET(String serviceName, String frameworkId) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/frameworks/{frameworkId}/apps";
 		StringBuilder sb = path(qPath, serviceName, frameworkId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhApplication.class);
 	}
 
@@ -311,7 +311,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 		addBody(o, "contactAdmin", contactAdmin);
 		addBody(o, "contactTech", contactTech);
 		addBody(o, "contactBilling", contactBilling);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
@@ -327,7 +327,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	public ArrayList<String> serviceName_availableFrameworks_GET(String serviceName) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/availableFrameworks";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -341,7 +341,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/caas/containers";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -355,7 +355,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	public ArrayList<String> slaves_flavors_GET() throws IOException {
 		String qPath = "/caas/containers/slaves/flavors";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -370,7 +370,7 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	public OvhFlavor slaves_flavors_flavorId_GET(String flavorId) throws IOException {
 		String qPath = "/caas/containers/slaves/flavors/{flavorId}";
 		StringBuilder sb = path(qPath, flavorId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhFlavor.class);
 	}
 }

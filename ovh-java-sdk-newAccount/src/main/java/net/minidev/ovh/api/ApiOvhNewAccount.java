@@ -16,7 +16,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/newAccount
  * version:1.0
  */
@@ -80,7 +80,7 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 		addBody(o, "zip", zip);
 		addBody(o, "corporationType", corporationType);
 		addBody(o, "legalform", legalform);
-		String resp = execN("POST", sb.toString(), o);
+		String resp = execN(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhNewAccountAndToken.class);
 	}
 
@@ -94,7 +94,7 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 		String qPath = "/newAccount/area";
 		StringBuilder sb = path(qPath);
 		query(sb, "country", country);
-		String resp = execN("GET", sb.toString());
+		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
@@ -115,7 +115,7 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 		query(sb, "legalform", legalform);
 		query(sb, "ovhCompany", ovhCompany);
 		query(sb, "ovhSubsidiary", ovhSubsidiary);
-		String resp = execN("GET", sb.toString());
+		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhCreationRules.class);
 	}
 
@@ -129,7 +129,7 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 		String qPath = "/newAccount/corporationType";
 		StringBuilder sb = path(qPath);
 		query(sb, "country", country);
-		String resp = execN("GET", sb.toString());
+		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -143,7 +143,7 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 		String qPath = "/newAccount/legalform";
 		StringBuilder sb = path(qPath);
 		query(sb, "country", country);
-		String resp = execN("GET", sb.toString());
+		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -159,7 +159,7 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 		StringBuilder sb = path(qPath);
 		query(sb, "ovhCompany", ovhCompany);
 		query(sb, "ovhSubsidiary", ovhSubsidiary);
-		String resp = execN("GET", sb.toString());
+		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<OvhCountryEnum>> t2 = new TypeReference<ArrayList<OvhCountryEnum>>() {};

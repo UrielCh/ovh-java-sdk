@@ -8,7 +8,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/supply/mondialRelay
  * version:1.0
  */
@@ -34,7 +34,7 @@ public class ApiOvhSupplymondialRelay extends ApiOvhBase {
 		addBody(o, "city", city);
 		addBody(o, "address", address);
 		addBody(o, "zipcode", zipcode);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhMondialRelayReturn.class);
 	}
 }

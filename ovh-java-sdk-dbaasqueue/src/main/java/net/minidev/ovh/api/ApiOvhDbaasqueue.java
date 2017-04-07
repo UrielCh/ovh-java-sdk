@@ -19,7 +19,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/dbaas/queue
  * version:1.0
  */
@@ -39,7 +39,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -55,7 +55,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -69,7 +69,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	public ArrayList<String> serviceName_topic_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/topic";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
@@ -92,7 +92,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 		addBody(o, "id", id);
 		addBody(o, "partitions", partitions);
 		addBody(o, "replicationFactor", replicationFactor);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTopic.class);
 	}
 
@@ -108,7 +108,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	public OvhTopic serviceName_topic_topicId_GET(String serviceName, String topicId) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/topic/{topicId}";
 		StringBuilder sb = path(qPath, serviceName, topicId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTopic.class);
 	}
 
@@ -127,7 +127,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName, topicId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "partitions", partitions);
-		exec("PUT", sb.toString(), o);
+		exec(qPath, "PUT", sb.toString(), o);
 	}
 
 	/**
@@ -142,7 +142,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	public void serviceName_topic_topicId_DELETE(String serviceName, String topicId) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/topic/{topicId}";
 		StringBuilder sb = path(qPath, serviceName, topicId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -156,7 +156,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	public OvhApp serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhApp.class);
 	}
 
@@ -174,7 +174,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "name", name);
-		String resp = exec("PUT", sb.toString(), o);
+		String resp = exec(qPath, "PUT", sb.toString(), o);
 		return convertTo(resp, OvhApp.class);
 	}
 
@@ -189,7 +189,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	public ArrayList<String> serviceName_region_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/region";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -205,7 +205,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	public OvhRegion serviceName_region_regionId_GET(String serviceName, String regionId) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/region/{regionId}";
 		StringBuilder sb = path(qPath, serviceName, regionId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhRegion.class);
 	}
 
@@ -227,7 +227,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 		addBody(o, "contactAdmin", contactAdmin);
 		addBody(o, "contactTech", contactTech);
 		addBody(o, "contactBilling", contactBilling);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
@@ -246,7 +246,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "name", name);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhKeyWithSecret.class);
 	}
 
@@ -261,7 +261,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	public ArrayList<String> serviceName_key_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/key";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -277,7 +277,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	public OvhKey serviceName_key_keyId_GET(String serviceName, String keyId) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/key/{keyId}";
 		StringBuilder sb = path(qPath, serviceName, keyId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhKey.class);
 	}
 
@@ -296,7 +296,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName, keyId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "name", name);
-		String resp = exec("PUT", sb.toString(), o);
+		String resp = exec(qPath, "PUT", sb.toString(), o);
 		return convertTo(resp, OvhKey.class);
 	}
 
@@ -312,7 +312,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	public void serviceName_key_keyId_DELETE(String serviceName, String keyId) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/key/{keyId}";
 		StringBuilder sb = path(qPath, serviceName, keyId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -327,7 +327,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	public OvhKeyWithSecret serviceName_key_keyId_changeSecret_POST(String serviceName, String keyId) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/key/{keyId}/changeSecret";
 		StringBuilder sb = path(qPath, serviceName, keyId);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhKeyWithSecret.class);
 	}
 
@@ -347,7 +347,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "name", name);
 		addBody(o, "regionId", regionId);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhAppConfiguration.class);
 	}
 
@@ -367,7 +367,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "name", name);
 		addBody(o, "roles", roles);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhUserWithPassword.class);
 	}
 
@@ -382,7 +382,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	public ArrayList<String> serviceName_user_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/user";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -398,7 +398,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	public ArrayList<String> serviceName_user_userId_roles_GET(String serviceName, String userId) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/user/{userId}/roles";
 		StringBuilder sb = path(qPath, serviceName, userId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -417,7 +417,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName, userId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "roleName", roleName);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, t1);
 	}
 
@@ -434,7 +434,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	public void serviceName_user_userId_roles_role_DELETE(String serviceName, String userId, String role) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/user/{userId}/roles/{role}";
 		StringBuilder sb = path(qPath, serviceName, userId, role);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -449,7 +449,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	public OvhUser serviceName_user_userId_GET(String serviceName, String userId) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/user/{userId}";
 		StringBuilder sb = path(qPath, serviceName, userId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhUser.class);
 	}
 
@@ -465,7 +465,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	public void serviceName_user_userId_DELETE(String serviceName, String userId) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/user/{userId}";
 		StringBuilder sb = path(qPath, serviceName, userId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -480,7 +480,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	public OvhUserWithPassword serviceName_user_userId_changePassword_POST(String serviceName, String userId) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/user/{userId}/changePassword";
 		StringBuilder sb = path(qPath, serviceName, userId);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhUserWithPassword.class);
 	}
 
@@ -495,7 +495,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	public OvhMetricsAccount serviceName_metrics_account_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/metrics/account";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhMetricsAccount.class);
 	}
 
@@ -510,7 +510,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	public ArrayList<String> serviceName_role_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/role";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -534,7 +534,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 		addBody(o, "readAcl", readAcl);
 		addBody(o, "writeAcl", writeAcl);
 		addBody(o, "autoCreateAcl", autoCreateAcl);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhRole.class);
 	}
 
@@ -550,7 +550,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	public OvhRole serviceName_role_roleName_GET(String serviceName, String roleName) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/role/{roleName}";
 		StringBuilder sb = path(qPath, serviceName, roleName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhRole.class);
 	}
 
@@ -575,7 +575,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 		addBody(o, "readAcl", readAcl);
 		addBody(o, "writeAcl", writeAcl);
 		addBody(o, "autoCreateAcl", autoCreateAcl);
-		String resp = exec("PUT", sb.toString(), o);
+		String resp = exec(qPath, "PUT", sb.toString(), o);
 		return convertTo(resp, OvhRole.class);
 	}
 
@@ -591,7 +591,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	public void serviceName_role_roleName_DELETE(String serviceName, String roleName) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/role/{roleName}";
 		StringBuilder sb = path(qPath, serviceName, roleName);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -604,7 +604,7 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/dbaas/queue";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 }

@@ -9,7 +9,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/email/imapCopy
  * version:1.0
  */
@@ -31,7 +31,7 @@ public class ApiOvhEmailimapCopy extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "to", to);
 		addBody(o, "from", from);
-		String resp = execN("POST", sb.toString(), o);
+		String resp = execN(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTaskIds.class);
 	}
 
@@ -47,7 +47,7 @@ public class ApiOvhEmailimapCopy extends ApiOvhBase {
 		StringBuilder sb = path(qPath);
 		query(sb, "id", id);
 		query(sb, "secretKey", secretKey);
-		String resp = execN("GET", sb.toString());
+		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 }

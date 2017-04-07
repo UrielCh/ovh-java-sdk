@@ -15,7 +15,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/license/cloudLinux
  * version:1.0
  */
@@ -33,7 +33,7 @@ public class ApiOvhLicensecloudLinux extends ApiOvhBase {
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/license/cloudLinux/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -47,7 +47,7 @@ public class ApiOvhLicensecloudLinux extends ApiOvhBase {
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/license/cloudLinux/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -59,7 +59,7 @@ public class ApiOvhLicensecloudLinux extends ApiOvhBase {
 	public OvhCloudLinux serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/license/cloudLinux/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhCloudLinux.class);
 	}
 
@@ -76,7 +76,7 @@ public class ApiOvhLicensecloudLinux extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "action", action);
 		query(sb, "status", status);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
@@ -91,7 +91,7 @@ public class ApiOvhLicensecloudLinux extends ApiOvhBase {
 	public OvhTask serviceName_tasks_taskId_GET(String serviceName, Long taskId) throws IOException {
 		String qPath = "/license/cloudLinux/{serviceName}/tasks/{taskId}";
 		StringBuilder sb = path(qPath, serviceName, taskId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -111,7 +111,7 @@ public class ApiOvhLicensecloudLinux extends ApiOvhBase {
 		addBody(o, "reason", reason);
 		addBody(o, "commentary", commentary);
 		addBody(o, "token", token);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -124,7 +124,7 @@ public class ApiOvhLicensecloudLinux extends ApiOvhBase {
 	public String serviceName_terminate_POST(String serviceName) throws IOException {
 		String qPath = "/license/cloudLinux/{serviceName}/terminate";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, String.class);
 	}
 
@@ -136,7 +136,7 @@ public class ApiOvhLicensecloudLinux extends ApiOvhBase {
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/license/cloudLinux";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};
@@ -151,7 +151,7 @@ public class ApiOvhLicensecloudLinux extends ApiOvhBase {
 		String qPath = "/license/cloudLinux/orderableVersions";
 		StringBuilder sb = path(qPath);
 		query(sb, "ip", ip);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 	private static TypeReference<ArrayList<OvhCloudLinuxOrderConfiguration>> t3 = new TypeReference<ArrayList<OvhCloudLinuxOrderConfiguration>>() {};

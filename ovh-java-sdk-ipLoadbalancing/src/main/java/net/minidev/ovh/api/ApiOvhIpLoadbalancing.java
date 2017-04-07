@@ -53,7 +53,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/ipLoadbalancing
  * version:1.0
  */
@@ -73,7 +73,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -89,7 +89,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -102,7 +102,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public ArrayList<String> serviceName_availableServerZones_GET(String serviceName) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/availableServerZones";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
@@ -118,7 +118,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public OvhIp serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhIp.class);
 	}
 
@@ -134,7 +134,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_PUT(String serviceName, OvhIp body) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -153,7 +153,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		query(sb, "defaultBackendId", defaultBackendId);
 		query(sb, "port", port);
 		query(sb, "zone", zone);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
@@ -191,7 +191,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		addBody(o, "port", port);
 		addBody(o, "redirectLocation", redirectLocation);
 		addBody(o, "defaultBackendId", defaultBackendId);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhFrontend.class);
 	}
 
@@ -206,7 +206,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public OvhFrontend serviceName_frontend_id_GET(String serviceName, Long id) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/frontend/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhFrontend.class);
 	}
 
@@ -222,7 +222,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_frontend_id_PUT(String serviceName, Long id, OvhFrontend body) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/frontend/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -236,7 +236,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_frontend_id_DELETE(String serviceName, Long id) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/frontend/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -250,7 +250,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public ArrayList<String> serviceName_zone_GET(String serviceName) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/zone";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -266,7 +266,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public OvhIpZone serviceName_zone_name_GET(String serviceName, String name) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/zone/{name}";
 		StringBuilder sb = path(qPath, serviceName, name);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhIpZone.class);
 	}
 
@@ -282,7 +282,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_zone_name_DELETE(String serviceName, String name) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/zone/{name}";
 		StringBuilder sb = path(qPath, serviceName, name);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -296,7 +296,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public ArrayList<String> serviceName_failover_GET(String serviceName) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/failover";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -312,7 +312,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		String qPath = "/ipLoadbalancing/{serviceName}/backend";
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "zone", zone);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -339,7 +339,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		addBody(o, "probe", probe);
 		addBody(o, "port", port);
 		addBody(o, "stickiness", stickiness);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhBackend.class);
 	}
 
@@ -354,7 +354,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public OvhBackend serviceName_backend_id_GET(String serviceName, Long id) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/backend/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhBackend.class);
 	}
 
@@ -370,7 +370,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_backend_id_PUT(String serviceName, Long id, OvhBackend body) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/backend/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -384,7 +384,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_backend_id_DELETE(String serviceName, Long id) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/backend/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -400,7 +400,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		String qPath = "/ipLoadbalancing/{serviceName}/backend/{id}/server";
 		StringBuilder sb = path(qPath, serviceName, id);
 		query(sb, "cookie", cookie);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -434,7 +434,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		addBody(o, "weight", weight);
 		addBody(o, "backup", backup);
 		addBody(o, "probe", probe);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhBackendServer.class);
 	}
 
@@ -450,7 +450,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public OvhBackendServer serviceName_backend_id_server_linkId_GET(String serviceName, Long id, Long linkId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/backend/{id}/server/{linkId}";
 		StringBuilder sb = path(qPath, serviceName, id, linkId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhBackendServer.class);
 	}
 
@@ -467,7 +467,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_backend_id_server_linkId_PUT(String serviceName, Long id, Long linkId, OvhBackendServer body) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/backend/{id}/server/{linkId}";
 		StringBuilder sb = path(qPath, serviceName, id, linkId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -482,7 +482,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_backend_id_server_linkId_DELETE(String serviceName, Long id, Long linkId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/backend/{id}/server/{linkId}";
 		StringBuilder sb = path(qPath, serviceName, id, linkId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -496,7 +496,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public String serviceName_terminate_POST(String serviceName) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/terminate";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, String.class);
 	}
 
@@ -511,7 +511,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public ArrayList<String> serviceName_natIp_GET(String serviceName) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/natIp";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -533,7 +533,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		addBody(o, "contactAdmin", contactAdmin);
 		addBody(o, "contactTech", contactTech);
 		addBody(o, "contactBilling", contactBilling);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, t2);
 	}
 
@@ -554,7 +554,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		query(sb, "defaultFarmId", defaultFarmId);
 		query(sb, "port", port);
 		query(sb, "zone", zone);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -592,7 +592,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		addBody(o, "port", port);
 		addBody(o, "redirectLocation", redirectLocation);
 		addBody(o, "defaultFarmId", defaultFarmId);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhFrontendHttp.class);
 	}
 
@@ -608,7 +608,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public OvhFrontendHttp serviceName_http_frontend_frontendId_GET(String serviceName, Long frontendId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/http/frontend/{frontendId}";
 		StringBuilder sb = path(qPath, serviceName, frontendId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhFrontendHttp.class);
 	}
 
@@ -625,7 +625,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_http_frontend_frontendId_PUT(String serviceName, Long frontendId, OvhFrontendHttp body) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/http/frontend/{frontendId}";
 		StringBuilder sb = path(qPath, serviceName, frontendId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -640,7 +640,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_http_frontend_frontendId_DELETE(String serviceName, Long frontendId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/http/frontend/{frontendId}";
 		StringBuilder sb = path(qPath, serviceName, frontendId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -656,7 +656,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		String qPath = "/ipLoadbalancing/{serviceName}/http/route";
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "frontendId", frontendId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -680,7 +680,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		addBody(o, "weight", weight);
 		addBody(o, "name", name);
 		addBody(o, "frontendId", frontendId);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhRouteHttp.class);
 	}
 
@@ -696,7 +696,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public OvhRouteHttp serviceName_http_route_routeId_GET(String serviceName, Long routeId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/http/route/{routeId}";
 		StringBuilder sb = path(qPath, serviceName, routeId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhRouteHttp.class);
 	}
 
@@ -713,7 +713,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_http_route_routeId_PUT(String serviceName, Long routeId, OvhRouteHttp body) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/http/route/{routeId}";
 		StringBuilder sb = path(qPath, serviceName, routeId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -728,7 +728,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_http_route_routeId_DELETE(String serviceName, Long routeId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/http/route/{routeId}";
 		StringBuilder sb = path(qPath, serviceName, routeId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -743,7 +743,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public ArrayList<Long> serviceName_http_route_routeId_rule_GET(String serviceName, Long routeId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/http/route/{routeId}/rule";
 		StringBuilder sb = path(qPath, serviceName, routeId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -770,7 +770,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		addBody(o, "subField", subField);
 		addBody(o, "negate", negate);
 		addBody(o, "field", field);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhRouteRule.class);
 	}
 
@@ -787,7 +787,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public OvhRouteRule serviceName_http_route_routeId_rule_ruleId_GET(String serviceName, Long routeId, Long ruleId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/http/route/{routeId}/rule/{ruleId}";
 		StringBuilder sb = path(qPath, serviceName, routeId, ruleId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhRouteRule.class);
 	}
 
@@ -805,7 +805,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_http_route_routeId_rule_ruleId_PUT(String serviceName, Long routeId, Long ruleId, OvhRouteRule body) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/http/route/{routeId}/rule/{ruleId}";
 		StringBuilder sb = path(qPath, serviceName, routeId, ruleId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -821,7 +821,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_http_route_routeId_rule_ruleId_DELETE(String serviceName, Long routeId, Long ruleId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/http/route/{routeId}/rule/{ruleId}";
 		StringBuilder sb = path(qPath, serviceName, routeId, ruleId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -837,7 +837,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		String qPath = "/ipLoadbalancing/{serviceName}/http/farm";
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "zone", zone);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -863,7 +863,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		addBody(o, "probe", probe);
 		addBody(o, "port", port);
 		addBody(o, "stickiness", stickiness);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhBackendHttp.class);
 	}
 
@@ -879,7 +879,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public OvhBackendHttp serviceName_http_farm_farmId_GET(String serviceName, Long farmId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/http/farm/{farmId}";
 		StringBuilder sb = path(qPath, serviceName, farmId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhBackendHttp.class);
 	}
 
@@ -896,7 +896,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_http_farm_farmId_PUT(String serviceName, Long farmId, OvhBackendHttp body) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/http/farm/{farmId}";
 		StringBuilder sb = path(qPath, serviceName, farmId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -911,7 +911,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_http_farm_farmId_DELETE(String serviceName, Long farmId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/http/farm/{farmId}";
 		StringBuilder sb = path(qPath, serviceName, farmId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -932,7 +932,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		query(sb, "address", address);
 		query(sb, "cookie", cookie);
 		query(sb, "status", status);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -969,7 +969,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		addBody(o, "address", address);
 		addBody(o, "backup", backup);
 		addBody(o, "probe", probe);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhBackendHTTPServer.class);
 	}
 
@@ -986,7 +986,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public OvhBackendHTTPServer serviceName_http_farm_farmId_server_serverId_GET(String serviceName, Long farmId, Long serverId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/http/farm/{farmId}/server/{serverId}";
 		StringBuilder sb = path(qPath, serviceName, farmId, serverId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhBackendHTTPServer.class);
 	}
 
@@ -1004,7 +1004,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_http_farm_farmId_server_serverId_PUT(String serviceName, Long farmId, Long serverId, OvhBackendHTTPServer body) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/http/farm/{farmId}/server/{serverId}";
 		StringBuilder sb = path(qPath, serviceName, farmId, serverId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1020,7 +1020,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_http_farm_farmId_server_serverId_DELETE(String serviceName, Long farmId, Long serverId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/http/farm/{farmId}/server/{serverId}";
 		StringBuilder sb = path(qPath, serviceName, farmId, serverId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -1034,7 +1034,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public ArrayList<OvhInstancesState> serviceName_instancesState_GET(String serviceName) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/instancesState";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 	private static TypeReference<ArrayList<OvhInstancesState>> t3 = new TypeReference<ArrayList<OvhInstancesState>>() {};
@@ -1053,7 +1053,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "zone", zone);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1071,7 +1071,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "fqdn", fqdn);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1092,7 +1092,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		query(sb, "defaultFarmId", defaultFarmId);
 		query(sb, "port", port);
 		query(sb, "zone", zone);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -1118,7 +1118,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		addBody(o, "zone", zone);
 		addBody(o, "dedicatedIpfo", dedicatedIpfo);
 		addBody(o, "port", port);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhFrontendUdp.class);
 	}
 
@@ -1134,7 +1134,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public OvhFrontendUdp serviceName_udp_frontend_frontendId_GET(String serviceName, Long frontendId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/udp/frontend/{frontendId}";
 		StringBuilder sb = path(qPath, serviceName, frontendId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhFrontendUdp.class);
 	}
 
@@ -1151,7 +1151,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_udp_frontend_frontendId_PUT(String serviceName, Long frontendId, OvhFrontendUdp body) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/udp/frontend/{frontendId}";
 		StringBuilder sb = path(qPath, serviceName, frontendId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1166,7 +1166,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_udp_frontend_frontendId_DELETE(String serviceName, Long frontendId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/udp/frontend/{frontendId}";
 		StringBuilder sb = path(qPath, serviceName, frontendId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -1182,7 +1182,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		String qPath = "/ipLoadbalancing/{serviceName}/udp/farm";
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "zone", zone);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -1202,7 +1202,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "zone", zone);
 		addBody(o, "port", port);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhBackendUdp.class);
 	}
 
@@ -1218,7 +1218,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public OvhBackendUdp serviceName_udp_farm_farmId_GET(String serviceName, Long farmId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/udp/farm/{farmId}";
 		StringBuilder sb = path(qPath, serviceName, farmId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhBackendUdp.class);
 	}
 
@@ -1235,7 +1235,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_udp_farm_farmId_PUT(String serviceName, Long farmId, OvhBackendUdp body) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/udp/farm/{farmId}";
 		StringBuilder sb = path(qPath, serviceName, farmId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1250,7 +1250,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_udp_farm_farmId_DELETE(String serviceName, Long farmId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/udp/farm/{farmId}";
 		StringBuilder sb = path(qPath, serviceName, farmId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -1269,7 +1269,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName, farmId);
 		query(sb, "address", address);
 		query(sb, "status", status);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -1292,7 +1292,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		addBody(o, "status", status);
 		addBody(o, "address", address);
 		addBody(o, "port", port);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhBackendServer.class);
 	}
 
@@ -1309,7 +1309,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public OvhBackendUDPServer serviceName_udp_farm_farmId_server_serverId_GET(String serviceName, Long farmId, Long serverId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/udp/farm/{farmId}/server/{serverId}";
 		StringBuilder sb = path(qPath, serviceName, farmId, serverId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhBackendUDPServer.class);
 	}
 
@@ -1327,7 +1327,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_udp_farm_farmId_server_serverId_PUT(String serviceName, Long farmId, Long serverId, OvhBackendUDPServer body) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/udp/farm/{farmId}/server/{serverId}";
 		StringBuilder sb = path(qPath, serviceName, farmId, serverId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1343,7 +1343,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_udp_farm_farmId_server_serverId_DELETE(String serviceName, Long farmId, Long serverId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/udp/farm/{farmId}/server/{serverId}";
 		StringBuilder sb = path(qPath, serviceName, farmId, serverId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -1357,7 +1357,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public ArrayList<OvhRouteAvailableAction> serviceName_availableRouteActions_GET(String serviceName) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/availableRouteActions";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t4);
 	}
 	private static TypeReference<ArrayList<OvhRouteAvailableAction>> t4 = new TypeReference<ArrayList<OvhRouteAvailableAction>>() {};
@@ -1378,7 +1378,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		query(sb, "address", address);
 		query(sb, "status", status);
 		query(sb, "zone", zone);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -1397,7 +1397,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "status", status);
 		addBody(o, "address", address);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhCustomerServer.class);
 	}
 
@@ -1412,7 +1412,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public OvhCustomerServer serviceName_server_id_GET(String serviceName, Long id) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/server/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhCustomerServer.class);
 	}
 
@@ -1428,7 +1428,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_server_id_PUT(String serviceName, Long id, OvhCustomerServer body) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/server/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1442,7 +1442,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_server_id_DELETE(String serviceName, Long id) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/server/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -1456,7 +1456,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public ArrayList<OvhRouteAvailableRule> serviceName_availableRouteRules_GET(String serviceName) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/availableRouteRules";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t5);
 	}
 	private static TypeReference<ArrayList<OvhRouteAvailableRule>> t5 = new TypeReference<ArrayList<OvhRouteAvailableRule>>() {};
@@ -1471,7 +1471,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public ArrayList<net.minidev.ovh.api.ip.OvhIp> serviceName_allowedServers_GET(String serviceName) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/allowedServers";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t6);
 	}
 	private static TypeReference<ArrayList<net.minidev.ovh.api.ip.OvhIp>> t6 = new TypeReference<ArrayList<net.minidev.ovh.api.ip.OvhIp>>() {};
@@ -1487,7 +1487,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public ArrayList<String> serviceName_availableFarmType_GET(String serviceName) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/availableFarmType";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -1508,7 +1508,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		query(sb, "fingerprint", fingerprint);
 		query(sb, "serial", serial);
 		query(sb, "type", type);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -1530,7 +1530,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		addBody(o, "chain", chain);
 		addBody(o, "certificate", certificate);
 		addBody(o, "key", key);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhSsl.class);
 	}
 
@@ -1546,7 +1546,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public OvhSsl serviceName_ssl_id_GET(String serviceName, Long id) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/ssl/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhSsl.class);
 	}
 
@@ -1562,7 +1562,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_ssl_id_DELETE(String serviceName, Long id) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/ssl/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -1576,7 +1576,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public ArrayList<OvhDefinedFrontend> serviceName_definedFrontends_GET(String serviceName) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/definedFrontends";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t7);
 	}
 	private static TypeReference<ArrayList<OvhDefinedFrontend>> t7 = new TypeReference<ArrayList<OvhDefinedFrontend>>() {};
@@ -1599,7 +1599,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		addBody(o, "reason", reason);
 		addBody(o, "commentary", commentary);
 		addBody(o, "token", token);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -1620,7 +1620,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		query(sb, "defaultFarmId", defaultFarmId);
 		query(sb, "port", port);
 		query(sb, "zone", zone);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -1652,7 +1652,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		addBody(o, "allowedSource", allowedSource);
 		addBody(o, "port", port);
 		addBody(o, "defaultFarmId", defaultFarmId);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhFrontendTcp.class);
 	}
 
@@ -1668,7 +1668,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public OvhFrontendTcp serviceName_tcp_frontend_frontendId_GET(String serviceName, Long frontendId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/tcp/frontend/{frontendId}";
 		StringBuilder sb = path(qPath, serviceName, frontendId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhFrontendTcp.class);
 	}
 
@@ -1685,7 +1685,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_tcp_frontend_frontendId_PUT(String serviceName, Long frontendId, OvhFrontendTcp body) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/tcp/frontend/{frontendId}";
 		StringBuilder sb = path(qPath, serviceName, frontendId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1700,7 +1700,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_tcp_frontend_frontendId_DELETE(String serviceName, Long frontendId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/tcp/frontend/{frontendId}";
 		StringBuilder sb = path(qPath, serviceName, frontendId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -1716,7 +1716,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		String qPath = "/ipLoadbalancing/{serviceName}/tcp/route";
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "frontendId", frontendId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -1740,7 +1740,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		addBody(o, "weight", weight);
 		addBody(o, "name", name);
 		addBody(o, "frontendId", frontendId);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhRouteTcp.class);
 	}
 
@@ -1756,7 +1756,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public OvhRouteTcp serviceName_tcp_route_routeId_GET(String serviceName, Long routeId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/tcp/route/{routeId}";
 		StringBuilder sb = path(qPath, serviceName, routeId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhRouteTcp.class);
 	}
 
@@ -1773,7 +1773,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_tcp_route_routeId_PUT(String serviceName, Long routeId, OvhRouteTcp body) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/tcp/route/{routeId}";
 		StringBuilder sb = path(qPath, serviceName, routeId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1788,7 +1788,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_tcp_route_routeId_DELETE(String serviceName, Long routeId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/tcp/route/{routeId}";
 		StringBuilder sb = path(qPath, serviceName, routeId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -1803,7 +1803,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public ArrayList<Long> serviceName_tcp_route_routeId_rule_GET(String serviceName, Long routeId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/tcp/route/{routeId}/rule";
 		StringBuilder sb = path(qPath, serviceName, routeId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -1830,7 +1830,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		addBody(o, "subField", subField);
 		addBody(o, "negate", negate);
 		addBody(o, "field", field);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhRouteRule.class);
 	}
 
@@ -1847,7 +1847,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public OvhRouteRule serviceName_tcp_route_routeId_rule_ruleId_GET(String serviceName, Long routeId, Long ruleId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/tcp/route/{routeId}/rule/{ruleId}";
 		StringBuilder sb = path(qPath, serviceName, routeId, ruleId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhRouteRule.class);
 	}
 
@@ -1865,7 +1865,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_tcp_route_routeId_rule_ruleId_PUT(String serviceName, Long routeId, Long ruleId, OvhRouteRule body) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/tcp/route/{routeId}/rule/{ruleId}";
 		StringBuilder sb = path(qPath, serviceName, routeId, ruleId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1881,7 +1881,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_tcp_route_routeId_rule_ruleId_DELETE(String serviceName, Long routeId, Long ruleId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/tcp/route/{routeId}/rule/{ruleId}";
 		StringBuilder sb = path(qPath, serviceName, routeId, ruleId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -1897,7 +1897,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		String qPath = "/ipLoadbalancing/{serviceName}/tcp/farm";
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "zone", zone);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -1923,7 +1923,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		addBody(o, "probe", probe);
 		addBody(o, "port", port);
 		addBody(o, "stickiness", stickiness);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhBackendTcp.class);
 	}
 
@@ -1939,7 +1939,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public OvhBackendTcp serviceName_tcp_farm_farmId_GET(String serviceName, Long farmId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/tcp/farm/{farmId}";
 		StringBuilder sb = path(qPath, serviceName, farmId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhBackendTcp.class);
 	}
 
@@ -1956,7 +1956,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_tcp_farm_farmId_PUT(String serviceName, Long farmId, OvhBackendTcp body) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/tcp/farm/{farmId}";
 		StringBuilder sb = path(qPath, serviceName, farmId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1971,7 +1971,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_tcp_farm_farmId_DELETE(String serviceName, Long farmId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/tcp/farm/{farmId}";
 		StringBuilder sb = path(qPath, serviceName, farmId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -1990,7 +1990,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName, farmId);
 		query(sb, "address", address);
 		query(sb, "status", status);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -2025,7 +2025,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		addBody(o, "address", address);
 		addBody(o, "backup", backup);
 		addBody(o, "probe", probe);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhBackendServer.class);
 	}
 
@@ -2042,7 +2042,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public OvhBackendTCPServer serviceName_tcp_farm_farmId_server_serverId_GET(String serviceName, Long farmId, Long serverId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/tcp/farm/{farmId}/server/{serverId}";
 		StringBuilder sb = path(qPath, serviceName, farmId, serverId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhBackendTCPServer.class);
 	}
 
@@ -2060,7 +2060,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_tcp_farm_farmId_server_serverId_PUT(String serviceName, Long farmId, Long serverId, OvhBackendTCPServer body) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/tcp/farm/{farmId}/server/{serverId}";
 		StringBuilder sb = path(qPath, serviceName, farmId, serverId);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -2076,7 +2076,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public void serviceName_tcp_farm_farmId_server_serverId_DELETE(String serviceName, Long farmId, Long serverId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/tcp/farm/{farmId}/server/{serverId}";
 		StringBuilder sb = path(qPath, serviceName, farmId, serverId);
-		exec("DELETE", sb.toString());
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -2092,7 +2092,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		String qPath = "/ipLoadbalancing/{serviceName}/task";
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "action", action);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -2108,7 +2108,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public OvhTask serviceName_task_id_GET(String serviceName, Long id) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/task/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -2123,7 +2123,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public ArrayList<OvhDefinedRoute> serviceName_definedRoutes_GET(String serviceName) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/definedRoutes";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t8);
 	}
 	private static TypeReference<ArrayList<OvhDefinedRoute>> t8 = new TypeReference<ArrayList<OvhDefinedRoute>>() {};
@@ -2139,7 +2139,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public ArrayList<OvhDefinedBackend> serviceName_definedFarms_GET(String serviceName) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/definedFarms";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t9);
 	}
 	private static TypeReference<ArrayList<OvhDefinedBackend>> t9 = new TypeReference<ArrayList<OvhDefinedBackend>>() {};
@@ -2155,7 +2155,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public ArrayList<String> serviceName_availableFrontendType_GET(String serviceName) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/availableFrontendType";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -2169,7 +2169,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/ipLoadbalancing";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -2183,7 +2183,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public ArrayList<String> availableZones_GET() throws IOException {
 		String qPath = "/ipLoadbalancing/availableZones";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 }

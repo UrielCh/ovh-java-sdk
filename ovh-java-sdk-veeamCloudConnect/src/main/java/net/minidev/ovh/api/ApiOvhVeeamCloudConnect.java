@@ -15,7 +15,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/veeamCloudConnect
  * version:1.0
  */
@@ -33,7 +33,7 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/veeamCloudConnect/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -47,7 +47,7 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/veeamCloudConnect/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -59,7 +59,7 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 	public OvhAccount serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/veeamCloudConnect/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhAccount.class);
 	}
 
@@ -72,7 +72,7 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 	public ArrayList<OvhOffer> serviceName_orderableUpgrade_GET(String serviceName) throws IOException {
 		String qPath = "/veeamCloudConnect/{serviceName}/orderableUpgrade";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<OvhOffer>> t1 = new TypeReference<ArrayList<OvhOffer>>() {};
@@ -86,7 +86,7 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 	public ArrayList<String> serviceName_backupRepository_GET(String serviceName) throws IOException {
 		String qPath = "/veeamCloudConnect/{serviceName}/backupRepository";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};
@@ -100,7 +100,7 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 	public ArrayList<OvhTask> serviceName_backupRepository_POST(String serviceName) throws IOException {
 		String qPath = "/veeamCloudConnect/{serviceName}/backupRepository";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 	private static TypeReference<ArrayList<OvhTask>> t3 = new TypeReference<ArrayList<OvhTask>>() {};
@@ -115,7 +115,7 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 	public OvhBackupRepository serviceName_backupRepository_inventoryName_GET(String serviceName, String inventoryName) throws IOException {
 		String qPath = "/veeamCloudConnect/{serviceName}/backupRepository/{inventoryName}";
 		StringBuilder sb = path(qPath, serviceName, inventoryName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhBackupRepository.class);
 	}
 
@@ -129,7 +129,7 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 	public ArrayList<OvhTask> serviceName_backupRepository_inventoryName_DELETE(String serviceName, String inventoryName) throws IOException {
 		String qPath = "/veeamCloudConnect/{serviceName}/backupRepository/{inventoryName}";
 		StringBuilder sb = path(qPath, serviceName, inventoryName);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -146,7 +146,7 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName, inventoryName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "newQuota", newQuota);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, t3);
 	}
 
@@ -159,7 +159,7 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 	public OvhOfferCapabilities serviceName_capabilities_GET(String serviceName) throws IOException {
 		String qPath = "/veeamCloudConnect/{serviceName}/capabilities";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOfferCapabilities.class);
 	}
 
@@ -176,7 +176,7 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "name", name);
 		query(sb, "state", state);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t4);
 	}
 	private static TypeReference<ArrayList<Long>> t4 = new TypeReference<ArrayList<Long>>() {};
@@ -191,7 +191,7 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 	public OvhTask serviceName_task_taskId_GET(String serviceName, Long taskId) throws IOException {
 		String qPath = "/veeamCloudConnect/{serviceName}/task/{taskId}";
 		StringBuilder sb = path(qPath, serviceName, taskId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -203,7 +203,7 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/veeamCloudConnect";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 }

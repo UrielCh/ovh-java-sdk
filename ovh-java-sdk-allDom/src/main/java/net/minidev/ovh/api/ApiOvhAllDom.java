@@ -10,7 +10,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/allDom
  * version:1.0
  */
@@ -28,7 +28,7 @@ public class ApiOvhAllDom extends ApiOvhBase {
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/allDom/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -42,7 +42,7 @@ public class ApiOvhAllDom extends ApiOvhBase {
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/allDom/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -54,7 +54,7 @@ public class ApiOvhAllDom extends ApiOvhBase {
 	public OvhAllDom serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/allDom/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhAllDom.class);
 	}
 
@@ -68,7 +68,7 @@ public class ApiOvhAllDom extends ApiOvhBase {
 	public OvhAllDomDomain serviceName_domain_domain_GET(String serviceName, String domain) throws IOException {
 		String qPath = "/allDom/{serviceName}/domain/{domain}";
 		StringBuilder sb = path(qPath, serviceName, domain);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhAllDomDomain.class);
 	}
 
@@ -83,7 +83,7 @@ public class ApiOvhAllDom extends ApiOvhBase {
 		String qPath = "/allDom/{serviceName}/domain";
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "domain", domain);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
@@ -96,7 +96,7 @@ public class ApiOvhAllDom extends ApiOvhBase {
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/allDom";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 }

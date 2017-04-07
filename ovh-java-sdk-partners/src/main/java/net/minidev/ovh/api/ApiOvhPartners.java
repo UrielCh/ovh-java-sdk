@@ -27,7 +27,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/partners
  * version:1.0
  */
@@ -44,7 +44,7 @@ public class ApiOvhPartners extends ApiOvhBase {
 	public ArrayList<String> register_company_GET() throws IOException {
 		String qPath = "/partners/register/company";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
@@ -116,7 +116,7 @@ public class ApiOvhPartners extends ApiOvhBase {
 		addBody(o, "productCountries", productCountries);
 		addBody(o, "externalCertifications", externalCertifications);
 		addBody(o, "partnerKnowledges", partnerKnowledges);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhCompany.class);
 	}
 
@@ -129,7 +129,7 @@ public class ApiOvhPartners extends ApiOvhBase {
 	public OvhCompany register_company_companyId_GET(String companyId) throws IOException {
 		String qPath = "/partners/register/company/{companyId}";
 		StringBuilder sb = path(qPath, companyId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhCompany.class);
 	}
 
@@ -201,7 +201,7 @@ public class ApiOvhPartners extends ApiOvhBase {
 		addBody(o, "productCountries", productCountries);
 		addBody(o, "externalCertifications", externalCertifications);
 		addBody(o, "partnerKnowledges", partnerKnowledges);
-		String resp = exec("PUT", sb.toString(), o);
+		String resp = exec(qPath, "PUT", sb.toString(), o);
 		return convertTo(resp, OvhCompany.class);
 	}
 
@@ -214,7 +214,7 @@ public class ApiOvhPartners extends ApiOvhBase {
 	public String register_company_companyId_DELETE(String companyId) throws IOException {
 		String qPath = "/partners/register/company/{companyId}";
 		StringBuilder sb = path(qPath, companyId);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, String.class);
 	}
 
@@ -230,7 +230,7 @@ public class ApiOvhPartners extends ApiOvhBase {
 		StringBuilder sb = path(qPath, companyId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "termsAndConditionsOfServiceAccepted", termsAndConditionsOfServiceAccepted);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhApplication.class);
 	}
 
@@ -243,7 +243,7 @@ public class ApiOvhPartners extends ApiOvhBase {
 	public OvhApplication register_company_companyId_application_GET(String companyId) throws IOException {
 		String qPath = "/partners/register/company/{companyId}/application";
 		StringBuilder sb = path(qPath, companyId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhApplication.class);
 	}
 
@@ -256,7 +256,7 @@ public class ApiOvhPartners extends ApiOvhBase {
 	public ArrayList<String> register_company_companyId_contact_GET(String companyId) throws IOException {
 		String qPath = "/partners/register/company/{companyId}/contact";
 		StringBuilder sb = path(qPath, companyId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -290,7 +290,7 @@ public class ApiOvhPartners extends ApiOvhBase {
 		addBody(o, "facebook", facebook);
 		addBody(o, "twitter", twitter);
 		addBody(o, "newsletter", newsletter);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhContact.class);
 	}
 
@@ -304,7 +304,7 @@ public class ApiOvhPartners extends ApiOvhBase {
 	public OvhContact register_company_companyId_contact_contactId_GET(String companyId, String contactId) throws IOException {
 		String qPath = "/partners/register/company/{companyId}/contact/{contactId}";
 		StringBuilder sb = path(qPath, companyId, contactId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhContact.class);
 	}
 
@@ -339,7 +339,7 @@ public class ApiOvhPartners extends ApiOvhBase {
 		addBody(o, "facebook", facebook);
 		addBody(o, "twitter", twitter);
 		addBody(o, "newsletter", newsletter);
-		String resp = exec("PUT", sb.toString(), o);
+		String resp = exec(qPath, "PUT", sb.toString(), o);
 		return convertTo(resp, OvhContact.class);
 	}
 
@@ -353,7 +353,7 @@ public class ApiOvhPartners extends ApiOvhBase {
 	public String register_company_companyId_contact_contactId_DELETE(String companyId, String contactId) throws IOException {
 		String qPath = "/partners/register/company/{companyId}/contact/{contactId}";
 		StringBuilder sb = path(qPath, companyId, contactId);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, String.class);
 	}
 }

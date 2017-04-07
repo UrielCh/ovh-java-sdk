@@ -17,7 +17,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/saas/csp2
  * version:1.0
  */
@@ -37,7 +37,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/saas/csp2/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -53,7 +53,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/saas/csp2/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -69,7 +69,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 		String qPath = "/saas/csp2/{serviceName}/usageStatistics";
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "timePeriod", timePeriod);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<OvhStatistics>> t1 = new TypeReference<ArrayList<OvhStatistics>>() {};
@@ -85,7 +85,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	public OvhOfficeTenant serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/saas/csp2/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOfficeTenant.class);
 	}
 
@@ -101,7 +101,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	public void serviceName_PUT(String serviceName, OvhOfficeTenant body) throws IOException {
 		String qPath = "/saas/csp2/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -118,7 +118,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "newPassword", newPassword);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOfficeTask.class);
 	}
 
@@ -138,7 +138,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "supportedServices", supportedServices);
 		addBody(o, "domain", domain);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOfficeTask.class);
 	}
 
@@ -153,7 +153,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	public ArrayList<Long> serviceName_task_GET(String serviceName) throws IOException {
 		String qPath = "/saas/csp2/{serviceName}/task";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
@@ -170,7 +170,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	public OvhOfficeTask serviceName_task_id_GET(String serviceName, Long id) throws IOException {
 		String qPath = "/saas/csp2/{serviceName}/task/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOfficeTask.class);
 	}
 
@@ -185,7 +185,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	public ArrayList<Long> serviceName_orderableLicenses_GET(String serviceName) throws IOException {
 		String qPath = "/saas/csp2/{serviceName}/orderableLicenses";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -201,7 +201,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	public OvhOfficeLicence serviceName_orderableLicenses_id_GET(String serviceName, Long id) throws IOException {
 		String qPath = "/saas/csp2/{serviceName}/orderableLicenses/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOfficeLicence.class);
 	}
 
@@ -216,7 +216,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	public OvhBillingStatistics serviceName_billingPeriodPeaks_GET(String serviceName) throws IOException {
 		String qPath = "/saas/csp2/{serviceName}/billingPeriodPeaks";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhBillingStatistics.class);
 	}
 
@@ -231,7 +231,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	public ArrayList<Long> serviceName_subscription_GET(String serviceName) throws IOException {
 		String qPath = "/saas/csp2/{serviceName}/subscription";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -251,7 +251,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "licenseId", licenseId);
 		addBody(o, "quantity", quantity);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOfficeTask.class);
 	}
 
@@ -267,7 +267,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	public OvhOfficeSubscription serviceName_subscription_id_GET(String serviceName, Long id) throws IOException {
 		String qPath = "/saas/csp2/{serviceName}/subscription/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOfficeSubscription.class);
 	}
 
@@ -283,7 +283,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	public OvhOfficeTask serviceName_subscription_id_DELETE(String serviceName, Long id) throws IOException {
 		String qPath = "/saas/csp2/{serviceName}/subscription/{id}";
 		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhOfficeTask.class);
 	}
 
@@ -302,7 +302,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName, id);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "quantity", quantity);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOfficeTask.class);
 	}
 
@@ -316,7 +316,7 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/saas/csp2";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 	private static TypeReference<ArrayList<String>> t3 = new TypeReference<ArrayList<String>>() {};

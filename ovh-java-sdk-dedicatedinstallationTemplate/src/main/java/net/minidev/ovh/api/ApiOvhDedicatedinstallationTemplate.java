@@ -11,7 +11,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/dedicated/installationTemplate
  * version:1.0
  */
@@ -28,7 +28,7 @@ public class ApiOvhDedicatedinstallationTemplate extends ApiOvhBase {
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/dedicated/installationTemplate";
 		StringBuilder sb = path(qPath);
-		String resp = execN("GET", sb.toString());
+		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
@@ -42,7 +42,7 @@ public class ApiOvhDedicatedinstallationTemplate extends ApiOvhBase {
 	public OvhTemplates templateName_GET(String templateName) throws IOException {
 		String qPath = "/dedicated/installationTemplate/{templateName}";
 		StringBuilder sb = path(qPath, templateName);
-		String resp = execN("GET", sb.toString());
+		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTemplates.class);
 	}
 
@@ -55,7 +55,7 @@ public class ApiOvhDedicatedinstallationTemplate extends ApiOvhBase {
 	public ArrayList<String> templateName_partitionScheme_GET(String templateName) throws IOException {
 		String qPath = "/dedicated/installationTemplate/{templateName}/partitionScheme";
 		StringBuilder sb = path(qPath, templateName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -69,7 +69,7 @@ public class ApiOvhDedicatedinstallationTemplate extends ApiOvhBase {
 	public OvhTemplatePartitioningSchemes templateName_partitionScheme_schemeName_GET(String templateName, String schemeName) throws IOException {
 		String qPath = "/dedicated/installationTemplate/{templateName}/partitionScheme/{schemeName}";
 		StringBuilder sb = path(qPath, templateName, schemeName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTemplatePartitioningSchemes.class);
 	}
 
@@ -83,7 +83,7 @@ public class ApiOvhDedicatedinstallationTemplate extends ApiOvhBase {
 	public ArrayList<String> templateName_partitionScheme_schemeName_partition_GET(String templateName, String schemeName) throws IOException {
 		String qPath = "/dedicated/installationTemplate/{templateName}/partitionScheme/{schemeName}/partition";
 		StringBuilder sb = path(qPath, templateName, schemeName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -98,7 +98,7 @@ public class ApiOvhDedicatedinstallationTemplate extends ApiOvhBase {
 	public OvhTemplatePartitions templateName_partitionScheme_schemeName_partition_mountpoint_GET(String templateName, String schemeName, String mountpoint) throws IOException {
 		String qPath = "/dedicated/installationTemplate/{templateName}/partitionScheme/{schemeName}/partition/{mountpoint}";
 		StringBuilder sb = path(qPath, templateName, schemeName, mountpoint);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTemplatePartitions.class);
 	}
 
@@ -112,7 +112,7 @@ public class ApiOvhDedicatedinstallationTemplate extends ApiOvhBase {
 	public ArrayList<String> templateName_partitionScheme_schemeName_hardwareRaid_GET(String templateName, String schemeName) throws IOException {
 		String qPath = "/dedicated/installationTemplate/{templateName}/partitionScheme/{schemeName}/hardwareRaid";
 		StringBuilder sb = path(qPath, templateName, schemeName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -127,7 +127,7 @@ public class ApiOvhDedicatedinstallationTemplate extends ApiOvhBase {
 	public OvhHardwareRaid templateName_partitionScheme_schemeName_hardwareRaid_name_GET(String templateName, String schemeName, String name) throws IOException {
 		String qPath = "/dedicated/installationTemplate/{templateName}/partitionScheme/{schemeName}/hardwareRaid/{name}";
 		StringBuilder sb = path(qPath, templateName, schemeName, name);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhHardwareRaid.class);
 	}
 }

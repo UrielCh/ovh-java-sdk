@@ -17,7 +17,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/dbaas/timeseries
  * version:1.0
  */
@@ -35,7 +35,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 	public ArrayList<OvhQuota> serviceName_quota_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/timeseries/{serviceName}/quota";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<OvhQuota>> t1 = new TypeReference<ArrayList<OvhQuota>>() {};
@@ -49,7 +49,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/timeseries/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -63,7 +63,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/dbaas/timeseries/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -75,7 +75,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 	public OvhProject serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/timeseries/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhProject.class);
 	}
 
@@ -89,7 +89,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 	public void serviceName_PUT(String serviceName, OvhProject body) throws IOException {
 		String qPath = "/dbaas/timeseries/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -102,7 +102,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 	public ArrayList<OvhKey> serviceName_key_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/timeseries/{serviceName}/key";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<OvhKey>> t2 = new TypeReference<ArrayList<OvhKey>>() {};
@@ -124,7 +124,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 		addBody(o, "description", description);
 		addBody(o, "permissions", permissions);
 		addBody(o, "tags", tags);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhKey.class);
 	}
 
@@ -139,7 +139,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 	public OvhKey serviceName_key_keyId_GET(String serviceName, String keyId) throws IOException {
 		String qPath = "/dbaas/timeseries/{serviceName}/key/{keyId}";
 		StringBuilder sb = path(qPath, serviceName, keyId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhKey.class);
 	}
 
@@ -161,7 +161,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 		addBody(o, "description", description);
 		addBody(o, "permissions", permissions);
 		addBody(o, "tags", tags);
-		String resp = exec("PUT", sb.toString(), o);
+		String resp = exec(qPath, "PUT", sb.toString(), o);
 		return convertTo(resp, OvhKey.class);
 	}
 
@@ -176,7 +176,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 	public Boolean serviceName_key_keyId_DELETE(String serviceName, String keyId) throws IOException {
 		String qPath = "/dbaas/timeseries/{serviceName}/key/{keyId}";
 		StringBuilder sb = path(qPath, serviceName, keyId);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, Boolean.class);
 	}
 
@@ -196,7 +196,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 		addBody(o, "contactAdmin", contactAdmin);
 		addBody(o, "contactTech", contactTech);
 		addBody(o, "contactBilling", contactBilling);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, t3);
 	}
 	private static TypeReference<ArrayList<Long>> t3 = new TypeReference<ArrayList<Long>>() {};
@@ -221,7 +221,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 		addBody(o, "regionId", regionId);
 		addBody(o, "raTokenId", raTokenId);
 		addBody(o, "raTokenKey", raTokenKey);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, net.minidev.ovh.api.paas.timeseries.OvhProject.class);
 	}
 
@@ -234,7 +234,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 	public ArrayList<OvhConsumption> serviceName_consumption_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/timeseries/{serviceName}/consumption";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t4);
 	}
 	private static TypeReference<ArrayList<OvhConsumption>> t4 = new TypeReference<ArrayList<OvhConsumption>>() {};
@@ -250,7 +250,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 	public ArrayList<OvhOpenTSDBToken> serviceName_token_opentsdb_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/timeseries/{serviceName}/token/opentsdb";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t5);
 	}
 	private static TypeReference<ArrayList<OvhOpenTSDBToken>> t5 = new TypeReference<ArrayList<OvhOpenTSDBToken>>() {};
@@ -273,7 +273,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 		addBody(o, "description", description);
 		addBody(o, "permission", permission);
 		addBody(o, "tags", tags);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOpenTSDBToken.class);
 	}
 
@@ -289,7 +289,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 	public OvhOpenTSDBToken serviceName_token_opentsdb_tokenId_GET(String serviceName, String tokenId) throws IOException {
 		String qPath = "/dbaas/timeseries/{serviceName}/token/opentsdb/{tokenId}";
 		StringBuilder sb = path(qPath, serviceName, tokenId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOpenTSDBToken.class);
 	}
 
@@ -305,7 +305,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 	public Boolean serviceName_token_opentsdb_tokenId_DELETE(String serviceName, String tokenId) throws IOException {
 		String qPath = "/dbaas/timeseries/{serviceName}/token/opentsdb/{tokenId}";
 		StringBuilder sb = path(qPath, serviceName, tokenId);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, Boolean.class);
 	}
 
@@ -317,7 +317,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/dbaas/timeseries";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t6);
 	}
 	private static TypeReference<ArrayList<String>> t6 = new TypeReference<ArrayList<String>>() {};
@@ -330,7 +330,7 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 	public ArrayList<OvhRegion> region_GET() throws IOException {
 		String qPath = "/dbaas/timeseries/region";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t7);
 	}
 	private static TypeReference<ArrayList<OvhRegion>> t7 = new TypeReference<ArrayList<OvhRegion>>() {};

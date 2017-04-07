@@ -30,7 +30,7 @@ import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
 /**
- * BasePath:https://api.ovh.com/1.0
+ * BasePath:https://eu.api.ovh.com/1.0
  * ResourcePath:/dedicated/nasha
  * version:1.0
  */
@@ -48,7 +48,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/dedicated/nasha/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -62,7 +62,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/dedicated/nasha/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -74,7 +74,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	public OvhStorage serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/dedicated/nasha/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhStorage.class);
 	}
 
@@ -88,7 +88,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	public void serviceName_PUT(String serviceName, OvhStorage body) throws IOException {
 		String qPath = "/dedicated/nasha/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -107,7 +107,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 		addBody(o, "reason", reason);
 		addBody(o, "commentary", commentary);
 		addBody(o, "token", token);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -120,7 +120,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	public String serviceName_terminate_POST(String serviceName) throws IOException {
 		String qPath = "/dedicated/nasha/{serviceName}/terminate";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("POST", sb.toString());
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, String.class);
 	}
 
@@ -137,7 +137,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "operation", operation);
 		query(sb, "status", status);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
@@ -152,7 +152,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	public OvhTask serviceName_task_taskId_GET(String serviceName, Long taskId) throws IOException {
 		String qPath = "/dedicated/nasha/{serviceName}/task/{taskId}";
 		StringBuilder sb = path(qPath, serviceName, taskId);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -172,7 +172,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 		addBody(o, "contactAdmin", contactAdmin);
 		addBody(o, "contactTech", contactTech);
 		addBody(o, "contactBilling", contactBilling);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, t1);
 	}
 
@@ -185,7 +185,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	public OvhTask serviceName_vrack_DELETE(String serviceName) throws IOException {
 		String qPath = "/dedicated/nasha/{serviceName}/vrack";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -200,7 +200,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 		String qPath = "/dedicated/nasha/{serviceName}/use";
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "type", type);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<OvhUnitAndValue<Double>> t2 = new TypeReference<OvhUnitAndValue<Double>>() {};
@@ -214,7 +214,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	public ArrayList<String> serviceName_partition_GET(String serviceName) throws IOException {
 		String qPath = "/dedicated/nasha/{serviceName}/partition";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 	private static TypeReference<ArrayList<String>> t3 = new TypeReference<ArrayList<String>>() {};
@@ -235,7 +235,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 		addBody(o, "protocol", protocol);
 		addBody(o, "partitionName", partitionName);
 		addBody(o, "size", size);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -249,7 +249,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	public ArrayList<Long> serviceName_partition_partitionName_quota_GET(String serviceName, String partitionName) throws IOException {
 		String qPath = "/dedicated/nasha/{serviceName}/partition/{partitionName}/quota";
 		StringBuilder sb = path(qPath, serviceName, partitionName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
@@ -268,7 +268,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "uid", uid);
 		addBody(o, "size", size);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -283,7 +283,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	public OvhQuota serviceName_partition_partitionName_quota_uid_GET(String serviceName, String partitionName, Long uid) throws IOException {
 		String qPath = "/dedicated/nasha/{serviceName}/partition/{partitionName}/quota/{uid}";
 		StringBuilder sb = path(qPath, serviceName, partitionName, uid);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhQuota.class);
 	}
 
@@ -298,7 +298,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	public OvhTask serviceName_partition_partitionName_quota_uid_DELETE(String serviceName, String partitionName, Long uid) throws IOException {
 		String qPath = "/dedicated/nasha/{serviceName}/partition/{partitionName}/quota/{uid}";
 		StringBuilder sb = path(qPath, serviceName, partitionName, uid);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -312,7 +312,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	public OvhPartition serviceName_partition_partitionName_GET(String serviceName, String partitionName) throws IOException {
 		String qPath = "/dedicated/nasha/{serviceName}/partition/{partitionName}";
 		StringBuilder sb = path(qPath, serviceName, partitionName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPartition.class);
 	}
 
@@ -327,7 +327,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	public void serviceName_partition_partitionName_PUT(String serviceName, String partitionName, OvhPartition body) throws IOException {
 		String qPath = "/dedicated/nasha/{serviceName}/partition/{partitionName}";
 		StringBuilder sb = path(qPath, serviceName, partitionName);
-		exec("PUT", sb.toString(), body);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -340,7 +340,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	public OvhTask serviceName_partition_partitionName_DELETE(String serviceName, String partitionName) throws IOException {
 		String qPath = "/dedicated/nasha/{serviceName}/partition/{partitionName}";
 		StringBuilder sb = path(qPath, serviceName, partitionName);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -354,7 +354,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	public ArrayList<String> serviceName_partition_partitionName_authorizableBlocks_GET(String serviceName, String partitionName) throws IOException {
 		String qPath = "/dedicated/nasha/{serviceName}/partition/{partitionName}/authorizableBlocks";
 		StringBuilder sb = path(qPath, serviceName, partitionName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -368,7 +368,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	public OvhOptions serviceName_partition_partitionName_options_GET(String serviceName, String partitionName) throws IOException {
 		String qPath = "/dedicated/nasha/{serviceName}/partition/{partitionName}/options";
 		StringBuilder sb = path(qPath, serviceName, partitionName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOptions.class);
 	}
 
@@ -389,7 +389,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 		addBody(o, "recordsize", recordsize);
 		addBody(o, "sync", sync);
 		addBody(o, "atime", atime);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -403,7 +403,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	public ArrayList<String> serviceName_partition_partitionName_access_GET(String serviceName, String partitionName) throws IOException {
 		String qPath = "/dedicated/nasha/{serviceName}/partition/{partitionName}/access";
 		StringBuilder sb = path(qPath, serviceName, partitionName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -422,7 +422,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "ip", ip);
 		addBody(o, "type", type);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -437,7 +437,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	public OvhAccess serviceName_partition_partitionName_access_ip_GET(String serviceName, String partitionName, String ip) throws IOException {
 		String qPath = "/dedicated/nasha/{serviceName}/partition/{partitionName}/access/{ip}";
 		StringBuilder sb = path(qPath, serviceName, partitionName, ip);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhAccess.class);
 	}
 
@@ -452,7 +452,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	public OvhTask serviceName_partition_partitionName_access_ip_DELETE(String serviceName, String partitionName, String ip) throws IOException {
 		String qPath = "/dedicated/nasha/{serviceName}/partition/{partitionName}/access/{ip}";
 		StringBuilder sb = path(qPath, serviceName, partitionName, ip);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -468,7 +468,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	public ArrayList<String> serviceName_partition_partitionName_customSnapshot_GET(String serviceName, String partitionName) throws IOException {
 		String qPath = "/dedicated/nasha/{serviceName}/partition/{partitionName}/customSnapshot";
 		StringBuilder sb = path(qPath, serviceName, partitionName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -489,7 +489,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "expiration", expiration);
 		addBody(o, "name", name);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -506,7 +506,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	public OvhCustomSnap serviceName_partition_partitionName_customSnapshot_name_GET(String serviceName, String partitionName, String name) throws IOException {
 		String qPath = "/dedicated/nasha/{serviceName}/partition/{partitionName}/customSnapshot/{name}";
 		StringBuilder sb = path(qPath, serviceName, partitionName, name);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhCustomSnap.class);
 	}
 
@@ -523,7 +523,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	public OvhTask serviceName_partition_partitionName_customSnapshot_name_DELETE(String serviceName, String partitionName, String name) throws IOException {
 		String qPath = "/dedicated/nasha/{serviceName}/partition/{partitionName}/customSnapshot/{name}";
 		StringBuilder sb = path(qPath, serviceName, partitionName, name);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -539,7 +539,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 		String qPath = "/dedicated/nasha/{serviceName}/partition/{partitionName}/use";
 		StringBuilder sb = path(qPath, serviceName, partitionName);
 		query(sb, "type", type);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
@@ -553,7 +553,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	public ArrayList<String> serviceName_partition_partitionName_authorizableIps_GET(String serviceName, String partitionName) throws IOException {
 		String qPath = "/dedicated/nasha/{serviceName}/partition/{partitionName}/authorizableIps";
 		StringBuilder sb = path(qPath, serviceName, partitionName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -567,7 +567,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	public ArrayList<OvhSnapshotEnum> serviceName_partition_partitionName_snapshot_GET(String serviceName, String partitionName) throws IOException {
 		String qPath = "/dedicated/nasha/{serviceName}/partition/{partitionName}/snapshot";
 		StringBuilder sb = path(qPath, serviceName, partitionName);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t4);
 	}
 	private static TypeReference<ArrayList<OvhSnapshotEnum>> t4 = new TypeReference<ArrayList<OvhSnapshotEnum>>() {};
@@ -585,7 +585,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName, partitionName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "snapshotType", snapshotType);
-		String resp = exec("POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -600,7 +600,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	public OvhSnapshot serviceName_partition_partitionName_snapshot_snapshotType_GET(String serviceName, String partitionName, net.minidev.ovh.api.dedicated.storage.OvhSnapshotEnum snapshotType) throws IOException {
 		String qPath = "/dedicated/nasha/{serviceName}/partition/{partitionName}/snapshot/{snapshotType}";
 		StringBuilder sb = path(qPath, serviceName, partitionName, snapshotType);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhSnapshot.class);
 	}
 
@@ -615,7 +615,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	public OvhTask serviceName_partition_partitionName_snapshot_snapshotType_DELETE(String serviceName, String partitionName, net.minidev.ovh.api.dedicated.storage.OvhSnapshotEnum snapshotType) throws IOException {
 		String qPath = "/dedicated/nasha/{serviceName}/partition/{partitionName}/snapshot/{snapshotType}";
 		StringBuilder sb = path(qPath, serviceName, partitionName, snapshotType);
-		String resp = exec("DELETE", sb.toString());
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -627,7 +627,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/dedicated/nasha";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
@@ -639,7 +639,7 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	public ArrayList<OvhNasHAAvailabilities> availabilities_GET() throws IOException {
 		String qPath = "/dedicated/nasha/availabilities";
 		StringBuilder sb = path(qPath);
-		String resp = exec("GET", sb.toString());
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t5);
 	}
 	private static TypeReference<ArrayList<OvhNasHAAvailabilities>> t5 = new TypeReference<ArrayList<OvhNasHAAvailabilities>>() {};
