@@ -43,7 +43,7 @@ public class OvhBackendTCPServer {
 	public Long backendId;
 
 	/**
-	 * Weight value (1 if null)
+	 * Weight of the server (0 if null). Servers with higher weight get more requests.
 	 *
 	 * canBeNull && readOnly
 	 */
@@ -71,7 +71,7 @@ public class OvhBackendTCPServer {
 	public OvhBackendCustomerServerStatusEnum status;
 
 	/**
-	 * Enforce use of the PROXY protocol version over any connection established to this server (disabled if null)
+	 * Disabled if null. Send PROXY protocol header. Requires a compatible server.
 	 *
 	 * canBeNull && readOnly
 	 */

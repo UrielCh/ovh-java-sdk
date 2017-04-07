@@ -26,14 +26,14 @@ public class OvhFrontendHttp {
 	public String zone;
 
 	/**
-	 * Port(s) attached to your frontend
+	 * Listening port(s) on the server
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String port;
 
 	/**
-	 * Restrict iplb access to these ip block. No restriction if null
+	 * Restrict IP Load Balancing access to these ip block. No restriction if null
 	 *
 	 * canBeNull && readOnly
 	 */

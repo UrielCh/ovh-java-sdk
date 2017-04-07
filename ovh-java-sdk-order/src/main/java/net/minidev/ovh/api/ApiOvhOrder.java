@@ -3636,6 +3636,80 @@ public class ApiOvhOrder extends ApiOvhBase {
 	}
 
 	/**
+	 * Get informations about CDN offers
+	 *
+	 * REST: GET /order/cart/{cartId}/cdn
+	 * @param cartId [required] Cart identifier
+	 */
+	public ArrayList<OvhGenericProductDefinition> cart_cartId_cdn_GET(String cartId) throws IOException {
+		String qPath = "/order/cart/{cartId}/cdn";
+		qPath = qPath.replace("{cartId}", cartId);
+		String resp = execN("GET", qPath);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Post a new CDN item in your cart
+	 *
+	 * REST: POST /order/cart/{cartId}/cdn
+	 * @param cartId [required] Cart identifier
+	 * @param planCode [required] Identifier of the CDN offer
+	 * @param duration [required] Duration selected for the purchase of the product
+	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
+	 * @param quantity [required] Quantity of product desired
+	 */
+	public OvhItem cart_cartId_cdn_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
+		String qPath = "/order/cart/{cartId}/cdn";
+		qPath = qPath.replace("{cartId}", cartId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "planCode", planCode);
+		addBody(o, "duration", duration);
+		addBody(o, "pricingMode", pricingMode);
+		addBody(o, "quantity", quantity);
+		String resp = execN("POST", qPath, o);
+		return convertTo(resp, OvhItem.class);
+	}
+
+	/**
+	 * Get informations about CDN options
+	 *
+	 * REST: GET /order/cart/{cartId}/cdn/options
+	 * @param cartId [required] Cart identifier
+	 * @param planCode [required] Identifier of the CDN offer you want to consult options
+	 */
+	public ArrayList<OvhGenericOptionDefinition> cart_cartId_cdn_options_GET(String cartId, String planCode) throws IOException {
+		String qPath = "/order/cart/{cartId}/cdn/options";
+		qPath = qPath.replace("{cartId}", cartId);
+		qPath = query(qPath, "planCode", planCode);
+		String resp = execN("GET", qPath);
+		return convertTo(resp, t3);
+	}
+
+	/**
+	 * Post a new CDN option in your cart
+	 *
+	 * REST: POST /order/cart/{cartId}/cdn/options
+	 * @param cartId [required] Cart identifier
+	 * @param itemId [required] Cart item offer parent of the option
+	 * @param planCode [required] Identifier of a CDN option offer
+	 * @param duration [required] Duration selected for the purchase of the product
+	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
+	 * @param quantity [required] Quantity of product desired
+	 */
+	public OvhItem cart_cartId_cdn_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
+		String qPath = "/order/cart/{cartId}/cdn/options";
+		qPath = qPath.replace("{cartId}", cartId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "itemId", itemId);
+		addBody(o, "planCode", planCode);
+		addBody(o, "duration", duration);
+		addBody(o, "pricingMode", pricingMode);
+		addBody(o, "quantity", quantity);
+		String resp = execN("POST", qPath, o);
+		return convertTo(resp, OvhItem.class);
+	}
+
+	/**
 	 * Get informations about VoIP offers
 	 *
 	 * REST: GET /order/cart/{cartId}/telephony

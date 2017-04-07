@@ -3650,6 +3650,22 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	}
 
 	/**
+	 * Check if security deposit transfer is possible between two billing accounts
+	 *
+	 * REST: POST /telephony/{billingAccount}/canTransferSecurityDeposit
+	 * @param billingAccountDestination [required] The destination billing account
+	 * @param billingAccount [required] The name of your billingAccount
+	 */
+	public Boolean billingAccount_canTransferSecurityDeposit_POST(String billingAccount, String billingAccountDestination) throws IOException {
+		String qPath = "/telephony/{billingAccount}/canTransferSecurityDeposit";
+		qPath = qPath.replace("{billingAccount}", billingAccount);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "billingAccountDestination", billingAccountDestination);
+		String resp = exec("POST", qPath, o);
+		return convertTo(resp, Boolean.class);
+	}
+
+	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /telephony/{billingAccount}/eventToken
@@ -3819,22 +3835,6 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		qPath = qPath.replace("{billingAccount}", billingAccount);
 		qPath = qPath.replace("{id}", id.toString());
 		exec("POST", qPath);
-	}
-
-	/**
-	 * Check if security deposit transfer is possible between two billing accounts
-	 *
-	 * REST: POST /telephony/{billingAccount}/canTransferSecurityDeposit
-	 * @param billingAccountDestination [required] The destination billing account
-	 * @param billingAccount [required] The name of your billingAccount
-	 */
-	public Boolean billingAccount_canTransferSecurityDeposit_POST(String billingAccount, String billingAccountDestination) throws IOException {
-		String qPath = "/telephony/{billingAccount}/canTransferSecurityDeposit";
-		qPath = qPath.replace("{billingAccount}", billingAccount);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "billingAccountDestination", billingAccountDestination);
-		String resp = exec("POST", qPath, o);
-		return convertTo(resp, Boolean.class);
 	}
 
 	/**
@@ -6380,6 +6380,40 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		String qPath = "/telephony/{billingAccount}/cancelTermination";
 		qPath = qPath.replace("{billingAccount}", billingAccount);
 		exec("POST", qPath);
+	}
+
+	/**
+	 * Operations on a telephony billing account
+	 *
+	 * REST: GET /telephony/{billingAccount}/task
+	 * @param serviceType [required] Filter the value of serviceType property (=)
+	 * @param status [required] Filter the value of status property (=)
+	 * @param action [required] Filter the value of action property (=)
+	 * @param billingAccount [required] The name of your billingAccount
+	 */
+	public ArrayList<Long> billingAccount_task_GET(String billingAccount, String action, String serviceType, OvhTaskStatusEnum status) throws IOException {
+		String qPath = "/telephony/{billingAccount}/task";
+		qPath = qPath.replace("{billingAccount}", billingAccount);
+		qPath = query(qPath, "action", action);
+		qPath = query(qPath, "serviceType", serviceType);
+		qPath = query(qPath, "status", status);
+		String resp = exec("GET", qPath);
+		return convertTo(resp, t3);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /telephony/{billingAccount}/task/{taskId}
+	 * @param billingAccount [required] The name of your billingAccount
+	 * @param taskId [required]
+	 */
+	public OvhTask billingAccount_task_taskId_GET(String billingAccount, Long taskId) throws IOException {
+		String qPath = "/telephony/{billingAccount}/task/{taskId}";
+		qPath = qPath.replace("{billingAccount}", billingAccount);
+		qPath = qPath.replace("{taskId}", taskId.toString());
+		String resp = exec("GET", qPath);
+		return convertTo(resp, OvhTask.class);
 	}
 
 	/**

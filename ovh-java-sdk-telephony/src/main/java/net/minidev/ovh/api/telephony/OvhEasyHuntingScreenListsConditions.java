@@ -22,4 +22,11 @@ public class OvhEasyHuntingScreenListsConditions {
 	 * canBeNull && readOnly
 	 */
 	public Long conditionId;
+
+	/**
+	 * Screenlist based on the destination number
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String destinationNumber;
 }

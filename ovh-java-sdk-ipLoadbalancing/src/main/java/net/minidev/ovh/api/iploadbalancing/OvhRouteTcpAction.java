@@ -12,7 +12,7 @@ public class OvhRouteTcpAction {
 	public String type;
 
 	/**
-	 * Backend ID for "backend" action type
+	 * Farm ID for "farm" action type, empty for others
 	 *
 	 * canBeNull
 	 */

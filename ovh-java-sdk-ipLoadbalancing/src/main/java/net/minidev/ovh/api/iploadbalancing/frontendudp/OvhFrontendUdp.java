@@ -12,7 +12,7 @@ public class OvhFrontendUdp {
 	public String zone;
 
 	/**
-	 * Port attached to your frontend
+	 * Listening port(s) on the server
 	 *
 	 * canBeNull && readOnly
 	 */

@@ -10,6 +10,7 @@ public enum OvhOvhPabxDialplanExtensionRuleActionEnum {
 	hunting("hunting"),
 	ivr("ivr"),
 	playback("playback"),
+	readDtmf("readDtmf"),
 	setCallerName("setCallerName"),
 	sleep("sleep"),
 	tts("tts"),

@@ -12,7 +12,7 @@ public class OvhRouteHttpAction {
 	public String type;
 
 	/**
-	 * Backend ID for "backend" action type or URL template for "redirect" action. You may use ${uri}, ${protocol}, ${host}, ${port} and ${path} variables in redirect target
+	 * Farm ID for "farm" action type or URL template for "redirect" action. You may use ${uri}, ${protocol}, ${host}, ${port} and ${path} variables in redirect target
 	 *
 	 * canBeNull
 	 */

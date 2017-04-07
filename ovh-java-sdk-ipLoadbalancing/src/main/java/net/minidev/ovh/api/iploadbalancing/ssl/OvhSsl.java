@@ -7,35 +7,36 @@ import net.minidev.ovh.api.iploadbalancing.OvhSslTypeEnum;
  */
 public class OvhSsl {
 	/**
-	 * Serial of your ssl certificate (Deprecated, use fingerprint instead !)
+	 * Serial of your SSL certificate (Deprecated, use fingerprint instead !)
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String serial;
 
 	/**
-	 * Subject of your ssl certificate
+	 * Subject of your SSL certificate
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String subject;
 
 	/**
-	 * Fingerprint of your ssl certificate
+	 * Fingerprint of your SSL certificate
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String fingerprint;
 
 	/**
-	 * Id of your ssl certificate
+	 * Id of your SSL certificate
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long id;
 
 	/**
-	 * Type of your ssl certificate
+	 * Type of your SSL certificate.
+'built' for SSL certificates managed by the IP Load Balancing. 'custom' for user manager certificates.
 	 *
 	 * canBeNull && readOnly
 	 */

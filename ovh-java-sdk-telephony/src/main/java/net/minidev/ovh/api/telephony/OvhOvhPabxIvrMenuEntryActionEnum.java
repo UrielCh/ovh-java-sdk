@@ -11,6 +11,7 @@ public enum OvhOvhPabxIvrMenuEntryActionEnum {
 	menuSub("menuSub"),
 	menuTop("menuTop"),
 	playback("playback"),
+	readDtmf("readDtmf"),
 	setCallerName("setCallerName");
 
 	final String value;

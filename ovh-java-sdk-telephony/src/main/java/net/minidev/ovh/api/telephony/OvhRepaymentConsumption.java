@@ -45,6 +45,20 @@ public class OvhRepaymentConsumption {
 	public String calling;
 
 	/**
+	 * Is the call repayable right now
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean repayable;
+
+	/**
+	 * Calling number's operator
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String operator;
+
+	/**
 	 * the Datetime of the start of the call
 	 *
 	 * canBeNull && readOnly

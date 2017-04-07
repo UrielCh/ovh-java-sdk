@@ -21,6 +21,13 @@ public class OvhBackupQuota {
 	public OvhUnitAndValue<Long> storageUsed;
 
 	/**
+	 * Volume usage in percent
+	 *
+	 * canBeNull
+	 */
+	public String usagePercent;
+
+	/**
 	 * Container max size.
 	 *
 	 * canBeNull

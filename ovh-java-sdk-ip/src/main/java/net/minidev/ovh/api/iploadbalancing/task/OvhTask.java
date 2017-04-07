@@ -5,39 +5,39 @@ import net.minidev.ovh.api.iploadbalancing.OvhTaskActionEnum;
 import net.minidev.ovh.api.iploadbalancing.OvhTaskStatusEnum;
 
 /**
- * Task of your iplb
+ * IP Load Balancing Operations
  */
 public class OvhTask {
 	/**
-	 * Task progress percentage
+	 * Operation progress percentage
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long progress;
 
 	/**
-	 * The action made
+	 * Operation type
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhTaskActionEnum action;
 
 	/**
-	 * Id of the task
+	 * Id of the operation
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long id;
 
 	/**
-	 * Creation date of your task
+	 * Creation date of your operation
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date creationDate;
 
 	/**
-	 * Current status of your task
+	 * Current status of your operation
 	 *
 	 * canBeNull && readOnly
 	 */
