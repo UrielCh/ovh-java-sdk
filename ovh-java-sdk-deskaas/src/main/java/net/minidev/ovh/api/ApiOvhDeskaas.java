@@ -32,8 +32,8 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 	 */
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/deskaas/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -46,8 +46,8 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/deskaas/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -58,8 +58,8 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 	 */
 	public OvhPasswordPolicy serviceName_passwordPolicy_GET(String serviceName) throws IOException {
 		String qPath = "/deskaas/{serviceName}/passwordPolicy";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhPasswordPolicy.class);
 	}
 
@@ -71,8 +71,8 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 	 */
 	public OvhDeskaas serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/deskaas/{serviceName}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhDeskaas.class);
 	}
 
@@ -84,8 +84,8 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_reboot_POST(String serviceName) throws IOException {
 		String qPath = "/deskaas/{serviceName}/reboot";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -97,8 +97,8 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_console_POST(String serviceName) throws IOException {
 		String qPath = "/deskaas/{serviceName}/console";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -110,8 +110,8 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 	 */
 	public String serviceName_terminate_POST(String serviceName) throws IOException {
 		String qPath = "/deskaas/{serviceName}/terminate";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, String.class);
 	}
 
@@ -126,12 +126,12 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 	 */
 	public String serviceName_confirmTermination_POST(String serviceName, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
 		String qPath = "/deskaas/{serviceName}/confirmTermination";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "reason", reason);
 		addBody(o, "commentary", commentary);
 		addBody(o, "token", token);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -144,9 +144,9 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_task_GET(String serviceName, OvhTaskStateEnum state) throws IOException {
 		String qPath = "/deskaas/{serviceName}/task";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = query(qPath, "state", state);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "state", state);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
@@ -160,9 +160,8 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_task_taskId_GET(String serviceName, Long taskId) throws IOException {
 		String qPath = "/deskaas/{serviceName}/task/{taskId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{taskId}", taskId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, taskId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -177,12 +176,12 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
 		String qPath = "/deskaas/{serviceName}/changeContact";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "contactAdmin", contactAdmin);
 		addBody(o, "contactTech", contactTech);
 		addBody(o, "contactBilling", contactBilling);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, t1);
 	}
 
@@ -194,8 +193,8 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_refresh_POST(String serviceName) throws IOException {
 		String qPath = "/deskaas/{serviceName}/refresh";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -207,8 +206,8 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 	 */
 	public OvhUser serviceName_user_GET(String serviceName) throws IOException {
 		String qPath = "/deskaas/{serviceName}/user";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhUser.class);
 	}
 
@@ -221,10 +220,10 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_user_changeProperties_POST(String serviceName, String email) throws IOException {
 		String qPath = "/deskaas/{serviceName}/user/changeProperties";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "email", email);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -237,10 +236,10 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_user_changePassword_POST(String serviceName, String password) throws IOException {
 		String qPath = "/deskaas/{serviceName}/user/changePassword";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "password", password);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -253,9 +252,9 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_user_task_GET(String serviceName, OvhTaskStateEnum state) throws IOException {
 		String qPath = "/deskaas/{serviceName}/user/task";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = query(qPath, "state", state);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "state", state);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -268,9 +267,8 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_user_task_taskId_GET(String serviceName, Long taskId) throws IOException {
 		String qPath = "/deskaas/{serviceName}/user/task/{taskId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{taskId}", taskId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, taskId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -283,10 +281,10 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_changeAlias_POST(String serviceName, String alias) throws IOException {
 		String qPath = "/deskaas/{serviceName}/changeAlias";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "alias", alias);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -300,11 +298,11 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_upgrade_POST(String serviceName, String newReference, String planCode) throws IOException {
 		String qPath = "/deskaas/{serviceName}/upgrade";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "newReference", newReference);
 		addBody(o, "planCode", planCode);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -315,7 +313,8 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 	 */
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/deskaas";
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};

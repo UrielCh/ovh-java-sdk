@@ -55,6 +55,7 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 	 */
 	public OvhNewAccountAndToken POST(String firstname, String vat, String spareEmail, String nationalIdentificationNumber, String birthDay, String area, OvhOvhSubsidiaryEnum ovhSubsidiary, OvhOvhCompanyEnum ovhCompany, String email, String city, String fax, String address, String companyNationalIdentificationNumber, OvhCountryEnum country, String birthCity, String organisation, OvhLanguageEnum language, String name, OvhGenderEnum sex, String phone, String zip, String corporationType, OvhLegalFormEnum legalform) throws IOException {
 		String qPath = "/newAccount";
+		StringBuilder sb = path(qPath);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "firstname", firstname);
 		addBody(o, "vat", vat);
@@ -79,7 +80,7 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 		addBody(o, "zip", zip);
 		addBody(o, "corporationType", corporationType);
 		addBody(o, "legalform", legalform);
-		String resp = execN("POST", qPath, o);
+		String resp = execN("POST", sb.toString(), o);
 		return convertTo(resp, OvhNewAccountAndToken.class);
 	}
 
@@ -91,8 +92,9 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 	 */
 	public ArrayList<String> area_GET(OvhCountryEnum country) throws IOException {
 		String qPath = "/newAccount/area";
-		qPath = query(qPath, "country", country);
-		String resp = execN("GET", qPath);
+		StringBuilder sb = path(qPath);
+		query(sb, "country", country);
+		String resp = execN("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
@@ -108,11 +110,12 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 	 */
 	public OvhCreationRules creationRules_GET(OvhCountryEnum country, OvhLegalFormEnum legalform, OvhOvhCompanyEnum ovhCompany, OvhOvhSubsidiaryEnum ovhSubsidiary) throws IOException {
 		String qPath = "/newAccount/creationRules";
-		qPath = query(qPath, "country", country);
-		qPath = query(qPath, "legalform", legalform);
-		qPath = query(qPath, "ovhCompany", ovhCompany);
-		qPath = query(qPath, "ovhSubsidiary", ovhSubsidiary);
-		String resp = execN("GET", qPath);
+		StringBuilder sb = path(qPath);
+		query(sb, "country", country);
+		query(sb, "legalform", legalform);
+		query(sb, "ovhCompany", ovhCompany);
+		query(sb, "ovhSubsidiary", ovhSubsidiary);
+		String resp = execN("GET", sb.toString());
 		return convertTo(resp, OvhCreationRules.class);
 	}
 
@@ -124,8 +127,9 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 	 */
 	public ArrayList<String> corporationType_GET(OvhCountryEnum country) throws IOException {
 		String qPath = "/newAccount/corporationType";
-		qPath = query(qPath, "country", country);
-		String resp = execN("GET", qPath);
+		StringBuilder sb = path(qPath);
+		query(sb, "country", country);
+		String resp = execN("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -137,8 +141,9 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 	 */
 	public ArrayList<String> legalform_GET(OvhCountryEnum country) throws IOException {
 		String qPath = "/newAccount/legalform";
-		qPath = query(qPath, "country", country);
-		String resp = execN("GET", qPath);
+		StringBuilder sb = path(qPath);
+		query(sb, "country", country);
+		String resp = execN("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -151,9 +156,10 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 	 */
 	public ArrayList<OvhCountryEnum> countries_GET(OvhOvhCompanyEnum ovhCompany, OvhOvhSubsidiaryEnum ovhSubsidiary) throws IOException {
 		String qPath = "/newAccount/countries";
-		qPath = query(qPath, "ovhCompany", ovhCompany);
-		qPath = query(qPath, "ovhSubsidiary", ovhSubsidiary);
-		String resp = execN("GET", qPath);
+		StringBuilder sb = path(qPath);
+		query(sb, "ovhCompany", ovhCompany);
+		query(sb, "ovhSubsidiary", ovhSubsidiary);
+		String resp = execN("GET", sb.toString());
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<OvhCountryEnum>> t2 = new TypeReference<ArrayList<OvhCountryEnum>>() {};

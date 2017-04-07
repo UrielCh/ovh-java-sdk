@@ -27,8 +27,8 @@ public class ApiOvhAllDom extends ApiOvhBase {
 	 */
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/allDom/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -41,8 +41,8 @@ public class ApiOvhAllDom extends ApiOvhBase {
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/allDom/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -53,8 +53,8 @@ public class ApiOvhAllDom extends ApiOvhBase {
 	 */
 	public OvhAllDom serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/allDom/{serviceName}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhAllDom.class);
 	}
 
@@ -67,9 +67,8 @@ public class ApiOvhAllDom extends ApiOvhBase {
 	 */
 	public OvhAllDomDomain serviceName_domain_domain_GET(String serviceName, String domain) throws IOException {
 		String qPath = "/allDom/{serviceName}/domain/{domain}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{domain}", domain);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, domain);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhAllDomDomain.class);
 	}
 
@@ -82,9 +81,9 @@ public class ApiOvhAllDom extends ApiOvhBase {
 	 */
 	public ArrayList<String> serviceName_domain_GET(String serviceName, String domain) throws IOException {
 		String qPath = "/allDom/{serviceName}/domain";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = query(qPath, "domain", domain);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "domain", domain);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
@@ -96,7 +95,8 @@ public class ApiOvhAllDom extends ApiOvhBase {
 	 */
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/allDom";
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 }

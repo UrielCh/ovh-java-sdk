@@ -29,8 +29,8 @@ public class ApiOvhHpcspot extends ApiOvhBase {
 	 */
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/hpcspot/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -43,8 +43,8 @@ public class ApiOvhHpcspot extends ApiOvhBase {
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/hpcspot/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -55,8 +55,8 @@ public class ApiOvhHpcspot extends ApiOvhBase {
 	 */
 	public OvhAccount serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/hpcspot/{serviceName}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhAccount.class);
 	}
 
@@ -73,13 +73,13 @@ public class ApiOvhHpcspot extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_consumption_GET(String serviceName, Date hpcspotItemEndDate_from, Date hpcspotItemEndDate_to, Long hpcspotItemId, Long orderId, OvhConsumptionTypeEnum type) throws IOException {
 		String qPath = "/hpcspot/{serviceName}/consumption";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = query(qPath, "hpcspotItemEndDate.from", hpcspotItemEndDate_from);
-		qPath = query(qPath, "hpcspotItemEndDate.to", hpcspotItemEndDate_to);
-		qPath = query(qPath, "hpcspotItemId", hpcspotItemId);
-		qPath = query(qPath, "orderId", orderId);
-		qPath = query(qPath, "type", type);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "hpcspotItemEndDate.from", hpcspotItemEndDate_from);
+		query(sb, "hpcspotItemEndDate.to", hpcspotItemEndDate_to);
+		query(sb, "hpcspotItemId", hpcspotItemId);
+		query(sb, "orderId", orderId);
+		query(sb, "type", type);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
@@ -93,9 +93,8 @@ public class ApiOvhHpcspot extends ApiOvhBase {
 	 */
 	public OvhConsumption serviceName_consumption_id_GET(String serviceName, Long id) throws IOException {
 		String qPath = "/hpcspot/{serviceName}/consumption/{id}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhConsumption.class);
 	}
 
@@ -106,7 +105,8 @@ public class ApiOvhHpcspot extends ApiOvhBase {
 	 */
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/hpcspot";
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};

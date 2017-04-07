@@ -55,8 +55,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhService domain_serviceInfos_GET(String domain) throws IOException {
 		String qPath = "/email/domain/{domain}/serviceInfos";
-		qPath = qPath.replace("{domain}", domain);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -69,8 +69,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public void domain_serviceInfos_PUT(String domain, OvhService body) throws IOException {
 		String qPath = "/email/domain/{domain}/serviceInfos";
-		qPath = qPath.replace("{domain}", domain);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, domain);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -81,8 +81,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhDomainQuota domain_quota_GET(String domain) throws IOException {
 		String qPath = "/email/domain/{domain}/quota";
-		qPath = qPath.replace("{domain}", domain);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhDomainQuota.class);
 	}
 
@@ -94,8 +94,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhDomainService domain_GET(String domain) throws IOException {
 		String qPath = "/email/domain/{domain}";
-		qPath = qPath.replace("{domain}", domain);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhDomainService.class);
 	}
 
@@ -107,8 +107,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public String domain_terminate_POST(String domain) throws IOException {
 		String qPath = "/email/domain/{domain}/terminate";
-		qPath = qPath.replace("{domain}", domain);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, domain);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, String.class);
 	}
 
@@ -122,10 +122,10 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public ArrayList<String> domain_redirection_GET(String domain, String from, String to) throws IOException {
 		String qPath = "/email/domain/{domain}/redirection";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = query(qPath, "from", from);
-		qPath = query(qPath, "to", to);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain);
+		query(sb, "from", from);
+		query(sb, "to", to);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
@@ -141,12 +141,12 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskSpecialAccount domain_redirection_POST(String domain, String to, Boolean localCopy, String from) throws IOException {
 		String qPath = "/email/domain/{domain}/redirection";
-		qPath = qPath.replace("{domain}", domain);
+		StringBuilder sb = path(qPath, domain);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "to", to);
 		addBody(o, "localCopy", localCopy);
 		addBody(o, "from", from);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTaskSpecialAccount.class);
 	}
 
@@ -159,9 +159,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhRedirectionGlobal domain_redirection_id_GET(String domain, String id) throws IOException {
 		String qPath = "/email/domain/{domain}/redirection/{id}";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{id}", id);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain, id);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhRedirectionGlobal.class);
 	}
 
@@ -174,9 +173,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskSpecialAccount domain_redirection_id_DELETE(String domain, String id) throws IOException {
 		String qPath = "/email/domain/{domain}/redirection/{id}";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{id}", id);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, domain, id);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhTaskSpecialAccount.class);
 	}
 
@@ -190,11 +188,10 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskSpecialAccount domain_redirection_id_changeRedirection_POST(String domain, String id, String to) throws IOException {
 		String qPath = "/email/domain/{domain}/redirection/{id}/changeRedirection";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{id}", id);
+		StringBuilder sb = path(qPath, domain, id);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "to", to);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTaskSpecialAccount.class);
 	}
 
@@ -209,12 +206,12 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public ArrayList<Long> domain_changeContact_POST(String domain, String contactAdmin, String contactTech, String contactBilling) throws IOException {
 		String qPath = "/email/domain/{domain}/changeContact";
-		qPath = qPath.replace("{domain}", domain);
+		StringBuilder sb = path(qPath, domain);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "contactAdmin", contactAdmin);
 		addBody(o, "contactTech", contactTech);
 		addBody(o, "contactBilling", contactBilling);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
@@ -227,8 +224,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhDomainSummary domain_summary_GET(String domain) throws IOException {
 		String qPath = "/email/domain/{domain}/summary";
-		qPath = qPath.replace("{domain}", domain);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhDomainSummary.class);
 	}
 
@@ -241,9 +238,9 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public ArrayList<String> domain_responder_GET(String domain, String account) throws IOException {
 		String qPath = "/email/domain/{domain}/responder";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = query(qPath, "account", account);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain);
+		query(sb, "account", account);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -261,7 +258,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskSpecialAccount domain_responder_POST(String domain, Boolean copy, String copyTo, Date to, Date from, String account, String content) throws IOException {
 		String qPath = "/email/domain/{domain}/responder";
-		qPath = qPath.replace("{domain}", domain);
+		StringBuilder sb = path(qPath, domain);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "copy", copy);
 		addBody(o, "copyTo", copyTo);
@@ -269,7 +266,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 		addBody(o, "from", from);
 		addBody(o, "account", account);
 		addBody(o, "content", content);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTaskSpecialAccount.class);
 	}
 
@@ -282,9 +279,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhResponder domain_responder_account_GET(String domain, String account) throws IOException {
 		String qPath = "/email/domain/{domain}/responder/{account}";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{account}", account);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain, account);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhResponder.class);
 	}
 
@@ -298,9 +294,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public void domain_responder_account_PUT(String domain, String account, OvhResponder body) throws IOException {
 		String qPath = "/email/domain/{domain}/responder/{account}";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{account}", account);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, domain, account);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -312,9 +307,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskSpecialAccount domain_responder_account_DELETE(String domain, String account) throws IOException {
 		String qPath = "/email/domain/{domain}/responder/{account}";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{account}", account);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, domain, account);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhTaskSpecialAccount.class);
 	}
 
@@ -326,8 +320,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public ArrayList<OvhRecord> domain_recommendedDNSRecords_GET(String domain) throws IOException {
 		String qPath = "/email/domain/{domain}/recommendedDNSRecords";
-		qPath = qPath.replace("{domain}", domain);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t3);
 	}
 	private static TypeReference<ArrayList<OvhRecord>> t3 = new TypeReference<ArrayList<OvhRecord>>() {};
@@ -341,9 +335,9 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhDomainMXFilterEnum domain_dnsMXFilter_GET(String domain, String subDomain) throws IOException {
 		String qPath = "/email/domain/{domain}/dnsMXFilter";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = query(qPath, "subDomain", subDomain);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain);
+		query(sb, "subDomain", subDomain);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhDomainMXFilterEnum.class);
 	}
 
@@ -355,8 +349,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public ArrayList<String> domain_acl_GET(String domain) throws IOException {
 		String qPath = "/email/domain/{domain}/acl";
-		qPath = qPath.replace("{domain}", domain);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -369,10 +363,10 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhAcl domain_acl_POST(String domain, String accountId) throws IOException {
 		String qPath = "/email/domain/{domain}/acl";
-		qPath = qPath.replace("{domain}", domain);
+		StringBuilder sb = path(qPath, domain);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "accountId", accountId);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhAcl.class);
 	}
 
@@ -385,9 +379,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhAcl domain_acl_accountId_GET(String domain, String accountId) throws IOException {
 		String qPath = "/email/domain/{domain}/acl/{accountId}";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{accountId}", accountId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain, accountId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhAcl.class);
 	}
 
@@ -400,9 +393,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public void domain_acl_accountId_DELETE(String domain, String accountId) throws IOException {
 		String qPath = "/email/domain/{domain}/acl/{accountId}";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{accountId}", accountId);
-		exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, domain, accountId);
+		exec("DELETE", sb.toString());
 	}
 
 	/**
@@ -415,10 +407,10 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public ArrayList<String> domain_account_GET(String domain, String accountName, String description) throws IOException {
 		String qPath = "/email/domain/{domain}/account";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = query(qPath, "accountName", accountName);
-		qPath = query(qPath, "description", description);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain);
+		query(sb, "accountName", accountName);
+		query(sb, "description", description);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -434,13 +426,13 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskPop domain_account_POST(String domain, String password, String description, Long size, String accountName) throws IOException {
 		String qPath = "/email/domain/{domain}/account";
-		qPath = qPath.replace("{domain}", domain);
+		StringBuilder sb = path(qPath, domain);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "password", password);
 		addBody(o, "description", description);
 		addBody(o, "size", size);
 		addBody(o, "accountName", accountName);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTaskPop.class);
 	}
 
@@ -453,9 +445,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhDomainUsageAccountStruct domain_account_accountName_usage_GET(String domain, String accountName) throws IOException {
 		String qPath = "/email/domain/{domain}/account/{accountName}/usage";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{accountName}", accountName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain, accountName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhDomainUsageAccountStruct.class);
 	}
 
@@ -468,9 +459,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public void domain_account_accountName_updateUsage_POST(String domain, String accountName) throws IOException {
 		String qPath = "/email/domain/{domain}/account/{accountName}/updateUsage";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{accountName}", accountName);
-		exec("POST", qPath);
+		StringBuilder sb = path(qPath, domain, accountName);
+		exec("POST", sb.toString());
 	}
 
 	/**
@@ -482,9 +472,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhAccount domain_account_accountName_GET(String domain, String accountName) throws IOException {
 		String qPath = "/email/domain/{domain}/account/{accountName}";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{accountName}", accountName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain, accountName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhAccount.class);
 	}
 
@@ -498,9 +487,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public void domain_account_accountName_PUT(String domain, String accountName, OvhAccount body) throws IOException {
 		String qPath = "/email/domain/{domain}/account/{accountName}";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{accountName}", accountName);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, domain, accountName);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -512,9 +500,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskPop domain_account_accountName_DELETE(String domain, String accountName) throws IOException {
 		String qPath = "/email/domain/{domain}/account/{accountName}";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{accountName}", accountName);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, domain, accountName);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhTaskPop.class);
 	}
 
@@ -527,9 +514,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public ArrayList<String> domain_account_accountName_filter_GET(String domain, String accountName) throws IOException {
 		String qPath = "/email/domain/{domain}/account/{accountName}/filter";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{accountName}", accountName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain, accountName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -550,8 +536,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskFilter domain_account_accountName_filter_POST(String domain, String accountName, Long priority, String value, Boolean active, OvhDomainFilterOperandEnum operand, String name, String actionParam, OvhDomainFilterActionEnum action, String header) throws IOException {
 		String qPath = "/email/domain/{domain}/account/{accountName}/filter";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{accountName}", accountName);
+		StringBuilder sb = path(qPath, domain, accountName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "priority", priority);
 		addBody(o, "value", value);
@@ -561,7 +546,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 		addBody(o, "actionParam", actionParam);
 		addBody(o, "action", action);
 		addBody(o, "header", header);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTaskFilter.class);
 	}
 
@@ -575,10 +560,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhFilter domain_account_accountName_filter_name_GET(String domain, String accountName, String name) throws IOException {
 		String qPath = "/email/domain/{domain}/account/{accountName}/filter/{name}";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{accountName}", accountName);
-		qPath = qPath.replace("{name}", name);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain, accountName, name);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhFilter.class);
 	}
 
@@ -592,10 +575,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public ArrayList<OvhTaskFilter> domain_account_accountName_filter_name_DELETE(String domain, String accountName, String name) throws IOException {
 		String qPath = "/email/domain/{domain}/account/{accountName}/filter/{name}";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{accountName}", accountName);
-		qPath = qPath.replace("{name}", name);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, domain, accountName, name);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, t4);
 	}
 	private static TypeReference<ArrayList<OvhTaskFilter>> t4 = new TypeReference<ArrayList<OvhTaskFilter>>() {};
@@ -611,12 +592,10 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskFilter domain_account_accountName_filter_name_changeActivity_POST(String domain, String accountName, String name, Boolean activity) throws IOException {
 		String qPath = "/email/domain/{domain}/account/{accountName}/filter/{name}/changeActivity";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{accountName}", accountName);
-		qPath = qPath.replace("{name}", name);
+		StringBuilder sb = path(qPath, domain, accountName, name);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "activity", activity);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTaskFilter.class);
 	}
 
@@ -630,10 +609,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public ArrayList<Long> domain_account_accountName_filter_name_rule_GET(String domain, String accountName, String name) throws IOException {
 		String qPath = "/email/domain/{domain}/account/{accountName}/filter/{name}/rule";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{accountName}", accountName);
-		qPath = qPath.replace("{name}", name);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain, accountName, name);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t2);
 	}
 
@@ -650,14 +627,12 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskFilter domain_account_accountName_filter_name_rule_POST(String domain, String accountName, String name, String value, OvhDomainFilterOperandEnum operand, String header) throws IOException {
 		String qPath = "/email/domain/{domain}/account/{accountName}/filter/{name}/rule";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{accountName}", accountName);
-		qPath = qPath.replace("{name}", name);
+		StringBuilder sb = path(qPath, domain, accountName, name);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "value", value);
 		addBody(o, "operand", operand);
 		addBody(o, "header", header);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTaskFilter.class);
 	}
 
@@ -672,11 +647,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhRule domain_account_accountName_filter_name_rule_id_GET(String domain, String accountName, String name, Long id) throws IOException {
 		String qPath = "/email/domain/{domain}/account/{accountName}/filter/{name}/rule/{id}";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{accountName}", accountName);
-		qPath = qPath.replace("{name}", name);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain, accountName, name, id);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhRule.class);
 	}
 
@@ -691,11 +663,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public ArrayList<OvhTaskFilter> domain_account_accountName_filter_name_rule_id_DELETE(String domain, String accountName, String name, Long id) throws IOException {
 		String qPath = "/email/domain/{domain}/account/{accountName}/filter/{name}/rule/{id}";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{accountName}", accountName);
-		qPath = qPath.replace("{name}", name);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, domain, accountName, name, id);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, t4);
 	}
 
@@ -710,12 +679,10 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskFilter domain_account_accountName_filter_name_changePriority_POST(String domain, String accountName, String name, Long priority) throws IOException {
 		String qPath = "/email/domain/{domain}/account/{accountName}/filter/{name}/changePriority";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{accountName}", accountName);
-		qPath = qPath.replace("{name}", name);
+		StringBuilder sb = path(qPath, domain, accountName, name);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "priority", priority);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTaskFilter.class);
 	}
 
@@ -729,11 +696,10 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskPop domain_account_accountName_changePassword_POST(String domain, String accountName, String password) throws IOException {
 		String qPath = "/email/domain/{domain}/account/{accountName}/changePassword";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{accountName}", accountName);
+		StringBuilder sb = path(qPath, domain, accountName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "password", password);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTaskPop.class);
 	}
 
@@ -746,9 +712,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public ArrayList<String> domain_account_accountName_delegation_GET(String domain, String accountName) throws IOException {
 		String qPath = "/email/domain/{domain}/account/{accountName}/delegation";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{accountName}", accountName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain, accountName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -762,11 +727,10 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public String domain_account_accountName_delegation_POST(String domain, String accountName, String accountId) throws IOException {
 		String qPath = "/email/domain/{domain}/account/{accountName}/delegation";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{accountName}", accountName);
+		StringBuilder sb = path(qPath, domain, accountName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "accountId", accountId);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -780,10 +744,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhDelegation domain_account_accountName_delegation_accountId_GET(String domain, String accountName, String accountId) throws IOException {
 		String qPath = "/email/domain/{domain}/account/{accountName}/delegation/{accountId}";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{accountName}", accountName);
-		qPath = qPath.replace("{accountId}", accountId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain, accountName, accountId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhDelegation.class);
 	}
 
@@ -797,10 +759,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public String domain_account_accountName_delegation_accountId_DELETE(String domain, String accountName, String accountId) throws IOException {
 		String qPath = "/email/domain/{domain}/account/{accountName}/delegation/{accountId}";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{accountName}", accountName);
-		qPath = qPath.replace("{accountId}", accountId);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, domain, accountName, accountId);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, String.class);
 	}
 
@@ -813,9 +773,9 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public ArrayList<String> domain_dnsMXRecords_GET(String domain, String subDomain) throws IOException {
 		String qPath = "/email/domain/{domain}/dnsMXRecords";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = query(qPath, "subDomain", subDomain);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain);
+		query(sb, "subDomain", subDomain);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -828,9 +788,9 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public ArrayList<Long> domain_task_responder_GET(String domain, String account) throws IOException {
 		String qPath = "/email/domain/{domain}/task/responder";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = query(qPath, "account", account);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain);
+		query(sb, "account", account);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t2);
 	}
 
@@ -843,9 +803,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskSpecialAccount domain_task_responder_id_GET(String domain, Long id) throws IOException {
 		String qPath = "/email/domain/{domain}/task/responder/{id}";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain, id);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhTaskSpecialAccount.class);
 	}
 
@@ -858,9 +817,9 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public ArrayList<Long> domain_task_filter_GET(String domain, String account) throws IOException {
 		String qPath = "/email/domain/{domain}/task/filter";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = query(qPath, "account", account);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain);
+		query(sb, "account", account);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t2);
 	}
 
@@ -873,9 +832,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskFilter domain_task_filter_id_GET(String domain, Long id) throws IOException {
 		String qPath = "/email/domain/{domain}/task/filter/{id}";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain, id);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhTaskFilter.class);
 	}
 
@@ -888,9 +846,9 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public ArrayList<Long> domain_task_account_GET(String domain, String name) throws IOException {
 		String qPath = "/email/domain/{domain}/task/account";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = query(qPath, "name", name);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain);
+		query(sb, "name", name);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t2);
 	}
 
@@ -903,9 +861,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskPop domain_task_account_id_GET(String domain, Long id) throws IOException {
 		String qPath = "/email/domain/{domain}/task/account/{id}";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain, id);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhTaskPop.class);
 	}
 
@@ -918,9 +875,9 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public ArrayList<Long> domain_task_mailinglist_GET(String domain, String account) throws IOException {
 		String qPath = "/email/domain/{domain}/task/mailinglist";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = query(qPath, "account", account);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain);
+		query(sb, "account", account);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t2);
 	}
 
@@ -933,9 +890,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskMl domain_task_mailinglist_id_GET(String domain, Long id) throws IOException {
 		String qPath = "/email/domain/{domain}/task/mailinglist/{id}";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain, id);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhTaskMl.class);
 	}
 
@@ -948,9 +904,9 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public ArrayList<Long> domain_task_redirection_GET(String domain, String account) throws IOException {
 		String qPath = "/email/domain/{domain}/task/redirection";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = query(qPath, "account", account);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain);
+		query(sb, "account", account);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t2);
 	}
 
@@ -963,9 +919,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskSpecialAccount domain_task_redirection_id_GET(String domain, Long id) throws IOException {
 		String qPath = "/email/domain/{domain}/task/redirection/{id}";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain, id);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhTaskSpecialAccount.class);
 	}
 
@@ -980,12 +935,12 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public String domain_confirmTermination_POST(String domain, String commentary, OvhTerminationReasonEnum reason, String token) throws IOException {
 		String qPath = "/email/domain/{domain}/confirmTermination";
-		qPath = qPath.replace("{domain}", domain);
+		StringBuilder sb = path(qPath, domain);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "commentary", commentary);
 		addBody(o, "reason", reason);
 		addBody(o, "token", token);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -997,8 +952,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public void domain_migrateDelegationV3toV6_POST(String domain) throws IOException {
 		String qPath = "/email/domain/{domain}/migrateDelegationV3toV6";
-		qPath = qPath.replace("{domain}", domain);
-		exec("POST", qPath);
+		StringBuilder sb = path(qPath, domain);
+		exec("POST", sb.toString());
 	}
 
 	/**
@@ -1010,9 +965,9 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public ArrayList<String> domain_mailingList_GET(String domain, String name) throws IOException {
 		String qPath = "/email/domain/{domain}/mailingList";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = query(qPath, "name", name);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain);
+		query(sb, "name", name);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -1029,14 +984,14 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskMl domain_mailingList_POST(String domain, String replyTo, OvhDomainMlOptionsStruct options, OvhDomainMlLanguageEnum language, String name, String ownerEmail) throws IOException {
 		String qPath = "/email/domain/{domain}/mailingList";
-		qPath = qPath.replace("{domain}", domain);
+		StringBuilder sb = path(qPath, domain);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "replyTo", replyTo);
 		addBody(o, "options", options);
 		addBody(o, "language", language);
 		addBody(o, "name", name);
 		addBody(o, "ownerEmail", ownerEmail);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTaskMl.class);
 	}
 
@@ -1050,11 +1005,10 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskMl domain_mailingList_name_sendListByEmail_POST(String domain, String name, String email) throws IOException {
 		String qPath = "/email/domain/{domain}/mailingList/{name}/sendListByEmail";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{name}", name);
+		StringBuilder sb = path(qPath, domain, name);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "email", email);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTaskMl.class);
 	}
 
@@ -1067,9 +1021,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhMailingList domain_mailingList_name_GET(String domain, String name) throws IOException {
 		String qPath = "/email/domain/{domain}/mailingList/{name}";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{name}", name);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain, name);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhMailingList.class);
 	}
 
@@ -1083,9 +1036,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public void domain_mailingList_name_PUT(String domain, String name, OvhMailingList body) throws IOException {
 		String qPath = "/email/domain/{domain}/mailingList/{name}";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{name}", name);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, domain, name);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1097,9 +1049,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskMl domain_mailingList_name_DELETE(String domain, String name) throws IOException {
 		String qPath = "/email/domain/{domain}/mailingList/{name}";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{name}", name);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, domain, name);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhTaskMl.class);
 	}
 
@@ -1113,11 +1064,10 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskMl domain_mailingList_name_changeOptions_POST(String domain, String name, OvhDomainMlOptionsStruct options) throws IOException {
 		String qPath = "/email/domain/{domain}/mailingList/{name}/changeOptions";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{name}", name);
+		StringBuilder sb = path(qPath, domain, name);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "options", options);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTaskMl.class);
 	}
 
@@ -1131,10 +1081,9 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public ArrayList<String> domain_mailingList_name_moderator_GET(String domain, String name, String email) throws IOException {
 		String qPath = "/email/domain/{domain}/mailingList/{name}/moderator";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{name}", name);
-		qPath = query(qPath, "email", email);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain, name);
+		query(sb, "email", email);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -1148,11 +1097,10 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskMl domain_mailingList_name_moderator_POST(String domain, String name, String email) throws IOException {
 		String qPath = "/email/domain/{domain}/mailingList/{name}/moderator";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{name}", name);
+		StringBuilder sb = path(qPath, domain, name);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "email", email);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTaskMl.class);
 	}
 
@@ -1166,10 +1114,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhModerator domain_mailingList_name_moderator_email_GET(String domain, String name, String email) throws IOException {
 		String qPath = "/email/domain/{domain}/mailingList/{name}/moderator/{email}";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{name}", name);
-		qPath = qPath.replace("{email}", email);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain, name, email);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhModerator.class);
 	}
 
@@ -1183,10 +1129,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskMl domain_mailingList_name_moderator_email_DELETE(String domain, String name, String email) throws IOException {
 		String qPath = "/email/domain/{domain}/mailingList/{name}/moderator/{email}";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{name}", name);
-		qPath = qPath.replace("{email}", email);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, domain, name, email);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhTaskMl.class);
 	}
 
@@ -1200,10 +1144,9 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public ArrayList<String> domain_mailingList_name_subscriber_GET(String domain, String name, String email) throws IOException {
 		String qPath = "/email/domain/{domain}/mailingList/{name}/subscriber";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{name}", name);
-		qPath = query(qPath, "email", email);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain, name);
+		query(sb, "email", email);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -1217,11 +1160,10 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskMl domain_mailingList_name_subscriber_POST(String domain, String name, String email) throws IOException {
 		String qPath = "/email/domain/{domain}/mailingList/{name}/subscriber";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{name}", name);
+		StringBuilder sb = path(qPath, domain, name);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "email", email);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTaskMl.class);
 	}
 
@@ -1235,10 +1177,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhSubscriber domain_mailingList_name_subscriber_email_GET(String domain, String name, String email) throws IOException {
 		String qPath = "/email/domain/{domain}/mailingList/{name}/subscriber/{email}";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{name}", name);
-		qPath = qPath.replace("{email}", email);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, domain, name, email);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhSubscriber.class);
 	}
 
@@ -1252,10 +1192,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskMl domain_mailingList_name_subscriber_email_DELETE(String domain, String name, String email) throws IOException {
 		String qPath = "/email/domain/{domain}/mailingList/{name}/subscriber/{email}";
-		qPath = qPath.replace("{domain}", domain);
-		qPath = qPath.replace("{name}", name);
-		qPath = qPath.replace("{email}", email);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, domain, name, email);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhTaskMl.class);
 	}
 
@@ -1270,12 +1208,12 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public void domain_changeDnsMXFilter_POST(String domain, OvhDomainMXFilterEnum mxFilter, String subDomain, String customTarget) throws IOException {
 		String qPath = "/email/domain/{domain}/changeDnsMXFilter";
-		qPath = qPath.replace("{domain}", domain);
+		StringBuilder sb = path(qPath, domain);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "mxFilter", mxFilter);
 		addBody(o, "subDomain", subDomain);
 		addBody(o, "customTarget", customTarget);
-		exec("POST", qPath, o);
+		exec("POST", sb.toString(), o);
 	}
 
 	/**
@@ -1285,7 +1223,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/email/domain";
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -1298,9 +1237,10 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public ArrayList<String> delegatedAccount_GET(String accountName, String domain) throws IOException {
 		String qPath = "/email/domain/delegatedAccount";
-		qPath = query(qPath, "accountName", accountName);
-		qPath = query(qPath, "domain", domain);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath);
+		query(sb, "accountName", accountName);
+		query(sb, "domain", domain);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -1312,8 +1252,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhDomainUsageAccountStruct delegatedAccount_email_usage_POST(String email) throws IOException {
 		String qPath = "/email/domain/delegatedAccount/{email}/usage";
-		qPath = qPath.replace("{email}", email);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, email);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhDomainUsageAccountStruct.class);
 	}
 
@@ -1325,8 +1265,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public void delegatedAccount_email_updateUsage_POST(String email) throws IOException {
 		String qPath = "/email/domain/delegatedAccount/{email}/updateUsage";
-		qPath = qPath.replace("{email}", email);
-		exec("POST", qPath);
+		StringBuilder sb = path(qPath, email);
+		exec("POST", sb.toString());
 	}
 
 	/**
@@ -1337,8 +1277,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhAccountDelegated delegatedAccount_email_GET(String email) throws IOException {
 		String qPath = "/email/domain/delegatedAccount/{email}";
-		qPath = qPath.replace("{email}", email);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, email);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhAccountDelegated.class);
 	}
 
@@ -1351,8 +1291,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public void delegatedAccount_email_PUT(String email, OvhAccountDelegated body) throws IOException {
 		String qPath = "/email/domain/delegatedAccount/{email}";
-		qPath = qPath.replace("{email}", email);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, email);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1363,8 +1303,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhResponderAccount delegatedAccount_email_responder_GET(String email) throws IOException {
 		String qPath = "/email/domain/delegatedAccount/{email}/responder";
-		qPath = qPath.replace("{email}", email);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, email);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhResponderAccount.class);
 	}
 
@@ -1377,8 +1317,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public void delegatedAccount_email_responder_PUT(String email, OvhResponderAccount body) throws IOException {
 		String qPath = "/email/domain/delegatedAccount/{email}/responder";
-		qPath = qPath.replace("{email}", email);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, email);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1394,14 +1334,14 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskSpecialAccount delegatedAccount_email_responder_POST(String email, Boolean copy, String copyTo, Date to, Date from, String content) throws IOException {
 		String qPath = "/email/domain/delegatedAccount/{email}/responder";
-		qPath = qPath.replace("{email}", email);
+		StringBuilder sb = path(qPath, email);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "copy", copy);
 		addBody(o, "copyTo", copyTo);
 		addBody(o, "to", to);
 		addBody(o, "from", from);
 		addBody(o, "content", content);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTaskSpecialAccount.class);
 	}
 
@@ -1413,8 +1353,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskSpecialAccount delegatedAccount_email_responder_DELETE(String email) throws IOException {
 		String qPath = "/email/domain/delegatedAccount/{email}/responder";
-		qPath = qPath.replace("{email}", email);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, email);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhTaskSpecialAccount.class);
 	}
 
@@ -1426,8 +1366,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public ArrayList<String> delegatedAccount_email_filter_GET(String email) throws IOException {
 		String qPath = "/email/domain/delegatedAccount/{email}/filter";
-		qPath = qPath.replace("{email}", email);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, email);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -1447,7 +1387,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskFilter delegatedAccount_email_filter_POST(String email, Long priority, String value, Boolean active, OvhDomainFilterOperandEnum operand, String name, String actionParam, OvhDomainFilterActionEnum action, String header) throws IOException {
 		String qPath = "/email/domain/delegatedAccount/{email}/filter";
-		qPath = qPath.replace("{email}", email);
+		StringBuilder sb = path(qPath, email);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "priority", priority);
 		addBody(o, "value", value);
@@ -1457,7 +1397,7 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 		addBody(o, "actionParam", actionParam);
 		addBody(o, "action", action);
 		addBody(o, "header", header);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTaskFilter.class);
 	}
 
@@ -1470,9 +1410,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhFilter delegatedAccount_email_filter_name_GET(String email, String name) throws IOException {
 		String qPath = "/email/domain/delegatedAccount/{email}/filter/{name}";
-		qPath = qPath.replace("{email}", email);
-		qPath = qPath.replace("{name}", name);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, email, name);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhFilter.class);
 	}
 
@@ -1485,9 +1424,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public ArrayList<OvhTaskFilter> delegatedAccount_email_filter_name_DELETE(String email, String name) throws IOException {
 		String qPath = "/email/domain/delegatedAccount/{email}/filter/{name}";
-		qPath = qPath.replace("{email}", email);
-		qPath = qPath.replace("{name}", name);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, email, name);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, t4);
 	}
 
@@ -1501,11 +1439,10 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskFilter delegatedAccount_email_filter_name_changeActivity_POST(String email, String name, Boolean activity) throws IOException {
 		String qPath = "/email/domain/delegatedAccount/{email}/filter/{name}/changeActivity";
-		qPath = qPath.replace("{email}", email);
-		qPath = qPath.replace("{name}", name);
+		StringBuilder sb = path(qPath, email, name);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "activity", activity);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTaskFilter.class);
 	}
 
@@ -1518,9 +1455,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public ArrayList<Long> delegatedAccount_email_filter_name_rule_GET(String email, String name) throws IOException {
 		String qPath = "/email/domain/delegatedAccount/{email}/filter/{name}/rule";
-		qPath = qPath.replace("{email}", email);
-		qPath = qPath.replace("{name}", name);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, email, name);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t2);
 	}
 
@@ -1536,13 +1472,12 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskFilter delegatedAccount_email_filter_name_rule_POST(String email, String name, String value, OvhDomainFilterOperandEnum operand, String header) throws IOException {
 		String qPath = "/email/domain/delegatedAccount/{email}/filter/{name}/rule";
-		qPath = qPath.replace("{email}", email);
-		qPath = qPath.replace("{name}", name);
+		StringBuilder sb = path(qPath, email, name);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "value", value);
 		addBody(o, "operand", operand);
 		addBody(o, "header", header);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTaskFilter.class);
 	}
 
@@ -1556,10 +1491,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhRule delegatedAccount_email_filter_name_rule_id_GET(String email, String name, Long id) throws IOException {
 		String qPath = "/email/domain/delegatedAccount/{email}/filter/{name}/rule/{id}";
-		qPath = qPath.replace("{email}", email);
-		qPath = qPath.replace("{name}", name);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, email, name, id);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhRule.class);
 	}
 
@@ -1573,10 +1506,8 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public ArrayList<OvhTaskFilter> delegatedAccount_email_filter_name_rule_id_DELETE(String email, String name, Long id) throws IOException {
 		String qPath = "/email/domain/delegatedAccount/{email}/filter/{name}/rule/{id}";
-		qPath = qPath.replace("{email}", email);
-		qPath = qPath.replace("{name}", name);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, email, name, id);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, t4);
 	}
 
@@ -1590,11 +1521,10 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskFilter delegatedAccount_email_filter_name_changePriority_POST(String email, String name, Long priority) throws IOException {
 		String qPath = "/email/domain/delegatedAccount/{email}/filter/{name}/changePriority";
-		qPath = qPath.replace("{email}", email);
-		qPath = qPath.replace("{name}", name);
+		StringBuilder sb = path(qPath, email, name);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "priority", priority);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTaskFilter.class);
 	}
 
@@ -1607,10 +1537,10 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhTaskPop delegatedAccount_email_changePassword_POST(String email, String password) throws IOException {
 		String qPath = "/email/domain/delegatedAccount/{email}/changePassword";
-		qPath = qPath.replace("{email}", email);
+		StringBuilder sb = path(qPath, email);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "password", password);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTaskPop.class);
 	}
 
@@ -1622,8 +1552,9 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 	 */
 	public OvhDomainMlLimits mailingListLimits_GET(Boolean moderatorMessage) throws IOException {
 		String qPath = "/email/domain/mailingListLimits";
-		qPath = query(qPath, "moderatorMessage", moderatorMessage);
-		String resp = execN("GET", qPath);
+		StringBuilder sb = path(qPath);
+		query(sb, "moderatorMessage", moderatorMessage);
+		String resp = execN("GET", sb.toString());
 		return convertTo(resp, OvhDomainMlLimits.class);
 	}
 }

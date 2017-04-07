@@ -21,11 +21,32 @@ public abstract class ApiOvhBase {
 			throw new NullPointerException("core can not be null");
 	}
 
-	protected String query(String url, String name, Object value) {
+//	protected String query(String url, String name, Object value) {
+//		if (value == null)
+//			return url;
+//		StringBuilder sb = new StringBuilder(url);
+//		sb.append(url.contains("?") ? "&" : "?");
+//		sb.append(name);
+//		sb.append("=");
+//		if (value instanceof Date) {
+//			// Expecting ISO 8601 data
+//			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
+//			String s = sdf.format((Date) value);
+//			s = s.replaceAll("([+-])([0-9]{2})(00)$", "$1$2:$3");
+//			sb.append(s);
+//		} else {
+//			sb.append(value);
+//		}
+//		return sb.toString();
+//	}
+
+	protected StringBuilder query(StringBuilder sb, String name, Object value) {
 		if (value == null)
-			return url;
-		StringBuilder sb = new StringBuilder(url);
-		sb.append(url.contains("?") ? "&" : "?");
+			return sb;
+		if (sb.indexOf("?") == -1)
+			sb.append("?");
+		else
+			sb.append("&");
 		sb.append(name);
 		sb.append("=");
 		if (value instanceof Date) {
@@ -37,7 +58,24 @@ public abstract class ApiOvhBase {
 		} else {
 			sb.append(value);
 		}
-		return sb.toString();
+		return sb;
+	}
+
+	public StringBuilder path(String url, Object... params) {
+		StringBuilder sb = new StringBuilder();
+		int p = 0;
+		int len = url.length();
+		for (int i = 0; i < len; i++) {
+			char c = url.charAt(i);
+			if (c == '{') {
+				sb.append(params[p++]);
+				while (url.charAt(i) != '}')
+					i++;
+			} else {
+				sb.append(c);
+			}
+		}
+		return sb;
 	}
 
 	public String execN(String method, String query) throws IOException {

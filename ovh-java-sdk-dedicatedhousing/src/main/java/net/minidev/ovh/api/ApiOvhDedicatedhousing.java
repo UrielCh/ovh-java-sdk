@@ -33,8 +33,8 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 	 */
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/dedicated/housing/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -47,8 +47,8 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/dedicated/housing/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 	 */
 	public OvhHousing serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/dedicated/housing/{serviceName}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhHousing.class);
 	}
 
@@ -72,8 +72,8 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 	 */
 	public OvhBackupFtp serviceName_features_backupFTP_GET(String serviceName) throws IOException {
 		String qPath = "/dedicated/housing/{serviceName}/features/backupFTP";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhBackupFtp.class);
 	}
 
@@ -85,8 +85,8 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_features_backupFTP_POST(String serviceName) throws IOException {
 		String qPath = "/dedicated/housing/{serviceName}/features/backupFTP";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -98,8 +98,8 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_features_backupFTP_DELETE(String serviceName) throws IOException {
 		String qPath = "/dedicated/housing/{serviceName}/features/backupFTP";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -111,8 +111,8 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_features_backupFTP_password_POST(String serviceName) throws IOException {
 		String qPath = "/dedicated/housing/{serviceName}/features/backupFTP/password";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -124,8 +124,8 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 	 */
 	public ArrayList<String> serviceName_features_backupFTP_authorizableBlocks_GET(String serviceName) throws IOException {
 		String qPath = "/dedicated/housing/{serviceName}/features/backupFTP/authorizableBlocks";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
@@ -138,8 +138,8 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 	 */
 	public ArrayList<String> serviceName_features_backupFTP_access_GET(String serviceName) throws IOException {
 		String qPath = "/dedicated/housing/{serviceName}/features/backupFTP/access";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -155,13 +155,13 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_features_backupFTP_access_POST(String serviceName, Boolean ftp, String ipBlock, Boolean nfs, Boolean cifs) throws IOException {
 		String qPath = "/dedicated/housing/{serviceName}/features/backupFTP/access";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "ftp", ftp);
 		addBody(o, "ipBlock", ipBlock);
 		addBody(o, "nfs", nfs);
 		addBody(o, "cifs", cifs);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -174,9 +174,8 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 	 */
 	public OvhBackupFtpAcl serviceName_features_backupFTP_access_ipBlock_GET(String serviceName, String ipBlock) throws IOException {
 		String qPath = "/dedicated/housing/{serviceName}/features/backupFTP/access/{ipBlock}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{ipBlock}", ipBlock);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, ipBlock);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhBackupFtpAcl.class);
 	}
 
@@ -190,9 +189,8 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 	 */
 	public void serviceName_features_backupFTP_access_ipBlock_PUT(String serviceName, String ipBlock, OvhBackupFtpAcl body) throws IOException {
 		String qPath = "/dedicated/housing/{serviceName}/features/backupFTP/access/{ipBlock}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{ipBlock}", ipBlock);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName, ipBlock);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -204,9 +202,8 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_features_backupFTP_access_ipBlock_DELETE(String serviceName, String ipBlock) throws IOException {
 		String qPath = "/dedicated/housing/{serviceName}/features/backupFTP/access/{ipBlock}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{ipBlock}", ipBlock);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, ipBlock);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -218,8 +215,8 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 	 */
 	public OvhApcOrderable serviceName_orderable_APC_GET(String serviceName) throws IOException {
 		String qPath = "/dedicated/housing/{serviceName}/orderable/APC";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhApcOrderable.class);
 	}
 
@@ -233,10 +230,10 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_task_GET(String serviceName, OvhTaskFunctionEnum function, OvhTaskStatusEnum status) throws IOException {
 		String qPath = "/dedicated/housing/{serviceName}/task";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = query(qPath, "function", function);
-		qPath = query(qPath, "status", status);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "function", function);
+		query(sb, "status", status);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
@@ -250,9 +247,8 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 	 */
 	public net.minidev.ovh.api.dedicated.housing.OvhTask serviceName_task_taskId_GET(String serviceName, Long taskId) throws IOException {
 		String qPath = "/dedicated/housing/{serviceName}/task/{taskId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{taskId}", taskId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, taskId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, net.minidev.ovh.api.dedicated.housing.OvhTask.class);
 	}
 
@@ -265,9 +261,8 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 	 */
 	public void serviceName_task_taskId_cancel_POST(String serviceName, Long taskId) throws IOException {
 		String qPath = "/dedicated/housing/{serviceName}/task/{taskId}/cancel";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{taskId}", taskId.toString());
-		exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName, taskId);
+		exec("POST", sb.toString());
 	}
 
 	/**
@@ -277,7 +272,8 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 	 */
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/dedicated/housing";
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 }

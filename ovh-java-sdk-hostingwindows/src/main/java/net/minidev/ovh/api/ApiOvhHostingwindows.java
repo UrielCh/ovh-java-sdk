@@ -23,11 +23,12 @@ public class ApiOvhHostingwindows extends ApiOvhBase {
 	 *
 	 * REST: GET /hosting/windows/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your hosting
+	 * @deprecated
 	 */
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/hosting/windows/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -37,11 +38,12 @@ public class ApiOvhHostingwindows extends ApiOvhBase {
 	 * REST: PUT /hosting/windows/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your hosting
+	 * @deprecated
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/hosting/windows/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -49,11 +51,12 @@ public class ApiOvhHostingwindows extends ApiOvhBase {
 	 *
 	 * REST: GET /hosting/windows/{serviceName}
 	 * @param serviceName [required] The internal name of your hosting
+	 * @deprecated
 	 */
 	public net.minidev.ovh.api.hosting.windows.OvhService serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/hosting/windows/{serviceName}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, net.minidev.ovh.api.hosting.windows.OvhService.class);
 	}
 
@@ -65,15 +68,16 @@ public class ApiOvhHostingwindows extends ApiOvhBase {
 	 * @param contactTech The contact to set as tech contact
 	 * @param contactBilling The contact to set as billing contact
 	 * @param serviceName [required] The internal name of your hosting
+	 * @deprecated
 	 */
 	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
 		String qPath = "/hosting/windows/{serviceName}/changeContact";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "contactAdmin", contactAdmin);
 		addBody(o, "contactTech", contactTech);
 		addBody(o, "contactBilling", contactBilling);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
@@ -82,10 +86,12 @@ public class ApiOvhHostingwindows extends ApiOvhBase {
 	 * List available services
 	 *
 	 * REST: GET /hosting/windows
+	 * @deprecated
 	 */
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/hosting/windows";
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};

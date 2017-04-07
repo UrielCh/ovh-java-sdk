@@ -81,8 +81,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhService serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/hosting/web/{serviceName}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -95,8 +95,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public void serviceName_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/hosting/web/{serviceName}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -107,8 +107,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public net.minidev.ovh.api.services.OvhService serviceName_cdn_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/cdn/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, net.minidev.ovh.api.services.OvhService.class);
 	}
 
@@ -121,10 +121,10 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public void serviceName_cdn_serviceInfosUpdate_POST(String serviceName, OvhRenewType renew) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/cdn/serviceInfosUpdate";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "renew", renew);
-		exec("POST", qPath, o);
+		exec("POST", sb.toString(), o);
 	}
 
 	/**
@@ -135,8 +135,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhCdn serviceName_cdn_GET(String serviceName) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/cdn";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhCdn.class);
 	}
 
@@ -148,8 +148,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public String serviceName_cdn_terminate_POST(String serviceName) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/cdn/terminate";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, String.class);
 	}
 
@@ -163,10 +163,10 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<OvhChartSerie<OvhChartTimestampValue>> serviceName_statistics_GET(String serviceName, OvhStatisticsPeriodEnum period, OvhStatisticsTypeEnum type) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/statistics";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = query(qPath, "period", period);
-		qPath = query(qPath, "type", type);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "period", period);
+		query(sb, "type", type);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<OvhChartSerie<OvhChartTimestampValue>>> t1 = new TypeReference<ArrayList<OvhChartSerie<OvhChartTimestampValue>>>() {};
@@ -180,10 +180,10 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public String serviceName_email_request_POST(String serviceName, OvhActionEnum action) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/email/request";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "action", action);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -195,8 +195,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhEmail serviceName_email_GET(String serviceName) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/email";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhEmail.class);
 	}
 
@@ -209,8 +209,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public void serviceName_email_PUT(String serviceName, OvhEmail body) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/email";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -221,8 +221,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<OvhVolumeHistory> serviceName_email_volumes_GET(String serviceName) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/email/volumes";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<OvhVolumeHistory>> t2 = new TypeReference<ArrayList<OvhVolumeHistory>>() {};
@@ -236,9 +236,9 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<OvhBounce> serviceName_email_bounces_GET(String serviceName, Long limit) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/email/bounces";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = query(qPath, "limit", limit);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "limit", limit);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t3);
 	}
 	private static TypeReference<ArrayList<OvhBounce>> t3 = new TypeReference<ArrayList<OvhBounce>>() {};
@@ -252,9 +252,9 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhAvailableVersionStruct serviceName_databaseAvailableVersion_GET(String serviceName, OvhDatabaseTypeEnum type) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/databaseAvailableVersion";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = query(qPath, "type", type);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "type", type);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhAvailableVersionStruct.class);
 	}
 
@@ -264,13 +264,14 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 * REST: POST /hosting/web/{serviceName}/migrateMyOvhOrg
 	 * @param destinationServiceName [required] Name of the service name that will have the ovh.org subdomain migrated
 	 * @param serviceName [required] The internal name of your hosting
+	 * @deprecated
 	 */
 	public OvhTask serviceName_migrateMyOvhOrg_POST(String serviceName, String destinationServiceName) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/migrateMyOvhOrg";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "destinationServiceName", destinationServiceName);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -284,10 +285,10 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<String> serviceName_user_GET(String serviceName, String home, String login) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/user";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = query(qPath, "home", home);
-		qPath = query(qPath, "login", login);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "home", home);
+		query(sb, "login", login);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t4);
 	}
 	private static TypeReference<ArrayList<String>> t4 = new TypeReference<ArrayList<String>>() {};
@@ -304,13 +305,13 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_user_POST(String serviceName, String password, OvhSshStateEnum sshState, String home, String login) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/user";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "password", password);
 		addBody(o, "sshState", sshState);
 		addBody(o, "home", home);
 		addBody(o, "login", login);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -323,9 +324,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhUser serviceName_user_login_GET(String serviceName, String login) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/user/{login}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{login}", login);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, login);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhUser.class);
 	}
 
@@ -339,9 +339,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public void serviceName_user_login_PUT(String serviceName, String login, OvhUser body) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/user/{login}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{login}", login);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName, login);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -353,9 +352,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_user_login_DELETE(String serviceName, String login) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/user/{login}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{login}", login);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, login);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -369,11 +367,10 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_user_login_changePassword_POST(String serviceName, String login, String password) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/user/{login}/changePassword";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{login}", login);
+		StringBuilder sb = path(qPath, serviceName, login);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "password", password);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -386,10 +383,10 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_restoreSnapshot_POST(String serviceName, OvhTypeEnum backup) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/restoreSnapshot";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "backup", backup);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -402,10 +399,10 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_request_POST(String serviceName, OvhRequestActionEnum action) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/request";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "action", action);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -419,10 +416,10 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_tasks_GET(String serviceName, String function, OvhStatusEnum status) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/tasks";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = query(qPath, "function", function);
-		qPath = query(qPath, "status", status);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "function", function);
+		query(sb, "status", status);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t5);
 	}
 	private static TypeReference<ArrayList<Long>> t5 = new TypeReference<ArrayList<Long>>() {};
@@ -436,9 +433,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_tasks_id_GET(String serviceName, Long id) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/tasks/{id}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -453,12 +449,12 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public String serviceName_confirmTermination_POST(String serviceName, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/confirmTermination";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "reason", reason);
 		addBody(o, "commentary", commentary);
 		addBody(o, "token", token);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -471,9 +467,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhFreedom serviceName_freedom_domain_GET(String serviceName, String domain) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/freedom/{domain}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{domain}", domain);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, domain);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhFreedom.class);
 	}
 
@@ -486,9 +481,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public void serviceName_freedom_domain_DELETE(String serviceName, String domain) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/freedom/{domain}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{domain}", domain);
-		exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, domain);
+		exec("DELETE", sb.toString());
 	}
 
 	/**
@@ -500,9 +494,9 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<String> serviceName_freedom_GET(String serviceName, net.minidev.ovh.api.hosting.web.freedom.OvhStatusEnum status) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/freedom";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = query(qPath, "status", status);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "status", status);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t4);
 	}
 
@@ -515,9 +509,9 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<Date> serviceName_boostHistory_GET(String serviceName, Date date) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/boostHistory";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = query(qPath, "date", date);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "date", date);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t6);
 	}
 	private static TypeReference<ArrayList<Date>> t6 = new TypeReference<ArrayList<Date>>() {};
@@ -531,9 +525,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhBoostHistory serviceName_boostHistory_date_GET(String serviceName, java.util.Date date) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/boostHistory/{date}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{date}", date.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, date);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhBoostHistory.class);
 	}
 
@@ -546,9 +539,9 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<String> serviceName_indy_GET(String serviceName, String login) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/indy";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = query(qPath, "login", login);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "login", login);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t4);
 	}
 
@@ -561,9 +554,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhIndy serviceName_indy_login_GET(String serviceName, String login) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/indy/{login}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{login}", login);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, login);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhIndy.class);
 	}
 
@@ -575,8 +567,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<String> serviceName_extraSqlPerso_GET(String serviceName) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/extraSqlPerso";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t4);
 	}
 
@@ -589,9 +581,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public net.minidev.ovh.api.services.OvhService serviceName_extraSqlPerso_name_serviceInfos_GET(String serviceName, String name) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/extraSqlPerso/{name}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{name}", name);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, name);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, net.minidev.ovh.api.services.OvhService.class);
 	}
 
@@ -605,11 +596,10 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public void serviceName_extraSqlPerso_name_serviceInfosUpdate_POST(String serviceName, String name, OvhRenewType renew) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/extraSqlPerso/{name}/serviceInfosUpdate";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{name}", name);
+		StringBuilder sb = path(qPath, serviceName, name);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "renew", renew);
-		exec("POST", qPath, o);
+		exec("POST", sb.toString(), o);
 	}
 
 	/**
@@ -621,9 +611,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhExtrasqlperso serviceName_extraSqlPerso_name_GET(String serviceName, String name) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/extraSqlPerso/{name}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{name}", name);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, name);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhExtrasqlperso.class);
 	}
 
@@ -636,9 +625,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<String> serviceName_extraSqlPerso_name_databases_GET(String serviceName, String name) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/extraSqlPerso/{name}/databases";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{name}", name);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, name);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t4);
 	}
 
@@ -651,9 +639,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public String serviceName_extraSqlPerso_name_terminate_POST(String serviceName, String name) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/extraSqlPerso/{name}/terminate";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{name}", name);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName, name);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, String.class);
 	}
 
@@ -665,8 +652,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<OvhLanguageEnum> serviceName_cronAvailableLanguage_GET(String serviceName) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/cronAvailableLanguage";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t7);
 	}
 	private static TypeReference<ArrayList<OvhLanguageEnum>> t7 = new TypeReference<ArrayList<OvhLanguageEnum>>() {};
@@ -679,8 +666,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public net.minidev.ovh.api.services.OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, net.minidev.ovh.api.services.OvhService.class);
 	}
 
@@ -693,8 +680,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, net.minidev.ovh.api.services.OvhService body) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -705,8 +692,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<String> serviceName_privateDatabases_GET(String serviceName) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/privateDatabases";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t4);
 	}
 
@@ -718,8 +705,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<OvhCreationDatabaseCapabilities> serviceName_databaseCreationCapabilities_GET(String serviceName) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/databaseCreationCapabilities";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t8);
 	}
 	private static TypeReference<ArrayList<OvhCreationDatabaseCapabilities>> t8 = new TypeReference<ArrayList<OvhCreationDatabaseCapabilities>>() {};
@@ -733,10 +720,10 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_requestBoost_POST(String serviceName, OvhOfferEnum offer) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/requestBoost";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "offer", offer);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -748,8 +735,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public String serviceName_terminate_POST(String serviceName) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/terminate";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, String.class);
 	}
 
@@ -764,12 +751,12 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/changeContact";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "contactAdmin", contactAdmin);
 		addBody(o, "contactTech", contactTech);
 		addBody(o, "contactBilling", contactBilling);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, t5);
 	}
 
@@ -781,8 +768,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_ovhConfigRefresh_POST(String serviceName) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/ovhConfigRefresh";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -795,9 +782,9 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<String> serviceName_userLogs_GET(String serviceName, String login) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/userLogs";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = query(qPath, "login", login);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "login", login);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t4);
 	}
 
@@ -813,13 +800,13 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public String serviceName_userLogs_POST(String serviceName, String password, Long ownLogsId, String description, String login) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/userLogs";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "password", password);
 		addBody(o, "ownLogsId", ownLogsId);
 		addBody(o, "description", description);
 		addBody(o, "login", login);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -832,9 +819,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhUserLogs serviceName_userLogs_login_GET(String serviceName, String login) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/userLogs/{login}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{login}", login);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, login);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhUserLogs.class);
 	}
 
@@ -848,9 +834,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public void serviceName_userLogs_login_PUT(String serviceName, String login, OvhUserLogs body) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/userLogs/{login}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{login}", login);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName, login);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -862,9 +847,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public String serviceName_userLogs_login_DELETE(String serviceName, String login) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/userLogs/{login}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{login}", login);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, login);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, String.class);
 	}
 
@@ -878,11 +862,10 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public String serviceName_userLogs_login_changePassword_POST(String serviceName, String login, String password) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/userLogs/{login}/changePassword";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{login}", login);
+		StringBuilder sb = path(qPath, serviceName, login);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "password", password);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -894,8 +877,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public String serviceName_token_GET(String serviceName) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/token";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, String.class);
 	}
 
@@ -907,8 +890,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_module_GET(String serviceName) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/module";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t5);
 	}
 
@@ -927,7 +910,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_module_POST(String serviceName, String domain, net.minidev.ovh.api.hosting.web.module.OvhLanguageEnum language, String adminName, String adminPassword, OvhDependencyType[] dependencies, String path, Long moduleId) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/module";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "domain", domain);
 		addBody(o, "language", language);
@@ -936,7 +919,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 		addBody(o, "dependencies", dependencies);
 		addBody(o, "path", path);
 		addBody(o, "moduleId", moduleId);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -949,9 +932,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhModule serviceName_module_id_GET(String serviceName, Long id) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/module/{id}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhModule.class);
 	}
 
@@ -964,9 +946,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_module_id_DELETE(String serviceName, Long id) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/module/{id}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -979,9 +960,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_module_id_changePassword_POST(String serviceName, Long id) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/module/{id}/changePassword";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -993,8 +973,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<OvhCreationDatabaseCapabilities> serviceName_privateDatabaseCreationCapabilities_GET(String serviceName) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/privateDatabaseCreationCapabilities";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t8);
 	}
 
@@ -1006,8 +986,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhSsl serviceName_ssl_GET(String serviceName) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/ssl";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhSsl.class);
 	}
 
@@ -1022,12 +1002,12 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhSsl serviceName_ssl_POST(String serviceName, String chain, String certificate, String key) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/ssl";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "chain", chain);
 		addBody(o, "certificate", certificate);
 		addBody(o, "key", key);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhSsl.class);
 	}
 
@@ -1039,8 +1019,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhSsl serviceName_ssl_DELETE(String serviceName) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/ssl";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhSsl.class);
 	}
 
@@ -1052,8 +1032,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhSsl serviceName_ssl_regenerate_POST(String serviceName) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/ssl/regenerate";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhSsl.class);
 	}
 
@@ -1065,8 +1045,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<String> serviceName_ssl_domains_GET(String serviceName) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/ssl/domains";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t4);
 	}
 
@@ -1081,11 +1061,11 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public String serviceName_userLogsToken_GET(String serviceName, String attachedDomain, Boolean remoteCheck, Long ttl) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/userLogsToken";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = query(qPath, "attachedDomain", attachedDomain);
-		qPath = query(qPath, "remoteCheck", remoteCheck);
-		qPath = query(qPath, "ttl", ttl);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "attachedDomain", attachedDomain);
+		query(sb, "remoteCheck", remoteCheck);
+		query(sb, "ttl", ttl);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, String.class);
 	}
 
@@ -1099,11 +1079,11 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_activatePrivateDatabase_POST(String serviceName, OvhOrderableVersionEnum version, OvhAvailableRamSizeEnum ram) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/activatePrivateDatabase";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "version", version);
 		addBody(o, "ram", ram);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1115,8 +1095,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<OvhDatabaseTypeEnum> serviceName_databaseAvailableType_GET(String serviceName) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/databaseAvailableType";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t9);
 	}
 	private static TypeReference<ArrayList<OvhDatabaseTypeEnum>> t9 = new TypeReference<ArrayList<OvhDatabaseTypeEnum>>() {};
@@ -1134,13 +1114,13 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<String> serviceName_database_GET(String serviceName, OvhModeEnum mode, String name, String server, OvhDatabaseTypeEnum type, String user) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/database";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = query(qPath, "mode", mode);
-		qPath = query(qPath, "name", name);
-		qPath = query(qPath, "server", server);
-		qPath = query(qPath, "type", type);
-		qPath = query(qPath, "user", user);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "mode", mode);
+		query(sb, "name", name);
+		query(sb, "server", server);
+		query(sb, "type", type);
+		query(sb, "user", user);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t4);
 	}
 
@@ -1158,7 +1138,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_database_POST(String serviceName, OvhExtraSqlQuotaEnum quota, String password, OvhVersionEnum version, OvhDatabaseCapabilitiesTypeEnum capabilitie, String user, OvhDatabaseTypeEnum type) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/database";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "quota", quota);
 		addBody(o, "password", password);
@@ -1166,7 +1146,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 		addBody(o, "capabilitie", capabilitie);
 		addBody(o, "user", user);
 		addBody(o, "type", type);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1180,11 +1160,10 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_database_name_request_POST(String serviceName, String name, net.minidev.ovh.api.hosting.web.database.OvhRequestActionEnum action) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/database/{name}/request";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{name}", name);
+		StringBuilder sb = path(qPath, serviceName, name);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "action", action);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1197,9 +1176,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhDatabase serviceName_database_name_GET(String serviceName, String name) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/database/{name}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{name}", name);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, name);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhDatabase.class);
 	}
 
@@ -1212,9 +1190,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_database_name_DELETE(String serviceName, String name) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/database/{name}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{name}", name);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, name);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1230,12 +1207,11 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_database_name_dump_GET(String serviceName, String name, Date creationDate, Date deletionDate, OvhDumpDateEnum type) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/database/{name}/dump";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{name}", name);
-		qPath = query(qPath, "creationDate", creationDate);
-		qPath = query(qPath, "deletionDate", deletionDate);
-		qPath = query(qPath, "type", type);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, name);
+		query(sb, "creationDate", creationDate);
+		query(sb, "deletionDate", deletionDate);
+		query(sb, "type", type);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t5);
 	}
 
@@ -1250,12 +1226,11 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_database_name_dump_POST(String serviceName, String name, OvhDumpDateEnum date, Boolean sendEmail) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/database/{name}/dump";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{name}", name);
+		StringBuilder sb = path(qPath, serviceName, name);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "date", date);
 		addBody(o, "sendEmail", sendEmail);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1269,10 +1244,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhDump serviceName_database_name_dump_id_GET(String serviceName, String name, Long id) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/database/{name}/dump/{id}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{name}", name);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, name, id);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhDump.class);
 	}
 
@@ -1286,10 +1259,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_database_name_dump_id_DELETE(String serviceName, String name, Long id) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/database/{name}/dump/{id}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{name}", name);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, name, id);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1303,10 +1274,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_database_name_dump_id_restore_POST(String serviceName, String name, Long id) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/database/{name}/dump/{id}/restore";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{name}", name);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName, name, id);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1321,11 +1290,10 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<OvhChartSerie<OvhChartTimestampValue>> serviceName_database_name_statistics_GET(String serviceName, String name, OvhStatisticsPeriodEnum period, net.minidev.ovh.api.hosting.web.database.OvhStatisticsTypeEnum type) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/database/{name}/statistics";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{name}", name);
-		qPath = query(qPath, "period", period);
-		qPath = query(qPath, "type", type);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, name);
+		query(sb, "period", period);
+		query(sb, "type", type);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -1338,15 +1306,15 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 * @param deletionDate [required] Filter the value of deletionDate property (like)
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param name [required] Database name (like mydb.mysql.db or mydb.postgres.db)
+	 * @deprecated
 	 */
 	public ArrayList<Long> serviceName_database_name_dumps_GET(String serviceName, String name, Date creationDate, Date deletionDate, OvhDumpDateEnum type) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/database/{name}/dumps";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{name}", name);
-		qPath = query(qPath, "creationDate", creationDate);
-		qPath = query(qPath, "deletionDate", deletionDate);
-		qPath = query(qPath, "type", type);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, name);
+		query(sb, "creationDate", creationDate);
+		query(sb, "deletionDate", deletionDate);
+		query(sb, "type", type);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t5);
 	}
 
@@ -1357,13 +1325,12 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param name [required] Database name (like mydb.mysql.db or mydb.postgres.db)
 	 * @param id [required] Dump id
+	 * @deprecated
 	 */
 	public OvhDump serviceName_database_name_dumps_id_GET(String serviceName, String name, Long id) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/database/{name}/dumps/{id}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{name}", name);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, name, id);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhDump.class);
 	}
 
@@ -1374,13 +1341,12 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param name [required] Database name (like mydb.mysql.db or mydb.postgres.db)
 	 * @param id [required] Dump id
+	 * @deprecated
 	 */
 	public OvhTask serviceName_database_name_dumps_id_DELETE(String serviceName, String name, Long id) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/database/{name}/dumps/{id}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{name}", name);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, name, id);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1391,13 +1357,12 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param name [required] Database name (like mydb.mysql.db or mydb.postgres.db)
 	 * @param id [required] Dump id
+	 * @deprecated
 	 */
 	public OvhTask serviceName_database_name_dumps_id_restore_POST(String serviceName, String name, Long id) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/database/{name}/dumps/{id}/restore";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{name}", name);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName, name, id);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1411,11 +1376,10 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_database_name_changePassword_POST(String serviceName, String name, String password) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/database/{name}/changePassword";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{name}", name);
+		StringBuilder sb = path(qPath, serviceName, name);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "password", password);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1430,12 +1394,11 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_database_name_restore_POST(String serviceName, String name, OvhDumpDateEnum date, Boolean sendEmail) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/database/{name}/restore";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{name}", name);
+		StringBuilder sb = path(qPath, serviceName, name);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "date", date);
 		addBody(o, "sendEmail", sendEmail);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1451,13 +1414,12 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_database_name_import_POST(String serviceName, String name, String documentId, Boolean sendEmail, Boolean flushDatabase) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/database/{name}/import";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{name}", name);
+		StringBuilder sb = path(qPath, serviceName, name);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "documentId", documentId);
 		addBody(o, "sendEmail", sendEmail);
 		addBody(o, "flushDatabase", flushDatabase);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1473,12 +1435,12 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_cron_GET(String serviceName, String command, String description, String email, OvhLanguageEnum language) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/cron";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = query(qPath, "command", command);
-		qPath = query(qPath, "description", description);
-		qPath = query(qPath, "email", email);
-		qPath = query(qPath, "language", language);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "command", command);
+		query(sb, "description", description);
+		query(sb, "email", email);
+		query(sb, "language", language);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t5);
 	}
 
@@ -1496,7 +1458,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public String serviceName_cron_POST(String serviceName, String frequency, String email, OvhLanguageEnum language, net.minidev.ovh.api.hosting.web.cron.OvhStatusEnum status, String description, String command) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/cron";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "frequency", frequency);
 		addBody(o, "email", email);
@@ -1504,7 +1466,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 		addBody(o, "status", status);
 		addBody(o, "description", description);
 		addBody(o, "command", command);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -1517,9 +1479,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhCron serviceName_cron_id_GET(String serviceName, Long id) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/cron/{id}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhCron.class);
 	}
 
@@ -1533,9 +1494,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public void serviceName_cron_id_PUT(String serviceName, Long id, OvhCron body) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/cron/{id}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{id}", id.toString());
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName, id);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1547,9 +1507,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public String serviceName_cron_id_DELETE(String serviceName, Long id) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/cron/{id}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, String.class);
 	}
 
@@ -1562,9 +1521,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhAttachedDomain serviceName_attachedDomain_domain_GET(String serviceName, String domain) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/attachedDomain/{domain}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{domain}", domain);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, domain);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhAttachedDomain.class);
 	}
 
@@ -1578,9 +1536,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public void serviceName_attachedDomain_domain_PUT(String serviceName, String domain, OvhAttachedDomain body) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/attachedDomain/{domain}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{domain}", domain);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName, domain);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1592,9 +1549,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_attachedDomain_domain_DELETE(String serviceName, String domain) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/attachedDomain/{domain}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{domain}", domain);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, domain);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1607,9 +1563,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_attachedDomain_domain_purgeCache_POST(String serviceName, String domain) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/attachedDomain/{domain}/purgeCache";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{domain}", domain);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName, domain);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1623,10 +1578,10 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<String> serviceName_attachedDomain_GET(String serviceName, String domain, String path) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/attachedDomain";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = query(qPath, "domain", domain);
-		qPath = query(qPath, "path", path);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "domain", domain);
+		query(sb, "path", path);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t4);
 	}
 
@@ -1644,7 +1599,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_attachedDomain_POST(String serviceName, OvhCdnEnum cdn, String domain, String ownLog, Boolean ssl, OvhFirewallEnum firewall, String path) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/attachedDomain";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "cdn", cdn);
 		addBody(o, "domain", domain);
@@ -1652,7 +1607,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 		addBody(o, "ssl", ssl);
 		addBody(o, "firewall", firewall);
 		addBody(o, "path", path);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1664,8 +1619,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_ownLogs_GET(String serviceName) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/ownLogs";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t5);
 	}
 
@@ -1678,9 +1633,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhOwnLogs serviceName_ownLogs_id_GET(String serviceName, Long id) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/ownLogs/{id}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhOwnLogs.class);
 	}
 
@@ -1694,10 +1648,10 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_ovhConfig_GET(String serviceName, Boolean historical, String path) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/ovhConfig";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = query(qPath, "historical", historical);
-		qPath = query(qPath, "path", path);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "historical", historical);
+		query(sb, "path", path);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t5);
 	}
 
@@ -1715,15 +1669,14 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_ovhConfig_id_changeConfiguration_POST(String serviceName, Long id, OvhEnvironmentEnum environment, OvhHttpFirewallEnum httpFirewall, OvhEngineNameEnum engineName, OvhContainerEnum container, OvhAvailableEngineVersionEnum engineVersion) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/ovhConfig/{id}/changeConfiguration";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{id}", id.toString());
+		StringBuilder sb = path(qPath, serviceName, id);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "environment", environment);
 		addBody(o, "httpFirewall", httpFirewall);
 		addBody(o, "engineName", engineName);
 		addBody(o, "container", container);
 		addBody(o, "engineVersion", engineVersion);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1736,9 +1689,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhOvhConfig serviceName_ovhConfig_id_GET(String serviceName, Long id) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/ovhConfig/{id}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhOvhConfig.class);
 	}
 
@@ -1752,11 +1704,10 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_ovhConfig_id_rollback_POST(String serviceName, Long id, Long rollbackId) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/ovhConfig/{id}/rollback";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{id}", id.toString());
+		StringBuilder sb = path(qPath, serviceName, id);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "rollbackId", rollbackId);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1767,7 +1718,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/hosting/web";
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t4);
 	}
 
@@ -1779,8 +1731,9 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<String> attachedDomain_GET(String domain) throws IOException {
 		String qPath = "/hosting/web/attachedDomain";
-		qPath = query(qPath, "domain", domain);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath);
+		query(sb, "domain", domain);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t4);
 	}
 
@@ -1792,8 +1745,9 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhCapabilities offerCapabilities_GET(OvhOfferCapabilitiesEnum offer) throws IOException {
 		String qPath = "/hosting/web/offerCapabilities";
-		qPath = query(qPath, "offer", offer);
-		String resp = execN("GET", qPath);
+		StringBuilder sb = path(qPath);
+		query(sb, "offer", offer);
+		String resp = execN("GET", sb.toString());
 		return convertTo(resp, OvhCapabilities.class);
 	}
 
@@ -1805,8 +1759,9 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<OvhOfferEnum> availableOffer_GET(String domain) throws IOException {
 		String qPath = "/hosting/web/availableOffer";
-		qPath = query(qPath, "domain", domain);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath);
+		query(sb, "domain", domain);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t10);
 	}
 	private static TypeReference<ArrayList<OvhOfferEnum>> t10 = new TypeReference<ArrayList<OvhOfferEnum>>() {};
@@ -1821,10 +1776,11 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<Long> moduleList_GET(Boolean active, OvhBranchEnum branch, Boolean latest) throws IOException {
 		String qPath = "/hosting/web/moduleList";
-		qPath = query(qPath, "active", active);
-		qPath = query(qPath, "branch", branch);
-		qPath = query(qPath, "latest", latest);
-		String resp = execN("GET", qPath);
+		StringBuilder sb = path(qPath);
+		query(sb, "active", active);
+		query(sb, "branch", branch);
+		query(sb, "latest", latest);
+		String resp = execN("GET", sb.toString());
 		return convertTo(resp, t5);
 	}
 
@@ -1836,8 +1792,8 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public OvhModuleList moduleList_id_GET(Long id) throws IOException {
 		String qPath = "/hosting/web/moduleList/{id}";
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = execN("GET", qPath);
+		StringBuilder sb = path(qPath, id);
+		String resp = execN("GET", sb.toString());
 		return convertTo(resp, OvhModuleList.class);
 	}
 }

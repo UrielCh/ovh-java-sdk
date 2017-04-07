@@ -43,7 +43,8 @@ public class ApiOvhPartners extends ApiOvhBase {
 	 */
 	public ArrayList<String> register_company_GET() throws IOException {
 		String qPath = "/partners/register/company";
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
@@ -84,6 +85,7 @@ public class ApiOvhPartners extends ApiOvhBase {
 	 */
 	public OvhCompany register_company_POST(String name, String commercialName, String registrationNumber, String address, String city, String zipCode, OvhCountryEnum country, String phone, String website, String description, String email, String linkedin, String facebook, String twitter, String logo, OvhEmployeesNumberEnum employeesNumber, OvhRevenueRangeEnum revenue, OvhKnowledgeResourcesRangeEnum OVHKnowledgeResources, OvhTechnicalAdvancedResourcesRangeEnum OVHTechnicalAdvancedResources, OvhTechnicalExpertResourcesRangeEnum OVHTechnicalExpertResources, OvhOVHCustomersAdvisedEnum OVHCustomersAdvised, OvhExpertisesChoices expertises, OvhOVHCertifications OVHCertifications, OvhOVHProductsUsed OVHProductsUsed, OvhClientKinds clientKinds, OvhActivitySectors activitySectors, OvhProductCountries productCountries, OvhExternalCertifications externalCertifications, OvhPartnerKnowledges partnerKnowledges) throws IOException {
 		String qPath = "/partners/register/company";
+		StringBuilder sb = path(qPath);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "name", name);
 		addBody(o, "commercialName", commercialName);
@@ -114,7 +116,7 @@ public class ApiOvhPartners extends ApiOvhBase {
 		addBody(o, "productCountries", productCountries);
 		addBody(o, "externalCertifications", externalCertifications);
 		addBody(o, "partnerKnowledges", partnerKnowledges);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhCompany.class);
 	}
 
@@ -126,8 +128,8 @@ public class ApiOvhPartners extends ApiOvhBase {
 	 */
 	public OvhCompany register_company_companyId_GET(String companyId) throws IOException {
 		String qPath = "/partners/register/company/{companyId}";
-		qPath = qPath.replace("{companyId}", companyId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, companyId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhCompany.class);
 	}
 
@@ -168,7 +170,7 @@ public class ApiOvhPartners extends ApiOvhBase {
 	 */
 	public OvhCompany register_company_companyId_PUT(String companyId, String name, String commercialName, String registrationNumber, String address, String city, String zipCode, OvhCountryEnum country, String phone, String website, String description, String email, String linkedin, String facebook, String twitter, String logo, OvhEmployeesNumberEnum effective, OvhRevenueRangeEnum revenue, OvhKnowledgeResourcesRangeEnum OVHKnowledgeResources, OvhTechnicalAdvancedResourcesRangeEnum OVHTechnicalAdvancedResources, OvhTechnicalExpertResourcesRangeEnum OVHTechnicalExpertResources, OvhExpertisesChoices expertises, OvhOVHCertifications OVHCertifications, OvhOVHCustomersAdvisedEnum OVHCustomersAdvised, OvhOVHProductsUsed OVHProductsUsed, OvhClientKinds clientKinds, OvhActivitySectors activitySectors, OvhProductCountries productCountries, OvhExternalCertifications externalCertifications, OvhPartnerKnowledges partnerKnowledges) throws IOException {
 		String qPath = "/partners/register/company/{companyId}";
-		qPath = qPath.replace("{companyId}", companyId);
+		StringBuilder sb = path(qPath, companyId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "name", name);
 		addBody(o, "commercialName", commercialName);
@@ -199,7 +201,7 @@ public class ApiOvhPartners extends ApiOvhBase {
 		addBody(o, "productCountries", productCountries);
 		addBody(o, "externalCertifications", externalCertifications);
 		addBody(o, "partnerKnowledges", partnerKnowledges);
-		String resp = exec("PUT", qPath, o);
+		String resp = exec("PUT", sb.toString(), o);
 		return convertTo(resp, OvhCompany.class);
 	}
 
@@ -211,8 +213,8 @@ public class ApiOvhPartners extends ApiOvhBase {
 	 */
 	public String register_company_companyId_DELETE(String companyId) throws IOException {
 		String qPath = "/partners/register/company/{companyId}";
-		qPath = qPath.replace("{companyId}", companyId);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, companyId);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, String.class);
 	}
 
@@ -225,10 +227,10 @@ public class ApiOvhPartners extends ApiOvhBase {
 	 */
 	public OvhApplication register_company_companyId_application_POST(String companyId, Boolean termsAndConditionsOfServiceAccepted) throws IOException {
 		String qPath = "/partners/register/company/{companyId}/application";
-		qPath = qPath.replace("{companyId}", companyId);
+		StringBuilder sb = path(qPath, companyId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "termsAndConditionsOfServiceAccepted", termsAndConditionsOfServiceAccepted);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhApplication.class);
 	}
 
@@ -240,8 +242,8 @@ public class ApiOvhPartners extends ApiOvhBase {
 	 */
 	public OvhApplication register_company_companyId_application_GET(String companyId) throws IOException {
 		String qPath = "/partners/register/company/{companyId}/application";
-		qPath = qPath.replace("{companyId}", companyId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, companyId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhApplication.class);
 	}
 
@@ -253,8 +255,8 @@ public class ApiOvhPartners extends ApiOvhBase {
 	 */
 	public ArrayList<String> register_company_companyId_contact_GET(String companyId) throws IOException {
 		String qPath = "/partners/register/company/{companyId}/contact";
-		qPath = qPath.replace("{companyId}", companyId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, companyId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -276,7 +278,7 @@ public class ApiOvhPartners extends ApiOvhBase {
 	 */
 	public OvhContact register_company_companyId_contact_POST(String companyId, OvhNic[] otherNics, String firstName, String lastName, String email, String role, String phone, String linkedin, String facebook, String twitter, Boolean newsletter) throws IOException {
 		String qPath = "/partners/register/company/{companyId}/contact";
-		qPath = qPath.replace("{companyId}", companyId);
+		StringBuilder sb = path(qPath, companyId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "otherNics", otherNics);
 		addBody(o, "firstName", firstName);
@@ -288,7 +290,7 @@ public class ApiOvhPartners extends ApiOvhBase {
 		addBody(o, "facebook", facebook);
 		addBody(o, "twitter", twitter);
 		addBody(o, "newsletter", newsletter);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhContact.class);
 	}
 
@@ -301,9 +303,8 @@ public class ApiOvhPartners extends ApiOvhBase {
 	 */
 	public OvhContact register_company_companyId_contact_contactId_GET(String companyId, String contactId) throws IOException {
 		String qPath = "/partners/register/company/{companyId}/contact/{contactId}";
-		qPath = qPath.replace("{companyId}", companyId);
-		qPath = qPath.replace("{contactId}", contactId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, companyId, contactId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhContact.class);
 	}
 
@@ -326,8 +327,7 @@ public class ApiOvhPartners extends ApiOvhBase {
 	 */
 	public OvhContact register_company_companyId_contact_contactId_PUT(String companyId, String contactId, OvhNic[] otherNics, String firstName, String lastName, String email, String role, String phone, String linkedin, String facebook, String twitter, Boolean newsletter) throws IOException {
 		String qPath = "/partners/register/company/{companyId}/contact/{contactId}";
-		qPath = qPath.replace("{companyId}", companyId);
-		qPath = qPath.replace("{contactId}", contactId);
+		StringBuilder sb = path(qPath, companyId, contactId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "otherNics", otherNics);
 		addBody(o, "firstName", firstName);
@@ -339,7 +339,7 @@ public class ApiOvhPartners extends ApiOvhBase {
 		addBody(o, "facebook", facebook);
 		addBody(o, "twitter", twitter);
 		addBody(o, "newsletter", newsletter);
-		String resp = exec("PUT", qPath, o);
+		String resp = exec("PUT", sb.toString(), o);
 		return convertTo(resp, OvhContact.class);
 	}
 
@@ -352,9 +352,8 @@ public class ApiOvhPartners extends ApiOvhBase {
 	 */
 	public String register_company_companyId_contact_contactId_DELETE(String companyId, String contactId) throws IOException {
 		String qPath = "/partners/register/company/{companyId}/contact/{contactId}";
-		qPath = qPath.replace("{companyId}", companyId);
-		qPath = qPath.replace("{contactId}", contactId);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, companyId, contactId);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, String.class);
 	}
 }

@@ -35,8 +35,8 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 */
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/horizonView/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -49,8 +49,8 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/horizonView/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -61,8 +61,8 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 */
 	public OvhDedicatedHorizon serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/horizonView/{serviceName}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhDedicatedHorizon.class);
 	}
 
@@ -77,12 +77,12 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 */
 	public String serviceName_confirmTermination_POST(String serviceName, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
 		String qPath = "/horizonView/{serviceName}/confirmTermination";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "reason", reason);
 		addBody(o, "commentary", commentary);
 		addBody(o, "token", token);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -94,8 +94,8 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 */
 	public String serviceName_terminate_POST(String serviceName) throws IOException {
 		String qPath = "/horizonView/{serviceName}/terminate";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, String.class);
 	}
 
@@ -108,9 +108,9 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_task_GET(String serviceName, OvhTaskStateEnum state) throws IOException {
 		String qPath = "/horizonView/{serviceName}/task";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = query(qPath, "state", state);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "state", state);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
@@ -124,9 +124,8 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_task_taskId_GET(String serviceName, Long taskId) throws IOException {
 		String qPath = "/horizonView/{serviceName}/task/{taskId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{taskId}", taskId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, taskId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -138,8 +137,8 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_host_GET(String serviceName) throws IOException {
 		String qPath = "/horizonView/{serviceName}/host";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -152,9 +151,8 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 */
 	public OvhHost serviceName_host_id_GET(String serviceName, Long id) throws IOException {
 		String qPath = "/horizonView/{serviceName}/host/{id}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhHost.class);
 	}
 
@@ -167,9 +165,8 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 */
 	public ArrayList<OvhTask> serviceName_host_id_DELETE(String serviceName, Long id) throws IOException {
 		String qPath = "/horizonView/{serviceName}/host/{id}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<OvhTask>> t2 = new TypeReference<ArrayList<OvhTask>>() {};
@@ -182,8 +179,8 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_accessPoint_GET(String serviceName) throws IOException {
 		String qPath = "/horizonView/{serviceName}/accessPoint";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -195,8 +192,8 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 */
 	public ArrayList<OvhTask> serviceName_accessPoint_POST(String serviceName) throws IOException {
 		String qPath = "/horizonView/{serviceName}/accessPoint";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, t2);
 	}
 
@@ -209,9 +206,8 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 */
 	public OvhPool serviceName_accessPoint_accessPointId_GET(String serviceName, Long accessPointId) throws IOException {
 		String qPath = "/horizonView/{serviceName}/accessPoint/{accessPointId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{accessPointId}", accessPointId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, accessPointId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhPool.class);
 	}
 
@@ -224,9 +220,8 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 */
 	public ArrayList<OvhTask> serviceName_accessPoint_accessPointId_DELETE(String serviceName, Long accessPointId) throws IOException {
 		String qPath = "/horizonView/{serviceName}/accessPoint/{accessPointId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{accessPointId}", accessPointId.toString());
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, accessPointId);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, t2);
 	}
 
@@ -238,8 +233,8 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 */
 	public ArrayList<String> serviceName_customerUser_GET(String serviceName) throws IOException {
 		String qPath = "/horizonView/{serviceName}/customerUser";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t3);
 	}
 	private static TypeReference<ArrayList<String>> t3 = new TypeReference<ArrayList<String>>() {};
@@ -255,12 +250,12 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 */
 	public ArrayList<OvhTask> serviceName_customerUser_POST(String serviceName, String email, String password, String username) throws IOException {
 		String qPath = "/horizonView/{serviceName}/customerUser";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "email", email);
 		addBody(o, "password", password);
 		addBody(o, "username", username);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, t2);
 	}
 
@@ -273,9 +268,8 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 */
 	public OvhCustomerUser serviceName_customerUser_username_GET(String serviceName, String username) throws IOException {
 		String qPath = "/horizonView/{serviceName}/customerUser/{username}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{username}", username);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, username);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhCustomerUser.class);
 	}
 
@@ -288,9 +282,8 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 */
 	public ArrayList<OvhTask> serviceName_customerUser_username_DELETE(String serviceName, String username) throws IOException {
 		String qPath = "/horizonView/{serviceName}/customerUser/{username}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{username}", username);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, username);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, t2);
 	}
 
@@ -304,11 +297,10 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_customerUser_username_changePassword_POST(String serviceName, String username, String password) throws IOException {
 		String qPath = "/horizonView/{serviceName}/customerUser/{username}/changePassword";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{username}", username);
+		StringBuilder sb = path(qPath, serviceName, username);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "password", password);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -320,8 +312,8 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 */
 	public OvhUser serviceName_user_GET(String serviceName) throws IOException {
 		String qPath = "/horizonView/{serviceName}/user";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhUser.class);
 	}
 
@@ -334,10 +326,10 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_user_changeProperties_POST(String serviceName, String email) throws IOException {
 		String qPath = "/horizonView/{serviceName}/user/changeProperties";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "email", email);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -350,10 +342,10 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_user_changePassword_POST(String serviceName, String password) throws IOException {
 		String qPath = "/horizonView/{serviceName}/user/changePassword";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "password", password);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -365,8 +357,8 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_storage_GET(String serviceName) throws IOException {
 		String qPath = "/horizonView/{serviceName}/storage";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -379,9 +371,8 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 */
 	public OvhStorage serviceName_storage_id_GET(String serviceName, Long id) throws IOException {
 		String qPath = "/horizonView/{serviceName}/storage/{id}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhStorage.class);
 	}
 
@@ -394,9 +385,8 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 */
 	public ArrayList<OvhTask> serviceName_storage_id_DELETE(String serviceName, Long id) throws IOException {
 		String qPath = "/horizonView/{serviceName}/storage/{id}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, t2);
 	}
 
@@ -407,7 +397,8 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 */
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/horizonView";
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t3);
 	}
 }

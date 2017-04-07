@@ -62,8 +62,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -76,8 +76,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -88,8 +88,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhPasswordPolicy serviceName_passwordPolicy_GET(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/passwordPolicy";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhPasswordPolicy.class);
 	}
 
@@ -101,8 +101,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhDedicatedCloud serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhDedicatedCloud.class);
 	}
 
@@ -115,8 +115,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public void serviceName_PUT(String serviceName, OvhDedicatedCloud body) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -127,8 +127,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_datacenter_GET(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
@@ -143,11 +143,11 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_datacenter_POST(String serviceName, String commercialRangeName, String vrackName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "commercialRangeName", commercialRangeName);
 		addBody(o, "vrackName", vrackName);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -160,9 +160,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhDatacenter serviceName_datacenter_datacenterId_GET(String serviceName, Long datacenterId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, datacenterId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhDatacenter.class);
 	}
 
@@ -176,9 +175,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public void serviceName_datacenter_datacenterId_PUT(String serviceName, Long datacenterId, OvhDatacenter body) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName, datacenterId);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -190,9 +188,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_datacenter_datacenterId_DELETE(String serviceName, Long datacenterId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, datacenterId);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -206,11 +203,10 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_datacenter_datacenterId_orderNewHostHourly_POST(String serviceName, Long datacenterId, String name) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/orderNewHostHourly";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
+		StringBuilder sb = path(qPath, serviceName, datacenterId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "name", name);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -225,11 +221,10 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_datacenter_datacenterId_task_GET(String serviceName, Long datacenterId, String name, OvhTaskStateEnum state) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/task";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		qPath = query(qPath, "name", name);
-		qPath = query(qPath, "state", state);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, datacenterId);
+		query(sb, "name", name);
+		query(sb, "state", state);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -243,10 +238,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_datacenter_datacenterId_task_taskId_GET(String serviceName, Long datacenterId, Long taskId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/task/{taskId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		qPath = qPath.replace("{taskId}", taskId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, datacenterId, taskId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -261,12 +254,10 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_datacenter_datacenterId_task_taskId_changeMaintenanceExecutionDate_POST(String serviceName, Long datacenterId, Long taskId, Date executionDate) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/task/{taskId}/changeMaintenanceExecutionDate";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		qPath = qPath.replace("{taskId}", taskId.toString());
+		StringBuilder sb = path(qPath, serviceName, datacenterId, taskId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "executionDate", executionDate);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -279,9 +270,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public ArrayList<OvhProfile> serviceName_datacenter_datacenterId_orderableFilerProfiles_GET(String serviceName, Long datacenterId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/orderableFilerProfiles";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, datacenterId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<OvhProfile>> t2 = new TypeReference<ArrayList<OvhProfile>>() {};
@@ -295,9 +285,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_datacenter_datacenterId_filer_GET(String serviceName, Long datacenterId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/filer";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, datacenterId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -311,10 +300,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhFiler serviceName_datacenter_datacenterId_filer_filerId_GET(String serviceName, Long datacenterId, Long filerId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/filer/{filerId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		qPath = qPath.replace("{filerId}", filerId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, datacenterId, filerId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhFiler.class);
 	}
 
@@ -328,10 +315,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_datacenter_datacenterId_filer_filerId_remove_POST(String serviceName, Long datacenterId, Long filerId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/filer/{filerId}/remove";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		qPath = qPath.replace("{filerId}", filerId.toString());
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName, datacenterId, filerId);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -347,12 +332,10 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_datacenter_datacenterId_filer_filerId_task_GET(String serviceName, Long datacenterId, Long filerId, String name, OvhTaskStateEnum state) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/filer/{filerId}/task";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		qPath = qPath.replace("{filerId}", filerId.toString());
-		qPath = query(qPath, "name", name);
-		qPath = query(qPath, "state", state);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, datacenterId, filerId);
+		query(sb, "name", name);
+		query(sb, "state", state);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -367,11 +350,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_datacenter_datacenterId_filer_filerId_task_taskId_GET(String serviceName, Long datacenterId, Long filerId, Long taskId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/filer/{filerId}/task/{taskId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		qPath = qPath.replace("{filerId}", filerId.toString());
-		qPath = qPath.replace("{taskId}", taskId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, datacenterId, filerId, taskId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -387,13 +367,10 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_datacenter_datacenterId_filer_filerId_task_taskId_changeMaintenanceExecutionDate_POST(String serviceName, Long datacenterId, Long filerId, Long taskId, Date executionDate) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/filer/{filerId}/task/{taskId}/changeMaintenanceExecutionDate";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		qPath = qPath.replace("{filerId}", filerId.toString());
-		qPath = qPath.replace("{taskId}", taskId.toString());
+		StringBuilder sb = path(qPath, serviceName, datacenterId, filerId, taskId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "executionDate", executionDate);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -407,10 +384,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhHourlyConsumption serviceName_datacenter_datacenterId_filer_filerId_hourlyConsumption_GET(String serviceName, Long datacenterId, Long filerId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/filer/{filerId}/hourlyConsumption";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		qPath = qPath.replace("{filerId}", filerId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, datacenterId, filerId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhHourlyConsumption.class);
 	}
 
@@ -424,10 +399,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhHost serviceName_datacenter_datacenterId_host_hostId_GET(String serviceName, Long datacenterId, Long hostId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/host/{hostId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		qPath = qPath.replace("{hostId}", hostId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, datacenterId, hostId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhHost.class);
 	}
 
@@ -441,10 +414,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_datacenter_datacenterId_host_hostId_remove_POST(String serviceName, Long datacenterId, Long hostId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/host/{hostId}/remove";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		qPath = qPath.replace("{hostId}", hostId.toString());
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName, datacenterId, hostId);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -460,12 +431,10 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_datacenter_datacenterId_host_hostId_task_GET(String serviceName, Long datacenterId, Long hostId, String name, OvhTaskStateEnum state) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/host/{hostId}/task";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		qPath = qPath.replace("{hostId}", hostId.toString());
-		qPath = query(qPath, "name", name);
-		qPath = query(qPath, "state", state);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, datacenterId, hostId);
+		query(sb, "name", name);
+		query(sb, "state", state);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -480,11 +449,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_datacenter_datacenterId_host_hostId_task_taskId_GET(String serviceName, Long datacenterId, Long hostId, Long taskId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/host/{hostId}/task/{taskId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		qPath = qPath.replace("{hostId}", hostId.toString());
-		qPath = qPath.replace("{taskId}", taskId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, datacenterId, hostId, taskId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -500,13 +466,10 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_datacenter_datacenterId_host_hostId_task_taskId_changeMaintenanceExecutionDate_POST(String serviceName, Long datacenterId, Long hostId, Long taskId, Date executionDate) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/host/{hostId}/task/{taskId}/changeMaintenanceExecutionDate";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		qPath = qPath.replace("{hostId}", hostId.toString());
-		qPath = qPath.replace("{taskId}", taskId.toString());
+		StringBuilder sb = path(qPath, serviceName, datacenterId, hostId, taskId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "executionDate", executionDate);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -520,10 +483,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public net.minidev.ovh.api.dedicatedcloud.host.OvhHourlyConsumption serviceName_datacenter_datacenterId_host_hostId_hourlyConsumption_GET(String serviceName, Long datacenterId, Long hostId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/host/{hostId}/hourlyConsumption";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		qPath = qPath.replace("{hostId}", hostId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, datacenterId, hostId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, net.minidev.ovh.api.dedicatedcloud.host.OvhHourlyConsumption.class);
 	}
 
@@ -536,9 +497,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_datacenter_datacenterId_host_GET(String serviceName, Long datacenterId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/host";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, datacenterId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -548,12 +508,12 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 * REST: GET /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
+	 * @beta
 	 */
 	public ArrayList<Long> serviceName_datacenter_datacenterId_vm_GET(String serviceName, Long datacenterId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, datacenterId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -564,13 +524,12 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
 	 * @param vmId [required] Id of the virtual machine.
+	 * @beta
 	 */
 	public OvhVm serviceName_datacenter_datacenterId_vm_vmId_GET(String serviceName, Long datacenterId, Long vmId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		qPath = qPath.replace("{vmId}", vmId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, datacenterId, vmId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhVm.class);
 	}
 
@@ -584,10 +543,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhBackupJob serviceName_datacenter_datacenterId_vm_vmId_backupJob_GET(String serviceName, Long datacenterId, Long vmId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}/backupJob";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		qPath = qPath.replace("{vmId}", vmId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, datacenterId, vmId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhBackupJob.class);
 	}
 
@@ -602,12 +559,10 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_datacenter_datacenterId_vm_vmId_backupJob_POST(String serviceName, Long datacenterId, Long vmId, OvhBackupDaysEnum[] backupDays) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}/backupJob";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		qPath = qPath.replace("{vmId}", vmId.toString());
+		StringBuilder sb = path(qPath, serviceName, datacenterId, vmId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "backupDays", backupDays);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -622,12 +577,10 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_datacenter_datacenterId_vm_vmId_backupJob_enable_POST(String serviceName, Long datacenterId, Long vmId, OvhBackupDaysEnum[] backupDays) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}/backupJob/enable";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		qPath = qPath.replace("{vmId}", vmId.toString());
+		StringBuilder sb = path(qPath, serviceName, datacenterId, vmId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "backupDays", backupDays);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -641,10 +594,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_datacenter_datacenterId_vm_vmId_backupJob_restorePoints_GET(String serviceName, Long datacenterId, Long vmId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}/backupJob/restorePoints";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		qPath = qPath.replace("{vmId}", vmId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, datacenterId, vmId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -659,11 +610,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhRestorePoint serviceName_datacenter_datacenterId_vm_vmId_backupJob_restorePoints_restorePointId_GET(String serviceName, Long datacenterId, Long vmId, Long restorePointId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}/backupJob/restorePoints/{restorePointId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		qPath = qPath.replace("{vmId}", vmId.toString());
-		qPath = qPath.replace("{restorePointId}", restorePointId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, datacenterId, vmId, restorePointId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhRestorePoint.class);
 	}
 
@@ -679,13 +627,10 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_datacenter_datacenterId_vm_vmId_backupJob_restorePoints_restorePointId_restore_POST(String serviceName, Long datacenterId, Long vmId, Long restorePointId, Long filerId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}/backupJob/restorePoints/{restorePointId}/restore";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		qPath = qPath.replace("{vmId}", vmId.toString());
-		qPath = qPath.replace("{restorePointId}", restorePointId.toString());
+		StringBuilder sb = path(qPath, serviceName, datacenterId, vmId, restorePointId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "filerId", filerId);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -699,10 +644,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_datacenter_datacenterId_vm_vmId_backupJob_disable_POST(String serviceName, Long datacenterId, Long vmId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}/backupJob/disable";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		qPath = qPath.replace("{vmId}", vmId.toString());
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName, datacenterId, vmId);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -716,11 +659,10 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_datacenter_datacenterId_orderNewFilerHourly_POST(String serviceName, Long datacenterId, String name) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/orderNewFilerHourly";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
+		StringBuilder sb = path(qPath, serviceName, datacenterId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "name", name);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -733,9 +675,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public ArrayList<net.minidev.ovh.api.dedicatedcloud.host.OvhProfile> serviceName_datacenter_datacenterId_orderableHostProfiles_GET(String serviceName, Long datacenterId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/orderableHostProfiles";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, datacenterId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t3);
 	}
 	private static TypeReference<ArrayList<net.minidev.ovh.api.dedicatedcloud.host.OvhProfile>> t3 = new TypeReference<ArrayList<net.minidev.ovh.api.dedicatedcloud.host.OvhProfile>>() {};
@@ -749,9 +690,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhBackup serviceName_datacenter_datacenterId_backup_GET(String serviceName, Long datacenterId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/backup";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, datacenterId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhBackup.class);
 	}
 
@@ -772,8 +712,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_datacenter_datacenterId_backup_POST(String serviceName, Long datacenterId, Boolean restorePointInReport, OvhOfferTypeEnum backupOffer, Boolean fullDayInReport, String mailAddress, Date scheduleHour, Boolean diskSizeInReport, Boolean backupSizeInReport, Boolean backupDurationInReport) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/backup";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
+		StringBuilder sb = path(qPath, serviceName, datacenterId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "restorePointInReport", restorePointInReport);
 		addBody(o, "backupOffer", backupOffer);
@@ -783,7 +722,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 		addBody(o, "diskSizeInReport", diskSizeInReport);
 		addBody(o, "backupSizeInReport", backupSizeInReport);
 		addBody(o, "backupDurationInReport", backupDurationInReport);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -797,11 +736,10 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_datacenter_datacenterId_backup_enable_POST(String serviceName, Long datacenterId, OvhOfferTypeEnum backupOffer) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/backup/enable";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
+		StringBuilder sb = path(qPath, serviceName, datacenterId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "backupOffer", backupOffer);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -814,9 +752,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_datacenter_datacenterId_backup_disable_POST(String serviceName, Long datacenterId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/backup/disable";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{datacenterId}", datacenterId.toString());
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName, datacenterId);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -828,8 +765,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhOptionCompatibility serviceName_hipaa_canBeDisabled_GET(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/hipaa/canBeDisabled";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhOptionCompatibility.class);
 	}
 
@@ -841,8 +778,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhHipaa serviceName_hipaa_GET(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/hipaa";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhHipaa.class);
 	}
 
@@ -854,8 +791,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_hipaa_enable_POST(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/hipaa/enable";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -867,8 +804,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhOptionCompatibility serviceName_hipaa_canBeEnabled_GET(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/hipaa/canBeEnabled";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhOptionCompatibility.class);
 	}
 
@@ -880,8 +817,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_hipaa_disable_POST(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/hipaa/disable";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -893,8 +830,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public ArrayList<String> serviceName_ip_GET(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/ip";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t4);
 	}
 	private static TypeReference<ArrayList<String>> t4 = new TypeReference<ArrayList<String>>() {};
@@ -908,9 +845,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhIp serviceName_ip_network_GET(String serviceName, String network) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/ip/{network}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{network}", network);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, network);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhIp.class);
 	}
 
@@ -925,11 +861,10 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_ip_network_task_GET(String serviceName, String network, String name, OvhTaskStateEnum state) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/ip/{network}/task";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{network}", network);
-		qPath = query(qPath, "name", name);
-		qPath = query(qPath, "state", state);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, network);
+		query(sb, "name", name);
+		query(sb, "state", state);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -943,10 +878,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_ip_network_task_taskId_GET(String serviceName, String network, Long taskId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/ip/{network}/task/{taskId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{network}", network);
-		qPath = qPath.replace("{taskId}", taskId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, network, taskId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -961,12 +894,10 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_ip_network_task_taskId_changeMaintenanceExecutionDate_POST(String serviceName, String network, Long taskId, Date executionDate) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/ip/{network}/task/{taskId}/changeMaintenanceExecutionDate";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{network}", network);
-		qPath = qPath.replace("{taskId}", taskId.toString());
+		StringBuilder sb = path(qPath, serviceName, network, taskId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "executionDate", executionDate);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -978,8 +909,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhOptionCompatibility serviceName_nsx_canBeDisabled_GET(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/nsx/canBeDisabled";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhOptionCompatibility.class);
 	}
 
@@ -991,8 +922,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhNsx serviceName_nsx_GET(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/nsx";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhNsx.class);
 	}
 
@@ -1004,8 +935,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_nsx_enable_POST(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/nsx/enable";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1017,8 +948,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhOptionCompatibility serviceName_nsx_canBeEnabled_GET(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/nsx/canBeEnabled";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhOptionCompatibility.class);
 	}
 
@@ -1030,8 +961,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_nsx_disable_POST(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/nsx/disable";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1043,8 +974,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public String serviceName_terminate_POST(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/terminate";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, String.class);
 	}
 
@@ -1056,8 +987,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public ArrayList<String> serviceName_commercialRange_compliance_GET(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/commercialRange/compliance";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t4);
 	}
 
@@ -1069,8 +1000,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public ArrayList<String> serviceName_commercialRange_orderable_GET(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/commercialRange/orderable";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t4);
 	}
 
@@ -1082,8 +1013,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_filer_GET(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/filer";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -1096,9 +1027,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhFiler serviceName_filer_filerId_GET(String serviceName, Long filerId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/filer/{filerId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{filerId}", filerId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, filerId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhFiler.class);
 	}
 
@@ -1111,9 +1041,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_filer_filerId_remove_POST(String serviceName, Long filerId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/filer/{filerId}/remove";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{filerId}", filerId.toString());
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName, filerId);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1128,11 +1057,10 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_filer_filerId_task_GET(String serviceName, Long filerId, String name, OvhTaskStateEnum state) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/filer/{filerId}/task";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{filerId}", filerId.toString());
-		qPath = query(qPath, "name", name);
-		qPath = query(qPath, "state", state);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, filerId);
+		query(sb, "name", name);
+		query(sb, "state", state);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -1146,10 +1074,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_filer_filerId_task_taskId_GET(String serviceName, Long filerId, Long taskId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/filer/{filerId}/task/{taskId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{filerId}", filerId.toString());
-		qPath = qPath.replace("{taskId}", taskId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, filerId, taskId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1164,12 +1090,10 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_filer_filerId_task_taskId_changeMaintenanceExecutionDate_POST(String serviceName, Long filerId, Long taskId, Date executionDate) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/filer/{filerId}/task/{taskId}/changeMaintenanceExecutionDate";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{filerId}", filerId.toString());
-		qPath = qPath.replace("{taskId}", taskId.toString());
+		StringBuilder sb = path(qPath, serviceName, filerId, taskId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "executionDate", executionDate);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1182,9 +1106,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhHourlyConsumption serviceName_filer_filerId_hourlyConsumption_GET(String serviceName, Long filerId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/filer/{filerId}/hourlyConsumption";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{filerId}", filerId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, filerId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhHourlyConsumption.class);
 	}
 
@@ -1199,12 +1122,12 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/changeContact";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "contactAdmin", contactAdmin);
 		addBody(o, "contactTech", contactTech);
 		addBody(o, "contactBilling", contactBilling);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, t1);
 	}
 
@@ -1216,8 +1139,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhResourceNewPrices serviceName_newPrices_GET(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/newPrices";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhResourceNewPrices.class);
 	}
 
@@ -1229,8 +1152,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_allowedNetwork_GET(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/allowedNetwork";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -1244,11 +1167,11 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_allowedNetwork_POST(String serviceName, String network, String description) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/allowedNetwork";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "network", network);
 		addBody(o, "description", description);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1261,9 +1184,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhAllowedNetwork serviceName_allowedNetwork_networkAccessId_GET(String serviceName, Long networkAccessId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/allowedNetwork/{networkAccessId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{networkAccessId}", networkAccessId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, networkAccessId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhAllowedNetwork.class);
 	}
 
@@ -1277,9 +1199,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public void serviceName_allowedNetwork_networkAccessId_PUT(String serviceName, Long networkAccessId, OvhAllowedNetwork body) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/allowedNetwork/{networkAccessId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{networkAccessId}", networkAccessId.toString());
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName, networkAccessId);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1291,9 +1212,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_allowedNetwork_networkAccessId_DELETE(String serviceName, Long networkAccessId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/allowedNetwork/{networkAccessId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{networkAccessId}", networkAccessId.toString());
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, networkAccessId);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1308,11 +1228,10 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_allowedNetwork_networkAccessId_task_GET(String serviceName, Long networkAccessId, String name, OvhTaskStateEnum state) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/allowedNetwork/{networkAccessId}/task";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{networkAccessId}", networkAccessId.toString());
-		qPath = query(qPath, "name", name);
-		qPath = query(qPath, "state", state);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, networkAccessId);
+		query(sb, "name", name);
+		query(sb, "state", state);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -1326,10 +1245,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_allowedNetwork_networkAccessId_task_taskId_GET(String serviceName, Long networkAccessId, Long taskId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/allowedNetwork/{networkAccessId}/task/{taskId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{networkAccessId}", networkAccessId.toString());
-		qPath = qPath.replace("{taskId}", taskId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, networkAccessId, taskId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1344,12 +1261,10 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_allowedNetwork_networkAccessId_task_taskId_changeMaintenanceExecutionDate_POST(String serviceName, Long networkAccessId, Long taskId, Date executionDate) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/allowedNetwork/{networkAccessId}/task/{taskId}/changeMaintenanceExecutionDate";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{networkAccessId}", networkAccessId.toString());
-		qPath = qPath.replace("{taskId}", taskId.toString());
+		StringBuilder sb = path(qPath, serviceName, networkAccessId, taskId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "executionDate", executionDate);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1361,8 +1276,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_upgradeHypervisor_POST(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/upgradeHypervisor";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1375,9 +1290,9 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_user_GET(String serviceName, String name) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/user";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = query(qPath, "name", name);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "name", name);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -1400,7 +1315,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_user_POST(String serviceName, String firstName, Boolean canAddRessource, String name, OvhVmNetworkRoleEnum vmNetworkRole, String email, String password, OvhRightEnum right, String lastName, String phoneNumber, Boolean tokenValidator, OvhNetworkRoleEnum networkRole) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/user";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "firstName", firstName);
 		addBody(o, "canAddRessource", canAddRessource);
@@ -1413,7 +1328,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 		addBody(o, "phoneNumber", phoneNumber);
 		addBody(o, "tokenValidator", tokenValidator);
 		addBody(o, "networkRole", networkRole);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1426,9 +1341,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhUser serviceName_user_userId_GET(String serviceName, Long userId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/user/{userId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{userId}", userId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, userId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhUser.class);
 	}
 
@@ -1441,9 +1355,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_user_userId_DELETE(String serviceName, Long userId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/user/{userId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{userId}", userId.toString());
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, userId);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1456,9 +1369,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_user_userId_enable_POST(String serviceName, Long userId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/user/{userId}/enable";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{userId}", userId.toString());
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName, userId);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1471,9 +1383,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_user_userId_right_GET(String serviceName, Long userId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/user/{userId}/right";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{userId}", userId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, userId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -1487,10 +1398,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhRight serviceName_user_userId_right_rightId_GET(String serviceName, Long userId, Long rightId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/user/{userId}/right/{rightId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{userId}", userId.toString());
-		qPath = qPath.replace("{rightId}", rightId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, userId, rightId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhRight.class);
 	}
 
@@ -1505,10 +1414,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public void serviceName_user_userId_right_rightId_PUT(String serviceName, Long userId, Long rightId, OvhRight body) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/user/{userId}/right/{rightId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{userId}", userId.toString());
-		qPath = qPath.replace("{rightId}", rightId.toString());
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName, userId, rightId);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1528,8 +1435,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_user_userId_changeProperties_POST(String serviceName, Long userId, String firstName, Boolean fullAdminRo, Boolean canManageIpFailOvers, String email, String lastName, Boolean canManageNetwork, String phoneNumber, Boolean tokenValidator) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/user/{userId}/changeProperties";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{userId}", userId.toString());
+		StringBuilder sb = path(qPath, serviceName, userId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "firstName", firstName);
 		addBody(o, "fullAdminRo", fullAdminRo);
@@ -1539,7 +1445,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 		addBody(o, "canManageNetwork", canManageNetwork);
 		addBody(o, "phoneNumber", phoneNumber);
 		addBody(o, "tokenValidator", tokenValidator);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1553,11 +1459,10 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_user_userId_changePassword_POST(String serviceName, Long userId, String password) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/user/{userId}/changePassword";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{userId}", userId.toString());
+		StringBuilder sb = path(qPath, serviceName, userId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "password", password);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1572,11 +1477,10 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_user_userId_task_GET(String serviceName, Long userId, String name, OvhTaskStateEnum state) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/user/{userId}/task";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{userId}", userId.toString());
-		qPath = query(qPath, "name", name);
-		qPath = query(qPath, "state", state);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, userId);
+		query(sb, "name", name);
+		query(sb, "state", state);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -1590,10 +1494,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_user_userId_task_taskId_GET(String serviceName, Long userId, Long taskId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/user/{userId}/task/{taskId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{userId}", userId.toString());
-		qPath = qPath.replace("{taskId}", taskId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, userId, taskId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1608,12 +1510,10 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_user_userId_task_taskId_changeMaintenanceExecutionDate_POST(String serviceName, Long userId, Long taskId, Date executionDate) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/user/{userId}/task/{taskId}/changeMaintenanceExecutionDate";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{userId}", userId.toString());
-		qPath = qPath.replace("{taskId}", taskId.toString());
+		StringBuilder sb = path(qPath, serviceName, userId, taskId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "executionDate", executionDate);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1626,9 +1526,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_user_userId_disable_POST(String serviceName, Long userId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/user/{userId}/disable";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{userId}", userId.toString());
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName, userId);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1640,8 +1539,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhCapabilities serviceName_capabilities_GET(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/capabilities";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhCapabilities.class);
 	}
 
@@ -1653,8 +1552,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public ArrayList<String> serviceName_robot_GET(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/robot";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t4);
 	}
 
@@ -1667,9 +1566,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhRobot serviceName_robot_name_GET(String serviceName, String name) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/robot/{name}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{name}", name);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, name);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhRobot.class);
 	}
 
@@ -1681,8 +1579,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhOptionCompatibility serviceName_pcidss_canBeDisabled_GET(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/pcidss/canBeDisabled";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhOptionCompatibility.class);
 	}
 
@@ -1694,8 +1592,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhPciDss serviceName_pcidss_GET(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/pcidss";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhPciDss.class);
 	}
 
@@ -1707,8 +1605,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_pcidss_enable_POST(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/pcidss/enable";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1720,8 +1618,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhOptionCompatibility serviceName_pcidss_canBeEnabled_GET(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/pcidss/canBeEnabled";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhOptionCompatibility.class);
 	}
 
@@ -1733,8 +1631,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_pcidss_disable_POST(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/pcidss/disable";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1749,12 +1647,12 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public String serviceName_confirmTermination_POST(String serviceName, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/confirmTermination";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "reason", reason);
 		addBody(o, "commentary", commentary);
 		addBody(o, "token", token);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -1768,10 +1666,10 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_task_GET(String serviceName, String name, OvhTaskStateEnum state) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/task";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = query(qPath, "name", name);
-		qPath = query(qPath, "state", state);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "name", name);
+		query(sb, "state", state);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -1784,9 +1682,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_task_taskId_GET(String serviceName, Long taskId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/task/{taskId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{taskId}", taskId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, taskId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1800,11 +1697,10 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_task_taskId_changeMaintenanceExecutionDate_POST(String serviceName, Long taskId, Date executionDate) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/task/{taskId}/changeMaintenanceExecutionDate";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{taskId}", taskId.toString());
+		StringBuilder sb = path(qPath, serviceName, taskId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "executionDate", executionDate);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1816,8 +1712,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_vlan_GET(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/vlan";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -1830,9 +1726,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhVlan serviceName_vlan_vlanId_GET(String serviceName, Long vlanId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/vlan/{vlanId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{vlanId}", vlanId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, vlanId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhVlan.class);
 	}
 
@@ -1844,8 +1739,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhOptionCompatibility serviceName_vrops_canBeDisabled_GET(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/vrops/canBeDisabled";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhOptionCompatibility.class);
 	}
 
@@ -1857,8 +1752,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhVrops serviceName_vrops_GET(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/vrops";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhVrops.class);
 	}
 
@@ -1870,8 +1765,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_vrops_enable_POST(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/vrops/enable";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1883,8 +1778,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhOptionCompatibility serviceName_vrops_canBeEnabled_GET(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/vrops/canBeEnabled";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhOptionCompatibility.class);
 	}
 
@@ -1896,8 +1791,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_vrops_disable_POST(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/vrops/disable";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1910,10 +1805,10 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_orderNewFilerHourly_POST(String serviceName, String name) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/orderNewFilerHourly";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "name", name);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1925,8 +1820,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public ArrayList<String> serviceName_vrack_GET(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/vrack";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t4);
 	}
 
@@ -1939,9 +1834,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public net.minidev.ovh.api.vrack.OvhDedicatedCloud serviceName_vrack_vrack_GET(String serviceName, String vrack) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/vrack/{vrack}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{vrack}", vrack);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, vrack);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, net.minidev.ovh.api.vrack.OvhDedicatedCloud.class);
 	}
 
@@ -1954,9 +1848,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public net.minidev.ovh.api.vrack.OvhTask serviceName_vrack_vrack_DELETE(String serviceName, String vrack) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/vrack/{vrack}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{vrack}", vrack);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, vrack);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, net.minidev.ovh.api.vrack.OvhTask.class);
 	}
 
@@ -1968,8 +1861,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public ArrayList<OvhIpCountriesEnum> serviceName_orderableIpCountries_GET(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/orderableIpCountries";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t5);
 	}
 	private static TypeReference<ArrayList<OvhIpCountriesEnum>> t5 = new TypeReference<ArrayList<OvhIpCountriesEnum>>() {};
@@ -1982,8 +1875,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhOptionCompatibility serviceName_hds_canBeDisabled_GET(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/hds/canBeDisabled";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhOptionCompatibility.class);
 	}
 
@@ -1995,8 +1888,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhHds serviceName_hds_GET(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/hds";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhHds.class);
 	}
 
@@ -2008,8 +1901,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_hds_enable_POST(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/hds/enable";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -2021,8 +1914,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhOptionCompatibility serviceName_hds_canBeEnabled_GET(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/hds/canBeEnabled";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhOptionCompatibility.class);
 	}
 
@@ -2034,8 +1927,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_hds_disable_POST(String serviceName) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/hds/disable";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -2046,7 +1939,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/dedicatedCloud";
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t4);
 	}
 
@@ -2057,7 +1951,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public ArrayList<String> commercialRange_GET() throws IOException {
 		String qPath = "/dedicatedCloud/commercialRange";
-		String resp = execN("GET", qPath);
+		StringBuilder sb = path(qPath);
+		String resp = execN("GET", sb.toString());
 		return convertTo(resp, t4);
 	}
 
@@ -2069,8 +1964,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 */
 	public OvhCommercialRange commercialRange_commercialRangeName_GET(String commercialRangeName) throws IOException {
 		String qPath = "/dedicatedCloud/commercialRange/{commercialRangeName}";
-		qPath = qPath.replace("{commercialRangeName}", commercialRangeName);
-		String resp = execN("GET", qPath);
+		StringBuilder sb = path(qPath, commercialRangeName);
+		String resp = execN("GET", sb.toString());
 		return convertTo(resp, OvhCommercialRange.class);
 	}
 }

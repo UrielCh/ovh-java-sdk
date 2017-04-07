@@ -27,10 +27,11 @@ public class ApiOvhEmailimapCopy extends ApiOvhBase {
 	 */
 	public OvhTaskIds POST(OvhStructImapCopy to, OvhStructImapCopy from) throws IOException {
 		String qPath = "/email/imapCopy";
+		StringBuilder sb = path(qPath);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "to", to);
 		addBody(o, "from", from);
-		String resp = execN("POST", qPath, o);
+		String resp = execN("POST", sb.toString(), o);
 		return convertTo(resp, OvhTaskIds.class);
 	}
 
@@ -43,9 +44,10 @@ public class ApiOvhEmailimapCopy extends ApiOvhBase {
 	 */
 	public OvhTask task_GET(Long id, String secretKey) throws IOException {
 		String qPath = "/email/imapCopy/task";
-		qPath = query(qPath, "id", id);
-		qPath = query(qPath, "secretKey", secretKey);
-		String resp = execN("GET", qPath);
+		StringBuilder sb = path(qPath);
+		query(sb, "id", id);
+		query(sb, "secretKey", secretKey);
+		String resp = execN("GET", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 }

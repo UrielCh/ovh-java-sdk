@@ -32,8 +32,8 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 	 */
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/veeamCloudConnect/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -46,8 +46,8 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/veeamCloudConnect/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -58,8 +58,8 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 	 */
 	public OvhAccount serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/veeamCloudConnect/{serviceName}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhAccount.class);
 	}
 
@@ -71,8 +71,8 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 	 */
 	public ArrayList<OvhOffer> serviceName_orderableUpgrade_GET(String serviceName) throws IOException {
 		String qPath = "/veeamCloudConnect/{serviceName}/orderableUpgrade";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<OvhOffer>> t1 = new TypeReference<ArrayList<OvhOffer>>() {};
@@ -85,8 +85,8 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 	 */
 	public ArrayList<String> serviceName_backupRepository_GET(String serviceName) throws IOException {
 		String qPath = "/veeamCloudConnect/{serviceName}/backupRepository";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};
@@ -99,8 +99,8 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 	 */
 	public ArrayList<OvhTask> serviceName_backupRepository_POST(String serviceName) throws IOException {
 		String qPath = "/veeamCloudConnect/{serviceName}/backupRepository";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, t3);
 	}
 	private static TypeReference<ArrayList<OvhTask>> t3 = new TypeReference<ArrayList<OvhTask>>() {};
@@ -114,9 +114,8 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 	 */
 	public OvhBackupRepository serviceName_backupRepository_inventoryName_GET(String serviceName, String inventoryName) throws IOException {
 		String qPath = "/veeamCloudConnect/{serviceName}/backupRepository/{inventoryName}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{inventoryName}", inventoryName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, inventoryName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhBackupRepository.class);
 	}
 
@@ -129,9 +128,8 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 	 */
 	public ArrayList<OvhTask> serviceName_backupRepository_inventoryName_DELETE(String serviceName, String inventoryName) throws IOException {
 		String qPath = "/veeamCloudConnect/{serviceName}/backupRepository/{inventoryName}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{inventoryName}", inventoryName);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, inventoryName);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, t3);
 	}
 
@@ -145,11 +143,10 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 	 */
 	public ArrayList<OvhTask> serviceName_backupRepository_inventoryName_upgradeQuota_POST(String serviceName, String inventoryName, Long newQuota) throws IOException {
 		String qPath = "/veeamCloudConnect/{serviceName}/backupRepository/{inventoryName}/upgradeQuota";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{inventoryName}", inventoryName);
+		StringBuilder sb = path(qPath, serviceName, inventoryName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "newQuota", newQuota);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, t3);
 	}
 
@@ -161,8 +158,8 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 	 */
 	public OvhOfferCapabilities serviceName_capabilities_GET(String serviceName) throws IOException {
 		String qPath = "/veeamCloudConnect/{serviceName}/capabilities";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhOfferCapabilities.class);
 	}
 
@@ -176,10 +173,10 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_task_GET(String serviceName, String name, OvhTaskStateEnum state) throws IOException {
 		String qPath = "/veeamCloudConnect/{serviceName}/task";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = query(qPath, "name", name);
-		qPath = query(qPath, "state", state);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "name", name);
+		query(sb, "state", state);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t4);
 	}
 	private static TypeReference<ArrayList<Long>> t4 = new TypeReference<ArrayList<Long>>() {};
@@ -193,9 +190,8 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_task_taskId_GET(String serviceName, Long taskId) throws IOException {
 		String qPath = "/veeamCloudConnect/{serviceName}/task/{taskId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{taskId}", taskId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, taskId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -206,7 +202,8 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 	 */
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/veeamCloudConnect";
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t2);
 	}
 }

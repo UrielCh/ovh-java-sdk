@@ -28,12 +28,13 @@ public class ApiOvhSupplymondialRelay extends ApiOvhBase {
 	 */
 	public OvhMondialRelayReturn POST(OvhCountryEnum country, String city, String address, String zipcode) throws IOException {
 		String qPath = "/supply/mondialRelay";
+		StringBuilder sb = path(qPath);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "country", country);
 		addBody(o, "city", city);
 		addBody(o, "address", address);
 		addBody(o, "zipcode", zipcode);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhMondialRelayReturn.class);
 	}
 }

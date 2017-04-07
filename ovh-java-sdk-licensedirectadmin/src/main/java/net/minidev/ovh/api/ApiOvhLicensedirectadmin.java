@@ -34,8 +34,8 @@ public class ApiOvhLicensedirectadmin extends ApiOvhBase {
 	 */
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/license/directadmin/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -48,8 +48,8 @@ public class ApiOvhLicensedirectadmin extends ApiOvhBase {
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/license/directadmin/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -60,8 +60,8 @@ public class ApiOvhLicensedirectadmin extends ApiOvhBase {
 	 */
 	public OvhDirectAdmin serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/license/directadmin/{serviceName}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhDirectAdmin.class);
 	}
 
@@ -74,8 +74,8 @@ public class ApiOvhLicensedirectadmin extends ApiOvhBase {
 	 */
 	public void serviceName_PUT(String serviceName, OvhDirectAdmin body) throws IOException {
 		String qPath = "/license/directadmin/{serviceName}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -88,10 +88,10 @@ public class ApiOvhLicensedirectadmin extends ApiOvhBase {
 	 */
 	public ArrayList<Long> serviceName_tasks_GET(String serviceName, OvhActionType action, OvhTaskStateEnum status) throws IOException {
 		String qPath = "/license/directadmin/{serviceName}/tasks";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = query(qPath, "action", action);
-		qPath = query(qPath, "status", status);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "action", action);
+		query(sb, "status", status);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
@@ -105,9 +105,8 @@ public class ApiOvhLicensedirectadmin extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_tasks_taskId_GET(String serviceName, Long taskId) throws IOException {
 		String qPath = "/license/directadmin/{serviceName}/tasks/{taskId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{taskId}", taskId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, taskId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -119,8 +118,8 @@ public class ApiOvhLicensedirectadmin extends ApiOvhBase {
 	 */
 	public ArrayList<String> serviceName_allowedDestinationIp_GET(String serviceName) throws IOException {
 		String qPath = "/license/directadmin/{serviceName}/allowedDestinationIp";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};
@@ -136,12 +135,12 @@ public class ApiOvhLicensedirectadmin extends ApiOvhBase {
 	 */
 	public String serviceName_confirmTermination_POST(String serviceName, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
 		String qPath = "/license/directadmin/{serviceName}/confirmTermination";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "reason", reason);
 		addBody(o, "commentary", commentary);
 		addBody(o, "token", token);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -153,8 +152,8 @@ public class ApiOvhLicensedirectadmin extends ApiOvhBase {
 	 */
 	public String serviceName_terminate_POST(String serviceName) throws IOException {
 		String qPath = "/license/directadmin/{serviceName}/terminate";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, String.class);
 	}
 
@@ -167,9 +166,9 @@ public class ApiOvhLicensedirectadmin extends ApiOvhBase {
 	 */
 	public OvhChangeIpStatus serviceName_canLicenseBeMovedTo_GET(String serviceName, String destinationIp) throws IOException {
 		String qPath = "/license/directadmin/{serviceName}/canLicenseBeMovedTo";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = query(qPath, "destinationIp", destinationIp);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "destinationIp", destinationIp);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhChangeIpStatus.class);
 	}
 
@@ -182,10 +181,10 @@ public class ApiOvhLicensedirectadmin extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_changeIp_POST(String serviceName, String destinationIp) throws IOException {
 		String qPath = "/license/directadmin/{serviceName}/changeIp";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "destinationIp", destinationIp);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -198,10 +197,10 @@ public class ApiOvhLicensedirectadmin extends ApiOvhBase {
 	 */
 	public OvhTask serviceName_changeOs_POST(String serviceName, OvhDirectAdminOsEnum os) throws IOException {
 		String qPath = "/license/directadmin/{serviceName}/changeOs";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "os", os);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -212,7 +211,8 @@ public class ApiOvhLicensedirectadmin extends ApiOvhBase {
 	 */
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/license/directadmin";
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t2);
 	}
 
@@ -224,8 +224,9 @@ public class ApiOvhLicensedirectadmin extends ApiOvhBase {
 	 */
 	public ArrayList<OvhDirectAdminOrderConfiguration> orderableVersions_GET(String ip) throws IOException {
 		String qPath = "/license/directadmin/orderableVersions";
-		qPath = query(qPath, "ip", ip);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath);
+		query(sb, "ip", ip);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t3);
 	}
 	private static TypeReference<ArrayList<OvhDirectAdminOrderConfiguration>> t3 = new TypeReference<ArrayList<OvhDirectAdminOrderConfiguration>>() {};

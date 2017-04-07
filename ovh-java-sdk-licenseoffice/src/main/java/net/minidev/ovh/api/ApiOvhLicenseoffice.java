@@ -33,8 +33,8 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 	 */
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/license/office/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -47,8 +47,8 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/license/office/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -61,10 +61,10 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 	 */
 	public ArrayList<OvhStatistics> serviceName_usageStatistics_GET(String serviceName, Date from, Date to) throws IOException {
 		String qPath = "/license/office/{serviceName}/usageStatistics";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = query(qPath, "from", from);
-		qPath = query(qPath, "to", to);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "from", from);
+		query(sb, "to", to);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<OvhStatistics>> t1 = new TypeReference<ArrayList<OvhStatistics>>() {};
@@ -77,8 +77,8 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 	 */
 	public OvhOfficeTenant serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/license/office/{serviceName}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhOfficeTenant.class);
 	}
 
@@ -91,8 +91,8 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 	 */
 	public void serviceName_PUT(String serviceName, OvhOfficeTenant body) throws IOException {
 		String qPath = "/license/office/{serviceName}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -104,9 +104,8 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 	 */
 	public OvhOfficeDomain serviceName_domain_domainName_GET(String serviceName, String domainName) throws IOException {
 		String qPath = "/license/office/{serviceName}/domain/{domainName}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{domainName}", domainName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, domainName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhOfficeDomain.class);
 	}
 
@@ -118,8 +117,8 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 	 */
 	public ArrayList<String> serviceName_domain_GET(String serviceName) throws IOException {
 		String qPath = "/license/office/{serviceName}/domain";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};
@@ -135,11 +134,11 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 	 */
 	public ArrayList<String> serviceName_user_GET(String serviceName, String activationEmail, String firstName, String lastName) throws IOException {
 		String qPath = "/license/office/{serviceName}/user";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = query(qPath, "activationEmail", activationEmail);
-		qPath = query(qPath, "firstName", firstName);
-		qPath = query(qPath, "lastName", lastName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "activationEmail", activationEmail);
+		query(sb, "firstName", firstName);
+		query(sb, "lastName", lastName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t2);
 	}
 
@@ -156,14 +155,14 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 	 */
 	public OvhOfficeTask serviceName_user_POST(String serviceName, String firstName, String domain, OvhLicenceEnum licence, String lastName, String login) throws IOException {
 		String qPath = "/license/office/{serviceName}/user";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "firstName", firstName);
 		addBody(o, "domain", domain);
 		addBody(o, "licence", licence);
 		addBody(o, "lastName", lastName);
 		addBody(o, "login", login);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhOfficeTask.class);
 	}
 
@@ -176,9 +175,8 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 	 */
 	public OvhOfficeUser serviceName_user_activationEmail_GET(String serviceName, String activationEmail) throws IOException {
 		String qPath = "/license/office/{serviceName}/user/{activationEmail}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{activationEmail}", activationEmail);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, activationEmail);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhOfficeUser.class);
 	}
 
@@ -191,9 +189,8 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 	 */
 	public OvhOfficeTask serviceName_user_activationEmail_DELETE(String serviceName, String activationEmail) throws IOException {
 		String qPath = "/license/office/{serviceName}/user/{activationEmail}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{activationEmail}", activationEmail);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, activationEmail);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhOfficeTask.class);
 	}
 
@@ -209,13 +206,12 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 	 */
 	public OvhOfficeTask serviceName_user_activationEmail_changePassword_POST(String serviceName, String activationEmail, String password, Boolean shouldSendMail, String notifyEmail) throws IOException {
 		String qPath = "/license/office/{serviceName}/user/{activationEmail}/changePassword";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{activationEmail}", activationEmail);
+		StringBuilder sb = path(qPath, serviceName, activationEmail);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "password", password);
 		addBody(o, "shouldSendMail", shouldSendMail);
 		addBody(o, "notifyEmail", notifyEmail);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhOfficeTask.class);
 	}
 
@@ -226,7 +222,8 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 	 */
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/license/office";
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t2);
 	}
 }

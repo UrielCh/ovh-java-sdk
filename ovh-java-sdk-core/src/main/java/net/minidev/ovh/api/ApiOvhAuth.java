@@ -24,7 +24,8 @@ public class ApiOvhAuth extends ApiOvhBase {
 	 */
 	public OvhCredential currentCredential_GET() throws IOException {
 		String qPath = "/auth/currentCredential";
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhCredential.class);
 	}
 
@@ -35,7 +36,8 @@ public class ApiOvhAuth extends ApiOvhBase {
 	 */
 	public Long time_GET() throws IOException {
 		String qPath = "/auth/time";
-		String resp = execN("GET", qPath);
+		StringBuilder sb = path(qPath);
+		String resp = execN("GET", sb.toString());
 		return convertTo(resp, Long.class);
 	}
 
@@ -46,7 +48,8 @@ public class ApiOvhAuth extends ApiOvhBase {
 	 */
 	public void logout_POST() throws IOException {
 		String qPath = "/auth/logout";
-		exec("POST", qPath);
+		StringBuilder sb = path(qPath);
+		exec("POST", sb.toString());
 	}
 
 	/**
@@ -58,10 +61,11 @@ public class ApiOvhAuth extends ApiOvhBase {
 	 */
 	public net.minidev.ovh.api.auth.OvhCredential credential_POST(OvhAccessRule[] accessRules, String redirection) throws IOException {
 		String qPath = "/auth/credential";
+		StringBuilder sb = path(qPath);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "accessRules", accessRules);
 		addBody(o, "redirection", redirection);
-		String resp = execN("POST", qPath, o);
+		String resp = execN("POST", sb.toString(), o);
 		return convertTo(resp, net.minidev.ovh.api.auth.OvhCredential.class);
 	}
 }

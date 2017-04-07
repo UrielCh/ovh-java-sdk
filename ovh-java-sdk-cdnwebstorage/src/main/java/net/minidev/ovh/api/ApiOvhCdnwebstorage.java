@@ -30,8 +30,8 @@ public class ApiOvhCdnwebstorage extends ApiOvhBase {
 	 */
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/cdn/webstorage/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -44,8 +44,8 @@ public class ApiOvhCdnwebstorage extends ApiOvhBase {
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/cdn/webstorage/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -56,8 +56,8 @@ public class ApiOvhCdnwebstorage extends ApiOvhBase {
 	 */
 	public OvhAccount serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/cdn/webstorage/{serviceName}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhAccount.class);
 	}
 
@@ -71,10 +71,10 @@ public class ApiOvhCdnwebstorage extends ApiOvhBase {
 	 */
 	public ArrayList<OvhStatsDataType> serviceName_statistics_GET(String serviceName, OvhStatsPeriodEnum period, OvhStatsTypeEnum type) throws IOException {
 		String qPath = "/cdn/webstorage/{serviceName}/statistics";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = query(qPath, "period", period);
-		qPath = query(qPath, "type", type);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "period", period);
+		query(sb, "type", type);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<OvhStatsDataType>> t1 = new TypeReference<ArrayList<OvhStatsDataType>>() {};
@@ -87,8 +87,8 @@ public class ApiOvhCdnwebstorage extends ApiOvhBase {
 	 */
 	public OvhAccountCredentials serviceName_credentials_GET(String serviceName) throws IOException {
 		String qPath = "/cdn/webstorage/{serviceName}/credentials";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhAccountCredentials.class);
 	}
 
@@ -99,7 +99,8 @@ public class ApiOvhCdnwebstorage extends ApiOvhBase {
 	 */
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/cdn/webstorage";
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};

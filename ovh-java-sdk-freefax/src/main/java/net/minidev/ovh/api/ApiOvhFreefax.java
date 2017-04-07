@@ -30,8 +30,8 @@ public class ApiOvhFreefax extends ApiOvhBase {
 	 */
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/freefax/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -44,8 +44,8 @@ public class ApiOvhFreefax extends ApiOvhBase {
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/freefax/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -56,8 +56,8 @@ public class ApiOvhFreefax extends ApiOvhBase {
 	 */
 	public OvhFreefaxProperties serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/freefax/{serviceName}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhFreefaxProperties.class);
 	}
 
@@ -70,8 +70,8 @@ public class ApiOvhFreefax extends ApiOvhBase {
 	 */
 	public void serviceName_PUT(String serviceName, OvhFreefaxProperties body) throws IOException {
 		String qPath = "/freefax/{serviceName}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -82,8 +82,8 @@ public class ApiOvhFreefax extends ApiOvhBase {
 	 */
 	public OvhVoicemailProperties serviceName_voicemail_GET(String serviceName) throws IOException {
 		String qPath = "/freefax/{serviceName}/voicemail";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhVoicemailProperties.class);
 	}
 
@@ -96,8 +96,8 @@ public class ApiOvhFreefax extends ApiOvhBase {
 	 */
 	public void serviceName_voicemail_PUT(String serviceName, OvhVoicemailProperties body) throws IOException {
 		String qPath = "/freefax/{serviceName}/voicemail";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -109,10 +109,10 @@ public class ApiOvhFreefax extends ApiOvhBase {
 	 */
 	public void serviceName_voicemail_changeRouting_POST(String serviceName, OvhVoicefaxRoutingEnum routing) throws IOException {
 		String qPath = "/freefax/{serviceName}/voicemail/changeRouting";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "routing", routing);
-		exec("POST", qPath, o);
+		exec("POST", sb.toString(), o);
 	}
 
 	/**
@@ -124,10 +124,10 @@ public class ApiOvhFreefax extends ApiOvhBase {
 	 */
 	public void serviceName_voicemail_changePassword_POST(String serviceName, String password) throws IOException {
 		String qPath = "/freefax/{serviceName}/voicemail/changePassword";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "password", password);
-		exec("POST", qPath, o);
+		exec("POST", sb.toString(), o);
 	}
 
 	/**
@@ -138,8 +138,8 @@ public class ApiOvhFreefax extends ApiOvhBase {
 	 */
 	public OvhVoicefaxRoutingEnum serviceName_voicemail_routing_GET(String serviceName) throws IOException {
 		String qPath = "/freefax/{serviceName}/voicemail/routing";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhVoicefaxRoutingEnum.class);
 	}
 
@@ -151,8 +151,8 @@ public class ApiOvhFreefax extends ApiOvhBase {
 	 */
 	public String serviceName_changePassword_POST(String serviceName) throws IOException {
 		String qPath = "/freefax/{serviceName}/changePassword";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, String.class);
 	}
 
@@ -164,8 +164,8 @@ public class ApiOvhFreefax extends ApiOvhBase {
 	 */
 	public String serviceName_mainService_GET(String serviceName) throws IOException {
 		String qPath = "/freefax/{serviceName}/mainService";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, String.class);
 	}
 
@@ -176,7 +176,8 @@ public class ApiOvhFreefax extends ApiOvhBase {
 	 */
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/freefax";
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
@@ -188,7 +189,8 @@ public class ApiOvhFreefax extends ApiOvhBase {
 	 */
 	public OvhBalanceInformations credits_GET() throws IOException {
 		String qPath = "/freefax/credits";
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhBalanceInformations.class);
 	}
 }

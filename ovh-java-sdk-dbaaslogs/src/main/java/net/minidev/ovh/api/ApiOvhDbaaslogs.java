@@ -51,11 +51,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal ID of your Logs pack
+	 * @beta
 	 */
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -65,11 +66,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: PUT /dbaas/logs/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal ID of your Logs pack
+	 * @beta
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -77,11 +79,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}
 	 * @param serviceName [required]
+	 * @beta
 	 */
 	public net.minidev.ovh.api.dbaaslogs.OvhService serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, net.minidev.ovh.api.dbaaslogs.OvhService.class);
 	}
 
@@ -91,13 +94,14 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: PUT /dbaas/logs/{serviceName}
 	 * @param serviceName [required]
 	 * @param contactId [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_PUT(String serviceName, Long contactId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "contactId", contactId);
-		String resp = exec("PUT", qPath, o);
+		String resp = exec("PUT", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -106,11 +110,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/input
 	 * @param serviceName [required]
+	 * @beta
 	 */
 	public ArrayList<String> serviceName_input_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
@@ -127,10 +132,11 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param singleInstance [required]
 	 * @param description [required]
 	 * @param optionId [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_input_POST(String serviceName, String engineId, String streamId, String exposedPort, String title, Boolean singleInstance, String description, String optionId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "engineId", engineId);
 		addBody(o, "streamId", streamId);
@@ -139,7 +145,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 		addBody(o, "singleInstance", singleInstance);
 		addBody(o, "description", description);
 		addBody(o, "optionId", optionId);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -149,12 +155,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: POST /dbaas/logs/{serviceName}/input/{inputId}/restart
 	 * @param serviceName [required]
 	 * @param inputId [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_input_inputId_restart_POST(String serviceName, String inputId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/restart";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{inputId}", inputId);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName, inputId);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -164,12 +170,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: DELETE /dbaas/logs/{serviceName}/input/{inputId}
 	 * @param serviceName [required]
 	 * @param inputId [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_input_inputId_DELETE(String serviceName, String inputId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{inputId}", inputId);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, inputId);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -179,12 +185,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/input/{inputId}
 	 * @param serviceName [required]
 	 * @param inputId [required]
+	 * @beta
 	 */
 	public OvhInput serviceName_input_inputId_GET(String serviceName, String inputId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{inputId}", inputId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, inputId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhInput.class);
 	}
 
@@ -201,11 +207,11 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param singleInstance [required]
 	 * @param description [required]
 	 * @param optionId [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_input_inputId_PUT(String serviceName, String inputId, String engineId, String streamId, String exposedPort, String title, Boolean singleInstance, String description, String optionId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{inputId}", inputId);
+		StringBuilder sb = path(qPath, serviceName, inputId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "engineId", engineId);
 		addBody(o, "streamId", streamId);
@@ -214,7 +220,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 		addBody(o, "singleInstance", singleInstance);
 		addBody(o, "description", description);
 		addBody(o, "optionId", optionId);
-		String resp = exec("PUT", qPath, o);
+		String resp = exec("PUT", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -224,12 +230,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: POST /dbaas/logs/{serviceName}/input/{inputId}/end
 	 * @param serviceName [required]
 	 * @param inputId [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_input_inputId_end_POST(String serviceName, String inputId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/end";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{inputId}", inputId);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName, inputId);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -239,12 +245,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/input/{inputId}/allowedNetwork
 	 * @param serviceName [required]
 	 * @param inputId [required]
+	 * @beta
 	 */
 	public ArrayList<String> serviceName_input_inputId_allowedNetwork_GET(String serviceName, String inputId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/allowedNetwork";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{inputId}", inputId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, inputId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -255,14 +261,14 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param inputId [required]
 	 * @param network [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_input_inputId_allowedNetwork_POST(String serviceName, String inputId, String network) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/allowedNetwork";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{inputId}", inputId);
+		StringBuilder sb = path(qPath, serviceName, inputId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "network", network);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -273,13 +279,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param inputId [required]
 	 * @param allowedNetworkId [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_input_inputId_allowedNetwork_allowedNetworkId_DELETE(String serviceName, String inputId, String allowedNetworkId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/allowedNetwork/{allowedNetworkId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{inputId}", inputId);
-		qPath = qPath.replace("{allowedNetworkId}", allowedNetworkId);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, inputId, allowedNetworkId);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -290,13 +295,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param inputId [required]
 	 * @param allowedNetworkId [required]
+	 * @beta
 	 */
 	public OvhAllowedNetwork serviceName_input_inputId_allowedNetwork_allowedNetworkId_GET(String serviceName, String inputId, String allowedNetworkId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/allowedNetwork/{allowedNetworkId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{inputId}", inputId);
-		qPath = qPath.replace("{allowedNetworkId}", allowedNetworkId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, inputId, allowedNetworkId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhAllowedNetwork.class);
 	}
 
@@ -306,12 +310,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/input/{inputId}/url
 	 * @param serviceName [required]
 	 * @param inputId [required]
+	 * @beta
 	 */
 	public ArrayList<OvhUrl> serviceName_input_inputId_url_GET(String serviceName, String inputId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/url";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{inputId}", inputId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, inputId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<OvhUrl>> t2 = new TypeReference<ArrayList<OvhUrl>>() {};
@@ -322,12 +326,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/input/{inputId}/action
 	 * @param serviceName [required]
 	 * @param inputId [required]
+	 * @beta
 	 */
 	public ArrayList<OvhInputAction> serviceName_input_inputId_action_GET(String serviceName, String inputId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/action";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{inputId}", inputId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, inputId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t3);
 	}
 	private static TypeReference<ArrayList<OvhInputAction>> t3 = new TypeReference<ArrayList<OvhInputAction>>() {};
@@ -338,12 +342,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/input/{inputId}/configuration/flowgger
 	 * @param serviceName [required]
 	 * @param inputId [required]
+	 * @beta
 	 */
 	public OvhFlowggerConfiguration serviceName_input_inputId_configuration_flowgger_GET(String serviceName, String inputId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/configuration/flowgger";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{inputId}", inputId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, inputId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhFlowggerConfiguration.class);
 	}
 
@@ -358,18 +362,18 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param logFormat [required]
 	 * @param kafkaCoalesce [required]
 	 * @param type [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_input_inputId_configuration_flowgger_PUT(String serviceName, String inputId, OvhFlowggerConfigurationTlsmethod tlsMethod, OvhFlowggerConfigurationLogframing logFraming, OvhFlowggerConfigurationLogformat logFormat, Long kafkaCoalesce, OvhFlowggerConfigurationType type) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/configuration/flowgger";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{inputId}", inputId);
+		StringBuilder sb = path(qPath, serviceName, inputId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "tlsMethod", tlsMethod);
 		addBody(o, "logFraming", logFraming);
 		addBody(o, "logFormat", logFormat);
 		addBody(o, "kafkaCoalesce", kafkaCoalesce);
 		addBody(o, "type", type);
-		String resp = exec("PUT", qPath, o);
+		String resp = exec("PUT", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -379,12 +383,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/input/{inputId}/configuration/logstash
 	 * @param serviceName [required]
 	 * @param inputId [required]
+	 * @beta
 	 */
 	public OvhLogstashConfiguration serviceName_input_inputId_configuration_logstash_GET(String serviceName, String inputId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/configuration/logstash";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{inputId}", inputId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, inputId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhLogstashConfiguration.class);
 	}
 
@@ -397,16 +401,16 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param patternSection [required]
 	 * @param filterSection [required]
 	 * @param inputSection [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_input_inputId_configuration_logstash_PUT(String serviceName, String inputId, String patternSection, String filterSection, String inputSection) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/configuration/logstash";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{inputId}", inputId);
+		StringBuilder sb = path(qPath, serviceName, inputId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "patternSection", patternSection);
 		addBody(o, "filterSection", filterSection);
 		addBody(o, "inputSection", inputSection);
-		String resp = exec("PUT", qPath, o);
+		String resp = exec("PUT", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -416,12 +420,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: POST /dbaas/logs/{serviceName}/input/{inputId}/configtest
 	 * @param serviceName [required]
 	 * @param inputId [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_input_inputId_configtest_POST(String serviceName, String inputId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/configtest";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{inputId}", inputId);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName, inputId);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -431,12 +435,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/input/{inputId}/configtest/result
 	 * @param serviceName [required]
 	 * @param inputId [required]
+	 * @beta
 	 */
 	public OvhTestResult serviceName_input_inputId_configtest_result_GET(String serviceName, String inputId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/configtest/result";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{inputId}", inputId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, inputId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhTestResult.class);
 	}
 
@@ -446,12 +450,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: POST /dbaas/logs/{serviceName}/input/{inputId}/start
 	 * @param serviceName [required]
 	 * @param inputId [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_input_inputId_start_POST(String serviceName, String inputId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/start";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{inputId}", inputId);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName, inputId);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -460,11 +464,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/offer
 	 * @param serviceName [required]
+	 * @beta
 	 */
 	public OvhOffer serviceName_offer_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/offer";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhOffer.class);
 	}
 
@@ -474,12 +479,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: DELETE /dbaas/logs/{serviceName}/output/elasticsearch/index/{indexId}
 	 * @param serviceName [required]
 	 * @param indexId [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_output_elasticsearch_index_indexId_DELETE(String serviceName, String indexId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/index/{indexId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{indexId}", indexId);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, indexId);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -489,12 +494,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/output/elasticsearch/index/{indexId}
 	 * @param serviceName [required]
 	 * @param indexId [required]
+	 * @beta
 	 */
 	public OvhIndex serviceName_output_elasticsearch_index_indexId_GET(String serviceName, String indexId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/index/{indexId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{indexId}", indexId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, indexId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhIndex.class);
 	}
 
@@ -506,15 +511,15 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param indexId [required]
 	 * @param description [required]
 	 * @param optionId [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_output_elasticsearch_index_indexId_PUT(String serviceName, String indexId, String description, String optionId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/index/{indexId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{indexId}", indexId);
+		StringBuilder sb = path(qPath, serviceName, indexId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "description", description);
 		addBody(o, "optionId", optionId);
-		String resp = exec("PUT", qPath, o);
+		String resp = exec("PUT", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -524,12 +529,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/output/elasticsearch/index/{indexId}/url
 	 * @param serviceName [required]
 	 * @param indexId [required]
+	 * @beta
 	 */
 	public ArrayList<OvhUrl> serviceName_output_elasticsearch_index_indexId_url_GET(String serviceName, String indexId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/index/{indexId}/url";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{indexId}", indexId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, indexId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t2);
 	}
 
@@ -538,11 +543,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/elasticsearch/index
 	 * @param serviceName [required]
+	 * @beta
 	 */
 	public ArrayList<String> serviceName_output_elasticsearch_index_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/index";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -554,15 +560,16 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param description [required]
 	 * @param optionId [required]
 	 * @param suffix [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_output_elasticsearch_index_POST(String serviceName, String description, String optionId, String suffix) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/index";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "description", description);
 		addBody(o, "optionId", optionId);
 		addBody(o, "suffix", suffix);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -571,11 +578,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/elasticsearch/alias
 	 * @param serviceName [required]
+	 * @beta
 	 */
 	public ArrayList<String> serviceName_output_elasticsearch_alias_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/alias";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -587,15 +595,16 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param description [required]
 	 * @param optionId [required]
 	 * @param suffix [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_output_elasticsearch_alias_POST(String serviceName, String description, String optionId, String suffix) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/alias";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "description", description);
 		addBody(o, "optionId", optionId);
 		addBody(o, "suffix", suffix);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -605,12 +614,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: DELETE /dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}
 	 * @param serviceName [required]
 	 * @param aliasId [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_output_elasticsearch_alias_aliasId_DELETE(String serviceName, String aliasId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{aliasId}", aliasId);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, aliasId);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -620,12 +629,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}
 	 * @param serviceName [required]
 	 * @param aliasId [required]
+	 * @beta
 	 */
 	public OvhAlias serviceName_output_elasticsearch_alias_aliasId_GET(String serviceName, String aliasId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{aliasId}", aliasId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, aliasId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhAlias.class);
 	}
 
@@ -637,15 +646,15 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param aliasId [required]
 	 * @param description [required]
 	 * @param optionId [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_output_elasticsearch_alias_aliasId_PUT(String serviceName, String aliasId, String description, String optionId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{aliasId}", aliasId);
+		StringBuilder sb = path(qPath, serviceName, aliasId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "description", description);
 		addBody(o, "optionId", optionId);
-		String resp = exec("PUT", qPath, o);
+		String resp = exec("PUT", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -655,12 +664,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}/url
 	 * @param serviceName [required]
 	 * @param aliasId [required]
+	 * @beta
 	 */
 	public ArrayList<OvhUrl> serviceName_output_elasticsearch_alias_aliasId_url_GET(String serviceName, String aliasId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}/url";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{aliasId}", aliasId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, aliasId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t2);
 	}
 
@@ -670,12 +679,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}/stream
 	 * @param serviceName [required]
 	 * @param aliasId [required]
+	 * @beta
 	 */
 	public ArrayList<String> serviceName_output_elasticsearch_alias_aliasId_stream_GET(String serviceName, String aliasId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}/stream";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{aliasId}", aliasId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, aliasId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -686,14 +695,14 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param aliasId [required]
 	 * @param streamId [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_output_elasticsearch_alias_aliasId_stream_POST(String serviceName, String aliasId, String streamId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}/stream";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{aliasId}", aliasId);
+		StringBuilder sb = path(qPath, serviceName, aliasId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "streamId", streamId);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -704,13 +713,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param aliasId [required]
 	 * @param streamId [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_output_elasticsearch_alias_aliasId_stream_streamId_DELETE(String serviceName, String aliasId, String streamId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}/stream/{streamId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{aliasId}", aliasId);
-		qPath = qPath.replace("{streamId}", streamId);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, aliasId, streamId);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -719,11 +727,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/stream
 	 * @param serviceName [required]
+	 * @beta
 	 */
 	public ArrayList<String> serviceName_output_graylog_stream_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -735,15 +744,16 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param description [required]
 	 * @param optionId [required]
 	 * @param title [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_output_graylog_stream_POST(String serviceName, String description, String optionId, String title) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "description", description);
 		addBody(o, "optionId", optionId);
 		addBody(o, "title", title);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -753,12 +763,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/alert
 	 * @param serviceName [required]
 	 * @param streamId [required]
+	 * @beta
 	 */
 	public ArrayList<String> serviceName_output_graylog_stream_streamId_alert_GET(String serviceName, String streamId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/alert";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{streamId}", streamId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, streamId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -778,11 +788,11 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param constraintType [required]
 	 * @param conditionType [required]
 	 * @param grace [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_output_graylog_stream_streamId_alert_POST(String serviceName, String streamId, String field, Long time, String title, String value, OvhNewStreamAlertConditionThresholdtype thresholdType, Long threshold, Long backlog, OvhNewStreamAlertConditionConstrainttype constraintType, OvhNewStreamAlertConditionConditiontype conditionType, Long grace) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/alert";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{streamId}", streamId);
+		StringBuilder sb = path(qPath, serviceName, streamId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "field", field);
 		addBody(o, "time", time);
@@ -794,7 +804,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 		addBody(o, "constraintType", constraintType);
 		addBody(o, "conditionType", conditionType);
 		addBody(o, "grace", grace);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -805,13 +815,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param streamId [required]
 	 * @param alertId [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_output_graylog_stream_streamId_alert_alertId_DELETE(String serviceName, String streamId, String alertId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/alert/{alertId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{streamId}", streamId);
-		qPath = qPath.replace("{alertId}", alertId);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, streamId, alertId);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -822,13 +831,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param streamId [required]
 	 * @param alertId [required]
+	 * @beta
 	 */
 	public OvhStreamAlertCondition serviceName_output_graylog_stream_streamId_alert_alertId_GET(String serviceName, String streamId, String alertId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/alert/{alertId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{streamId}", streamId);
-		qPath = qPath.replace("{alertId}", alertId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, streamId, alertId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhStreamAlertCondition.class);
 	}
 
@@ -849,12 +857,11 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param constraintType [required]
 	 * @param conditionType [required]
 	 * @param grace [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_output_graylog_stream_streamId_alert_alertId_PUT(String serviceName, String streamId, String alertId, String field, Long time, String title, String value, OvhNewStreamAlertConditionThresholdtype thresholdType, Long threshold, Long backlog, OvhNewStreamAlertConditionConstrainttype constraintType, OvhNewStreamAlertConditionConditiontype conditionType, Long grace) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/alert/{alertId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{streamId}", streamId);
-		qPath = qPath.replace("{alertId}", alertId);
+		StringBuilder sb = path(qPath, serviceName, streamId, alertId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "field", field);
 		addBody(o, "time", time);
@@ -866,7 +873,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 		addBody(o, "constraintType", constraintType);
 		addBody(o, "conditionType", conditionType);
 		addBody(o, "grace", grace);
-		String resp = exec("PUT", qPath, o);
+		String resp = exec("PUT", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -876,12 +883,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: DELETE /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}
 	 * @param serviceName [required]
 	 * @param streamId [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_output_graylog_stream_streamId_DELETE(String serviceName, String streamId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream/{streamId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{streamId}", streamId);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, streamId);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -891,12 +898,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}
 	 * @param serviceName [required]
 	 * @param streamId [required]
+	 * @beta
 	 */
 	public OvhStream serviceName_output_graylog_stream_streamId_GET(String serviceName, String streamId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream/{streamId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{streamId}", streamId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, streamId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhStream.class);
 	}
 
@@ -909,16 +916,16 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param description [required]
 	 * @param optionId [required]
 	 * @param title [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_output_graylog_stream_streamId_PUT(String serviceName, String streamId, String description, String optionId, String title) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream/{streamId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{streamId}", streamId);
+		StringBuilder sb = path(qPath, serviceName, streamId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "description", description);
 		addBody(o, "optionId", optionId);
 		addBody(o, "title", title);
-		String resp = exec("PUT", qPath, o);
+		String resp = exec("PUT", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -928,12 +935,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/url
 	 * @param serviceName [required]
 	 * @param streamId [required]
+	 * @beta
 	 */
 	public ArrayList<OvhUrl> serviceName_output_graylog_stream_streamId_url_GET(String serviceName, String streamId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/url";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{streamId}", streamId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, streamId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t2);
 	}
 
@@ -943,12 +950,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/rule
 	 * @param serviceName [required]
 	 * @param streamId [required]
+	 * @beta
 	 */
 	public ArrayList<String> serviceName_output_graylog_stream_streamId_rule_GET(String serviceName, String streamId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/rule";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{streamId}", streamId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, streamId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -959,13 +966,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param streamId [required]
 	 * @param ruleId [required]
+	 * @beta
 	 */
 	public ArrayList<OvhStreamRule> serviceName_output_graylog_stream_streamId_rule_ruleId_GET(String serviceName, String streamId, String ruleId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/rule/{ruleId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{streamId}", streamId);
-		qPath = qPath.replace("{ruleId}", ruleId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, streamId, ruleId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t4);
 	}
 	private static TypeReference<ArrayList<OvhStreamRule>> t4 = new TypeReference<ArrayList<OvhStreamRule>>() {};
@@ -975,11 +981,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/dashboard
 	 * @param serviceName [required]
+	 * @beta
 	 */
 	public ArrayList<String> serviceName_output_graylog_dashboard_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/dashboard";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -991,15 +998,16 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param description [required]
 	 * @param optionId [required]
 	 * @param title [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_output_graylog_dashboard_POST(String serviceName, String description, String optionId, String title) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/dashboard";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "description", description);
 		addBody(o, "optionId", optionId);
 		addBody(o, "title", title);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -1009,12 +1017,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: DELETE /dbaas/logs/{serviceName}/output/graylog/dashboard/{dashboardId}
 	 * @param serviceName [required]
 	 * @param dashboardId [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_output_graylog_dashboard_dashboardId_DELETE(String serviceName, String dashboardId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/dashboard/{dashboardId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{dashboardId}", dashboardId);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, dashboardId);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -1024,12 +1032,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/dashboard/{dashboardId}
 	 * @param serviceName [required]
 	 * @param dashboardId [required]
+	 * @beta
 	 */
 	public OvhDashboard serviceName_output_graylog_dashboard_dashboardId_GET(String serviceName, String dashboardId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/dashboard/{dashboardId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{dashboardId}", dashboardId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, dashboardId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhDashboard.class);
 	}
 
@@ -1042,16 +1050,16 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param description [required]
 	 * @param optionId [required]
 	 * @param title [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_output_graylog_dashboard_dashboardId_PUT(String serviceName, String dashboardId, String description, String optionId, String title) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/dashboard/{dashboardId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{dashboardId}", dashboardId);
+		StringBuilder sb = path(qPath, serviceName, dashboardId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "description", description);
 		addBody(o, "optionId", optionId);
 		addBody(o, "title", title);
-		String resp = exec("PUT", qPath, o);
+		String resp = exec("PUT", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -1065,17 +1073,17 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param optionId [required]
 	 * @param streamId [required]
 	 * @param title [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_output_graylog_dashboard_dashboardId_duplicate_POST(String serviceName, String dashboardId, String description, String optionId, String streamId, String title) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/dashboard/{dashboardId}/duplicate";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{dashboardId}", dashboardId);
+		StringBuilder sb = path(qPath, serviceName, dashboardId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "description", description);
 		addBody(o, "optionId", optionId);
 		addBody(o, "streamId", streamId);
 		addBody(o, "title", title);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -1085,12 +1093,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/dashboard/{dashboardId}/url
 	 * @param serviceName [required]
 	 * @param dashboardId [required]
+	 * @beta
 	 */
 	public ArrayList<OvhUrl> serviceName_output_graylog_dashboard_dashboardId_url_GET(String serviceName, String dashboardId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/dashboard/{dashboardId}/url";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{dashboardId}", dashboardId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, dashboardId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t2);
 	}
 
@@ -1102,15 +1110,16 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param contactTech The contact to set as tech contact
 	 * @param contactBilling The contact to set as billing contact
 	 * @param serviceName [required] The internal ID of your Logs pack
+	 * @beta
 	 */
 	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/changeContact";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "contactAdmin", contactAdmin);
 		addBody(o, "contactTech", contactTech);
 		addBody(o, "contactBilling", contactBilling);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, t5);
 	}
 	private static TypeReference<ArrayList<Long>> t5 = new TypeReference<ArrayList<Long>>() {};
@@ -1120,11 +1129,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/user/changePassword
 	 * @param serviceName [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_user_changePassword_POST(String serviceName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/user/changePassword";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -1133,11 +1143,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/url
 	 * @param serviceName [required]
+	 * @beta
 	 */
 	public ArrayList<OvhUrl> serviceName_url_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/url";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t2);
 	}
 
@@ -1146,11 +1157,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/metrics
 	 * @param serviceName [required]
+	 * @beta
 	 */
 	public OvhServiceMetric serviceName_metrics_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/metrics";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhServiceMetric.class);
 	}
 
@@ -1159,11 +1171,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/operation
 	 * @param serviceName [required]
+	 * @beta
 	 */
 	public ArrayList<String> serviceName_operation_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/operation";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -1173,12 +1186,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/operation/{operationId}
 	 * @param serviceName [required]
 	 * @param operationId [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_operation_operationId_GET(String serviceName, String operationId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/operation/{operationId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{operationId}", operationId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, operationId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -1187,11 +1200,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/option
 	 * @param serviceName [required]
+	 * @beta
 	 */
 	public ArrayList<String> serviceName_option_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/option";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -1201,12 +1215,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/option/{optionId}
 	 * @param serviceName [required]
 	 * @param optionId [required]
+	 * @beta
 	 */
 	public OvhOption serviceName_option_optionId_GET(String serviceName, String optionId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/option/{optionId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{optionId}", optionId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, optionId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhOption.class);
 	}
 
@@ -1215,11 +1229,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/token
 	 * @param serviceName [required]
+	 * @beta
 	 */
 	public ArrayList<String> serviceName_token_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/token";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -1229,13 +1244,14 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: POST /dbaas/logs/{serviceName}/token
 	 * @param serviceName [required]
 	 * @param name [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_token_POST(String serviceName, String name) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/token";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "name", name);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -1245,12 +1261,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: DELETE /dbaas/logs/{serviceName}/token/{tokenId}
 	 * @param serviceName [required]
 	 * @param tokenId [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_token_tokenId_DELETE(String serviceName, String tokenId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/token/{tokenId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{tokenId}", tokenId);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, tokenId);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -1260,12 +1276,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/token/{tokenId}
 	 * @param serviceName [required]
 	 * @param tokenId [required]
+	 * @beta
 	 */
 	public OvhToken serviceName_token_tokenId_GET(String serviceName, String tokenId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/token/{tokenId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{tokenId}", tokenId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, tokenId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhToken.class);
 	}
 
@@ -1275,12 +1291,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: DELETE /dbaas/logs/{serviceName}/role/{roleId}
 	 * @param serviceName [required]
 	 * @param roleId [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_role_roleId_DELETE(String serviceName, String roleId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role/{roleId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{roleId}", roleId);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, roleId);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -1290,12 +1306,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/role/{roleId}
 	 * @param serviceName [required]
 	 * @param roleId [required]
+	 * @beta
 	 */
 	public OvhRole serviceName_role_roleId_GET(String serviceName, String roleId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role/{roleId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{roleId}", roleId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, roleId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhRole.class);
 	}
 
@@ -1308,16 +1324,16 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param name [required]
 	 * @param description [required]
 	 * @param optionId [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_role_roleId_PUT(String serviceName, String roleId, String name, String description, String optionId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role/{roleId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{roleId}", roleId);
+		StringBuilder sb = path(qPath, serviceName, roleId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "name", name);
 		addBody(o, "description", description);
 		addBody(o, "optionId", optionId);
-		String resp = exec("PUT", qPath, o);
+		String resp = exec("PUT", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -1327,12 +1343,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/role/{roleId}/member
 	 * @param serviceName [required]
 	 * @param roleId [required]
+	 * @beta
 	 */
 	public ArrayList<String> serviceName_role_roleId_member_GET(String serviceName, String roleId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role/{roleId}/member";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{roleId}", roleId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, roleId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -1343,14 +1359,14 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param roleId [required]
 	 * @param username [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_role_roleId_member_POST(String serviceName, String roleId, String username) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role/{roleId}/member";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{roleId}", roleId);
+		StringBuilder sb = path(qPath, serviceName, roleId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "username", username);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -1361,13 +1377,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param roleId [required]
 	 * @param username [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_role_roleId_member_username_DELETE(String serviceName, String roleId, String username) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role/{roleId}/member/{username}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{roleId}", roleId);
-		qPath = qPath.replace("{username}", username);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, roleId, username);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -1377,12 +1392,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/role/{roleId}/permission
 	 * @param serviceName [required]
 	 * @param roleId [required]
+	 * @beta
 	 */
 	public ArrayList<String> serviceName_role_roleId_permission_GET(String serviceName, String roleId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role/{roleId}/permission";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{roleId}", roleId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, roleId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -1393,14 +1408,14 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param roleId [required]
 	 * @param indexId [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_role_roleId_permission_index_POST(String serviceName, String roleId, String indexId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role/{roleId}/permission/index";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{roleId}", roleId);
+		StringBuilder sb = path(qPath, serviceName, roleId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "indexId", indexId);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -1411,13 +1426,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param roleId [required]
 	 * @param permissionId [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_role_roleId_permission_permissionId_DELETE(String serviceName, String roleId, String permissionId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role/{roleId}/permission/{permissionId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{roleId}", roleId);
-		qPath = qPath.replace("{permissionId}", permissionId);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, roleId, permissionId);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -1428,13 +1442,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param roleId [required]
 	 * @param permissionId [required]
+	 * @beta
 	 */
 	public ArrayList<OvhPermission> serviceName_role_roleId_permission_permissionId_GET(String serviceName, String roleId, String permissionId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role/{roleId}/permission/{permissionId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{roleId}", roleId);
-		qPath = qPath.replace("{permissionId}", permissionId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, roleId, permissionId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t6);
 	}
 	private static TypeReference<ArrayList<OvhPermission>> t6 = new TypeReference<ArrayList<OvhPermission>>() {};
@@ -1446,14 +1459,14 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param roleId [required]
 	 * @param streamId [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_role_roleId_permission_stream_POST(String serviceName, String roleId, String streamId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role/{roleId}/permission/stream";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{roleId}", roleId);
+		StringBuilder sb = path(qPath, serviceName, roleId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "streamId", streamId);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -1464,14 +1477,14 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param roleId [required]
 	 * @param aliasId [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_role_roleId_permission_alias_POST(String serviceName, String roleId, String aliasId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role/{roleId}/permission/alias";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{roleId}", roleId);
+		StringBuilder sb = path(qPath, serviceName, roleId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "aliasId", aliasId);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -1482,14 +1495,14 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param roleId [required]
 	 * @param dashboardId [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_role_roleId_permission_dashboard_POST(String serviceName, String roleId, String dashboardId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role/{roleId}/permission/dashboard";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{roleId}", roleId);
+		StringBuilder sb = path(qPath, serviceName, roleId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "dashboardId", dashboardId);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -1498,11 +1511,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/role
 	 * @param serviceName [required]
+	 * @beta
 	 */
 	public ArrayList<String> serviceName_role_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -1514,15 +1528,16 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param name [required]
 	 * @param description [required]
 	 * @param optionId [required]
+	 * @beta
 	 */
 	public OvhOperation serviceName_role_POST(String serviceName, String name, String description, String optionId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "name", name);
 		addBody(o, "description", description);
 		addBody(o, "optionId", optionId);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -1530,10 +1545,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * List available services
 	 *
 	 * REST: GET /dbaas/logs
+	 * @beta
 	 */
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/dbaas/logs";
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -1541,10 +1558,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return the list of available input engines
 	 *
 	 * REST: GET /dbaas/logs/input/engine
+	 * @beta
 	 */
 	public ArrayList<String> input_engine_GET() throws IOException {
 		String qPath = "/dbaas/logs/input/engine";
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -1553,11 +1572,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/logs/input/engine/{engineId}
 	 * @param engineId [required]
+	 * @beta
 	 */
 	public OvhEngine input_engine_engineId_GET(String engineId) throws IOException {
 		String qPath = "/dbaas/logs/input/engine/{engineId}";
-		qPath = qPath.replace("{engineId}", engineId);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, engineId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhEngine.class);
 	}
 }

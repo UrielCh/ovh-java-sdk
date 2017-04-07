@@ -80,11 +80,12 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<String> GET(String description, String ip, String routedTo_serviceName, OvhIpTypeEnum type) throws IOException {
 		String qPath = "/ip";
-		qPath = query(qPath, "description", description);
-		qPath = query(qPath, "ip", ip);
-		qPath = query(qPath, "routedTo.serviceName", routedTo_serviceName);
-		qPath = query(qPath, "type", type);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath);
+		query(sb, "description", description);
+		query(sb, "ip", ip);
+		query(sb, "routedTo.serviceName", routedTo_serviceName);
+		query(sb, "type", type);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
@@ -97,8 +98,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhIp ip_GET(String ip) throws IOException {
 		String qPath = "/ip/{ip}";
-		qPath = qPath.replace("{ip}", ip);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhIp.class);
 	}
 
@@ -111,8 +112,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public void ip_PUT(String ip, OvhIp body) throws IOException {
 		String qPath = "/ip/{ip}";
-		qPath = qPath.replace("{ip}", ip);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, ip);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -125,11 +126,11 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhIpTask ip_move_POST(String ip, String nexthop, String to) throws IOException {
 		String qPath = "/ip/{ip}/move";
-		qPath = qPath.replace("{ip}", ip);
+		StringBuilder sb = path(qPath, ip);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "nexthop", nexthop);
 		addBody(o, "to", to);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhIpTask.class);
 	}
 
@@ -138,11 +139,12 @@ public class ApiOvhIp extends ApiOvhBase {
 	 *
 	 * REST: GET /ip/{ip}/move
 	 * @param ip [required]
+	 * @beta
 	 */
 	public OvhDestinations ip_move_GET(String ip) throws IOException {
 		String qPath = "/ip/{ip}/move";
-		qPath = qPath.replace("{ip}", ip);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhDestinations.class);
 	}
 
@@ -155,9 +157,9 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<String> ip_arp_GET(String ip, OvhArpStateEnum state) throws IOException {
 		String qPath = "/ip/{ip}/arp";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = query(qPath, "state", state);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip);
+		query(sb, "state", state);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -170,9 +172,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhArpBlockedIp ip_arp_ipBlocked_GET(String ip, String ipBlocked) throws IOException {
 		String qPath = "/ip/{ip}/arp/{ipBlocked}";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{ipBlocked}", ipBlocked);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip, ipBlocked);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhArpBlockedIp.class);
 	}
 
@@ -185,9 +186,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public void ip_arp_ipBlocked_unblock_POST(String ip, String ipBlocked) throws IOException {
 		String qPath = "/ip/{ip}/arp/{ipBlocked}/unblock";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{ipBlocked}", ipBlocked);
-		exec("POST", qPath);
+		StringBuilder sb = path(qPath, ip, ipBlocked);
+		exec("POST", sb.toString());
 	}
 
 	/**
@@ -198,8 +198,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhRipeInfos ip_ripe_GET(String ip) throws IOException {
 		String qPath = "/ip/{ip}/ripe";
-		qPath = qPath.replace("{ip}", ip);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhRipeInfos.class);
 	}
 
@@ -212,8 +212,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public void ip_ripe_PUT(String ip, OvhRipeInfos body) throws IOException {
 		String qPath = "/ip/{ip}/ripe";
-		qPath = qPath.replace("{ip}", ip);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, ip);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -221,11 +221,12 @@ public class ApiOvhIp extends ApiOvhBase {
 	 *
 	 * REST: POST /ip/{ip}/terminate
 	 * @param ip [required]
+	 * @deprecated
 	 */
 	public OvhIpTask ip_terminate_POST(String ip) throws IOException {
 		String qPath = "/ip/{ip}/terminate";
-		qPath = qPath.replace("{ip}", ip);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, ip);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhIpTask.class);
 	}
 
@@ -238,10 +239,10 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhIpTask ip_changeOrg_POST(String ip, String organisation) throws IOException {
 		String qPath = "/ip/{ip}/changeOrg";
-		qPath = qPath.replace("{ip}", ip);
+		StringBuilder sb = path(qPath, ip);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "organisation", organisation);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhIpTask.class);
 	}
 
@@ -253,8 +254,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhIpTask ip_park_POST(String ip) throws IOException {
 		String qPath = "/ip/{ip}/park";
-		qPath = qPath.replace("{ip}", ip);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, ip);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhIpTask.class);
 	}
 
@@ -267,9 +268,9 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<String> ip_spam_GET(String ip, OvhSpamStateEnum state) throws IOException {
 		String qPath = "/ip/{ip}/spam";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = query(qPath, "state", state);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip);
+		query(sb, "state", state);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -282,9 +283,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhSpamIp ip_spam_ipSpamming_GET(String ip, String ipSpamming) throws IOException {
 		String qPath = "/ip/{ip}/spam/{ipSpamming}";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{ipSpamming}", ipSpamming);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip, ipSpamming);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhSpamIp.class);
 	}
 
@@ -297,9 +297,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhSpamIp ip_spam_ipSpamming_unblock_POST(String ip, String ipSpamming) throws IOException {
 		String qPath = "/ip/{ip}/spam/{ipSpamming}/unblock";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{ipSpamming}", ipSpamming);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, ip, ipSpamming);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhSpamIp.class);
 	}
 
@@ -314,11 +313,10 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<OvhSpamStats> ip_spam_ipSpamming_stats_GET(String ip, String ipSpamming, Date from, Date to) throws IOException {
 		String qPath = "/ip/{ip}/spam/{ipSpamming}/stats";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{ipSpamming}", ipSpamming);
-		qPath = query(qPath, "from", from);
-		qPath = query(qPath, "to", to);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip, ipSpamming);
+		query(sb, "from", from);
+		query(sb, "to", to);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<OvhSpamStats>> t2 = new TypeReference<ArrayList<OvhSpamStats>>() {};
@@ -331,8 +329,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<String> ip_delegation_GET(String ip) throws IOException {
 		String qPath = "/ip/{ip}/delegation";
-		qPath = qPath.replace("{ip}", ip);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -345,10 +343,10 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhReverseDelegation ip_delegation_POST(String ip, String target) throws IOException {
 		String qPath = "/ip/{ip}/delegation";
-		qPath = qPath.replace("{ip}", ip);
+		StringBuilder sb = path(qPath, ip);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "target", target);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhReverseDelegation.class);
 	}
 
@@ -361,9 +359,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhReverseDelegation ip_delegation_target_GET(String ip, String target) throws IOException {
 		String qPath = "/ip/{ip}/delegation/{target}";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{target}", target);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip, target);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhReverseDelegation.class);
 	}
 
@@ -376,9 +373,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public void ip_delegation_target_DELETE(String ip, String target) throws IOException {
 		String qPath = "/ip/{ip}/delegation/{target}";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{target}", target);
-		exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, ip, target);
+		exec("DELETE", sb.toString());
 	}
 
 	/**
@@ -389,8 +385,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhIpMigrationToken ip_migrationToken_GET(String ip) throws IOException {
 		String qPath = "/ip/{ip}/migrationToken";
-		qPath = qPath.replace("{ip}", ip);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhIpMigrationToken.class);
 	}
 
@@ -403,10 +399,10 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhIpMigrationToken ip_migrationToken_POST(String ip, String customerId) throws IOException {
 		String qPath = "/ip/{ip}/migrationToken";
-		qPath = qPath.replace("{ip}", ip);
+		StringBuilder sb = path(qPath, ip);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "customerId", customerId);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhIpMigrationToken.class);
 	}
 
@@ -418,8 +414,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<String> ip_mitigationProfiles_GET(String ip) throws IOException {
 		String qPath = "/ip/{ip}/mitigationProfiles";
-		qPath = qPath.replace("{ip}", ip);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -433,11 +429,11 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhMitigationProfile ip_mitigationProfiles_POST(String ip, String ipMitigationProfile, OvhMitigationProfileAutoMitigationTimeOutEnum autoMitigationTimeOut) throws IOException {
 		String qPath = "/ip/{ip}/mitigationProfiles";
-		qPath = qPath.replace("{ip}", ip);
+		StringBuilder sb = path(qPath, ip);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "ipMitigationProfile", ipMitigationProfile);
 		addBody(o, "autoMitigationTimeOut", autoMitigationTimeOut);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhMitigationProfile.class);
 	}
 
@@ -450,9 +446,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhMitigationProfile ip_mitigationProfiles_ipMitigationProfile_GET(String ip, String ipMitigationProfile) throws IOException {
 		String qPath = "/ip/{ip}/mitigationProfiles/{ipMitigationProfile}";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{ipMitigationProfile}", ipMitigationProfile);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip, ipMitigationProfile);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhMitigationProfile.class);
 	}
 
@@ -466,9 +461,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public void ip_mitigationProfiles_ipMitigationProfile_PUT(String ip, String ipMitigationProfile, OvhMitigationProfile body) throws IOException {
 		String qPath = "/ip/{ip}/mitigationProfiles/{ipMitigationProfile}";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{ipMitigationProfile}", ipMitigationProfile);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, ip, ipMitigationProfile);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -480,9 +474,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public void ip_mitigationProfiles_ipMitigationProfile_DELETE(String ip, String ipMitigationProfile) throws IOException {
 		String qPath = "/ip/{ip}/mitigationProfiles/{ipMitigationProfile}";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{ipMitigationProfile}", ipMitigationProfile);
-		exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, ip, ipMitigationProfile);
+		exec("DELETE", sb.toString());
 	}
 
 	/**
@@ -495,10 +488,10 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<Long> ip_task_GET(String ip, OvhTaskFunctionEnum function, OvhTaskStatusEnum status) throws IOException {
 		String qPath = "/ip/{ip}/task";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = query(qPath, "function", function);
-		qPath = query(qPath, "status", status);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip);
+		query(sb, "function", function);
+		query(sb, "status", status);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t3);
 	}
 	private static TypeReference<ArrayList<Long>> t3 = new TypeReference<ArrayList<Long>>() {};
@@ -512,9 +505,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhIpTask ip_task_taskId_GET(String ip, Long taskId) throws IOException {
 		String qPath = "/ip/{ip}/task/{taskId}";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{taskId}", taskId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip, taskId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhIpTask.class);
 	}
 
@@ -527,9 +519,9 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<String> ip_license_worklight_GET(String ip, String ipAddress) throws IOException {
 		String qPath = "/ip/{ip}/license/worklight";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = query(qPath, "ipAddress", ipAddress);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip);
+		query(sb, "ipAddress", ipAddress);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -542,9 +534,9 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<String> ip_license_cloudLinux_GET(String ip, String ipAddress) throws IOException {
 		String qPath = "/ip/{ip}/license/cloudLinux";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = query(qPath, "ipAddress", ipAddress);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip);
+		query(sb, "ipAddress", ipAddress);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -557,9 +549,9 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<String> ip_license_directadmin_GET(String ip, String ipAddress) throws IOException {
 		String qPath = "/ip/{ip}/license/directadmin";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = query(qPath, "ipAddress", ipAddress);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip);
+		query(sb, "ipAddress", ipAddress);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -572,9 +564,9 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<String> ip_license_windows_GET(String ip, String ipAddress) throws IOException {
 		String qPath = "/ip/{ip}/license/windows";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = query(qPath, "ipAddress", ipAddress);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip);
+		query(sb, "ipAddress", ipAddress);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -587,9 +579,9 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<String> ip_license_virtuozzo_GET(String ip, String ipAddress) throws IOException {
 		String qPath = "/ip/{ip}/license/virtuozzo";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = query(qPath, "ipAddress", ipAddress);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip);
+		query(sb, "ipAddress", ipAddress);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -602,9 +594,9 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<String> ip_license_cpanel_GET(String ip, String ipAddress) throws IOException {
 		String qPath = "/ip/{ip}/license/cpanel";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = query(qPath, "ipAddress", ipAddress);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip);
+		query(sb, "ipAddress", ipAddress);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -617,9 +609,9 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<String> ip_license_sqlserver_GET(String ip, String ipAddress) throws IOException {
 		String qPath = "/ip/{ip}/license/sqlserver";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = query(qPath, "ipAddress", ipAddress);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip);
+		query(sb, "ipAddress", ipAddress);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -632,9 +624,9 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<String> ip_license_plesk_GET(String ip, String ipAddress) throws IOException {
 		String qPath = "/ip/{ip}/license/plesk";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = query(qPath, "ipAddress", ipAddress);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip);
+		query(sb, "ipAddress", ipAddress);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -648,10 +640,10 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<String> ip_mitigation_GET(String ip, Boolean auto, OvhMitigationStateEnum state) throws IOException {
 		String qPath = "/ip/{ip}/mitigation";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = query(qPath, "auto", auto);
-		qPath = query(qPath, "state", state);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip);
+		query(sb, "auto", auto);
+		query(sb, "state", state);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -664,10 +656,10 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhMitigationIp ip_mitigation_POST(String ip, String ipOnMitigation) throws IOException {
 		String qPath = "/ip/{ip}/mitigation";
-		qPath = qPath.replace("{ip}", ip);
+		StringBuilder sb = path(qPath, ip);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "ipOnMitigation", ipOnMitigation);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhMitigationIp.class);
 	}
 
@@ -680,9 +672,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhMitigationIp ip_mitigation_ipOnMitigation_GET(String ip, String ipOnMitigation) throws IOException {
 		String qPath = "/ip/{ip}/mitigation/{ipOnMitigation}";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{ipOnMitigation}", ipOnMitigation);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip, ipOnMitigation);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhMitigationIp.class);
 	}
 
@@ -696,9 +687,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public void ip_mitigation_ipOnMitigation_PUT(String ip, String ipOnMitigation, OvhMitigationIp body) throws IOException {
 		String qPath = "/ip/{ip}/mitigation/{ipOnMitigation}";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{ipOnMitigation}", ipOnMitigation);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, ip, ipOnMitigation);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -710,9 +700,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhMitigationIp ip_mitigation_ipOnMitigation_DELETE(String ip, String ipOnMitigation) throws IOException {
 		String qPath = "/ip/{ip}/mitigation/{ipOnMitigation}";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{ipOnMitigation}", ipOnMitigation);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, ip, ipOnMitigation);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhMitigationIp.class);
 	}
 
@@ -728,12 +717,11 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<OvhMitigationStats> ip_mitigation_ipOnMitigation_stats_GET(String ip, String ipOnMitigation, Date from, OvhMitigationStatsScaleEnum scale, Date to) throws IOException {
 		String qPath = "/ip/{ip}/mitigation/{ipOnMitigation}/stats";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{ipOnMitigation}", ipOnMitigation);
-		qPath = query(qPath, "from", from);
-		qPath = query(qPath, "scale", scale);
-		qPath = query(qPath, "to", to);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip, ipOnMitigation);
+		query(sb, "from", from);
+		query(sb, "scale", scale);
+		query(sb, "to", to);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t4);
 	}
 	private static TypeReference<ArrayList<OvhMitigationStats>> t4 = new TypeReference<ArrayList<OvhMitigationStats>>() {};
@@ -749,11 +737,10 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<OvhMitigationDetailedStats> ip_mitigation_ipOnMitigation_topStream_GET(String ip, String ipOnMitigation, Date date, OvhMitigationStatsScaleEnum scale) throws IOException {
 		String qPath = "/ip/{ip}/mitigation/{ipOnMitigation}/topStream";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{ipOnMitigation}", ipOnMitigation);
-		qPath = query(qPath, "date", date);
-		qPath = query(qPath, "scale", scale);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip, ipOnMitigation);
+		query(sb, "date", date);
+		query(sb, "scale", scale);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t5);
 	}
 	private static TypeReference<ArrayList<OvhMitigationDetailedStats>> t5 = new TypeReference<ArrayList<OvhMitigationDetailedStats>>() {};
@@ -766,8 +753,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<String> ip_reverse_GET(String ip) throws IOException {
 		String qPath = "/ip/{ip}/reverse";
-		qPath = qPath.replace("{ip}", ip);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -781,11 +768,11 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhReverseIp ip_reverse_POST(String ip, String ipReverse, String reverse) throws IOException {
 		String qPath = "/ip/{ip}/reverse";
-		qPath = qPath.replace("{ip}", ip);
+		StringBuilder sb = path(qPath, ip);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "ipReverse", ipReverse);
 		addBody(o, "reverse", reverse);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhReverseIp.class);
 	}
 
@@ -798,9 +785,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhReverseIp ip_reverse_ipReverse_GET(String ip, String ipReverse) throws IOException {
 		String qPath = "/ip/{ip}/reverse/{ipReverse}";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{ipReverse}", ipReverse);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip, ipReverse);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhReverseIp.class);
 	}
 
@@ -813,9 +799,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public void ip_reverse_ipReverse_DELETE(String ip, String ipReverse) throws IOException {
 		String qPath = "/ip/{ip}/reverse/{ipReverse}";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{ipReverse}", ipReverse);
-		exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, ip, ipReverse);
+		exec("DELETE", sb.toString());
 	}
 
 	/**
@@ -827,9 +812,9 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<String> ip_antihack_GET(String ip, OvhBlockedIpStateEnum state) throws IOException {
 		String qPath = "/ip/{ip}/antihack";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = query(qPath, "state", state);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip);
+		query(sb, "state", state);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -842,9 +827,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhBlockedIp ip_antihack_ipBlocked_GET(String ip, String ipBlocked) throws IOException {
 		String qPath = "/ip/{ip}/antihack/{ipBlocked}";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{ipBlocked}", ipBlocked);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip, ipBlocked);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhBlockedIp.class);
 	}
 
@@ -857,9 +841,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public void ip_antihack_ipBlocked_unblock_POST(String ip, String ipBlocked) throws IOException {
 		String qPath = "/ip/{ip}/antihack/{ipBlocked}/unblock";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{ipBlocked}", ipBlocked);
-		exec("POST", qPath);
+		StringBuilder sb = path(qPath, ip, ipBlocked);
+		exec("POST", sb.toString());
 	}
 
 	/**
@@ -872,10 +855,10 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<Long> ip_phishing_GET(String ip, String ipOnAntiphishing, OvhAntiphishingStateEnum state) throws IOException {
 		String qPath = "/ip/{ip}/phishing";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = query(qPath, "ipOnAntiphishing", ipOnAntiphishing);
-		qPath = query(qPath, "state", state);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip);
+		query(sb, "ipOnAntiphishing", ipOnAntiphishing);
+		query(sb, "state", state);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t3);
 	}
 
@@ -888,9 +871,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhAntiphishing ip_phishing_id_GET(String ip, Long id) throws IOException {
 		String qPath = "/ip/{ip}/phishing/{id}";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip, id);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhAntiphishing.class);
 	}
 
@@ -903,9 +885,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhGameMitigation ip_game_ipOnGame_GET(String ip, String ipOnGame) throws IOException {
 		String qPath = "/ip/{ip}/game/{ipOnGame}";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{ipOnGame}", ipOnGame);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip, ipOnGame);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhGameMitigation.class);
 	}
 
@@ -919,9 +900,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public void ip_game_ipOnGame_PUT(String ip, String ipOnGame, OvhGameMitigation body) throws IOException {
 		String qPath = "/ip/{ip}/game/{ipOnGame}";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{ipOnGame}", ipOnGame);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, ip, ipOnGame);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -933,9 +913,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<Long> ip_game_ipOnGame_rule_GET(String ip, String ipOnGame) throws IOException {
 		String qPath = "/ip/{ip}/game/{ipOnGame}/rule";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{ipOnGame}", ipOnGame);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip, ipOnGame);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t3);
 	}
 
@@ -950,12 +929,11 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhGameMitigationRule ip_game_ipOnGame_rule_POST(String ip, String ipOnGame, OvhGameMitigationRuleProtocolEnum protocol, OvhRange<Long> ports) throws IOException {
 		String qPath = "/ip/{ip}/game/{ipOnGame}/rule";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{ipOnGame}", ipOnGame);
+		StringBuilder sb = path(qPath, ip, ipOnGame);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "protocol", protocol);
 		addBody(o, "ports", ports);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhGameMitigationRule.class);
 	}
 
@@ -969,10 +947,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhGameMitigationRule ip_game_ipOnGame_rule_id_GET(String ip, String ipOnGame, Long id) throws IOException {
 		String qPath = "/ip/{ip}/game/{ipOnGame}/rule/{id}";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{ipOnGame}", ipOnGame);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip, ipOnGame, id);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhGameMitigationRule.class);
 	}
 
@@ -986,10 +962,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhGameMitigationRule ip_game_ipOnGame_rule_id_DELETE(String ip, String ipOnGame, Long id) throws IOException {
 		String qPath = "/ip/{ip}/game/{ipOnGame}/rule/{id}";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{ipOnGame}", ipOnGame);
-		qPath = qPath.replace("{id}", id.toString());
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, ip, ipOnGame, id);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhGameMitigationRule.class);
 	}
 
@@ -1001,8 +975,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<String> ip_game_GET(String ip) throws IOException {
 		String qPath = "/ip/{ip}/game";
-		qPath = qPath.replace("{ip}", ip);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -1016,10 +990,10 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<String> ip_firewall_GET(String ip, Boolean enabled, OvhFirewallStateEnum state) throws IOException {
 		String qPath = "/ip/{ip}/firewall";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = query(qPath, "enabled", enabled);
-		qPath = query(qPath, "state", state);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip);
+		query(sb, "enabled", enabled);
+		query(sb, "state", state);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -1032,10 +1006,10 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhFirewallIp ip_firewall_POST(String ip, String ipOnFirewall) throws IOException {
 		String qPath = "/ip/{ip}/firewall";
-		qPath = qPath.replace("{ip}", ip);
+		StringBuilder sb = path(qPath, ip);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "ipOnFirewall", ipOnFirewall);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhFirewallIp.class);
 	}
 
@@ -1048,9 +1022,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhFirewallIp ip_firewall_ipOnFirewall_GET(String ip, String ipOnFirewall) throws IOException {
 		String qPath = "/ip/{ip}/firewall/{ipOnFirewall}";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{ipOnFirewall}", ipOnFirewall);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip, ipOnFirewall);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhFirewallIp.class);
 	}
 
@@ -1064,9 +1037,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public void ip_firewall_ipOnFirewall_PUT(String ip, String ipOnFirewall, OvhFirewallIp body) throws IOException {
 		String qPath = "/ip/{ip}/firewall/{ipOnFirewall}";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{ipOnFirewall}", ipOnFirewall);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, ip, ipOnFirewall);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1078,9 +1050,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public String ip_firewall_ipOnFirewall_DELETE(String ip, String ipOnFirewall) throws IOException {
 		String qPath = "/ip/{ip}/firewall/{ipOnFirewall}";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{ipOnFirewall}", ipOnFirewall);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, ip, ipOnFirewall);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, String.class);
 	}
 
@@ -1094,10 +1065,9 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<Long> ip_firewall_ipOnFirewall_rule_GET(String ip, String ipOnFirewall, OvhFirewallRuleStateEnum state) throws IOException {
 		String qPath = "/ip/{ip}/firewall/{ipOnFirewall}/rule";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{ipOnFirewall}", ipOnFirewall);
-		qPath = query(qPath, "state", state);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip, ipOnFirewall);
+		query(sb, "state", state);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t3);
 	}
 
@@ -1117,8 +1087,7 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhFirewallNetworkRule ip_firewall_ipOnFirewall_rule_POST(String ip, String ipOnFirewall, OvhFirewallOptionTCP tcpOption, String source, OvhFirewallProtocolEnum protocol, Long destinationPort, OvhFirewallSequenceRangeEnum sequence, OvhFirewallActionEnum action, Long sourcePort) throws IOException {
 		String qPath = "/ip/{ip}/firewall/{ipOnFirewall}/rule";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{ipOnFirewall}", ipOnFirewall);
+		StringBuilder sb = path(qPath, ip, ipOnFirewall);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "tcpOption", tcpOption);
 		addBody(o, "source", source);
@@ -1127,7 +1096,7 @@ public class ApiOvhIp extends ApiOvhBase {
 		addBody(o, "sequence", sequence);
 		addBody(o, "action", action);
 		addBody(o, "sourcePort", sourcePort);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhFirewallNetworkRule.class);
 	}
 
@@ -1141,10 +1110,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhFirewallNetworkRule ip_firewall_ipOnFirewall_rule_sequence_GET(String ip, String ipOnFirewall, Long sequence) throws IOException {
 		String qPath = "/ip/{ip}/firewall/{ipOnFirewall}/rule/{sequence}";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{ipOnFirewall}", ipOnFirewall);
-		qPath = qPath.replace("{sequence}", sequence.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, ip, ipOnFirewall, sequence);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhFirewallNetworkRule.class);
 	}
 
@@ -1158,10 +1125,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhFirewallNetworkRule ip_firewall_ipOnFirewall_rule_sequence_DELETE(String ip, String ipOnFirewall, Long sequence) throws IOException {
 		String qPath = "/ip/{ip}/firewall/{ipOnFirewall}/rule/{sequence}";
-		qPath = qPath.replace("{ip}", ip);
-		qPath = qPath.replace("{ipOnFirewall}", ipOnFirewall);
-		qPath = qPath.replace("{sequence}", sequence.toString());
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, ip, ipOnFirewall, sequence);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhFirewallNetworkRule.class);
 	}
 
@@ -1173,8 +1138,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhService loadBalancing_serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/ip/loadBalancing/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhService.class);
 	}
 
@@ -1187,8 +1152,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public void loadBalancing_serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/ip/loadBalancing/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1202,12 +1167,12 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhLoadBalancingTask loadBalancing_serviceName_importCustomSsl_POST(String serviceName, String chain, String certificate, String key) throws IOException {
 		String qPath = "/ip/loadBalancing/{serviceName}/importCustomSsl";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "chain", chain);
 		addBody(o, "certificate", certificate);
 		addBody(o, "key", key);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhLoadBalancingTask.class);
 	}
 
@@ -1219,8 +1184,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhLoadBalancingIp loadBalancing_serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/ip/loadBalancing/{serviceName}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhLoadBalancingIp.class);
 	}
 
@@ -1232,8 +1197,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<String> loadBalancing_serviceName_allowedBackends_GET(String serviceName) throws IOException {
 		String qPath = "/ip/loadBalancing/{serviceName}/allowedBackends";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -1246,9 +1211,9 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public String loadBalancing_serviceName_internalNatIp_GET(String serviceName, OvhLoadBalancingZoneEnum zone) throws IOException {
 		String qPath = "/ip/loadBalancing/{serviceName}/internalNatIp";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = query(qPath, "zone", zone);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "zone", zone);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, String.class);
 	}
 
@@ -1260,8 +1225,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<String> loadBalancing_serviceName_backend_GET(String serviceName) throws IOException {
 		String qPath = "/ip/loadBalancing/{serviceName}/backend";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -1276,12 +1241,12 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhLoadBalancingTask loadBalancing_serviceName_backend_POST(String serviceName, Long weight, String ipBackend, OvhLoadBalancingBackendProbeEnum probe) throws IOException {
 		String qPath = "/ip/loadBalancing/{serviceName}/backend";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "weight", weight);
 		addBody(o, "ipBackend", ipBackend);
 		addBody(o, "probe", probe);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhLoadBalancingTask.class);
 	}
 
@@ -1294,9 +1259,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhLoadBalancingBackendIp loadBalancing_serviceName_backend_backend_GET(String serviceName, String backend) throws IOException {
 		String qPath = "/ip/loadBalancing/{serviceName}/backend/{backend}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{backend}", backend);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, backend);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhLoadBalancingBackendIp.class);
 	}
 
@@ -1310,9 +1274,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public void loadBalancing_serviceName_backend_backend_PUT(String serviceName, String backend, OvhLoadBalancingBackendIp body) throws IOException {
 		String qPath = "/ip/loadBalancing/{serviceName}/backend/{backend}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{backend}", backend);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName, backend);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1324,9 +1287,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhLoadBalancingTask loadBalancing_serviceName_backend_backend_DELETE(String serviceName, String backend) throws IOException {
 		String qPath = "/ip/loadBalancing/{serviceName}/backend/{backend}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{backend}", backend);
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, backend);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhLoadBalancingTask.class);
 	}
 
@@ -1341,12 +1303,11 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhLoadBalancingTask loadBalancing_serviceName_backend_backend_backupState_POST(String serviceName, String backend, String mainBackendIp, Boolean backupStateSet) throws IOException {
 		String qPath = "/ip/loadBalancing/{serviceName}/backend/{backend}/backupState";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{backend}", backend);
+		StringBuilder sb = path(qPath, serviceName, backend);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "mainBackendIp", mainBackendIp);
 		addBody(o, "backupStateSet", backupStateSet);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhLoadBalancingTask.class);
 	}
 
@@ -1360,11 +1321,10 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhLoadBalancingTask loadBalancing_serviceName_backend_backend_setWeight_POST(String serviceName, String backend, Long weight) throws IOException {
 		String qPath = "/ip/loadBalancing/{serviceName}/backend/{backend}/setWeight";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{backend}", backend);
+		StringBuilder sb = path(qPath, serviceName, backend);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "weight", weight);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhLoadBalancingTask.class);
 	}
 
@@ -1376,8 +1336,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<Long> loadBalancing_serviceName_task_GET(String serviceName) throws IOException {
 		String qPath = "/ip/loadBalancing/{serviceName}/task";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t3);
 	}
 
@@ -1390,9 +1350,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhLoadBalancingTask loadBalancing_serviceName_task_taskId_GET(String serviceName, Long taskId) throws IOException {
 		String qPath = "/ip/loadBalancing/{serviceName}/task/{taskId}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{taskId}", taskId.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, taskId);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhLoadBalancingTask.class);
 	}
 
@@ -1404,8 +1363,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhLoadBalancingTask loadBalancing_serviceName_restoreSsl_POST(String serviceName) throws IOException {
 		String qPath = "/ip/loadBalancing/{serviceName}/restoreSsl";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhLoadBalancingTask.class);
 	}
 
@@ -1418,10 +1377,10 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhLoadBalancingTask loadBalancing_serviceName_stickiness_POST(String serviceName, OvhLoadBalancingStickinessEnum stickiness) throws IOException {
 		String qPath = "/ip/loadBalancing/{serviceName}/stickiness";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "stickiness", stickiness);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, OvhLoadBalancingTask.class);
 	}
 
@@ -1433,8 +1392,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<OvhLoadBalancingAdditionalPortEnum> loadBalancing_serviceName_portsRedirection_GET(String serviceName) throws IOException {
 		String qPath = "/ip/loadBalancing/{serviceName}/portsRedirection";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t6);
 	}
 	private static TypeReference<ArrayList<OvhLoadBalancingAdditionalPortEnum>> t6 = new TypeReference<ArrayList<OvhLoadBalancingAdditionalPortEnum>>() {};
@@ -1448,8 +1407,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhLoadBalancingTask loadBalancing_serviceName_portsRedirection_POST(String serviceName, OvhLoadBalancingPort body) throws IOException {
 		String qPath = "/ip/loadBalancing/{serviceName}/portsRedirection";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath, body);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString(), body);
 		return convertTo(resp, OvhLoadBalancingTask.class);
 	}
 
@@ -1462,9 +1421,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhLoadBalancingPort loadBalancing_serviceName_portsRedirection_srcPort_GET(String serviceName, net.minidev.ovh.api.ip.OvhLoadBalancingAdditionalPortEnum srcPort) throws IOException {
 		String qPath = "/ip/loadBalancing/{serviceName}/portsRedirection/{srcPort}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{srcPort}", srcPort.toString());
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName, srcPort);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhLoadBalancingPort.class);
 	}
 
@@ -1477,9 +1435,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhLoadBalancingTask loadBalancing_serviceName_portsRedirection_srcPort_DELETE(String serviceName, net.minidev.ovh.api.ip.OvhLoadBalancingAdditionalPortEnum srcPort) throws IOException {
 		String qPath = "/ip/loadBalancing/{serviceName}/portsRedirection/{srcPort}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = qPath.replace("{srcPort}", srcPort.toString());
-		String resp = exec("DELETE", qPath);
+		StringBuilder sb = path(qPath, serviceName, srcPort);
+		String resp = exec("DELETE", sb.toString());
 		return convertTo(resp, OvhLoadBalancingTask.class);
 	}
 
@@ -1492,9 +1449,9 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<String> loadBalancing_serviceName_probeIp_GET(String serviceName, OvhLoadBalancingZoneEnum zone) throws IOException {
 		String qPath = "/ip/loadBalancing/{serviceName}/probeIp";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		qPath = query(qPath, "zone", zone);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "zone", zone);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -1506,8 +1463,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public OvhTask loadBalancing_serviceName_switchToIplbNextGenerationApi_POST(String serviceName) throws IOException {
 		String qPath = "/ip/loadBalancing/{serviceName}/switchToIplbNextGenerationApi";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1518,7 +1475,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 */
 	public ArrayList<String> loadBalancing_GET() throws IOException {
 		String qPath = "/ip/loadBalancing";
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 
@@ -1527,11 +1485,12 @@ public class ApiOvhIp extends ApiOvhBase {
 	 *
 	 * REST: GET /ip/service/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your IP services
+	 * @beta
 	 */
 	public OvhNonExpiringService service_serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/ip/service/{serviceName}/serviceInfos";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhNonExpiringService.class);
 	}
 
@@ -1540,11 +1499,12 @@ public class ApiOvhIp extends ApiOvhBase {
 	 *
 	 * REST: GET /ip/service/{serviceName}
 	 * @param serviceName [required] The internal name of your IP services
+	 * @beta
 	 */
 	public OvhServiceIp service_serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/ip/service/{serviceName}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, OvhServiceIp.class);
 	}
 
@@ -1554,11 +1514,12 @@ public class ApiOvhIp extends ApiOvhBase {
 	 * REST: PUT /ip/service/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP services
+	 * @beta
 	 */
 	public void service_serviceName_PUT(String serviceName, OvhServiceIp body) throws IOException {
 		String qPath = "/ip/service/{serviceName}";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		exec("PUT", qPath, body);
+		StringBuilder sb = path(qPath, serviceName);
+		exec("PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1569,15 +1530,16 @@ public class ApiOvhIp extends ApiOvhBase {
 	 * @param commentary Commentary about your termination request
 	 * @param token [required] The termination token sent by mail to the admin contact
 	 * @param serviceName [required] The internal name of your IP services
+	 * @beta
 	 */
 	public String service_serviceName_confirmTermination_POST(String serviceName, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
 		String qPath = "/ip/service/{serviceName}/confirmTermination";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "reason", reason);
 		addBody(o, "commentary", commentary);
 		addBody(o, "token", token);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -1586,11 +1548,12 @@ public class ApiOvhIp extends ApiOvhBase {
 	 *
 	 * REST: POST /ip/service/{serviceName}/terminate
 	 * @param serviceName [required] The internal name of your IP services
+	 * @beta
 	 */
 	public String service_serviceName_terminate_POST(String serviceName) throws IOException {
 		String qPath = "/ip/service/{serviceName}/terminate";
-		qPath = qPath.replace("{serviceName}", serviceName);
-		String resp = exec("POST", qPath);
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec("POST", sb.toString());
 		return convertTo(resp, String.class);
 	}
 
@@ -1602,15 +1565,16 @@ public class ApiOvhIp extends ApiOvhBase {
 	 * @param contactTech The contact to set as tech contact
 	 * @param contactBilling The contact to set as billing contact
 	 * @param serviceName [required] The internal name of your IP services
+	 * @beta
 	 */
 	public ArrayList<Long> service_serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
 		String qPath = "/ip/service/{serviceName}/changeContact";
-		qPath = qPath.replace("{serviceName}", serviceName);
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "contactAdmin", contactAdmin);
 		addBody(o, "contactTech", contactTech);
 		addBody(o, "contactBilling", contactBilling);
-		String resp = exec("POST", qPath, o);
+		String resp = exec("POST", sb.toString(), o);
 		return convertTo(resp, t3);
 	}
 
@@ -1618,10 +1582,12 @@ public class ApiOvhIp extends ApiOvhBase {
 	 * List available services
 	 *
 	 * REST: GET /ip/service
+	 * @beta
 	 */
 	public ArrayList<String> service_GET() throws IOException {
 		String qPath = "/ip/service";
-		String resp = exec("GET", qPath);
+		StringBuilder sb = path(qPath);
+		String resp = exec("GET", sb.toString());
 		return convertTo(resp, t1);
 	}
 }
