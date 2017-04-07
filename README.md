@@ -12,12 +12,12 @@ Each service had his own java SDK. you can use each service independently:
 	<dependency>
 		<groupId>net.minidev</groupId>
 		<artifactId>ovh-java-sdk-domain</artifactId>
-		<version>0.9</version>
+		<version>0.9.2</version>
 	</dependency>
 	<dependency>
 		<groupId>net.minidev</groupId>
 		<artifactId>ovh-java-sdk-order</artifactId>
-		<version>0.9</version>
+		<version>0.9.2</version>
 	</dependency>
 
 Or you can load them all with a single dependency:
@@ -25,7 +25,7 @@ Or you can load them all with a single dependency:
 	<dependency>
 		<groupId>net.minidev</groupId>
 		<artifactId>ovh-java-sdk</artifactId>
-		<version>0.9</version>
+		<version>0.9.2</version>
 	</dependency>
 
 But it's not recomended, excepted if you use them all.
