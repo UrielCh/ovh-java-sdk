@@ -68,7 +68,7 @@
 						"mvn gpg:sign" results in NPE with v 1.o-a.-4, use "mvn package gpg:sign" 
 						instead; see the issue MGPG-18 -->
 					<plugin> <!-- updated on 29/07/2015 -->
-						<!-- mvn deploy -Dmaven.javadoc.skip=true -DperformRelease=true -Dgpg.passphrase=Password -->
+						<!-- mvn deploy -DperformRelease=true -Dgpg.passphrase=Password -->
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-gpg-plugin</artifactId>
 
