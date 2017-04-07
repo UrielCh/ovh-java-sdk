@@ -31,7 +31,8 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	 *
 	 * REST: GET /saas/csp2/{serviceName}/serviceInfos
 	 * @param serviceName [required] The unique identifier of your Office service
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/saas/csp2/{serviceName}/serviceInfos";
@@ -46,7 +47,8 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	 * REST: PUT /saas/csp2/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The unique identifier of your Office service
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/saas/csp2/{serviceName}/serviceInfos";
@@ -60,7 +62,8 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	 * REST: GET /saas/csp2/{serviceName}/usageStatistics
 	 * @param timePeriod [required] The period to query
 	 * @param serviceName [required] The unique identifier of your Office service
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<OvhStatistics> serviceName_usageStatistics_GET(String serviceName, OvhLicensePeriodEnum timePeriod) throws IOException {
 		String qPath = "/saas/csp2/{serviceName}/usageStatistics";
@@ -76,7 +79,8 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	 *
 	 * REST: GET /saas/csp2/{serviceName}
 	 * @param serviceName [required] The unique identifier of your Office service
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOfficeTenant serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/saas/csp2/{serviceName}";
@@ -91,7 +95,8 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	 * REST: PUT /saas/csp2/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The unique identifier of your Office service
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_PUT(String serviceName, OvhOfficeTenant body) throws IOException {
 		String qPath = "/saas/csp2/{serviceName}";
@@ -105,7 +110,8 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	 * REST: POST /saas/csp2/{serviceName}/changeAdministratorPassword
 	 * @param newPassword [required] New password for the tenant administrator
 	 * @param serviceName [required] The unique identifier of your Office service
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOfficeTask serviceName_changeAdministratorPassword_POST(String serviceName, String newPassword) throws IOException {
 		String qPath = "/saas/csp2/{serviceName}/changeAdministratorPassword";
@@ -123,7 +129,8 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	 * @param supportedServices [required] Services that your domain needs to be configured with
 	 * @param domain [required] Your OVH-hosted domain to configure
 	 * @param serviceName [required] The unique identifier of your Office service
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOfficeTask serviceName_configureDomain_POST(String serviceName, OvhSupportedServiceEnum[] supportedServices, String domain) throws IOException {
 		String qPath = "/saas/csp2/{serviceName}/configureDomain";
@@ -140,7 +147,8 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	 *
 	 * REST: GET /saas/csp2/{serviceName}/task
 	 * @param serviceName [required] The unique identifier of your Office service
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<Long> serviceName_task_GET(String serviceName) throws IOException {
 		String qPath = "/saas/csp2/{serviceName}/task";
@@ -156,7 +164,8 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	 * REST: GET /saas/csp2/{serviceName}/task/{id}
 	 * @param serviceName [required] The unique identifier of your Office service
 	 * @param id [required] Unique identifier of the task
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOfficeTask serviceName_task_id_GET(String serviceName, Long id) throws IOException {
 		String qPath = "/saas/csp2/{serviceName}/task/{id}";
@@ -170,7 +179,8 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	 *
 	 * REST: GET /saas/csp2/{serviceName}/orderableLicenses
 	 * @param serviceName [required] The unique identifier of your Office service
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<Long> serviceName_orderableLicenses_GET(String serviceName) throws IOException {
 		String qPath = "/saas/csp2/{serviceName}/orderableLicenses";
@@ -185,7 +195,8 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	 * REST: GET /saas/csp2/{serviceName}/orderableLicenses/{id}
 	 * @param serviceName [required] The unique identifier of your Office service
 	 * @param id [required] License unique identifier
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOfficeLicence serviceName_orderableLicenses_id_GET(String serviceName, Long id) throws IOException {
 		String qPath = "/saas/csp2/{serviceName}/orderableLicenses/{id}";
@@ -199,7 +210,8 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	 *
 	 * REST: GET /saas/csp2/{serviceName}/billingPeriodPeaks
 	 * @param serviceName [required] The unique identifier of your Office service
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhBillingStatistics serviceName_billingPeriodPeaks_GET(String serviceName) throws IOException {
 		String qPath = "/saas/csp2/{serviceName}/billingPeriodPeaks";
@@ -213,7 +225,8 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	 *
 	 * REST: GET /saas/csp2/{serviceName}/subscription
 	 * @param serviceName [required] The unique identifier of your Office service
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<Long> serviceName_subscription_GET(String serviceName) throws IOException {
 		String qPath = "/saas/csp2/{serviceName}/subscription";
@@ -229,7 +242,8 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	 * @param licenseId [required] License's type unique identifier
 	 * @param quantity [required] Quantity of licenses to order
 	 * @param serviceName [required] The unique identifier of your Office service
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOfficeTask serviceName_subscription_POST(String serviceName, Long licenseId, Long quantity) throws IOException {
 		String qPath = "/saas/csp2/{serviceName}/subscription";
@@ -247,7 +261,8 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	 * REST: GET /saas/csp2/{serviceName}/subscription/{id}
 	 * @param serviceName [required] The unique identifier of your Office service
 	 * @param id [required] Subscription's unique identifier
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOfficeSubscription serviceName_subscription_id_GET(String serviceName, Long id) throws IOException {
 		String qPath = "/saas/csp2/{serviceName}/subscription/{id}";
@@ -262,7 +277,8 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	 * REST: DELETE /saas/csp2/{serviceName}/subscription/{id}
 	 * @param serviceName [required] The unique identifier of your Office service
 	 * @param id [required] Subscription's unique identifier
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOfficeTask serviceName_subscription_id_DELETE(String serviceName, Long id) throws IOException {
 		String qPath = "/saas/csp2/{serviceName}/subscription/{id}";
@@ -278,7 +294,8 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	 * @param quantity [required] New seat quantity
 	 * @param serviceName [required] The unique identifier of your Office service
 	 * @param id [required] Subscription's unique identifier
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOfficeTask serviceName_subscription_id_changeQuantity_POST(String serviceName, Long id, Long quantity) throws IOException {
 		String qPath = "/saas/csp2/{serviceName}/subscription/{id}/changeQuantity";
@@ -293,7 +310,8 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	 * List available services
 	 *
 	 * REST: GET /saas/csp2
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/saas/csp2";

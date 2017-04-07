@@ -26,7 +26,8 @@ public class ApiOvhStore extends ApiOvhBase {
 	 * List current customer documents
 	 *
 	 * REST: GET /store/document
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<OvhDocument> document_GET() throws IOException {
 		String qPath = "/store/document";
@@ -42,7 +43,8 @@ public class ApiOvhStore extends ApiOvhBase {
 	 * REST: POST /store/document
 	 * @param name [required] Name of the document
 	 * @param tags [required] Optional tags for document
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhDocument document_POST(String name, OvhSafeKeyValue<String>[] tags) throws IOException {
 		String qPath = "/store/document";
@@ -59,7 +61,8 @@ public class ApiOvhStore extends ApiOvhBase {
 	 *
 	 * REST: POST /store/document/cors
 	 * @param origin [required] Allow this origin
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void document_cors_POST(String origin) throws IOException {
 		String qPath = "/store/document/cors";
@@ -74,7 +77,8 @@ public class ApiOvhStore extends ApiOvhBase {
 	 *
 	 * REST: GET /store/document/{documentId}
 	 * @param documentId [required] Id of the document to fetch
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhDocument document_documentId_GET(String documentId) throws IOException {
 		String qPath = "/store/document/{documentId}";
@@ -88,7 +92,8 @@ public class ApiOvhStore extends ApiOvhBase {
 	 *
 	 * REST: DELETE /store/document/{documentId}
 	 * @param documentId [required] Id of the object to delete
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public String document_documentId_DELETE(String documentId) throws IOException {
 		String qPath = "/store/document/{documentId}";
@@ -101,7 +106,8 @@ public class ApiOvhStore extends ApiOvhBase {
 	 * List current customer contacts
 	 *
 	 * REST: GET /store/contact
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<OvhContact> contact_GET() throws IOException {
 		String qPath = "/store/contact";
@@ -125,7 +131,8 @@ public class ApiOvhStore extends ApiOvhBase {
 	 * @param province [required] Province name
 	 * @param city [required] City
 	 * @param phone [required] Phone number
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhContact contact_POST(String title, String firstname, String lastname, String email, String street, String country, String zip, String province, String city, String phone) throws IOException {
 		String qPath = "/store/contact";
@@ -150,7 +157,8 @@ public class ApiOvhStore extends ApiOvhBase {
 	 *
 	 * REST: GET /store/contact/{contactId}
 	 * @param contactId [required] Id of the contact to fetch
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhContact contact_contactId_GET(String contactId) throws IOException {
 		String qPath = "/store/contact/{contactId}";
@@ -174,7 +182,8 @@ public class ApiOvhStore extends ApiOvhBase {
 	 * @param province [required] Province name
 	 * @param city [required] City
 	 * @param phone [required] Phone number
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhContact contact_contactId_PUT(String contactId, String title, String firstname, String lastname, String email, String street, String country, String zip, String province, String city, String phone) throws IOException {
 		String qPath = "/store/contact/{contactId}";
@@ -199,7 +208,8 @@ public class ApiOvhStore extends ApiOvhBase {
 	 *
 	 * REST: DELETE /store/contact/{contactId}
 	 * @param contactId [required] Id of the contact to remove
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public String contact_contactId_DELETE(String contactId) throws IOException {
 		String qPath = "/store/contact/{contactId}";
@@ -213,7 +223,8 @@ public class ApiOvhStore extends ApiOvhBase {
 	 *
 	 * REST: GET /store/contact/{contactId}/document
 	 * @param contactId [required] Id of the contact to fetch
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> contact_contactId_document_GET(String contactId) throws IOException {
 		String qPath = "/store/contact/{contactId}/document";
@@ -229,7 +240,8 @@ public class ApiOvhStore extends ApiOvhBase {
 	 * REST: POST /store/contact/{contactId}/document
 	 * @param documentId [required] Document id to link
 	 * @param contactId [required] Id of the contact to fetch
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> contact_contactId_document_POST(String contactId, String documentId) throws IOException {
 		String qPath = "/store/contact/{contactId}/document";
@@ -246,7 +258,8 @@ public class ApiOvhStore extends ApiOvhBase {
 	 * REST: DELETE /store/contact/{contactId}/document/{documentId}
 	 * @param contactId [required] Id of the contact to fetch
 	 * @param documentId [required] Id of the document
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> contact_contactId_document_documentId_DELETE(String contactId, String documentId) throws IOException {
 		String qPath = "/store/contact/{contactId}/document/{documentId}";
@@ -259,7 +272,8 @@ public class ApiOvhStore extends ApiOvhBase {
 	 * List current customer partners
 	 *
 	 * REST: GET /store/partner
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<OvhPartner> partner_GET() throws IOException {
 		String qPath = "/store/partner";
@@ -289,7 +303,8 @@ public class ApiOvhStore extends ApiOvhBase {
 	 * @param category [required] Category
 	 * @param province [required] Province name
 	 * @param contact [required] Linked contact id
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhPartner partner_POST(String legalForm, String organisationName, String country, String city, String street, String zip, String language, String description, String vat, String organisationDisplayName, String companyNationalIdentificationNumber, String url, String otherDetails, String category, String province, String contact) throws IOException {
 		String qPath = "/store/partner";
@@ -320,7 +335,8 @@ public class ApiOvhStore extends ApiOvhBase {
 	 *
 	 * REST: GET /store/partner/{partnerId}
 	 * @param partnerId [required] Id of the partner
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhPartner partner_partnerId_GET(String partnerId) throws IOException {
 		String qPath = "/store/partner/{partnerId}";
@@ -350,7 +366,8 @@ public class ApiOvhStore extends ApiOvhBase {
 	 * @param otherDetails [required] Complementary information
 	 * @param province [required] Province name
 	 * @param contact [required] Linked contact id
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhPartner partner_partnerId_PUT(String partnerId, String legalForm, String organisationName, String country, String city, String street, String zip, String language, String description, String vat, String category, String organisationDisplayName, String companyNationalIdentificationNumber, String url, String otherDetails, String province, String contact) throws IOException {
 		String qPath = "/store/partner/{partnerId}";
@@ -381,7 +398,8 @@ public class ApiOvhStore extends ApiOvhBase {
 	 *
 	 * REST: DELETE /store/partner/{partnerId}
 	 * @param partnerId [required] Id of the object to fetch
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public String partner_partnerId_DELETE(String partnerId) throws IOException {
 		String qPath = "/store/partner/{partnerId}";
@@ -395,7 +413,8 @@ public class ApiOvhStore extends ApiOvhBase {
 	 *
 	 * REST: GET /store/partner/{partnerId}/document
 	 * @param partnerId [required] Id of the partner
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> partner_partnerId_document_GET(String partnerId) throws IOException {
 		String qPath = "/store/partner/{partnerId}/document";
@@ -410,7 +429,8 @@ public class ApiOvhStore extends ApiOvhBase {
 	 * REST: POST /store/partner/{partnerId}/document
 	 * @param documentId [required] Document id to link
 	 * @param partnerId [required] Id of the partner
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> partner_partnerId_document_POST(String partnerId, String documentId) throws IOException {
 		String qPath = "/store/partner/{partnerId}/document";
@@ -427,7 +447,8 @@ public class ApiOvhStore extends ApiOvhBase {
 	 * REST: DELETE /store/partner/{partnerId}/document/{documentId}
 	 * @param partnerId [required] Id of the partner
 	 * @param documentId [required] Id of the document
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> partner_partnerId_document_documentId_DELETE(String partnerId, String documentId) throws IOException {
 		String qPath = "/store/partner/{partnerId}/document/{documentId}";
@@ -441,7 +462,8 @@ public class ApiOvhStore extends ApiOvhBase {
 	 *
 	 * REST: GET /store/partner/{partnerId}/product
 	 * @param partnerId [required] Id of the partner
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<OvhEditResponse> partner_partnerId_product_GET(String partnerId) throws IOException {
 		String qPath = "/store/partner/{partnerId}/product";
@@ -460,7 +482,8 @@ public class ApiOvhStore extends ApiOvhBase {
 	 * @param name [required] Name of product
 	 * @param otherDetails [required] Additional information
 	 * @param category [required] Name of product category
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhEditResponse partner_partnerId_product_POST(String partnerId, String description, String name, String otherDetails, String category) throws IOException {
 		String qPath = "/store/partner/{partnerId}/product";
@@ -480,7 +503,8 @@ public class ApiOvhStore extends ApiOvhBase {
 	 * REST: GET /store/partner/{partnerId}/product/{productId}
 	 * @param partnerId [required] Id of the partner
 	 * @param productId [required] Id of the product
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhEditResponse partner_partnerId_product_productId_GET(String partnerId, String productId) throws IOException {
 		String qPath = "/store/partner/{partnerId}/product/{productId}";
@@ -499,7 +523,8 @@ public class ApiOvhStore extends ApiOvhBase {
 	 * @param name [required] Name of product
 	 * @param category [required] Name of product category
 	 * @param otherDetails [required] Additional information
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhEditResponse partner_partnerId_product_productId_PUT(String partnerId, String productId, String description, String name, String category, String otherDetails) throws IOException {
 		String qPath = "/store/partner/{partnerId}/product/{productId}";
@@ -519,7 +544,8 @@ public class ApiOvhStore extends ApiOvhBase {
 	 * REST: DELETE /store/partner/{partnerId}/product/{productId}
 	 * @param partnerId [required] Id of the partner
 	 * @param productId [required] Id of the product
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public String partner_partnerId_product_productId_DELETE(String partnerId, String productId) throws IOException {
 		String qPath = "/store/partner/{partnerId}/product/{productId}";
@@ -534,7 +560,8 @@ public class ApiOvhStore extends ApiOvhBase {
 	 * REST: GET /store/partner/{partnerId}/product/{productId}/document
 	 * @param partnerId [required] Id of the partner
 	 * @param productId [required] Id of the product
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> partner_partnerId_product_productId_document_GET(String partnerId, String productId) throws IOException {
 		String qPath = "/store/partner/{partnerId}/product/{productId}/document";
@@ -550,7 +577,8 @@ public class ApiOvhStore extends ApiOvhBase {
 	 * @param documentId [required] Document id to link
 	 * @param partnerId [required] Id of the partner
 	 * @param productId [required] Id of the product
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> partner_partnerId_product_productId_document_POST(String partnerId, String productId, String documentId) throws IOException {
 		String qPath = "/store/partner/{partnerId}/product/{productId}/document";
@@ -568,7 +596,8 @@ public class ApiOvhStore extends ApiOvhBase {
 	 * @param partnerId [required] Id of the partner
 	 * @param productId [required] Id of the product
 	 * @param documentId [required] Id of the document
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> partner_partnerId_product_productId_document_documentId_DELETE(String partnerId, String productId, String documentId) throws IOException {
 		String qPath = "/store/partner/{partnerId}/product/{productId}/document/{documentId}";

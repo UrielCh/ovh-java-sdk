@@ -218,7 +218,8 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	 * REST: POST /overTheBox/{serviceName}/device/restoreBackup
 	 * @param backupId [required] The id of the backup to restore
 	 * @param serviceName [required] The internal name of your overTheBox offer
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<OvhDeviceAction> serviceName_device_restoreBackup_POST(String serviceName, String backupId) throws IOException {
 		String qPath = "/overTheBox/{serviceName}/device/restoreBackup";
@@ -235,7 +236,8 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	 *
 	 * REST: POST /overTheBox/{serviceName}/device/logs
 	 * @param serviceName [required] The internal name of your overTheBox offer
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTemporaryLogsLink serviceName_device_logs_POST(String serviceName) throws IOException {
 		String qPath = "/overTheBox/{serviceName}/device/logs";
@@ -249,7 +251,8 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	 *
 	 * REST: POST /overTheBox/{serviceName}/device/backup
 	 * @param serviceName [required] The internal name of your overTheBox offer
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhDeviceAction serviceName_device_backup_POST(String serviceName) throws IOException {
 		String qPath = "/overTheBox/{serviceName}/device/backup";
@@ -372,7 +375,8 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	 *
 	 * REST: GET /overTheBox/{serviceName}/backups
 	 * @param serviceName [required] The internal name of your overTheBox offer
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_backups_GET(String serviceName) throws IOException {
 		String qPath = "/overTheBox/{serviceName}/backups";
@@ -387,7 +391,8 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	 * REST: GET /overTheBox/{serviceName}/backups/{backupId}
 	 * @param serviceName [required] The internal name of your overTheBox offer
 	 * @param backupId [required] The id of the backup
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhBackup serviceName_backups_backupId_GET(String serviceName, String backupId) throws IOException {
 		String qPath = "/overTheBox/{serviceName}/backups/{backupId}";

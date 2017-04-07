@@ -36,7 +36,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * List available services
 	 *
 	 * REST: GET /email/pro
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/email/pro";
@@ -51,7 +52,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 *
 	 * REST: GET /email/pro/{service}/serviceInfos
 	 * @param service [required] The internal name of your pro organization
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhService service_serviceInfos_GET(String service) throws IOException {
 		String qPath = "/email/pro/{service}/serviceInfos";
@@ -66,7 +68,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * REST: PUT /email/pro/{service}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param service [required] The internal name of your pro organization
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void service_serviceInfos_PUT(String service, OvhService body) throws IOException {
 		String qPath = "/email/pro/{service}/serviceInfos";
@@ -79,7 +82,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 *
 	 * REST: GET /email/pro/{service}
 	 * @param service [required] The internal name of your pro organization
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public net.minidev.ovh.api.email.pro.OvhService service_GET(String service) throws IOException {
 		String qPath = "/email/pro/{service}";
@@ -94,7 +98,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * REST: PUT /email/pro/{service}
 	 * @param body [required] New object properties
 	 * @param service [required] The internal name of your pro organization
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void service_PUT(String service, net.minidev.ovh.api.email.pro.OvhService body) throws IOException {
 		String qPath = "/email/pro/{service}";
@@ -109,7 +114,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * @param primaryEmailAddress [required] Filter the value of primaryEmailAddress property (like)
 	 * @param id [required] Filter the value of id property (like)
 	 * @param service [required] The internal name of your pro organization
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> service_account_GET(String service, Long id, String primaryEmailAddress) throws IOException {
 		String qPath = "/email/pro/{service}/account";
@@ -126,7 +132,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * REST: GET /email/pro/{service}/account/{email}
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhAccount service_account_email_GET(String service, String email) throws IOException {
 		String qPath = "/email/pro/{service}/account/{email}";
@@ -142,7 +149,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * @param body [required] New object properties
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void service_account_email_PUT(String service, String email, OvhAccount body) throws IOException {
 		String qPath = "/email/pro/{service}/account/{email}";
@@ -156,7 +164,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * REST: DELETE /email/pro/{service}/account/{email}
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTask service_account_email_DELETE(String service, String email) throws IOException {
 		String qPath = "/email/pro/{service}/account/{email}";
@@ -171,7 +180,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * REST: GET /email/pro/{service}/account/{email}/tasks
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<Long> service_account_email_tasks_GET(String service, String email) throws IOException {
 		String qPath = "/email/pro/{service}/account/{email}/tasks";
@@ -188,7 +198,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
 	 * @param id [required] Task id
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTask service_account_email_tasks_id_GET(String service, String email, Long id) throws IOException {
 		String qPath = "/email/pro/{service}/account/{email}/tasks/{id}";
@@ -204,7 +215,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * @param password [required] new password
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTask service_account_email_changePassword_POST(String service, String email, String password) throws IOException {
 		String qPath = "/email/pro/{service}/account/{email}/changePassword";
@@ -221,7 +233,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * REST: POST /email/pro/{service}/account/{email}/terminate
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public String service_account_email_terminate_POST(String service, String email) throws IOException {
 		String qPath = "/email/pro/{service}/account/{email}/terminate";
@@ -236,7 +249,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * REST: GET /email/pro/{service}/account/{email}/diagnostics
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhAccountDiagnosis service_account_email_diagnostics_GET(String service, String email) throws IOException {
 		String qPath = "/email/pro/{service}/account/{email}/diagnostics";
@@ -252,7 +266,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * @param password [required] Account password
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTask service_account_email_diagnostics_POST(String service, String email, String password) throws IOException {
 		String qPath = "/email/pro/{service}/account/{email}/diagnostics";
@@ -269,7 +284,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * REST: GET /email/pro/{service}/account/{email}/sendOnBehalfTo
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<Long> service_account_email_sendOnBehalfTo_GET(String service, String email) throws IOException {
 		String qPath = "/email/pro/{service}/account/{email}/sendOnBehalfTo";
@@ -285,7 +301,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * @param allowAccountId [required] Account id to allow to send On Behalf To mails from this mailbox
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTask service_account_email_sendOnBehalfTo_POST(String service, String email, Long allowAccountId) throws IOException {
 		String qPath = "/email/pro/{service}/account/{email}/sendOnBehalfTo";
@@ -303,7 +320,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
 	 * @param allowedAccountId [required] Account id to give send on behalf to
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhAccountSendOnBehalfTo service_account_email_sendOnBehalfTo_allowedAccountId_GET(String service, String email, Long allowedAccountId) throws IOException {
 		String qPath = "/email/pro/{service}/account/{email}/sendOnBehalfTo/{allowedAccountId}";
@@ -319,7 +337,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
 	 * @param allowedAccountId [required] Account id to give send on behalf to
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTask service_account_email_sendOnBehalfTo_allowedAccountId_DELETE(String service, String email, Long allowedAccountId) throws IOException {
 		String qPath = "/email/pro/{service}/account/{email}/sendOnBehalfTo/{allowedAccountId}";
@@ -334,7 +353,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * REST: GET /email/pro/{service}/account/{email}/fullAccess
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<Long> service_account_email_fullAccess_GET(String service, String email) throws IOException {
 		String qPath = "/email/pro/{service}/account/{email}/fullAccess";
@@ -350,7 +370,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * @param allowedAccountId [required] User to give full access
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTask service_account_email_fullAccess_POST(String service, String email, Long allowedAccountId) throws IOException {
 		String qPath = "/email/pro/{service}/account/{email}/fullAccess";
@@ -368,7 +389,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
 	 * @param allowedAccountId [required] Account id to give full access
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhAccountFullAccess service_account_email_fullAccess_allowedAccountId_GET(String service, String email, Long allowedAccountId) throws IOException {
 		String qPath = "/email/pro/{service}/account/{email}/fullAccess/{allowedAccountId}";
@@ -384,7 +406,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
 	 * @param allowedAccountId [required] Account id to give full access
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTask service_account_email_fullAccess_allowedAccountId_DELETE(String service, String email, Long allowedAccountId) throws IOException {
 		String qPath = "/email/pro/{service}/account/{email}/fullAccess/{allowedAccountId}";
@@ -399,7 +422,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * REST: GET /email/pro/{service}/account/{email}/alias
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> service_account_email_alias_GET(String service, String email) throws IOException {
 		String qPath = "/email/pro/{service}/account/{email}/alias";
@@ -415,7 +439,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * @param alias [required] Alias
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTask service_account_email_alias_POST(String service, String email, String alias) throws IOException {
 		String qPath = "/email/pro/{service}/account/{email}/alias";
@@ -433,7 +458,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
 	 * @param alias [required] Alias
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhAccountAlias service_account_email_alias_alias_GET(String service, String email, String alias) throws IOException {
 		String qPath = "/email/pro/{service}/account/{email}/alias/{alias}";
@@ -449,7 +475,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
 	 * @param alias [required] Alias
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTask service_account_email_alias_alias_DELETE(String service, String email, String alias) throws IOException {
 		String qPath = "/email/pro/{service}/account/{email}/alias/{alias}";
@@ -464,7 +491,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * REST: GET /email/pro/{service}/account/{email}/sendAs
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<Long> service_account_email_sendAs_GET(String service, String email) throws IOException {
 		String qPath = "/email/pro/{service}/account/{email}/sendAs";
@@ -480,7 +508,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * @param allowAccountId [required] Account id to allow to send mails from this mailbox
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTask service_account_email_sendAs_POST(String service, String email, Long allowAccountId) throws IOException {
 		String qPath = "/email/pro/{service}/account/{email}/sendAs";
@@ -498,7 +527,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
 	 * @param allowedAccountId [required] Account id to give send as
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhAccountSendAs service_account_email_sendAs_allowedAccountId_GET(String service, String email, Long allowedAccountId) throws IOException {
 		String qPath = "/email/pro/{service}/account/{email}/sendAs/{allowedAccountId}";
@@ -514,7 +544,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
 	 * @param allowedAccountId [required] Account id to give send as
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTask service_account_email_sendAs_allowedAccountId_DELETE(String service, String email, Long allowedAccountId) throws IOException {
 		String qPath = "/email/pro/{service}/account/{email}/sendAs/{allowedAccountId}";
@@ -528,7 +559,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 *
 	 * REST: GET /email/pro/{service}/task
 	 * @param service [required] The internal name of your pro organization
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<Long> service_task_GET(String service) throws IOException {
 		String qPath = "/email/pro/{service}/task";
@@ -543,7 +575,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * REST: GET /email/pro/{service}/task/{id}
 	 * @param service [required] The internal name of your pro organization
 	 * @param id [required] Task id
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTask service_task_id_GET(String service, Long id) throws IOException {
 		String qPath = "/email/pro/{service}/task/{id}";
@@ -562,7 +595,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * @param displayName [required] Filter the value of displayName property (like)
 	 * @param externalEmailAddress [required] Filter the value of externalEmailAddress property (like)
 	 * @param service [required] The internal name of your pro organization
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> service_externalContact_GET(String service, String displayName, String externalEmailAddress, String firstName, Long id, String lastName) throws IOException {
 		String qPath = "/email/pro/{service}/externalContact";
@@ -587,7 +621,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * @param displayName [required] Contact display name
 	 * @param externalEmailAddress [required] Contact email address
 	 * @param service [required] The internal name of your pro organization
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTask service_externalContact_POST(String service, String initials, String firstName, Boolean hiddenFromGAL, String lastName, String displayName, String externalEmailAddress) throws IOException {
 		String qPath = "/email/pro/{service}/externalContact";
@@ -609,7 +644,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * REST: GET /email/pro/{service}/externalContact/{externalEmailAddress}
 	 * @param service [required] The internal name of your pro organization
 	 * @param externalEmailAddress [required] Contact email
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhExternalContact service_externalContact_externalEmailAddress_GET(String service, String externalEmailAddress) throws IOException {
 		String qPath = "/email/pro/{service}/externalContact/{externalEmailAddress}";
@@ -625,7 +661,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * @param body [required] New object properties
 	 * @param service [required] The internal name of your pro organization
 	 * @param externalEmailAddress [required] Contact email
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void service_externalContact_externalEmailAddress_PUT(String service, String externalEmailAddress, OvhExternalContact body) throws IOException {
 		String qPath = "/email/pro/{service}/externalContact/{externalEmailAddress}";
@@ -639,7 +676,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * REST: DELETE /email/pro/{service}/externalContact/{externalEmailAddress}
 	 * @param service [required] The internal name of your pro organization
 	 * @param externalEmailAddress [required] Contact email
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTask service_externalContact_externalEmailAddress_DELETE(String service, String externalEmailAddress) throws IOException {
 		String qPath = "/email/pro/{service}/externalContact/{externalEmailAddress}";
@@ -654,7 +692,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * REST: GET /email/pro/{service}/domain/{domainName}
 	 * @param service [required] The internal name of your pro organization
 	 * @param domainName [required] Domain name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhDomain service_domain_domainName_GET(String service, String domainName) throws IOException {
 		String qPath = "/email/pro/{service}/domain/{domainName}";
@@ -670,7 +709,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * @param body [required] New object properties
 	 * @param service [required] The internal name of your pro organization
 	 * @param domainName [required] Domain name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void service_domain_domainName_PUT(String service, String domainName, OvhDomain body) throws IOException {
 		String qPath = "/email/pro/{service}/domain/{domainName}";
@@ -684,7 +724,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * REST: DELETE /email/pro/{service}/domain/{domainName}
 	 * @param service [required] The internal name of your pro organization
 	 * @param domainName [required] Domain name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTask service_domain_domainName_DELETE(String service, String domainName) throws IOException {
 		String qPath = "/email/pro/{service}/domain/{domainName}";
@@ -699,7 +740,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * REST: GET /email/pro/{service}/domain/{domainName}/disclaimerAttribute
 	 * @param service [required] The internal name of your pro organization
 	 * @param domainName [required] Domain name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<OvhDisclaimerAttributeEnum> service_domain_domainName_disclaimerAttribute_GET(String service, String domainName) throws IOException {
 		String qPath = "/email/pro/{service}/domain/{domainName}/disclaimerAttribute";
@@ -715,7 +757,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * REST: GET /email/pro/{service}/domain/{domainName}/disclaimer
 	 * @param service [required] The internal name of your pro organization
 	 * @param domainName [required] Domain name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhDisclaimer service_domain_domainName_disclaimer_GET(String service, String domainName) throws IOException {
 		String qPath = "/email/pro/{service}/domain/{domainName}/disclaimer";
@@ -731,7 +774,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * @param body [required] New object properties
 	 * @param service [required] The internal name of your pro organization
 	 * @param domainName [required] Domain name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void service_domain_domainName_disclaimer_PUT(String service, String domainName, OvhDisclaimer body) throws IOException {
 		String qPath = "/email/pro/{service}/domain/{domainName}/disclaimer";
@@ -747,7 +791,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * @param content [required] Signature, added at the bottom of your organization emails
 	 * @param service [required] The internal name of your pro organization
 	 * @param domainName [required] Domain name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTask service_domain_domainName_disclaimer_POST(String service, String domainName, Boolean outsideOnly, String content) throws IOException {
 		String qPath = "/email/pro/{service}/domain/{domainName}/disclaimer";
@@ -765,7 +810,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * REST: DELETE /email/pro/{service}/domain/{domainName}/disclaimer
 	 * @param service [required] The internal name of your pro organization
 	 * @param domainName [required] Domain name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTask service_domain_domainName_disclaimer_DELETE(String service, String domainName) throws IOException {
 		String qPath = "/email/pro/{service}/domain/{domainName}/disclaimer";
@@ -780,7 +826,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * REST: GET /email/pro/{service}/domain
 	 * @param state [required] Filter the value of state property (=)
 	 * @param service [required] The internal name of your pro organization
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> service_domain_GET(String service, OvhObjectStateEnum state) throws IOException {
 		String qPath = "/email/pro/{service}/domain";
@@ -800,7 +847,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * @param type [required] Type of domain that You want to install
 	 * @param configureMx [required] If you host domain in OVH we can configure mx record automatically
 	 * @param service [required] The internal name of your pro organization
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTask service_domain_POST(String service, String mxRelay, Boolean configureAutodiscover, String name, OvhDomainTypeEnum type, Boolean configureMx) throws IOException {
 		String qPath = "/email/pro/{service}/domain";
@@ -820,7 +868,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 *
 	 * REST: POST /email/pro/{service}/updateFlagsOnAllAccounts
 	 * @param service [required] The internal name of your pro organization
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void service_updateFlagsOnAllAccounts_POST(String service) throws IOException {
 		String qPath = "/email/pro/{service}/updateFlagsOnAllAccounts";
@@ -833,7 +882,8 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 *
 	 * REST: GET /email/pro/{service}/server
 	 * @param service [required] The internal name of your pro organization
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhServer service_server_GET(String service) throws IOException {
 		String qPath = "/email/pro/{service}/server";

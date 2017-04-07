@@ -39,7 +39,8 @@ public class ApiOvhVrack extends ApiOvhBase {
 	 *
 	 * REST: GET /vrack/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your vrack
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhNonExpiringService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/vrack/{serviceName}/serviceInfos";
@@ -311,7 +312,8 @@ public class ApiOvhVrack extends ApiOvhBase {
 	 * REST: POST /vrack/{serviceName}/cloudProject
 	 * @param project [required] publicCloud project to add
 	 * @param serviceName [required] The internal name of your vrack
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTask serviceName_cloudProject_POST(String serviceName, String project) throws IOException {
 		String qPath = "/vrack/{serviceName}/cloudProject";

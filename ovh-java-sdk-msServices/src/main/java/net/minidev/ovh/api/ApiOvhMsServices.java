@@ -37,7 +37,8 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 *
 	 * REST: GET /msServices/{serviceName}
 	 * @param serviceName [required] The internal name of your Active Directory organization
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhActiveDirectoryOrganizationalUnit serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/msServices/{serviceName}";
@@ -52,7 +53,8 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 * REST: PUT /msServices/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your Active Directory organization
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_PUT(String serviceName, OvhActiveDirectoryOrganizationalUnit body) throws IOException {
 		String qPath = "/msServices/{serviceName}";
@@ -65,7 +67,8 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 *
 	 * REST: GET /msServices/{serviceName}/upnSuffix
 	 * @param serviceName [required] The internal name of your Active Directory organization
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_upnSuffix_GET(String serviceName) throws IOException {
 		String qPath = "/msServices/{serviceName}/upnSuffix";
@@ -81,7 +84,8 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 * REST: POST /msServices/{serviceName}/upnSuffix
 	 * @param suffix [required] UPN suffix to create
 	 * @param serviceName [required] The internal name of your Active Directory organization
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTask serviceName_upnSuffix_POST(String serviceName, String suffix) throws IOException {
 		String qPath = "/msServices/{serviceName}/upnSuffix";
@@ -98,7 +102,8 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 * REST: GET /msServices/{serviceName}/upnSuffix/{suffix}
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 * @param suffix [required] UPN suffix
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhUpnSuffix serviceName_upnSuffix_suffix_GET(String serviceName, String suffix) throws IOException {
 		String qPath = "/msServices/{serviceName}/upnSuffix/{suffix}";
@@ -113,7 +118,8 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 * REST: DELETE /msServices/{serviceName}/upnSuffix/{suffix}
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 * @param suffix [required] UPN suffix
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTask serviceName_upnSuffix_suffix_DELETE(String serviceName, String suffix) throws IOException {
 		String qPath = "/msServices/{serviceName}/upnSuffix/{suffix}";
@@ -128,7 +134,8 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 * REST: GET /msServices/{serviceName}/account/{userPrincipalName}
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 * @param userPrincipalName [required] User Principal Name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhAccount serviceName_account_userPrincipalName_GET(String serviceName, String userPrincipalName) throws IOException {
 		String qPath = "/msServices/{serviceName}/account/{userPrincipalName}";
@@ -144,7 +151,8 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 * @param userPrincipalName [required] User Principal Name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_account_userPrincipalName_PUT(String serviceName, String userPrincipalName, OvhAccount body) throws IOException {
 		String qPath = "/msServices/{serviceName}/account/{userPrincipalName}";
@@ -158,7 +166,8 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 * REST: GET /msServices/{serviceName}/account/{userPrincipalName}/sharepoint
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 * @param userPrincipalName [required] User Principal Name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhSharepointInformation serviceName_account_userPrincipalName_sharepoint_GET(String serviceName, String userPrincipalName) throws IOException {
 		String qPath = "/msServices/{serviceName}/account/{userPrincipalName}/sharepoint";
@@ -174,7 +183,8 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 * @param userPrincipalName [required] User Principal Name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_account_userPrincipalName_sharepoint_PUT(String serviceName, String userPrincipalName, OvhSharepointInformation body) throws IOException {
 		String qPath = "/msServices/{serviceName}/account/{userPrincipalName}/sharepoint";
@@ -188,7 +198,8 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 * REST: POST /msServices/{serviceName}/account/{userPrincipalName}/sharepoint/clearSpace
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 * @param userPrincipalName [required] User Principal Name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhSharepointTask serviceName_account_userPrincipalName_sharepoint_clearSpace_POST(String serviceName, String userPrincipalName) throws IOException {
 		String qPath = "/msServices/{serviceName}/account/{userPrincipalName}/sharepoint/clearSpace";
@@ -203,7 +214,8 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 * REST: POST /msServices/{serviceName}/account/{userPrincipalName}/sharepoint/configure
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 * @param userPrincipalName [required] User Principal Name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhSharepointTask serviceName_account_userPrincipalName_sharepoint_configure_POST(String serviceName, String userPrincipalName) throws IOException {
 		String qPath = "/msServices/{serviceName}/account/{userPrincipalName}/sharepoint/configure";
@@ -219,7 +231,8 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 * @param password [required] new password
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 * @param userPrincipalName [required] User Principal Name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTask serviceName_account_userPrincipalName_changePassword_POST(String serviceName, String userPrincipalName, String password) throws IOException {
 		String qPath = "/msServices/{serviceName}/account/{userPrincipalName}/changePassword";
@@ -236,7 +249,8 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 * REST: GET /msServices/{serviceName}/account/{userPrincipalName}/exchange
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 * @param userPrincipalName [required] User Principal Name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhExchangeInformation serviceName_account_userPrincipalName_exchange_GET(String serviceName, String userPrincipalName) throws IOException {
 		String qPath = "/msServices/{serviceName}/account/{userPrincipalName}/exchange";
@@ -252,7 +266,8 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 * @param userPrincipalName [required] User Principal Name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_account_userPrincipalName_exchange_PUT(String serviceName, String userPrincipalName, OvhExchangeInformation body) throws IOException {
 		String qPath = "/msServices/{serviceName}/account/{userPrincipalName}/exchange";
@@ -266,7 +281,8 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 * REST: POST /msServices/{serviceName}/account/{userPrincipalName}/exchange/configure
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 * @param userPrincipalName [required] User Principal Name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhExchangeTask serviceName_account_userPrincipalName_exchange_configure_POST(String serviceName, String userPrincipalName) throws IOException {
 		String qPath = "/msServices/{serviceName}/account/{userPrincipalName}/exchange/configure";
@@ -282,7 +298,8 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 * @param id [required] Filter the value of id property (like)
 	 * @param userPrincipalName [required] Filter the value of userPrincipalName property (like)
 	 * @param serviceName [required] The internal name of your Active Directory organization
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_account_GET(String serviceName, Long id, String userPrincipalName) throws IOException {
 		String qPath = "/msServices/{serviceName}/account";
@@ -298,7 +315,8 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 *
 	 * REST: GET /msServices/{serviceName}/sharepoint
 	 * @param serviceName [required] The internal name of your Active Directory organization
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhSharepointService serviceName_sharepoint_GET(String serviceName) throws IOException {
 		String qPath = "/msServices/{serviceName}/sharepoint";
@@ -313,7 +331,8 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 * REST: PUT /msServices/{serviceName}/sharepoint
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your Active Directory organization
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_sharepoint_PUT(String serviceName, OvhSharepointService body) throws IOException {
 		String qPath = "/msServices/{serviceName}/sharepoint";
@@ -326,7 +345,8 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 *
 	 * REST: POST /msServices/{serviceName}/sharepoint/restoreAdminRights
 	 * @param serviceName [required] The internal name of your Active Directory organization
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhSharepointTask serviceName_sharepoint_restoreAdminRights_POST(String serviceName) throws IOException {
 		String qPath = "/msServices/{serviceName}/sharepoint/restoreAdminRights";
@@ -342,7 +362,8 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 * @param function [required] Filter the value of function property (like)
 	 * @param status [required] Filter the value of status property (=)
 	 * @param serviceName [required] The internal name of your Active Directory organization
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<Long> serviceName_sharepoint_task_GET(String serviceName, String function, OvhTaskStatusEnum status) throws IOException {
 		String qPath = "/msServices/{serviceName}/sharepoint/task";
@@ -360,7 +381,8 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 * REST: GET /msServices/{serviceName}/sharepoint/task/{id}
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 * @param id [required] Task id
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhSharepointTask serviceName_sharepoint_task_id_GET(String serviceName, Long id) throws IOException {
 		String qPath = "/msServices/{serviceName}/sharepoint/task/{id}";
@@ -376,7 +398,8 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 * @param period [required] Period of time used to determine sharepoint account license statistics
 	 * @param license [required] License type
 	 * @param serviceName [required] The internal name of your Active Directory organization
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<OvhSharepointDailyLicense> serviceName_sharepoint_license_GET(String serviceName, OvhSharepointLicenseEnum license, OvhLicensePeriodEnum period) throws IOException {
 		String qPath = "/msServices/{serviceName}/sharepoint/license";
@@ -395,7 +418,8 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 * @param function [required] Filter the value of function property (=)
 	 * @param status [required] Filter the value of status property (=)
 	 * @param serviceName [required] The internal name of your Active Directory organization
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<Long> serviceName_task_GET(String serviceName, OvhTaskFunctionEnum function, OvhTaskStatusEnum status) throws IOException {
 		String qPath = "/msServices/{serviceName}/task";
@@ -412,7 +436,8 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 * REST: GET /msServices/{serviceName}/task/{id}
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 * @param id [required] Task id
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTask serviceName_task_id_GET(String serviceName, Long id) throws IOException {
 		String qPath = "/msServices/{serviceName}/task/{id}";
@@ -426,7 +451,8 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 *
 	 * REST: GET /msServices/{serviceName}/exchange
 	 * @param serviceName [required] The internal name of your Active Directory organization
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhExchangeService serviceName_exchange_GET(String serviceName) throws IOException {
 		String qPath = "/msServices/{serviceName}/exchange";
@@ -441,7 +467,8 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 * REST: PUT /msServices/{serviceName}/exchange
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your Active Directory organization
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_exchange_PUT(String serviceName, OvhExchangeService body) throws IOException {
 		String qPath = "/msServices/{serviceName}/exchange";
@@ -454,7 +481,8 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 *
 	 * REST: GET /msServices/{serviceName}/exchange/task
 	 * @param serviceName [required] The internal name of your Active Directory organization
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<Long> serviceName_exchange_task_GET(String serviceName) throws IOException {
 		String qPath = "/msServices/{serviceName}/exchange/task";
@@ -469,7 +497,8 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 * REST: GET /msServices/{serviceName}/exchange/task/{id}
 	 * @param serviceName [required] The internal name of your Active Directory organization
 	 * @param id [required] Task id
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhExchangeTask serviceName_exchange_task_id_GET(String serviceName, Long id) throws IOException {
 		String qPath = "/msServices/{serviceName}/exchange/task/{id}";
@@ -482,7 +511,8 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 * List available services
 	 *
 	 * REST: GET /msServices
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/msServices";

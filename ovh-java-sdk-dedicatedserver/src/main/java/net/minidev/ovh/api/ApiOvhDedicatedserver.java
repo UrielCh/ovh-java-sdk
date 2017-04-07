@@ -1153,7 +1153,8 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 	 * @param comment [required] User comment
 	 * @param inverse [required] If set to 'true', replace only NON LISTED DISKS
 	 * @param serviceName [required] The internal name of your dedicated server
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhNewMessageInfo serviceName_support_replace_hardDiskDrive_POST(String serviceName, OvhSupportReplaceHddInfo[] disks, String comment, Boolean inverse) throws IOException {
 		String qPath = "/dedicated/server/{serviceName}/support/replace/hardDiskDrive";
@@ -2041,7 +2042,8 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 	 * REST: GET /dedicated/server/availabilities
 	 * @param country [required] The subsidiary company where the availability is requested
 	 * @param hardware [required] The kind of hardware which is requested
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<OvhAvailabilities> availabilities_GET(OvhOvhSubsidiaryEnum country, String hardware) throws IOException {
 		String qPath = "/dedicated/server/availabilities";

@@ -244,7 +244,8 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/timeseries/{serviceName}/token/opentsdb
 	 * @param serviceName [required] Service Name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<OvhOpenTSDBToken> serviceName_token_opentsdb_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/timeseries/{serviceName}/token/opentsdb";
@@ -262,7 +263,8 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 	 * @param description [required]
 	 * @param permission [required]
 	 * @param tags [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOpenTSDBToken serviceName_token_opentsdb_POST(String serviceName, String description, String permission, OvhTag[] tags) throws IOException {
 		String qPath = "/dbaas/timeseries/{serviceName}/token/opentsdb";
@@ -281,7 +283,8 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 	 * REST: GET /dbaas/timeseries/{serviceName}/token/opentsdb/{tokenId}
 	 * @param serviceName [required] Service Name
 	 * @param tokenId [required] token id
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOpenTSDBToken serviceName_token_opentsdb_tokenId_GET(String serviceName, String tokenId) throws IOException {
 		String qPath = "/dbaas/timeseries/{serviceName}/token/opentsdb/{tokenId}";
@@ -296,7 +299,8 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 	 * REST: DELETE /dbaas/timeseries/{serviceName}/token/opentsdb/{tokenId}
 	 * @param serviceName [required] Service Name
 	 * @param tokenId [required] token id
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public Boolean serviceName_token_opentsdb_tokenId_DELETE(String serviceName, String tokenId) throws IOException {
 		String qPath = "/dbaas/timeseries/{serviceName}/token/opentsdb/{tokenId}";

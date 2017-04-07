@@ -33,7 +33,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/queue/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal ID of your Queue app
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/serviceInfos";
@@ -48,7 +49,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 * REST: PUT /dbaas/queue/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal ID of your Queue app
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/serviceInfos";
@@ -61,7 +63,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/queue/{serviceName}/topic
 	 * @param serviceName [required] Application ID
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_topic_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/topic";
@@ -79,7 +82,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 * @param id [required] Topic ID
 	 * @param partitions [required] Number of partitions
 	 * @param replicationFactor [required] Replication factor
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTopic serviceName_topic_POST(String serviceName, String id, Long partitions, Long replicationFactor) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/topic";
@@ -98,7 +102,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 * REST: GET /dbaas/queue/{serviceName}/topic/{topicId}
 	 * @param serviceName [required] Application ID
 	 * @param topicId [required] Topic ID
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTopic serviceName_topic_topicId_GET(String serviceName, String topicId) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/topic/{topicId}";
@@ -114,7 +119,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 * @param serviceName [required] Application ID
 	 * @param topicId [required] Topic ID
 	 * @param partitions [required] Number of partitions
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_topic_topicId_PUT(String serviceName, String topicId, Long partitions) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/topic/{topicId}";
@@ -130,7 +136,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 * REST: DELETE /dbaas/queue/{serviceName}/topic/{topicId}
 	 * @param serviceName [required] Application ID
 	 * @param topicId [required] Topic ID
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_topic_topicId_DELETE(String serviceName, String topicId) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/topic/{topicId}";
@@ -143,7 +150,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/queue/{serviceName}
 	 * @param serviceName [required] Application ID
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhApp serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}";
@@ -158,7 +166,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 * REST: PUT /dbaas/queue/{serviceName}
 	 * @param serviceName [required] Application ID
 	 * @param name [required] Application name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhApp serviceName_PUT(String serviceName, String name) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}";
@@ -174,7 +183,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/queue/{serviceName}/region
 	 * @param serviceName [required] Application ID
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_region_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/region";
@@ -189,7 +199,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 * REST: GET /dbaas/queue/{serviceName}/region/{regionId}
 	 * @param serviceName [required] Application ID
 	 * @param regionId [required] Region ID
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhRegion serviceName_region_regionId_GET(String serviceName, String regionId) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/region/{regionId}";
@@ -206,7 +217,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 * @param contactTech The contact to set as tech contact
 	 * @param contactBilling The contact to set as billing contact
 	 * @param serviceName [required] The internal ID of your Queue app
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/changeContact";
@@ -226,7 +238,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 * REST: POST /dbaas/queue/{serviceName}/key
 	 * @param serviceName [required] Application ID
 	 * @param name [required] Key name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhKeyWithSecret serviceName_key_POST(String serviceName, String name) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/key";
@@ -242,7 +255,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/queue/{serviceName}/key
 	 * @param serviceName [required] Application ID
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_key_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/key";
@@ -257,7 +271,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 * REST: GET /dbaas/queue/{serviceName}/key/{keyId}
 	 * @param serviceName [required] Application ID
 	 * @param keyId [required] Key ID
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhKey serviceName_key_keyId_GET(String serviceName, String keyId) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/key/{keyId}";
@@ -273,7 +288,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 * @param serviceName [required] Application ID
 	 * @param keyId [required] Key ID
 	 * @param name [required] Key name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhKey serviceName_key_keyId_PUT(String serviceName, String keyId, String name) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/key/{keyId}";
@@ -290,7 +306,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 * REST: DELETE /dbaas/queue/{serviceName}/key/{keyId}
 	 * @param serviceName [required] Application ID
 	 * @param keyId [required] Key ID
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_key_keyId_DELETE(String serviceName, String keyId) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/key/{keyId}";
@@ -304,7 +321,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 * REST: POST /dbaas/queue/{serviceName}/key/{keyId}/changeSecret
 	 * @param serviceName [required] Application ID
 	 * @param keyId [required] Key ID
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhKeyWithSecret serviceName_key_keyId_changeSecret_POST(String serviceName, String keyId) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/key/{keyId}/changeSecret";
@@ -320,7 +338,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 * @param serviceName [required] Application ID
 	 * @param name [required] Application name
 	 * @param regionId [required] Application region ID
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhAppConfiguration serviceName_configure_POST(String serviceName, String name, String regionId) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/configure";
@@ -339,7 +358,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 * @param serviceName [required] Application ID
 	 * @param name [required] User name
 	 * @param roles [required] User roles
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhUserWithPassword serviceName_user_POST(String serviceName, String name, String[] roles) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/user";
@@ -356,7 +376,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/queue/{serviceName}/user
 	 * @param serviceName [required] Application ID
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_user_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/user";
@@ -371,7 +392,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 * REST: GET /dbaas/queue/{serviceName}/user/{userId}/roles
 	 * @param serviceName [required] Application ID
 	 * @param userId [required] User ID
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_user_userId_roles_GET(String serviceName, String userId) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/user/{userId}/roles";
@@ -387,7 +409,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 * @param serviceName [required] Application ID
 	 * @param userId [required] User ID
 	 * @param roleName [required] Role name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_user_userId_roles_POST(String serviceName, String userId, String roleName) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/user/{userId}/roles";
@@ -405,7 +428,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 * @param serviceName [required] Application ID
 	 * @param userId [required] User ID
 	 * @param role [required] Role name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_user_userId_roles_role_DELETE(String serviceName, String userId, String role) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/user/{userId}/roles/{role}";
@@ -419,7 +443,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 * REST: GET /dbaas/queue/{serviceName}/user/{userId}
 	 * @param serviceName [required] Application ID
 	 * @param userId [required] User ID
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhUser serviceName_user_userId_GET(String serviceName, String userId) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/user/{userId}";
@@ -434,7 +459,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 * REST: DELETE /dbaas/queue/{serviceName}/user/{userId}
 	 * @param serviceName [required] Application ID
 	 * @param userId [required] User ID
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_user_userId_DELETE(String serviceName, String userId) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/user/{userId}";
@@ -448,7 +474,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 * REST: POST /dbaas/queue/{serviceName}/user/{userId}/changePassword
 	 * @param serviceName [required] Application ID
 	 * @param userId [required] User ID
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhUserWithPassword serviceName_user_userId_changePassword_POST(String serviceName, String userId) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/user/{userId}/changePassword";
@@ -462,7 +489,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/queue/{serviceName}/metrics/account
 	 * @param serviceName [required] Application ID
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhMetricsAccount serviceName_metrics_account_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/metrics/account";
@@ -476,7 +504,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/queue/{serviceName}/role
 	 * @param serviceName [required] Application ID
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_role_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/role";
@@ -494,7 +523,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 * @param readAcl [required] List of topics with read access
 	 * @param writeAcl [required] List of topics with write access
 	 * @param autoCreateAcl [required] Automatically create non-existing topics on read & write operations
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhRole serviceName_role_POST(String serviceName, String name, String[] readAcl, String[] writeAcl, Boolean autoCreateAcl) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/role";
@@ -514,7 +544,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 * REST: GET /dbaas/queue/{serviceName}/role/{roleName}
 	 * @param serviceName [required] Application ID
 	 * @param roleName [required] Role name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhRole serviceName_role_roleName_GET(String serviceName, String roleName) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/role/{roleName}";
@@ -533,7 +564,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 * @param readAcl [required] List of topics with read access
 	 * @param writeAcl [required] List of topics with write access
 	 * @param autoCreateAcl [required] Automatically create non-existing topics on read & write operations
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhRole serviceName_role_roleName_PUT(String serviceName, String roleName, String name, String[] readAcl, String[] writeAcl, Boolean autoCreateAcl) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/role/{roleName}";
@@ -553,7 +585,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 * REST: DELETE /dbaas/queue/{serviceName}/role/{roleName}
 	 * @param serviceName [required] Application ID
 	 * @param roleName [required] Role name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_role_roleName_DELETE(String serviceName, String roleName) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/role/{roleName}";
@@ -565,7 +598,8 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 * List available services
 	 *
 	 * REST: GET /dbaas/queue
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/dbaas/queue";

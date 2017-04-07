@@ -51,7 +51,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal ID of your Logs pack
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/serviceInfos";
@@ -66,7 +67,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: PUT /dbaas/logs/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal ID of your Logs pack
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/serviceInfos";
@@ -79,7 +81,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}
 	 * @param serviceName [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public net.minidev.ovh.api.dbaaslogs.OvhService serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}";
@@ -94,7 +97,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: PUT /dbaas/logs/{serviceName}
 	 * @param serviceName [required]
 	 * @param contactId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_PUT(String serviceName, Long contactId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}";
@@ -110,7 +114,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/input
 	 * @param serviceName [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_input_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input";
@@ -132,7 +137,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param singleInstance [required]
 	 * @param description [required]
 	 * @param optionId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_input_POST(String serviceName, String engineId, String streamId, String exposedPort, String title, Boolean singleInstance, String description, String optionId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input";
@@ -155,7 +161,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: POST /dbaas/logs/{serviceName}/input/{inputId}/restart
 	 * @param serviceName [required]
 	 * @param inputId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_input_inputId_restart_POST(String serviceName, String inputId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/restart";
@@ -170,7 +177,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: DELETE /dbaas/logs/{serviceName}/input/{inputId}
 	 * @param serviceName [required]
 	 * @param inputId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_input_inputId_DELETE(String serviceName, String inputId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}";
@@ -185,7 +193,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/input/{inputId}
 	 * @param serviceName [required]
 	 * @param inputId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInput serviceName_input_inputId_GET(String serviceName, String inputId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}";
@@ -207,7 +216,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param singleInstance [required]
 	 * @param description [required]
 	 * @param optionId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_input_inputId_PUT(String serviceName, String inputId, String engineId, String streamId, String exposedPort, String title, Boolean singleInstance, String description, String optionId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}";
@@ -230,7 +240,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: POST /dbaas/logs/{serviceName}/input/{inputId}/end
 	 * @param serviceName [required]
 	 * @param inputId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_input_inputId_end_POST(String serviceName, String inputId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/end";
@@ -245,7 +256,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/input/{inputId}/allowedNetwork
 	 * @param serviceName [required]
 	 * @param inputId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_input_inputId_allowedNetwork_GET(String serviceName, String inputId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/allowedNetwork";
@@ -261,7 +273,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param inputId [required]
 	 * @param network [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_input_inputId_allowedNetwork_POST(String serviceName, String inputId, String network) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/allowedNetwork";
@@ -279,7 +292,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param inputId [required]
 	 * @param allowedNetworkId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_input_inputId_allowedNetwork_allowedNetworkId_DELETE(String serviceName, String inputId, String allowedNetworkId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/allowedNetwork/{allowedNetworkId}";
@@ -295,7 +309,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param inputId [required]
 	 * @param allowedNetworkId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhAllowedNetwork serviceName_input_inputId_allowedNetwork_allowedNetworkId_GET(String serviceName, String inputId, String allowedNetworkId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/allowedNetwork/{allowedNetworkId}";
@@ -310,7 +325,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/input/{inputId}/url
 	 * @param serviceName [required]
 	 * @param inputId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<OvhUrl> serviceName_input_inputId_url_GET(String serviceName, String inputId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/url";
@@ -326,7 +342,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/input/{inputId}/action
 	 * @param serviceName [required]
 	 * @param inputId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<OvhInputAction> serviceName_input_inputId_action_GET(String serviceName, String inputId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/action";
@@ -342,7 +359,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/input/{inputId}/configuration/flowgger
 	 * @param serviceName [required]
 	 * @param inputId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhFlowggerConfiguration serviceName_input_inputId_configuration_flowgger_GET(String serviceName, String inputId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/configuration/flowgger";
@@ -362,7 +380,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param logFormat [required]
 	 * @param kafkaCoalesce [required]
 	 * @param type [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_input_inputId_configuration_flowgger_PUT(String serviceName, String inputId, OvhFlowggerConfigurationTlsmethod tlsMethod, OvhFlowggerConfigurationLogframing logFraming, OvhFlowggerConfigurationLogformat logFormat, Long kafkaCoalesce, OvhFlowggerConfigurationType type) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/configuration/flowgger";
@@ -383,7 +402,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/input/{inputId}/configuration/logstash
 	 * @param serviceName [required]
 	 * @param inputId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhLogstashConfiguration serviceName_input_inputId_configuration_logstash_GET(String serviceName, String inputId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/configuration/logstash";
@@ -401,7 +421,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param patternSection [required]
 	 * @param filterSection [required]
 	 * @param inputSection [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_input_inputId_configuration_logstash_PUT(String serviceName, String inputId, String patternSection, String filterSection, String inputSection) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/configuration/logstash";
@@ -420,7 +441,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: POST /dbaas/logs/{serviceName}/input/{inputId}/configtest
 	 * @param serviceName [required]
 	 * @param inputId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_input_inputId_configtest_POST(String serviceName, String inputId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/configtest";
@@ -435,7 +457,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/input/{inputId}/configtest/result
 	 * @param serviceName [required]
 	 * @param inputId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTestResult serviceName_input_inputId_configtest_result_GET(String serviceName, String inputId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/configtest/result";
@@ -450,7 +473,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: POST /dbaas/logs/{serviceName}/input/{inputId}/start
 	 * @param serviceName [required]
 	 * @param inputId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_input_inputId_start_POST(String serviceName, String inputId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/start";
@@ -464,7 +488,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/offer
 	 * @param serviceName [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOffer serviceName_offer_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/offer";
@@ -479,7 +504,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: DELETE /dbaas/logs/{serviceName}/output/elasticsearch/index/{indexId}
 	 * @param serviceName [required]
 	 * @param indexId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_output_elasticsearch_index_indexId_DELETE(String serviceName, String indexId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/index/{indexId}";
@@ -494,7 +520,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/output/elasticsearch/index/{indexId}
 	 * @param serviceName [required]
 	 * @param indexId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhIndex serviceName_output_elasticsearch_index_indexId_GET(String serviceName, String indexId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/index/{indexId}";
@@ -511,7 +538,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param indexId [required]
 	 * @param description [required]
 	 * @param optionId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_output_elasticsearch_index_indexId_PUT(String serviceName, String indexId, String description, String optionId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/index/{indexId}";
@@ -529,7 +557,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/output/elasticsearch/index/{indexId}/url
 	 * @param serviceName [required]
 	 * @param indexId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<OvhUrl> serviceName_output_elasticsearch_index_indexId_url_GET(String serviceName, String indexId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/index/{indexId}/url";
@@ -543,7 +572,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/elasticsearch/index
 	 * @param serviceName [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_output_elasticsearch_index_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/index";
@@ -560,7 +590,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param description [required]
 	 * @param optionId [required]
 	 * @param suffix [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_output_elasticsearch_index_POST(String serviceName, String description, String optionId, String suffix) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/index";
@@ -578,7 +609,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/elasticsearch/alias
 	 * @param serviceName [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_output_elasticsearch_alias_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/alias";
@@ -595,7 +627,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param description [required]
 	 * @param optionId [required]
 	 * @param suffix [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_output_elasticsearch_alias_POST(String serviceName, String description, String optionId, String suffix) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/alias";
@@ -614,7 +647,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: DELETE /dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}
 	 * @param serviceName [required]
 	 * @param aliasId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_output_elasticsearch_alias_aliasId_DELETE(String serviceName, String aliasId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}";
@@ -629,7 +663,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}
 	 * @param serviceName [required]
 	 * @param aliasId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhAlias serviceName_output_elasticsearch_alias_aliasId_GET(String serviceName, String aliasId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}";
@@ -646,7 +681,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param aliasId [required]
 	 * @param description [required]
 	 * @param optionId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_output_elasticsearch_alias_aliasId_PUT(String serviceName, String aliasId, String description, String optionId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}";
@@ -664,7 +700,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}/url
 	 * @param serviceName [required]
 	 * @param aliasId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<OvhUrl> serviceName_output_elasticsearch_alias_aliasId_url_GET(String serviceName, String aliasId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}/url";
@@ -679,7 +716,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}/stream
 	 * @param serviceName [required]
 	 * @param aliasId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_output_elasticsearch_alias_aliasId_stream_GET(String serviceName, String aliasId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}/stream";
@@ -695,7 +733,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param aliasId [required]
 	 * @param streamId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_output_elasticsearch_alias_aliasId_stream_POST(String serviceName, String aliasId, String streamId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}/stream";
@@ -713,7 +752,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param aliasId [required]
 	 * @param streamId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_output_elasticsearch_alias_aliasId_stream_streamId_DELETE(String serviceName, String aliasId, String streamId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}/stream/{streamId}";
@@ -727,7 +767,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/stream
 	 * @param serviceName [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_output_graylog_stream_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream";
@@ -744,7 +785,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param description [required]
 	 * @param optionId [required]
 	 * @param title [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_output_graylog_stream_POST(String serviceName, String description, String optionId, String title) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream";
@@ -763,7 +805,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/alert
 	 * @param serviceName [required]
 	 * @param streamId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_output_graylog_stream_streamId_alert_GET(String serviceName, String streamId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/alert";
@@ -788,7 +831,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param constraintType [required]
 	 * @param conditionType [required]
 	 * @param grace [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_output_graylog_stream_streamId_alert_POST(String serviceName, String streamId, String field, Long time, String title, String value, OvhNewStreamAlertConditionThresholdtype thresholdType, Long threshold, Long backlog, OvhNewStreamAlertConditionConstrainttype constraintType, OvhNewStreamAlertConditionConditiontype conditionType, Long grace) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/alert";
@@ -815,7 +859,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param streamId [required]
 	 * @param alertId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_output_graylog_stream_streamId_alert_alertId_DELETE(String serviceName, String streamId, String alertId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/alert/{alertId}";
@@ -831,7 +876,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param streamId [required]
 	 * @param alertId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhStreamAlertCondition serviceName_output_graylog_stream_streamId_alert_alertId_GET(String serviceName, String streamId, String alertId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/alert/{alertId}";
@@ -857,7 +903,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param constraintType [required]
 	 * @param conditionType [required]
 	 * @param grace [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_output_graylog_stream_streamId_alert_alertId_PUT(String serviceName, String streamId, String alertId, String field, Long time, String title, String value, OvhNewStreamAlertConditionThresholdtype thresholdType, Long threshold, Long backlog, OvhNewStreamAlertConditionConstrainttype constraintType, OvhNewStreamAlertConditionConditiontype conditionType, Long grace) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/alert/{alertId}";
@@ -883,7 +930,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: DELETE /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}
 	 * @param serviceName [required]
 	 * @param streamId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_output_graylog_stream_streamId_DELETE(String serviceName, String streamId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream/{streamId}";
@@ -898,7 +946,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}
 	 * @param serviceName [required]
 	 * @param streamId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhStream serviceName_output_graylog_stream_streamId_GET(String serviceName, String streamId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream/{streamId}";
@@ -916,7 +965,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param description [required]
 	 * @param optionId [required]
 	 * @param title [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_output_graylog_stream_streamId_PUT(String serviceName, String streamId, String description, String optionId, String title) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream/{streamId}";
@@ -935,7 +985,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/url
 	 * @param serviceName [required]
 	 * @param streamId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<OvhUrl> serviceName_output_graylog_stream_streamId_url_GET(String serviceName, String streamId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/url";
@@ -950,7 +1001,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/rule
 	 * @param serviceName [required]
 	 * @param streamId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_output_graylog_stream_streamId_rule_GET(String serviceName, String streamId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/rule";
@@ -966,7 +1018,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param streamId [required]
 	 * @param ruleId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<OvhStreamRule> serviceName_output_graylog_stream_streamId_rule_ruleId_GET(String serviceName, String streamId, String ruleId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/rule/{ruleId}";
@@ -981,7 +1034,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/dashboard
 	 * @param serviceName [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_output_graylog_dashboard_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/dashboard";
@@ -998,7 +1052,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param description [required]
 	 * @param optionId [required]
 	 * @param title [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_output_graylog_dashboard_POST(String serviceName, String description, String optionId, String title) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/dashboard";
@@ -1017,7 +1072,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: DELETE /dbaas/logs/{serviceName}/output/graylog/dashboard/{dashboardId}
 	 * @param serviceName [required]
 	 * @param dashboardId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_output_graylog_dashboard_dashboardId_DELETE(String serviceName, String dashboardId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/dashboard/{dashboardId}";
@@ -1032,7 +1088,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/dashboard/{dashboardId}
 	 * @param serviceName [required]
 	 * @param dashboardId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhDashboard serviceName_output_graylog_dashboard_dashboardId_GET(String serviceName, String dashboardId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/dashboard/{dashboardId}";
@@ -1050,7 +1107,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param description [required]
 	 * @param optionId [required]
 	 * @param title [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_output_graylog_dashboard_dashboardId_PUT(String serviceName, String dashboardId, String description, String optionId, String title) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/dashboard/{dashboardId}";
@@ -1073,7 +1131,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param optionId [required]
 	 * @param streamId [required]
 	 * @param title [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_output_graylog_dashboard_dashboardId_duplicate_POST(String serviceName, String dashboardId, String description, String optionId, String streamId, String title) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/dashboard/{dashboardId}/duplicate";
@@ -1093,7 +1152,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/dashboard/{dashboardId}/url
 	 * @param serviceName [required]
 	 * @param dashboardId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<OvhUrl> serviceName_output_graylog_dashboard_dashboardId_url_GET(String serviceName, String dashboardId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/dashboard/{dashboardId}/url";
@@ -1110,7 +1170,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param contactTech The contact to set as tech contact
 	 * @param contactBilling The contact to set as billing contact
 	 * @param serviceName [required] The internal ID of your Logs pack
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/changeContact";
@@ -1129,7 +1190,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/user/changePassword
 	 * @param serviceName [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_user_changePassword_POST(String serviceName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/user/changePassword";
@@ -1143,7 +1205,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/url
 	 * @param serviceName [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<OvhUrl> serviceName_url_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/url";
@@ -1157,7 +1220,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/metrics
 	 * @param serviceName [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhServiceMetric serviceName_metrics_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/metrics";
@@ -1171,7 +1235,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/operation
 	 * @param serviceName [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_operation_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/operation";
@@ -1186,7 +1251,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/operation/{operationId}
 	 * @param serviceName [required]
 	 * @param operationId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_operation_operationId_GET(String serviceName, String operationId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/operation/{operationId}";
@@ -1200,7 +1266,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/option
 	 * @param serviceName [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_option_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/option";
@@ -1215,7 +1282,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/option/{optionId}
 	 * @param serviceName [required]
 	 * @param optionId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOption serviceName_option_optionId_GET(String serviceName, String optionId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/option/{optionId}";
@@ -1229,7 +1297,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/token
 	 * @param serviceName [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_token_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/token";
@@ -1244,7 +1313,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: POST /dbaas/logs/{serviceName}/token
 	 * @param serviceName [required]
 	 * @param name [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_token_POST(String serviceName, String name) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/token";
@@ -1261,7 +1331,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: DELETE /dbaas/logs/{serviceName}/token/{tokenId}
 	 * @param serviceName [required]
 	 * @param tokenId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_token_tokenId_DELETE(String serviceName, String tokenId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/token/{tokenId}";
@@ -1276,7 +1347,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/token/{tokenId}
 	 * @param serviceName [required]
 	 * @param tokenId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhToken serviceName_token_tokenId_GET(String serviceName, String tokenId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/token/{tokenId}";
@@ -1291,7 +1363,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: DELETE /dbaas/logs/{serviceName}/role/{roleId}
 	 * @param serviceName [required]
 	 * @param roleId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_role_roleId_DELETE(String serviceName, String roleId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role/{roleId}";
@@ -1306,7 +1379,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/role/{roleId}
 	 * @param serviceName [required]
 	 * @param roleId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhRole serviceName_role_roleId_GET(String serviceName, String roleId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role/{roleId}";
@@ -1324,7 +1398,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param name [required]
 	 * @param description [required]
 	 * @param optionId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_role_roleId_PUT(String serviceName, String roleId, String name, String description, String optionId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role/{roleId}";
@@ -1343,7 +1418,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/role/{roleId}/member
 	 * @param serviceName [required]
 	 * @param roleId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_role_roleId_member_GET(String serviceName, String roleId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role/{roleId}/member";
@@ -1359,7 +1435,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param roleId [required]
 	 * @param username [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_role_roleId_member_POST(String serviceName, String roleId, String username) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role/{roleId}/member";
@@ -1377,7 +1454,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param roleId [required]
 	 * @param username [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_role_roleId_member_username_DELETE(String serviceName, String roleId, String username) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role/{roleId}/member/{username}";
@@ -1392,7 +1470,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: GET /dbaas/logs/{serviceName}/role/{roleId}/permission
 	 * @param serviceName [required]
 	 * @param roleId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_role_roleId_permission_GET(String serviceName, String roleId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role/{roleId}/permission";
@@ -1408,7 +1487,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param roleId [required]
 	 * @param indexId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_role_roleId_permission_index_POST(String serviceName, String roleId, String indexId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role/{roleId}/permission/index";
@@ -1426,7 +1506,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param roleId [required]
 	 * @param permissionId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_role_roleId_permission_permissionId_DELETE(String serviceName, String roleId, String permissionId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role/{roleId}/permission/{permissionId}";
@@ -1442,7 +1523,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param roleId [required]
 	 * @param permissionId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<OvhPermission> serviceName_role_roleId_permission_permissionId_GET(String serviceName, String roleId, String permissionId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role/{roleId}/permission/{permissionId}";
@@ -1459,7 +1541,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param roleId [required]
 	 * @param streamId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_role_roleId_permission_stream_POST(String serviceName, String roleId, String streamId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role/{roleId}/permission/stream";
@@ -1477,7 +1560,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param roleId [required]
 	 * @param aliasId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_role_roleId_permission_alias_POST(String serviceName, String roleId, String aliasId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role/{roleId}/permission/alias";
@@ -1495,7 +1579,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param roleId [required]
 	 * @param dashboardId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_role_roleId_permission_dashboard_POST(String serviceName, String roleId, String dashboardId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role/{roleId}/permission/dashboard";
@@ -1511,7 +1596,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/role
 	 * @param serviceName [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_role_GET(String serviceName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role";
@@ -1528,7 +1614,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param name [required]
 	 * @param description [required]
 	 * @param optionId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_role_POST(String serviceName, String name, String description, String optionId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role";
@@ -1545,7 +1632,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * List available services
 	 *
 	 * REST: GET /dbaas/logs
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/dbaas/logs";
@@ -1558,7 +1646,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return the list of available input engines
 	 *
 	 * REST: GET /dbaas/logs/input/engine
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> input_engine_GET() throws IOException {
 		String qPath = "/dbaas/logs/input/engine";
@@ -1572,7 +1661,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: GET /dbaas/logs/input/engine/{engineId}
 	 * @param engineId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhEngine input_engine_engineId_GET(String engineId) throws IOException {
 		String qPath = "/dbaas/logs/input/engine/{engineId}";

@@ -1406,7 +1406,8 @@ public class ApiOvhDomain extends ApiOvhBase {
 	 * REST: GET /domain/rules
 	 * @param cartId [required] Cart ID concerned for the rules
 	 * @param itemId [required] Item ID concerned for the rules
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhRule rules_GET(String cartId, Long itemId) throws IOException {
 		String qPath = "/domain/rules";

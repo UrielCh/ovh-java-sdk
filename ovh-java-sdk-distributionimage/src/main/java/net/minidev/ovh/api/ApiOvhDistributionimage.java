@@ -22,7 +22,8 @@ public class ApiOvhDistributionimage extends ApiOvhBase {
 	 *
 	 * REST: GET /distribution/image/{serviceType}
 	 * @param serviceType [required] service type name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceType_GET(net.minidev.ovh.api.distribution.image.OvhService serviceType) throws IOException {
 		String qPath = "/distribution/image/{serviceType}";
@@ -38,7 +39,8 @@ public class ApiOvhDistributionimage extends ApiOvhBase {
 	 * REST: GET /distribution/image/{serviceType}/{imageName}
 	 * @param serviceType [required] service type name
 	 * @param imageName [required] image name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhImage serviceType_imageName_GET(net.minidev.ovh.api.distribution.image.OvhService serviceType, String imageName) throws IOException {
 		String qPath = "/distribution/image/{serviceType}/{imageName}";

@@ -462,7 +462,8 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	 * REST: GET /dedicated/nasha/{serviceName}/partition/{partitionName}/customSnapshot
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_partition_partitionName_customSnapshot_GET(String serviceName, String partitionName) throws IOException {
 		String qPath = "/dedicated/nasha/{serviceName}/partition/{partitionName}/customSnapshot";
@@ -479,7 +480,8 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	 * @param name [required] the name of the snapshot
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTask serviceName_partition_partitionName_customSnapshot_POST(String serviceName, String partitionName, String expiration, String name) throws IOException {
 		String qPath = "/dedicated/nasha/{serviceName}/partition/{partitionName}/customSnapshot";
@@ -498,7 +500,8 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
 	 * @param name [required] name of the snapshot
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhCustomSnap serviceName_partition_partitionName_customSnapshot_name_GET(String serviceName, String partitionName, String name) throws IOException {
 		String qPath = "/dedicated/nasha/{serviceName}/partition/{partitionName}/customSnapshot/{name}";
@@ -514,7 +517,8 @@ public class ApiOvhDedicatednasha extends ApiOvhBase {
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
 	 * @param name [required] name of the snapshot
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTask serviceName_partition_partitionName_customSnapshot_name_DELETE(String serviceName, String partitionName, String name) throws IOException {
 		String qPath = "/dedicated/nasha/{serviceName}/partition/{partitionName}/customSnapshot/{name}";

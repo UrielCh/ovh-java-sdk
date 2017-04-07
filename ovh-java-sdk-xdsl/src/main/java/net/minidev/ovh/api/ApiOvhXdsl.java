@@ -230,7 +230,8 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	 * @param answers [required] Customer answers for line diagnostic
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param number [required] The number of the line
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhDiagnostic serviceName_lines_number_diagnostic_run_POST(String serviceName, String number, OvhCustomerActionsEnum[] actionsDone, OvhFaultTypeEnum faultType, OvhAnswers answers) throws IOException {
 		String qPath = "/xdsl/{serviceName}/lines/{number}/diagnostic/run";
@@ -249,7 +250,8 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	 * REST: POST /xdsl/{serviceName}/lines/{number}/diagnostic/cancel
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 * @param number [required] The number of the line
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_lines_number_diagnostic_cancel_POST(String serviceName, String number) throws IOException {
 		String qPath = "/xdsl/{serviceName}/lines/{number}/diagnostic/cancel";

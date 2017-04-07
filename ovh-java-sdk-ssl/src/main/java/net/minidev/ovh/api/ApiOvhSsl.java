@@ -24,7 +24,8 @@ public class ApiOvhSsl extends ApiOvhBase {
 	 *
 	 * REST: GET /ssl/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your SSL service
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/ssl/{serviceName}/serviceInfos";
@@ -39,7 +40,8 @@ public class ApiOvhSsl extends ApiOvhBase {
 	 * REST: PUT /ssl/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your SSL service
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/ssl/{serviceName}/serviceInfos";
@@ -52,7 +54,8 @@ public class ApiOvhSsl extends ApiOvhBase {
 	 *
 	 * REST: GET /ssl/{serviceName}
 	 * @param serviceName [required] The internal name of your SSL service
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhCertificate serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/ssl/{serviceName}";
@@ -66,7 +69,8 @@ public class ApiOvhSsl extends ApiOvhBase {
 	 *
 	 * REST: GET /ssl/{serviceName}/tasks
 	 * @param serviceName [required] The internal name of your SSL service
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<Long> serviceName_tasks_GET(String serviceName) throws IOException {
 		String qPath = "/ssl/{serviceName}/tasks";
@@ -82,7 +86,8 @@ public class ApiOvhSsl extends ApiOvhBase {
 	 * REST: GET /ssl/{serviceName}/tasks/{taskId}
 	 * @param serviceName [required] The internal name of your SSL service
 	 * @param taskId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOperation serviceName_tasks_taskId_GET(String serviceName, Long taskId) throws IOException {
 		String qPath = "/ssl/{serviceName}/tasks/{taskId}";
@@ -95,7 +100,8 @@ public class ApiOvhSsl extends ApiOvhBase {
 	 * List available services
 	 *
 	 * REST: GET /ssl
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/ssl";

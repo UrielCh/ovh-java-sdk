@@ -508,7 +508,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 * REST: GET /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<Long> serviceName_datacenter_datacenterId_vm_GET(String serviceName, Long datacenterId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm";
@@ -524,7 +525,8 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
 	 * @param vmId [required] Id of the virtual machine.
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhVm serviceName_datacenter_datacenterId_vm_vmId_GET(String serviceName, Long datacenterId, Long vmId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}";

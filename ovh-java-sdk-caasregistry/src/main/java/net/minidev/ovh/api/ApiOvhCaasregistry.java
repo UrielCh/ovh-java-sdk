@@ -32,7 +32,8 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 *
 	 * REST: GET /caas/registry/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal ID of your project
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/caas/registry/{serviceName}/serviceInfos";
@@ -47,7 +48,8 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 * REST: PUT /caas/registry/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal ID of your project
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/caas/registry/{serviceName}/serviceInfos";
@@ -60,7 +62,8 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 *
 	 * REST: GET /caas/registry/{serviceName}
 	 * @param serviceName [required] Service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public net.minidev.ovh.api.registry.OvhService serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/caas/registry/{serviceName}";
@@ -75,7 +78,8 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 * REST: POST /caas/registry/{serviceName}/users
 	 * @param body [required] A registry user account
 	 * @param serviceName [required] Service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhUser serviceName_users_POST(String serviceName, OvhInputUser body) throws IOException {
 		String qPath = "/caas/registry/{serviceName}/users";
@@ -89,7 +93,8 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 *
 	 * REST: GET /caas/registry/{serviceName}/users
 	 * @param serviceName [required] Service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_users_GET(String serviceName) throws IOException {
 		String qPath = "/caas/registry/{serviceName}/users";
@@ -105,7 +110,8 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 * REST: DELETE /caas/registry/{serviceName}/users/{userId}
 	 * @param serviceName [required] Service name
 	 * @param userId [required] User id
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_users_userId_DELETE(String serviceName, String userId) throws IOException {
 		String qPath = "/caas/registry/{serviceName}/users/{userId}";
@@ -119,7 +125,8 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 * REST: GET /caas/registry/{serviceName}/users/{userId}
 	 * @param serviceName [required] Service name
 	 * @param userId [required] User id
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhUser serviceName_users_userId_GET(String serviceName, String userId) throws IOException {
 		String qPath = "/caas/registry/{serviceName}/users/{userId}";
@@ -134,7 +141,8 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 * REST: POST /caas/registry/{serviceName}/users/{userId}/changePassword
 	 * @param serviceName [required] Service name
 	 * @param userId [required] User id
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhUser serviceName_users_userId_changePassword_POST(String serviceName, String userId) throws IOException {
 		String qPath = "/caas/registry/{serviceName}/users/{userId}/changePassword";
@@ -151,7 +159,8 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 * @param contactTech The contact to set as tech contact
 	 * @param contactBilling The contact to set as billing contact
 	 * @param serviceName [required] The internal ID of your project
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
 		String qPath = "/caas/registry/{serviceName}/changeContact";
@@ -171,7 +180,8 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 * REST: POST /caas/registry/{serviceName}/namespaces
 	 * @param body [required] A namespace in which a user can either read, write or delete images
 	 * @param serviceName [required] Service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhNamespace serviceName_namespaces_POST(String serviceName, OvhInputNamespace body) throws IOException {
 		String qPath = "/caas/registry/{serviceName}/namespaces";
@@ -185,7 +195,8 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 *
 	 * REST: GET /caas/registry/{serviceName}/namespaces
 	 * @param serviceName [required] Service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_namespaces_GET(String serviceName) throws IOException {
 		String qPath = "/caas/registry/{serviceName}/namespaces";
@@ -200,7 +211,8 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 * REST: DELETE /caas/registry/{serviceName}/namespaces/{namespaceId}
 	 * @param namespaceId [required] Namespace id
 	 * @param serviceName [required] Service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_namespaces_namespaceId_DELETE(String serviceName, String namespaceId) throws IOException {
 		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}";
@@ -214,7 +226,8 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 * REST: GET /caas/registry/{serviceName}/namespaces/{namespaceId}
 	 * @param namespaceId [required] Namespace id
 	 * @param serviceName [required] Service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhNamespace serviceName_namespaces_namespaceId_GET(String serviceName, String namespaceId) throws IOException {
 		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}";
@@ -229,7 +242,8 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 * REST: GET /caas/registry/{serviceName}/namespaces/{namespaceId}/images
 	 * @param namespaceId [required] Namespace id
 	 * @param serviceName [required] Service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_namespaces_namespaceId_images_GET(String serviceName, String namespaceId) throws IOException {
 		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}/images";
@@ -245,7 +259,8 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 * @param imageId [required] Image id
 	 * @param namespaceId [required] Namespace id
 	 * @param serviceName [required] Service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_namespaces_namespaceId_images_imageId_DELETE(String serviceName, String namespaceId, String imageId) throws IOException {
 		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}";
@@ -260,7 +275,8 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 * @param imageId [required] Image id
 	 * @param namespaceId [required] Namespace id
 	 * @param serviceName [required] Service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhImage serviceName_namespaces_namespaceId_images_imageId_GET(String serviceName, String namespaceId, String imageId) throws IOException {
 		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}";
@@ -277,7 +293,8 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 * @param imageId [required] Image id
 	 * @param namespaceId [required] Namespace id
 	 * @param serviceName [required] Service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhImage serviceName_namespaces_namespaceId_images_imageId_PUT(String serviceName, String namespaceId, String imageId, OvhInputImage body) throws IOException {
 		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}";
@@ -294,7 +311,8 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 * @param namespaceId [required] Namespace id
 	 * @param body [required] Permissions of a user over a namespace
 	 * @param serviceName [required] Service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhPermissions serviceName_namespaces_namespaceId_images_imageId_permissions_POST(String serviceName, String namespaceId, String imageId, OvhInputPermissions body) throws IOException {
 		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/permissions";
@@ -310,7 +328,8 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 * @param imageId [required] Image id
 	 * @param namespaceId [required] Namespace id
 	 * @param serviceName [required] Service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_namespaces_namespaceId_images_imageId_permissions_GET(String serviceName, String namespaceId, String imageId) throws IOException {
 		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/permissions";
@@ -327,7 +346,8 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 * @param namespaceId [required] Namespace id
 	 * @param permissionId [required] Permission id
 	 * @param serviceName [required] Service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_namespaces_namespaceId_images_imageId_permissions_permissionId_DELETE(String serviceName, String namespaceId, String imageId, String permissionId) throws IOException {
 		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/permissions/{permissionId}";
@@ -343,7 +363,8 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 * @param namespaceId [required] Namespace id
 	 * @param permissionId [required] Permission id
 	 * @param serviceName [required] Service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhPermissions serviceName_namespaces_namespaceId_images_imageId_permissions_permissionId_GET(String serviceName, String namespaceId, String imageId, String permissionId) throws IOException {
 		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/permissions/{permissionId}";
@@ -360,7 +381,8 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 * @param namespaceId [required] Namespace id
 	 * @param serviceName [required] Service name
 	 * @param tagId [required] Tag id
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTag serviceName_namespaces_namespaceId_images_imageId_tags_tagId_GET(String serviceName, String namespaceId, String imageId, String tagId) throws IOException {
 		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/tags/{tagId}";
@@ -376,7 +398,8 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 * @param imageId [required] Image id
 	 * @param namespaceId [required] Namespace id
 	 * @param serviceName [required] Service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_namespaces_namespaceId_images_imageId_tags_GET(String serviceName, String namespaceId, String imageId) throws IOException {
 		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/tags";
@@ -392,7 +415,8 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 * @param namespaceId [required] Namespace id
 	 * @param body [required] Permissions of a user over a namespace
 	 * @param serviceName [required] Service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhPermissions serviceName_namespaces_namespaceId_permissions_POST(String serviceName, String namespaceId, OvhInputPermissions body) throws IOException {
 		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}/permissions";
@@ -407,7 +431,8 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 * REST: GET /caas/registry/{serviceName}/namespaces/{namespaceId}/permissions
 	 * @param namespaceId [required] Namespace id
 	 * @param serviceName [required] Service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_namespaces_namespaceId_permissions_GET(String serviceName, String namespaceId) throws IOException {
 		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}/permissions";
@@ -423,7 +448,8 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 * @param namespaceId [required] Namespace id
 	 * @param permissionId [required] Permission id
 	 * @param serviceName [required] Service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_namespaces_namespaceId_permissions_permissionId_DELETE(String serviceName, String namespaceId, String permissionId) throws IOException {
 		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}/permissions/{permissionId}";
@@ -438,7 +464,8 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 * @param namespaceId [required] Namespace id
 	 * @param permissionId [required] Permission id
 	 * @param serviceName [required] Service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhPermissions serviceName_namespaces_namespaceId_permissions_permissionId_GET(String serviceName, String namespaceId, String permissionId) throws IOException {
 		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}/permissions/{permissionId}";
@@ -451,7 +478,8 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	 * List available services
 	 *
 	 * REST: GET /caas/registry
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/caas/registry";

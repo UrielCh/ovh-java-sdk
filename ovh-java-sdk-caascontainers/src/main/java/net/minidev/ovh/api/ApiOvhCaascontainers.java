@@ -33,7 +33,8 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	 *
 	 * REST: GET /caas/containers/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal ID of your project
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/serviceInfos";
@@ -48,7 +49,8 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	 * REST: PUT /caas/containers/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal ID of your project
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/serviceInfos";
@@ -61,7 +63,8 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	 *
 	 * REST: GET /caas/containers/{serviceName}
 	 * @param serviceName [required] service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhStack serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/caas/containers/{serviceName}";
@@ -76,7 +79,8 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	 * REST: PUT /caas/containers/{serviceName}/ssl
 	 * @param body [required] A custom SSL certificate associated to a Docker PaaS environment
 	 * @param serviceName [required] service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhCustomSslMessage serviceName_ssl_PUT(String serviceName, OvhInputCustomSsl body) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/ssl";
@@ -90,7 +94,8 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	 *
 	 * REST: DELETE /caas/containers/{serviceName}/ssl
 	 * @param serviceName [required] service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhCustomSslMessage serviceName_ssl_DELETE(String serviceName) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/ssl";
@@ -104,7 +109,8 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	 *
 	 * REST: GET /caas/containers/{serviceName}/ssl
 	 * @param serviceName [required] service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhCustomSsl serviceName_ssl_GET(String serviceName) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/ssl";
@@ -118,7 +124,8 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	 *
 	 * REST: GET /caas/containers/{serviceName}/slaves
 	 * @param serviceName [required] service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_slaves_GET(String serviceName) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/slaves";
@@ -134,7 +141,8 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	 * REST: GET /caas/containers/{serviceName}/slaves/{slaveId}
 	 * @param slaveId [required] slave id
 	 * @param serviceName [required] service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhSlave serviceName_slaves_slaveId_GET(String serviceName, String slaveId) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/slaves/{slaveId}";
@@ -149,7 +157,8 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	 * REST: POST /caas/containers/{serviceName}/registry/credentials
 	 * @param body [required] Credentials providing authentication to an external registry
 	 * @param serviceName [required] service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhRegistryCredentials serviceName_registry_credentials_POST(String serviceName, OvhInputCustomSsl body) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/registry/credentials";
@@ -163,7 +172,8 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	 *
 	 * REST: GET /caas/containers/{serviceName}/registry/credentials
 	 * @param serviceName [required] service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_registry_credentials_GET(String serviceName) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/registry/credentials";
@@ -179,7 +189,8 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	 * @param body [required] Credentials providing authentication to an external registry
 	 * @param credentialsId [required] credentials id
 	 * @param serviceName [required] service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhRegistryCredentials serviceName_registry_credentials_credentialsId_PUT(String serviceName, String credentialsId, OvhInputCustomSsl body) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/registry/credentials/{credentialsId}";
@@ -194,7 +205,8 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	 * REST: GET /caas/containers/{serviceName}/registry/credentials/{credentialsId}
 	 * @param credentialsId [required] credentials id
 	 * @param serviceName [required] service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhRegistryCredentials serviceName_registry_credentials_credentialsId_GET(String serviceName, String credentialsId) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/registry/credentials/{credentialsId}";
@@ -209,7 +221,8 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	 * REST: DELETE /caas/containers/{serviceName}/registry/credentials/{credentialsId}
 	 * @param credentialsId [required] credentials id
 	 * @param serviceName [required] service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_registry_credentials_credentialsId_DELETE(String serviceName, String credentialsId) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/registry/credentials/{credentialsId}";
@@ -222,7 +235,8 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	 *
 	 * REST: GET /caas/containers/{serviceName}/frameworks
 	 * @param serviceName [required] service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_frameworks_GET(String serviceName) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/frameworks";
@@ -237,7 +251,8 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	 * REST: GET /caas/containers/{serviceName}/frameworks/{frameworkId}
 	 * @param frameworkId [required] framework id
 	 * @param serviceName [required] service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhFramework serviceName_frameworks_frameworkId_GET(String serviceName, String frameworkId) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/frameworks/{frameworkId}";
@@ -253,7 +268,8 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	 * @param frameworkId [required] framework id
 	 * @param serviceName [required] service name
 	 * @param body [required] The new framework password
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_frameworks_frameworkId_password_PUT(String serviceName, String frameworkId, OvhPassword body) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/frameworks/{frameworkId}/password";
@@ -267,7 +283,8 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	 * REST: GET /caas/containers/{serviceName}/frameworks/{frameworkId}/apps
 	 * @param frameworkId [required] framework id
 	 * @param serviceName [required] service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhApplication serviceName_frameworks_frameworkId_apps_GET(String serviceName, String frameworkId) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/frameworks/{frameworkId}/apps";
@@ -284,7 +301,8 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	 * @param contactTech The contact to set as tech contact
 	 * @param contactBilling The contact to set as billing contact
 	 * @param serviceName [required] The internal ID of your project
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/changeContact";
@@ -303,7 +321,8 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	 *
 	 * REST: GET /caas/containers/{serviceName}/availableFrameworks
 	 * @param serviceName [required] service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_availableFrameworks_GET(String serviceName) throws IOException {
 		String qPath = "/caas/containers/{serviceName}/availableFrameworks";
@@ -316,7 +335,8 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	 * List available services
 	 *
 	 * REST: GET /caas/containers
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/caas/containers";
@@ -329,7 +349,8 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	 * List the /cloud flavors available for the Docker PaaS slaves
 	 *
 	 * REST: GET /caas/containers/slaves/flavors
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> slaves_flavors_GET() throws IOException {
 		String qPath = "/caas/containers/slaves/flavors";
@@ -343,7 +364,8 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	 *
 	 * REST: GET /caas/containers/slaves/flavors/{flavorId}
 	 * @param flavorId [required] flavor id
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhFlavor slaves_flavors_flavorId_GET(String flavorId) throws IOException {
 		String qPath = "/caas/containers/slaves/flavors/{flavorId}";

@@ -31,7 +31,8 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 *
 	 * REST: GET /paas/monitoring/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal ID of your monitoring instance
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/serviceInfos";
@@ -46,7 +47,8 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 * REST: PUT /paas/monitoring/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal ID of your monitoring instance
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/serviceInfos";
@@ -59,7 +61,8 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 *
 	 * REST: GET /paas/monitoring/{serviceName}
 	 * @param serviceName [required] service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public net.minidev.ovh.api.monitoring.OvhService serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}";
@@ -74,7 +77,8 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 * REST: POST /paas/monitoring/{serviceName}/deploy
 	 * @param serviceName [required] service name
 	 * @param body [required] A Shinken-based monitoring service
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public net.minidev.ovh.api.monitoring.OvhService serviceName_deploy_POST(String serviceName, net.minidev.ovh.api.monitoring.OvhService body) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/deploy";
@@ -88,7 +92,8 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 *
 	 * REST: GET /paas/monitoring/{serviceName}/backend
 	 * @param serviceName [required] service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_backend_GET(String serviceName) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/backend";
@@ -104,7 +109,8 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 * REST: GET /paas/monitoring/{serviceName}/backend/{backendId}
 	 * @param backendId [required] backend id
 	 * @param serviceName [required] service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhBackend serviceName_backend_backendId_GET(String serviceName, String backendId) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/backend/{backendId}";
@@ -121,7 +127,8 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 * @param commentary Commentary about your termination request
 	 * @param token [required] The termination token sent by mail to the admin contact
 	 * @param serviceName [required] The internal ID of your monitoring instance
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public String serviceName_confirmTermination_POST(String serviceName, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/confirmTermination";
@@ -139,7 +146,8 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 *
 	 * REST: POST /paas/monitoring/{serviceName}/terminate
 	 * @param serviceName [required] The internal ID of your monitoring instance
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public String serviceName_terminate_POST(String serviceName) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/terminate";
@@ -156,7 +164,8 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 * @param contactTech The contact to set as tech contact
 	 * @param contactBilling The contact to set as billing contact
 	 * @param serviceName [required] The internal ID of your monitoring instance
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/changeContact";
@@ -175,7 +184,8 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 *
 	 * REST: POST /paas/monitoring/{serviceName}/resource/apply
 	 * @param serviceName [required] service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_resource_apply_POST(String serviceName) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/resource/apply";
@@ -188,7 +198,8 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 *
 	 * REST: GET /paas/monitoring/{serviceName}/resource
 	 * @param serviceName [required] service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_resource_GET(String serviceName) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/resource";
@@ -202,7 +213,8 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 *
 	 * REST: POST /paas/monitoring/{serviceName}/resource/test
 	 * @param serviceName [required] service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTestConfigResult serviceName_resource_test_POST(String serviceName) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/resource/test";
@@ -217,7 +229,8 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 * REST: GET /paas/monitoring/{serviceName}/resource/{resourceType}
 	 * @param resourceType [required] resource type
 	 * @param serviceName [required] service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_resource_resourceType_GET(String serviceName, String resourceType) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/resource/{resourceType}";
@@ -233,7 +246,8 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 * @param resourceType [required] resource type
 	 * @param serviceName [required] service name
 	 * @param body [required] Shinken resource (e.g. Host, Service, Contact, etc)
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhResource serviceName_resource_resourceType_POST(String serviceName, String resourceType, OvhResource body) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/resource/{resourceType}";
@@ -248,7 +262,8 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 * REST: DELETE /paas/monitoring/{serviceName}/resource/{resourceType}
 	 * @param resourceType [required] resource type
 	 * @param serviceName [required] service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_resource_resourceType_DELETE(String serviceName, String resourceType) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/resource/{resourceType}";
@@ -263,7 +278,8 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 * @param resourceType [required] resource type
 	 * @param resourceId [required] resource id
 	 * @param serviceName [required] service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhResource serviceName_resource_resourceType_resourceId_GET(String serviceName, String resourceType, String resourceId) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/resource/{resourceType}/{resourceId}";
@@ -280,7 +296,8 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 * @param resourceId [required] resource id
 	 * @param serviceName [required] service name
 	 * @param body [required] Shinken resource (e.g. Host, Service, Contact, etc)
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhResource serviceName_resource_resourceType_resourceId_PUT(String serviceName, String resourceType, String resourceId, OvhResource body) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/resource/{resourceType}/{resourceId}";
@@ -296,7 +313,8 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 * @param resourceType [required] resource type
 	 * @param resourceId [required] resource id
 	 * @param serviceName [required] service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_resource_resourceType_resourceId_DELETE(String serviceName, String resourceType, String resourceId) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/resource/{resourceType}/{resourceId}";
@@ -311,7 +329,8 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 * @param resourceType [required] resource type
 	 * @param serviceName [required] service name
 	 * @param body [required] Batch of resource configuration sets
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_resource_resourceType_batch_POST(String serviceName, String resourceType, OvhConfig[] body) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/resource/{resourceType}/batch";
@@ -324,7 +343,8 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 *
 	 * REST: GET /paas/monitoring/{serviceName}/config/timezone
 	 * @param serviceName [required] service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTimezoneConfig serviceName_config_timezone_GET(String serviceName) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/config/timezone";
@@ -339,7 +359,8 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 * REST: PUT /paas/monitoring/{serviceName}/config/timezone
 	 * @param serviceName [required] service name
 	 * @param body [required] Configuration of the timezone
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTimezoneConfig serviceName_config_timezone_PUT(String serviceName, OvhTimezoneConfig body) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/config/timezone";
@@ -353,7 +374,8 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 *
 	 * REST: GET /paas/monitoring/{serviceName}/config/firewall
 	 * @param serviceName [required] service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhFirewallConfig serviceName_config_firewall_GET(String serviceName) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/config/firewall";
@@ -368,7 +390,8 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 * REST: PUT /paas/monitoring/{serviceName}/config/firewall
 	 * @param serviceName [required] service name
 	 * @param body [required] Configuration of the firewall
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhFirewallConfig serviceName_config_firewall_PUT(String serviceName, OvhFirewallConfig body) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/config/firewall";
@@ -382,7 +405,8 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 *
 	 * REST: GET /paas/monitoring/{serviceName}/config/nsca
 	 * @param serviceName [required] service name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhNscaConfig serviceName_config_nsca_GET(String serviceName) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/config/nsca";
@@ -397,7 +421,8 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 * REST: PUT /paas/monitoring/{serviceName}/config/nsca
 	 * @param serviceName [required] service name
 	 * @param body [required] Configuration for the NSCA receiver
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhNscaConfig serviceName_config_nsca_PUT(String serviceName, OvhNscaConfig body) throws IOException {
 		String qPath = "/paas/monitoring/{serviceName}/config/nsca";
@@ -410,7 +435,8 @@ public class ApiOvhPaasmonitoring extends ApiOvhBase {
 	 * List available services
 	 *
 	 * REST: GET /paas/monitoring
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/paas/monitoring";

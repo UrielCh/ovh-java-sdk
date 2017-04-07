@@ -42,7 +42,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 *
 	 * REST: GET /paas/database/{serviceName}/serviceInfos
 	 * @param serviceName [required] Your database project's name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/paas/database/{serviceName}/serviceInfos";
@@ -57,7 +58,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * REST: PUT /paas/database/{serviceName}/serviceInfos
 	 * @param body [required] New object properties
 	 * @param serviceName [required] Your database project's name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
 		String qPath = "/paas/database/{serviceName}/serviceInfos";
@@ -70,7 +72,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 *
 	 * REST: GET /paas/database/{serviceName}
 	 * @param serviceName [required] Your database project's name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public net.minidev.ovh.api.paas.database.OvhService serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/paas/database/{serviceName}";
@@ -85,7 +88,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * REST: PUT /paas/database/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] Your database project's name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_PUT(String serviceName, net.minidev.ovh.api.paas.database.OvhService body) throws IOException {
 		String qPath = "/paas/database/{serviceName}";
@@ -103,7 +107,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param status [required] Filter the value of status property (=)
 	 * @param expirationDate [required] Filter the value of expirationDate property (<)
 	 * @param serviceName [required] Your database project's name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_dump_GET(String serviceName, Date creationDate, String databaseName, Date expirationDate, String instanceId, OvhStatus status) throws IOException {
 		String qPath = "/paas/database/{serviceName}/dump";
@@ -124,7 +129,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * REST: GET /paas/database/{serviceName}/dump/{dumpId}
 	 * @param serviceName [required] Your database project's name
 	 * @param dumpId [required] Dump id
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhDump serviceName_dump_dumpId_GET(String serviceName, String dumpId) throws IOException {
 		String qPath = "/paas/database/{serviceName}/dump/{dumpId}";
@@ -139,7 +145,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * REST: DELETE /paas/database/{serviceName}/dump/{dumpId}
 	 * @param serviceName [required] Your database project's name
 	 * @param dumpId [required] Dump id
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhDump serviceName_dump_dumpId_DELETE(String serviceName, String dumpId) throws IOException {
 		String qPath = "/paas/database/{serviceName}/dump/{dumpId}";
@@ -156,7 +163,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param databaseName [required] The databaseName where you want to restore this dump
 	 * @param serviceName [required] Your database project's name
 	 * @param dumpId [required] Dump id
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhDump serviceName_dump_dumpId_restore_POST(String serviceName, String dumpId, String instanceId, String databaseName) throws IOException {
 		String qPath = "/paas/database/{serviceName}/dump/{dumpId}/restore";
@@ -175,7 +183,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param function [required] Filter the value of function property (=)
 	 * @param status [required] Filter the value of status property (=)
 	 * @param serviceName [required] Your database project's name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_task_GET(String serviceName, String function, net.minidev.ovh.api.paas.database.task.OvhStatus status) throws IOException {
 		String qPath = "/paas/database/{serviceName}/task";
@@ -192,7 +201,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * REST: GET /paas/database/{serviceName}/task/{taskId}
 	 * @param serviceName [required] Your database project's name
 	 * @param taskId [required] Task id
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhTask serviceName_task_taskId_GET(String serviceName, String taskId) throws IOException {
 		String qPath = "/paas/database/{serviceName}/task/{taskId}";
@@ -207,7 +217,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * REST: GET /paas/database/{serviceName}/instance
 	 * @param status [required] Filter the value of status property (=)
 	 * @param serviceName [required] Your database project's name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_instance_GET(String serviceName, net.minidev.ovh.api.paas.database.instance.OvhStatus status) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance";
@@ -223,7 +234,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * REST: POST /paas/database/{serviceName}/instance
 	 * @param parameters [required] Array of instance creation parameters
 	 * @param serviceName [required] Your database project's name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<OvhData> serviceName_instance_POST(String serviceName, OvhParameters[] parameters) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance";
@@ -241,7 +253,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * REST: POST /paas/database/{serviceName}/instance/{instanceId}/restart
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInstance serviceName_instance_instanceId_restart_POST(String serviceName, String instanceId) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/restart";
@@ -256,7 +269,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * REST: GET /paas/database/{serviceName}/instance/{instanceId}
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInstance serviceName_instance_instanceId_GET(String serviceName, String instanceId) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}";
@@ -272,7 +286,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param body [required] New object properties
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_instance_instanceId_PUT(String serviceName, String instanceId, OvhInstance body) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}";
@@ -286,7 +301,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * REST: DELETE /paas/database/{serviceName}/instance/{instanceId}
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInstance serviceName_instance_instanceId_DELETE(String serviceName, String instanceId) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}";
@@ -301,7 +317,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * REST: POST /paas/database/{serviceName}/instance/{instanceId}/stop
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInstance serviceName_instance_instanceId_stop_POST(String serviceName, String instanceId) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/stop";
@@ -317,7 +334,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param status [required] Filter the value of status property (=)
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_instance_instanceId_whitelist_GET(String serviceName, String instanceId, net.minidev.ovh.api.paas.database.instance.whitelist.OvhStatus status) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/whitelist";
@@ -337,7 +355,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param sftp [required] Authorize this IP to access sftp port
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInstanceWhitelist serviceName_instance_instanceId_whitelist_POST(String serviceName, String instanceId, String ip, String name, Boolean service, Boolean sftp) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/whitelist";
@@ -358,7 +377,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
 	 * @param ip [required] The whitelisted IP in your instance
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInstanceWhitelist serviceName_instance_instanceId_whitelist_ip_GET(String serviceName, String instanceId, String ip) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/whitelist/{ip}";
@@ -375,7 +395,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
 	 * @param ip [required] The whitelisted IP in your instance
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_instance_instanceId_whitelist_ip_PUT(String serviceName, String instanceId, String ip, OvhInstanceWhitelist body) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/whitelist/{ip}";
@@ -390,7 +411,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
 	 * @param ip [required] The whitelisted IP in your instance
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInstanceWhitelist serviceName_instance_instanceId_whitelist_ip_DELETE(String serviceName, String instanceId, String ip) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/whitelist/{ip}";
@@ -406,7 +428,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param status [required] Filter the value of status property (=)
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_instance_instanceId_database_GET(String serviceName, String instanceId, net.minidev.ovh.api.paas.database.instance.database.OvhStatus status) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/database";
@@ -423,7 +446,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param databaseName [required] Name of your new database
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInstanceDatabase serviceName_instance_instanceId_database_POST(String serviceName, String instanceId, String databaseName) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/database";
@@ -441,7 +465,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
 	 * @param databaseName [required] Database name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInstanceDatabase serviceName_instance_instanceId_database_databaseName_GET(String serviceName, String instanceId, String databaseName) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/database/{databaseName}";
@@ -457,7 +482,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
 	 * @param databaseName [required] Database name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInstanceDatabase serviceName_instance_instanceId_database_databaseName_DELETE(String serviceName, String instanceId, String databaseName) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/database/{databaseName}";
@@ -474,7 +500,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param instanceId [required] Instance uuid
 	 * @param databaseName [required] Database name
 	 * @param extensionName [required] Extension name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInstanceDatabaseExtension serviceName_instance_instanceId_database_databaseName_extension_extensionName_GET(String serviceName, String instanceId, String databaseName, String extensionName) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/database/{databaseName}/extension/{extensionName}";
@@ -491,7 +518,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param instanceId [required] Instance uuid
 	 * @param databaseName [required] Database name
 	 * @param extensionName [required] Extension name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInstanceDatabaseExtension serviceName_instance_instanceId_database_databaseName_extension_extensionName_enable_POST(String serviceName, String instanceId, String databaseName, String extensionName) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/database/{databaseName}/extension/{extensionName}/enable";
@@ -508,7 +536,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param instanceId [required] Instance uuid
 	 * @param databaseName [required] Database name
 	 * @param extensionName [required] Extension name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInstanceDatabaseExtension serviceName_instance_instanceId_database_databaseName_extension_extensionName_disable_POST(String serviceName, String instanceId, String databaseName, String extensionName) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/database/{databaseName}/extension/{extensionName}/disable";
@@ -526,7 +555,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
 	 * @param databaseName [required] Database name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_instance_instanceId_database_databaseName_extension_GET(String serviceName, String instanceId, String databaseName, String extensionName, net.minidev.ovh.api.paas.database.instance.database.extension.OvhStatus status) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/database/{databaseName}/extension";
@@ -547,7 +577,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
 	 * @param databaseName [required] Database name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_instance_instanceId_database_databaseName_dump_GET(String serviceName, String instanceId, String databaseName, Date creationDate, Date expirationDate, OvhStatus status) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/database/{databaseName}/dump";
@@ -568,7 +599,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
 	 * @param databaseName [required] Database name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInstanceDatabaseDump serviceName_instance_instanceId_database_databaseName_dump_POST(String serviceName, String instanceId, String databaseName, String email, String name) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/database/{databaseName}/dump";
@@ -588,7 +620,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param instanceId [required] Instance uuid
 	 * @param databaseName [required] Database name
 	 * @param dumpId [required] Dump id
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInstanceDatabaseDump serviceName_instance_instanceId_database_databaseName_dump_dumpId_GET(String serviceName, String instanceId, String databaseName, String dumpId) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/database/{databaseName}/dump/{dumpId}";
@@ -605,7 +638,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param instanceId [required] Instance uuid
 	 * @param databaseName [required] Database name
 	 * @param dumpId [required] Dump id
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInstanceDatabaseDump serviceName_instance_instanceId_database_databaseName_dump_dumpId_DELETE(String serviceName, String instanceId, String databaseName, String dumpId) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/database/{databaseName}/dump/{dumpId}";
@@ -622,7 +656,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param instanceId [required] Instance uuid
 	 * @param databaseName [required] Database name
 	 * @param dumpId [required] Dump id
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInstanceDatabaseDump serviceName_instance_instanceId_database_databaseName_dump_dumpId_restore_POST(String serviceName, String instanceId, String databaseName, String dumpId) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/database/{databaseName}/dump/{dumpId}/restore";
@@ -638,7 +673,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param offerName [required] Name of the new offer you want to resize your instance to
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInstance serviceName_instance_instanceId_resize_POST(String serviceName, String instanceId, String offerName) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/resize";
@@ -656,7 +692,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param password [required] The new password ( alphanumeric, 8 characters minimum and 31 max )
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInstance serviceName_instance_instanceId_changeSftpPassword_POST(String serviceName, String instanceId, String password) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/changeSftpPassword";
@@ -674,7 +711,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param status [required] Filter the value of status property (=)
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_instance_instanceId_user_GET(String serviceName, String instanceId, net.minidev.ovh.api.paas.database.instance.user.OvhStatus status) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/user";
@@ -692,7 +730,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param userName [required] User name used to connect on your databases
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInstanceUser serviceName_instance_instanceId_user_POST(String serviceName, String instanceId, String password, String userName) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/user";
@@ -711,7 +750,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
 	 * @param userName [required] User name used to connect to your databases
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInstanceUser serviceName_instance_instanceId_user_userName_GET(String serviceName, String instanceId, String userName) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/user/{userName}";
@@ -727,7 +767,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
 	 * @param userName [required] User name used to connect to your databases
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInstanceUser serviceName_instance_instanceId_user_userName_DELETE(String serviceName, String instanceId, String userName) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/user/{userName}";
@@ -744,7 +785,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
 	 * @param userName [required] User name used to connect to your databases
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInstanceUser serviceName_instance_instanceId_user_userName_changePassword_POST(String serviceName, String instanceId, String userName, String password) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/user/{userName}/changePassword";
@@ -762,7 +804,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param imageName [required] Name of the new image that you want for your instance to use
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInstance serviceName_instance_instanceId_upgrade_POST(String serviceName, String instanceId, String imageName) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/upgrade";
@@ -779,7 +822,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * REST: GET /paas/database/{serviceName}/instance/{instanceId}/configuration
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInstanceConfiguration serviceName_instance_instanceId_configuration_GET(String serviceName, String instanceId) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/configuration";
@@ -795,7 +839,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param parameters [required] Array of instance configuration parameters
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInstanceConfiguration serviceName_instance_instanceId_configuration_update_POST(String serviceName, String instanceId, OvhSafeKeyValue<String>[] parameters) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/configuration/update";
@@ -812,7 +857,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * REST: POST /paas/database/{serviceName}/instance/{instanceId}/start
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInstance serviceName_instance_instanceId_start_POST(String serviceName, String instanceId) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/start";
@@ -828,7 +874,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param status [required] Filter the value of status property (=)
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> serviceName_instance_instanceId_grant_GET(String serviceName, String instanceId, net.minidev.ovh.api.paas.database.instance.grant.OvhStatus status) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/grant";
@@ -847,7 +894,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param userName [required] User name to grant
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInstanceGrant serviceName_instance_instanceId_grant_POST(String serviceName, String instanceId, String databaseName, OvhType grantType, String userName) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/grant";
@@ -867,7 +915,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
 	 * @param grantId [required] Grant id
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInstanceGrant serviceName_instance_instanceId_grant_grantId_GET(String serviceName, String instanceId, String grantId) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/grant/{grantId}";
@@ -884,7 +933,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
 	 * @param grantId [required] Grant id
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void serviceName_instance_instanceId_grant_grantId_PUT(String serviceName, String instanceId, String grantId, OvhInstanceGrant body) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/grant/{grantId}";
@@ -899,7 +949,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * @param serviceName [required] Your database project's name
 	 * @param instanceId [required] Instance uuid
 	 * @param grantId [required] Grant id
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhInstanceGrant serviceName_instance_instanceId_grant_grantId_DELETE(String serviceName, String instanceId, String grantId) throws IOException {
 		String qPath = "/paas/database/{serviceName}/instance/{instanceId}/grant/{grantId}";
@@ -912,7 +963,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * List available services
 	 *
 	 * REST: GET /paas/database
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/paas/database";
@@ -926,7 +978,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 *
 	 * REST: GET /paas/database/offer
 	 * @param status [required] Filter the value of status property (=)
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> offer_GET(net.minidev.ovh.api.paas.database.offer.OvhStatus status) throws IOException {
 		String qPath = "/paas/database/offer";
@@ -941,7 +994,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 *
 	 * REST: GET /paas/database/offer/{offerName}
 	 * @param offerName [required] Offer name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhOffer offer_offerName_GET(String offerName) throws IOException {
 		String qPath = "/paas/database/offer/{offerName}";
@@ -955,7 +1009,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 *
 	 * REST: GET /paas/database/region
 	 * @param status [required] Filter the value of status property (=)
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> region_GET(net.minidev.ovh.api.paas.database.region.OvhStatus status) throws IOException {
 		String qPath = "/paas/database/region";
@@ -970,7 +1025,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 *
 	 * REST: GET /paas/database/region/{regionName}
 	 * @param regionName [required] Region name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhRegion region_regionName_GET(String regionName) throws IOException {
 		String qPath = "/paas/database/region/{regionName}";
@@ -985,7 +1041,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 * REST: GET /paas/database/image
 	 * @param status [required] Filter the value of status property (=)
 	 * @param type [required] Filter the value of type property (=)
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> image_GET(net.minidev.ovh.api.paas.database.image.OvhStatus status, net.minidev.ovh.api.paas.database.image.OvhType type) throws IOException {
 		String qPath = "/paas/database/image";
@@ -1001,7 +1058,8 @@ public class ApiOvhPaasdatabase extends ApiOvhBase {
 	 *
 	 * REST: GET /paas/database/image/{imageName}
 	 * @param imageName [required] Image name
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhImage image_imageName_GET(String imageName) throws IOException {
 		String qPath = "/paas/database/image/{imageName}";

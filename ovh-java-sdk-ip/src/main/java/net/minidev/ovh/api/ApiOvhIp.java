@@ -139,7 +139,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 *
 	 * REST: GET /ip/{ip}/move
 	 * @param ip [required]
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhDestinations ip_move_GET(String ip) throws IOException {
 		String qPath = "/ip/{ip}/move";
@@ -1485,7 +1486,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 *
 	 * REST: GET /ip/service/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your IP services
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhNonExpiringService service_serviceName_serviceInfos_GET(String serviceName) throws IOException {
 		String qPath = "/ip/service/{serviceName}/serviceInfos";
@@ -1499,7 +1501,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 *
 	 * REST: GET /ip/service/{serviceName}
 	 * @param serviceName [required] The internal name of your IP services
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public OvhServiceIp service_serviceName_GET(String serviceName) throws IOException {
 		String qPath = "/ip/service/{serviceName}";
@@ -1514,7 +1517,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 * REST: PUT /ip/service/{serviceName}
 	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your IP services
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public void service_serviceName_PUT(String serviceName, OvhServiceIp body) throws IOException {
 		String qPath = "/ip/service/{serviceName}";
@@ -1530,7 +1534,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 * @param commentary Commentary about your termination request
 	 * @param token [required] The termination token sent by mail to the admin contact
 	 * @param serviceName [required] The internal name of your IP services
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public String service_serviceName_confirmTermination_POST(String serviceName, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
 		String qPath = "/ip/service/{serviceName}/confirmTermination";
@@ -1548,7 +1553,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 *
 	 * REST: POST /ip/service/{serviceName}/terminate
 	 * @param serviceName [required] The internal name of your IP services
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public String service_serviceName_terminate_POST(String serviceName) throws IOException {
 		String qPath = "/ip/service/{serviceName}/terminate";
@@ -1565,7 +1571,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 * @param contactTech The contact to set as tech contact
 	 * @param contactBilling The contact to set as billing contact
 	 * @param serviceName [required] The internal name of your IP services
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<Long> service_serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
 		String qPath = "/ip/service/{serviceName}/changeContact";
@@ -1582,7 +1589,8 @@ public class ApiOvhIp extends ApiOvhBase {
 	 * List available services
 	 *
 	 * REST: GET /ip/service
-	 * @beta
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> service_GET() throws IOException {
 		String qPath = "/ip/service";
