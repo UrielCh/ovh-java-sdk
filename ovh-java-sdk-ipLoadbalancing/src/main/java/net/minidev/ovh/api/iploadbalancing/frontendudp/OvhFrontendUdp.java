@@ -19,6 +19,13 @@ public class OvhFrontendUdp {
 	public String port;
 
 	/**
+	 * Human readable name for your frontend, this field is for you
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String displayName;
+
+	/**
 	 * Disable frontend
 	 *
 	 * canBeNull && readOnly

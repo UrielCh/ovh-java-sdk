@@ -30,6 +30,13 @@ public class OvhBackendHttp {
 	public Long port;
 
 	/**
+	 * Human readable name for your backend, this field is for you
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String displayName;
+
+	/**
 	 * Stickiness type. No stickiness if null
 	 *
 	 * canBeNull && readOnly

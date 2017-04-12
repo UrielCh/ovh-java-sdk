@@ -69,7 +69,7 @@ import net.minidev.ovh.api.order.cart.OvhGenericProductDefinition;
 import net.minidev.ovh.api.order.cart.OvhItem;
 import net.minidev.ovh.api.order.cart.OvhProductInformation;
 import net.minidev.ovh.api.order.cart.OvhWebHostingProductInformation;
-import net.minidev.ovh.api.order.catalog.OvhCatalog;
+import net.minidev.ovh.api.order.catalog.privatecloud.OvhCatalog;
 import net.minidev.ovh.api.order.upgrade.OvhOrderUpgradeOperationAndOrder;
 import net.minidev.ovh.api.services.OvhService;
 import net.minidev.ovh.api.telephony.OvhLineTypeEnum;
@@ -511,16 +511,58 @@ public class ApiOvhOrder extends ApiOvhBase {
 	/**
 	 * Retrieve information of catalog
 	 *
+	 * REST: GET /order/catalog/formatted/privateCloudSDDC
+	 * @param ovhSubsidiary [required] Subsidiary of the country you want to consult catalog
+	 */
+	public OvhCatalog catalog_formatted_privateCloudSDDC_GET(OvhOvhSubsidiaryEnum ovhSubsidiary) throws IOException {
+		String qPath = "/order/catalog/formatted/privateCloudSDDC";
+		StringBuilder sb = path(qPath);
+		query(sb, "ovhSubsidiary", ovhSubsidiary);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhCatalog.class);
+	}
+
+	/**
+	 * Retrieve information of catalog
+	 *
+	 * REST: GET /order/catalog/formatted/privateCloudDC
+	 * @param ovhSubsidiary [required] Subsidiary of the country you want to consult catalog
+	 */
+	public OvhCatalog catalog_formatted_privateCloudDC_GET(OvhOvhSubsidiaryEnum ovhSubsidiary) throws IOException {
+		String qPath = "/order/catalog/formatted/privateCloudDC";
+		StringBuilder sb = path(qPath);
+		query(sb, "ovhSubsidiary", ovhSubsidiary);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhCatalog.class);
+	}
+
+	/**
+	 * Retrieve information of catalog
+	 *
+	 * REST: GET /order/catalog/formatted/privateCloud
+	 * @param ovhSubsidiary [required] Subsidiary of the country you want to consult catalog
+	 */
+	public OvhCatalog catalog_formatted_privateCloud_GET(OvhOvhSubsidiaryEnum ovhSubsidiary) throws IOException {
+		String qPath = "/order/catalog/formatted/privateCloud";
+		StringBuilder sb = path(qPath);
+		query(sb, "ovhSubsidiary", ovhSubsidiary);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhCatalog.class);
+	}
+
+	/**
+	 * Retrieve information of catalog
+	 *
 	 * REST: GET /order/catalog/formatted/{catalogName}
 	 * @param catalogName [required] Catalog name you want to consult.
 	 * @param ovhSubsidiary [required] Subsidiary of the country you want to consult catalog
 	 */
-	public OvhCatalog catalog_formatted_catalogName_GET(String catalogName, OvhOvhSubsidiaryEnum ovhSubsidiary) throws IOException {
+	public net.minidev.ovh.api.order.catalog.OvhCatalog catalog_formatted_catalogName_GET(String catalogName, OvhOvhSubsidiaryEnum ovhSubsidiary) throws IOException {
 		String qPath = "/order/catalog/formatted/{catalogName}";
 		StringBuilder sb = path(qPath, catalogName);
 		query(sb, "ovhSubsidiary", ovhSubsidiary);
 		String resp = execN(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhCatalog.class);
+		return convertTo(resp, net.minidev.ovh.api.order.catalog.OvhCatalog.class);
 	}
 
 	/**

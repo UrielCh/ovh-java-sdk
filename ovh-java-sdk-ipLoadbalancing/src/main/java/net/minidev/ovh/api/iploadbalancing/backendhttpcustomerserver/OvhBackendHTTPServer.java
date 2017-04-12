@@ -36,11 +36,11 @@ public class OvhBackendHTTPServer {
 	public String cookie;
 
 	/**
-	 * Port attached to your server. Inherited from farm if null
+	 * Human readable name for your server, this field is for you
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long port;
+	public String displayName;
 
 	/**
 	 * farm id
@@ -57,18 +57,32 @@ public class OvhBackendHTTPServer {
 	public Long weight;
 
 	/**
-	 * Id of your server
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long id;
-
-	/**
 	 * SSL ciphering. Probes will also be sent ciphered
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean ssl;
+
+	/**
+	 * Probe state
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean probe;
+
+	/**
+	 * Port attached to your server. Inherited from farm if null
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long port;
+
+	/**
+	 * Id of your server
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long id;
 
 	/**
 	 * Status attached to your server
@@ -83,11 +97,4 @@ public class OvhBackendHTTPServer {
 	 * canBeNull && readOnly
 	 */
 	public OvhProxyProtocolVersionEnum proxyProtocolVersion;
-
-	/**
-	 * Probe state
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean probe;
 }

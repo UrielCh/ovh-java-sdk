@@ -12,6 +12,27 @@ public class OvhFrontendHttp {
 	public String[] httpHeader;
 
 	/**
+	 * Human readable name for your frontend, this field is for you
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String displayName;
+
+	/**
+	 * Only attach frontend on these ip. No restriction if null
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String[] dedicatedIpfo;
+
+	/**
+	 * SSL deciphering
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean ssl;
+
+	/**
 	 * Default ssl served to your customer
 	 *
 	 * canBeNull && readOnly
@@ -59,20 +80,6 @@ public class OvhFrontendHttp {
 	 * canBeNull && readOnly
 	 */
 	public Long id;
-
-	/**
-	 * Only attach frontend on these ip. No restriction if null
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String[] dedicatedIpfo;
-
-	/**
-	 * SSL deciphering
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean ssl;
 
 	/**
 	 * Default HTTP Farm of your frontend

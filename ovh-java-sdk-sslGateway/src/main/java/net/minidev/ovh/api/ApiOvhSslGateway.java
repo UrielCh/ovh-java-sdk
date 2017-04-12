@@ -381,4 +381,18 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhEligibilityStatus.class);
 	}
+
+	/**
+	 * List of zone available for an SSL Gateway
+	 *
+	 * REST: GET /sslGateway/availableZones
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> availableZones_GET() throws IOException {
+		String qPath = "/sslGateway/availableZones";
+		StringBuilder sb = path(qPath);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
 }

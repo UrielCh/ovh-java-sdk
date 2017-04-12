@@ -16,7 +16,7 @@ public class OvhDefinedRoute {
 	 *
 	 * canBeNull
 	 */
-	public String name;
+	public String displayName;
 
 	/**
 	 * Protocol supported by this route

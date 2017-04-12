@@ -7,6 +7,13 @@ import java.util.Date;
  */
 public class OvhSsl {
 	/**
+	 * Provider of the certificate installed on CDN
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String certificateProvider;
+
+	/**
 	 * canBeNull && readOnly
 	 */
 	public Date certificateValidFrom;

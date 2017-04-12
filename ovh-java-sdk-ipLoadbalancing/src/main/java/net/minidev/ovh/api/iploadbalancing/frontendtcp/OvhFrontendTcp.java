@@ -33,6 +33,13 @@ public class OvhFrontendTcp {
 	public String[] allowedSource;
 
 	/**
+	 * Human readable name for your frontend, this field is for you
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String displayName;
+
+	/**
 	 * Disable frontend
 	 *
 	 * canBeNull && readOnly

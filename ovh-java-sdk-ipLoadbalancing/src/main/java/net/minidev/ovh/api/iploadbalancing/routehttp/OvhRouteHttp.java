@@ -20,7 +20,7 @@ public class OvhRouteHttp {
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String name;
+	public String displayName;
 
 	/**
 	 * Route priority ([0..255]). 0 if null. Highest priority routes are evaluated first. Only the first matching route will trigger an action

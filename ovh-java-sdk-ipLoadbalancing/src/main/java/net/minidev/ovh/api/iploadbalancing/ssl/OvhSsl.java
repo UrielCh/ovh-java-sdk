@@ -21,6 +21,13 @@ public class OvhSsl {
 	public String subject;
 
 	/**
+	 * Human readable name for your ssl certificate, this field is for you
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String displayName;
+
+	/**
 	 * Fingerprint of your SSL certificate
 	 *
 	 * canBeNull && readOnly

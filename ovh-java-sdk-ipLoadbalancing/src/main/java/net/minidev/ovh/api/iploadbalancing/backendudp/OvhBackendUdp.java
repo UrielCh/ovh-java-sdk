@@ -19,6 +19,13 @@ public class OvhBackendUdp {
 	public Long port;
 
 	/**
+	 * Human readable name for your backend, this field is for you
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String displayName;
+
+	/**
 	 * Id of your farm
 	 *
 	 * canBeNull && readOnly

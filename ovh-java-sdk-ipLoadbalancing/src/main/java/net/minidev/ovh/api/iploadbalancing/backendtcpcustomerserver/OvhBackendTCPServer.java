@@ -36,6 +36,13 @@ public class OvhBackendTCPServer {
 	public Long port;
 
 	/**
+	 * Human readable name for your server, this field is for you
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String displayName;
+
+	/**
 	 * Farm id
 	 *
 	 * canBeNull && readOnly
