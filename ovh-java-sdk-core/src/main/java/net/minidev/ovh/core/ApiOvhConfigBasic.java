@@ -33,7 +33,7 @@ public class ApiOvhConfigBasic extends ApiOvhConfig {
 	//
 	//
 	// make dynamique
-	protected String endpoint = "https://api.ovh.com/1.0";
+	protected String endpoint = OvhEntryPoint.OVH_EU;// "https://api.ovh.com/1.0";
 	/**
 	 * your application key or by default the key from api.ovh.com
 	 */
@@ -137,7 +137,7 @@ public class ApiOvhConfigBasic extends ApiOvhConfig {
 	}
 
 	@Override
-	protected String getCK() {
+	protected String getConsumerKey() {
 		return default_CK;
 	}
 
@@ -202,11 +202,6 @@ public class ApiOvhConfigBasic extends ApiOvhConfig {
 					configFiles);
 		}
 		return applicationKey;
-	}
-
-	@Override
-	public String getRedirection() {
-		return redirection;
 	}
 
 	@Override

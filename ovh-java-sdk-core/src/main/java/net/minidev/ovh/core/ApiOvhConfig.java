@@ -4,6 +4,7 @@ import java.io.IOException;
 
 /**
  * @See {@link ApiOvhConfigBasic}
+ * @See {@link ApiOvhConfigStatic}
  * 
  * @author uriel
  *
@@ -15,11 +16,9 @@ public abstract class ApiOvhConfig {
 
 	protected abstract String getApplicationKey();
 
-	protected abstract String getRedirection();
-
 	protected abstract String getAppSecret();
 
-	protected abstract String getCK();
+	protected abstract String getConsumerKey();
 
 	protected abstract String getConsumerKey(String nic) throws IOException;
 

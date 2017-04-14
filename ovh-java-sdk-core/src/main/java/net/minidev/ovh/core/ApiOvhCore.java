@@ -75,6 +75,14 @@ public class ApiOvhCore {
 	 */
 	private String consumerKey = null;
 
+	public String getConsumerKey() {
+		if (consumerKey == null)
+			consumerKey = config.getConsumerKey();
+		if (consumerKey == null)
+			throw new NullPointerException("ConsumerKey can not be null");
+		return consumerKey;
+	}
+
 	// nic / passwor auth
 	private String nic;
 	private String password;
@@ -87,7 +95,7 @@ public class ApiOvhCore {
 
 	public static void main(String[] args) throws Exception {
 		ApiOvhCore api = new ApiOvhCore();
-		api.requestToken();
+		api.requestToken(null);
 	}
 
 	/**
@@ -127,7 +135,7 @@ public class ApiOvhCore {
 	 */
 	public static ApiOvhCore getInstance() {
 		ApiOvhCore core = new ApiOvhCore();
-		core.consumerKey = core.config.getCK();
+		core.consumerKey = core.config.getConsumerKey();
 		if (core.consumerKey == null) {
 			log.error("no consumerKey present in your ovh.cong (consumer_key) or environement (OVH_CONSUMER_KEY)");
 			return null;
@@ -262,7 +270,8 @@ public class ApiOvhCore {
 				consumerKey = oldCK;
 				return true;
 			}
-			OvhCredential token = requestToken();
+			// TODO remove dummy redirection
+			OvhCredential token = requestToken("http://localhost/callback");
 			log.info("validationUrl Url:{}", token.validationUrl);
 
 			Document doc = Jsoup.connect(token.validationUrl).get();
@@ -315,7 +324,7 @@ public class ApiOvhCore {
 	 * @return
 	 * @throws IOException
 	 */
-	public OvhCredential requestToken() throws IOException {
+	public OvhCredential requestToken(String redirection) throws IOException {
 		OvhMethodEnum[] ms = OvhMethodEnum.values();
 		OvhAccessRule[] rules = new OvhAccessRule[ms.length];
 		for (int i = 0; i < ms.length; i++) {
@@ -324,7 +333,7 @@ public class ApiOvhCore {
 			rules[i].path = "/*";
 		}
 		ApiOvhAuth auth = new ApiOvhAuth(this);
-		return auth.credential_POST(rules, config.getRedirection());
+		return auth.credential_POST(rules, redirection);
 	}
 
 	/**
@@ -377,10 +386,12 @@ public class ApiOvhCore {
 		int failure = 0;
 		String response = "";
 		// retry loop
+		String CK = null;
 		while (true) {
-			String CK = this.consumerKey;
+
 			HttpURLConnection request = getRequest(method, url);
 			if (needAuth) {
+				CK = this.getConsumerKey();
 				String timestamp = getTimestamp();
 				String toHash = config.getAppSecret() + "+" + CK + "+" + method + "+" + url + "+" + txt + "+" + timestamp;
 				String sig = "$1$" + ApiOvhUtils.digestSha1(toHash.getBytes(UTF8));
