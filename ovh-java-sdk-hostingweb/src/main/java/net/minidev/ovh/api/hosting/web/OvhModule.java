@@ -3,6 +3,7 @@ package net.minidev.ovh.api.hosting.web;
 import java.util.Date;
 import net.minidev.ovh.api.hosting.web.module.OvhDependencyType;
 import net.minidev.ovh.api.hosting.web.module.OvhLanguageEnum;
+import net.minidev.ovh.api.hosting.web.module.OvhStatusEnum;
 
 /**
  * Hosting modules installed
@@ -70,6 +71,20 @@ public class OvhModule {
 	 * canBeNull && readOnly
 	 */
 	public String targetUrl;
+
+	/**
+	 * The task ID working on this module
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long taskId;
+
+	/**
+	 * The module status
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhStatusEnum status;
 
 	/**
 	 * The dependencies to which the module has access. A dependency can be a standard database (like MySQL or PostgreSQL) or a key-value store (like Redis or Memcached) for example

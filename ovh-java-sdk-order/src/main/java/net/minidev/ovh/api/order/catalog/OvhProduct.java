@@ -7,13 +7,6 @@ import net.minidev.ovh.api.complextype.OvhSafeKeyValue;
  */
 public class OvhProduct {
 	/**
-	 * List of the metadata of the product
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhSafeKeyValue<String>[] metadatas;
-
-	/**
 	 * Technicals details about product
 	 *
 	 * canBeNull && readOnly

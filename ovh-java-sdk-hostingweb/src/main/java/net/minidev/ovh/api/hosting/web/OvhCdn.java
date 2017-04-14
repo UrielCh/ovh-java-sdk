@@ -1,5 +1,7 @@
 package net.minidev.ovh.api.hosting.web;
 
+import net.minidev.ovh.api.hosting.web.cdn.OvhStatusEnum;
+
 /**
  * CDN service
  */
@@ -33,9 +35,16 @@ public class OvhCdn {
 	public String version;
 
 	/**
+	 * The task ID working on this CDN
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long taskId;
+
+	/**
 	 * Status of the CDN option
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String status;
+	public OvhStatusEnum status;
 }

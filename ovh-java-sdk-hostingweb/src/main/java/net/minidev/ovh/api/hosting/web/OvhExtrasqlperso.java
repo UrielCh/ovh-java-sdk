@@ -28,6 +28,13 @@ public class OvhExtrasqlperso {
 	public String name;
 
 	/**
+	 * The task ID working on this extraSqlPerso
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long taskId;
+
+	/**
 	 * The extraSqlPerso option status
 	 *
 	 * canBeNull && readOnly

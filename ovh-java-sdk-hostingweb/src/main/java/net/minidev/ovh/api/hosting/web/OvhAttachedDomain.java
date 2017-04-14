@@ -2,6 +2,7 @@ package net.minidev.ovh.api.hosting.web;
 
 import net.minidev.ovh.api.hosting.web.attacheddomain.OvhCdnEnum;
 import net.minidev.ovh.api.hosting.web.attacheddomain.OvhFirewallEnum;
+import net.minidev.ovh.api.hosting.web.attacheddomain.OvhStatusEnum;
 
 /**
  * Virtual service
@@ -55,4 +56,18 @@ public class OvhAttachedDomain {
 	 * canBeNull && readOnly
 	 */
 	public Boolean ssl;
+
+	/**
+	 * The task ID working on this domain
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long taskId;
+
+	/**
+	 * The domain status
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhStatusEnum status;
 }

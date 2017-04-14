@@ -2,6 +2,7 @@ package net.minidev.ovh.api.hosting.web;
 
 import net.minidev.ovh.api.hosting.web.user.OvhSshStateEnum;
 import net.minidev.ovh.api.hosting.web.user.OvhStateEnum;
+import net.minidev.ovh.api.hosting.web.user.OvhStatusEnum;
 
 /**
  * Hosting users
@@ -22,7 +23,7 @@ public class OvhUser {
 	public OvhSshStateEnum sshState;
 
 	/**
-	 * User status
+	 * User state
 	 *
 	 * canBeNull && readOnly
 	 */
@@ -34,6 +35,20 @@ public class OvhUser {
 	 * canBeNull && readOnly
 	 */
 	public String login;
+
+	/**
+	 * The task ID working on this user
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long taskId;
+
+	/**
+	 * The user status
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhStatusEnum status;
 
 	/**
 	 * Home directory

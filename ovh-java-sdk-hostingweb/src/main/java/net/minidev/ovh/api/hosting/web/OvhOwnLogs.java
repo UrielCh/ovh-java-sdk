@@ -21,6 +21,13 @@ public class OvhOwnLogs {
 	public Long id;
 
 	/**
+	 * The task ID working on this ownLogs
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long taskId;
+
+	/**
 	 * Status of this ownLogs
 	 *
 	 * canBeNull && readOnly

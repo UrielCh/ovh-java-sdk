@@ -36,6 +36,13 @@ public class OvhUserLogs {
 	public String login;
 
 	/**
+	 * The task ID working on this userLogs
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long taskId;
+
+	/**
 	 * Status of this userLogs
 	 *
 	 * canBeNull && readOnly

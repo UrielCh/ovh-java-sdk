@@ -5,6 +5,7 @@ import net.minidev.ovh.api.hosting.web.ovhconfig.OvhEngineNameEnum;
 import net.minidev.ovh.api.hosting.web.ovhconfig.OvhEngineVersionEnum;
 import net.minidev.ovh.api.hosting.web.ovhconfig.OvhEnvironmentEnum;
 import net.minidev.ovh.api.hosting.web.ovhconfig.OvhHttpFirewallEnum;
+import net.minidev.ovh.api.hosting.web.ovhconfig.OvhStatusEnum;
 
 /**
  * Virtual service
@@ -79,4 +80,18 @@ public class OvhOvhConfig {
 	 * canBeNull && readOnly
 	 */
 	public Date creationDate;
+
+	/**
+	 * The task ID working on this configuration
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long taskId;
+
+	/**
+	 * The configuration status
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhStatusEnum status;
 }

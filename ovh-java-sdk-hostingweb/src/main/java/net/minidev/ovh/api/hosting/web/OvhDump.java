@@ -1,7 +1,8 @@
 package net.minidev.ovh.api.hosting.web;
 
 import java.util.Date;
-import net.minidev.ovh.api.hosting.web.database.OvhDumpDateEnum;
+import net.minidev.ovh.api.hosting.web.database.dump.OvhDateEnum;
+import net.minidev.ovh.api.hosting.web.database.dump.OvhStatusEnum;
 
 /**
  * Dump
@@ -33,7 +34,14 @@ public class OvhDump {
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhDumpDateEnum type;
+	public OvhDateEnum type;
+
+	/**
+	 * The task ID working on this dump
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long taskId;
 
 	/**
 	 * Dump url access
@@ -41,4 +49,11 @@ public class OvhDump {
 	 * canBeNull && readOnly
 	 */
 	public String url;
+
+	/**
+	 * The dump status
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhStatusEnum status;
 }

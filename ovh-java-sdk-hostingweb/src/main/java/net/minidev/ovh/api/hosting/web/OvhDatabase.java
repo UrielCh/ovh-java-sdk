@@ -5,26 +5,13 @@ import net.minidev.ovh.api.complextype.OvhUnitAndValue;
 import net.minidev.ovh.api.hosting.web.database.OvhDatabaseTypeEnum;
 import net.minidev.ovh.api.hosting.web.database.OvhModeEnum;
 import net.minidev.ovh.api.hosting.web.database.OvhStateEnum;
+import net.minidev.ovh.api.hosting.web.database.OvhStatusEnum;
 import net.minidev.ovh.api.hosting.web.database.OvhVersionEnum;
 
 /**
  * Database
  */
 public class OvhDatabase {
-	/**
-	 * Mode of your database
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhModeEnum mode;
-
-	/**
-	 * URL for the graphical user interface
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String guiURL;
-
 	/**
 	 * Your database server name
 	 *
@@ -38,6 +25,34 @@ public class OvhDatabase {
 	 * canBeNull && readOnly
 	 */
 	public Date lastCheck;
+
+	/**
+	 * Type of your database
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhDatabaseTypeEnum type;
+
+	/**
+	 * Database version following the database type
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhVersionEnum version;
+
+	/**
+	 * Mode of your database
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhModeEnum mode;
+
+	/**
+	 * URL for the graphical user interface
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String guiURL;
 
 	/**
 	 * The port on where to contact this database
@@ -75,23 +90,23 @@ public class OvhDatabase {
 	public OvhStateEnum state;
 
 	/**
-	 * Type of your database
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhDatabaseTypeEnum type;
-
-	/**
-	 * Database version following the database type
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhVersionEnum version;
-
-	/**
 	 * Database user name
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String user;
+
+	/**
+	 * The task ID working on this database
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long taskId;
+
+	/**
+	 * The database status
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhStatusEnum status;
 }
