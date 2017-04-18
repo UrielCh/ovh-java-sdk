@@ -35,7 +35,7 @@ public class ApiOvhUtils {
 			return mapper.readValue(in, mapTo);
 		} catch (Exception e) {
 			log.error("Can not convert:{} to {}", in, mapTo, e);
-			throw new OVHServiceException("local", "conversion Error to " + mapTo);
+			throw new OvhServiceException("local", "conversion Error to " + mapTo);
 		}
 	}
 
@@ -44,7 +44,7 @@ public class ApiOvhUtils {
 			return mapper.readValue(in, mapTo);
 		} catch (Exception e) {
 			log.error("Can not convert:{} to {}", in, mapTo, e);
-			throw new OVHServiceException("local", "conversion Error to " + mapTo);
+			throw new OvhServiceException("local", "conversion Error to " + mapTo);
 		}
 	}
 

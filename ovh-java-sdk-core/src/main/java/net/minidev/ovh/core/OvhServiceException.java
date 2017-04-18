@@ -2,12 +2,12 @@ package net.minidev.ovh.core;
 
 import java.io.IOException;
 
-public class OVHServiceException extends IOException {
+public class OvhServiceException extends IOException {
 	private static final long serialVersionUID = 1L;
 	public final String service;
 	public final String message;
 	
-	public OVHServiceException(String service, String message) {
+	public OvhServiceException(String service, String message) {
 		super("Service " + service + ": This service is expired");
 		this.service = service;
 		this.message = message;
