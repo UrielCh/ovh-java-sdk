@@ -3,6 +3,7 @@
 */.classpath
 */.project
 */.settings
+ovh-java-sdk/bim
 target/
 .classpath
 .project
