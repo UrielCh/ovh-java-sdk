@@ -19,6 +19,13 @@ public class OvhIp {
 	public OvhSslConfigurationEnum sslConfiguration;
 
 	/**
+	 * The metrics token associated with your IP load balancing
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String metricsToken;
+
+	/**
 	 * Location where your service is
 	 *
 	 * canBeNull && readOnly

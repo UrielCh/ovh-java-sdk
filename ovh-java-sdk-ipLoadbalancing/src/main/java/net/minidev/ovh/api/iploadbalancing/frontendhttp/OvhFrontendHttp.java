@@ -26,6 +26,13 @@ public class OvhFrontendHttp {
 	public String[] dedicatedIpfo;
 
 	/**
+	 * Id of your frontend
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long frontendId;
+
+	/**
 	 * SSL deciphering
 	 *
 	 * canBeNull && readOnly
@@ -73,13 +80,6 @@ public class OvhFrontendHttp {
 	 * canBeNull && readOnly
 	 */
 	public Boolean hsts;
-
-	/**
-	 * Id of your frontend
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long id;
 
 	/**
 	 * Default HTTP Farm of your frontend

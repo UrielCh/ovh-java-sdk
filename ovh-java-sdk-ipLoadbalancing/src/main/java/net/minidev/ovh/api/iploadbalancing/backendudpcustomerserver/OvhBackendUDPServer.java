@@ -39,7 +39,7 @@ public class OvhBackendUDPServer {
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long id;
+	public Long serverId;
 
 	/**
 	 * Status attached to your server

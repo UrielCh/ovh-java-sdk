@@ -28,6 +28,13 @@ public class OvhOfficeTask {
 	public Date finishDate;
 
 	/**
+	 * Task's unique identifier
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long id;
+
+	/**
 	 * Task state
 	 *
 	 * canBeNull && readOnly

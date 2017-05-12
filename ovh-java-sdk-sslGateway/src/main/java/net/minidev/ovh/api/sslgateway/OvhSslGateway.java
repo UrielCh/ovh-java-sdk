@@ -5,6 +5,13 @@ package net.minidev.ovh.api.sslgateway;
  */
 public class OvhSslGateway {
 	/**
+	 * The metrics token associated with your SSL Gateway
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String metricsToken;
+
+	/**
 	 * Custom name of your SSL Gateway
 	 *
 	 * canBeNull && readOnly

@@ -21,13 +21,6 @@ public class OvhDedicatedHorizon {
 	public String publicUrl;
 
 	/**
-	 * Current state of your Dedicated Horizon
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhStateEnum state;
-
-	/**
 	 * Your Horizon Private Cloud
 	 *
 	 * canBeNull && readOnly
@@ -35,11 +28,11 @@ public class OvhDedicatedHorizon {
 	public String privateCloudName;
 
 	/**
-	 * Domain of your Dedicated Horizon
+	 * Current state of your Dedicated Horizon
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String serviceName;
+	public OvhStateEnum state;
 
 	/**
 	 * Get the number of available public IPs

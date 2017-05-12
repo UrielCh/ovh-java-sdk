@@ -15,6 +15,7 @@ import net.minidev.ovh.api.hosting.web.OvhCapabilities;
 import net.minidev.ovh.api.hosting.web.OvhCdn;
 import net.minidev.ovh.api.hosting.web.OvhCron;
 import net.minidev.ovh.api.hosting.web.OvhDatabase;
+import net.minidev.ovh.api.hosting.web.OvhDatabaseDump;
 import net.minidev.ovh.api.hosting.web.OvhDump;
 import net.minidev.ovh.api.hosting.web.OvhEmail;
 import net.minidev.ovh.api.hosting.web.OvhExtrasqlperso;
@@ -42,10 +43,10 @@ import net.minidev.ovh.api.hosting.web.database.OvhAvailableVersionStruct;
 import net.minidev.ovh.api.hosting.web.database.OvhCreationDatabaseCapabilities;
 import net.minidev.ovh.api.hosting.web.database.OvhDatabaseCapabilitiesTypeEnum;
 import net.minidev.ovh.api.hosting.web.database.OvhDatabaseTypeEnum;
-import net.minidev.ovh.api.hosting.web.database.OvhDumpDateEnum;
 import net.minidev.ovh.api.hosting.web.database.OvhExtraSqlQuotaEnum;
 import net.minidev.ovh.api.hosting.web.database.OvhModeEnum;
 import net.minidev.ovh.api.hosting.web.database.OvhVersionEnum;
+import net.minidev.ovh.api.hosting.web.database.dump.OvhDateEnum;
 import net.minidev.ovh.api.hosting.web.mail.OvhActionEnum;
 import net.minidev.ovh.api.hosting.web.mail.OvhBounce;
 import net.minidev.ovh.api.hosting.web.mail.OvhVolumeHistory;
@@ -712,6 +713,55 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	private static TypeReference<ArrayList<OvhCreationDatabaseCapabilities>> t8 = new TypeReference<ArrayList<OvhCreationDatabaseCapabilities>>() {};
 
 	/**
+	 * Dumps linked to your hosting
+	 *
+	 * REST: GET /hosting/web/{serviceName}/dump
+	 * @param creationDate [required] Filter the value of creationDate property (like)
+	 * @param databaseName [required] Filter the value of databaseName property (like)
+	 * @param orphan [required] Filter the value of orphan property (like)
+	 * @param deletionDate [required] Filter the value of deletionDate property (like)
+	 * @param serviceName [required] The internal name of your hosting
+	 */
+	public ArrayList<Long> serviceName_dump_GET(String serviceName, Date creationDate, String databaseName, Date deletionDate, Boolean orphan) throws IOException {
+		String qPath = "/hosting/web/{serviceName}/dump";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "creationDate", creationDate);
+		query(sb, "databaseName", databaseName);
+		query(sb, "deletionDate", deletionDate);
+		query(sb, "orphan", orphan);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t5);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /hosting/web/{serviceName}/dump/{id}
+	 * @param serviceName [required] The internal name of your hosting
+	 * @param id [required] Dump id
+	 */
+	public OvhDump serviceName_dump_id_GET(String serviceName, Long id) throws IOException {
+		String qPath = "/hosting/web/{serviceName}/dump/{id}";
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhDump.class);
+	}
+
+	/**
+	 * Delete dump before expiration date
+	 *
+	 * REST: DELETE /hosting/web/{serviceName}/dump/{id}
+	 * @param serviceName [required] The internal name of your hosting
+	 * @param id [required] Dump id
+	 */
+	public OvhTask serviceName_dump_id_DELETE(String serviceName, Long id) throws IOException {
+		String qPath = "/hosting/web/{serviceName}/dump/{id}";
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
 	 * Allows you to boost your offer.
 	 *
 	 * REST: POST /hosting/web/{serviceName}/requestBoost
@@ -1205,7 +1255,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param name [required] Database name (like mydb.mysql.db or mydb.postgres.db)
 	 */
-	public ArrayList<Long> serviceName_database_name_dump_GET(String serviceName, String name, Date creationDate, Date deletionDate, OvhDumpDateEnum type) throws IOException {
+	public ArrayList<Long> serviceName_database_name_dump_GET(String serviceName, String name, Date creationDate, Date deletionDate, OvhDateEnum type) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/database/{name}/dump";
 		StringBuilder sb = path(qPath, serviceName, name);
 		query(sb, "creationDate", creationDate);
@@ -1224,7 +1274,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param name [required] Database name (like mydb.mysql.db or mydb.postgres.db)
 	 */
-	public OvhTask serviceName_database_name_dump_POST(String serviceName, String name, OvhDumpDateEnum date, Boolean sendEmail) throws IOException {
+	public OvhTask serviceName_database_name_dump_POST(String serviceName, String name, OvhDateEnum date, Boolean sendEmail) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/database/{name}/dump";
 		StringBuilder sb = path(qPath, serviceName, name);
 		HashMap<String, Object>o = new HashMap<String, Object>();
@@ -1242,11 +1292,11 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 * @param name [required] Database name (like mydb.mysql.db or mydb.postgres.db)
 	 * @param id [required] Dump id
 	 */
-	public OvhDump serviceName_database_name_dump_id_GET(String serviceName, String name, Long id) throws IOException {
+	public OvhDatabaseDump serviceName_database_name_dump_id_GET(String serviceName, String name, Long id) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/database/{name}/dump/{id}";
 		StringBuilder sb = path(qPath, serviceName, name, id);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhDump.class);
+		return convertTo(resp, OvhDatabaseDump.class);
 	}
 
 	/**
@@ -1298,75 +1348,6 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	}
 
 	/**
-	 * Dump available for your databases
-	 *
-	 * REST: GET /hosting/web/{serviceName}/database/{name}/dumps
-	 * @param creationDate [required] Filter the value of creationDate property (like)
-	 * @param type [required] Filter the value of type property (=)
-	 * @param deletionDate [required] Filter the value of deletionDate property (like)
-	 * @param serviceName [required] The internal name of your hosting
-	 * @param name [required] Database name (like mydb.mysql.db or mydb.postgres.db)
-	 * @deprecated
-	 */
-	public ArrayList<Long> serviceName_database_name_dumps_GET(String serviceName, String name, Date creationDate, Date deletionDate, OvhDumpDateEnum type) throws IOException {
-		String qPath = "/hosting/web/{serviceName}/database/{name}/dumps";
-		StringBuilder sb = path(qPath, serviceName, name);
-		query(sb, "creationDate", creationDate);
-		query(sb, "deletionDate", deletionDate);
-		query(sb, "type", type);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t5);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /hosting/web/{serviceName}/database/{name}/dumps/{id}
-	 * @param serviceName [required] The internal name of your hosting
-	 * @param name [required] Database name (like mydb.mysql.db or mydb.postgres.db)
-	 * @param id [required] Dump id
-	 * @deprecated
-	 */
-	public OvhDump serviceName_database_name_dumps_id_GET(String serviceName, String name, Long id) throws IOException {
-		String qPath = "/hosting/web/{serviceName}/database/{name}/dumps/{id}";
-		StringBuilder sb = path(qPath, serviceName, name, id);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhDump.class);
-	}
-
-	/**
-	 * Delete dump before expiration date
-	 *
-	 * REST: DELETE /hosting/web/{serviceName}/database/{name}/dumps/{id}
-	 * @param serviceName [required] The internal name of your hosting
-	 * @param name [required] Database name (like mydb.mysql.db or mydb.postgres.db)
-	 * @param id [required] Dump id
-	 * @deprecated
-	 */
-	public OvhTask serviceName_database_name_dumps_id_DELETE(String serviceName, String name, Long id) throws IOException {
-		String qPath = "/hosting/web/{serviceName}/database/{name}/dumps/{id}";
-		StringBuilder sb = path(qPath, serviceName, name, id);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Request the restore from this dump
-	 *
-	 * REST: POST /hosting/web/{serviceName}/database/{name}/dumps/{id}/restore
-	 * @param serviceName [required] The internal name of your hosting
-	 * @param name [required] Database name (like mydb.mysql.db or mydb.postgres.db)
-	 * @param id [required] Dump id
-	 * @deprecated
-	 */
-	public OvhTask serviceName_database_name_dumps_id_restore_POST(String serviceName, String name, Long id) throws IOException {
-		String qPath = "/hosting/web/{serviceName}/database/{name}/dumps/{id}/restore";
-		StringBuilder sb = path(qPath, serviceName, name, id);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
 	 * Request a password change
 	 *
 	 * REST: POST /hosting/web/{serviceName}/database/{name}/changePassword
@@ -1392,7 +1373,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 * @param serviceName [required] The internal name of your hosting
 	 * @param name [required] Database name (like mydb.mysql.db or mydb.postgres.db)
 	 */
-	public OvhTask serviceName_database_name_restore_POST(String serviceName, String name, OvhDumpDateEnum date, Boolean sendEmail) throws IOException {
+	public OvhTask serviceName_database_name_restore_POST(String serviceName, String name, OvhDateEnum date, Boolean sendEmail) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/database/{name}/restore";
 		StringBuilder sb = path(qPath, serviceName, name);
 		HashMap<String, Object>o = new HashMap<String, Object>();

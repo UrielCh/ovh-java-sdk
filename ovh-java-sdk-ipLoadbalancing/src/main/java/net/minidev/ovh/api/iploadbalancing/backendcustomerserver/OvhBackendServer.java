@@ -42,7 +42,7 @@ public class OvhBackendServer {
 	public Long backendId;
 
 	/**
-	 * Weight value (0 if null)
+	 * Weight value . 1 if null. 0 if not used in load balancing.
 	 *
 	 * canBeNull && readOnly
 	 */

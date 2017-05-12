@@ -13,6 +13,7 @@ import net.minidev.ovh.api.dedicated.server.OvhBackupFtp;
 import net.minidev.ovh.api.dedicated.server.OvhBackupFtpAcl;
 import net.minidev.ovh.api.dedicated.server.OvhBackupStorageOrderable;
 import net.minidev.ovh.api.dedicated.server.OvhBandwidthOrderable;
+import net.minidev.ovh.api.dedicated.server.OvhBandwidthvRackOrderable;
 import net.minidev.ovh.api.dedicated.server.OvhBootOptionEnum;
 import net.minidev.ovh.api.dedicated.server.OvhBootTypeEnum;
 import net.minidev.ovh.api.dedicated.server.OvhCacheTTLEnum;
@@ -1794,6 +1795,19 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhUsbKeyOrderableDetails.class);
+	}
+
+	/**
+	 * Get vRack bandwidth orderable with your server.
+	 *
+	 * REST: GET /dedicated/server/{serviceName}/orderable/bandwidthvRack
+	 * @param serviceName [required] The internal name of your dedicated server
+	 */
+	public OvhBandwidthvRackOrderable serviceName_orderable_bandwidthvRack_GET(String serviceName) throws IOException {
+		String qPath = "/dedicated/server/{serviceName}/orderable/bandwidthvRack";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhBandwidthvRackOrderable.class);
 	}
 
 	/**

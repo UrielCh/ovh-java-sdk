@@ -19,6 +19,13 @@ public class OvhOfficeUser {
 	public String lastName;
 
 	/**
+	 * Specify if the user is actually a user slot (configureme) or a real user
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean isVirtual;
+
+	/**
 	 * Licenses attributed to the user
 	 *
 	 * canBeNull && readOnly

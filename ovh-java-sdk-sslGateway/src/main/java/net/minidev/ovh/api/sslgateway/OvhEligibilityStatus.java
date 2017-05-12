@@ -5,6 +5,13 @@ package net.minidev.ovh.api.sslgateway;
  */
 public class OvhEligibilityStatus {
 	/**
+	 * Eligible IP(s) v6 for this domain
+	 *
+	 * canBeNull
+	 */
+	public String[] ip6s;
+
+	/**
 	 * Whether this domain is hosted by Ovh or not
 	 *
 	 * canBeNull

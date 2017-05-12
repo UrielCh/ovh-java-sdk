@@ -12,6 +12,8 @@ public enum OvhAvailableRamSizeEnum {
 	_2048("2048"),
 	@JsonProperty("256")
 	_256("256"),
+	@JsonProperty("4096")
+	_4096("4096"),
 	@JsonProperty("512")
 	_512("512");
 

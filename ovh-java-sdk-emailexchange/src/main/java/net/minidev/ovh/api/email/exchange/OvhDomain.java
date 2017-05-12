@@ -68,6 +68,8 @@ public class OvhDomain {
 	public String name;
 
 	/**
+	 * If true your dns mx configuration is valid
+	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean mxIsValid;

@@ -6,14 +6,20 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import net.minidev.ovh.api.complextype.OvhSafeKeyValue;
+import net.minidev.ovh.api.hosting.privatedatabase.OvhAvailableOrderCapacities;
 import net.minidev.ovh.api.hosting.privatedatabase.OvhAvailableVersionEnum;
 import net.minidev.ovh.api.hosting.privatedatabase.OvhConfiguration;
 import net.minidev.ovh.api.hosting.privatedatabase.OvhDatabase;
 import net.minidev.ovh.api.hosting.privatedatabase.OvhDatabaseDump;
+import net.minidev.ovh.api.hosting.privatedatabase.OvhDatabaseExtension;
 import net.minidev.ovh.api.hosting.privatedatabase.OvhDump;
 import net.minidev.ovh.api.hosting.privatedatabase.OvhGrant;
+import net.minidev.ovh.api.hosting.privatedatabase.OvhOfferEnum;
 import net.minidev.ovh.api.hosting.privatedatabase.OvhTask;
+import net.minidev.ovh.api.hosting.privatedatabase.OvhTemporaryLogsLink;
 import net.minidev.ovh.api.hosting.privatedatabase.OvhUser;
+import net.minidev.ovh.api.hosting.privatedatabase.OvhWhitelist;
+import net.minidev.ovh.api.hosting.privatedatabase.database.extension.OvhStatus;
 import net.minidev.ovh.api.hosting.privatedatabase.grant.OvhGrantEnum;
 import net.minidev.ovh.api.hosting.privatedatabase.task.OvhFunctionEnum;
 import net.minidev.ovh.api.hosting.privatedatabase.task.OvhStatusEnum;
@@ -206,6 +212,96 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 		addBody(o, "contactBilling", contactBilling);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Generate a temporary url to retrieve instance logs
+	 *
+	 * REST: POST /hosting/privateDatabase/{serviceName}/generateTemporaryLogsLink
+	 * @param serviceName [required] The internal name of your private database
+	 */
+	public OvhTemporaryLogsLink serviceName_generateTemporaryLogsLink_POST(String serviceName) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/generateTemporaryLogsLink";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTemporaryLogsLink.class);
+	}
+
+	/**
+	 * Whitelist allowed on your privatesql
+	 *
+	 * REST: GET /hosting/privateDatabase/{serviceName}/whitelist
+	 * @param serviceName [required] The internal name of your private database
+	 */
+	public ArrayList<String> serviceName_whitelist_GET(String serviceName) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/whitelist";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Create a new IP whitelist
+	 *
+	 * REST: POST /hosting/privateDatabase/{serviceName}/whitelist
+	 * @param ip [required] The IP to whitelist in your instance
+	 * @param name [required] Custom name for your Whitelisted IP
+	 * @param service [required] Authorize this IP to access service port
+	 * @param sftp [required] Authorize this IP to access sftp port
+	 * @param serviceName [required] The internal name of your private database
+	 */
+	public OvhTask serviceName_whitelist_POST(String serviceName, String ip, String name, Boolean service, Boolean sftp) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/whitelist";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "ip", ip);
+		addBody(o, "name", name);
+		addBody(o, "service", service);
+		addBody(o, "sftp", sftp);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /hosting/privateDatabase/{serviceName}/whitelist/{ip}
+	 * @param serviceName [required] The internal name of your private database
+	 * @param ip [required] The whitelisted IP in your instance
+	 */
+	public OvhWhitelist serviceName_whitelist_ip_GET(String serviceName, String ip) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/whitelist/{ip}";
+		StringBuilder sb = path(qPath, serviceName, ip);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhWhitelist.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /hosting/privateDatabase/{serviceName}/whitelist/{ip}
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your private database
+	 * @param ip [required] The whitelisted IP in your instance
+	 */
+	public void serviceName_whitelist_ip_PUT(String serviceName, String ip, OvhWhitelist body) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/whitelist/{ip}";
+		StringBuilder sb = path(qPath, serviceName, ip);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Delete ain IP whitelist
+	 *
+	 * REST: DELETE /hosting/privateDatabase/{serviceName}/whitelist/{ip}
+	 * @param serviceName [required] The internal name of your private database
+	 * @param ip [required] The whitelisted IP in your instance
+	 */
+	public OvhTask serviceName_whitelist_ip_DELETE(String serviceName, String ip) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/whitelist/{ip}";
+		StringBuilder sb = path(qPath, serviceName, ip);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
@@ -543,6 +639,69 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 	}
 
 	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /hosting/privateDatabase/{serviceName}/database/{databaseName}/extension/{extensionName}
+	 * @param serviceName [required] The internal name of your private database
+	 * @param databaseName [required] Database name
+	 * @param extensionName [required] Extension name
+	 */
+	public OvhDatabaseExtension serviceName_database_databaseName_extension_extensionName_GET(String serviceName, String databaseName, String extensionName) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/database/{databaseName}/extension/{extensionName}";
+		StringBuilder sb = path(qPath, serviceName, databaseName, extensionName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhDatabaseExtension.class);
+	}
+
+	/**
+	 * Enable an extension on a database
+	 *
+	 * REST: POST /hosting/privateDatabase/{serviceName}/database/{databaseName}/extension/{extensionName}/enable
+	 * @param serviceName [required] The internal name of your private database
+	 * @param databaseName [required] Database name
+	 * @param extensionName [required] Extension name
+	 */
+	public OvhTask serviceName_database_databaseName_extension_extensionName_enable_POST(String serviceName, String databaseName, String extensionName) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/database/{databaseName}/extension/{extensionName}/enable";
+		StringBuilder sb = path(qPath, serviceName, databaseName, extensionName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Disable an extension from a database
+	 *
+	 * REST: POST /hosting/privateDatabase/{serviceName}/database/{databaseName}/extension/{extensionName}/disable
+	 * @param serviceName [required] The internal name of your private database
+	 * @param databaseName [required] Database name
+	 * @param extensionName [required] Extension name
+	 */
+	public OvhTask serviceName_database_databaseName_extension_extensionName_disable_POST(String serviceName, String databaseName, String extensionName) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/database/{databaseName}/extension/{extensionName}/disable";
+		StringBuilder sb = path(qPath, serviceName, databaseName, extensionName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Extensions linked to your database
+	 *
+	 * REST: GET /hosting/privateDatabase/{serviceName}/database/{databaseName}/extension
+	 * @param status [required] Filter the value of status property (=)
+	 * @param extensionName [required] Filter the value of extensionName property (like)
+	 * @param serviceName [required] The internal name of your private database
+	 * @param databaseName [required] Database name
+	 */
+	public ArrayList<String> serviceName_database_databaseName_extension_GET(String serviceName, String databaseName, String extensionName, OvhStatus status) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/database/{databaseName}/extension";
+		StringBuilder sb = path(qPath, serviceName, databaseName);
+		query(sb, "extensionName", extensionName);
+		query(sb, "status", status);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
 	 * Dump available for your databases
 	 *
 	 * REST: GET /hosting/privateDatabase/{serviceName}/database/{databaseName}/dump
@@ -717,5 +876,19 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Get available order capacitie
+	 *
+	 * REST: GET /hosting/privateDatabase/availableOrderCapacities
+	 * @param offer [required] Offer available order capacities to choose
+	 */
+	public OvhAvailableOrderCapacities availableOrderCapacities_GET(OvhOfferEnum offer) throws IOException {
+		String qPath = "/hosting/privateDatabase/availableOrderCapacities";
+		StringBuilder sb = path(qPath);
+		query(sb, "offer", offer);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhAvailableOrderCapacities.class);
 	}
 }

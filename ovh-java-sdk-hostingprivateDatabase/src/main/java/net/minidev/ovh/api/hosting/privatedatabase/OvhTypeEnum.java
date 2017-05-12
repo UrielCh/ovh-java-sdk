@@ -4,6 +4,7 @@ package net.minidev.ovh.api.hosting.privatedatabase;
  * Private database type
  */
 public enum OvhTypeEnum {
+	mariadb("mariadb"),
 	mysql("mysql"),
 	postgresql("postgresql");
 

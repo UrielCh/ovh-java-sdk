@@ -30,6 +30,8 @@ import net.minidev.ovh.api.billing.OvhPaypal;
 import net.minidev.ovh.api.billing.OvhRefund;
 import net.minidev.ovh.api.billing.OvhRefundDetail;
 import net.minidev.ovh.api.billing.OvhReusablePaymentMeanEnum;
+import net.minidev.ovh.api.billing.OvhSlaOperation;
+import net.minidev.ovh.api.billing.OvhSlaOperationService;
 import net.minidev.ovh.api.billing.order.OvhOrderStatusEnum;
 import net.minidev.ovh.api.billing.order.OvhPaymentMeans;
 import net.minidev.ovh.api.billing.order.OvhRegisteredPaymentMean;
@@ -66,8 +68,6 @@ import net.minidev.ovh.api.nichandle.OvhLegalFormEnum;
 import net.minidev.ovh.api.nichandle.OvhNicAutorenewInfos;
 import net.minidev.ovh.api.nichandle.OvhNichandle;
 import net.minidev.ovh.api.nichandle.OvhOvhCompanyEnum;
-import net.minidev.ovh.api.nichandle.OvhSlaApply;
-import net.minidev.ovh.api.nichandle.OvhSlaService;
 import net.minidev.ovh.api.nichandle.OvhSshKey;
 import net.minidev.ovh.api.nichandle.OvhSubAccount;
 import net.minidev.ovh.api.nichandle.OvhSubAccountConsumerKey;
@@ -362,11 +362,11 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * REST: GET /me/sla/{id}
 	 * @param id [required] Id of the object
 	 */
-	public OvhSlaApply sla_id_GET(Long id) throws IOException {
+	public OvhSlaOperation sla_id_GET(Long id) throws IOException {
 		String qPath = "/me/sla/{id}";
 		StringBuilder sb = path(qPath, id);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhSlaApply.class);
+		return convertTo(resp, OvhSlaOperation.class);
 	}
 
 	/**
@@ -375,13 +375,26 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * REST: GET /me/sla/{id}/services
 	 * @param id [required] Id of the object
 	 */
-	public ArrayList<OvhSlaService> sla_id_services_GET(Long id) throws IOException {
+	public ArrayList<OvhSlaOperationService> sla_id_services_GET(Long id) throws IOException {
 		String qPath = "/me/sla/{id}/services";
 		StringBuilder sb = path(qPath, id);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
-	private static TypeReference<ArrayList<OvhSlaService>> t3 = new TypeReference<ArrayList<OvhSlaService>>() {};
+	private static TypeReference<ArrayList<OvhSlaOperationService>> t3 = new TypeReference<ArrayList<OvhSlaOperationService>>() {};
+
+	/**
+	 * Get the status request of this SLA
+	 *
+	 * REST: GET /me/sla/{id}/status
+	 * @param id [required] Id of the object
+	 */
+	public String sla_id_status_GET(Long id) throws IOException {
+		String qPath = "/me/sla/{id}/status";
+		StringBuilder sb = path(qPath, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
 
 	/**
 	 * List of sub-accounts

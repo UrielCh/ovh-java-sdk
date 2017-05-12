@@ -22,6 +22,10 @@ public enum OvhFunctionEnum {
 	database_dump("database/dump"),
 	@JsonProperty("database/dump/delete")
 	database_dump_delete("database/dump/delete"),
+	@JsonProperty("database/extension/create")
+	database_extension_create("database/extension/create"),
+	@JsonProperty("database/extension/delete")
+	database_extension_delete("database/extension/delete"),
 	@JsonProperty("database/import")
 	database_import("database/import"),
 	@JsonProperty("database/restore")

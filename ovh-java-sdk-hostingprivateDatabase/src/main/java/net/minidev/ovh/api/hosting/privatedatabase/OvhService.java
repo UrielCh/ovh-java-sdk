@@ -106,6 +106,13 @@ public class OvhService {
 	public String guiURL;
 
 	/**
+	 * Type of the private database offer
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhOfferEnum offer;
+
+	/**
 	 * Private database hostname
 	 *
 	 * canBeNull && readOnly

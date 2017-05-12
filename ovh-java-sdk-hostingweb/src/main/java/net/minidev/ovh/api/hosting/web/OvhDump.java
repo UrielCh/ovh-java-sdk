@@ -1,13 +1,20 @@
 package net.minidev.ovh.api.hosting.web;
 
 import java.util.Date;
-import net.minidev.ovh.api.hosting.web.database.OvhDumpDateEnum;
+import net.minidev.ovh.api.hosting.web.database.dump.OvhDateEnum;
 import net.minidev.ovh.api.hosting.web.database.dump.OvhStatusEnum;
 
 /**
  * Dump
  */
 public class OvhDump {
+	/**
+	 * Source database name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String databaseName;
+
 	/**
 	 * Automatic deletion date of the dump
 	 *
@@ -23,6 +30,13 @@ public class OvhDump {
 	public Long id;
 
 	/**
+	 * If source database was deleted
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean orphan;
+
+	/**
 	 * Creation date of the dump
 	 *
 	 * canBeNull && readOnly
@@ -34,7 +48,7 @@ public class OvhDump {
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhDumpDateEnum type;
+	public OvhDateEnum type;
 
 	/**
 	 * The task ID working on this dump

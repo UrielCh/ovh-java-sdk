@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.minidev</groupId>
 	<artifactId>ovh-java-sdk-pom</artifactId>
-	<version>0.9.3</version>
+	<version>0.9.4</version>
 	<packaging>pom</packaging>
 	<name>OVH SDK for Java</name>
 	<description>OVH ...</description>
@@ -258,6 +258,7 @@
 		<module>ovh-java-sdk-ssl</module>
 		<module>ovh-java-sdk-sslGateway</module>
 		<module>ovh-java-sdk-stackmis</module>
+		<module>ovh-java-sdk-status</module>
 		<module>ovh-java-sdk-store</module>
 		<module>ovh-java-sdk-supplymondialRelay</module>
 		<module>ovh-java-sdk-support</module>

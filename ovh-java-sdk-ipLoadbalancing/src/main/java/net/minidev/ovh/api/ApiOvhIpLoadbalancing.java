@@ -13,6 +13,7 @@ import net.minidev.ovh.api.iploadbalancing.OvhCustomerServerStatusEnum;
 import net.minidev.ovh.api.iploadbalancing.OvhDefinedBackend;
 import net.minidev.ovh.api.iploadbalancing.OvhDefinedFrontend;
 import net.minidev.ovh.api.iploadbalancing.OvhDefinedRoute;
+import net.minidev.ovh.api.iploadbalancing.OvhFarmAvailableProbe;
 import net.minidev.ovh.api.iploadbalancing.OvhInstancesState;
 import net.minidev.ovh.api.iploadbalancing.OvhIp;
 import net.minidev.ovh.api.iploadbalancing.OvhProbeTypeEnum;
@@ -170,7 +171,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * @param httpHeader [required] Add header to your frontend. Useful variables admitted : %ci <=> client_ip, %cp <=> client_port
 	 * @param allowedSource [required] Restrict iplb access to these ip block. No restriction if null
 	 * @param hsts [required] HTTP Strict Transport Security. Set to 'false' if null
-	 * @param port [required] Port(s) attached to your frontend. A numerical port, a dash-delimited ports range or comma-delimited ports
+	 * @param port [required] Port(s) attached to your frontend. Supports single port (numerical value), range (2 dash-delimited increasing ports) and comma-separated list of 'single port' and/or 'range'. Each port must be in the [1;65535] range.
 	 * @param redirectLocation [required] HTTP redirection (Ex : http://www.ovh.com)
 	 * @param defaultBackendId [required] Default Backend of your frontend
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -414,7 +415,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * @param proxyProtocolVersion [required] Enforce use of the PROXY protocol version over any connection established to this server (disabled if null)
 	 * @param serverId [required] Id of your server
 	 * @param chain [required] Certificate chain. Allow server certificate verification (Avoid man-in-the-middle attacks)
-	 * @param weight [required] Set weight on that server [0..255]. 0 if null
+	 * @param weight [required] Set weight on that server [1..256]. 0 if not used in load balancing. 1 if null.
 	 * @param backup [required] Set server as backup. Set to 'false' if null
 	 * @param probe [required] Enable/disable probe. Set to 'false' if null
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -570,7 +571,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * @param httpHeader [required] Add header to your frontend. Useful variables admitted : %ci <=> client_ip, %cp <=> client_port
 	 * @param allowedSource [required] Restrict IP Load Balancing access to these ip block. No restriction if null
 	 * @param hsts [required] HTTP Strict Transport Security. Set to 'false' if null
-	 * @param port [required] Listening port(s) of your server. Supported format: '\d+(,\d+)+' or '\d+-\d+'.
+	 * @param port [required] Port(s) attached to your frontend. Supports single port (numerical value), range (2 dash-delimited increasing ports) and comma-separated list of 'single port' and/or 'range'. Each port must be in the [1;65535] range.
 	 * @param redirectLocation [required] HTTP redirection (Ex : http://www.ovh.com)
 	 * @param defaultFarmId [required] Default HTTP Farm of your frontend
 	 * @param displayName [required] Human readable name for your frontend, this field is for you
@@ -950,7 +951,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * @param port [required] Port attached to your server ([1..65535]). Inherited from farm if null
 	 * @param proxyProtocolVersion [required] Disabled if null. Send PROXY protocol header. Requires a compatible server.
 	 * @param chain [required] Certificate chain. Allow server certificate verification (Avoid man-in-the-middle attacks)
-	 * @param weight [required] Server priority ([0..255]. 0 if null. Servers with higher weight get more requests.
+	 * @param weight [required] Set weight on that server [1..256]. 0 if not used in load balancing. 1 if null. Servers with higher weight get more requests.
 	 * @param address [required] Address of your server
 	 * @param backup [required] Set server as backup. Set to 'false' if null
 	 * @param probe [required] Enable/disable probe. Set to 'false' if null
@@ -1110,7 +1111,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * @param defaultFarmId [required] Default UDP Farm of your frontend
 	 * @param zone [required] Zone of your frontend. You can check what zone are available on this API section : /ipLoadbalancing/availableZones
 	 * @param dedicatedIpfo [required] Only attach frontend on these ip. No restriction if null
-	 * @param port [required] Listening port(s) of your server. Supported format: '\d+(,\d+)+' or '\d+-\d+'.
+	 * @param port [required] Port(s) attached to your frontend. Supports single port (numerical value), range (2 dash-delimited increasing ports) and comma-separated list of 'single port' and/or 'range'. Each port must be in the [1;65535] range.
 	 * @param displayName [required] Human readable name for your frontend, this field is for you
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 *
@@ -1489,6 +1490,22 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	private static TypeReference<ArrayList<net.minidev.ovh.api.ip.OvhIp>> t6 = new TypeReference<ArrayList<net.minidev.ovh.api.ip.OvhIp>>() {};
 
 	/**
+	 * Available farm probes for health checks
+	 *
+	 * REST: GET /ipLoadbalancing/{serviceName}/availableFarmProbes
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 *
+	 * API beta
+	 */
+	public ArrayList<OvhFarmAvailableProbe> serviceName_availableFarmProbes_GET(String serviceName) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/availableFarmProbes";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t7);
+	}
+	private static TypeReference<ArrayList<OvhFarmAvailableProbe>> t7 = new TypeReference<ArrayList<OvhFarmAvailableProbe>>() {};
+
+	/**
 	 * Available farm types
 	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/availableFarmType
@@ -1607,9 +1624,9 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		String qPath = "/ipLoadbalancing/{serviceName}/definedFrontends";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t7);
+		return convertTo(resp, t8);
 	}
-	private static TypeReference<ArrayList<OvhDefinedFrontend>> t7 = new TypeReference<ArrayList<OvhDefinedFrontend>>() {};
+	private static TypeReference<ArrayList<OvhDefinedFrontend>> t8 = new TypeReference<ArrayList<OvhDefinedFrontend>>() {};
 
 	/**
 	 * Confirm termination of your service
@@ -1664,7 +1681,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * @param zone [required] Zone of your frontend. You can check what zone are available on this API section : /ipLoadbalancing/availableZones
 	 * @param dedicatedIpfo [required] Only attach frontend on these ip. No restriction if null
 	 * @param allowedSource [required] Restrict IP Load Balancing access to these ip block. No restriction if null
-	 * @param port [required] Listening port(s) of your server. Supported format: '\d+(,\d+)+' or '\d+-\d+'.
+	 * @param port [required] Port(s) attached to your frontend. Supports single port (numerical value), range (2 dash-delimited increasing ports) and comma-separated list of 'single port' and/or 'range'. Each port must be in the [1;65535] range.
 	 * @param defaultFarmId [required] Default TCP Farm of your frontend
 	 * @param displayName [required] Human readable name for your frontend, this field is for you
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -2037,7 +2054,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * @param port [required] Port attached to your server ([1..65535]). Inherited from farm if null
 	 * @param proxyProtocolVersion [required] Disabled if null. Send PROXY protocol header. Requires a compatible server.
 	 * @param chain [required] Certificate chain. Allow server certificate verification (Avoid man-in-the-middle attacks)
-	 * @param weight [required] Server priority ([0..255]. 0 if null. Servers with higher weight get more requests.
+	 * @param weight [required] Set weight on that server [1..256]. 0 if not used in load balancing. 1 if null. Servers with higher weight get more requests.
 	 * @param address [required] Address of your server
 	 * @param backup [required] Set server as backup. Set to 'false' if null
 	 * @param probe [required] Enable/disable probe. Set to 'false' if null
@@ -2160,9 +2177,9 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		String qPath = "/ipLoadbalancing/{serviceName}/definedRoutes";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t8);
+		return convertTo(resp, t9);
 	}
-	private static TypeReference<ArrayList<OvhDefinedRoute>> t8 = new TypeReference<ArrayList<OvhDefinedRoute>>() {};
+	private static TypeReference<ArrayList<OvhDefinedRoute>> t9 = new TypeReference<ArrayList<OvhDefinedRoute>>() {};
 
 	/**
 	 * List of defined farms, and whether they are HTTP, TCP or UDP
@@ -2176,9 +2193,9 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		String qPath = "/ipLoadbalancing/{serviceName}/definedFarms";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t9);
+		return convertTo(resp, t10);
 	}
-	private static TypeReference<ArrayList<OvhDefinedBackend>> t9 = new TypeReference<ArrayList<OvhDefinedBackend>>() {};
+	private static TypeReference<ArrayList<OvhDefinedBackend>> t10 = new TypeReference<ArrayList<OvhDefinedBackend>>() {};
 
 	/**
 	 * Available frontend type

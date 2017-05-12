@@ -26,6 +26,8 @@ import net.minidev.ovh.api.telephony.OvhConferenceHistory;
 import net.minidev.ovh.api.telephony.OvhConferenceInformations;
 import net.minidev.ovh.api.telephony.OvhConferenceParticipants;
 import net.minidev.ovh.api.telephony.OvhConferenceProperties;
+import net.minidev.ovh.api.telephony.OvhConferenceWebAccess;
+import net.minidev.ovh.api.telephony.OvhConferenceWebAccessTypeEnum;
 import net.minidev.ovh.api.telephony.OvhContactsExportFormatsEnum;
 import net.minidev.ovh.api.telephony.OvhDatetimeAndIpvalue;
 import net.minidev.ovh.api.telephony.OvhDdi;
@@ -3559,13 +3561,16 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Ask to change the portability date
 	 *
 	 * REST: POST /telephony/{billingAccount}/portability/{id}/changeDate
+	 * @param date [required] The proposed portability due date
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param id [required] The ID of the portability
 	 */
-	public void billingAccount_portability_id_changeDate_POST(String billingAccount, Long id) throws IOException {
+	public void billingAccount_portability_id_changeDate_POST(String billingAccount, Long id, Date date) throws IOException {
 		String qPath = "/telephony/{billingAccount}/portability/{id}/changeDate";
 		StringBuilder sb = path(qPath, billingAccount, id);
-		exec(qPath, "POST", sb.toString(), null);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "date", date);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -3586,13 +3591,16 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * Ask to cancel the portability
 	 *
 	 * REST: POST /telephony/{billingAccount}/portability/{id}/cancel
+	 * @param reason [required] The cancellation reason
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param id [required] The ID of the portability
 	 */
-	public void billingAccount_portability_id_cancel_POST(String billingAccount, Long id) throws IOException {
+	public void billingAccount_portability_id_cancel_POST(String billingAccount, Long id, String reason) throws IOException {
 		String qPath = "/telephony/{billingAccount}/portability/{id}/cancel";
 		StringBuilder sb = path(qPath, billingAccount, id);
-		exec(qPath, "POST", sb.toString(), null);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "reason", reason);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -4131,6 +4139,79 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	}
 
 	/**
+	 * Lock the conference room
+	 *
+	 * REST: POST /telephony/{billingAccount}/conference/{serviceName}/lock
+	 * @param billingAccount [required] The name of your billingAccount
+	 * @param serviceName [required]
+	 */
+	public OvhTask billingAccount_conference_serviceName_lock_POST(String billingAccount, String serviceName) throws IOException {
+		String qPath = "/telephony/{billingAccount}/conference/{serviceName}/lock";
+		StringBuilder sb = path(qPath, billingAccount, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Change the sound played at the beginning of the conference
+	 *
+	 * REST: POST /telephony/{billingAccount}/conference/{serviceName}/announceUpload
+	 * @param documentId [required] ID of the /me/document file you want to import
+	 * @param billingAccount [required] The name of your billingAccount
+	 * @param serviceName [required]
+	 */
+	public OvhTask billingAccount_conference_serviceName_announceUpload_POST(String billingAccount, String serviceName, String documentId) throws IOException {
+		String qPath = "/telephony/{billingAccount}/conference/{serviceName}/announceUpload";
+		StringBuilder sb = path(qPath, billingAccount, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "documentId", documentId);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get realtime conference informations
+	 *
+	 * REST: GET /telephony/{billingAccount}/conference/{serviceName}/informations
+	 * @param billingAccount [required] The name of your billingAccount
+	 * @param serviceName [required]
+	 */
+	public OvhConferenceInformations billingAccount_conference_serviceName_informations_GET(String billingAccount, String serviceName) throws IOException {
+		String qPath = "/telephony/{billingAccount}/conference/{serviceName}/informations";
+		StringBuilder sb = path(qPath, billingAccount, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhConferenceInformations.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /telephony/{billingAccount}/conference/{serviceName}/settings
+	 * @param billingAccount [required] The name of your billingAccount
+	 * @param serviceName [required]
+	 */
+	public OvhConferenceProperties billingAccount_conference_serviceName_settings_GET(String billingAccount, String serviceName) throws IOException {
+		String qPath = "/telephony/{billingAccount}/conference/{serviceName}/settings";
+		StringBuilder sb = path(qPath, billingAccount, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhConferenceProperties.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /telephony/{billingAccount}/conference/{serviceName}/settings
+	 * @param body [required] New object properties
+	 * @param billingAccount [required] The name of your billingAccount
+	 * @param serviceName [required]
+	 */
+	public void billingAccount_conference_serviceName_settings_PUT(String billingAccount, String serviceName, OvhConferenceProperties body) throws IOException {
+		String qPath = "/telephony/{billingAccount}/conference/{serviceName}/settings";
+		StringBuilder sb = path(qPath, billingAccount, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
 	 * Current participants of the associate conference
 	 *
 	 * REST: GET /telephony/{billingAccount}/conference/{serviceName}/participants
@@ -4282,59 +4363,63 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	}
 
 	/**
-	 * Lock the conference room
+	 * List your conference web access
 	 *
-	 * REST: POST /telephony/{billingAccount}/conference/{serviceName}/lock
+	 * REST: GET /telephony/{billingAccount}/conference/{serviceName}/webAccess
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
-	public OvhTask billingAccount_conference_serviceName_lock_POST(String billingAccount, String serviceName) throws IOException {
-		String qPath = "/telephony/{billingAccount}/conference/{serviceName}/lock";
+	public ArrayList<Long> billingAccount_conference_serviceName_webAccess_GET(String billingAccount, String serviceName) throws IOException {
+		String qPath = "/telephony/{billingAccount}/conference/{serviceName}/webAccess";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
 	}
 
 	/**
-	 * Get realtime conference informations
+	 * Add a public web access to your conference
 	 *
-	 * REST: GET /telephony/{billingAccount}/conference/{serviceName}/informations
+	 * REST: POST /telephony/{billingAccount}/conference/{serviceName}/webAccess
+	 * @param type [required] The type of the conference web access : read or write
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
-	public OvhConferenceInformations billingAccount_conference_serviceName_informations_GET(String billingAccount, String serviceName) throws IOException {
-		String qPath = "/telephony/{billingAccount}/conference/{serviceName}/informations";
+	public OvhConferenceWebAccess billingAccount_conference_serviceName_webAccess_POST(String billingAccount, String serviceName, OvhConferenceWebAccessTypeEnum type) throws IOException {
+		String qPath = "/telephony/{billingAccount}/conference/{serviceName}/webAccess";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhConferenceInformations.class);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "type", type);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhConferenceWebAccess.class);
 	}
 
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /telephony/{billingAccount}/conference/{serviceName}/settings
+	 * REST: GET /telephony/{billingAccount}/conference/{serviceName}/webAccess/{id}
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
+	 * @param id [required] Id of the object
 	 */
-	public OvhConferenceProperties billingAccount_conference_serviceName_settings_GET(String billingAccount, String serviceName) throws IOException {
-		String qPath = "/telephony/{billingAccount}/conference/{serviceName}/settings";
-		StringBuilder sb = path(qPath, billingAccount, serviceName);
+	public OvhConferenceWebAccess billingAccount_conference_serviceName_webAccess_id_GET(String billingAccount, String serviceName, Long id) throws IOException {
+		String qPath = "/telephony/{billingAccount}/conference/{serviceName}/webAccess/{id}";
+		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhConferenceProperties.class);
+		return convertTo(resp, OvhConferenceWebAccess.class);
 	}
 
 	/**
-	 * Alter this object properties
+	 * Delete a public web access to your conference
 	 *
-	 * REST: PUT /telephony/{billingAccount}/conference/{serviceName}/settings
-	 * @param body [required] New object properties
+	 * REST: DELETE /telephony/{billingAccount}/conference/{serviceName}/webAccess/{id}
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
+	 * @param id [required] Id of the object
 	 */
-	public void billingAccount_conference_serviceName_settings_PUT(String billingAccount, String serviceName, OvhConferenceProperties body) throws IOException {
-		String qPath = "/telephony/{billingAccount}/conference/{serviceName}/settings";
-		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
+	public void billingAccount_conference_serviceName_webAccess_id_DELETE(String billingAccount, String serviceName, Long id) throws IOException {
+		String qPath = "/telephony/{billingAccount}/conference/{serviceName}/webAccess/{id}";
+		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**

@@ -49,6 +49,13 @@ public class OvhBillingAccount {
 	public OvhPrice securityDeposit;
 
 	/**
+	 * Hide called numbers in end-of-month call details CSV
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean hiddenExternalNumber;
+
+	/**
 	 * Name of the billing account
 	 *
 	 * canBeNull && readOnly

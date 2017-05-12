@@ -2,6 +2,7 @@ package net.minidev.ovh.api.iploadbalancing.backendtcpcustomerserver;
 
 import net.minidev.ovh.api.iploadbalancing.OvhBackendCustomerServerStatusEnum;
 import net.minidev.ovh.api.iploadbalancing.OvhProxyProtocolVersionEnum;
+import net.minidev.ovh.api.iploadbalancing.OvhServerState;
 
 /**
  * TCP Farm's Server
@@ -29,13 +30,6 @@ public class OvhBackendTCPServer {
 	public String address;
 
 	/**
-	 * Port attached to your server. Inherited from farm if null
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long port;
-
-	/**
 	 * Human readable name for your server, this field is for you
 	 *
 	 * canBeNull && readOnly
@@ -50,18 +44,11 @@ public class OvhBackendTCPServer {
 	public Long backendId;
 
 	/**
-	 * Weight of the server (0 if null). Servers with higher weight get more requests.
+	 * Weight value . 1 if null. 0 if not used in load balancing. Servers with higher weight get more requests.
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long weight;
-
-	/**
-	 * Id of your server
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long id;
 
 	/**
 	 * SSL ciphering. Probes will also be sent ciphered
@@ -69,6 +56,34 @@ public class OvhBackendTCPServer {
 	 * canBeNull && readOnly
 	 */
 	public Boolean ssl;
+
+	/**
+	 * Id of your server
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long serverId;
+
+	/**
+	 * Probe state. 'False' if null
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean probe;
+
+	/**
+	 * Server state
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhServerState[] serverState;
+
+	/**
+	 * Port attached to your server. Inherited from farm if null
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long port;
 
 	/**
 	 * Status attached to your server
@@ -83,11 +98,4 @@ public class OvhBackendTCPServer {
 	 * canBeNull && readOnly
 	 */
 	public OvhProxyProtocolVersionEnum proxyProtocolVersion;
-
-	/**
-	 * Probe state. 'False' if null
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean probe;
 }

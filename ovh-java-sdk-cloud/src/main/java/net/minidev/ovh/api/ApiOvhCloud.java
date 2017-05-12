@@ -1506,7 +1506,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 	 * @param serviceName [required] Project name
 	 * @param sshKeyId [required] SSH keypair id
 	 * @param userData [required] Configuration information or scripts to use upon launch
-	 * @param volumeId [required] Specify a volume id to boot on it
+	 * @param volumeId [required] Specify a volume id to boot from it
 	 */
 	public OvhInstanceDetail project_serviceName_instance_POST(String serviceName, String flavorId, String groupId, String imageId, Boolean monthlyBilling, String name, OvhNetworkParams[] networks, String region, String sshKeyId, String userData, String volumeId) throws IOException {
 		String qPath = "/cloud/project/{serviceName}/instance";
@@ -1856,7 +1856,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 	 * @param serviceName [required] Project name
 	 * @param sshKeyId [required] SSH keypair id
 	 * @param userData [required] Configuration information or scripts to use upon launch
-	 * @param volumeId [required] Specify a volume id to boot on it
+	 * @param volumeId [required] Specify a volume id to boot from it
 	 */
 	public ArrayList<OvhInstance> project_serviceName_instance_bulk_POST(String serviceName, String flavorId, String groupId, String imageId, Boolean monthlyBilling, String name, OvhNetworkBulkParams[] networks, Long number, String region, String sshKeyId, String userData, String volumeId) throws IOException {
 		String qPath = "/cloud/project/{serviceName}/instance/bulk";

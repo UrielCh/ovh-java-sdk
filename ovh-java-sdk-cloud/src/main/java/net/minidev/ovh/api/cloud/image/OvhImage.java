@@ -5,6 +5,13 @@ package net.minidev.ovh.api.cloud.image;
  */
 public class OvhImage {
 	/**
+	 * Image usable only for this type of flavor if not null
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String flavorType;
+
+	/**
 	 * Image visibility
 	 *
 	 * canBeNull && readOnly

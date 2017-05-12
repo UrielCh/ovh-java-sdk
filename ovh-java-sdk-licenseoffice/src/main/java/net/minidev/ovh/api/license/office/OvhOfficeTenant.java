@@ -1,5 +1,7 @@
 package net.minidev.ovh.api.license.office;
 
+import java.util.Date;
+
 /**
  * Office tenant
  */
@@ -52,6 +54,13 @@ public class OvhOfficeTenant {
 	 * canBeNull && readOnly
 	 */
 	public String displayName;
+
+	/**
+	 * Creation date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date creationDate;
 
 	/**
 	 * canBeNull && readOnly

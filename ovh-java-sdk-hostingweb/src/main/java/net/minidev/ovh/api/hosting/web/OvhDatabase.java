@@ -27,6 +27,13 @@ public class OvhDatabase {
 	public Date lastCheck;
 
 	/**
+	 * The number of available dumps associated to this database
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long dumps;
+
+	/**
 	 * Type of your database
 	 *
 	 * canBeNull && readOnly

@@ -2,6 +2,7 @@ package net.minidev.ovh.api.iploadbalancing.backendhttpcustomerserver;
 
 import net.minidev.ovh.api.iploadbalancing.OvhBackendCustomerServerStatusEnum;
 import net.minidev.ovh.api.iploadbalancing.OvhProxyProtocolVersionEnum;
+import net.minidev.ovh.api.iploadbalancing.OvhServerState;
 
 /**
  * HTTP Farm's Server
@@ -50,7 +51,7 @@ public class OvhBackendHTTPServer {
 	public Long backendId;
 
 	/**
-	 * Weight of the server (0 if null). Servers with higher weight get more requests.
+	 * Weight value . 1 if null. 0 if not used in load balancing. Servers with higher weight get more requests.
 	 *
 	 * canBeNull && readOnly
 	 */
@@ -64,6 +65,13 @@ public class OvhBackendHTTPServer {
 	public Boolean ssl;
 
 	/**
+	 * Id of your server
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long serverId;
+
+	/**
 	 * Probe state
 	 *
 	 * canBeNull && readOnly
@@ -71,18 +79,18 @@ public class OvhBackendHTTPServer {
 	public Boolean probe;
 
 	/**
+	 * Server state
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhServerState[] serverState;
+
+	/**
 	 * Port attached to your server. Inherited from farm if null
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long port;
-
-	/**
-	 * Id of your server
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long id;
 
 	/**
 	 * Status attached to your server

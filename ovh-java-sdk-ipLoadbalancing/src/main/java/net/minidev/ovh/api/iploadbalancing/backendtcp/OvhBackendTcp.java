@@ -48,7 +48,7 @@ public class OvhBackendTcp {
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long id;
+	public Long farmId;
 
 	/**
 	 * Probe used to determine if a backend is alive and can handle requests. Defaults to tcp on the same port as the farm

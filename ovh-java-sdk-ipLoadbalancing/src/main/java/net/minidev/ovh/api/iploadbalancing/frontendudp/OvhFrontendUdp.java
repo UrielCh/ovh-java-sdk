@@ -33,18 +33,18 @@ public class OvhFrontendUdp {
 	public Boolean disabled;
 
 	/**
-	 * Id of your frontend
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long id;
-
-	/**
 	 * Only attach frontend on these ip. No restriction if null
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String[] dedicatedIpfo;
+
+	/**
+	 * Id of your frontend
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long frontendId;
 
 	/**
 	 * Default UDP Farm of your frontend

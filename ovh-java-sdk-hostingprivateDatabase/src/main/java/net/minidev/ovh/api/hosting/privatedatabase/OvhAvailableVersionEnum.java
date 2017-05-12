@@ -6,6 +6,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * Private database available versions
  */
 public enum OvhAvailableVersionEnum {
+	@JsonProperty("mariadb_10.1")
+	mariadb_10_1("mariadb_10.1"),
 	@JsonProperty("mysql_4.1")
 	mysql_4_1("mysql_4.1"),
 	@JsonProperty("mysql_5.0")

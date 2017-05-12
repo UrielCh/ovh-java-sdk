@@ -5,10 +5,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import net.minidev.ovh.api.horizonview.OvhCustomerUser;
+import net.minidev.ovh.api.horizonview.OvhDatacenter;
 import net.minidev.ovh.api.horizonview.OvhDedicatedHorizon;
-import net.minidev.ovh.api.horizonview.OvhHost;
 import net.minidev.ovh.api.horizonview.OvhPool;
-import net.minidev.ovh.api.horizonview.OvhStorage;
 import net.minidev.ovh.api.horizonview.OvhTask;
 import net.minidev.ovh.api.horizonview.OvhTaskStateEnum;
 import net.minidev.ovh.api.horizonview.OvhUser;
@@ -56,123 +55,186 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /horizonView/{serviceName}
+	 * REST: GET /horizonView/{serviceName}/dedicatedHorizon
 	 * @param serviceName [required] Domain of the service
 	 */
-	public OvhDedicatedHorizon serviceName_GET(String serviceName) throws IOException {
-		String qPath = "/horizonView/{serviceName}";
+	public OvhDedicatedHorizon serviceName_dedicatedHorizon_GET(String serviceName) throws IOException {
+		String qPath = "/horizonView/{serviceName}/dedicatedHorizon";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhDedicatedHorizon.class);
 	}
 
 	/**
-	 * Confirm termination of your service
+	 * Account to access to your pool
 	 *
-	 * REST: POST /horizonView/{serviceName}/confirmTermination
-	 * @param reason Reason of your termination request
-	 * @param commentary Commentary about your termination request
-	 * @param token [required] The termination token sent by mail to the admin contact
+	 * REST: GET /horizonView/{serviceName}/dedicatedHorizon/customerUser
 	 * @param serviceName [required] Domain of the service
 	 */
-	public String serviceName_confirmTermination_POST(String serviceName, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
-		String qPath = "/horizonView/{serviceName}/confirmTermination";
+	public ArrayList<String> serviceName_dedicatedHorizon_customerUser_GET(String serviceName) throws IOException {
+		String qPath = "/horizonView/{serviceName}/dedicatedHorizon/customerUser";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
+
+	/**
+	 * Create a new customer user
+	 *
+	 * REST: POST /horizonView/{serviceName}/dedicatedHorizon/customerUser
+	 * @param email [required] Email for your new user in Active diRectory.
+	 * @param password [required] New password for this Horizon View user. It must fits your HaaS password policy. If this field is empty, a random password will be generated and sent to your  email.
+	 * @param username [required] Username for your new user in Active Directory.
+	 * @param serviceName [required] Domain of the service
+	 */
+	public ArrayList<OvhTask> serviceName_dedicatedHorizon_customerUser_POST(String serviceName, String email, String password, String username) throws IOException {
+		String qPath = "/horizonView/{serviceName}/dedicatedHorizon/customerUser";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "reason", reason);
-		addBody(o, "commentary", commentary);
-		addBody(o, "token", token);
+		addBody(o, "email", email);
+		addBody(o, "password", password);
+		addBody(o, "username", username);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, String.class);
+		return convertTo(resp, t2);
+	}
+	private static TypeReference<ArrayList<OvhTask>> t2 = new TypeReference<ArrayList<OvhTask>>() {};
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /horizonView/{serviceName}/dedicatedHorizon/customerUser/{username}
+	 * @param serviceName [required] Domain of the service
+	 * @param username [required] Customer username of your HaaS User
+	 */
+	public OvhCustomerUser serviceName_dedicatedHorizon_customerUser_username_GET(String serviceName, String username) throws IOException {
+		String qPath = "/horizonView/{serviceName}/dedicatedHorizon/customerUser/{username}";
+		StringBuilder sb = path(qPath, serviceName, username);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhCustomerUser.class);
 	}
 
 	/**
-	 * Terminate your service
+	 * Delete this Customer User
 	 *
-	 * REST: POST /horizonView/{serviceName}/terminate
+	 * REST: DELETE /horizonView/{serviceName}/dedicatedHorizon/customerUser/{username}
+	 * @param serviceName [required] Domain of the service
+	 * @param username [required] Customer username of your HaaS User
+	 */
+	public ArrayList<OvhTask> serviceName_dedicatedHorizon_customerUser_username_DELETE(String serviceName, String username) throws IOException {
+		String qPath = "/horizonView/{serviceName}/dedicatedHorizon/customerUser/{username}";
+		StringBuilder sb = path(qPath, serviceName, username);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Change Horizon View Customer  user password
+	 *
+	 * REST: POST /horizonView/{serviceName}/dedicatedHorizon/customerUser/{username}/changePassword
+	 * @param password [required] New password for this Horizon View user. It must fits your HaaS password policy. If this field is empty, a random password will be generated and sent to you by email.
+	 * @param serviceName [required] Domain of the service
+	 * @param username [required] Customer username of your HaaS User
+	 */
+	public OvhTask serviceName_dedicatedHorizon_customerUser_username_changePassword_POST(String serviceName, String username, String password) throws IOException {
+		String qPath = "/horizonView/{serviceName}/dedicatedHorizon/customerUser/{username}/changePassword";
+		StringBuilder sb = path(qPath, serviceName, username);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "password", password);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /horizonView/{serviceName}/dedicatedHorizon/user
 	 * @param serviceName [required] Domain of the service
 	 */
-	public String serviceName_terminate_POST(String serviceName) throws IOException {
-		String qPath = "/horizonView/{serviceName}/terminate";
+	public OvhUser serviceName_dedicatedHorizon_user_GET(String serviceName) throws IOException {
+		String qPath = "/horizonView/{serviceName}/dedicatedHorizon/user";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, String.class);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhUser.class);
+	}
+
+	/**
+	 * Change horizon view user properties
+	 *
+	 * REST: POST /horizonView/{serviceName}/dedicatedHorizon/user/changeProperties
+	 * @param email [required] Change email of your admin user
+	 * @param serviceName [required] Domain of the service
+	 */
+	public OvhTask serviceName_dedicatedHorizon_user_changeProperties_POST(String serviceName, String email) throws IOException {
+		String qPath = "/horizonView/{serviceName}/dedicatedHorizon/user/changeProperties";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "email", email);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Change Horizon View user password
+	 *
+	 * REST: POST /horizonView/{serviceName}/dedicatedHorizon/user/changePassword
+	 * @param password [required] New password for this Horizon View user. It must fits your HaaS password policy. If this field is empty, a random password will be generated and sent to you by email.
+	 * @param serviceName [required] Domain of the service
+	 */
+	public OvhTask serviceName_dedicatedHorizon_user_changePassword_POST(String serviceName, String password) throws IOException {
+		String qPath = "/horizonView/{serviceName}/dedicatedHorizon/user/changePassword";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "password", password);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
 	 * Tasks associated with this Dedicated Horizon
 	 *
-	 * REST: GET /horizonView/{serviceName}/task
+	 * REST: GET /horizonView/{serviceName}/dedicatedHorizon/task
 	 * @param state [required] Filter the value of state property (=)
 	 * @param serviceName [required] Domain of the service
 	 */
-	public ArrayList<Long> serviceName_task_GET(String serviceName, OvhTaskStateEnum state) throws IOException {
-		String qPath = "/horizonView/{serviceName}/task";
+	public ArrayList<Long> serviceName_dedicatedHorizon_task_GET(String serviceName, OvhTaskStateEnum state) throws IOException {
+		String qPath = "/horizonView/{serviceName}/dedicatedHorizon/task";
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "state", state);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, t3);
 	}
-	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
+	private static TypeReference<ArrayList<Long>> t3 = new TypeReference<ArrayList<Long>>() {};
 
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /horizonView/{serviceName}/task/{taskId}
+	 * REST: GET /horizonView/{serviceName}/dedicatedHorizon/task/{taskId}
 	 * @param serviceName [required] Domain of the service
 	 * @param taskId [required] Task id
 	 */
-	public OvhTask serviceName_task_taskId_GET(String serviceName, Long taskId) throws IOException {
-		String qPath = "/horizonView/{serviceName}/task/{taskId}";
+	public OvhTask serviceName_dedicatedHorizon_task_taskId_GET(String serviceName, Long taskId) throws IOException {
+		String qPath = "/horizonView/{serviceName}/dedicatedHorizon/task/{taskId}";
 		StringBuilder sb = path(qPath, serviceName, taskId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
-	 * Your Cloud Desktop Infrastructure hosts
-	 *
-	 * REST: GET /horizonView/{serviceName}/host
-	 * @param serviceName [required] Domain of the service
-	 */
-	public ArrayList<Long> serviceName_host_GET(String serviceName) throws IOException {
-		String qPath = "/horizonView/{serviceName}/host";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /horizonView/{serviceName}/host/{id}
+	 * REST: GET /horizonView/{serviceName}
 	 * @param serviceName [required] Domain of the service
-	 * @param id [required] Host ids
 	 */
-	public OvhHost serviceName_host_id_GET(String serviceName, Long id) throws IOException {
-		String qPath = "/horizonView/{serviceName}/host/{id}";
-		StringBuilder sb = path(qPath, serviceName, id);
+	public OvhDatacenter serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/horizonView/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhHost.class);
+		return convertTo(resp, OvhDatacenter.class);
 	}
 
 	/**
-	 * Delete this host
-	 *
-	 * REST: DELETE /horizonView/{serviceName}/host/{id}
-	 * @param serviceName [required] Domain of the service
-	 * @param id [required] Host ids
-	 */
-	public ArrayList<OvhTask> serviceName_host_id_DELETE(String serviceName, Long id) throws IOException {
-		String qPath = "/horizonView/{serviceName}/host/{id}";
-		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-	private static TypeReference<ArrayList<OvhTask>> t2 = new TypeReference<ArrayList<OvhTask>>() {};
-
-	/**
-	 * Pool associated with this Dedicated Horizon
+	 * Pool associated with this Datacenter
 	 *
 	 * REST: GET /horizonView/{serviceName}/accessPoint
 	 * @param serviceName [required] Domain of the service
@@ -181,7 +243,7 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 		String qPath = "/horizonView/{serviceName}/accessPoint";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, t3);
 	}
 
 	/**
@@ -226,168 +288,36 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	}
 
 	/**
-	 * Account to access to your pool
+	 * Confirm termination of your service
 	 *
-	 * REST: GET /horizonView/{serviceName}/customerUser
+	 * REST: POST /horizonView/{serviceName}/confirmTermination
+	 * @param reason Reason of your termination request
+	 * @param commentary Commentary about your termination request
+	 * @param token [required] The termination token sent by mail to the admin contact
 	 * @param serviceName [required] Domain of the service
 	 */
-	public ArrayList<String> serviceName_customerUser_GET(String serviceName) throws IOException {
-		String qPath = "/horizonView/{serviceName}/customerUser";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
-	}
-	private static TypeReference<ArrayList<String>> t3 = new TypeReference<ArrayList<String>>() {};
-
-	/**
-	 * Create a new customer user
-	 *
-	 * REST: POST /horizonView/{serviceName}/customerUser
-	 * @param email [required] Email for your new user in Active diRectory.
-	 * @param password [required] New password for this Horizon View user. It must fits your HaaS password policy. If this field is empty, a random password will be generated and sent to your  email.
-	 * @param username [required] Username for your new user in Active Directory.
-	 * @param serviceName [required] Domain of the service
-	 */
-	public ArrayList<OvhTask> serviceName_customerUser_POST(String serviceName, String email, String password, String username) throws IOException {
-		String qPath = "/horizonView/{serviceName}/customerUser";
+	public String serviceName_confirmTermination_POST(String serviceName, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
+		String qPath = "/horizonView/{serviceName}/confirmTermination";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "email", email);
-		addBody(o, "password", password);
-		addBody(o, "username", username);
+		addBody(o, "reason", reason);
+		addBody(o, "commentary", commentary);
+		addBody(o, "token", token);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t2);
+		return convertTo(resp, String.class);
 	}
 
 	/**
-	 * Get this object properties
+	 * Terminate your service
 	 *
-	 * REST: GET /horizonView/{serviceName}/customerUser/{username}
-	 * @param serviceName [required] Domain of the service
-	 * @param username [required] Customer username of your HaaS User
-	 */
-	public OvhCustomerUser serviceName_customerUser_username_GET(String serviceName, String username) throws IOException {
-		String qPath = "/horizonView/{serviceName}/customerUser/{username}";
-		StringBuilder sb = path(qPath, serviceName, username);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhCustomerUser.class);
-	}
-
-	/**
-	 * Delete this Customer User
-	 *
-	 * REST: DELETE /horizonView/{serviceName}/customerUser/{username}
-	 * @param serviceName [required] Domain of the service
-	 * @param username [required] Customer username of your HaaS User
-	 */
-	public ArrayList<OvhTask> serviceName_customerUser_username_DELETE(String serviceName, String username) throws IOException {
-		String qPath = "/horizonView/{serviceName}/customerUser/{username}";
-		StringBuilder sb = path(qPath, serviceName, username);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Change Horizon View Customer  user password
-	 *
-	 * REST: POST /horizonView/{serviceName}/customerUser/{username}/changePassword
-	 * @param password [required] New password for this Horizon View user. It must fits your HaaS password policy. If this field is empty, a random password will be generated and sent to you by email.
-	 * @param serviceName [required] Domain of the service
-	 * @param username [required] Customer username of your HaaS User
-	 */
-	public OvhTask serviceName_customerUser_username_changePassword_POST(String serviceName, String username, String password) throws IOException {
-		String qPath = "/horizonView/{serviceName}/customerUser/{username}/changePassword";
-		StringBuilder sb = path(qPath, serviceName, username);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "password", password);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /horizonView/{serviceName}/user
+	 * REST: POST /horizonView/{serviceName}/terminate
 	 * @param serviceName [required] Domain of the service
 	 */
-	public OvhUser serviceName_user_GET(String serviceName) throws IOException {
-		String qPath = "/horizonView/{serviceName}/user";
+	public String serviceName_terminate_POST(String serviceName) throws IOException {
+		String qPath = "/horizonView/{serviceName}/terminate";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhUser.class);
-	}
-
-	/**
-	 * Change horizon view user properties
-	 *
-	 * REST: POST /horizonView/{serviceName}/user/changeProperties
-	 * @param email [required] Change email of your admin user
-	 * @param serviceName [required] Domain of the service
-	 */
-	public OvhTask serviceName_user_changeProperties_POST(String serviceName, String email) throws IOException {
-		String qPath = "/horizonView/{serviceName}/user/changeProperties";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "email", email);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Change Horizon View user password
-	 *
-	 * REST: POST /horizonView/{serviceName}/user/changePassword
-	 * @param password [required] New password for this Horizon View user. It must fits your HaaS password policy. If this field is empty, a random password will be generated and sent to you by email.
-	 * @param serviceName [required] Domain of the service
-	 */
-	public OvhTask serviceName_user_changePassword_POST(String serviceName, String password) throws IOException {
-		String qPath = "/horizonView/{serviceName}/user/changePassword";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "password", password);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Your Cloud Desktop Infrastructure storages
-	 *
-	 * REST: GET /horizonView/{serviceName}/storage
-	 * @param serviceName [required] Domain of the service
-	 */
-	public ArrayList<Long> serviceName_storage_GET(String serviceName) throws IOException {
-		String qPath = "/horizonView/{serviceName}/storage";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /horizonView/{serviceName}/storage/{id}
-	 * @param serviceName [required] Domain of the service
-	 * @param id [required] Storage ids
-	 */
-	public OvhStorage serviceName_storage_id_GET(String serviceName, Long id) throws IOException {
-		String qPath = "/horizonView/{serviceName}/storage/{id}";
-		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhStorage.class);
-	}
-
-	/**
-	 * Delete this storage
-	 *
-	 * REST: DELETE /horizonView/{serviceName}/storage/{id}
-	 * @param serviceName [required] Domain of the service
-	 * @param id [required] Storage ids
-	 */
-	public ArrayList<OvhTask> serviceName_storage_id_DELETE(String serviceName, Long id) throws IOException {
-		String qPath = "/horizonView/{serviceName}/storage/{id}";
-		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, t2);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, String.class);
 	}
 
 	/**
@@ -399,6 +329,6 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 		String qPath = "/horizonView";
 		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
+		return convertTo(resp, t1);
 	}
 }

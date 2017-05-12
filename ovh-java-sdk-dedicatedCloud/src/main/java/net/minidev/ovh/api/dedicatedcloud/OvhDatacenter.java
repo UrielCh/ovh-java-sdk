@@ -5,6 +5,13 @@ package net.minidev.ovh.api.dedicatedcloud;
  */
 public class OvhDatacenter {
 	/**
+	 * Name of the associated Horizon View service if the VDI option is enabled
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String horizonViewName;
+
+	/**
 	 * The commercial range associated to this Datacenter
 	 *
 	 * canBeNull && readOnly

@@ -14,6 +14,13 @@ public class OvhNetworkSpecifications {
 	public OvhBandwidthDetails bandwidth;
 
 	/**
+	 * vRack details
+	 *
+	 * canBeNull
+	 */
+	public OvhBandwidthvRackDetails vrack;
+
+	/**
 	 * Network connection flow rate
 	 *
 	 * canBeNull

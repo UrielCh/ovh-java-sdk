@@ -30,5 +30,5 @@ public class OvhBackendUdp {
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long id;
+	public Long farmId;
 }
