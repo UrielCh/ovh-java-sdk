@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import net.minidev.ovh.api.nichandle.OvhCountryEnum;
+import net.minidev.ovh.api.nichandle.OvhCreationRule;
 import net.minidev.ovh.api.nichandle.OvhCreationRules;
 import net.minidev.ovh.api.nichandle.OvhGenderEnum;
 import net.minidev.ovh.api.nichandle.OvhLanguageEnum;
@@ -148,6 +149,66 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 	}
 
 	/**
+	 * Give all the rules to follow in order to create and update an OVH identifier
+	 *
+	 * REST: POST /newAccount/rules
+	 * @param firstname [required]
+	 * @param vat [required]
+	 * @param spareEmail [required]
+	 * @param nationalIdentificationNumber [required]
+	 * @param birthDay [required]
+	 * @param area [required]
+	 * @param ovhSubsidiary [required]
+	 * @param ovhCompany [required]
+	 * @param email [required]
+	 * @param city [required]
+	 * @param fax [required]
+	 * @param address [required]
+	 * @param companyNationalIdentificationNumber [required]
+	 * @param country [required]
+	 * @param birthCity [required]
+	 * @param organisation [required]
+	 * @param language [required]
+	 * @param name [required]
+	 * @param sex [required]
+	 * @param phone [required]
+	 * @param zip [required]
+	 * @param corporationType [required]
+	 * @param legalform [required]
+	 */
+	public ArrayList<OvhCreationRule> rules_POST(String firstname, String vat, String spareEmail, String nationalIdentificationNumber, String birthDay, String area, OvhOvhSubsidiaryEnum ovhSubsidiary, OvhOvhCompanyEnum ovhCompany, String email, String city, String fax, String address, String companyNationalIdentificationNumber, OvhCountryEnum country, String birthCity, String organisation, OvhLanguageEnum language, String name, OvhGenderEnum sex, String phone, String zip, String corporationType, OvhLegalFormEnum legalform) throws IOException {
+		String qPath = "/newAccount/rules";
+		StringBuilder sb = path(qPath);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "firstname", firstname);
+		addBody(o, "vat", vat);
+		addBody(o, "spareEmail", spareEmail);
+		addBody(o, "nationalIdentificationNumber", nationalIdentificationNumber);
+		addBody(o, "birthDay", birthDay);
+		addBody(o, "area", area);
+		addBody(o, "ovhSubsidiary", ovhSubsidiary);
+		addBody(o, "ovhCompany", ovhCompany);
+		addBody(o, "email", email);
+		addBody(o, "city", city);
+		addBody(o, "fax", fax);
+		addBody(o, "address", address);
+		addBody(o, "companyNationalIdentificationNumber", companyNationalIdentificationNumber);
+		addBody(o, "country", country);
+		addBody(o, "birthCity", birthCity);
+		addBody(o, "organisation", organisation);
+		addBody(o, "language", language);
+		addBody(o, "name", name);
+		addBody(o, "sex", sex);
+		addBody(o, "phone", phone);
+		addBody(o, "zip", zip);
+		addBody(o, "corporationType", corporationType);
+		addBody(o, "legalform", legalform);
+		String resp = execN(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t2);
+	}
+	private static TypeReference<ArrayList<OvhCreationRule>> t2 = new TypeReference<ArrayList<OvhCreationRule>>() {};
+
+	/**
 	 * All available countries for an ovh company and an ovh subsidiary
 	 *
 	 * REST: GET /newAccount/countries
@@ -160,7 +221,7 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 		query(sb, "ovhCompany", ovhCompany);
 		query(sb, "ovhSubsidiary", ovhSubsidiary);
 		String resp = execN(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
+		return convertTo(resp, t3);
 	}
-	private static TypeReference<ArrayList<OvhCountryEnum>> t2 = new TypeReference<ArrayList<OvhCountryEnum>>() {};
+	private static TypeReference<ArrayList<OvhCountryEnum>> t3 = new TypeReference<ArrayList<OvhCountryEnum>>() {};
 }

@@ -24,4 +24,11 @@ public class OvhAutomaticPaymentMean {
 	 * canBeNull
 	 */
 	public Boolean paypal;
+
+	/**
+	 * Deferred invoice payment account for authorized customers
+	 *
+	 * canBeNull
+	 */
+	public Boolean deferredPaymentAccount;
 }

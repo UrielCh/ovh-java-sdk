@@ -1,5 +1,7 @@
 package net.minidev.ovh.api.iploadbalancing;
 
+import java.util.Date;
+
 /**
  * Available servers states
  */
@@ -17,6 +19,13 @@ public class OvhServerState {
 	 * canBeNull
 	 */
 	public Long instanceId;
+
+	/**
+	 * Time of last health check
+	 *
+	 * canBeNull
+	 */
+	public Date checkTime;
 
 	/**
 	 * Last health check contents or textual error

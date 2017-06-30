@@ -5,6 +5,13 @@ package net.minidev.ovh.api.msservices;
  */
 public class OvhSharepointService {
 	/**
+	 * Service family name displayed
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String displayName;
+
+	/**
 	 * Shared space maximum size in byte
 	 *
 	 * canBeNull && readOnly

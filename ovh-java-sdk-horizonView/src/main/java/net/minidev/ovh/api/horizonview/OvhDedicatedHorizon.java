@@ -1,7 +1,5 @@
 package net.minidev.ovh.api.horizonview;
 
-import net.minidev.ovh.api.complextype.OvhUnitAndValue;
-
 /**
  * Horizon View as a Service
  */
@@ -35,23 +33,9 @@ public class OvhDedicatedHorizon {
 	public OvhStateEnum state;
 
 	/**
-	 * Get the number of available public IPs
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhUnitAndValue<Double> numberOfAvailableIp;
-
-	/**
 	 * Version of your Dedicated Horizon
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String version;
-
-	/**
-	 * Your Cloud Desktop Infrastructure pack
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhOffer pack;
 }

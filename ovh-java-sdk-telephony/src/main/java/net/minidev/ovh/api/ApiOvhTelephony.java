@@ -15,7 +15,6 @@ import net.minidev.ovh.api.telephony.OvhAbbreviatedNumberGroup;
 import net.minidev.ovh.api.telephony.OvhAccessoryOffer;
 import net.minidev.ovh.api.telephony.OvhBannerAccess;
 import net.minidev.ovh.api.telephony.OvhBillDocument;
-import net.minidev.ovh.api.telephony.OvhBillDocumentExtension;
 import net.minidev.ovh.api.telephony.OvhBillingAccount;
 import net.minidev.ovh.api.telephony.OvhCallDiagnostics;
 import net.minidev.ovh.api.telephony.OvhCallsGenerated;
@@ -69,6 +68,7 @@ import net.minidev.ovh.api.telephony.OvhLineOffer;
 import net.minidev.ovh.api.telephony.OvhLineOffersAndContracts;
 import net.minidev.ovh.api.telephony.OvhLineOptions;
 import net.minidev.ovh.api.telephony.OvhLinePhone;
+import net.minidev.ovh.api.telephony.OvhLinePhoneAssociable;
 import net.minidev.ovh.api.telephony.OvhLineStatisticsTypeEnum;
 import net.minidev.ovh.api.telephony.OvhMiniPabx;
 import net.minidev.ovh.api.telephony.OvhMiniPabxHunting;
@@ -1240,6 +1240,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * REST: GET /telephony/{billingAccount}/line/{serviceName}/phoneCanBeAssociable
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
+	 * @deprecated
 	 */
 	public ArrayList<OvhLinePhone> billingAccount_line_serviceName_phoneCanBeAssociable_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/phoneCanBeAssociable";
@@ -1248,6 +1249,21 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		return convertTo(resp, t9);
 	}
 	private static TypeReference<ArrayList<OvhLinePhone>> t9 = new TypeReference<ArrayList<OvhLinePhone>>() {};
+
+	/**
+	 * List phones with available slots where this line can be attached
+	 *
+	 * REST: GET /telephony/{billingAccount}/line/{serviceName}/listAssociablePhones
+	 * @param billingAccount [required] The name of your billingAccount
+	 * @param serviceName [required]
+	 */
+	public ArrayList<OvhLinePhoneAssociable> billingAccount_line_serviceName_listAssociablePhones_GET(String billingAccount, String serviceName) throws IOException {
+		String qPath = "/telephony/{billingAccount}/line/{serviceName}/listAssociablePhones";
+		StringBuilder sb = path(qPath, billingAccount, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t10);
+	}
+	private static TypeReference<ArrayList<OvhLinePhoneAssociable>> t10 = new TypeReference<ArrayList<OvhLinePhoneAssociable>>() {};
 
 	/**
 	 * Abbreviated numbers for the line
@@ -1439,9 +1455,9 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/ips";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t10);
+		return convertTo(resp, t11);
 	}
-	private static TypeReference<ArrayList<OvhDatetimeAndIpvalue>> t10 = new TypeReference<ArrayList<OvhDatetimeAndIpvalue>>() {};
+	private static TypeReference<ArrayList<OvhDatetimeAndIpvalue>> t11 = new TypeReference<ArrayList<OvhDatetimeAndIpvalue>>() {};
 
 	/**
 	 * Automatic Calls made by Calls Generator on this line
@@ -1521,14 +1537,16 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 *
 	 * REST: POST /telephony/{billingAccount}/line/{serviceName}/associateDevice
 	 * @param macAddress [required] The mac address of the device you want to associate to the line (format: AABBCCDDEEFF)
+	 * @param ipAddress [required] The public phone IP address allowed to get phone's configuration
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
-	public void billingAccount_line_serviceName_associateDevice_POST(String billingAccount, String serviceName, String macAddress) throws IOException {
+	public void billingAccount_line_serviceName_associateDevice_POST(String billingAccount, String serviceName, String macAddress, String ipAddress) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/associateDevice";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "macAddress", macAddress);
+		addBody(o, "ipAddress", ipAddress);
 		exec(qPath, "POST", sb.toString(), o);
 	}
 
@@ -1556,9 +1574,9 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/lastRegistrations";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t11);
+		return convertTo(resp, t12);
 	}
-	private static TypeReference<ArrayList<OvhRegistrationInformations>> t11 = new TypeReference<ArrayList<OvhRegistrationInformations>>() {};
+	private static TypeReference<ArrayList<OvhRegistrationInformations>> t12 = new TypeReference<ArrayList<OvhRegistrationInformations>>() {};
 
 	/**
 	 * The current calls of your line
@@ -2131,9 +2149,9 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/phone/merchandiseAvailable";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t12);
+		return convertTo(resp, t13);
 	}
-	private static TypeReference<ArrayList<OvhHardwareOffer>> t12 = new TypeReference<ArrayList<OvhHardwareOffer>>() {};
+	private static TypeReference<ArrayList<OvhHardwareOffer>> t13 = new TypeReference<ArrayList<OvhHardwareOffer>>() {};
 
 	/**
 	 * Edit configuration of the phone remotely by provisioning
@@ -2239,14 +2257,16 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 *
 	 * REST: POST /telephony/{billingAccount}/line/{serviceName}/dissociateDevice
 	 * @param macAddress [required] The mac address of the device you want to dissociate from the line (format: AABBCCDDEEFF)
+	 * @param ipAddress [required] The public phone IP address allowed to get phone's configuration
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
 	 */
-	public void billingAccount_line_serviceName_dissociateDevice_POST(String billingAccount, String serviceName, String macAddress) throws IOException {
+	public void billingAccount_line_serviceName_dissociateDevice_POST(String billingAccount, String serviceName, String macAddress, String ipAddress) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/dissociateDevice";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "macAddress", macAddress);
+		addBody(o, "ipAddress", ipAddress);
 		exec(qPath, "POST", sb.toString(), o);
 	}
 
@@ -2859,9 +2879,9 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		String qPath = "/telephony/{billingAccount}/service/{serviceName}/directory/getWayTypes";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t13);
+		return convertTo(resp, t14);
 	}
-	private static TypeReference<ArrayList<OvhDirectoryWayType>> t13 = new TypeReference<ArrayList<OvhDirectoryWayType>>() {};
+	private static TypeReference<ArrayList<OvhDirectoryWayType>> t14 = new TypeReference<ArrayList<OvhDirectoryWayType>>() {};
 
 	/**
 	 * Get directory service code from an APE code ( principal activity of the firm code )
@@ -2876,9 +2896,9 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		query(sb, "apeCode", apeCode);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t14);
+		return convertTo(resp, t15);
 	}
-	private static TypeReference<ArrayList<OvhDirectoryHeadingPJ>> t14 = new TypeReference<ArrayList<OvhDirectoryHeadingPJ>>() {};
+	private static TypeReference<ArrayList<OvhDirectoryHeadingPJ>> t15 = new TypeReference<ArrayList<OvhDirectoryHeadingPJ>>() {};
 
 	/**
 	 * Get company entreprise informations by providing entreprise number
@@ -3040,9 +3060,9 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		query(sb, "dayInterval", dayInterval);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t15);
+		return convertTo(resp, t16);
 	}
-	private static TypeReference<ArrayList<OvhDiagnosticReport>> t15 = new TypeReference<ArrayList<OvhDiagnosticReport>>() {};
+	private static TypeReference<ArrayList<OvhDiagnosticReport>> t16 = new TypeReference<ArrayList<OvhDiagnosticReport>>() {};
 
 	/**
 	 * List all available offer changes compatibilities
@@ -3055,9 +3075,9 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		String qPath = "/telephony/{billingAccount}/service/{serviceName}/offerChanges";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t16);
+		return convertTo(resp, t17);
 	}
-	private static TypeReference<ArrayList<OvhLineOffer>> t16 = new TypeReference<ArrayList<OvhLineOffer>>() {};
+	private static TypeReference<ArrayList<OvhLineOffer>> t17 = new TypeReference<ArrayList<OvhLineOffer>>() {};
 
 	/**
 	 * Services associated with this billing account
@@ -3526,9 +3546,9 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		String qPath = "/telephony/{billingAccount}/portability/{id}/status";
 		StringBuilder sb = path(qPath, billingAccount, id);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t17);
+		return convertTo(resp, t18);
 	}
-	private static TypeReference<ArrayList<OvhPortabilityStep>> t17 = new TypeReference<ArrayList<OvhPortabilityStep>>() {};
+	private static TypeReference<ArrayList<OvhPortabilityStep>> t18 = new TypeReference<ArrayList<OvhPortabilityStep>>() {};
 
 	/**
 	 * Indicates whether or not the portability can be cancelled
@@ -3829,9 +3849,9 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		String qPath = "/telephony/{billingAccount}/rsva/{serviceName}/allowedRateCodes";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t18);
+		return convertTo(resp, t19);
 	}
-	private static TypeReference<ArrayList<OvhRateCodeInformation>> t18 = new TypeReference<ArrayList<OvhRateCodeInformation>>() {};
+	private static TypeReference<ArrayList<OvhRateCodeInformation>> t19 = new TypeReference<ArrayList<OvhRateCodeInformation>>() {};
 
 	/**
 	 * Current rate code related to this sva
@@ -4058,21 +4078,6 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "password", password);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * Generates a new password for your fax account
-	 *
-	 * REST: POST /telephony/{billingAccount}/fax/{serviceName}/settings/newPassword
-	 * @param billingAccount [required] The name of your billingAccount
-	 * @param serviceName [required]
-	 * @deprecated
-	 */
-	public String billingAccount_fax_serviceName_settings_newPassword_POST(String billingAccount, String serviceName) throws IOException {
-		String qPath = "/telephony/{billingAccount}/fax/{serviceName}/settings/newPassword";
-		StringBuilder sb = path(qPath, billingAccount, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, String.class);
 	}
 
@@ -4670,23 +4675,6 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, date);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhHistoryConsumption.class);
-	}
-
-	/**
-	 * Previous billed consumptions document
-	 *
-	 * REST: GET /telephony/{billingAccount}/historyConsumption/{date}/document
-	 * @param extension [required] Document extension
-	 * @param billingAccount [required] The name of your billingAccount
-	 * @param date [required]
-	 * @deprecated
-	 */
-	public OvhPcsFile billingAccount_historyConsumption_date_document_GET(String billingAccount, java.util.Date date, OvhBillDocumentExtension extension) throws IOException {
-		String qPath = "/telephony/{billingAccount}/historyConsumption/{date}/document";
-		StringBuilder sb = path(qPath, billingAccount, date);
-		query(sb, "extension", extension);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPcsFile.class);
 	}
 
 	/**
@@ -8035,9 +8023,9 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath);
 		query(sb, "country", country);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t19);
+		return convertTo(resp, t20);
 	}
-	private static TypeReference<ArrayList<OvhAccessoryOffer>> t19 = new TypeReference<ArrayList<OvhAccessoryOffer>>() {};
+	private static TypeReference<ArrayList<OvhAccessoryOffer>> t20 = new TypeReference<ArrayList<OvhAccessoryOffer>>() {};
 
 	/**
 	 * Search a service with its domain, to get its billing account and type
@@ -8050,9 +8038,9 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath);
 		query(sb, "axiom", axiom);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t20);
+		return convertTo(resp, t21);
 	}
-	private static TypeReference<ArrayList<OvhTelephonySearchService>> t20 = new TypeReference<ArrayList<OvhTelephonySearchService>>() {};
+	private static TypeReference<ArrayList<OvhTelephonySearchService>> t21 = new TypeReference<ArrayList<OvhTelephonySearchService>>() {};
 
 	/**
 	 * Get all available SIP domains by country
@@ -8083,7 +8071,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath);
 		query(sb, "country", country);
 		String resp = execN(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t16);
+		return convertTo(resp, t17);
 	}
 
 	/**
@@ -8344,7 +8332,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath);
 		query(sb, "country", country);
 		String resp = execN(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t16);
+		return convertTo(resp, t17);
 	}
 
 	/**

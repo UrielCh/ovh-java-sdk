@@ -9,6 +9,13 @@ import net.minidev.ovh.api.xdsl.OvhGtrEnum;
  */
 public class OvhOffer {
 	/**
+	 * Is copper lines desaturation needed and available for this offer ?
+	 *
+	 * canBeNull
+	 */
+	public Boolean desaturation;
+
+	/**
 	 * The allowed gtr (none, 4ho : 4 work hours, 4hno : 4 unworked hours)
 	 *
 	 * canBeNull

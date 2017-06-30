@@ -35,13 +35,6 @@ public class OvhArchive {
 	public Long size;
 
 	/**
-	 * Origin file size in bytes
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long originSize;
-
-	/**
 	 * Archive UUID
 	 *
 	 * canBeNull && readOnly

@@ -33,6 +33,13 @@ public class OvhConferenceProperties {
 	public Boolean recordStatus;
 
 	/**
+	 * The announce file name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String announceFilename;
+
+	/**
 	 * The conference pin number
 	 *
 	 * canBeNull && readOnly

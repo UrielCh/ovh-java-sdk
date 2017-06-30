@@ -5,30 +5,16 @@ package net.minidev.ovh.api.cloud.instance;
  */
 public class OvhApplicationAccess {
 	/**
-	 * Password
+	 * List of credentials
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String password;
+	public OvhAccess[] accesses;
 
 	/**
-	 * Application access type
+	 * Application status
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String type;
-
-	/**
-	 * Login
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String login;
-
-	/**
-	 * Url
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String url;
+	public OvhApplicationAccessStateEnum status;
 }

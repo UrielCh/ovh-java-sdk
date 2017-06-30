@@ -5,18 +5,46 @@ package net.minidev.ovh.api.cloud.image;
  */
 public class OvhImage {
 	/**
-	 * Image usable only for this type of flavor if not null
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String flavorType;
-
-	/**
 	 * Image visibility
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String visibility;
+
+	/**
+	 * Image creation date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String creationDate;
+
+	/**
+	 * Image type
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String type;
+
+	/**
+	 * Minimum disks required to use image
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long minDisk;
+
+	/**
+	 * Tags about the image
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String[] tags;
+
+	/**
+	 * Image usable only for this type of flavor if not null
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String flavorType;
 
 	/**
 	 * Image size (in GiB)
@@ -52,27 +80,6 @@ public class OvhImage {
 	 * canBeNull && readOnly
 	 */
 	public String region;
-
-	/**
-	 * Image creation date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String creationDate;
-
-	/**
-	 * Image type
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String type;
-
-	/**
-	 * Minimum disks required to use image
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long minDisk;
 
 	/**
 	 * User to connect with

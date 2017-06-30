@@ -242,6 +242,7 @@
 		<module>ovh-java-sdk-licensewindows</module>
 		<module>ovh-java-sdk-licenseworklight</module>
 		<module>ovh-java-sdk-me</module>
+		<module>ovh-java-sdk-metrics</module>
 		<module>ovh-java-sdk-msServices</module>
 		<module>ovh-java-sdk-newAccount</module>
 		<module>ovh-java-sdk-order</module>
@@ -249,6 +250,7 @@
 		<module>ovh-java-sdk-paasdatabase</module>
 		<module>ovh-java-sdk-paasmonitoring</module>
 		<module>ovh-java-sdk-paastimeseries</module>
+		<module>ovh-java-sdk-packsiptrunk</module>
 		<module>ovh-java-sdk-packxdsl</module>
 		<module>ovh-java-sdk-partners</module>
 		<module>ovh-java-sdk-price</module>
@@ -267,17 +269,17 @@
 		<module>ovh-java-sdk-vps</module>
 		<module>ovh-java-sdk-vrack</module>
 		<module>ovh-java-sdk-xdsl</module>
+		<module>ovh-java-sdk-time</module>
 		<module>ovh-java-sdk-instance</module>
 		<module>ovh-java-sdk-volume</module>
-		<module>ovh-java-sdk-ssh</module>
-		<module>ovh-java-sdk-iot</module>
-		<module>ovh-java-sdk-time</module>
 		<module>ovh-java-sdk-flavor</module>
 		<module>ovh-java-sdk-image</module>
 		<module>ovh-java-sdk-region</module>
 		<module>ovh-java-sdk-project</module>
+		<module>ovh-java-sdk-ssh</module>
 		<module>ovh-java-sdk-storage</module>
 		<module>ovh-java-sdk-token</module>
+		<module>ovh-java-sdk-iot</module>
 		<module>ovh-java-sdk-launch</module>
 		<module>ovh-java-sdk</module>
 

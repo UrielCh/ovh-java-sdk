@@ -33,6 +33,13 @@ public class OvhLineCharacteristics {
 	public Long distance;
 
 	/**
+	 * Number of free pairs proposed ondesaturation of copper lines
+	 *
+	 * canBeNull
+	 */
+	public Long desaturationFreePairs;
+
+	/**
 	 * The NRA
 	 *
 	 * canBeNull

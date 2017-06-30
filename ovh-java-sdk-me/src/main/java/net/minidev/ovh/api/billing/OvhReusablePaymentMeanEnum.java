@@ -4,8 +4,11 @@ package net.minidev.ovh.api.billing;
  * Reusable payment mean type
  */
 public enum OvhReusablePaymentMeanEnum {
+	bankAccount("bankAccount"),
+	creditCard("creditCard"),
 	fidelityAccount("fidelityAccount"),
-	ovhAccount("ovhAccount");
+	ovhAccount("ovhAccount"),
+	paypal("paypal");
 
 	final String value;
 

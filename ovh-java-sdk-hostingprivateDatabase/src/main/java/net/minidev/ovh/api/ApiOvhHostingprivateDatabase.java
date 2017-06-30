@@ -15,6 +15,7 @@ import net.minidev.ovh.api.hosting.privatedatabase.OvhDatabaseExtension;
 import net.minidev.ovh.api.hosting.privatedatabase.OvhDump;
 import net.minidev.ovh.api.hosting.privatedatabase.OvhGrant;
 import net.minidev.ovh.api.hosting.privatedatabase.OvhOfferEnum;
+import net.minidev.ovh.api.hosting.privatedatabase.OvhOom;
 import net.minidev.ovh.api.hosting.privatedatabase.OvhTask;
 import net.minidev.ovh.api.hosting.privatedatabase.OvhTemporaryLogsLink;
 import net.minidev.ovh.api.hosting.privatedatabase.OvhUser;
@@ -111,12 +112,14 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 	 *
 	 * REST: GET /hosting/privateDatabase/{serviceName}/dump
 	 * @param databaseName [required] Filter the value of databaseName property (like)
+	 * @param orphan [required] Filter the value of orphan property (=)
 	 * @param serviceName [required] The internal name of your private database
 	 */
-	public ArrayList<Long> serviceName_dump_GET(String serviceName, String databaseName) throws IOException {
+	public ArrayList<Long> serviceName_dump_GET(String serviceName, String databaseName, Boolean orphan) throws IOException {
 		String qPath = "/hosting/privateDatabase/{serviceName}/dump";
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "databaseName", databaseName);
+		query(sb, "orphan", orphan);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
@@ -823,6 +826,20 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
+
+	/**
+	 * List of privatesql OOM kill
+	 *
+	 * REST: GET /hosting/privateDatabase/{serviceName}/oom
+	 * @param serviceName [required] The internal name of your private database
+	 */
+	public ArrayList<OvhOom> serviceName_oom_GET(String serviceName) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/oom";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t4);
+	}
+	private static TypeReference<ArrayList<OvhOom>> t4 = new TypeReference<ArrayList<OvhOom>>() {};
 
 	/**
 	 * Get this object properties

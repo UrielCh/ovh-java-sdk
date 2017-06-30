@@ -14,11 +14,13 @@ import net.minidev.ovh.api.msservices.OvhSharepointDailyLicense;
 import net.minidev.ovh.api.msservices.OvhSharepointInformation;
 import net.minidev.ovh.api.msservices.OvhSharepointLicenseEnum;
 import net.minidev.ovh.api.msservices.OvhSharepointService;
+import net.minidev.ovh.api.msservices.OvhSharepointServiceInfo;
 import net.minidev.ovh.api.msservices.OvhSharepointTask;
 import net.minidev.ovh.api.msservices.OvhTask;
 import net.minidev.ovh.api.msservices.OvhTaskFunctionEnum;
 import net.minidev.ovh.api.msservices.OvhTaskStatusEnum;
 import net.minidev.ovh.api.msservices.OvhUpnSuffix;
+import net.minidev.ovh.api.services.OvhService;
 import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
@@ -516,6 +518,65 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	 */
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/msServices";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /msServices/sharepoint/{domain}/serviceInfos
+	 * @param domain [required] Sharepoint customer's service
+	 *
+	 * API beta
+	 */
+	public OvhService sharepoint_domain_serviceInfos_GET(String domain) throws IOException {
+		String qPath = "/msServices/sharepoint/{domain}/serviceInfos";
+		StringBuilder sb = path(qPath, domain);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhService.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /msServices/sharepoint/{domain}/serviceInfos
+	 * @param body [required] New object properties
+	 * @param domain [required] Sharepoint customer's service
+	 *
+	 * API beta
+	 */
+	public void sharepoint_domain_serviceInfos_PUT(String domain, OvhService body) throws IOException {
+		String qPath = "/msServices/sharepoint/{domain}/serviceInfos";
+		StringBuilder sb = path(qPath, domain);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /msServices/sharepoint/{domain}
+	 * @param domain [required] Sharepoint customer's service
+	 *
+	 * API beta
+	 */
+	public OvhSharepointServiceInfo sharepoint_domain_GET(String domain) throws IOException {
+		String qPath = "/msServices/sharepoint/{domain}";
+		StringBuilder sb = path(qPath, domain);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhSharepointServiceInfo.class);
+	}
+
+	/**
+	 * List available services
+	 *
+	 * REST: GET /msServices/sharepoint
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> sharepoint_GET() throws IOException {
+		String qPath = "/msServices/sharepoint";
 		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);

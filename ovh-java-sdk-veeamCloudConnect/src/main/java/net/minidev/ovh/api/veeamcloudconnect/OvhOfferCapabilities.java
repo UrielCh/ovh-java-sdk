@@ -52,4 +52,11 @@ public class OvhOfferCapabilities {
 	 * canBeNull
 	 */
 	public Long defaultQuota;
+
+	/**
+	 * Required usage on all repositories to add a new one (percent)
+	 *
+	 * canBeNull
+	 */
+	public Long minimumUsage;
 }

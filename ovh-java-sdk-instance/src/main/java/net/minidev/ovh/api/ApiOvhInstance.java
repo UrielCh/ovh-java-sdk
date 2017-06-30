@@ -22,49 +22,6 @@ public class ApiOvhInstance extends ApiOvhBase {
 	}
 
 	/**
-	 * Delete an instance
-	 *
-	 * REST: DELETE /instance/{instanceId}
-	 * @param instanceId [required] Instance id
-	 * @deprecated
-	 */
-	public void instanceId_DELETE(String instanceId) throws IOException {
-		String qPath = "/instance/{instanceId}";
-		StringBuilder sb = path(qPath, instanceId);
-		exec(qPath, "DELETE", sb.toString(), null);
-	}
-
-	/**
-	 * Alter an instance
-	 *
-	 * REST: PUT /instance/{instanceId}
-	 * @param instanceId [required] Instance id
-	 * @param name [required] New instance name
-	 * @deprecated
-	 */
-	public void instanceId_PUT(String instanceId, String name) throws IOException {
-		String qPath = "/instance/{instanceId}";
-		StringBuilder sb = path(qPath, instanceId);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "name", name);
-		exec(qPath, "PUT", sb.toString(), o);
-	}
-
-	/**
-	 * Get details on your instance
-	 *
-	 * REST: GET /instance/{instanceId}
-	 * @param instanceId [required] Instance id
-	 * @deprecated
-	 */
-	public OvhInstanceDetail instanceId_GET(String instanceId) throws IOException {
-		String qPath = "/instance/{instanceId}";
-		StringBuilder sb = path(qPath, instanceId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhInstanceDetail.class);
-	}
-
-	/**
 	 * Get all your instance
 	 *
 	 * REST: GET /instance
@@ -117,6 +74,49 @@ public class ApiOvhInstance extends ApiOvhBase {
 		query(sb, "region", region);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhQuota.class);
+	}
+
+	/**
+	 * Get details on your instance
+	 *
+	 * REST: GET /instance/{instanceId}
+	 * @param instanceId [required] Instance id
+	 * @deprecated
+	 */
+	public OvhInstanceDetail instanceId_GET(String instanceId) throws IOException {
+		String qPath = "/instance/{instanceId}";
+		StringBuilder sb = path(qPath, instanceId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhInstanceDetail.class);
+	}
+
+	/**
+	 * Delete an instance
+	 *
+	 * REST: DELETE /instance/{instanceId}
+	 * @param instanceId [required] Instance id
+	 * @deprecated
+	 */
+	public void instanceId_DELETE(String instanceId) throws IOException {
+		String qPath = "/instance/{instanceId}";
+		StringBuilder sb = path(qPath, instanceId);
+		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
+	 * Alter an instance
+	 *
+	 * REST: PUT /instance/{instanceId}
+	 * @param instanceId [required] Instance id
+	 * @param name [required] New instance name
+	 * @deprecated
+	 */
+	public void instanceId_PUT(String instanceId, String name) throws IOException {
+		String qPath = "/instance/{instanceId}";
+		StringBuilder sb = path(qPath, instanceId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "name", name);
+		exec(qPath, "PUT", sb.toString(), o);
 	}
 
 	/**

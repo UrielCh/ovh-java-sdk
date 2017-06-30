@@ -6,7 +6,8 @@ package net.minidev.ovh.api.dbaas.logs;
 public enum OvhStreamColdStorageCompressionEnum {
 	LZMA("LZMA"),
 	GZIP("GZIP"),
-	DEFLATED("DEFLATED");
+	DEFLATED("DEFLATED"),
+	ZSTD("ZSTD");
 
 	final String value;
 

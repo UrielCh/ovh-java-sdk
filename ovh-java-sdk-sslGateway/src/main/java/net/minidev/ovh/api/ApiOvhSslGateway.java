@@ -58,14 +58,17 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 	 * Renew your SSL certificates
 	 *
 	 * REST: POST /sslGateway/{serviceName}/renewCertificate
+	 * @param domain [required] Domain on which you want to renew certificate
 	 * @param serviceName [required] The internal name of your SSL Gateway
 	 *
 	 * API beta
 	 */
-	public ArrayList<String> serviceName_renewCertificate_POST(String serviceName) throws IOException {
+	public ArrayList<String> serviceName_renewCertificate_POST(String serviceName, String domain) throws IOException {
 		String qPath = "/sslGateway/{serviceName}/renewCertificate";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "domain", domain);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};

@@ -14,6 +14,13 @@ public class OvhStream {
 	public Long coldStorageRetention;
 
 	/**
+	 * Enable Websocket
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean webSocketEnabled;
+
+	/**
 	 * Stream creation
 	 *
 	 * canBeNull && readOnly

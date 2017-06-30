@@ -28,6 +28,13 @@ public class OvhToken {
 	public String name;
 
 	/**
+	 * Cluster UUID
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String clusterId;
+
+	/**
 	 * Token value
 	 *
 	 * canBeNull && readOnly

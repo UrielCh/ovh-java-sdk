@@ -284,6 +284,12 @@
 			<version>${ovhjavasdk.version}</version>
 		</dependency>
 		<dependency>
+			<artifactId>ovh-java-sdk-metrics</artifactId>
+			<groupId>net.minidev</groupId>
+			<optional>false</optional>
+			<version>${ovhjavasdk.version}</version>
+		</dependency>
+		<dependency>
 			<artifactId>ovh-java-sdk-msServices</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
@@ -321,6 +327,12 @@
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-paastimeseries</artifactId>
+			<groupId>net.minidev</groupId>
+			<optional>false</optional>
+			<version>${ovhjavasdk.version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>ovh-java-sdk-packsiptrunk</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
 			<version>${ovhjavasdk.version}</version>
@@ -434,6 +446,12 @@
 			<version>${ovhjavasdk.version}</version>
 		</dependency>
 		<dependency>
+			<artifactId>ovh-java-sdk-time</artifactId>
+			<groupId>net.minidev</groupId>
+			<optional>false</optional>
+			<version>${ovhjavasdk.version}</version>
+		</dependency>
+		<dependency>
 			<artifactId>ovh-java-sdk-instance</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
@@ -441,24 +459,6 @@
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-volume</artifactId>
-			<groupId>net.minidev</groupId>
-			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>ovh-java-sdk-ssh</artifactId>
-			<groupId>net.minidev</groupId>
-			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>ovh-java-sdk-iot</artifactId>
-			<groupId>net.minidev</groupId>
-			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>ovh-java-sdk-time</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
 			<version>${ovhjavasdk.version}</version>
@@ -488,6 +488,12 @@
 			<version>${ovhjavasdk.version}</version>
 		</dependency>
 		<dependency>
+			<artifactId>ovh-java-sdk-ssh</artifactId>
+			<groupId>net.minidev</groupId>
+			<optional>false</optional>
+			<version>${ovhjavasdk.version}</version>
+		</dependency>
+		<dependency>
 			<artifactId>ovh-java-sdk-storage</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
@@ -495,6 +501,12 @@
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-token</artifactId>
+			<groupId>net.minidev</groupId>
+			<optional>false</optional>
+			<version>${ovhjavasdk.version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>ovh-java-sdk-iot</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
 			<version>${ovhjavasdk.version}</version>

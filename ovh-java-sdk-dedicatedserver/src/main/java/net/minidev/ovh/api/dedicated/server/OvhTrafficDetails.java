@@ -21,11 +21,25 @@ public class OvhTrafficDetails {
 	public OvhUnitAndValue<Long> outputQuotaSize;
 
 	/**
+	 * Is bandwidth throttleted for being over quota
+	 *
+	 * canBeNull
+	 */
+	public Boolean isThrottled;
+
+	/**
 	 * Monthly input traffic consumed this month
 	 *
 	 * canBeNull
 	 */
 	public OvhUnitAndValue<Long> inputQuotaUsed;
+
+	/**
+	 * Next reset quota date for traffic counter
+	 *
+	 * canBeNull
+	 */
+	public String resetQuotaDate;
 
 	/**
 	 * Monthly output traffic consumed this month

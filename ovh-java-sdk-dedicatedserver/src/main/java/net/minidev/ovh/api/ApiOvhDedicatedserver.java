@@ -72,6 +72,7 @@ import net.minidev.ovh.api.dedicated.server.OvhSplaTypeEnum;
 import net.minidev.ovh.api.dedicated.server.OvhSupportReplaceHddInfo;
 import net.minidev.ovh.api.dedicated.server.OvhTask;
 import net.minidev.ovh.api.dedicated.server.OvhTemplateCaps;
+import net.minidev.ovh.api.dedicated.server.OvhTrafficOrderable;
 import net.minidev.ovh.api.dedicated.server.OvhUsbKeyOrderableDetails;
 import net.minidev.ovh.api.dedicated.server.OvhVirtualMac;
 import net.minidev.ovh.api.dedicated.server.OvhVirtualMacManagement;
@@ -1756,6 +1757,19 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, Boolean.class);
+	}
+
+	/**
+	 * Get orderable traffic with your server.
+	 *
+	 * REST: GET /dedicated/server/{serviceName}/orderable/traffic
+	 * @param serviceName [required] The internal name of your dedicated server
+	 */
+	public OvhTrafficOrderable serviceName_orderable_traffic_GET(String serviceName) throws IOException {
+		String qPath = "/dedicated/server/{serviceName}/orderable/traffic";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhTrafficOrderable.class);
 	}
 
 	/**

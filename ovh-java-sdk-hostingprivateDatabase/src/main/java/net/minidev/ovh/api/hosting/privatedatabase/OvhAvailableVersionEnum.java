@@ -25,7 +25,9 @@ public enum OvhAvailableVersionEnum {
 	@JsonProperty("postgresql_9.5")
 	postgresql_9_5("postgresql_9.5"),
 	@JsonProperty("postgresql_9.6")
-	postgresql_9_6("postgresql_9.6");
+	postgresql_9_6("postgresql_9.6"),
+	@JsonProperty("redis_3.2")
+	redis_3_2("redis_3.2");
 
 	final String value;
 

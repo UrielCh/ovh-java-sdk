@@ -23,109 +23,6 @@ public class ApiOvhIot extends ApiOvhBase {
 	}
 
 	/**
-	 * Unregister an existing App for current user account
-	 *
-	 * REST: DELETE /iot/app/{app}
-	 * @param app [required] App name
-	 */
-	public void app_app_DELETE(String app) throws IOException {
-		String qPath = "/iot/app/{app}";
-		StringBuilder sb = path(qPath, app);
-		exec(qPath, "DELETE", sb.toString(), null);
-	}
-
-	/**
-	 * Update an existing App for current user account
-	 *
-	 * REST: PUT /iot/app/{app}
-	 * @param app [required] App name
-	 * @param description [required] App description
-	 * @param cluster [required] App Cluster
-	 */
-	public OvhIOTApp app_app_PUT(String app, String description, String cluster) throws IOException {
-		String qPath = "/iot/app/{app}";
-		StringBuilder sb = path(qPath, app);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "description", description);
-		addBody(o, "cluster", cluster);
-		String resp = exec(qPath, "PUT", sb.toString(), o);
-		return convertTo(resp, OvhIOTApp.class);
-	}
-
-	/**
-	 * Get App Details for current user account
-	 *
-	 * REST: GET /iot/app/{app}
-	 * @param app [required] App name
-	 */
-	public OvhIOTApp app_app_GET(String app) throws IOException {
-		String qPath = "/iot/app/{app}";
-		StringBuilder sb = path(qPath, app);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhIOTApp.class);
-	}
-
-	/**
-	 * Delete an existing Token for a specified app
-	 *
-	 * REST: DELETE /iot/app/{app}/token/{token}
-	 * @param app [required] App name
-	 * @param token [required] Token
-	 */
-	public void app_app_token_token_DELETE(String app, String token) throws IOException {
-		String qPath = "/iot/app/{app}/token/{token}";
-		StringBuilder sb = path(qPath, app, token);
-		exec(qPath, "DELETE", sb.toString(), null);
-	}
-
-	/**
-	 * Update Token properties for a specified app
-	 *
-	 * REST: PUT /iot/app/{app}/token/{token}
-	 * @param app [required] App name
-	 * @param token [required] Token
-	 * @param description [required] Token description
-	 * @param tagList [required] Tag List
-	 */
-	public OvhIOTToken app_app_token_token_PUT(String app, String token, String description, OvhTag[] tagList) throws IOException {
-		String qPath = "/iot/app/{app}/token/{token}";
-		StringBuilder sb = path(qPath, app, token);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "description", description);
-		addBody(o, "tagList", tagList);
-		String resp = exec(qPath, "PUT", sb.toString(), o);
-		return convertTo(resp, OvhIOTToken.class);
-	}
-
-	/**
-	 * Get Token properties for a specified app
-	 *
-	 * REST: GET /iot/app/{app}/token/{token}
-	 * @param app [required] App name
-	 * @param token [required] Token
-	 */
-	public OvhIOTToken app_app_token_token_GET(String app, String token) throws IOException {
-		String qPath = "/iot/app/{app}/token/{token}";
-		StringBuilder sb = path(qPath, app, token);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhIOTToken.class);
-	}
-
-	/**
-	 * Update Token to create a Grafana datasource
-	 *
-	 * REST: PUT /iot/app/{app}/token/{token}/actions/addGrafana
-	 * @param app [required] App name
-	 * @param token [required] Token
-	 */
-	public OvhGrafanaUser app_app_token_token_actions_addGrafana_PUT(String app, String token) throws IOException {
-		String qPath = "/iot/app/{app}/token/{token}/actions/addGrafana";
-		StringBuilder sb = path(qPath, app, token);
-		String resp = exec(qPath, "PUT", sb.toString(), null);
-		return convertTo(resp, OvhGrafanaUser.class);
-	}
-
-	/**
 	 * Get cluster list for current user account
 	 *
 	 * REST: GET /iot/availableCluster
@@ -168,6 +65,95 @@ public class ApiOvhIot extends ApiOvhBase {
 		addBody(o, "cluster", cluster);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhIOTApp.class);
+	}
+
+	/**
+	 * Get App Details for current user account
+	 *
+	 * REST: GET /iot/app/{app}
+	 * @param app [required] App name
+	 */
+	public OvhIOTApp app_app_GET(String app) throws IOException {
+		String qPath = "/iot/app/{app}";
+		StringBuilder sb = path(qPath, app);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhIOTApp.class);
+	}
+
+	/**
+	 * Unregister an existing App for current user account
+	 *
+	 * REST: DELETE /iot/app/{app}
+	 * @param app [required] App name
+	 */
+	public void app_app_DELETE(String app) throws IOException {
+		String qPath = "/iot/app/{app}";
+		StringBuilder sb = path(qPath, app);
+		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
+	 * Update an existing App for current user account
+	 *
+	 * REST: PUT /iot/app/{app}
+	 * @param app [required] App name
+	 * @param description [required] App description
+	 * @param cluster [required] App Cluster
+	 */
+	public OvhIOTApp app_app_PUT(String app, String description, String cluster) throws IOException {
+		String qPath = "/iot/app/{app}";
+		StringBuilder sb = path(qPath, app);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "description", description);
+		addBody(o, "cluster", cluster);
+		String resp = exec(qPath, "PUT", sb.toString(), o);
+		return convertTo(resp, OvhIOTApp.class);
+	}
+
+	/**
+	 * Get Token properties for a specified app
+	 *
+	 * REST: GET /iot/app/{app}/token/{token}
+	 * @param app [required] App name
+	 * @param token [required] Token
+	 */
+	public OvhIOTToken app_app_token_token_GET(String app, String token) throws IOException {
+		String qPath = "/iot/app/{app}/token/{token}";
+		StringBuilder sb = path(qPath, app, token);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhIOTToken.class);
+	}
+
+	/**
+	 * Delete an existing Token for a specified app
+	 *
+	 * REST: DELETE /iot/app/{app}/token/{token}
+	 * @param app [required] App name
+	 * @param token [required] Token
+	 */
+	public void app_app_token_token_DELETE(String app, String token) throws IOException {
+		String qPath = "/iot/app/{app}/token/{token}";
+		StringBuilder sb = path(qPath, app, token);
+		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
+	 * Update Token properties for a specified app
+	 *
+	 * REST: PUT /iot/app/{app}/token/{token}
+	 * @param app [required] App name
+	 * @param token [required] Token
+	 * @param description [required] Token description
+	 * @param tagList [required] Tag List
+	 */
+	public OvhIOTToken app_app_token_token_PUT(String app, String token, String description, OvhTag[] tagList) throws IOException {
+		String qPath = "/iot/app/{app}/token/{token}";
+		StringBuilder sb = path(qPath, app, token);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "description", description);
+		addBody(o, "tagList", tagList);
+		String resp = exec(qPath, "PUT", sb.toString(), o);
+		return convertTo(resp, OvhIOTToken.class);
 	}
 
 	/**
@@ -215,5 +201,19 @@ public class ApiOvhIot extends ApiOvhBase {
 		addBody(o, "activationCode", activationCode);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhIOTApp.class);
+	}
+
+	/**
+	 * Update Token to create a Grafana datasource
+	 *
+	 * REST: PUT /iot/app/{app}/token/{token}/actions/addGrafana
+	 * @param app [required] App name
+	 * @param token [required] Token
+	 */
+	public OvhGrafanaUser app_app_token_token_actions_addGrafana_PUT(String app, String token) throws IOException {
+		String qPath = "/iot/app/{app}/token/{token}/actions/addGrafana";
+		StringBuilder sb = path(qPath, app, token);
+		String resp = exec(qPath, "PUT", sb.toString(), null);
+		return convertTo(resp, OvhGrafanaUser.class);
 	}
 }

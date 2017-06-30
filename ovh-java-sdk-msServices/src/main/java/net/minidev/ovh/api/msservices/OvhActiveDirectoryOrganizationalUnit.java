@@ -5,6 +5,13 @@ package net.minidev.ovh.api.msservices;
  */
 public class OvhActiveDirectoryOrganizationalUnit {
 	/**
+	 * Service name of the office tenant (/licence/office/{serviceName}) linked to this AD service
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String officeTenantServiceName;
+
+	/**
 	 * Minimum lifespan of passwords, in days (0 = unlimited)
 	 *
 	 * canBeNull && readOnly

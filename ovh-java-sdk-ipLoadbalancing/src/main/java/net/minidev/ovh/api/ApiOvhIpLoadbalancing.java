@@ -415,7 +415,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * @param proxyProtocolVersion [required] Enforce use of the PROXY protocol version over any connection established to this server (disabled if null)
 	 * @param serverId [required] Id of your server
 	 * @param chain [required] Certificate chain. Allow server certificate verification (Avoid man-in-the-middle attacks)
-	 * @param weight [required] Set weight on that server [1..256]. 0 if not used in load balancing. 1 if null.
+	 * @param weight [required] Set weight on that server [1..256]. 0 if not used in load balancing. 1 if left null.
 	 * @param backup [required] Set server as backup. Set to 'false' if null
 	 * @param probe [required] Enable/disable probe. Set to 'false' if null
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -951,7 +951,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * @param port [required] Port attached to your server ([1..65535]). Inherited from farm if null
 	 * @param proxyProtocolVersion [required] Disabled if null. Send PROXY protocol header. Requires a compatible server.
 	 * @param chain [required] Certificate chain. Allow server certificate verification (Avoid man-in-the-middle attacks)
-	 * @param weight [required] Set weight on that server [1..256]. 0 if not used in load balancing. 1 if null. Servers with higher weight get more requests.
+	 * @param weight [required] Set weight on that server [1..256]. 0 if not used in load balancing. 1 if left null. Servers with higher weight get more requests.
 	 * @param address [required] Address of your server
 	 * @param backup [required] Set server as backup. Set to 'false' if null
 	 * @param probe [required] Enable/disable probe. Set to 'false' if null
@@ -2054,7 +2054,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * @param port [required] Port attached to your server ([1..65535]). Inherited from farm if null
 	 * @param proxyProtocolVersion [required] Disabled if null. Send PROXY protocol header. Requires a compatible server.
 	 * @param chain [required] Certificate chain. Allow server certificate verification (Avoid man-in-the-middle attacks)
-	 * @param weight [required] Set weight on that server [1..256]. 0 if not used in load balancing. 1 if null. Servers with higher weight get more requests.
+	 * @param weight [required] Set weight on that server [1..256]. 0 if not used in load balancing. 1 if left null. Servers with higher weight get more requests.
 	 * @param address [required] Address of your server
 	 * @param backup [required] Set server as backup. Set to 'false' if null
 	 * @param probe [required] Enable/disable probe. Set to 'false' if null

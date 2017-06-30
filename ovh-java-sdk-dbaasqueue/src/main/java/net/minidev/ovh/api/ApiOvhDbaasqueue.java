@@ -122,12 +122,13 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	 *
 	 * API beta
 	 */
-	public void serviceName_topic_topicId_PUT(String serviceName, String topicId, Long partitions) throws IOException {
+	public OvhTopic serviceName_topic_topicId_PUT(String serviceName, String topicId, Long partitions) throws IOException {
 		String qPath = "/dbaas/queue/{serviceName}/topic/{topicId}";
 		StringBuilder sb = path(qPath, serviceName, topicId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "partitions", partitions);
-		exec(qPath, "PUT", sb.toString(), o);
+		String resp = exec(qPath, "PUT", sb.toString(), o);
+		return convertTo(resp, OvhTopic.class);
 	}
 
 	/**

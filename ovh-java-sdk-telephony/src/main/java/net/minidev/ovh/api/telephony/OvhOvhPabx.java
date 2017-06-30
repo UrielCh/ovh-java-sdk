@@ -5,16 +5,29 @@ package net.minidev.ovh.api.telephony;
  */
 public class OvhOvhPabx {
 	/**
+	 * General type of the service
+	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhTypeServiceEnum serviceType;
 
 	/**
+	 * Does the service have extended CCS options enabled?
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean isCCS;
+
+	/**
+	 * Feature of the service
+	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhTypeEnum featureType;
 
 	/**
+	 * Description of the service
+	 *
 	 * canBeNull && readOnly
 	 */
 	public String description;

@@ -698,37 +698,6 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	}
 
 	/**
-	 * Edit the backup on a Private Cloud
-	 *
-	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/backup
-	 * @param restorePointInReport [required] RestorePoint number on mail report
-	 * @param backupOffer [required] Backup offer type
-	 * @param fullDayInReport [required] Full day on mail report
-	 * @param mailAddress [required] Unique additional email address for backup daily report
-	 * @param scheduleHour [required] Schedule hour for start backup. UTC Timezone
-	 * @param diskSizeInReport [required] Disk size on mail report
-	 * @param backupSizeInReport [required] Backup size on day on email report
-	 * @param backupDurationInReport [required] Duration on email report
-	 * @param serviceName [required] Domain of the service
-	 * @param datacenterId [required]
-	 */
-	public OvhTask serviceName_datacenter_datacenterId_backup_POST(String serviceName, Long datacenterId, Boolean restorePointInReport, OvhOfferTypeEnum backupOffer, Boolean fullDayInReport, String mailAddress, Date scheduleHour, Boolean diskSizeInReport, Boolean backupSizeInReport, Boolean backupDurationInReport) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/backup";
-		StringBuilder sb = path(qPath, serviceName, datacenterId);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "restorePointInReport", restorePointInReport);
-		addBody(o, "backupOffer", backupOffer);
-		addBody(o, "fullDayInReport", fullDayInReport);
-		addBody(o, "mailAddress", mailAddress);
-		addBody(o, "scheduleHour", scheduleHour);
-		addBody(o, "diskSizeInReport", diskSizeInReport);
-		addBody(o, "backupSizeInReport", backupSizeInReport);
-		addBody(o, "backupDurationInReport", backupDurationInReport);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
 	 * Enable backup solution on a Private Cloud
 	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/backup/enable
@@ -741,6 +710,37 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName, datacenterId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "backupOffer", backupOffer);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Edit the backup on a Private Cloud
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/backup/changeProperties
+	 * @param restorePointInReport [required] RestorePoint number on mail report
+	 * @param backupOffer [required] Backup offer type
+	 * @param fullDayInReport [required] Full day on mail report
+	 * @param mailAddress [required] Unique additional email address for backup daily report
+	 * @param scheduleHour [required] Schedule hour for start backup. UTC Timezone
+	 * @param diskSizeInReport [required] Disk size on mail report
+	 * @param backupSizeInReport [required] Backup size on day on email report
+	 * @param backupDurationInReport [required] Duration on email report
+	 * @param serviceName [required] Domain of the service
+	 * @param datacenterId [required]
+	 */
+	public OvhTask serviceName_datacenter_datacenterId_backup_changeProperties_POST(String serviceName, Long datacenterId, Boolean restorePointInReport, OvhOfferTypeEnum backupOffer, Boolean fullDayInReport, String mailAddress, Date scheduleHour, Boolean diskSizeInReport, Boolean backupSizeInReport, Boolean backupDurationInReport) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/backup/changeProperties";
+		StringBuilder sb = path(qPath, serviceName, datacenterId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "restorePointInReport", restorePointInReport);
+		addBody(o, "backupOffer", backupOffer);
+		addBody(o, "fullDayInReport", fullDayInReport);
+		addBody(o, "mailAddress", mailAddress);
+		addBody(o, "scheduleHour", scheduleHour);
+		addBody(o, "diskSizeInReport", diskSizeInReport);
+		addBody(o, "backupSizeInReport", backupSizeInReport);
+		addBody(o, "backupDurationInReport", backupDurationInReport);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}

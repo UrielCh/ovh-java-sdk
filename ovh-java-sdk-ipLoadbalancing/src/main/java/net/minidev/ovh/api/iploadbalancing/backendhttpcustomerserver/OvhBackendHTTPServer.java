@@ -51,7 +51,7 @@ public class OvhBackendHTTPServer {
 	public Long backendId;
 
 	/**
-	 * Weight value . 1 if null. 0 if not used in load balancing. Servers with higher weight get more requests.
+	 * Weight value. Defaults to 1. 0 if not used in load balancing. Servers with higher weight get more requests.
 	 *
 	 * canBeNull && readOnly
 	 */

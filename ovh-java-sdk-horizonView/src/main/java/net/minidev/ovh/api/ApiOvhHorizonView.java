@@ -4,10 +4,12 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import net.minidev.ovh.api.horizonview.OvhCustomerNetwork;
 import net.minidev.ovh.api.horizonview.OvhCustomerUser;
 import net.minidev.ovh.api.horizonview.OvhDatacenter;
 import net.minidev.ovh.api.horizonview.OvhDedicatedHorizon;
 import net.minidev.ovh.api.horizonview.OvhPool;
+import net.minidev.ovh.api.horizonview.OvhPoolType;
 import net.minidev.ovh.api.horizonview.OvhTask;
 import net.minidev.ovh.api.horizonview.OvhTaskStateEnum;
 import net.minidev.ovh.api.horizonview.OvhUser;
@@ -221,6 +223,51 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	}
 
 	/**
+	 * You can reach from the Desktops your private network
+	 *
+	 * REST: GET /horizonView/{serviceName}/customerNetwork
+	 * @param serviceName [required] Domain of the service
+	 */
+	public ArrayList<String> serviceName_customerNetwork_GET(String serviceName) throws IOException {
+		String qPath = "/horizonView/{serviceName}/customerNetwork";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Add a new network
+	 *
+	 * REST: POST /horizonView/{serviceName}/customerNetwork
+	 * @param network [required] The private network you want to reach.
+	 * @param name [required] Name your network
+	 * @param serviceName [required] Domain of the service
+	 */
+	public ArrayList<OvhTask> serviceName_customerNetwork_POST(String serviceName, String network, String name) throws IOException {
+		String qPath = "/horizonView/{serviceName}/customerNetwork";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "network", network);
+		addBody(o, "name", name);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /horizonView/{serviceName}/customerNetwork/{network}
+	 * @param serviceName [required] Domain of the service
+	 * @param network [required] Customer network
+	 */
+	public OvhCustomerNetwork serviceName_customerNetwork_network_GET(String serviceName, String network) throws IOException {
+		String qPath = "/horizonView/{serviceName}/customerNetwork/{network}";
+		StringBuilder sb = path(qPath, serviceName, network);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhCustomerNetwork.class);
+	}
+
+	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /horizonView/{serviceName}
@@ -250,13 +297,53 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 * Add new access point to create a new network
 	 *
 	 * REST: POST /horizonView/{serviceName}/accessPoint
+	 * @param vrouterPoolPublicIp [required] You need to use a public Ip if you want to deploy a public pool.
+	 * @param privateVlan [required] You can customize your pool by choosing its private Vlan ID. (smaller than 4095)
+	 * @param privateBlock [required] You can customize your pool by choosing the private network (Ex : 10.0.0.0/16)
+	 * @param poolType [required] The type of pool you want to deploy.
 	 * @param serviceName [required] Domain of the service
 	 */
-	public ArrayList<OvhTask> serviceName_accessPoint_POST(String serviceName) throws IOException {
+	public ArrayList<OvhTask> serviceName_accessPoint_POST(String serviceName, String vrouterPoolPublicIp, Long privateVlan, String privateBlock, OvhPoolType poolType) throws IOException {
 		String qPath = "/horizonView/{serviceName}/accessPoint";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "vrouterPoolPublicIp", vrouterPoolPublicIp);
+		addBody(o, "privateVlan", privateVlan);
+		addBody(o, "privateBlock", privateBlock);
+		addBody(o, "poolType", poolType);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Link an existing private network to your Access Point
+	 *
+	 * REST: POST /horizonView/{serviceName}/accessPoint/{accessPointId}/customerNetwork
+	 * @param network [required] The customer network you want to route on your pool
+	 * @param serviceName [required] Domain of the service
+	 * @param accessPointId [required] Pool id
+	 */
+	public OvhTask serviceName_accessPoint_accessPointId_customerNetwork_POST(String serviceName, Long accessPointId, String network) throws IOException {
+		String qPath = "/horizonView/{serviceName}/accessPoint/{accessPointId}/customerNetwork";
+		StringBuilder sb = path(qPath, serviceName, accessPointId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "network", network);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * List private networks linked to your Access Point
+	 *
+	 * REST: GET /horizonView/{serviceName}/accessPoint/{accessPointId}/customerNetwork
+	 * @param serviceName [required] Domain of the service
+	 * @param accessPointId [required] Pool id
+	 */
+	public ArrayList<String> serviceName_accessPoint_accessPointId_customerNetwork_GET(String serviceName, Long accessPointId) throws IOException {
+		String qPath = "/horizonView/{serviceName}/accessPoint/{accessPointId}/customerNetwork";
+		StringBuilder sb = path(qPath, serviceName, accessPointId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
 	}
 
 	/**

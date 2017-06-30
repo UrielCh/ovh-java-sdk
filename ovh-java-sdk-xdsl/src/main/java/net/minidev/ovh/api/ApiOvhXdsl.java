@@ -13,6 +13,7 @@ import net.minidev.ovh.api.xdsl.OvhAccess;
 import net.minidev.ovh.api.xdsl.OvhAccessDiagnostic;
 import net.minidev.ovh.api.xdsl.OvhAccessStatisticsTypeEnum;
 import net.minidev.ovh.api.xdsl.OvhAsyncTask;
+import net.minidev.ovh.api.xdsl.OvhAsyncTaskArray;
 import net.minidev.ovh.api.xdsl.OvhConnectedDevice;
 import net.minidev.ovh.api.xdsl.OvhDHCP;
 import net.minidev.ovh.api.xdsl.OvhDHCPStaticAddress;
@@ -43,7 +44,10 @@ import net.minidev.ovh.api.xdsl.OvhTask;
 import net.minidev.ovh.api.xdsl.OvhTaskStatusEnum;
 import net.minidev.ovh.api.xdsl.OvhTimestampAndValue;
 import net.minidev.ovh.api.xdsl.OvhWLAN;
+import net.minidev.ovh.api.xdsl.eligibility.OvhAddress;
 import net.minidev.ovh.api.xdsl.eligibility.OvhCity;
+import net.minidev.ovh.api.xdsl.eligibility.OvhEligibility;
+import net.minidev.ovh.api.xdsl.eligibility.OvhLandlineStatusEnum;
 import net.minidev.ovh.api.xdsl.eligibility.OvhStreet;
 import net.minidev.ovh.api.xdsl.linediagnostic.OvhAnswers;
 import net.minidev.ovh.api.xdsl.linediagnostic.OvhCustomerActionsEnum;
@@ -1461,6 +1465,43 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	}
 
 	/**
+	 * Do an eligibility for an address, if no line exist
+	 *
+	 * REST: POST /xdsl/eligibility/test/address
+	 * @param address [required] The address
+	 *
+	 * API beta
+	 */
+	public OvhAsyncTask<OvhEligibility> eligibility_test_address_POST(OvhAddress address) throws IOException {
+		String qPath = "/xdsl/eligibility/test/address";
+		StringBuilder sb = path(qPath);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "address", address);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t10);
+	}
+	private static TypeReference<OvhAsyncTask<OvhEligibility>> t10 = new TypeReference<OvhAsyncTask<OvhEligibility>>() {};
+
+	/**
+	 * Do an eligibility for a line
+	 *
+	 * REST: POST /xdsl/eligibility/test/line
+	 * @param lineNumber [required] The line number
+	 * @param lineStatus [required] The line status
+	 *
+	 * API beta
+	 */
+	public OvhAsyncTask<OvhEligibility> eligibility_test_line_POST(String lineNumber, OvhLandlineStatusEnum lineStatus) throws IOException {
+		String qPath = "/xdsl/eligibility/test/line";
+		StringBuilder sb = path(qPath);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "lineNumber", lineNumber);
+		addBody(o, "lineStatus", lineStatus);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t10);
+	}
+
+	/**
 	 * Get the streets from a city inseeCode and partial street name
 	 *
 	 * REST: GET /xdsl/eligibility/streets
@@ -1473,9 +1514,46 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		query(sb, "inseeCode", inseeCode);
 		query(sb, "partialName", partialName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t10);
+		return convertTo(resp, t11);
 	}
-	private static TypeReference<ArrayList<OvhStreet>> t10 = new TypeReference<ArrayList<OvhStreet>>() {};
+	private static TypeReference<ArrayList<OvhStreet>> t11 = new TypeReference<ArrayList<OvhStreet>>() {};
+
+	/**
+	 * Get the inactive lines at given address
+	 *
+	 * REST: POST /xdsl/eligibility/lines/inactive
+	 * @param address [required] The address
+	 *
+	 * API beta
+	 */
+	public OvhAsyncTaskArray<net.minidev.ovh.api.xdsl.eligibility.OvhLine> eligibility_lines_inactive_POST(OvhAddress address) throws IOException {
+		String qPath = "/xdsl/eligibility/lines/inactive";
+		StringBuilder sb = path(qPath);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "address", address);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t12);
+	}
+	private static TypeReference<OvhAsyncTaskArray<net.minidev.ovh.api.xdsl.eligibility.OvhLine>> t12 = new TypeReference<OvhAsyncTaskArray<net.minidev.ovh.api.xdsl.eligibility.OvhLine>>() {};
+
+	/**
+	 * Get the active lines at given address
+	 *
+	 * REST: POST /xdsl/eligibility/lines/active
+	 * @param contactName [required] The contact name first three letters
+	 * @param address [required] The address
+	 *
+	 * API beta
+	 */
+	public OvhAsyncTaskArray<net.minidev.ovh.api.xdsl.eligibility.OvhLine> eligibility_lines_active_POST(String contactName, OvhAddress address) throws IOException {
+		String qPath = "/xdsl/eligibility/lines/active";
+		StringBuilder sb = path(qPath);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "contactName", contactName);
+		addBody(o, "address", address);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t12);
+	}
 
 	/**
 	 * Get the cities from a zipCode
@@ -1488,9 +1566,9 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		StringBuilder sb = path(qPath);
 		query(sb, "zipCode", zipCode);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t11);
+		return convertTo(resp, t13);
 	}
-	private static TypeReference<ArrayList<OvhCity>> t11 = new TypeReference<ArrayList<OvhCity>>() {};
+	private static TypeReference<ArrayList<OvhCity>> t13 = new TypeReference<ArrayList<OvhCity>>() {};
 
 	/**
 	 * List of incidents

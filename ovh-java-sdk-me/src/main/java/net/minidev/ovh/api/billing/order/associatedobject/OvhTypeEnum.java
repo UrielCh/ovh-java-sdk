@@ -5,9 +5,9 @@ package net.minidev.ovh.api.billing.order.associatedobject;
  */
 public enum OvhTypeEnum {
 	Bill("Bill"),
+	Deposit("Deposit"),
 	Refund("Refund"),
-	StatementIncome("StatementIncome"),
-	StatementOutcome("StatementOutcome");
+	Withdrawal("Withdrawal");
 
 	final String value;
 

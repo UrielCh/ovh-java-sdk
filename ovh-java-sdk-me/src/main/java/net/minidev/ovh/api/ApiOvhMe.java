@@ -18,8 +18,12 @@ import net.minidev.ovh.api.billing.OvhBankAccountStateEnum;
 import net.minidev.ovh.api.billing.OvhBill;
 import net.minidev.ovh.api.billing.OvhBillDetail;
 import net.minidev.ovh.api.billing.OvhCreditCard;
+import net.minidev.ovh.api.billing.OvhDeferredPaymentAccount;
+import net.minidev.ovh.api.billing.OvhDeposit;
+import net.minidev.ovh.api.billing.OvhDepositDetail;
 import net.minidev.ovh.api.billing.OvhFidelityAccount;
 import net.minidev.ovh.api.billing.OvhFidelityMovement;
+import net.minidev.ovh.api.billing.OvhItemDetail;
 import net.minidev.ovh.api.billing.OvhMovement;
 import net.minidev.ovh.api.billing.OvhOrder;
 import net.minidev.ovh.api.billing.OvhOrderDetail;
@@ -32,6 +36,8 @@ import net.minidev.ovh.api.billing.OvhRefundDetail;
 import net.minidev.ovh.api.billing.OvhReusablePaymentMeanEnum;
 import net.minidev.ovh.api.billing.OvhSlaOperation;
 import net.minidev.ovh.api.billing.OvhSlaOperationService;
+import net.minidev.ovh.api.billing.OvhWithdrawal;
+import net.minidev.ovh.api.billing.OvhWithdrawalDetail;
 import net.minidev.ovh.api.billing.order.OvhOrderStatusEnum;
 import net.minidev.ovh.api.billing.order.OvhPaymentMeans;
 import net.minidev.ovh.api.billing.order.OvhRegisteredPaymentMean;
@@ -88,6 +94,7 @@ import net.minidev.ovh.api.nichandle.document.OvhDocument;
 import net.minidev.ovh.api.nichandle.emailchange.OvhTask;
 import net.minidev.ovh.api.telephony.OvhDefaultIpRestriction;
 import net.minidev.ovh.api.telephony.OvhProtocolEnum;
+import net.minidev.ovh.api.telephony.OvhSettings;
 import net.minidev.ovh.api.xdsl.OvhSetting;
 import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
@@ -179,6 +186,32 @@ public class ApiOvhMe extends ApiOvhBase {
 		String qPath = "/me/telephony/defaultIpRestriction/{id}";
 		StringBuilder sb = path(qPath, id);
 		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
+	 * Change the telephony settings linked to the customer account
+	 *
+	 * REST: POST /me/telephony/settings
+	 * @param settings [required] Settings to be changed
+	 */
+	public void telephony_settings_POST(OvhSettings settings) throws IOException {
+		String qPath = "/me/telephony/settings";
+		StringBuilder sb = path(qPath);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "settings", settings);
+		exec(qPath, "POST", sb.toString(), o);
+	}
+
+	/**
+	 * Get the telephony settings linked to the customer account
+	 *
+	 * REST: GET /me/telephony/settings
+	 */
+	public OvhSettings telephony_settings_GET() throws IOException {
+		String qPath = "/me/telephony/settings";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhSettings.class);
 	}
 
 	/**
@@ -534,11 +567,13 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * All operations related to these debts
 	 *
 	 * REST: GET /me/order/{orderId}/debt/operation
+	 * @param depositOrderId [required] Filter the value of depositOrderId property (=)
 	 * @param orderId [required]
 	 */
-	public ArrayList<Long> order_orderId_debt_operation_GET(Long orderId) throws IOException {
+	public ArrayList<Long> order_orderId_debt_operation_GET(Long orderId, Long depositOrderId) throws IOException {
 		String qPath = "/me/order/{orderId}/debt/operation";
 		StringBuilder sb = path(qPath, orderId);
+		query(sb, "depositOrderId", depositOrderId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
@@ -638,6 +673,22 @@ public class ApiOvhMe extends ApiOvhBase {
 	}
 
 	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /me/order/{orderId}/details/{orderDetailId}/extension
+	 * @param orderId [required]
+	 * @param orderDetailId [required]
+	 *
+	 * API beta
+	 */
+	public OvhItemDetail order_orderId_details_orderDetailId_extension_GET(Long orderId, Long orderDetailId) throws IOException {
+		String qPath = "/me/order/{orderId}/details/{orderDetailId}/extension";
+		StringBuilder sb = path(qPath, orderId, orderDetailId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhItemDetail.class);
+	}
+
+	/**
 	 * List of registered payment mean you can use to pay this order
 	 *
 	 * REST: GET /me/order/{orderId}/availableRegisteredPaymentMean
@@ -655,13 +706,15 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * Pay with an already registered payment mean
 	 *
 	 * REST: POST /me/order/{orderId}/payWithRegisteredPaymentMean
+	 * @param paymentMeanId [required] Id of registered payment mean, mandatory for bankAccount, creditCard and paypal
 	 * @param paymentMean [required] The registered payment mean you want to use
 	 * @param orderId [required]
 	 */
-	public void order_orderId_payWithRegisteredPaymentMean_POST(Long orderId, OvhReusablePaymentMeanEnum paymentMean) throws IOException {
+	public void order_orderId_payWithRegisteredPaymentMean_POST(Long orderId, Long paymentMeanId, OvhReusablePaymentMeanEnum paymentMean) throws IOException {
 		String qPath = "/me/order/{orderId}/payWithRegisteredPaymentMean";
 		StringBuilder sb = path(qPath, orderId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "paymentMeanId", paymentMeanId);
 		addBody(o, "paymentMean", paymentMean);
 		exec(qPath, "POST", sb.toString(), o);
 	}
@@ -690,6 +743,77 @@ public class ApiOvhMe extends ApiOvhBase {
 		StringBuilder sb = path(qPath, orderId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, net.minidev.ovh.api.billing.order.OvhAssociatedObject.class);
+	}
+
+	/**
+	 * List of all the withdrawals made from your prepaid account
+	 *
+	 * REST: GET /me/withdrawal
+	 * @param orderId [required] Filter the value of orderId property (=)
+	 * @param date_to [required] Filter the value of date property (<=)
+	 * @param date_from [required] Filter the value of date property (>=)
+	 */
+	public ArrayList<String> withdrawal_GET(Date date_from, Date date_to, Long orderId) throws IOException {
+		String qPath = "/me/withdrawal";
+		StringBuilder sb = path(qPath);
+		query(sb, "date.from", date_from);
+		query(sb, "date.to", date_to);
+		query(sb, "orderId", orderId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /me/withdrawal/{withdrawalId}
+	 * @param withdrawalId [required]
+	 */
+	public OvhWithdrawal withdrawal_withdrawalId_GET(String withdrawalId) throws IOException {
+		String qPath = "/me/withdrawal/{withdrawalId}";
+		StringBuilder sb = path(qPath, withdrawalId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhWithdrawal.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /me/withdrawal/{withdrawalId}/payment
+	 * @param withdrawalId [required]
+	 */
+	public OvhPayment withdrawal_withdrawalId_payment_GET(String withdrawalId) throws IOException {
+		String qPath = "/me/withdrawal/{withdrawalId}/payment";
+		StringBuilder sb = path(qPath, withdrawalId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPayment.class);
+	}
+
+	/**
+	 * Give access to all entries of this withdrawal
+	 *
+	 * REST: GET /me/withdrawal/{withdrawalId}/details
+	 * @param withdrawalId [required]
+	 */
+	public ArrayList<String> withdrawal_withdrawalId_details_GET(String withdrawalId) throws IOException {
+		String qPath = "/me/withdrawal/{withdrawalId}/details";
+		StringBuilder sb = path(qPath, withdrawalId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /me/withdrawal/{withdrawalId}/details/{withdrawalDetailId}
+	 * @param withdrawalId [required]
+	 * @param withdrawalDetailId [required]
+	 */
+	public OvhWithdrawalDetail withdrawal_withdrawalId_details_withdrawalDetailId_GET(String withdrawalId, String withdrawalDetailId) throws IOException {
+		String qPath = "/me/withdrawal/{withdrawalId}/details/{withdrawalDetailId}";
+		StringBuilder sb = path(qPath, withdrawalId, withdrawalDetailId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhWithdrawalDetail.class);
 	}
 
 	/**
@@ -728,6 +852,221 @@ public class ApiOvhMe extends ApiOvhBase {
 		String qPath = "/me/subscription/{subscriptionType}";
 		StringBuilder sb = path(qPath, subscriptionType);
 		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * List of all the deposits made to your prepaid account or debt account
+	 *
+	 * REST: GET /me/deposit
+	 * @param orderId [required] Filter the value of orderId property (=)
+	 * @param date_to [required] Filter the value of date property (<=)
+	 * @param date_from [required] Filter the value of date property (>=)
+	 */
+	public ArrayList<String> deposit_GET(Date date_from, Date date_to, Long orderId) throws IOException {
+		String qPath = "/me/deposit";
+		StringBuilder sb = path(qPath);
+		query(sb, "date.from", date_from);
+		query(sb, "date.to", date_to);
+		query(sb, "orderId", orderId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /me/deposit/{depositId}
+	 * @param depositId [required]
+	 */
+	public OvhDeposit deposit_depositId_GET(String depositId) throws IOException {
+		String qPath = "/me/deposit/{depositId}";
+		StringBuilder sb = path(qPath, depositId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhDeposit.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /me/deposit/{depositId}/payment
+	 * @param depositId [required]
+	 */
+	public OvhPayment deposit_depositId_payment_GET(String depositId) throws IOException {
+		String qPath = "/me/deposit/{depositId}/payment";
+		StringBuilder sb = path(qPath, depositId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPayment.class);
+	}
+
+	/**
+	 * Get invoices paid by this deposit
+	 *
+	 * REST: GET /me/deposit/{depositId}/paidBills
+	 * @param depositId [required]
+	 */
+	public ArrayList<String> deposit_depositId_paidBills_GET(String depositId) throws IOException {
+		String qPath = "/me/deposit/{depositId}/paidBills";
+		StringBuilder sb = path(qPath, depositId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /me/deposit/{depositId}/paidBills/{billId}
+	 * @param depositId [required]
+	 * @param billId [required]
+	 */
+	public OvhBill deposit_depositId_paidBills_billId_GET(String depositId, String billId) throws IOException {
+		String qPath = "/me/deposit/{depositId}/paidBills/{billId}";
+		StringBuilder sb = path(qPath, depositId, billId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhBill.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /me/deposit/{depositId}/paidBills/{billId}/debt
+	 * @param depositId [required]
+	 * @param billId [required]
+	 */
+	public OvhDebt deposit_depositId_paidBills_billId_debt_GET(String depositId, String billId) throws IOException {
+		String qPath = "/me/deposit/{depositId}/paidBills/{billId}/debt";
+		StringBuilder sb = path(qPath, depositId, billId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhDebt.class);
+	}
+
+	/**
+	 * Create an order in order to pay this order's debt
+	 *
+	 * REST: POST /me/deposit/{depositId}/paidBills/{billId}/debt/pay
+	 * @param depositId [required]
+	 * @param billId [required]
+	 */
+	public OvhOrder deposit_depositId_paidBills_billId_debt_pay_POST(String depositId, String billId) throws IOException {
+		String qPath = "/me/deposit/{depositId}/paidBills/{billId}/debt/pay";
+		StringBuilder sb = path(qPath, depositId, billId);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhOrder.class);
+	}
+
+	/**
+	 * All operations related to these debts
+	 *
+	 * REST: GET /me/deposit/{depositId}/paidBills/{billId}/debt/operation
+	 * @param depositOrderId [required] Filter the value of depositOrderId property (=)
+	 * @param depositId [required]
+	 * @param billId [required]
+	 */
+	public ArrayList<Long> deposit_depositId_paidBills_billId_debt_operation_GET(String depositId, String billId, Long depositOrderId) throws IOException {
+		String qPath = "/me/deposit/{depositId}/paidBills/{billId}/debt/operation";
+		StringBuilder sb = path(qPath, depositId, billId);
+		query(sb, "depositOrderId", depositOrderId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /me/deposit/{depositId}/paidBills/{billId}/debt/operation/{operationId}
+	 * @param depositId [required]
+	 * @param billId [required]
+	 * @param operationId [required]
+	 */
+	public OvhOperation deposit_depositId_paidBills_billId_debt_operation_operationId_GET(String depositId, String billId, Long operationId) throws IOException {
+		String qPath = "/me/deposit/{depositId}/paidBills/{billId}/debt/operation/{operationId}";
+		StringBuilder sb = path(qPath, depositId, billId, operationId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhOperation.class);
+	}
+
+	/**
+	 * Return main data about the object related to this debt operation
+	 *
+	 * REST: GET /me/deposit/{depositId}/paidBills/{billId}/debt/operation/{operationId}/associatedObject
+	 * @param depositId [required]
+	 * @param billId [required]
+	 * @param operationId [required]
+	 */
+	public OvhAssociatedObject deposit_depositId_paidBills_billId_debt_operation_operationId_associatedObject_GET(String depositId, String billId, Long operationId) throws IOException {
+		String qPath = "/me/deposit/{depositId}/paidBills/{billId}/debt/operation/{operationId}/associatedObject";
+		StringBuilder sb = path(qPath, depositId, billId, operationId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhAssociatedObject.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /me/deposit/{depositId}/paidBills/{billId}/payment
+	 * @param depositId [required]
+	 * @param billId [required]
+	 */
+	public OvhPayment deposit_depositId_paidBills_billId_payment_GET(String depositId, String billId) throws IOException {
+		String qPath = "/me/deposit/{depositId}/paidBills/{billId}/payment";
+		StringBuilder sb = path(qPath, depositId, billId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPayment.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /me/deposit/{depositId}/paidBills/{billId}/details/{billDetailId}
+	 * @param depositId [required]
+	 * @param billId [required]
+	 * @param billDetailId [required]
+	 */
+	public OvhBillDetail deposit_depositId_paidBills_billId_details_billDetailId_GET(String depositId, String billId, String billDetailId) throws IOException {
+		String qPath = "/me/deposit/{depositId}/paidBills/{billId}/details/{billDetailId}";
+		StringBuilder sb = path(qPath, depositId, billId, billDetailId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhBillDetail.class);
+	}
+
+	/**
+	 * Give access to all entries of the bill
+	 *
+	 * REST: GET /me/deposit/{depositId}/paidBills/{billId}/details
+	 * @param depositId [required]
+	 * @param billId [required]
+	 */
+	public ArrayList<String> deposit_depositId_paidBills_billId_details_GET(String depositId, String billId) throws IOException {
+		String qPath = "/me/deposit/{depositId}/paidBills/{billId}/details";
+		StringBuilder sb = path(qPath, depositId, billId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Give access to all entries of this deposit
+	 *
+	 * REST: GET /me/deposit/{depositId}/details
+	 * @param depositId [required]
+	 */
+	public ArrayList<String> deposit_depositId_details_GET(String depositId) throws IOException {
+		String qPath = "/me/deposit/{depositId}/details";
+		StringBuilder sb = path(qPath, depositId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /me/deposit/{depositId}/details/{depositDetailId}
+	 * @param depositId [required]
+	 * @param depositDetailId [required]
+	 */
+	public OvhDepositDetail deposit_depositId_details_depositDetailId_GET(String depositId, String depositDetailId) throws IOException {
+		String qPath = "/me/deposit/{depositId}/details/{depositDetailId}";
+		StringBuilder sb = path(qPath, depositId, depositDetailId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhDepositDetail.class);
 	}
 
 	/**
@@ -2036,6 +2375,56 @@ public class ApiOvhMe extends ApiOvhBase {
 	}
 
 	/**
+	 * List of authorized deferred payment account for this customer
+	 *
+	 * REST: GET /me/paymentMean/deferredPaymentAccount
+	 */
+	public ArrayList<Long> paymentMean_deferredPaymentAccount_GET() throws IOException {
+		String qPath = "/me/paymentMean/deferredPaymentAccount";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Allow you to use deferred payment. Will cancel the previous choice.
+	 *
+	 * REST: POST /me/paymentMean/deferredPaymentAccount/{id}/chooseAsDefaultPaymentMean
+	 * @param id [required]
+	 */
+	public void paymentMean_deferredPaymentAccount_id_chooseAsDefaultPaymentMean_POST(Long id) throws IOException {
+		String qPath = "/me/paymentMean/deferredPaymentAccount/{id}/chooseAsDefaultPaymentMean";
+		StringBuilder sb = path(qPath, id);
+		exec(qPath, "POST", sb.toString(), null);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /me/paymentMean/deferredPaymentAccount/{id}
+	 * @param id [required]
+	 */
+	public OvhDeferredPaymentAccount paymentMean_deferredPaymentAccount_id_GET(Long id) throws IOException {
+		String qPath = "/me/paymentMean/deferredPaymentAccount/{id}";
+		StringBuilder sb = path(qPath, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhDeferredPaymentAccount.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /me/paymentMean/deferredPaymentAccount/{id}
+	 * @param body [required] New object properties
+	 * @param id [required]
+	 */
+	public void paymentMean_deferredPaymentAccount_id_PUT(Long id, OvhDeferredPaymentAccount body) throws IOException {
+		String qPath = "/me/paymentMean/deferredPaymentAccount/{id}";
+		StringBuilder sb = path(qPath, id);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
 	 * List of bank accounts
 	 *
 	 * REST: GET /me/paymentMean/bankAccount
@@ -2056,16 +2445,18 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * @param iban [required] Account's IBAN
 	 * @param ownerAddress [required] Account owner's address
 	 * @param ownerName [required] Account owner's name
+	 * @param setDefault [required] Set as default payment mean once validated
 	 * @param bic [required] Account's BIC
 	 * @param description [required] Custom description of this account
 	 */
-	public OvhPaymentMeanValidation paymentMean_bankAccount_POST(String iban, String ownerAddress, String ownerName, String bic, String description) throws IOException {
+	public OvhPaymentMeanValidation paymentMean_bankAccount_POST(String iban, String ownerAddress, String ownerName, Boolean setDefault, String bic, String description) throws IOException {
 		String qPath = "/me/paymentMean/bankAccount";
 		StringBuilder sb = path(qPath);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "iban", iban);
 		addBody(o, "ownerAddress", ownerAddress);
 		addBody(o, "ownerName", ownerName);
+		addBody(o, "setDefault", setDefault);
 		addBody(o, "bic", bic);
 		addBody(o, "description", description);
 		String resp = exec(qPath, "POST", sb.toString(), o);
@@ -2716,34 +3107,6 @@ public class ApiOvhMe extends ApiOvhBase {
 	}
 
 	/**
-	 * List of mailing list you can subscribe
-	 *
-	 * REST: GET /me/mailingList/availableLists
-	 */
-	public ArrayList<String> mailingList_availableLists_GET() throws IOException {
-		String qPath = "/me/mailingList/availableLists";
-		StringBuilder sb = path(qPath);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Subscribe an email to a restricted mailing list
-	 *
-	 * REST: POST /me/mailingList/subscribe
-	 * @param email [required] Email you want to subscribe to
-	 * @param mailingList [required] Mailing list
-	 */
-	public void mailingList_subscribe_POST(String email, String mailingList) throws IOException {
-		String qPath = "/me/mailingList/subscribe";
-		StringBuilder sb = path(qPath);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "email", email);
-		addBody(o, "mailingList", mailingList);
-		exec(qPath, "POST", sb.toString(), o);
-	}
-
-	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /me/debtAccount
@@ -2797,11 +3160,13 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * All operations related to these debts
 	 *
 	 * REST: GET /me/debtAccount/debt/{debtId}/operation
+	 * @param depositOrderId [required] Filter the value of depositOrderId property (=)
 	 * @param debtId [required]
 	 */
-	public ArrayList<Long> debtAccount_debt_debtId_operation_GET(Long debtId) throws IOException {
+	public ArrayList<Long> debtAccount_debt_debtId_operation_GET(Long debtId, Long depositOrderId) throws IOException {
 		String qPath = "/me/debtAccount/debt/{debtId}/operation";
 		StringBuilder sb = path(qPath, debtId);
+		query(sb, "depositOrderId", depositOrderId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
@@ -2844,6 +3209,34 @@ public class ApiOvhMe extends ApiOvhBase {
 		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhOrder.class);
+	}
+
+	/**
+	 * List of mailing list you can subscribe
+	 *
+	 * REST: GET /me/mailingList/availableLists
+	 */
+	public ArrayList<String> mailingList_availableLists_GET() throws IOException {
+		String qPath = "/me/mailingList/availableLists";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Subscribe an email to a restricted mailing list
+	 *
+	 * REST: POST /me/mailingList/subscribe
+	 * @param email [required] Email you want to subscribe to
+	 * @param mailingList [required] Mailing list
+	 */
+	public void mailingList_subscribe_POST(String email, String mailingList) throws IOException {
+		String qPath = "/me/mailingList/subscribe";
+		StringBuilder sb = path(qPath);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "email", email);
+		addBody(o, "mailingList", mailingList);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -2988,11 +3381,13 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * All operations related to these debts
 	 *
 	 * REST: GET /me/bill/{billId}/debt/operation
+	 * @param depositOrderId [required] Filter the value of depositOrderId property (=)
 	 * @param billId [required]
 	 */
-	public ArrayList<Long> bill_billId_debt_operation_GET(String billId) throws IOException {
+	public ArrayList<Long> bill_billId_debt_operation_GET(String billId, Long depositOrderId) throws IOException {
 		String qPath = "/me/bill/{billId}/debt/operation";
 		StringBuilder sb = path(qPath, billId);
+		query(sb, "depositOrderId", depositOrderId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}

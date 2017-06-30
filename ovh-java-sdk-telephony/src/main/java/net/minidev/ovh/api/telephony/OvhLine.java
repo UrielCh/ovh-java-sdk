@@ -41,6 +41,13 @@ public class OvhLine {
 	public String description;
 
 	/**
+	 * Is this line attached to a phone that belongs to another line?
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean isAttachedToOtherLinesPhone;
+
+	/**
 	 * canBeNull && readOnly
 	 */
 	public String serviceName;

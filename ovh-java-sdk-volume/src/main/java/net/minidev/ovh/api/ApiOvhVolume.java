@@ -19,33 +19,6 @@ public class ApiOvhVolume extends ApiOvhBase {
 	}
 
 	/**
-	 * Delete a volume
-	 *
-	 * REST: DELETE /volume/{volumeId}
-	 * @param volumeId [required] Volume id
-	 * @deprecated
-	 */
-	public void volumeId_DELETE(String volumeId) throws IOException {
-		String qPath = "/volume/{volumeId}";
-		StringBuilder sb = path(qPath, volumeId);
-		exec(qPath, "DELETE", sb.toString(), null);
-	}
-
-	/**
-	 * Get details on your volume
-	 *
-	 * REST: GET /volume/{volumeId}
-	 * @param volumeId [required] Volume id
-	 * @deprecated
-	 */
-	public OvhVolume volumeId_GET(String volumeId) throws IOException {
-		String qPath = "/volume/{volumeId}";
-		StringBuilder sb = path(qPath, volumeId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhVolume.class);
-	}
-
-	/**
 	 * Get all your volume
 	 *
 	 * REST: GET /volume
@@ -83,6 +56,33 @@ public class ApiOvhVolume extends ApiOvhBase {
 		addBody(o, "region", region);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhVolume.class);
+	}
+
+	/**
+	 * Get details on your volume
+	 *
+	 * REST: GET /volume/{volumeId}
+	 * @param volumeId [required] Volume id
+	 * @deprecated
+	 */
+	public OvhVolume volumeId_GET(String volumeId) throws IOException {
+		String qPath = "/volume/{volumeId}";
+		StringBuilder sb = path(qPath, volumeId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhVolume.class);
+	}
+
+	/**
+	 * Delete a volume
+	 *
+	 * REST: DELETE /volume/{volumeId}
+	 * @param volumeId [required] Volume id
+	 * @deprecated
+	 */
+	public void volumeId_DELETE(String volumeId) throws IOException {
+		String qPath = "/volume/{volumeId}";
+		StringBuilder sb = path(qPath, volumeId);
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**

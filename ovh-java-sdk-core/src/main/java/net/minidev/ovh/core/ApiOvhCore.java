@@ -12,7 +12,6 @@ import java.nio.charset.Charset;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.TreeMap;
 
 import org.jsoup.Connection;
@@ -470,7 +469,8 @@ public class ApiOvhCore {
 			if (message.startsWith("The requested object"))
 				// The requested object (id = 10884320) does not exist
 				throw new OvhServiceException(url.toString(), message);
-			throw new IOException(method + " " + url + " " + txt + " return: " + message);
+			throw new OvhServiceException(url.toString(), message);
+			//throw new IOException(method + " " + url + " " + txt + " return: " + message);
 		}
 		return response;
 	}

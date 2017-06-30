@@ -13,8 +13,11 @@ public enum OvhDatacenterEnum {
 	bhs5("bhs5"),
 	bhs6("bhs6"),
 	dc1("dc1"),
+	eri1("eri1"),
 	gra1("gra1"),
+	gra2("gra2"),
 	gsw("gsw"),
+	lim1("lim1"),
 	p19("p19"),
 	@JsonProperty("rbx-hz")
 	rbx_hz("rbx-hz"),
@@ -24,12 +27,14 @@ public enum OvhDatacenterEnum {
 	rbx4("rbx4"),
 	rbx5("rbx5"),
 	rbx6("rbx6"),
+	rbx7("rbx7"),
 	sbg1("sbg1"),
 	sbg2("sbg2"),
 	sbg3("sbg3"),
 	sbg4("sbg4"),
 	sgp1("sgp1"),
 	syd1("syd1"),
+	vin1("vin1"),
 	waw1("waw1");
 
 	final String value;

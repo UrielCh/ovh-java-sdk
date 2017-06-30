@@ -5,6 +5,8 @@ package net.minidev.ovh.api.telephony;
  */
 public class OvhEasyHunting {
 	/**
+	 * General type of the service
+	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhTypeServiceEnum serviceType;
@@ -45,6 +47,8 @@ public class OvhEasyHunting {
 	public Long maxWaitTime;
 
 	/**
+	 * Description of the service
+	 *
 	 * canBeNull && readOnly
 	 */
 	public String description;
@@ -62,6 +66,13 @@ public class OvhEasyHunting {
 	public Boolean anonymousRejection;
 
 	/**
+	 * Does the service have extended CCS options enabled?
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean isCCS;
+
+	/**
 	 * Tone played when call is picked up
 	 *
 	 * canBeNull && readOnly
@@ -69,6 +80,8 @@ public class OvhEasyHunting {
 	public Long toneOnOpening;
 
 	/**
+	 * Feature of the service
+	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhTypeEnum featureType;

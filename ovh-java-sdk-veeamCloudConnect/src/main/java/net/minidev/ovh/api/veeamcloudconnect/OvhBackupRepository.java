@@ -21,6 +21,13 @@ public class OvhBackupRepository {
 	public OvhUnitAndValue<Long> quota;
 
 	/**
+	 * The usage in percent of this backup repository
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long usage;
+
+	/**
 	 * The inventory name of your backup repository
 	 *
 	 * canBeNull && readOnly
@@ -33,4 +40,11 @@ public class OvhBackupRepository {
 	 * canBeNull && readOnly
 	 */
 	public OvhBackupRepositoryStateEnum state;
+
+	/**
+	 * The replication zone of your repository
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhLocation replicationZone;
 }

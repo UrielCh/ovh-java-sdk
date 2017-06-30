@@ -7,6 +7,13 @@ import java.util.Date;
  */
 public class OvhOfficeTenant {
 	/**
+	 * Tenant's service type
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhServiceTypeEnum serviceType;
+
+	/**
 	 * Contact's fisrt name
 	 *
 	 * canBeNull && readOnly

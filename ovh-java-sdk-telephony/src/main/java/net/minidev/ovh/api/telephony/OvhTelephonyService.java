@@ -31,6 +31,13 @@ public class OvhTelephonyService {
 	public OvhNumberCountryEnum country;
 
 	/**
+	 * Does this service have fax capabilities?
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean hasFaxCapabilities;
+
+	/**
 	 * canBeNull && readOnly
 	 */
 	public Long simultaneousLines;

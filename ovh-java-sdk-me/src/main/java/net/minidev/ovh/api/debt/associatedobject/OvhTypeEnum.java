@@ -6,11 +6,11 @@ package net.minidev.ovh.api.debt.associatedobject;
 public enum OvhTypeEnum {
 	Bill("Bill"),
 	DebtOperation("DebtOperation"),
+	Deposit("Deposit"),
 	Order("Order"),
 	OvhAccountMovement("OvhAccountMovement"),
 	Refund("Refund"),
-	StatementIncome("StatementIncome"),
-	StatementOutcome("StatementOutcome");
+	Withdrawal("Withdrawal");
 
 	final String value;
 

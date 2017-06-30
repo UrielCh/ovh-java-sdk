@@ -10,11 +10,22 @@ public class OvhTask {
 	public String serviceType;
 
 	/**
+	 * Action associated with the task
+	 *
 	 * canBeNull && readOnly
 	 */
 	public String action;
 
 	/**
+	 * Object potentially created at the end of the task
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String objectCreated;
+
+	/**
+	 * Potential failure reason of the task
+	 *
 	 * canBeNull && readOnly
 	 */
 	public String message;
@@ -25,6 +36,8 @@ public class OvhTask {
 	public Long taskId;
 
 	/**
+	 * Status of the task
+	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhTaskStatusEnum status;

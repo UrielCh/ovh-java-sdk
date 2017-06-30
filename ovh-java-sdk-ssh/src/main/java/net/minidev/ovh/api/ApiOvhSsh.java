@@ -19,37 +19,6 @@ public class ApiOvhSsh extends ApiOvhBase {
 	}
 
 	/**
-	 * Delete this SSH keypair
-	 *
-	 * REST: DELETE /ssh/{name}
-	 * @param name [required] SSH keypair name
-	 * @param region [required] SSH keypair region
-	 * @deprecated
-	 */
-	public void name_DELETE(String name, String region) throws IOException {
-		String qPath = "/ssh/{name}";
-		StringBuilder sb = path(qPath, name);
-		query(sb, "region", region);
-		exec(qPath, "DELETE", sb.toString(), null);
-	}
-
-	/**
-	 * Get one of your SSH keypair
-	 *
-	 * REST: GET /ssh/{name}
-	 * @param name [required] SSH keypair name
-	 * @param region [required] SSH keypair region
-	 * @deprecated
-	 */
-	public OvhSSHKeyPair name_GET(String name, String region) throws IOException {
-		String qPath = "/ssh/{name}";
-		StringBuilder sb = path(qPath, name);
-		query(sb, "region", region);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhSSHKeyPair.class);
-	}
-
-	/**
 	 * Get all registered SSH keypairs
 	 *
 	 * REST: GET /ssh
@@ -83,5 +52,36 @@ public class ApiOvhSsh extends ApiOvhBase {
 		addBody(o, "region", region);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhSSHKeyPair.class);
+	}
+
+	/**
+	 * Get one of your SSH keypair
+	 *
+	 * REST: GET /ssh/{name}
+	 * @param name [required] SSH keypair name
+	 * @param region [required] SSH keypair region
+	 * @deprecated
+	 */
+	public OvhSSHKeyPair name_GET(String name, String region) throws IOException {
+		String qPath = "/ssh/{name}";
+		StringBuilder sb = path(qPath, name);
+		query(sb, "region", region);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhSSHKeyPair.class);
+	}
+
+	/**
+	 * Delete this SSH keypair
+	 *
+	 * REST: DELETE /ssh/{name}
+	 * @param name [required] SSH keypair name
+	 * @param region [required] SSH keypair region
+	 * @deprecated
+	 */
+	public void name_DELETE(String name, String region) throws IOException {
+		String qPath = "/ssh/{name}";
+		StringBuilder sb = path(qPath, name);
+		query(sb, "region", region);
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 }

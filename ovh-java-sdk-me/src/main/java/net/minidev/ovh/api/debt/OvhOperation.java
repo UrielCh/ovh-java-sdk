@@ -24,6 +24,13 @@ public class OvhOperation {
 	public OvhPrice amount;
 
 	/**
+	 * Order id associated to the deposit
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long depositOrderId;
+
+	/**
 	 * canBeNull && readOnly
 	 */
 	public Long operationId;

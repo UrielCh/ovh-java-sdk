@@ -11,13 +11,6 @@ import net.minidev.ovh.api.status.reply.OvhReply;
  */
 public class OvhTask {
 	/**
-	 * The replies of the task
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhReply[] replies;
-
-	/**
 	 * The end date of the task
 	 *
 	 * canBeNull && readOnly
@@ -32,13 +25,6 @@ public class OvhTask {
 	public OvhTaskImpactEnum impact;
 
 	/**
-	 * The task progression from 0 to 100
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long progress;
-
-	/**
 	 * The project of task
 	 *
 	 * canBeNull && readOnly
@@ -51,13 +37,6 @@ public class OvhTask {
 	 * canBeNull && readOnly
 	 */
 	public String impactedService;
-
-	/**
-	 * The category of the task
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String category;
 
 	/**
 	 * The title of the task
@@ -79,6 +58,34 @@ public class OvhTask {
 	 * canBeNull && readOnly
 	 */
 	public String uuid;
+
+	/**
+	 * The reference of the task
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String reference;
+
+	/**
+	 * The replies of the task
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhReply[] replies;
+
+	/**
+	 * The task progression from 0 to 100
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long progress;
+
+	/**
+	 * The category of the task
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String category;
 
 	/**
 	 * The start date of the task
