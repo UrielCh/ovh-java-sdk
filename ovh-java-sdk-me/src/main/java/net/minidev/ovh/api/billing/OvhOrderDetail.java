@@ -34,5 +34,10 @@ public class OvhOrderDetail {
 	/**
 	 * canBeNull && readOnly
 	 */
+	public Boolean cancelled;
+
+	/**
+	 * canBeNull && readOnly
+	 */
 	public Long orderDetailId;
 }

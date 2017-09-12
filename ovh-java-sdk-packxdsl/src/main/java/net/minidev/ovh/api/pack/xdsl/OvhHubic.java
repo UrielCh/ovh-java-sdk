@@ -29,4 +29,11 @@ public class OvhHubic {
 	 * canBeNull && readOnly
 	 */
 	public String domain;
+
+	/**
+	 * Indicate if the voucher is used or not
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean isUsed;
 }

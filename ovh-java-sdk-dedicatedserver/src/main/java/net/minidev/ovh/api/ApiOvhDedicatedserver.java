@@ -6,9 +6,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import net.minidev.ovh.api.complextype.OvhChartReturn;
 import net.minidev.ovh.api.dedicated.OvhAvailabilities;
+import net.minidev.ovh.api.dedicated.OvhAvailabilitiesRaw;
 import net.minidev.ovh.api.dedicated.OvhTaskFunctionEnum;
 import net.minidev.ovh.api.dedicated.OvhTaskStatusEnum;
 import net.minidev.ovh.api.dedicated.server.OvhAlertLanguageEnum;
+import net.minidev.ovh.api.dedicated.server.OvhBackupCloud;
 import net.minidev.ovh.api.dedicated.server.OvhBackupFtp;
 import net.minidev.ovh.api.dedicated.server.OvhBackupFtpAcl;
 import net.minidev.ovh.api.dedicated.server.OvhBackupStorageOrderable;
@@ -77,6 +79,8 @@ import net.minidev.ovh.api.dedicated.server.OvhUsbKeyOrderableDetails;
 import net.minidev.ovh.api.dedicated.server.OvhVirtualMac;
 import net.minidev.ovh.api.dedicated.server.OvhVirtualMacManagement;
 import net.minidev.ovh.api.dedicated.server.OvhVmacTypeEnum;
+import net.minidev.ovh.api.dedicated.server.backup.OvhBackupOffer;
+import net.minidev.ovh.api.dedicated.server.backup.OvhBackupPassword;
 import net.minidev.ovh.api.license.OvhWindowsOsVersionEnum;
 import net.minidev.ovh.api.license.OvhWindowsSqlVersionEnum;
 import net.minidev.ovh.api.nichandle.OvhOvhSubsidiaryEnum;
@@ -1295,6 +1299,21 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 	private static TypeReference<ArrayList<OvhIpCountryEnum>> t9 = new TypeReference<ArrayList<OvhIpCountryEnum>>() {};
 
 	/**
+	 * Get details on offered backup cloud if available for the current server
+	 *
+	 * REST: GET /dedicated/server/{serviceName}/backupCloudOfferDetails
+	 * @param serviceName [required] The internal name of your dedicated server
+	 *
+	 * API beta
+	 */
+	public OvhBackupOffer serviceName_backupCloudOfferDetails_GET(String serviceName) throws IOException {
+		String qPath = "/dedicated/server/{serviceName}/backupCloudOfferDetails";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhBackupOffer.class);
+	}
+
+	/**
 	 * Terminate your service
 	 *
 	 * REST: POST /dedicated/server/{serviceName}/terminate
@@ -1703,6 +1722,70 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 	}
 
 	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /dedicated/server/{serviceName}/features/backupCloud
+	 * @param serviceName [required] The internal name of your dedicated server
+	 *
+	 * API beta
+	 */
+	public OvhBackupCloud serviceName_features_backupCloud_GET(String serviceName) throws IOException {
+		String qPath = "/dedicated/server/{serviceName}/features/backupCloud";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhBackupCloud.class);
+	}
+
+	/**
+	 * Create a new storage backup space associated to server
+	 *
+	 * REST: POST /dedicated/server/{serviceName}/features/backupCloud
+	 * @param cloudProjectId [required] cloud project id
+	 * @param projectDescription [required] Project description of the project to be created (ignored when an existing project is already specified)
+	 * @param serviceName [required] The internal name of your dedicated server
+	 *
+	 * API beta
+	 */
+	public OvhBackupCloud serviceName_features_backupCloud_POST(String serviceName, String cloudProjectId, String projectDescription) throws IOException {
+		String qPath = "/dedicated/server/{serviceName}/features/backupCloud";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "cloudProjectId", cloudProjectId);
+		addBody(o, "projectDescription", projectDescription);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhBackupCloud.class);
+	}
+
+	/**
+	 * Deactivate the cloud backup associated to the server. This does not delete container data.
+	 *
+	 * REST: DELETE /dedicated/server/{serviceName}/features/backupCloud
+	 * @param serviceName [required] The internal name of your dedicated server
+	 *
+	 * API beta
+	 */
+	public void serviceName_features_backupCloud_DELETE(String serviceName) throws IOException {
+		String qPath = "/dedicated/server/{serviceName}/features/backupCloud";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
+	 * Change your cloud account password
+	 *
+	 * REST: POST /dedicated/server/{serviceName}/features/backupCloud/password
+	 * @param serviceName [required] The internal name of your dedicated server
+	 *
+	 * API beta
+	 */
+	public OvhBackupPassword serviceName_features_backupCloud_password_POST(String serviceName) throws IOException {
+		String qPath = "/dedicated/server/{serviceName}/features/backupCloud/password";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhBackupPassword.class);
+	}
+
+	/**
 	 * Dedicated server todos
 	 *
 	 * REST: GET /dedicated/server/{serviceName}/task
@@ -2082,4 +2165,17 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 		return convertTo(resp, t13);
 	}
 	private static TypeReference<ArrayList<OvhAvailabilities>> t13 = new TypeReference<ArrayList<OvhAvailabilities>>() {};
+
+	/**
+	 * List the availability of dedicated server
+	 *
+	 * REST: GET /dedicated/server/availabilities/raw
+	 */
+	public ArrayList<OvhAvailabilitiesRaw> availabilities_raw_GET() throws IOException {
+		String qPath = "/dedicated/server/availabilities/raw";
+		StringBuilder sb = path(qPath);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t14);
+	}
+	private static TypeReference<ArrayList<OvhAvailabilitiesRaw>> t14 = new TypeReference<ArrayList<OvhAvailabilitiesRaw>>() {};
 }

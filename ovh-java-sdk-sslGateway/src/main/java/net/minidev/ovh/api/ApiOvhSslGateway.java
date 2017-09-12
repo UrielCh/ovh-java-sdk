@@ -8,6 +8,7 @@ import net.minidev.ovh.api.service.OvhTerminationReasonEnum;
 import net.minidev.ovh.api.services.OvhService;
 import net.minidev.ovh.api.sslgateway.OvhDomain;
 import net.minidev.ovh.api.sslgateway.OvhEligibilityStatus;
+import net.minidev.ovh.api.sslgateway.OvhNatIps;
 import net.minidev.ovh.api.sslgateway.OvhServer;
 import net.minidev.ovh.api.sslgateway.OvhSslGateway;
 import net.minidev.ovh.api.sslgateway.OvhTask;
@@ -180,12 +181,13 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 	 *
 	 * API beta
 	 */
-	public ArrayList<String> serviceName_natIp_GET(String serviceName) throws IOException {
+	public ArrayList<OvhNatIps> serviceName_natIp_GET(String serviceName) throws IOException {
 		String qPath = "/sslGateway/{serviceName}/natIp";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, t3);
 	}
+	private static TypeReference<ArrayList<OvhNatIps>> t3 = new TypeReference<ArrayList<OvhNatIps>>() {};
 
 	/**
 	 * Launch a contact change procedure

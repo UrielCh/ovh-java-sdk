@@ -25,7 +25,7 @@ public class OvhBackupQuota {
 	 *
 	 * canBeNull
 	 */
-	public String usagePercent;
+	public Double usagePercent;
 
 	/**
 	 * Container max size.

@@ -4,6 +4,7 @@ package net.minidev.ovh.api.nichandle;
  * OVH subsidiaries
  */
 public enum OvhOvhSubsidiaryEnum {
+	ASIA("ASIA"),
 	AU("AU"),
 	CA("CA"),
 	CZ("CZ"),

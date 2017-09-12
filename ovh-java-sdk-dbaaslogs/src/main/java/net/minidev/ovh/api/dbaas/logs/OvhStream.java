@@ -35,18 +35,18 @@ public class OvhStream {
 	public Boolean isEditable;
 
 	/**
-	 * Notify on new ColdStorage archive
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean coldStorageNotify;
-
-	/**
 	 * Stream UUID
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String streamId;
+
+	/**
+	 * Notify on new ColdStorage archive
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean coldStorageNotifyEnabled;
 
 	/**
 	 * Stream description

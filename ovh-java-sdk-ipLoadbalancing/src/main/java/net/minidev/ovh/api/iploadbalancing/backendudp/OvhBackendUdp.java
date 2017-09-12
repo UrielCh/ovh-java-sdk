@@ -5,6 +5,13 @@ package net.minidev.ovh.api.iploadbalancing.backendudp;
  */
 public class OvhBackendUdp {
 	/**
+	 * Internal Load Balancer identifier of the vRack private network attached to your farm, mandatory when your Load Balancer is attached to a vRack
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long vrackNetworkId;
+
+	/**
 	 * Zone of you farm
 	 *
 	 * canBeNull && readOnly

@@ -1,12 +1,20 @@
 package net.minidev.ovh.api.xdsl;
 
 import net.minidev.ovh.api.xdsl.xdslmodemconfig.OvhChannelModeEnum;
+import net.minidev.ovh.api.xdsl.xdslmodemconfig.OvhFrequencyEnum;
 import net.minidev.ovh.api.xdsl.xdslmodemconfig.OvhSecurityTypeEnum;
 
 /**
  * WLAN Configuration of the Modem
  */
 public class OvhWLAN {
+	/**
+	 * Indicate if frequencies 2.4GHz and 5GHz are agregated
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean bandSteering;
+
 	/**
 	 * How the channel is chosen (Auto / Manual)
 	 *
@@ -43,6 +51,13 @@ public class OvhWLAN {
 	public Boolean SSIDAdvertisementEnabled;
 
 	/**
+	 * Indicate if it is normal access wifi or guest wifi
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean guest;
+
+	/**
 	 * WPA or WEP key
 	 *
 	 * canBeNull && readOnly
@@ -69,4 +84,11 @@ public class OvhWLAN {
 	 * canBeNull && readOnly
 	 */
 	public Boolean enabled;
+
+	/**
+	 * Frequency (2.4GHz | 5GHz)
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhFrequencyEnum frequency;
 }

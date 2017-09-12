@@ -60,8 +60,10 @@ import net.minidev.ovh.api.dedicated.installationtemplate.OvhTemplates;
 import net.minidev.ovh.api.domain.OvhNicOperationFunctionEnum;
 import net.minidev.ovh.api.domain.OvhOperationStatusEnum;
 import net.minidev.ovh.api.nichandle.OvhCountryEnum;
+import net.minidev.ovh.api.nichandle.OvhDeveloperModeRestriction;
 import net.minidev.ovh.api.nichandle.OvhDomainTask;
 import net.minidev.ovh.api.nichandle.OvhDomainTaskArgument;
+import net.minidev.ovh.api.nichandle.OvhDomainTaskProgressBar;
 import net.minidev.ovh.api.nichandle.OvhEmailNotification;
 import net.minidev.ovh.api.nichandle.OvhGenderEnum;
 import net.minidev.ovh.api.nichandle.OvhIpRegistryEnum;
@@ -93,6 +95,7 @@ import net.minidev.ovh.api.nichandle.changeemail.OvhTaskStateEnum;
 import net.minidev.ovh.api.nichandle.document.OvhDocument;
 import net.minidev.ovh.api.nichandle.emailchange.OvhTask;
 import net.minidev.ovh.api.telephony.OvhDefaultIpRestriction;
+import net.minidev.ovh.api.telephony.OvhMailDomain2Service;
 import net.minidev.ovh.api.telephony.OvhProtocolEnum;
 import net.minidev.ovh.api.telephony.OvhSettings;
 import net.minidev.ovh.api.xdsl.OvhSetting;
@@ -1912,6 +1915,30 @@ public class ApiOvhMe extends ApiOvhBase {
 	}
 
 	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /me/accessRestriction/developerMode
+	 */
+	public OvhDeveloperModeRestriction accessRestriction_developerMode_GET() throws IOException {
+		String qPath = "/me/accessRestriction/developerMode";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhDeveloperModeRestriction.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /me/accessRestriction/developerMode
+	 * @param body [required] New object properties
+	 */
+	public void accessRestriction_developerMode_PUT(OvhDeveloperModeRestriction body) throws IOException {
+		String qPath = "/me/accessRestriction/developerMode";
+		StringBuilder sb = path(qPath);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
 	 * Retrieve all contact that you created
 	 *
 	 * REST: GET /me/contact
@@ -2291,6 +2318,58 @@ public class ApiOvhMe extends ApiOvhBase {
 		StringBuilder sb = path(qPath, credentialId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhApplication.class);
+	}
+
+	/**
+	 * Get the fax custom domains linked to the customer account
+	 *
+	 * REST: GET /me/fax/customDomains
+	 */
+	public ArrayList<Long> fax_customDomains_GET() throws IOException {
+		String qPath = "/me/fax/customDomains";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Create a custom domain for your fax services
+	 *
+	 * REST: POST /me/fax/customDomains
+	 * @param domain [required] The custom domain of your fax services
+	 */
+	public OvhMailDomain2Service fax_customDomains_POST(String domain) throws IOException {
+		String qPath = "/me/fax/customDomains";
+		StringBuilder sb = path(qPath);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "domain", domain);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhMailDomain2Service.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /me/fax/customDomains/{id}
+	 * @param id [required]
+	 */
+	public OvhMailDomain2Service fax_customDomains_id_GET(Long id) throws IOException {
+		String qPath = "/me/fax/customDomains/{id}";
+		StringBuilder sb = path(qPath, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhMailDomain2Service.class);
+	}
+
+	/**
+	 * Delete a custom domain of your fax services
+	 *
+	 * REST: DELETE /me/fax/customDomains/{id}
+	 * @param id [required]
+	 */
+	public void fax_customDomains_id_DELETE(Long id) throws IOException {
+		String qPath = "/me/fax/customDomains/{id}";
+		StringBuilder sb = path(qPath, id);
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -2794,6 +2873,21 @@ public class ApiOvhMe extends ApiOvhBase {
 	}
 
 	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /me/task/domain/{id}/progressbar
+	 * @param id [required] Id of the task
+	 *
+	 * API beta
+	 */
+	public OvhDomainTaskProgressBar task_domain_id_progressbar_GET(Long id) throws IOException {
+		String qPath = "/me/task/domain/{id}/progressbar";
+		StringBuilder sb = path(qPath, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhDomainTaskProgressBar.class);
+	}
+
+	/**
 	 * Cancel the task
 	 *
 	 * REST: POST /me/task/domain/{id}/cancel
@@ -2933,6 +3027,20 @@ public class ApiOvhMe extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "token", token);
 		exec(qPath, "POST", sb.toString(), o);
+	}
+
+	/**
+	 * Get all certificates of the account
+	 *
+	 * REST: GET /me/certificates
+	 * @param name [required] Certificate definition name
+	 */
+	public ArrayList<String> certificates_GET(String name) throws IOException {
+		String qPath = "/me/certificates";
+		StringBuilder sb = path(qPath);
+		query(sb, "name", name);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
 	}
 
 	/**

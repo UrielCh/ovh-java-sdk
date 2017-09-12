@@ -12,6 +12,11 @@ public class OvhService {
 	/**
 	 * canBeNull && readOnly
 	 */
+	public OvhRenewalTypeEnum renewalType;
+
+	/**
+	 * canBeNull && readOnly
+	 */
 	public Date engagedUpTo;
 
 	/**
@@ -34,11 +39,6 @@ public class OvhService {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhRenewalTypeEnum renewalType;
-
-	/**
-	 * canBeNull && readOnly
-	 */
 	public String domain;
 
 	/**
@@ -57,6 +57,11 @@ public class OvhService {
 	 * canBeNull && readOnly
 	 */
 	public OvhRenewType renew;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public Long serviceId;
 
 	/**
 	 * canBeNull && readOnly

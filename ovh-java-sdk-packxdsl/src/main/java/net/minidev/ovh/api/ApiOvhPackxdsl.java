@@ -35,6 +35,7 @@ import net.minidev.ovh.api.services.OvhService;
 import net.minidev.ovh.api.xdsl.OvhAsyncTask;
 import net.minidev.ovh.api.xdsl.eligibility.OvhAddress;
 import net.minidev.ovh.api.xdsl.eligibility.OvhProviderEnum;
+import net.minidev.ovh.api.xdsl.hubic.OvhHubicDetailsResponse;
 import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
@@ -228,6 +229,21 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	}
 
 	/**
+	 * Details associated to a voucher
+	 *
+	 * REST: GET /pack/xdsl/{packName}/hubic/services/{domain}/details
+	 * @param packName [required] The internal name of your pack
+	 * @param domain [required]
+	 */
+	public OvhAsyncTask<OvhHubicDetailsResponse> packName_hubic_services_domain_details_GET(String packName, String domain) throws IOException {
+		String qPath = "/pack/xdsl/{packName}/hubic/services/{domain}/details";
+		StringBuilder sb = path(qPath, packName, domain);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+	private static TypeReference<OvhAsyncTask<OvhHubicDetailsResponse>> t3 = new TypeReference<OvhAsyncTask<OvhHubicDetailsResponse>>() {};
+
+	/**
 	 * Hubic perso services
 	 *
 	 * REST: GET /pack/xdsl/{packName}/hubic/services
@@ -291,9 +307,9 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 		String qPath = "/pack/xdsl/{packName}/siteBuilderFull/options/domains";
 		StringBuilder sb = path(qPath, packName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
+		return convertTo(resp, t4);
 	}
-	private static TypeReference<ArrayList<OvhSiteBuilderDomain>> t3 = new TypeReference<ArrayList<OvhSiteBuilderDomain>>() {};
+	private static TypeReference<ArrayList<OvhSiteBuilderDomain>> t4 = new TypeReference<ArrayList<OvhSiteBuilderDomain>>() {};
 
 	/**
 	 * Get the available templates
@@ -305,9 +321,9 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 		String qPath = "/pack/xdsl/{packName}/siteBuilderFull/options/templates";
 		StringBuilder sb = path(qPath, packName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t4);
+		return convertTo(resp, t5);
 	}
-	private static TypeReference<ArrayList<OvhSiteBuilderTemplate>> t4 = new TypeReference<ArrayList<OvhSiteBuilderTemplate>>() {};
+	private static TypeReference<ArrayList<OvhSiteBuilderTemplate>> t5 = new TypeReference<ArrayList<OvhSiteBuilderTemplate>>() {};
 
 	/**
 	 * Sitebuilder full services
@@ -359,9 +375,9 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 		addBody(o, "contactTech", contactTech);
 		addBody(o, "contactBilling", contactBilling);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t5);
+		return convertTo(resp, t6);
 	}
-	private static TypeReference<ArrayList<Long>> t5 = new TypeReference<ArrayList<Long>>() {};
+	private static TypeReference<ArrayList<Long>> t6 = new TypeReference<ArrayList<Long>>() {};
 
 	/**
 	 * Get the available domains
@@ -483,9 +499,9 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 		String qPath = "/pack/xdsl/{packName}/voipLine/options/hardwares";
 		StringBuilder sb = path(qPath, packName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t6);
+		return convertTo(resp, t7);
 	}
-	private static TypeReference<ArrayList<OvhVoIPHardware>> t6 = new TypeReference<ArrayList<OvhVoIPHardware>>() {};
+	private static TypeReference<ArrayList<OvhVoIPHardware>> t7 = new TypeReference<ArrayList<OvhVoIPHardware>>() {};
 
 	/**
 	 * Get this object properties
@@ -667,7 +683,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 		query(sb, "function", function);
 		query(sb, "status", status);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t5);
+		return convertTo(resp, t6);
 	}
 
 	/**
@@ -720,9 +736,9 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 		String qPath = "/pack/xdsl/{packName}/migration/offers";
 		StringBuilder sb = path(qPath, packName);
 		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, t7);
+		return convertTo(resp, t8);
 	}
-	private static TypeReference<OvhAsyncTask<OvhMigrationOfferResponse>> t7 = new TypeReference<OvhAsyncTask<OvhMigrationOfferResponse>>() {};
+	private static TypeReference<OvhAsyncTask<OvhMigrationOfferResponse>> t8 = new TypeReference<OvhAsyncTask<OvhMigrationOfferResponse>>() {};
 
 	/**
 	 * VOIP ecofax service
@@ -760,9 +776,9 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 		String qPath = "/pack/xdsl/{packName}/services";
 		StringBuilder sb = path(qPath, packName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t8);
+		return convertTo(resp, t9);
 	}
-	private static TypeReference<ArrayList<OvhServiceInformation>> t8 = new TypeReference<ArrayList<OvhServiceInformation>>() {};
+	private static TypeReference<ArrayList<OvhServiceInformation>> t9 = new TypeReference<ArrayList<OvhServiceInformation>>() {};
 
 	/**
 	 * Exchange 2013 organization services
@@ -831,9 +847,9 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 		addBody(o, "lineNumber", lineNumber);
 		addBody(o, "address", address);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t9);
+		return convertTo(resp, t10);
 	}
-	private static TypeReference<OvhAsyncTask<OvhEligibility>> t9 = new TypeReference<OvhAsyncTask<OvhEligibility>>() {};
+	private static TypeReference<OvhAsyncTask<OvhEligibility>> t10 = new TypeReference<OvhAsyncTask<OvhEligibility>>() {};
 
 	/**
 	 * Move the access to another address
@@ -858,9 +874,9 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 		addBody(o, "creation", creation);
 		addBody(o, "landline", landline);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t10);
+		return convertTo(resp, t11);
 	}
-	private static TypeReference<OvhAsyncTask<Long>> t10 = new TypeReference<OvhAsyncTask<Long>>() {};
+	private static TypeReference<OvhAsyncTask<Long>> t11 = new TypeReference<OvhAsyncTask<Long>>() {};
 
 	/**
 	 * Cancel the ongoing resiliation
@@ -897,7 +913,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 		String qPath = "/pack/xdsl/{packName}/siteBuilderStart/options/domains";
 		StringBuilder sb = path(qPath, packName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
+		return convertTo(resp, t4);
 	}
 
 	/**
@@ -910,7 +926,7 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 		String qPath = "/pack/xdsl/{packName}/siteBuilderStart/options/templates";
 		StringBuilder sb = path(qPath, packName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t4);
+		return convertTo(resp, t5);
 	}
 
 	/**

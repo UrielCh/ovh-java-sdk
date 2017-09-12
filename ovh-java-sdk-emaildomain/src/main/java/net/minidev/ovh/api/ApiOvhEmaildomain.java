@@ -22,6 +22,10 @@ import net.minidev.ovh.api.email.domain.OvhDelegation;
 import net.minidev.ovh.api.email.domain.OvhDomainService;
 import net.minidev.ovh.api.email.domain.OvhFilter;
 import net.minidev.ovh.api.email.domain.OvhMailingList;
+import net.minidev.ovh.api.email.domain.OvhMigrationAccount;
+import net.minidev.ovh.api.email.domain.OvhMigrationCheckStruct;
+import net.minidev.ovh.api.email.domain.OvhMigrationService;
+import net.minidev.ovh.api.email.domain.OvhMigrationServiceType;
 import net.minidev.ovh.api.email.domain.OvhModerator;
 import net.minidev.ovh.api.email.domain.OvhRedirectionGlobal;
 import net.minidev.ovh.api.email.domain.OvhResponder;
@@ -461,6 +465,117 @@ public class ApiOvhEmaildomain extends ApiOvhBase {
 		String qPath = "/email/domain/{domain}/account/{accountName}/updateUsage";
 		StringBuilder sb = path(qPath, domain, accountName);
 		exec(qPath, "POST", sb.toString(), null);
+	}
+
+	/**
+	 * Get migration service
+	 *
+	 * REST: GET /email/domain/{domain}/account/{accountName}/migrate
+	 * @param type [required] Type of migration service
+	 * @param domain [required] Name of your domain name
+	 * @param accountName [required] Name of account
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> domain_account_accountName_migrate_GET(String domain, String accountName, OvhMigrationServiceType type) throws IOException {
+		String qPath = "/email/domain/{domain}/account/{accountName}/migrate";
+		StringBuilder sb = path(qPath, domain, accountName);
+		query(sb, "type", type);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /email/domain/{domain}/account/{accountName}/migrate/{destinationServiceName}
+	 * @param domain [required] Name of your domain name
+	 * @param accountName [required] Name of account
+	 * @param destinationServiceName [required] Service name allowed as migration destination
+	 *
+	 * API beta
+	 */
+	public OvhMigrationService domain_account_accountName_migrate_destinationServiceName_GET(String domain, String accountName, String destinationServiceName) throws IOException {
+		String qPath = "/email/domain/{domain}/account/{accountName}/migrate/{destinationServiceName}";
+		StringBuilder sb = path(qPath, domain, accountName, destinationServiceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhMigrationService.class);
+	}
+
+	/**
+	 * List of email address available for migration
+	 *
+	 * REST: GET /email/domain/{domain}/account/{accountName}/migrate/{destinationServiceName}/destinationEmailAddress
+	 * @param quota [required] Account maximum size
+	 * @param domain [required] Name of your domain name
+	 * @param accountName [required] Name of account
+	 * @param destinationServiceName [required] Service name allowed as migration destination
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> domain_account_accountName_migrate_destinationServiceName_destinationEmailAddress_GET(String domain, String accountName, String destinationServiceName, Long quota) throws IOException {
+		String qPath = "/email/domain/{domain}/account/{accountName}/migrate/{destinationServiceName}/destinationEmailAddress";
+		StringBuilder sb = path(qPath, domain, accountName, destinationServiceName);
+		query(sb, "quota", quota);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Migrate account to destination account
+	 *
+	 * REST: POST /email/domain/{domain}/account/{accountName}/migrate/{destinationServiceName}/destinationEmailAddress/{destinationEmailAddress}/migrate
+	 * @param password [required] New password used for migration
+	 * @param domain [required] Name of your domain name
+	 * @param accountName [required] Name of account
+	 * @param destinationServiceName [required] Service name allowed as migration destination
+	 * @param destinationEmailAddress [required] Destination account name
+	 *
+	 * API beta
+	 */
+	public OvhTaskPop domain_account_accountName_migrate_destinationServiceName_destinationEmailAddress_destinationEmailAddress_migrate_POST(String domain, String accountName, String destinationServiceName, String destinationEmailAddress, String password) throws IOException {
+		String qPath = "/email/domain/{domain}/account/{accountName}/migrate/{destinationServiceName}/destinationEmailAddress/{destinationEmailAddress}/migrate";
+		StringBuilder sb = path(qPath, domain, accountName, destinationServiceName, destinationEmailAddress);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "password", password);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTaskPop.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /email/domain/{domain}/account/{accountName}/migrate/{destinationServiceName}/destinationEmailAddress/{destinationEmailAddress}
+	 * @param domain [required] Name of your domain name
+	 * @param accountName [required] Name of account
+	 * @param destinationServiceName [required] Service name allowed as migration destination
+	 * @param destinationEmailAddress [required] Destination account name
+	 *
+	 * API beta
+	 */
+	public OvhMigrationAccount domain_account_accountName_migrate_destinationServiceName_destinationEmailAddress_destinationEmailAddress_GET(String domain, String accountName, String destinationServiceName, String destinationEmailAddress) throws IOException {
+		String qPath = "/email/domain/{domain}/account/{accountName}/migrate/{destinationServiceName}/destinationEmailAddress/{destinationEmailAddress}";
+		StringBuilder sb = path(qPath, domain, accountName, destinationServiceName, destinationEmailAddress);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhMigrationAccount.class);
+	}
+
+	/**
+	 * Check if it's possible to migrate
+	 *
+	 * REST: GET /email/domain/{domain}/account/{accountName}/migrate/{destinationServiceName}/destinationEmailAddress/{destinationEmailAddress}/checkMigrate
+	 * @param domain [required] Name of your domain name
+	 * @param accountName [required] Name of account
+	 * @param destinationServiceName [required] Service name allowed as migration destination
+	 * @param destinationEmailAddress [required] Destination account name
+	 *
+	 * API beta
+	 */
+	public OvhMigrationCheckStruct domain_account_accountName_migrate_destinationServiceName_destinationEmailAddress_destinationEmailAddress_checkMigrate_GET(String domain, String accountName, String destinationServiceName, String destinationEmailAddress) throws IOException {
+		String qPath = "/email/domain/{domain}/account/{accountName}/migrate/{destinationServiceName}/destinationEmailAddress/{destinationEmailAddress}/checkMigrate";
+		StringBuilder sb = path(qPath, domain, accountName, destinationServiceName, destinationEmailAddress);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhMigrationCheckStruct.class);
 	}
 
 	/**

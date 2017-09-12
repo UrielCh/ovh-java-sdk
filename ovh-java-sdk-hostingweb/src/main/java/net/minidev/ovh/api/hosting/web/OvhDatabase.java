@@ -6,6 +6,7 @@ import net.minidev.ovh.api.hosting.web.database.OvhDatabaseTypeEnum;
 import net.minidev.ovh.api.hosting.web.database.OvhModeEnum;
 import net.minidev.ovh.api.hosting.web.database.OvhStateEnum;
 import net.minidev.ovh.api.hosting.web.database.OvhStatusEnum;
+import net.minidev.ovh.api.hosting.web.database.OvhSupportedVersionEnum;
 import net.minidev.ovh.api.hosting.web.database.OvhVersionEnum;
 
 /**
@@ -32,6 +33,13 @@ public class OvhDatabase {
 	 * canBeNull && readOnly
 	 */
 	public Long dumps;
+
+	/**
+	 * Indicates the current support state of your database version
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhSupportedVersionEnum versionSupport;
 
 	/**
 	 * Type of your database
@@ -83,18 +91,18 @@ public class OvhDatabase {
 	public String name;
 
 	/**
-	 * Space allowed
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhUnitAndValue<Double> quotaSize;
-
-	/**
 	 * Database state
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhStateEnum state;
+
+	/**
+	 * Space allowed
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhUnitAndValue<Double> quotaSize;
 
 	/**
 	 * Database user name

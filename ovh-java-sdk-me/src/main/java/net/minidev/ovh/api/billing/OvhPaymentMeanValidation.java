@@ -17,5 +17,10 @@ public class OvhPaymentMeanValidation {
 	/**
 	 * canBeNull
 	 */
+	public String finalizeUrl;
+
+	/**
+	 * canBeNull
+	 */
 	public String url;
 }

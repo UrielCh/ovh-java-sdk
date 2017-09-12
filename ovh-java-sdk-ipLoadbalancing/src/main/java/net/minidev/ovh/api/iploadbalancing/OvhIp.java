@@ -26,6 +26,13 @@ public class OvhIp {
 	public String metricsToken;
 
 	/**
+	 * The IPV4 associated to your IP load balancing
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String ipv4;
+
+	/**
 	 * Location where your service is
 	 *
 	 * canBeNull && readOnly
@@ -59,6 +66,13 @@ public class OvhIp {
 	 * canBeNull && readOnly
 	 */
 	public String serviceName;
+
+	/**
+	 * Name of the vRack on which the current Load Balancer is attached to, as it is named on vRack product
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String vrackName;
 
 	/**
 	 * Your IP load balancing

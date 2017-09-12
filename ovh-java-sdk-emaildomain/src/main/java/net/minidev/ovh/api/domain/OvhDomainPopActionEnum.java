@@ -7,7 +7,10 @@ public enum OvhDomainPopActionEnum {
 	addAccount("addAccount"),
 	changeAccount("changeAccount"),
 	changePassword("changePassword"),
-	deleteAccount("deleteAccount");
+	deleteAccount("deleteAccount"),
+	migration("migration"),
+	temporaryTask("temporaryTask"),
+	unknown("unknown");
 
 	final String value;
 

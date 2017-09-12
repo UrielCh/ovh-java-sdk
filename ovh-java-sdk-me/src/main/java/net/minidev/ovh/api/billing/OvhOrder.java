@@ -15,6 +15,11 @@ public class OvhOrder {
 	/**
 	 * canBeNull && readOnly
 	 */
+	public Date retractionDate;
+
+	/**
+	 * canBeNull && readOnly
+	 */
 	public String pdfUrl;
 
 	/**

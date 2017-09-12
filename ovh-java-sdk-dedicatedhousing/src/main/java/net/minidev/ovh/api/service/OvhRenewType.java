@@ -5,6 +5,13 @@ package net.minidev.ovh.api.service;
  */
 public class OvhRenewType {
 	/**
+	 * The service needs to be manually renewed and paid
+	 *
+	 * canBeNull
+	 */
+	public Boolean manualPayment;
+
+	/**
 	 * period of renew in month
 	 *
 	 * canBeNull

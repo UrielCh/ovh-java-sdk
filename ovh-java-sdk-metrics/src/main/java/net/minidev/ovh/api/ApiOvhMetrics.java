@@ -87,23 +87,6 @@ public class ApiOvhMetrics extends ApiOvhBase {
 	}
 
 	/**
-	 * Get consumption for your service
-	 *
-	 * REST: GET /metrics/{serviceName}/consumption
-	 * @param serviceName [required] Name of your service
-	 * @param duration [required] Last 'm' minutes. Default is 60min
-	 *
-	 * API beta
-	 */
-	public OvhConsumption serviceName_consumption_GET(String serviceName, Long duration) throws IOException {
-		String qPath = "/metrics/{serviceName}/consumption";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "duration", duration);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhConsumption.class);
-	}
-
-	/**
 	 * Confirm termination of your service
 	 *
 	 * REST: POST /metrics/{serviceName}/confirmTermination
@@ -141,6 +124,65 @@ public class ApiOvhMetrics extends ApiOvhBase {
 	}
 
 	/**
+	 * Launch a contact change procedure
+	 *
+	 * REST: POST /metrics/{serviceName}/changeContact
+	 * @param contactAdmin The contact to set as admin contact
+	 * @param contactTech The contact to set as tech contact
+	 * @param contactBilling The contact to set as billing contact
+	 * @param serviceName [required] The internal ID of your metrics
+	 *
+	 * API beta
+	 */
+	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
+		String qPath = "/metrics/{serviceName}/changeContact";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "contactAdmin", contactAdmin);
+		addBody(o, "contactTech", contactTech);
+		addBody(o, "contactBilling", contactBilling);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t1);
+	}
+	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
+
+	/**
+	 * Find TokenID for a specific token
+	 *
+	 * REST: POST /metrics/{serviceName}/lookup/token
+	 * @param serviceName [required] Name of your service
+	 * @param accessToken [required] access token
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> serviceName_lookup_token_POST(String serviceName, String accessToken) throws IOException {
+		String qPath = "/metrics/{serviceName}/lookup/token";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "accessToken", accessToken);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t2);
+	}
+	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};
+
+	/**
+	 * Get consumption for your service
+	 *
+	 * REST: GET /metrics/{serviceName}/consumption
+	 * @param serviceName [required] Name of your service
+	 * @param duration [required] Last 'm' minutes. Default is 60min
+	 *
+	 * API beta
+	 */
+	public OvhConsumption serviceName_consumption_GET(String serviceName, Long duration) throws IOException {
+		String qPath = "/metrics/{serviceName}/consumption";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "duration", duration);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhConsumption.class);
+	}
+
+	/**
 	 * Get list of tokens
 	 *
 	 * REST: GET /metrics/{serviceName}/token
@@ -152,9 +194,8 @@ public class ApiOvhMetrics extends ApiOvhBase {
 		String qPath = "/metrics/{serviceName}/token";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, t2);
 	}
-	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
 
 	/**
 	 * Create a token
@@ -215,40 +256,18 @@ public class ApiOvhMetrics extends ApiOvhBase {
 	 * REST: PUT /metrics/{serviceName}/token/{tokenId}
 	 * @param description [required] New description for your token
 	 * @param serviceName [required] Name of your service
+	 * @param tokenId [required] ID of the desired token
 	 *
 	 * API beta
 	 */
-	public OvhToken serviceName_token_tokenId_PUT(String serviceName, String missingParam, String description) throws IOException {
+	public OvhToken serviceName_token_tokenId_PUT(String serviceName, String tokenId, String description) throws IOException {
 		String qPath = "/metrics/{serviceName}/token/{tokenId}";
-		StringBuilder sb = path(qPath, serviceName);
+		StringBuilder sb = path(qPath, serviceName, tokenId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "description", description);
 		String resp = exec(qPath, "PUT", sb.toString(), o);
 		return convertTo(resp, OvhToken.class);
 	}
-
-	/**
-	 * Launch a contact change procedure
-	 *
-	 * REST: POST /metrics/{serviceName}/changeContact
-	 * @param contactAdmin The contact to set as admin contact
-	 * @param contactTech The contact to set as tech contact
-	 * @param contactBilling The contact to set as billing contact
-	 * @param serviceName [required] The internal ID of your metrics
-	 *
-	 * API beta
-	 */
-	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
-		String qPath = "/metrics/{serviceName}/changeContact";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "contactAdmin", contactAdmin);
-		addBody(o, "contactTech", contactTech);
-		addBody(o, "contactBilling", contactBilling);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t2);
-	}
-	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
 
 	/**
 	 * List available services
@@ -261,6 +280,6 @@ public class ApiOvhMetrics extends ApiOvhBase {
 		String qPath = "/metrics";
 		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, t2);
 	}
 }

@@ -4,6 +4,7 @@ package net.minidev.ovh.api.vps.ip;
  * Geolocation of the IP Address
  */
 public enum OvhGeolocationEnum {
+	au("au"),
 	be("be"),
 	ca("ca"),
 	cz("cz"),
@@ -17,6 +18,7 @@ public enum OvhGeolocationEnum {
 	nl("nl"),
 	pl("pl"),
 	pt("pt"),
+	sg("sg"),
 	uk("uk"),
 	us("us");
 

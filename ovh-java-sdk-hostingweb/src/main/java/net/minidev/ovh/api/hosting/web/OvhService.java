@@ -49,6 +49,13 @@ public class OvhService {
 	public String hostingIp;
 
 	/**
+	 * List of updates on your hosting
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String[] updates;
+
+	/**
 	 * Hosting's OS
 	 *
 	 * canBeNull && readOnly
@@ -180,6 +187,13 @@ public class OvhService {
 	 * canBeNull && readOnly
 	 */
 	public OvhUnitAndValue<Double> quotaSize;
+
+	/**
+	 * URLs to use to manage your webhosting
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhServiceAccess serviceManagementAccess;
 
 	/**
 	 * Hosting resource type

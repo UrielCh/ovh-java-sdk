@@ -7,6 +7,8 @@ public enum OvhTypeEnum {
 	cloudHunting("cloudHunting"),
 	cloudIvr("cloudIvr"),
 	conference("conference"),
+	contactCenterSolution("contactCenterSolution"),
+	contactCenterSolutionExpert("contactCenterSolutionExpert"),
 	ddi("ddi"),
 	easyHunting("easyHunting"),
 	easyPabx("easyPabx"),

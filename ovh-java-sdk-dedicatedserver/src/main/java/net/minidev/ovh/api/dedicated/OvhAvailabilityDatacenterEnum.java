@@ -9,9 +9,15 @@ public enum OvhAvailabilityDatacenterEnum {
 	bhs("bhs"),
 	@JsonProperty("default")
 	_default("default"),
+	fra("fra"),
 	gra("gra"),
+	lon("lon"),
 	rbx("rbx"),
-	sbg("sbg");
+	sbg("sbg"),
+	sgp("sgp"),
+	syd("syd"),
+	vin("vin"),
+	waw("waw");
 
 	final String value;
 

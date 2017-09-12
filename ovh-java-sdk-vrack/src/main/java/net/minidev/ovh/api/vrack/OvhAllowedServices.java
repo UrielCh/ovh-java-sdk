@@ -54,6 +54,13 @@ public class OvhAllowedServices {
 	public OvhAllowedDedicatedServerInterfaces[] dedicatedServerInterface;
 
 	/**
+	 * list of ipLoadbalancing allowed to be connected to vrack
+	 *
+	 * canBeNull
+	 */
+	public String[] ipLoadbalancing;
+
+	/**
 	 * list of publicCloud projects allowed to be connected to vrack
 	 *
 	 * canBeNull

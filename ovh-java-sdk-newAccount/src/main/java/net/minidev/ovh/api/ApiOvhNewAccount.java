@@ -7,6 +7,7 @@ import java.util.HashMap;
 import net.minidev.ovh.api.nichandle.OvhCountryEnum;
 import net.minidev.ovh.api.nichandle.OvhCreationRule;
 import net.minidev.ovh.api.nichandle.OvhCreationRules;
+import net.minidev.ovh.api.nichandle.OvhCreationRulesActionEnum;
 import net.minidev.ovh.api.nichandle.OvhGenderEnum;
 import net.minidev.ovh.api.nichandle.OvhLanguageEnum;
 import net.minidev.ovh.api.nichandle.OvhLegalFormEnum;
@@ -173,10 +174,11 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 	 * @param sex [required]
 	 * @param phone [required]
 	 * @param zip [required]
+	 * @param action [required]
 	 * @param corporationType [required]
 	 * @param legalform [required]
 	 */
-	public ArrayList<OvhCreationRule> rules_POST(String firstname, String vat, String spareEmail, String nationalIdentificationNumber, String birthDay, String area, OvhOvhSubsidiaryEnum ovhSubsidiary, OvhOvhCompanyEnum ovhCompany, String email, String city, String fax, String address, String companyNationalIdentificationNumber, OvhCountryEnum country, String birthCity, String organisation, OvhLanguageEnum language, String name, OvhGenderEnum sex, String phone, String zip, String corporationType, OvhLegalFormEnum legalform) throws IOException {
+	public ArrayList<OvhCreationRule> rules_POST(String firstname, String vat, String spareEmail, String nationalIdentificationNumber, String birthDay, String area, OvhOvhSubsidiaryEnum ovhSubsidiary, OvhOvhCompanyEnum ovhCompany, String email, String city, String fax, String address, String companyNationalIdentificationNumber, OvhCountryEnum country, String birthCity, String organisation, OvhLanguageEnum language, String name, OvhGenderEnum sex, String phone, String zip, OvhCreationRulesActionEnum action, String corporationType, OvhLegalFormEnum legalform) throws IOException {
 		String qPath = "/newAccount/rules";
 		StringBuilder sb = path(qPath);
 		HashMap<String, Object>o = new HashMap<String, Object>();
@@ -201,6 +203,7 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 		addBody(o, "sex", sex);
 		addBody(o, "phone", phone);
 		addBody(o, "zip", zip);
+		addBody(o, "action", action);
 		addBody(o, "corporationType", corporationType);
 		addBody(o, "legalform", legalform);
 		String resp = execN(qPath, "POST", sb.toString(), o);

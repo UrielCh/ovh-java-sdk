@@ -704,6 +704,18 @@ public class ApiOvhDomain extends ApiOvhBase {
 	}
 
 	/**
+	 * Apply zone modification on DNS servers
+	 *
+	 * REST: POST /domain/zone/{zoneName}/refresh
+	 * @param zoneName [required] The internal name of your zone
+	 */
+	public void zone_zoneName_refresh_POST(String zoneName) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/refresh";
+		StringBuilder sb = path(qPath, zoneName);
+		exec(qPath, "POST", sb.toString(), null);
+	}
+
+	/**
 	 * Records of the zone
 	 *
 	 * REST: GET /domain/zone/{zoneName}/record
@@ -798,18 +810,6 @@ public class ApiOvhDomain extends ApiOvhBase {
 		addBody(o, "DnsRecords", DnsRecords);
 		addBody(o, "minimized", minimized);
 		exec(qPath, "POST", sb.toString(), o);
-	}
-
-	/**
-	 * Apply zone modification on DNS servers
-	 *
-	 * REST: POST /domain/zone/{zoneName}/refresh
-	 * @param zoneName [required] The internal name of your zone
-	 */
-	public void zone_zoneName_refresh_POST(String zoneName) throws IOException {
-		String qPath = "/domain/zone/{zoneName}/refresh";
-		StringBuilder sb = path(qPath, zoneName);
-		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**

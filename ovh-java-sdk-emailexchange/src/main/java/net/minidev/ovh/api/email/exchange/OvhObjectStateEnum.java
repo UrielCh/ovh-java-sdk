@@ -6,6 +6,7 @@ package net.minidev.ovh.api.email.exchange;
 public enum OvhObjectStateEnum {
 	creating("creating"),
 	deleting("deleting"),
+	internalMigration("internalMigration"),
 	ok("ok"),
 	reopening("reopening"),
 	suspended("suspended"),

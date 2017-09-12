@@ -8,6 +8,13 @@ import net.minidev.ovh.api.dedicatedcloud.user.OvhStateEnum;
  */
 public class OvhUser {
 	/**
+	 * Is this User able to access nsx interface (requires NSX option)
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean nsxRight;
+
+	/**
 	 * Last name of the user
 	 *
 	 * canBeNull && readOnly

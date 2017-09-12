@@ -30,6 +30,11 @@ public class OvhNonExpiringService {
 	/**
 	 * canBeNull && readOnly
 	 */
+	public Long serviceId;
+
+	/**
+	 * canBeNull && readOnly
+	 */
 	public Date creation;
 
 	/**

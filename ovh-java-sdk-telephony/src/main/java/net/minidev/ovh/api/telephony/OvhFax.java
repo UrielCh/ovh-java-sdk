@@ -23,4 +23,11 @@ public class OvhFax {
 	 * canBeNull && readOnly
 	 */
 	public String serviceName;
+
+	/**
+	 * Send notifications about Line's diagnosticReports
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhLineNotificationsOptions notifications;
 }

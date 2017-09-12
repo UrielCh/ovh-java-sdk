@@ -52,16 +52,19 @@ import net.minidev.ovh.api.cloud.storage.OvhContainer;
 import net.minidev.ovh.api.cloud.storage.OvhContainerAccess;
 import net.minidev.ovh.api.cloud.storage.OvhContainerDetail;
 import net.minidev.ovh.api.cloud.storage.OvhContainerObjectTempURL;
+import net.minidev.ovh.api.cloud.storage.OvhRightEnum;
 import net.minidev.ovh.api.cloud.usage.OvhUsageCurrent;
 import net.minidev.ovh.api.cloud.usage.OvhUsageForecast;
 import net.minidev.ovh.api.cloud.usage.OvhUsageHistory;
 import net.minidev.ovh.api.cloud.usage.OvhUsageHistoryDetail;
 import net.minidev.ovh.api.cloud.user.OvhOpenrc;
+import net.minidev.ovh.api.cloud.user.OvhRoleEnum;
 import net.minidev.ovh.api.cloud.user.OvhUser;
 import net.minidev.ovh.api.cloud.user.OvhUserDetail;
 import net.minidev.ovh.api.cloud.volume.OvhSnapshot;
 import net.minidev.ovh.api.cloud.volume.OvhVolume;
 import net.minidev.ovh.api.cloud.volume.OvhVolumeTypeEnum;
+import net.minidev.ovh.api.nichandle.OvhOvhSubsidiaryEnum;
 import net.minidev.ovh.api.pca.OvhAccount;
 import net.minidev.ovh.api.pca.OvhBilling;
 import net.minidev.ovh.api.pca.OvhFile;
@@ -787,13 +790,15 @@ public class ApiOvhCloud extends ApiOvhBase {
 	 *
 	 * REST: POST /cloud/project/{serviceName}/user
 	 * @param description [required] User description
+	 * @param role [required] Openstack keystone role name
 	 * @param serviceName [required] Service name
 	 */
-	public OvhUserDetail project_serviceName_user_POST(String serviceName, String description) throws IOException {
+	public OvhUserDetail project_serviceName_user_POST(String serviceName, String description, OvhRoleEnum role) throws IOException {
 		String qPath = "/cloud/project/{serviceName}/user";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "description", description);
+		addBody(o, "role", role);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhUserDetail.class);
 	}
@@ -2170,6 +2175,25 @@ public class ApiOvhCloud extends ApiOvhBase {
 	}
 
 	/**
+	 * Create openstack user with only access to this container
+	 *
+	 * REST: POST /cloud/project/{serviceName}/storage/{containerId}/user
+	 * @param containerId [required] Container ID
+	 * @param description [required] User description
+	 * @param right [required] User right (all, read, write)
+	 * @param serviceName [required] Service name
+	 */
+	public OvhUserDetail project_serviceName_storage_containerId_user_POST(String serviceName, String containerId, String description, OvhRightEnum right) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/storage/{containerId}/user";
+		StringBuilder sb = path(qPath, serviceName, containerId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "description", description);
+		addBody(o, "right", right);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhUserDetail.class);
+	}
+
+	/**
 	 * Deploy your container files as a static web site
 	 *
 	 * REST: POST /cloud/project/{serviceName}/storage/{containerId}/static
@@ -2256,6 +2280,24 @@ public class ApiOvhCloud extends ApiOvhBase {
 		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Get services prices for a subsidiary
+	 *
+	 * REST: GET /cloud/subsidiaryPrice
+	 * @param flavorId [required] OVH cloud flavor id
+	 * @param ovhSubsidiary [required] OVH subsidiary
+	 * @param region [required] Region
+	 */
+	public OvhPrice subsidiaryPrice_GET(String flavorId, OvhOvhSubsidiaryEnum ovhSubsidiary, String region) throws IOException {
+		String qPath = "/cloud/subsidiaryPrice";
+		StringBuilder sb = path(qPath);
+		query(sb, "flavorId", flavorId);
+		query(sb, "ovhSubsidiary", ovhSubsidiary);
+		query(sb, "region", region);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
 	}
 
 	/**

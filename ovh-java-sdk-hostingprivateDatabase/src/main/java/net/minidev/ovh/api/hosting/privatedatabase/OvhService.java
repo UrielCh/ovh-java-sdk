@@ -78,6 +78,13 @@ public class OvhService {
 	public String serviceName;
 
 	/**
+	 * Return the TLS certificate authority used by the private database
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String tlsCa;
+
+	/**
 	 * Private database type
 	 *
 	 * canBeNull && readOnly

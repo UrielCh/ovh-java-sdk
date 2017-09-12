@@ -47,6 +47,13 @@ public class OvhFlavor {
 	public String id;
 
 	/**
+	 * Flavor region
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String region;
+
+	/**
 	 * Number of VCPUs
 	 *
 	 * canBeNull && readOnly

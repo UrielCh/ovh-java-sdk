@@ -5,6 +5,13 @@ package net.minidev.ovh.api.billing.itemdetail;
  */
 public class OvhOrder {
 	/**
+	 * Configurations chosen during the order
+	 *
+	 * canBeNull
+	 */
+	public OvhOrderConfiguration[] configurations;
+
+	/**
 	 * The meaning of this order detail
 	 *
 	 * canBeNull

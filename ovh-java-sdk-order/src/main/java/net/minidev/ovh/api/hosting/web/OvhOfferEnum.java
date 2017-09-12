@@ -4,6 +4,7 @@ package net.minidev.ovh.api.hosting.web;
  * Hosting's offer
  */
 public enum OvhOfferEnum {
+	CLOUDWEB_1("CLOUDWEB_1"),
 	KS("KS"),
 	PERFORMANCE_1("PERFORMANCE_1"),
 	PERFORMANCE_2("PERFORMANCE_2"),

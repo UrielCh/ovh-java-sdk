@@ -166,27 +166,27 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/input
 	 * @param serviceName [required]
-	 * @param streamId [required]
-	 * @param engineId [required]
 	 * @param optionId [required]
-	 * @param title [required]
-	 * @param exposedPort [required]
-	 * @param singleInstance [required]
 	 * @param description [required]
+	 * @param engineId [required]
+	 * @param exposedPort [required]
+	 * @param singleInstanceEnabled [required]
+	 * @param title [required]
+	 * @param streamId [required]
 	 *
 	 * API beta
 	 */
-	public OvhOperation serviceName_input_POST(String serviceName, String streamId, String engineId, String optionId, String title, String exposedPort, Boolean singleInstance, String description) throws IOException {
+	public OvhOperation serviceName_input_POST(String serviceName, String optionId, String description, String engineId, String exposedPort, Boolean singleInstanceEnabled, String title, String streamId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "streamId", streamId);
-		addBody(o, "engineId", engineId);
 		addBody(o, "optionId", optionId);
-		addBody(o, "title", title);
-		addBody(o, "exposedPort", exposedPort);
-		addBody(o, "singleInstance", singleInstance);
 		addBody(o, "description", description);
+		addBody(o, "engineId", engineId);
+		addBody(o, "exposedPort", exposedPort);
+		addBody(o, "singleInstanceEnabled", singleInstanceEnabled);
+		addBody(o, "title", title);
+		addBody(o, "streamId", streamId);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
@@ -245,27 +245,27 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: PUT /dbaas/logs/{serviceName}/input/{inputId}
 	 * @param serviceName [required]
 	 * @param inputId [required]
-	 * @param streamId [required]
-	 * @param engineId [required]
 	 * @param optionId [required]
-	 * @param title [required]
-	 * @param exposedPort [required]
-	 * @param singleInstance [required]
 	 * @param description [required]
+	 * @param engineId [required]
+	 * @param exposedPort [required]
+	 * @param singleInstanceEnabled [required]
+	 * @param title [required]
+	 * @param streamId [required]
 	 *
 	 * API beta
 	 */
-	public OvhOperation serviceName_input_inputId_PUT(String serviceName, String inputId, String streamId, String engineId, String optionId, String title, String exposedPort, Boolean singleInstance, String description) throws IOException {
+	public OvhOperation serviceName_input_inputId_PUT(String serviceName, String inputId, String optionId, String description, String engineId, String exposedPort, Boolean singleInstanceEnabled, String title, String streamId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}";
 		StringBuilder sb = path(qPath, serviceName, inputId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "streamId", streamId);
-		addBody(o, "engineId", engineId);
 		addBody(o, "optionId", optionId);
-		addBody(o, "title", title);
-		addBody(o, "exposedPort", exposedPort);
-		addBody(o, "singleInstance", singleInstance);
 		addBody(o, "description", description);
+		addBody(o, "engineId", engineId);
+		addBody(o, "exposedPort", exposedPort);
+		addBody(o, "singleInstanceEnabled", singleInstanceEnabled);
+		addBody(o, "title", title);
+		addBody(o, "streamId", streamId);
 		String resp = exec(qPath, "PUT", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
@@ -427,23 +427,23 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: PUT /dbaas/logs/{serviceName}/input/{inputId}/configuration/flowgger
 	 * @param serviceName [required]
 	 * @param inputId [required]
-	 * @param type [required]
-	 * @param kafkaCoalesce [required]
 	 * @param logFormat [required]
 	 * @param logFraming [required]
+	 * @param kafkaCoalesce [required]
 	 * @param tlsMethod [required]
+	 * @param type [required]
 	 *
 	 * API beta
 	 */
-	public OvhOperation serviceName_input_inputId_configuration_flowgger_PUT(String serviceName, String inputId, OvhFlowggerConfigurationTypeEnum type, Long kafkaCoalesce, OvhFlowggerConfigurationLogFormatEnum logFormat, OvhFlowggerConfigurationLogFramingEnum logFraming, OvhFlowggerConfigurationTlsMethodEnum tlsMethod) throws IOException {
+	public OvhOperation serviceName_input_inputId_configuration_flowgger_PUT(String serviceName, String inputId, OvhFlowggerConfigurationLogFormatEnum logFormat, OvhFlowggerConfigurationLogFramingEnum logFraming, Long kafkaCoalesce, OvhFlowggerConfigurationTlsMethodEnum tlsMethod, OvhFlowggerConfigurationTypeEnum type) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/configuration/flowgger";
 		StringBuilder sb = path(qPath, serviceName, inputId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "type", type);
-		addBody(o, "kafkaCoalesce", kafkaCoalesce);
 		addBody(o, "logFormat", logFormat);
 		addBody(o, "logFraming", logFraming);
+		addBody(o, "kafkaCoalesce", kafkaCoalesce);
 		addBody(o, "tlsMethod", tlsMethod);
+		addBody(o, "type", type);
 		String resp = exec(qPath, "PUT", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
@@ -470,19 +470,19 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: PUT /dbaas/logs/{serviceName}/input/{inputId}/configuration/logstash
 	 * @param serviceName [required]
 	 * @param inputId [required]
-	 * @param patternSection [required]
 	 * @param inputSection [required]
 	 * @param filterSection [required]
+	 * @param patternSection [required]
 	 *
 	 * API beta
 	 */
-	public OvhOperation serviceName_input_inputId_configuration_logstash_PUT(String serviceName, String inputId, String patternSection, String inputSection, String filterSection) throws IOException {
+	public OvhOperation serviceName_input_inputId_configuration_logstash_PUT(String serviceName, String inputId, String inputSection, String filterSection, String patternSection) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input/{inputId}/configuration/logstash";
 		StringBuilder sb = path(qPath, serviceName, inputId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "patternSection", patternSection);
 		addBody(o, "inputSection", inputSection);
 		addBody(o, "filterSection", filterSection);
+		addBody(o, "patternSection", patternSection);
 		String resp = exec(qPath, "PUT", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
@@ -590,15 +590,17 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param indexId [required]
 	 * @param optionId [required]
 	 * @param description [required]
+	 * @param alertNotifyEnabled [required]
 	 *
 	 * API beta
 	 */
-	public OvhOperation serviceName_output_elasticsearch_index_indexId_PUT(String serviceName, String indexId, String optionId, String description) throws IOException {
+	public OvhOperation serviceName_output_elasticsearch_index_indexId_PUT(String serviceName, String indexId, String optionId, String description, Boolean alertNotifyEnabled) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/index/{indexId}";
 		StringBuilder sb = path(qPath, serviceName, indexId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "optionId", optionId);
 		addBody(o, "description", description);
+		addBody(o, "alertNotifyEnabled", alertNotifyEnabled);
 		String resp = exec(qPath, "PUT", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
@@ -639,19 +641,21 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/output/elasticsearch/index
 	 * @param serviceName [required]
-	 * @param suffix [required]
 	 * @param optionId [required]
 	 * @param description [required]
+	 * @param alertNotifyEnabled [required]
+	 * @param suffix [required]
 	 *
 	 * API beta
 	 */
-	public OvhOperation serviceName_output_elasticsearch_index_POST(String serviceName, String suffix, String optionId, String description) throws IOException {
+	public OvhOperation serviceName_output_elasticsearch_index_POST(String serviceName, String optionId, String description, Boolean alertNotifyEnabled, String suffix) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/index";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "suffix", suffix);
 		addBody(o, "optionId", optionId);
 		addBody(o, "description", description);
+		addBody(o, "alertNotifyEnabled", alertNotifyEnabled);
+		addBody(o, "suffix", suffix);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
@@ -676,19 +680,19 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/output/elasticsearch/alias
 	 * @param serviceName [required]
-	 * @param suffix [required]
 	 * @param optionId [required]
 	 * @param description [required]
+	 * @param suffix [required]
 	 *
 	 * API beta
 	 */
-	public OvhOperation serviceName_output_elasticsearch_alias_POST(String serviceName, String suffix, String optionId, String description) throws IOException {
+	public OvhOperation serviceName_output_elasticsearch_alias_POST(String serviceName, String optionId, String description, String suffix) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/alias";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "suffix", suffix);
 		addBody(o, "optionId", optionId);
 		addBody(o, "description", description);
+		addBody(o, "suffix", suffix);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
@@ -743,6 +747,58 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 		addBody(o, "optionId", optionId);
 		addBody(o, "description", description);
 		String resp = exec(qPath, "PUT", sb.toString(), o);
+		return convertTo(resp, OvhOperation.class);
+	}
+
+	/**
+	 * Detach a elasticsearch index from specified elasticsearch alias
+	 *
+	 * REST: DELETE /dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}/index/{indexId}
+	 * @param serviceName [required]
+	 * @param aliasId [required]
+	 * @param indexId [required]
+	 *
+	 * API beta
+	 */
+	public OvhOperation serviceName_output_elasticsearch_alias_aliasId_index_indexId_DELETE(String serviceName, String aliasId, String indexId) throws IOException {
+		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}/index/{indexId}";
+		StringBuilder sb = path(qPath, serviceName, aliasId, indexId);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhOperation.class);
+	}
+
+	/**
+	 * Return the list of elasticsearch indexes attached to specified         elasticsearch alias
+	 *
+	 * REST: GET /dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}/index
+	 * @param serviceName [required]
+	 * @param aliasId [required]
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> serviceName_output_elasticsearch_alias_aliasId_index_GET(String serviceName, String aliasId) throws IOException {
+		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}/index";
+		StringBuilder sb = path(qPath, serviceName, aliasId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Attach a elasticsearch index to specified elasticsearch alias
+	 *
+	 * REST: POST /dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}/index
+	 * @param serviceName [required]
+	 * @param aliasId [required]
+	 * @param indexId [required]
+	 *
+	 * API beta
+	 */
+	public OvhOperation serviceName_output_elasticsearch_alias_aliasId_index_POST(String serviceName, String aliasId, String indexId) throws IOException {
+		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}/index";
+		StringBuilder sb = path(qPath, serviceName, aliasId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "indexId", indexId);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -834,27 +890,27 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/output/graylog/stream
 	 * @param serviceName [required]
-	 * @param coldStorageEnabled [required]
-	 * @param optionId [required]
-	 * @param title [required]
-	 * @param coldStorageNotify [required]
 	 * @param coldStorageRetention [required]
 	 * @param webSocketEnabled [required]
+	 * @param coldStorageEnabled [required]
+	 * @param coldStorageNotifyEnabled [required]
+	 * @param optionId [required]
+	 * @param title [required]
 	 * @param description [required]
 	 * @param coldStorageCompression [required]
 	 *
 	 * API beta
 	 */
-	public OvhOperation serviceName_output_graylog_stream_POST(String serviceName, Boolean coldStorageEnabled, String optionId, String title, Boolean coldStorageNotify, Long coldStorageRetention, Boolean webSocketEnabled, String description, OvhStreamColdStorageCompressionEnum coldStorageCompression) throws IOException {
+	public OvhOperation serviceName_output_graylog_stream_POST(String serviceName, Long coldStorageRetention, Boolean webSocketEnabled, Boolean coldStorageEnabled, Boolean coldStorageNotifyEnabled, String optionId, String title, String description, OvhStreamColdStorageCompressionEnum coldStorageCompression) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "coldStorageEnabled", coldStorageEnabled);
-		addBody(o, "optionId", optionId);
-		addBody(o, "title", title);
-		addBody(o, "coldStorageNotify", coldStorageNotify);
 		addBody(o, "coldStorageRetention", coldStorageRetention);
 		addBody(o, "webSocketEnabled", webSocketEnabled);
+		addBody(o, "coldStorageEnabled", coldStorageEnabled);
+		addBody(o, "coldStorageNotifyEnabled", coldStorageNotifyEnabled);
+		addBody(o, "optionId", optionId);
+		addBody(o, "title", title);
 		addBody(o, "description", description);
 		addBody(o, "coldStorageCompression", coldStorageCompression);
 		String resp = exec(qPath, "POST", sb.toString(), o);
@@ -883,33 +939,35 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: POST /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/alert
 	 * @param serviceName [required]
 	 * @param streamId [required]
-	 * @param value [required]
+	 * @param threshold [required]
+	 * @param thresholdType [required]
 	 * @param time [required]
 	 * @param backlog [required]
+	 * @param repeatNotificationsEnabled [required]
 	 * @param field [required]
-	 * @param conditionType [required]
+	 * @param value [required]
 	 * @param constraintType [required]
 	 * @param grace [required]
+	 * @param conditionType [required]
 	 * @param title [required]
-	 * @param thresholdType [required]
-	 * @param threshold [required]
 	 *
 	 * API beta
 	 */
-	public OvhOperation serviceName_output_graylog_stream_streamId_alert_POST(String serviceName, String streamId, String value, Long time, Long backlog, String field, OvhStreamAlertConditionConditionTypeEnum conditionType, OvhStreamAlertConditionConstraintTypeEnum constraintType, Long grace, String title, OvhStreamAlertConditionThresholdTypeEnum thresholdType, Long threshold) throws IOException {
+	public OvhOperation serviceName_output_graylog_stream_streamId_alert_POST(String serviceName, String streamId, Long threshold, OvhStreamAlertConditionThresholdTypeEnum thresholdType, Long time, Long backlog, Boolean repeatNotificationsEnabled, String field, String value, OvhStreamAlertConditionConstraintTypeEnum constraintType, Long grace, OvhStreamAlertConditionConditionTypeEnum conditionType, String title) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/alert";
 		StringBuilder sb = path(qPath, serviceName, streamId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "value", value);
+		addBody(o, "threshold", threshold);
+		addBody(o, "thresholdType", thresholdType);
 		addBody(o, "time", time);
 		addBody(o, "backlog", backlog);
+		addBody(o, "repeatNotificationsEnabled", repeatNotificationsEnabled);
 		addBody(o, "field", field);
-		addBody(o, "conditionType", conditionType);
+		addBody(o, "value", value);
 		addBody(o, "constraintType", constraintType);
 		addBody(o, "grace", grace);
+		addBody(o, "conditionType", conditionType);
 		addBody(o, "title", title);
-		addBody(o, "thresholdType", thresholdType);
-		addBody(o, "threshold", threshold);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
@@ -955,33 +1013,35 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param streamId [required]
 	 * @param alertId [required]
-	 * @param value [required]
+	 * @param threshold [required]
+	 * @param thresholdType [required]
 	 * @param time [required]
 	 * @param backlog [required]
+	 * @param repeatNotificationsEnabled [required]
 	 * @param field [required]
-	 * @param conditionType [required]
+	 * @param value [required]
 	 * @param constraintType [required]
 	 * @param grace [required]
+	 * @param conditionType [required]
 	 * @param title [required]
-	 * @param thresholdType [required]
-	 * @param threshold [required]
 	 *
 	 * API beta
 	 */
-	public OvhOperation serviceName_output_graylog_stream_streamId_alert_alertId_PUT(String serviceName, String streamId, String alertId, String value, Long time, Long backlog, String field, OvhStreamAlertConditionConditionTypeEnum conditionType, OvhStreamAlertConditionConstraintTypeEnum constraintType, Long grace, String title, OvhStreamAlertConditionThresholdTypeEnum thresholdType, Long threshold) throws IOException {
+	public OvhOperation serviceName_output_graylog_stream_streamId_alert_alertId_PUT(String serviceName, String streamId, String alertId, Long threshold, OvhStreamAlertConditionThresholdTypeEnum thresholdType, Long time, Long backlog, Boolean repeatNotificationsEnabled, String field, String value, OvhStreamAlertConditionConstraintTypeEnum constraintType, Long grace, OvhStreamAlertConditionConditionTypeEnum conditionType, String title) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/alert/{alertId}";
 		StringBuilder sb = path(qPath, serviceName, streamId, alertId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "value", value);
+		addBody(o, "threshold", threshold);
+		addBody(o, "thresholdType", thresholdType);
 		addBody(o, "time", time);
 		addBody(o, "backlog", backlog);
+		addBody(o, "repeatNotificationsEnabled", repeatNotificationsEnabled);
 		addBody(o, "field", field);
-		addBody(o, "conditionType", conditionType);
+		addBody(o, "value", value);
 		addBody(o, "constraintType", constraintType);
 		addBody(o, "grace", grace);
+		addBody(o, "conditionType", conditionType);
 		addBody(o, "title", title);
-		addBody(o, "thresholdType", thresholdType);
-		addBody(o, "threshold", threshold);
 		String resp = exec(qPath, "PUT", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
@@ -1024,29 +1084,29 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: PUT /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}
 	 * @param serviceName [required]
 	 * @param streamId [required]
+	 * @param coldStorageRetention [required]
+	 * @param webSocketEnabled [required]
 	 * @param coldStorageEnabled [required]
+	 * @param coldStorageNotifyEnabled [required]
 	 * @param optionId [required]
 	 * @param title [required]
-	 * @param coldStorageNotify [required]
-	 * @param coldStorageCompression [required]
-	 * @param webSocketEnabled [required]
 	 * @param description [required]
-	 * @param coldStorageRetention [required]
+	 * @param coldStorageCompression [required]
 	 *
 	 * API beta
 	 */
-	public OvhOperation serviceName_output_graylog_stream_streamId_PUT(String serviceName, String streamId, Boolean coldStorageEnabled, String optionId, String title, Boolean coldStorageNotify, OvhStreamColdStorageCompressionEnum coldStorageCompression, Boolean webSocketEnabled, String description, Long coldStorageRetention) throws IOException {
+	public OvhOperation serviceName_output_graylog_stream_streamId_PUT(String serviceName, String streamId, Long coldStorageRetention, Boolean webSocketEnabled, Boolean coldStorageEnabled, Boolean coldStorageNotifyEnabled, String optionId, String title, String description, OvhStreamColdStorageCompressionEnum coldStorageCompression) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream/{streamId}";
 		StringBuilder sb = path(qPath, serviceName, streamId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "coldStorageRetention", coldStorageRetention);
+		addBody(o, "webSocketEnabled", webSocketEnabled);
 		addBody(o, "coldStorageEnabled", coldStorageEnabled);
+		addBody(o, "coldStorageNotifyEnabled", coldStorageNotifyEnabled);
 		addBody(o, "optionId", optionId);
 		addBody(o, "title", title);
-		addBody(o, "coldStorageNotify", coldStorageNotify);
-		addBody(o, "coldStorageCompression", coldStorageCompression);
-		addBody(o, "webSocketEnabled", webSocketEnabled);
 		addBody(o, "description", description);
-		addBody(o, "coldStorageRetention", coldStorageRetention);
+		addBody(o, "coldStorageCompression", coldStorageCompression);
 		String resp = exec(qPath, "PUT", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
@@ -1175,18 +1235,18 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: POST /dbaas/logs/{serviceName}/output/graylog/dashboard
 	 * @param serviceName [required]
 	 * @param optionId [required]
-	 * @param description [required]
 	 * @param title [required]
+	 * @param description [required]
 	 *
 	 * API beta
 	 */
-	public OvhOperation serviceName_output_graylog_dashboard_POST(String serviceName, String optionId, String description, String title) throws IOException {
+	public OvhOperation serviceName_output_graylog_dashboard_POST(String serviceName, String optionId, String title, String description) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/dashboard";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "optionId", optionId);
-		addBody(o, "description", description);
 		addBody(o, "title", title);
+		addBody(o, "description", description);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
@@ -1230,18 +1290,18 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param dashboardId [required]
 	 * @param optionId [required]
-	 * @param description [required]
 	 * @param title [required]
+	 * @param description [required]
 	 *
 	 * API beta
 	 */
-	public OvhOperation serviceName_output_graylog_dashboard_dashboardId_PUT(String serviceName, String dashboardId, String optionId, String description, String title) throws IOException {
+	public OvhOperation serviceName_output_graylog_dashboard_dashboardId_PUT(String serviceName, String dashboardId, String optionId, String title, String description) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/dashboard/{dashboardId}";
 		StringBuilder sb = path(qPath, serviceName, dashboardId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "optionId", optionId);
-		addBody(o, "description", description);
 		addBody(o, "title", title);
+		addBody(o, "description", description);
 		String resp = exec(qPath, "PUT", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
@@ -1252,21 +1312,21 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: POST /dbaas/logs/{serviceName}/output/graylog/dashboard/{dashboardId}/duplicate
 	 * @param serviceName [required]
 	 * @param dashboardId [required]
-	 * @param streamId [required]
 	 * @param optionId [required]
-	 * @param description [required]
 	 * @param title [required]
+	 * @param streamId [required]
+	 * @param description [required]
 	 *
 	 * API beta
 	 */
-	public OvhOperation serviceName_output_graylog_dashboard_dashboardId_duplicate_POST(String serviceName, String dashboardId, String streamId, String optionId, String description, String title) throws IOException {
+	public OvhOperation serviceName_output_graylog_dashboard_dashboardId_duplicate_POST(String serviceName, String dashboardId, String optionId, String title, String streamId, String description) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/dashboard/{dashboardId}/duplicate";
 		StringBuilder sb = path(qPath, serviceName, dashboardId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "streamId", streamId);
 		addBody(o, "optionId", optionId);
-		addBody(o, "description", description);
 		addBody(o, "title", title);
+		addBody(o, "streamId", streamId);
+		addBody(o, "description", description);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}

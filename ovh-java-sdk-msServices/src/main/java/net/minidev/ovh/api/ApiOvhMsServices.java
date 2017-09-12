@@ -16,6 +16,10 @@ import net.minidev.ovh.api.msservices.OvhSharepointLicenseEnum;
 import net.minidev.ovh.api.msservices.OvhSharepointService;
 import net.minidev.ovh.api.msservices.OvhSharepointServiceInfo;
 import net.minidev.ovh.api.msservices.OvhSharepointTask;
+import net.minidev.ovh.api.msservices.OvhSyncDailyLicense;
+import net.minidev.ovh.api.msservices.OvhSyncInformation;
+import net.minidev.ovh.api.msservices.OvhSyncLicenseEnum;
+import net.minidev.ovh.api.msservices.OvhSyncService;
 import net.minidev.ovh.api.msservices.OvhTask;
 import net.minidev.ovh.api.msservices.OvhTaskFunctionEnum;
 import net.minidev.ovh.api.msservices.OvhTaskStatusEnum;
@@ -227,6 +231,73 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	}
 
 	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /msServices/{serviceName}/account/{userPrincipalName}/sync
+	 * @param serviceName [required] The internal name of your Active Directory organization
+	 * @param userPrincipalName [required] User Principal Name
+	 *
+	 * API beta
+	 */
+	public OvhSyncInformation serviceName_account_userPrincipalName_sync_GET(String serviceName, String userPrincipalName) throws IOException {
+		String qPath = "/msServices/{serviceName}/account/{userPrincipalName}/sync";
+		StringBuilder sb = path(qPath, serviceName, userPrincipalName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhSyncInformation.class);
+	}
+
+	/**
+	 * Create new sync account
+	 *
+	 * REST: POST /msServices/{serviceName}/account/{userPrincipalName}/sync
+	 * @param license [required] Sync account license
+	 * @param serviceName [required] The internal name of your Active Directory organization
+	 * @param userPrincipalName [required] User Principal Name
+	 *
+	 * API beta
+	 */
+	public OvhTask serviceName_account_userPrincipalName_sync_POST(String serviceName, String userPrincipalName, OvhSyncLicenseEnum license) throws IOException {
+		String qPath = "/msServices/{serviceName}/account/{userPrincipalName}/sync";
+		StringBuilder sb = path(qPath, serviceName, userPrincipalName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "license", license);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Delete sync account
+	 *
+	 * REST: DELETE /msServices/{serviceName}/account/{userPrincipalName}/sync
+	 * @param serviceName [required] The internal name of your Active Directory organization
+	 * @param userPrincipalName [required] User Principal Name
+	 *
+	 * API beta
+	 */
+	public OvhTask serviceName_account_userPrincipalName_sync_DELETE(String serviceName, String userPrincipalName) throws IOException {
+		String qPath = "/msServices/{serviceName}/account/{userPrincipalName}/sync";
+		StringBuilder sb = path(qPath, serviceName, userPrincipalName);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Configure sync account to be operational
+	 *
+	 * REST: POST /msServices/{serviceName}/account/{userPrincipalName}/sync/configure
+	 * @param serviceName [required] The internal name of your Active Directory organization
+	 * @param userPrincipalName [required] User Principal Name
+	 *
+	 * API beta
+	 */
+	public OvhTask serviceName_account_userPrincipalName_sync_configure_POST(String serviceName, String userPrincipalName) throws IOException {
+		String qPath = "/msServices/{serviceName}/account/{userPrincipalName}/sync/configure";
+		StringBuilder sb = path(qPath, serviceName, userPrincipalName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
 	 * Change account password
 	 *
 	 * REST: POST /msServices/{serviceName}/account/{userPrincipalName}/changePassword
@@ -412,6 +483,74 @@ public class ApiOvhMsServices extends ApiOvhBase {
 		return convertTo(resp, t3);
 	}
 	private static TypeReference<ArrayList<OvhSharepointDailyLicense>> t3 = new TypeReference<ArrayList<OvhSharepointDailyLicense>>() {};
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /msServices/{serviceName}/sync
+	 * @param serviceName [required] The internal name of your Active Directory organization
+	 *
+	 * API beta
+	 */
+	public OvhSyncService serviceName_sync_GET(String serviceName) throws IOException {
+		String qPath = "/msServices/{serviceName}/sync";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhSyncService.class);
+	}
+
+	/**
+	 * Delete sync service
+	 *
+	 * REST: DELETE /msServices/{serviceName}/sync
+	 * @param serviceName [required] The internal name of your Active Directory organization
+	 *
+	 * API beta
+	 */
+	public OvhTask serviceName_sync_DELETE(String serviceName) throws IOException {
+		String qPath = "/msServices/{serviceName}/sync";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Change account password
+	 *
+	 * REST: POST /msServices/{serviceName}/sync/changePassword
+	 * @param password [required] new password
+	 * @param serviceName [required] The internal name of your Active Directory organization
+	 *
+	 * API beta
+	 */
+	public OvhTask serviceName_sync_changePassword_POST(String serviceName, String password) throws IOException {
+		String qPath = "/msServices/{serviceName}/sync/changePassword";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "password", password);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get active licenses for specific period of time
+	 *
+	 * REST: GET /msServices/{serviceName}/sync/license
+	 * @param period [required] Period of time used to determine sync account license statistics
+	 * @param license [required] License type
+	 * @param serviceName [required] The internal name of your Active Directory organization
+	 *
+	 * API beta
+	 */
+	public ArrayList<OvhSyncDailyLicense> serviceName_sync_license_GET(String serviceName, OvhSyncLicenseEnum license, OvhLicensePeriodEnum period) throws IOException {
+		String qPath = "/msServices/{serviceName}/sync/license";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "license", license);
+		query(sb, "period", period);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t4);
+	}
+	private static TypeReference<ArrayList<OvhSyncDailyLicense>> t4 = new TypeReference<ArrayList<OvhSyncDailyLicense>>() {};
 
 	/**
 	 * Pending actions

@@ -12,6 +12,13 @@ public class OvhPool {
 	public String externalUrl;
 
 	/**
+	 * Next hop IP to reach virtual desktops network
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String intercoNextHop;
+
+	/**
 	 * DHCP netmask in this port group
 	 *
 	 * canBeNull && readOnly

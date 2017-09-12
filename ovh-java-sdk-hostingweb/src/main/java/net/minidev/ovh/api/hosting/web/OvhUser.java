@@ -1,5 +1,6 @@
 package net.minidev.ovh.api.hosting.web;
 
+import net.minidev.ovh.api.hosting.web.user.OvhServiceCredentials;
 import net.minidev.ovh.api.hosting.web.user.OvhSshStateEnum;
 import net.minidev.ovh.api.hosting.web.user.OvhStateEnum;
 import net.minidev.ovh.api.hosting.web.user.OvhStatusEnum;
@@ -14,6 +15,13 @@ public class OvhUser {
 	 * canBeNull && readOnly
 	 */
 	public Boolean isPrimaryAccount;
+
+	/**
+	 * Credentials to manage your webhosting
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhServiceCredentials serviceManagementCredentials;
 
 	/**
 	 * User ssh status

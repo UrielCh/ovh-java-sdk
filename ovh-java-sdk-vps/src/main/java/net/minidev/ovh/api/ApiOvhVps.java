@@ -797,6 +797,19 @@ public class ApiOvhVps extends ApiOvhBase {
 	}
 
 	/**
+	 * Terminate your service
+	 *
+	 * REST: POST /vps/{serviceName}/terminate
+	 * @param serviceName [required] The internal name of your VPS offer
+	 */
+	public String serviceName_terminate_POST(String serviceName) throws IOException {
+		String qPath = "/vps/{serviceName}/terminate";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
+
+	/**
 	 * Launch a contact change procedure
 	 *
 	 * REST: POST /vps/{serviceName}/changeContact

@@ -86,6 +86,13 @@ public class OvhHost {
 	public Long cpuNum;
 
 	/**
+	 * Host uptime in second
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long uptime;
+
+	/**
 	 * Billing type of the host
 	 *
 	 * canBeNull && readOnly

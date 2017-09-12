@@ -2362,6 +2362,7 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	 * create new resource account in exchange server
 	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/resourceAccount
+	 * @param location [required] resource location
 	 * @param resourceEmailAddress [required] resource address
 	 * @param allowConflict [required] resource can be scheduled by more than one person during the same time period
 	 * @param type [required] field of your reservation
@@ -2370,10 +2371,11 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 */
-	public OvhTask organizationName_service_exchangeService_resourceAccount_POST(String organizationName, String exchangeService, String resourceEmailAddress, Boolean allowConflict, OvhResourceTypeEnum type, Long capacity, String displayName) throws IOException {
+	public OvhTask organizationName_service_exchangeService_resourceAccount_POST(String organizationName, String exchangeService, String location, String resourceEmailAddress, Boolean allowConflict, OvhResourceTypeEnum type, Long capacity, String displayName) throws IOException {
 		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/resourceAccount";
 		StringBuilder sb = path(qPath, organizationName, exchangeService);
 		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "location", location);
 		addBody(o, "resourceEmailAddress", resourceEmailAddress);
 		addBody(o, "allowConflict", allowConflict);
 		addBody(o, "type", type);

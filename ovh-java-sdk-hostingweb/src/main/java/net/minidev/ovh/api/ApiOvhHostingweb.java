@@ -1620,6 +1620,108 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	}
 
 	/**
+	 * User allowed to connect into your logs interface
+	 *
+	 * REST: GET /hosting/web/{serviceName}/ownLogs/{id}/userLogs
+	 * @param login [required] Filter the value of login property (like)
+	 * @param serviceName [required] The internal name of your hosting
+	 * @param id [required] Id of the object
+	 */
+	public ArrayList<String> serviceName_ownLogs_id_userLogs_GET(String serviceName, Long id, String login) throws IOException {
+		String qPath = "/hosting/web/{serviceName}/ownLogs/{id}/userLogs";
+		StringBuilder sb = path(qPath, serviceName, id);
+		query(sb, "login", login);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t4);
+	}
+
+	/**
+	 * Create new userLogs
+	 *
+	 * REST: POST /hosting/web/{serviceName}/ownLogs/{id}/userLogs
+	 * @param password [required] The new userLogs password
+	 * @param ownLogsId [required] OwnLogs where this userLogs will be enable. Default : main domain ownlogs
+	 * @param description [required] Description field for you
+	 * @param login [required] The userLogs login used to connect to logs.ovh.net
+	 * @param serviceName [required] The internal name of your hosting
+	 * @param id [required] Id of the object
+	 */
+	public String serviceName_ownLogs_id_userLogs_POST(String serviceName, Long id, String password, Long ownLogsId, String description, String login) throws IOException {
+		String qPath = "/hosting/web/{serviceName}/ownLogs/{id}/userLogs";
+		StringBuilder sb = path(qPath, serviceName, id);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "password", password);
+		addBody(o, "ownLogsId", ownLogsId);
+		addBody(o, "description", description);
+		addBody(o, "login", login);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /hosting/web/{serviceName}/ownLogs/{id}/userLogs/{login}
+	 * @param serviceName [required] The internal name of your hosting
+	 * @param id [required] Id of the object
+	 * @param login [required] The userLogs login used to connect to logs.ovh.net
+	 */
+	public OvhUserLogs serviceName_ownLogs_id_userLogs_login_GET(String serviceName, Long id, String login) throws IOException {
+		String qPath = "/hosting/web/{serviceName}/ownLogs/{id}/userLogs/{login}";
+		StringBuilder sb = path(qPath, serviceName, id, login);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhUserLogs.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /hosting/web/{serviceName}/ownLogs/{id}/userLogs/{login}
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your hosting
+	 * @param id [required] Id of the object
+	 * @param login [required] The userLogs login used to connect to logs.ovh.net
+	 */
+	public void serviceName_ownLogs_id_userLogs_login_PUT(String serviceName, Long id, String login, OvhUserLogs body) throws IOException {
+		String qPath = "/hosting/web/{serviceName}/ownLogs/{id}/userLogs/{login}";
+		StringBuilder sb = path(qPath, serviceName, id, login);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Delete the userLogs
+	 *
+	 * REST: DELETE /hosting/web/{serviceName}/ownLogs/{id}/userLogs/{login}
+	 * @param serviceName [required] The internal name of your hosting
+	 * @param id [required] Id of the object
+	 * @param login [required] The userLogs login used to connect to logs.ovh.net
+	 */
+	public String serviceName_ownLogs_id_userLogs_login_DELETE(String serviceName, Long id, String login) throws IOException {
+		String qPath = "/hosting/web/{serviceName}/ownLogs/{id}/userLogs/{login}";
+		StringBuilder sb = path(qPath, serviceName, id, login);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Request a password change
+	 *
+	 * REST: POST /hosting/web/{serviceName}/ownLogs/{id}/userLogs/{login}/changePassword
+	 * @param password [required] The new userLogs password
+	 * @param serviceName [required] The internal name of your hosting
+	 * @param id [required] Id of the object
+	 * @param login [required] The userLogs login used to connect to logs.ovh.net
+	 */
+	public String serviceName_ownLogs_id_userLogs_login_changePassword_POST(String serviceName, Long id, String login, String password) throws IOException {
+		String qPath = "/hosting/web/{serviceName}/ownLogs/{id}/userLogs/{login}/changePassword";
+		StringBuilder sb = path(qPath, serviceName, id, login);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "password", password);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, String.class);
+	}
+
+	/**
 	 * Configuration used on your hosting
 	 *
 	 * REST: GET /hosting/web/{serviceName}/ovhConfig
@@ -1699,6 +1801,18 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 */
 	public ArrayList<String> GET() throws IOException {
 		String qPath = "/hosting/web";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t4);
+	}
+
+	/**
+	 * Get current incident
+	 *
+	 * REST: GET /hosting/web/incident
+	 */
+	public ArrayList<String> incident_GET() throws IOException {
+		String qPath = "/hosting/web/incident";
 		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t4);

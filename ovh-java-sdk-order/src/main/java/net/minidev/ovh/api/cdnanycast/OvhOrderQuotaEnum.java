@@ -11,7 +11,9 @@ public enum OvhOrderQuotaEnum {
 	@JsonProperty("10")
 	_10("10"),
 	@JsonProperty("100")
-	_100("100");
+	_100("100"),
+	@JsonProperty("1000")
+	_1000("1000");
 
 	final String value;
 

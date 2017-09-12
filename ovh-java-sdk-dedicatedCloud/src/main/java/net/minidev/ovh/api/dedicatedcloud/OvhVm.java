@@ -131,6 +131,13 @@ public class OvhVm {
 	public String memoryTps;
 
 	/**
+	 * Virtual machine cdroms devices
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhVirtualMachineCdrom[] cdroms;
+
+	/**
 	 * moRef of the virtual machine.
 	 *
 	 * canBeNull && readOnly

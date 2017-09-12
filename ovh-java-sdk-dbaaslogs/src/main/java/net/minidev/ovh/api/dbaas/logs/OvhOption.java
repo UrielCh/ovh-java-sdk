@@ -56,6 +56,13 @@ public class OvhOption {
 	public Long curNbDashboard;
 
 	/**
+	 * Index size in bytes
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long indexSize;
+
+	/**
 	 * Option unique reference
 	 *
 	 * canBeNull && readOnly

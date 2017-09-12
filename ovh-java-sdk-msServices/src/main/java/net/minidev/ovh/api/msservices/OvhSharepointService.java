@@ -5,6 +5,13 @@ package net.minidev.ovh.api.msservices;
  */
 public class OvhSharepointService {
 	/**
+	 * Sharepoint farm url
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String farmUrl;
+
+	/**
 	 * Service family name displayed
 	 *
 	 * canBeNull && readOnly

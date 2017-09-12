@@ -7,6 +7,13 @@ import net.minidev.ovh.api.complextype.OvhUnitAndValue;
  */
 public class OvhNetworkSpecifications {
 	/**
+	 * Routing details
+	 *
+	 * canBeNull
+	 */
+	public OvhRoutingDetails routing;
+
+	/**
 	 * Bandwidth details
 	 *
 	 * canBeNull

@@ -156,16 +156,18 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 	 *
 	 * REST: GET /license/office/{serviceName}/user
 	 * @param firstName [required] Filter the value of firstName property (like)
+	 * @param licences [required] Filter the value of licences property (=)
 	 * @param lastName [required] Filter the value of lastName property (like)
 	 * @param activationEmail [required] Filter the value of activationEmail property (like)
 	 * @param serviceName [required] The unique identifier of your Office service
 	 */
-	public ArrayList<String> serviceName_user_GET(String serviceName, String activationEmail, String firstName, String lastName) throws IOException {
+	public ArrayList<String> serviceName_user_GET(String serviceName, String activationEmail, String firstName, String lastName, OvhLicenceEnum[] licences) throws IOException {
 		String qPath = "/license/office/{serviceName}/user";
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "activationEmail", activationEmail);
 		query(sb, "firstName", firstName);
 		query(sb, "lastName", lastName);
+		query(sb, "licences", licences);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}

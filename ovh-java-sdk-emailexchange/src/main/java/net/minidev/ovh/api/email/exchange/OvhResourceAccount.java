@@ -21,6 +21,13 @@ public class OvhResourceAccount {
 	public String displayName;
 
 	/**
+	 * resource location name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String location;
+
+	/**
 	 * resource can be scheduled by more than one person during the same time period
 	 *
 	 * canBeNull && readOnly

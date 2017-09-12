@@ -48,6 +48,7 @@ import net.minidev.ovh.api.xdsl.eligibility.OvhAddress;
 import net.minidev.ovh.api.xdsl.eligibility.OvhCity;
 import net.minidev.ovh.api.xdsl.eligibility.OvhEligibility;
 import net.minidev.ovh.api.xdsl.eligibility.OvhLandlineStatusEnum;
+import net.minidev.ovh.api.xdsl.eligibility.OvhMeetingSlots;
 import net.minidev.ovh.api.xdsl.eligibility.OvhStreet;
 import net.minidev.ovh.api.xdsl.linediagnostic.OvhAnswers;
 import net.minidev.ovh.api.xdsl.linediagnostic.OvhCustomerActionsEnum;
@@ -990,6 +991,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	 *
 	 * REST: GET /xdsl/{serviceName}/availableLns
 	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @deprecated
 	 */
 	public ArrayList<OvhLns> serviceName_availableLns_GET(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/availableLns";
@@ -1070,6 +1072,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	 *
 	 * REST: GET /xdsl/{serviceName}/canMigrateToPPP
 	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @deprecated
 	 */
 	public OvhPPPMigrationInfo serviceName_canMigrateToPPP_GET(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/canMigrateToPPP";
@@ -1099,6 +1102,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	 *
 	 * REST: POST /xdsl/{serviceName}/migrateToPPP
 	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @deprecated
 	 */
 	public void serviceName_migrateToPPP_POST(String serviceName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/migrateToPPP";
@@ -1182,6 +1186,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	 * REST: POST /xdsl/{serviceName}/changeLns
 	 * @param lnsName [required] The name from xdsl.Lns
 	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @deprecated
 	 */
 	public OvhTask serviceName_changeLns_POST(String serviceName, String lnsName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/changeLns";
@@ -1519,40 +1524,69 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	private static TypeReference<ArrayList<OvhStreet>> t11 = new TypeReference<ArrayList<OvhStreet>>() {};
 
 	/**
-	 * Get the inactive lines at given address
+	 * Search for meeting time slot
 	 *
-	 * REST: POST /xdsl/eligibility/lines/inactive
-	 * @param address [required] The address
+	 * REST: GET /xdsl/eligibility/meetings
+	 * @param eligibilityId [required] The eligibility test id
+	 * @param offerLabel [required] The choosen offer label
 	 *
 	 * API beta
 	 */
-	public OvhAsyncTaskArray<net.minidev.ovh.api.xdsl.eligibility.OvhLine> eligibility_lines_inactive_POST(OvhAddress address) throws IOException {
+	public OvhAsyncTask<OvhMeetingSlots> eligibility_meetings_GET(String eligibilityId, String offerLabel) throws IOException {
+		String qPath = "/xdsl/eligibility/meetings";
+		StringBuilder sb = path(qPath);
+		query(sb, "eligibilityId", eligibilityId);
+		query(sb, "offerLabel", offerLabel);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t12);
+	}
+	private static TypeReference<OvhAsyncTask<OvhMeetingSlots>> t12 = new TypeReference<OvhAsyncTask<OvhMeetingSlots>>() {};
+
+	/**
+	 * Get the inactive lines at given address
+	 *
+	 * REST: POST /xdsl/eligibility/lines/inactive
+	 * @param contactName [required] The contact name first three letters
+	 * @param city [required] The information about the city
+	 * @param streetNumber [required] The number in the street
+	 * @param street [required] The information about the street
+	 *
+	 * API beta
+	 */
+	public OvhAsyncTaskArray<net.minidev.ovh.api.xdsl.eligibility.OvhLine> eligibility_lines_inactive_POST(String contactName, OvhCity city, String streetNumber, OvhStreet street) throws IOException {
 		String qPath = "/xdsl/eligibility/lines/inactive";
 		StringBuilder sb = path(qPath);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "address", address);
+		addBody(o, "contactName", contactName);
+		addBody(o, "city", city);
+		addBody(o, "streetNumber", streetNumber);
+		addBody(o, "street", street);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t12);
+		return convertTo(resp, t13);
 	}
-	private static TypeReference<OvhAsyncTaskArray<net.minidev.ovh.api.xdsl.eligibility.OvhLine>> t12 = new TypeReference<OvhAsyncTaskArray<net.minidev.ovh.api.xdsl.eligibility.OvhLine>>() {};
+	private static TypeReference<OvhAsyncTaskArray<net.minidev.ovh.api.xdsl.eligibility.OvhLine>> t13 = new TypeReference<OvhAsyncTaskArray<net.minidev.ovh.api.xdsl.eligibility.OvhLine>>() {};
 
 	/**
 	 * Get the active lines at given address
 	 *
 	 * REST: POST /xdsl/eligibility/lines/active
 	 * @param contactName [required] The contact name first three letters
-	 * @param address [required] The address
+	 * @param city [required] The information about the city
+	 * @param streetNumber [required] The number in the street
+	 * @param street [required] The information about the street
 	 *
 	 * API beta
 	 */
-	public OvhAsyncTaskArray<net.minidev.ovh.api.xdsl.eligibility.OvhLine> eligibility_lines_active_POST(String contactName, OvhAddress address) throws IOException {
+	public OvhAsyncTaskArray<net.minidev.ovh.api.xdsl.eligibility.OvhLine> eligibility_lines_active_POST(String contactName, OvhCity city, String streetNumber, OvhStreet street) throws IOException {
 		String qPath = "/xdsl/eligibility/lines/active";
 		StringBuilder sb = path(qPath);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "contactName", contactName);
-		addBody(o, "address", address);
+		addBody(o, "city", city);
+		addBody(o, "streetNumber", streetNumber);
+		addBody(o, "street", street);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t12);
+		return convertTo(resp, t13);
 	}
 
 	/**
@@ -1566,9 +1600,9 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		StringBuilder sb = path(qPath);
 		query(sb, "zipCode", zipCode);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t13);
+		return convertTo(resp, t14);
 	}
-	private static TypeReference<ArrayList<OvhCity>> t13 = new TypeReference<ArrayList<OvhCity>>() {};
+	private static TypeReference<ArrayList<OvhCity>> t14 = new TypeReference<ArrayList<OvhCity>>() {};
 
 	/**
 	 * List of incidents

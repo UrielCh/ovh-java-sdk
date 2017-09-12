@@ -14,6 +14,13 @@ public class OvhIndex {
 	public Date createdAt;
 
 	/**
+	 * Notify if size is near 80, 90 or 100 %
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean alertNotifyEnabled;
+
+	/**
 	 * Indicates if you are allowed to edit entry
 	 *
 	 * canBeNull && readOnly
@@ -40,6 +47,13 @@ public class OvhIndex {
 	 * canBeNull && readOnly
 	 */
 	public String indexId;
+
+	/**
+	 * Maximum index size (in bytes)
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long maxSize;
 
 	/**
 	 * Associated DBaaS Logs option

@@ -42,5 +42,10 @@ public class OvhFaxProperties {
 	/**
 	 * canBeNull && readOnly
 	 */
+	public String faxTagLine;
+
+	/**
+	 * canBeNull && readOnly
+	 */
 	public String fromEmail;
 }

@@ -6,6 +6,7 @@ package net.minidev.ovh.api.hosting.web.database;
 public enum OvhDatabaseCapabilitiesTypeEnum {
 	extraSqlPerso("extraSqlPerso"),
 	privateDatabase("privateDatabase"),
+	sqlLocal("sqlLocal"),
 	sqlPerso("sqlPerso"),
 	sqlPro("sqlPro");
 

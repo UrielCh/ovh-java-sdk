@@ -7,13 +7,6 @@ import net.minidev.ovh.api.order.OvhPrice;
  */
 public class OvhTelephonyService {
 	/**
-	 * Current outplan
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhPrice currentOutplan;
-
-	/**
 	 * canBeNull && readOnly
 	 */
 	public OvhTypeServiceEnum serviceType;
@@ -43,6 +36,30 @@ public class OvhTelephonyService {
 	public Long simultaneousLines;
 
 	/**
+	 * canBeNull && readOnly
+	 */
+	public String description;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public String serviceName;
+
+	/**
+	 * Current outplan
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhPrice currentOutplan;
+
+	/**
+	 * The service offers
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhLineOffer getPublicOffer;
+
+	/**
 	 * The country code of the number
 	 *
 	 * canBeNull && readOnly
@@ -60,16 +77,6 @@ public class OvhTelephonyService {
 	 * canBeNull && readOnly
 	 */
 	public String rio;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public String description;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public String serviceName;
 
 	/**
 	 * canBeNull && readOnly

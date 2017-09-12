@@ -3983,20 +3983,6 @@ public class ApiOvhPrice extends ApiOvhBase {
 	}
 
 	/**
-	 * Get price of VPS Low Latency
-	 *
-	 * REST: GET /price/vps/lowlat/model/{modelName}
-	 * @param modelName [required] Model
-	 * @deprecated
-	 */
-	public OvhPrice vps_lowlat_model_modelName_GET(net.minidev.ovh.api.price.vps.lowlat.OvhModelEnum modelName) throws IOException {
-		String qPath = "/price/vps/lowlat/model/{modelName}";
-		StringBuilder sb = path(qPath, modelName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPrice.class);
-	}
-
-	/**
 	 * Get price of VPS Classic 2013
 	 *
 	 * REST: GET /price/vps/2013v1/cloud/model/{modelName}
@@ -4044,6 +4030,46 @@ public class ApiOvhPrice extends ApiOvhBase {
 	public OvhPrice vps_2013v1_classic_model_modelName_GET(net.minidev.ovh.api.price.vps._2013v1.classic.OvhModelEnum modelName) throws IOException {
 		String qPath = "/price/vps/2013v1/classic/model/{modelName}";
 		StringBuilder sb = path(qPath, modelName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of VPS Low Latency
+	 *
+	 * REST: GET /price/vps/lowlat/model/{modelName}
+	 * @param modelName [required] Model
+	 * @deprecated
+	 */
+	public OvhPrice vps_lowlat_model_modelName_GET(net.minidev.ovh.api.price.vps.lowlat.OvhModelEnum modelName) throws IOException {
+		String qPath = "/price/vps/lowlat/model/{modelName}";
+		StringBuilder sb = path(qPath, modelName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of VPS SSD Discovery 2017
+	 *
+	 * REST: GET /price/vps/2017v1/ssd/model/{modelName}
+	 * @param modelName [required] Model
+	 */
+	public OvhPrice vps_2017v1_ssd_model_modelName_GET(net.minidev.ovh.api.price.vps._2017v1.ssd.OvhModelEnum modelName) throws IOException {
+		String qPath = "/price/vps/2017v1/ssd/model/{modelName}";
+		StringBuilder sb = path(qPath, modelName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of VPS SSD Discovery Options 2017
+	 *
+	 * REST: GET /price/vps/2017v1/ssd/option/{optionName}
+	 * @param optionName [required] Option
+	 */
+	public OvhPrice vps_2017v1_ssd_option_optionName_GET(net.minidev.ovh.api.price.vps._2017v1.ssd.OvhOptionEnum optionName) throws IOException {
+		String qPath = "/price/vps/2017v1/ssd/option/{optionName}";
+		StringBuilder sb = path(qPath, optionName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
 	}

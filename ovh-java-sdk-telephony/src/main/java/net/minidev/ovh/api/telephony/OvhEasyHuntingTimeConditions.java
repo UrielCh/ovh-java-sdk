@@ -37,5 +37,5 @@ public class OvhEasyHuntingTimeConditions {
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhEasyHuntingTimeConditionsPolicyEnum policy;
+	public OvhTimeConditionsPolicyEnum policy;
 }

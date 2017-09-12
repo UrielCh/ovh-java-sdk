@@ -96,4 +96,11 @@ public class OvhHardwareSpecifications {
 	 * canBeNull
 	 */
 	public OvhCpuFamilyEnum processorArchitecture;
+
+	/**
+	 * details about the server's expansion cards
+	 *
+	 * canBeNull
+	 */
+	public OvhHardwareSpecificationsExpansionCard[] expansionCards;
 }

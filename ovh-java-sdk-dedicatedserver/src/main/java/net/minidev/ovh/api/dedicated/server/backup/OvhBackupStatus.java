@@ -1,7 +1,7 @@
 package net.minidev.ovh.api.dedicated.server.backup;
 
 /**
- * A structure describing informations about this dedicated server
+ * A structure describing the status of your backup
  */
 public class OvhBackupStatus {
 	/**
@@ -16,5 +16,5 @@ public class OvhBackupStatus {
 	 *
 	 * canBeNull
 	 */
-	public String code;
+	public OvhBackupStatusCodeEnum code;
 }

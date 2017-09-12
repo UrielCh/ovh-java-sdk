@@ -30,6 +30,7 @@ public enum OvhOfferCapabilitiesEnum {
 	_90pack("90pack"),
 	@JsonProperty("90plan")
 	_90plan("90plan"),
+	CLOUDWEB_1("CLOUDWEB_1"),
 	KS("KS"),
 	PERFORMANCE_1("PERFORMANCE_1"),
 	PERFORMANCE_2("PERFORMANCE_2"),
@@ -41,6 +42,7 @@ public enum OvhOfferCapabilitiesEnum {
 	aspfree("aspfree"),
 	aspperso("aspperso"),
 	business("business"),
+	cloudwebx1("cloudwebx1"),
 	demo1g("demo1g"),
 	depro2012("depro2012"),
 	deprol2012("deprol2012"),

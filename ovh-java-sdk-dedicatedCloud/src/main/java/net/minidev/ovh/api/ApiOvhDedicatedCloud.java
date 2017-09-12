@@ -1310,12 +1310,13 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 * @param password [required] The user password. It must fits your Private Cloud password policy. If this field is empty, a random password will be generated and sent by email.
 	 * @param right [required] Determine what kind of access the User will have in all Datacenters of your Private Cloud (default is disabled)
 	 * @param lastName [required] Last name of the user
+	 * @param nsxRight [required] Is this User able to access nsx interface (requires NSX option)
 	 * @param phoneNumber [required] Mobile phone number of the user
 	 * @param tokenValidator [required] Defines if the user can confirm security tokens (if a compatible option is enabled)
 	 * @param networkRole [required] Determine how this user will be able to act on this Private Cloud v(x)Lans
 	 * @param serviceName [required] Domain of the service
 	 */
-	public OvhTask serviceName_user_POST(String serviceName, String firstName, Boolean canAddRessource, String name, OvhVmNetworkRoleEnum vmNetworkRole, String email, String password, OvhRightEnum right, String lastName, String phoneNumber, Boolean tokenValidator, OvhNetworkRoleEnum networkRole) throws IOException {
+	public OvhTask serviceName_user_POST(String serviceName, String firstName, Boolean canAddRessource, String name, OvhVmNetworkRoleEnum vmNetworkRole, String email, String password, OvhRightEnum right, String lastName, Boolean nsxRight, String phoneNumber, Boolean tokenValidator, OvhNetworkRoleEnum networkRole) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/user";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
@@ -1327,6 +1328,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 		addBody(o, "password", password);
 		addBody(o, "right", right);
 		addBody(o, "lastName", lastName);
+		addBody(o, "nsxRight", nsxRight);
 		addBody(o, "phoneNumber", phoneNumber);
 		addBody(o, "tokenValidator", tokenValidator);
 		addBody(o, "networkRole", networkRole);
@@ -1428,6 +1430,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 * @param fullAdminRo [required] Defines if the user is a full admin in readonly
 	 * @param canManageIpFailOvers [required] Defines if the user can manage ip failovers
 	 * @param email [required] Email address of the user
+	 * @param nsxRight [required] Is this User able to access nsx interface (requires NSX option)
 	 * @param lastName [required] Last name of the user
 	 * @param canManageNetwork [required] Defines if the user can manage the network
 	 * @param phoneNumber [required] Mobile phone number of the user in international format (+prefix.number)
@@ -1435,7 +1438,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 * @param serviceName [required] Domain of the service
 	 * @param userId [required]
 	 */
-	public OvhTask serviceName_user_userId_changeProperties_POST(String serviceName, Long userId, String firstName, Boolean fullAdminRo, Boolean canManageIpFailOvers, String email, String lastName, Boolean canManageNetwork, String phoneNumber, Boolean tokenValidator) throws IOException {
+	public OvhTask serviceName_user_userId_changeProperties_POST(String serviceName, Long userId, String firstName, Boolean fullAdminRo, Boolean canManageIpFailOvers, String email, Boolean nsxRight, String lastName, Boolean canManageNetwork, String phoneNumber, Boolean tokenValidator) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/user/{userId}/changeProperties";
 		StringBuilder sb = path(qPath, serviceName, userId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
@@ -1443,6 +1446,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 		addBody(o, "fullAdminRo", fullAdminRo);
 		addBody(o, "canManageIpFailOvers", canManageIpFailOvers);
 		addBody(o, "email", email);
+		addBody(o, "nsxRight", nsxRight);
 		addBody(o, "lastName", lastName);
 		addBody(o, "canManageNetwork", canManageNetwork);
 		addBody(o, "phoneNumber", phoneNumber);

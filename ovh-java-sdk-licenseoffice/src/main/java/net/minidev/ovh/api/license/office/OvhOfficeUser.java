@@ -19,6 +19,13 @@ public class OvhOfficeUser {
 	public String lastName;
 
 	/**
+	 * Whether or not this user slot will be resigned at the next renew period
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean deleteAtExpiration;
+
+	/**
 	 * Specify if the user is actually a user slot (configureme) or a real user
 	 *
 	 * canBeNull && readOnly

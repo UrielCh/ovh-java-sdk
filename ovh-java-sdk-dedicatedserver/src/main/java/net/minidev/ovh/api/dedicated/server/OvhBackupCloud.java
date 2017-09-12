@@ -12,7 +12,7 @@ public class OvhBackupCloud {
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String[] agreements;
+	public Long[] agreements;
 
 	/**
 	 * Archive space info.

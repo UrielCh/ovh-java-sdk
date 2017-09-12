@@ -19,6 +19,13 @@ public class OvhBackendProbe {
 	public Long port;
 
 	/**
+	 * Invert the matching operator effect
+	 *
+	 * canBeNull
+	 */
+	public Boolean negate;
+
+	/**
 	 * Force probe to run over a SSL layer. Defaults to false
 	 *
 	 * canBeNull

@@ -5,6 +5,7 @@ package net.minidev.ovh.api.hosting.web;
  */
 public enum OvhResourceEnum {
 	bestEffort("bestEffort"),
+	cloud("cloud"),
 	dedicated("dedicated"),
 	shared("shared");
 

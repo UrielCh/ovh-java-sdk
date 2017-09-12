@@ -2,8 +2,6 @@ package net.minidev.ovh.api.cloud.instanceregion;
 
 import java.util.Date;
 import net.minidev.ovh.api.cloud.api.OvhResource;
-import net.minidev.ovh.api.cloud.instance.OvhInstanceStatusEnum;
-import net.minidev.ovh.api.cloud.instance.OvhMonthlyBilling;
 
 /**
  * Instance
@@ -66,7 +64,7 @@ public class OvhInstance {
 	public String id;
 
 	/**
-	 * Instance id
+	 * Instance region
 	 *
 	 * canBeNull && readOnly
 	 */

@@ -12,6 +12,13 @@ public class OvhCreationRule {
 	public String fieldName;
 
 	/**
+	 * Examples of values for the fields
+	 *
+	 * canBeNull
+	 */
+	public String[] examples;
+
+	/**
 	 * List of allowed values for the field
 	 *
 	 * canBeNull
@@ -24,6 +31,13 @@ public class OvhCreationRule {
 	 * canBeNull
 	 */
 	public String regularExpression;
+
+	/**
+	 * Default value of the field
+	 *
+	 * canBeNull
+	 */
+	public String defaultValue;
 
 	/**
 	 * Prefix of the field value

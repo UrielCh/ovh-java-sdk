@@ -21,6 +21,13 @@ public class OvhInput {
 	public String streamId;
 
 	/**
+	 * Indicate if input need to be restarted
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean isRestartRequired;
+
+	/**
 	 * Port
 	 *
 	 * canBeNull && readOnly
@@ -70,25 +77,18 @@ public class OvhInput {
 	public String sslCertificate;
 
 	/**
-	 * Indicate if input need to be restarted
+	 * Associated DBaaS Logs option
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Boolean restartRequired;
+	public String optionId;
 
 	/**
 	 * Force only one instance
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Boolean singleInstance;
-
-	/**
-	 * Associated DBaaS Logs option
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String optionId;
+	public Boolean singleInstanceEnabled;
 
 	/**
 	 * Input last update

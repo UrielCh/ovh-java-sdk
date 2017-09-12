@@ -26,11 +26,25 @@ public class OvhEligibility {
 	public OvhLineCharacteristics characteristics;
 
 	/**
+	 * The eligibility endpoint type
+	 *
+	 * canBeNull
+	 */
+	public OvhLineEndpointEnum endpoint;
+
+	/**
 	 * The line address
 	 *
 	 * canBeNull
 	 */
 	public OvhAddress address;
+
+	/**
+	 * The eligibility uuid
+	 *
+	 * canBeNull
+	 */
+	public String id;
 
 	/**
 	 * The line infos

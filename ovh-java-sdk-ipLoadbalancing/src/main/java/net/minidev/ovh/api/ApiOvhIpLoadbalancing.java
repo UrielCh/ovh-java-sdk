@@ -3,6 +3,7 @@ package net.minidev.ovh.api;
 import com.fasterxml.jackson.core.type.TypeReference;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import net.minidev.ovh.api.iploadbalancing.OvhBackendCustomerServerStatusEnum;
 import net.minidev.ovh.api.iploadbalancing.OvhBackendProbe;
@@ -16,6 +17,7 @@ import net.minidev.ovh.api.iploadbalancing.OvhDefinedRoute;
 import net.minidev.ovh.api.iploadbalancing.OvhFarmAvailableProbe;
 import net.minidev.ovh.api.iploadbalancing.OvhInstancesState;
 import net.minidev.ovh.api.iploadbalancing.OvhIp;
+import net.minidev.ovh.api.iploadbalancing.OvhNatIps;
 import net.minidev.ovh.api.iploadbalancing.OvhProbeTypeEnum;
 import net.minidev.ovh.api.iploadbalancing.OvhProxyProtocolVersionEnum;
 import net.minidev.ovh.api.iploadbalancing.OvhProxyTypeEnum;
@@ -42,6 +44,8 @@ import net.minidev.ovh.api.iploadbalancing.frontend.OvhFrontend;
 import net.minidev.ovh.api.iploadbalancing.frontendhttp.OvhFrontendHttp;
 import net.minidev.ovh.api.iploadbalancing.frontendtcp.OvhFrontendTcp;
 import net.minidev.ovh.api.iploadbalancing.frontendudp.OvhFrontendUdp;
+import net.minidev.ovh.api.iploadbalancing.quota.OvhQuota;
+import net.minidev.ovh.api.iploadbalancing.quotahistory.OvhQuotaHistory;
 import net.minidev.ovh.api.iploadbalancing.routehttp.OvhRouteHttp;
 import net.minidev.ovh.api.iploadbalancing.routerule.OvhRouteRule;
 import net.minidev.ovh.api.iploadbalancing.routetcp.OvhRouteTcp;
@@ -61,36 +65,6 @@ import net.minidev.ovh.core.ApiOvhCore;
 public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	public ApiOvhIpLoadbalancing(ApiOvhCore core) {
 		super(core);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /ipLoadbalancing/{serviceName}/serviceInfos
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 *
-	 * API beta
-	 */
-	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhService.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /ipLoadbalancing/{serviceName}/serviceInfos
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 *
-	 * API beta
-	 */
-	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -171,7 +145,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * @param httpHeader [required] Add header to your frontend. Useful variables admitted : %ci <=> client_ip, %cp <=> client_port
 	 * @param allowedSource [required] Restrict iplb access to these ip block. No restriction if null
 	 * @param hsts [required] HTTP Strict Transport Security. Set to 'false' if null
-	 * @param port [required] Port(s) attached to your frontend. Supports single port (numerical value), range (2 dash-delimited increasing ports) and comma-separated list of 'single port' and/or 'range'. Each port must be in the [1;65535] range.
+	 * @param port [required] Port(s) attached to your frontend. Supports single port (numerical value), range (2 dash-delimited increasing ports) and comma-separated list of 'single port' and/or 'range'. Each port must be in the [1;65000] range.
 	 * @param redirectLocation [required] HTTP redirection (Ex : http://www.ovh.com)
 	 * @param defaultBackendId [required] Default Backend of your frontend
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -241,67 +215,6 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	}
 
 	/**
-	 * Zone for this iplb
-	 *
-	 * REST: GET /ipLoadbalancing/{serviceName}/zone
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 *
-	 * API beta
-	 */
-	public ArrayList<String> serviceName_zone_GET(String serviceName) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/zone";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /ipLoadbalancing/{serviceName}/zone/{name}
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 * @param name [required] Name of your zone
-	 *
-	 * API beta
-	 */
-	public OvhIpZone serviceName_zone_name_GET(String serviceName, String name) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/zone/{name}";
-		StringBuilder sb = path(qPath, serviceName, name);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhIpZone.class);
-	}
-
-	/**
-	 * Delete a zone
-	 *
-	 * REST: DELETE /ipLoadbalancing/{serviceName}/zone/{name}
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 * @param name [required] Name of your zone
-	 *
-	 * API beta
-	 */
-	public void serviceName_zone_name_DELETE(String serviceName, String name) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/zone/{name}";
-		StringBuilder sb = path(qPath, serviceName, name);
-		exec(qPath, "DELETE", sb.toString(), null);
-	}
-
-	/**
-	 * List all failover ip routed to this IPLB
-	 *
-	 * REST: GET /ipLoadbalancing/{serviceName}/failover
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 *
-	 * API beta
-	 */
-	public ArrayList<String> serviceName_failover_GET(String serviceName) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/failover";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
 	 * Backends for this iplb
 	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/backend
@@ -323,19 +236,21 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * REST: POST /ipLoadbalancing/{serviceName}/backend
 	 * @param balance [required] Load balancing algorithm. 'roundrobin' if null
 	 * @param zone [required] Zone of your backend.
+	 * @param vrackNetworkId [required] Internal Load Balancer identifier of the vRack private network to attach to your farm, mandatory when your Load Balancer is attached to a vRack
 	 * @param type [required] Type of your backend
 	 * @param probe [required] Probe type. 'tcp' if null
-	 * @param port [required] Port attached to your backend [1..65535]. Inherited from frontend if null
+	 * @param port [required] Port attached to your backend [1..65000]. Inherited from frontend if null
 	 * @param stickiness [required] Stickiness type. No stickiness if null
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @deprecated
 	 */
-	public OvhBackend serviceName_backend_POST(String serviceName, OvhBalanceEnum balance, String zone, OvhProxyTypeEnum type, OvhProbeTypeEnum probe, Long port, OvhStickinessEnum stickiness) throws IOException {
+	public OvhBackend serviceName_backend_POST(String serviceName, OvhBalanceEnum balance, String zone, Long vrackNetworkId, OvhProxyTypeEnum type, OvhProbeTypeEnum probe, Long port, OvhStickinessEnum stickiness) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/backend";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "balance", balance);
 		addBody(o, "zone", zone);
+		addBody(o, "vrackNetworkId", vrackNetworkId);
 		addBody(o, "type", type);
 		addBody(o, "probe", probe);
 		addBody(o, "port", port);
@@ -411,7 +326,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * REST: POST /ipLoadbalancing/{serviceName}/backend/{id}/server
 	 * @param ssl [required] SSL ciphering. Probes will also be sent ciphered. Set to 'false' if null
 	 * @param cookie [required] Set the cookie value used when 'cookie' stickiness is set in backend
-	 * @param port [required] Port attached to your server [1..65535]. Inherited from backend if null
+	 * @param port [required] Port attached to your server [1..65000]. Inherited from backend if null
 	 * @param proxyProtocolVersion [required] Enforce use of the PROXY protocol version over any connection established to this server (disabled if null)
 	 * @param serverId [required] Id of your server
 	 * @param chain [required] Certificate chain. Allow server certificate verification (Avoid man-in-the-middle attacks)
@@ -487,58 +402,6 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	}
 
 	/**
-	 * Terminate your service
-	 *
-	 * REST: POST /ipLoadbalancing/{serviceName}/terminate
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 *
-	 * API beta
-	 */
-	public String serviceName_terminate_POST(String serviceName) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/terminate";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * Ip subnet used by OVH to nat requests on your IPLB to your backends. You must ensure that your backends are not part of a network that overlap with this one
-	 *
-	 * REST: GET /ipLoadbalancing/{serviceName}/natIp
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 *
-	 * API beta
-	 */
-	public ArrayList<String> serviceName_natIp_GET(String serviceName) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/natIp";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Launch a contact change procedure
-	 *
-	 * REST: POST /ipLoadbalancing/{serviceName}/changeContact
-	 * @param contactAdmin The contact to set as admin contact
-	 * @param contactTech The contact to set as tech contact
-	 * @param contactBilling The contact to set as billing contact
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 *
-	 * API beta
-	 */
-	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/changeContact";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "contactAdmin", contactAdmin);
-		addBody(o, "contactTech", contactTech);
-		addBody(o, "contactBilling", contactBilling);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t2);
-	}
-
-	/**
 	 * HTTP frontends for this iplb
 	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/http/frontend
@@ -571,7 +434,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * @param httpHeader [required] Add header to your frontend. Useful variables admitted : %ci <=> client_ip, %cp <=> client_port
 	 * @param allowedSource [required] Restrict IP Load Balancing access to these ip block. No restriction if null
 	 * @param hsts [required] HTTP Strict Transport Security. Set to 'false' if null
-	 * @param port [required] Port(s) attached to your frontend. Supports single port (numerical value), range (2 dash-delimited increasing ports) and comma-separated list of 'single port' and/or 'range'. Each port must be in the [1;65535] range.
+	 * @param port [required] Port(s) attached to your frontend. Supports single port (numerical value), range (2 dash-delimited increasing ports) and comma-separated list of 'single port' and/or 'range'. Each port must be in the [1;65000] range.
 	 * @param redirectLocation [required] HTTP redirection (Ex : http://www.ovh.com)
 	 * @param defaultFarmId [required] Default HTTP Farm of your frontend
 	 * @param displayName [required] Human readable name for your frontend, this field is for you
@@ -850,20 +713,22 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * REST: POST /ipLoadbalancing/{serviceName}/http/farm
 	 * @param balance [required] Load balancing algorithm. 'roundrobin' if null
 	 * @param zone [required] Zone of your farm
+	 * @param vrackNetworkId [required] Internal Load Balancer identifier of the vRack private network to attach to your farm, mandatory when your Load Balancer is attached to a vRack
 	 * @param probe [required] Probe used to determine if a backend is alive and can handle requests
-	 * @param port [required] Port attached to your farm ([1..65535]). Inherited from frontend if null
+	 * @param port [required] Port attached to your farm ([1..65000]). Inherited from frontend if null
 	 * @param stickiness [required] Stickiness type. No stickiness if null
 	 * @param displayName [required] Human readable name for your backend, this field is for you
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 *
 	 * API beta
 	 */
-	public OvhBackendHttp serviceName_http_farm_POST(String serviceName, OvhBalanceHTTPEnum balance, String zone, OvhBackendProbe probe, Long port, OvhStickinessHTTPEnum stickiness, String displayName) throws IOException {
+	public OvhBackendHttp serviceName_http_farm_POST(String serviceName, OvhBalanceHTTPEnum balance, String zone, Long vrackNetworkId, OvhBackendProbe probe, Long port, OvhStickinessHTTPEnum stickiness, String displayName) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/http/farm";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "balance", balance);
 		addBody(o, "zone", zone);
+		addBody(o, "vrackNetworkId", vrackNetworkId);
 		addBody(o, "probe", probe);
 		addBody(o, "port", port);
 		addBody(o, "stickiness", stickiness);
@@ -948,7 +813,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * @param ssl [required] SSL ciphering. Probes will also be sent ciphered. Set to 'false' if null
 	 * @param status [required] Enable or disable your server
 	 * @param cookie [required] Set the cookie value used when 'cookie' stickiness is set in the farm. Auto generate the cookie if none provided and required.
-	 * @param port [required] Port attached to your server ([1..65535]). Inherited from farm if null
+	 * @param port [required] Port attached to your server ([1..65000]). Inherited from farm if null
 	 * @param proxyProtocolVersion [required] Disabled if null. Send PROXY protocol header. Requires a compatible server.
 	 * @param chain [required] Certificate chain. Allow server certificate verification (Avoid man-in-the-middle attacks)
 	 * @param weight [required] Set weight on that server [1..256]. 0 if not used in load balancing. 1 if left null. Servers with higher weight get more requests.
@@ -1031,22 +896,6 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	}
 
 	/**
-	 * Get the effective state of your IPLB instances on IPLB servers
-	 *
-	 * REST: GET /ipLoadbalancing/{serviceName}/instancesState
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 *
-	 * API beta
-	 */
-	public ArrayList<OvhInstancesState> serviceName_instancesState_GET(String serviceName) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/instancesState";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
-	}
-	private static TypeReference<ArrayList<OvhInstancesState>> t3 = new TypeReference<ArrayList<OvhInstancesState>>() {};
-
-	/**
 	 * Apply the configuration to your iplb
 	 *
 	 * REST: POST /ipLoadbalancing/{serviceName}/refresh
@@ -1065,301 +914,6 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	}
 
 	/**
-	 * Order a free certificate. We order and deliver it for you
-	 *
-	 * REST: POST /ipLoadbalancing/{serviceName}/freeCertificate
-	 * @param fqdn [required] The FQDN for which you want a free certificate. A DCV (Domain Control Validation) http request will be made to http://your_domain.abc, make sure this domain exists and resolves to your iplb ip before ordering
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 *
-	 * API beta
-	 */
-	public OvhTask serviceName_freeCertificate_POST(String serviceName, String[] fqdn) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/freeCertificate";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "fqdn", fqdn);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * UDP frontends for this iplb
-	 *
-	 * REST: GET /ipLoadbalancing/{serviceName}/udp/frontend
-	 * @param defaultFarmId [required] Filter the value of defaultFarmId property (=)
-	 * @param zone [required] Filter the value of zone property (=)
-	 * @param port [required] Filter the value of port property (like)
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 *
-	 * API beta
-	 */
-	public ArrayList<Long> serviceName_udp_frontend_GET(String serviceName, Long defaultFarmId, String port, String zone) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/udp/frontend";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "defaultFarmId", defaultFarmId);
-		query(sb, "port", port);
-		query(sb, "zone", zone);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Add a new UDP frontend on your IP Load Balancing
-	 *
-	 * REST: POST /ipLoadbalancing/{serviceName}/udp/frontend
-	 * @param disabled [required] Disable your frontend. Set to 'false' if null
-	 * @param defaultFarmId [required] Default UDP Farm of your frontend
-	 * @param zone [required] Zone of your frontend. You can check what zone are available on this API section : /ipLoadbalancing/availableZones
-	 * @param dedicatedIpfo [required] Only attach frontend on these ip. No restriction if null
-	 * @param port [required] Port(s) attached to your frontend. Supports single port (numerical value), range (2 dash-delimited increasing ports) and comma-separated list of 'single port' and/or 'range'. Each port must be in the [1;65535] range.
-	 * @param displayName [required] Human readable name for your frontend, this field is for you
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 *
-	 * API beta
-	 */
-	public OvhFrontendUdp serviceName_udp_frontend_POST(String serviceName, Boolean disabled, Long defaultFarmId, String zone, String[] dedicatedIpfo, String port, String displayName) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/udp/frontend";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "disabled", disabled);
-		addBody(o, "defaultFarmId", defaultFarmId);
-		addBody(o, "zone", zone);
-		addBody(o, "dedicatedIpfo", dedicatedIpfo);
-		addBody(o, "port", port);
-		addBody(o, "displayName", displayName);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhFrontendUdp.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /ipLoadbalancing/{serviceName}/udp/frontend/{frontendId}
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 * @param frontendId [required] Id of your frontend
-	 *
-	 * API beta
-	 */
-	public OvhFrontendUdp serviceName_udp_frontend_frontendId_GET(String serviceName, Long frontendId) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/udp/frontend/{frontendId}";
-		StringBuilder sb = path(qPath, serviceName, frontendId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhFrontendUdp.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /ipLoadbalancing/{serviceName}/udp/frontend/{frontendId}
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 * @param frontendId [required] Id of your frontend
-	 *
-	 * API beta
-	 */
-	public void serviceName_udp_frontend_frontendId_PUT(String serviceName, Long frontendId, OvhFrontendUdp body) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/udp/frontend/{frontendId}";
-		StringBuilder sb = path(qPath, serviceName, frontendId);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Delete an UDP frontend
-	 *
-	 * REST: DELETE /ipLoadbalancing/{serviceName}/udp/frontend/{frontendId}
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 * @param frontendId [required] Id of your frontend
-	 *
-	 * API beta
-	 */
-	public void serviceName_udp_frontend_frontendId_DELETE(String serviceName, Long frontendId) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/udp/frontend/{frontendId}";
-		StringBuilder sb = path(qPath, serviceName, frontendId);
-		exec(qPath, "DELETE", sb.toString(), null);
-	}
-
-	/**
-	 * UDP Farm for this iplb
-	 *
-	 * REST: GET /ipLoadbalancing/{serviceName}/udp/farm
-	 * @param zone [required] Filter the value of zone property (=)
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 *
-	 * API beta
-	 */
-	public ArrayList<Long> serviceName_udp_farm_GET(String serviceName, String zone) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/udp/farm";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "zone", zone);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Add a new UDP Farm on your IP Load Balancing
-	 *
-	 * REST: POST /ipLoadbalancing/{serviceName}/udp/farm
-	 * @param zone [required] Zone of your farm
-	 * @param port [required] Port attached to your farm ([1..65535]). Inherited from frontend if null
-	 * @param displayName [required] Human readable name for your backend, this field is for you
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 *
-	 * API beta
-	 */
-	public OvhBackendUdp serviceName_udp_farm_POST(String serviceName, String zone, Long port, String displayName) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/udp/farm";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "zone", zone);
-		addBody(o, "port", port);
-		addBody(o, "displayName", displayName);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhBackendUdp.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /ipLoadbalancing/{serviceName}/udp/farm/{farmId}
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 * @param farmId [required] Id of your farm
-	 *
-	 * API beta
-	 */
-	public OvhBackendUdp serviceName_udp_farm_farmId_GET(String serviceName, Long farmId) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/udp/farm/{farmId}";
-		StringBuilder sb = path(qPath, serviceName, farmId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhBackendUdp.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /ipLoadbalancing/{serviceName}/udp/farm/{farmId}
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 * @param farmId [required] Id of your farm
-	 *
-	 * API beta
-	 */
-	public void serviceName_udp_farm_farmId_PUT(String serviceName, Long farmId, OvhBackendUdp body) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/udp/farm/{farmId}";
-		StringBuilder sb = path(qPath, serviceName, farmId);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Delete an UDP Farm
-	 *
-	 * REST: DELETE /ipLoadbalancing/{serviceName}/udp/farm/{farmId}
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 * @param farmId [required] Id of your farm
-	 *
-	 * API beta
-	 */
-	public void serviceName_udp_farm_farmId_DELETE(String serviceName, Long farmId) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/udp/farm/{farmId}";
-		StringBuilder sb = path(qPath, serviceName, farmId);
-		exec(qPath, "DELETE", sb.toString(), null);
-	}
-
-	/**
-	 * UDP Farm's Servers
-	 *
-	 * REST: GET /ipLoadbalancing/{serviceName}/udp/farm/{farmId}/server
-	 * @param status [required] Filter the value of status property (=)
-	 * @param address [required] Filter the value of address property (=)
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 * @param farmId [required] Id of your farm
-	 *
-	 * API beta
-	 */
-	public ArrayList<Long> serviceName_udp_farm_farmId_server_GET(String serviceName, Long farmId, String address, OvhBackendCustomerServerStatusEnum status) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/udp/farm/{farmId}/server";
-		StringBuilder sb = path(qPath, serviceName, farmId);
-		query(sb, "address", address);
-		query(sb, "status", status);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Add a server to an UDP Farm
-	 *
-	 * REST: POST /ipLoadbalancing/{serviceName}/udp/farm/{farmId}/server
-	 * @param status [required] Enable or disable your server
-	 * @param address [required] Address of your server
-	 * @param port [required] Port attached to your server ([1..65535]). Inherited from farm if null
-	 * @param displayName [required] Human readable name for your server, this field is for you
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 * @param farmId [required] Id of your farm
-	 *
-	 * API beta
-	 */
-	public OvhBackendServer serviceName_udp_farm_farmId_server_POST(String serviceName, Long farmId, OvhBackendCustomerServerStatusEnum status, String address, Long port, String displayName) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/udp/farm/{farmId}/server";
-		StringBuilder sb = path(qPath, serviceName, farmId);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "status", status);
-		addBody(o, "address", address);
-		addBody(o, "port", port);
-		addBody(o, "displayName", displayName);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhBackendServer.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /ipLoadbalancing/{serviceName}/udp/farm/{farmId}/server/{serverId}
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 * @param farmId [required] Id of your farm
-	 * @param serverId [required] Id of your server
-	 *
-	 * API beta
-	 */
-	public OvhBackendUDPServer serviceName_udp_farm_farmId_server_serverId_GET(String serviceName, Long farmId, Long serverId) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/udp/farm/{farmId}/server/{serverId}";
-		StringBuilder sb = path(qPath, serviceName, farmId, serverId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhBackendUDPServer.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /ipLoadbalancing/{serviceName}/udp/farm/{farmId}/server/{serverId}
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 * @param farmId [required] Id of your farm
-	 * @param serverId [required] Id of your server
-	 *
-	 * API beta
-	 */
-	public void serviceName_udp_farm_farmId_server_serverId_PUT(String serviceName, Long farmId, Long serverId, OvhBackendUDPServer body) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/udp/farm/{farmId}/server/{serverId}";
-		StringBuilder sb = path(qPath, serviceName, farmId, serverId);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Delete a server from an UDP Farm
-	 *
-	 * REST: DELETE /ipLoadbalancing/{serviceName}/udp/farm/{farmId}/server/{serverId}
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 * @param farmId [required] Id of your farm
-	 * @param serverId [required] Id of your server
-	 *
-	 * API beta
-	 */
-	public void serviceName_udp_farm_farmId_server_serverId_DELETE(String serviceName, Long farmId, Long serverId) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/udp/farm/{farmId}/server/{serverId}";
-		StringBuilder sb = path(qPath, serviceName, farmId, serverId);
-		exec(qPath, "DELETE", sb.toString(), null);
-	}
-
-	/**
 	 * Available route actions
 	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/availableRouteActions
@@ -1371,9 +925,9 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		String qPath = "/ipLoadbalancing/{serviceName}/availableRouteActions";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t4);
+		return convertTo(resp, t3);
 	}
-	private static TypeReference<ArrayList<OvhRouteAvailableAction>> t4 = new TypeReference<ArrayList<OvhRouteAvailableAction>>() {};
+	private static TypeReference<ArrayList<OvhRouteAvailableAction>> t3 = new TypeReference<ArrayList<OvhRouteAvailableAction>>() {};
 
 	/**
 	 * Servers for this iplb
@@ -1470,9 +1024,9 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		String qPath = "/ipLoadbalancing/{serviceName}/availableRouteRules";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t5);
+		return convertTo(resp, t4);
 	}
-	private static TypeReference<ArrayList<OvhRouteAvailableRule>> t5 = new TypeReference<ArrayList<OvhRouteAvailableRule>>() {};
+	private static TypeReference<ArrayList<OvhRouteAvailableRule>> t4 = new TypeReference<ArrayList<OvhRouteAvailableRule>>() {};
 
 	/**
 	 * List of servers you can attach to your iplb
@@ -1485,9 +1039,9 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		String qPath = "/ipLoadbalancing/{serviceName}/allowedServers";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t6);
+		return convertTo(resp, t5);
 	}
-	private static TypeReference<ArrayList<net.minidev.ovh.api.ip.OvhIp>> t6 = new TypeReference<ArrayList<net.minidev.ovh.api.ip.OvhIp>>() {};
+	private static TypeReference<ArrayList<net.minidev.ovh.api.ip.OvhIp>> t5 = new TypeReference<ArrayList<net.minidev.ovh.api.ip.OvhIp>>() {};
 
 	/**
 	 * Available farm probes for health checks
@@ -1501,9 +1055,9 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		String qPath = "/ipLoadbalancing/{serviceName}/availableFarmProbes";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t7);
+		return convertTo(resp, t6);
 	}
-	private static TypeReference<ArrayList<OvhFarmAvailableProbe>> t7 = new TypeReference<ArrayList<OvhFarmAvailableProbe>>() {};
+	private static TypeReference<ArrayList<OvhFarmAvailableProbe>> t6 = new TypeReference<ArrayList<OvhFarmAvailableProbe>>() {};
 
 	/**
 	 * Available farm types
@@ -1518,6 +1072,585 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Confirm termination of your service
+	 *
+	 * REST: POST /ipLoadbalancing/{serviceName}/confirmTermination
+	 * @param reason Reason of your termination request
+	 * @param commentary Commentary about your termination request
+	 * @param token [required] The termination token sent by mail to the admin contact
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 *
+	 * API beta
+	 */
+	public String serviceName_confirmTermination_POST(String serviceName, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/confirmTermination";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "reason", reason);
+		addBody(o, "commentary", commentary);
+		addBody(o, "token", token);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * List of defined routes, and whether they are HTTP or TCP
+	 *
+	 * REST: GET /ipLoadbalancing/{serviceName}/definedRoutes
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 *
+	 * API beta
+	 */
+	public ArrayList<OvhDefinedRoute> serviceName_definedRoutes_GET(String serviceName) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/definedRoutes";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t7);
+	}
+	private static TypeReference<ArrayList<OvhDefinedRoute>> t7 = new TypeReference<ArrayList<OvhDefinedRoute>>() {};
+
+	/**
+	 * Available quota informations for current billing period per zone
+	 *
+	 * REST: GET /ipLoadbalancing/{serviceName}/quota
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> serviceName_quota_GET(String serviceName) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/quota";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /ipLoadbalancing/{serviceName}/quota/{zone}
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 * @param zone [required] Zone of your quota
+	 *
+	 * API beta
+	 */
+	public OvhQuota serviceName_quota_zone_GET(String serviceName, String zone) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/quota/{zone}";
+		StringBuilder sb = path(qPath, serviceName, zone);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhQuota.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /ipLoadbalancing/{serviceName}/quota/{zone}
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 * @param zone [required] Zone of your quota
+	 *
+	 * API beta
+	 */
+	public void serviceName_quota_zone_PUT(String serviceName, String zone, OvhQuota body) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/quota/{zone}";
+		StringBuilder sb = path(qPath, serviceName, zone);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /ipLoadbalancing/{serviceName}/serviceInfos
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 *
+	 * API beta
+	 */
+	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhService.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /ipLoadbalancing/{serviceName}/serviceInfos
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 *
+	 * API beta
+	 */
+	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Zone for this iplb
+	 *
+	 * REST: GET /ipLoadbalancing/{serviceName}/zone
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> serviceName_zone_GET(String serviceName) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/zone";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /ipLoadbalancing/{serviceName}/zone/{name}
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 * @param name [required] Name of your zone
+	 *
+	 * API beta
+	 */
+	public OvhIpZone serviceName_zone_name_GET(String serviceName, String name) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/zone/{name}";
+		StringBuilder sb = path(qPath, serviceName, name);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhIpZone.class);
+	}
+
+	/**
+	 * Delete a zone
+	 *
+	 * REST: DELETE /ipLoadbalancing/{serviceName}/zone/{name}
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 * @param name [required] Name of your zone
+	 *
+	 * API beta
+	 */
+	public void serviceName_zone_name_DELETE(String serviceName, String name) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/zone/{name}";
+		StringBuilder sb = path(qPath, serviceName, name);
+		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
+	 * Quota history informations, per month
+	 *
+	 * REST: GET /ipLoadbalancing/{serviceName}/quotaHistory
+	 * @param zone [required] Filter the value of zone property (=)
+	 * @param historizedDate_to [required] Filter the value of historizedDate property (<=)
+	 * @param historizedDate_from [required] Filter the value of historizedDate property (>=)
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 *
+	 * API beta
+	 */
+	public ArrayList<Long> serviceName_quotaHistory_GET(String serviceName, Date historizedDate_from, Date historizedDate_to, String zone) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/quotaHistory";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "historizedDate.from", historizedDate_from);
+		query(sb, "historizedDate.to", historizedDate_to);
+		query(sb, "zone", zone);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /ipLoadbalancing/{serviceName}/quotaHistory/{id}
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 * @param id [required] Id of your quota
+	 *
+	 * API beta
+	 */
+	public OvhQuotaHistory serviceName_quotaHistory_id_GET(String serviceName, Long id) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/quotaHistory/{id}";
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhQuotaHistory.class);
+	}
+
+	/**
+	 * List all failover ip routed to this IPLB
+	 *
+	 * REST: GET /ipLoadbalancing/{serviceName}/failover
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> serviceName_failover_GET(String serviceName) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/failover";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Terminate your service
+	 *
+	 * REST: POST /ipLoadbalancing/{serviceName}/terminate
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 *
+	 * API beta
+	 */
+	public String serviceName_terminate_POST(String serviceName) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/terminate";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Ip subnet used by OVH to nat requests on your IPLB to your backends. You must ensure that your backends are not part of a network that overlap with this one
+	 *
+	 * REST: GET /ipLoadbalancing/{serviceName}/natIp
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 *
+	 * API beta
+	 */
+	public ArrayList<OvhNatIps> serviceName_natIp_GET(String serviceName) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/natIp";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t8);
+	}
+	private static TypeReference<ArrayList<OvhNatIps>> t8 = new TypeReference<ArrayList<OvhNatIps>>() {};
+
+	/**
+	 * Launch a contact change procedure
+	 *
+	 * REST: POST /ipLoadbalancing/{serviceName}/changeContact
+	 * @param contactAdmin The contact to set as admin contact
+	 * @param contactTech The contact to set as tech contact
+	 * @param contactBilling The contact to set as billing contact
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 *
+	 * API beta
+	 */
+	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/changeContact";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "contactAdmin", contactAdmin);
+		addBody(o, "contactTech", contactTech);
+		addBody(o, "contactBilling", contactBilling);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Get the effective state of your IPLB instances on IPLB servers
+	 *
+	 * REST: GET /ipLoadbalancing/{serviceName}/instancesState
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 *
+	 * API beta
+	 */
+	public ArrayList<OvhInstancesState> serviceName_instancesState_GET(String serviceName) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/instancesState";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t9);
+	}
+	private static TypeReference<ArrayList<OvhInstancesState>> t9 = new TypeReference<ArrayList<OvhInstancesState>>() {};
+
+	/**
+	 * Order a free certificate. We order and deliver it for you
+	 *
+	 * REST: POST /ipLoadbalancing/{serviceName}/freeCertificate
+	 * @param fqdn [required] The FQDN for which you want a free certificate. A DCV (Domain Control Validation) http request will be made to http://your_domain.abc, make sure this domain exists and resolves to your iplb ip before ordering
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 *
+	 * API beta
+	 */
+	public OvhTask serviceName_freeCertificate_POST(String serviceName, String[] fqdn) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/freeCertificate";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "fqdn", fqdn);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * UDP frontends for this iplb
+	 *
+	 * REST: GET /ipLoadbalancing/{serviceName}/udp/frontend
+	 * @param defaultFarmId [required] Filter the value of defaultFarmId property (=)
+	 * @param zone [required] Filter the value of zone property (=)
+	 * @param port [required] Filter the value of port property (like)
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 *
+	 * API beta
+	 */
+	public ArrayList<Long> serviceName_udp_frontend_GET(String serviceName, Long defaultFarmId, String port, String zone) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/udp/frontend";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "defaultFarmId", defaultFarmId);
+		query(sb, "port", port);
+		query(sb, "zone", zone);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Add a new UDP frontend on your IP Load Balancing
+	 *
+	 * REST: POST /ipLoadbalancing/{serviceName}/udp/frontend
+	 * @param disabled [required] Disable your frontend. Set to 'false' if null
+	 * @param defaultFarmId [required] Default UDP Farm of your frontend
+	 * @param zone [required] Zone of your frontend. You can check what zone are available on this API section : /ipLoadbalancing/availableZones
+	 * @param dedicatedIpfo [required] Only attach frontend on these ip. No restriction if null
+	 * @param port [required] Port(s) attached to your frontend. Supports single port (numerical value), range (2 dash-delimited increasing ports) and comma-separated list of 'single port' and/or 'range'. Each port must be in the [1;65000] range.
+	 * @param displayName [required] Human readable name for your frontend, this field is for you
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 *
+	 * API beta
+	 */
+	public OvhFrontendUdp serviceName_udp_frontend_POST(String serviceName, Boolean disabled, Long defaultFarmId, String zone, String[] dedicatedIpfo, String port, String displayName) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/udp/frontend";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "disabled", disabled);
+		addBody(o, "defaultFarmId", defaultFarmId);
+		addBody(o, "zone", zone);
+		addBody(o, "dedicatedIpfo", dedicatedIpfo);
+		addBody(o, "port", port);
+		addBody(o, "displayName", displayName);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhFrontendUdp.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /ipLoadbalancing/{serviceName}/udp/frontend/{frontendId}
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 * @param frontendId [required] Id of your frontend
+	 *
+	 * API beta
+	 */
+	public OvhFrontendUdp serviceName_udp_frontend_frontendId_GET(String serviceName, Long frontendId) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/udp/frontend/{frontendId}";
+		StringBuilder sb = path(qPath, serviceName, frontendId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhFrontendUdp.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /ipLoadbalancing/{serviceName}/udp/frontend/{frontendId}
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 * @param frontendId [required] Id of your frontend
+	 *
+	 * API beta
+	 */
+	public void serviceName_udp_frontend_frontendId_PUT(String serviceName, Long frontendId, OvhFrontendUdp body) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/udp/frontend/{frontendId}";
+		StringBuilder sb = path(qPath, serviceName, frontendId);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Delete an UDP frontend
+	 *
+	 * REST: DELETE /ipLoadbalancing/{serviceName}/udp/frontend/{frontendId}
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 * @param frontendId [required] Id of your frontend
+	 *
+	 * API beta
+	 */
+	public void serviceName_udp_frontend_frontendId_DELETE(String serviceName, Long frontendId) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/udp/frontend/{frontendId}";
+		StringBuilder sb = path(qPath, serviceName, frontendId);
+		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
+	 * UDP Farm for this iplb
+	 *
+	 * REST: GET /ipLoadbalancing/{serviceName}/udp/farm
+	 * @param zone [required] Filter the value of zone property (=)
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 *
+	 * API beta
+	 */
+	public ArrayList<Long> serviceName_udp_farm_GET(String serviceName, String zone) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/udp/farm";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "zone", zone);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Add a new UDP Farm on your IP Load Balancing
+	 *
+	 * REST: POST /ipLoadbalancing/{serviceName}/udp/farm
+	 * @param zone [required] Zone of your farm
+	 * @param vrackNetworkId [required] Internal Load Balancer identifier of the vRack private network to attach to your farm, mandatory when your Load Balancer is attached to a vRack
+	 * @param port [required] Port attached to your farm ([1..65000]). Inherited from frontend if null
+	 * @param displayName [required] Human readable name for your backend, this field is for you
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 *
+	 * API beta
+	 */
+	public OvhBackendUdp serviceName_udp_farm_POST(String serviceName, String zone, Long vrackNetworkId, Long port, String displayName) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/udp/farm";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "zone", zone);
+		addBody(o, "vrackNetworkId", vrackNetworkId);
+		addBody(o, "port", port);
+		addBody(o, "displayName", displayName);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhBackendUdp.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /ipLoadbalancing/{serviceName}/udp/farm/{farmId}
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 * @param farmId [required] Id of your farm
+	 *
+	 * API beta
+	 */
+	public OvhBackendUdp serviceName_udp_farm_farmId_GET(String serviceName, Long farmId) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/udp/farm/{farmId}";
+		StringBuilder sb = path(qPath, serviceName, farmId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhBackendUdp.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /ipLoadbalancing/{serviceName}/udp/farm/{farmId}
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 * @param farmId [required] Id of your farm
+	 *
+	 * API beta
+	 */
+	public void serviceName_udp_farm_farmId_PUT(String serviceName, Long farmId, OvhBackendUdp body) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/udp/farm/{farmId}";
+		StringBuilder sb = path(qPath, serviceName, farmId);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Delete an UDP Farm
+	 *
+	 * REST: DELETE /ipLoadbalancing/{serviceName}/udp/farm/{farmId}
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 * @param farmId [required] Id of your farm
+	 *
+	 * API beta
+	 */
+	public void serviceName_udp_farm_farmId_DELETE(String serviceName, Long farmId) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/udp/farm/{farmId}";
+		StringBuilder sb = path(qPath, serviceName, farmId);
+		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
+	 * UDP Farm's Servers
+	 *
+	 * REST: GET /ipLoadbalancing/{serviceName}/udp/farm/{farmId}/server
+	 * @param status [required] Filter the value of status property (=)
+	 * @param address [required] Filter the value of address property (=)
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 * @param farmId [required] Id of your farm
+	 *
+	 * API beta
+	 */
+	public ArrayList<Long> serviceName_udp_farm_farmId_server_GET(String serviceName, Long farmId, String address, OvhBackendCustomerServerStatusEnum status) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/udp/farm/{farmId}/server";
+		StringBuilder sb = path(qPath, serviceName, farmId);
+		query(sb, "address", address);
+		query(sb, "status", status);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Add a server to an UDP Farm
+	 *
+	 * REST: POST /ipLoadbalancing/{serviceName}/udp/farm/{farmId}/server
+	 * @param status [required] Enable or disable your server
+	 * @param address [required] Address of your server
+	 * @param port [required] Port attached to your server ([1..65000]). Inherited from farm if null
+	 * @param displayName [required] Human readable name for your server, this field is for you
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 * @param farmId [required] Id of your farm
+	 *
+	 * API beta
+	 */
+	public OvhBackendServer serviceName_udp_farm_farmId_server_POST(String serviceName, Long farmId, OvhBackendCustomerServerStatusEnum status, String address, Long port, String displayName) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/udp/farm/{farmId}/server";
+		StringBuilder sb = path(qPath, serviceName, farmId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "status", status);
+		addBody(o, "address", address);
+		addBody(o, "port", port);
+		addBody(o, "displayName", displayName);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhBackendServer.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /ipLoadbalancing/{serviceName}/udp/farm/{farmId}/server/{serverId}
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 * @param farmId [required] Id of your farm
+	 * @param serverId [required] Id of your server
+	 *
+	 * API beta
+	 */
+	public OvhBackendUDPServer serviceName_udp_farm_farmId_server_serverId_GET(String serviceName, Long farmId, Long serverId) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/udp/farm/{farmId}/server/{serverId}";
+		StringBuilder sb = path(qPath, serviceName, farmId, serverId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhBackendUDPServer.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /ipLoadbalancing/{serviceName}/udp/farm/{farmId}/server/{serverId}
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 * @param farmId [required] Id of your farm
+	 * @param serverId [required] Id of your server
+	 *
+	 * API beta
+	 */
+	public void serviceName_udp_farm_farmId_server_serverId_PUT(String serviceName, Long farmId, Long serverId, OvhBackendUDPServer body) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/udp/farm/{farmId}/server/{serverId}";
+		StringBuilder sb = path(qPath, serviceName, farmId, serverId);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Delete a server from an UDP Farm
+	 *
+	 * REST: DELETE /ipLoadbalancing/{serviceName}/udp/farm/{farmId}/server/{serverId}
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 * @param farmId [required] Id of your farm
+	 * @param serverId [required] Id of your server
+	 *
+	 * API beta
+	 */
+	public void serviceName_udp_farm_farmId_server_serverId_DELETE(String serviceName, Long farmId, Long serverId) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/udp/farm/{farmId}/server/{serverId}";
+		StringBuilder sb = path(qPath, serviceName, farmId, serverId);
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -1624,30 +1757,41 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		String qPath = "/ipLoadbalancing/{serviceName}/definedFrontends";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t8);
+		return convertTo(resp, t10);
 	}
-	private static TypeReference<ArrayList<OvhDefinedFrontend>> t8 = new TypeReference<ArrayList<OvhDefinedFrontend>>() {};
+	private static TypeReference<ArrayList<OvhDefinedFrontend>> t10 = new TypeReference<ArrayList<OvhDefinedFrontend>>() {};
 
 	/**
-	 * Confirm termination of your service
+	 * Task for this iplb
 	 *
-	 * REST: POST /ipLoadbalancing/{serviceName}/confirmTermination
-	 * @param reason Reason of your termination request
-	 * @param commentary Commentary about your termination request
-	 * @param token [required] The termination token sent by mail to the admin contact
+	 * REST: GET /ipLoadbalancing/{serviceName}/task
+	 * @param action [required] Filter the value of action property (=)
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 *
 	 * API beta
 	 */
-	public String serviceName_confirmTermination_POST(String serviceName, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/confirmTermination";
+	public ArrayList<Long> serviceName_task_GET(String serviceName, OvhTaskActionEnum action) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/task";
 		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "reason", reason);
-		addBody(o, "commentary", commentary);
-		addBody(o, "token", token);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, String.class);
+		query(sb, "action", action);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /ipLoadbalancing/{serviceName}/task/{id}
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 * @param id [required] Id of the operation
+	 *
+	 * API beta
+	 */
+	public OvhTask serviceName_task_id_GET(String serviceName, Long id) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/task/{id}";
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
@@ -1681,7 +1825,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * @param zone [required] Zone of your frontend. You can check what zone are available on this API section : /ipLoadbalancing/availableZones
 	 * @param dedicatedIpfo [required] Only attach frontend on these ip. No restriction if null
 	 * @param allowedSource [required] Restrict IP Load Balancing access to these ip block. No restriction if null
-	 * @param port [required] Port(s) attached to your frontend. Supports single port (numerical value), range (2 dash-delimited increasing ports) and comma-separated list of 'single port' and/or 'range'. Each port must be in the [1;65535] range.
+	 * @param port [required] Port(s) attached to your frontend. Supports single port (numerical value), range (2 dash-delimited increasing ports) and comma-separated list of 'single port' and/or 'range'. Each port must be in the [1;65000] range.
 	 * @param defaultFarmId [required] Default TCP Farm of your frontend
 	 * @param displayName [required] Human readable name for your frontend, this field is for you
 	 * @param serviceName [required] The internal name of your IP load balancing
@@ -1956,20 +2100,22 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * REST: POST /ipLoadbalancing/{serviceName}/tcp/farm
 	 * @param balance [required] Load balancing algorithm. 'roundrobin' if null
 	 * @param zone [required] Zone of your farm
+	 * @param vrackNetworkId [required] Internal Load Balancer identifier of the vRack private network to attach to your farm, mandatory when your Load Balancer is attached to a vRack
 	 * @param probe [required] Probe used to determine if a backend is alive and can handle requests
-	 * @param port [required] Port attached to your farm ([1..65535]). Inherited from frontend if null
+	 * @param port [required] Port attached to your farm ([1..65000]). Inherited from frontend if null
 	 * @param stickiness [required] Stickiness type. No stickiness if null
 	 * @param displayName [required] Human readable name for your backend, this field is for you
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 *
 	 * API beta
 	 */
-	public OvhBackendTcp serviceName_tcp_farm_POST(String serviceName, OvhBalanceTCPEnum balance, String zone, OvhBackendProbe probe, Long port, OvhStickinessTCPEnum stickiness, String displayName) throws IOException {
+	public OvhBackendTcp serviceName_tcp_farm_POST(String serviceName, OvhBalanceTCPEnum balance, String zone, Long vrackNetworkId, OvhBackendProbe probe, Long port, OvhStickinessTCPEnum stickiness, String displayName) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/tcp/farm";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "balance", balance);
 		addBody(o, "zone", zone);
+		addBody(o, "vrackNetworkId", vrackNetworkId);
 		addBody(o, "probe", probe);
 		addBody(o, "port", port);
 		addBody(o, "stickiness", stickiness);
@@ -2051,7 +2197,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * REST: POST /ipLoadbalancing/{serviceName}/tcp/farm/{farmId}/server
 	 * @param ssl [required] SSL ciphering. Probes will also be sent ciphered. Set to 'false' if null
 	 * @param status [required] Enable or disable your server
-	 * @param port [required] Port attached to your server ([1..65535]). Inherited from farm if null
+	 * @param port [required] Port attached to your server ([1..65000]). Inherited from farm if null
 	 * @param proxyProtocolVersion [required] Disabled if null. Send PROXY protocol header. Requires a compatible server.
 	 * @param chain [required] Certificate chain. Allow server certificate verification (Avoid man-in-the-middle attacks)
 	 * @param weight [required] Set weight on that server [1..256]. 0 if not used in load balancing. 1 if left null. Servers with higher weight get more requests.
@@ -2133,55 +2279,6 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	}
 
 	/**
-	 * Task for this iplb
-	 *
-	 * REST: GET /ipLoadbalancing/{serviceName}/task
-	 * @param action [required] Filter the value of action property (=)
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 *
-	 * API beta
-	 */
-	public ArrayList<Long> serviceName_task_GET(String serviceName, OvhTaskActionEnum action) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/task";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "action", action);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /ipLoadbalancing/{serviceName}/task/{id}
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 * @param id [required] Id of the operation
-	 *
-	 * API beta
-	 */
-	public OvhTask serviceName_task_id_GET(String serviceName, Long id) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/task/{id}";
-		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * List of defined routes, and whether they are HTTP or TCP
-	 *
-	 * REST: GET /ipLoadbalancing/{serviceName}/definedRoutes
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 *
-	 * API beta
-	 */
-	public ArrayList<OvhDefinedRoute> serviceName_definedRoutes_GET(String serviceName) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/definedRoutes";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t9);
-	}
-	private static TypeReference<ArrayList<OvhDefinedRoute>> t9 = new TypeReference<ArrayList<OvhDefinedRoute>>() {};
-
-	/**
 	 * List of defined farms, and whether they are HTTP, TCP or UDP
 	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/definedFarms
@@ -2193,9 +2290,9 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		String qPath = "/ipLoadbalancing/{serviceName}/definedFarms";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t10);
+		return convertTo(resp, t11);
 	}
-	private static TypeReference<ArrayList<OvhDefinedBackend>> t10 = new TypeReference<ArrayList<OvhDefinedBackend>>() {};
+	private static TypeReference<ArrayList<OvhDefinedBackend>> t11 = new TypeReference<ArrayList<OvhDefinedBackend>>() {};
 
 	/**
 	 * Available frontend type

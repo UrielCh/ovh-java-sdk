@@ -8,6 +8,7 @@ import net.minidev.ovh.api.horizonview.OvhCustomerNetwork;
 import net.minidev.ovh.api.horizonview.OvhCustomerUser;
 import net.minidev.ovh.api.horizonview.OvhDatacenter;
 import net.minidev.ovh.api.horizonview.OvhDedicatedHorizon;
+import net.minidev.ovh.api.horizonview.OvhDomainTrust;
 import net.minidev.ovh.api.horizonview.OvhPool;
 import net.minidev.ovh.api.horizonview.OvhPoolType;
 import net.minidev.ovh.api.horizonview.OvhTask;
@@ -228,11 +229,11 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 * REST: GET /horizonView/{serviceName}/customerNetwork
 	 * @param serviceName [required] Domain of the service
 	 */
-	public ArrayList<String> serviceName_customerNetwork_GET(String serviceName) throws IOException {
+	public ArrayList<Long> serviceName_customerNetwork_GET(String serviceName) throws IOException {
 		String qPath = "/horizonView/{serviceName}/customerNetwork";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, t3);
 	}
 
 	/**
@@ -256,13 +257,13 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /horizonView/{serviceName}/customerNetwork/{network}
+	 * REST: GET /horizonView/{serviceName}/customerNetwork/{customerNetworkId}
 	 * @param serviceName [required] Domain of the service
-	 * @param network [required] Customer network
+	 * @param customerNetworkId [required] Customer Network id
 	 */
-	public OvhCustomerNetwork serviceName_customerNetwork_network_GET(String serviceName, String network) throws IOException {
-		String qPath = "/horizonView/{serviceName}/customerNetwork/{network}";
-		StringBuilder sb = path(qPath, serviceName, network);
+	public OvhCustomerNetwork serviceName_customerNetwork_customerNetworkId_GET(String serviceName, Long customerNetworkId) throws IOException {
+		String qPath = "/horizonView/{serviceName}/customerNetwork/{customerNetworkId}";
+		StringBuilder sb = path(qPath, serviceName, customerNetworkId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhCustomerNetwork.class);
 	}
@@ -278,6 +279,39 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhDatacenter.class);
+	}
+
+	/**
+	 * Confirm termination of your service
+	 *
+	 * REST: POST /horizonView/{serviceName}/confirmTermination
+	 * @param reason Reason of your termination request
+	 * @param commentary Commentary about your termination request
+	 * @param token [required] The termination token sent by mail to the admin contact
+	 * @param serviceName [required] Domain of the service
+	 */
+	public String serviceName_confirmTermination_POST(String serviceName, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
+		String qPath = "/horizonView/{serviceName}/confirmTermination";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "reason", reason);
+		addBody(o, "commentary", commentary);
+		addBody(o, "token", token);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Terminate your service
+	 *
+	 * REST: POST /horizonView/{serviceName}/terminate
+	 * @param serviceName [required] Domain of the service
+	 */
+	public String serviceName_terminate_POST(String serviceName) throws IOException {
+		String qPath = "/horizonView/{serviceName}/terminate";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, String.class);
 	}
 
 	/**
@@ -375,36 +409,111 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	}
 
 	/**
-	 * Confirm termination of your service
+	 * Get this object properties
 	 *
-	 * REST: POST /horizonView/{serviceName}/confirmTermination
-	 * @param reason Reason of your termination request
-	 * @param commentary Commentary about your termination request
-	 * @param token [required] The termination token sent by mail to the admin contact
+	 * REST: GET /horizonView/{serviceName}/domainTrust/{domainTrustId}
 	 * @param serviceName [required] Domain of the service
+	 * @param domainTrustId [required] Domain trust id
 	 */
-	public String serviceName_confirmTermination_POST(String serviceName, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
-		String qPath = "/horizonView/{serviceName}/confirmTermination";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "reason", reason);
-		addBody(o, "commentary", commentary);
-		addBody(o, "token", token);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, String.class);
+	public OvhDomainTrust serviceName_domainTrust_domainTrustId_GET(String serviceName, Long domainTrustId) throws IOException {
+		String qPath = "/horizonView/{serviceName}/domainTrust/{domainTrustId}";
+		StringBuilder sb = path(qPath, serviceName, domainTrustId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhDomainTrust.class);
 	}
 
 	/**
-	 * Terminate your service
+	 * Change Horizon View user password
 	 *
-	 * REST: POST /horizonView/{serviceName}/terminate
+	 * REST: POST /horizonView/{serviceName}/domainTrust/{domainTrustId}/createTrust
+	 * @param serviceAccountPassword [required] Password of the horizonUI service account
+	 * @param passphrase [required] Shared passphrase to create the Active Directory trust
+	 * @param serviceName [required] Domain of the service
+	 * @param domainTrustId [required] Domain trust id
+	 */
+	public OvhTask serviceName_domainTrust_domainTrustId_createTrust_POST(String serviceName, Long domainTrustId, String serviceAccountPassword, String passphrase) throws IOException {
+		String qPath = "/horizonView/{serviceName}/domainTrust/{domainTrustId}/createTrust";
+		StringBuilder sb = path(qPath, serviceName, domainTrustId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "serviceAccountPassword", serviceAccountPassword);
+		addBody(o, "passphrase", passphrase);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Add a Domain Controller for this domain.
+	 *
+	 * REST: POST /horizonView/{serviceName}/domainTrust/{domainTrustId}/addDomainController
+	 * @param domain [required] Name of your Domain Controller (example : domain.local)
+	 * @param domainControllerIp [required] IP of your Domain Controller
+	 * @param serviceName [required] Domain of the service
+	 * @param domainTrustId [required] Domain trust id
+	 */
+	public OvhTask serviceName_domainTrust_domainTrustId_addDomainController_POST(String serviceName, Long domainTrustId, String domain, String domainControllerIp) throws IOException {
+		String qPath = "/horizonView/{serviceName}/domainTrust/{domainTrustId}/addDomainController";
+		StringBuilder sb = path(qPath, serviceName, domainTrustId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "domain", domain);
+		addBody(o, "domainControllerIp", domainControllerIp);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Add a domain user to add your desktop in your Active Directory
+	 *
+	 * REST: POST /horizonView/{serviceName}/domainTrust/{domainTrustId}/addDomainUserOnComposer
+	 * @param password [required] Password of the user
+	 * @param domain [required] Name of your Domain (example : domain.local)
+	 * @param username [required] Name of the User who is going to add the Desktop in your Active Directory
+	 * @param serviceName [required] Domain of the service
+	 * @param domainTrustId [required] Domain trust id
+	 */
+	public OvhTask serviceName_domainTrust_domainTrustId_addDomainUserOnComposer_POST(String serviceName, Long domainTrustId, String password, String domain, String username) throws IOException {
+		String qPath = "/horizonView/{serviceName}/domainTrust/{domainTrustId}/addDomainUserOnComposer";
+		StringBuilder sb = path(qPath, serviceName, domainTrustId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "password", password);
+		addBody(o, "domain", domain);
+		addBody(o, "username", username);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * List all Active Directories linked to your CDI Active Directory
+	 *
+	 * REST: GET /horizonView/{serviceName}/domainTrust
 	 * @param serviceName [required] Domain of the service
 	 */
-	public String serviceName_terminate_POST(String serviceName) throws IOException {
-		String qPath = "/horizonView/{serviceName}/terminate";
+	public ArrayList<Long> serviceName_domainTrust_GET(String serviceName) throws IOException {
+		String qPath = "/horizonView/{serviceName}/domainTrust";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, String.class);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+
+	/**
+	 * Link your Active Directory to your CDI Active Directory
+	 *
+	 * REST: POST /horizonView/{serviceName}/domainTrust
+	 * @param activeDirectoryIP [required] IP of your Active Directory
+	 * @param domain [required] Domain of your active directory (for example domain.local)
+	 * @param dns1 [required] IP of your first DNS
+	 * @param dns2 [required] IP of your second DNS
+	 * @param serviceName [required] Domain of the service
+	 */
+	public ArrayList<OvhTask> serviceName_domainTrust_POST(String serviceName, String activeDirectoryIP, String domain, String dns1, String dns2) throws IOException {
+		String qPath = "/horizonView/{serviceName}/domainTrust";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "activeDirectoryIP", activeDirectoryIP);
+		addBody(o, "domain", domain);
+		addBody(o, "dns1", dns1);
+		addBody(o, "dns2", dns2);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t2);
 	}
 
 	/**

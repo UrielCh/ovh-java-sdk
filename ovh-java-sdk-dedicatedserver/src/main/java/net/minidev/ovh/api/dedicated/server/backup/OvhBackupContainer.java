@@ -1,7 +1,7 @@
 package net.minidev.ovh.api.dedicated.server.backup;
 
 /**
- * A structure describing informations about this dedicated server
+ * A structure describing informations about the backup cloud feature
  */
 public class OvhBackupContainer {
 	/**
