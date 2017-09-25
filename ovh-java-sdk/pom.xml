@@ -422,6 +422,12 @@
 			<version>${ovhjavasdk.version}</version>
 		</dependency>
 		<dependency>
+			<artifactId>ovh-java-sdk-telephony</artifactId>
+			<groupId>net.minidev</groupId>
+			<optional>false</optional>
+			<version>${ovhjavasdk.version}</version>
+		</dependency>
+		<dependency>
 			<artifactId>ovh-java-sdk-veeamCloudConnect</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>

@@ -265,6 +265,7 @@
 		<module>ovh-java-sdk-store</module>
 		<module>ovh-java-sdk-supplymondialRelay</module>
 		<module>ovh-java-sdk-support</module>
+		<module>ovh-java-sdk-telephony</module>
 		<module>ovh-java-sdk-veeamCloudConnect</module>
 		<module>ovh-java-sdk-vip</module>
 		<module>ovh-java-sdk-vps</module>
