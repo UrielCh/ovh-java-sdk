@@ -10,13 +10,6 @@ import net.minidev.ovh.api.iploadbalancing.OvhStickinessEnum;
  */
 public class OvhBackend {
 	/**
-	 * Internal Load Balancer identifier of the vRack private network attached to your farm, mandatory when your Load Balancer is attached to a vRack
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long vrackNetworkId;
-
-	/**
 	 * Load balancing algorithm. 'roundrobin' if null
 	 *
 	 * canBeNull && readOnly

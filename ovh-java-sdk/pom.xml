@@ -368,6 +368,12 @@
 			<version>${ovhjavasdk.version}</version>
 		</dependency>
 		<dependency>
+			<artifactId>ovh-java-sdk-service</artifactId>
+			<groupId>net.minidev</groupId>
+			<optional>false</optional>
+			<version>${ovhjavasdk.version}</version>
+		</dependency>
+		<dependency>
 			<artifactId>ovh-java-sdk-sms</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
@@ -416,13 +422,13 @@
 			<version>${ovhjavasdk.version}</version>
 		</dependency>
 		<dependency>
-			<artifactId>ovh-java-sdk-telephony</artifactId>
+			<artifactId>ovh-java-sdk-veeamCloudConnect</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
 			<version>${ovhjavasdk.version}</version>
 		</dependency>
 		<dependency>
-			<artifactId>ovh-java-sdk-veeamCloudConnect</artifactId>
+			<artifactId>ovh-java-sdk-vip</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
 			<version>${ovhjavasdk.version}</version>

@@ -24,6 +24,7 @@ public class ApiOvhEmailimapCopy extends ApiOvhBase {
 	 * REST: POST /email/imapCopy
 	 * @param to [required] Where you want to put messages
 	 * @param from [required] Where you have messages
+	 * @deprecated
 	 */
 	public OvhTaskIds POST(OvhStructImapCopy to, OvhStructImapCopy from) throws IOException {
 		String qPath = "/email/imapCopy";
@@ -41,6 +42,7 @@ public class ApiOvhEmailimapCopy extends ApiOvhBase {
 	 * REST: GET /email/imapCopy/task
 	 * @param id [required] Id of task
 	 * @param secretKey [required] Secret key of task
+	 * @deprecated
 	 */
 	public OvhTask task_GET(Long id, String secretKey) throws IOException {
 		String qPath = "/email/imapCopy/task";

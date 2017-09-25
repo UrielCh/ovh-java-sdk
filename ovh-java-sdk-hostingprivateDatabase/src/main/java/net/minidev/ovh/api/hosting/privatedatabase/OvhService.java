@@ -29,6 +29,13 @@ public class OvhService {
 	public Date lastCheck;
 
 	/**
+	 * Private database capabilities
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhCapability[] capabilities;
+
+	/**
 	 * Private database ftp hostname
 	 *
 	 * canBeNull && readOnly

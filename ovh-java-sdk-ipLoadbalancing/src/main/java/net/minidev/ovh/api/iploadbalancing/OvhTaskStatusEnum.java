@@ -9,7 +9,6 @@ public enum OvhTaskStatusEnum {
 	doing("doing"),
 	done("done"),
 	error("error"),
-	paused("paused"),
 	todo("todo");
 
 	final String value;

@@ -19,6 +19,13 @@ public class OvhFarmAvailableProbe {
 	public Boolean port;
 
 	/**
+	 * List of matches operators that accept the negate option for this type of probe
+	 *
+	 * canBeNull
+	 */
+	public String[] negatableMatches;
+
+	/**
 	 * Probe protocol name. See probe "type" field in the farm probe
 	 *
 	 * canBeNull

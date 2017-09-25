@@ -8,6 +8,7 @@ import net.minidev.ovh.api.freefax.OvhBalanceInformations;
 import net.minidev.ovh.api.freefax.OvhFreefaxProperties;
 import net.minidev.ovh.api.services.OvhService;
 import net.minidev.ovh.api.telephony.OvhVoicefaxRoutingEnum;
+import net.minidev.ovh.api.telephony.OvhVoicemailNumbers;
 import net.minidev.ovh.api.telephony.OvhVoicemailProperties;
 import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
@@ -113,6 +114,19 @@ public class ApiOvhFreefax extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "routing", routing);
 		exec(qPath, "POST", sb.toString(), o);
+	}
+
+	/**
+	 * Get number for internal and external voicemail
+	 *
+	 * REST: GET /freefax/{serviceName}/voicemail/voicemailNumbers
+	 * @param serviceName [required] Freefax number
+	 */
+	public OvhVoicemailNumbers serviceName_voicemail_voicemailNumbers_GET(String serviceName) throws IOException {
+		String qPath = "/freefax/{serviceName}/voicemail/voicemailNumbers";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhVoicemailNumbers.class);
 	}
 
 	/**

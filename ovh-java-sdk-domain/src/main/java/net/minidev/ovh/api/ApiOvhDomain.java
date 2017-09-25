@@ -31,6 +31,7 @@ import net.minidev.ovh.api.domain.zone.OvhRecord;
 import net.minidev.ovh.api.domain.zone.OvhRedirection;
 import net.minidev.ovh.api.domain.zone.OvhSoa;
 import net.minidev.ovh.api.domain.zone.OvhZone;
+import net.minidev.ovh.api.domain.zone.OvhZoneRestorePoint;
 import net.minidev.ovh.api.nichandle.OvhCountryEnum;
 import net.minidev.ovh.api.service.OvhTerminationReasonEnum;
 import net.minidev.ovh.api.services.OvhService;
@@ -849,6 +850,58 @@ public class ApiOvhDomain extends ApiOvhBase {
 		String qPath = "/domain/zone/{zoneName}/soa";
 		StringBuilder sb = path(qPath, zoneName);
 		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Zone restore points
+	 *
+	 * REST: GET /domain/zone/{zoneName}/history
+	 * @param creationDate_to [required] Filter the value of creationDate property (<=)
+	 * @param creationDate_from [required] Filter the value of creationDate property (>=)
+	 * @param zoneName [required] The internal name of your zone
+	 *
+	 * API beta
+	 */
+	public ArrayList<Date> zone_zoneName_history_GET(String zoneName, Date creationDate_from, Date creationDate_to) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/history";
+		StringBuilder sb = path(qPath, zoneName);
+		query(sb, "creationDate.from", creationDate_from);
+		query(sb, "creationDate.to", creationDate_to);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t4);
+	}
+	private static TypeReference<ArrayList<Date>> t4 = new TypeReference<ArrayList<Date>>() {};
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /domain/zone/{zoneName}/history/{creationDate}
+	 * @param zoneName [required] The internal name of your zone
+	 * @param creationDate [required] Date of backup creation
+	 *
+	 * API beta
+	 */
+	public OvhZoneRestorePoint zone_zoneName_history_creationDate_GET(String zoneName, java.util.Date creationDate) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/history/{creationDate}";
+		StringBuilder sb = path(qPath, zoneName, creationDate);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhZoneRestorePoint.class);
+	}
+
+	/**
+	 * Restore the DNS zone
+	 *
+	 * REST: POST /domain/zone/{zoneName}/history/{creationDate}/restore
+	 * @param zoneName [required] The internal name of your zone
+	 * @param creationDate [required] Date of backup creation
+	 *
+	 * API beta
+	 */
+	public net.minidev.ovh.api.domain.zone.OvhTask zone_zoneName_history_creationDate_restore_POST(String zoneName, java.util.Date creationDate) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/history/{creationDate}/restore";
+		StringBuilder sb = path(qPath, zoneName, creationDate);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, net.minidev.ovh.api.domain.zone.OvhTask.class);
 	}
 
 	/**

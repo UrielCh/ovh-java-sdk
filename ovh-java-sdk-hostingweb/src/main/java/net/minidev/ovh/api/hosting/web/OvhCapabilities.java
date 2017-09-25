@@ -29,7 +29,7 @@ public class OvhCapabilities {
 	public OvhUnitAndValue<Double> disk;
 
 	/**
-	 * Tell if you have acces to module on click
+	 * Is this offer can use 1-click modules?
 	 *
 	 * canBeNull
 	 */
@@ -76,6 +76,13 @@ public class OvhCapabilities {
 	 * canBeNull
 	 */
 	public Long sitesRecommended;
+
+	/**
+	 * Is this offer can access to web files browser?
+	 *
+	 * canBeNull
+	 */
+	public Boolean filesBrowser;
 
 	/**
 	 * Traffic quota size for your hosting ( null for unlimited )

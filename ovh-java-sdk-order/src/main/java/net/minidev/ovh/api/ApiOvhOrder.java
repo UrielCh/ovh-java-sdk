@@ -2356,6 +2356,72 @@ public class ApiOvhOrder extends ApiOvhBase {
 	/**
 	 * Retrieve available offers to upgrade your service to
 	 *
+	 * REST: GET /order/upgrade/metrics/{serviceName}
+	 * @param serviceName [required] The internal ID of your Metrics service
+	 *
+	 * API beta
+	 */
+	public ArrayList<OvhGenericProductDefinition> upgrade_metrics_serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/order/upgrade/metrics/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Get a provisional order for the selected upgrade of your service
+	 *
+	 * REST: GET /order/upgrade/metrics/{serviceName}/{planCode}
+	 * @param planCode [required] Plan code of the offer you want to upgrade to
+	 * @param quantity [required] Quantity you want to upgrade to
+	 * @param serviceName [required] The internal ID of your Metrics service
+	 *
+	 * API beta
+	 */
+	public OvhOrderUpgradeOperationAndOrder upgrade_metrics_serviceName_planCode_GET(String serviceName, String planCode, Long quantity) throws IOException {
+		String qPath = "/order/upgrade/metrics/{serviceName}/{planCode}";
+		StringBuilder sb = path(qPath, serviceName, planCode);
+		query(sb, "quantity", quantity);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhOrderUpgradeOperationAndOrder.class);
+	}
+
+	/**
+	 * Perform the requested upgrade of your service
+	 *
+	 * REST: POST /order/upgrade/metrics/{serviceName}/{planCode}
+	 * @param planCode [required] Plan code of the offer you want to upgrade to
+	 * @param quantity [required] Quantity you want to upgrade to
+	 * @param serviceName [required] The internal ID of your Metrics service
+	 *
+	 * API beta
+	 */
+	public OvhOrderUpgradeOperationAndOrder upgrade_metrics_serviceName_planCode_POST(String serviceName, String planCode, Long quantity) throws IOException {
+		String qPath = "/order/upgrade/metrics/{serviceName}/{planCode}";
+		StringBuilder sb = path(qPath, serviceName, planCode);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "quantity", quantity);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhOrderUpgradeOperationAndOrder.class);
+	}
+
+	/**
+	 * List available services
+	 *
+	 * REST: GET /order/upgrade/metrics
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> upgrade_metrics_GET() throws IOException {
+		String qPath = "/order/upgrade/metrics";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Retrieve available offers to upgrade your service to
+	 *
 	 * REST: GET /order/upgrade/logs/{serviceName}
 	 * @param serviceName [required] The internal ID of DBaaS Logs service
 	 *
@@ -4027,6 +4093,45 @@ public class ApiOvhOrder extends ApiOvhBase {
 	}
 
 	/**
+	 * Get informations about DNS zone offer
+	 *
+	 * REST: GET /order/cart/{cartId}/dns
+	 * @param cartId [required] Cart identifier
+	 *
+	 * API beta
+	 */
+	public ArrayList<OvhGenericProductDefinition> cart_cartId_dns_GET(String cartId) throws IOException {
+		String qPath = "/order/cart/{cartId}/dns";
+		StringBuilder sb = path(qPath, cartId);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Post a new DNS zone item in your cart
+	 *
+	 * REST: POST /order/cart/{cartId}/dns
+	 * @param cartId [required] Cart identifier
+	 * @param planCode [required] Identifier of a DNS zone offer
+	 * @param duration [required] Duration selected for the purchase of the product
+	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
+	 * @param quantity [required] Quantity of product desired
+	 *
+	 * API beta
+	 */
+	public OvhItem cart_cartId_dns_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
+		String qPath = "/order/cart/{cartId}/dns";
+		StringBuilder sb = path(qPath, cartId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "planCode", planCode);
+		addBody(o, "duration", duration);
+		addBody(o, "pricingMode", pricingMode);
+		addBody(o, "quantity", quantity);
+		String resp = execN(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhItem.class);
+	}
+
+	/**
 	 * Get informations about Desk As A Service offers
 	 *
 	 * REST: GET /order/cart/{cartId}/deskaas
@@ -4466,6 +4571,45 @@ public class ApiOvhOrder extends ApiOvhBase {
 		String qPath = "/order/cart/{cartId}/item/{itemId}/configuration/{configurationId}";
 		StringBuilder sb = path(qPath, cartId, itemId, configurationId);
 		execN(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
+	 * Get informations about vRack offers
+	 *
+	 * REST: GET /order/cart/{cartId}/vrackReseller
+	 * @param cartId [required] Cart identifier
+	 *
+	 * API beta
+	 */
+	public ArrayList<OvhGenericProductDefinition> cart_cartId_vrackReseller_GET(String cartId) throws IOException {
+		String qPath = "/order/cart/{cartId}/vrackReseller";
+		StringBuilder sb = path(qPath, cartId);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Post a new vRack item in your cart
+	 *
+	 * REST: POST /order/cart/{cartId}/vrackReseller
+	 * @param cartId [required] Cart identifier
+	 * @param planCode [required] Identifier of the vRack offer
+	 * @param duration [required] Duration selected for the purchase of the product
+	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
+	 * @param quantity [required] Quantity of product desired
+	 *
+	 * API beta
+	 */
+	public OvhItem cart_cartId_vrackReseller_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
+		String qPath = "/order/cart/{cartId}/vrackReseller";
+		StringBuilder sb = path(qPath, cartId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "planCode", planCode);
+		addBody(o, "duration", duration);
+		addBody(o, "pricingMode", pricingMode);
+		addBody(o, "quantity", quantity);
+		String resp = execN(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhItem.class);
 	}
 
 	/**
@@ -5348,6 +5492,88 @@ public class ApiOvhOrder extends ApiOvhBase {
 		String qPath = "/order/cart/{cartId}/registry";
 		StringBuilder sb = path(qPath, cartId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "planCode", planCode);
+		addBody(o, "duration", duration);
+		addBody(o, "pricingMode", pricingMode);
+		addBody(o, "quantity", quantity);
+		String resp = execN(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhItem.class);
+	}
+
+	/**
+	 * Get informations about IP addresses offers
+	 *
+	 * REST: GET /order/cart/{cartId}/ip
+	 * @param cartId [required] Cart identifier
+	 *
+	 * API beta
+	 */
+	public ArrayList<OvhGenericProductDefinition> cart_cartId_ip_GET(String cartId) throws IOException {
+		String qPath = "/order/cart/{cartId}/ip";
+		StringBuilder sb = path(qPath, cartId);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Post a new IP addresses item in your cart
+	 *
+	 * REST: POST /order/cart/{cartId}/ip
+	 * @param cartId [required] Cart identifier
+	 * @param planCode [required] Identifier of the IP addresses offer
+	 * @param duration [required] Duration selected for the purchase of the product
+	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
+	 * @param quantity [required] Quantity of product desired
+	 *
+	 * API beta
+	 */
+	public OvhItem cart_cartId_ip_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
+		String qPath = "/order/cart/{cartId}/ip";
+		StringBuilder sb = path(qPath, cartId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "planCode", planCode);
+		addBody(o, "duration", duration);
+		addBody(o, "pricingMode", pricingMode);
+		addBody(o, "quantity", quantity);
+		String resp = execN(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhItem.class);
+	}
+
+	/**
+	 * Get informations about IP addresses options
+	 *
+	 * REST: GET /order/cart/{cartId}/ip/options
+	 * @param cartId [required] Cart identifier
+	 * @param planCode [required] Identifier of the IP addresses you want to consult options
+	 *
+	 * API beta
+	 */
+	public ArrayList<OvhGenericOptionDefinition> cart_cartId_ip_options_GET(String cartId, String planCode) throws IOException {
+		String qPath = "/order/cart/{cartId}/ip/options";
+		StringBuilder sb = path(qPath, cartId);
+		query(sb, "planCode", planCode);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+
+	/**
+	 * Post a new IP addresses option in your cart
+	 *
+	 * REST: POST /order/cart/{cartId}/ip/options
+	 * @param cartId [required] Cart identifier
+	 * @param itemId [required] Cart item to be linked
+	 * @param planCode [required] Identifier of a IP addresses option offer
+	 * @param duration [required] Duration selected for the purchase of the product
+	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
+	 * @param quantity [required] Quantity of product desired
+	 *
+	 * API beta
+	 */
+	public OvhItem cart_cartId_ip_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
+		String qPath = "/order/cart/{cartId}/ip/options";
+		StringBuilder sb = path(qPath, cartId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "itemId", itemId);
 		addBody(o, "planCode", planCode);
 		addBody(o, "duration", duration);
 		addBody(o, "pricingMode", pricingMode);

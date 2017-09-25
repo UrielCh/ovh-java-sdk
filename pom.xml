@@ -256,6 +256,7 @@
 		<module>ovh-java-sdk-price</module>
 		<module>ovh-java-sdk-router</module>
 		<module>ovh-java-sdk-saascsp2</module>
+		<module>ovh-java-sdk-service</module>
 		<module>ovh-java-sdk-sms</module>
 		<module>ovh-java-sdk-ssl</module>
 		<module>ovh-java-sdk-sslGateway</module>
@@ -264,8 +265,8 @@
 		<module>ovh-java-sdk-store</module>
 		<module>ovh-java-sdk-supplymondialRelay</module>
 		<module>ovh-java-sdk-support</module>
-		<module>ovh-java-sdk-telephony</module>
 		<module>ovh-java-sdk-veeamCloudConnect</module>
+		<module>ovh-java-sdk-vip</module>
 		<module>ovh-java-sdk-vps</module>
 		<module>ovh-java-sdk-vrack</module>
 		<module>ovh-java-sdk-xdsl</module>

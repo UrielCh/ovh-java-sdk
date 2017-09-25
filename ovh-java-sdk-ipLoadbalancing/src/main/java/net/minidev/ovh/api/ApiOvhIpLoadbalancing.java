@@ -10,7 +10,6 @@ import net.minidev.ovh.api.iploadbalancing.OvhBackendProbe;
 import net.minidev.ovh.api.iploadbalancing.OvhBalanceEnum;
 import net.minidev.ovh.api.iploadbalancing.OvhBalanceHTTPEnum;
 import net.minidev.ovh.api.iploadbalancing.OvhBalanceTCPEnum;
-import net.minidev.ovh.api.iploadbalancing.OvhCustomerServerStatusEnum;
 import net.minidev.ovh.api.iploadbalancing.OvhDefinedBackend;
 import net.minidev.ovh.api.iploadbalancing.OvhDefinedFrontend;
 import net.minidev.ovh.api.iploadbalancing.OvhDefinedRoute;
@@ -31,6 +30,7 @@ import net.minidev.ovh.api.iploadbalancing.OvhStickinessEnum;
 import net.minidev.ovh.api.iploadbalancing.OvhStickinessHTTPEnum;
 import net.minidev.ovh.api.iploadbalancing.OvhStickinessTCPEnum;
 import net.minidev.ovh.api.iploadbalancing.OvhTaskActionEnum;
+import net.minidev.ovh.api.iploadbalancing.OvhTaskStatusEnum;
 import net.minidev.ovh.api.iploadbalancing.backend.OvhBackend;
 import net.minidev.ovh.api.iploadbalancing.backendcustomerserver.OvhBackendServer;
 import net.minidev.ovh.api.iploadbalancing.backendhttp.OvhBackendHttp;
@@ -39,7 +39,6 @@ import net.minidev.ovh.api.iploadbalancing.backendtcp.OvhBackendTcp;
 import net.minidev.ovh.api.iploadbalancing.backendtcpcustomerserver.OvhBackendTCPServer;
 import net.minidev.ovh.api.iploadbalancing.backendudp.OvhBackendUdp;
 import net.minidev.ovh.api.iploadbalancing.backendudpcustomerserver.OvhBackendUDPServer;
-import net.minidev.ovh.api.iploadbalancing.customerserver.OvhCustomerServer;
 import net.minidev.ovh.api.iploadbalancing.frontend.OvhFrontend;
 import net.minidev.ovh.api.iploadbalancing.frontendhttp.OvhFrontendHttp;
 import net.minidev.ovh.api.iploadbalancing.frontendtcp.OvhFrontendTcp;
@@ -236,7 +235,6 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * REST: POST /ipLoadbalancing/{serviceName}/backend
 	 * @param balance [required] Load balancing algorithm. 'roundrobin' if null
 	 * @param zone [required] Zone of your backend.
-	 * @param vrackNetworkId [required] Internal Load Balancer identifier of the vRack private network to attach to your farm, mandatory when your Load Balancer is attached to a vRack
 	 * @param type [required] Type of your backend
 	 * @param probe [required] Probe type. 'tcp' if null
 	 * @param port [required] Port attached to your backend [1..65000]. Inherited from frontend if null
@@ -244,13 +242,12 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @deprecated
 	 */
-	public OvhBackend serviceName_backend_POST(String serviceName, OvhBalanceEnum balance, String zone, Long vrackNetworkId, OvhProxyTypeEnum type, OvhProbeTypeEnum probe, Long port, OvhStickinessEnum stickiness) throws IOException {
+	public OvhBackend serviceName_backend_POST(String serviceName, OvhBalanceEnum balance, String zone, OvhProxyTypeEnum type, OvhProbeTypeEnum probe, Long port, OvhStickinessEnum stickiness) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/backend";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "balance", balance);
 		addBody(o, "zone", zone);
-		addBody(o, "vrackNetworkId", vrackNetworkId);
 		addBody(o, "type", type);
 		addBody(o, "probe", probe);
 		addBody(o, "port", port);
@@ -928,89 +925,6 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		return convertTo(resp, t3);
 	}
 	private static TypeReference<ArrayList<OvhRouteAvailableAction>> t3 = new TypeReference<ArrayList<OvhRouteAvailableAction>>() {};
-
-	/**
-	 * Servers for this iplb
-	 *
-	 * REST: GET /ipLoadbalancing/{serviceName}/server
-	 * @param status [required] Filter the value of status property (=)
-	 * @param zone [required] Filter the value of zone property (=)
-	 * @param address [required] Filter the value of address property (=)
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 * @deprecated
-	 */
-	public ArrayList<Long> serviceName_server_GET(String serviceName, String address, OvhCustomerServerStatusEnum status, String zone) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/server";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "address", address);
-		query(sb, "status", status);
-		query(sb, "zone", zone);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Add a new server on your iplb
-	 *
-	 * REST: POST /ipLoadbalancing/{serviceName}/server
-	 * @param status [required] Status of your server
-	 * @param address [required] Address of your server
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 * @deprecated
-	 */
-	public OvhCustomerServer serviceName_server_POST(String serviceName, OvhCustomerServerStatusEnum status, String address) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/server";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "status", status);
-		addBody(o, "address", address);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhCustomerServer.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /ipLoadbalancing/{serviceName}/server/{id}
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 * @param id [required] Id of your server
-	 * @deprecated
-	 */
-	public OvhCustomerServer serviceName_server_id_GET(String serviceName, Long id) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/server/{id}";
-		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhCustomerServer.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /ipLoadbalancing/{serviceName}/server/{id}
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 * @param id [required] Id of your server
-	 * @deprecated
-	 */
-	public void serviceName_server_id_PUT(String serviceName, Long id, OvhCustomerServer body) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/server/{id}";
-		StringBuilder sb = path(qPath, serviceName, id);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Delete a server
-	 *
-	 * REST: DELETE /ipLoadbalancing/{serviceName}/server/{id}
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 * @param id [required] Id of your server
-	 * @deprecated
-	 */
-	public void serviceName_server_id_DELETE(String serviceName, Long id) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/server/{id}";
-		StringBuilder sb = path(qPath, serviceName, id);
-		exec(qPath, "DELETE", sb.toString(), null);
-	}
 
 	/**
 	 * Available route match rules
@@ -1765,15 +1679,25 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * Task for this iplb
 	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/task
+	 * @param creationDate_to [required] Filter the value of creationDate property (<=)
+	 * @param creationDate_from [required] Filter the value of creationDate property (>=)
+	 * @param doneDate_from [required] Filter the value of doneDate property (>=)
+	 * @param status [required] Filter the value of status property (=)
 	 * @param action [required] Filter the value of action property (=)
+	 * @param doneDate_to [required] Filter the value of doneDate property (<=)
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 *
 	 * API beta
 	 */
-	public ArrayList<Long> serviceName_task_GET(String serviceName, OvhTaskActionEnum action) throws IOException {
+	public ArrayList<Long> serviceName_task_GET(String serviceName, OvhTaskActionEnum action, Date creationDate_from, Date creationDate_to, Date doneDate_from, Date doneDate_to, OvhTaskStatusEnum status) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/task";
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "action", action);
+		query(sb, "creationDate.from", creationDate_from);
+		query(sb, "creationDate.to", creationDate_to);
+		query(sb, "doneDate.from", doneDate_from);
+		query(sb, "doneDate.to", doneDate_to);
+		query(sb, "status", status);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}

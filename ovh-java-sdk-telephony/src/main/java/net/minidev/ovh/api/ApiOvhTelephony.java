@@ -158,6 +158,7 @@ import net.minidev.ovh.api.telephony.OvhTimestampAndValue;
 import net.minidev.ovh.api.telephony.OvhTokenExpirationEnum;
 import net.minidev.ovh.api.telephony.OvhTones;
 import net.minidev.ovh.api.telephony.OvhTonesTypeEnum;
+import net.minidev.ovh.api.telephony.OvhTrafficExtract;
 import net.minidev.ovh.api.telephony.OvhTypeEnum;
 import net.minidev.ovh.api.telephony.OvhVoiceConsumption;
 import net.minidev.ovh.api.telephony.OvhVoiceConsumptionDestinationTypeEnum;
@@ -169,6 +170,7 @@ import net.minidev.ovh.api.telephony.OvhVoicemailGreetings;
 import net.minidev.ovh.api.telephony.OvhVoicemailMessageFolderDirectoryEnum;
 import net.minidev.ovh.api.telephony.OvhVoicemailMessageFolderGreetingEnum;
 import net.minidev.ovh.api.telephony.OvhVoicemailMessages;
+import net.minidev.ovh.api.telephony.OvhVoicemailNumbers;
 import net.minidev.ovh.api.telephony.OvhVoicemailProperties;
 import net.minidev.ovh.api.telephony.OvhVxml;
 import net.minidev.ovh.api.telephony.OvhVxmlProperties;
@@ -785,6 +787,20 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "routing", routing);
 		exec(qPath, "POST", sb.toString(), o);
+	}
+
+	/**
+	 * Get number for internal and external voicemail
+	 *
+	 * REST: GET /telephony/{billingAccount}/voicemail/{serviceName}/settings/voicemailNumbers
+	 * @param billingAccount [required] The name of your billingAccount
+	 * @param serviceName [required]
+	 */
+	public OvhVoicemailNumbers billingAccount_voicemail_serviceName_settings_voicemailNumbers_GET(String billingAccount, String serviceName) throws IOException {
+		String qPath = "/telephony/{billingAccount}/voicemail/{serviceName}/settings/voicemailNumbers";
+		StringBuilder sb = path(qPath, billingAccount, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhVoicemailNumbers.class);
 	}
 
 	/**
@@ -1599,6 +1615,68 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/cancelConvertToNumber";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		exec(qPath, "POST", sb.toString(), null);
+	}
+
+	/**
+	 * The traffic extracts (SIP only) of your line
+	 *
+	 * REST: GET /telephony/{billingAccount}/line/{serviceName}/trafficExtracts
+	 * @param billingAccount [required] The name of your billingAccount
+	 * @param serviceName [required]
+	 */
+	public ArrayList<Long> billingAccount_line_serviceName_trafficExtracts_GET(String billingAccount, String serviceName) throws IOException {
+		String qPath = "/telephony/{billingAccount}/line/{serviceName}/trafficExtracts";
+		StringBuilder sb = path(qPath, billingAccount, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+
+	/**
+	 * Launch a traffic extract on your line
+	 *
+	 * REST: POST /telephony/{billingAccount}/line/{serviceName}/trafficExtracts
+	 * @param dateStart [required] The start date of the traffic extract
+	 * @param dateEnd [required] The end date of the traffic extract
+	 * @param billingAccount [required] The name of your billingAccount
+	 * @param serviceName [required]
+	 */
+	public OvhTrafficExtract billingAccount_line_serviceName_trafficExtracts_POST(String billingAccount, String serviceName, Date dateStart, Date dateEnd) throws IOException {
+		String qPath = "/telephony/{billingAccount}/line/{serviceName}/trafficExtracts";
+		StringBuilder sb = path(qPath, billingAccount, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "dateStart", dateStart);
+		addBody(o, "dateEnd", dateEnd);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTrafficExtract.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /telephony/{billingAccount}/line/{serviceName}/trafficExtracts/{id}
+	 * @param billingAccount [required] The name of your billingAccount
+	 * @param serviceName [required]
+	 * @param id [required] Id of the object
+	 */
+	public OvhTrafficExtract billingAccount_line_serviceName_trafficExtracts_id_GET(String billingAccount, String serviceName, Long id) throws IOException {
+		String qPath = "/telephony/{billingAccount}/line/{serviceName}/trafficExtracts/{id}";
+		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhTrafficExtract.class);
+	}
+
+	/**
+	 * Delete a traffic extract
+	 *
+	 * REST: DELETE /telephony/{billingAccount}/line/{serviceName}/trafficExtracts/{id}
+	 * @param billingAccount [required] The name of your billingAccount
+	 * @param serviceName [required]
+	 * @param id [required] Id of the object
+	 */
+	public void billingAccount_line_serviceName_trafficExtracts_id_DELETE(String billingAccount, String serviceName, Long id) throws IOException {
+		String qPath = "/telephony/{billingAccount}/line/{serviceName}/trafficExtracts/{id}";
+		StringBuilder sb = path(qPath, billingAccount, serviceName, id);
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**

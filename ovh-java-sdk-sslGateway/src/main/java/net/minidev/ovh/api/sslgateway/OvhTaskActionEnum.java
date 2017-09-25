@@ -5,6 +5,7 @@ package net.minidev.ovh.api.sslgateway;
  */
 public enum OvhTaskActionEnum {
 	addDomain("addDomain"),
+	addPaidCertificate("addPaidCertificate"),
 	addServer("addServer"),
 	createService("createService"),
 	deleteDomain("deleteDomain"),
@@ -12,7 +13,8 @@ public enum OvhTaskActionEnum {
 	deleteService("deleteService"),
 	internalTask("internalTask"),
 	updateServer("updateServer"),
-	updateService("updateService");
+	updateService("updateService"),
+	upgrade("upgrade");
 
 	final String value;
 

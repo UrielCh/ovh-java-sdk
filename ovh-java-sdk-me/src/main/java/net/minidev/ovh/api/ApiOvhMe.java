@@ -41,6 +41,7 @@ import net.minidev.ovh.api.billing.OvhWithdrawalDetail;
 import net.minidev.ovh.api.billing.order.OvhOrderStatusEnum;
 import net.minidev.ovh.api.billing.order.OvhPaymentMeans;
 import net.minidev.ovh.api.billing.order.OvhRegisteredPaymentMean;
+import net.minidev.ovh.api.billing.order.OvhRetractionReasonEnum;
 import net.minidev.ovh.api.complextype.OvhSafeKeyValue;
 import net.minidev.ovh.api.contact.OvhAddress;
 import net.minidev.ovh.api.contact.OvhContact;
@@ -525,6 +526,23 @@ public class ApiOvhMe extends ApiOvhBase {
 		StringBuilder sb = path(qPath, orderId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPaymentMeans.class);
+	}
+
+	/**
+	 * Request retraction of order
+	 *
+	 * REST: POST /me/order/{orderId}/retraction
+	 * @param comment [required] An optional comment of why you want to retract
+	 * @param reason [required] The reason why you want to retract
+	 * @param orderId [required]
+	 */
+	public void order_orderId_retraction_POST(Long orderId, String comment, OvhRetractionReasonEnum reason) throws IOException {
+		String qPath = "/me/order/{orderId}/retraction";
+		StringBuilder sb = path(qPath, orderId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "comment", comment);
+		addBody(o, "reason", reason);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**

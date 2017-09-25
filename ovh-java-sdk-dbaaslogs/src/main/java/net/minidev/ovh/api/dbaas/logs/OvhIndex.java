@@ -56,13 +56,6 @@ public class OvhIndex {
 	public Long maxSize;
 
 	/**
-	 * Associated DBaaS Logs option
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String optionId;
-
-	/**
 	 * Index last update
 	 *
 	 * canBeNull && readOnly
