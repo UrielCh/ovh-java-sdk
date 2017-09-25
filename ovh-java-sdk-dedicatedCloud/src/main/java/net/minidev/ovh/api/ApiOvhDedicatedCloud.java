@@ -16,11 +16,16 @@ import net.minidev.ovh.api.dedicatedcloud.OvhFiler;
 import net.minidev.ovh.api.dedicatedcloud.OvhHds;
 import net.minidev.ovh.api.dedicatedcloud.OvhHipaa;
 import net.minidev.ovh.api.dedicatedcloud.OvhHost;
+import net.minidev.ovh.api.dedicatedcloud.OvhHostProfile;
+import net.minidev.ovh.api.dedicatedcloud.OvhHostStockProfile;
 import net.minidev.ovh.api.dedicatedcloud.OvhIp;
 import net.minidev.ovh.api.dedicatedcloud.OvhIpCountriesEnum;
 import net.minidev.ovh.api.dedicatedcloud.OvhNsx;
 import net.minidev.ovh.api.dedicatedcloud.OvhOptionCompatibility;
+import net.minidev.ovh.api.dedicatedcloud.OvhOs;
 import net.minidev.ovh.api.dedicatedcloud.OvhPasswordPolicy;
+import net.minidev.ovh.api.dedicatedcloud.OvhPccStockProfile;
+import net.minidev.ovh.api.dedicatedcloud.OvhPccZone;
 import net.minidev.ovh.api.dedicatedcloud.OvhPciDss;
 import net.minidev.ovh.api.dedicatedcloud.OvhResourceNewPrices;
 import net.minidev.ovh.api.dedicatedcloud.OvhRestorePoint;
@@ -32,6 +37,7 @@ import net.minidev.ovh.api.dedicatedcloud.OvhUser;
 import net.minidev.ovh.api.dedicatedcloud.OvhVlan;
 import net.minidev.ovh.api.dedicatedcloud.OvhVm;
 import net.minidev.ovh.api.dedicatedcloud.OvhVrops;
+import net.minidev.ovh.api.dedicatedcloud.OvhZpoolStockProfile;
 import net.minidev.ovh.api.dedicatedcloud.backup.OvhBackupDaysEnum;
 import net.minidev.ovh.api.dedicatedcloud.backup.OvhOfferTypeEnum;
 import net.minidev.ovh.api.dedicatedcloud.filer.OvhHourlyConsumption;
@@ -262,6 +268,24 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	}
 
 	/**
+	 * Restart task in error.
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/task/{taskId}/resetTaskState
+	 * @param reason [required] Reason of task restart
+	 * @param serviceName [required] Domain of the service
+	 * @param datacenterId [required]
+	 * @param taskId [required] Task id
+	 */
+	public OvhTask serviceName_datacenter_datacenterId_task_taskId_resetTaskState_POST(String serviceName, Long datacenterId, Long taskId, String reason) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/task/{taskId}/resetTaskState";
+		StringBuilder sb = path(qPath, serviceName, datacenterId, taskId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "reason", reason);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
 	 * List available filers in a given Private Cloud Datacenter
 	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/orderableFilerProfiles
@@ -375,6 +399,25 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	}
 
 	/**
+	 * Restart task in error.
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/filer/{filerId}/task/{taskId}/resetTaskState
+	 * @param reason [required] Reason of task restart
+	 * @param serviceName [required] Domain of the service
+	 * @param datacenterId [required]
+	 * @param filerId [required] Filer Id
+	 * @param taskId [required] Task id
+	 */
+	public OvhTask serviceName_datacenter_datacenterId_filer_filerId_task_taskId_resetTaskState_POST(String serviceName, Long datacenterId, Long filerId, Long taskId, String reason) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/filer/{filerId}/task/{taskId}/resetTaskState";
+		StringBuilder sb = path(qPath, serviceName, datacenterId, filerId, taskId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "reason", reason);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
 	 * Hourly consumption associated with this Filer
 	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/filer/{filerId}/hourlyConsumption
@@ -416,6 +459,24 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/host/{hostId}/remove";
 		StringBuilder sb = path(qPath, serviceName, datacenterId, hostId);
 		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Add a spare host to your Private Cloud.
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/host/{hostId}/addHostSpare
+	 * @param reason [required] Reason of spare add
+	 * @param serviceName [required] Domain of the service
+	 * @param datacenterId [required]
+	 * @param hostId [required] Id of the host
+	 */
+	public OvhTask serviceName_datacenter_datacenterId_host_hostId_addHostSpare_POST(String serviceName, Long datacenterId, Long hostId, String reason) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/host/{hostId}/addHostSpare";
+		StringBuilder sb = path(qPath, serviceName, datacenterId, hostId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "reason", reason);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -469,6 +530,25 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName, datacenterId, hostId, taskId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "executionDate", executionDate);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Restart task in error.
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/host/{hostId}/task/{taskId}/resetTaskState
+	 * @param reason [required] Reason of task restart
+	 * @param serviceName [required] Domain of the service
+	 * @param datacenterId [required]
+	 * @param hostId [required] Id of the host
+	 * @param taskId [required] Task id
+	 */
+	public OvhTask serviceName_datacenter_datacenterId_host_hostId_task_taskId_resetTaskState_POST(String serviceName, Long datacenterId, Long hostId, Long taskId, String reason) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/host/{hostId}/task/{taskId}/resetTaskState";
+		StringBuilder sb = path(qPath, serviceName, datacenterId, hostId, taskId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "reason", reason);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
@@ -904,6 +984,24 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	}
 
 	/**
+	 * Restart task in error.
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/ip/{network}/task/{taskId}/resetTaskState
+	 * @param reason [required] Reason of task restart
+	 * @param serviceName [required] Domain of the service
+	 * @param network [required] IP ex: 213.186.33.34/24
+	 * @param taskId [required] Task id
+	 */
+	public OvhTask serviceName_ip_network_task_taskId_resetTaskState_POST(String serviceName, String network, Long taskId, String reason) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/ip/{network}/task/{taskId}/resetTaskState";
+		StringBuilder sb = path(qPath, serviceName, network, taskId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "reason", reason);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
 	 * Check if Nsx option can be disabled
 	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/nsx/canBeDisabled
@@ -1100,6 +1198,24 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	}
 
 	/**
+	 * Restart task in error.
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/filer/{filerId}/task/{taskId}/resetTaskState
+	 * @param reason [required] Reason of task restart
+	 * @param serviceName [required] Domain of the service
+	 * @param filerId [required] Filer Id
+	 * @param taskId [required] Task id
+	 */
+	public OvhTask serviceName_filer_filerId_task_taskId_resetTaskState_POST(String serviceName, Long filerId, Long taskId, String reason) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/filer/{filerId}/task/{taskId}/resetTaskState";
+		StringBuilder sb = path(qPath, serviceName, filerId, taskId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "reason", reason);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
 	 * Hourly consumption associated with this Filer
 	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/filer/{filerId}/hourlyConsumption
@@ -1271,6 +1387,24 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	}
 
 	/**
+	 * Restart task in error.
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/allowedNetwork/{networkAccessId}/task/{taskId}/resetTaskState
+	 * @param reason [required] Reason of task restart
+	 * @param serviceName [required] Domain of the service
+	 * @param networkAccessId [required]
+	 * @param taskId [required] Task id
+	 */
+	public OvhTask serviceName_allowedNetwork_networkAccessId_task_taskId_resetTaskState_POST(String serviceName, Long networkAccessId, Long taskId, String reason) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/allowedNetwork/{networkAccessId}/task/{taskId}/resetTaskState";
+		StringBuilder sb = path(qPath, serviceName, networkAccessId, taskId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "reason", reason);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
 	 * Upgrade your hypervisor to the next released version
 	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/upgradeHypervisor
@@ -1305,7 +1439,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 * @param firstName [required] First name of the user
 	 * @param canAddRessource [required] Is this User able to add ressources in the Datacenter he has access ? (default is no right to add ressource)
 	 * @param name [required] Name of the user (login)
-	 * @param vmNetworkRole [required] Determine how this user will be able to act on this Private Cloud VM Nertwork
+	 * @param vmNetworkRole [required] Determine how this user will be able to act on this Private Cloud VM Network
 	 * @param email [required] The user email. If this field is empty, user informations will be sent to the dedicatedCloud administrator contact.
 	 * @param password [required] The user password. It must fits your Private Cloud password policy. If this field is empty, a random password will be generated and sent by email.
 	 * @param right [required] Determine what kind of access the User will have in all Datacenters of your Private Cloud (default is disabled)
@@ -1524,6 +1658,24 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	}
 
 	/**
+	 * Restart task in error.
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/user/{userId}/task/{taskId}/resetTaskState
+	 * @param reason [required] Reason of task restart
+	 * @param serviceName [required] Domain of the service
+	 * @param userId [required]
+	 * @param taskId [required] Task id
+	 */
+	public OvhTask serviceName_user_userId_task_taskId_resetTaskState_POST(String serviceName, Long userId, Long taskId, String reason) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/user/{userId}/task/{taskId}/resetTaskState";
+		StringBuilder sb = path(qPath, serviceName, userId, taskId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "reason", reason);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
 	 * Disable the given Private Cloud user
 	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/user/{userId}/disable
@@ -1548,6 +1700,19 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhCapabilities.class);
+	}
+
+	/**
+	 * Reset all triggered alarms on PCC
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/resetTriggeredAlarm
+	 * @param serviceName [required] Domain of the service
+	 */
+	public OvhTask serviceName_resetTriggeredAlarm_POST(String serviceName) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/resetTriggeredAlarm";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
@@ -1706,6 +1871,23 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName, taskId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "executionDate", executionDate);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Restart task in error.
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/task/{taskId}/resetTaskState
+	 * @param reason [required] Reason of task restart
+	 * @param serviceName [required] Domain of the service
+	 * @param taskId [required] Task id
+	 */
+	public OvhTask serviceName_task_taskId_resetTaskState_POST(String serviceName, Long taskId, String reason) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/task/{taskId}/resetTaskState";
+		StringBuilder sb = path(qPath, serviceName, taskId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "reason", reason);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
@@ -1949,6 +2131,127 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t4);
 	}
+
+	/**
+	 * List of locations available in a Dedicated Cloud
+	 *
+	 * REST: GET /dedicatedCloud/location
+	 */
+	public ArrayList<String> location_GET() throws IOException {
+		String qPath = "/dedicatedCloud/location";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t4);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /dedicatedCloud/location/{pccZone}
+	 * @param pccZone [required] Name of pccZone
+	 */
+	public OvhPccZone location_pccZone_GET(String pccZone) throws IOException {
+		String qPath = "/dedicatedCloud/location/{pccZone}";
+		StringBuilder sb = path(qPath, pccZone);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPccZone.class);
+	}
+
+	/**
+	 * Offered host profile
+	 *
+	 * REST: GET /dedicatedCloud/location/{pccZone}/hostProfile
+	 * @param pccZone [required] Name of pccZone
+	 */
+	public ArrayList<Long> location_pccZone_hostProfile_GET(String pccZone) throws IOException {
+		String qPath = "/dedicatedCloud/location/{pccZone}/hostProfile";
+		StringBuilder sb = path(qPath, pccZone);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /dedicatedCloud/location/{pccZone}/hostProfile/{id}
+	 * @param pccZone [required] Name of pccZone
+	 * @param id [required] Id of Host profile
+	 */
+	public OvhHostProfile location_pccZone_hostProfile_id_GET(String pccZone, Long id) throws IOException {
+		String qPath = "/dedicatedCloud/location/{pccZone}/hostProfile/{id}";
+		StringBuilder sb = path(qPath, pccZone, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhHostProfile.class);
+	}
+
+	/**
+	 * Offered hypervisor version
+	 *
+	 * REST: GET /dedicatedCloud/location/{pccZone}/hypervisor
+	 * @param pccZone [required] Name of pccZone
+	 */
+	public ArrayList<String> location_pccZone_hypervisor_GET(String pccZone) throws IOException {
+		String qPath = "/dedicatedCloud/location/{pccZone}/hypervisor";
+		StringBuilder sb = path(qPath, pccZone);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t4);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /dedicatedCloud/location/{pccZone}/hypervisor/{shortName}
+	 * @param pccZone [required] Name of pccZone
+	 * @param shortName [required] Short name of hypervisor
+	 */
+	public OvhOs location_pccZone_hypervisor_shortName_GET(String pccZone, String shortName) throws IOException {
+		String qPath = "/dedicatedCloud/location/{pccZone}/hypervisor/{shortName}";
+		StringBuilder sb = path(qPath, pccZone, shortName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhOs.class);
+	}
+
+	/**
+	 * Available PCC stock
+	 *
+	 * REST: GET /dedicatedCloud/location/{pccZone}/stock/pcc
+	 * @param pccZone [required] Name of pccZone
+	 */
+	public ArrayList<OvhPccStockProfile> location_pccZone_stock_pcc_GET(String pccZone) throws IOException {
+		String qPath = "/dedicatedCloud/location/{pccZone}/stock/pcc";
+		StringBuilder sb = path(qPath, pccZone);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t6);
+	}
+	private static TypeReference<ArrayList<OvhPccStockProfile>> t6 = new TypeReference<ArrayList<OvhPccStockProfile>>() {};
+
+	/**
+	 * Available zpool stock
+	 *
+	 * REST: GET /dedicatedCloud/location/{pccZone}/stock/zpool
+	 * @param pccZone [required] Name of pccZone
+	 */
+	public ArrayList<OvhZpoolStockProfile> location_pccZone_stock_zpool_GET(String pccZone) throws IOException {
+		String qPath = "/dedicatedCloud/location/{pccZone}/stock/zpool";
+		StringBuilder sb = path(qPath, pccZone);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t7);
+	}
+	private static TypeReference<ArrayList<OvhZpoolStockProfile>> t7 = new TypeReference<ArrayList<OvhZpoolStockProfile>>() {};
+
+	/**
+	 * Available host stock
+	 *
+	 * REST: GET /dedicatedCloud/location/{pccZone}/stock/host
+	 * @param pccZone [required] Name of pccZone
+	 */
+	public ArrayList<OvhHostStockProfile> location_pccZone_stock_host_GET(String pccZone) throws IOException {
+		String qPath = "/dedicatedCloud/location/{pccZone}/stock/host";
+		StringBuilder sb = path(qPath, pccZone);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t8);
+	}
+	private static TypeReference<ArrayList<OvhHostStockProfile>> t8 = new TypeReference<ArrayList<OvhHostStockProfile>>() {};
 
 	/**
 	 * List of commercial Ranges available in a Dedicated Cloud
