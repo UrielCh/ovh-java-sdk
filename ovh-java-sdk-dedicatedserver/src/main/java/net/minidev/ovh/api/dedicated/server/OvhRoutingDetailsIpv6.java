@@ -9,7 +9,7 @@ public class OvhRoutingDetailsIpv6 {
 	 *
 	 * canBeNull
 	 */
-	public Object ip;
+	public String ip;
 
 	/**
 	 * Server gateway
@@ -23,5 +23,5 @@ public class OvhRoutingDetailsIpv6 {
 	 *
 	 * canBeNull
 	 */
-	public Object network;
+	public String network;
 }
