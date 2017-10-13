@@ -32,8 +32,10 @@ import net.minidev.ovh.api.auth.OvhCredential;
 import net.minidev.ovh.api.auth.OvhMethodEnum;
 
 public class ApiOvhCore {
+	private String[] DEFAULT_ACCESS_RULES = new String[] { "DELETE /*", "GET /*", "POST /*", "PUT /*" };
 	// shared map
-	TreeMap<String, TreeMap<String, OphApiHandler>> mtdHandler;
+	private TreeMap<String, TreeMap<String, OphApiHandler>> mtdHandler;
+	private String[] accessRules = DEFAULT_ACCESS_RULES;
 
 	/**
 	 * register and handlet linked to a method
@@ -92,9 +94,16 @@ public class ApiOvhCore {
 	 */
 	private Long timeOffset;
 
-	public static void main(String[] args) throws Exception {
-		ApiOvhCore api = new ApiOvhCore();
-		api.requestToken(null);
+	/**
+	 * Overwrite Default accessRules (DELETE /*, GET /*, POST /*, PUT /*)
+	 * If called with no parameter the Default Rules will be used. 
+	 * @param accessRules
+	 */
+	public void setAccessRules(String... accessRules) {
+		if (accessRules == null)
+			this.accessRules = DEFAULT_ACCESS_RULES;
+		else
+			this.accessRules = accessRules;
 	}
 
 	/**
@@ -119,6 +128,18 @@ public class ApiOvhCore {
 	 */
 	public ApiOvhCore(String nic, String password) {
 		this();
+		this.nic = nic;
+		this.password = password;
+	}
+
+	/**
+	 * Connect to OVH using nic/password
+	 * 
+	 * @param nic
+	 * @param password
+	 */
+	public ApiOvhCore(ApiOvhConfig config, String nic, String password) {
+		this(config);
 		this.nic = nic;
 		this.password = password;
 	}
@@ -172,6 +193,11 @@ public class ApiOvhCore {
 			cache.put(ac, core);
 		}
 		return core;
+	}
+
+	public void dumpCertif() {
+		System.out.println("Nic:" + this.getNic());
+		System.out.println("ConsumerKey:" + this.getConsumerKey());
 	}
 
 	private HttpURLConnection getRequest(String method, URL url) throws IOException {
@@ -269,18 +295,17 @@ public class ApiOvhCore {
 				consumerKey = oldCK;
 				return true;
 			}
-			// TODO remove dummy redirection
-			OvhCredential token = requestToken("http://localhost/callback");
+			OvhCredential token = requestToken(null);
 			log.info("validationUrl Url:{}", token.validationUrl);
 
 			Document doc = Jsoup.connect(token.validationUrl).get();
 			String html = doc.toString();
 			if (html.contains("Too much requests"))
 				return false;
-
+			// <input type="hidden" name="sT" id="sT" value="XXXXX">
 			Element st = doc.getElementById("sT");
 			FormElement form = null;
-
+			// get Parent Form
 			for (Element elm : st.parents()) {
 				// "form".equalsIgnoreCase(elm.tagName())
 				if (elm instanceof FormElement) {
@@ -291,6 +316,7 @@ public class ApiOvhCore {
 			Elements inputs = form.select("input");
 			Connection validForm = Jsoup.connect(token.validationUrl);
 			validForm.followRedirects(false);
+			// fill user and password field
 			for (Element e : inputs) {
 				String value = e.attr("value");
 				String type = e.attr("type");
@@ -300,15 +326,21 @@ public class ApiOvhCore {
 					value = password;
 				validForm.data(e.attr("name"), value);
 			}
+			// set Expiration Date
 			validForm.data("duration", Integer.toString(timeInSec));
 			Document doc2 = validForm.post();
 			Elements p = doc2.select("p");
-			if ("The document has moved here.".equals(p.text())) {
+			String pText = p.text();
+			if ("The document has moved here.".equals(pText)) {
 				consumerKey = token.consumerKey;
 				config.setConsumerKey(nic, consumerKey);
 				return true;
 			}
-
+			if ("Your token is now valid, you can use it in your application".equals(pText)) {
+				consumerKey = token.consumerKey;
+				config.setConsumerKey(nic, consumerKey);
+				return true;
+			}
 			String error = doc2.select("div.error").text();
 			if (error != null && error.length() > 0)
 				log.error("Login Error:{}", error);
@@ -320,19 +352,28 @@ public class ApiOvhCore {
 
 	/**
 	 * Request for a new Token with full access
+	 * @param redirection
+	 * @param rules
 	 * @return
-	 * @throws IOException
 	 */
 	public OvhCredential requestToken(String redirection) throws IOException {
-		OvhMethodEnum[] ms = OvhMethodEnum.values();
-		OvhAccessRule[] rules = new OvhAccessRule[ms.length];
-		for (int i = 0; i < ms.length; i++) {
-			rules[i] = new OvhAccessRule();
-			rules[i].method = ms[i];
-			rules[i].path = "/*";
+		OvhAccessRule[] accessRules = new OvhAccessRule[this.accessRules.length];
+
+		for (int i = 0; i < this.accessRules.length; i++) {
+			String rule = this.accessRules[i];
+			int p = rule.indexOf(" ");
+			if (p == -1)
+				throw new IOException("Invalid rule " + rule);
+			String mtd = rule.substring(0, p);
+			String path = rule.substring(p + 1);
+			accessRules[i] = new OvhAccessRule();
+			// GET POST PUT DELETE
+			accessRules[i].method = OvhMethodEnum.valueOf(mtd.toUpperCase());
+			// /*
+			accessRules[i].path = path;
 		}
 		ApiOvhAuth auth = new ApiOvhAuth(this);
-		return auth.credential_POST(rules, redirection);
+		return auth.credential_POST(accessRules, redirection);
 	}
 
 	/**
@@ -448,11 +489,14 @@ public class ApiOvhCore {
 						continue;
 					}
 				}
-				// 
+				//
 				if (err.isErrorCode(OvhErrorMessage.QUERY_TIME_OUT) && failure < 5) {
 					failure++;
 					continue;
 				} // NOT_CREDENTIAL
+				if (err.isErrorCode(OvhErrorMessage.NOT_GRANTED_CALL)) {
+					throw new OvhException(method, query, err);
+				}
 				throw new OvhException(method, query, err);
 			}
 			break;

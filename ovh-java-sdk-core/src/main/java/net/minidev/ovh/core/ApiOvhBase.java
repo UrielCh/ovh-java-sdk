@@ -6,7 +6,14 @@ import java.util.Date;
 import java.util.HashMap;
 
 import com.fasterxml.jackson.core.type.TypeReference;
-
+/**
+ * API Call Helper
+ * 
+ * Those common function make OVH api call more readable.
+ * 
+ * @author uriel
+ *
+ */
 public abstract class ApiOvhBase {
 	// private final static Logger log = LoggerFactory.getLogger(ApiOvhBase.class);
 
@@ -80,6 +87,9 @@ public abstract class ApiOvhBase {
 		o.put(key, value);
 	}
 
+	/**
+	 * @return current ovh nickhandle
+	 */
 	public String getNic() {
 		return core.getNic();
 	}

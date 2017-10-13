@@ -30,6 +30,13 @@ public class ApiOvhUtils {
 		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 	}
 
+	/**
+	 * Convert JSON String to a POJO java
+	 * @param in
+	 * @param mapTo
+	 * @return
+	 * @throws IOException
+	 */
 	public static <T> T convertTo(String in, TypeReference<T> mapTo) throws IOException {
 		try {
 			return mapper.readValue(in, mapTo);
@@ -39,6 +46,13 @@ public class ApiOvhUtils {
 		}
 	}
 
+	/**
+	 * Convert JSON String to a POJO java
+	 * @param in
+	 * @param mapTo
+	 * @return
+	 * @throws IOException
+	 */
 	public static <T> T convertTo(String in, Class<T> mapTo) throws IOException {
 		try {
 			return mapper.readValue(in, mapTo);
@@ -48,6 +62,11 @@ public class ApiOvhUtils {
 		}
 	}
 
+	/**
+	 * Convert Object to JSON String
+	 * @param body
+	 * @return
+	 */
 	public static String objectJsonBody(Object body) {
 		if (body instanceof String)
 			return (String) body;
@@ -60,6 +79,13 @@ public class ApiOvhUtils {
 		return txt;
 	}
 
+	/**
+	 * Create a new OVH Application using https://eu.api.ovh.com/createApp/
+	 * Outout the Application Key and Application Secret in std-out
+	 * @param nic
+	 * @param password
+	 * @throws IOException
+	 */
 	public void createApplication(String nic, String password) throws IOException {
 		String url = "https://eu.api.ovh.com/createApp/";
 		Document doc = Jsoup.connect(url)
@@ -84,13 +110,21 @@ public class ApiOvhUtils {
 		log.warn("Key:{} Secret:{}", Key, Secret);
 	}
 
+	/**
+	 * Sleep helper that catch exception
+	 * @param ms
+	 */
 	public static void sleep(long ms) {
 		try {
 			Thread.sleep(ms);
 		} catch (Exception e) {
 		}
 	}
-
+	
+	/**
+	 * MultiThread safe Digester
+	 * @author uriel
+	 */
 	static class LocalMessageDigest extends ThreadLocal<MessageDigest> {
 		String algo;
 
@@ -116,8 +150,16 @@ public class ApiOvhUtils {
 		return encodeHex(digest);
 	}
 
+	/**
+	 * Hexa chars used ib Hexa encoding
+	 */
 	static char[] hexa = "0123456789abcdef".toCharArray();
 
+	/**
+	 * Encode bytes[] to lowercase hea string
+	 * @param bytes
+	 * @return
+	 */
 	public static String encodeHex(byte[] bytes) {
 		char[] result = new char[bytes.length * 2];
 		for (int i = 0; i < bytes.length; i++) {

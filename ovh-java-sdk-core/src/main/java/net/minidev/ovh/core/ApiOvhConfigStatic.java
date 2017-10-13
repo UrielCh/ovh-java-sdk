@@ -1,16 +1,27 @@
 package net.minidev.ovh.core;
 
 import java.io.IOException;
-
+/**
+ * Handcrafted Ovh API configuration.
+ * 
+ * @author uriel
+ *
+ */
 public class ApiOvhConfigStatic extends ApiOvhConfig {
 	String endPoint;
 	String applicationKey;
 	String appSecret;
 	String consumerKey;
-
+	/**
+	 * 
+	 * @param endPoint see {@link OvhEntryPoint}
+	 * @param applicationKey
+	 * @param appSecret
+	 * @param consumerKey
+	 */
 	public ApiOvhConfigStatic(String endPoint, String applicationKey, String appSecret, String consumerKey) {
-		if (consumerKey == null)
-			throw new NullPointerException("consumerKey can not be null");
+		//if (consumerKey == null)
+		//	throw new NullPointerException("consumerKey can not be null");
 		if (applicationKey == null)
 			throw new NullPointerException("applicationKey can not be null");
 		if (appSecret == null)

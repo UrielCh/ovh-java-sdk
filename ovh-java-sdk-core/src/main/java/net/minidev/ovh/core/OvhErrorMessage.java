@@ -6,6 +6,7 @@ public class OvhErrorMessage {
 	public static String INVALID_CREDENTIAL = "INVALID_CREDENTIAL";
 	public static String NOT_CREDENTIAL = "NOT_CREDENTIAL";
 	public static String QUERY_TIME_OUT = "QUERY_TIME_OUT";
+	public static String NOT_GRANTED_CALL = "NOT_GRANTED_CALL";
 
 	/**
 	 * Ovh error code

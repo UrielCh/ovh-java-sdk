@@ -9,7 +9,7 @@ public class OvhException extends IOException {
 	private final String url;
 
 	public OvhException(String method, String url, OvhErrorMessage err) {
-		super(err.message);
+		super(method + " " + url + " " + err.message);
 		this.method = method;
 		this.url = url;
 		this.err = err;
@@ -26,4 +26,5 @@ public class OvhException extends IOException {
 	public String getUrl() {
 		return url;
 	}
+
 }
