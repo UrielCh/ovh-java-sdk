@@ -1132,6 +1132,18 @@ public class ApiOvhCloud extends ApiOvhBase {
 	}
 
 	/**
+	 * Do not expire the project, and retain it. You will have to pay for the resources you will use after using this call
+	 *
+	 * REST: POST /cloud/project/{serviceName}/retain
+	 * @param serviceName [required] The project id
+	 */
+	public void project_serviceName_retain_POST(String serviceName) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/retain";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "POST", sb.toString(), null);
+	}
+
+	/**
 	 * Get volumes
 	 *
 	 * REST: GET /cloud/project/{serviceName}/volume

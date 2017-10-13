@@ -84,6 +84,13 @@ public class OvhAccount {
 	public Boolean hiddenFromGAL;
 
 	/**
+	 * Litigation hold period in days (0 means unlimited). This setting covers all items in the mailbox.
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long litigationPeriod;
+
+	/**
 	 * Account maximum size
 	 *
 	 * canBeNull && readOnly
@@ -175,7 +182,7 @@ public class OvhAccount {
 	public Boolean deleteOutlookAtExpiration;
 
 	/**
-	 * Pending tasks for this account
+	 * Pending task for this account
 	 *
 	 * canBeNull && readOnly
 	 */
@@ -201,6 +208,13 @@ public class OvhAccount {
 	 * canBeNull && readOnly
 	 */
 	public OvhRenewPeriodEnum renewPeriod;
+
+	/**
+	 * Litigation hold feature enabled on this mailbox
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean litigation;
 
 	/**
 	 * Email domain

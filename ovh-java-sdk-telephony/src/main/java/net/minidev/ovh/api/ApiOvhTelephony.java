@@ -159,6 +159,9 @@ import net.minidev.ovh.api.telephony.OvhTokenExpirationEnum;
 import net.minidev.ovh.api.telephony.OvhTones;
 import net.minidev.ovh.api.telephony.OvhTonesTypeEnum;
 import net.minidev.ovh.api.telephony.OvhTrafficExtract;
+import net.minidev.ovh.api.telephony.OvhTrunk;
+import net.minidev.ovh.api.telephony.OvhTrunkExternalDisplayedNumber;
+import net.minidev.ovh.api.telephony.OvhTrunkExternalDisplayedNumberValidation;
 import net.minidev.ovh.api.telephony.OvhTypeEnum;
 import net.minidev.ovh.api.telephony.OvhVoiceConsumption;
 import net.minidev.ovh.api.telephony.OvhVoiceConsumptionDestinationTypeEnum;
@@ -4912,6 +4915,110 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 */
 	public ArrayList<String> billingAccount_miniPabx_GET(String billingAccount) throws IOException {
 		String qPath = "/telephony/{billingAccount}/miniPabx";
+		StringBuilder sb = path(qPath, billingAccount);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /telephony/{billingAccount}/trunk/{serviceName}
+	 * @param billingAccount [required] The name of your billingAccount
+	 * @param serviceName [required] Name of the service
+	 */
+	public OvhTrunk billingAccount_trunk_serviceName_GET(String billingAccount, String serviceName) throws IOException {
+		String qPath = "/telephony/{billingAccount}/trunk/{serviceName}";
+		StringBuilder sb = path(qPath, billingAccount, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhTrunk.class);
+	}
+
+	/**
+	 * External displayed number linked to this trunk
+	 *
+	 * REST: GET /telephony/{billingAccount}/trunk/{serviceName}/externalDisplayedNumber
+	 * @param billingAccount [required] The name of your billingAccount
+	 * @param serviceName [required] Name of the service
+	 */
+	public ArrayList<String> billingAccount_trunk_serviceName_externalDisplayedNumber_GET(String billingAccount, String serviceName) throws IOException {
+		String qPath = "/telephony/{billingAccount}/trunk/{serviceName}/externalDisplayedNumber";
+		StringBuilder sb = path(qPath, billingAccount, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * External displayed number creation for a given trunk
+	 *
+	 * REST: POST /telephony/{billingAccount}/trunk/{serviceName}/externalDisplayedNumber
+	 * @param autoValidation [required] External displayed number auto-validation. Only available for partner. Must be owner of the number.
+	 * @param number [required] External displayed number to create, in international format
+	 * @param billingAccount [required] The name of your billingAccount
+	 * @param serviceName [required] Name of the service
+	 */
+	public OvhTrunkExternalDisplayedNumber billingAccount_trunk_serviceName_externalDisplayedNumber_POST(String billingAccount, String serviceName, Boolean autoValidation, String number) throws IOException {
+		String qPath = "/telephony/{billingAccount}/trunk/{serviceName}/externalDisplayedNumber";
+		StringBuilder sb = path(qPath, billingAccount, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "autoValidation", autoValidation);
+		addBody(o, "number", number);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTrunkExternalDisplayedNumber.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /telephony/{billingAccount}/trunk/{serviceName}/externalDisplayedNumber/{number}
+	 * @param billingAccount [required] The name of your billingAccount
+	 * @param serviceName [required] Name of the service
+	 * @param number [required] External displayed number linked to a trunk
+	 */
+	public OvhTrunkExternalDisplayedNumber billingAccount_trunk_serviceName_externalDisplayedNumber_number_GET(String billingAccount, String serviceName, String number) throws IOException {
+		String qPath = "/telephony/{billingAccount}/trunk/{serviceName}/externalDisplayedNumber/{number}";
+		StringBuilder sb = path(qPath, billingAccount, serviceName, number);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhTrunkExternalDisplayedNumber.class);
+	}
+
+	/**
+	 * Delete an external displayed number for a given trunk
+	 *
+	 * REST: DELETE /telephony/{billingAccount}/trunk/{serviceName}/externalDisplayedNumber/{number}
+	 * @param billingAccount [required] The name of your billingAccount
+	 * @param serviceName [required] Name of the service
+	 * @param number [required] External displayed number linked to a trunk
+	 */
+	public void billingAccount_trunk_serviceName_externalDisplayedNumber_number_DELETE(String billingAccount, String serviceName, String number) throws IOException {
+		String qPath = "/telephony/{billingAccount}/trunk/{serviceName}/externalDisplayedNumber/{number}";
+		StringBuilder sb = path(qPath, billingAccount, serviceName, number);
+		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
+	 * Generate a phone call for validation. Returned validation code should be typed when asked.
+	 *
+	 * REST: POST /telephony/{billingAccount}/trunk/{serviceName}/externalDisplayedNumber/{number}/validate
+	 * @param billingAccount [required] The name of your billingAccount
+	 * @param serviceName [required] Name of the service
+	 * @param number [required] External displayed number linked to a trunk
+	 */
+	public OvhTrunkExternalDisplayedNumberValidation billingAccount_trunk_serviceName_externalDisplayedNumber_number_validate_POST(String billingAccount, String serviceName, String number) throws IOException {
+		String qPath = "/telephony/{billingAccount}/trunk/{serviceName}/externalDisplayedNumber/{number}/validate";
+		StringBuilder sb = path(qPath, billingAccount, serviceName, number);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTrunkExternalDisplayedNumberValidation.class);
+	}
+
+	/**
+	 * Trunk associated with this billing account
+	 *
+	 * REST: GET /telephony/{billingAccount}/trunk
+	 * @param billingAccount [required] The name of your billingAccount
+	 */
+	public ArrayList<String> billingAccount_trunk_GET(String billingAccount) throws IOException {
+		String qPath = "/telephony/{billingAccount}/trunk";
 		StringBuilder sb = path(qPath, billingAccount);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);

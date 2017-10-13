@@ -6,6 +6,7 @@ package net.minidev.ovh.api.email.exchange;
 public enum OvhTaskFunctionEnum {
 	activateSharepoint("activateSharepoint"),
 	addAccount("addAccount"),
+	addAccountArchive("addAccountArchive"),
 	addActiveSyncMailNotification("addActiveSyncMailNotification"),
 	addAlias("addAlias"),
 	addDistributionGroup("addDistributionGroup"),
@@ -36,6 +37,7 @@ public enum OvhTaskFunctionEnum {
 	cloneTemplateExchangePrivate("cloneTemplateExchangePrivate"),
 	configureExchangeCustomer("configureExchangeCustomer"),
 	deleteAccount("deleteAccount"),
+	deleteAccountArchive("deleteAccountArchive"),
 	deleteActiveSyncMailNotification("deleteActiveSyncMailNotification"),
 	deleteAlias("deleteAlias"),
 	deleteDistributionGroup("deleteDistributionGroup"),
@@ -81,6 +83,7 @@ public enum OvhTaskFunctionEnum {
 	reOpenPrivateAccount("reOpenPrivateAccount"),
 	reOpenPrivateVm("reOpenPrivateVm"),
 	setAccount("setAccount"),
+	setAccountArchive("setAccountArchive"),
 	setAlias("setAlias"),
 	setDistributionGroup("setDistributionGroup"),
 	setDns("setDns"),

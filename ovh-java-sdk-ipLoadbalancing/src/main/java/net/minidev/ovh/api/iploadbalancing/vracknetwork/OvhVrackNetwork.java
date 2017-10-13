@@ -26,7 +26,7 @@ public class OvhVrackNetwork {
 	public String natIp;
 
 	/**
-	 * VLAN of the private network in the vRack. Null if the private network is not in a VLAN
+	 * VLAN of the private network in the vRack. 0 if the private network is not in a VLAN
 	 *
 	 * canBeNull && readOnly
 	 */

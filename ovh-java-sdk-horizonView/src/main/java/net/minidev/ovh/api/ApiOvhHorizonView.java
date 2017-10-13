@@ -56,6 +56,19 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	}
 
 	/**
+	 * Disable the View Storage Accelerator option on VCenter
+	 *
+	 * REST: POST /horizonView/{serviceName}/dedicatedHorizon/disableStorageAccelerator
+	 * @param serviceName [required] Domain of the service
+	 */
+	public OvhTask serviceName_dedicatedHorizon_disableStorageAccelerator_POST(String serviceName) throws IOException {
+		String qPath = "/horizonView/{serviceName}/dedicatedHorizon/disableStorageAccelerator";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /horizonView/{serviceName}/dedicatedHorizon
@@ -220,6 +233,19 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 		String qPath = "/horizonView/{serviceName}/dedicatedHorizon/task/{taskId}";
 		StringBuilder sb = path(qPath, serviceName, taskId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Enable the View Storage Accelerator option on VCenter
+	 *
+	 * REST: POST /horizonView/{serviceName}/dedicatedHorizon/enableStorageAccelerator
+	 * @param serviceName [required] Domain of the service
+	 */
+	public OvhTask serviceName_dedicatedHorizon_enableStorageAccelerator_POST(String serviceName) throws IOException {
+		String qPath = "/horizonView/{serviceName}/dedicatedHorizon/enableStorageAccelerator";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -456,6 +482,27 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "domain", domain);
 		addBody(o, "domainControllerIp", domainControllerIp);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Add a child domain for this domain.
+	 *
+	 * REST: POST /horizonView/{serviceName}/domainTrust/{domainTrustId}/addChildDomain
+	 * @param activeDirectoryIP [required] IP of your Active Directory
+	 * @param domain [required] Name of your private domain
+	 * @param passphrase [required] Shared passphrase to create the Active Directory trust
+	 * @param serviceName [required] Domain of the service
+	 * @param domainTrustId [required] Domain trust id
+	 */
+	public OvhTask serviceName_domainTrust_domainTrustId_addChildDomain_POST(String serviceName, Long domainTrustId, String activeDirectoryIP, String domain, String passphrase) throws IOException {
+		String qPath = "/horizonView/{serviceName}/domainTrust/{domainTrustId}/addChildDomain";
+		StringBuilder sb = path(qPath, serviceName, domainTrustId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "activeDirectoryIP", activeDirectoryIP);
+		addBody(o, "domain", domain);
+		addBody(o, "passphrase", passphrase);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}

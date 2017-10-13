@@ -4,7 +4,9 @@ package net.minidev.ovh.api.telephony;
  * Voice to use for your text to speech
  */
 public enum OvhOvhPabxTtsVoiceEnum {
+	Bruce("Bruce"),
 	Helene("Helene"),
+	Jenny("Jenny"),
 	Loic("Loic");
 
 	final String value;

@@ -4,8 +4,8 @@ package net.minidev.ovh.api.dedicatedcloud.backup;
  * All the type of a restore point
  */
 public enum OvhBackupTypeEnum {
-	Full("Full"),
-	Incremental("Incremental");
+	full("full"),
+	incremental("incremental");
 
 	final String value;
 

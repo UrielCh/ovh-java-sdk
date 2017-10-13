@@ -63,13 +63,6 @@ public class OvhBackendServer {
 	public Boolean ssl;
 
 	/**
-	 * Server id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long serverId;
-
-	/**
 	 * Enforce use of the PROXY protocol version over any connection established to this server (disabled if null)
 	 *
 	 * canBeNull && readOnly

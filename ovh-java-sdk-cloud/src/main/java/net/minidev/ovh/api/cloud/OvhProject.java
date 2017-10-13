@@ -36,6 +36,13 @@ public class OvhProject {
 	public String description;
 
 	/**
+	 * Expiration date of your project. After this date, your project will be deleted
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date expiration;
+
+	/**
 	 * Project unleashed
 	 *
 	 * canBeNull && readOnly

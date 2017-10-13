@@ -5,6 +5,13 @@ package net.minidev.ovh.api.horizonview;
  */
 public class OvhDedicatedHorizon {
 	/**
+	 * View Storage Accelerator for Vcenter
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean storageAccelerator;
+
+	/**
 	 * The location of your datacenter
 	 *
 	 * canBeNull && readOnly

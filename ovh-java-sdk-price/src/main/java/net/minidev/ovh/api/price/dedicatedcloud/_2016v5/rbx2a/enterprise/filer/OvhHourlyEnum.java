@@ -20,8 +20,8 @@ public enum OvhHourlyEnum {
 	nfs_100_GB("nfs-100-GB"),
 	@JsonProperty("nfs-1200-GB")
 	nfs_1200_GB("nfs-1200-GB"),
-	@JsonProperty("nfs-13200g-GB")
-	nfs_13200g_GB("nfs-13200g-GB"),
+	@JsonProperty("nfs-13200-GB")
+	nfs_13200_GB("nfs-13200-GB"),
 	@JsonProperty("nfs-1600-GB")
 	nfs_1600_GB("nfs-1600-GB"),
 	@JsonProperty("nfs-2400-GB")

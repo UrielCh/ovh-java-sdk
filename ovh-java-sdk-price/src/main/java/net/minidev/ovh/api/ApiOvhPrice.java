@@ -18,6 +18,266 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
 	 *
+	 * REST: GET /price/dedicatedCloud/2018v2/bhs1a/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v2_bhs1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v2.bhs1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v2/bhs1a/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v2/bhs1a/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v2_bhs1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v2.bhs1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v2/bhs1a/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v2/bhs1a/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v2_bhs1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v2.bhs1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v2/bhs1a/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v2/bhs1a/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v2_bhs1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v2.bhs1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v2/bhs1a/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v2/rbx2b/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v2_rbx2b_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v2.rbx2b.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v2/rbx2b/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v2/rbx2b/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v2_rbx2b_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v2.rbx2b.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v2/rbx2b/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v2/rbx2b/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v2_rbx2b_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v2.rbx2b.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v2/rbx2b/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v2/rbx2b/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v2_rbx2b_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v2.rbx2b.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v2/rbx2b/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v2/waw1c/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v2_waw1c_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v2.waw1c.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v2/waw1c/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v2/waw1c/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v2_waw1c_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v2.waw1c.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v2/waw1c/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v2/waw1c/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v2_waw1c_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v2.waw1c.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v2/waw1c/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v2/waw1c/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v2_waw1c_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v2.waw1c.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v2/waw1c/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v2/sbg1a/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v2_sbg1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v2.sbg1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v2/sbg1a/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v2/sbg1a/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v2_sbg1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v2.sbg1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v2/sbg1a/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v2/sbg1a/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v2_sbg1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v2.sbg1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v2/sbg1a/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v2/sbg1a/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v2_sbg1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v2.sbg1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v2/sbg1a/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v2/rbx2a/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v2_rbx2a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v2.rbx2a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v2/rbx2a/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v2/rbx2a/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v2_rbx2a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v2.rbx2a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v2/rbx2a/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v2/rbx2a/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v2_rbx2a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v2.rbx2a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v2/rbx2a/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v2/rbx2a/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v2_rbx2a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v2.rbx2a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v2/rbx2a/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v6/bhs1a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -426,6 +686,266 @@ public class ApiOvhPrice extends ApiOvhBase {
 	 */
 	public OvhPrice dedicatedCloud_2016v6_rbx2a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v6.rbx2a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
 		String qPath = "/price/dedicatedCloud/2016v6/rbx2a/enterprise/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v5/bhs1a/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v5_bhs1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v5.bhs1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v5/bhs1a/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v5/bhs1a/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v5_bhs1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v5.bhs1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v5/bhs1a/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v5/bhs1a/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v5_bhs1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v5.bhs1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v5/bhs1a/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v5/bhs1a/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v5_bhs1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v5.bhs1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v5/bhs1a/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v5/rbx2b/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v5_rbx2b_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v5.rbx2b.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v5/rbx2b/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v5/rbx2b/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v5_rbx2b_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v5.rbx2b.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v5/rbx2b/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v5/rbx2b/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v5_rbx2b_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v5.rbx2b.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v5/rbx2b/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v5/rbx2b/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v5_rbx2b_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v5.rbx2b.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v5/rbx2b/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v5/waw1c/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v5_waw1c_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v5.waw1c.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v5/waw1c/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v5/waw1c/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v5_waw1c_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v5.waw1c.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v5/waw1c/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v5/waw1c/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v5_waw1c_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v5.waw1c.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v5/waw1c/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v5/waw1c/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v5_waw1c_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v5.waw1c.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v5/waw1c/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v5/sbg1a/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v5_sbg1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v5.sbg1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v5/sbg1a/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v5/sbg1a/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v5_sbg1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v5.sbg1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v5/sbg1a/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v5/sbg1a/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v5_sbg1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v5.sbg1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v5/sbg1a/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v5/sbg1a/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v5_sbg1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v5.sbg1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v5/sbg1a/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v5/rbx2a/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v5_rbx2a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v5.rbx2a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v5/rbx2a/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v5/rbx2a/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v5_rbx2a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v5.rbx2a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v5/rbx2a/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v5/rbx2a/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v5_rbx2a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v5.rbx2a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v5/rbx2a/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v5/rbx2a/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v5_rbx2a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v5.rbx2a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v5/rbx2a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -850,11 +1370,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/bhs1a/infrastructure/filer/hourly/{filerProfile}
+	 * REST: GET /price/dedicatedCloud/2018v7/bhs1a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v1_bhs1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.bhs1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/bhs1a/infrastructure/filer/hourly/{filerProfile}";
+	public OvhPrice dedicatedCloud_2018v7_bhs1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v7.bhs1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v7/bhs1a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -863,11 +1383,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/bhs1a/infrastructure/filer/monthly/{filerProfile}
+	 * REST: GET /price/dedicatedCloud/2018v7/bhs1a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v1_bhs1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.bhs1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/bhs1a/infrastructure/filer/monthly/{filerProfile}";
+	public OvhPrice dedicatedCloud_2018v7_bhs1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v7.bhs1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v7/bhs1a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -876,11 +1396,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/bhs1a/infrastructure/host/hourly/{hostProfile}
+	 * REST: GET /price/dedicatedCloud/2018v7/bhs1a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v1_bhs1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.bhs1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/bhs1a/infrastructure/host/hourly/{hostProfile}";
+	public OvhPrice dedicatedCloud_2018v7_bhs1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v7.bhs1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v7/bhs1a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -889,11 +1409,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/bhs1a/infrastructure/host/monthly/{hostProfile}
+	 * REST: GET /price/dedicatedCloud/2018v7/bhs1a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v1_bhs1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.bhs1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/bhs1a/infrastructure/host/monthly/{hostProfile}";
+	public OvhPrice dedicatedCloud_2018v7_bhs1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v7.bhs1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v7/bhs1a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -902,11 +1422,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/bhs1a/enterprise/filer/hourly/{filerProfile}
+	 * REST: GET /price/dedicatedCloud/2018v7/rbx2b/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v1_bhs1a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.bhs1a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/bhs1a/enterprise/filer/hourly/{filerProfile}";
+	public OvhPrice dedicatedCloud_2018v7_rbx2b_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v7.rbx2b.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v7/rbx2b/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -915,11 +1435,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/bhs1a/enterprise/filer/monthly/{filerProfile}
+	 * REST: GET /price/dedicatedCloud/2018v7/rbx2b/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v1_bhs1a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.bhs1a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/bhs1a/enterprise/filer/monthly/{filerProfile}";
+	public OvhPrice dedicatedCloud_2018v7_rbx2b_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v7.rbx2b.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v7/rbx2b/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -928,11 +1448,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/bhs1a/enterprise/host/hourly/{hostProfile}
+	 * REST: GET /price/dedicatedCloud/2018v7/rbx2b/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v1_bhs1a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.bhs1a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/bhs1a/enterprise/host/hourly/{hostProfile}";
+	public OvhPrice dedicatedCloud_2018v7_rbx2b_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v7.rbx2b.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v7/rbx2b/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -941,11 +1461,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/bhs1a/enterprise/host/monthly/{hostProfile}
+	 * REST: GET /price/dedicatedCloud/2018v7/rbx2b/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v1_bhs1a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.bhs1a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/bhs1a/enterprise/host/monthly/{hostProfile}";
+	public OvhPrice dedicatedCloud_2018v7_rbx2b_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v7.rbx2b.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v7/rbx2b/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -954,11 +1474,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/rbx2b/infrastructure/filer/hourly/{filerProfile}
+	 * REST: GET /price/dedicatedCloud/2018v7/waw1c/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v1_rbx2b_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2b.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/rbx2b/infrastructure/filer/hourly/{filerProfile}";
+	public OvhPrice dedicatedCloud_2018v7_waw1c_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v7.waw1c.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v7/waw1c/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -967,11 +1487,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/rbx2b/infrastructure/filer/monthly/{filerProfile}
+	 * REST: GET /price/dedicatedCloud/2018v7/waw1c/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v1_rbx2b_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2b.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/rbx2b/infrastructure/filer/monthly/{filerProfile}";
+	public OvhPrice dedicatedCloud_2018v7_waw1c_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v7.waw1c.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v7/waw1c/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -980,11 +1500,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/rbx2b/infrastructure/host/hourly/{hostProfile}
+	 * REST: GET /price/dedicatedCloud/2018v7/waw1c/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v1_rbx2b_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2b.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/rbx2b/infrastructure/host/hourly/{hostProfile}";
+	public OvhPrice dedicatedCloud_2018v7_waw1c_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v7.waw1c.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v7/waw1c/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -993,11 +1513,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/rbx2b/infrastructure/host/monthly/{hostProfile}
+	 * REST: GET /price/dedicatedCloud/2018v7/waw1c/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v1_rbx2b_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2b.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/rbx2b/infrastructure/host/monthly/{hostProfile}";
+	public OvhPrice dedicatedCloud_2018v7_waw1c_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v7.waw1c.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v7/waw1c/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -1006,11 +1526,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/rbx2b/enterprise/filer/hourly/{filerProfile}
+	 * REST: GET /price/dedicatedCloud/2018v7/sbg1a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v1_rbx2b_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2b.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/rbx2b/enterprise/filer/hourly/{filerProfile}";
+	public OvhPrice dedicatedCloud_2018v7_sbg1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v7.sbg1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v7/sbg1a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -1019,11 +1539,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/rbx2b/enterprise/filer/monthly/{filerProfile}
+	 * REST: GET /price/dedicatedCloud/2018v7/sbg1a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v1_rbx2b_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2b.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/rbx2b/enterprise/filer/monthly/{filerProfile}";
+	public OvhPrice dedicatedCloud_2018v7_sbg1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v7.sbg1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v7/sbg1a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -1032,11 +1552,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/rbx2b/enterprise/host/hourly/{hostProfile}
+	 * REST: GET /price/dedicatedCloud/2018v7/sbg1a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v1_rbx2b_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2b.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/rbx2b/enterprise/host/hourly/{hostProfile}";
+	public OvhPrice dedicatedCloud_2018v7_sbg1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v7.sbg1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v7/sbg1a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -1045,11 +1565,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/rbx2b/enterprise/host/monthly/{hostProfile}
+	 * REST: GET /price/dedicatedCloud/2018v7/sbg1a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v1_rbx2b_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2b.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/rbx2b/enterprise/host/monthly/{hostProfile}";
+	public OvhPrice dedicatedCloud_2018v7_sbg1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v7.sbg1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v7/sbg1a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -1058,11 +1578,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/sbg1a/infrastructure/filer/hourly/{filerProfile}
+	 * REST: GET /price/dedicatedCloud/2018v7/rbx2a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v1_sbg1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.sbg1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/sbg1a/infrastructure/filer/hourly/{filerProfile}";
+	public OvhPrice dedicatedCloud_2018v7_rbx2a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v7.rbx2a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v7/rbx2a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -1071,11 +1591,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/sbg1a/infrastructure/filer/monthly/{filerProfile}
+	 * REST: GET /price/dedicatedCloud/2018v7/rbx2a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v1_sbg1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.sbg1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/sbg1a/infrastructure/filer/monthly/{filerProfile}";
+	public OvhPrice dedicatedCloud_2018v7_rbx2a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v7.rbx2a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v7/rbx2a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -1084,11 +1604,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/sbg1a/infrastructure/host/hourly/{hostProfile}
+	 * REST: GET /price/dedicatedCloud/2018v7/rbx2a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v1_sbg1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.sbg1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/sbg1a/infrastructure/host/hourly/{hostProfile}";
+	public OvhPrice dedicatedCloud_2018v7_rbx2a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v7.rbx2a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v7/rbx2a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -1097,167 +1617,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/sbg1a/infrastructure/host/monthly/{hostProfile}
+	 * REST: GET /price/dedicatedCloud/2018v7/rbx2a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v1_sbg1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.sbg1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/sbg1a/infrastructure/host/monthly/{hostProfile}";
-		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPrice.class);
-	}
-
-	/**
-	 * Get price of dedicated Cloud hourly filer ressources
-	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/sbg1a/enterprise/filer/hourly/{filerProfile}
-	 * @param filerProfile [required] type of the hourly ressources you want to order
-	 */
-	public OvhPrice dedicatedCloud_2016v1_sbg1a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.sbg1a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/sbg1a/enterprise/filer/hourly/{filerProfile}";
-		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPrice.class);
-	}
-
-	/**
-	 * Get price of dedicated Cloud monthly filer ressources
-	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/sbg1a/enterprise/filer/monthly/{filerProfile}
-	 * @param filerProfile [required] type of the monthly ressources you want to order
-	 */
-	public OvhPrice dedicatedCloud_2016v1_sbg1a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.sbg1a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/sbg1a/enterprise/filer/monthly/{filerProfile}";
-		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPrice.class);
-	}
-
-	/**
-	 * Get price of dedicated Cloud hourly host ressources
-	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/sbg1a/enterprise/host/hourly/{hostProfile}
-	 * @param hostProfile [required] type of the hourly ressources you want to order
-	 */
-	public OvhPrice dedicatedCloud_2016v1_sbg1a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.sbg1a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/sbg1a/enterprise/host/hourly/{hostProfile}";
-		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPrice.class);
-	}
-
-	/**
-	 * Get price of dedicated Cloud monthly host ressources
-	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/sbg1a/enterprise/host/monthly/{hostProfile}
-	 * @param hostProfile [required] type of the monthly ressources you want to order
-	 */
-	public OvhPrice dedicatedCloud_2016v1_sbg1a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.sbg1a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/sbg1a/enterprise/host/monthly/{hostProfile}";
-		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPrice.class);
-	}
-
-	/**
-	 * Get price of dedicated Cloud hourly filer ressources
-	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/rbx2a/infrastructure/filer/hourly/{filerProfile}
-	 * @param filerProfile [required] type of the hourly ressources you want to order
-	 */
-	public OvhPrice dedicatedCloud_2016v1_rbx2a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/rbx2a/infrastructure/filer/hourly/{filerProfile}";
-		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPrice.class);
-	}
-
-	/**
-	 * Get price of dedicated Cloud monthly filer ressources
-	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/rbx2a/infrastructure/filer/monthly/{filerProfile}
-	 * @param filerProfile [required] type of the monthly ressources you want to order
-	 */
-	public OvhPrice dedicatedCloud_2016v1_rbx2a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/rbx2a/infrastructure/filer/monthly/{filerProfile}";
-		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPrice.class);
-	}
-
-	/**
-	 * Get price of dedicated Cloud hourly host ressources
-	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/rbx2a/infrastructure/host/hourly/{hostProfile}
-	 * @param hostProfile [required] type of the hourly ressources you want to order
-	 */
-	public OvhPrice dedicatedCloud_2016v1_rbx2a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/rbx2a/infrastructure/host/hourly/{hostProfile}";
-		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPrice.class);
-	}
-
-	/**
-	 * Get price of dedicated Cloud monthly host ressources
-	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/rbx2a/infrastructure/host/monthly/{hostProfile}
-	 * @param hostProfile [required] type of the monthly ressources you want to order
-	 */
-	public OvhPrice dedicatedCloud_2016v1_rbx2a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/rbx2a/infrastructure/host/monthly/{hostProfile}";
-		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPrice.class);
-	}
-
-	/**
-	 * Get price of dedicated Cloud hourly filer ressources
-	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/rbx2a/enterprise/filer/hourly/{filerProfile}
-	 * @param filerProfile [required] type of the hourly ressources you want to order
-	 */
-	public OvhPrice dedicatedCloud_2016v1_rbx2a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/rbx2a/enterprise/filer/hourly/{filerProfile}";
-		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPrice.class);
-	}
-
-	/**
-	 * Get price of dedicated Cloud monthly filer ressources
-	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/rbx2a/enterprise/filer/monthly/{filerProfile}
-	 * @param filerProfile [required] type of the monthly ressources you want to order
-	 */
-	public OvhPrice dedicatedCloud_2016v1_rbx2a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/rbx2a/enterprise/filer/monthly/{filerProfile}";
-		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPrice.class);
-	}
-
-	/**
-	 * Get price of dedicated Cloud hourly host ressources
-	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/rbx2a/enterprise/host/hourly/{hostProfile}
-	 * @param hostProfile [required] type of the hourly ressources you want to order
-	 */
-	public OvhPrice dedicatedCloud_2016v1_rbx2a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/rbx2a/enterprise/host/hourly/{hostProfile}";
-		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPrice.class);
-	}
-
-	/**
-	 * Get price of dedicated Cloud monthly host ressources
-	 *
-	 * REST: GET /price/dedicatedCloud/2016v1/rbx2a/enterprise/host/monthly/{hostProfile}
-	 * @param hostProfile [required] type of the monthly ressources you want to order
-	 */
-	public OvhPrice dedicatedCloud_2016v1_rbx2a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v1/rbx2a/enterprise/host/monthly/{hostProfile}";
+	public OvhPrice dedicatedCloud_2018v7_rbx2a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v7.rbx2a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v7/rbx2a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -2930,6 +3294,1358 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
 	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/bhs1a/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_bhs1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.bhs1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/bhs1a/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/bhs1a/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_bhs1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.bhs1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/bhs1a/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/bhs1a/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_bhs1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.bhs1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/bhs1a/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/bhs1a/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_bhs1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.bhs1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/bhs1a/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/bhs1a/enterprise/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_bhs1a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.bhs1a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/bhs1a/enterprise/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/bhs1a/enterprise/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_bhs1a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.bhs1a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/bhs1a/enterprise/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/bhs1a/enterprise/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_bhs1a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.bhs1a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/bhs1a/enterprise/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/bhs1a/enterprise/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_bhs1a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.bhs1a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/bhs1a/enterprise/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/rbx2b/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_rbx2b_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2b.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/rbx2b/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/rbx2b/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_rbx2b_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2b.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/rbx2b/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/rbx2b/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_rbx2b_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2b.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/rbx2b/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/rbx2b/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_rbx2b_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2b.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/rbx2b/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/rbx2b/enterprise/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_rbx2b_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2b.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/rbx2b/enterprise/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/rbx2b/enterprise/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_rbx2b_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2b.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/rbx2b/enterprise/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/rbx2b/enterprise/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_rbx2b_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2b.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/rbx2b/enterprise/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/rbx2b/enterprise/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_rbx2b_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2b.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/rbx2b/enterprise/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/sbg1a/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_sbg1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.sbg1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/sbg1a/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/sbg1a/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_sbg1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.sbg1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/sbg1a/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/sbg1a/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_sbg1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.sbg1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/sbg1a/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/sbg1a/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_sbg1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.sbg1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/sbg1a/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/sbg1a/enterprise/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_sbg1a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.sbg1a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/sbg1a/enterprise/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/sbg1a/enterprise/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_sbg1a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.sbg1a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/sbg1a/enterprise/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/sbg1a/enterprise/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_sbg1a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.sbg1a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/sbg1a/enterprise/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/sbg1a/enterprise/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_sbg1a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.sbg1a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/sbg1a/enterprise/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/rbx2a/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_rbx2a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/rbx2a/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/rbx2a/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_rbx2a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/rbx2a/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/rbx2a/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_rbx2a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/rbx2a/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/rbx2a/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_rbx2a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/rbx2a/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/rbx2a/enterprise/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_rbx2a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/rbx2a/enterprise/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/rbx2a/enterprise/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_rbx2a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/rbx2a/enterprise/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/rbx2a/enterprise/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_rbx2a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/rbx2a/enterprise/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v5/rbx2a/enterprise/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v5_rbx2a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v5/rbx2a/enterprise/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v1/bhs1a/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v1_bhs1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v1.bhs1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v1/bhs1a/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v1/bhs1a/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v1_bhs1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v1.bhs1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v1/bhs1a/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v1/bhs1a/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v1_bhs1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v1.bhs1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v1/bhs1a/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v1/bhs1a/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v1_bhs1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v1.bhs1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v1/bhs1a/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v1/rbx2b/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v1_rbx2b_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v1.rbx2b.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v1/rbx2b/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v1/rbx2b/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v1_rbx2b_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v1.rbx2b.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v1/rbx2b/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v1/rbx2b/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v1_rbx2b_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v1.rbx2b.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v1/rbx2b/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v1/rbx2b/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v1_rbx2b_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v1.rbx2b.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v1/rbx2b/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v1/waw1c/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v1_waw1c_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v1.waw1c.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v1/waw1c/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v1/waw1c/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v1_waw1c_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v1.waw1c.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v1/waw1c/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v1/waw1c/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v1_waw1c_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v1.waw1c.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v1/waw1c/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v1/waw1c/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v1_waw1c_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v1.waw1c.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v1/waw1c/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v1/sbg1a/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v1_sbg1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v1.sbg1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v1/sbg1a/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v1/sbg1a/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v1_sbg1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v1.sbg1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v1/sbg1a/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v1/sbg1a/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v1_sbg1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v1.sbg1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v1/sbg1a/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v1/sbg1a/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v1_sbg1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v1.sbg1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v1/sbg1a/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v1/rbx2a/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v1_rbx2a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v1.rbx2a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v1/rbx2a/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v1/rbx2a/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v1_rbx2a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v1.rbx2a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v1/rbx2a/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v1/rbx2a/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v1_rbx2a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v1.rbx2a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v1/rbx2a/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v1/rbx2a/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v1_rbx2a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v1.rbx2a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v1/rbx2a/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v6/bhs1a/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v6_bhs1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v6.bhs1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v6/bhs1a/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v6/bhs1a/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v6_bhs1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v6.bhs1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v6/bhs1a/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v6/bhs1a/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v6_bhs1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v6.bhs1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v6/bhs1a/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v6/bhs1a/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v6_bhs1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v6.bhs1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v6/bhs1a/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v6/rbx2b/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v6_rbx2b_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v6.rbx2b.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v6/rbx2b/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v6/rbx2b/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v6_rbx2b_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v6.rbx2b.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v6/rbx2b/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v6/rbx2b/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v6_rbx2b_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v6.rbx2b.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v6/rbx2b/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v6/rbx2b/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v6_rbx2b_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v6.rbx2b.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v6/rbx2b/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v6/waw1c/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v6_waw1c_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v6.waw1c.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v6/waw1c/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v6/waw1c/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v6_waw1c_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v6.waw1c.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v6/waw1c/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v6/waw1c/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v6_waw1c_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v6.waw1c.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v6/waw1c/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v6/waw1c/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v6_waw1c_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v6.waw1c.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v6/waw1c/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v6/sbg1a/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v6_sbg1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v6.sbg1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v6/sbg1a/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v6/sbg1a/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v6_sbg1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v6.sbg1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v6/sbg1a/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v6/sbg1a/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v6_sbg1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v6.sbg1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v6/sbg1a/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v6/sbg1a/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v6_sbg1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v6.sbg1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v6/sbg1a/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v6/rbx2a/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v6_rbx2a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v6.rbx2a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v6/rbx2a/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v6/rbx2a/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v6_rbx2a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v6.rbx2a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v6/rbx2a/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v6/rbx2a/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v6_rbx2a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v6.rbx2a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v6/rbx2a/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v6/rbx2a/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v6_rbx2a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v6.rbx2a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v6/rbx2a/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/bhs1a/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_bhs1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.bhs1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/bhs1a/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/bhs1a/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_bhs1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.bhs1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/bhs1a/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/bhs1a/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_bhs1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.bhs1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/bhs1a/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/bhs1a/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_bhs1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.bhs1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/bhs1a/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/bhs1a/enterprise/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_bhs1a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.bhs1a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/bhs1a/enterprise/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/bhs1a/enterprise/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_bhs1a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.bhs1a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/bhs1a/enterprise/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/bhs1a/enterprise/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_bhs1a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.bhs1a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/bhs1a/enterprise/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/bhs1a/enterprise/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_bhs1a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.bhs1a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/bhs1a/enterprise/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/rbx2b/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_rbx2b_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2b.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/rbx2b/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/rbx2b/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_rbx2b_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2b.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/rbx2b/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/rbx2b/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_rbx2b_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2b.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/rbx2b/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/rbx2b/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_rbx2b_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2b.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/rbx2b/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/rbx2b/enterprise/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_rbx2b_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2b.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/rbx2b/enterprise/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/rbx2b/enterprise/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_rbx2b_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2b.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/rbx2b/enterprise/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/rbx2b/enterprise/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_rbx2b_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2b.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/rbx2b/enterprise/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/rbx2b/enterprise/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_rbx2b_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2b.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/rbx2b/enterprise/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/sbg1a/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_sbg1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.sbg1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/sbg1a/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/sbg1a/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_sbg1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.sbg1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/sbg1a/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/sbg1a/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_sbg1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.sbg1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/sbg1a/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/sbg1a/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_sbg1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.sbg1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/sbg1a/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/sbg1a/enterprise/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_sbg1a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.sbg1a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/sbg1a/enterprise/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/sbg1a/enterprise/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_sbg1a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.sbg1a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/sbg1a/enterprise/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/sbg1a/enterprise/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_sbg1a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.sbg1a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/sbg1a/enterprise/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/sbg1a/enterprise/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_sbg1a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.sbg1a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/sbg1a/enterprise/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/rbx2a/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_rbx2a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/rbx2a/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/rbx2a/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_rbx2a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/rbx2a/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/rbx2a/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_rbx2a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/rbx2a/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/rbx2a/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_rbx2a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/rbx2a/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/rbx2a/enterprise/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_rbx2a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/rbx2a/enterprise/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/rbx2a/enterprise/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_rbx2a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/rbx2a/enterprise/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/rbx2a/enterprise/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_rbx2a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/rbx2a/enterprise/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2016v1/rbx2a/enterprise/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2016v1_rbx2a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v1.rbx2a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2016v1/rbx2a/enterprise/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
 	 * REST: GET /price/dedicatedCloud/2016v3/bhs1a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3346,6 +5062,266 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
 	 *
+	 * REST: GET /price/dedicatedCloud/2018v3/bhs1a/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v3_bhs1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v3.bhs1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v3/bhs1a/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v3/bhs1a/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v3_bhs1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v3.bhs1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v3/bhs1a/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v3/bhs1a/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v3_bhs1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v3.bhs1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v3/bhs1a/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v3/bhs1a/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v3_bhs1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v3.bhs1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v3/bhs1a/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v3/rbx2b/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v3_rbx2b_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v3.rbx2b.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v3/rbx2b/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v3/rbx2b/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v3_rbx2b_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v3.rbx2b.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v3/rbx2b/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v3/rbx2b/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v3_rbx2b_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v3.rbx2b.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v3/rbx2b/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v3/rbx2b/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v3_rbx2b_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v3.rbx2b.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v3/rbx2b/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v3/waw1c/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v3_waw1c_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v3.waw1c.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v3/waw1c/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v3/waw1c/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v3_waw1c_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v3.waw1c.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v3/waw1c/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v3/waw1c/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v3_waw1c_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v3.waw1c.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v3/waw1c/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v3/waw1c/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v3_waw1c_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v3.waw1c.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v3/waw1c/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v3/sbg1a/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v3_sbg1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v3.sbg1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v3/sbg1a/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v3/sbg1a/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v3_sbg1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v3.sbg1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v3/sbg1a/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v3/sbg1a/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v3_sbg1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v3.sbg1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v3/sbg1a/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v3/sbg1a/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v3_sbg1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v3.sbg1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v3/sbg1a/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v3/rbx2a/infrastructure/filer/hourly/{filerProfile}
+	 * @param filerProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v3_rbx2a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v3.rbx2a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v3/rbx2a/infrastructure/filer/hourly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly filer ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v3/rbx2a/infrastructure/filer/monthly/{filerProfile}
+	 * @param filerProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v3_rbx2a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v3.rbx2a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v3/rbx2a/infrastructure/filer/monthly/{filerProfile}";
+		StringBuilder sb = path(qPath, filerProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v3/rbx2a/infrastructure/host/hourly/{hostProfile}
+	 * @param hostProfile [required] type of the hourly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v3_rbx2a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v3.rbx2a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v3/rbx2a/infrastructure/host/hourly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud monthly host ressources
+	 *
+	 * REST: GET /price/dedicatedCloud/2018v3/rbx2a/infrastructure/host/monthly/{hostProfile}
+	 * @param hostProfile [required] type of the monthly ressources you want to order
+	 */
+	public OvhPrice dedicatedCloud_2018v3_rbx2a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v3.rbx2a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v3/rbx2a/infrastructure/host/monthly/{hostProfile}";
+		StringBuilder sb = path(qPath, hostProfile);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrice.class);
+	}
+
+	/**
+	 * Get price of dedicated Cloud hourly filer ressources
+	 *
 	 * REST: GET /price/dedicatedCloud/2013v1/bhs1a/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
@@ -3502,11 +5478,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/bhs1a/infrastructure/filer/hourly/{filerProfile}
+	 * REST: GET /price/dedicatedCloud/2018v4/bhs1a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v5_bhs1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.bhs1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/bhs1a/infrastructure/filer/hourly/{filerProfile}";
+	public OvhPrice dedicatedCloud_2018v4_bhs1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v4.bhs1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v4/bhs1a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -3515,11 +5491,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/bhs1a/infrastructure/filer/monthly/{filerProfile}
+	 * REST: GET /price/dedicatedCloud/2018v4/bhs1a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v5_bhs1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.bhs1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/bhs1a/infrastructure/filer/monthly/{filerProfile}";
+	public OvhPrice dedicatedCloud_2018v4_bhs1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v4.bhs1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v4/bhs1a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -3528,11 +5504,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/bhs1a/infrastructure/host/hourly/{hostProfile}
+	 * REST: GET /price/dedicatedCloud/2018v4/bhs1a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v5_bhs1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.bhs1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/bhs1a/infrastructure/host/hourly/{hostProfile}";
+	public OvhPrice dedicatedCloud_2018v4_bhs1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v4.bhs1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v4/bhs1a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -3541,11 +5517,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/bhs1a/infrastructure/host/monthly/{hostProfile}
+	 * REST: GET /price/dedicatedCloud/2018v4/bhs1a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v5_bhs1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.bhs1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/bhs1a/infrastructure/host/monthly/{hostProfile}";
+	public OvhPrice dedicatedCloud_2018v4_bhs1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v4.bhs1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v4/bhs1a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -3554,11 +5530,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/bhs1a/enterprise/filer/hourly/{filerProfile}
+	 * REST: GET /price/dedicatedCloud/2018v4/rbx2b/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v5_bhs1a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.bhs1a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/bhs1a/enterprise/filer/hourly/{filerProfile}";
+	public OvhPrice dedicatedCloud_2018v4_rbx2b_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v4.rbx2b.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v4/rbx2b/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -3567,11 +5543,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/bhs1a/enterprise/filer/monthly/{filerProfile}
+	 * REST: GET /price/dedicatedCloud/2018v4/rbx2b/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v5_bhs1a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.bhs1a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/bhs1a/enterprise/filer/monthly/{filerProfile}";
+	public OvhPrice dedicatedCloud_2018v4_rbx2b_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v4.rbx2b.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v4/rbx2b/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -3580,11 +5556,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/bhs1a/enterprise/host/hourly/{hostProfile}
+	 * REST: GET /price/dedicatedCloud/2018v4/rbx2b/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v5_bhs1a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.bhs1a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/bhs1a/enterprise/host/hourly/{hostProfile}";
+	public OvhPrice dedicatedCloud_2018v4_rbx2b_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v4.rbx2b.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v4/rbx2b/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -3593,11 +5569,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/bhs1a/enterprise/host/monthly/{hostProfile}
+	 * REST: GET /price/dedicatedCloud/2018v4/rbx2b/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v5_bhs1a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.bhs1a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/bhs1a/enterprise/host/monthly/{hostProfile}";
+	public OvhPrice dedicatedCloud_2018v4_rbx2b_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v4.rbx2b.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v4/rbx2b/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -3606,11 +5582,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/rbx2b/infrastructure/filer/hourly/{filerProfile}
+	 * REST: GET /price/dedicatedCloud/2018v4/waw1c/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v5_rbx2b_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2b.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/rbx2b/infrastructure/filer/hourly/{filerProfile}";
+	public OvhPrice dedicatedCloud_2018v4_waw1c_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v4.waw1c.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v4/waw1c/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -3619,11 +5595,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/rbx2b/infrastructure/filer/monthly/{filerProfile}
+	 * REST: GET /price/dedicatedCloud/2018v4/waw1c/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v5_rbx2b_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2b.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/rbx2b/infrastructure/filer/monthly/{filerProfile}";
+	public OvhPrice dedicatedCloud_2018v4_waw1c_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v4.waw1c.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v4/waw1c/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -3632,11 +5608,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/rbx2b/infrastructure/host/hourly/{hostProfile}
+	 * REST: GET /price/dedicatedCloud/2018v4/waw1c/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v5_rbx2b_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2b.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/rbx2b/infrastructure/host/hourly/{hostProfile}";
+	public OvhPrice dedicatedCloud_2018v4_waw1c_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v4.waw1c.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v4/waw1c/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -3645,11 +5621,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/rbx2b/infrastructure/host/monthly/{hostProfile}
+	 * REST: GET /price/dedicatedCloud/2018v4/waw1c/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v5_rbx2b_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2b.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/rbx2b/infrastructure/host/monthly/{hostProfile}";
+	public OvhPrice dedicatedCloud_2018v4_waw1c_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v4.waw1c.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v4/waw1c/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -3658,11 +5634,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/rbx2b/enterprise/filer/hourly/{filerProfile}
+	 * REST: GET /price/dedicatedCloud/2018v4/sbg1a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v5_rbx2b_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2b.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/rbx2b/enterprise/filer/hourly/{filerProfile}";
+	public OvhPrice dedicatedCloud_2018v4_sbg1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v4.sbg1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v4/sbg1a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -3671,11 +5647,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/rbx2b/enterprise/filer/monthly/{filerProfile}
+	 * REST: GET /price/dedicatedCloud/2018v4/sbg1a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v5_rbx2b_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2b.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/rbx2b/enterprise/filer/monthly/{filerProfile}";
+	public OvhPrice dedicatedCloud_2018v4_sbg1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v4.sbg1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v4/sbg1a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -3684,11 +5660,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/rbx2b/enterprise/host/hourly/{hostProfile}
+	 * REST: GET /price/dedicatedCloud/2018v4/sbg1a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v5_rbx2b_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2b.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/rbx2b/enterprise/host/hourly/{hostProfile}";
+	public OvhPrice dedicatedCloud_2018v4_sbg1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v4.sbg1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v4/sbg1a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -3697,11 +5673,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/rbx2b/enterprise/host/monthly/{hostProfile}
+	 * REST: GET /price/dedicatedCloud/2018v4/sbg1a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v5_rbx2b_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2b.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/rbx2b/enterprise/host/monthly/{hostProfile}";
+	public OvhPrice dedicatedCloud_2018v4_sbg1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v4.sbg1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v4/sbg1a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -3710,11 +5686,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud hourly filer ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/sbg1a/infrastructure/filer/hourly/{filerProfile}
+	 * REST: GET /price/dedicatedCloud/2018v4/rbx2a/infrastructure/filer/hourly/{filerProfile}
 	 * @param filerProfile [required] type of the hourly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v5_sbg1a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.sbg1a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/sbg1a/infrastructure/filer/hourly/{filerProfile}";
+	public OvhPrice dedicatedCloud_2018v4_rbx2a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v4.rbx2a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v4/rbx2a/infrastructure/filer/hourly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -3723,11 +5699,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud monthly filer ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/sbg1a/infrastructure/filer/monthly/{filerProfile}
+	 * REST: GET /price/dedicatedCloud/2018v4/rbx2a/infrastructure/filer/monthly/{filerProfile}
 	 * @param filerProfile [required] type of the monthly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v5_sbg1a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.sbg1a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/sbg1a/infrastructure/filer/monthly/{filerProfile}";
+	public OvhPrice dedicatedCloud_2018v4_rbx2a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v4.rbx2a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v4/rbx2a/infrastructure/filer/monthly/{filerProfile}";
 		StringBuilder sb = path(qPath, filerProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -3736,11 +5712,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud hourly host ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/sbg1a/infrastructure/host/hourly/{hostProfile}
+	 * REST: GET /price/dedicatedCloud/2018v4/rbx2a/infrastructure/host/hourly/{hostProfile}
 	 * @param hostProfile [required] type of the hourly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v5_sbg1a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.sbg1a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/sbg1a/infrastructure/host/hourly/{hostProfile}";
+	public OvhPrice dedicatedCloud_2018v4_rbx2a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v4.rbx2a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v4/rbx2a/infrastructure/host/hourly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);
@@ -3749,167 +5725,11 @@ public class ApiOvhPrice extends ApiOvhBase {
 	/**
 	 * Get price of dedicated Cloud monthly host ressources
 	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/sbg1a/infrastructure/host/monthly/{hostProfile}
+	 * REST: GET /price/dedicatedCloud/2018v4/rbx2a/infrastructure/host/monthly/{hostProfile}
 	 * @param hostProfile [required] type of the monthly ressources you want to order
 	 */
-	public OvhPrice dedicatedCloud_2016v5_sbg1a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.sbg1a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/sbg1a/infrastructure/host/monthly/{hostProfile}";
-		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPrice.class);
-	}
-
-	/**
-	 * Get price of dedicated Cloud hourly filer ressources
-	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/sbg1a/enterprise/filer/hourly/{filerProfile}
-	 * @param filerProfile [required] type of the hourly ressources you want to order
-	 */
-	public OvhPrice dedicatedCloud_2016v5_sbg1a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.sbg1a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/sbg1a/enterprise/filer/hourly/{filerProfile}";
-		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPrice.class);
-	}
-
-	/**
-	 * Get price of dedicated Cloud monthly filer ressources
-	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/sbg1a/enterprise/filer/monthly/{filerProfile}
-	 * @param filerProfile [required] type of the monthly ressources you want to order
-	 */
-	public OvhPrice dedicatedCloud_2016v5_sbg1a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.sbg1a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/sbg1a/enterprise/filer/monthly/{filerProfile}";
-		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPrice.class);
-	}
-
-	/**
-	 * Get price of dedicated Cloud hourly host ressources
-	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/sbg1a/enterprise/host/hourly/{hostProfile}
-	 * @param hostProfile [required] type of the hourly ressources you want to order
-	 */
-	public OvhPrice dedicatedCloud_2016v5_sbg1a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.sbg1a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/sbg1a/enterprise/host/hourly/{hostProfile}";
-		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPrice.class);
-	}
-
-	/**
-	 * Get price of dedicated Cloud monthly host ressources
-	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/sbg1a/enterprise/host/monthly/{hostProfile}
-	 * @param hostProfile [required] type of the monthly ressources you want to order
-	 */
-	public OvhPrice dedicatedCloud_2016v5_sbg1a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.sbg1a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/sbg1a/enterprise/host/monthly/{hostProfile}";
-		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPrice.class);
-	}
-
-	/**
-	 * Get price of dedicated Cloud hourly filer ressources
-	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/rbx2a/infrastructure/filer/hourly/{filerProfile}
-	 * @param filerProfile [required] type of the hourly ressources you want to order
-	 */
-	public OvhPrice dedicatedCloud_2016v5_rbx2a_infrastructure_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2a.infrastructure.filer.OvhHourlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/rbx2a/infrastructure/filer/hourly/{filerProfile}";
-		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPrice.class);
-	}
-
-	/**
-	 * Get price of dedicated Cloud monthly filer ressources
-	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/rbx2a/infrastructure/filer/monthly/{filerProfile}
-	 * @param filerProfile [required] type of the monthly ressources you want to order
-	 */
-	public OvhPrice dedicatedCloud_2016v5_rbx2a_infrastructure_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2a.infrastructure.filer.OvhMonthlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/rbx2a/infrastructure/filer/monthly/{filerProfile}";
-		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPrice.class);
-	}
-
-	/**
-	 * Get price of dedicated Cloud hourly host ressources
-	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/rbx2a/infrastructure/host/hourly/{hostProfile}
-	 * @param hostProfile [required] type of the hourly ressources you want to order
-	 */
-	public OvhPrice dedicatedCloud_2016v5_rbx2a_infrastructure_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2a.infrastructure.host.OvhHourlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/rbx2a/infrastructure/host/hourly/{hostProfile}";
-		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPrice.class);
-	}
-
-	/**
-	 * Get price of dedicated Cloud monthly host ressources
-	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/rbx2a/infrastructure/host/monthly/{hostProfile}
-	 * @param hostProfile [required] type of the monthly ressources you want to order
-	 */
-	public OvhPrice dedicatedCloud_2016v5_rbx2a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/rbx2a/infrastructure/host/monthly/{hostProfile}";
-		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPrice.class);
-	}
-
-	/**
-	 * Get price of dedicated Cloud hourly filer ressources
-	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/rbx2a/enterprise/filer/hourly/{filerProfile}
-	 * @param filerProfile [required] type of the hourly ressources you want to order
-	 */
-	public OvhPrice dedicatedCloud_2016v5_rbx2a_enterprise_filer_hourly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2a.enterprise.filer.OvhHourlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/rbx2a/enterprise/filer/hourly/{filerProfile}";
-		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPrice.class);
-	}
-
-	/**
-	 * Get price of dedicated Cloud monthly filer ressources
-	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/rbx2a/enterprise/filer/monthly/{filerProfile}
-	 * @param filerProfile [required] type of the monthly ressources you want to order
-	 */
-	public OvhPrice dedicatedCloud_2016v5_rbx2a_enterprise_filer_monthly_filerProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2a.enterprise.filer.OvhMonthlyEnum filerProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/rbx2a/enterprise/filer/monthly/{filerProfile}";
-		StringBuilder sb = path(qPath, filerProfile);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPrice.class);
-	}
-
-	/**
-	 * Get price of dedicated Cloud hourly host ressources
-	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/rbx2a/enterprise/host/hourly/{hostProfile}
-	 * @param hostProfile [required] type of the hourly ressources you want to order
-	 */
-	public OvhPrice dedicatedCloud_2016v5_rbx2a_enterprise_host_hourly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2a.enterprise.host.OvhHourlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/rbx2a/enterprise/host/hourly/{hostProfile}";
-		StringBuilder sb = path(qPath, hostProfile);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPrice.class);
-	}
-
-	/**
-	 * Get price of dedicated Cloud monthly host ressources
-	 *
-	 * REST: GET /price/dedicatedCloud/2016v5/rbx2a/enterprise/host/monthly/{hostProfile}
-	 * @param hostProfile [required] type of the monthly ressources you want to order
-	 */
-	public OvhPrice dedicatedCloud_2016v5_rbx2a_enterprise_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2016v5.rbx2a.enterprise.host.OvhMonthlyEnum hostProfile) throws IOException {
-		String qPath = "/price/dedicatedCloud/2016v5/rbx2a/enterprise/host/monthly/{hostProfile}";
+	public OvhPrice dedicatedCloud_2018v4_rbx2a_infrastructure_host_monthly_hostProfile_GET(net.minidev.ovh.api.price.dedicatedcloud._2018v4.rbx2a.infrastructure.host.OvhMonthlyEnum hostProfile) throws IOException {
+		String qPath = "/price/dedicatedCloud/2018v4/rbx2a/infrastructure/host/monthly/{hostProfile}";
 		StringBuilder sb = path(qPath, hostProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPrice.class);

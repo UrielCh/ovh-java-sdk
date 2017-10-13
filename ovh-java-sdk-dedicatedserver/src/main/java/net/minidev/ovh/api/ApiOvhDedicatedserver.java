@@ -81,6 +81,8 @@ import net.minidev.ovh.api.dedicated.server.OvhVirtualMacManagement;
 import net.minidev.ovh.api.dedicated.server.OvhVmacTypeEnum;
 import net.minidev.ovh.api.dedicated.server.backup.OvhBackupOffer;
 import net.minidev.ovh.api.dedicated.server.backup.OvhBackupPassword;
+import net.minidev.ovh.api.dedicated.virtualnetworkinterface.OvhVirtualNetworkInterface;
+import net.minidev.ovh.api.dedicated.virtualnetworkinterface.OvhVirtualNetworkInterfaceModeEnum;
 import net.minidev.ovh.api.license.OvhWindowsOsVersionEnum;
 import net.minidev.ovh.api.license.OvhWindowsSqlVersionEnum;
 import net.minidev.ovh.api.nichandle.OvhOvhSubsidiaryEnum;
@@ -891,6 +893,43 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName, bootId, option);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhNetbootOption.class);
+	}
+
+	/**
+	 * List server VirtualNetworkInterfaces
+	 *
+	 * REST: GET /dedicated/server/{serviceName}/virtualNetworkInterface
+	 * @param vrack [required] Filter the value of vrack property (=)
+	 * @param mode [required] Filter the value of mode property (=)
+	 * @param name [required] Filter the value of name property (=)
+	 * @param serviceName [required] The internal name of your dedicated server
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> serviceName_virtualNetworkInterface_GET(String serviceName, OvhVirtualNetworkInterfaceModeEnum mode, String name, String vrack) throws IOException {
+		String qPath = "/dedicated/server/{serviceName}/virtualNetworkInterface";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "mode", mode);
+		query(sb, "name", name);
+		query(sb, "vrack", vrack);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /dedicated/server/{serviceName}/virtualNetworkInterface/{uuid}
+	 * @param serviceName [required] The internal name of your dedicated server
+	 * @param uuid [required] VirtualNetworkInterface unique id
+	 *
+	 * API beta
+	 */
+	public OvhVirtualNetworkInterface serviceName_virtualNetworkInterface_uuid_GET(String serviceName, String uuid) throws IOException {
+		String qPath = "/dedicated/server/{serviceName}/virtualNetworkInterface/{uuid}";
+		StringBuilder sb = path(qPath, serviceName, uuid);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhVirtualNetworkInterface.class);
 	}
 
 	/**
@@ -2145,6 +2184,19 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
+	}
+
+	/**
+	 * Get VirtualNetworkInterface details
+	 *
+	 * REST: GET /dedicated/server/virtualNetworkInterface/{uuid}
+	 * @param uuid [required] VirtualNetworkInterface uuid
+	 */
+	public OvhVirtualNetworkInterface virtualNetworkInterface_uuid_GET(String uuid) throws IOException {
+		String qPath = "/dedicated/server/virtualNetworkInterface/{uuid}";
+		StringBuilder sb = path(qPath, uuid);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhVirtualNetworkInterface.class);
 	}
 
 	/**

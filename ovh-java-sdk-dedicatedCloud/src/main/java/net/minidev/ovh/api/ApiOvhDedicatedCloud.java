@@ -622,6 +622,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
 	 * @param vmId [required] Id of the virtual machine.
+	 * @deprecated
 	 */
 	public OvhBackupJob serviceName_datacenter_datacenterId_vm_vmId_backupJob_GET(String serviceName, Long datacenterId, Long vmId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}/backupJob";
@@ -638,6 +639,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
 	 * @param vmId [required] Id of the virtual machine.
+	 * @deprecated
 	 */
 	public OvhTask serviceName_datacenter_datacenterId_vm_vmId_backupJob_POST(String serviceName, Long datacenterId, Long vmId, OvhBackupDaysEnum[] backupDays) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}/backupJob";
@@ -656,6 +658,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
 	 * @param vmId [required] Id of the virtual machine.
+	 * @deprecated
 	 */
 	public OvhTask serviceName_datacenter_datacenterId_vm_vmId_backupJob_enable_POST(String serviceName, Long datacenterId, Long vmId, OvhBackupDaysEnum[] backupDays) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}/backupJob/enable";
@@ -673,6 +676,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
 	 * @param vmId [required] Id of the virtual machine.
+	 * @deprecated
 	 */
 	public ArrayList<Long> serviceName_datacenter_datacenterId_vm_vmId_backupJob_restorePoints_GET(String serviceName, Long datacenterId, Long vmId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}/backupJob/restorePoints";
@@ -689,6 +693,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 * @param datacenterId [required]
 	 * @param vmId [required] Id of the virtual machine.
 	 * @param restorePointId [required] Id of the restore point.
+	 * @deprecated
 	 */
 	public OvhRestorePoint serviceName_datacenter_datacenterId_vm_vmId_backupJob_restorePoints_restorePointId_GET(String serviceName, Long datacenterId, Long vmId, Long restorePointId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}/backupJob/restorePoints/{restorePointId}";
@@ -706,6 +711,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 * @param datacenterId [required]
 	 * @param vmId [required] Id of the virtual machine.
 	 * @param restorePointId [required] Id of the restore point.
+	 * @deprecated
 	 */
 	public OvhTask serviceName_datacenter_datacenterId_vm_vmId_backupJob_restorePoints_restorePointId_restore_POST(String serviceName, Long datacenterId, Long vmId, Long restorePointId, Long filerId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}/backupJob/restorePoints/{restorePointId}/restore";
@@ -723,11 +729,91 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
 	 * @param vmId [required] Id of the virtual machine.
+	 * @deprecated
 	 */
 	public OvhTask serviceName_datacenter_datacenterId_vm_vmId_backupJob_disable_POST(String serviceName, Long datacenterId, Long vmId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}/backupJob/disable";
 		StringBuilder sb = path(qPath, serviceName, datacenterId, vmId);
 		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Enable backup on this virtual Machine
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}/enableBackup
+	 * @param backupDays [required] List of days your Virtual Machine will be backuped
+	 * @param serviceName [required] Domain of the service
+	 * @param datacenterId [required]
+	 * @param vmId [required] Id of the virtual machine.
+	 *
+	 * API beta
+	 */
+	public OvhTask serviceName_datacenter_datacenterId_vm_vmId_enableBackup_POST(String serviceName, Long datacenterId, Long vmId, OvhBackupDaysEnum[] backupDays) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}/enableBackup";
+		StringBuilder sb = path(qPath, serviceName, datacenterId, vmId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "backupDays", backupDays);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Disable backup on this virtual Machine
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}/disableBackup
+	 * @param serviceName [required] Domain of the service
+	 * @param datacenterId [required]
+	 * @param vmId [required] Id of the virtual machine.
+	 *
+	 * API beta
+	 */
+	public OvhTask serviceName_datacenter_datacenterId_vm_vmId_disableBackup_POST(String serviceName, Long datacenterId, Long vmId) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}/disableBackup";
+		StringBuilder sb = path(qPath, serviceName, datacenterId, vmId);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Restore this restore point
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}/restoreBackup
+	 * @param filerId [required] Id of the filer where we should restore this Backup
+	 * @param restorePointId [required] Id of the restorePoint you want to restore
+	 * @param serviceName [required] Domain of the service
+	 * @param datacenterId [required]
+	 * @param vmId [required] Id of the virtual machine.
+	 *
+	 * API beta
+	 */
+	public OvhTask serviceName_datacenter_datacenterId_vm_vmId_restoreBackup_POST(String serviceName, Long datacenterId, Long vmId, Long filerId, Long restorePointId) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}/restoreBackup";
+		StringBuilder sb = path(qPath, serviceName, datacenterId, vmId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "filerId", filerId);
+		addBody(o, "restorePointId", restorePointId);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Edit backup on this virtual Machine
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}/editBackup
+	 * @param backupDays [required] List of days your Virtual Machine will be backuped
+	 * @param serviceName [required] Domain of the service
+	 * @param datacenterId [required]
+	 * @param vmId [required] Id of the virtual machine.
+	 *
+	 * API beta
+	 */
+	public OvhTask serviceName_datacenter_datacenterId_vm_vmId_editBackup_POST(String serviceName, Long datacenterId, Long vmId, OvhBackupDaysEnum[] backupDays) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm/{vmId}/editBackup";
+		StringBuilder sb = path(qPath, serviceName, datacenterId, vmId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "backupDays", backupDays);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 

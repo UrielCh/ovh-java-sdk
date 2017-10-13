@@ -60,6 +60,7 @@ import net.minidev.ovh.api.dedicated.installationtemplate.OvhTemplatePartitions;
 import net.minidev.ovh.api.dedicated.installationtemplate.OvhTemplates;
 import net.minidev.ovh.api.domain.OvhNicOperationFunctionEnum;
 import net.minidev.ovh.api.domain.OvhOperationStatusEnum;
+import net.minidev.ovh.api.geolocation.OvhContinentCountryLocation;
 import net.minidev.ovh.api.nichandle.OvhCountryEnum;
 import net.minidev.ovh.api.nichandle.OvhDeveloperModeRestriction;
 import net.minidev.ovh.api.nichandle.OvhDomainTask;
@@ -92,6 +93,9 @@ import net.minidev.ovh.api.nichandle.accessrestriction.OvhSmsCode;
 import net.minidev.ovh.api.nichandle.accessrestriction.OvhSmsSecret;
 import net.minidev.ovh.api.nichandle.accessrestriction.OvhTOTPAccount;
 import net.minidev.ovh.api.nichandle.accessrestriction.OvhTOTPSecret;
+import net.minidev.ovh.api.nichandle.accessrestriction.OvhU2FAccount;
+import net.minidev.ovh.api.nichandle.accessrestriction.OvhU2FRegisterChallenge;
+import net.minidev.ovh.api.nichandle.accessrestriction.OvhU2FSignChallenge;
 import net.minidev.ovh.api.nichandle.changeemail.OvhTaskStateEnum;
 import net.minidev.ovh.api.nichandle.document.OvhDocument;
 import net.minidev.ovh.api.nichandle.emailchange.OvhTask;
@@ -1690,6 +1694,19 @@ public class ApiOvhMe extends ApiOvhBase {
 	}
 
 	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /me/accessRestriction/sms/{id}
+	 * @param body [required] New object properties
+	 * @param id [required] The Id of the restriction
+	 */
+	public void accessRestriction_sms_id_PUT(Long id, OvhSmsAccount body) throws IOException {
+		String qPath = "/me/accessRestriction/sms/{id}";
+		StringBuilder sb = path(qPath, id);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
 	 * Delete this Two-Factor
 	 *
 	 * REST: DELETE /me/accessRestriction/sms/{id}
@@ -1781,6 +1798,19 @@ public class ApiOvhMe extends ApiOvhBase {
 		StringBuilder sb = path(qPath, id);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTOTPAccount.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /me/accessRestriction/totp/{id}
+	 * @param body [required] New object properties
+	 * @param id [required] The Id of the restriction
+	 */
+	public void accessRestriction_totp_id_PUT(Long id, OvhTOTPAccount body) throws IOException {
+		String qPath = "/me/accessRestriction/totp/{id}";
+		StringBuilder sb = path(qPath, id);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1930,6 +1960,132 @@ public class ApiOvhMe extends ApiOvhBase {
 		String qPath = "/me/accessRestriction/ipDefaultRule";
 		StringBuilder sb = path(qPath);
 		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * List of U2F accounts
+	 *
+	 * REST: GET /me/accessRestriction/u2f
+	 */
+	public ArrayList<Long> accessRestriction_u2f_GET() throws IOException {
+		String qPath = "/me/accessRestriction/u2f";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Add a U2F access restriction
+	 *
+	 * REST: POST /me/accessRestriction/u2f
+	 */
+	public OvhU2FRegisterChallenge accessRestriction_u2f_POST() throws IOException {
+		String qPath = "/me/accessRestriction/u2f";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhU2FRegisterChallenge.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /me/accessRestriction/u2f/{id}
+	 * @param id [required] The Id of the restriction
+	 */
+	public OvhU2FAccount accessRestriction_u2f_id_GET(Long id) throws IOException {
+		String qPath = "/me/accessRestriction/u2f/{id}";
+		StringBuilder sb = path(qPath, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhU2FAccount.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /me/accessRestriction/u2f/{id}
+	 * @param body [required] New object properties
+	 * @param id [required] The Id of the restriction
+	 */
+	public void accessRestriction_u2f_id_PUT(Long id, OvhU2FAccount body) throws IOException {
+		String qPath = "/me/accessRestriction/u2f/{id}";
+		StringBuilder sb = path(qPath, id);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Delete this Two-Factor
+	 *
+	 * REST: DELETE /me/accessRestriction/u2f/{id}
+	 * @param id [required] The Id of the restriction
+	 */
+	public void accessRestriction_u2f_id_DELETE(Long id) throws IOException {
+		String qPath = "/me/accessRestriction/u2f/{id}";
+		StringBuilder sb = path(qPath, id);
+		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
+	 * Enable this U2F account
+	 *
+	 * REST: POST /me/accessRestriction/u2f/{id}/enable
+	 * @param signatureData [required]
+	 * @param clientData [required]
+	 * @param id [required] The Id of the restriction
+	 */
+	public void accessRestriction_u2f_id_enable_POST(Long id, String signatureData, String clientData) throws IOException {
+		String qPath = "/me/accessRestriction/u2f/{id}/enable";
+		StringBuilder sb = path(qPath, id);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "signatureData", signatureData);
+		addBody(o, "clientData", clientData);
+		exec(qPath, "POST", sb.toString(), o);
+	}
+
+	/**
+	 * Get an U2F Challenge
+	 *
+	 * REST: POST /me/accessRestriction/u2f/{id}/challenge
+	 * @param id [required] The Id of the restriction
+	 */
+	public OvhU2FSignChallenge accessRestriction_u2f_id_challenge_POST(Long id) throws IOException {
+		String qPath = "/me/accessRestriction/u2f/{id}/challenge";
+		StringBuilder sb = path(qPath, id);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhU2FSignChallenge.class);
+	}
+
+	/**
+	 * Validate your U2F account
+	 *
+	 * REST: POST /me/accessRestriction/u2f/{id}/validate
+	 * @param registrationData [required]
+	 * @param clientData [required]
+	 * @param id [required] The Id of the restriction
+	 */
+	public void accessRestriction_u2f_id_validate_POST(Long id, String registrationData, String clientData) throws IOException {
+		String qPath = "/me/accessRestriction/u2f/{id}/validate";
+		StringBuilder sb = path(qPath, id);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "registrationData", registrationData);
+		addBody(o, "clientData", clientData);
+		exec(qPath, "POST", sb.toString(), o);
+	}
+
+	/**
+	 * Disable this U2F account
+	 *
+	 * REST: POST /me/accessRestriction/u2f/{id}/disable
+	 * @param signatureData [required]
+	 * @param clientData [required]
+	 * @param id [required] The Id of the restriction
+	 */
+	public void accessRestriction_u2f_id_disable_POST(Long id, String signatureData, String clientData) throws IOException {
+		String qPath = "/me/accessRestriction/u2f/{id}/disable";
+		StringBuilder sb = path(qPath, id);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "signatureData", signatureData);
+		addBody(o, "clientData", clientData);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -2195,6 +2351,18 @@ public class ApiOvhMe extends ApiOvhBase {
 		addBody(o, "newEmail", newEmail);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get visitor country & region
+	 *
+	 * REST: GET /me/geolocation
+	 */
+	public OvhContinentCountryLocation geolocation_GET() throws IOException {
+		String qPath = "/me/geolocation";
+		StringBuilder sb = path(qPath);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhContinentCountryLocation.class);
 	}
 
 	/**
@@ -3082,12 +3250,13 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * @param registry [required]
 	 * @param lastname [required]
 	 * @param phone [required]
+	 * @param state [required]
 	 * @param abuse_mailbox [required]
 	 * @param zip [required]
 	 * @param city [required]
 	 * @param address [required]
 	 */
-	public void ipOrganisation_POST(OvhCountryEnum country, String firstname, OvhIpRegistryEnum registry, String lastname, String phone, String abuse_mailbox, String zip, String city, String address) throws IOException {
+	public void ipOrganisation_POST(OvhCountryEnum country, String firstname, OvhIpRegistryEnum registry, String lastname, String phone, String state, String abuse_mailbox, String zip, String city, String address) throws IOException {
 		String qPath = "/me/ipOrganisation";
 		StringBuilder sb = path(qPath);
 		HashMap<String, Object>o = new HashMap<String, Object>();
@@ -3096,6 +3265,7 @@ public class ApiOvhMe extends ApiOvhBase {
 		addBody(o, "registry", registry);
 		addBody(o, "lastname", lastname);
 		addBody(o, "phone", phone);
+		addBody(o, "state", state);
 		addBody(o, "abuse_mailbox", abuse_mailbox);
 		addBody(o, "zip", zip);
 		addBody(o, "city", city);
@@ -3369,12 +3539,14 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * Change xdsl settings linked to the nichandle
 	 *
 	 * REST: POST /me/xdsl/setting
+	 * @param resellerModemBasicConfig [required] Let the modem with vendor configuration. It prevent to apply the config managed by ovh manager
 	 * @param resellerFastModemShipping [required] Send the modem as soon as possible, do not wait the xdsl line to be active
 	 */
-	public void xdsl_setting_POST(Boolean resellerFastModemShipping) throws IOException {
+	public void xdsl_setting_POST(Boolean resellerModemBasicConfig, Boolean resellerFastModemShipping) throws IOException {
 		String qPath = "/me/xdsl/setting";
 		StringBuilder sb = path(qPath);
 		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "resellerModemBasicConfig", resellerModemBasicConfig);
 		addBody(o, "resellerFastModemShipping", resellerFastModemShipping);
 		exec(qPath, "POST", sb.toString(), o);
 	}

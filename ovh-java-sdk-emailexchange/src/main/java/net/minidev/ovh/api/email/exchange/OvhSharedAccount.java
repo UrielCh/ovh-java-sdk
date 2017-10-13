@@ -63,7 +63,7 @@ public class OvhSharedAccount {
 	public Date creationDate;
 
 	/**
-	 * Pending tasks for this shared account
+	 * Pending task for this shared account
 	 *
 	 * canBeNull && readOnly
 	 */

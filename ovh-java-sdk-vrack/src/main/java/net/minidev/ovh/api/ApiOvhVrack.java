@@ -16,6 +16,7 @@ import net.minidev.ovh.api.vrack.OvhDedicatedConnect;
 import net.minidev.ovh.api.vrack.OvhDedicatedServer;
 import net.minidev.ovh.api.vrack.OvhDedicatedServerInterface;
 import net.minidev.ovh.api.vrack.OvhIp;
+import net.minidev.ovh.api.vrack.OvhIplb;
 import net.minidev.ovh.api.vrack.OvhLegacyVrack;
 import net.minidev.ovh.api.vrack.OvhPccDatacenter;
 import net.minidev.ovh.api.vrack.OvhTask;
@@ -312,8 +313,6 @@ public class ApiOvhVrack extends ApiOvhBase {
 	 * REST: POST /vrack/{serviceName}/cloudProject
 	 * @param project [required] publicCloud project to add
 	 * @param serviceName [required] The internal name of your vrack
-	 *
-	 * API beta
 	 */
 	public OvhTask serviceName_cloudProject_POST(String serviceName, String project) throws IOException {
 		String qPath = "/vrack/{serviceName}/cloudProject";
@@ -434,6 +433,71 @@ public class ApiOvhVrack extends ApiOvhBase {
 		String qPath = "/vrack/{serviceName}/task/{taskId}";
 		StringBuilder sb = path(qPath, serviceName, taskId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * vrack for ipLoadbalancing
+	 *
+	 * REST: GET /vrack/{serviceName}/ipLoadbalancing
+	 * @param serviceName [required] The internal name of your vrack
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> serviceName_ipLoadbalancing_GET(String serviceName) throws IOException {
+		String qPath = "/vrack/{serviceName}/ipLoadbalancing";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * add an ipLoadbalancing to this vrack
+	 *
+	 * REST: POST /vrack/{serviceName}/ipLoadbalancing
+	 * @param ipLoadbalancing [required] Your ipLoadbalancing
+	 * @param serviceName [required] The internal name of your vrack
+	 *
+	 * API beta
+	 */
+	public OvhTask serviceName_ipLoadbalancing_POST(String serviceName, String ipLoadbalancing) throws IOException {
+		String qPath = "/vrack/{serviceName}/ipLoadbalancing";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "ipLoadbalancing", ipLoadbalancing);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /vrack/{serviceName}/ipLoadbalancing/{ipLoadbalancing}
+	 * @param serviceName [required] The internal name of your vrack
+	 * @param ipLoadbalancing [required] Your ipLoadbalancing
+	 *
+	 * API beta
+	 */
+	public OvhIplb serviceName_ipLoadbalancing_ipLoadbalancing_GET(String serviceName, String ipLoadbalancing) throws IOException {
+		String qPath = "/vrack/{serviceName}/ipLoadbalancing/{ipLoadbalancing}";
+		StringBuilder sb = path(qPath, serviceName, ipLoadbalancing);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhIplb.class);
+	}
+
+	/**
+	 * remove this ipLoadbalancing from this vrack
+	 *
+	 * REST: DELETE /vrack/{serviceName}/ipLoadbalancing/{ipLoadbalancing}
+	 * @param serviceName [required] The internal name of your vrack
+	 * @param ipLoadbalancing [required] Your ipLoadbalancing
+	 *
+	 * API beta
+	 */
+	public OvhTask serviceName_ipLoadbalancing_ipLoadbalancing_DELETE(String serviceName, String ipLoadbalancing) throws IOException {
+		String qPath = "/vrack/{serviceName}/ipLoadbalancing/{ipLoadbalancing}";
+		StringBuilder sb = path(qPath, serviceName, ipLoadbalancing);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 

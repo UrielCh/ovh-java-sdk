@@ -502,6 +502,8 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * Retrieve list of catalog name
 	 *
 	 * REST: GET /order/catalog/formatted
+	 *
+	 * API beta
 	 */
 	public ArrayList<String> catalog_formatted_GET() throws IOException {
 		String qPath = "/order/catalog/formatted";
@@ -515,6 +517,8 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/catalog/formatted/privateCloudSDDC
 	 * @param ovhSubsidiary [required] Subsidiary of the country you want to consult catalog
+	 *
+	 * API beta
 	 */
 	public OvhCatalog catalog_formatted_privateCloudSDDC_GET(OvhOvhSubsidiaryEnum ovhSubsidiary) throws IOException {
 		String qPath = "/order/catalog/formatted/privateCloudSDDC";
@@ -529,6 +533,8 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/catalog/formatted/privateCloudDC
 	 * @param ovhSubsidiary [required] Subsidiary of the country you want to consult catalog
+	 *
+	 * API beta
 	 */
 	public OvhCatalog catalog_formatted_privateCloudDC_GET(OvhOvhSubsidiaryEnum ovhSubsidiary) throws IOException {
 		String qPath = "/order/catalog/formatted/privateCloudDC";
@@ -544,6 +550,8 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/catalog/formatted/{catalogName}
 	 * @param catalogName [required] Catalog name you want to consult.
 	 * @param ovhSubsidiary [required] Subsidiary of the country you want to consult catalog
+	 *
+	 * API beta
 	 */
 	public net.minidev.ovh.api.order.catalog.OvhCatalog catalog_formatted_catalogName_GET(String catalogName, OvhOvhSubsidiaryEnum ovhSubsidiary) throws IOException {
 		String qPath = "/order/catalog/formatted/{catalogName}";
@@ -558,6 +566,8 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/catalog/formatted/privateCloudCDI
 	 * @param ovhSubsidiary [required] Subsidiary of the country you want to consult catalog
+	 *
+	 * API beta
 	 */
 	public OvhCatalog catalog_formatted_privateCloudCDI_GET(OvhOvhSubsidiaryEnum ovhSubsidiary) throws IOException {
 		String qPath = "/order/catalog/formatted/privateCloudCDI";
@@ -3929,8 +3939,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart
 	 * @param description [required] Filter the value of description property (=)
-	 *
-	 * API beta
 	 */
 	public ArrayList<String> cart_GET(String description) throws IOException {
 		String qPath = "/order/cart";
@@ -3947,8 +3955,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param description [required] Description of your cart
 	 * @param expire [required] Time of expiration of the cart
 	 * @param ovhSubsidiary [required] OVH Subsidiary where you want to order
-	 *
-	 * API beta
 	 */
 	public OvhCart cart_POST(String description, Date expire, OvhOvhSubsidiaryEnum ovhSubsidiary) throws IOException {
 		String qPath = "/order/cart";
@@ -3966,8 +3972,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public OvhCart cart_cartId_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}";
@@ -3983,8 +3987,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param cartId [required] Cart identifier
 	 * @param description [required] Description of your cart
 	 * @param expire [required] Time of expiration of the cart
-	 *
-	 * API beta
 	 */
 	public OvhCart cart_cartId_PUT(String cartId, String description, Date expire) throws IOException {
 		String qPath = "/order/cart/{cartId}";
@@ -4001,8 +4003,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: DELETE /order/cart/{cartId}
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public void cart_cartId_DELETE(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}";
@@ -4015,8 +4015,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/privateCloudSDDC
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_privateCloudSDDC_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/privateCloudSDDC";
@@ -4034,8 +4032,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_privateCloudSDDC_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/privateCloudSDDC";
@@ -4055,8 +4051,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/cart/{cartId}/privateCloudSDDC/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Private Cloud SDDC you want to consult options
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericOptionDefinition> cart_cartId_privateCloudSDDC_options_GET(String cartId, String planCode) throws IOException {
 		String qPath = "/order/cart/{cartId}/privateCloudSDDC/options";
@@ -4076,8 +4070,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_privateCloudSDDC_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/privateCloudSDDC/options";
@@ -4097,8 +4089,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/dns
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_dns_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/dns";
@@ -4116,8 +4106,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_dns_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/dns";
@@ -4136,8 +4124,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/deskaas
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_deskaas_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/deskaas";
@@ -4155,8 +4141,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_deskaas_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/deskaas";
@@ -4171,12 +4155,84 @@ public class ApiOvhOrder extends ApiOvhBase {
 	}
 
 	/**
+	 * Get informations about Cloud Web offers
+	 *
+	 * REST: GET /order/cart/{cartId}/cloudweb
+	 * @param cartId [required] Cart identifier
+	 */
+	public ArrayList<OvhGenericProductDefinition> cart_cartId_cloudweb_GET(String cartId) throws IOException {
+		String qPath = "/order/cart/{cartId}/cloudweb";
+		StringBuilder sb = path(qPath, cartId);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Post a new Cloud Web item in your cart
+	 *
+	 * REST: POST /order/cart/{cartId}/cloudweb
+	 * @param cartId [required] Cart identifier
+	 * @param planCode [required] Identifier of the Cloud Web offer
+	 * @param duration [required] Duration selected for the purchase of the product
+	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
+	 * @param quantity [required] Quantity of product desired
+	 */
+	public OvhItem cart_cartId_cloudweb_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
+		String qPath = "/order/cart/{cartId}/cloudweb";
+		StringBuilder sb = path(qPath, cartId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "planCode", planCode);
+		addBody(o, "duration", duration);
+		addBody(o, "pricingMode", pricingMode);
+		addBody(o, "quantity", quantity);
+		String resp = execN(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhItem.class);
+	}
+
+	/**
+	 * Get informations about Cloud Web options
+	 *
+	 * REST: GET /order/cart/{cartId}/cloudweb/options
+	 * @param cartId [required] Cart identifier
+	 * @param planCode [required] Identifier of the Cloud Web you want to consult options
+	 */
+	public ArrayList<OvhGenericOptionDefinition> cart_cartId_cloudweb_options_GET(String cartId, String planCode) throws IOException {
+		String qPath = "/order/cart/{cartId}/cloudweb/options";
+		StringBuilder sb = path(qPath, cartId);
+		query(sb, "planCode", planCode);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+
+	/**
+	 * Post a new Cloud Web option in your cart
+	 *
+	 * REST: POST /order/cart/{cartId}/cloudweb/options
+	 * @param cartId [required] Cart identifier
+	 * @param itemId [required] Cart item to be linked
+	 * @param planCode [required] Identifier of a Cloud Web option offer
+	 * @param duration [required] Duration selected for the purchase of the product
+	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
+	 * @param quantity [required] Quantity of product desired
+	 */
+	public OvhItem cart_cartId_cloudweb_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
+		String qPath = "/order/cart/{cartId}/cloudweb/options";
+		StringBuilder sb = path(qPath, cartId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "itemId", itemId);
+		addBody(o, "planCode", planCode);
+		addBody(o, "duration", duration);
+		addBody(o, "pricingMode", pricingMode);
+		addBody(o, "quantity", quantity);
+		String resp = execN(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhItem.class);
+	}
+
+	/**
 	 * Get informations about CDN offers
 	 *
 	 * REST: GET /order/cart/{cartId}/cdn
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_cdn_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/cdn";
@@ -4194,8 +4250,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_cdn_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/cdn";
@@ -4215,8 +4269,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/cart/{cartId}/cdn/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the CDN offer you want to consult options
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericOptionDefinition> cart_cartId_cdn_options_GET(String cartId, String planCode) throws IOException {
 		String qPath = "/order/cart/{cartId}/cdn/options";
@@ -4236,8 +4288,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_cdn_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/cdn/options";
@@ -4257,8 +4307,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/telephony
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_telephony_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/telephony";
@@ -4276,8 +4324,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_telephony_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/telephony";
@@ -4297,8 +4343,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/cart/{cartId}/telephony/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the VoIP you want to consult options
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericOptionDefinition> cart_cartId_telephony_options_GET(String cartId, String planCode) throws IOException {
 		String qPath = "/order/cart/{cartId}/telephony/options";
@@ -4318,8 +4362,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_telephony_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/telephony/options";
@@ -4339,8 +4381,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/vdi
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_vdi_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/vdi";
@@ -4358,8 +4398,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_vdi_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/vdi";
@@ -4379,8 +4417,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/cart/{cartId}/vdi/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Horizon View you want to consult options
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericOptionDefinition> cart_cartId_vdi_options_GET(String cartId, String planCode) throws IOException {
 		String qPath = "/order/cart/{cartId}/vdi/options";
@@ -4400,8 +4436,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_vdi_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/vdi/options";
@@ -4421,8 +4455,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/item
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<Long> cart_cartId_item_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/item";
@@ -4438,8 +4470,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/cart/{cartId}/item/{itemId}/requiredConfiguration
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Product item identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhConfigurationRequirements> cart_cartId_item_itemId_requiredConfiguration_GET(String cartId, Long itemId) throws IOException {
 		String qPath = "/order/cart/{cartId}/item/{itemId}/requiredConfiguration";
@@ -4455,8 +4485,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/cart/{cartId}/item/{itemId}
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Product item identifier
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_item_itemId_GET(String cartId, Long itemId) throws IOException {
 		String qPath = "/order/cart/{cartId}/item/{itemId}";
@@ -4473,8 +4501,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param itemId [required] Product item identifier
 	 * @param quantity [required] New quantity for item
 	 * @param duration [required] New duration for item
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_item_itemId_PUT(String cartId, Long itemId, Long quantity, String duration) throws IOException {
 		String qPath = "/order/cart/{cartId}/item/{itemId}";
@@ -4492,8 +4518,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: DELETE /order/cart/{cartId}/item/{itemId}
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Product item identifier
-	 *
-	 * API beta
 	 */
 	public void cart_cartId_item_itemId_DELETE(String cartId, Long itemId) throws IOException {
 		String qPath = "/order/cart/{cartId}/item/{itemId}";
@@ -4508,8 +4532,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Product item identifier
 	 * @param label [required] Filter the value of label property (=)
-	 *
-	 * API beta
 	 */
 	public ArrayList<Long> cart_cartId_item_itemId_configuration_GET(String cartId, Long itemId, String label) throws IOException {
 		String qPath = "/order/cart/{cartId}/item/{itemId}/configuration";
@@ -4527,8 +4549,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param itemId [required] Product item identifier
 	 * @param label [required] Label for your configuration item
 	 * @param value [required] Value or resource URL on API.OVH.COM of your configuration item
-	 *
-	 * API beta
 	 */
 	public OvhConfigurationItem cart_cartId_item_itemId_configuration_POST(String cartId, Long itemId, String label, String value) throws IOException {
 		String qPath = "/order/cart/{cartId}/item/{itemId}/configuration";
@@ -4547,8 +4567,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Product item identifier
 	 * @param configurationId [required] Configuration item identifier
-	 *
-	 * API beta
 	 */
 	public OvhConfigurationItem cart_cartId_item_itemId_configuration_configurationId_GET(String cartId, Long itemId, Long configurationId) throws IOException {
 		String qPath = "/order/cart/{cartId}/item/{itemId}/configuration/{configurationId}";
@@ -4564,8 +4582,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Product item identifier
 	 * @param configurationId [required] Configuration item identifier
-	 *
-	 * API beta
 	 */
 	public void cart_cartId_item_itemId_configuration_configurationId_DELETE(String cartId, Long itemId, Long configurationId) throws IOException {
 		String qPath = "/order/cart/{cartId}/item/{itemId}/configuration/{configurationId}";
@@ -4578,8 +4594,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/vrackReseller
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_vrackReseller_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/vrackReseller";
@@ -4597,8 +4611,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_vrackReseller_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/vrackReseller";
@@ -4617,8 +4629,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/nasha
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_nasha_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/nasha";
@@ -4636,8 +4646,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_nasha_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/nasha";
@@ -4657,8 +4665,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/cart/{cartId}/nasha/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the NAS HA you want to consult options
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericOptionDefinition> cart_cartId_nasha_options_GET(String cartId, String planCode) throws IOException {
 		String qPath = "/order/cart/{cartId}/nasha/options";
@@ -4678,8 +4684,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_nasha_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/nasha/options";
@@ -4699,8 +4703,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/managedServices
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_managedServices_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/managedServices";
@@ -4718,8 +4720,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_managedServices_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/managedServices";
@@ -4739,8 +4739,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/cart/{cartId}/managedServices/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Managed Services you want to consult options
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericOptionDefinition> cart_cartId_managedServices_options_GET(String cartId, String planCode) throws IOException {
 		String qPath = "/order/cart/{cartId}/managedServices/options";
@@ -4760,8 +4758,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_managedServices_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/managedServices/options";
@@ -4781,8 +4777,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/cloud
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_cloud_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/cloud";
@@ -4800,8 +4794,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_cloud_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/cloud";
@@ -4821,8 +4813,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/cart/{cartId}/cloud/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Public Cloud you want to consult options
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericOptionDefinition> cart_cartId_cloud_options_GET(String cartId, String planCode) throws IOException {
 		String qPath = "/order/cart/{cartId}/cloud/options";
@@ -4842,8 +4832,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_cloud_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/cloud/options";
@@ -4880,8 +4868,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/reseller
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_reseller_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/reseller";
@@ -4899,8 +4885,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_reseller_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/reseller";
@@ -4919,8 +4903,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/dbaasTimeseries
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_dbaasTimeseries_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/dbaasTimeseries";
@@ -4938,8 +4920,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_dbaasTimeseries_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/dbaasTimeseries";
@@ -4958,8 +4938,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/discover
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_discover_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/discover";
@@ -4977,8 +4955,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_discover_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/discover";
@@ -4998,8 +4974,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/cart/{cartId}/discover/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Dedicated Discover server you want to consult options
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericOptionDefinition> cart_cartId_discover_options_GET(String cartId, String planCode) throws IOException {
 		String qPath = "/order/cart/{cartId}/discover/options";
@@ -5019,8 +4993,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_discover_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/discover/options";
@@ -5040,8 +5012,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/hostingReseller
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_hostingReseller_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/hostingReseller";
@@ -5059,8 +5029,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_hostingReseller_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/hostingReseller";
@@ -5079,8 +5047,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/vrack
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_vrack_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/vrack";
@@ -5098,8 +5064,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_vrack_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/vrack";
@@ -5118,8 +5082,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/office365
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_office365_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/office365";
@@ -5137,8 +5099,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_office365_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/office365";
@@ -5158,8 +5118,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/cart/{cartId}/office365/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of a Office 365 main offer
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericOptionDefinition> cart_cartId_office365_options_GET(String cartId, String planCode) throws IOException {
 		String qPath = "/order/cart/{cartId}/office365/options";
@@ -5179,8 +5137,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_office365_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/office365/options";
@@ -5200,8 +5156,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/sharepoint
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_sharepoint_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/sharepoint";
@@ -5219,8 +5173,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_sharepoint_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/sharepoint";
@@ -5240,8 +5192,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/cart/{cartId}/sharepoint/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of a Sharepoint main offer
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericOptionDefinition> cart_cartId_sharepoint_options_GET(String cartId, String planCode) throws IOException {
 		String qPath = "/order/cart/{cartId}/sharepoint/options";
@@ -5261,8 +5211,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_sharepoint_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/sharepoint/options";
@@ -5282,8 +5230,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: POST /order/cart/{cartId}/assign
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public void cart_cartId_assign_POST(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/assign";
@@ -5296,8 +5242,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/coupon
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<String> cart_cartId_coupon_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/coupon";
@@ -5312,8 +5256,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: POST /order/cart/{cartId}/coupon
 	 * @param cartId [required] Cart identifier
 	 * @param coupon [required] Coupon identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<String> cart_cartId_coupon_POST(String cartId, String coupon) throws IOException {
 		String qPath = "/order/cart/{cartId}/coupon";
@@ -5330,8 +5272,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: DELETE /order/cart/{cartId}/coupon
 	 * @param cartId [required] Cart identifier
 	 * @param coupon [required] Coupon identifier
-	 *
-	 * API beta
 	 */
 	public void cart_cartId_coupon_DELETE(String cartId, String coupon) throws IOException {
 		String qPath = "/order/cart/{cartId}/coupon";
@@ -5345,8 +5285,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/sslComodo
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_sslComodo_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/sslComodo";
@@ -5364,8 +5302,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_sslComodo_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/sslComodo";
@@ -5385,8 +5321,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/cart/{cartId}/sslComodo/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the SSL Comodo you want to consult options
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericOptionDefinition> cart_cartId_sslComodo_options_GET(String cartId, String planCode) throws IOException {
 		String qPath = "/order/cart/{cartId}/sslComodo/options";
@@ -5406,8 +5340,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_sslComodo_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/sslComodo/options";
@@ -5427,8 +5359,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/sms
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_sms_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/sms";
@@ -5446,8 +5376,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_sms_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/sms";
@@ -5466,8 +5394,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/registry
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_registry_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/registry";
@@ -5485,8 +5411,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_registry_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/registry";
@@ -5505,8 +5429,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/ip
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_ip_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/ip";
@@ -5524,8 +5446,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_ip_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/ip";
@@ -5545,8 +5465,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/cart/{cartId}/ip/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the IP addresses you want to consult options
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericOptionDefinition> cart_cartId_ip_options_GET(String cartId, String planCode) throws IOException {
 		String qPath = "/order/cart/{cartId}/ip/options";
@@ -5566,8 +5484,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_ip_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/ip/options";
@@ -5587,8 +5503,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/logs
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_logs_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/logs";
@@ -5606,8 +5520,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_logs_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/logs";
@@ -5627,8 +5539,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/cart/{cartId}/logs/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Logs you want to consult options
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericOptionDefinition> cart_cartId_logs_options_GET(String cartId, String planCode) throws IOException {
 		String qPath = "/order/cart/{cartId}/logs/options";
@@ -5648,8 +5558,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_logs_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/logs/options";
@@ -5669,8 +5577,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/sslGateway
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_sslGateway_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/sslGateway";
@@ -5688,8 +5594,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_sslGateway_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/sslGateway";
@@ -5709,8 +5613,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/cart/{cartId}/sslGateway/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the SSL Gateway you want to consult options
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericOptionDefinition> cart_cartId_sslGateway_options_GET(String cartId, String planCode) throws IOException {
 		String qPath = "/order/cart/{cartId}/sslGateway/options";
@@ -5730,8 +5632,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_sslGateway_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/sslGateway/options";
@@ -5751,8 +5651,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/docker
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_docker_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/docker";
@@ -5770,8 +5668,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_docker_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/docker";
@@ -5791,8 +5687,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/cart/{cartId}/docker/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Docker you want to consult options
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericOptionDefinition> cart_cartId_docker_options_GET(String cartId, String planCode) throws IOException {
 		String qPath = "/order/cart/{cartId}/docker/options";
@@ -5812,8 +5706,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_docker_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/docker/options";
@@ -5833,8 +5725,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/csp2
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_csp2_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/csp2";
@@ -5852,8 +5742,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_csp2_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/csp2";
@@ -5873,8 +5761,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/cart/{cartId}/csp2/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of a SaaS CSP2 main offer
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericOptionDefinition> cart_cartId_csp2_options_GET(String cartId, String planCode) throws IOException {
 		String qPath = "/order/cart/{cartId}/csp2/options";
@@ -5894,8 +5780,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_csp2_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/csp2/options";
@@ -6000,8 +5884,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/summary
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public OvhOrder cart_cartId_summary_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/summary";
@@ -6187,8 +6069,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/metrics
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_metrics_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/metrics";
@@ -6206,8 +6086,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_metrics_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/metrics";
@@ -6227,8 +6105,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/cart/{cartId}/metrics/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Metrics you want to consult options
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericOptionDefinition> cart_cartId_metrics_options_GET(String cartId, String planCode) throws IOException {
 		String qPath = "/order/cart/{cartId}/metrics/options";
@@ -6248,8 +6124,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_metrics_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/metrics/options";
@@ -6269,8 +6143,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/privateCloudCDI
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_privateCloudCDI_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/privateCloudCDI";
@@ -6288,8 +6160,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_privateCloudCDI_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/privateCloudCDI";
@@ -6309,8 +6179,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/cart/{cartId}/privateCloudCDI/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Private Cloud CDI you want to consult options
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericOptionDefinition> cart_cartId_privateCloudCDI_options_GET(String cartId, String planCode) throws IOException {
 		String qPath = "/order/cart/{cartId}/privateCloudCDI/options";
@@ -6330,8 +6198,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_privateCloudCDI_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/privateCloudCDI/options";
@@ -6351,8 +6217,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/vps
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_vps_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/vps";
@@ -6370,8 +6234,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_vps_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/vps";
@@ -6391,8 +6253,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/cart/{cartId}/vps/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the VPS you want to consult options
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericOptionDefinition> cart_cartId_vps_options_GET(String cartId, String planCode) throws IOException {
 		String qPath = "/order/cart/{cartId}/vps/options";
@@ -6412,8 +6272,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_vps_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/vps/options";
@@ -6433,8 +6291,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/cephaas
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_cephaas_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/cephaas";
@@ -6452,8 +6308,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_cephaas_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/cephaas";
@@ -6473,8 +6327,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/cart/{cartId}/cephaas/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Ceph as a Service you want to consult options
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericOptionDefinition> cart_cartId_cephaas_options_GET(String cartId, String planCode) throws IOException {
 		String qPath = "/order/cart/{cartId}/cephaas/options";
@@ -6494,8 +6346,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_cephaas_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/cephaas/options";
@@ -6515,8 +6365,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/webHosting
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhWebHostingProductInformation> cart_cartId_webHosting_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/webHosting";
@@ -6535,8 +6383,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_webHosting_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/webHosting";
@@ -6556,8 +6402,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/cart/{cartId}/webHosting/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the webHosting you want to consult options
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericOptionDefinition> cart_cartId_webHosting_options_GET(String cartId, String planCode) throws IOException {
 		String qPath = "/order/cart/{cartId}/webHosting/options";
@@ -6577,8 +6421,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_webHosting_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/webHosting/options";
@@ -6598,8 +6440,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/paasdb
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_paasdb_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/paasdb";
@@ -6617,8 +6457,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_paasdb_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/paasdb";
@@ -6637,8 +6475,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/ipLoadbalancing
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_ipLoadbalancing_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/ipLoadbalancing";
@@ -6656,8 +6492,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_ipLoadbalancing_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/ipLoadbalancing";
@@ -6677,8 +6511,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/cart/{cartId}/ipLoadbalancing/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the IP Load-Balancing you want to consult options
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericOptionDefinition> cart_cartId_ipLoadbalancing_options_GET(String cartId, String planCode) throws IOException {
 		String qPath = "/order/cart/{cartId}/ipLoadbalancing/options";
@@ -6698,8 +6530,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_ipLoadbalancing_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/ipLoadbalancing/options";
@@ -6719,8 +6549,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/checkout
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public OvhOrder cart_cartId_checkout_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/checkout";
@@ -6735,8 +6563,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: POST /order/cart/{cartId}/checkout
 	 * @param cartId [required] Cart identifier
 	 * @param waiveRetractationPeriod [required] Indicates that order will be processed with waiving retractation period
-	 *
-	 * API beta
 	 */
 	public OvhOrder cart_cartId_checkout_POST(String cartId, Boolean waiveRetractationPeriod) throws IOException {
 		String qPath = "/order/cart/{cartId}/checkout";
@@ -6752,8 +6578,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/privateCloudDC
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_privateCloudDC_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/privateCloudDC";
@@ -6771,8 +6595,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_privateCloudDC_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/privateCloudDC";
@@ -6792,8 +6614,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/cart/{cartId}/privateCloudDC/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Private Cloud Dedicated Cloud you want to consult options
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericOptionDefinition> cart_cartId_privateCloudDC_options_GET(String cartId, String planCode) throws IOException {
 		String qPath = "/order/cart/{cartId}/privateCloudDC/options";
@@ -6813,8 +6633,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_privateCloudDC_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/privateCloudDC/options";
@@ -6834,8 +6652,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/office365Prepaid
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_office365Prepaid_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/office365Prepaid";
@@ -6853,8 +6669,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_office365Prepaid_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/office365Prepaid";
@@ -6874,8 +6688,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/cart/{cartId}/office365Prepaid/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of a Office 365 Prepaid main offer
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericOptionDefinition> cart_cartId_office365Prepaid_options_GET(String cartId, String planCode) throws IOException {
 		String qPath = "/order/cart/{cartId}/office365Prepaid/options";
@@ -6895,8 +6707,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_office365Prepaid_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/office365Prepaid/options";
@@ -6916,8 +6726,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/paasmon
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_paasmon_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/paasmon";
@@ -6935,8 +6743,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_paasmon_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/paasmon";
@@ -6999,8 +6805,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/paasqueue
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_paasqueue_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/paasqueue";
@@ -7018,8 +6822,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_paasqueue_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/paasqueue";
@@ -7038,8 +6840,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/emailpro
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_emailpro_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/emailpro";
@@ -7057,8 +6857,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_emailpro_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/emailpro";
@@ -7078,8 +6876,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/cart/{cartId}/emailpro/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the EmailPro you want to consult options
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericOptionDefinition> cart_cartId_emailpro_options_GET(String cartId, String planCode) throws IOException {
 		String qPath = "/order/cart/{cartId}/emailpro/options";
@@ -7099,8 +6895,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_emailpro_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/emailpro/options";
@@ -7120,8 +6914,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/veeamcc
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_veeamcc_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/veeamcc";
@@ -7139,8 +6931,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_veeamcc_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/veeamcc";
@@ -7160,8 +6950,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/cart/{cartId}/veeamcc/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Veeam Cloud Connect you want to consult options
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericOptionDefinition> cart_cartId_veeamcc_options_GET(String cartId, String planCode) throws IOException {
 		String qPath = "/order/cart/{cartId}/veeamcc/options";
@@ -7181,8 +6969,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_veeamcc_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/veeamcc/options";
@@ -7202,8 +6988,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/exchange
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_exchange_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/exchange";
@@ -7221,8 +7005,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_exchange_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/exchange";
@@ -7242,8 +7024,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/cart/{cartId}/exchange/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Exchange you want to consult options
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericOptionDefinition> cart_cartId_exchange_options_GET(String cartId, String planCode) throws IOException {
 		String qPath = "/order/cart/{cartId}/exchange/options";
@@ -7263,8 +7043,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_exchange_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/exchange/options";
@@ -7284,8 +7062,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 *
 	 * REST: GET /order/cart/{cartId}/exchangeEnterprise
 	 * @param cartId [required] Cart identifier
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericProductDefinition> cart_cartId_exchangeEnterprise_GET(String cartId) throws IOException {
 		String qPath = "/order/cart/{cartId}/exchangeEnterprise";
@@ -7303,8 +7079,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_exchangeEnterprise_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/exchangeEnterprise";
@@ -7324,8 +7098,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * REST: GET /order/cart/{cartId}/exchangeEnterprise/options
 	 * @param cartId [required] Cart identifier
 	 * @param planCode [required] Identifier of the Exchange Enterprise offer you want to consult options
-	 *
-	 * API beta
 	 */
 	public ArrayList<OvhGenericOptionDefinition> cart_cartId_exchangeEnterprise_options_GET(String cartId, String planCode) throws IOException {
 		String qPath = "/order/cart/{cartId}/exchangeEnterprise/options";
@@ -7345,8 +7117,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 *
-	 * API beta
 	 */
 	public OvhItem cart_cartId_exchangeEnterprise_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/exchangeEnterprise/options";

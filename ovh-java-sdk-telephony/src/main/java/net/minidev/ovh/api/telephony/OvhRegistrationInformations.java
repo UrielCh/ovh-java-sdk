@@ -14,6 +14,13 @@ public class OvhRegistrationInformations {
 	public Date datetime;
 
 	/**
+	 * SIP registration's local device port
+	 *
+	 * canBeNull
+	 */
+	public Long localPort;
+
+	/**
 	 * SIP registration's port
 	 *
 	 * canBeNull
@@ -33,6 +40,13 @@ public class OvhRegistrationInformations {
 	 * canBeNull
 	 */
 	public String ip;
+
+	/**
+	 * SIP registration's local device IP
+	 *
+	 * canBeNull
+	 */
+	public String localIp;
 
 	/**
 	 * SIP registration's User-Agent

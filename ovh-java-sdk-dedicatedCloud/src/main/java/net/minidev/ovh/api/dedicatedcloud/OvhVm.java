@@ -1,5 +1,7 @@
 package net.minidev.ovh.api.dedicatedcloud;
 
+import net.minidev.ovh.api.dedicatedcloud.backup.OvhBackup;
+
 /**
  * Private Cloud Virtual Machine
  */
@@ -10,6 +12,13 @@ public class OvhVm {
 	 * canBeNull && readOnly
 	 */
 	public String hostName;
+
+	/**
+	 * Backup associated to this Virtual Machine
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhBackup backup;
 
 	/**
 	 * Current version status of VMware Tools in the guest operating system.

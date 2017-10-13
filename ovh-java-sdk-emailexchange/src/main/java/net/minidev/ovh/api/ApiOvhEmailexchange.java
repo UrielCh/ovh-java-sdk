@@ -13,6 +13,7 @@ import net.minidev.ovh.api.email.exchange.OvhDisclaimerAttributeEnum;
 import net.minidev.ovh.api.email.exchange.OvhDomain;
 import net.minidev.ovh.api.email.exchange.OvhDomainTypeEnum;
 import net.minidev.ovh.api.email.exchange.OvhExchangeAccountAlias;
+import net.minidev.ovh.api.email.exchange.OvhExchangeAccountArchive;
 import net.minidev.ovh.api.email.exchange.OvhExchangeAccountDiagnosis;
 import net.minidev.ovh.api.email.exchange.OvhExchangeAccountFullAccess;
 import net.minidev.ovh.api.email.exchange.OvhExchangeAccountProtocol;
@@ -988,6 +989,8 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	 * @param initials [required] Account initials
 	 * @param firstName [required] Account first name
 	 * @param hiddenFromGAL [required] Hide the account in Global Address List
+	 * @param litigationPeriod [required] Litigation length in days, 0 means unlimited
+	 * @param litigation [required] Litigation status
 	 * @param license [required] Exchange license
 	 * @param login [required] Account login
 	 * @param password [required] Account password
@@ -1001,13 +1004,15 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 */
-	public OvhTask organizationName_service_exchangeService_account_POST(String organizationName, String exchangeService, String initials, String firstName, Boolean hiddenFromGAL, OvhOvhLicenceEnum license, String login, String password, String domain, OvhSpamAndVirusConfiguration spamAndVirusConfiguration, String SAMAccountName, OvhMailingFilterEnum[] mailingFilter, String lastName, Boolean outlookLicense, String displayName) throws IOException {
+	public OvhTask organizationName_service_exchangeService_account_POST(String organizationName, String exchangeService, String initials, String firstName, Boolean hiddenFromGAL, Long litigationPeriod, Boolean litigation, OvhOvhLicenceEnum license, String login, String password, String domain, OvhSpamAndVirusConfiguration spamAndVirusConfiguration, String SAMAccountName, OvhMailingFilterEnum[] mailingFilter, String lastName, Boolean outlookLicense, String displayName) throws IOException {
 		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account";
 		StringBuilder sb = path(qPath, organizationName, exchangeService);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "initials", initials);
 		addBody(o, "firstName", firstName);
 		addBody(o, "hiddenFromGAL", hiddenFromGAL);
+		addBody(o, "litigationPeriod", litigationPeriod);
+		addBody(o, "litigation", litigation);
 		addBody(o, "license", license);
 		addBody(o, "login", login);
 		addBody(o, "password", password);
@@ -1125,6 +1130,69 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/tasks/{id}";
 		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress, id);
 		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/archive
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param primaryEmailAddress [required] Default email for this mailbox
+	 */
+	public OvhExchangeAccountArchive organizationName_service_exchangeService_account_primaryEmailAddress_archive_GET(String organizationName, String exchangeService, String primaryEmailAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/archive";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhExchangeAccountArchive.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/archive
+	 * @param body [required] New object properties
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param primaryEmailAddress [required] Default email for this mailbox
+	 */
+	public void organizationName_service_exchangeService_account_primaryEmailAddress_archive_PUT(String organizationName, String exchangeService, String primaryEmailAddress, OvhExchangeAccountArchive body) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/archive";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Create new archive mailbox
+	 *
+	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/archive
+	 * @param quota [required] Archive mailbox quota (if not provided mailbox quota will be taken)
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param primaryEmailAddress [required] Default email for this mailbox
+	 */
+	public OvhTask organizationName_service_exchangeService_account_primaryEmailAddress_archive_POST(String organizationName, String exchangeService, String primaryEmailAddress, Long quota) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/archive";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "quota", quota);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Delete existing archive mailbox
+	 *
+	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/archive
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param primaryEmailAddress [required] Default email for this mailbox
+	 */
+	public OvhTask organizationName_service_exchangeService_account_primaryEmailAddress_archive_DELETE(String organizationName, String exchangeService, String primaryEmailAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/archive";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1290,6 +1358,51 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	}
 
 	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/export
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param primaryEmailAddress [required] Default email for this mailbox
+	 */
+	public OvhExport organizationName_service_exchangeService_account_primaryEmailAddress_export_GET(String organizationName, String exchangeService, String primaryEmailAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/export";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhExport.class);
+	}
+
+	/**
+	 * Request PST file for the account
+	 *
+	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/export
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param primaryEmailAddress [required] Default email for this mailbox
+	 */
+	public OvhTask organizationName_service_exchangeService_account_primaryEmailAddress_export_POST(String organizationName, String exchangeService, String primaryEmailAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/export";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Remove request of PST file
+	 *
+	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/export
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param primaryEmailAddress [required] Default email for this mailbox
+	 */
+	public OvhTask organizationName_service_exchangeService_account_primaryEmailAddress_export_DELETE(String organizationName, String exchangeService, String primaryEmailAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/export";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
 	 * Full access granted users for this mailbox
 	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/fullAccess
@@ -1350,51 +1463,6 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	public OvhTask organizationName_service_exchangeService_account_primaryEmailAddress_fullAccess_allowedAccountId_DELETE(String organizationName, String exchangeService, String primaryEmailAddress, Long allowedAccountId) throws IOException {
 		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/fullAccess/{allowedAccountId}";
 		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress, allowedAccountId);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/export
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param primaryEmailAddress [required] Default email for this mailbox
-	 */
-	public OvhExport organizationName_service_exchangeService_account_primaryEmailAddress_export_GET(String organizationName, String exchangeService, String primaryEmailAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/export";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhExport.class);
-	}
-
-	/**
-	 * Request PST file for the account
-	 *
-	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/export
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param primaryEmailAddress [required] Default email for this mailbox
-	 */
-	public OvhTask organizationName_service_exchangeService_account_primaryEmailAddress_export_POST(String organizationName, String exchangeService, String primaryEmailAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/export";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Remove request of PST file
-	 *
-	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/export
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param primaryEmailAddress [required] Default email for this mailbox
-	 */
-	public OvhTask organizationName_service_exchangeService_account_primaryEmailAddress_export_DELETE(String organizationName, String exchangeService, String primaryEmailAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/export";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
 		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}

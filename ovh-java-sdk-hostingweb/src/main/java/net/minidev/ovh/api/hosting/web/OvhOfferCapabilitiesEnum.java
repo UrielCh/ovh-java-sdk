@@ -42,6 +42,7 @@ public enum OvhOfferCapabilitiesEnum {
 	aspfree("aspfree"),
 	aspperso("aspperso"),
 	business("business"),
+	cloudwebbetax1("cloudwebbetax1"),
 	cloudwebx1("cloudwebx1"),
 	demo1g("demo1g"),
 	depro2012("depro2012"),

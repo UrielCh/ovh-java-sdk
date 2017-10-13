@@ -52,5 +52,10 @@ public class OvhIpv4Org {
 	/**
 	 * canBeNull && readOnly
 	 */
+	public String state;
+
+	/**
+	 * canBeNull && readOnly
+	 */
 	public String lastname;
 }
