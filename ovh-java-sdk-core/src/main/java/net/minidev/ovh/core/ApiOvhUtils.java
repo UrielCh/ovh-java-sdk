@@ -156,9 +156,9 @@ public class ApiOvhUtils {
 	static char[] hexa = "0123456789abcdef".toCharArray();
 
 	/**
-	 * Encode bytes[] to lowercase hea string
+	 * Encode bytes[] to lowercase hex string
 	 * @param bytes
-	 * @return
+	 * @return lowcased hex value
 	 */
 	public static String encodeHex(byte[] bytes) {
 		char[] result = new char[bytes.length * 2];

@@ -149,8 +149,7 @@ public class ApiOvhCore {
 	}
 
 	/**
-	 * Connect to the OVH API using a consumerKey contains in your ohv config file or environement variable
-	 * @param ck the consumerKey
+	 * Connect to the OVH API using a consumerKey contains in your ovh config file or environment variable
 	 * @return an ApiOvhCore authenticate by consumerKey
 	 */
 	public static ApiOvhCore getInstance() {
@@ -353,7 +352,7 @@ public class ApiOvhCore {
 	/**
 	 * Request for a new Token with full access
 	 * @param redirection
-	 * @return
+	 * @return a new OvhCredential
 	 */
 	public OvhCredential requestToken(String redirection) throws IOException {
 		OvhAccessRule[] accessRules = new OvhAccessRule[this.accessRules.length];
@@ -381,7 +380,7 @@ public class ApiOvhCore {
 	 * @param query
 	 * @param payload
 	 * @param needAuth
-	 * @return
+	 * @return Full response as String
 	 * @throws IOException
 	 */
 	public String exec(String apiPath, String method, String query, Object payload, boolean needAuth) throws IOException {

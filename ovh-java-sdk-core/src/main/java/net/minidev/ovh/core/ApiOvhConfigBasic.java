@@ -120,7 +120,7 @@ public class ApiOvhConfigBasic extends ApiOvhConfig {
 
 	/**
 	 * storage for previous CK
-	 * @return
+	 * @return File used to store consumer key
 	 */
 	protected File gettmpStore(String nic) {
 		if (consumer_key_storage == null || !consumer_key_storage.isDirectory()) {
