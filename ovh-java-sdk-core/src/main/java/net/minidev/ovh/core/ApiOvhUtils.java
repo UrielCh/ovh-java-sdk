@@ -34,7 +34,7 @@ public class ApiOvhUtils {
 	 * Convert JSON String to a POJO java
 	 * @param in
 	 * @param mapTo
-	 * @return
+	 * @return POJO Object
 	 * @throws IOException
 	 */
 	public static <T> T convertTo(String in, TypeReference<T> mapTo) throws IOException {
@@ -50,7 +50,7 @@ public class ApiOvhUtils {
 	 * Convert JSON String to a POJO java
 	 * @param in
 	 * @param mapTo
-	 * @return
+	 * @return POJO Object
 	 * @throws IOException
 	 */
 	public static <T> T convertTo(String in, Class<T> mapTo) throws IOException {
@@ -65,7 +65,7 @@ public class ApiOvhUtils {
 	/**
 	 * Convert Object to JSON String
 	 * @param body
-	 * @return
+	 * @return a String containing the JSON
 	 */
 	public static String objectJsonBody(Object body) {
 		if (body instanceof String)

@@ -353,7 +353,6 @@ public class ApiOvhCore {
 	/**
 	 * Request for a new Token with full access
 	 * @param redirection
-	 * @param rules
 	 * @return
 	 */
 	public OvhCredential requestToken(String redirection) throws IOException {
