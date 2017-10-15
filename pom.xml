@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.minidev</groupId>
 	<artifactId>ovh-java-sdk-pom</artifactId>
-	<version>0.9.6</version>
+	<version>0.9.7</version>
 	<packaging>pom</packaging>
 	<name>OVH SDK for Java</name>
 	<description>OVH ...</description>
@@ -300,8 +300,6 @@
 	</modules>
 	<scm>
 		<url>https://github.com/UrielCh/ovh-java-sdk.git</url>
-		<connection>scm:git:git://github.com/UrielCh/ovh-java-sdk.git</connection>
-		<developerConnection>scm:git:git://github.com/UrielCh/ovh-java-sdk.git</developerConnection>
 	</scm>
 	<dependencyManagement>
 		<dependencies>
