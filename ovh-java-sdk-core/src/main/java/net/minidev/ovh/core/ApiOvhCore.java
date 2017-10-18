@@ -194,19 +194,14 @@ public class ApiOvhCore {
 		return core;
 	}
 
-	public void dumpCertif() {
-		System.out.println("Nic:" + this.getNic());
-		System.out.println("ConsumerKey:" + this.getConsumerKey());
-	}
-
 	private HttpURLConnection getRequest(String method, URL url) throws IOException {
-		HttpURLConnection request = (HttpURLConnection) url.openConnection();
-		request.setRequestMethod(method);
-		request.setReadTimeout(60000);
-		request.setConnectTimeout(60000);
-		request.setRequestProperty("Content-Type", "application/json");
-		request.setRequestProperty("X-Ovh-Application", config.getApplicationKey());
-		return request;
+		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+		connection.setRequestMethod(method);
+		connection.setReadTimeout(60000);
+		connection.setConnectTimeout(60000);
+		connection.setRequestProperty("Content-Type", "application/json");
+		connection.setRequestProperty("X-Ovh-Application", config.getApplicationKey());
+		return connection;
 	}
 
 	public String getNic() {
@@ -242,7 +237,7 @@ public class ApiOvhCore {
 		if (timeOffset == null)
 			syncTime();
 		long now = System.currentTimeMillis() / 1000L;
-		now += timeOffset;
+		now -= timeOffset;
 		return Long.toString(now);
 	}
 
@@ -429,27 +424,27 @@ public class ApiOvhCore {
 		String CK = null;
 		while (true) {
 
-			HttpURLConnection request = getRequest(method, url);
+			HttpURLConnection connection = getRequest(method, url);
 			if (needAuth) {
 				CK = this.getConsumerKey();
 				String timestamp = getTimestamp();
 				String toHash = config.getAppSecret() + "+" + CK + "+" + method + "+" + url + "+" + txt + "+" + timestamp;
 				String sig = "$1$" + ApiOvhUtils.digestSha1(toHash.getBytes(UTF8));
-				request.setRequestProperty("X-Ovh-Timestamp", timestamp);
-				request.setRequestProperty("X-Ovh-Signature", sig);
-				request.setRequestProperty("X-Ovh-Consumer", CK);
+				connection.setRequestProperty("X-Ovh-Timestamp", timestamp);
+				connection.setRequestProperty("X-Ovh-Signature", sig);
+				connection.setRequestProperty("X-Ovh-Consumer", CK);
 			}
 			if (txt != null && txt.length() > 0) {
-				request.setDoOutput(true);
-				DataOutputStream out = new DataOutputStream(request.getOutputStream());
+				connection.setDoOutput(true);
+				DataOutputStream out = new DataOutputStream(connection.getOutputStream());
 				out.writeBytes(txt);
 				out.flush();
 				out.close();
 			}
 
 			String inputLine;
-			int responseCode = request.getResponseCode();
-			InputStream stream = (responseCode == 200) ? request.getInputStream() : request.getErrorStream();
+			int responseCode = connection.getResponseCode();
+			InputStream stream = (responseCode == 200) ? connection.getInputStream() : connection.getErrorStream();
 			BufferedReader in = new BufferedReader(new InputStreamReader(stream));
 			// build response
 			StringBuilder responseSb = new StringBuilder();
@@ -469,10 +464,8 @@ public class ApiOvhCore {
 			}
 
 			if (response.startsWith("{\"errorCode\":")) {
-
 				//  errorCode=INVALID_CREDENTIAL, httpCode=403 Forbidden, message=This credential is not valid
 				OvhErrorMessage err = ApiOvhUtils.mapper.readValue(response, OvhErrorMessage.class);
-				//String errorCode = obj.errorCode;
 
 				boolean credentialError = err.isErrorCode(OvhErrorMessage.INVALID_CREDENTIAL, OvhErrorMessage.NOT_CREDENTIAL);
 
@@ -487,15 +480,17 @@ public class ApiOvhCore {
 						continue;
 					}
 				}
-				//
 				if (err.isErrorCode(OvhErrorMessage.QUERY_TIME_OUT) && failure < 5) {
+					ApiOvhUtils.sleep(100);
 					failure++;
 					continue;
-				} // NOT_CREDENTIAL
-				if (err.isErrorCode(OvhErrorMessage.NOT_GRANTED_CALL)) {
-					throw new OvhException(method, query, err);
 				}
-				throw new OvhException(method, query, err);
+				// NOT_CREDENTIAL error ?
+				String queryId = connection.getHeaderField("X-OVH-QUERYID");
+				if (err.isErrorCode(OvhErrorMessage.NOT_GRANTED_CALL)) {
+					throw new OvhException(method, query, err, queryId);
+				}
+				throw new OvhException(method, query, err, queryId);
 			}
 			break;
 		}
