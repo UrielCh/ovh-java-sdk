@@ -13,8 +13,6 @@ import java.util.Properties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-// import net.minidev.sos.res.Res;
-
 public class ApiOvhConfigBasic extends ApiOvhConfig {
 	private final static String configFiles = "./ovh.conf, ~/.ovh/config, ~/ovh.conf or /etc/ovh.conf";
 	/**

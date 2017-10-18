@@ -3,8 +3,8 @@ package net.minidev.ovh.core;
 import java.io.IOException;
 
 /**
- * @See {@link ApiOvhConfigBasic}
- * @See {@link ApiOvhConfigStatic}
+ * {@link ApiOvhConfigBasic}
+ * {@link ApiOvhConfigStatic}
  * 
  * @author uriel
  *
