@@ -5,6 +5,8 @@ package net.minidev.ovh.api.xdsl.linediagnostic;
  */
 public enum OvhCustomerActionsEnum {
 	bePreparedToCheckModemSynchronization("bePreparedToCheckModemSynchronization"),
+	changeDslFilterAndPlugInDti("changeDslFilterAndPlugInDti"),
+	changeExtensionCable("changeExtensionCable"),
 	changeProfile("changeProfile"),
 	checkConnectionCable("checkConnectionCable"),
 	checkConnectionLoginAndParameters("checkConnectionLoginAndParameters"),

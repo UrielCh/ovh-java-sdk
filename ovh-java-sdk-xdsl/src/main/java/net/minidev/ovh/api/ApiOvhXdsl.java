@@ -415,6 +415,37 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	}
 
 	/**
+	 * Launch a task to install target firmware on modem
+	 *
+	 * REST: POST /xdsl/{serviceName}/modem/firmware
+	 * @param todoDate [required] Date of execution, default is now
+	 * @param firmware [required] The firmware version to upgrade to
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhTask serviceName_modem_firmware_POST(String serviceName, Date todoDate, String firmware) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/firmware";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "todoDate", todoDate);
+		addBody(o, "firmware", firmware);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get the firmware version installed on modem
+	 *
+	 * REST: GET /xdsl/{serviceName}/modem/firmware
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public String serviceName_modem_firmware_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/firmware";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
+
+	/**
 	 * Change the status of the ftp service on modem
 	 *
 	 * REST: POST /xdsl/{serviceName}/modem/ftp
@@ -525,6 +556,19 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * List available firmware for this modem
+	 *
+	 * REST: GET /xdsl/{serviceName}/modem/firmwareAvailable
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public ArrayList<String> serviceName_modem_firmwareAvailable_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/firmwareAvailable";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
 	}
 
 	/**

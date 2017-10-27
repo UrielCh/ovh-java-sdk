@@ -7,7 +7,7 @@ import java.util.Date;
  */
 public class OvhQuota {
 	/**
-	 * Total (IN+OUT) used quota value in bytes
+	 * Total used quota value in bytes
 	 *
 	 * canBeNull && readOnly
 	 */
@@ -35,13 +35,6 @@ public class OvhQuota {
 	public String zone;
 
 	/**
-	 * In used quota value in bytes since last reset date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long in;
-
-	/**
 	 * The last time your quota was updated from your Load Balancer instance
 	 *
 	 * canBeNull && readOnly
@@ -54,11 +47,4 @@ public class OvhQuota {
 	 * canBeNull && readOnly
 	 */
 	public Long included;
-
-	/**
-	 * Out used quota value in bytes since last reset date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long out;
 }

@@ -60,7 +60,7 @@ public class ApiOvh extends ApiOvhBase {
 	final public ApiOvhNewAccount newAccount;
 	final public ApiOvhOrder order;
 	final public ApiOvhOverTheBox overTheBox;
-	final public ApiOvhPaasdatabase paasDatabase;
+	// final public ApiOvhPaasdatabase paasDatabase;
 	final public ApiOvhPaasmonitoring paasMonitoring;
 	final public ApiOvhPaastimeseries paasTimeseries;
 	final public ApiOvhPackxdsl packXdsl;
@@ -131,7 +131,7 @@ public class ApiOvh extends ApiOvhBase {
 		this.newAccount = new ApiOvhNewAccount(core);
 		this.order = new ApiOvhOrder(core);
 		this.overTheBox = new ApiOvhOverTheBox(core);
-		this.paasDatabase = new ApiOvhPaasdatabase(core);
+		//this.paasDatabase = new ApiOvhPaasdatabase(core);
 		this.paasMonitoring = new ApiOvhPaasmonitoring(core);
 		this.paasTimeseries = new ApiOvhPaastimeseries(core);
 		this.packXdsl = new ApiOvhPackxdsl(core);

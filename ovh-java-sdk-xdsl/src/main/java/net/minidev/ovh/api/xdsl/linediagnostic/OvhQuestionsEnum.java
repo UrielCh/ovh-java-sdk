@@ -4,10 +4,12 @@ package net.minidev.ovh.api.xdsl.linediagnostic;
  * Possible customer questions
  */
 public enum OvhQuestionsEnum {
+	bandwidthTestUnit("bandwidthTestUnit"),
 	comment("comment"),
 	conditionsAccepted("conditionsAccepted"),
 	contactPhone("contactPhone"),
 	datetimeOfAppearance("datetimeOfAppearance"),
+	downloadBandwidthTest("downloadBandwidthTest"),
 	endAfternoonHours("endAfternoonHours"),
 	endMorningHours("endMorningHours"),
 	followBySms("followBySms"),
@@ -18,7 +20,8 @@ public enum OvhQuestionsEnum {
 	modemMac("modemMac"),
 	modemStillSynchronized("modemStillSynchronized"),
 	modemType("modemType"),
-	otrsTicket("otrsTicket"),
+	ovhTicket("ovhTicket"),
+	problemType("problemType"),
 	resolvedAfterTests("resolvedAfterTests"),
 	secureSite("secureSite"),
 	severalInternetConnections("severalInternetConnections"),
@@ -26,7 +29,8 @@ public enum OvhQuestionsEnum {
 	siteDigicode("siteDigicode"),
 	siteOpening("siteOpening"),
 	startAfternoonHours("startAfternoonHours"),
-	startMorningHours("startMorningHours");
+	startMorningHours("startMorningHours"),
+	uploadBandwidthTest("uploadBandwidthTest");
 
 	final String value;
 

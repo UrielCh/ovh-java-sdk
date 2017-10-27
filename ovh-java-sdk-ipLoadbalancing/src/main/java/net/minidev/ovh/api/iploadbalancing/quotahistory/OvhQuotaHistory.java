@@ -7,7 +7,7 @@ import java.util.Date;
  */
 public class OvhQuotaHistory {
 	/**
-	 * Total (IN+OUT) used quota value in bytes
+	 * Total used quota value in bytes
 	 *
 	 * canBeNull && readOnly
 	 */
@@ -26,13 +26,6 @@ public class OvhQuotaHistory {
 	 * canBeNull && readOnly
 	 */
 	public String zone;
-
-	/**
-	 * In used quota value in bytes since last reset date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long in;
 
 	/**
 	 * Historized date for this quota entry
@@ -54,11 +47,4 @@ public class OvhQuotaHistory {
 	 * canBeNull && readOnly
 	 */
 	public Long id;
-
-	/**
-	 * Out used quota value in bytes since last reset date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long out;
 }

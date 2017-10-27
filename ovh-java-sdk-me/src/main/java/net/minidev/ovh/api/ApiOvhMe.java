@@ -2354,14 +2354,14 @@ public class ApiOvhMe extends ApiOvhBase {
 	}
 
 	/**
-	 * Get visitor country & region
+	 * Fetch visitor country & region
 	 *
-	 * REST: GET /me/geolocation
+	 * REST: POST /me/geolocation
 	 */
-	public OvhContinentCountryLocation geolocation_GET() throws IOException {
+	public OvhContinentCountryLocation geolocation_POST() throws IOException {
 		String qPath = "/me/geolocation";
 		StringBuilder sb = path(qPath);
-		String resp = execN(qPath, "GET", sb.toString(), null);
+		String resp = execN(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhContinentCountryLocation.class);
 	}
 

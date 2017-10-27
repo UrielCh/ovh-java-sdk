@@ -9,6 +9,8 @@ public enum OvhDiagnosticStatusEnum {
 	haveToConnectModemOnTheRightPlug("haveToConnectModemOnTheRightPlug"),
 	init("init"),
 	interventionRequested("interventionRequested"),
+	noBandwidthFault("noBandwidthFault"),
+	noProblemAnymore("noProblemAnymore"),
 	noSyncFaultDiagnosticRequired("noSyncFaultDiagnosticRequired"),
 	problem("problem"),
 	resolvedAfterTests("resolvedAfterTests"),

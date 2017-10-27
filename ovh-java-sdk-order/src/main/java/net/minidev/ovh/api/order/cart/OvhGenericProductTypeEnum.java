@@ -6,7 +6,11 @@ package net.minidev.ovh.api.order.cart;
 public enum OvhGenericProductTypeEnum {
 	delivery("delivery"),
 	deposit("deposit"),
-	shipping("shipping");
+	shipping("shipping"),
+	cloud_service("cloud_service"),
+	saas_license("saas_license"),
+	storage("storage"),
+	domain("domain");
 
 	final String value;
 

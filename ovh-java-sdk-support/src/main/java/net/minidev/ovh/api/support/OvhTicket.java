@@ -70,6 +70,13 @@ public class OvhTicket {
 	public String score;
 
 	/**
+	 * Can this ticket be closed or not
+	 *
+	 * canBeNull
+	 */
+	public Boolean canBeClosed;
+
+	/**
 	 * Sender type of last message
 	 *
 	 * canBeNull

@@ -7,6 +7,7 @@ public enum OvhProviderEnum {
 	axione("axione"),
 	ft("ft"),
 	ftBySfr("ftBySfr"),
+	kosc("kosc"),
 	koscDeg("koscDeg"),
 	ovh("ovh"),
 	sfr("sfr");

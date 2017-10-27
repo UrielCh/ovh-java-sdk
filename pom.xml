@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.minidev</groupId>
 	<artifactId>ovh-java-sdk-pom</artifactId>
-	<version>0.9.8</version>
+	<version>0.9.9</version>
 	<packaging>pom</packaging>
 	<name>OVH SDK for Java</name>
 	<description>OVH ...</description>
@@ -259,7 +259,6 @@
 		<module>ovh-java-sdk-newAccount</module>
 		<module>ovh-java-sdk-order</module>
 		<module>ovh-java-sdk-overTheBox</module>
-		<module>ovh-java-sdk-paasdatabase</module>
 		<module>ovh-java-sdk-paasmonitoring</module>
 		<module>ovh-java-sdk-paastimeseries</module>
 		<module>ovh-java-sdk-packsiptrunk</module>

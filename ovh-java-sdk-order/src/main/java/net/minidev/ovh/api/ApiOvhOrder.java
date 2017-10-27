@@ -3737,6 +3737,55 @@ public class ApiOvhOrder extends ApiOvhBase {
 	}
 
 	/**
+	 * Get informations about additional Office offer for your service
+	 *
+	 * REST: GET /order/cartServiceOption/office365Prepaid/{serviceName}
+	 * @param serviceName [required] The internal ID of Office service
+	 */
+	public ArrayList<OvhGenericOptionDefinition> cartServiceOption_office365Prepaid_serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/order/cartServiceOption/office365Prepaid/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+
+	/**
+	 * Post an additional Office option in your cart
+	 *
+	 * REST: POST /order/cartServiceOption/office365Prepaid/{serviceName}
+	 * @param cartId [required] Cart identifier
+	 * @param planCode [required] Identifier of the additional Office offer
+	 * @param duration [required] Duration selected for the purchase of the product
+	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
+	 * @param quantity [required] Quantity of product desired
+	 * @param serviceName [required] The internal ID of Office service
+	 */
+	public OvhItem cartServiceOption_office365Prepaid_serviceName_POST(String serviceName, String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
+		String qPath = "/order/cartServiceOption/office365Prepaid/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "cartId", cartId);
+		addBody(o, "planCode", planCode);
+		addBody(o, "duration", duration);
+		addBody(o, "pricingMode", pricingMode);
+		addBody(o, "quantity", quantity);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhItem.class);
+	}
+
+	/**
+	 * List available services
+	 *
+	 * REST: GET /order/cartServiceOption/office365Prepaid
+	 */
+	public ArrayList<String> cartServiceOption_office365Prepaid_GET() throws IOException {
+		String qPath = "/order/cartServiceOption/office365Prepaid";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
 	 * Get informations about additional Cloud offer for your service
 	 *
 	 * REST: GET /order/cartServiceOption/cloud/{serviceName}
@@ -3832,55 +3881,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 		String qPath = "/order/cartServiceOption/domain";
 		StringBuilder sb = path(qPath);
 		query(sb, "whoisOwner", whoisOwner);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Get informations about additional Office offer for your service
-	 *
-	 * REST: GET /order/cartServiceOption/office365Prepaid/{serviceName}
-	 * @param serviceName [required] The internal ID of Office service
-	 */
-	public ArrayList<OvhGenericOptionDefinition> cartServiceOption_office365Prepaid_serviceName_GET(String serviceName) throws IOException {
-		String qPath = "/order/cartServiceOption/office365Prepaid/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
-	}
-
-	/**
-	 * Post an additional Office option in your cart
-	 *
-	 * REST: POST /order/cartServiceOption/office365Prepaid/{serviceName}
-	 * @param cartId [required] Cart identifier
-	 * @param planCode [required] Identifier of the additional Office offer
-	 * @param duration [required] Duration selected for the purchase of the product
-	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
-	 * @param quantity [required] Quantity of product desired
-	 * @param serviceName [required] The internal ID of Office service
-	 */
-	public OvhItem cartServiceOption_office365Prepaid_serviceName_POST(String serviceName, String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
-		String qPath = "/order/cartServiceOption/office365Prepaid/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "cartId", cartId);
-		addBody(o, "planCode", planCode);
-		addBody(o, "duration", duration);
-		addBody(o, "pricingMode", pricingMode);
-		addBody(o, "quantity", quantity);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhItem.class);
-	}
-
-	/**
-	 * List available services
-	 *
-	 * REST: GET /order/cartServiceOption/office365Prepaid
-	 */
-	public ArrayList<String> cartServiceOption_office365Prepaid_GET() throws IOException {
-		String qPath = "/order/cartServiceOption/office365Prepaid";
-		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
@@ -6427,41 +6427,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 		StringBuilder sb = path(qPath, cartId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "itemId", itemId);
-		addBody(o, "planCode", planCode);
-		addBody(o, "duration", duration);
-		addBody(o, "pricingMode", pricingMode);
-		addBody(o, "quantity", quantity);
-		String resp = execN(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhItem.class);
-	}
-
-	/**
-	 * Get informations about PaaS Database offers
-	 *
-	 * REST: GET /order/cart/{cartId}/paasdb
-	 * @param cartId [required] Cart identifier
-	 */
-	public ArrayList<OvhGenericProductDefinition> cart_cartId_paasdb_GET(String cartId) throws IOException {
-		String qPath = "/order/cart/{cartId}/paasdb";
-		StringBuilder sb = path(qPath, cartId);
-		String resp = execN(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Post a new PaaS Database item in your cart
-	 *
-	 * REST: POST /order/cart/{cartId}/paasdb
-	 * @param cartId [required] Cart identifier
-	 * @param planCode [required] Identifier of the PaaS Database offer
-	 * @param duration [required] Duration selected for the purchase of the product
-	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
-	 * @param quantity [required] Quantity of product desired
-	 */
-	public OvhItem cart_cartId_paasdb_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
-		String qPath = "/order/cart/{cartId}/paasdb";
-		StringBuilder sb = path(qPath, cartId);
-		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "planCode", planCode);
 		addBody(o, "duration", duration);
 		addBody(o, "pricingMode", pricingMode);

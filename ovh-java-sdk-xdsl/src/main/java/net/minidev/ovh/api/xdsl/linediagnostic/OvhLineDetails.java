@@ -7,13 +7,6 @@ import net.minidev.ovh.api.xdsl.OvhDslTypeEnum;
  */
 public class OvhLineDetails {
 	/**
-	 * line number
-	 *
-	 * canBeNull
-	 */
-	public String number;
-
-	/**
 	 * address of the access
 	 *
 	 * canBeNull
@@ -33,13 +26,6 @@ public class OvhLineDetails {
 	 * canBeNull
 	 */
 	public Boolean gtr;
-
-	/**
-	 * dsl connexion type for the line
-	 *
-	 * canBeNull
-	 */
-	public OvhDslTypeEnum lineType;
 
 	/**
 	 * Line length in meters
@@ -63,18 +49,11 @@ public class OvhLineDetails {
 	public Boolean dslamIsSynchronized;
 
 	/**
-	 * customer phone number for contact
+	 * Theoretical line capabilities
 	 *
 	 * canBeNull
 	 */
-	public String contactPhone;
-
-	/**
-	 * NRA name
-	 *
-	 * canBeNull
-	 */
-	public String nra;
+	public OvhLineCapabilities lineCapabilities;
 
 	/**
 	 * provider for internet connexion
@@ -89,4 +68,39 @@ public class OvhLineDetails {
 	 * canBeNull
 	 */
 	public OvhSection[] sections;
+
+	/**
+	 * line number
+	 *
+	 * canBeNull
+	 */
+	public String number;
+
+	/**
+	 * dsl connexion type for the line
+	 *
+	 * canBeNull
+	 */
+	public OvhDslTypeEnum lineType;
+
+	/**
+	 * customer phone number for contact
+	 *
+	 * canBeNull
+	 */
+	public String contactPhone;
+
+	/**
+	 * NRA name
+	 *
+	 * canBeNull
+	 */
+	public String nra;
+
+	/**
+	 * informations directly get on DSLAM or Modem
+	 *
+	 * canBeNull
+	 */
+	public OvhConnectionInformations connectionInfo;
 }

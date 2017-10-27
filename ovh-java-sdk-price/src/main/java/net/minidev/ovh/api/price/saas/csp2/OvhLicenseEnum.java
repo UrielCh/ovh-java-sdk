@@ -12,7 +12,8 @@ public enum OvhLicenseEnum {
 	EnterpriseK1("EnterpriseK1"),
 	ExchangeOnlinePlan1("ExchangeOnlinePlan1"),
 	ProPlus("ProPlus"),
-	ProjectOnline("ProjectOnline");
+	ProjectOnline("ProjectOnline"),
+	ProjectOnlineProfessional("ProjectOnlineProfessional");
 
 	final String value;
 

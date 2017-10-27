@@ -45,4 +45,11 @@ public class OvhQuestion {
 	 * canBeNull
 	 */
 	public Boolean required;
+
+	/**
+	 * available values for enum
+	 *
+	 * canBeNull
+	 */
+	public String[] enumValues;
 }

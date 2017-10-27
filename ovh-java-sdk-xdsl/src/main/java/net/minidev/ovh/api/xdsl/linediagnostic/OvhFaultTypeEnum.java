@@ -5,7 +5,8 @@ package net.minidev.ovh.api.xdsl.linediagnostic;
  */
 public enum OvhFaultTypeEnum {
 	alignment("alignment"),
-	noSync("noSync");
+	noSync("noSync"),
+	syncLossOrLowBandwidth("syncLossOrLowBandwidth");
 
 	final String value;
 

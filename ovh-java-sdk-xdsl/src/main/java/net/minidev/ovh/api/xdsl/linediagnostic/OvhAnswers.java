@@ -7,11 +7,11 @@ import java.util.Date;
  */
 public class OvhAnswers {
 	/**
-	 * Modem still synchronized ? Please check once again.
+	 * Ovh ticket name or ticket ID, only if a ticket is already opened for this problem
 	 *
 	 * canBeNull
 	 */
-	public Boolean modemStillSynchronized;
+	public String ovhTicket;
 
 	/**
 	 * indicate if customer wants to be informed by sms
@@ -19,6 +19,76 @@ public class OvhAnswers {
 	 * canBeNull
 	 */
 	public Boolean followBySms;
+
+	/**
+	 * Has customer several internal connections ? (on the same place)
+	 *
+	 * canBeNull
+	 */
+	public Boolean severalInternetConnections;
+
+	/**
+	 * bandwidth download value on proof.ovh.net test
+	 *
+	 * canBeNull
+	 */
+	public Long downloadBandwidthTest;
+
+	/**
+	 * approximative datetime of problem happening
+	 *
+	 * canBeNull
+	 */
+	public Date datetimeOfAppearance;
+
+	/**
+	 * morning closing informations or time for the site
+	 *
+	 * canBeNull
+	 */
+	public String endMorningHours;
+
+	/**
+	 * Has modem kept his synchronization during line port reset ?
+	 *
+	 * canBeNull
+	 */
+	public Boolean hasModemKeptSynchronization;
+
+	/**
+	 * is secure site ?
+	 *
+	 * canBeNull
+	 */
+	public Boolean secureSite;
+
+	/**
+	 * is access problem solved ?
+	 *
+	 * canBeNull
+	 */
+	public Boolean resolvedAfterTests;
+
+	/**
+	 * modem mac address
+	 *
+	 * canBeNull
+	 */
+	public String modemMac;
+
+	/**
+	 * Modem still synchronized ? Please check once again.
+	 *
+	 * canBeNull
+	 */
+	public Boolean modemStillSynchronized;
+
+	/**
+	 * bandwidth unit for proof.ovh.net test values
+	 *
+	 * canBeNull
+	 */
+	public OvhBandwidthTestUnitEnum bandwidthTestUnit;
 
 	/**
 	 * digicode for site entrance
@@ -42,20 +112,6 @@ public class OvhAnswers {
 	public String startAfternoonHours;
 
 	/**
-	 * Has customer several internal connections ? (on the same place)
-	 *
-	 * canBeNull
-	 */
-	public Boolean severalInternetConnections;
-
-	/**
-	 * approximative datetime of problem happening
-	 *
-	 * canBeNull
-	 */
-	public Date datetimeOfAppearance;
-
-	/**
 	 * is non-professional site ?
 	 *
 	 * canBeNull
@@ -70,25 +126,11 @@ public class OvhAnswers {
 	public String siteClosedDays;
 
 	/**
-	 * morning closing informations or time for the site
-	 *
-	 * canBeNull
-	 */
-	public String endMorningHours;
-
-	/**
 	 * modem brand and reference
 	 *
 	 * canBeNull
 	 */
 	public String modemType;
-
-	/**
-	 * Has modem kept his synchronization during line port reset ?
-	 *
-	 * canBeNull
-	 */
-	public Boolean hasModemKeptSynchronization;
 
 	/**
 	 * site opening hours or informations
@@ -105,13 +147,6 @@ public class OvhAnswers {
 	public Boolean modemIsSynchronized;
 
 	/**
-	 * is secure site ?
-	 *
-	 * canBeNull
-	 */
-	public Boolean secureSite;
-
-	/**
 	 * morning opening informations or time for the site
 	 *
 	 * canBeNull
@@ -124,6 +159,13 @@ public class OvhAnswers {
 	 * canBeNull
 	 */
 	public Boolean conditionsAccepted;
+
+	/**
+	 * bandwidth upload value on proof.ovh.net test
+	 *
+	 * canBeNull
+	 */
+	public Long uploadBandwidthTest;
 
 	/**
 	 * afternoon closing informations or time for the site
@@ -140,13 +182,6 @@ public class OvhAnswers {
 	public String comment;
 
 	/**
-	 * is access problem solved ?
-	 *
-	 * canBeNull
-	 */
-	public Boolean resolvedAfterTests;
-
-	/**
 	 * customer's phone number
 	 *
 	 * canBeNull
@@ -154,9 +189,9 @@ public class OvhAnswers {
 	public String contactPhone;
 
 	/**
-	 * modem mac address
+	 * Problem Type on DSL connection
 	 *
 	 * canBeNull
 	 */
-	public String modemMac;
+	public OvhProblemTypeEnum problemType;
 }
