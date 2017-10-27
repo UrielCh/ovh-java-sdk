@@ -50,7 +50,7 @@ public abstract class ApiOvhBase {
 		return sb;
 	}
 
-	public StringBuilder path(String url, Object... params) {
+	protected StringBuilder path(String url, Object... params) {
 		StringBuilder sb = new StringBuilder();
 		int p = 0;
 		int len = url.length();
@@ -67,19 +67,19 @@ public abstract class ApiOvhBase {
 		return sb;
 	}
 
-	public String exec(String apiPath, String method, String query, Object payload) throws IOException {
+	protected String exec(String apiPath, String method, String query, Object payload) throws IOException {
 		return core.exec(apiPath, method, query, payload, true);
 	}
 
-	public String execN(String apiPath, String method, String query, Object payload) throws IOException {
+	protected String execN(String apiPath, String method, String query, Object payload) throws IOException {
 		return core.exec(apiPath, method, query, payload, false);
 	}
 
-	public <T> T convertTo(String in, TypeReference<T> mapTo) throws IOException {
+	protected <T> T convertTo(String in, TypeReference<T> mapTo) throws IOException {
 		return ApiOvhUtils.convertTo(in, mapTo);
 	}
 
-	public <T> T convertTo(String in, Class<T> mapTo) throws IOException {
+	protected <T> T convertTo(String in, Class<T> mapTo) throws IOException {
 		return ApiOvhUtils.convertTo(in, mapTo);
 	}
 
