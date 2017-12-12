@@ -665,6 +665,7 @@ public class ApiOvhVrack extends ApiOvhBase {
 	 * @param type [required] mrtg type
 	 * @param serviceName [required] The internal name of your vrack
 	 * @param dedicatedServer [required] Dedicated Server
+	 * @deprecated
 	 */
 	public ArrayList<OvhMrtgTimestampValue> serviceName_dedicatedServer_dedicatedServer_mrtg_GET(String serviceName, String dedicatedServer, OvhMrtgPeriodEnum period, OvhMrtgTypeEnum type) throws IOException {
 		String qPath = "/vrack/{serviceName}/dedicatedServer/{dedicatedServer}/mrtg";

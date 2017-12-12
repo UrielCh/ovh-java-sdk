@@ -435,6 +435,39 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	}
 
 	/**
+	 * Enable two factor authentication on your pool
+	 *
+	 * REST: POST /horizonView/{serviceName}/accessPoint/{accessPointId}/enableTwoFA
+	 * @param secret [required] The secret password for the two factor authentication
+	 * @param radiusIp [required] The server radius IP
+	 * @param serviceName [required] Domain of the service
+	 * @param accessPointId [required] Pool id
+	 */
+	public OvhTask serviceName_accessPoint_accessPointId_enableTwoFA_POST(String serviceName, Long accessPointId, String secret, String radiusIp) throws IOException {
+		String qPath = "/horizonView/{serviceName}/accessPoint/{accessPointId}/enableTwoFA";
+		StringBuilder sb = path(qPath, serviceName, accessPointId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "secret", secret);
+		addBody(o, "radiusIp", radiusIp);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Disable two factor authentication on your pool
+	 *
+	 * REST: POST /horizonView/{serviceName}/accessPoint/{accessPointId}/disableTwoFA
+	 * @param serviceName [required] Domain of the service
+	 * @param accessPointId [required] Pool id
+	 */
+	public OvhTask serviceName_accessPoint_accessPointId_disableTwoFA_POST(String serviceName, Long accessPointId) throws IOException {
+		String qPath = "/horizonView/{serviceName}/accessPoint/{accessPointId}/disableTwoFA";
+		StringBuilder sb = path(qPath, serviceName, accessPointId);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /horizonView/{serviceName}/domainTrust/{domainTrustId}
@@ -490,16 +523,18 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 * Add a child domain for this domain.
 	 *
 	 * REST: POST /horizonView/{serviceName}/domainTrust/{domainTrustId}/addChildDomain
+	 * @param serviceAccountPassword [required] Password of the horizonUI service account
 	 * @param activeDirectoryIP [required] IP of your Active Directory
 	 * @param domain [required] Name of your private domain
 	 * @param passphrase [required] Shared passphrase to create the Active Directory trust
 	 * @param serviceName [required] Domain of the service
 	 * @param domainTrustId [required] Domain trust id
 	 */
-	public OvhTask serviceName_domainTrust_domainTrustId_addChildDomain_POST(String serviceName, Long domainTrustId, String activeDirectoryIP, String domain, String passphrase) throws IOException {
+	public OvhTask serviceName_domainTrust_domainTrustId_addChildDomain_POST(String serviceName, Long domainTrustId, String serviceAccountPassword, String activeDirectoryIP, String domain, String passphrase) throws IOException {
 		String qPath = "/horizonView/{serviceName}/domainTrust/{domainTrustId}/addChildDomain";
 		StringBuilder sb = path(qPath, serviceName, domainTrustId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "serviceAccountPassword", serviceAccountPassword);
 		addBody(o, "activeDirectoryIP", activeDirectoryIP);
 		addBody(o, "domain", domain);
 		addBody(o, "passphrase", passphrase);

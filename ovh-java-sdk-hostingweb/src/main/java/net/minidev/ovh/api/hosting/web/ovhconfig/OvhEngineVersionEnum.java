@@ -26,6 +26,8 @@ public enum OvhEngineVersionEnum {
 	_7_0("7.0"),
 	@JsonProperty("7.1")
 	_7_1("7.1"),
+	@JsonProperty("7.2")
+	_7_2("7.2"),
 	AUTO("AUTO");
 
 	final String value;

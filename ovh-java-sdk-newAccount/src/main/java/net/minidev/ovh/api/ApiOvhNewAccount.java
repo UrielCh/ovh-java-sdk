@@ -39,6 +39,7 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 	 * @param area [required]
 	 * @param ovhSubsidiary [required]
 	 * @param ovhCompany [required]
+	 * @param phoneCountry [required]
 	 * @param email [required]
 	 * @param city [required]
 	 * @param fax [required]
@@ -55,7 +56,7 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 	 * @param corporationType [required]
 	 * @param legalform [required]
 	 */
-	public OvhNewAccountAndToken POST(String firstname, String vat, String spareEmail, String nationalIdentificationNumber, String birthDay, String area, OvhOvhSubsidiaryEnum ovhSubsidiary, OvhOvhCompanyEnum ovhCompany, String email, String city, String fax, String address, String companyNationalIdentificationNumber, OvhCountryEnum country, String birthCity, String organisation, OvhLanguageEnum language, String name, OvhGenderEnum sex, String phone, String zip, String corporationType, OvhLegalFormEnum legalform) throws IOException {
+	public OvhNewAccountAndToken POST(String firstname, String vat, String spareEmail, String nationalIdentificationNumber, String birthDay, String area, OvhOvhSubsidiaryEnum ovhSubsidiary, OvhOvhCompanyEnum ovhCompany, OvhCountryEnum phoneCountry, String email, String city, String fax, String address, String companyNationalIdentificationNumber, OvhCountryEnum country, String birthCity, String organisation, OvhLanguageEnum language, String name, OvhGenderEnum sex, String phone, String zip, String corporationType, OvhLegalFormEnum legalform) throws IOException {
 		String qPath = "/newAccount";
 		StringBuilder sb = path(qPath);
 		HashMap<String, Object>o = new HashMap<String, Object>();
@@ -67,6 +68,7 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 		addBody(o, "area", area);
 		addBody(o, "ovhSubsidiary", ovhSubsidiary);
 		addBody(o, "ovhCompany", ovhCompany);
+		addBody(o, "phoneCountry", phoneCountry);
 		addBody(o, "email", email);
 		addBody(o, "city", city);
 		addBody(o, "fax", fax);
@@ -161,6 +163,7 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 	 * @param area [required]
 	 * @param ovhSubsidiary [required]
 	 * @param ovhCompany [required]
+	 * @param phoneCountry [required]
 	 * @param email [required]
 	 * @param city [required]
 	 * @param fax [required]
@@ -178,7 +181,7 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 	 * @param corporationType [required]
 	 * @param legalform [required]
 	 */
-	public ArrayList<OvhCreationRule> rules_POST(String firstname, String vat, String spareEmail, String nationalIdentificationNumber, String birthDay, String area, OvhOvhSubsidiaryEnum ovhSubsidiary, OvhOvhCompanyEnum ovhCompany, String email, String city, String fax, String address, String companyNationalIdentificationNumber, OvhCountryEnum country, String birthCity, String organisation, OvhLanguageEnum language, String name, OvhGenderEnum sex, String phone, String zip, OvhCreationRulesActionEnum action, String corporationType, OvhLegalFormEnum legalform) throws IOException {
+	public ArrayList<OvhCreationRule> rules_POST(String firstname, String vat, String spareEmail, String nationalIdentificationNumber, String birthDay, String area, OvhOvhSubsidiaryEnum ovhSubsidiary, OvhOvhCompanyEnum ovhCompany, OvhCountryEnum phoneCountry, String email, String city, String fax, String address, String companyNationalIdentificationNumber, OvhCountryEnum country, String birthCity, String organisation, OvhLanguageEnum language, String name, OvhGenderEnum sex, String phone, String zip, OvhCreationRulesActionEnum action, String corporationType, OvhLegalFormEnum legalform) throws IOException {
 		String qPath = "/newAccount/rules";
 		StringBuilder sb = path(qPath);
 		HashMap<String, Object>o = new HashMap<String, Object>();
@@ -190,6 +193,7 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 		addBody(o, "area", area);
 		addBody(o, "ovhSubsidiary", ovhSubsidiary);
 		addBody(o, "ovhCompany", ovhCompany);
+		addBody(o, "phoneCountry", phoneCountry);
 		addBody(o, "email", email);
 		addBody(o, "city", city);
 		addBody(o, "fax", fax);

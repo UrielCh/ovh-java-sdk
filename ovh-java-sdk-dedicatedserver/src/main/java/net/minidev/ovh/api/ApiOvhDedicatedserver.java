@@ -9,6 +9,8 @@ import net.minidev.ovh.api.dedicated.OvhAvailabilities;
 import net.minidev.ovh.api.dedicated.OvhAvailabilitiesRaw;
 import net.minidev.ovh.api.dedicated.OvhTaskFunctionEnum;
 import net.minidev.ovh.api.dedicated.OvhTaskStatusEnum;
+import net.minidev.ovh.api.dedicated.networkinterfacecontroller.OvhNetworkInterfaceController;
+import net.minidev.ovh.api.dedicated.networkinterfacecontroller.OvhNetworkInterfaceControllerLinkTypeEnum;
 import net.minidev.ovh.api.dedicated.server.OvhAlertLanguageEnum;
 import net.minidev.ovh.api.dedicated.server.OvhBackupCloud;
 import net.minidev.ovh.api.dedicated.server.OvhBackupFtp;
@@ -825,6 +827,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 	 * @param type [required] mrtg type
 	 * @param serviceName [required] The internal name of your dedicated server
 	 * @param vrack [required] vrack name
+	 * @deprecated
 	 */
 	public ArrayList<OvhMrtgTimestampValue> serviceName_vrack_vrack_mrtg_GET(String serviceName, String vrack, OvhMrtgPeriodEnum period, OvhMrtgTypeEnum type) throws IOException {
 		String qPath = "/dedicated/server/{serviceName}/vrack/{vrack}/mrtg";
@@ -1392,6 +1395,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 	 * @param period [required] mrtg period
 	 * @param type [required] mrtg type
 	 * @param serviceName [required] The internal name of your dedicated server
+	 * @deprecated
 	 */
 	public ArrayList<OvhMrtgTimestampValue> serviceName_mrtg_GET(String serviceName, OvhMrtgPeriodEnum period, OvhMrtgTypeEnum type) throws IOException {
 		String qPath = "/dedicated/server/{serviceName}/mrtg";
@@ -1468,6 +1472,59 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * List server networkInterfaceController
+	 *
+	 * REST: GET /dedicated/server/{serviceName}/networkInterfaceController
+	 * @param linkType [required] Filter the value of linkType property (=)
+	 * @param serviceName [required] The internal name of your dedicated server
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> serviceName_networkInterfaceController_GET(String serviceName, OvhNetworkInterfaceControllerLinkTypeEnum linkType) throws IOException {
+		String qPath = "/dedicated/server/{serviceName}/networkInterfaceController";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "linkType", linkType);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /dedicated/server/{serviceName}/networkInterfaceController/{mac}
+	 * @param serviceName [required] The internal name of your dedicated server
+	 * @param mac [required] NetworkInterfaceController mac
+	 *
+	 * API beta
+	 */
+	public OvhNetworkInterfaceController serviceName_networkInterfaceController_mac_GET(String serviceName, String mac) throws IOException {
+		String qPath = "/dedicated/server/{serviceName}/networkInterfaceController/{mac}";
+		StringBuilder sb = path(qPath, serviceName, mac);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhNetworkInterfaceController.class);
+	}
+
+	/**
+	 * Retrieve traffic graph values
+	 *
+	 * REST: GET /dedicated/server/{serviceName}/networkInterfaceController/{mac}/mrtg
+	 * @param period [required] mrtg period
+	 * @param type [required] mrtg type
+	 * @param serviceName [required] The internal name of your dedicated server
+	 * @param mac [required] NetworkInterfaceController mac
+	 *
+	 * API beta
+	 */
+	public ArrayList<OvhMrtgTimestampValue> serviceName_networkInterfaceController_mac_mrtg_GET(String serviceName, String mac, OvhMrtgPeriodEnum period, OvhMrtgTypeEnum type) throws IOException {
+		String qPath = "/dedicated/server/{serviceName}/networkInterfaceController/{mac}/mrtg";
+		StringBuilder sb = path(qPath, serviceName, mac);
+		query(sb, "period", period);
+		query(sb, "type", type);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t7);
 	}
 
 	/**

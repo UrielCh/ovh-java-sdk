@@ -49,6 +49,13 @@ public class OvhHardwareSpecifications {
 	public Long coresPerProcessor;
 
 	/**
+	 * Server boot mode
+	 *
+	 * canBeNull
+	 */
+	public OvhBootModeEnum bootMode;
+
+	/**
 	 * number of threads per processor
 	 *
 	 * canBeNull

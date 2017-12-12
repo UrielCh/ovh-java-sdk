@@ -40,6 +40,13 @@ public class OvhDeviceInterface {
 	public String[] dnsServers;
 
 	/**
+	 * Device of the interface
+	 *
+	 * canBeNull
+	 */
+	public String device;
+
+	/**
 	 * Gateway of the interface
 	 *
 	 * canBeNull

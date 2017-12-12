@@ -47,6 +47,13 @@ public class OvhPool {
 	public OvhStateEnum state;
 
 	/**
+	 * Two factor authentication
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean twoFA;
+
+	/**
 	 * DHCP network in this port group
 	 *
 	 * canBeNull && readOnly

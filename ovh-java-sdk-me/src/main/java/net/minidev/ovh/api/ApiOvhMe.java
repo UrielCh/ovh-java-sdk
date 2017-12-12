@@ -24,7 +24,6 @@ import net.minidev.ovh.api.billing.OvhDepositDetail;
 import net.minidev.ovh.api.billing.OvhFidelityAccount;
 import net.minidev.ovh.api.billing.OvhFidelityMovement;
 import net.minidev.ovh.api.billing.OvhItemDetail;
-import net.minidev.ovh.api.billing.OvhMovement;
 import net.minidev.ovh.api.billing.OvhOrder;
 import net.minidev.ovh.api.billing.OvhOrderDetail;
 import net.minidev.ovh.api.billing.OvhOvhAccount;
@@ -38,6 +37,8 @@ import net.minidev.ovh.api.billing.OvhSlaOperation;
 import net.minidev.ovh.api.billing.OvhSlaOperationService;
 import net.minidev.ovh.api.billing.OvhWithdrawal;
 import net.minidev.ovh.api.billing.OvhWithdrawalDetail;
+import net.minidev.ovh.api.billing.credit.OvhBalance;
+import net.minidev.ovh.api.billing.credit.balance.OvhMovement;
 import net.minidev.ovh.api.billing.order.OvhOrderStatusEnum;
 import net.minidev.ovh.api.billing.order.OvhPaymentMeans;
 import net.minidev.ovh.api.billing.order.OvhRegisteredPaymentMean;
@@ -46,7 +47,6 @@ import net.minidev.ovh.api.complextype.OvhSafeKeyValue;
 import net.minidev.ovh.api.contact.OvhAddress;
 import net.minidev.ovh.api.contact.OvhContact;
 import net.minidev.ovh.api.contact.OvhFieldInformation;
-import net.minidev.ovh.api.debt.OvhBalance;
 import net.minidev.ovh.api.debt.OvhDebt;
 import net.minidev.ovh.api.debt.OvhOperation;
 import net.minidev.ovh.api.debt.entry.OvhAssociatedObject;
@@ -2860,6 +2860,73 @@ public class ApiOvhMe extends ApiOvhBase {
 	}
 
 	/**
+	 * Retrieve credit balance names
+	 *
+	 * REST: GET /me/credit/balance
+	 */
+	public ArrayList<String> credit_balance_GET() throws IOException {
+		String qPath = "/me/credit/balance";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Retrieve a credit balance
+	 *
+	 * REST: GET /me/credit/balance/{balanceName}
+	 * @param balanceName [required] Balance name
+	 */
+	public OvhBalance credit_balance_balanceName_GET(String balanceName) throws IOException {
+		String qPath = "/me/credit/balance/{balanceName}";
+		StringBuilder sb = path(qPath, balanceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhBalance.class);
+	}
+
+	/**
+	 * Retrieve a specific movement for a credit balance
+	 *
+	 * REST: GET /me/credit/balance/{balanceName}/movement/{movementId}
+	 * @param balanceName [required] Credit balance name
+	 * @param movementId [required] Movement ID
+	 */
+	public OvhMovement credit_balance_balanceName_movement_movementId_GET(String balanceName, Long movementId) throws IOException {
+		String qPath = "/me/credit/balance/{balanceName}/movement/{movementId}";
+		StringBuilder sb = path(qPath, balanceName, movementId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhMovement.class);
+	}
+
+	/**
+	 * Retrieve movements for a specific balance
+	 *
+	 * REST: GET /me/credit/balance/{balanceName}/movement
+	 * @param balanceName [required] Balance name
+	 */
+	public ArrayList<Long> credit_balance_balanceName_movement_GET(String balanceName) throws IOException {
+		String qPath = "/me/credit/balance/{balanceName}/movement";
+		StringBuilder sb = path(qPath, balanceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Validate a code to generate associated credit movement
+	 *
+	 * REST: POST /me/credit/code
+	 * @param inputCode [required] Code to validate
+	 */
+	public OvhMovement credit_code_POST(String inputCode) throws IOException {
+		String qPath = "/me/credit/code";
+		StringBuilder sb = path(qPath);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "inputCode", inputCode);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhMovement.class);
+	}
+
+	/**
 	 * List of OVH accounts the logged account has
 	 *
 	 * REST: GET /me/ovhAccount
@@ -2878,11 +2945,11 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * @param ovhAccountId [required]
 	 * @param movementId [required]
 	 */
-	public OvhMovement ovhAccount_ovhAccountId_movements_movementId_GET(String ovhAccountId, Long movementId) throws IOException {
+	public net.minidev.ovh.api.billing.OvhMovement ovhAccount_ovhAccountId_movements_movementId_GET(String ovhAccountId, Long movementId) throws IOException {
 		String qPath = "/me/ovhAccount/{ovhAccountId}/movements/{movementId}";
 		StringBuilder sb = path(qPath, ovhAccountId, movementId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhMovement.class);
+		return convertTo(resp, net.minidev.ovh.api.billing.OvhMovement.class);
 	}
 
 	/**
@@ -3216,20 +3283,6 @@ public class ApiOvhMe extends ApiOvhBase {
 	}
 
 	/**
-	 * Get all certificates of the account
-	 *
-	 * REST: GET /me/certificates
-	 * @param name [required] Certificate definition name
-	 */
-	public ArrayList<String> certificates_GET(String name) throws IOException {
-		String qPath = "/me/certificates";
-		StringBuilder sb = path(qPath);
-		query(sb, "name", name);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
 	 * List of organisations
 	 *
 	 * REST: GET /me/ipOrganisation
@@ -3297,6 +3350,20 @@ public class ApiOvhMe extends ApiOvhBase {
 		String qPath = "/me/ipOrganisation/{organisationId}";
 		StringBuilder sb = path(qPath, organisationId);
 		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Get all certificates of the account
+	 *
+	 * REST: GET /me/certificates
+	 * @param name [required] Certificate definition name
+	 */
+	public ArrayList<String> certificates_GET(String name) throws IOException {
+		String qPath = "/me/certificates";
+		StringBuilder sb = path(qPath);
+		query(sb, "name", name);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
 	}
 
 	/**
@@ -3407,11 +3474,11 @@ public class ApiOvhMe extends ApiOvhBase {
 	 *
 	 * REST: GET /me/debtAccount
 	 */
-	public OvhBalance debtAccount_GET() throws IOException {
+	public net.minidev.ovh.api.debt.OvhBalance debtAccount_GET() throws IOException {
 		String qPath = "/me/debtAccount";
 		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhBalance.class);
+		return convertTo(resp, net.minidev.ovh.api.debt.OvhBalance.class);
 	}
 
 	/**

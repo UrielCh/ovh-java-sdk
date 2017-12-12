@@ -21,7 +21,9 @@ public enum OvhLanguageEnum {
 	@JsonProperty("php7.0")
 	php7_0("php7.0"),
 	@JsonProperty("php7.1")
-	php7_1("php7.1");
+	php7_1("php7.1"),
+	@JsonProperty("php7.2")
+	php7_2("php7.2");
 
 	final String value;
 

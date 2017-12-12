@@ -4,6 +4,8 @@ package net.minidev.ovh.api.price.saas.csp2;
  * Enum of Licenses
  */
 public enum OvhLicenseEnum {
+	AzureActiveDirectoryBasic("AzureActiveDirectoryBasic"),
+	AzureActiveDirectoryPremiumP1("AzureActiveDirectoryPremiumP1"),
 	Business("Business"),
 	BusinessEssentials("BusinessEssentials"),
 	BusinessPremium("BusinessPremium"),
@@ -13,7 +15,8 @@ public enum OvhLicenseEnum {
 	ExchangeOnlinePlan1("ExchangeOnlinePlan1"),
 	ProPlus("ProPlus"),
 	ProjectOnline("ProjectOnline"),
-	ProjectOnlineProfessional("ProjectOnlineProfessional");
+	ProjectOnlineProfessional("ProjectOnlineProfessional"),
+	VisioPro("VisioPro");
 
 	final String value;
 

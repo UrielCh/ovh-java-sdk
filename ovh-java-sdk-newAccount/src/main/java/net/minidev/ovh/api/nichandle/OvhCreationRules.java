@@ -82,6 +82,11 @@ public class OvhCreationRules {
 	/**
 	 * canBeNull
 	 */
+	public OvhCreationRule phoneCountry;
+
+	/**
+	 * canBeNull
+	 */
 	public OvhCreationRule phone;
 
 	/**

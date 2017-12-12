@@ -49,6 +49,11 @@ public class OvhNichandle {
 	/**
 	 * canBeNull && readOnly
 	 */
+	public OvhCountryEnum phoneCountry;
+
+	/**
+	 * canBeNull && readOnly
+	 */
 	public String spareEmail;
 
 	/**

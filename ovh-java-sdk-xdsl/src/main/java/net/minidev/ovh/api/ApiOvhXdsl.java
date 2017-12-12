@@ -536,12 +536,15 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	 * Reset the modem to its default configuration
 	 *
 	 * REST: POST /xdsl/{serviceName}/modem/reset
+	 * @param resetOvhConfig [required] Reset configuration stored in OVH databases
 	 * @param serviceName [required] The internal name of your XDSL offer
 	 */
-	public OvhTask serviceName_modem_reset_POST(String serviceName) throws IOException {
+	public OvhTask serviceName_modem_reset_POST(String serviceName, Boolean resetOvhConfig) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/reset";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "resetOvhConfig", resetOvhConfig);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1044,6 +1047,23 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		return convertTo(resp, t8);
 	}
 	private static TypeReference<ArrayList<OvhLns>> t8 = new TypeReference<ArrayList<OvhLns>>() {};
+
+	/**
+	 * Update RIO, or disable portability, for order in error because of missing or invalid RIO
+	 *
+	 * REST: POST /xdsl/{serviceName}/updateInvalidOrMissingRio
+	 * @param rio [required] RIO number for portability
+	 * @param relaunchWithoutPortability [required] Do not set RIO, and relaunch order without portability
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public void serviceName_updateInvalidOrMissingRio_POST(String serviceName, String rio, Boolean relaunchWithoutPortability) throws IOException {
+		String qPath = "/xdsl/{serviceName}/updateInvalidOrMissingRio";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "rio", rio);
+		addBody(o, "relaunchWithoutPortability", relaunchWithoutPortability);
+		exec(qPath, "POST", sb.toString(), o);
+	}
 
 	/**
 	 * List of IPs addresses for this access

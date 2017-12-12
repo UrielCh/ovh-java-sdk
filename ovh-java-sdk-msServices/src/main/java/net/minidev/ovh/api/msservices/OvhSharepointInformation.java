@@ -5,6 +5,13 @@ package net.minidev.ovh.api.msservices;
  */
 public class OvhSharepointInformation {
 	/**
+	 * Indicates if the account is configured
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean configured;
+
+	/**
 	 * Sharepoint account license
 	 *
 	 * canBeNull && readOnly

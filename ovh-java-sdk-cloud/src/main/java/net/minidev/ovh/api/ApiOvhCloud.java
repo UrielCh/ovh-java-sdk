@@ -11,6 +11,7 @@ import net.minidev.ovh.api.cloud.OvhAlerting;
 import net.minidev.ovh.api.cloud.OvhAlertingAlert;
 import net.minidev.ovh.api.cloud.OvhAlertingDelayEnum;
 import net.minidev.ovh.api.cloud.OvhCredit;
+import net.minidev.ovh.api.cloud.OvhIPLoadbalancing;
 import net.minidev.ovh.api.cloud.OvhPrice;
 import net.minidev.ovh.api.cloud.OvhProject;
 import net.minidev.ovh.api.cloud.authentication.OvhToken;
@@ -58,6 +59,7 @@ import net.minidev.ovh.api.cloud.usage.OvhUsageForecast;
 import net.minidev.ovh.api.cloud.usage.OvhUsageHistory;
 import net.minidev.ovh.api.cloud.usage.OvhUsageHistoryDetail;
 import net.minidev.ovh.api.cloud.user.OvhOpenrc;
+import net.minidev.ovh.api.cloud.user.OvhRclone;
 import net.minidev.ovh.api.cloud.user.OvhRoleEnum;
 import net.minidev.ovh.api.cloud.user.OvhUser;
 import net.minidev.ovh.api.cloud.user.OvhUserDetail;
@@ -436,46 +438,6 @@ public class ApiOvhCloud extends ApiOvhBase {
 	}
 
 	/**
-	 * Get project quotas
-	 *
-	 * REST: GET /cloud/project/{serviceName}/quota
-	 * @param serviceName [required] Project id
-	 */
-	public ArrayList<OvhQuotas> project_serviceName_quota_GET(String serviceName) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/quota";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
-	}
-	private static TypeReference<ArrayList<OvhQuotas>> t3 = new TypeReference<ArrayList<OvhQuotas>>() {};
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /cloud/project/{serviceName}/serviceInfos
-	 * @param serviceName [required] The project id
-	 */
-	public OvhService project_serviceName_serviceInfos_GET(String serviceName) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhService.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /cloud/project/{serviceName}/serviceInfos
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The project id
-	 */
-	public void project_serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /cloud/project/{serviceName}
@@ -511,9 +473,9 @@ public class ApiOvhCloud extends ApiOvhBase {
 		String qPath = "/cloud/project/{serviceName}/network/public";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t4);
+		return convertTo(resp, t3);
 	}
-	private static TypeReference<ArrayList<OvhNetwork>> t4 = new TypeReference<ArrayList<OvhNetwork>>() {};
+	private static TypeReference<ArrayList<OvhNetwork>> t3 = new TypeReference<ArrayList<OvhNetwork>>() {};
 
 	/**
 	 * Get private networks
@@ -525,7 +487,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 		String qPath = "/cloud/project/{serviceName}/network/private";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t4);
+		return convertTo(resp, t3);
 	}
 
 	/**
@@ -619,9 +581,9 @@ public class ApiOvhCloud extends ApiOvhBase {
 		String qPath = "/cloud/project/{serviceName}/network/private/{networkId}/subnet";
 		StringBuilder sb = path(qPath, serviceName, networkId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t5);
+		return convertTo(resp, t4);
 	}
-	private static TypeReference<ArrayList<OvhSubnet>> t5 = new TypeReference<ArrayList<OvhSubnet>>() {};
+	private static TypeReference<ArrayList<OvhSubnet>> t4 = new TypeReference<ArrayList<OvhSubnet>>() {};
 
 	/**
 	 * Create a new network subnet
@@ -665,113 +627,6 @@ public class ApiOvhCloud extends ApiOvhBase {
 	}
 
 	/**
-	 * Get ips
-	 *
-	 * REST: GET /cloud/project/{serviceName}/ip
-	 * @param serviceName [required] Project id
-	 */
-	public ArrayList<OvhCloudIp> project_serviceName_ip_GET(String serviceName) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/ip";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t6);
-	}
-	private static TypeReference<ArrayList<OvhCloudIp>> t6 = new TypeReference<ArrayList<OvhCloudIp>>() {};
-
-	/**
-	 * Get failover ips
-	 *
-	 * REST: GET /cloud/project/{serviceName}/ip/failover
-	 * @param serviceName [required] Project id
-	 */
-	public ArrayList<OvhFailoverIp> project_serviceName_ip_failover_GET(String serviceName) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/ip/failover";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t7);
-	}
-	private static TypeReference<ArrayList<OvhFailoverIp>> t7 = new TypeReference<ArrayList<OvhFailoverIp>>() {};
-
-	/**
-	 * Get failover ip
-	 *
-	 * REST: GET /cloud/project/{serviceName}/ip/failover/{id}
-	 * @param id [required] Ip id
-	 * @param serviceName [required] Project id
-	 */
-	public OvhFailoverIp project_serviceName_ip_failover_id_GET(String serviceName, String id) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/ip/failover/{id}";
-		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhFailoverIp.class);
-	}
-
-	/**
-	 * Attach failover ip to an instance
-	 *
-	 * REST: POST /cloud/project/{serviceName}/ip/failover/{id}/attach
-	 * @param id [required] Ip id
-	 * @param instanceId [required] Attach failover ip to instance
-	 * @param serviceName [required] Project id
-	 */
-	public OvhFailoverIp project_serviceName_ip_failover_id_attach_POST(String serviceName, String id, String instanceId) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/ip/failover/{id}/attach";
-		StringBuilder sb = path(qPath, serviceName, id);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "instanceId", instanceId);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhFailoverIp.class);
-	}
-
-	/**
-	 * Terminate your service
-	 *
-	 * REST: POST /cloud/project/{serviceName}/terminate
-	 * @param serviceName [required] The project id
-	 */
-	public String project_serviceName_terminate_POST(String serviceName) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/terminate";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * Launch a contact change procedure
-	 *
-	 * REST: POST /cloud/project/{serviceName}/changeContact
-	 * @param contactAdmin The contact to set as admin contact
-	 * @param contactTech The contact to set as tech contact
-	 * @param contactBilling The contact to set as billing contact
-	 * @param serviceName [required] The project id
-	 */
-	public ArrayList<Long> project_serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/changeContact";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "contactAdmin", contactAdmin);
-		addBody(o, "contactTech", contactTech);
-		addBody(o, "contactBilling", contactBilling);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Get your consumption forecast
-	 *
-	 * REST: GET /cloud/project/{serviceName}/forecast
-	 * @param serviceName [required] Service name
-	 * @param toDate [required] Forecast until date
-	 */
-	public OvhProjectForecast project_serviceName_forecast_GET(String serviceName, Date toDate) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/forecast";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "toDate", toDate);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhProjectForecast.class);
-	}
-
-	/**
 	 * Get all users
 	 *
 	 * REST: GET /cloud/project/{serviceName}/user
@@ -781,9 +636,9 @@ public class ApiOvhCloud extends ApiOvhBase {
 		String qPath = "/cloud/project/{serviceName}/user";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t8);
+		return convertTo(resp, t5);
 	}
-	private static TypeReference<ArrayList<OvhUser>> t8 = new TypeReference<ArrayList<OvhUser>>() {};
+	private static TypeReference<ArrayList<OvhUser>> t5 = new TypeReference<ArrayList<OvhUser>>() {};
 
 	/**
 	 * Create user
@@ -845,6 +700,22 @@ public class ApiOvhCloud extends ApiOvhBase {
 	}
 
 	/**
+	 * Get rclone configuration file
+	 *
+	 * REST: GET /cloud/project/{serviceName}/user/{userId}/rclone
+	 * @param region [required] Region
+	 * @param serviceName [required] Service name
+	 * @param userId [required] User id
+	 */
+	public OvhRclone project_serviceName_user_userId_rclone_GET(String serviceName, Long userId, String region) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/user/{userId}/rclone";
+		StringBuilder sb = path(qPath, serviceName, userId);
+		query(sb, "region", region);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhRclone.class);
+	}
+
+	/**
 	 * Get RC file of OpenStack
 	 *
 	 * REST: GET /cloud/project/{serviceName}/user/{userId}/openrc
@@ -893,52 +764,6 @@ public class ApiOvhCloud extends ApiOvhBase {
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhProjectUsage.class);
 	}
-
-	/**
-	 * Delete a snapshot
-	 *
-	 * REST: DELETE /cloud/project/{serviceName}/snapshot/{snapshotId}
-	 * @param serviceName [required] Project id
-	 * @param snapshotId [required] Snapshot id
-	 */
-	public OvhImage project_serviceName_snapshot_snapshotId_DELETE(String serviceName, String snapshotId) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/snapshot/{snapshotId}";
-		StringBuilder sb = path(qPath, serviceName, snapshotId);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhImage.class);
-	}
-
-	/**
-	 * Get snapshot details
-	 *
-	 * REST: GET /cloud/project/{serviceName}/snapshot/{snapshotId}
-	 * @param serviceName [required] Project id
-	 * @param snapshotId [required] Snapshot id
-	 */
-	public OvhImage project_serviceName_snapshot_snapshotId_GET(String serviceName, String snapshotId) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/snapshot/{snapshotId}";
-		StringBuilder sb = path(qPath, serviceName, snapshotId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhImage.class);
-	}
-
-	/**
-	 * Get snapshots
-	 *
-	 * REST: GET /cloud/project/{serviceName}/snapshot
-	 * @param flavorType [required] Get compatible snapshots with flavor type
-	 * @param region [required] Region
-	 * @param serviceName [required] Service name
-	 */
-	public ArrayList<OvhImage> project_serviceName_snapshot_GET(String serviceName, String flavorType, String region) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/snapshot";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "flavorType", flavorType);
-		query(sb, "region", region);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t9);
-	}
-	private static TypeReference<ArrayList<OvhImage>> t9 = new TypeReference<ArrayList<OvhImage>>() {};
 
 	/**
 	 * Manage alerts on your consumption
@@ -1055,9 +880,9 @@ public class ApiOvhCloud extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "region", region);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t10);
+		return convertTo(resp, t6);
 	}
-	private static TypeReference<ArrayList<OvhFlavor>> t10 = new TypeReference<ArrayList<OvhFlavor>>() {};
+	private static TypeReference<ArrayList<OvhFlavor>> t6 = new TypeReference<ArrayList<OvhFlavor>>() {};
 
 	/**
 	 * Get flavor
@@ -1071,330 +896,6 @@ public class ApiOvhCloud extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName, flavorId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhFlavor.class);
-	}
-
-	/**
-	 * Get usage forecast
-	 *
-	 * REST: GET /cloud/project/{serviceName}/usage/forecast
-	 * @param serviceName [required] Service name
-	 */
-	public OvhUsageForecast project_serviceName_usage_forecast_GET(String serviceName) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/usage/forecast";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhUsageForecast.class);
-	}
-
-	/**
-	 * Usage information on your project
-	 *
-	 * REST: GET /cloud/project/{serviceName}/usage/history
-	 * @param from [required] Filter results having date superior to from
-	 * @param serviceName [required] Service name
-	 * @param to [required] Filter results having date inferior to
-	 */
-	public ArrayList<OvhUsageHistory> project_serviceName_usage_history_GET(String serviceName, Date from, Date to) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/usage/history";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "from", from);
-		query(sb, "to", to);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t11);
-	}
-	private static TypeReference<ArrayList<OvhUsageHistory>> t11 = new TypeReference<ArrayList<OvhUsageHistory>>() {};
-
-	/**
-	 * Usage information details
-	 *
-	 * REST: GET /cloud/project/{serviceName}/usage/history/{usageId}
-	 * @param serviceName [required] Service name
-	 * @param usageId [required] Usage id
-	 */
-	public OvhUsageHistoryDetail project_serviceName_usage_history_usageId_GET(String serviceName, String usageId) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/usage/history/{usageId}";
-		StringBuilder sb = path(qPath, serviceName, usageId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhUsageHistoryDetail.class);
-	}
-
-	/**
-	 * Get current usage
-	 *
-	 * REST: GET /cloud/project/{serviceName}/usage/current
-	 * @param serviceName [required] Service name
-	 */
-	public OvhUsageCurrent project_serviceName_usage_current_GET(String serviceName) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/usage/current";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhUsageCurrent.class);
-	}
-
-	/**
-	 * Do not expire the project, and retain it. You will have to pay for the resources you will use after using this call
-	 *
-	 * REST: POST /cloud/project/{serviceName}/retain
-	 * @param serviceName [required] The project id
-	 */
-	public void project_serviceName_retain_POST(String serviceName) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/retain";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "POST", sb.toString(), null);
-	}
-
-	/**
-	 * Get volumes
-	 *
-	 * REST: GET /cloud/project/{serviceName}/volume
-	 * @param region [required] Volume region
-	 * @param serviceName [required] Project id
-	 */
-	public ArrayList<OvhVolume> project_serviceName_volume_GET(String serviceName, String region) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/volume";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "region", region);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t12);
-	}
-	private static TypeReference<ArrayList<OvhVolume>> t12 = new TypeReference<ArrayList<OvhVolume>>() {};
-
-	/**
-	 * Create a volume
-	 *
-	 * REST: POST /cloud/project/{serviceName}/volume
-	 * @param description [required] Volume description
-	 * @param imageId [required] Id of image to create a bootable volume
-	 * @param name [required] Volume name
-	 * @param region [required] Volume region
-	 * @param serviceName [required] Project id
-	 * @param size [required] Volume size (in GiB)
-	 * @param snapshotId [required] Source snapshot id
-	 * @param type [required] Volume type
-	 */
-	public OvhVolume project_serviceName_volume_POST(String serviceName, String description, String imageId, String name, String region, Long size, String snapshotId, OvhVolumeTypeEnum type) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/volume";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "description", description);
-		addBody(o, "imageId", imageId);
-		addBody(o, "name", name);
-		addBody(o, "region", region);
-		addBody(o, "size", size);
-		addBody(o, "snapshotId", snapshotId);
-		addBody(o, "type", type);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhVolume.class);
-	}
-
-	/**
-	 * Delete a volume
-	 *
-	 * REST: DELETE /cloud/project/{serviceName}/volume/{volumeId}
-	 * @param serviceName [required] Project id
-	 * @param volumeId [required] Volume id
-	 */
-	public void project_serviceName_volume_volumeId_DELETE(String serviceName, String volumeId) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/volume/{volumeId}";
-		StringBuilder sb = path(qPath, serviceName, volumeId);
-		exec(qPath, "DELETE", sb.toString(), null);
-	}
-
-	/**
-	 * Get volume details
-	 *
-	 * REST: GET /cloud/project/{serviceName}/volume/{volumeId}
-	 * @param serviceName [required] Project id
-	 * @param volumeId [required] Volume id
-	 */
-	public OvhVolume project_serviceName_volume_volumeId_GET(String serviceName, String volumeId) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/volume/{volumeId}";
-		StringBuilder sb = path(qPath, serviceName, volumeId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhVolume.class);
-	}
-
-	/**
-	 * Update a volume
-	 *
-	 * REST: PUT /cloud/project/{serviceName}/volume/{volumeId}
-	 * @param description [required] Volume description
-	 * @param name [required] Volume name
-	 * @param serviceName [required] Project id
-	 * @param volumeId [required] Volume id
-	 */
-	public OvhVolume project_serviceName_volume_volumeId_PUT(String serviceName, String volumeId, String description, String name) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/volume/{volumeId}";
-		StringBuilder sb = path(qPath, serviceName, volumeId);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "description", description);
-		addBody(o, "name", name);
-		String resp = exec(qPath, "PUT", sb.toString(), o);
-		return convertTo(resp, OvhVolume.class);
-	}
-
-	/**
-	 * Detach a volume from an instance
-	 *
-	 * REST: POST /cloud/project/{serviceName}/volume/{volumeId}/detach
-	 * @param instanceId [required] Instance id
-	 * @param serviceName [required] Service name
-	 * @param volumeId [required] Volume id
-	 */
-	public OvhVolume project_serviceName_volume_volumeId_detach_POST(String serviceName, String volumeId, String instanceId) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/volume/{volumeId}/detach";
-		StringBuilder sb = path(qPath, serviceName, volumeId);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "instanceId", instanceId);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhVolume.class);
-	}
-
-	/**
-	 * Extend a volume
-	 *
-	 * REST: POST /cloud/project/{serviceName}/volume/{volumeId}/upsize
-	 * @param serviceName [required] Service name
-	 * @param size [required] New volume size (in GiB) (must be greater than current one)
-	 * @param volumeId [required] Volume id
-	 */
-	public OvhVolume project_serviceName_volume_volumeId_upsize_POST(String serviceName, String volumeId, Long size) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/volume/{volumeId}/upsize";
-		StringBuilder sb = path(qPath, serviceName, volumeId);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "size", size);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhVolume.class);
-	}
-
-	/**
-	 * Snapshot a volume
-	 *
-	 * REST: POST /cloud/project/{serviceName}/volume/{volumeId}/snapshot
-	 * @param description [required] Snapshot description
-	 * @param name [required] Snapshot name
-	 * @param serviceName [required] Service name
-	 * @param volumeId [required] Volume id
-	 */
-	public OvhSnapshot project_serviceName_volume_volumeId_snapshot_POST(String serviceName, String volumeId, String description, String name) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/volume/{volumeId}/snapshot";
-		StringBuilder sb = path(qPath, serviceName, volumeId);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "description", description);
-		addBody(o, "name", name);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhSnapshot.class);
-	}
-
-	/**
-	 * Attach a volume on an instance
-	 *
-	 * REST: POST /cloud/project/{serviceName}/volume/{volumeId}/attach
-	 * @param instanceId [required] Instance id
-	 * @param serviceName [required] Service name
-	 * @param volumeId [required] Volume id
-	 */
-	public OvhVolume project_serviceName_volume_volumeId_attach_POST(String serviceName, String volumeId, String instanceId) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/volume/{volumeId}/attach";
-		StringBuilder sb = path(qPath, serviceName, volumeId);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "instanceId", instanceId);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhVolume.class);
-	}
-
-	/**
-	 * Delete a volume snapshot
-	 *
-	 * REST: DELETE /cloud/project/{serviceName}/volume/snapshot/{snapshotId}
-	 * @param serviceName [required] Project id
-	 * @param snapshotId [required] Snapshot id
-	 */
-	public void project_serviceName_volume_snapshot_snapshotId_DELETE(String serviceName, String snapshotId) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/volume/snapshot/{snapshotId}";
-		StringBuilder sb = path(qPath, serviceName, snapshotId);
-		exec(qPath, "DELETE", sb.toString(), null);
-	}
-
-	/**
-	 * Get volume snapshot details
-	 *
-	 * REST: GET /cloud/project/{serviceName}/volume/snapshot/{snapshotId}
-	 * @param serviceName [required] Project id
-	 * @param snapshotId [required]
-	 */
-	public OvhSnapshot project_serviceName_volume_snapshot_snapshotId_GET(String serviceName, String snapshotId) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/volume/snapshot/{snapshotId}";
-		StringBuilder sb = path(qPath, serviceName, snapshotId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhSnapshot.class);
-	}
-
-	/**
-	 * Get volume snapshots
-	 *
-	 * REST: GET /cloud/project/{serviceName}/volume/snapshot
-	 * @param region [required] Snapshots region
-	 * @param serviceName [required] Project id
-	 */
-	public ArrayList<OvhSnapshot> project_serviceName_volume_snapshot_GET(String serviceName, String region) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/volume/snapshot";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "region", region);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t13);
-	}
-	private static TypeReference<ArrayList<OvhSnapshot>> t13 = new TypeReference<ArrayList<OvhSnapshot>>() {};
-
-	/**
-	 * Get planned migrations
-	 *
-	 * REST: GET /cloud/project/{serviceName}/migration
-	 * @param serviceName [required] Service name
-	 *
-	 * API beta
-	 */
-	public ArrayList<OvhMigration> project_serviceName_migration_GET(String serviceName) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/migration";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t14);
-	}
-	private static TypeReference<ArrayList<OvhMigration>> t14 = new TypeReference<ArrayList<OvhMigration>>() {};
-
-	/**
-	 * Get planned migration
-	 *
-	 * REST: GET /cloud/project/{serviceName}/migration/{migrationId}
-	 * @param migrationId [required] Migration id
-	 * @param serviceName [required] Service name
-	 *
-	 * API beta
-	 */
-	public OvhMigration project_serviceName_migration_migrationId_GET(String serviceName, String migrationId) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/migration/{migrationId}";
-		StringBuilder sb = path(qPath, serviceName, migrationId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhMigration.class);
-	}
-
-	/**
-	 * Update planned migration
-	 *
-	 * REST: PUT /cloud/project/{serviceName}/migration/{migrationId}
-	 * @param date [required] Migration date (RFC3339)
-	 * @param migrationId [required] Migration id
-	 * @param serviceName [required] Service name
-	 *
-	 * API beta
-	 */
-	public OvhMigration project_serviceName_migration_migrationId_PUT(String serviceName, String migrationId, Date date) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/migration/{migrationId}";
-		StringBuilder sb = path(qPath, serviceName, migrationId);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "date", date);
-		String resp = exec(qPath, "PUT", sb.toString(), o);
-		return convertTo(resp, OvhMigration.class);
 	}
 
 	/**
@@ -1458,48 +959,6 @@ public class ApiOvhCloud extends ApiOvhBase {
 	}
 
 	/**
-	 * Get your credit
-	 *
-	 * REST: GET /cloud/project/{serviceName}/credit
-	 * @param serviceName [required] The project id
-	 */
-	public ArrayList<Long> project_serviceName_credit_GET(String serviceName) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/credit";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Add credit to your project
-	 *
-	 * REST: POST /cloud/project/{serviceName}/credit
-	 * @param code [required] Voucher code
-	 * @param serviceName [required] The project id
-	 */
-	public void project_serviceName_credit_POST(String serviceName, String code) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/credit";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "code", code);
-		exec(qPath, "POST", sb.toString(), o);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /cloud/project/{serviceName}/credit/{id}
-	 * @param serviceName [required] The project id
-	 * @param id [required] Credit id
-	 */
-	public OvhCredit project_serviceName_credit_id_GET(String serviceName, Long id) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/credit/{id}";
-		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhCredit.class);
-	}
-
-	/**
 	 * Get regions
 	 *
 	 * REST: GET /cloud/project/{serviceName}/region
@@ -1558,9 +1017,9 @@ public class ApiOvhCloud extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "region", region);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t15);
+		return convertTo(resp, t7);
 	}
-	private static TypeReference<ArrayList<OvhInstance>> t15 = new TypeReference<ArrayList<OvhInstance>>() {};
+	private static TypeReference<ArrayList<OvhInstance>> t7 = new TypeReference<ArrayList<OvhInstance>>() {};
 
 	/**
 	 * Create a new instance
@@ -1608,9 +1067,9 @@ public class ApiOvhCloud extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "region", region);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t16);
+		return convertTo(resp, t8);
 	}
-	private static TypeReference<ArrayList<OvhInstanceGroup>> t16 = new TypeReference<ArrayList<OvhInstanceGroup>>() {};
+	private static TypeReference<ArrayList<OvhInstanceGroup>> t8 = new TypeReference<ArrayList<OvhInstanceGroup>>() {};
 
 	/**
 	 * Create a group
@@ -1829,9 +1288,9 @@ public class ApiOvhCloud extends ApiOvhBase {
 		String qPath = "/cloud/project/{serviceName}/instance/{instanceId}/interface";
 		StringBuilder sb = path(qPath, serviceName, instanceId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t17);
+		return convertTo(resp, t9);
 	}
-	private static TypeReference<ArrayList<OvhInterface>> t17 = new TypeReference<ArrayList<OvhInterface>>() {};
+	private static TypeReference<ArrayList<OvhInterface>> t9 = new TypeReference<ArrayList<OvhInterface>>() {};
 
 	/**
 	 * Create interface on an instance and attached it to a network
@@ -1958,7 +1417,691 @@ public class ApiOvhCloud extends ApiOvhBase {
 		addBody(o, "userData", userData);
 		addBody(o, "volumeId", volumeId);
 		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t7);
+	}
+
+	/**
+	 * Get vrack where this project is associated
+	 *
+	 * REST: GET /cloud/project/{serviceName}/vrack
+	 * @param serviceName [required] The project id
+	 */
+	public OvhVrack project_serviceName_vrack_GET(String serviceName) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/vrack";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhVrack.class);
+	}
+
+	/**
+	 * Cancel project creation
+	 *
+	 * REST: POST /cloud/project/{serviceName}/cancel
+	 * @param serviceName [required] The project id
+	 */
+	public void project_serviceName_cancel_POST(String serviceName) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/cancel";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "POST", sb.toString(), null);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /cloud/project/{serviceName}/serviceInfos
+	 * @param serviceName [required] The project id
+	 */
+	public OvhService project_serviceName_serviceInfos_GET(String serviceName) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhService.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /cloud/project/{serviceName}/serviceInfos
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The project id
+	 */
+	public void project_serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Get project quotas
+	 *
+	 * REST: GET /cloud/project/{serviceName}/quota
+	 * @param serviceName [required] Project id
+	 */
+	public ArrayList<OvhQuotas> project_serviceName_quota_GET(String serviceName) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/quota";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t10);
+	}
+	private static TypeReference<ArrayList<OvhQuotas>> t10 = new TypeReference<ArrayList<OvhQuotas>>() {};
+
+	/**
+	 * Get ips
+	 *
+	 * REST: GET /cloud/project/{serviceName}/ip
+	 * @param serviceName [required] Project id
+	 */
+	public ArrayList<OvhCloudIp> project_serviceName_ip_GET(String serviceName) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/ip";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t11);
+	}
+	private static TypeReference<ArrayList<OvhCloudIp>> t11 = new TypeReference<ArrayList<OvhCloudIp>>() {};
+
+	/**
+	 * Get failover ips
+	 *
+	 * REST: GET /cloud/project/{serviceName}/ip/failover
+	 * @param serviceName [required] Project id
+	 */
+	public ArrayList<OvhFailoverIp> project_serviceName_ip_failover_GET(String serviceName) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/ip/failover";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t12);
+	}
+	private static TypeReference<ArrayList<OvhFailoverIp>> t12 = new TypeReference<ArrayList<OvhFailoverIp>>() {};
+
+	/**
+	 * Get failover ip
+	 *
+	 * REST: GET /cloud/project/{serviceName}/ip/failover/{id}
+	 * @param id [required] Ip id
+	 * @param serviceName [required] Project id
+	 */
+	public OvhFailoverIp project_serviceName_ip_failover_id_GET(String serviceName, String id) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/ip/failover/{id}";
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhFailoverIp.class);
+	}
+
+	/**
+	 * Attach failover ip to an instance
+	 *
+	 * REST: POST /cloud/project/{serviceName}/ip/failover/{id}/attach
+	 * @param id [required] Ip id
+	 * @param instanceId [required] Attach failover ip to instance
+	 * @param serviceName [required] Project id
+	 */
+	public OvhFailoverIp project_serviceName_ip_failover_id_attach_POST(String serviceName, String id, String instanceId) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/ip/failover/{id}/attach";
+		StringBuilder sb = path(qPath, serviceName, id);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "instanceId", instanceId);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhFailoverIp.class);
+	}
+
+	/**
+	 * Terminate your service
+	 *
+	 * REST: POST /cloud/project/{serviceName}/terminate
+	 * @param serviceName [required] The project id
+	 */
+	public String project_serviceName_terminate_POST(String serviceName) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/terminate";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Launch a contact change procedure
+	 *
+	 * REST: POST /cloud/project/{serviceName}/changeContact
+	 * @param contactAdmin The contact to set as admin contact
+	 * @param contactTech The contact to set as tech contact
+	 * @param contactBilling The contact to set as billing contact
+	 * @param serviceName [required] The project id
+	 */
+	public ArrayList<Long> project_serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/changeContact";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "contactAdmin", contactAdmin);
+		addBody(o, "contactTech", contactTech);
+		addBody(o, "contactBilling", contactBilling);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Get your consumption forecast
+	 *
+	 * REST: GET /cloud/project/{serviceName}/forecast
+	 * @param serviceName [required] Service name
+	 * @param toDate [required] Forecast until date
+	 */
+	public OvhProjectForecast project_serviceName_forecast_GET(String serviceName, Date toDate) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/forecast";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "toDate", toDate);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhProjectForecast.class);
+	}
+
+	/**
+	 * Delete a snapshot
+	 *
+	 * REST: DELETE /cloud/project/{serviceName}/snapshot/{snapshotId}
+	 * @param serviceName [required] Project id
+	 * @param snapshotId [required] Snapshot id
+	 */
+	public OvhImage project_serviceName_snapshot_snapshotId_DELETE(String serviceName, String snapshotId) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/snapshot/{snapshotId}";
+		StringBuilder sb = path(qPath, serviceName, snapshotId);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhImage.class);
+	}
+
+	/**
+	 * Get snapshot details
+	 *
+	 * REST: GET /cloud/project/{serviceName}/snapshot/{snapshotId}
+	 * @param serviceName [required] Project id
+	 * @param snapshotId [required] Snapshot id
+	 */
+	public OvhImage project_serviceName_snapshot_snapshotId_GET(String serviceName, String snapshotId) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/snapshot/{snapshotId}";
+		StringBuilder sb = path(qPath, serviceName, snapshotId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhImage.class);
+	}
+
+	/**
+	 * Get snapshots
+	 *
+	 * REST: GET /cloud/project/{serviceName}/snapshot
+	 * @param flavorType [required] Get compatible snapshots with flavor type
+	 * @param region [required] Region
+	 * @param serviceName [required] Service name
+	 */
+	public ArrayList<OvhImage> project_serviceName_snapshot_GET(String serviceName, String flavorType, String region) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/snapshot";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "flavorType", flavorType);
+		query(sb, "region", region);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t13);
+	}
+	private static TypeReference<ArrayList<OvhImage>> t13 = new TypeReference<ArrayList<OvhImage>>() {};
+
+	/**
+	 * Get usage forecast
+	 *
+	 * REST: GET /cloud/project/{serviceName}/usage/forecast
+	 * @param serviceName [required] Service name
+	 */
+	public OvhUsageForecast project_serviceName_usage_forecast_GET(String serviceName) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/usage/forecast";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhUsageForecast.class);
+	}
+
+	/**
+	 * Usage information on your project
+	 *
+	 * REST: GET /cloud/project/{serviceName}/usage/history
+	 * @param from [required] Filter results having date superior to from
+	 * @param serviceName [required] Service name
+	 * @param to [required] Filter results having date inferior to
+	 */
+	public ArrayList<OvhUsageHistory> project_serviceName_usage_history_GET(String serviceName, Date from, Date to) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/usage/history";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "from", from);
+		query(sb, "to", to);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t14);
+	}
+	private static TypeReference<ArrayList<OvhUsageHistory>> t14 = new TypeReference<ArrayList<OvhUsageHistory>>() {};
+
+	/**
+	 * Usage information details
+	 *
+	 * REST: GET /cloud/project/{serviceName}/usage/history/{usageId}
+	 * @param serviceName [required] Service name
+	 * @param usageId [required] Usage id
+	 */
+	public OvhUsageHistoryDetail project_serviceName_usage_history_usageId_GET(String serviceName, String usageId) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/usage/history/{usageId}";
+		StringBuilder sb = path(qPath, serviceName, usageId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhUsageHistoryDetail.class);
+	}
+
+	/**
+	 * Get current usage
+	 *
+	 * REST: GET /cloud/project/{serviceName}/usage/current
+	 * @param serviceName [required] Service name
+	 */
+	public OvhUsageCurrent project_serviceName_usage_current_GET(String serviceName) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/usage/current";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhUsageCurrent.class);
+	}
+
+	/**
+	 * Do not expire the project, and retain it. You will have to pay for the resources you will use after using this call
+	 *
+	 * REST: POST /cloud/project/{serviceName}/retain
+	 * @param serviceName [required] The project id
+	 */
+	public void project_serviceName_retain_POST(String serviceName) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/retain";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "POST", sb.toString(), null);
+	}
+
+	/**
+	 * Get volumes
+	 *
+	 * REST: GET /cloud/project/{serviceName}/volume
+	 * @param region [required] Volume region
+	 * @param serviceName [required] Project id
+	 */
+	public ArrayList<OvhVolume> project_serviceName_volume_GET(String serviceName, String region) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/volume";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "region", region);
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t15);
+	}
+	private static TypeReference<ArrayList<OvhVolume>> t15 = new TypeReference<ArrayList<OvhVolume>>() {};
+
+	/**
+	 * Create a volume
+	 *
+	 * REST: POST /cloud/project/{serviceName}/volume
+	 * @param description [required] Volume description
+	 * @param imageId [required] Id of image to create a bootable volume
+	 * @param name [required] Volume name
+	 * @param region [required] Volume region
+	 * @param serviceName [required] Project id
+	 * @param size [required] Volume size (in GiB)
+	 * @param snapshotId [required] Source snapshot id
+	 * @param type [required] Volume type
+	 */
+	public OvhVolume project_serviceName_volume_POST(String serviceName, String description, String imageId, String name, String region, Long size, String snapshotId, OvhVolumeTypeEnum type) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/volume";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "description", description);
+		addBody(o, "imageId", imageId);
+		addBody(o, "name", name);
+		addBody(o, "region", region);
+		addBody(o, "size", size);
+		addBody(o, "snapshotId", snapshotId);
+		addBody(o, "type", type);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhVolume.class);
+	}
+
+	/**
+	 * Delete a volume
+	 *
+	 * REST: DELETE /cloud/project/{serviceName}/volume/{volumeId}
+	 * @param serviceName [required] Project id
+	 * @param volumeId [required] Volume id
+	 */
+	public void project_serviceName_volume_volumeId_DELETE(String serviceName, String volumeId) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/volume/{volumeId}";
+		StringBuilder sb = path(qPath, serviceName, volumeId);
+		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
+	 * Get volume details
+	 *
+	 * REST: GET /cloud/project/{serviceName}/volume/{volumeId}
+	 * @param serviceName [required] Project id
+	 * @param volumeId [required] Volume id
+	 */
+	public OvhVolume project_serviceName_volume_volumeId_GET(String serviceName, String volumeId) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/volume/{volumeId}";
+		StringBuilder sb = path(qPath, serviceName, volumeId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhVolume.class);
+	}
+
+	/**
+	 * Update a volume
+	 *
+	 * REST: PUT /cloud/project/{serviceName}/volume/{volumeId}
+	 * @param description [required] Volume description
+	 * @param name [required] Volume name
+	 * @param serviceName [required] Project id
+	 * @param volumeId [required] Volume id
+	 */
+	public OvhVolume project_serviceName_volume_volumeId_PUT(String serviceName, String volumeId, String description, String name) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/volume/{volumeId}";
+		StringBuilder sb = path(qPath, serviceName, volumeId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "description", description);
+		addBody(o, "name", name);
+		String resp = exec(qPath, "PUT", sb.toString(), o);
+		return convertTo(resp, OvhVolume.class);
+	}
+
+	/**
+	 * Detach a volume from an instance
+	 *
+	 * REST: POST /cloud/project/{serviceName}/volume/{volumeId}/detach
+	 * @param instanceId [required] Instance id
+	 * @param serviceName [required] Service name
+	 * @param volumeId [required] Volume id
+	 */
+	public OvhVolume project_serviceName_volume_volumeId_detach_POST(String serviceName, String volumeId, String instanceId) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/volume/{volumeId}/detach";
+		StringBuilder sb = path(qPath, serviceName, volumeId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "instanceId", instanceId);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhVolume.class);
+	}
+
+	/**
+	 * Extend a volume
+	 *
+	 * REST: POST /cloud/project/{serviceName}/volume/{volumeId}/upsize
+	 * @param serviceName [required] Service name
+	 * @param size [required] New volume size (in GiB) (must be greater than current one)
+	 * @param volumeId [required] Volume id
+	 */
+	public OvhVolume project_serviceName_volume_volumeId_upsize_POST(String serviceName, String volumeId, Long size) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/volume/{volumeId}/upsize";
+		StringBuilder sb = path(qPath, serviceName, volumeId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "size", size);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhVolume.class);
+	}
+
+	/**
+	 * Snapshot a volume
+	 *
+	 * REST: POST /cloud/project/{serviceName}/volume/{volumeId}/snapshot
+	 * @param description [required] Snapshot description
+	 * @param name [required] Snapshot name
+	 * @param serviceName [required] Service name
+	 * @param volumeId [required] Volume id
+	 */
+	public OvhSnapshot project_serviceName_volume_volumeId_snapshot_POST(String serviceName, String volumeId, String description, String name) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/volume/{volumeId}/snapshot";
+		StringBuilder sb = path(qPath, serviceName, volumeId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "description", description);
+		addBody(o, "name", name);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhSnapshot.class);
+	}
+
+	/**
+	 * Attach a volume on an instance
+	 *
+	 * REST: POST /cloud/project/{serviceName}/volume/{volumeId}/attach
+	 * @param instanceId [required] Instance id
+	 * @param serviceName [required] Service name
+	 * @param volumeId [required] Volume id
+	 */
+	public OvhVolume project_serviceName_volume_volumeId_attach_POST(String serviceName, String volumeId, String instanceId) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/volume/{volumeId}/attach";
+		StringBuilder sb = path(qPath, serviceName, volumeId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "instanceId", instanceId);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhVolume.class);
+	}
+
+	/**
+	 * Delete a volume snapshot
+	 *
+	 * REST: DELETE /cloud/project/{serviceName}/volume/snapshot/{snapshotId}
+	 * @param serviceName [required] Project id
+	 * @param snapshotId [required] Snapshot id
+	 */
+	public void project_serviceName_volume_snapshot_snapshotId_DELETE(String serviceName, String snapshotId) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/volume/snapshot/{snapshotId}";
+		StringBuilder sb = path(qPath, serviceName, snapshotId);
+		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
+	 * Get volume snapshot details
+	 *
+	 * REST: GET /cloud/project/{serviceName}/volume/snapshot/{snapshotId}
+	 * @param serviceName [required] Project id
+	 * @param snapshotId [required]
+	 */
+	public OvhSnapshot project_serviceName_volume_snapshot_snapshotId_GET(String serviceName, String snapshotId) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/volume/snapshot/{snapshotId}";
+		StringBuilder sb = path(qPath, serviceName, snapshotId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhSnapshot.class);
+	}
+
+	/**
+	 * Get volume snapshots
+	 *
+	 * REST: GET /cloud/project/{serviceName}/volume/snapshot
+	 * @param region [required] Snapshots region
+	 * @param serviceName [required] Project id
+	 */
+	public ArrayList<OvhSnapshot> project_serviceName_volume_snapshot_GET(String serviceName, String region) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/volume/snapshot";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "region", region);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t16);
+	}
+	private static TypeReference<ArrayList<OvhSnapshot>> t16 = new TypeReference<ArrayList<OvhSnapshot>>() {};
+
+	/**
+	 * Get planned migrations
+	 *
+	 * REST: GET /cloud/project/{serviceName}/migration
+	 * @param serviceName [required] Service name
+	 *
+	 * API beta
+	 */
+	public ArrayList<OvhMigration> project_serviceName_migration_GET(String serviceName) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/migration";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t17);
+	}
+	private static TypeReference<ArrayList<OvhMigration>> t17 = new TypeReference<ArrayList<OvhMigration>>() {};
+
+	/**
+	 * Get planned migration
+	 *
+	 * REST: GET /cloud/project/{serviceName}/migration/{migrationId}
+	 * @param migrationId [required] Migration id
+	 * @param serviceName [required] Service name
+	 *
+	 * API beta
+	 */
+	public OvhMigration project_serviceName_migration_migrationId_GET(String serviceName, String migrationId) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/migration/{migrationId}";
+		StringBuilder sb = path(qPath, serviceName, migrationId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhMigration.class);
+	}
+
+	/**
+	 * Update planned migration
+	 *
+	 * REST: PUT /cloud/project/{serviceName}/migration/{migrationId}
+	 * @param date [required] Migration date (RFC3339)
+	 * @param migrationId [required] Migration id
+	 * @param serviceName [required] Service name
+	 *
+	 * API beta
+	 */
+	public OvhMigration project_serviceName_migration_migrationId_PUT(String serviceName, String migrationId, Date date) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/migration/{migrationId}";
+		StringBuilder sb = path(qPath, serviceName, migrationId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "date", date);
+		String resp = exec(qPath, "PUT", sb.toString(), o);
+		return convertTo(resp, OvhMigration.class);
+	}
+
+	/**
+	 * Get your credit
+	 *
+	 * REST: GET /cloud/project/{serviceName}/credit
+	 * @param serviceName [required] The project id
+	 */
+	public ArrayList<Long> project_serviceName_credit_GET(String serviceName) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/credit";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Add credit to your project
+	 *
+	 * REST: POST /cloud/project/{serviceName}/credit
+	 * @param code [required] Voucher code
+	 * @param serviceName [required] The project id
+	 */
+	public void project_serviceName_credit_POST(String serviceName, String code) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/credit";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "code", code);
+		exec(qPath, "POST", sb.toString(), o);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /cloud/project/{serviceName}/credit/{id}
+	 * @param serviceName [required] The project id
+	 * @param id [required] Credit id
+	 */
+	public OvhCredit project_serviceName_credit_id_GET(String serviceName, Long id) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/credit/{id}";
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhCredit.class);
+	}
+
+	/**
+	 * Managed imported IP LB in OpenStack
+	 *
+	 * REST: GET /cloud/project/{serviceName}/ipLoadbalancing
+	 * @param serviceName [required] The project id
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> project_serviceName_ipLoadbalancing_GET(String serviceName) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/ipLoadbalancing";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Import an existing IP LB into OpenStack
+	 *
+	 * REST: POST /cloud/project/{serviceName}/ipLoadbalancing
+	 * @param ipLoadbalancingServiceName [required] Service name of the IP LB to import
+	 * @param redirection [required] Where you want to redirect the user after sucessfull authentication. Useful variables admitted: %project <=> project ID, %id <=> ID of load balancing ip, %iplb <=> IPLB service name
+	 * @param serviceName [required] The project id
+	 *
+	 * API beta
+	 */
+	public OvhIPLoadbalancing project_serviceName_ipLoadbalancing_POST(String serviceName, String ipLoadbalancingServiceName, String redirection) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/ipLoadbalancing";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "ipLoadbalancingServiceName", ipLoadbalancingServiceName);
+		addBody(o, "redirection", redirection);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhIPLoadbalancing.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /cloud/project/{serviceName}/ipLoadbalancing/{id}
+	 * @param serviceName [required] The project id
+	 * @param id [required] ID of your load balancing ip import
+	 *
+	 * API beta
+	 */
+	public OvhIPLoadbalancing project_serviceName_ipLoadbalancing_id_GET(String serviceName, String id) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/ipLoadbalancing/{id}";
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhIPLoadbalancing.class);
+	}
+
+	/**
+	 * Delete the import of your load balancing IP into OpenStack. This does not delete the IP LB but close the access of it from OpenStack
+	 *
+	 * REST: DELETE /cloud/project/{serviceName}/ipLoadbalancing/{id}
+	 * @param serviceName [required] The project id
+	 * @param id [required] ID of your load balancing ip import
+	 *
+	 * API beta
+	 */
+	public void project_serviceName_ipLoadbalancing_id_DELETE(String serviceName, String id) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/ipLoadbalancing/{id}";
+		StringBuilder sb = path(qPath, serviceName, id);
+		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
+	 * Validate the import of your load balancing IP into OpenStack
+	 *
+	 * REST: POST /cloud/project/{serviceName}/ipLoadbalancing/{id}/validate
+	 * @param serviceName [required] The project id
+	 * @param id [required] ID of your load balancing ip import
+	 *
+	 * API beta
+	 */
+	public void project_serviceName_ipLoadbalancing_id_validate_POST(String serviceName, String id) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/ipLoadbalancing/{id}/validate";
+		StringBuilder sb = path(qPath, serviceName, id);
+		exec(qPath, "POST", sb.toString(), null);
+	}
+
+	/**
+	 * Renew the import of your load balancing IP into Openstack
+	 *
+	 * REST: POST /cloud/project/{serviceName}/ipLoadbalancing/{id}/renew
+	 * @param redirection [required] Where you want to redirect the user after sucessfull authentication. Useful variables admitted: %project <=> project ID, %id <=> ID of load balancing ip, %iplb <=> IPLB service name
+	 * @param serviceName [required] The project id
+	 * @param id [required] ID of your load balancing ip import
+	 *
+	 * API beta
+	 */
+	public OvhIPLoadbalancing project_serviceName_ipLoadbalancing_id_renew_POST(String serviceName, String id, String redirection) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/ipLoadbalancing/{id}/renew";
+		StringBuilder sb = path(qPath, serviceName, id);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "redirection", redirection);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhIPLoadbalancing.class);
 	}
 
 	/**
@@ -1977,7 +2120,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 		query(sb, "osType", osType);
 		query(sb, "region", region);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t9);
+		return convertTo(resp, t13);
 	}
 
 	/**
@@ -2004,19 +2147,6 @@ public class ApiOvhCloud extends ApiOvhBase {
 		String qPath = "/cloud/project/{serviceName}/unleash";
 		StringBuilder sb = path(qPath, serviceName);
 		exec(qPath, "POST", sb.toString(), null);
-	}
-
-	/**
-	 * Get vrack where this project is associated
-	 *
-	 * REST: GET /cloud/project/{serviceName}/vrack
-	 * @param serviceName [required] The project id
-	 */
-	public OvhVrack project_serviceName_vrack_GET(String serviceName) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/vrack";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhVrack.class);
 	}
 
 	/**
@@ -2083,16 +2213,22 @@ public class ApiOvhCloud extends ApiOvhBase {
 	}
 
 	/**
-	 * Cancel project creation
+	 * Get your project bills
 	 *
-	 * REST: POST /cloud/project/{serviceName}/cancel
+	 * REST: GET /cloud/project/{serviceName}/bill
+	 * @param to [required] Get bills to
+	 * @param from [required] Get bills from
 	 * @param serviceName [required] The project id
 	 */
-	public void project_serviceName_cancel_POST(String serviceName) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/cancel";
+	public ArrayList<OvhBill> project_serviceName_bill_GET(String serviceName, Date from, Date to) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/bill";
 		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "POST", sb.toString(), null);
+		query(sb, "from", from);
+		query(sb, "to", to);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t19);
 	}
+	private static TypeReference<ArrayList<OvhBill>> t19 = new TypeReference<ArrayList<OvhBill>>() {};
 
 	/**
 	 * Get storage containers
@@ -2104,9 +2240,9 @@ public class ApiOvhCloud extends ApiOvhBase {
 		String qPath = "/cloud/project/{serviceName}/storage";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t19);
+		return convertTo(resp, t20);
 	}
-	private static TypeReference<ArrayList<OvhContainer>> t19 = new TypeReference<ArrayList<OvhContainer>>() {};
+	private static TypeReference<ArrayList<OvhContainer>> t20 = new TypeReference<ArrayList<OvhContainer>>() {};
 
 	/**
 	 * Create container
@@ -2263,24 +2399,6 @@ public class ApiOvhCloud extends ApiOvhBase {
 		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhContainerAccess.class);
 	}
-
-	/**
-	 * Get your project bills
-	 *
-	 * REST: GET /cloud/project/{serviceName}/bill
-	 * @param to [required] Get bills to
-	 * @param from [required] Get bills from
-	 * @param serviceName [required] The project id
-	 */
-	public ArrayList<OvhBill> project_serviceName_bill_GET(String serviceName, Date from, Date to) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/bill";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "from", from);
-		query(sb, "to", to);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t20);
-	}
-	private static TypeReference<ArrayList<OvhBill>> t20 = new TypeReference<ArrayList<OvhBill>>() {};
 
 	/**
 	 * List available services

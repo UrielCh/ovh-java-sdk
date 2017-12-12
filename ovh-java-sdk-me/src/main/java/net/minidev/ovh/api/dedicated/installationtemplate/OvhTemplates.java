@@ -98,6 +98,13 @@ public class OvhTemplates {
 	public Boolean hardRaidConfiguration;
 
 	/**
+	 * This distribution supports RTM software
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean supportsRTM;
+
+	/**
 	 * the default language of this template
 	 *
 	 * canBeNull && readOnly
