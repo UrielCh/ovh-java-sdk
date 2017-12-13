@@ -33,13 +33,21 @@ import net.minidev.ovh.api.auth.OvhMethodEnum;
 
 public class ApiOvhCore {
 	private String[] DEFAULT_ACCESS_RULES = new String[] { "DELETE /*", "GET /*", "POST /*", "PUT /*" };
-	// shared map
+	/**
+	 * Optional Handlers
+	 */
 	private TreeMap<String, TreeMap<String, OphApiHandler>> mtdHandler;
 	private String[] accessRules = DEFAULT_ACCESS_RULES;
+	/**
+	 * optional cache manager
+	 */
+	private CacheManager cacheManager;
 
 	/**
 	 * register and handlet linked to a method
-	 * @param method GET PUT POST DELETE or ALL
+	 * 
+	 * @param method
+	 *            GET PUT POST DELETE or ALL
 	 * @param url
 	 * @param handler
 	 */
@@ -56,6 +64,10 @@ public class ApiOvhCore {
 			mtdHandler.put(method, reg);
 		}
 		reg.put(url, handler);
+	}
+
+	public void setCacheManager(CacheManager cacheManager) {
+		this.cacheManager = cacheManager;
 	}
 
 	private ApiOvhConfig config;
@@ -95,8 +107,9 @@ public class ApiOvhCore {
 	private Long timeOffset;
 
 	/**
-	 * Overwrite Default accessRules (DELETE /*, GET /*, POST /*, PUT /*)
-	 * If called with no parameter the Default Rules will be used. 
+	 * Overwrite Default accessRules (DELETE /*, GET /*, POST /*, PUT /*) If called
+	 * with no parameter the Default Rules will be used.
+	 * 
 	 * @param accessRules
 	 */
 	public void setAccessRules(String... accessRules) {
@@ -149,7 +162,9 @@ public class ApiOvhCore {
 	}
 
 	/**
-	 * Connect to the OVH API using a consumerKey contains in your ovh config file or environment variable
+	 * Connect to the OVH API using a consumerKey contains in your ovh config file
+	 * or environment variable
+	 * 
 	 * @return an ApiOvhCore authenticate by consumerKey
 	 */
 	public static ApiOvhCore getInstance() {
@@ -164,7 +179,9 @@ public class ApiOvhCore {
 
 	/**
 	 * Connect to the OVH API using a consumerKey
-	 * @param consumerKey the consumerKey
+	 * 
+	 * @param consumerKey
+	 *            the consumerKey
 	 * @return an ApiOvhCore authenticate by consumerKey
 	 */
 	public static ApiOvhCore getInstance(String consumerKey) {
@@ -246,7 +263,7 @@ public class ApiOvhCore {
 	 */
 	public boolean login(String nic, String password, int timeInSec) throws IOException {
 		if (password == null) {
-			// using CK only, no autologin			
+			// using CK only, no autologin
 			return false;
 		}
 		nic = nic.toLowerCase();
@@ -346,6 +363,7 @@ public class ApiOvhCore {
 
 	/**
 	 * Request for a new Token with full access
+	 * 
 	 * @param redirection
 	 * @return a new OvhCredential
 	 */
@@ -371,6 +389,7 @@ public class ApiOvhCore {
 
 	/**
 	 * Call REST entry point and handle errors
+	 * 
 	 * @param method
 	 * @param query
 	 * @param payload
@@ -378,23 +397,37 @@ public class ApiOvhCore {
 	 * @return Full response as String
 	 * @throws IOException
 	 */
-	public String exec(String apiPath, String method, String query, Object payload, boolean needAuth) throws IOException {
+	public String exec(String apiPath, String method, String query, Object payload, boolean needAuth)
+			throws IOException {
 		if (payload == null)
 			payload = "";
+
 		String responseText = null;
-		try {
-			responseText = execInternal(method, query, payload, needAuth);
-		} catch (OvhException e0) {
-			throw e0;
-		} catch (OvhServiceException e0) {
-			throw e0;
-		} catch (SocketTimeoutException e1) {
-			log.error("CNX TIME OUT");
-			responseText = execInternal(method, query, payload, needAuth);
-		} catch (IOException e2) {
-			log.error("API OVH ERROR", e2);
-			throw e2;
+
+		boolean cached = false;
+		if (cacheManager != null) {
+			responseText = cacheManager.getCache(apiPath, method, query, payload);
+			if (responseText != null)
+				cached = true;
 		}
+
+		if (responseText == null)
+			try {
+				responseText = execInternal(method, query, payload, needAuth);
+			} catch (OvhException e0) {
+				throw e0;
+			} catch (OvhServiceException e0) {
+				throw e0;
+			} catch (SocketTimeoutException e1) {
+				log.error("CNX TIME OUT");
+				responseText = execInternal(method, query, payload, needAuth);
+			} catch (IOException e2) {
+				log.error("API OVH ERROR", e2);
+				throw e2;
+			}
+		if (cacheManager != null && !cached)
+			cacheManager.setCache(apiPath, method, query, payload, responseText);
+
 		if (mtdHandler != null) {
 			for (String mtd : new String[] { method, "ALL" }) {
 				TreeMap<String, OphApiHandler> handlers = null;
@@ -415,7 +448,8 @@ public class ApiOvhCore {
 		return responseText;
 	}
 
-	private String execInternal(final String method, final String query, final Object payload, boolean needAuth) throws IOException {
+	private String execInternal(final String method, final String query, final Object payload, boolean needAuth)
+			throws IOException {
 		String txt = ApiOvhUtils.objectJsonBody(payload);
 		URL url = new URL(config.getEndpoint() + query);
 		int failure = 0;
@@ -428,7 +462,8 @@ public class ApiOvhCore {
 			if (needAuth) {
 				CK = this.getConsumerKey();
 				String timestamp = getTimestamp();
-				String toHash = config.getAppSecret() + "+" + CK + "+" + method + "+" + url + "+" + txt + "+" + timestamp;
+				String toHash = config.getAppSecret() + "+" + CK + "+" + method + "+" + url + "+" + txt + "+"
+						+ timestamp;
 				String sig = "$1$" + ApiOvhUtils.digestSha1(toHash.getBytes(UTF8));
 				connection.setRequestProperty("X-Ovh-Timestamp", timestamp);
 				connection.setRequestProperty("X-Ovh-Signature", sig);
@@ -458,16 +493,18 @@ public class ApiOvhCore {
 				ApiOvhUtils.sleep(500);
 				failure++;
 				if (failure >= 5)
-					throw new IOException(
-							method + " " + query + " " + txt + " return: 500 Internal Server Error after " + failure + " retry TS: " + new Date());
+					throw new IOException(method + " " + query + " " + txt + " return: 500 Internal Server Error after "
+							+ failure + " retry TS: " + new Date());
 				continue;
 			}
 
 			if (response.startsWith("{\"errorCode\":")) {
-				//  errorCode=INVALID_CREDENTIAL, httpCode=403 Forbidden, message=This credential is not valid
+				// errorCode=INVALID_CREDENTIAL, httpCode=403 Forbidden, message=This credential
+				// is not valid
 				OvhErrorMessage err = ApiOvhUtils.mapper.readValue(response, OvhErrorMessage.class);
 
-				boolean credentialError = err.isErrorCode(OvhErrorMessage.INVALID_CREDENTIAL, OvhErrorMessage.NOT_CREDENTIAL);
+				boolean credentialError = err.isErrorCode(OvhErrorMessage.INVALID_CREDENTIAL,
+						OvhErrorMessage.NOT_CREDENTIAL);
 
 				if (credentialError && failure < 5) {
 					if (nic == null) {
@@ -507,7 +544,8 @@ public class ApiOvhCore {
 				// The requested object (id = 10884320) does not exist
 				throw new OvhServiceException(url.toString(), message);
 			throw new OvhServiceException(url.toString(), message);
-			//throw new IOException(method + " " + url + " " + txt + " return: " + message);
+			// throw new IOException(method + " " + url + " " + txt + " return: " +
+			// message);
 		}
 		return response;
 	}
@@ -515,6 +553,7 @@ public class ApiOvhCore {
 	private final static TypeReference<LinkedHashMap<String, Object>> t1 = new TypeReference<LinkedHashMap<String, Object>>() {
 	};
 
-	//private final static TypeReference<Map<String, Object>> t2 = new TypeReference<Map<String, Object>>() {
-	//};
+	// private final static TypeReference<Map<String, Object>> t2 = new
+	// TypeReference<Map<String, Object>>() {
+	// };
 }
