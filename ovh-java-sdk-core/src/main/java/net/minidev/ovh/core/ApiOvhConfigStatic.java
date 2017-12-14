@@ -17,7 +17,7 @@ public class ApiOvhConfigStatic extends ApiOvhConfig {
 	 * @param endPoint see {@link OvhEntryPoint}
 	 * @param applicationKey
 	 * @param appSecret
-	 * @param consumerKey
+	 * @param consumerKey can only be null if using user/password authentication
 	 */
 	public ApiOvhConfigStatic(String endPoint, String applicationKey, String appSecret, String consumerKey) {
 		//if (consumerKey == null)
@@ -61,6 +61,7 @@ public class ApiOvhConfigStatic extends ApiOvhConfig {
 
 	@Override
 	protected void setConsumerKey(String nic, String CK) throws IOException {
+		this.consumerKey = CK;
 	}
 
 	@Override
