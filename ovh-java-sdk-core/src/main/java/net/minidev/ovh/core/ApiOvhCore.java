@@ -372,7 +372,7 @@ public class ApiOvhCore {
 			}
 			String error = doc2.select("div.error").text();
 			if (error != null && error.length() > 0)
-				log.error("Login Error:{}", error);
+				log.error("Login {} Error:{}", nic, error);
 			else {
 				String body = doc2.toString();
 				if (body.contains("Too much requests. Please retry in 3 seconds. ")) {

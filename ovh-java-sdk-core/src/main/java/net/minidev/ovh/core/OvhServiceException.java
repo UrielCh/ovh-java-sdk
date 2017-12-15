@@ -8,13 +8,17 @@ public class OvhServiceException extends IOException {
 	public final String message;
 	
 	public OvhServiceException(String service, String message) {
-		super("Service " + service + ": This service is expired");
+		super(service + " " + message);
 		this.service = service;
 		this.message = message;
 	}
 	
 	public boolean isExpired() {
 		return "This service is expired".equalsIgnoreCase(message);
+	}
+	
+	public boolean isInvalidContactNumber() {
+		return "Invalid contact number".equalsIgnoreCase(message);
 	}
 	
 	public boolean isNonExists() {
