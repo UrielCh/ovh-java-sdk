@@ -4,8 +4,7 @@ package net.minidev.ovh.api.hosting.web;
  * Hosting's OS
  */
 public enum OvhOperatingSystemEnum {
-	linux("linux"),
-	windows("windows");
+	linux("linux");
 
 	final String value;
 

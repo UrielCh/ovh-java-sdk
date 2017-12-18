@@ -56,6 +56,13 @@ public class OvhSnapshot {
 	public Date creationDate;
 
 	/**
+	 * Order plan code
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String planCode;
+
+	/**
 	 * Snapshot status
 	 *
 	 * canBeNull && readOnly

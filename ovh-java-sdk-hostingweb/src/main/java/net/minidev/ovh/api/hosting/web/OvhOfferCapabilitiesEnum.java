@@ -18,8 +18,6 @@ public enum OvhOfferCapabilitiesEnum {
 	_240plan("240plan"),
 	@JsonProperty("300gp")
 	_300gp("300gp"),
-	@JsonProperty("60free")
-	_60free("60free"),
 	@JsonProperty("60gp")
 	_60gp("60gp"),
 	@JsonProperty("720pack")
@@ -39,12 +37,9 @@ public enum OvhOfferCapabilitiesEnum {
 	PERSO("PERSO"),
 	PRO("PRO"),
 	START("START"),
-	aspfree("aspfree"),
-	aspperso("aspperso"),
 	business("business"),
 	cloudwebbetax1("cloudwebbetax1"),
 	cloudwebx1("cloudwebx1"),
-	demo1g("demo1g"),
 	depro2012("depro2012"),
 	deprol2012("deprol2012"),
 	deproxl2012("deproxl2012"),

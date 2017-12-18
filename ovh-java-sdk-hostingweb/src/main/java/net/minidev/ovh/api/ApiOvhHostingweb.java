@@ -18,6 +18,7 @@ import net.minidev.ovh.api.hosting.web.OvhDatabase;
 import net.minidev.ovh.api.hosting.web.OvhDatabaseDump;
 import net.minidev.ovh.api.hosting.web.OvhDump;
 import net.minidev.ovh.api.hosting.web.OvhEmail;
+import net.minidev.ovh.api.hosting.web.OvhEnvVar;
 import net.minidev.ovh.api.hosting.web.OvhExtrasqlperso;
 import net.minidev.ovh.api.hosting.web.OvhFreedom;
 import net.minidev.ovh.api.hosting.web.OvhIndy;
@@ -257,23 +258,6 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 		query(sb, "type", type);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhAvailableVersionStruct.class);
-	}
-
-	/**
-	 * Migrate ovh.org subdomain for old 60free and demo1g offers
-	 *
-	 * REST: POST /hosting/web/{serviceName}/migrateMyOvhOrg
-	 * @param destinationServiceName [required] Name of the service name that will have the ovh.org subdomain migrated
-	 * @param serviceName [required] The internal name of your hosting
-	 * @deprecated
-	 */
-	public OvhTask serviceName_migrateMyOvhOrg_POST(String serviceName, String destinationServiceName) throws IOException {
-		String qPath = "/hosting/web/{serviceName}/migrateMyOvhOrg";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "destinationServiceName", destinationServiceName);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
@@ -1791,6 +1775,83 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "rollbackId", rollbackId);
 		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Environment variables set on your webhosting
+	 *
+	 * REST: GET /hosting/web/{serviceName}/envVar
+	 * @param type [required] Filter the value of type property (=)
+	 * @param serviceName [required] The internal name of your hosting
+	 */
+	public ArrayList<String> serviceName_envVar_GET(String serviceName, net.minidev.ovh.api.hosting.web.envvar.OvhTypeEnum type) throws IOException {
+		String qPath = "/hosting/web/{serviceName}/envVar";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "type", type);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t4);
+	}
+
+	/**
+	 * Set a variable to this hosting
+	 *
+	 * REST: POST /hosting/web/{serviceName}/envVar
+	 * @param value [required] Value of the variable
+	 * @param type [required] Type of variable set
+	 * @param key [required] Name of the new variable
+	 * @param serviceName [required] The internal name of your hosting
+	 */
+	public OvhTask serviceName_envVar_POST(String serviceName, String value, net.minidev.ovh.api.hosting.web.envvar.OvhTypeEnum type, String key) throws IOException {
+		String qPath = "/hosting/web/{serviceName}/envVar";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "value", value);
+		addBody(o, "type", type);
+		addBody(o, "key", key);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /hosting/web/{serviceName}/envVar/{key}
+	 * @param serviceName [required] The internal name of your hosting
+	 * @param key [required] Name of the variable
+	 */
+	public OvhEnvVar serviceName_envVar_key_GET(String serviceName, String key) throws IOException {
+		String qPath = "/hosting/web/{serviceName}/envVar/{key}";
+		StringBuilder sb = path(qPath, serviceName, key);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhEnvVar.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /hosting/web/{serviceName}/envVar/{key}
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your hosting
+	 * @param key [required] Name of the variable
+	 */
+	public void serviceName_envVar_key_PUT(String serviceName, String key, OvhEnvVar body) throws IOException {
+		String qPath = "/hosting/web/{serviceName}/envVar/{key}";
+		StringBuilder sb = path(qPath, serviceName, key);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Remove variable from hosting
+	 *
+	 * REST: DELETE /hosting/web/{serviceName}/envVar/{key}
+	 * @param serviceName [required] The internal name of your hosting
+	 * @param key [required] Name of the variable
+	 */
+	public OvhTask serviceName_envVar_key_DELETE(String serviceName, String key) throws IOException {
+		String qPath = "/hosting/web/{serviceName}/envVar/{key}";
+		StringBuilder sb = path(qPath, serviceName, key);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 

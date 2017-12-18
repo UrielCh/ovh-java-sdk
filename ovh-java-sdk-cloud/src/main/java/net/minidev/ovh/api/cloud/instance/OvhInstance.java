@@ -63,6 +63,13 @@ public class OvhInstance {
 	public String region;
 
 	/**
+	 * Order plan code
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String planCode;
+
+	/**
 	 * Instance ssh key id
 	 *
 	 * canBeNull && readOnly

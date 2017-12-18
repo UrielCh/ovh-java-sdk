@@ -1,6 +1,7 @@
 package net.minidev.ovh.api.domain;
 
 import java.util.Date;
+
 /**
  * Domain name administration
  */

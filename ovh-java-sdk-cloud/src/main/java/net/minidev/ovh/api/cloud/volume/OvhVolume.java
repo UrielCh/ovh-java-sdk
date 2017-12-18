@@ -70,6 +70,13 @@ public class OvhVolume {
 	public Boolean bootable;
 
 	/**
+	 * Order plan code
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String planCode;
+
+	/**
 	 * Volume status
 	 *
 	 * canBeNull && readOnly

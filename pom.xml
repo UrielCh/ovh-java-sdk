@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.minidev</groupId>
 	<artifactId>ovh-java-sdk-pom</artifactId>
-	<version>0.9.10</version>
+	<version>0.9.11</version>
 	<packaging>pom</packaging>
 	<name>OVH SDK for Java</name>
 	<description>OVH ...</description>
@@ -240,7 +240,6 @@
 		<module>ovh-java-sdk-hostingprivateDatabase</module>
 		<module>ovh-java-sdk-hostingreseller</module>
 		<module>ovh-java-sdk-hostingweb</module>
-		<module>ovh-java-sdk-hostingwindows</module>
 		<module>ovh-java-sdk-hpcspot</module>
 		<module>ovh-java-sdk-ip</module>
 		<module>ovh-java-sdk-ipLoadbalancing</module>

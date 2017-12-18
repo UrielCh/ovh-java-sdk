@@ -1593,6 +1593,21 @@ public class ApiOvhCloud extends ApiOvhBase {
 	}
 
 	/**
+	 * Get OVH playground session to use the openstack terminal
+	 *
+	 * REST: POST /cloud/project/{serviceName}/openstackClient
+	 * @param serviceName [required] Project id
+	 *
+	 * API beta
+	 */
+	public net.minidev.ovh.api.cloud.openstackclient.OvhSession project_serviceName_openstackClient_POST(String serviceName) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/openstackClient";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, net.minidev.ovh.api.cloud.openstackclient.OvhSession.class);
+	}
+
+	/**
 	 * Delete a snapshot
 	 *
 	 * REST: DELETE /cloud/project/{serviceName}/snapshot/{snapshotId}
@@ -2436,6 +2451,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 	 * REST: GET /cloud/price
 	 * @param flavorId [required] OVH cloud flavor id
 	 * @param region [required] Region
+	 * @deprecated
 	 */
 	public OvhPrice price_GET(String flavorId, String region) throws IOException {
 		String qPath = "/cloud/price";

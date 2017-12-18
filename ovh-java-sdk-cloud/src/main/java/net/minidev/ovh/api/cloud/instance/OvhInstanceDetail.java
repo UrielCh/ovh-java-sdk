@@ -73,6 +73,13 @@ public class OvhInstanceDetail {
 	public String region;
 
 	/**
+	 * Order plan code
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String planCode;
+
+	/**
 	 * Instance status
 	 *
 	 * canBeNull && readOnly

@@ -57,6 +57,13 @@ public class OvhProject {
 	public Date creationDate;
 
 	/**
+	 * Order plan code
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String planCode;
+
+	/**
 	 * Current status
 	 *
 	 * canBeNull && readOnly

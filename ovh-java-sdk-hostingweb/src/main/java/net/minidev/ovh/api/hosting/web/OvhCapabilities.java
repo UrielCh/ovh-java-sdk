@@ -8,13 +8,6 @@ import net.minidev.ovh.api.hosting.web.database.OvhCreationDatabaseCapabilities;
  */
 public class OvhCapabilities {
 	/**
-	 * Describe all email offer you can have
-	 *
-	 * canBeNull
-	 */
-	public OvhCreationEmailCapabilities emails;
-
-	/**
 	 * Describe all databases type you can have
 	 *
 	 * canBeNull
@@ -22,21 +15,14 @@ public class OvhCapabilities {
 	public OvhCreationDatabaseCapabilities[] databases;
 
 	/**
-	 * Disk capacity available for your hosting ( null for unlimited )
-	 *
-	 * canBeNull
-	 */
-	public OvhUnitAndValue<Double> disk;
-
-	/**
-	 * Is this offer can use 1-click modules?
+	 * Does the offer allow 1-click modules?
 	 *
 	 * canBeNull
 	 */
 	public Boolean moduleOneClick;
 
 	/**
-	 * Tell if you have acces to crontab
+	 * Does the offer allow crontab
 	 *
 	 * canBeNull
 	 */
@@ -50,7 +36,14 @@ public class OvhCapabilities {
 	public Long attachedDomains;
 
 	/**
-	 * Tell if you have acces to ssh
+	 * Does the offer allow environment variables?
+	 *
+	 * canBeNull
+	 */
+	public Boolean envVars;
+
+	/**
+	 * Does the offer allow SSH access
 	 *
 	 * canBeNull
 	 */
@@ -64,13 +57,6 @@ public class OvhCapabilities {
 	public OvhCreationDatabaseCapabilities[] privateDatabases;
 
 	/**
-	 * Number of ftp user you can create
-	 *
-	 * canBeNull
-	 */
-	public Long extraUsers;
-
-	/**
 	 * Number of sites recommended for your hosting ( -1 for unlimited )
 	 *
 	 * canBeNull
@@ -78,7 +64,28 @@ public class OvhCapabilities {
 	public Long sitesRecommended;
 
 	/**
-	 * Is this offer can access to web files browser?
+	 * Describe all email offer you can have
+	 *
+	 * canBeNull
+	 */
+	public OvhCreationEmailCapabilities emails;
+
+	/**
+	 * Disk capacity available for your hosting ( null for unlimited )
+	 *
+	 * canBeNull
+	 */
+	public OvhUnitAndValue<Double> disk;
+
+	/**
+	 * Number of ftp user you can create
+	 *
+	 * canBeNull
+	 */
+	public Long extraUsers;
+
+	/**
+	 * Does the offer allow access to web files browser?
 	 *
 	 * canBeNull
 	 */

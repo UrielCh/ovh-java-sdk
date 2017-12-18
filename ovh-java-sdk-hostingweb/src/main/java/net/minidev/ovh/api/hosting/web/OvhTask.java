@@ -1,6 +1,7 @@
 package net.minidev.ovh.api.hosting.web;
 
 import java.util.Date;
+import net.minidev.ovh.api.hosting.web.task.OvhObjectTypeEnum;
 import net.minidev.ovh.api.hosting.web.task.OvhStatusEnum;
 
 /**
@@ -36,6 +37,13 @@ public class OvhTask {
 	public Date doneDate;
 
 	/**
+	 * Task related object ID
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String objectId;
+
+	/**
 	 * Task Creation date
 	 *
 	 * canBeNull && readOnly
@@ -48,4 +56,11 @@ public class OvhTask {
 	 * canBeNull && readOnly
 	 */
 	public OvhStatusEnum status;
+
+	/**
+	 * Task object type
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhObjectTypeEnum objectType;
 }

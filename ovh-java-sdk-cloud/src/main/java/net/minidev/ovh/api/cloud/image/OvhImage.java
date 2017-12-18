@@ -33,6 +33,13 @@ public class OvhImage {
 	public Long minDisk;
 
 	/**
+	 * Order plan code
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String planCode;
+
+	/**
 	 * Tags about the image
 	 *
 	 * canBeNull && readOnly

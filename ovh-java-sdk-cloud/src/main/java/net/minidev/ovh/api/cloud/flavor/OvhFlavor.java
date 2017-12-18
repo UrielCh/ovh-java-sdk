@@ -33,6 +33,13 @@ public class OvhFlavor {
 	public String name;
 
 	/**
+	 * Plan codes to order instances
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhFlavorPlanCodes planCodes;
+
+	/**
 	 * OS to install on
 	 *
 	 * canBeNull && readOnly

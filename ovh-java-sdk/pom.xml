@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>net.minidev</groupId>
 		<artifactId>ovh-java-sdk-pom</artifactId>
-		<version>0.9.10</version>
+		<version>0.9.11</version>
 	</parent>
 	<artifactId>ovh-java-sdk</artifactId>
 	<name>OVH SDK For Java</name>
@@ -195,12 +195,6 @@
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-hostingweb</artifactId>
-			<groupId>net.minidev</groupId>
-			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>ovh-java-sdk-hostingwindows</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
 			<version>${ovhjavasdk.version}</version>
