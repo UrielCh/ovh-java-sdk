@@ -7,7 +7,8 @@ public enum OvhStepStatusEnum {
 	doing("doing"),
 	done("done"),
 	error("error"),
-	todo("todo");
+	todo("todo"),
+	waitingCustomer("waitingCustomer");
 
 	final String value;
 

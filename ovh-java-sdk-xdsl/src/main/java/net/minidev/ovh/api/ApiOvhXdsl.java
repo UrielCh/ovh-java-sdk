@@ -1146,6 +1146,19 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	}
 
 	/**
+	 * Migrate the access from IPoE protocol to PPP
+	 *
+	 * REST: POST /xdsl/{serviceName}/migrateToPPP
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @deprecated
+	 */
+	public void serviceName_migrateToPPP_POST(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/migrateToPPP";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "POST", sb.toString(), null);
+	}
+
+	/**
 	 * Change the status of the IPv6 for this access
 	 *
 	 * REST: POST /xdsl/{serviceName}/ipv6
@@ -1159,19 +1172,6 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		addBody(o, "enabled", enabled);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Migrate the access from IPoE protocol to PPP
-	 *
-	 * REST: POST /xdsl/{serviceName}/migrateToPPP
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @deprecated
-	 */
-	public void serviceName_migrateToPPP_POST(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/migrateToPPP";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
@@ -1259,6 +1259,18 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		addBody(o, "lnsName", lnsName);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Unlock order in "waitingCustomer" status. It only concerns orders whose modem is sent before anything have been forwarded to our provider
+	 *
+	 * REST: POST /xdsl/{serviceName}/sendOrderToProvider
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public void serviceName_sendOrderToProvider_POST(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/sendOrderToProvider";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
