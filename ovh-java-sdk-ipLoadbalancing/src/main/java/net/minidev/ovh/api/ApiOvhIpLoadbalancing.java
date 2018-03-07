@@ -9,7 +9,7 @@ import net.minidev.ovh.api.iploadbalancing.OvhBackendCustomerServerStatusEnum;
 import net.minidev.ovh.api.iploadbalancing.OvhBackendProbe;
 import net.minidev.ovh.api.iploadbalancing.OvhBalanceHTTPEnum;
 import net.minidev.ovh.api.iploadbalancing.OvhBalanceTCPEnum;
-import net.minidev.ovh.api.iploadbalancing.OvhDefinedBackend;
+import net.minidev.ovh.api.iploadbalancing.OvhDefinedFarm;
 import net.minidev.ovh.api.iploadbalancing.OvhDefinedFrontend;
 import net.minidev.ovh.api.iploadbalancing.OvhDefinedRoute;
 import net.minidev.ovh.api.iploadbalancing.OvhFarmAvailableProbe;
@@ -29,6 +29,7 @@ import net.minidev.ovh.api.iploadbalancing.OvhStickinessHTTPEnum;
 import net.minidev.ovh.api.iploadbalancing.OvhStickinessTCPEnum;
 import net.minidev.ovh.api.iploadbalancing.OvhTaskActionEnum;
 import net.minidev.ovh.api.iploadbalancing.OvhTaskStatusEnum;
+import net.minidev.ovh.api.iploadbalancing.OvhVrackInformation;
 import net.minidev.ovh.api.iploadbalancing.OvhVrackNetworkCreationRules;
 import net.minidev.ovh.api.iploadbalancing.backendcustomerserver.OvhBackendServer;
 import net.minidev.ovh.api.iploadbalancing.backendhttp.OvhBackendHttp;
@@ -199,16 +200,29 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	}
 
 	/**
-	 * Delete a zone
+	 * Cancel the termination request of your service zone option
 	 *
-	 * REST: DELETE /ipLoadbalancing/{serviceName}/zone/{name}
+	 * REST: POST /ipLoadbalancing/{serviceName}/zone/{name}/cancelTermination
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param name [required] Name of your zone
 	 */
-	public void serviceName_zone_name_DELETE(String serviceName, String name) throws IOException {
-		String qPath = "/ipLoadbalancing/{serviceName}/zone/{name}";
+	public void serviceName_zone_name_cancelTermination_POST(String serviceName, String name) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/zone/{name}/cancelTermination";
 		StringBuilder sb = path(qPath, serviceName, name);
-		exec(qPath, "DELETE", sb.toString(), null);
+		exec(qPath, "POST", sb.toString(), null);
+	}
+
+	/**
+	 * Terminate your service zone option
+	 *
+	 * REST: POST /ipLoadbalancing/{serviceName}/zone/{name}/terminate
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 * @param name [required] Name of your zone
+	 */
+	public void serviceName_zone_name_terminate_POST(String serviceName, String name) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/zone/{name}/terminate";
+		StringBuilder sb = path(qPath, serviceName, name);
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
@@ -514,10 +528,10 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 *
 	 * REST: POST /ipLoadbalancing/{serviceName}/http/route/{routeId}/rule
 	 * @param pattern [required] Value to match against this match. Interpretation if this field depends on the match and field
-	 * @param match [required] Matching operator. Not all operators are available for all fields. See "/availableRules"
+	 * @param match [required] Matching operator. Not all operators are available for all fields. See "/ipLoadbalancing/{serviceName}/availableRouteRules"
 	 * @param subField [required] Name of sub-field, if applicable. This may be a Cookie or Header name for instance
 	 * @param negate [required] Invert the matching operator effect
-	 * @param field [required] Name of the field to match like "protocol" or "host". See "/ipLoadbalancing/{serviceName}/route/availableRules" for a list of available rules
+	 * @param field [required] Name of the field to match like "protocol" or "host". See "/ipLoadbalancing/{serviceName}/availableRouteRules" for a list of available rules
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param routeId [required] Id of your route
 	 */
@@ -583,11 +597,13 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/http/farm
 	 * @param zone [required] Filter the value of zone property (=)
+	 * @param vrackNetworkId [required] Filter the value of vrackNetworkId property (=)
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
-	public ArrayList<Long> serviceName_http_farm_GET(String serviceName, String zone) throws IOException {
+	public ArrayList<Long> serviceName_http_farm_GET(String serviceName, Long vrackNetworkId, String zone) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/http/farm";
 		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "vrackNetworkId", vrackNetworkId);
 		query(sb, "zone", zone);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
@@ -910,13 +926,15 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/udp/farm
 	 * @param zone [required] Filter the value of zone property (=)
+	 * @param vrackNetworkId [required] Filter the value of vrackNetworkId property (=)
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 *
 	 * API beta
 	 */
-	public ArrayList<Long> serviceName_udp_farm_GET(String serviceName, String zone) throws IOException {
+	public ArrayList<Long> serviceName_udp_farm_GET(String serviceName, Long vrackNetworkId, String zone) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/udp/farm";
 		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "vrackNetworkId", vrackNetworkId);
 		query(sb, "zone", zone);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
@@ -1448,10 +1466,10 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 *
 	 * REST: POST /ipLoadbalancing/{serviceName}/tcp/route/{routeId}/rule
 	 * @param pattern [required] Value to match against this match. Interpretation if this field depends on the match and field
-	 * @param match [required] Matching operator. Not all operators are available for all fields. See "/availableRules"
+	 * @param match [required] Matching operator. Not all operators are available for all fields. See "/ipLoadbalancing/{serviceName}/availableRouteRules"
 	 * @param subField [required] Name of sub-field, if applicable. This may be a Cookie or Header name for instance
 	 * @param negate [required] Invert the matching operator effect
-	 * @param field [required] Name of the field to match like "protocol" or "host". See "/ipLoadbalancing/{serviceName}/route/availableRules" for a list of available rules
+	 * @param field [required] Name of the field to match like "protocol" or "host". See "/ipLoadbalancing/{serviceName}/availableRouteRules" for a list of available rules
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param routeId [required] Id of your route
 	 */
@@ -1517,11 +1535,13 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/tcp/farm
 	 * @param zone [required] Filter the value of zone property (=)
+	 * @param vrackNetworkId [required] Filter the value of vrackNetworkId property (=)
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
-	public ArrayList<Long> serviceName_tcp_farm_GET(String serviceName, String zone) throws IOException {
+	public ArrayList<Long> serviceName_tcp_farm_GET(String serviceName, Long vrackNetworkId, String zone) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/tcp/farm";
 		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "vrackNetworkId", vrackNetworkId);
 		query(sb, "zone", zone);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
@@ -1769,20 +1789,24 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * Add a description of a private network in the attached vRack
 	 *
 	 * REST: POST /ipLoadbalancing/{serviceName}/vrack/network
+	 * @param farmId [required] Farm Id you want to attach to that vrack network
 	 * @param natIp [required] An IP block used as a pool of IPs by this Load Balancer to connect to the servers in this private network. The block must be in the private network and reserved for the Load Balancer
 	 * @param vlan [required] VLAN of the private network in the vRack. 0 if the private network is not in a VLAN
 	 * @param subnet [required] IP Block of the private network in the vRack
+	 * @param displayName [required] Human readable name for your vrack network
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 *
 	 * API beta
 	 */
-	public OvhVrackNetwork serviceName_vrack_network_POST(String serviceName, String natIp, Long vlan, String subnet) throws IOException {
+	public OvhVrackNetwork serviceName_vrack_network_POST(String serviceName, Long[] farmId, String natIp, Long vlan, String subnet, String displayName) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/vrack/network";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "farmId", farmId);
 		addBody(o, "natIp", natIp);
 		addBody(o, "vlan", vlan);
 		addBody(o, "subnet", subnet);
+		addBody(o, "displayName", displayName);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhVrackNetwork.class);
 	}
@@ -1835,6 +1859,40 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	}
 
 	/**
+	 * Update farm attached to that vrack network id
+	 *
+	 * REST: POST /ipLoadbalancing/{serviceName}/vrack/network/{vrackNetworkId}/updateFarmId
+	 * @param farmId [required] Farm Id you want to attach to that vrack network
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 * @param vrackNetworkId [required] Internal Load Balancer identifier of the vRack private network description
+	 *
+	 * API beta
+	 */
+	public OvhVrackNetwork serviceName_vrack_network_vrackNetworkId_updateFarmId_POST(String serviceName, Long vrackNetworkId, Long[] farmId) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/vrack/network/{vrackNetworkId}/updateFarmId";
+		StringBuilder sb = path(qPath, serviceName, vrackNetworkId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "farmId", farmId);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhVrackNetwork.class);
+	}
+
+	/**
+	 * Information about vRack for your Load Balancer
+	 *
+	 * REST: GET /ipLoadbalancing/{serviceName}/vrack/status
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 *
+	 * API beta
+	 */
+	public OvhVrackInformation serviceName_vrack_status_GET(String serviceName) throws IOException {
+		String qPath = "/ipLoadbalancing/{serviceName}/vrack/status";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhVrackInformation.class);
+	}
+
+	/**
 	 * Rules to create a network attached to a vrack
 	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/vrack/networkCreationRules
@@ -1853,15 +1911,17 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * List of defined farms, and whether they are HTTP, TCP or UDP
 	 *
 	 * REST: GET /ipLoadbalancing/{serviceName}/definedFarms
+	 * @param vrackNetworkId [required] The vrack network id you want to filter on
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
-	public ArrayList<OvhDefinedBackend> serviceName_definedFarms_GET(String serviceName) throws IOException {
+	public ArrayList<OvhDefinedFarm> serviceName_definedFarms_GET(String serviceName, Long vrackNetworkId) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/definedFarms";
 		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "vrackNetworkId", vrackNetworkId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t11);
 	}
-	private static TypeReference<ArrayList<OvhDefinedBackend>> t11 = new TypeReference<ArrayList<OvhDefinedBackend>>() {};
+	private static TypeReference<ArrayList<OvhDefinedFarm>> t11 = new TypeReference<ArrayList<OvhDefinedFarm>>() {};
 
 	/**
 	 * Available frontend type

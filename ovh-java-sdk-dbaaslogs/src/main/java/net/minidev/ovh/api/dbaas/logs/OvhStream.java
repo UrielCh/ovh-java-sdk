@@ -7,11 +7,11 @@ import java.util.Date;
  */
 public class OvhStream {
 	/**
-	 * ColdStorage retention in year
+	 * Indicates if the current user can create alert on the stream
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long coldStorageRetention;
+	public Boolean canAlert;
 
 	/**
 	 * Enable Websocket
@@ -21,11 +21,46 @@ public class OvhStream {
 	public Boolean webSocketEnabled;
 
 	/**
+	 * Stream UUID
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String streamId;
+
+	/**
+	 * Stream description
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String description;
+
+	/**
+	 * Stream description
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String title;
+
+	/**
+	 * ColdStorage retention in year
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long coldStorageRetention;
+
+	/**
 	 * Stream creation
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date createdAt;
+
+	/**
+	 * Number of coldstored archives
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long nbArchive;
 
 	/**
 	 * Indicates if you are allowed to edit entry
@@ -35,25 +70,11 @@ public class OvhStream {
 	public Boolean isEditable;
 
 	/**
-	 * Stream UUID
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String streamId;
-
-	/**
 	 * Notify on new ColdStorage archive
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean coldStorageNotifyEnabled;
-
-	/**
-	 * Stream description
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String description;
 
 	/**
 	 * Associated DBaaS Logs option
@@ -68,13 +89,6 @@ public class OvhStream {
 	 * canBeNull && readOnly
 	 */
 	public Boolean coldStorageEnabled;
-
-	/**
-	 * Stream description
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String title;
 
 	/**
 	 * ColdStorage compression method

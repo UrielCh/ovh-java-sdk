@@ -428,7 +428,9 @@ public class ApiOvhCore {
 				throw new IOException("Invalid rule " + rule);
 			String mtd = rule.substring(0, p);
 			String path = rule.substring(p + 1);
-			accessRules[i] = new OvhAccessRule(OvhMethodEnum.valueOf(mtd.toUpperCase()), path);
+			accessRules[i] = new OvhAccessRule();
+			accessRules[i].method = OvhMethodEnum.valueOf(mtd.toUpperCase());
+			accessRules[i].path = path;
 		}
 		ApiOvhAuth auth = new ApiOvhAuth(this);
 		return auth.credential_POST(accessRules, redirection);

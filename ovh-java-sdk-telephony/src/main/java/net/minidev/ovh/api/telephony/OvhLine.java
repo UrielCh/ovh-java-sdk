@@ -24,6 +24,13 @@ public class OvhLine {
 	public String[] offers;
 
 	/**
+	 * Ability to manage SIP password on this service
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean canChangePassword;
+
+	/**
 	 * canBeNull && readOnly
 	 */
 	public Long simultaneousLines;

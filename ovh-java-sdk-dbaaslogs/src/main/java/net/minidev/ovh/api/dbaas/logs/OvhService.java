@@ -21,6 +21,13 @@ public class OvhService {
 	public Long contactId;
 
 	/**
+	 * Service custom name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String displayName;
+
+	/**
 	 * Service state
 	 *
 	 * canBeNull && readOnly

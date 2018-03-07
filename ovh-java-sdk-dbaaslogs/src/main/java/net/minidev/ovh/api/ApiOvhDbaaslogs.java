@@ -25,6 +25,7 @@ import net.minidev.ovh.api.dbaas.logs.OvhOperation;
 import net.minidev.ovh.api.dbaas.logs.OvhOption;
 import net.minidev.ovh.api.dbaas.logs.OvhPermission;
 import net.minidev.ovh.api.dbaas.logs.OvhPermissionMeta;
+import net.minidev.ovh.api.dbaas.logs.OvhPublicOffer;
 import net.minidev.ovh.api.dbaas.logs.OvhRole;
 import net.minidev.ovh.api.dbaas.logs.OvhServiceMetric;
 import net.minidev.ovh.api.dbaas.logs.OvhStream;
@@ -98,18 +99,20 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	}
 
 	/**
-	 * Update the service contact
+	 * Update the service properties
 	 *
 	 * REST: PUT /dbaas/logs/{serviceName}
 	 * @param serviceName [required]
+	 * @param displayName [required] Service custom name
 	 * @param contactId [required]
 	 *
 	 * API beta
 	 */
-	public OvhOperation serviceName_PUT(String serviceName, Long contactId) throws IOException {
+	public OvhOperation serviceName_PUT(String serviceName, String displayName, Long contactId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "displayName", displayName);
 		addBody(o, "contactId", contactId);
 		String resp = exec(qPath, "PUT", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
@@ -1150,16 +1153,13 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param serviceName [required]
 	 * @param streamId [required]
 	 * @param archiveId [required]
-	 * @param expirationInSeconds [required]
 	 *
 	 * API beta
 	 */
-	public OvhArchiveUrl serviceName_output_graylog_stream_streamId_archive_archiveId_url_POST(String serviceName, String streamId, String archiveId, Long expirationInSeconds) throws IOException {
+	public OvhArchiveUrl serviceName_output_graylog_stream_streamId_archive_archiveId_url_POST(String serviceName, String streamId, String archiveId) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/archive/{archiveId}/url";
 		StringBuilder sb = path(qPath, serviceName, streamId, archiveId);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "expirationInSeconds", expirationInSeconds);
-		String resp = exec(qPath, "POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhArchiveUrl.class);
 	}
 
@@ -1374,13 +1374,16 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/user/changePassword
 	 * @param serviceName [required]
+	 * @param password [required] Password must be at least 12 characters long contain a number, an uppercase, a lowercase and a special letter
 	 *
 	 * API beta
 	 */
-	public OvhOperation serviceName_user_changePassword_POST(String serviceName) throws IOException {
+	public OvhOperation serviceName_user_changePassword_POST(String serviceName, String password) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/user/changePassword";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "password", password);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
 
@@ -1474,6 +1477,22 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName, optionId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOption.class);
+	}
+
+	/**
+	 * Remove the specified subscribed option
+	 *
+	 * REST: POST /dbaas/logs/{serviceName}/option/{optionId}/terminate
+	 * @param serviceName [required]
+	 * @param optionId [required]
+	 *
+	 * API beta
+	 */
+	public OvhOperation serviceName_option_optionId_terminate_POST(String serviceName, String optionId) throws IOException {
+		String qPath = "/dbaas/logs/{serviceName}/option/{optionId}/terminate";
+		StringBuilder sb = path(qPath, serviceName, optionId);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhOperation.class);
 	}
 
 	/**
@@ -1894,5 +1913,20 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 		StringBuilder sb = path(qPath, engineId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhEngine.class);
+	}
+
+	/**
+	 * Display specified offer
+	 *
+	 * REST: GET /dbaas/logs/offer/{reference}
+	 * @param reference [required]
+	 *
+	 * API beta
+	 */
+	public OvhPublicOffer offer_reference_GET(String reference) throws IOException {
+		String qPath = "/dbaas/logs/offer/{reference}";
+		StringBuilder sb = path(qPath, reference);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPublicOffer.class);
 	}
 }

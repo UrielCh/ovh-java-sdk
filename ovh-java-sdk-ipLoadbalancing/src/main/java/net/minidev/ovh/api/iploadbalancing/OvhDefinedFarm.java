@@ -1,9 +1,9 @@
 package net.minidev.ovh.api.iploadbalancing;
 
 /**
- * a list of {type=>[Backend ids]}
+ * a list of { type => [ Farm ids ] }
  */
-public class OvhDefinedBackend {
+public class OvhDefinedFarm {
 	/**
 	 * canBeNull
 	 */

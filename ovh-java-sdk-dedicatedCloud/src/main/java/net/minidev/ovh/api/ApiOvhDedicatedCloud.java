@@ -34,17 +34,20 @@ import net.minidev.ovh.api.dedicatedcloud.OvhRobot;
 import net.minidev.ovh.api.dedicatedcloud.OvhTask;
 import net.minidev.ovh.api.dedicatedcloud.OvhTaskStateEnum;
 import net.minidev.ovh.api.dedicatedcloud.OvhUser;
+import net.minidev.ovh.api.dedicatedcloud.OvhVendor;
+import net.minidev.ovh.api.dedicatedcloud.OvhVendorObjectTypeEnum;
 import net.minidev.ovh.api.dedicatedcloud.OvhVlan;
 import net.minidev.ovh.api.dedicatedcloud.OvhVm;
 import net.minidev.ovh.api.dedicatedcloud.OvhVrops;
 import net.minidev.ovh.api.dedicatedcloud.OvhZpoolStockProfile;
 import net.minidev.ovh.api.dedicatedcloud.backup.OvhBackupDaysEnum;
 import net.minidev.ovh.api.dedicatedcloud.backup.OvhOfferTypeEnum;
+import net.minidev.ovh.api.dedicatedcloud.disasterrecovery.OvhProfile;
 import net.minidev.ovh.api.dedicatedcloud.filer.OvhHourlyConsumption;
-import net.minidev.ovh.api.dedicatedcloud.filer.OvhProfile;
 import net.minidev.ovh.api.dedicatedcloud.right.OvhNetworkRoleEnum;
 import net.minidev.ovh.api.dedicatedcloud.right.OvhRightEnum;
 import net.minidev.ovh.api.dedicatedcloud.right.OvhVmNetworkRoleEnum;
+import net.minidev.ovh.api.dedicatedcloud.vendor.OvhOvhId;
 import net.minidev.ovh.api.service.OvhTerminationReasonEnum;
 import net.minidev.ovh.api.services.OvhService;
 import net.minidev.ovh.core.ApiOvhBase;
@@ -200,6 +203,84 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	}
 
 	/**
+	 * enable Zerto replication between 2 OVH dedicated Clouds
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/disasterRecovery/zerto/enable
+	 * @param primaryEndpointIp [required] Your primary dedicated cloud public IP for the secured replication data tunnel endpoint
+	 * @param secondaryEndpointIp [required] Your secondary dedicated cloud public IP for the secured replication data tunnel endpoint
+	 * @param secondaryDatacenterId [required] Your secondary datacenter id
+	 * @param secondaryServiceName [required] Your secondary dedicatedCloud
+	 * @param serviceName [required] Domain of the service
+	 * @param datacenterId [required]
+	 *
+	 * API beta
+	 */
+	public OvhTask serviceName_datacenter_datacenterId_disasterRecovery_zerto_enable_POST(String serviceName, Long datacenterId, String primaryEndpointIp, String secondaryEndpointIp, Long secondaryDatacenterId, String secondaryServiceName) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/disasterRecovery/zerto/enable";
+		StringBuilder sb = path(qPath, serviceName, datacenterId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "primaryEndpointIp", primaryEndpointIp);
+		addBody(o, "secondaryEndpointIp", secondaryEndpointIp);
+		addBody(o, "secondaryDatacenterId", secondaryDatacenterId);
+		addBody(o, "secondaryServiceName", secondaryServiceName);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Generate a new password for Zerto Self Service Portal and receive it by email.
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/disasterRecovery/zerto/generateZsspPassword
+	 * @param serviceName [required] Domain of the service
+	 * @param datacenterId [required]
+	 *
+	 * API beta
+	 */
+	public OvhTask serviceName_datacenter_datacenterId_disasterRecovery_zerto_generateZsspPassword_POST(String serviceName, Long datacenterId) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/disasterRecovery/zerto/generateZsspPassword";
+		StringBuilder sb = path(qPath, serviceName, datacenterId);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Disable Zerto
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/disasterRecovery/zerto/disable
+	 * @param secondaryDatacenterId [required] Your secondary datacenter id
+	 * @param secondaryServiceName [required] Your secondary dedicatedCloud
+	 * @param serviceName [required] Domain of the service
+	 * @param datacenterId [required]
+	 *
+	 * API beta
+	 */
+	public OvhTask serviceName_datacenter_datacenterId_disasterRecovery_zerto_disable_POST(String serviceName, Long datacenterId, Long secondaryDatacenterId, String secondaryServiceName) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/disasterRecovery/zerto/disable";
+		StringBuilder sb = path(qPath, serviceName, datacenterId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "secondaryDatacenterId", secondaryDatacenterId);
+		addBody(o, "secondaryServiceName", secondaryServiceName);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get the current state of Zerto deployment on your dedicated Cloud.
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/disasterRecovery/zerto/state
+	 * @param serviceName [required] Domain of the service
+	 * @param datacenterId [required]
+	 *
+	 * API beta
+	 */
+	public OvhProfile serviceName_datacenter_datacenterId_disasterRecovery_zerto_state_POST(String serviceName, Long datacenterId) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/disasterRecovery/zerto/state";
+		StringBuilder sb = path(qPath, serviceName, datacenterId);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhProfile.class);
+	}
+
+	/**
 	 * Order a new hourly Host in a given Datacenter
 	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/orderNewHostHourly
@@ -292,13 +373,13 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	 * @param serviceName [required] Domain of the service
 	 * @param datacenterId [required]
 	 */
-	public ArrayList<OvhProfile> serviceName_datacenter_datacenterId_orderableFilerProfiles_GET(String serviceName, Long datacenterId) throws IOException {
+	public ArrayList<net.minidev.ovh.api.dedicatedcloud.filer.OvhProfile> serviceName_datacenter_datacenterId_orderableFilerProfiles_GET(String serviceName, Long datacenterId) throws IOException {
 		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/orderableFilerProfiles";
 		StringBuilder sb = path(qPath, serviceName, datacenterId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
-	private static TypeReference<ArrayList<OvhProfile>> t2 = new TypeReference<ArrayList<OvhProfile>>() {};
+	private static TypeReference<ArrayList<net.minidev.ovh.api.dedicatedcloud.filer.OvhProfile>> t2 = new TypeReference<ArrayList<net.minidev.ovh.api.dedicatedcloud.filer.OvhProfile>>() {};
 
 	/**
 	 * Filers associated with this Datacenter
@@ -583,6 +664,23 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	}
 
 	/**
+	 * Order a new hourly Filer in a given Datacenter
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/orderNewFilerHourly
+	 * @param name [required] Filer profile you want to order
+	 * @param serviceName [required] Domain of the service
+	 * @param datacenterId [required]
+	 */
+	public OvhTask serviceName_datacenter_datacenterId_orderNewFilerHourly_POST(String serviceName, Long datacenterId, String name) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/orderNewFilerHourly";
+		StringBuilder sb = path(qPath, serviceName, datacenterId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "name", name);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
 	 * Virtual machiness associated with this Datacenter
 	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/vm
@@ -813,23 +911,6 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName, datacenterId, vmId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "backupDays", backupDays);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Order a new hourly Filer in a given Datacenter
-	 *
-	 * REST: POST /dedicatedCloud/{serviceName}/datacenter/{datacenterId}/orderNewFilerHourly
-	 * @param name [required] Filer profile you want to order
-	 * @param serviceName [required] Domain of the service
-	 * @param datacenterId [required]
-	 */
-	public OvhTask serviceName_datacenter_datacenterId_orderNewFilerHourly_POST(String serviceName, Long datacenterId, String name) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/datacenter/{datacenterId}/orderNewFilerHourly";
-		StringBuilder sb = path(qPath, serviceName, datacenterId);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "name", name);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
@@ -2140,6 +2221,50 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 		return convertTo(resp, t5);
 	}
 	private static TypeReference<ArrayList<OvhIpCountriesEnum>> t5 = new TypeReference<ArrayList<OvhIpCountriesEnum>>() {};
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /dedicatedCloud/{serviceName}/vendor
+	 * @param serviceName [required] Domain of the service
+	 */
+	public OvhVendor serviceName_vendor_GET(String serviceName) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/vendor";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhVendor.class);
+	}
+
+	/**
+	 * Get available object types
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/vendor/objectType
+	 * @param serviceName [required] Domain of the service
+	 */
+	public ArrayList<String> serviceName_vendor_objectType_POST(String serviceName) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/vendor/objectType";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, t4);
+	}
+
+	/**
+	 * Get ovh id from object type
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/vendor/ovhId
+	 * @param vendorId [required] object type id
+	 * @param objectType [required] object type
+	 * @param serviceName [required] Domain of the service
+	 */
+	public OvhOvhId serviceName_vendor_ovhId_POST(String serviceName, String vendorId, OvhVendorObjectTypeEnum objectType) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/vendor/ovhId";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "vendorId", vendorId);
+		addBody(o, "objectType", objectType);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhOvhId.class);
+	}
 
 	/**
 	 * Check if Hds option can be disabled

@@ -1,7 +1,7 @@
 package net.minidev.ovh.api.dedicatedcloud;
 
 /**
- * PccZones actually available in Dedicated Cloud
+ * PccZones actually available in Private Cloud
  */
 public class OvhPccZone {
 	/**

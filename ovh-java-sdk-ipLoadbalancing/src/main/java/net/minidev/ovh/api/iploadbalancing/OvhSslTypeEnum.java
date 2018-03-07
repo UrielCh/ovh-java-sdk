@@ -5,6 +5,7 @@ package net.minidev.ovh.api.iploadbalancing;
  */
 public enum OvhSslTypeEnum {
 	built("built"),
+	built_not_routed("built_not_routed"),
 	custom("custom");
 
 	final String value;

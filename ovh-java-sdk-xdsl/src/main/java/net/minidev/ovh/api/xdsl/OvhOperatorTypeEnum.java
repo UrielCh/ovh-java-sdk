@@ -5,6 +5,7 @@ package net.minidev.ovh.api.xdsl;
  */
 public enum OvhOperatorTypeEnum {
 	collect("collect"),
+	kosc("kosc"),
 	ovh("ovh");
 
 	final String value;

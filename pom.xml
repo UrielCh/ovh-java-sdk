@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.minidev</groupId>
 	<artifactId>ovh-java-sdk-pom</artifactId>
-	<version>0.9.11</version>
+	<version>0.9.12</version>
 	<packaging>pom</packaging>
 	<name>OVH SDK for Java</name>
 	<description>OVH ...</description>
@@ -277,6 +277,7 @@
 		<module>ovh-java-sdk-supplymondialRelay</module>
 		<module>ovh-java-sdk-support</module>
 		<module>ovh-java-sdk-telephony</module>
+		<module>ovh-java-sdk-veeamveeamEnterprise</module>
 		<module>ovh-java-sdk-veeamCloudConnect</module>
 		<module>ovh-java-sdk-vip</module>
 		<module>ovh-java-sdk-vps</module>
@@ -312,6 +313,48 @@
 				<artifactId>junit</artifactId>
 				<version>4.12</version>
 			</dependency>
+			<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-core</artifactId>
+				<version>2.9.4</version>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>2.9.4</version>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-annotations</artifactId>
+				<version>2.9.4</version>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>1.7.25</version>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>1.2.3</version>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+			<dependency>
+				<groupId>org.jsoup</groupId>
+				<artifactId>jsoup</artifactId>
+				<version>1.11.2</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 </project>

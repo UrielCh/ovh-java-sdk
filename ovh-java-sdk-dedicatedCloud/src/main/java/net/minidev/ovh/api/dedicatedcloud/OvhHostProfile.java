@@ -1,7 +1,7 @@
 package net.minidev.ovh.api.dedicatedcloud;
 
 /**
- * Host profiles actually available in Dedicated Cloud
+ * Host profiles actually available in Private Cloud
  */
 public class OvhHostProfile {
 	/**

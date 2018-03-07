@@ -38,6 +38,7 @@ import net.minidev.ovh.api.cloud.ip.OvhFailoverIp;
 import net.minidev.ovh.api.cloud.migration.OvhMigration;
 import net.minidev.ovh.api.cloud.network.OvhNetwork;
 import net.minidev.ovh.api.cloud.network.OvhSubnet;
+import net.minidev.ovh.api.cloud.order.OvhOrder;
 import net.minidev.ovh.api.cloud.pca.OvhFunctionTypeEnum;
 import net.minidev.ovh.api.cloud.pca.OvhTaskStateEnum;
 import net.minidev.ovh.api.cloud.pca.OvhTaskTypeEnum;
@@ -2228,24 +2229,6 @@ public class ApiOvhCloud extends ApiOvhBase {
 	}
 
 	/**
-	 * Get your project bills
-	 *
-	 * REST: GET /cloud/project/{serviceName}/bill
-	 * @param to [required] Get bills to
-	 * @param from [required] Get bills from
-	 * @param serviceName [required] The project id
-	 */
-	public ArrayList<OvhBill> project_serviceName_bill_GET(String serviceName, Date from, Date to) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/bill";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "from", from);
-		query(sb, "to", to);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t19);
-	}
-	private static TypeReference<ArrayList<OvhBill>> t19 = new TypeReference<ArrayList<OvhBill>>() {};
-
-	/**
 	 * Get storage containers
 	 *
 	 * REST: GET /cloud/project/{serviceName}/storage
@@ -2255,9 +2238,9 @@ public class ApiOvhCloud extends ApiOvhBase {
 		String qPath = "/cloud/project/{serviceName}/storage";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t20);
+		return convertTo(resp, t19);
 	}
-	private static TypeReference<ArrayList<OvhContainer>> t20 = new TypeReference<ArrayList<OvhContainer>>() {};
+	private static TypeReference<ArrayList<OvhContainer>> t19 = new TypeReference<ArrayList<OvhContainer>>() {};
 
 	/**
 	 * Create container
@@ -2416,6 +2399,24 @@ public class ApiOvhCloud extends ApiOvhBase {
 	}
 
 	/**
+	 * Get your project bills
+	 *
+	 * REST: GET /cloud/project/{serviceName}/bill
+	 * @param to [required] Get bills to
+	 * @param from [required] Get bills from
+	 * @param serviceName [required] The project id
+	 */
+	public ArrayList<OvhBill> project_serviceName_bill_GET(String serviceName, Date from, Date to) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/bill";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "from", from);
+		query(sb, "to", to);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t20);
+	}
+	private static TypeReference<ArrayList<OvhBill>> t20 = new TypeReference<ArrayList<OvhBill>>() {};
+
+	/**
 	 * List available services
 	 *
 	 * REST: GET /cloud/project
@@ -2426,6 +2427,23 @@ public class ApiOvhCloud extends ApiOvhBase {
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
+
+	/**
+	 * Get all cloud pending orders
+	 *
+	 * REST: GET /cloud/order
+	 * @param planCode [required] Order plan code
+	 *
+	 * API beta
+	 */
+	public ArrayList<OvhOrder> order_GET(String planCode) throws IOException {
+		String qPath = "/cloud/order";
+		StringBuilder sb = path(qPath);
+		query(sb, "planCode", planCode);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t21);
+	}
+	private static TypeReference<ArrayList<OvhOrder>> t21 = new TypeReference<ArrayList<OvhOrder>>() {};
 
 	/**
 	 * Get services prices for a subsidiary

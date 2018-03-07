@@ -42,7 +42,9 @@ public class OvhTask {
 	public String serviceName;
 
 	/**
+	 * Task status
+	 *
 	 * canBeNull && readOnly
 	 */
-	public String status;
+	public OvhTaskStatusEnum status;
 }

@@ -7,6 +7,7 @@ import java.util.HashMap;
 import net.minidev.ovh.api.complextype.OvhChartReturn;
 import net.minidev.ovh.api.dedicated.OvhAvailabilities;
 import net.minidev.ovh.api.dedicated.OvhAvailabilitiesRaw;
+import net.minidev.ovh.api.dedicated.OvhOsAvailabilitiesEnum;
 import net.minidev.ovh.api.dedicated.OvhTaskFunctionEnum;
 import net.minidev.ovh.api.dedicated.OvhTaskStatusEnum;
 import net.minidev.ovh.api.dedicated.networkinterfacecontroller.OvhNetworkInterfaceController;
@@ -2244,6 +2245,21 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 	}
 
 	/**
+	 * List the os available for a specified hardware reference
+	 *
+	 * REST: GET /dedicated/server/osAvailabilities
+	 * @param hardware [required] Hardware reference requested
+	 */
+	public ArrayList<OvhOsAvailabilitiesEnum> osAvailabilities_GET(String hardware) throws IOException {
+		String qPath = "/dedicated/server/osAvailabilities";
+		StringBuilder sb = path(qPath);
+		query(sb, "hardware", hardware);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t13);
+	}
+	private static TypeReference<ArrayList<OvhOsAvailabilitiesEnum>> t13 = new TypeReference<ArrayList<OvhOsAvailabilitiesEnum>>() {};
+
+	/**
 	 * Get VirtualNetworkInterface details
 	 *
 	 * REST: GET /dedicated/server/virtualNetworkInterface/{uuid}
@@ -2271,9 +2287,9 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 		query(sb, "country", country);
 		query(sb, "hardware", hardware);
 		String resp = execN(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t13);
+		return convertTo(resp, t14);
 	}
-	private static TypeReference<ArrayList<OvhAvailabilities>> t13 = new TypeReference<ArrayList<OvhAvailabilities>>() {};
+	private static TypeReference<ArrayList<OvhAvailabilities>> t14 = new TypeReference<ArrayList<OvhAvailabilities>>() {};
 
 	/**
 	 * List the availability of dedicated server
@@ -2284,7 +2300,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 		String qPath = "/dedicated/server/availabilities/raw";
 		StringBuilder sb = path(qPath);
 		String resp = execN(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t14);
+		return convertTo(resp, t15);
 	}
-	private static TypeReference<ArrayList<OvhAvailabilitiesRaw>> t14 = new TypeReference<ArrayList<OvhAvailabilitiesRaw>>() {};
+	private static TypeReference<ArrayList<OvhAvailabilitiesRaw>> t15 = new TypeReference<ArrayList<OvhAvailabilitiesRaw>>() {};
 }

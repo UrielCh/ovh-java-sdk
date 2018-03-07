@@ -90,6 +90,7 @@ public class ApiOvh extends ApiOvhBase {
 	final public ApiOvhTime time;
 	final public ApiOvhToken token;
 	final public ApiOvhVeeamCloudConnect veeamCloudConnect;
+	final public ApiOvhVeeamveeamEnterprise veeamveeamEnterprise;
 	final public ApiOvhVip vip;
 	final public ApiOvhVolume volume;
 	final public ApiOvhVps vps;
@@ -179,6 +180,7 @@ public class ApiOvh extends ApiOvhBase {
 		this.time = new ApiOvhTime(core);
 		this.token = new ApiOvhToken(core);
 		this.veeamCloudConnect = new ApiOvhVeeamCloudConnect(core);
+		this.veeamveeamEnterprise = new ApiOvhVeeamveeamEnterprise(core);
 		this.vip = new ApiOvhVip(core);
 		this.volume = new ApiOvhVolume(core);
 		this.vps = new ApiOvhVps(core);

@@ -5,6 +5,7 @@ package net.minidev.ovh.api.dbaas.logs;
  */
 public enum OvhServiceStateEnum {
 	INIT("INIT"),
+	TO_CONFIG("TO_CONFIG"),
 	ENABLED("ENABLED"),
 	DISABLED("DISABLED");
 

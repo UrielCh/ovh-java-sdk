@@ -1,5 +1,7 @@
 package net.minidev.ovh.api.iploadbalancing.vracknetwork;
 
+import net.minidev.ovh.api.iploadbalancing.OvhDefinedFarm;
+
 /**
  * Represents a private network in the vRack
  */
@@ -31,4 +33,18 @@ public class OvhVrackNetwork {
 	 * canBeNull && readOnly
 	 */
 	public Long vlan;
+
+	/**
+	 * Human readable name for your vrack network
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String displayName;
+
+	/**
+	 * Farm Id your vrack network is attached to and their type
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhDefinedFarm[] farmId;
 }

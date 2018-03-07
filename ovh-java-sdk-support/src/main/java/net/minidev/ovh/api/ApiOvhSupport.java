@@ -160,12 +160,13 @@ public class ApiOvhSupport extends ApiOvhBase {
 	 * @param status [required] Status of ticket
 	 * @param serviceName [required] Ticket message service name
 	 * @param archived [required] Search archived tickets
+	 * @param ticketNumber [required] Search by ticket number
 	 * @param minCreationDate [required] Minimum creation date
 	 * @param maxCreationDate [required] Maximum creation date
 	 * @param product [required] Search by ticket product
 	 * @param category [required] Search by ticket category
 	 */
-	public ArrayList<Long> tickets_GET(Boolean archived, OvhTicketCategoryEnum category, Date maxCreationDate, Date minCreationDate, OvhTicketProductEnum product, String serviceName, OvhTicketStatusEnum status, String subject) throws IOException {
+	public ArrayList<Long> tickets_GET(Boolean archived, OvhTicketCategoryEnum category, Date maxCreationDate, Date minCreationDate, OvhTicketProductEnum product, String serviceName, OvhTicketStatusEnum status, String subject, String ticketNumber) throws IOException {
 		String qPath = "/support/tickets";
 		StringBuilder sb = path(qPath);
 		query(sb, "archived", archived);
@@ -176,6 +177,7 @@ public class ApiOvhSupport extends ApiOvhBase {
 		query(sb, "serviceName", serviceName);
 		query(sb, "status", status);
 		query(sb, "subject", subject);
+		query(sb, "ticketNumber", ticketNumber);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}

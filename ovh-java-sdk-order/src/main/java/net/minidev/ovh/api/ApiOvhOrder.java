@@ -72,6 +72,7 @@ import net.minidev.ovh.api.order.cart.OvhProductInformation;
 import net.minidev.ovh.api.order.cart.OvhWebHostingProductInformation;
 import net.minidev.ovh.api.order.catalog.privatecloud.OvhCatalog;
 import net.minidev.ovh.api.order.upgrade.OvhOrderUpgradeOperationAndOrder;
+import net.minidev.ovh.api.overthebox.OvhShippingMethodEnum;
 import net.minidev.ovh.api.telephony.OvhLineTypeEnum;
 import net.minidev.ovh.api.telephony.OvhNumberCountryEnum;
 import net.minidev.ovh.api.telephony.OvhNumberOffer;
@@ -1213,6 +1214,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param quantity [required] The quantity of extra simultaneous lines to add
 	 * @param serviceName [required] Your line number
+	 * @deprecated
 	 */
 	public OvhOrder telephony_lines_serviceName_addSimultaneousLines_GET(String serviceName, String billingAccount, Long quantity) throws IOException {
 		String qPath = "/order/telephony/lines/{serviceName}/addSimultaneousLines";
@@ -1230,6 +1232,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param quantity [required] The quantity of extra simultaneous lines to add
 	 * @param serviceName [required] Your line number
+	 * @deprecated
 	 */
 	public OvhOrder telephony_lines_serviceName_addSimultaneousLines_POST(String serviceName, String billingAccount, Long quantity) throws IOException {
 		String qPath = "/order/telephony/lines/{serviceName}/addSimultaneousLines";
@@ -1293,6 +1296,37 @@ public class ApiOvhOrder extends ApiOvhBase {
 		addBody(o, "shippingContactId", shippingContactId);
 		addBody(o, "hardware", hardware);
 		addBody(o, "mondialRelayId", mondialRelayId);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhOrder.class);
+	}
+
+	/**
+	 * Get prices and contracts information
+	 *
+	 * REST: GET /order/telephony/lines/{serviceName}/updateSimultaneousChannels
+	 * @param quantity [required] The quantity of total simultaneous channels requested
+	 * @param serviceName [required] Your line number
+	 */
+	public OvhOrder telephony_lines_serviceName_updateSimultaneousChannels_GET(String serviceName, Long quantity) throws IOException {
+		String qPath = "/order/telephony/lines/{serviceName}/updateSimultaneousChannels";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "quantity", quantity);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhOrder.class);
+	}
+
+	/**
+	 * Create order
+	 *
+	 * REST: POST /order/telephony/lines/{serviceName}/updateSimultaneousChannels
+	 * @param quantity [required] The quantity of total simultaneous channels requested
+	 * @param serviceName [required] Your line number
+	 */
+	public OvhOrder telephony_lines_serviceName_updateSimultaneousChannels_POST(String serviceName, Long quantity) throws IOException {
+		String qPath = "/order/telephony/lines/{serviceName}/updateSimultaneousChannels";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "quantity", quantity);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOrder.class);
 	}
@@ -1381,6 +1415,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param quantity [required] The quantity of extra simultaneous lines to add
 	 * @param serviceName [required] Your trunk number
+	 * @deprecated
 	 */
 	public OvhOrder telephony_trunks_serviceName_addSimultaneousLines_GET(String serviceName, String billingAccount, Long quantity) throws IOException {
 		String qPath = "/order/telephony/trunks/{serviceName}/addSimultaneousLines";
@@ -1398,6 +1433,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param quantity [required] The quantity of extra simultaneous lines to add
 	 * @param serviceName [required] Your trunk number
+	 * @deprecated
 	 */
 	public OvhOrder telephony_trunks_serviceName_addSimultaneousLines_POST(String serviceName, String billingAccount, Long quantity) throws IOException {
 		String qPath = "/order/telephony/trunks/{serviceName}/addSimultaneousLines";
@@ -1461,6 +1497,37 @@ public class ApiOvhOrder extends ApiOvhBase {
 		addBody(o, "shippingContactId", shippingContactId);
 		addBody(o, "hardware", hardware);
 		addBody(o, "mondialRelayId", mondialRelayId);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhOrder.class);
+	}
+
+	/**
+	 * Get prices and contracts information
+	 *
+	 * REST: GET /order/telephony/trunks/{serviceName}/updateSimultaneousChannels
+	 * @param quantity [required] The quantity of total simultaneous channels requested
+	 * @param serviceName [required] Your trunk number
+	 */
+	public OvhOrder telephony_trunks_serviceName_updateSimultaneousChannels_GET(String serviceName, Long quantity) throws IOException {
+		String qPath = "/order/telephony/trunks/{serviceName}/updateSimultaneousChannels";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "quantity", quantity);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhOrder.class);
+	}
+
+	/**
+	 * Create order
+	 *
+	 * REST: POST /order/telephony/trunks/{serviceName}/updateSimultaneousChannels
+	 * @param quantity [required] The quantity of total simultaneous channels requested
+	 * @param serviceName [required] Your trunk number
+	 */
+	public OvhOrder telephony_trunks_serviceName_updateSimultaneousChannels_POST(String serviceName, Long quantity) throws IOException {
+		String qPath = "/order/telephony/trunks/{serviceName}/updateSimultaneousChannels";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "quantity", quantity);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOrder.class);
 	}
@@ -10093,6 +10160,82 @@ public class ApiOvhOrder extends ApiOvhBase {
 		addBody(o, "brand", brand);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOrder.class);
+	}
+
+	/**
+	 * Get prices and contracts information
+	 *
+	 * REST: GET /order/overTheBox/{serviceName}/migrate
+	 * @param shippingContactID [required] Contact ID to deliver to
+	 * @param shippingMethod [required] How do you want your shipment shipped
+	 * @param hardware [required] If you want to migrate with a new hardware
+	 * @param offer [required] Offer name to migrate to
+	 * @param shippingRelayID [required] Relay ID to deliver to. Needed if shipping is mondialRelay
+	 * @param serviceName [required] The internal name of your overTheBox offer
+	 *
+	 * API beta
+	 */
+	public OvhOrder overTheBox_serviceName_migrate_GET(String serviceName, Boolean hardware, String offer, String shippingContactID, OvhShippingMethodEnum shippingMethod, Long shippingRelayID) throws IOException {
+		String qPath = "/order/overTheBox/{serviceName}/migrate";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "hardware", hardware);
+		query(sb, "offer", offer);
+		query(sb, "shippingContactID", shippingContactID);
+		query(sb, "shippingMethod", shippingMethod);
+		query(sb, "shippingRelayID", shippingRelayID);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhOrder.class);
+	}
+
+	/**
+	 * Create order
+	 *
+	 * REST: POST /order/overTheBox/{serviceName}/migrate
+	 * @param shippingContactID [required] Contact ID to deliver to
+	 * @param shippingMethod [required] How do you want your shipment shipped
+	 * @param hardware [required] If you want to migrate with a new hardware
+	 * @param offer [required] Offer name to migrate to
+	 * @param shippingRelayID [required] Relay ID to deliver to. Needed if shipping is mondialRelay
+	 * @param serviceName [required] The internal name of your overTheBox offer
+	 *
+	 * API beta
+	 */
+	public OvhOrder overTheBox_serviceName_migrate_POST(String serviceName, String shippingContactID, OvhShippingMethodEnum shippingMethod, Boolean hardware, String offer, Long shippingRelayID) throws IOException {
+		String qPath = "/order/overTheBox/{serviceName}/migrate";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "shippingContactID", shippingContactID);
+		addBody(o, "shippingMethod", shippingMethod);
+		addBody(o, "hardware", hardware);
+		addBody(o, "offer", offer);
+		addBody(o, "shippingRelayID", shippingRelayID);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhOrder.class);
+	}
+
+	/**
+	 * Get allowed options
+	 *
+	 * REST: GET /order/overTheBox/{serviceName}
+	 * @param serviceName [required] The internal name of your overTheBox offer
+	 */
+	public ArrayList<String> overTheBox_serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/order/overTheBox/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * List available services
+	 *
+	 * REST: GET /order/overTheBox
+	 */
+	public ArrayList<String> overTheBox_GET() throws IOException {
+		String qPath = "/order/overTheBox";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
 	}
 
 	/**

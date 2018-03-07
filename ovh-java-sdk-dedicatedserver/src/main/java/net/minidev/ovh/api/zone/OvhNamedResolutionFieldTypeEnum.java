@@ -6,6 +6,7 @@ package net.minidev.ovh.api.zone;
 public enum OvhNamedResolutionFieldTypeEnum {
 	A("A"),
 	AAAA("AAAA"),
+	CAA("CAA"),
 	CNAME("CNAME"),
 	DKIM("DKIM"),
 	LOC("LOC"),

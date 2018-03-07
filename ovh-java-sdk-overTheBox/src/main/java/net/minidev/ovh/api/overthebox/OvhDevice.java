@@ -35,6 +35,20 @@ public class OvhDevice {
 	public String deviceId;
 
 	/**
+	 * System version of the device
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String systemVersion;
+
+	/**
+	 * Version of the device
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String version;
+
+	/**
 	 * Whether or not this device is associated to a service
 	 *
 	 * canBeNull && readOnly

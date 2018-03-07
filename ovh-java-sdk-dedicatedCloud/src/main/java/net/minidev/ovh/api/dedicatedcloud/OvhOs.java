@@ -3,7 +3,7 @@ package net.minidev.ovh.api.dedicatedcloud;
 import java.util.Date;
 
 /**
- * Hypervisors actually available in Dedicated Cloud
+ * Hypervisors actually available in Private Cloud
  */
 public class OvhOs {
 	/**

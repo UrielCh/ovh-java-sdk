@@ -122,6 +122,7 @@ import net.minidev.ovh.api.telephony.OvhPhonebook;
 import net.minidev.ovh.api.telephony.OvhPhonebookContact;
 import net.minidev.ovh.api.telephony.OvhPhonebookMaster;
 import net.minidev.ovh.api.telephony.OvhPortability;
+import net.minidev.ovh.api.telephony.OvhPortabilityFixErrorPossibleParameters;
 import net.minidev.ovh.api.telephony.OvhPortabilityStep;
 import net.minidev.ovh.api.telephony.OvhPreviousVoiceConsumption;
 import net.minidev.ovh.api.telephony.OvhRateCodeInformation;
@@ -141,6 +142,7 @@ import net.minidev.ovh.api.telephony.OvhScreenList;
 import net.minidev.ovh.api.telephony.OvhScreenListNatureEnum;
 import net.minidev.ovh.api.telephony.OvhScreenListTypeEnum;
 import net.minidev.ovh.api.telephony.OvhServiceVoicemailAudioFormatEnum;
+import net.minidev.ovh.api.telephony.OvhSimultaneousChannelsDetails;
 import net.minidev.ovh.api.telephony.OvhSipDomainProductTypeEnum;
 import net.minidev.ovh.api.telephony.OvhSpecificNumber;
 import net.minidev.ovh.api.telephony.OvhStatisticsTimeframeEnum;
@@ -162,6 +164,7 @@ import net.minidev.ovh.api.telephony.OvhTrafficExtract;
 import net.minidev.ovh.api.telephony.OvhTrunk;
 import net.minidev.ovh.api.telephony.OvhTrunkExternalDisplayedNumber;
 import net.minidev.ovh.api.telephony.OvhTrunkExternalDisplayedNumberValidation;
+import net.minidev.ovh.api.telephony.OvhTrunkSimultaneousPacksRepartition;
 import net.minidev.ovh.api.telephony.OvhTypeEnum;
 import net.minidev.ovh.api.telephony.OvhVoiceConsumption;
 import net.minidev.ovh.api.telephony.OvhVoiceConsumptionDestinationTypeEnum;
@@ -1621,6 +1624,20 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	}
 
 	/**
+	 * Details about simultaneous channels of this line.
+	 *
+	 * REST: GET /telephony/{billingAccount}/line/{serviceName}/simultaneousChannelsDetails
+	 * @param billingAccount [required] The name of your billingAccount
+	 * @param serviceName [required]
+	 */
+	public OvhSimultaneousChannelsDetails billingAccount_line_serviceName_simultaneousChannelsDetails_GET(String billingAccount, String serviceName) throws IOException {
+		String qPath = "/telephony/{billingAccount}/line/{serviceName}/simultaneousChannelsDetails";
+		StringBuilder sb = path(qPath, billingAccount, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhSimultaneousChannelsDetails.class);
+	}
+
+	/**
 	 * The traffic extracts (SIP only) of your line
 	 *
 	 * REST: GET /telephony/{billingAccount}/line/{serviceName}/trafficExtracts
@@ -2453,6 +2470,7 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	 * REST: GET /telephony/{billingAccount}/line/{serviceName}/canChangePassword
 	 * @param billingAccount [required] The name of your billingAccount
 	 * @param serviceName [required]
+	 * @deprecated
 	 */
 	public Boolean billingAccount_line_serviceName_canChangePassword_GET(String billingAccount, String serviceName) throws IOException {
 		String qPath = "/telephony/{billingAccount}/line/{serviceName}/canChangePassword";
@@ -3652,6 +3670,36 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, id);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPortability.class);
+	}
+
+	/**
+	 * Fix error and relaunch portability
+	 *
+	 * REST: POST /telephony/{billingAccount}/portability/{id}/relaunch
+	 * @param parameters [required] List of parameters to use to fix error
+	 * @param billingAccount [required] The name of your billingAccount
+	 * @param id [required] The ID of the portability
+	 */
+	public void billingAccount_portability_id_relaunch_POST(String billingAccount, Long id, OvhSafeKeyValue<String>[] parameters) throws IOException {
+		String qPath = "/telephony/{billingAccount}/portability/{id}/relaunch";
+		StringBuilder sb = path(qPath, billingAccount, id);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "parameters", parameters);
+		exec(qPath, "POST", sb.toString(), o);
+	}
+
+	/**
+	 * Indicates whether or not error can be fixed and portability can be relaunched
+	 *
+	 * REST: GET /telephony/{billingAccount}/portability/{id}/relaunch
+	 * @param billingAccount [required] The name of your billingAccount
+	 * @param id [required] The ID of the portability
+	 */
+	public OvhPortabilityFixErrorPossibleParameters billingAccount_portability_id_relaunch_GET(String billingAccount, Long id) throws IOException {
+		String qPath = "/telephony/{billingAccount}/portability/{id}/relaunch";
+		StringBuilder sb = path(qPath, billingAccount, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPortabilityFixErrorPossibleParameters.class);
 	}
 
 	/**
@@ -4932,6 +4980,22 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTrunk.class);
+	}
+
+	/**
+	 * Determine the best channels packs combination for a given channel quantity
+	 *
+	 * REST: GET /telephony/{billingAccount}/trunk/{serviceName}/channelsPacksRepartition
+	 * @param quantity [required] Channels quantity to get the best repartition on
+	 * @param billingAccount [required] The name of your billingAccount
+	 * @param serviceName [required] Name of the service
+	 */
+	public OvhTrunkSimultaneousPacksRepartition billingAccount_trunk_serviceName_channelsPacksRepartition_GET(String billingAccount, String serviceName, Long quantity) throws IOException {
+		String qPath = "/telephony/{billingAccount}/trunk/{serviceName}/channelsPacksRepartition";
+		StringBuilder sb = path(qPath, billingAccount, serviceName);
+		query(sb, "quantity", quantity);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhTrunkSimultaneousPacksRepartition.class);
 	}
 
 	/**

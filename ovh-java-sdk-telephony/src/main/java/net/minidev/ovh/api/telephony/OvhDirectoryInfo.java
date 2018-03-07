@@ -1,5 +1,8 @@
 package net.minidev.ovh.api.telephony;
 
+import java.util.Date;
+import net.minidev.ovh.api.nichandle.OvhGenderEnum;
+
 /**
  * Directory Informations
  */
@@ -28,6 +31,11 @@ public class OvhDirectoryInfo {
 	 * canBeNull && readOnly
 	 */
 	public String wayName;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public OvhGenderEnum gender;
 
 	/**
 	 * canBeNull && readOnly
@@ -128,6 +136,11 @@ public class OvhDirectoryInfo {
 	 * canBeNull && readOnly
 	 */
 	public String legalForm;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public Date birthDate;
 
 	/**
 	 * canBeNull && readOnly

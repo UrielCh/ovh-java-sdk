@@ -7,7 +7,7 @@ import net.minidev.ovh.api.iploadbalancing.OvhRouteRuleMatchesEnum;
  */
 public class OvhRouteRule {
 	/**
-	 * Name of the field to match like "protocol" or "host". See "/ipLoadbalancing/{serviceName}/route/availableRules" for a list of available rules
+	 * Name of the field to match like "protocol" or "host". See "/ipLoadbalancing/{serviceName}/availableRouteRules" for a list of available rules
 	 *
 	 * canBeNull && readOnly
 	 */
@@ -28,7 +28,7 @@ public class OvhRouteRule {
 	public String pattern;
 
 	/**
-	 * Matching operator. Not all operators are available for all fields. See "/availableRules"
+	 * Matching operator. Not all operators are available for all fields. See "/ipLoadbalancing/{serviceName}/availableRouteRules"
 	 *
 	 * canBeNull && readOnly
 	 */

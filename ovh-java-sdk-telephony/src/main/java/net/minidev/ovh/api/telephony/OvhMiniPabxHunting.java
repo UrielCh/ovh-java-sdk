@@ -5,6 +5,13 @@ package net.minidev.ovh.api.telephony;
  */
 public class OvhMiniPabxHunting {
 	/**
+	 * Maximum numbers of callers in the queue
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long queueSize;
+
+	/**
 	 * The maximum waiting time in the calls queue
 	 *
 	 * canBeNull && readOnly

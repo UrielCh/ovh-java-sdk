@@ -33,13 +33,6 @@ public class OvhService {
 	public String description;
 
 	/**
-	 * Structure holding the info to get the metrics from your service
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhMetricsAccess metrics;
-
-	/**
 	 * Region holding the service
 	 *
 	 * canBeNull && readOnly
@@ -59,4 +52,11 @@ public class OvhService {
 	 * canBeNull && readOnly
 	 */
 	public OvhServiceStatusEnum status;
+
+	/**
+	 * Indicator if the service should be upgraded based on current quota and offer
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean shouldUpgrade;
 }

@@ -14,6 +14,13 @@ public class OvhSsl {
 	public String provider;
 
 	/**
+	 * If the hostedssl is currently bound to a report
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean isReportable;
+
+	/**
 	 * Type of the HostedSsl
 	 *
 	 * canBeNull && readOnly

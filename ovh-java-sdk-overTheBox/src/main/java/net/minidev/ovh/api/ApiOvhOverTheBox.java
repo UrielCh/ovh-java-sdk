@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.HashMap;
 import net.minidev.ovh.api.overthebox.OvhActionStatusEnum;
 import net.minidev.ovh.api.overthebox.OvhAvailableDeviceAction;
+import net.minidev.ovh.api.overthebox.OvhAvailableMigrationOffer;
 import net.minidev.ovh.api.overthebox.OvhBackup;
 import net.minidev.ovh.api.overthebox.OvhDevice;
 import net.minidev.ovh.api.overthebox.OvhDeviceAction;
@@ -127,6 +128,22 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 	}
 
 	/**
+	 * List all available offers one can migrate to
+	 *
+	 * REST: GET /overTheBox/{serviceName}/migration/offers
+	 * @param serviceName [required] The internal name of your overTheBox offer
+	 *
+	 * API beta
+	 */
+	public ArrayList<OvhAvailableMigrationOffer> serviceName_migration_offers_GET(String serviceName) throws IOException {
+		String qPath = "/overTheBox/{serviceName}/migration/offers";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+	private static TypeReference<ArrayList<OvhAvailableMigrationOffer>> t2 = new TypeReference<ArrayList<OvhAvailableMigrationOffer>>() {};
+
+	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /overTheBox/{serviceName}/device
@@ -161,9 +178,9 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 		String qPath = "/overTheBox/{serviceName}/device/availableActions";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
+		return convertTo(resp, t3);
 	}
-	private static TypeReference<ArrayList<OvhAvailableDeviceAction>> t2 = new TypeReference<ArrayList<OvhAvailableDeviceAction>>() {};
+	private static TypeReference<ArrayList<OvhAvailableDeviceAction>> t3 = new TypeReference<ArrayList<OvhAvailableDeviceAction>>() {};
 
 	/**
 	 * List of actions scheduled for this device
@@ -227,9 +244,9 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "backupId", backupId);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t3);
+		return convertTo(resp, t4);
 	}
-	private static TypeReference<ArrayList<OvhDeviceAction>> t3 = new TypeReference<ArrayList<OvhDeviceAction>>() {};
+	private static TypeReference<ArrayList<OvhDeviceAction>> t4 = new TypeReference<ArrayList<OvhDeviceAction>>() {};
 
 	/**
 	 * Generate a temporary url to retrieve device logs
@@ -278,9 +295,9 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 		addBody(o, "contactTech", contactTech);
 		addBody(o, "contactBilling", contactBilling);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t4);
+		return convertTo(resp, t5);
 	}
-	private static TypeReference<ArrayList<Long>> t4 = new TypeReference<ArrayList<Long>>() {};
+	private static TypeReference<ArrayList<Long>> t5 = new TypeReference<ArrayList<Long>>() {};
 
 	/**
 	 * List available release channels for this service
@@ -449,9 +466,9 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 		String qPath = "/overTheBox/availableOffers";
 		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t5);
+		return convertTo(resp, t6);
 	}
-	private static TypeReference<ArrayList<OvhOfferEnum>> t5 = new TypeReference<ArrayList<OvhOfferEnum>>() {};
+	private static TypeReference<ArrayList<OvhOfferEnum>> t6 = new TypeReference<ArrayList<OvhOfferEnum>>() {};
 
 	/**
 	 * Get the list of devices connected from the same IP address
@@ -462,7 +479,7 @@ public class ApiOvhOverTheBox extends ApiOvhBase {
 		String qPath = "/overTheBox/devices";
 		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, t6);
+		return convertTo(resp, t7);
 	}
-	private static TypeReference<ArrayList<OvhDeviceForRegistration>> t6 = new TypeReference<ArrayList<OvhDeviceForRegistration>>() {};
+	private static TypeReference<ArrayList<OvhDeviceForRegistration>> t7 = new TypeReference<ArrayList<OvhDeviceForRegistration>>() {};
 }

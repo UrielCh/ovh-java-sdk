@@ -19,6 +19,13 @@ public class OvhPhone {
 	public String macAddress;
 
 	/**
+	 * The phone user password
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String userPassword;
+
+	/**
 	 * Maximum number of lines managed by a phone
 	 *
 	 * canBeNull && readOnly
@@ -26,18 +33,18 @@ public class OvhPhone {
 	public Long maxline;
 
 	/**
-	 * The ip restriction of your MGCP phone
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String mgcpIpRestriction;
-
-	/**
 	 * Current phone properties
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhPhoneConfigurationProperty[] phoneConfiguration;
+
+	/**
+	 * The ip restriction of your MGCP phone
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String mgcpIpRestriction;
 
 	/**
 	 * The phone description

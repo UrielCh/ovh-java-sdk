@@ -1,7 +1,7 @@
 package net.minidev.ovh.api.nichandle;
 
 /**
- * All genders a nic can choose
+ * All genders a person can choose
  */
 public enum OvhGenderEnum {
 	female("female"),

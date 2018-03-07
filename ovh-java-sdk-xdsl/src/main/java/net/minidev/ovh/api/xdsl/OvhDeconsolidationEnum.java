@@ -6,6 +6,7 @@ package net.minidev.ovh.api.xdsl;
 public enum OvhDeconsolidationEnum {
 	createNeighbour("createNeighbour"),
 	creation("creation"),
+	creationNeighbour("creationNeighbour"),
 	partial("partial"),
 	total("total");
 

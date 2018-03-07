@@ -66,6 +66,13 @@ public class OvhDedicatedCloud {
 	public String description;
 
 	/**
+	 * Name of the current service pack
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String servicePackName;
+
+	/**
 	 * Access policy of your Private Cloud : opened to every IPs or filtered
 	 *
 	 * canBeNull && readOnly

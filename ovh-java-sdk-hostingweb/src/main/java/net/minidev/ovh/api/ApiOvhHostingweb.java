@@ -31,6 +31,7 @@ import net.minidev.ovh.api.hosting.web.OvhOwnLogs;
 import net.minidev.ovh.api.hosting.web.OvhRequestActionEnum;
 import net.minidev.ovh.api.hosting.web.OvhService;
 import net.minidev.ovh.api.hosting.web.OvhSsl;
+import net.minidev.ovh.api.hosting.web.OvhSslReport;
 import net.minidev.ovh.api.hosting.web.OvhStatisticsPeriodEnum;
 import net.minidev.ovh.api.hosting.web.OvhStatisticsTypeEnum;
 import net.minidev.ovh.api.hosting.web.OvhTask;
@@ -1085,6 +1086,19 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	}
 
 	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /hosting/web/{serviceName}/ssl/report
+	 * @param serviceName [required] The internal name of your hosting
+	 */
+	public OvhSslReport serviceName_ssl_report_GET(String serviceName) throws IOException {
+		String qPath = "/hosting/web/{serviceName}/ssl/report";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhSslReport.class);
+	}
+
+	/**
 	 * Get a temporary token to access the your web hosting logs interface
 	 *
 	 * REST: GET /hosting/web/{serviceName}/userLogsToken
@@ -1880,34 +1894,6 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	}
 
 	/**
-	 * Find hosting service linked to a domain
-	 *
-	 * REST: GET /hosting/web/attachedDomain
-	 * @param domain [required] Domain used into web hosting attached Domains
-	 */
-	public ArrayList<String> attachedDomain_GET(String domain) throws IOException {
-		String qPath = "/hosting/web/attachedDomain";
-		StringBuilder sb = path(qPath);
-		query(sb, "domain", domain);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t4);
-	}
-
-	/**
-	 * Get offer capabilities
-	 *
-	 * REST: GET /hosting/web/offerCapabilities
-	 * @param offer [required] Describe offer capabilities
-	 */
-	public OvhCapabilities offerCapabilities_GET(OvhOfferCapabilitiesEnum offer) throws IOException {
-		String qPath = "/hosting/web/offerCapabilities";
-		StringBuilder sb = path(qPath);
-		query(sb, "offer", offer);
-		String resp = execN(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhCapabilities.class);
-	}
-
-	/**
 	 * Get available offer
 	 *
 	 * REST: GET /hosting/web/availableOffer
@@ -1951,5 +1937,33 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 		StringBuilder sb = path(qPath, id);
 		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhModuleList.class);
+	}
+
+	/**
+	 * Find hosting service linked to a domain
+	 *
+	 * REST: GET /hosting/web/attachedDomain
+	 * @param domain [required] Domain used into web hosting attached Domains
+	 */
+	public ArrayList<String> attachedDomain_GET(String domain) throws IOException {
+		String qPath = "/hosting/web/attachedDomain";
+		StringBuilder sb = path(qPath);
+		query(sb, "domain", domain);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t4);
+	}
+
+	/**
+	 * Get offer capabilities
+	 *
+	 * REST: GET /hosting/web/offerCapabilities
+	 * @param offer [required] Describe offer capabilities
+	 */
+	public OvhCapabilities offerCapabilities_GET(OvhOfferCapabilitiesEnum offer) throws IOException {
+		String qPath = "/hosting/web/offerCapabilities";
+		StringBuilder sb = path(qPath);
+		query(sb, "offer", offer);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhCapabilities.class);
 	}
 }

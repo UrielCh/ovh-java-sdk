@@ -61,6 +61,7 @@ import net.minidev.ovh.api.dedicated.installationtemplate.OvhTemplates;
 import net.minidev.ovh.api.domain.OvhNicOperationFunctionEnum;
 import net.minidev.ovh.api.domain.OvhOperationStatusEnum;
 import net.minidev.ovh.api.geolocation.OvhContinentCountryLocation;
+import net.minidev.ovh.api.insight.OvhAccess;
 import net.minidev.ovh.api.nichandle.OvhCountryEnum;
 import net.minidev.ovh.api.nichandle.OvhDeveloperModeRestriction;
 import net.minidev.ovh.api.nichandle.OvhDomainTask;
@@ -2857,6 +2858,18 @@ public class ApiOvhMe extends ApiOvhBase {
 		String qPath = "/me/paymentMean/creditCard/{id}";
 		StringBuilder sb = path(qPath, id);
 		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
+	 * Get your insight access token
+	 *
+	 * REST: GET /me/insight
+	 */
+	public OvhAccess insight_GET() throws IOException {
+		String qPath = "/me/insight";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhAccess.class);
 	}
 
 	/**

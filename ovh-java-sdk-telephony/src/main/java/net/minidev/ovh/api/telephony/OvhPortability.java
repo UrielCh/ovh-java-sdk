@@ -21,6 +21,13 @@ public class OvhPortability {
 	public Date desiredExecutionDate;
 
 	/**
+	 * Codes representing the error in current portability
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String[] errorCodes;
+
+	/**
 	 * Country that defines the portability kind
 	 *
 	 * canBeNull && readOnly
@@ -61,6 +68,13 @@ public class OvhPortability {
 	 * canBeNull && readOnly
 	 */
 	public String billingAccount;
+
+	/**
+	 * Indicates that portability is in error
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean error;
 
 	/**
 	 * The operator that currently holds the numbers

@@ -12,6 +12,11 @@ public class OvhFaxProperties {
 	/**
 	 * canBeNull && readOnly
 	 */
+	public Boolean rejectAnonymous;
+
+	/**
+	 * canBeNull && readOnly
+	 */
 	public OvhFaxQualityEnum faxQuality;
 
 	/**

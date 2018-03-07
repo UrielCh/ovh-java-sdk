@@ -5,6 +5,27 @@ package net.minidev.ovh.api.iploadbalancing;
  */
 public class OvhIp {
 	/**
+	 * The metrics token associated with your IP load balancing
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String metricsToken;
+
+	/**
+	 * Set the name displayed in ManagerV6 for your iplb (max 50 chars)
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String displayName;
+
+	/**
+	 * The internal name of your IP load balancing
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String serviceName;
+
+	/**
 	 * The offer of your IP load balancing
 	 *
 	 * canBeNull && readOnly
@@ -19,18 +40,18 @@ public class OvhIp {
 	public OvhSslConfigurationEnum sslConfiguration;
 
 	/**
-	 * The metrics token associated with your IP load balancing
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String metricsToken;
-
-	/**
 	 * The IPV4 associated to your IP load balancing
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String ipv4;
+
+	/**
+	 * Vrack eligibility
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean vrackEligibility;
 
 	/**
 	 * Location where your service is
@@ -47,11 +68,11 @@ public class OvhIp {
 	public String ipv6;
 
 	/**
-	 * Set the name displayed in ManagerV6 for your iplb (max 50 chars)
+	 * Available additional zone for your Load Balancer
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String displayName;
+	public OvhOrderableZone[] orderableZone;
 
 	/**
 	 * Current state of your IP
@@ -59,13 +80,6 @@ public class OvhIp {
 	 * canBeNull && readOnly
 	 */
 	public OvhIpStateEnum state;
-
-	/**
-	 * The internal name of your IP load balancing
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String serviceName;
 
 	/**
 	 * Name of the vRack on which the current Load Balancer is attached to, as it is named on vRack product

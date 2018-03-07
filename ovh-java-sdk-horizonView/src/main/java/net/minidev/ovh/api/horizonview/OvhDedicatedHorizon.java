@@ -26,6 +26,13 @@ public class OvhDedicatedHorizon {
 	public String publicUrl;
 
 	/**
+	 * The location of your administration servers in our datacenter
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhZone masterZone;
+
+	/**
 	 * Your Horizon Private Cloud
 	 *
 	 * canBeNull && readOnly

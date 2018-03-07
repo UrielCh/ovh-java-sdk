@@ -54,6 +54,24 @@ public class ApiOvhMetrics extends ApiOvhBase {
 	}
 
 	/**
+	 * Set overquota
+	 *
+	 * REST: PUT /metrics/{serviceName}/quota
+	 * @param serviceName [required] Name of your service
+	 * @param quota [required] New value for overquota
+	 *
+	 * API beta
+	 */
+	public String serviceName_quota_PUT(String serviceName, Long quota) throws IOException {
+		String qPath = "/metrics/{serviceName}/quota";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "quota", quota);
+		String resp = exec(qPath, "PUT", sb.toString(), o);
+		return convertTo(resp, String.class);
+	}
+
+	/**
 	 * Get service
 	 *
 	 * REST: GET /metrics/{serviceName}

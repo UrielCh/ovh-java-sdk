@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public enum OvhAvailableVersionEnum {
 	@JsonProperty("mariadb_10.1")
 	mariadb_10_1("mariadb_10.1"),
+	@JsonProperty("mariadb_10.2")
+	mariadb_10_2("mariadb_10.2"),
 	@JsonProperty("mongodb_3.4")
 	mongodb_3_4("mongodb_3.4"),
 	@JsonProperty("mysql_4.1")

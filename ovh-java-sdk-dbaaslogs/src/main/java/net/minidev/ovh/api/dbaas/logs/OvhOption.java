@@ -105,6 +105,13 @@ public class OvhOption {
 	public String optionId;
 
 	/**
+	 * Option state
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhOptionStateEnum state;
+
+	/**
 	 * Maximum number of dashboard allowed
 	 *
 	 * canBeNull && readOnly
