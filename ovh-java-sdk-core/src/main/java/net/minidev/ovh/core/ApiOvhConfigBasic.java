@@ -23,15 +23,14 @@ public class ApiOvhConfigBasic extends ApiOvhConfig {
 	 * 
 	 */
 	private File consumer_key_storage;
-
 	/**
 	 * Application redirectTo
 	 */
 	protected String redirection = "http://www.ovh.com/";
-	//
-	//
-	// make dynamique
-	protected String endpoint = OvhEntryPoint.OVH_EU;// "https://api.ovh.com/1.0";
+	/**
+	 * the default Entry point is ovh EU
+	 */
+	protected String endpoint = OvhEntryPoint.OVH_EU;
 	/**
 	 * your application key or by default the key from api.ovh.com
 	 */

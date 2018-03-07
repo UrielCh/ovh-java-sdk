@@ -87,7 +87,12 @@ public class ApiOvhCore {
 	 * consumerKey
 	 */
 	private String _consumerKey = null;
-
+	/**
+	 * Discard a consumerKey from cache
+	 * @param nic nichandler
+	 * @param currentCK
+	 * @throws IOException
+	 */
 	private void invalidateConsumerKey(String nic, String currentCK) throws IOException {
 		config.invalidateConsumerKey(nic, currentCK);
 	}
@@ -223,7 +228,13 @@ public class ApiOvhCore {
 		}
 		return core;
 	}
-
+	/**
+	 * Build an HTTP Request with customs headers (Content-Type, X-Ovh-Application)
+	 * @param method
+	 * @param url
+	 * @return
+	 * @throws IOException
+	 */
 	private HttpURLConnection getRequest(String method, URL url) throws IOException {
 		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 		connection.setRequestMethod(method);
@@ -263,7 +274,10 @@ public class ApiOvhCore {
 			timeOffset = 0L;
 		}
 	}
-
+	/**
+	 * issue an time syncronized timestamp.
+	 * @return
+	 */
 	private String getTimestamp() {
 		if (timeOffset == null)
 			syncTime();
@@ -271,7 +285,12 @@ public class ApiOvhCore {
 		now -= timeOffset;
 		return Long.toString(now);
 	}
-
+	/**
+	 * Store password based credential for an automatic certificate generation
+	 * @param nic
+	 * @param password
+	 * @param timeInSec
+	 */
 	public void setLoginInfo(String nic, String password, int timeInSec) {
 		nic = nic.toLowerCase();
 		this.nic = nic;
@@ -289,7 +308,7 @@ public class ApiOvhCore {
 			return false;
 		}
 		setLoginInfo(nic, password, timeInSec);
-		int retry = 10;
+		int retry = 0;
 
 		String lastKey = config.getConsumerKey(nic);
 		if (lastKey != null) {
@@ -298,12 +317,14 @@ public class ApiOvhCore {
 		}
 		// no valid CK use login
 		while (!loginInternal(nic, password, timeInSec)) {
-			retry--;
-			if (retry <= 0) {
-				log.error("LOGIN failure to {} after 10 retry", nic);
+			retry++;
+			if (retry > 5) {
+				log.error("LOGIN failure to {} after {} retry", nic, retry);
 				return false;
 			}
-			ApiOvhUtils.sleep(2000 + (long) (Math.random() * 1000));
+			long sleep = retry * 3000 + (long) (Math.random() * 5000);
+			log.error("LOGIN failure to {} after will retry in {} ms", nic, sleep);
+			ApiOvhUtils.sleep(sleep);
 		}
 		return true;
 	}
@@ -318,7 +339,9 @@ public class ApiOvhCore {
 	 * @throws IOException
 	 */
 	private boolean loginInternal(String nic, String password, int timeInSec) throws IOException {
-		synchronized (nic.intern()) {
+		// Due to per IP login rate limiting, we synchronize this part of the code.
+		// if multiple IP available, it can be sync on public IP based token
+		synchronized (ApiOvhCore.class) {
 			String oldCK = config.getConsumerKey(nic);
 			if (oldCK != null && _consumerKey != null && !oldCK.equals(_consumerKey)) {
 				// a new CK is available try it first.
@@ -326,7 +349,7 @@ public class ApiOvhCore {
 				return true;
 			}
 			OvhCredential token = requestToken(null);
-			log.info("generating a new ConsumerKey for account {} valid for {} sec, validationUrl:{}", nic, timeInSec,
+			log.info("Generating a new ConsumerKey as appKey: {} for account {} valid for {} sec, validationUrl:{}", this.config.getApplicationKey(), nic, timeInSec,
 					token.validationUrl);
 
 			Document doc = Jsoup.connect(token.validationUrl).get();
@@ -363,10 +386,12 @@ public class ApiOvhCore {
 			Elements p = doc2.select("p");
 			String pText = p.text();
 			if ("The document has moved here.".equals(pText)) {
+				log.info("a new consumerKey had been issued for {}", nic);
 				this.setCK(nic, token.consumerKey);
 				return true;
 			}
 			if ("Your token is now valid, you can use it in your application".equals(pText)) {
+				log.info("a new consumerKey had been issued for {}", nic);
 				this.setCK(nic, token.consumerKey);
 				return true;
 			}
@@ -376,7 +401,8 @@ public class ApiOvhCore {
 			else {
 				String body = doc2.toString();
 				if (body.contains("Too much requests. Please retry in 3 seconds. ")) {
-					log.error("Too much requests. Retry later to connect {}", nic);
+					log.error("Too much requests, block all connexion for 3sec, Retry later to connect {}", nic);
+					ApiOvhUtils.sleep(3000);
 				} else {
 					log.error("Unknown Error connecting to {} in body:{}", nic, body);
 				}
@@ -394,6 +420,7 @@ public class ApiOvhCore {
 	public OvhCredential requestToken(String redirection) throws IOException {
 		OvhAccessRule[] accessRules = new OvhAccessRule[this.accessRules.length];
 
+		// {GET POST PUT DELETE} /*
 		for (int i = 0; i < this.accessRules.length; i++) {
 			String rule = this.accessRules[i];
 			int p = rule.indexOf(" ");
@@ -401,11 +428,7 @@ public class ApiOvhCore {
 				throw new IOException("Invalid rule " + rule);
 			String mtd = rule.substring(0, p);
 			String path = rule.substring(p + 1);
-			accessRules[i] = new OvhAccessRule();
-			// GET POST PUT DELETE
-			accessRules[i].method = OvhMethodEnum.valueOf(mtd.toUpperCase());
-			// /*
-			accessRules[i].path = path;
+			accessRules[i] = new OvhAccessRule(OvhMethodEnum.valueOf(mtd.toUpperCase()), path);
 		}
 		ApiOvhAuth auth = new ApiOvhAuth(this);
 		return auth.credential_POST(accessRules, redirection);
@@ -475,13 +498,12 @@ public class ApiOvhCore {
 	private String execInternal(final String method, final String query, final Object payload, boolean needAuth)
 			throws IOException {
 		String txt = ApiOvhUtils.objectJsonBody(payload);
-		URL url = new URL(config.getEndpoint() + query);
+		URL url = new URL(config.getEndpoint().concat(query));
 		int failure = 0;
 		String response = "";
 		// retry loop
 		String currentCK = null;
 		while (true) {
-
 			HttpURLConnection connection = getRequest(method, url);
 			if (needAuth) {
 				currentCK = this.getConsumerKeyOrNull();
@@ -524,7 +546,7 @@ public class ApiOvhCore {
 			}
 			in.close();
 			response = responseSb.toString();
-			// XML response
+			// XML response OVH internal Error.
 			if (response.startsWith("<") && response.contains("<title>500 Internal Server Error</title>")) {
 				ApiOvhUtils.sleep(500);
 				failure++;
@@ -539,14 +561,13 @@ public class ApiOvhCore {
 				// is not valid
 				OvhErrorMessage err = ApiOvhUtils.mapper.readValue(response, OvhErrorMessage.class);
 
-				boolean credentialError = err.isErrorCode(OvhErrorMessage.INVALID_CREDENTIAL,
-						OvhErrorMessage.NOT_CREDENTIAL);
-
-				if (credentialError && failure < 5) {
+				boolean credentialErr = err.isErrorCode(OvhErrorMessage.INVALID_CREDENTIAL, OvhErrorMessage.NOT_CREDENTIAL);
+				// ex: {"errorCode":"INVALID_CREDENTIAL","httpCode":"403 Forbidden","message":"This credential is not valid"}
+				if (credentialErr && failure < 3) {
 					if (nic == null) {
 						log.error("{} and no nic/password provided, reconnection aboard", err.errorCode);
 					} else {
-						if (this._consumerKey.equals(currentCK)) {
+						if (this._consumerKey.equals(currentCK)) {// check if the consumerKey had been renew from an other thread
 							invalidateConsumerKey(nic, currentCK);
 							failure++;
 							login(this.nic, this.password, this.timeInSec);
@@ -564,6 +585,12 @@ public class ApiOvhCore {
 				if (err.isErrorCode(OvhErrorMessage.NOT_GRANTED_CALL)) {
 					throw new OvhException(method, query, err, queryId);
 				}
+				if (err.isErrorCode(OvhErrorMessage.INVALID_CREDENTIAL)) {
+					log.error("INVALID_CREDENTIAL with AppKey:{} CK:{} failure:{}", config.getApplicationKey(), currentCK, failure);
+					throw new OvhException(method, query, err, queryId);
+				}
+				
+				
 				throw new OvhException(method, query, err, queryId);
 			}
 			break;

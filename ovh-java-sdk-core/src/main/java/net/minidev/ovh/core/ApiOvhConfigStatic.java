@@ -66,6 +66,7 @@ public class ApiOvhConfigStatic extends ApiOvhConfig {
 
 	@Override
 	protected boolean invalidateConsumerKey(String nic, String CK) throws IOException {
+		this.consumerKey = null;
 		return false;
 	}
 
