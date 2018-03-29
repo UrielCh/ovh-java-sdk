@@ -90,6 +90,7 @@ import net.minidev.ovh.api.vps.additionaldisk.OvhAdditionalDiskSizeEnum;
 import net.minidev.ovh.api.vps.ip.OvhGeolocationEnum;
 import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
+import net.minidev.ovh.core.ApiOvhUtils;
 
 /**
  * BasePath:https://eu.api.ovh.com/1.0
@@ -1132,6 +1133,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 		addBody(o, "zip", zip);
 		addBody(o, "streetNumber", streetNumber);
 		addBody(o, "legalform", legalform);
+		
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOrder.class);
 	}

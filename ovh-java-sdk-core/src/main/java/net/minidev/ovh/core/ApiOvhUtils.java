@@ -26,6 +26,7 @@ public class ApiOvhUtils {
 	protected final static ObjectMapper mapper;
 	static {
 		mapper = new ObjectMapper();
+		// mapper.getFactory().configure(JsonGenerator.Feature.ESCAPE_NON_ASCII, true);
 		mapper.setSerializationInclusion(Include.NON_NULL);
 		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 	}

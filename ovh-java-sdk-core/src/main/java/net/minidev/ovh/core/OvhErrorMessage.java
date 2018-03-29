@@ -12,11 +12,13 @@ public class OvhErrorMessage {
 	 * Ovh error code
 	 */
 	public String errorCode;
+	
 	/**
 	 * http code + status line
 	 */
 	public String httpCode;
-	/*
+	
+	/**
 	 * error message
 	 */
 	public String message;

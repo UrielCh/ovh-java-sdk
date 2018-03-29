@@ -10,6 +10,9 @@ import java.io.IOException;
  *
  */
 public abstract class ApiOvhConfig {
+	/**
+	 * Default configuration
+	 */
 	protected static ApiOvhConfig config = new ApiOvhConfigBasic();
 
 	protected abstract String getEndpoint();
@@ -25,4 +28,29 @@ public abstract class ApiOvhConfig {
 	protected abstract void setConsumerKey(String nic, String CK) throws IOException;
 
 	protected abstract boolean invalidateConsumerKey(String nic, String CK) throws IOException;
+	
+    private int connectTimeout = 60000;
+    private int readTimeout = 3 * 60000;
+    
+	protected int getReadTimeout() {
+		return readTimeout;
+	}
+
+	protected int getConnectTimeout() {
+		return connectTimeout;
+	}
+
+    public void setConnectTimeout(int timeout) {
+        if (timeout < 0) {
+            throw new IllegalArgumentException("timeout can not be negative");
+        }
+        connectTimeout = timeout;
+    }
+
+    public void setReadTimeout(int timeout) {
+        if (timeout < 0) {
+            throw new IllegalArgumentException("timeout can not be negative");
+        }
+        readTimeout = timeout;
+    }
 }

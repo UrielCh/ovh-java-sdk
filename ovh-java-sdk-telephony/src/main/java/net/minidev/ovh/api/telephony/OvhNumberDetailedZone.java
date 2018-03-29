@@ -44,7 +44,7 @@ public class OvhNumberDetailedZone {
 	 *
 	 * canBeNull
 	 */
-	public OvhNumberCountryCodeEnum prefix;
+	public Number prefix;
 
 	/**
 	 * The searched value

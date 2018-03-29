@@ -11,7 +11,6 @@ import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.TreeMap;
 
 import org.jsoup.Connection;
@@ -23,7 +22,8 @@ import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 
 //import net.minidev.ovh.api.ApiOvh;
 import net.minidev.ovh.api.ApiOvhAuth;
@@ -238,8 +238,8 @@ public class ApiOvhCore {
 	private HttpURLConnection getRequest(String method, URL url) throws IOException {
 		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 		connection.setRequestMethod(method);
-		connection.setReadTimeout(60000);
-		connection.setConnectTimeout(60000);
+		connection.setReadTimeout(config.getReadTimeout());
+		connection.setConnectTimeout(config.getConnectTimeout());
 		connection.setRequestProperty("Content-Type", "application/json");
 		connection.setRequestProperty("X-Ovh-Application", config.getApplicationKey());
 		return connection;
@@ -468,10 +468,10 @@ public class ApiOvhCore {
 			} catch (OvhServiceException e0) {
 				throw e0;
 			} catch (SocketTimeoutException e1) {
-				log.error("CNX TIME OUT");
+				log.error("calling {} {} Failed by timeout. (ConnectTimeout:{} ReadTimeout:{})", method, query, config.getConnectTimeout(), config.getReadTimeout());
 				responseText = execInternal(method, query, payload, needAuth);
 			} catch (IOException e2) {
-				log.error("API OVH ERROR", e2);
+				log.error("API OVH IOException", e2);
 				throw e2;
 			}
 		if (cacheManager != null && !cached)
@@ -532,7 +532,7 @@ public class ApiOvhCore {
 			if (txt != null && txt.length() > 0) {
 				connection.setDoOutput(true);
 				DataOutputStream out = new DataOutputStream(connection.getOutputStream());
-				out.writeBytes(txt);
+				out.write(txt.getBytes(UTF8));
 				out.flush();
 				out.close();
 			}
@@ -557,32 +557,42 @@ public class ApiOvhCore {
 							+ failure + " retry TS: " + new Date());
 				continue;
 			}
-
-			if (response.startsWith("{\"errorCode\":")) {
-				// errorCode=INVALID_CREDENTIAL, httpCode=403 Forbidden, message=This credential
-				// is not valid
-				OvhErrorMessage err = ApiOvhUtils.mapper.readValue(response, OvhErrorMessage.class);
-
-				boolean credentialErr = err.isErrorCode(OvhErrorMessage.INVALID_CREDENTIAL, OvhErrorMessage.NOT_CREDENTIAL);
-				// ex: {"errorCode":"INVALID_CREDENTIAL","httpCode":"403 Forbidden","message":"This credential is not valid"}
-				if (credentialErr && failure < 3) {
+			if (responseCode == 200)
+				return response;
+			OvhErrorMessage err = readAsError(response);
+			if (err != null) {
+				if (err.errorCode == null) {
+					// application error response
+					String message = err.message;
+					if ("This service is expired".equals(message))
+						throw new OvhServiceException(url.toString(), message);
+					if ("This service does not exist".equals(message))
+						throw new OvhServiceException(url.toString(), message);
+					if (message.startsWith("The requested object"))
+						// The requested object (id = 10884320) does not exist
+						throw new OvhServiceException(url.toString(), message);
+					throw new OvhServiceException(url.toString(), message);
+					// throw new IOException(method + " " + url + " " + txt + " return: " +
+					// message);
+				}
+				// all other errors
+				if (failure < 3 && err.isErrorCode(OvhErrorMessage.INVALID_CREDENTIAL, OvhErrorMessage.NOT_CREDENTIAL)) {
 					if (nic == null) {
-						log.error("{} and no nic/password provided, reconnection aboard", err.errorCode);
+						log.error("Get Error:{} and have no nic/password provided, reconnection feature non available.", err.errorCode);
+					} else if (this._consumerKey.equals(currentCK)) {
+						// check if the consumerKey had been renew from an other thread
+						invalidateConsumerKey(nic, currentCK);
+						failure++;
+						login(this.nic, this.password, this.timeInSec);
 					} else {
-						if (this._consumerKey.equals(currentCK)) {// check if the consumerKey had been renew from an other thread
-							invalidateConsumerKey(nic, currentCK);
-							failure++;
-							login(this.nic, this.password, this.timeInSec);
-						}
+						// the consumerKey had been modified by an other thread -> retry
 						continue;
 					}
-				}
-				if (err.isErrorCode(OvhErrorMessage.QUERY_TIME_OUT) && failure < 5) {
+				} else if (failure < 5 && err.isErrorCode(OvhErrorMessage.QUERY_TIME_OUT)) {
 					ApiOvhUtils.sleep(100);
 					failure++;
 					continue;
 				}
-				// NOT_CREDENTIAL error ?
 				String queryId = connection.getHeaderField("X-OVH-QUERYID");
 				if (err.isErrorCode(OvhErrorMessage.NOT_GRANTED_CALL)) {
 					throw new OvhException(method, query, err, queryId);
@@ -591,35 +601,19 @@ public class ApiOvhCore {
 					log.error("INVALID_CREDENTIAL with AppKey:{} CK:{} failure:{}", config.getApplicationKey(), currentCK, failure);
 					throw new OvhException(method, query, err, queryId);
 				}
-				
-				
 				throw new OvhException(method, query, err, queryId);
 			}
 			break;
 		}
-
-		if (response.startsWith("{\"message\":")) {
-			LinkedHashMap<String, Object> obj = ApiOvhUtils.mapper.readValue(response, t1);
-			Object message1 = obj.get("message");
-			String message = (String) message1;
-			if ("This service is expired".equals(message))
-				throw new OvhServiceException(url.toString(), message);
-			if ("This service does not exist".equals(message))
-				throw new OvhServiceException(url.toString(), message);
-			if (message.startsWith("The requested object"))
-				// The requested object (id = 10884320) does not exist
-				throw new OvhServiceException(url.toString(), message);
-			throw new OvhServiceException(url.toString(), message);
-			// throw new IOException(method + " " + url + " " + txt + " return: " +
-			// message);
-		}
 		return response;
 	}
-
-	private final static TypeReference<LinkedHashMap<String, Object>> t1 = new TypeReference<LinkedHashMap<String, Object>>() {
-	};
-
-	// private final static TypeReference<Map<String, Object>> t2 = new
-	// TypeReference<Map<String, Object>>() {
-	// };
+	
+	private OvhErrorMessage readAsError(String response) throws JsonParseException, JsonMappingException, IOException {
+		if (response == null)
+			return null;
+		if (!response.startsWith("{\"message\":") && !response.startsWith("{\"errorCode\":"))
+			return null;
+		OvhErrorMessage err = ApiOvhUtils.mapper.readValue(response, OvhErrorMessage.class);
+		return err;
+	}
 }

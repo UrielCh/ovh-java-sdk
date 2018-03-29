@@ -64,7 +64,7 @@ public class OvhTelephonyService {
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhNumberCountryCodeEnum countryCode;
+	public Number countryCode;
 
 	/**
 	 * canBeNull && readOnly

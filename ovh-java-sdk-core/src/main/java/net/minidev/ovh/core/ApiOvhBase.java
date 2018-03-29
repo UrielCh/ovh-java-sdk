@@ -1,6 +1,8 @@
 package net.minidev.ovh.core;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -44,6 +46,12 @@ public abstract class ApiOvhBase {
 			String s = sdf.format((Date) value);
 			s = s.replaceAll("([+-])([0-9]{2})(00)$", "$1$2:$3");
 			sb.append(s);
+		} else if (value instanceof String) {
+			try {
+				sb.append(URLEncoder.encode((String)value, "UTF-8"));
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
+			}
 		} else {
 			sb.append(value);
 		}
