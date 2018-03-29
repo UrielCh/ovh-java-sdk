@@ -26,6 +26,13 @@ public class OvhCluster {
 	public String hostname;
 
 	/**
+	 * PEM for dedicated inputs
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String dedicatedInputPEM;
+
+	/**
 	 * Cluster UUID
 	 *
 	 * canBeNull && readOnly
@@ -38,4 +45,11 @@ public class OvhCluster {
 	 * canBeNull && readOnly
 	 */
 	public OvhClusterRegionEnum region;
+
+	/**
+	 * PEM for direct inputs
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String directInputPEM;
 }

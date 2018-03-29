@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import net.minidev.ovh.api.horizonview.OvhAccessPointTypeEnum;
 import net.minidev.ovh.api.horizonview.OvhCustomerNetwork;
 import net.minidev.ovh.api.horizonview.OvhCustomerUser;
 import net.minidev.ovh.api.horizonview.OvhDatacenter;
@@ -438,15 +439,17 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 * Enable two factor authentication on your pool
 	 *
 	 * REST: POST /horizonView/{serviceName}/accessPoint/{accessPointId}/enableTwoFA
+	 * @param onSingleAP [required] Enable the 2FA on a single Access Point (only for hybrid Pool)
 	 * @param secret [required] The secret password for the two factor authentication
 	 * @param radiusIp [required] The server radius IP
 	 * @param serviceName [required] Domain of the service
 	 * @param accessPointId [required] Pool id
 	 */
-	public OvhTask serviceName_accessPoint_accessPointId_enableTwoFA_POST(String serviceName, Long accessPointId, String secret, String radiusIp) throws IOException {
+	public OvhTask serviceName_accessPoint_accessPointId_enableTwoFA_POST(String serviceName, Long accessPointId, OvhAccessPointTypeEnum onSingleAP, String secret, String radiusIp) throws IOException {
 		String qPath = "/horizonView/{serviceName}/accessPoint/{accessPointId}/enableTwoFA";
 		StringBuilder sb = path(qPath, serviceName, accessPointId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "onSingleAP", onSingleAP);
 		addBody(o, "secret", secret);
 		addBody(o, "radiusIp", radiusIp);
 		String resp = exec(qPath, "POST", sb.toString(), o);

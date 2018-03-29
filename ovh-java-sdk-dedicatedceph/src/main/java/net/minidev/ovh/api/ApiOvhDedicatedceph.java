@@ -402,7 +402,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 	 * REST: POST /dedicated/ceph/{serviceName}/user/{userName}/pool
 	 * @param userName [required] Name of ceph user
 	 * @param serviceName [required] ID of cluster
-	 * @param permissions [required]
+	 * @param permissions [required] Permissions
 	 *
 	 * API beta
 	 */

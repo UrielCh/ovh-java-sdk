@@ -5,6 +5,7 @@ package net.minidev.ovh.api.msservices;
  */
 public enum OvhServiceOfferEnum {
 	dedicated("dedicated"),
+	dedicatedCluster("dedicatedCluster"),
 	hosted("hosted"),
 	provider("provider");
 

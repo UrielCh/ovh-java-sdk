@@ -891,19 +891,6 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	}
 
 	/**
-	 * xDSL access services
-	 *
-	 * REST: GET /pack/xdsl/{packName}/xdslAccess/services
-	 * @param packName [required] The internal name of your pack
-	 */
-	public ArrayList<String> packName_xdslAccess_services_GET(String packName) throws IOException {
-		String qPath = "/pack/xdsl/{packName}/xdslAccess/services";
-		StringBuilder sb = path(qPath, packName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
 	 * Get the available domains
 	 *
 	 * REST: GET /pack/xdsl/{packName}/siteBuilderStart/options/domains
@@ -960,6 +947,19 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 		addBody(o, "templateId", templateId);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * xDSL access services
+	 *
+	 * REST: GET /pack/xdsl/{packName}/xdslAccess/services
+	 * @param packName [required] The internal name of your pack
+	 */
+	public ArrayList<String> packName_xdslAccess_services_GET(String packName) throws IOException {
+		String qPath = "/pack/xdsl/{packName}/xdslAccess/services";
+		StringBuilder sb = path(qPath, packName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
 	}
 
 	/**

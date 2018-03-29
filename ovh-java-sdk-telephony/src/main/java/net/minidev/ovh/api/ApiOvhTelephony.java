@@ -3139,6 +3139,21 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	}
 
 	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /telephony/{billingAccount}/service/{serviceName}/offerTask/{taskId}
+	 * @param body [required] New object properties
+	 * @param billingAccount [required] The name of your billingAccount
+	 * @param serviceName [required]
+	 * @param taskId [required]
+	 */
+	public void billingAccount_service_serviceName_offerTask_taskId_PUT(String billingAccount, String serviceName, Long taskId, OvhOfferTask body) throws IOException {
+		String qPath = "/telephony/{billingAccount}/service/{serviceName}/offerTask/{taskId}";
+		StringBuilder sb = path(qPath, billingAccount, serviceName, taskId);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /telephony/{billingAccount}/service/{serviceName}/eventToken
@@ -3242,6 +3257,20 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
+
+	/**
+	 * List old phones archived as they were not returned after an RMA
+	 *
+	 * REST: GET /telephony/{billingAccount}/oldPhone
+	 * @param billingAccount [required] The name of your billingAccount
+	 */
+	public ArrayList<OvhPhone> billingAccount_oldPhone_GET(String billingAccount) throws IOException {
+		String qPath = "/telephony/{billingAccount}/oldPhone";
+		StringBuilder sb = path(qPath, billingAccount);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t19);
+	}
+	private static TypeReference<ArrayList<OvhPhone>> t19 = new TypeReference<ArrayList<OvhPhone>>() {};
 
 	/**
 	 * Used to overwrite current billing account feature by the billing account site
@@ -3727,9 +3756,9 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		String qPath = "/telephony/{billingAccount}/portability/{id}/status";
 		StringBuilder sb = path(qPath, billingAccount, id);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t19);
+		return convertTo(resp, t20);
 	}
-	private static TypeReference<ArrayList<OvhPortabilityStep>> t19 = new TypeReference<ArrayList<OvhPortabilityStep>>() {};
+	private static TypeReference<ArrayList<OvhPortabilityStep>> t20 = new TypeReference<ArrayList<OvhPortabilityStep>>() {};
 
 	/**
 	 * Indicates whether or not the portability can be cancelled
@@ -4090,9 +4119,9 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		String qPath = "/telephony/{billingAccount}/rsva/{serviceName}/allowedRateCodes";
 		StringBuilder sb = path(qPath, billingAccount, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t20);
+		return convertTo(resp, t21);
 	}
-	private static TypeReference<ArrayList<OvhRateCodeInformation>> t20 = new TypeReference<ArrayList<OvhRateCodeInformation>>() {};
+	private static TypeReference<ArrayList<OvhRateCodeInformation>> t21 = new TypeReference<ArrayList<OvhRateCodeInformation>>() {};
 
 	/**
 	 * Current rate code related to this sva
@@ -6504,6 +6533,20 @@ public class ApiOvhTelephony extends ApiOvhBase {
 	}
 
 	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /telephony/{billingAccount}/offerTask/{taskId}
+	 * @param body [required] New object properties
+	 * @param billingAccount [required] The name of your billingAccount
+	 * @param taskId [required]
+	 */
+	public void billingAccount_offerTask_taskId_PUT(String billingAccount, Long taskId, OvhOfferTask body) throws IOException {
+		String qPath = "/telephony/{billingAccount}/offerTask/{taskId}";
+		StringBuilder sb = path(qPath, billingAccount, taskId);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /telephony/{billingAccount}/screen/{serviceName}
@@ -8474,9 +8517,9 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath);
 		query(sb, "country", country);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t21);
+		return convertTo(resp, t22);
 	}
-	private static TypeReference<ArrayList<OvhAccessoryOffer>> t21 = new TypeReference<ArrayList<OvhAccessoryOffer>>() {};
+	private static TypeReference<ArrayList<OvhAccessoryOffer>> t22 = new TypeReference<ArrayList<OvhAccessoryOffer>>() {};
 
 	/**
 	 * Search a service with its domain, to get its billing account and type
@@ -8489,9 +8532,9 @@ public class ApiOvhTelephony extends ApiOvhBase {
 		StringBuilder sb = path(qPath);
 		query(sb, "axiom", axiom);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t22);
+		return convertTo(resp, t23);
 	}
-	private static TypeReference<ArrayList<OvhTelephonySearchService>> t22 = new TypeReference<ArrayList<OvhTelephonySearchService>>() {};
+	private static TypeReference<ArrayList<OvhTelephonySearchService>> t23 = new TypeReference<ArrayList<OvhTelephonySearchService>>() {};
 
 	/**
 	 * Get all available SIP domains by country

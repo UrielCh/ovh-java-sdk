@@ -12,7 +12,7 @@ public class OvhPool {
 	public String externalUrl;
 
 	/**
-	 * Next hop IP to reach virtual desktops network
+	 * Next hop IP to reach virtual desktops network for public Access Point
 	 *
 	 * canBeNull && readOnly
 	 */
@@ -47,11 +47,25 @@ public class OvhPool {
 	public OvhStateEnum state;
 
 	/**
+	 * Pool type
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhPoolType type;
+
+	/**
 	 * Two factor authentication
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean twoFA;
+
+	/**
+	 * Next hop IP to reach virtual desktops network for private Access Point
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String intercoPrivateNextHop;
 
 	/**
 	 * DHCP network in this port group

@@ -12,6 +12,7 @@ public enum OvhDatacenterEnum {
 	bhs4("bhs4"),
 	bhs5("bhs5"),
 	bhs6("bhs6"),
+	bhs7("bhs7"),
 	dc1("dc1"),
 	eri1("eri1"),
 	gra1("gra1"),

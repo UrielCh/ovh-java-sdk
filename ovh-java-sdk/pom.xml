@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>net.minidev</groupId>
 		<artifactId>ovh-java-sdk-pom</artifactId>
-		<version>0.9.12</version>
+		<version>0.9.13</version>
 	</parent>
 	<artifactId>ovh-java-sdk</artifactId>
 	<name>OVH SDK For Java</name>
@@ -17,517 +17,433 @@
 			<artifactId>ovh-java-sdk-allDom</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-core</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-caascontainers</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-caasregistry</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-cdndedicated</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-cdnwebsite</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-cdnwebstorage</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-cloud</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-clusterhadoop</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-dbaaslogs</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-dbaasqueue</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-dbaastimeseries</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-dedicatedceph</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-dedicatedhousing</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-dedicatedinstallationTemplate</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-dedicatednas</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-dedicatednasha</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-dedicatedserver</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-dedicatedCloud</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-deskaas</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-distributionimage</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-domain</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-emaildomain</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-emailexchange</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>ovh-java-sdk-emailimapCopy</artifactId>
-			<groupId>net.minidev</groupId>
-			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-emailpro</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-freefax</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-horizonView</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-hostingprivateDatabase</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-hostingreseller</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-hostingweb</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-hpcspot</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-ip</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-ipLoadbalancing</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-licensecloudLinux</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-licensecpanel</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-licensedirectadmin</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-licenseoffice</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-licenseplesk</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-licensesqlserver</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-licensevirtuozzo</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-licensewindows</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-licenseworklight</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-me</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-metrics</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-msServices</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-newAccount</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-order</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-overTheBox</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>ovh-java-sdk-paasmonitoring</artifactId>
-			<groupId>net.minidev</groupId>
-			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-paastimeseries</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-packsiptrunk</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-packxdsl</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-partners</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-price</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-router</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-saascsp2</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-secret</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-service</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-sms</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-ssl</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-sslGateway</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-stackmis</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-status</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-store</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-supplymondialRelay</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-support</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-telephony</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-veeamveeamEnterprise</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-veeamCloudConnect</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-vip</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-vps</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-vrack</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 		<dependency>
 			<artifactId>ovh-java-sdk-xdsl</artifactId>
 			<groupId>net.minidev</groupId>
 			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>ovh-java-sdk-time</artifactId>
-			<groupId>net.minidev</groupId>
-			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>ovh-java-sdk-instance</artifactId>
-			<groupId>net.minidev</groupId>
-			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>ovh-java-sdk-volume</artifactId>
-			<groupId>net.minidev</groupId>
-			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>ovh-java-sdk-flavor</artifactId>
-			<groupId>net.minidev</groupId>
-			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>ovh-java-sdk-image</artifactId>
-			<groupId>net.minidev</groupId>
-			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>ovh-java-sdk-region</artifactId>
-			<groupId>net.minidev</groupId>
-			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>ovh-java-sdk-project</artifactId>
-			<groupId>net.minidev</groupId>
-			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>ovh-java-sdk-ssh</artifactId>
-			<groupId>net.minidev</groupId>
-			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>ovh-java-sdk-storage</artifactId>
-			<groupId>net.minidev</groupId>
-			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>ovh-java-sdk-token</artifactId>
-			<groupId>net.minidev</groupId>
-			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>ovh-java-sdk-iot</artifactId>
-			<groupId>net.minidev</groupId>
-			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
-		</dependency>
-		<dependency>
-			<artifactId>ovh-java-sdk-launch</artifactId>
-			<groupId>net.minidev</groupId>
-			<optional>false</optional>
-			<version>${ovhjavasdk.version}</version>
+			<version>0.9.13</version>
 		</dependency>
 
 	</dependencies>

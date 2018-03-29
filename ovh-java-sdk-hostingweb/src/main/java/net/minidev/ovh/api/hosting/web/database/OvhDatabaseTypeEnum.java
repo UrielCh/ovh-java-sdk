@@ -4,6 +4,7 @@ package net.minidev.ovh.api.hosting.web.database;
  * Database Type enum
  */
 public enum OvhDatabaseTypeEnum {
+	mongodb("mongodb"),
 	mysql("mysql"),
 	postgresql("postgresql");
 

@@ -4,8 +4,10 @@ package net.minidev.ovh.api.telephony;
  * Offer task types
  */
 public enum OvhOfferTaskTypeEnum {
+	line("line"),
 	offer("offer"),
-	option("option");
+	option("option"),
+	phone("phone");
 
 	final String value;
 

@@ -31,4 +31,11 @@ public class OvhDynHostRecord {
 	 * canBeNull && readOnly
 	 */
 	public Long id;
+
+	/**
+	 * DynHost record ttl
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long ttl;
 }

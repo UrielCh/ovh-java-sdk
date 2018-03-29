@@ -5,6 +5,7 @@ package net.minidev.ovh.api.pack.xdsl;
  */
 public enum OvhServiceNameEnum {
 	domain("domain"),
+	emailPro("emailPro"),
 	exchangeAccount("exchangeAccount"),
 	exchangeIndividual("exchangeIndividual"),
 	exchangeLite("exchangeLite"),

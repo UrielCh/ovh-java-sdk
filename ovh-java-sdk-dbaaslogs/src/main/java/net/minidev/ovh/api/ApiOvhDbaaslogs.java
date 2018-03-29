@@ -87,7 +87,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return the service object of connected identity.
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}
-	 * @param serviceName [required]
+	 * @param serviceName [required] Service name
 	 *
 	 * API beta
 	 */
@@ -102,9 +102,9 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Update the service properties
 	 *
 	 * REST: PUT /dbaas/logs/{serviceName}
-	 * @param serviceName [required]
+	 * @param serviceName [required] Service name
 	 * @param displayName [required] Service custom name
-	 * @param contactId [required]
+	 * @param contactId [required] Contact ID
 	 *
 	 * API beta
 	 */
@@ -122,7 +122,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return the list of allowed cluster
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/cluster
-	 * @param serviceName [required]
+	 * @param serviceName [required] Service name
 	 *
 	 * API beta
 	 */
@@ -138,8 +138,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return details of an allowed cluster
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/cluster/{clusterId}
-	 * @param serviceName [required]
-	 * @param clusterId [required]
+	 * @param serviceName [required] Service name
+	 * @param clusterId [required] Cluster ID
 	 *
 	 * API beta
 	 */
@@ -154,7 +154,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return the list of registered input attached to the logged user
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/input
-	 * @param serviceName [required]
+	 * @param serviceName [required] Service name
 	 *
 	 * API beta
 	 */
@@ -169,14 +169,14 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Register a new input object
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/input
-	 * @param serviceName [required]
-	 * @param streamId [required]
-	 * @param engineId [required]
-	 * @param description [required]
-	 * @param singleInstanceEnabled [required]
-	 * @param optionId [required]
-	 * @param title [required]
-	 * @param exposedPort [required]
+	 * @param serviceName [required] Service name
+	 * @param streamId [required] Stream ID
+	 * @param engineId [required] Engine ID
+	 * @param description [required] Description
+	 * @param singleInstanceEnabled [required] Indicate if input have only a single instance
+	 * @param optionId [required] Option ID
+	 * @param title [required] Title
+	 * @param exposedPort [required] Exposed port
 	 *
 	 * API beta
 	 */
@@ -199,8 +199,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Schedule the restart of specified input
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/input/{inputId}/restart
-	 * @param serviceName [required]
-	 * @param inputId [required]
+	 * @param serviceName [required] Service name
+	 * @param inputId [required] Input ID
 	 *
 	 * API beta
 	 */
@@ -215,8 +215,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Remove the specified input object
 	 *
 	 * REST: DELETE /dbaas/logs/{serviceName}/input/{inputId}
-	 * @param serviceName [required]
-	 * @param inputId [required]
+	 * @param serviceName [required] Service name
+	 * @param inputId [required] Input ID
 	 *
 	 * API beta
 	 */
@@ -231,8 +231,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return details of specified input
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/input/{inputId}
-	 * @param serviceName [required]
-	 * @param inputId [required]
+	 * @param serviceName [required] Service name
+	 * @param inputId [required] Input ID
 	 *
 	 * API beta
 	 */
@@ -247,15 +247,15 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Update information of specified input object
 	 *
 	 * REST: PUT /dbaas/logs/{serviceName}/input/{inputId}
-	 * @param serviceName [required]
-	 * @param inputId [required]
-	 * @param streamId [required]
-	 * @param engineId [required]
-	 * @param description [required]
-	 * @param singleInstanceEnabled [required]
-	 * @param optionId [required]
-	 * @param title [required]
-	 * @param exposedPort [required]
+	 * @param serviceName [required] Service name
+	 * @param inputId [required] Input ID
+	 * @param streamId [required] Stream ID
+	 * @param engineId [required] Engine ID
+	 * @param description [required] Description
+	 * @param singleInstanceEnabled [required] Indicate if input have only a single instance
+	 * @param optionId [required] Option ID
+	 * @param title [required] Title
+	 * @param exposedPort [required] Exposed port
 	 *
 	 * API beta
 	 */
@@ -278,8 +278,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Generate a temporary url to retrieve input logs
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/input/{inputId}/logs/url
-	 * @param serviceName [required]
-	 * @param inputId [required]
+	 * @param serviceName [required] Service name
+	 * @param inputId [required] Input ID
 	 *
 	 * API beta
 	 */
@@ -294,8 +294,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Schedule the end of specified input
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/input/{inputId}/end
-	 * @param serviceName [required]
-	 * @param inputId [required]
+	 * @param serviceName [required] Service name
+	 * @param inputId [required] Input ID
 	 *
 	 * API beta
 	 */
@@ -310,8 +310,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * List all network UUID allowed to join input
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/input/{inputId}/allowedNetwork
-	 * @param serviceName [required]
-	 * @param inputId [required]
+	 * @param serviceName [required] Service name
+	 * @param inputId [required] Input ID
 	 *
 	 * API beta
 	 */
@@ -326,9 +326,9 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Allow an ip to join input
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/input/{inputId}/allowedNetwork
-	 * @param serviceName [required]
-	 * @param inputId [required]
-	 * @param network [required]
+	 * @param serviceName [required] Service name
+	 * @param inputId [required] Input ID
+	 * @param network [required] Network
 	 *
 	 * API beta
 	 */
@@ -345,9 +345,9 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Remove the specified IP from the list of allowed networks
 	 *
 	 * REST: DELETE /dbaas/logs/{serviceName}/input/{inputId}/allowedNetwork/{allowedNetworkId}
-	 * @param serviceName [required]
-	 * @param inputId [required]
-	 * @param allowedNetworkId [required]
+	 * @param serviceName [required] Service name
+	 * @param inputId [required] Input ID
+	 * @param allowedNetworkId [required] Allowed network ID
 	 *
 	 * API beta
 	 */
@@ -362,9 +362,9 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * List all network UUID allowed to join input
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/input/{inputId}/allowedNetwork/{allowedNetworkId}
-	 * @param serviceName [required]
-	 * @param inputId [required]
-	 * @param allowedNetworkId [required]
+	 * @param serviceName [required] Service name
+	 * @param inputId [required] Input ID
+	 * @param allowedNetworkId [required] Allowed network ID
 	 *
 	 * API beta
 	 */
@@ -379,8 +379,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return the list of urls of specified input
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/input/{inputId}/url
-	 * @param serviceName [required]
-	 * @param inputId [required]
+	 * @param serviceName [required] Service name
+	 * @param inputId [required] Input ID
 	 *
 	 * API beta
 	 */
@@ -396,8 +396,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return actions of specified input
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/input/{inputId}/action
-	 * @param serviceName [required]
-	 * @param inputId [required]
+	 * @param serviceName [required] Service name
+	 * @param inputId [required] Input ID
 	 *
 	 * API beta
 	 */
@@ -413,8 +413,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return the flowgger configuration
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/input/{inputId}/configuration/flowgger
-	 * @param serviceName [required]
-	 * @param inputId [required]
+	 * @param serviceName [required] Service name
+	 * @param inputId [required] Input ID
 	 *
 	 * API beta
 	 */
@@ -429,13 +429,13 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Update the flowgger configuration
 	 *
 	 * REST: PUT /dbaas/logs/{serviceName}/input/{inputId}/configuration/flowgger
-	 * @param serviceName [required]
-	 * @param inputId [required]
-	 * @param tlsMethod [required]
-	 * @param logFraming [required]
-	 * @param kafkaCoalesce [required]
-	 * @param type [required]
-	 * @param logFormat [required]
+	 * @param serviceName [required] Service name
+	 * @param inputId [required] Input ID
+	 * @param tlsMethod [required] TLS method
+	 * @param logFraming [required] Log framing
+	 * @param kafkaCoalesce [required] kafkaCoalesce
+	 * @param type [required] configuration type
+	 * @param logFormat [required] configuration log format
 	 *
 	 * API beta
 	 */
@@ -456,8 +456,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return the logstash configuration
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/input/{inputId}/configuration/logstash
-	 * @param serviceName [required]
-	 * @param inputId [required]
+	 * @param serviceName [required] Service name
+	 * @param inputId [required] Input ID
 	 *
 	 * API beta
 	 */
@@ -472,11 +472,11 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Update the logstash configuration
 	 *
 	 * REST: PUT /dbaas/logs/{serviceName}/input/{inputId}/configuration/logstash
-	 * @param serviceName [required]
-	 * @param inputId [required]
-	 * @param patternSection [required]
-	 * @param inputSection [required]
-	 * @param filterSection [required]
+	 * @param serviceName [required] Service name
+	 * @param inputId [required] Input ID
+	 * @param patternSection [required] Pattern section
+	 * @param inputSection [required] Input section
+	 * @param filterSection [required] Filter section
 	 *
 	 * API beta
 	 */
@@ -495,8 +495,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Validate configuration of specified input
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/input/{inputId}/configtest
-	 * @param serviceName [required]
-	 * @param inputId [required]
+	 * @param serviceName [required] Service name
+	 * @param inputId [required] Input ID
 	 *
 	 * API beta
 	 */
@@ -511,8 +511,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return the config test operation result
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/input/{inputId}/configtest/result
-	 * @param serviceName [required]
-	 * @param inputId [required]
+	 * @param serviceName [required] Service name
+	 * @param inputId [required] Input ID
 	 *
 	 * API beta
 	 */
@@ -527,8 +527,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Schedule the start of specified input
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/input/{inputId}/start
-	 * @param serviceName [required]
-	 * @param inputId [required]
+	 * @param serviceName [required] Service name
+	 * @param inputId [required] Input ID
 	 *
 	 * API beta
 	 */
@@ -543,7 +543,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return the subscribed offer
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/offer
-	 * @param serviceName [required]
+	 * @param serviceName [required] Service name
 	 *
 	 * API beta
 	 */
@@ -558,8 +558,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Remove specified elasticsearch index
 	 *
 	 * REST: DELETE /dbaas/logs/{serviceName}/output/elasticsearch/index/{indexId}
-	 * @param serviceName [required]
-	 * @param indexId [required]
+	 * @param serviceName [required] Service name
+	 * @param indexId [required] Index ID
 	 *
 	 * API beta
 	 */
@@ -574,8 +574,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return specified elasticsearch index
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/elasticsearch/index/{indexId}
-	 * @param serviceName [required]
-	 * @param indexId [required]
+	 * @param serviceName [required] Service name
+	 * @param indexId [required] Index ID
 	 *
 	 * API beta
 	 */
@@ -590,10 +590,10 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Update specified elasticsearch index
 	 *
 	 * REST: PUT /dbaas/logs/{serviceName}/output/elasticsearch/index/{indexId}
-	 * @param serviceName [required]
-	 * @param indexId [required]
-	 * @param alertNotifyEnabled [required]
-	 * @param description [required]
+	 * @param serviceName [required] Service name
+	 * @param indexId [required] Index ID
+	 * @param alertNotifyEnabled [required] Alert notify enabled
+	 * @param description [required] Description
 	 *
 	 * API beta
 	 */
@@ -611,8 +611,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return the list of urls of specified graylog stream
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/elasticsearch/index/{indexId}/url
-	 * @param serviceName [required]
-	 * @param indexId [required]
+	 * @param serviceName [required] Service name
+	 * @param indexId [required] Index ID
 	 *
 	 * API beta
 	 */
@@ -627,7 +627,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return the list of elasticsearch indices
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/elasticsearch/index
-	 * @param serviceName [required]
+	 * @param serviceName [required] Service name
 	 *
 	 * API beta
 	 */
@@ -642,11 +642,11 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Register a new elasticsearch index
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/output/elasticsearch/index
-	 * @param serviceName [required]
-	 * @param optionId [required]
-	 * @param alertNotifyEnabled [required]
-	 * @param suffix [required]
-	 * @param description [required]
+	 * @param serviceName [required] Service name
+	 * @param optionId [required] Option ID
+	 * @param alertNotifyEnabled [required] Alert notify enabled
+	 * @param suffix [required] Suffix
+	 * @param description [required] Description
 	 *
 	 * API beta
 	 */
@@ -666,7 +666,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return the list of alias for connected user
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/elasticsearch/alias
-	 * @param serviceName [required]
+	 * @param serviceName [required] Service name
 	 *
 	 * API beta
 	 */
@@ -681,10 +681,10 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Register a new elasticsearch alias
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/output/elasticsearch/alias
-	 * @param serviceName [required]
-	 * @param optionId [required]
-	 * @param suffix [required]
-	 * @param description [required]
+	 * @param serviceName [required] Service name
+	 * @param optionId [required] Option ID
+	 * @param suffix [required] Suffix
+	 * @param description [required] Description
 	 *
 	 * API beta
 	 */
@@ -703,8 +703,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Remove specified elasticsearch alias
 	 *
 	 * REST: DELETE /dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}
-	 * @param serviceName [required]
-	 * @param aliasId [required]
+	 * @param serviceName [required] Service name
+	 * @param aliasId [required] Alias ID
 	 *
 	 * API beta
 	 */
@@ -719,8 +719,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return specified elasticsearch alias
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}
-	 * @param serviceName [required]
-	 * @param aliasId [required]
+	 * @param serviceName [required] Service name
+	 * @param aliasId [required] Alias ID
 	 *
 	 * API beta
 	 */
@@ -735,10 +735,10 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Update specified elasticsearch alias
 	 *
 	 * REST: PUT /dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}
-	 * @param serviceName [required]
-	 * @param aliasId [required]
-	 * @param optionId [required]
-	 * @param description [required]
+	 * @param serviceName [required] Service name
+	 * @param aliasId [required] Alias ID
+	 * @param optionId [required] Option ID
+	 * @param description [required] Description
 	 *
 	 * API beta
 	 */
@@ -756,9 +756,9 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Detach a elasticsearch index from specified elasticsearch alias
 	 *
 	 * REST: DELETE /dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}/index/{indexId}
-	 * @param serviceName [required]
-	 * @param aliasId [required]
-	 * @param indexId [required]
+	 * @param serviceName [required] Service name
+	 * @param aliasId [required] Alias ID
+	 * @param indexId [required] Index ID
 	 *
 	 * API beta
 	 */
@@ -773,8 +773,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return the list of elasticsearch indices attached to specified         elasticsearch alias
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}/index
-	 * @param serviceName [required]
-	 * @param aliasId [required]
+	 * @param serviceName [required] Service name
+	 * @param aliasId [required] Alias ID
 	 *
 	 * API beta
 	 */
@@ -789,9 +789,9 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Attach a elasticsearch index to specified elasticsearch alias
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}/index
-	 * @param serviceName [required]
-	 * @param aliasId [required]
-	 * @param indexId [required]
+	 * @param serviceName [required] Service name
+	 * @param aliasId [required] Alias ID
+	 * @param indexId [required] Index ID
 	 *
 	 * API beta
 	 */
@@ -808,8 +808,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return the list of urls of specified graylog stream
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}/url
-	 * @param serviceName [required]
-	 * @param aliasId [required]
+	 * @param serviceName [required] Service name
+	 * @param aliasId [required] Alias ID
 	 *
 	 * API beta
 	 */
@@ -824,8 +824,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return the list of graylog streams attached to specified         elasticsearch alias
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}/stream
-	 * @param serviceName [required]
-	 * @param aliasId [required]
+	 * @param serviceName [required] Service name
+	 * @param aliasId [required] Alias ID
 	 *
 	 * API beta
 	 */
@@ -840,9 +840,9 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Attach a graylog stream to specified elasticsearch alias
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}/stream
-	 * @param serviceName [required]
-	 * @param aliasId [required]
-	 * @param streamId [required]
+	 * @param serviceName [required] Service name
+	 * @param aliasId [required] Alias ID
+	 * @param streamId [required] Stream ID
 	 *
 	 * API beta
 	 */
@@ -859,9 +859,9 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Detach a graylog stream from specified elasticsearch alias
 	 *
 	 * REST: DELETE /dbaas/logs/{serviceName}/output/elasticsearch/alias/{aliasId}/stream/{streamId}
-	 * @param serviceName [required]
-	 * @param aliasId [required]
-	 * @param streamId [required]
+	 * @param serviceName [required] Service name
+	 * @param aliasId [required] Alias ID
+	 * @param streamId [required] Stream ID
 	 *
 	 * API beta
 	 */
@@ -876,7 +876,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return the list of graylog streams
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/stream
-	 * @param serviceName [required]
+	 * @param serviceName [required] Service name
 	 *
 	 * API beta
 	 */
@@ -891,15 +891,15 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Register a new graylog stream
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/output/graylog/stream
-	 * @param serviceName [required]
-	 * @param webSocketEnabled [required]
-	 * @param coldStorageRetention [required]
-	 * @param coldStorageCompression [required]
-	 * @param optionId [required]
-	 * @param coldStorageNotifyEnabled [required]
-	 * @param description [required]
-	 * @param title [required]
-	 * @param coldStorageEnabled [required]
+	 * @param serviceName [required] Service name
+	 * @param webSocketEnabled [required] Web Socket enabled
+	 * @param coldStorageRetention [required] Cold storage retention time
+	 * @param coldStorageCompression [required] Cold storage compression
+	 * @param optionId [required] Option ID
+	 * @param coldStorageNotifyEnabled [required] Cold storage notify enabled
+	 * @param description [required] Description
+	 * @param title [required] Title
+	 * @param coldStorageEnabled [required] Cold storage enabled
 	 *
 	 * API beta
 	 */
@@ -923,8 +923,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return the list of configured alerts of specified graylog stream
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/alert
-	 * @param serviceName [required]
-	 * @param streamId [required]
+	 * @param serviceName [required] Service name
+	 * @param streamId [required] Stream ID
 	 *
 	 * API beta
 	 */
@@ -939,19 +939,19 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Register a new alert on specified graylog stream
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/alert
-	 * @param serviceName [required]
-	 * @param streamId [required]
-	 * @param thresholdType [required]
-	 * @param grace [required]
-	 * @param constraintType [required]
-	 * @param conditionType [required]
-	 * @param repeatNotificationsEnabled [required]
-	 * @param value [required]
-	 * @param backlog [required]
-	 * @param threshold [required]
-	 * @param time [required]
-	 * @param title [required]
-	 * @param field [required]
+	 * @param serviceName [required] Service name
+	 * @param streamId [required] Stream ID
+	 * @param thresholdType [required] Threshold type
+	 * @param grace [required] Grace period
+	 * @param constraintType [required] Constraint type
+	 * @param conditionType [required] Condition type
+	 * @param repeatNotificationsEnabled [required] Repeat notifications enabled
+	 * @param value [required] Value
+	 * @param backlog [required] Backlog
+	 * @param threshold [required] Threshold
+	 * @param time [required] Time
+	 * @param title [required] Title
+	 * @param field [required] Field
 	 *
 	 * API beta
 	 */
@@ -978,9 +978,9 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Remove alert from specified graylog stream
 	 *
 	 * REST: DELETE /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/alert/{alertId}
-	 * @param serviceName [required]
-	 * @param streamId [required]
-	 * @param alertId [required]
+	 * @param serviceName [required] Service name
+	 * @param streamId [required] Stream ID
+	 * @param alertId [required] Alert ID
 	 *
 	 * API beta
 	 */
@@ -995,9 +995,9 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return details of specified graylog stream alert
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/alert/{alertId}
-	 * @param serviceName [required]
-	 * @param streamId [required]
-	 * @param alertId [required]
+	 * @param serviceName [required] Service name
+	 * @param streamId [required] Stream ID
+	 * @param alertId [required] Alert ID
 	 *
 	 * API beta
 	 */
@@ -1012,20 +1012,20 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Update alert information of specified graylog stream
 	 *
 	 * REST: PUT /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/alert/{alertId}
-	 * @param serviceName [required]
-	 * @param streamId [required]
-	 * @param alertId [required]
-	 * @param thresholdType [required]
-	 * @param grace [required]
-	 * @param constraintType [required]
-	 * @param conditionType [required]
-	 * @param repeatNotificationsEnabled [required]
-	 * @param value [required]
-	 * @param backlog [required]
-	 * @param threshold [required]
-	 * @param time [required]
-	 * @param title [required]
-	 * @param field [required]
+	 * @param serviceName [required] Service name
+	 * @param streamId [required] Stream ID
+	 * @param alertId [required] Alert ID
+	 * @param thresholdType [required] Threshold type
+	 * @param grace [required] Grace period
+	 * @param constraintType [required] Constraint type
+	 * @param conditionType [required] Condition type
+	 * @param repeatNotificationsEnabled [required] Repeat notifications enabled
+	 * @param value [required] Value
+	 * @param backlog [required] Backlog
+	 * @param threshold [required] Threshold
+	 * @param time [required] Time
+	 * @param title [required] Title
+	 * @param field [required] Field
 	 *
 	 * API beta
 	 */
@@ -1052,8 +1052,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Remove specified graylog stream
 	 *
 	 * REST: DELETE /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}
-	 * @param serviceName [required]
-	 * @param streamId [required]
+	 * @param serviceName [required] Service name
+	 * @param streamId [required] Stream ID
 	 *
 	 * API beta
 	 */
@@ -1068,8 +1068,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return details of specified graylog stream
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}
-	 * @param serviceName [required]
-	 * @param streamId [required]
+	 * @param serviceName [required] Service name
+	 * @param streamId [required] Stream ID
 	 *
 	 * API beta
 	 */
@@ -1084,16 +1084,16 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Update information of specified graylog stream
 	 *
 	 * REST: PUT /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}
-	 * @param serviceName [required]
-	 * @param streamId [required]
-	 * @param webSocketEnabled [required]
-	 * @param coldStorageRetention [required]
-	 * @param coldStorageCompression [required]
-	 * @param description [required]
-	 * @param coldStorageNotifyEnabled [required]
-	 * @param optionId [required]
-	 * @param title [required]
-	 * @param coldStorageEnabled [required]
+	 * @param serviceName [required] Service name
+	 * @param streamId [required] Stream ID
+	 * @param webSocketEnabled [required] Web socket enabled
+	 * @param coldStorageRetention [required] Cold storage retention time
+	 * @param coldStorageCompression [required] Cold storage compression
+	 * @param description [required] Description
+	 * @param coldStorageNotifyEnabled [required] Cold storage notify enabled
+	 * @param optionId [required] Option ID
+	 * @param title [required] Title
+	 * @param coldStorageEnabled [required] Cold storage enabled
 	 *
 	 * API beta
 	 */
@@ -1117,8 +1117,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return the list of archives
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/archive
-	 * @param serviceName [required]
-	 * @param streamId [required]
+	 * @param serviceName [required] Service name
+	 * @param streamId [required] Stream ID
 	 *
 	 * API beta
 	 */
@@ -1133,9 +1133,9 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return details of specified archive
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/archive/{archiveId}
-	 * @param serviceName [required]
-	 * @param streamId [required]
-	 * @param archiveId [required]
+	 * @param serviceName [required] Service name
+	 * @param streamId [required] Stream ID
+	 * @param archiveId [required] Archive ID
 	 *
 	 * API beta
 	 */
@@ -1150,9 +1150,9 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Get a public temporary URL to access the archive
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/archive/{archiveId}/url
-	 * @param serviceName [required]
-	 * @param streamId [required]
-	 * @param archiveId [required]
+	 * @param serviceName [required] Service name
+	 * @param streamId [required] Stream ID
+	 * @param archiveId [required] Archive ID
 	 *
 	 * API beta
 	 */
@@ -1167,8 +1167,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return the list of urls of specified graylog stream
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/url
-	 * @param serviceName [required]
-	 * @param streamId [required]
+	 * @param serviceName [required] Service name
+	 * @param streamId [required] Stream ID
 	 *
 	 * API beta
 	 */
@@ -1183,8 +1183,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return the list of rules of specified graylog stream
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/rule
-	 * @param serviceName [required]
-	 * @param streamId [required]
+	 * @param serviceName [required] Service name
+	 * @param streamId [required] Stream ID
 	 *
 	 * API beta
 	 */
@@ -1199,9 +1199,9 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return details of specified graylog stream rule
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/rule/{ruleId}
-	 * @param serviceName [required]
-	 * @param streamId [required]
-	 * @param ruleId [required]
+	 * @param serviceName [required] Service name
+	 * @param streamId [required] Stream ID
+	 * @param ruleId [required] Rule ID
 	 *
 	 * API beta
 	 */
@@ -1217,7 +1217,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return the list graylog dashboards
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/dashboard
-	 * @param serviceName [required]
+	 * @param serviceName [required] Service name
 	 *
 	 * API beta
 	 */
@@ -1232,10 +1232,10 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Register a new graylog dashboard
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/output/graylog/dashboard
-	 * @param serviceName [required]
-	 * @param optionId [required]
-	 * @param title [required]
-	 * @param description [required]
+	 * @param serviceName [required] Service name
+	 * @param optionId [required] Option ID
+	 * @param title [required] Title
+	 * @param description [required] Description
 	 *
 	 * API beta
 	 */
@@ -1254,8 +1254,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Remove specified graylog dashboard
 	 *
 	 * REST: DELETE /dbaas/logs/{serviceName}/output/graylog/dashboard/{dashboardId}
-	 * @param serviceName [required]
-	 * @param dashboardId [required]
+	 * @param serviceName [required] Service name
+	 * @param dashboardId [required] Dashboard ID
 	 *
 	 * API beta
 	 */
@@ -1270,8 +1270,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return details of specified graylog dashboard
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/dashboard/{dashboardId}
-	 * @param serviceName [required]
-	 * @param dashboardId [required]
+	 * @param serviceName [required] Service name
+	 * @param dashboardId [required] Dashboard ID
 	 *
 	 * API beta
 	 */
@@ -1286,11 +1286,11 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Update information of specified graylog dashboard
 	 *
 	 * REST: PUT /dbaas/logs/{serviceName}/output/graylog/dashboard/{dashboardId}
-	 * @param serviceName [required]
-	 * @param dashboardId [required]
-	 * @param optionId [required]
-	 * @param title [required]
-	 * @param description [required]
+	 * @param serviceName [required] Service name
+	 * @param dashboardId [required] Dashboard ID
+	 * @param optionId [required] Option ID
+	 * @param title [required] Title
+	 * @param description [required] Description
 	 *
 	 * API beta
 	 */
@@ -1309,12 +1309,12 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Copy all widgets from specified dashboard to a new one
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/output/graylog/dashboard/{dashboardId}/duplicate
-	 * @param serviceName [required]
-	 * @param dashboardId [required]
-	 * @param optionId [required]
-	 * @param title [required]
-	 * @param streamId [required]
-	 * @param description [required]
+	 * @param serviceName [required] Service name
+	 * @param dashboardId [required] Dashboard ID
+	 * @param optionId [required] Option ID
+	 * @param title [required] Title
+	 * @param streamId [required] Stream ID
+	 * @param description [required] Description
 	 *
 	 * API beta
 	 */
@@ -1334,8 +1334,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return the list of urls of specified graylog dashboard
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/output/graylog/dashboard/{dashboardId}/url
-	 * @param serviceName [required]
-	 * @param dashboardId [required]
+	 * @param serviceName [required] Service name
+	 * @param dashboardId [required] Dashboard ID
 	 *
 	 * API beta
 	 */
@@ -1373,7 +1373,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Initiate a password change procedure.
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/user/changePassword
-	 * @param serviceName [required]
+	 * @param serviceName [required] Service name
 	 * @param password [required] Password must be at least 12 characters long contain a number, an uppercase, a lowercase and a special letter
 	 *
 	 * API beta
@@ -1391,7 +1391,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return platform useful urls.
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/url
-	 * @param serviceName [required]
+	 * @param serviceName [required] Service name
 	 *
 	 * API beta
 	 */
@@ -1406,7 +1406,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return Metrics credentials
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/metrics
-	 * @param serviceName [required]
+	 * @param serviceName [required] Service name
 	 *
 	 * API beta
 	 */
@@ -1421,7 +1421,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Latest operations
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/operation
-	 * @param serviceName [required]
+	 * @param serviceName [required] Service name
 	 *
 	 * API beta
 	 */
@@ -1436,8 +1436,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return details of specified operation
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/operation/{operationId}
-	 * @param serviceName [required]
-	 * @param operationId [required]
+	 * @param serviceName [required] Service name
+	 * @param operationId [required] Operation ID
 	 *
 	 * API beta
 	 */
@@ -1452,7 +1452,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return the subscribed additional options
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/option
-	 * @param serviceName [required]
+	 * @param serviceName [required] Service name
 	 *
 	 * API beta
 	 */
@@ -1467,8 +1467,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return details of a subscribed option
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/option/{optionId}
-	 * @param serviceName [required]
-	 * @param optionId [required]
+	 * @param serviceName [required] Service name
+	 * @param optionId [required] Option ID
 	 *
 	 * API beta
 	 */
@@ -1483,8 +1483,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Remove the specified subscribed option
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/option/{optionId}/terminate
-	 * @param serviceName [required]
-	 * @param optionId [required]
+	 * @param serviceName [required] Service name
+	 * @param optionId [required] Option ID
 	 *
 	 * API beta
 	 */
@@ -1499,7 +1499,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return the list of service tokens
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/token
-	 * @param serviceName [required]
+	 * @param serviceName [required] Service name
 	 *
 	 * API beta
 	 */
@@ -1514,9 +1514,9 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Add a new token
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/token
-	 * @param serviceName [required]
-	 * @param name [required]
-	 * @param clusterId [required]
+	 * @param serviceName [required] Service name
+	 * @param name [required] Token name
+	 * @param clusterId [required] Cluster ID
 	 *
 	 * API beta
 	 */
@@ -1534,8 +1534,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Delete the specified token
 	 *
 	 * REST: DELETE /dbaas/logs/{serviceName}/token/{tokenId}
-	 * @param serviceName [required]
-	 * @param tokenId [required]
+	 * @param serviceName [required] Service name
+	 * @param tokenId [required] Token ID
 	 *
 	 * API beta
 	 */
@@ -1550,8 +1550,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return the specified token
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/token/{tokenId}
-	 * @param serviceName [required]
-	 * @param tokenId [required]
+	 * @param serviceName [required] Service name
+	 * @param tokenId [required] Token ID
 	 *
 	 * API beta
 	 */
@@ -1566,8 +1566,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Remove specified role
 	 *
 	 * REST: DELETE /dbaas/logs/{serviceName}/role/{roleId}
-	 * @param serviceName [required]
-	 * @param roleId [required]
+	 * @param serviceName [required] Service name
+	 * @param roleId [required] Role ID
 	 *
 	 * API beta
 	 */
@@ -1582,8 +1582,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return details of specified role
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/role/{roleId}
-	 * @param serviceName [required]
-	 * @param roleId [required]
+	 * @param serviceName [required] Service name
+	 * @param roleId [required] Role ID
 	 *
 	 * API beta
 	 */
@@ -1598,11 +1598,11 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Update information of specified role
 	 *
 	 * REST: PUT /dbaas/logs/{serviceName}/role/{roleId}
-	 * @param serviceName [required]
-	 * @param roleId [required]
-	 * @param optionId [required]
-	 * @param name [required]
-	 * @param description [required]
+	 * @param serviceName [required] Service name
+	 * @param roleId [required] Role ID
+	 * @param optionId [required] Option ID
+	 * @param name [required] Name
+	 * @param description [required] Description
 	 *
 	 * API beta
 	 */
@@ -1621,8 +1621,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return the member list of specified role
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/role/{roleId}/member
-	 * @param serviceName [required]
-	 * @param roleId [required]
+	 * @param serviceName [required] Service name
+	 * @param roleId [required] Role ID
 	 *
 	 * API beta
 	 */
@@ -1637,10 +1637,10 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Append user into the member list of specified role
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/role/{roleId}/member
-	 * @param serviceName [required]
-	 * @param roleId [required]
-	 * @param username [required]
-	 * @param note [required]
+	 * @param serviceName [required] Service name
+	 * @param roleId [required] Role ID
+	 * @param username [required] Username
+	 * @param note [required] Note
 	 *
 	 * API beta
 	 */
@@ -1658,9 +1658,9 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Remove user from the member list of specified role
 	 *
 	 * REST: DELETE /dbaas/logs/{serviceName}/role/{roleId}/member/{username}
-	 * @param serviceName [required]
-	 * @param roleId [required]
-	 * @param username [required]
+	 * @param serviceName [required] Service name
+	 * @param roleId [required] Role ID
+	 * @param username [required] Username
 	 *
 	 * API beta
 	 */
@@ -1675,9 +1675,9 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return the member metadata
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/role/{roleId}/member/{username}
-	 * @param serviceName [required]
-	 * @param roleId [required]
-	 * @param username [required]
+	 * @param serviceName [required] Service name
+	 * @param roleId [required] Role ID
+	 * @param username [required] Username
 	 *
 	 * API beta
 	 */
@@ -1692,10 +1692,10 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Update the member metadata
 	 *
 	 * REST: PUT /dbaas/logs/{serviceName}/role/{roleId}/member/{username}
-	 * @param serviceName [required]
-	 * @param roleId [required]
-	 * @param username [required]
-	 * @param note [required]
+	 * @param serviceName [required] Service name
+	 * @param roleId [required] Role ID
+	 * @param username [required] Username
+	 * @param note [required] Note
 	 *
 	 * API beta
 	 */
@@ -1712,8 +1712,8 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return the list of permissions of specified role
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/role/{roleId}/permission
-	 * @param serviceName [required]
-	 * @param roleId [required]
+	 * @param serviceName [required] Service name
+	 * @param roleId [required] Role ID
 	 *
 	 * API beta
 	 */
@@ -1728,9 +1728,9 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Append a elasticsearch index permission to role
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/role/{roleId}/permission/index
-	 * @param serviceName [required]
-	 * @param roleId [required]
-	 * @param indexId [required]
+	 * @param serviceName [required] Service name
+	 * @param roleId [required] Role ID
+	 * @param indexId [required] Index ID
 	 *
 	 * API beta
 	 */
@@ -1747,9 +1747,9 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Remove specified permission
 	 *
 	 * REST: DELETE /dbaas/logs/{serviceName}/role/{roleId}/permission/{permissionId}
-	 * @param serviceName [required]
-	 * @param roleId [required]
-	 * @param permissionId [required]
+	 * @param serviceName [required] Service name
+	 * @param roleId [required] Role ID
+	 * @param permissionId [required] Permission ID
 	 *
 	 * API beta
 	 */
@@ -1764,9 +1764,9 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return details of specified permission
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/role/{roleId}/permission/{permissionId}
-	 * @param serviceName [required]
-	 * @param roleId [required]
-	 * @param permissionId [required]
+	 * @param serviceName [required] Service name
+	 * @param roleId [required] Role ID
+	 * @param permissionId [required] Permission ID
 	 *
 	 * API beta
 	 */
@@ -1782,9 +1782,9 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Append a graylog stream permission to role
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/role/{roleId}/permission/stream
-	 * @param serviceName [required]
-	 * @param roleId [required]
-	 * @param streamId [required]
+	 * @param serviceName [required] Service name
+	 * @param roleId [required] Role ID
+	 * @param streamId [required] Stream ID
 	 *
 	 * API beta
 	 */
@@ -1801,9 +1801,9 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Append a elasticsearch alias permission to role
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/role/{roleId}/permission/alias
-	 * @param serviceName [required]
-	 * @param roleId [required]
-	 * @param aliasId [required]
+	 * @param serviceName [required] Service name
+	 * @param roleId [required] Role ID
+	 * @param aliasId [required] Alias ID
 	 *
 	 * API beta
 	 */
@@ -1820,9 +1820,9 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Append a graylog dashboard permission to role
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/role/{roleId}/permission/dashboard
-	 * @param serviceName [required]
-	 * @param roleId [required]
-	 * @param dashboardId [required]
+	 * @param serviceName [required] Service name
+	 * @param roleId [required] Role ID
+	 * @param dashboardId [required] Dashboard ID
 	 *
 	 * API beta
 	 */
@@ -1839,7 +1839,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return the list of roles
 	 *
 	 * REST: GET /dbaas/logs/{serviceName}/role
-	 * @param serviceName [required]
+	 * @param serviceName [required] service name
 	 *
 	 * API beta
 	 */
@@ -1854,10 +1854,10 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Register a new role
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/role
-	 * @param serviceName [required]
-	 * @param optionId [required]
-	 * @param name [required]
-	 * @param description [required]
+	 * @param serviceName [required] service name
+	 * @param optionId [required] Option ID
+	 * @param name [required] Name
+	 * @param description [required] Description
 	 *
 	 * API beta
 	 */
@@ -1904,7 +1904,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Return details of specified input engine
 	 *
 	 * REST: GET /dbaas/logs/input/engine/{engineId}
-	 * @param engineId [required]
+	 * @param engineId [required] Engine ID
 	 *
 	 * API beta
 	 */
@@ -1919,7 +1919,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * Display specified offer
 	 *
 	 * REST: GET /dbaas/logs/offer/{reference}
-	 * @param reference [required]
+	 * @param reference [required] Reference
 	 *
 	 * API beta
 	 */

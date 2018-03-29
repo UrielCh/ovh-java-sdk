@@ -1902,7 +1902,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 	 *
 	 * REST: GET /cloud/project/{serviceName}/volume/snapshot/{snapshotId}
 	 * @param serviceName [required] Project id
-	 * @param snapshotId [required]
+	 * @param snapshotId [required] Snapshot id
 	 */
 	public OvhSnapshot project_serviceName_volume_snapshot_snapshotId_GET(String serviceName, String snapshotId) throws IOException {
 		String qPath = "/cloud/project/{serviceName}/volume/snapshot/{snapshotId}";

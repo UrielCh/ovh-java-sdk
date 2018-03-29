@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.minidev</groupId>
 	<artifactId>ovh-java-sdk-pom</artifactId>
-	<version>0.9.12</version>
+	<version>0.9.13</version>
 	<packaging>pom</packaging>
 	<name>OVH SDK for Java</name>
 	<description>OVH ...</description>
@@ -233,7 +233,6 @@
 		<module>ovh-java-sdk-domain</module>
 		<module>ovh-java-sdk-emaildomain</module>
 		<module>ovh-java-sdk-emailexchange</module>
-		<module>ovh-java-sdk-emailimapCopy</module>
 		<module>ovh-java-sdk-emailpro</module>
 		<module>ovh-java-sdk-freefax</module>
 		<module>ovh-java-sdk-horizonView</module>
@@ -258,7 +257,6 @@
 		<module>ovh-java-sdk-newAccount</module>
 		<module>ovh-java-sdk-order</module>
 		<module>ovh-java-sdk-overTheBox</module>
-		<module>ovh-java-sdk-paasmonitoring</module>
 		<module>ovh-java-sdk-paastimeseries</module>
 		<module>ovh-java-sdk-packsiptrunk</module>
 		<module>ovh-java-sdk-packxdsl</module>
@@ -283,18 +281,6 @@
 		<module>ovh-java-sdk-vps</module>
 		<module>ovh-java-sdk-vrack</module>
 		<module>ovh-java-sdk-xdsl</module>
-		<module>ovh-java-sdk-time</module>
-		<module>ovh-java-sdk-instance</module>
-		<module>ovh-java-sdk-volume</module>
-		<module>ovh-java-sdk-flavor</module>
-		<module>ovh-java-sdk-image</module>
-		<module>ovh-java-sdk-region</module>
-		<module>ovh-java-sdk-project</module>
-		<module>ovh-java-sdk-ssh</module>
-		<module>ovh-java-sdk-storage</module>
-		<module>ovh-java-sdk-token</module>
-		<module>ovh-java-sdk-iot</module>
-		<module>ovh-java-sdk-launch</module>
 		<module>ovh-java-sdk</module>
 
 	</modules>

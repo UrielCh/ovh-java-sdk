@@ -6,6 +6,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * Database Version enum
  */
 public enum OvhVersionEnum {
+	@JsonProperty("3.4")
+	_3_4("3.4"),
 	@JsonProperty("4.0")
 	_4_0("4.0"),
 	@JsonProperty("5.1")

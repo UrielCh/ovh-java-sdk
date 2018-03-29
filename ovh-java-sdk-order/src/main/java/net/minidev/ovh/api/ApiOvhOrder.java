@@ -90,7 +90,6 @@ import net.minidev.ovh.api.vps.additionaldisk.OvhAdditionalDiskSizeEnum;
 import net.minidev.ovh.api.vps.ip.OvhGeolocationEnum;
 import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
-import net.minidev.ovh.core.ApiOvhUtils;
 
 /**
  * BasePath:https://eu.api.ovh.com/1.0
@@ -503,8 +502,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 * Retrieve list of catalog name
 	 *
 	 * REST: GET /order/catalog/formatted
-	 *
-	 * API beta
+	 * @deprecated
 	 */
 	public ArrayList<String> catalog_formatted_GET() throws IOException {
 		String qPath = "/order/catalog/formatted";
@@ -514,7 +512,7 @@ public class ApiOvhOrder extends ApiOvhBase {
 	}
 
 	/**
-	 * Retrieve information of catalog
+	 * Retrieve information of Private Cloud SDDC catalog
 	 *
 	 * REST: GET /order/catalog/formatted/privateCloudSDDC
 	 * @param ovhSubsidiary [required] Subsidiary of the country you want to consult catalog
@@ -530,7 +528,71 @@ public class ApiOvhOrder extends ApiOvhBase {
 	}
 
 	/**
-	 * Retrieve information of catalog
+	 * Retrieve information of Desk as a service catalog
+	 *
+	 * REST: GET /order/catalog/formatted/deskaas
+	 * @param ovhSubsidiary [required] Subsidiary of the country you want to consult catalog
+	 *
+	 * API beta
+	 */
+	public net.minidev.ovh.api.order.catalog.OvhCatalog catalog_formatted_deskaas_GET(OvhOvhSubsidiaryEnum ovhSubsidiary) throws IOException {
+		String qPath = "/order/catalog/formatted/deskaas";
+		StringBuilder sb = path(qPath);
+		query(sb, "ovhSubsidiary", ovhSubsidiary);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, net.minidev.ovh.api.order.catalog.OvhCatalog.class);
+	}
+
+	/**
+	 * Retrieve information of VPS catalog
+	 *
+	 * REST: GET /order/catalog/formatted/vps
+	 * @param ovhSubsidiary [required] Subsidiary of the country you want to consult catalog
+	 *
+	 * API beta
+	 */
+	public net.minidev.ovh.api.order.catalog.OvhCatalog catalog_formatted_vps_GET(OvhOvhSubsidiaryEnum ovhSubsidiary) throws IOException {
+		String qPath = "/order/catalog/formatted/vps";
+		StringBuilder sb = path(qPath);
+		query(sb, "ovhSubsidiary", ovhSubsidiary);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, net.minidev.ovh.api.order.catalog.OvhCatalog.class);
+	}
+
+	/**
+	 * Retrieve information of IP addresses catalog
+	 *
+	 * REST: GET /order/catalog/formatted/ip
+	 * @param ovhSubsidiary [required] Subsidiary of the country you want to consult catalog
+	 *
+	 * API beta
+	 */
+	public net.minidev.ovh.api.order.catalog.OvhCatalog catalog_formatted_ip_GET(OvhOvhSubsidiaryEnum ovhSubsidiary) throws IOException {
+		String qPath = "/order/catalog/formatted/ip";
+		StringBuilder sb = path(qPath);
+		query(sb, "ovhSubsidiary", ovhSubsidiary);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, net.minidev.ovh.api.order.catalog.OvhCatalog.class);
+	}
+
+	/**
+	 * Retrieve information of Public Cloud catalog
+	 *
+	 * REST: GET /order/catalog/formatted/cloud
+	 * @param ovhSubsidiary [required] Subsidiary of the country you want to consult catalog
+	 *
+	 * API beta
+	 */
+	public net.minidev.ovh.api.order.catalog.OvhCatalog catalog_formatted_cloud_GET(OvhOvhSubsidiaryEnum ovhSubsidiary) throws IOException {
+		String qPath = "/order/catalog/formatted/cloud";
+		StringBuilder sb = path(qPath);
+		query(sb, "ovhSubsidiary", ovhSubsidiary);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, net.minidev.ovh.api.order.catalog.OvhCatalog.class);
+	}
+
+	/**
+	 * Retrieve information of Private Cloud Dedicated Cloud catalog
 	 *
 	 * REST: GET /order/catalog/formatted/privateCloudDC
 	 * @param ovhSubsidiary [required] Subsidiary of the country you want to consult catalog
@@ -546,24 +608,23 @@ public class ApiOvhOrder extends ApiOvhBase {
 	}
 
 	/**
-	 * Retrieve information of catalog
+	 * Retrieve information of dedicated server catalog
 	 *
-	 * REST: GET /order/catalog/formatted/{catalogName}
-	 * @param catalogName [required] Catalog name you want to consult.
+	 * REST: GET /order/catalog/formatted/dedicated
 	 * @param ovhSubsidiary [required] Subsidiary of the country you want to consult catalog
 	 *
 	 * API beta
 	 */
-	public net.minidev.ovh.api.order.catalog.OvhCatalog catalog_formatted_catalogName_GET(String catalogName, OvhOvhSubsidiaryEnum ovhSubsidiary) throws IOException {
-		String qPath = "/order/catalog/formatted/{catalogName}";
-		StringBuilder sb = path(qPath, catalogName);
+	public net.minidev.ovh.api.order.catalog.OvhCatalog catalog_formatted_dedicated_GET(OvhOvhSubsidiaryEnum ovhSubsidiary) throws IOException {
+		String qPath = "/order/catalog/formatted/dedicated";
+		StringBuilder sb = path(qPath);
 		query(sb, "ovhSubsidiary", ovhSubsidiary);
 		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, net.minidev.ovh.api.order.catalog.OvhCatalog.class);
 	}
 
 	/**
-	 * Retrieve information of catalog
+	 * Retrieve information of Private Cloud CDI catalog
 	 *
 	 * REST: GET /order/catalog/formatted/privateCloudCDI
 	 * @param ovhSubsidiary [required] Subsidiary of the country you want to consult catalog
@@ -576,6 +637,22 @@ public class ApiOvhOrder extends ApiOvhBase {
 		query(sb, "ovhSubsidiary", ovhSubsidiary);
 		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhCatalog.class);
+	}
+
+	/**
+	 * Retrieve information of Reseller catalog
+	 *
+	 * REST: GET /order/catalog/formatted/reseller
+	 * @param ovhSubsidiary [required] Subsidiary of the country you want to consult catalog
+	 *
+	 * API beta
+	 */
+	public net.minidev.ovh.api.order.catalog.OvhCatalog catalog_formatted_reseller_GET(OvhOvhSubsidiaryEnum ovhSubsidiary) throws IOException {
+		String qPath = "/order/catalog/formatted/reseller";
+		StringBuilder sb = path(qPath);
+		query(sb, "ovhSubsidiary", ovhSubsidiary);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, net.minidev.ovh.api.order.catalog.OvhCatalog.class);
 	}
 
 	/**
@@ -1133,7 +1210,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 		addBody(o, "zip", zip);
 		addBody(o, "streetNumber", streetNumber);
 		addBody(o, "legalform", legalform);
-		
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOrder.class);
 	}

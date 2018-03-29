@@ -6,8 +6,11 @@ package net.minidev.ovh.api.telephony;
 public enum OvhOfferTaskActionEnum {
 	convertToAlias("convertToAlias"),
 	convertToSip("convertToSip"),
+	migrateToNewVoicemail("migrateToNewVoicemail"),
 	removeSimltaneousLines("removeSimltaneousLines"),
+	switchServer("switchServer"),
 	termination("termination"),
+	updateFirmware("updateFirmware"),
 	upgrade("upgrade");
 
 	final String value;

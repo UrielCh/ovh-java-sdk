@@ -260,9 +260,9 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 	 *
 	 * REST: POST /dbaas/timeseries/{serviceName}/token/opentsdb
 	 * @param serviceName [required] Service Name
-	 * @param description [required]
-	 * @param permission [required]
-	 * @param tags [required]
+	 * @param description [required] Token description
+	 * @param permission [required] Permission
+	 * @param tags [required] Tags to apply
 	 *
 	 * API beta
 	 */
