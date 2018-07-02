@@ -24,7 +24,7 @@ public class OvhServiceException extends IOException {
 	public boolean isNonExists() {
 		if ("This service does not exist".equals(message))
 			return true;
-		if (message.startsWith("The requested object"))
+		if (message.startsWith("The requested object (") && message.endsWith(") does not exist"))
 			return true;
 		return false;
 	}	

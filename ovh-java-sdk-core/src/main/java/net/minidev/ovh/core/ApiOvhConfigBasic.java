@@ -14,7 +14,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class ApiOvhConfigBasic extends ApiOvhConfig {
-	private final static String configFiles = "./ovh.conf, ~/.ovh/config, ~/ovh.conf or /etc/ovh.conf";
+	public final static String configFiles = "./ovh.conf, ~/.ovh/config, ~/ovh.conf, /etc/ovh.conf".replace("/",
+			File.separator);
+	public final static String defaultApplicationKey = "So8hjoZsM5aYGWVO"; //"iE3vL3mgAtLZg00l";
+	public final static String defaultApplicationSecret = "zEOWPt3TQ1JqKmQVP1JK6Ctp7iTdAyBe"; //"Gkmuh6Ce0SzxEAgexCA3zMkFGEWCwmqp";
 	/**
 	 * log
 	 */
@@ -34,15 +37,17 @@ public class ApiOvhConfigBasic extends ApiOvhConfig {
 	/**
 	 * your application key or by default the key from api.ovh.com
 	 */
-	protected String applicationKey = "iE3vL3mgAtLZg00l";
+	protected String applicationKey = defaultApplicationKey;
 	/**
 	 * ApplicationSecret or by default the key from api.ovh.com
 	 */
-	protected String applicationSecret = "Gkmuh6Ce0SzxEAgexCA3zMkFGEWCwmqp";
+	protected String applicationSecret = defaultApplicationSecret;
 	/**
 	 * CK for single account usage
 	 */
 	protected String default_CK = null;
+
+	private static File configFile;
 
 	ApiOvhConfigBasic() {
 		File configFile = getOvhConfig();
@@ -50,22 +55,19 @@ public class ApiOvhConfigBasic extends ApiOvhConfig {
 		localEnvironConfig();
 	}
 
-	public File getOvhConfig() {
-		// local
-		File configFile = new File("ovh.conf");
-		if (configFile.exists())
+	public static File getOvhConfig() {
+		if (configFile != null)
 			return configFile;
 		File userHomePath = new File(System.getProperty("user.home"));
-		configFile = new File(userHomePath, ".ovh");
-		configFile = new File(configFile, "config");
-		if (configFile.exists())
-			return configFile;
-		configFile = new File(userHomePath, "ovh.conf");
-		if (configFile.exists())
-			return configFile;
-		configFile = new File("/etc/ovh.conf");
-		if (configFile.exists())
-			return configFile;
+		for (String path : configFiles.split(", ")) {
+			path = path.replace("~", userHomePath.getAbsolutePath());
+			File tmp = new File(path);
+			if (tmp.exists()) {
+				configFile = tmp;
+				log.info("api-ovh-java Using configuration file:{}", path);
+				return tmp;
+			}
+		}
 		return null;
 	}
 
@@ -92,13 +94,16 @@ public class ApiOvhConfigBasic extends ApiOvhConfig {
 			config.load(new FileInputStream(configFile));
 			// get the values
 			endpoint = config.getProperty("endpoint", endpoint);
+			// https://eu.api.ovh.com/createApp/
 			applicationKey = config.getProperty("application_key", applicationKey);
 			applicationSecret = config.getProperty("application_secret", applicationSecret);
 			default_CK = config.getProperty("consumer_key", default_CK);
 			redirection = config.getProperty("redirection", redirection);
 			setConsumerKeyStorage(config.getProperty("consumer_key_storage", null));
+			if (applicationKey.endsWith(defaultApplicationKey))
+				log.info("Using default ApplicationKey, you can create a new one here: {}", "https://eu.api.ovh.com/createApp/");
 		} catch (Exception e) {
-			//throw new OvhApiException(e.getMessage(), OvhApiExceptionCause.CONFIG_ERROR);
+			// throw new OvhApiException(e.getMessage(), OvhApiExceptionCause.CONFIG_ERROR);
 		}
 	}
 
@@ -117,6 +122,7 @@ public class ApiOvhConfigBasic extends ApiOvhConfig {
 
 	/**
 	 * storage for previous CK
+	 * 
 	 * @return File used to store consumer key
 	 */
 	protected File gettmpStore(String nic) {

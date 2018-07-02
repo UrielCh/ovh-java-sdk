@@ -2,6 +2,7 @@ package net.minidev.ovh.core;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -87,9 +88,12 @@ public class ApiOvhCore {
 	 * consumerKey
 	 */
 	private String _consumerKey = null;
+
 	/**
 	 * Discard a consumerKey from cache
-	 * @param nic nichandler
+	 * 
+	 * @param nic
+	 *            nichandler
 	 * @param currentCK
 	 * @throws IOException
 	 */
@@ -189,8 +193,22 @@ public class ApiOvhCore {
 		// core._consumerKey = core.config.getConsumerKey();
 		core._consumerKey = core.getConsumerKeyOrNull();// config.getConsumerKey();
 		if (core._consumerKey == null) {
-			log.error("no consumerKey present in your ovh.conf (consumer_key) or environement (OVH_CONSUMER_KEY)");
-			return null;
+			File file = ApiOvhConfigBasic.getOvhConfig();
+			String location = ApiOvhConfigBasic.configFiles;
+			if (file != null)
+				location = file.getAbsolutePath();
+			String url = "";
+			String CK = "";
+			try {
+				OvhCredential credential = core.requestToken(null);
+				url = credential.validationUrl;
+				CK = credential.consumerKey;
+			} catch (Exception e) {
+				log.error("Fail to request a new Credential", e);
+			}
+			log.error("activate the CK {} here: {}", CK, url);
+			throw new NullPointerException("no 'consumer_key' present in " + location
+					+ " or environement 'OVH_CONSUMER_KEY', activate the CK '" + CK + "' here: " + url);
 		}
 		return core;
 	}
@@ -228,8 +246,10 @@ public class ApiOvhCore {
 		}
 		return core;
 	}
+
 	/**
 	 * Build an HTTP Request with customs headers (Content-Type, X-Ovh-Application)
+	 * 
 	 * @param method
 	 * @param url
 	 * @return
@@ -274,8 +294,10 @@ public class ApiOvhCore {
 			timeOffset = 0L;
 		}
 	}
+
 	/**
 	 * issue an time syncronized timestamp.
+	 * 
 	 * @return
 	 */
 	private String getTimestamp() {
@@ -285,8 +307,10 @@ public class ApiOvhCore {
 		now -= timeOffset;
 		return Long.toString(now);
 	}
+
 	/**
 	 * Store password based credential for an automatic certificate generation
+	 * 
 	 * @param nic
 	 * @param password
 	 * @param timeInSec
@@ -299,8 +323,7 @@ public class ApiOvhCore {
 	}
 
 	/**
-	 * Create a new CK from a nic/password
-	 * and force login
+	 * Create a new CK from a nic/password and force login
 	 */
 	public boolean login(String nic, String password, int timeInSec) throws IOException {
 		if (password == null) {
@@ -318,7 +341,7 @@ public class ApiOvhCore {
 		// no valid CK use login
 		while (!loginInternal(nic, password, timeInSec)) {
 			retry++;
-			if (retry > 5) {
+			if (retry > 1) { //  no more retry
 				log.error("LOGIN failure to {} after {} retry", nic, retry);
 				return false;
 			}
@@ -349,8 +372,8 @@ public class ApiOvhCore {
 				return true;
 			}
 			OvhCredential token = requestToken(null);
-			log.info("Generating a new ConsumerKey as appKey: {} for account {} valid for {} sec, validationUrl:{}", this.config.getApplicationKey(), nic, timeInSec,
-					token.validationUrl);
+			log.info("Generating a new ConsumerKey as appKey: {} for account {} valid for {} sec, validationUrl:{}",
+					this.config.getApplicationKey(), nic, timeInSec, token.validationUrl);
 
 			Document doc = Jsoup.connect(token.validationUrl).get();
 			String html = doc.toString();
@@ -372,13 +395,14 @@ public class ApiOvhCore {
 			validForm.followRedirects(false);
 			// fill user and password field
 			for (Element e : inputs) {
+				String name = e.attr("name");
 				String value = e.attr("value");
 				String type = e.attr("type");
 				if ("text".equals(type))
 					value = nic;
 				else if ("password".equals(type))
 					value = password;
-				validForm.data(e.attr("name"), value);
+				validForm.data(name, value);
 			}
 			// set Expiration Date
 			validForm.data("duration", Integer.toString(timeInSec));
@@ -468,7 +492,8 @@ public class ApiOvhCore {
 			} catch (OvhServiceException e0) {
 				throw e0;
 			} catch (SocketTimeoutException e1) {
-				log.error("calling {} {} Failed by timeout. (ConnectTimeout:{} ReadTimeout:{})", method, query, config.getConnectTimeout(), config.getReadTimeout());
+				log.error("calling {} {} Failed by timeout. (ConnectTimeout:{} ReadTimeout:{})", method, query,
+						config.getConnectTimeout(), config.getReadTimeout());
 				responseText = execInternal(method, query, payload, needAuth);
 			} catch (IOException e2) {
 				log.error("API OVH IOException", e2);
@@ -509,18 +534,23 @@ public class ApiOvhCore {
 			HttpURLConnection connection = getRequest(method, url);
 			if (needAuth) {
 				currentCK = this.getConsumerKeyOrNull();
-				if (currentCK == null && password != null) {
-					synchronized (this.nic.intern()) {
-						while (currentCK == null) {
-							failure++;
-							if (failure > 10)
-								throw new NullPointerException(
-										"Failed to allocate a new ConsumerKey for nic " + this.nic);
-							login(this.nic, this.password, this.timeInSec);
-							currentCK = this.getConsumerKeyOrNull();
+				if (currentCK == null)
+					if (password != null) {
+						synchronized (this.nic.intern()) {
+							while (currentCK == null) {
+								failure++;
+								if (failure > 10)
+									throw new NullPointerException(
+											"Failed to allocate a new ConsumerKey for nic " + this.nic);
+								login(this.nic, this.password, this.timeInSec);
+								currentCK = this.getConsumerKeyOrNull();
+							}
 						}
+					} else {
+						OvhCredential credential = this.requestToken(null);
+						log.error("No currentCK or user/password available, validate {} with {}", credential.consumerKey, credential.validationUrl);
+						throw new IOException("active the CK " + credential.consumerKey + " here " + credential.validationUrl);
 					}
-				}
 				String timestamp = getTimestamp();
 				String toHash = config.getAppSecret() + "+" + currentCK + "+" + method + "+" + url + "+" + txt + "+"
 						+ timestamp;
@@ -576,9 +606,11 @@ public class ApiOvhCore {
 					// message);
 				}
 				// all other errors
-				if (failure < 3 && err.isErrorCode(OvhErrorMessage.INVALID_CREDENTIAL, OvhErrorMessage.NOT_CREDENTIAL)) {
+				if (failure < 3
+						&& err.isErrorCode(OvhErrorMessage.INVALID_CREDENTIAL, OvhErrorMessage.NOT_CREDENTIAL)) {
 					if (nic == null) {
-						log.error("Get Error:{} and have no nic/password provided, reconnection feature non available.", err.errorCode);
+						log.error("Get Error:{} and have no nic/password provided, reconnection feature non available.",
+								err.errorCode);
 					} else if (this._consumerKey.equals(currentCK)) {
 						// check if the consumerKey had been renew from an other thread
 						invalidateConsumerKey(nic, currentCK);
@@ -598,7 +630,8 @@ public class ApiOvhCore {
 					throw new OvhException(method, query, err, queryId);
 				}
 				if (err.isErrorCode(OvhErrorMessage.INVALID_CREDENTIAL)) {
-					log.error("INVALID_CREDENTIAL with AppKey:{} CK:{} failure:{}", config.getApplicationKey(), currentCK, failure);
+					log.error("INVALID_CREDENTIAL with AppKey:{} CK:{} failure:{}", config.getApplicationKey(),
+							currentCK, failure);
 					throw new OvhException(method, query, err, queryId);
 				}
 				throw new OvhException(method, query, err, queryId);
@@ -607,7 +640,7 @@ public class ApiOvhCore {
 		}
 		return response;
 	}
-	
+
 	private OvhErrorMessage readAsError(String response) throws JsonParseException, JsonMappingException, IOException {
 		if (response == null)
 			return null;
