@@ -68,6 +68,13 @@ public class OvhConferenceProperties {
 	public OvhConferenceReportStatusEnum reportStatus;
 
 	/**
+	 * The announce sound id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long announceSoundId;
+
+	/**
 	 * The conference sounds language
 	 *
 	 * canBeNull && readOnly

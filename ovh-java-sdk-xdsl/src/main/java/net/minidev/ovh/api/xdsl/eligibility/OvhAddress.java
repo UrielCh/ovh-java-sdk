@@ -5,56 +5,70 @@ package net.minidev.ovh.api.xdsl.eligibility;
  */
 public class OvhAddress {
 	/**
-	 * The identifier of the door, if any
+	 * Owner of the line, this information can be restricted
+	 *
+	 * canBeNull
+	 */
+	public String owner;
+
+	/**
+	 * Identifier of the door, if any
 	 *
 	 * canBeNull
 	 */
 	public String door;
 
 	/**
-	 * The identifier of the stair, if any
+	 * Identifier of the stair, if any
 	 *
 	 * canBeNull
 	 */
 	public String stair;
 
 	/**
-	 * The information about the city
+	 * Informations about the city
 	 *
 	 * canBeNull
 	 */
 	public OvhCity city;
 
 	/**
-	 * The number in the street
+	 * Number on the street
 	 *
 	 * canBeNull
 	 */
 	public String streetNumber;
 
 	/**
-	 * The information about the street
+	 * Informations about the street
 	 *
 	 * canBeNull
 	 */
 	public OvhStreet street;
 
 	/**
-	 * The identifier of the floor, if any
+	 * Identifier of the historical operator landmark, if any
+	 *
+	 * canBeNull
+	 */
+	public String logo;
+
+	/**
+	 * Identifier of the floor, if any
 	 *
 	 * canBeNull
 	 */
 	public String floor;
 
 	/**
-	 * The name of the residence, if any
+	 * Name of the residence, if any
 	 *
 	 * canBeNull
 	 */
 	public String residence;
 
 	/**
-	 * The name of the building, if any
+	 * Name of the building, if any
 	 *
 	 * canBeNull
 	 */

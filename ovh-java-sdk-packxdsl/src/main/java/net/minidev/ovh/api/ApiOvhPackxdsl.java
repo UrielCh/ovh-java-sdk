@@ -440,6 +440,73 @@ public class ApiOvhPackxdsl extends ApiOvhBase {
 	}
 
 	/**
+	 * List the available domains for the Email Pro service
+	 *
+	 * REST: GET /pack/xdsl/{packName}/emailPro/options/domains
+	 * @param packName [required] The internal name of your pack
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> packName_emailPro_options_domains_GET(String packName) throws IOException {
+		String qPath = "/pack/xdsl/{packName}/emailPro/options/domains";
+		StringBuilder sb = path(qPath, packName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Check if the given email address is available for an Email Pro activation
+	 *
+	 * REST: GET /pack/xdsl/{packName}/emailPro/options/isEmailAvailable
+	 * @param email [required] The email address
+	 * @param packName [required] The internal name of your pack
+	 *
+	 * API beta
+	 */
+	public Boolean packName_emailPro_options_isEmailAvailable_GET(String packName, String email) throws IOException {
+		String qPath = "/pack/xdsl/{packName}/emailPro/options/isEmailAvailable";
+		StringBuilder sb = path(qPath, packName);
+		query(sb, "email", email);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, Boolean.class);
+	}
+
+	/**
+	 * List the Email Pro services
+	 *
+	 * REST: GET /pack/xdsl/{packName}/emailPro/services
+	 * @param packName [required] The internal name of your pack
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> packName_emailPro_services_GET(String packName) throws IOException {
+		String qPath = "/pack/xdsl/{packName}/emailPro/services";
+		StringBuilder sb = path(qPath, packName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Activate an Email Pro service
+	 *
+	 * REST: POST /pack/xdsl/{packName}/emailPro/services
+	 * @param email [required] The email address
+	 * @param password [required] The password
+	 * @param packName [required] The internal name of your pack
+	 *
+	 * API beta
+	 */
+	public OvhTask packName_emailPro_services_POST(String packName, String email, String password) throws IOException {
+		String qPath = "/pack/xdsl/{packName}/emailPro/services";
+		StringBuilder sb = path(qPath, packName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "email", email);
+		addBody(o, "password", password);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
 	 * VOIP billing accounts
 	 *
 	 * REST: GET /pack/xdsl/{packName}/voipBillingAccount/services

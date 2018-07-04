@@ -21,6 +21,13 @@ public class OvhRouteRule {
 	public Boolean negate;
 
 	/**
+	 * Human readable name for your rule
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String displayName;
+
+	/**
 	 * Value to match against this match. Interpretation if this field depends on the match and field
 	 *
 	 * canBeNull && readOnly

@@ -12,6 +12,7 @@ import net.minidev.ovh.api.dedicated.OvhTaskFunctionEnum;
 import net.minidev.ovh.api.dedicated.OvhTaskStatusEnum;
 import net.minidev.ovh.api.dedicated.networkinterfacecontroller.OvhNetworkInterfaceController;
 import net.minidev.ovh.api.dedicated.networkinterfacecontroller.OvhNetworkInterfaceControllerLinkTypeEnum;
+import net.minidev.ovh.api.dedicated.server.OvhAccess;
 import net.minidev.ovh.api.dedicated.server.OvhAlertLanguageEnum;
 import net.minidev.ovh.api.dedicated.server.OvhBackupCloud;
 import net.minidev.ovh.api.dedicated.server.OvhBackupFtp;
@@ -92,6 +93,7 @@ import net.minidev.ovh.api.nichandle.OvhOvhSubsidiaryEnum;
 import net.minidev.ovh.api.secondarydns.OvhSecondaryDNS;
 import net.minidev.ovh.api.secondarydns.OvhSecondaryDNSCheckField;
 import net.minidev.ovh.api.secondarydns.OvhSecondaryDNSNameServer;
+import net.minidev.ovh.api.service.OvhTerminationFutureUseEnum;
 import net.minidev.ovh.api.service.OvhTerminationReasonEnum;
 import net.minidev.ovh.api.services.OvhService;
 import net.minidev.ovh.api.support.OvhNewMessageInfo;
@@ -628,6 +630,20 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 	}
 
 	/**
+	 * Retrieve secret to connect to the server / application
+	 *
+	 * REST: POST /dedicated/server/{serviceName}/authenticationSecret
+	 * @param serviceName [required] The internal name of your dedicated server
+	 */
+	public ArrayList<OvhAccess> serviceName_authenticationSecret_POST(String serviceName) throws IOException {
+		String qPath = "/dedicated/server/{serviceName}/authenticationSecret";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, t7);
+	}
+	private static TypeReference<ArrayList<OvhAccess>> t7 = new TypeReference<ArrayList<OvhAccess>>() {};
+
+	/**
 	 * Get hardware RAID size for a given configuration
 	 *
 	 * REST: GET /dedicated/server/{serviceName}/install/hardwareRaidSize
@@ -763,15 +779,17 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 	 * Confirm termination of your service
 	 *
 	 * REST: POST /dedicated/server/{serviceName}/confirmTermination
+	 * @param futureUse What next after your termination request
 	 * @param reason Reason of your termination request
 	 * @param commentary Commentary about your termination request
 	 * @param token [required] The termination token sent by mail to the admin contact
 	 * @param serviceName [required] The internal name of your dedicated server
 	 */
-	public String serviceName_confirmTermination_POST(String serviceName, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
+	public String serviceName_confirmTermination_POST(String serviceName, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
 		String qPath = "/dedicated/server/{serviceName}/confirmTermination";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "futureUse", futureUse);
 		addBody(o, "reason", reason);
 		addBody(o, "commentary", commentary);
 		addBody(o, "token", token);
@@ -836,9 +854,9 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 		query(sb, "period", period);
 		query(sb, "type", type);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t7);
+		return convertTo(resp, t8);
 	}
-	private static TypeReference<ArrayList<OvhMrtgTimestampValue>> t7 = new TypeReference<ArrayList<OvhMrtgTimestampValue>>() {};
+	private static TypeReference<ArrayList<OvhMrtgTimestampValue>> t8 = new TypeReference<ArrayList<OvhMrtgTimestampValue>>() {};
 
 	/**
 	 * Server compatibles netboots
@@ -880,9 +898,9 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 		String qPath = "/dedicated/server/{serviceName}/boot/{bootId}/option";
 		StringBuilder sb = path(qPath, serviceName, bootId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t8);
+		return convertTo(resp, t9);
 	}
-	private static TypeReference<ArrayList<OvhBootOptionEnum>> t8 = new TypeReference<ArrayList<OvhBootOptionEnum>>() {};
+	private static TypeReference<ArrayList<OvhBootOptionEnum>> t9 = new TypeReference<ArrayList<OvhBootOptionEnum>>() {};
 
 	/**
 	 * Get this object properties
@@ -1179,6 +1197,32 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 	}
 
 	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /dedicated/server/{serviceName}/serviceInfos
+	 * @param serviceName [required] The internal name of your dedicated server
+	 */
+	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
+		String qPath = "/dedicated/server/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhService.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /dedicated/server/{serviceName}/serviceInfos
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your dedicated server
+	 */
+	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
+		String qPath = "/dedicated/server/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
 	 * Move an Ip failover to this server
 	 *
 	 * REST: POST /dedicated/server/{serviceName}/ipMove
@@ -1214,32 +1258,6 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 		addBody(o, "inverse", inverse);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhNewMessageInfo.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /dedicated/server/{serviceName}/serviceInfos
-	 * @param serviceName [required] The internal name of your dedicated server
-	 */
-	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
-		String qPath = "/dedicated/server/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhService.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /dedicated/server/{serviceName}/serviceInfos
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your dedicated server
-	 */
-	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
-		String qPath = "/dedicated/server/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1337,9 +1355,9 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 		String qPath = "/dedicated/server/{serviceName}/ipCountryAvailable";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t9);
+		return convertTo(resp, t10);
 	}
-	private static TypeReference<ArrayList<OvhIpCountryEnum>> t9 = new TypeReference<ArrayList<OvhIpCountryEnum>>() {};
+	private static TypeReference<ArrayList<OvhIpCountryEnum>> t10 = new TypeReference<ArrayList<OvhIpCountryEnum>>() {};
 
 	/**
 	 * Get details on offered backup cloud if available for the current server
@@ -1404,7 +1422,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 		query(sb, "period", period);
 		query(sb, "type", type);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t7);
+		return convertTo(resp, t8);
 	}
 
 	/**
@@ -1417,9 +1435,9 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 		String qPath = "/dedicated/server/{serviceName}/option";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t10);
+		return convertTo(resp, t11);
 	}
-	private static TypeReference<ArrayList<OvhOptionEnum>> t10 = new TypeReference<ArrayList<OvhOptionEnum>>() {};
+	private static TypeReference<ArrayList<OvhOptionEnum>> t11 = new TypeReference<ArrayList<OvhOptionEnum>>() {};
 
 	/**
 	 * Get this object properties
@@ -1525,7 +1543,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 		query(sb, "period", period);
 		query(sb, "type", type);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t7);
+		return convertTo(resp, t8);
 	}
 
 	/**
@@ -2086,9 +2104,9 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 		String qPath = "/dedicated/server/{serviceName}/license/compliantWindowsSqlServer";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t11);
+		return convertTo(resp, t12);
 	}
-	private static TypeReference<ArrayList<OvhWindowsSqlVersionEnum>> t11 = new TypeReference<ArrayList<OvhWindowsSqlVersionEnum>>() {};
+	private static TypeReference<ArrayList<OvhWindowsSqlVersionEnum>> t12 = new TypeReference<ArrayList<OvhWindowsSqlVersionEnum>>() {};
 
 	/**
 	 * Get the windows license compliant with your server.
@@ -2100,9 +2118,9 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 		String qPath = "/dedicated/server/{serviceName}/license/compliantWindows";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t12);
+		return convertTo(resp, t13);
 	}
-	private static TypeReference<ArrayList<OvhWindowsOsVersionEnum>> t12 = new TypeReference<ArrayList<OvhWindowsOsVersionEnum>>() {};
+	private static TypeReference<ArrayList<OvhWindowsOsVersionEnum>> t13 = new TypeReference<ArrayList<OvhWindowsOsVersionEnum>>() {};
 
 	/**
 	 * Your own SPLA licenses attached to this dedicated server
@@ -2255,9 +2273,9 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 		StringBuilder sb = path(qPath);
 		query(sb, "hardware", hardware);
 		String resp = execN(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t13);
+		return convertTo(resp, t14);
 	}
-	private static TypeReference<ArrayList<OvhOsAvailabilitiesEnum>> t13 = new TypeReference<ArrayList<OvhOsAvailabilitiesEnum>>() {};
+	private static TypeReference<ArrayList<OvhOsAvailabilitiesEnum>> t14 = new TypeReference<ArrayList<OvhOsAvailabilitiesEnum>>() {};
 
 	/**
 	 * Get VirtualNetworkInterface details
@@ -2287,9 +2305,9 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 		query(sb, "country", country);
 		query(sb, "hardware", hardware);
 		String resp = execN(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t14);
+		return convertTo(resp, t15);
 	}
-	private static TypeReference<ArrayList<OvhAvailabilities>> t14 = new TypeReference<ArrayList<OvhAvailabilities>>() {};
+	private static TypeReference<ArrayList<OvhAvailabilities>> t15 = new TypeReference<ArrayList<OvhAvailabilities>>() {};
 
 	/**
 	 * List the availability of dedicated server
@@ -2300,7 +2318,7 @@ public class ApiOvhDedicatedserver extends ApiOvhBase {
 		String qPath = "/dedicated/server/availabilities/raw";
 		StringBuilder sb = path(qPath);
 		String resp = execN(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t15);
+		return convertTo(resp, t16);
 	}
-	private static TypeReference<ArrayList<OvhAvailabilitiesRaw>> t15 = new TypeReference<ArrayList<OvhAvailabilitiesRaw>>() {};
+	private static TypeReference<ArrayList<OvhAvailabilitiesRaw>> t16 = new TypeReference<ArrayList<OvhAvailabilitiesRaw>>() {};
 }

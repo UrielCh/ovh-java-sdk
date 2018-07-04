@@ -23,6 +23,7 @@ public enum OvhObjectTypeEnum {
 	OvhConfig("OvhConfig"),
 	OvhOrg("OvhOrg"),
 	OwnLogs("OwnLogs"),
+	Runtime("Runtime"),
 	Scan("Scan"),
 	Sqlperso("Sqlperso"),
 	User("User"),

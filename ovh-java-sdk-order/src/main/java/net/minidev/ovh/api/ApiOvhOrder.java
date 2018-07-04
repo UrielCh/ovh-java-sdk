@@ -576,19 +576,45 @@ public class ApiOvhOrder extends ApiOvhBase {
 	}
 
 	/**
-	 * Retrieve information of Public Cloud catalog
+	 * Retrieve information of dedicated discover offer server catalog
 	 *
-	 * REST: GET /order/catalog/formatted/cloud
+	 * REST: GET /order/catalog/formatted/discover
 	 * @param ovhSubsidiary [required] Subsidiary of the country you want to consult catalog
-	 *
-	 * API beta
 	 */
-	public net.minidev.ovh.api.order.catalog.OvhCatalog catalog_formatted_cloud_GET(OvhOvhSubsidiaryEnum ovhSubsidiary) throws IOException {
-		String qPath = "/order/catalog/formatted/cloud";
+	public net.minidev.ovh.api.order.catalog.OvhCatalog catalog_formatted_discover_GET(OvhOvhSubsidiaryEnum ovhSubsidiary) throws IOException {
+		String qPath = "/order/catalog/formatted/discover";
 		StringBuilder sb = path(qPath);
 		query(sb, "ovhSubsidiary", ovhSubsidiary);
 		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, net.minidev.ovh.api.order.catalog.OvhCatalog.class);
+	}
+
+	/**
+	 * Retrieve information of Logs Data Platform catalog
+	 *
+	 * REST: GET /order/catalog/formatted/logs
+	 * @param ovhSubsidiary [required] Subsidiary of the country you want to consult catalog
+	 */
+	public net.minidev.ovh.api.order.catalog.OvhCatalog catalog_formatted_logs_GET(OvhOvhSubsidiaryEnum ovhSubsidiary) throws IOException {
+		String qPath = "/order/catalog/formatted/logs";
+		StringBuilder sb = path(qPath);
+		query(sb, "ovhSubsidiary", ovhSubsidiary);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, net.minidev.ovh.api.order.catalog.OvhCatalog.class);
+	}
+
+	/**
+	 * Retrieve information of Private Cloud Reseller Enterprise catalog
+	 *
+	 * REST: GET /order/catalog/formatted/privateCloudResellerEnterprise
+	 * @param ovhSubsidiary [required] Subsidiary of the country you want to consult catalog
+	 */
+	public net.minidev.ovh.api.order.catalog.pcc.OvhCatalog catalog_formatted_privateCloudResellerEnterprise_GET(OvhOvhSubsidiaryEnum ovhSubsidiary) throws IOException {
+		String qPath = "/order/catalog/formatted/privateCloudResellerEnterprise";
+		StringBuilder sb = path(qPath);
+		query(sb, "ovhSubsidiary", ovhSubsidiary);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, net.minidev.ovh.api.order.catalog.pcc.OvhCatalog.class);
 	}
 
 	/**
@@ -605,6 +631,36 @@ public class ApiOvhOrder extends ApiOvhBase {
 		query(sb, "ovhSubsidiary", ovhSubsidiary);
 		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhCatalog.class);
+	}
+
+	/**
+	 * Retrieve information of Public Cloud catalog
+	 *
+	 * REST: GET /order/catalog/formatted/cloud
+	 * @param ovhSubsidiary [required] Subsidiary of the country you want to consult catalog
+	 *
+	 * API beta
+	 */
+	public net.minidev.ovh.api.order.catalog.OvhCatalog catalog_formatted_cloud_GET(OvhOvhSubsidiaryEnum ovhSubsidiary) throws IOException {
+		String qPath = "/order/catalog/formatted/cloud";
+		StringBuilder sb = path(qPath);
+		query(sb, "ovhSubsidiary", ovhSubsidiary);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, net.minidev.ovh.api.order.catalog.OvhCatalog.class);
+	}
+
+	/**
+	 * Retrieve information of Private Cloud Reseller catalog
+	 *
+	 * REST: GET /order/catalog/formatted/privateCloudReseller
+	 * @param ovhSubsidiary [required] Subsidiary of the country you want to consult catalog
+	 */
+	public net.minidev.ovh.api.order.catalog.pcc.OvhCatalog catalog_formatted_privateCloudReseller_GET(OvhOvhSubsidiaryEnum ovhSubsidiary) throws IOException {
+		String qPath = "/order/catalog/formatted/privateCloudReseller";
+		StringBuilder sb = path(qPath);
+		query(sb, "ovhSubsidiary", ovhSubsidiary);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, net.minidev.ovh.api.order.catalog.pcc.OvhCatalog.class);
 	}
 
 	/**
@@ -3574,55 +3630,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	}
 
 	/**
-	 * Get informations about additional Web Hosting offer for your service
-	 *
-	 * REST: GET /order/cartServiceOption/webHosting/{serviceName}
-	 * @param serviceName [required] The internal ID of Web Hosting service
-	 */
-	public ArrayList<OvhGenericOptionDefinition> cartServiceOption_webHosting_serviceName_GET(String serviceName) throws IOException {
-		String qPath = "/order/cartServiceOption/webHosting/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
-	}
-
-	/**
-	 * Post an additional Web Hosting option in your cart
-	 *
-	 * REST: POST /order/cartServiceOption/webHosting/{serviceName}
-	 * @param cartId [required] Cart identifier
-	 * @param planCode [required] Identifier of the additional Web Hosting offer
-	 * @param duration [required] Duration selected for the purchase of the product
-	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
-	 * @param quantity [required] Quantity of product desired
-	 * @param serviceName [required] The internal ID of Web Hosting service
-	 */
-	public OvhItem cartServiceOption_webHosting_serviceName_POST(String serviceName, String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
-		String qPath = "/order/cartServiceOption/webHosting/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "cartId", cartId);
-		addBody(o, "planCode", planCode);
-		addBody(o, "duration", duration);
-		addBody(o, "pricingMode", pricingMode);
-		addBody(o, "quantity", quantity);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhItem.class);
-	}
-
-	/**
-	 * List available services
-	 *
-	 * REST: GET /order/cartServiceOption/webHosting
-	 */
-	public ArrayList<String> cartServiceOption_webHosting_GET() throws IOException {
-		String qPath = "/order/cartServiceOption/webHosting";
-		StringBuilder sb = path(qPath);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
 	 * Get informations about additional Logs offer for your service
 	 *
 	 * REST: GET /order/cartServiceOption/logs/{serviceName}
@@ -3666,55 +3673,6 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 */
 	public ArrayList<String> cartServiceOption_logs_GET() throws IOException {
 		String qPath = "/order/cartServiceOption/logs";
-		StringBuilder sb = path(qPath);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Get informations about additional IP Load-Balancing offer for your service
-	 *
-	 * REST: GET /order/cartServiceOption/ipLoadbalancing/{serviceName}
-	 * @param serviceName [required] The internal ID of IP Load-Balancing service
-	 */
-	public ArrayList<OvhGenericOptionDefinition> cartServiceOption_ipLoadbalancing_serviceName_GET(String serviceName) throws IOException {
-		String qPath = "/order/cartServiceOption/ipLoadbalancing/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
-	}
-
-	/**
-	 * Post an additional IP Load-Balancing option in your cart
-	 *
-	 * REST: POST /order/cartServiceOption/ipLoadbalancing/{serviceName}
-	 * @param cartId [required] Cart identifier
-	 * @param planCode [required] Identifier of the additional IP Load-Balancing offer
-	 * @param duration [required] Duration selected for the purchase of the product
-	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
-	 * @param quantity [required] Quantity of product desired
-	 * @param serviceName [required] The internal ID of IP Load-Balancing service
-	 */
-	public OvhItem cartServiceOption_ipLoadbalancing_serviceName_POST(String serviceName, String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
-		String qPath = "/order/cartServiceOption/ipLoadbalancing/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "cartId", cartId);
-		addBody(o, "planCode", planCode);
-		addBody(o, "duration", duration);
-		addBody(o, "pricingMode", pricingMode);
-		addBody(o, "quantity", quantity);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhItem.class);
-	}
-
-	/**
-	 * List available services
-	 *
-	 * REST: GET /order/cartServiceOption/ipLoadbalancing
-	 */
-	public ArrayList<String> cartServiceOption_ipLoadbalancing_GET() throws IOException {
-		String qPath = "/order/cartServiceOption/ipLoadbalancing";
 		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
@@ -3770,31 +3728,31 @@ public class ApiOvhOrder extends ApiOvhBase {
 	}
 
 	/**
-	 * Get informations about additional Docker offer for your service
+	 * Get informations about additional Private Cloud Enterprise offer for your service
 	 *
-	 * REST: GET /order/cartServiceOption/docker/{serviceName}
-	 * @param serviceName [required] The internal ID of Docker service
+	 * REST: GET /order/cartServiceOption/privateCloudResellerEnterprise/{serviceName}
+	 * @param serviceName [required] The private cloud service name
 	 */
-	public ArrayList<OvhGenericOptionDefinition> cartServiceOption_docker_serviceName_GET(String serviceName) throws IOException {
-		String qPath = "/order/cartServiceOption/docker/{serviceName}";
+	public ArrayList<OvhGenericOptionDefinition> cartServiceOption_privateCloudResellerEnterprise_serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/order/cartServiceOption/privateCloudResellerEnterprise/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
 
 	/**
-	 * Post an additional Docker option in your cart
+	 * Post an additional Private Cloud Enterprise option in your cart
 	 *
-	 * REST: POST /order/cartServiceOption/docker/{serviceName}
+	 * REST: POST /order/cartServiceOption/privateCloudResellerEnterprise/{serviceName}
 	 * @param cartId [required] Cart identifier
-	 * @param planCode [required] Identifier of the additional Docker offer
+	 * @param planCode [required] Identifier of the additional private cloud enterprise offer
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
-	 * @param serviceName [required] The internal ID of Docker service
+	 * @param serviceName [required] The private cloud service name
 	 */
-	public OvhItem cartServiceOption_docker_serviceName_POST(String serviceName, String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
-		String qPath = "/order/cartServiceOption/docker/{serviceName}";
+	public OvhItem cartServiceOption_privateCloudResellerEnterprise_serviceName_POST(String serviceName, String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
+		String qPath = "/order/cartServiceOption/privateCloudResellerEnterprise/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "cartId", cartId);
@@ -3809,59 +3767,10 @@ public class ApiOvhOrder extends ApiOvhBase {
 	/**
 	 * List available services
 	 *
-	 * REST: GET /order/cartServiceOption/docker
+	 * REST: GET /order/cartServiceOption/privateCloudResellerEnterprise
 	 */
-	public ArrayList<String> cartServiceOption_docker_GET() throws IOException {
-		String qPath = "/order/cartServiceOption/docker";
-		StringBuilder sb = path(qPath);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Get informations about additional Office offer for your service
-	 *
-	 * REST: GET /order/cartServiceOption/office365Prepaid/{serviceName}
-	 * @param serviceName [required] The internal ID of Office service
-	 */
-	public ArrayList<OvhGenericOptionDefinition> cartServiceOption_office365Prepaid_serviceName_GET(String serviceName) throws IOException {
-		String qPath = "/order/cartServiceOption/office365Prepaid/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
-	}
-
-	/**
-	 * Post an additional Office option in your cart
-	 *
-	 * REST: POST /order/cartServiceOption/office365Prepaid/{serviceName}
-	 * @param cartId [required] Cart identifier
-	 * @param planCode [required] Identifier of the additional Office offer
-	 * @param duration [required] Duration selected for the purchase of the product
-	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
-	 * @param quantity [required] Quantity of product desired
-	 * @param serviceName [required] The internal ID of Office service
-	 */
-	public OvhItem cartServiceOption_office365Prepaid_serviceName_POST(String serviceName, String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
-		String qPath = "/order/cartServiceOption/office365Prepaid/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "cartId", cartId);
-		addBody(o, "planCode", planCode);
-		addBody(o, "duration", duration);
-		addBody(o, "pricingMode", pricingMode);
-		addBody(o, "quantity", quantity);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhItem.class);
-	}
-
-	/**
-	 * List available services
-	 *
-	 * REST: GET /order/cartServiceOption/office365Prepaid
-	 */
-	public ArrayList<String> cartServiceOption_office365Prepaid_GET() throws IOException {
-		String qPath = "/order/cartServiceOption/office365Prepaid";
+	public ArrayList<String> cartServiceOption_privateCloudResellerEnterprise_GET() throws IOException {
+		String qPath = "/order/cartServiceOption/privateCloudResellerEnterprise";
 		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
@@ -3968,6 +3877,325 @@ public class ApiOvhOrder extends ApiOvhBase {
 	}
 
 	/**
+	 * Get informations about additional dedicated offer for your service
+	 *
+	 * REST: GET /order/cartServiceOption/dedicated/{serviceName}
+	 * @param serviceName [required] The internal ID of Dedicated service
+	 */
+	public ArrayList<OvhGenericOptionDefinition> cartServiceOption_dedicated_serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/order/cartServiceOption/dedicated/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+
+	/**
+	 * Post an additional dedicated option in your cart
+	 *
+	 * REST: POST /order/cartServiceOption/dedicated/{serviceName}
+	 * @param cartId [required] Cart identifier
+	 * @param planCode [required] Identifier of the additional dedicated offer
+	 * @param duration [required] Duration selected for the purchase of the product
+	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
+	 * @param quantity [required] Quantity of product desired
+	 * @param serviceName [required] The internal ID of Dedicated service
+	 */
+	public OvhItem cartServiceOption_dedicated_serviceName_POST(String serviceName, String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
+		String qPath = "/order/cartServiceOption/dedicated/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "cartId", cartId);
+		addBody(o, "planCode", planCode);
+		addBody(o, "duration", duration);
+		addBody(o, "pricingMode", pricingMode);
+		addBody(o, "quantity", quantity);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhItem.class);
+	}
+
+	/**
+	 * List available services
+	 *
+	 * REST: GET /order/cartServiceOption/dedicated
+	 */
+	public ArrayList<String> cartServiceOption_dedicated_GET() throws IOException {
+		String qPath = "/order/cartServiceOption/dedicated";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Get informations about additional Private Cloud offer for your service
+	 *
+	 * REST: GET /order/cartServiceOption/privateCloud/{serviceName}
+	 * @param serviceName [required] The private cloud service name
+	 */
+	public ArrayList<OvhGenericOptionDefinition> cartServiceOption_privateCloud_serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/order/cartServiceOption/privateCloud/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+
+	/**
+	 * Post an additional Private Cloud option in your cart
+	 *
+	 * REST: POST /order/cartServiceOption/privateCloud/{serviceName}
+	 * @param cartId [required] Cart identifier
+	 * @param planCode [required] Identifier of the additional private cloud offer
+	 * @param duration [required] Duration selected for the purchase of the product
+	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
+	 * @param quantity [required] Quantity of product desired
+	 * @param serviceName [required] The private cloud service name
+	 */
+	public OvhItem cartServiceOption_privateCloud_serviceName_POST(String serviceName, String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
+		String qPath = "/order/cartServiceOption/privateCloud/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "cartId", cartId);
+		addBody(o, "planCode", planCode);
+		addBody(o, "duration", duration);
+		addBody(o, "pricingMode", pricingMode);
+		addBody(o, "quantity", quantity);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhItem.class);
+	}
+
+	/**
+	 * Get informations about additional Private Cloud offer for your service
+	 *
+	 * REST: GET /order/cartServiceOption/privateCloud/{serviceName}/Reseller
+	 * @param serviceName [required] The private cloud service name
+	 */
+	public ArrayList<OvhGenericOptionDefinition> cartServiceOption_privateCloud_serviceName_Reseller_GET(String serviceName) throws IOException {
+		String qPath = "/order/cartServiceOption/privateCloud/{serviceName}/Reseller";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+
+	/**
+	 * Post an additional Private Cloud option in your cart
+	 *
+	 * REST: POST /order/cartServiceOption/privateCloud/{serviceName}/Reseller
+	 * @param cartId [required] Cart identifier
+	 * @param planCode [required] Identifier of the additional private cloud offer
+	 * @param duration [required] Duration selected for the purchase of the product
+	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
+	 * @param quantity [required] Quantity of product desired
+	 * @param serviceName [required] The private cloud service name
+	 */
+	public OvhItem cartServiceOption_privateCloud_serviceName_Reseller_POST(String serviceName, String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
+		String qPath = "/order/cartServiceOption/privateCloud/{serviceName}/Reseller";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "cartId", cartId);
+		addBody(o, "planCode", planCode);
+		addBody(o, "duration", duration);
+		addBody(o, "pricingMode", pricingMode);
+		addBody(o, "quantity", quantity);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhItem.class);
+	}
+
+	/**
+	 * Get informations about additional Private Cloud Enterprise offer for your service
+	 *
+	 * REST: GET /order/cartServiceOption/privateCloud/{serviceName}/ResellerEnterprise
+	 * @param serviceName [required] The private cloud service name
+	 */
+	public ArrayList<OvhGenericOptionDefinition> cartServiceOption_privateCloud_serviceName_ResellerEnterprise_GET(String serviceName) throws IOException {
+		String qPath = "/order/cartServiceOption/privateCloud/{serviceName}/ResellerEnterprise";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+
+	/**
+	 * Post an additional Private Cloud Enterprise option in your cart
+	 *
+	 * REST: POST /order/cartServiceOption/privateCloud/{serviceName}/ResellerEnterprise
+	 * @param cartId [required] Cart identifier
+	 * @param planCode [required] Identifier of the additional private cloud enterprise offer
+	 * @param duration [required] Duration selected for the purchase of the product
+	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
+	 * @param quantity [required] Quantity of product desired
+	 * @param serviceName [required] The private cloud service name
+	 */
+	public OvhItem cartServiceOption_privateCloud_serviceName_ResellerEnterprise_POST(String serviceName, String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
+		String qPath = "/order/cartServiceOption/privateCloud/{serviceName}/ResellerEnterprise";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "cartId", cartId);
+		addBody(o, "planCode", planCode);
+		addBody(o, "duration", duration);
+		addBody(o, "pricingMode", pricingMode);
+		addBody(o, "quantity", quantity);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhItem.class);
+	}
+
+	/**
+	 * List available services
+	 *
+	 * REST: GET /order/cartServiceOption/privateCloud
+	 */
+	public ArrayList<String> cartServiceOption_privateCloud_GET() throws IOException {
+		String qPath = "/order/cartServiceOption/privateCloud";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Get informations about additional Web Hosting offer for your service
+	 *
+	 * REST: GET /order/cartServiceOption/webHosting/{serviceName}
+	 * @param serviceName [required] The internal ID of Web Hosting service
+	 */
+	public ArrayList<OvhGenericOptionDefinition> cartServiceOption_webHosting_serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/order/cartServiceOption/webHosting/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+
+	/**
+	 * Post an additional Web Hosting option in your cart
+	 *
+	 * REST: POST /order/cartServiceOption/webHosting/{serviceName}
+	 * @param cartId [required] Cart identifier
+	 * @param planCode [required] Identifier of the additional Web Hosting offer
+	 * @param duration [required] Duration selected for the purchase of the product
+	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
+	 * @param quantity [required] Quantity of product desired
+	 * @param serviceName [required] The internal ID of Web Hosting service
+	 */
+	public OvhItem cartServiceOption_webHosting_serviceName_POST(String serviceName, String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
+		String qPath = "/order/cartServiceOption/webHosting/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "cartId", cartId);
+		addBody(o, "planCode", planCode);
+		addBody(o, "duration", duration);
+		addBody(o, "pricingMode", pricingMode);
+		addBody(o, "quantity", quantity);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhItem.class);
+	}
+
+	/**
+	 * List available services
+	 *
+	 * REST: GET /order/cartServiceOption/webHosting
+	 */
+	public ArrayList<String> cartServiceOption_webHosting_GET() throws IOException {
+		String qPath = "/order/cartServiceOption/webHosting";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Get informations about additional IP Load-Balancing offer for your service
+	 *
+	 * REST: GET /order/cartServiceOption/ipLoadbalancing/{serviceName}
+	 * @param serviceName [required] The internal ID of IP Load-Balancing service
+	 */
+	public ArrayList<OvhGenericOptionDefinition> cartServiceOption_ipLoadbalancing_serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/order/cartServiceOption/ipLoadbalancing/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+
+	/**
+	 * Post an additional IP Load-Balancing option in your cart
+	 *
+	 * REST: POST /order/cartServiceOption/ipLoadbalancing/{serviceName}
+	 * @param cartId [required] Cart identifier
+	 * @param planCode [required] Identifier of the additional IP Load-Balancing offer
+	 * @param duration [required] Duration selected for the purchase of the product
+	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
+	 * @param quantity [required] Quantity of product desired
+	 * @param serviceName [required] The internal ID of IP Load-Balancing service
+	 */
+	public OvhItem cartServiceOption_ipLoadbalancing_serviceName_POST(String serviceName, String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
+		String qPath = "/order/cartServiceOption/ipLoadbalancing/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "cartId", cartId);
+		addBody(o, "planCode", planCode);
+		addBody(o, "duration", duration);
+		addBody(o, "pricingMode", pricingMode);
+		addBody(o, "quantity", quantity);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhItem.class);
+	}
+
+	/**
+	 * List available services
+	 *
+	 * REST: GET /order/cartServiceOption/ipLoadbalancing
+	 */
+	public ArrayList<String> cartServiceOption_ipLoadbalancing_GET() throws IOException {
+		String qPath = "/order/cartServiceOption/ipLoadbalancing";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Get informations about additional Office offer for your service
+	 *
+	 * REST: GET /order/cartServiceOption/office365Prepaid/{serviceName}
+	 * @param serviceName [required] The internal ID of Office service
+	 */
+	public ArrayList<OvhGenericOptionDefinition> cartServiceOption_office365Prepaid_serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/order/cartServiceOption/office365Prepaid/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+
+	/**
+	 * Post an additional Office option in your cart
+	 *
+	 * REST: POST /order/cartServiceOption/office365Prepaid/{serviceName}
+	 * @param cartId [required] Cart identifier
+	 * @param planCode [required] Identifier of the additional Office offer
+	 * @param duration [required] Duration selected for the purchase of the product
+	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
+	 * @param quantity [required] Quantity of product desired
+	 * @param serviceName [required] The internal ID of Office service
+	 */
+	public OvhItem cartServiceOption_office365Prepaid_serviceName_POST(String serviceName, String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
+		String qPath = "/order/cartServiceOption/office365Prepaid/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "cartId", cartId);
+		addBody(o, "planCode", planCode);
+		addBody(o, "duration", duration);
+		addBody(o, "pricingMode", pricingMode);
+		addBody(o, "quantity", quantity);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhItem.class);
+	}
+
+	/**
+	 * List available services
+	 *
+	 * REST: GET /order/cartServiceOption/office365Prepaid
+	 */
+	public ArrayList<String> cartServiceOption_office365Prepaid_GET() throws IOException {
+		String qPath = "/order/cartServiceOption/office365Prepaid";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
 	 * Get informations about additional Sharepoint offer for your service
 	 *
 	 * REST: GET /order/cartServiceOption/sharepoint/{serviceName}
@@ -4011,6 +4239,141 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 */
 	public ArrayList<String> cartServiceOption_sharepoint_GET() throws IOException {
 		String qPath = "/order/cartServiceOption/sharepoint";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Get informations about additional Private Cloud offer for your service
+	 *
+	 * REST: GET /order/cartServiceOption/privateCloudReseller/{serviceName}
+	 * @param serviceName [required] The private cloud service name
+	 */
+	public ArrayList<OvhGenericOptionDefinition> cartServiceOption_privateCloudReseller_serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/order/cartServiceOption/privateCloudReseller/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+
+	/**
+	 * Post an additional Private Cloud option in your cart
+	 *
+	 * REST: POST /order/cartServiceOption/privateCloudReseller/{serviceName}
+	 * @param cartId [required] Cart identifier
+	 * @param planCode [required] Identifier of the additional private cloud offer
+	 * @param duration [required] Duration selected for the purchase of the product
+	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
+	 * @param quantity [required] Quantity of product desired
+	 * @param serviceName [required] The private cloud service name
+	 */
+	public OvhItem cartServiceOption_privateCloudReseller_serviceName_POST(String serviceName, String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
+		String qPath = "/order/cartServiceOption/privateCloudReseller/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "cartId", cartId);
+		addBody(o, "planCode", planCode);
+		addBody(o, "duration", duration);
+		addBody(o, "pricingMode", pricingMode);
+		addBody(o, "quantity", quantity);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhItem.class);
+	}
+
+	/**
+	 * Get informations about additional Private Cloud Enterprise offer for your service
+	 *
+	 * REST: GET /order/cartServiceOption/privateCloudReseller/{serviceName}/Enterprise
+	 * @param serviceName [required] The private cloud service name
+	 */
+	public ArrayList<OvhGenericOptionDefinition> cartServiceOption_privateCloudReseller_serviceName_Enterprise_GET(String serviceName) throws IOException {
+		String qPath = "/order/cartServiceOption/privateCloudReseller/{serviceName}/Enterprise";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+
+	/**
+	 * Post an additional Private Cloud Enterprise option in your cart
+	 *
+	 * REST: POST /order/cartServiceOption/privateCloudReseller/{serviceName}/Enterprise
+	 * @param cartId [required] Cart identifier
+	 * @param planCode [required] Identifier of the additional private cloud enterprise offer
+	 * @param duration [required] Duration selected for the purchase of the product
+	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
+	 * @param quantity [required] Quantity of product desired
+	 * @param serviceName [required] The private cloud service name
+	 */
+	public OvhItem cartServiceOption_privateCloudReseller_serviceName_Enterprise_POST(String serviceName, String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
+		String qPath = "/order/cartServiceOption/privateCloudReseller/{serviceName}/Enterprise";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "cartId", cartId);
+		addBody(o, "planCode", planCode);
+		addBody(o, "duration", duration);
+		addBody(o, "pricingMode", pricingMode);
+		addBody(o, "quantity", quantity);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhItem.class);
+	}
+
+	/**
+	 * List available services
+	 *
+	 * REST: GET /order/cartServiceOption/privateCloudReseller
+	 */
+	public ArrayList<String> cartServiceOption_privateCloudReseller_GET() throws IOException {
+		String qPath = "/order/cartServiceOption/privateCloudReseller";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Get informations about additional EmailPro offer for your service
+	 *
+	 * REST: GET /order/cartServiceOption/emailpro/{serviceName}
+	 * @param serviceName [required] The internal ID of EmailPro service
+	 */
+	public ArrayList<OvhGenericOptionDefinition> cartServiceOption_emailpro_serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/order/cartServiceOption/emailpro/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+
+	/**
+	 * Post an additional EmailPro option in your cart
+	 *
+	 * REST: POST /order/cartServiceOption/emailpro/{serviceName}
+	 * @param cartId [required] Cart identifier
+	 * @param planCode [required] Identifier of the additional EmailPro offer
+	 * @param duration [required] Duration selected for the purchase of the product
+	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
+	 * @param quantity [required] Quantity of product desired
+	 * @param serviceName [required] The internal ID of EmailPro service
+	 */
+	public OvhItem cartServiceOption_emailpro_serviceName_POST(String serviceName, String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
+		String qPath = "/order/cartServiceOption/emailpro/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "cartId", cartId);
+		addBody(o, "planCode", planCode);
+		addBody(o, "duration", duration);
+		addBody(o, "pricingMode", pricingMode);
+		addBody(o, "quantity", quantity);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhItem.class);
+	}
+
+	/**
+	 * List available services
+	 *
+	 * REST: GET /order/cartServiceOption/emailpro
+	 */
+	public ArrayList<String> cartServiceOption_emailpro_GET() throws IOException {
+		String qPath = "/order/cartServiceOption/emailpro";
 		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
@@ -7014,6 +7377,80 @@ public class ApiOvhOrder extends ApiOvhBase {
 	}
 
 	/**
+	 * Get informations about Private Cloud Reseller Enterprise offers
+	 *
+	 * REST: GET /order/cart/{cartId}/privateCloudResellerEnterprise
+	 * @param cartId [required] Cart identifier
+	 */
+	public ArrayList<OvhGenericProductDefinition> cart_cartId_privateCloudResellerEnterprise_GET(String cartId) throws IOException {
+		String qPath = "/order/cart/{cartId}/privateCloudResellerEnterprise";
+		StringBuilder sb = path(qPath, cartId);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Post a new Private Cloud Reseller Enterprise item in your cart
+	 *
+	 * REST: POST /order/cart/{cartId}/privateCloudResellerEnterprise
+	 * @param cartId [required] Cart identifier
+	 * @param planCode [required] Identifier of the Private Cloud Reseller Enterprise offer
+	 * @param duration [required] Duration selected for the purchase of the product
+	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
+	 * @param quantity [required] Quantity of product desired
+	 */
+	public OvhItem cart_cartId_privateCloudResellerEnterprise_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
+		String qPath = "/order/cart/{cartId}/privateCloudResellerEnterprise";
+		StringBuilder sb = path(qPath, cartId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "planCode", planCode);
+		addBody(o, "duration", duration);
+		addBody(o, "pricingMode", pricingMode);
+		addBody(o, "quantity", quantity);
+		String resp = execN(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhItem.class);
+	}
+
+	/**
+	 * Get informations about Private Cloud Reseller Enterprise options
+	 *
+	 * REST: GET /order/cart/{cartId}/privateCloudResellerEnterprise/options
+	 * @param cartId [required] Cart identifier
+	 * @param planCode [required] Identifier of the Private Cloud Reseller Enterprise you want to consult options
+	 */
+	public ArrayList<OvhGenericOptionDefinition> cart_cartId_privateCloudResellerEnterprise_options_GET(String cartId, String planCode) throws IOException {
+		String qPath = "/order/cart/{cartId}/privateCloudResellerEnterprise/options";
+		StringBuilder sb = path(qPath, cartId);
+		query(sb, "planCode", planCode);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+
+	/**
+	 * Post a new Private Cloud Reseller Enterprise option in your cart
+	 *
+	 * REST: POST /order/cart/{cartId}/privateCloudResellerEnterprise/options
+	 * @param cartId [required] Cart identifier
+	 * @param itemId [required] Cart item to be linked
+	 * @param planCode [required] Identifier of a Private Cloud Reseller Enterprise option offer
+	 * @param duration [required] Duration selected for the purchase of the product
+	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
+	 * @param quantity [required] Quantity of product desired
+	 */
+	public OvhItem cart_cartId_privateCloudResellerEnterprise_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
+		String qPath = "/order/cart/{cartId}/privateCloudResellerEnterprise/options";
+		StringBuilder sb = path(qPath, cartId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "itemId", itemId);
+		addBody(o, "planCode", planCode);
+		addBody(o, "duration", duration);
+		addBody(o, "pricingMode", pricingMode);
+		addBody(o, "quantity", quantity);
+		String resp = execN(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhItem.class);
+	}
+
+	/**
 	 * Get informations about SSL Gateway offers
 	 *
 	 * REST: GET /order/cart/{cartId}/sslGateway
@@ -7088,30 +7525,30 @@ public class ApiOvhOrder extends ApiOvhBase {
 	}
 
 	/**
-	 * Get informations about Docker offers
+	 * Get informations about Veeam Enterprise offers
 	 *
-	 * REST: GET /order/cart/{cartId}/docker
+	 * REST: GET /order/cart/{cartId}/veeamEnterprise
 	 * @param cartId [required] Cart identifier
 	 */
-	public ArrayList<OvhGenericProductDefinition> cart_cartId_docker_GET(String cartId) throws IOException {
-		String qPath = "/order/cart/{cartId}/docker";
+	public ArrayList<OvhGenericProductDefinition> cart_cartId_veeamEnterprise_GET(String cartId) throws IOException {
+		String qPath = "/order/cart/{cartId}/veeamEnterprise";
 		StringBuilder sb = path(qPath, cartId);
 		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
 	/**
-	 * Post a new Docker item in your cart
+	 * Post a new Veeam Enterprise item in your cart
 	 *
-	 * REST: POST /order/cart/{cartId}/docker
+	 * REST: POST /order/cart/{cartId}/veeamEnterprise
 	 * @param cartId [required] Cart identifier
-	 * @param planCode [required] Identifier of the Docker offer
+	 * @param planCode [required] Identifier of the Veeam Enterprise offer
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
 	 */
-	public OvhItem cart_cartId_docker_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
-		String qPath = "/order/cart/{cartId}/docker";
+	public OvhItem cart_cartId_veeamEnterprise_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
+		String qPath = "/order/cart/{cartId}/veeamEnterprise";
 		StringBuilder sb = path(qPath, cartId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "planCode", planCode);
@@ -7123,14 +7560,14 @@ public class ApiOvhOrder extends ApiOvhBase {
 	}
 
 	/**
-	 * Get informations about Docker options
+	 * Get informations about Veeam Enterprise options
 	 *
-	 * REST: GET /order/cart/{cartId}/docker/options
+	 * REST: GET /order/cart/{cartId}/veeamEnterprise/options
 	 * @param cartId [required] Cart identifier
-	 * @param planCode [required] Identifier of the Docker you want to consult options
+	 * @param planCode [required] Identifier of the Veeam Enterprise you want to consult options
 	 */
-	public ArrayList<OvhGenericOptionDefinition> cart_cartId_docker_options_GET(String cartId, String planCode) throws IOException {
-		String qPath = "/order/cart/{cartId}/docker/options";
+	public ArrayList<OvhGenericOptionDefinition> cart_cartId_veeamEnterprise_options_GET(String cartId, String planCode) throws IOException {
+		String qPath = "/order/cart/{cartId}/veeamEnterprise/options";
 		StringBuilder sb = path(qPath, cartId);
 		query(sb, "planCode", planCode);
 		String resp = execN(qPath, "GET", sb.toString(), null);
@@ -7138,18 +7575,18 @@ public class ApiOvhOrder extends ApiOvhBase {
 	}
 
 	/**
-	 * Post a new Docker option in your cart
+	 * Post a new Veeam Enterprise option in your cart
 	 *
-	 * REST: POST /order/cart/{cartId}/docker/options
+	 * REST: POST /order/cart/{cartId}/veeamEnterprise/options
 	 * @param cartId [required] Cart identifier
 	 * @param itemId [required] Cart item to be linked
-	 * @param planCode [required] Identifier of a Docker option offer
+	 * @param planCode [required] Identifier of a Veeam Enterprise option offer
 	 * @param duration [required] Duration selected for the purchase of the product
 	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
 	 * @param quantity [required] Quantity of product desired
 	 */
-	public OvhItem cart_cartId_docker_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
-		String qPath = "/order/cart/{cartId}/docker/options";
+	public OvhItem cart_cartId_veeamEnterprise_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
+		String qPath = "/order/cart/{cartId}/veeamEnterprise/options";
 		StringBuilder sb = path(qPath, cartId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "itemId", itemId);
@@ -7563,6 +8000,154 @@ public class ApiOvhOrder extends ApiOvhBase {
 	 */
 	public OvhItem cart_cartId_office365Prepaid_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
 		String qPath = "/order/cart/{cartId}/office365Prepaid/options";
+		StringBuilder sb = path(qPath, cartId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "itemId", itemId);
+		addBody(o, "planCode", planCode);
+		addBody(o, "duration", duration);
+		addBody(o, "pricingMode", pricingMode);
+		addBody(o, "quantity", quantity);
+		String resp = execN(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhItem.class);
+	}
+
+	/**
+	 * Get informations about Private Cloud Reseller offers
+	 *
+	 * REST: GET /order/cart/{cartId}/privateCloudReseller
+	 * @param cartId [required] Cart identifier
+	 */
+	public ArrayList<OvhGenericProductDefinition> cart_cartId_privateCloudReseller_GET(String cartId) throws IOException {
+		String qPath = "/order/cart/{cartId}/privateCloudReseller";
+		StringBuilder sb = path(qPath, cartId);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Post a new Private Cloud Reseller item in your cart
+	 *
+	 * REST: POST /order/cart/{cartId}/privateCloudReseller
+	 * @param cartId [required] Cart identifier
+	 * @param planCode [required] Identifier of the Private Cloud Reseller offer
+	 * @param duration [required] Duration selected for the purchase of the product
+	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
+	 * @param quantity [required] Quantity of product desired
+	 */
+	public OvhItem cart_cartId_privateCloudReseller_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
+		String qPath = "/order/cart/{cartId}/privateCloudReseller";
+		StringBuilder sb = path(qPath, cartId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "planCode", planCode);
+		addBody(o, "duration", duration);
+		addBody(o, "pricingMode", pricingMode);
+		addBody(o, "quantity", quantity);
+		String resp = execN(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhItem.class);
+	}
+
+	/**
+	 * Get informations about Private Cloud Reseller options
+	 *
+	 * REST: GET /order/cart/{cartId}/privateCloudReseller/options
+	 * @param cartId [required] Cart identifier
+	 * @param planCode [required] Identifier of the Private Cloud Reseller you want to consult options
+	 */
+	public ArrayList<OvhGenericOptionDefinition> cart_cartId_privateCloudReseller_options_GET(String cartId, String planCode) throws IOException {
+		String qPath = "/order/cart/{cartId}/privateCloudReseller/options";
+		StringBuilder sb = path(qPath, cartId);
+		query(sb, "planCode", planCode);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+
+	/**
+	 * Post a new Private Cloud Reseller option in your cart
+	 *
+	 * REST: POST /order/cart/{cartId}/privateCloudReseller/options
+	 * @param cartId [required] Cart identifier
+	 * @param itemId [required] Cart item to be linked
+	 * @param planCode [required] Identifier of a Private Cloud Reseller option offer
+	 * @param duration [required] Duration selected for the purchase of the product
+	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
+	 * @param quantity [required] Quantity of product desired
+	 */
+	public OvhItem cart_cartId_privateCloudReseller_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
+		String qPath = "/order/cart/{cartId}/privateCloudReseller/options";
+		StringBuilder sb = path(qPath, cartId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "itemId", itemId);
+		addBody(o, "planCode", planCode);
+		addBody(o, "duration", duration);
+		addBody(o, "pricingMode", pricingMode);
+		addBody(o, "quantity", quantity);
+		String resp = execN(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhItem.class);
+	}
+
+	/**
+	 * Get informations about xdsl offers
+	 *
+	 * REST: GET /order/cart/{cartId}/xdsl
+	 * @param cartId [required] Cart identifier
+	 */
+	public ArrayList<OvhGenericProductDefinition> cart_cartId_xdsl_GET(String cartId) throws IOException {
+		String qPath = "/order/cart/{cartId}/xdsl";
+		StringBuilder sb = path(qPath, cartId);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Post a new xdsl item in your cart
+	 *
+	 * REST: POST /order/cart/{cartId}/xdsl
+	 * @param cartId [required] Cart identifier
+	 * @param planCode [required] Identifier of the xdsl offer
+	 * @param duration [required] Duration selected for the purchase of the product
+	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
+	 * @param quantity [required] Quantity of product desired
+	 */
+	public OvhItem cart_cartId_xdsl_POST(String cartId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
+		String qPath = "/order/cart/{cartId}/xdsl";
+		StringBuilder sb = path(qPath, cartId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "planCode", planCode);
+		addBody(o, "duration", duration);
+		addBody(o, "pricingMode", pricingMode);
+		addBody(o, "quantity", quantity);
+		String resp = execN(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhItem.class);
+	}
+
+	/**
+	 * Get informations about xdsl options
+	 *
+	 * REST: GET /order/cart/{cartId}/xdsl/options
+	 * @param cartId [required] Cart identifier
+	 * @param planCode [required] Identifier of the xdsl you want to consult options
+	 */
+	public ArrayList<OvhGenericOptionDefinition> cart_cartId_xdsl_options_GET(String cartId, String planCode) throws IOException {
+		String qPath = "/order/cart/{cartId}/xdsl/options";
+		StringBuilder sb = path(qPath, cartId);
+		query(sb, "planCode", planCode);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+
+	/**
+	 * Post a new xdsl option in your cart
+	 *
+	 * REST: POST /order/cart/{cartId}/xdsl/options
+	 * @param cartId [required] Cart identifier
+	 * @param itemId [required] Cart item to be linked
+	 * @param planCode [required] Identifier of a xdsl option offer
+	 * @param duration [required] Duration selected for the purchase of the product
+	 * @param pricingMode [required] Pricing mode selected for the purchase of the product
+	 * @param quantity [required] Quantity of product desired
+	 */
+	public OvhItem cart_cartId_xdsl_options_POST(String cartId, Long itemId, String planCode, String duration, String pricingMode, Long quantity) throws IOException {
+		String qPath = "/order/cart/{cartId}/xdsl/options";
 		StringBuilder sb = path(qPath, cartId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "itemId", itemId);

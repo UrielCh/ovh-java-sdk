@@ -9,6 +9,13 @@ import net.minidev.ovh.api.xdsl.OvhGtrEnum;
  */
 public class OvhOffer {
 	/**
+	 * Estimated or guaranteed upload rate in Mbit/s, if applicable
+	 *
+	 * canBeNull
+	 */
+	public Double uploadRate;
+
+	/**
 	 * Is copper lines desaturation needed and available for this offer ?
 	 *
 	 * canBeNull
@@ -16,28 +23,35 @@ public class OvhOffer {
 	public Boolean desaturation;
 
 	/**
-	 * The allowed gtr (none, 4ho : 4 work hours, 4hno : 4 unworked hours)
+	 * Estimated or guaranteed download rate in Mbit/s, if applicable
+	 *
+	 * canBeNull
+	 */
+	public Double downloadRate;
+
+	/**
+	 * Allowed GTR (none, 4ho : 4 work hours, 4hno : 4 unworked hours)
 	 *
 	 * canBeNull
 	 */
 	public OvhGtrEnum[] gtr;
 
 	/**
-	 * The provider, if applicable
+	 * Provider, if applicable
 	 *
 	 * canBeNull
 	 */
 	public OvhProviderEnum provider;
 
 	/**
-	 * The estimated or guaranteed rate in Mbit/s, if applicable
+	 * DEPRECATED Please use downloadRate instead /DEPRECATED - Estimated or guaranteed rate in Mbit/s, if applicable
 	 *
 	 * canBeNull
 	 */
 	public Double rate;
 
 	/**
-	 * The allowed unbundling
+	 * Allowed unbundling methods
 	 *
 	 * canBeNull
 	 */
@@ -51,21 +65,21 @@ public class OvhOffer {
 	public Boolean guaranteed;
 
 	/**
-	 * The offer label
+	 * Offer label
 	 *
 	 * canBeNull
 	 */
 	public String label;
 
 	/**
-	 * The DSL technology
+	 * DSL technology
 	 *
 	 * canBeNull
 	 */
 	public OvhDslTypeEnum type;
 
 	/**
-	 * The number if pairs to use
+	 * Number of pairs to use
 	 *
 	 * canBeNull
 	 */

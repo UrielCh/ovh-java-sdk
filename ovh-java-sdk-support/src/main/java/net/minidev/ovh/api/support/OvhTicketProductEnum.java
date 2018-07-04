@@ -19,10 +19,13 @@ public enum OvhTicketProductEnum {
 	fax("fax"),
 	hosting("hosting"),
 	housing("housing"),
+	iaas("iaas"),
 	mail("mail"),
+	network("network"),
 	publiccloud("publiccloud"),
 	sms("sms"),
 	ssl("ssl"),
+	storage("storage"),
 	@JsonProperty("telecom-billing")
 	telecom_billing("telecom-billing"),
 	@JsonProperty("telecom-other")

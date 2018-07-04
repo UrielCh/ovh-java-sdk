@@ -29,6 +29,7 @@ import net.minidev.ovh.api.hosting.web.OvhOfferEnum;
 import net.minidev.ovh.api.hosting.web.OvhOvhConfig;
 import net.minidev.ovh.api.hosting.web.OvhOwnLogs;
 import net.minidev.ovh.api.hosting.web.OvhRequestActionEnum;
+import net.minidev.ovh.api.hosting.web.OvhRuntime;
 import net.minidev.ovh.api.hosting.web.OvhService;
 import net.minidev.ovh.api.hosting.web.OvhSsl;
 import net.minidev.ovh.api.hosting.web.OvhSslReport;
@@ -62,6 +63,7 @@ import net.minidev.ovh.api.hosting.web.ovhconfig.OvhHttpFirewallEnum;
 import net.minidev.ovh.api.hosting.web.task.OvhStatusEnum;
 import net.minidev.ovh.api.hosting.web.user.OvhSshStateEnum;
 import net.minidev.ovh.api.service.OvhRenewType;
+import net.minidev.ovh.api.service.OvhTerminationFutureUseEnum;
 import net.minidev.ovh.api.service.OvhTerminationReasonEnum;
 import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
@@ -428,15 +430,17 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 * Confirm termination of your service
 	 *
 	 * REST: POST /hosting/web/{serviceName}/confirmTermination
+	 * @param futureUse What next after your termination request
 	 * @param reason Reason of your termination request
 	 * @param commentary Commentary about your termination request
 	 * @param token [required] The termination token sent by mail to the admin contact
 	 * @param serviceName [required] The internal name of your hosting
 	 */
-	public String serviceName_confirmTermination_POST(String serviceName, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
+	public String serviceName_confirmTermination_POST(String serviceName, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/confirmTermination";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "futureUse", futureUse);
 		addBody(o, "reason", reason);
 		addBody(o, "commentary", commentary);
 		addBody(o, "token", token);
@@ -514,6 +518,107 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName, date);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhBoostHistory.class);
+	}
+
+	/**
+	 * List of runtime configurations to your hosting
+	 *
+	 * REST: GET /hosting/web/{serviceName}/runtime
+	 * @param name [required] Filter the value of name property (like)
+	 * @param type [required] Filter the value of type property (=)
+	 * @param serviceName [required] The internal name of your hosting
+	 */
+	public ArrayList<Long> serviceName_runtime_GET(String serviceName, String name, net.minidev.ovh.api.hosting.web.runtime.OvhTypeEnum type) throws IOException {
+		String qPath = "/hosting/web/{serviceName}/runtime";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "name", name);
+		query(sb, "type", type);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t5);
+	}
+
+	/**
+	 * Request the creation of a new runtime configuration
+	 *
+	 * REST: POST /hosting/web/{serviceName}/runtime
+	 * @param attachedDomains [required] The attached domains fqdn to link to this runtime configuration
+	 * @param appEnv [required] The client application environment
+	 * @param publicDir [required] The client application public directory
+	 * @param isDefault [required] Set if the runtime configuration is the one by default for the hosting
+	 * @param name [required] The custom display name of the runtime configuration
+	 * @param type [required] The backend type of a runtime configuration
+	 * @param appBootstrap [required] The client application bootstrap script
+	 * @param serviceName [required] The internal name of your hosting
+	 */
+	public OvhTask serviceName_runtime_POST(String serviceName, String[] attachedDomains, String appEnv, String publicDir, Boolean isDefault, String name, net.minidev.ovh.api.hosting.web.runtime.OvhTypeEnum type, String appBootstrap) throws IOException {
+		String qPath = "/hosting/web/{serviceName}/runtime";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "attachedDomains", attachedDomains);
+		addBody(o, "appEnv", appEnv);
+		addBody(o, "publicDir", publicDir);
+		addBody(o, "isDefault", isDefault);
+		addBody(o, "name", name);
+		addBody(o, "type", type);
+		addBody(o, "appBootstrap", appBootstrap);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /hosting/web/{serviceName}/runtime/{id}
+	 * @param serviceName [required] The internal name of your hosting
+	 * @param id [required] The runtime configuration ID
+	 */
+	public OvhRuntime serviceName_runtime_id_GET(String serviceName, Long id) throws IOException {
+		String qPath = "/hosting/web/{serviceName}/runtime/{id}";
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhRuntime.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /hosting/web/{serviceName}/runtime/{id}
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your hosting
+	 * @param id [required] The runtime configuration ID
+	 */
+	public void serviceName_runtime_id_PUT(String serviceName, Long id, OvhRuntime body) throws IOException {
+		String qPath = "/hosting/web/{serviceName}/runtime/{id}";
+		StringBuilder sb = path(qPath, serviceName, id);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Delete a runtime configuration of an hosting
+	 *
+	 * REST: DELETE /hosting/web/{serviceName}/runtime/{id}
+	 * @param serviceName [required] The internal name of your hosting
+	 * @param id [required] The runtime configuration ID
+	 */
+	public OvhTask serviceName_runtime_id_DELETE(String serviceName, Long id) throws IOException {
+		String qPath = "/hosting/web/{serviceName}/runtime/{id}";
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get the attached domains linked to this runtime configuration
+	 *
+	 * REST: GET /hosting/web/{serviceName}/runtime/{id}/attachedDomains
+	 * @param serviceName [required] The internal name of your hosting
+	 * @param id [required] The runtime configuration ID
+	 */
+	public ArrayList<String> serviceName_runtime_id_attachedDomains_GET(String serviceName, Long id) throws IOException {
+		String qPath = "/hosting/web/{serviceName}/runtime/{id}/attachedDomains";
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t4);
 	}
 
 	/**
@@ -918,6 +1023,22 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	}
 
 	/**
+	 * List available runtime configurations available backend types
+	 *
+	 * REST: GET /hosting/web/{serviceName}/runtimeAvailableTypes
+	 * @param language [required] Specific programming language to filter
+	 * @param serviceName [required] The internal name of your hosting
+	 */
+	public ArrayList<net.minidev.ovh.api.hosting.web.runtime.OvhTypeEnum> serviceName_runtimeAvailableTypes_GET(String serviceName, String language) throws IOException {
+		String qPath = "/hosting/web/{serviceName}/runtimeAvailableTypes";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "language", language);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t9);
+	}
+	private static TypeReference<ArrayList<net.minidev.ovh.api.hosting.web.runtime.OvhTypeEnum>> t9 = new TypeReference<ArrayList<net.minidev.ovh.api.hosting.web.runtime.OvhTypeEnum>>() {};
+
+	/**
 	 * Module installed on your hosting
 	 *
 	 * REST: GET /hosting/web/{serviceName}/module
@@ -1145,9 +1266,9 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 		String qPath = "/hosting/web/{serviceName}/databaseAvailableType";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t9);
+		return convertTo(resp, t10);
 	}
-	private static TypeReference<ArrayList<OvhDatabaseTypeEnum>> t9 = new TypeReference<ArrayList<OvhDatabaseTypeEnum>>() {};
+	private static TypeReference<ArrayList<OvhDatabaseTypeEnum>> t10 = new TypeReference<ArrayList<OvhDatabaseTypeEnum>>() {};
 
 	/**
 	 * Databases linked to your hosting
@@ -1492,6 +1613,20 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	}
 
 	/**
+	 * Restart the virtual host of the attached domain
+	 *
+	 * REST: POST /hosting/web/{serviceName}/attachedDomain/{domain}/restart
+	 * @param serviceName [required] The internal name of your hosting
+	 * @param domain [required] Domain linked (fqdn)
+	 */
+	public OvhTask serviceName_attachedDomain_domain_restart_POST(String serviceName, String domain) throws IOException {
+		String qPath = "/hosting/web/{serviceName}/attachedDomain/{domain}/restart";
+		StringBuilder sb = path(qPath, serviceName, domain);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /hosting/web/{serviceName}/attachedDomain/{domain}
@@ -1574,9 +1709,10 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 	 * @param ssl [required] Put domain in ssl certificate
 	 * @param firewall [required] Firewall state for this path
 	 * @param path [required] Domain's path, relative to your home directory
+	 * @param runtimeId [required] The runtime configuration ID linked to this attached domain
 	 * @param serviceName [required] The internal name of your hosting
 	 */
-	public OvhTask serviceName_attachedDomain_POST(String serviceName, OvhCdnEnum cdn, String domain, String ownLog, Boolean ssl, OvhFirewallEnum firewall, String path) throws IOException {
+	public OvhTask serviceName_attachedDomain_POST(String serviceName, OvhCdnEnum cdn, String domain, String ownLog, Boolean ssl, OvhFirewallEnum firewall, String path, Long runtimeId) throws IOException {
 		String qPath = "/hosting/web/{serviceName}/attachedDomain";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
@@ -1586,6 +1722,7 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 		addBody(o, "ssl", ssl);
 		addBody(o, "firewall", firewall);
 		addBody(o, "path", path);
+		addBody(o, "runtimeId", runtimeId);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
@@ -1904,9 +2041,9 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 		StringBuilder sb = path(qPath);
 		query(sb, "domain", domain);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t10);
+		return convertTo(resp, t11);
 	}
-	private static TypeReference<ArrayList<OvhOfferEnum>> t10 = new TypeReference<ArrayList<OvhOfferEnum>>() {};
+	private static TypeReference<ArrayList<OvhOfferEnum>> t11 = new TypeReference<ArrayList<OvhOfferEnum>>() {};
 
 	/**
 	 * IDs of all modules available

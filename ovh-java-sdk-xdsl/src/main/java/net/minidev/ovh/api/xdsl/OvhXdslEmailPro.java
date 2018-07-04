@@ -2,9 +2,7 @@ package net.minidev.ovh.api.xdsl;
 
 import java.util.Date;
 import net.minidev.ovh.api.complextype.OvhUnitAndValue;
-import net.minidev.ovh.api.email.pro.OvhMailingFilterEnum;
 import net.minidev.ovh.api.email.pro.OvhObjectStateEnum;
-import net.minidev.ovh.api.email.pro.OvhSpamAndVirusConfiguration;
 
 /**
  * XDSL Email Pro
@@ -25,13 +23,6 @@ public class OvhXdslEmailPro {
 	public String initial;
 
 	/**
-	 * Account display name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String displayName;
-
-	/**
 	 * Time of account's password last update
 	 *
 	 * canBeNull && readOnly
@@ -39,11 +30,11 @@ public class OvhXdslEmailPro {
 	public Date passwordLastUpdate;
 
 	/**
-	 * Enable or disable anti-virus and anti-spam
+	 * Account display name
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhMailingFilterEnum[] mailingFilter;
+	public String displayName;
 
 	/**
 	 * Mailbox usage
@@ -58,13 +49,6 @@ public class OvhXdslEmailPro {
 	 * canBeNull && readOnly
 	 */
 	public String login;
-
-	/**
-	 * Spam and Antivirus configuration
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhSpamAndVirusConfiguration spamAndVirusConfiguration;
 
 	/**
 	 * Default email for this mailbox

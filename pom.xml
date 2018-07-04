@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.minidev</groupId>
 	<artifactId>ovh-java-sdk-pom</artifactId>
-	<version>0.9.13</version>
+	<version>0.9.14</version>
 	<packaging>pom</packaging>
 	<name>OVH SDK for Java</name>
 	<description>OVH ...</description>
@@ -218,6 +218,7 @@
 		<module>ovh-java-sdk-cdnwebstorage</module>
 		<module>ovh-java-sdk-cloud</module>
 		<module>ovh-java-sdk-clusterhadoop</module>
+		<module>ovh-java-sdk-contact</module>
 		<module>ovh-java-sdk-dbaaslogs</module>
 		<module>ovh-java-sdk-dbaasqueue</module>
 		<module>ovh-java-sdk-dbaastimeseries</module>

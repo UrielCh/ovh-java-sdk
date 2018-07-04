@@ -15,6 +15,13 @@ public class OvhCapabilities {
 	public OvhCreationDatabaseCapabilities[] databases;
 
 	/**
+	 * Language available for cron script
+	 *
+	 * canBeNull
+	 */
+	public OvhCronLanguageAvailable languages;
+
+	/**
 	 * Does the offer allow 1-click modules?
 	 *
 	 * canBeNull
@@ -36,11 +43,11 @@ public class OvhCapabilities {
 	public Long attachedDomains;
 
 	/**
-	 * Does the offer allow environment variables?
+	 * Number of environment variables allowed for your hosting
 	 *
 	 * canBeNull
 	 */
-	public Boolean envVars;
+	public Long envVars;
 
 	/**
 	 * Does the offer allow SSH access
@@ -71,11 +78,25 @@ public class OvhCapabilities {
 	public OvhCreationEmailCapabilities emails;
 
 	/**
-	 * Disk capacity available for your hosting ( null for unlimited )
+	 * Marketing information about the current offer
 	 *
 	 * canBeNull
 	 */
-	public OvhUnitAndValue<Double> disk;
+	public OvhHighLightEnum highlight;
+
+	/**
+	 * Disk capacity and type available for your hosting ( null for unlimited )
+	 *
+	 * canBeNull
+	 */
+	public OvhDiskType disk;
+
+	/**
+	 * Number of runtimes allowed for your hosting
+	 *
+	 * canBeNull
+	 */
+	public Long runtimes;
 
 	/**
 	 * Number of ftp user you can create

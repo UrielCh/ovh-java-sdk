@@ -62,6 +62,8 @@ import net.minidev.ovh.api.domain.OvhNicOperationFunctionEnum;
 import net.minidev.ovh.api.domain.OvhOperationStatusEnum;
 import net.minidev.ovh.api.geolocation.OvhContinentCountryLocation;
 import net.minidev.ovh.api.insight.OvhAccess;
+import net.minidev.ovh.api.me.consent.OvhCampaign;
+import net.minidev.ovh.api.me.consent.OvhConsent;
 import net.minidev.ovh.api.nichandle.OvhCountryEnum;
 import net.minidev.ovh.api.nichandle.OvhDeveloperModeRestriction;
 import net.minidev.ovh.api.nichandle.OvhDomainTask;
@@ -79,10 +81,12 @@ import net.minidev.ovh.api.nichandle.OvhLegalFormEnum;
 import net.minidev.ovh.api.nichandle.OvhNicAutorenewInfos;
 import net.minidev.ovh.api.nichandle.OvhNichandle;
 import net.minidev.ovh.api.nichandle.OvhOvhCompanyEnum;
+import net.minidev.ovh.api.nichandle.OvhRoleEnum;
 import net.minidev.ovh.api.nichandle.OvhSshKey;
 import net.minidev.ovh.api.nichandle.OvhSubAccount;
 import net.minidev.ovh.api.nichandle.OvhSubAccountConsumerKey;
 import net.minidev.ovh.api.nichandle.OvhSubscription;
+import net.minidev.ovh.api.nichandle.OvhUser;
 import net.minidev.ovh.api.nichandle.OvhVipStatus;
 import net.minidev.ovh.api.nichandle.OvhVoucherStatus;
 import net.minidev.ovh.api.nichandle.accessrestriction.OvhIpRestrictionRuleEnum;
@@ -97,6 +101,7 @@ import net.minidev.ovh.api.nichandle.accessrestriction.OvhTOTPSecret;
 import net.minidev.ovh.api.nichandle.accessrestriction.OvhU2FAccount;
 import net.minidev.ovh.api.nichandle.accessrestriction.OvhU2FRegisterChallenge;
 import net.minidev.ovh.api.nichandle.accessrestriction.OvhU2FSignChallenge;
+import net.minidev.ovh.api.nichandle.authentication.OvhGroup;
 import net.minidev.ovh.api.nichandle.changeemail.OvhTaskStateEnum;
 import net.minidev.ovh.api.nichandle.document.OvhDocument;
 import net.minidev.ovh.api.nichandle.emailchange.OvhTask;
@@ -2260,6 +2265,18 @@ public class ApiOvhMe extends ApiOvhBase {
 	private static TypeReference<ArrayList<OvhFieldInformation>> t5 = new TypeReference<ArrayList<OvhFieldInformation>>() {};
 
 	/**
+	 * Fetch visitor country & region
+	 *
+	 * REST: POST /me/geolocation
+	 */
+	public OvhContinentCountryLocation geolocation_POST() throws IOException {
+		String qPath = "/me/geolocation";
+		StringBuilder sb = path(qPath);
+		String resp = execN(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhContinentCountryLocation.class);
+	}
+
+	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /me/fidelityAccount/movements/{movementId}
@@ -2352,18 +2369,6 @@ public class ApiOvhMe extends ApiOvhBase {
 		addBody(o, "newEmail", newEmail);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Fetch visitor country & region
-	 *
-	 * REST: POST /me/geolocation
-	 */
-	public OvhContinentCountryLocation geolocation_POST() throws IOException {
-		String qPath = "/me/geolocation";
-		StringBuilder sb = path(qPath);
-		String resp = execN(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, OvhContinentCountryLocation.class);
 	}
 
 	/**
@@ -3366,6 +3371,18 @@ public class ApiOvhMe extends ApiOvhBase {
 	}
 
 	/**
+	 * Delete this organisation
+	 *
+	 * REST: DELETE /me/ipOrganisation/{organisationId}
+	 * @param organisationId [required]
+	 */
+	public void ipOrganisation_organisationId_DELETE(String organisationId) throws IOException {
+		String qPath = "/me/ipOrganisation/{organisationId}";
+		StringBuilder sb = path(qPath, organisationId);
+		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
 	 * Get all certificates of the account
 	 *
 	 * REST: GET /me/certificates
@@ -3455,6 +3472,181 @@ public class ApiOvhMe extends ApiOvhBase {
 		addBody(o, "key", key);
 		addBody(o, "keyName", keyName);
 		exec(qPath, "POST", sb.toString(), o);
+	}
+
+	/**
+	 * Retrieve all groups of this account
+	 *
+	 * REST: GET /me/identity/group
+	 */
+	public ArrayList<String> identity_group_GET() throws IOException {
+		String qPath = "/me/identity/group";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Create a new group
+	 *
+	 * REST: POST /me/identity/group
+	 * @param name [required] Group's name
+	 * @param description [required] Group's description
+	 * @param role [required] Group's Role
+	 */
+	public OvhGroup identity_group_POST(String name, String description, OvhRoleEnum role) throws IOException {
+		String qPath = "/me/identity/group";
+		StringBuilder sb = path(qPath);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "name", name);
+		addBody(o, "description", description);
+		addBody(o, "role", role);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhGroup.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /me/identity/group/{group}
+	 * @param group [required] Group's name
+	 */
+	public OvhGroup identity_group_group_GET(String group) throws IOException {
+		String qPath = "/me/identity/group/{group}";
+		StringBuilder sb = path(qPath, group);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhGroup.class);
+	}
+
+	/**
+	 * Delete this object
+	 *
+	 * REST: DELETE /me/identity/group/{group}
+	 * @param group [required] Group's name
+	 */
+	public void identity_group_group_DELETE(String group) throws IOException {
+		String qPath = "/me/identity/group/{group}";
+		StringBuilder sb = path(qPath, group);
+		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
+	 * Alter a group
+	 *
+	 * REST: PUT /me/identity/group/{group}
+	 * @param group [required] Group's name
+	 * @param description [required] Group's description
+	 * @param role [required] Group's role
+	 */
+	public void identity_group_group_PUT(String group, String description, OvhRoleEnum role) throws IOException {
+		String qPath = "/me/identity/group/{group}";
+		StringBuilder sb = path(qPath, group);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "description", description);
+		addBody(o, "role", role);
+		exec(qPath, "PUT", sb.toString(), o);
+	}
+
+	/**
+	 * Retrieve all users of this account
+	 *
+	 * REST: GET /me/identity/user
+	 */
+	public ArrayList<String> identity_user_GET() throws IOException {
+		String qPath = "/me/identity/user";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Create a new user
+	 *
+	 * REST: POST /me/identity/user
+	 * @param login [required] User's login
+	 * @param description [required] User's description
+	 * @param email [required] User's email
+	 * @param password [required] User's password
+	 * @param group [required] User's group
+	 */
+	public void identity_user_POST(String login, String description, String email, String password, String group) throws IOException {
+		String qPath = "/me/identity/user";
+		StringBuilder sb = path(qPath);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "login", login);
+		addBody(o, "description", description);
+		addBody(o, "email", email);
+		addBody(o, "password", password);
+		addBody(o, "group", group);
+		exec(qPath, "POST", sb.toString(), o);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /me/identity/user/{user}
+	 * @param user [required] User's login
+	 */
+	public OvhUser identity_user_user_GET(String user) throws IOException {
+		String qPath = "/me/identity/user/{user}";
+		StringBuilder sb = path(qPath, user);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhUser.class);
+	}
+
+	/**
+	 * Delete this object
+	 *
+	 * REST: DELETE /me/identity/user/{user}
+	 * @param user [required] User's login
+	 */
+	public void identity_user_user_DELETE(String user) throws IOException {
+		String qPath = "/me/identity/user/{user}";
+		StringBuilder sb = path(qPath, user);
+		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
+	 * Alter a user
+	 *
+	 * REST: PUT /me/identity/user/{user}
+	 * @param user [required] User's login
+	 * @param email [required] User's email
+	 * @param description [required] User's description
+	 * @param group [required] User's group
+	 */
+	public void identity_user_user_PUT(String user, String email, String description, String group) throws IOException {
+		String qPath = "/me/identity/user/{user}";
+		StringBuilder sb = path(qPath, user);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "email", email);
+		addBody(o, "description", description);
+		addBody(o, "group", group);
+		exec(qPath, "PUT", sb.toString(), o);
+	}
+
+	/**
+	 * Enable this user
+	 *
+	 * REST: POST /me/identity/user/{user}/enable
+	 * @param user [required] User's login
+	 */
+	public void identity_user_user_enable_POST(String user) throws IOException {
+		String qPath = "/me/identity/user/{user}/enable";
+		StringBuilder sb = path(qPath, user);
+		exec(qPath, "POST", sb.toString(), null);
+	}
+
+	/**
+	 * Disable this user
+	 *
+	 * REST: POST /me/identity/user/{user}/disable
+	 * @param user [required] User's login
+	 */
+	public void identity_user_user_disable_POST(String user) throws IOException {
+		String qPath = "/me/identity/user/{user}/disable";
+		StringBuilder sb = path(qPath, user);
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
@@ -3837,4 +4029,88 @@ public class ApiOvhMe extends ApiOvhBase {
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
+
+	/**
+	 * Enable or disable invoices by postal mail
+	 *
+	 * REST: POST /me/billing/invoicesByPostalMail
+	 * @param enable [required] Send invoices through postal mail
+	 *
+	 * API beta
+	 */
+	public void billing_invoicesByPostalMail_POST(Boolean enable) throws IOException {
+		String qPath = "/me/billing/invoicesByPostalMail";
+		StringBuilder sb = path(qPath);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "enable", enable);
+		exec(qPath, "POST", sb.toString(), o);
+	}
+
+	/**
+	 * Send invoices through postal mail
+	 *
+	 * REST: GET /me/billing/invoicesByPostalMail
+	 *
+	 * API beta
+	 */
+	public Boolean billing_invoicesByPostalMail_GET() throws IOException {
+		String qPath = "/me/billing/invoicesByPostalMail";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, Boolean.class);
+	}
+
+	/**
+	 * Retrieve information about a consent campaign
+	 *
+	 * REST: GET /me/consent/{campaignName}
+	 * @param campaignName [required] Consent campaign name
+	 */
+	public OvhCampaign consent_campaignName_GET(String campaignName) throws IOException {
+		String qPath = "/me/consent/{campaignName}";
+		StringBuilder sb = path(qPath, campaignName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhCampaign.class);
+	}
+
+	/**
+	 * Get decision value for a consent campaign
+	 *
+	 * REST: GET /me/consent/{campaignName}/decision
+	 * @param campaignName [required] Consent campaign name
+	 */
+	public OvhConsent consent_campaignName_decision_GET(String campaignName) throws IOException {
+		String qPath = "/me/consent/{campaignName}/decision";
+		StringBuilder sb = path(qPath, campaignName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhConsent.class);
+	}
+
+	/**
+	 * Update decision of a consent campaign
+	 *
+	 * REST: PUT /me/consent/{campaignName}/decision
+	 * @param campaignName [required] Consent campaign name
+	 * @param value [required] Decision value
+	 */
+	public void consent_campaignName_decision_PUT(String campaignName, Boolean value) throws IOException {
+		String qPath = "/me/consent/{campaignName}/decision";
+		StringBuilder sb = path(qPath, campaignName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "value", value);
+		exec(qPath, "PUT", sb.toString(), o);
+	}
+
+	/**
+	 * List all consent campaign available
+	 *
+	 * REST: GET /me/consent
+	 */
+	public ArrayList<OvhCampaign> consent_GET() throws IOException {
+		String qPath = "/me/consent";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t6);
+	}
+	private static TypeReference<ArrayList<OvhCampaign>> t6 = new TypeReference<ArrayList<OvhCampaign>>() {};
 }

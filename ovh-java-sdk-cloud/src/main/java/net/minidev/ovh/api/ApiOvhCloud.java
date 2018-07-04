@@ -73,6 +73,7 @@ import net.minidev.ovh.api.pca.OvhBilling;
 import net.minidev.ovh.api.pca.OvhFile;
 import net.minidev.ovh.api.pca.OvhSession;
 import net.minidev.ovh.api.pca.OvhTask;
+import net.minidev.ovh.api.service.OvhTerminationFutureUseEnum;
 import net.minidev.ovh.api.service.OvhTerminationReasonEnum;
 import net.minidev.ovh.api.services.OvhService;
 import net.minidev.ovh.api.vrack.OvhVrack;
@@ -990,15 +991,17 @@ public class ApiOvhCloud extends ApiOvhBase {
 	 * Confirm termination of your service
 	 *
 	 * REST: POST /cloud/project/{serviceName}/confirmTermination
+	 * @param futureUse What next after your termination request
 	 * @param reason Reason of your termination request
 	 * @param commentary Commentary about your termination request
 	 * @param token [required] The termination token sent by mail to the admin contact
 	 * @param serviceName [required] The project id
 	 */
-	public String project_serviceName_confirmTermination_POST(String serviceName, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
+	public String project_serviceName_confirmTermination_POST(String serviceName, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
 		String qPath = "/cloud/project/{serviceName}/confirmTermination";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "futureUse", futureUse);
 		addBody(o, "reason", reason);
 		addBody(o, "commentary", commentary);
 		addBody(o, "token", token);
@@ -1725,6 +1728,57 @@ public class ApiOvhCloud extends ApiOvhBase {
 	}
 
 	/**
+	 * Get planned migrations
+	 *
+	 * REST: GET /cloud/project/{serviceName}/migration
+	 * @param serviceName [required] Service name
+	 *
+	 * API beta
+	 */
+	public ArrayList<OvhMigration> project_serviceName_migration_GET(String serviceName) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/migration";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t15);
+	}
+	private static TypeReference<ArrayList<OvhMigration>> t15 = new TypeReference<ArrayList<OvhMigration>>() {};
+
+	/**
+	 * Get planned migration
+	 *
+	 * REST: GET /cloud/project/{serviceName}/migration/{migrationId}
+	 * @param migrationId [required] Migration id
+	 * @param serviceName [required] Service name
+	 *
+	 * API beta
+	 */
+	public OvhMigration project_serviceName_migration_migrationId_GET(String serviceName, String migrationId) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/migration/{migrationId}";
+		StringBuilder sb = path(qPath, serviceName, migrationId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhMigration.class);
+	}
+
+	/**
+	 * Update planned migration
+	 *
+	 * REST: PUT /cloud/project/{serviceName}/migration/{migrationId}
+	 * @param date [required] Migration date (RFC3339)
+	 * @param migrationId [required] Migration id
+	 * @param serviceName [required] Service name
+	 *
+	 * API beta
+	 */
+	public OvhMigration project_serviceName_migration_migrationId_PUT(String serviceName, String migrationId, Date date) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/migration/{migrationId}";
+		StringBuilder sb = path(qPath, serviceName, migrationId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "date", date);
+		String resp = exec(qPath, "PUT", sb.toString(), o);
+		return convertTo(resp, OvhMigration.class);
+	}
+
+	/**
 	 * Get volumes
 	 *
 	 * REST: GET /cloud/project/{serviceName}/volume
@@ -1736,9 +1790,9 @@ public class ApiOvhCloud extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "region", region);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t15);
+		return convertTo(resp, t16);
 	}
-	private static TypeReference<ArrayList<OvhVolume>> t15 = new TypeReference<ArrayList<OvhVolume>>() {};
+	private static TypeReference<ArrayList<OvhVolume>> t16 = new TypeReference<ArrayList<OvhVolume>>() {};
 
 	/**
 	 * Create a volume
@@ -1923,60 +1977,9 @@ public class ApiOvhCloud extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "region", region);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t16);
-	}
-	private static TypeReference<ArrayList<OvhSnapshot>> t16 = new TypeReference<ArrayList<OvhSnapshot>>() {};
-
-	/**
-	 * Get planned migrations
-	 *
-	 * REST: GET /cloud/project/{serviceName}/migration
-	 * @param serviceName [required] Service name
-	 *
-	 * API beta
-	 */
-	public ArrayList<OvhMigration> project_serviceName_migration_GET(String serviceName) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/migration";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t17);
 	}
-	private static TypeReference<ArrayList<OvhMigration>> t17 = new TypeReference<ArrayList<OvhMigration>>() {};
-
-	/**
-	 * Get planned migration
-	 *
-	 * REST: GET /cloud/project/{serviceName}/migration/{migrationId}
-	 * @param migrationId [required] Migration id
-	 * @param serviceName [required] Service name
-	 *
-	 * API beta
-	 */
-	public OvhMigration project_serviceName_migration_migrationId_GET(String serviceName, String migrationId) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/migration/{migrationId}";
-		StringBuilder sb = path(qPath, serviceName, migrationId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhMigration.class);
-	}
-
-	/**
-	 * Update planned migration
-	 *
-	 * REST: PUT /cloud/project/{serviceName}/migration/{migrationId}
-	 * @param date [required] Migration date (RFC3339)
-	 * @param migrationId [required] Migration id
-	 * @param serviceName [required] Service name
-	 *
-	 * API beta
-	 */
-	public OvhMigration project_serviceName_migration_migrationId_PUT(String serviceName, String migrationId, Date date) throws IOException {
-		String qPath = "/cloud/project/{serviceName}/migration/{migrationId}";
-		StringBuilder sb = path(qPath, serviceName, migrationId);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "date", date);
-		String resp = exec(qPath, "PUT", sb.toString(), o);
-		return convertTo(resp, OvhMigration.class);
-	}
+	private static TypeReference<ArrayList<OvhSnapshot>> t17 = new TypeReference<ArrayList<OvhSnapshot>>() {};
 
 	/**
 	 * Get your credit

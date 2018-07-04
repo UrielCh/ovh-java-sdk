@@ -1,6 +1,6 @@
 package net.minidev.ovh.api.dedicatedcloud;
 
-import net.minidev.ovh.api.dedicatedcloud.pcidss.OvhStateEnum;
+import net.minidev.ovh.api.dedicatedcloud.option.OvhStateEnum;
 
 /**
  * The Private Cloud PCI-DSS option

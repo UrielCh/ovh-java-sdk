@@ -12,6 +12,20 @@ public class OvhService {
 	public String releaseChannel;
 
 	/**
+	 * If the socks proxy is enabled
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean SOCKSProxyEnabled;
+
+	/**
+	 * The tunnel mode of the service
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhTunnelModeEnum tunnelMode;
+
+	/**
 	 * Parameters needed to fetch metrics
 	 *
 	 * canBeNull && readOnly

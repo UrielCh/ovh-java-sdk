@@ -38,6 +38,20 @@ public class OvhOvhPabxHuntingAgent {
 	public Long simultaneousLines;
 
 	/**
+	 * The agent's description
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String description;
+
+	/**
+	 * The agent's type
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhOvhPabxHuntingAgentTypeEnum type;
+
+	/**
 	 * The waiting timeout (in seconds) before hangup an assigned called
 	 *
 	 * canBeNull && readOnly

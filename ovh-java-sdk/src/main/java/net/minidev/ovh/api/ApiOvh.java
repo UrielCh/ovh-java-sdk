@@ -18,6 +18,7 @@ public class ApiOvh extends ApiOvhBase {
 	final public ApiOvhCdnwebstorage cdnwebstorage;
 	final public ApiOvhCloud cloud;
 	final public ApiOvhClusterhadoop clusterhadoop;
+	final public ApiOvhContact contact;
 	final public ApiOvhAuth auth;
 	final public ApiOvhDbaaslogs dbaaslogs;
 	final public ApiOvhDbaasqueue dbaasqueue;
@@ -94,6 +95,7 @@ public class ApiOvh extends ApiOvhBase {
 		this.cdnwebstorage = new ApiOvhCdnwebstorage(core);
 		this.cloud = new ApiOvhCloud(core);
 		this.clusterhadoop = new ApiOvhClusterhadoop(core);
+		this.contact = new ApiOvhContact(core);
 		this.auth = new ApiOvhAuth(core);
 		this.dbaaslogs = new ApiOvhDbaaslogs(core);
 		this.dbaasqueue = new ApiOvhDbaasqueue(core);

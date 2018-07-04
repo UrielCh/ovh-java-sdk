@@ -170,6 +170,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/input
 	 * @param serviceName [required] Service name
+	 * @param autoSelectOption [required] If set, automatically selects a compatible option
 	 * @param streamId [required] Stream ID
 	 * @param engineId [required] Engine ID
 	 * @param description [required] Description
@@ -180,10 +181,11 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * API beta
 	 */
-	public OvhOperation serviceName_input_POST(String serviceName, String streamId, String engineId, String description, Boolean singleInstanceEnabled, String optionId, String title, String exposedPort) throws IOException {
+	public OvhOperation serviceName_input_POST(String serviceName, Boolean autoSelectOption, String streamId, String engineId, String description, Boolean singleInstanceEnabled, String optionId, String title, String exposedPort) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/input";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "autoSelectOption", autoSelectOption);
 		addBody(o, "streamId", streamId);
 		addBody(o, "engineId", engineId);
 		addBody(o, "description", description);
@@ -643,6 +645,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/output/elasticsearch/index
 	 * @param serviceName [required] Service name
+	 * @param autoSelectOption [required] If set, automatically selects a compatible option
 	 * @param optionId [required] Option ID
 	 * @param alertNotifyEnabled [required] Alert notify enabled
 	 * @param suffix [required] Suffix
@@ -650,10 +653,11 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * API beta
 	 */
-	public OvhOperation serviceName_output_elasticsearch_index_POST(String serviceName, String optionId, Boolean alertNotifyEnabled, String suffix, String description) throws IOException {
+	public OvhOperation serviceName_output_elasticsearch_index_POST(String serviceName, Boolean autoSelectOption, String optionId, Boolean alertNotifyEnabled, String suffix, String description) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/index";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "autoSelectOption", autoSelectOption);
 		addBody(o, "optionId", optionId);
 		addBody(o, "alertNotifyEnabled", alertNotifyEnabled);
 		addBody(o, "suffix", suffix);
@@ -682,16 +686,18 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/output/elasticsearch/alias
 	 * @param serviceName [required] Service name
+	 * @param autoSelectOption [required] If set, automatically selects a compatible option
 	 * @param optionId [required] Option ID
 	 * @param suffix [required] Suffix
 	 * @param description [required] Description
 	 *
 	 * API beta
 	 */
-	public OvhOperation serviceName_output_elasticsearch_alias_POST(String serviceName, String optionId, String suffix, String description) throws IOException {
+	public OvhOperation serviceName_output_elasticsearch_alias_POST(String serviceName, Boolean autoSelectOption, String optionId, String suffix, String description) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/elasticsearch/alias";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "autoSelectOption", autoSelectOption);
 		addBody(o, "optionId", optionId);
 		addBody(o, "suffix", suffix);
 		addBody(o, "description", description);
@@ -892,6 +898,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/output/graylog/stream
 	 * @param serviceName [required] Service name
+	 * @param autoSelectOption [required] If set, automatically selects a compatible option
 	 * @param webSocketEnabled [required] Web Socket enabled
 	 * @param coldStorageRetention [required] Cold storage retention time
 	 * @param coldStorageCompression [required] Cold storage compression
@@ -903,10 +910,11 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * API beta
 	 */
-	public OvhOperation serviceName_output_graylog_stream_POST(String serviceName, Boolean webSocketEnabled, Long coldStorageRetention, OvhStreamColdStorageCompressionEnum coldStorageCompression, String optionId, Boolean coldStorageNotifyEnabled, String description, String title, Boolean coldStorageEnabled) throws IOException {
+	public OvhOperation serviceName_output_graylog_stream_POST(String serviceName, Boolean autoSelectOption, Boolean webSocketEnabled, Long coldStorageRetention, OvhStreamColdStorageCompressionEnum coldStorageCompression, String optionId, Boolean coldStorageNotifyEnabled, String description, String title, Boolean coldStorageEnabled) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "autoSelectOption", autoSelectOption);
 		addBody(o, "webSocketEnabled", webSocketEnabled);
 		addBody(o, "coldStorageRetention", coldStorageRetention);
 		addBody(o, "coldStorageCompression", coldStorageCompression);
@@ -1236,16 +1244,18 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param optionId [required] Option ID
 	 * @param title [required] Title
 	 * @param description [required] Description
+	 * @param autoSelectOption [required] If set, automatically selects a compatible option
 	 *
 	 * API beta
 	 */
-	public OvhOperation serviceName_output_graylog_dashboard_POST(String serviceName, String optionId, String title, String description) throws IOException {
+	public OvhOperation serviceName_output_graylog_dashboard_POST(String serviceName, String optionId, String title, String description, Boolean autoSelectOption) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/dashboard";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "optionId", optionId);
 		addBody(o, "title", title);
 		addBody(o, "description", description);
+		addBody(o, "autoSelectOption", autoSelectOption);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
@@ -1855,16 +1865,18 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 *
 	 * REST: POST /dbaas/logs/{serviceName}/role
 	 * @param serviceName [required] service name
+	 * @param autoSelectOption [required] If set, automatically selects a compatible option
 	 * @param optionId [required] Option ID
 	 * @param name [required] Name
 	 * @param description [required] Description
 	 *
 	 * API beta
 	 */
-	public OvhOperation serviceName_role_POST(String serviceName, String optionId, String name, String description) throws IOException {
+	public OvhOperation serviceName_role_POST(String serviceName, Boolean autoSelectOption, String optionId, String name, String description) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/role";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "autoSelectOption", autoSelectOption);
 		addBody(o, "optionId", optionId);
 		addBody(o, "name", name);
 		addBody(o, "description", description);

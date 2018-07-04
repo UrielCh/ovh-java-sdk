@@ -53,6 +53,7 @@ import net.minidev.ovh.api.ip.OvhTaskFunctionEnum;
 import net.minidev.ovh.api.ip.OvhTaskStatusEnum;
 import net.minidev.ovh.api.ip.loadbalancingip.OvhLoadBalancingPort;
 import net.minidev.ovh.api.iploadbalancing.task.OvhTask;
+import net.minidev.ovh.api.service.OvhTerminationFutureUseEnum;
 import net.minidev.ovh.api.service.OvhTerminationReasonEnum;
 import net.minidev.ovh.api.services.OvhNonExpiringService;
 import net.minidev.ovh.api.services.OvhService;
@@ -1530,6 +1531,7 @@ public class ApiOvhIp extends ApiOvhBase {
 	 * Confirm termination of your service
 	 *
 	 * REST: POST /ip/service/{serviceName}/confirmTermination
+	 * @param futureUse What next after your termination request
 	 * @param reason Reason of your termination request
 	 * @param commentary Commentary about your termination request
 	 * @param token [required] The termination token sent by mail to the admin contact
@@ -1537,10 +1539,11 @@ public class ApiOvhIp extends ApiOvhBase {
 	 *
 	 * API beta
 	 */
-	public String service_serviceName_confirmTermination_POST(String serviceName, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
+	public String service_serviceName_confirmTermination_POST(String serviceName, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
 		String qPath = "/ip/service/{serviceName}/confirmTermination";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "futureUse", futureUse);
 		addBody(o, "reason", reason);
 		addBody(o, "commentary", commentary);
 		addBody(o, "token", token);

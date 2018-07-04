@@ -14,6 +14,7 @@ import net.minidev.ovh.api.nichandle.OvhLegalFormEnum;
 import net.minidev.ovh.api.nichandle.OvhNewAccountAndToken;
 import net.minidev.ovh.api.nichandle.OvhOvhCompanyEnum;
 import net.minidev.ovh.api.nichandle.OvhOvhSubsidiaryEnum;
+import net.minidev.ovh.api.order.OvhContract;
 import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
@@ -104,54 +105,6 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
 
 	/**
-	 * Give all the rules to follow in order to create an OVH identifier
-	 *
-	 * REST: GET /newAccount/creationRules
-	 * @param country [required]
-	 * @param ovhSubsidiary [required]
-	 * @param ovhCompany [required]
-	 * @param legalform [required]
-	 */
-	public OvhCreationRules creationRules_GET(OvhCountryEnum country, OvhLegalFormEnum legalform, OvhOvhCompanyEnum ovhCompany, OvhOvhSubsidiaryEnum ovhSubsidiary) throws IOException {
-		String qPath = "/newAccount/creationRules";
-		StringBuilder sb = path(qPath);
-		query(sb, "country", country);
-		query(sb, "legalform", legalform);
-		query(sb, "ovhCompany", ovhCompany);
-		query(sb, "ovhSubsidiary", ovhSubsidiary);
-		String resp = execN(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhCreationRules.class);
-	}
-
-	/**
-	 * All available corporation types for a given country
-	 *
-	 * REST: GET /newAccount/corporationType
-	 * @param country [required]
-	 */
-	public ArrayList<String> corporationType_GET(OvhCountryEnum country) throws IOException {
-		String qPath = "/newAccount/corporationType";
-		StringBuilder sb = path(qPath);
-		query(sb, "country", country);
-		String resp = execN(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * All available legal forms for a given country
-	 *
-	 * REST: GET /newAccount/legalform
-	 * @param country [required]
-	 */
-	public ArrayList<String> legalform_GET(OvhCountryEnum country) throws IOException {
-		String qPath = "/newAccount/legalform";
-		StringBuilder sb = path(qPath);
-		query(sb, "country", country);
-		String resp = execN(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
 	 * Give all the rules to follow in order to create and update an OVH identifier
 	 *
 	 * REST: POST /newAccount/rules
@@ -216,6 +169,71 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 	private static TypeReference<ArrayList<OvhCreationRule>> t2 = new TypeReference<ArrayList<OvhCreationRule>>() {};
 
 	/**
+	 * All available corporation types for a given country
+	 *
+	 * REST: GET /newAccount/corporationType
+	 * @param country [required]
+	 */
+	public ArrayList<String> corporationType_GET(OvhCountryEnum country) throws IOException {
+		String qPath = "/newAccount/corporationType";
+		StringBuilder sb = path(qPath);
+		query(sb, "country", country);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Give all the rules to follow in order to create an OVH identifier
+	 *
+	 * REST: GET /newAccount/creationRules
+	 * @param country [required]
+	 * @param ovhSubsidiary [required]
+	 * @param ovhCompany [required]
+	 * @param legalform [required]
+	 */
+	public OvhCreationRules creationRules_GET(OvhCountryEnum country, OvhLegalFormEnum legalform, OvhOvhCompanyEnum ovhCompany, OvhOvhSubsidiaryEnum ovhSubsidiary) throws IOException {
+		String qPath = "/newAccount/creationRules";
+		StringBuilder sb = path(qPath);
+		query(sb, "country", country);
+		query(sb, "legalform", legalform);
+		query(sb, "ovhCompany", ovhCompany);
+		query(sb, "ovhSubsidiary", ovhSubsidiary);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhCreationRules.class);
+	}
+
+	/**
+	 * All available legal forms for a given country
+	 *
+	 * REST: GET /newAccount/legalform
+	 * @param country [required]
+	 */
+	public ArrayList<String> legalform_GET(OvhCountryEnum country) throws IOException {
+		String qPath = "/newAccount/legalform";
+		StringBuilder sb = path(qPath);
+		query(sb, "country", country);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Returns the contracts that governs the creation of an OVH identifier
+	 *
+	 * REST: GET /newAccount/contracts
+	 * @param subsidiary [required]
+	 * @param company [required]
+	 */
+	public ArrayList<OvhContract> contracts_GET(OvhOvhCompanyEnum company, OvhOvhSubsidiaryEnum subsidiary) throws IOException {
+		String qPath = "/newAccount/contracts";
+		StringBuilder sb = path(qPath);
+		query(sb, "company", company);
+		query(sb, "subsidiary", subsidiary);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+	private static TypeReference<ArrayList<OvhContract>> t3 = new TypeReference<ArrayList<OvhContract>>() {};
+
+	/**
 	 * All available countries for an ovh company and an ovh subsidiary
 	 *
 	 * REST: GET /newAccount/countries
@@ -228,7 +246,7 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 		query(sb, "ovhCompany", ovhCompany);
 		query(sb, "ovhSubsidiary", ovhSubsidiary);
 		String resp = execN(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
+		return convertTo(resp, t4);
 	}
-	private static TypeReference<ArrayList<OvhCountryEnum>> t3 = new TypeReference<ArrayList<OvhCountryEnum>>() {};
+	private static TypeReference<ArrayList<OvhCountryEnum>> t4 = new TypeReference<ArrayList<OvhCountryEnum>>() {};
 }

@@ -18,6 +18,7 @@ public enum OvhTaskFunctionEnum {
 	deleteADSyncAccount("deleteADSyncAccount"),
 	deleteADUPNSuffix("deleteADUPNSuffix"),
 	enableADSyncAccount("enableADSyncAccount"),
+	generateADSyncClientUrl("generateADSyncClientUrl"),
 	setADAccount("setADAccount"),
 	setPasswordPolicy("setPasswordPolicy");
 

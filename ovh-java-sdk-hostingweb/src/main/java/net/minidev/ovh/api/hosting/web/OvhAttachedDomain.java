@@ -65,6 +65,13 @@ public class OvhAttachedDomain {
 	public Long taskId;
 
 	/**
+	 * The runtime configuration ID used on this domain
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long runtimeId;
+
+	/**
 	 * The domain status
 	 *
 	 * canBeNull && readOnly

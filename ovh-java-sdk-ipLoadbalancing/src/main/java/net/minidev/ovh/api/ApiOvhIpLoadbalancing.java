@@ -50,6 +50,7 @@ import net.minidev.ovh.api.iploadbalancing.ssl.OvhSsl;
 import net.minidev.ovh.api.iploadbalancing.task.OvhTask;
 import net.minidev.ovh.api.iploadbalancing.vracknetwork.OvhVrackNetwork;
 import net.minidev.ovh.api.iploadbalancing.zone.OvhIpZone;
+import net.minidev.ovh.api.service.OvhTerminationFutureUseEnum;
 import net.minidev.ovh.api.service.OvhTerminationReasonEnum;
 import net.minidev.ovh.api.services.OvhService;
 import net.minidev.ovh.core.ApiOvhBase;
@@ -359,7 +360,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * @param defaultSslId [required] Default ssl served to your customer
 	 * @param disabled [required] Disable your frontend. Set to 'false' if null
 	 * @param ssl [required] SSL deciphering. Set to 'false' if null
-	 * @param zone [required] Zone of your frontend. You can check what zone are available on this API section : /ipLoadbalancing/availableZones
+	 * @param zone [required] Zone of your frontend. Use "all" for all owned zone.
 	 * @param dedicatedIpfo [required] Only attach frontend on these ip. No restriction if null
 	 * @param httpHeader [required] Add header to your frontend. Useful variables admitted : %ci <=> client_ip, %cp <=> client_port
 	 * @param allowedSource [required] Restrict IP Load Balancing access to these ip block. No restriction if null
@@ -531,11 +532,12 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * @param match [required] Matching operator. Not all operators are available for all fields. See "/ipLoadbalancing/{serviceName}/availableRouteRules"
 	 * @param subField [required] Name of sub-field, if applicable. This may be a Cookie or Header name for instance
 	 * @param negate [required] Invert the matching operator effect
+	 * @param displayName [required] Human readable name for your rule
 	 * @param field [required] Name of the field to match like "protocol" or "host". See "/ipLoadbalancing/{serviceName}/availableRouteRules" for a list of available rules
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param routeId [required] Id of your route
 	 */
-	public OvhRouteRule serviceName_http_route_routeId_rule_POST(String serviceName, Long routeId, String pattern, OvhRouteRuleMatchesEnum match, String subField, Boolean negate, String field) throws IOException {
+	public OvhRouteRule serviceName_http_route_routeId_rule_POST(String serviceName, Long routeId, String pattern, OvhRouteRuleMatchesEnum match, String subField, Boolean negate, String displayName, String field) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/http/route/{routeId}/rule";
 		StringBuilder sb = path(qPath, serviceName, routeId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
@@ -543,6 +545,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		addBody(o, "match", match);
 		addBody(o, "subField", subField);
 		addBody(o, "negate", negate);
+		addBody(o, "displayName", displayName);
 		addBody(o, "field", field);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhRouteRule.class);
@@ -852,7 +855,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * REST: POST /ipLoadbalancing/{serviceName}/udp/frontend
 	 * @param disabled [required] Disable your frontend. Set to 'false' if null
 	 * @param defaultFarmId [required] Default UDP Farm of your frontend
-	 * @param zone [required] Zone of your frontend. You can check what zone are available on this API section : /ipLoadbalancing/availableZones
+	 * @param zone [required] Zone of your frontend. Use "all" for all owned zone.
 	 * @param dedicatedIpfo [required] Only attach frontend on these ip. No restriction if null
 	 * @param port [required] Port(s) attached to your frontend. Supports single port (numerical value), range (2 dash-delimited increasing ports) and comma-separated list of 'single port' and/or 'range'. Each port must be in the [1;49151] range.
 	 * @param displayName [required] Human readable name for your frontend, this field is for you
@@ -1261,15 +1264,17 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * Confirm termination of your service
 	 *
 	 * REST: POST /ipLoadbalancing/{serviceName}/confirmTermination
+	 * @param futureUse What next after your termination request
 	 * @param reason Reason of your termination request
 	 * @param commentary Commentary about your termination request
 	 * @param token [required] The termination token sent by mail to the admin contact
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
-	public String serviceName_confirmTermination_POST(String serviceName, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
+	public String serviceName_confirmTermination_POST(String serviceName, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/confirmTermination";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "futureUse", futureUse);
 		addBody(o, "reason", reason);
 		addBody(o, "commentary", commentary);
 		addBody(o, "token", token);
@@ -1303,7 +1308,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * @param defaultSslId [required] Default ssl served to your customer
 	 * @param disabled [required] Disable your frontend. Set to 'false' if null
 	 * @param ssl [required] SSL deciphering. Set to 'false' if null
-	 * @param zone [required] Zone of your frontend. You can check what zone are available on this API section : /ipLoadbalancing/availableZones
+	 * @param zone [required] Zone of your frontend. Use "all" for all owned zone.
 	 * @param dedicatedIpfo [required] Only attach frontend on these ip. No restriction if null
 	 * @param allowedSource [required] Restrict IP Load Balancing access to these ip block. No restriction if null
 	 * @param port [required] Port(s) attached to your frontend. Supports single port (numerical value), range (2 dash-delimited increasing ports) and comma-separated list of 'single port' and/or 'range'. Each port must be in the [1;49151] range.
@@ -1469,11 +1474,12 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * @param match [required] Matching operator. Not all operators are available for all fields. See "/ipLoadbalancing/{serviceName}/availableRouteRules"
 	 * @param subField [required] Name of sub-field, if applicable. This may be a Cookie or Header name for instance
 	 * @param negate [required] Invert the matching operator effect
+	 * @param displayName [required] Human readable name for your rule
 	 * @param field [required] Name of the field to match like "protocol" or "host". See "/ipLoadbalancing/{serviceName}/availableRouteRules" for a list of available rules
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param routeId [required] Id of your route
 	 */
-	public OvhRouteRule serviceName_tcp_route_routeId_rule_POST(String serviceName, Long routeId, String pattern, OvhRouteRuleMatchesEnum match, String subField, Boolean negate, String field) throws IOException {
+	public OvhRouteRule serviceName_tcp_route_routeId_rule_POST(String serviceName, Long routeId, String pattern, OvhRouteRuleMatchesEnum match, String subField, Boolean negate, String displayName, String field) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/tcp/route/{routeId}/rule";
 		StringBuilder sb = path(qPath, serviceName, routeId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
@@ -1481,6 +1487,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		addBody(o, "match", match);
 		addBody(o, "subField", subField);
 		addBody(o, "negate", negate);
+		addBody(o, "displayName", displayName);
 		addBody(o, "field", field);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhRouteRule.class);
@@ -1952,6 +1959,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * List of zone available for an IP load balancing
 	 *
 	 * REST: GET /ipLoadbalancing/availableZones
+	 * @deprecated
 	 */
 	public ArrayList<String> availableZones_GET() throws IOException {
 		String qPath = "/ipLoadbalancing/availableZones";

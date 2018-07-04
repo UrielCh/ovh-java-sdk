@@ -288,6 +288,59 @@ public class ApiOvhSaascsp2 extends ApiOvhBase {
 	}
 
 	/**
+	 * Gives a list of licenses ids that can be ordered as an addon for this subscription
+	 *
+	 * REST: GET /saas/csp2/{serviceName}/subscription/{id}/availableAddonLicenses
+	 * @param serviceName [required] The unique identifier of your Office service
+	 * @param id [required] Subscription's unique identifier
+	 *
+	 * API beta
+	 */
+	public ArrayList<Long> serviceName_subscription_id_availableAddonLicenses_GET(String serviceName, Long id) throws IOException {
+		String qPath = "/saas/csp2/{serviceName}/subscription/{id}/availableAddonLicenses";
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Creates a new subscription as an addon for this subscription
+	 *
+	 * REST: POST /saas/csp2/{serviceName}/subscription/{id}/orderAddon
+	 * @param licenseId [required] License id associated to this addon subscription (see subscription/<id>/availableAddonLicenses)
+	 * @param quantity [required] Seat quantity of the new subscription
+	 * @param serviceName [required] The unique identifier of your Office service
+	 * @param id [required] Subscription's unique identifier
+	 *
+	 * API beta
+	 */
+	public OvhOfficeTask serviceName_subscription_id_orderAddon_POST(String serviceName, Long id, Long licenseId, Long quantity) throws IOException {
+		String qPath = "/saas/csp2/{serviceName}/subscription/{id}/orderAddon";
+		StringBuilder sb = path(qPath, serviceName, id);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "licenseId", licenseId);
+		addBody(o, "quantity", quantity);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhOfficeTask.class);
+	}
+
+	/**
+	 * Addon subscriptions associated to this office subscription
+	 *
+	 * REST: GET /saas/csp2/{serviceName}/subscription/{id}/addonsSubscriptionIds
+	 * @param serviceName [required] The unique identifier of your Office service
+	 * @param id [required] Subscription's unique identifier
+	 *
+	 * API beta
+	 */
+	public ArrayList<Long> serviceName_subscription_id_addonsSubscriptionIds_GET(String serviceName, Long id) throws IOException {
+		String qPath = "/saas/csp2/{serviceName}/subscription/{id}/addonsSubscriptionIds";
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
 	 * Change the quantity of seats in the subscription
 	 *
 	 * REST: POST /saas/csp2/{serviceName}/subscription/{id}/changeQuantity

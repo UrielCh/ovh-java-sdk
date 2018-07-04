@@ -14,6 +14,13 @@ public class OvhOrder {
 	public Date date;
 
 	/**
+	 * Order id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long orderId;
+
+	/**
 	 * Service created
 	 *
 	 * canBeNull && readOnly

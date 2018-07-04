@@ -3,6 +3,9 @@ package net.minidev.ovh.api;
 import com.fasterxml.jackson.core.type.TypeReference;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import net.minidev.ovh.api.service.renew.OvhRenewDescription;
+import net.minidev.ovh.api.service.renew.OvhRenewOrder;
 import net.minidev.ovh.api.servicelist.OvhService;
 import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
@@ -76,6 +79,46 @@ public class ApiOvhService extends ApiOvhBase {
 	}
 
 	/**
+	 * List possible renews for this service
+	 *
+	 * REST: GET /service/{serviceId}/renew
+	 * @param serviceId [required] Service Id
+	 * @param includeOptions [required] Include service's option(s)
+	 *
+	 * API beta
+	 */
+	public ArrayList<OvhRenewDescription> serviceId_renew_GET(String serviceId, Boolean includeOptions) throws IOException {
+		String qPath = "/service/{serviceId}/renew";
+		StringBuilder sb = path(qPath, serviceId);
+		query(sb, "includeOptions", includeOptions);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+	private static TypeReference<ArrayList<OvhRenewDescription>> t1 = new TypeReference<ArrayList<OvhRenewDescription>>() {};
+
+	/**
+	 * Create a renew order
+	 *
+	 * REST: POST /service/{serviceId}/renew
+	 * @param serviceId [required] Service Id
+	 * @param dryRun [required] Indicates if renew order is generated
+	 * @param duration [required] Renew duration
+	 * @param services [required] List of services to renew
+	 *
+	 * API beta
+	 */
+	public OvhRenewOrder serviceId_renew_POST(String serviceId, Boolean dryRun, String duration, Long[] services) throws IOException {
+		String qPath = "/service/{serviceId}/renew";
+		StringBuilder sb = path(qPath, serviceId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "dryRun", dryRun);
+		addBody(o, "duration", duration);
+		addBody(o, "services", services);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhRenewOrder.class);
+	}
+
+	/**
 	 * List available services
 	 *
 	 * REST: GET /service
@@ -86,7 +129,7 @@ public class ApiOvhService extends ApiOvhBase {
 		String qPath = "/service";
 		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, t2);
 	}
-	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
+	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
 }

@@ -33,6 +33,7 @@ import net.minidev.ovh.api.domain.zone.OvhSoa;
 import net.minidev.ovh.api.domain.zone.OvhZone;
 import net.minidev.ovh.api.domain.zone.OvhZoneRestorePoint;
 import net.minidev.ovh.api.nichandle.OvhCountryEnum;
+import net.minidev.ovh.api.service.OvhTerminationFutureUseEnum;
 import net.minidev.ovh.api.service.OvhTerminationReasonEnum;
 import net.minidev.ovh.api.services.OvhService;
 import net.minidev.ovh.api.zone.OvhNamedResolutionFieldTypeEnum;
@@ -978,15 +979,17 @@ public class ApiOvhDomain extends ApiOvhBase {
 	 * Confirm termination of your service
 	 *
 	 * REST: POST /domain/zone/{zoneName}/confirmTermination
+	 * @param futureUse What next after your termination request
 	 * @param reason Reason of your termination request
 	 * @param commentary Commentary about your termination request
 	 * @param token [required] The termination token sent by mail to the admin contact
 	 * @param zoneName [required] The internal name of your zone
 	 */
-	public String zone_zoneName_confirmTermination_POST(String zoneName, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
+	public String zone_zoneName_confirmTermination_POST(String zoneName, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
 		String qPath = "/domain/zone/{zoneName}/confirmTermination";
 		StringBuilder sb = path(qPath, zoneName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "futureUse", futureUse);
 		addBody(o, "reason", reason);
 		addBody(o, "commentary", commentary);
 		addBody(o, "token", token);

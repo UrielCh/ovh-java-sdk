@@ -77,6 +77,13 @@ public class OvhAccount {
 	public OvhSpamAndVirusConfiguration spamAndVirusConfiguration;
 
 	/**
+	 * OWA policy restriction is applied
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean owaLimited;
+
+	/**
 	 * Hide account in Global Address List
 	 *
 	 * canBeNull && readOnly

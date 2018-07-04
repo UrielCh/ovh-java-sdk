@@ -7,6 +7,15 @@ import net.minidev.ovh.api.complextype.OvhUnitAndValue;
  */
 public class OvhCreationDatabaseCapabilities {
 	/**
+	 * Database software available on this platform
+	 *
+	 * canBeNull
+	 */
+	public OvhDatabaseTypeEnum[] engines;
+
+	/**
+	 * Size of data can be used
+	 *
 	 * canBeNull
 	 */
 	public OvhUnitAndValue<Long> quota;
@@ -19,6 +28,15 @@ public class OvhCreationDatabaseCapabilities {
 	public Long available;
 
 	/**
+	 * Technology use to isolate differents webhosting accounts
+	 *
+	 * canBeNull
+	 */
+	public OvhDatabaseIsolationEnum isolation;
+
+	/**
+	 * Database offer name
+	 *
 	 * canBeNull
 	 */
 	public OvhDatabaseCapabilitiesTypeEnum type;

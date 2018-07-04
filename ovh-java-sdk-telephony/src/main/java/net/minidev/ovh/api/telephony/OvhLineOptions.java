@@ -59,6 +59,13 @@ public class OvhLineOptions {
 	public OvhLineOptionLanguageEnum language;
 
 	/**
+	 * Sound ID of ringback tone
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long toneRingbackSoundId;
+
+	/**
 	 * Nature of the forward when the line is busy
 	 *
 	 * canBeNull && readOnly
@@ -127,6 +134,13 @@ public class OvhLineOptions {
 	public Boolean callRestrictionIncoming;
 
 	/**
+	 * Sound ID of on-call-waiting tone
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long toneOnCallWaitingSoundId;
+
+	/**
 	 * Codecs preferences
 	 *
 	 * canBeNull && readOnly
@@ -151,6 +165,13 @@ public class OvhLineOptions {
 	 * canBeNull && readOnly
 	 */
 	public Boolean callWaiting;
+
+	/**
+	 * Sound ID of on-hold tone
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long toneOnHoldSoundId;
 
 	/**
 	 * Destination of the unconditional forward

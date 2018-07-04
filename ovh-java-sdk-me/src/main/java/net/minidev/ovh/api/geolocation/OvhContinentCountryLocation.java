@@ -20,4 +20,11 @@ public class OvhContinentCountryLocation {
 	 * canBeNull && readOnly
 	 */
 	public OvhCountryEnum countryCode;
+
+	/**
+	 * The IP address processed, the user's origin one
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String ip;
 }

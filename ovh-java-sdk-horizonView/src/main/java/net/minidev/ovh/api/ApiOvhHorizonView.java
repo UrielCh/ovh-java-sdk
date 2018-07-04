@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import net.minidev.ovh.api.horizonview.OvhAccessPointTypeEnum;
 import net.minidev.ovh.api.horizonview.OvhCustomerNetwork;
+import net.minidev.ovh.api.horizonview.OvhCustomerNetworkPool;
 import net.minidev.ovh.api.horizonview.OvhCustomerUser;
 import net.minidev.ovh.api.horizonview.OvhDatacenter;
 import net.minidev.ovh.api.horizonview.OvhDedicatedHorizon;
@@ -15,6 +16,7 @@ import net.minidev.ovh.api.horizonview.OvhPoolType;
 import net.minidev.ovh.api.horizonview.OvhTask;
 import net.minidev.ovh.api.horizonview.OvhTaskStateEnum;
 import net.minidev.ovh.api.horizonview.OvhUser;
+import net.minidev.ovh.api.service.OvhTerminationFutureUseEnum;
 import net.minidev.ovh.api.service.OvhTerminationReasonEnum;
 import net.minidev.ovh.api.services.OvhService;
 import net.minidev.ovh.core.ApiOvhBase;
@@ -296,6 +298,20 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	}
 
 	/**
+	 * Delete this Customer Network
+	 *
+	 * REST: DELETE /horizonView/{serviceName}/customerNetwork/{customerNetworkId}
+	 * @param serviceName [required] Domain of the service
+	 * @param customerNetworkId [required] Customer Network id
+	 */
+	public ArrayList<OvhTask> serviceName_customerNetwork_customerNetworkId_DELETE(String serviceName, Long customerNetworkId) throws IOException {
+		String qPath = "/horizonView/{serviceName}/customerNetwork/{customerNetworkId}";
+		StringBuilder sb = path(qPath, serviceName, customerNetworkId);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /horizonView/{serviceName}
@@ -312,15 +328,17 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	 * Confirm termination of your service
 	 *
 	 * REST: POST /horizonView/{serviceName}/confirmTermination
+	 * @param futureUse What next after your termination request
 	 * @param reason Reason of your termination request
 	 * @param commentary Commentary about your termination request
 	 * @param token [required] The termination token sent by mail to the admin contact
 	 * @param serviceName [required] Domain of the service
 	 */
-	public String serviceName_confirmTermination_POST(String serviceName, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
+	public String serviceName_confirmTermination_POST(String serviceName, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
 		String qPath = "/horizonView/{serviceName}/confirmTermination";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "futureUse", futureUse);
 		addBody(o, "reason", reason);
 		addBody(o, "commentary", commentary);
 		addBody(o, "token", token);
@@ -377,34 +395,64 @@ public class ApiOvhHorizonView extends ApiOvhBase {
 	}
 
 	/**
-	 * Link an existing private network to your Access Point
-	 *
-	 * REST: POST /horizonView/{serviceName}/accessPoint/{accessPointId}/customerNetwork
-	 * @param network [required] The customer network you want to route on your pool
-	 * @param serviceName [required] Domain of the service
-	 * @param accessPointId [required] Pool id
-	 */
-	public OvhTask serviceName_accessPoint_accessPointId_customerNetwork_POST(String serviceName, Long accessPointId, String network) throws IOException {
-		String qPath = "/horizonView/{serviceName}/accessPoint/{accessPointId}/customerNetwork";
-		StringBuilder sb = path(qPath, serviceName, accessPointId);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "network", network);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * List private networks linked to your Access Point
+	 * You can reach from the Desktops your private network
 	 *
 	 * REST: GET /horizonView/{serviceName}/accessPoint/{accessPointId}/customerNetwork
 	 * @param serviceName [required] Domain of the service
 	 * @param accessPointId [required] Pool id
 	 */
-	public ArrayList<String> serviceName_accessPoint_accessPointId_customerNetwork_GET(String serviceName, Long accessPointId) throws IOException {
+	public ArrayList<Long> serviceName_accessPoint_accessPointId_customerNetwork_GET(String serviceName, Long accessPointId) throws IOException {
 		String qPath = "/horizonView/{serviceName}/accessPoint/{accessPointId}/customerNetwork";
 		StringBuilder sb = path(qPath, serviceName, accessPointId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, t3);
+	}
+
+	/**
+	 * Add a new network
+	 *
+	 * REST: POST /horizonView/{serviceName}/accessPoint/{accessPointId}/customerNetwork
+	 * @param network [required] The private network you want to reach.
+	 * @param serviceName [required] Domain of the service
+	 * @param accessPointId [required] Pool id
+	 */
+	public ArrayList<OvhTask> serviceName_accessPoint_accessPointId_customerNetwork_POST(String serviceName, Long accessPointId, String network) throws IOException {
+		String qPath = "/horizonView/{serviceName}/accessPoint/{accessPointId}/customerNetwork";
+		StringBuilder sb = path(qPath, serviceName, accessPointId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "network", network);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /horizonView/{serviceName}/accessPoint/{accessPointId}/customerNetwork/{customerNetworkId}
+	 * @param serviceName [required] Domain of the service
+	 * @param accessPointId [required] Pool id
+	 * @param customerNetworkId [required] Customer Network id
+	 */
+	public OvhCustomerNetworkPool serviceName_accessPoint_accessPointId_customerNetwork_customerNetworkId_GET(String serviceName, Long accessPointId, Long customerNetworkId) throws IOException {
+		String qPath = "/horizonView/{serviceName}/accessPoint/{accessPointId}/customerNetwork/{customerNetworkId}";
+		StringBuilder sb = path(qPath, serviceName, accessPointId, customerNetworkId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhCustomerNetworkPool.class);
+	}
+
+	/**
+	 * Delete this Customer Network
+	 *
+	 * REST: DELETE /horizonView/{serviceName}/accessPoint/{accessPointId}/customerNetwork/{customerNetworkId}
+	 * @param serviceName [required] Domain of the service
+	 * @param accessPointId [required] Pool id
+	 * @param customerNetworkId [required] Customer Network id
+	 */
+	public ArrayList<OvhTask> serviceName_accessPoint_accessPointId_customerNetwork_customerNetworkId_DELETE(String serviceName, Long accessPointId, Long customerNetworkId) throws IOException {
+		String qPath = "/horizonView/{serviceName}/accessPoint/{accessPointId}/customerNetwork/{customerNetworkId}";
+		StringBuilder sb = path(qPath, serviceName, accessPointId, customerNetworkId);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, t2);
 	}
 
 	/**

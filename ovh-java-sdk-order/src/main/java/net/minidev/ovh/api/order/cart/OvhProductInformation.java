@@ -26,6 +26,13 @@ public class OvhProductInformation {
 	public String phase;
 
 	/**
+	 * Pricing model identifier for this product
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String pricingMode;
+
+	/**
 	 * Informations about the estimated delivery time for the product
 	 *
 	 * canBeNull && readOnly

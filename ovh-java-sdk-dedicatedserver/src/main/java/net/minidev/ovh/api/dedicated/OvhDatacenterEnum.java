@@ -18,6 +18,7 @@ public enum OvhDatacenterEnum {
 	gra1("gra1"),
 	gra2("gra2"),
 	gsw("gsw"),
+	hil1("hil1"),
 	lim1("lim1"),
 	p19("p19"),
 	@JsonProperty("rbx-hz")

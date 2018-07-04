@@ -1,25 +1,25 @@
 package net.minidev.ovh.api.xdsl.eligibility;
 
 /**
- * Represents a city
+ * Represent a city
  */
 public class OvhCity {
 	/**
-	 * The zip code of the city
+	 * Zip code of the city
 	 *
 	 * canBeNull
 	 */
 	public String zipCode;
 
 	/**
-	 * The identifier of the city
+	 * INSEE code of the city
 	 *
 	 * canBeNull
 	 */
 	public String inseeCode;
 
 	/**
-	 * The name of the city
+	 * Name of the city
 	 *
 	 * canBeNull
 	 */

@@ -112,6 +112,13 @@ public class OvhExchangeInformation {
 	public OvhExchangeLicenceEnum accountLicense;
 
 	/**
+	 * OWA policy restriction is applied
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean owaLimited;
+
+	/**
 	 * Frequency of mailbox license renewals
 	 *
 	 * canBeNull && readOnly

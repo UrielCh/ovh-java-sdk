@@ -1,11 +1,19 @@
 package net.minidev.ovh.api.iploadbalancing.ssl;
 
+import java.util.Date;
 import net.minidev.ovh.api.iploadbalancing.OvhSslTypeEnum;
 
 /**
  * Ssl
  */
 public class OvhSsl {
+	/**
+	 * Subject Alternative Name of your SSL certificate
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String[] san;
+
 	/**
 	 * Serial of your SSL certificate (Deprecated, use fingerprint instead !)
 	 *
@@ -33,6 +41,13 @@ public class OvhSsl {
 	 * canBeNull && readOnly
 	 */
 	public String fingerprint;
+
+	/**
+	 * Expire date of your SSL certificate
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date expireDate;
 
 	/**
 	 * Id of your SSL certificate

@@ -5,6 +5,13 @@ package net.minidev.ovh.api.saas.csp2;
  */
 public class OvhOfficeLicence {
 	/**
+	 * License's type, indicates if the licence is standalone or an addon
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhLicenseTypeEnum licenceType;
+
+	/**
 	 * License name
 	 *
 	 * canBeNull && readOnly

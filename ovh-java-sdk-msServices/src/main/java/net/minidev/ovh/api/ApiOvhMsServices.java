@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import net.minidev.ovh.api.msservices.OvhAccount;
 import net.minidev.ovh.api.msservices.OvhActiveDirectoryOrganizationalUnit;
+import net.minidev.ovh.api.msservices.OvhActiveDirectorySyncClientUrl;
 import net.minidev.ovh.api.msservices.OvhExchangeInformation;
 import net.minidev.ovh.api.msservices.OvhExchangeService;
 import net.minidev.ovh.api.msservices.OvhExchangeTask;
@@ -551,6 +552,36 @@ public class ApiOvhMsServices extends ApiOvhBase {
 		return convertTo(resp, t4);
 	}
 	private static TypeReference<ArrayList<OvhSyncDailyLicense>> t4 = new TypeReference<ArrayList<OvhSyncDailyLicense>>() {};
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /msServices/{serviceName}/sync/clientSoftwareURL
+	 * @param serviceName [required] The internal name of your Active Directory organization
+	 *
+	 * API beta
+	 */
+	public OvhActiveDirectorySyncClientUrl serviceName_sync_clientSoftwareURL_GET(String serviceName) throws IOException {
+		String qPath = "/msServices/{serviceName}/sync/clientSoftwareURL";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhActiveDirectorySyncClientUrl.class);
+	}
+
+	/**
+	 * Generate temporary link to ADSync software executable
+	 *
+	 * REST: POST /msServices/{serviceName}/sync/clientSoftwareURL
+	 * @param serviceName [required] The internal name of your Active Directory organization
+	 *
+	 * API beta
+	 */
+	public OvhTask serviceName_sync_clientSoftwareURL_POST(String serviceName) throws IOException {
+		String qPath = "/msServices/{serviceName}/sync/clientSoftwareURL";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
 
 	/**
 	 * Pending actions

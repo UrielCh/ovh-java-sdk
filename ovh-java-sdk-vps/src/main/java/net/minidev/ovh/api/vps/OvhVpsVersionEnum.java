@@ -17,7 +17,11 @@ public enum OvhVpsVersionEnum {
 	@JsonProperty("2017v2")
 	_2017v2("2017v2"),
 	@JsonProperty("2017v3")
-	_2017v3("2017v3");
+	_2017v3("2017v3"),
+	@JsonProperty("2018v1")
+	_2018v1("2018v1"),
+	@JsonProperty("2018v2")
+	_2018v2("2018v2");
 
 	final String value;
 

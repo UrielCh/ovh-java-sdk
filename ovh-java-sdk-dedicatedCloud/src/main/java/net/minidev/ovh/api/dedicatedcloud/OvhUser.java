@@ -36,6 +36,13 @@ public class OvhUser {
 	public OvhActivationStateEnum activationState;
 
 	/**
+	 * Login of the user
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String login;
+
+	/**
 	 * canBeNull && readOnly
 	 */
 	public Long userId;
@@ -69,7 +76,7 @@ public class OvhUser {
 	public String phoneNumber;
 
 	/**
-	 * Name of the user (login)
+	 * Name of the user
 	 *
 	 * canBeNull && readOnly
 	 */
