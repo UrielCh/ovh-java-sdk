@@ -616,6 +616,7 @@ public class ApiOvhCore {
 						invalidateConsumerKey(nic, currentCK);
 						failure++;
 						login(this.nic, this.password, this.timeInSec);
+						continue;
 					} else {
 						// the consumerKey had been modified by an other thread -> retry
 						continue;

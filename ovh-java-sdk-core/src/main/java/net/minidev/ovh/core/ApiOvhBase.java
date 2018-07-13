@@ -65,7 +65,13 @@ public abstract class ApiOvhBase {
 		for (int i = 0; i < len; i++) {
 			char c = url.charAt(i);
 			if (c == '{') {
-				sb.append(params[p++]);
+				if (params[p] instanceof Date) {
+					SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+					sb.append(sdf.format(params[p]));
+				} else {
+					sb.append(params[p]);
+				}
+				p++;
 				while (url.charAt(i) != '}')
 					i++;
 			} else {

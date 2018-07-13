@@ -10,6 +10,7 @@ public enum OvhVpsStateEnum {
 	running("running"),
 	stopped("stopped"),
 	stopping("stopping"),
+	provisioning("provisioning"),
 	upgrading("upgrading");
 
 	final String value;
