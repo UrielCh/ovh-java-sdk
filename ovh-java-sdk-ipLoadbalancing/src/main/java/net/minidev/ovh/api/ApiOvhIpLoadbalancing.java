@@ -49,7 +49,7 @@ import net.minidev.ovh.api.iploadbalancing.routetcp.OvhRouteTcp;
 import net.minidev.ovh.api.iploadbalancing.ssl.OvhSsl;
 import net.minidev.ovh.api.iploadbalancing.task.OvhTask;
 import net.minidev.ovh.api.iploadbalancing.vracknetwork.OvhVrackNetwork;
-import net.minidev.ovh.api.iploadbalancing.zone.OvhIpZone;
+import net.minidev.ovh.api.iploadbalancing.zone.OvhZone;
 import net.minidev.ovh.api.service.OvhTerminationFutureUseEnum;
 import net.minidev.ovh.api.service.OvhTerminationReasonEnum;
 import net.minidev.ovh.api.services.OvhService;
@@ -193,11 +193,11 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param name [required] Name of your zone
 	 */
-	public OvhIpZone serviceName_zone_name_GET(String serviceName, String name) throws IOException {
+	public OvhZone serviceName_zone_name_GET(String serviceName, String name) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/zone/{name}";
 		StringBuilder sb = path(qPath, serviceName, name);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhIpZone.class);
+		return convertTo(resp, OvhZone.class);
 	}
 
 	/**

@@ -431,6 +431,7 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	 * REST: POST /xdsl/{serviceName}/modem/duplicatePortMappingConfig
 	 * @param accessName [required] The access name with the config you want to duplicate
 	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @deprecated
 	 */
 	public void serviceName_modem_duplicatePortMappingConfig_POST(String serviceName, String accessName) throws IOException {
 		String qPath = "/xdsl/{serviceName}/modem/duplicatePortMappingConfig";

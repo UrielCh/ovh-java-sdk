@@ -1,7 +1,9 @@
 package net.minidev.ovh.api.billing.credit;
 
 import java.util.Date;
+import net.minidev.ovh.api.billing.credit.balance.OvhBookedMovement;
 import net.minidev.ovh.api.billing.credit.balance.OvhExpiringMovement;
+import net.minidev.ovh.api.billing.credit.balance.OvhType;
 import net.minidev.ovh.api.order.OvhPrice;
 
 /**
@@ -9,11 +11,25 @@ import net.minidev.ovh.api.order.OvhPrice;
  */
 public class OvhBalance {
 	/**
+	 * Movement expiring soon
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhExpiringMovement[] expiring;
+
+	/**
 	 * Balance amount
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhPrice amount;
+
+	/**
+	 * Movement already booked on orders
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhBookedMovement[] booked;
 
 	/**
 	 * Movement expiring soon
@@ -42,4 +58,11 @@ public class OvhBalance {
 	 * canBeNull && readOnly
 	 */
 	public Date creationDate;
+
+	/**
+	 * Balance type
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhType type;
 }

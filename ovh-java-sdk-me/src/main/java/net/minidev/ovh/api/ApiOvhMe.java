@@ -64,6 +64,7 @@ import net.minidev.ovh.api.geolocation.OvhContinentCountryLocation;
 import net.minidev.ovh.api.insight.OvhAccess;
 import net.minidev.ovh.api.me.consent.OvhCampaign;
 import net.minidev.ovh.api.me.consent.OvhConsent;
+import net.minidev.ovh.api.me.consumption.OvhTransaction;
 import net.minidev.ovh.api.nichandle.OvhCountryEnum;
 import net.minidev.ovh.api.nichandle.OvhDeveloperModeRestriction;
 import net.minidev.ovh.api.nichandle.OvhDomainTask;
@@ -774,6 +775,35 @@ public class ApiOvhMe extends ApiOvhBase {
 		StringBuilder sb = path(qPath, orderId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, net.minidev.ovh.api.billing.order.OvhAssociatedObject.class);
+	}
+
+	/**
+	 * Get list of transactions between two dates
+	 *
+	 * REST: GET /me/consumption/usage/history
+	 * @param beginDate [required] Begin date
+	 * @param endDate [required] End date
+	 */
+	public ArrayList<OvhTransaction> consumption_usage_history_GET(Date beginDate, Date endDate) throws IOException {
+		String qPath = "/me/consumption/usage/history";
+		StringBuilder sb = path(qPath);
+		query(sb, "beginDate", beginDate);
+		query(sb, "endDate", endDate);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t5);
+	}
+	private static TypeReference<ArrayList<OvhTransaction>> t5 = new TypeReference<ArrayList<OvhTransaction>>() {};
+
+	/**
+	 * Get on-going consumptions for all services
+	 *
+	 * REST: GET /me/consumption/usage/current
+	 */
+	public ArrayList<OvhTransaction> consumption_usage_current_GET() throws IOException {
+		String qPath = "/me/consumption/usage/current";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t5);
 	}
 
 	/**
@@ -2260,9 +2290,9 @@ public class ApiOvhMe extends ApiOvhBase {
 		String qPath = "/me/contact/{contactId}/fields";
 		StringBuilder sb = path(qPath, contactId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t5);
+		return convertTo(resp, t6);
 	}
-	private static TypeReference<ArrayList<OvhFieldInformation>> t5 = new TypeReference<ArrayList<OvhFieldInformation>>() {};
+	private static TypeReference<ArrayList<OvhFieldInformation>> t6 = new TypeReference<ArrayList<OvhFieldInformation>>() {};
 
 	/**
 	 * Fetch visitor country & region
@@ -4110,7 +4140,7 @@ public class ApiOvhMe extends ApiOvhBase {
 		String qPath = "/me/consent";
 		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t6);
+		return convertTo(resp, t7);
 	}
-	private static TypeReference<ArrayList<OvhCampaign>> t6 = new TypeReference<ArrayList<OvhCampaign>>() {};
+	private static TypeReference<ArrayList<OvhCampaign>> t7 = new TypeReference<ArrayList<OvhCampaign>>() {};
 }

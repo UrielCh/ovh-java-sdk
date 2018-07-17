@@ -6,6 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * Cron's language
  */
 public enum OvhLanguageEnum {
+	node10("node10"),
+	node8("node8"),
+	node9("node9"),
 	other("other"),
 	php4("php4"),
 	@JsonProperty("php5.2")

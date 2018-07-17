@@ -10,6 +10,7 @@ public enum OvhNumberCountryEnum {
 	es("es"),
 	fr("fr"),
 	gb("gb"),
+	it("it"),
 	uk("uk");
 
 	final String value;

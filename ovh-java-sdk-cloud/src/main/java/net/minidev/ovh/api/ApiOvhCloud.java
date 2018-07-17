@@ -15,6 +15,7 @@ import net.minidev.ovh.api.cloud.OvhIPLoadbalancing;
 import net.minidev.ovh.api.cloud.OvhPrice;
 import net.minidev.ovh.api.cloud.OvhProject;
 import net.minidev.ovh.api.cloud.authentication.OvhToken;
+import net.minidev.ovh.api.cloud.backup.OvhBackupWorkflow;
 import net.minidev.ovh.api.cloud.flavor.OvhFlavor;
 import net.minidev.ovh.api.cloud.forecast.OvhProjectForecast;
 import net.minidev.ovh.api.cloud.image.OvhImage;
@@ -60,6 +61,7 @@ import net.minidev.ovh.api.cloud.usage.OvhUsageForecast;
 import net.minidev.ovh.api.cloud.usage.OvhUsageHistory;
 import net.minidev.ovh.api.cloud.usage.OvhUsageHistoryDetail;
 import net.minidev.ovh.api.cloud.user.OvhOpenrc;
+import net.minidev.ovh.api.cloud.user.OvhOpenrcVersionEnum;
 import net.minidev.ovh.api.cloud.user.OvhRclone;
 import net.minidev.ovh.api.cloud.user.OvhRoleEnum;
 import net.minidev.ovh.api.cloud.user.OvhUser;
@@ -724,11 +726,13 @@ public class ApiOvhCloud extends ApiOvhBase {
 	 * @param region [required] Region
 	 * @param serviceName [required] Service name
 	 * @param userId [required] User id
+	 * @param version [required] Identity API version
 	 */
-	public OvhOpenrc project_serviceName_user_userId_openrc_GET(String serviceName, Long userId, String region) throws IOException {
+	public OvhOpenrc project_serviceName_user_userId_openrc_GET(String serviceName, Long userId, String region, OvhOpenrcVersionEnum version) throws IOException {
 		String qPath = "/cloud/project/{serviceName}/user/{userId}/openrc";
 		StringBuilder sb = path(qPath, serviceName, userId);
 		query(sb, "region", region);
+		query(sb, "version", version);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOpenrc.class);
 	}
@@ -988,6 +992,68 @@ public class ApiOvhCloud extends ApiOvhBase {
 	}
 
 	/**
+	 * List created autobackup
+	 *
+	 * REST: GET /cloud/project/{serviceName}/region/{regionName}/workflow/backup
+	 * @param instanceId [required] Instance id
+	 * @param regionName [required] Region name
+	 * @param serviceName [required] Service name
+	 *
+	 * API beta
+	 */
+	public ArrayList<OvhBackupWorkflow> project_serviceName_region_regionName_workflow_backup_GET(String serviceName, String regionName, String instanceId) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/region/{regionName}/workflow/backup";
+		StringBuilder sb = path(qPath, serviceName, regionName);
+		query(sb, "instanceId", instanceId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t7);
+	}
+	private static TypeReference<ArrayList<OvhBackupWorkflow>> t7 = new TypeReference<ArrayList<OvhBackupWorkflow>>() {};
+
+	/**
+	 * Add an autobackup for an instance
+	 *
+	 * REST: POST /cloud/project/{serviceName}/region/{regionName}/workflow/backup
+	 * @param cron [required] Cron pattern (eg: '* * * * *')
+	 * @param instanceId [required] Instance id
+	 * @param maxExecutionCount [required] Number of execution to do. Let it empty if must never end.
+	 * @param name [required] Name of the backup
+	 * @param regionName [required] Region name
+	 * @param rotation [required] Number of backup to keep
+	 * @param serviceName [required] Service name
+	 *
+	 * API beta
+	 */
+	public OvhBackupWorkflow project_serviceName_region_regionName_workflow_backup_POST(String serviceName, String regionName, String cron, String instanceId, Long maxExecutionCount, String name, Long rotation) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/region/{regionName}/workflow/backup";
+		StringBuilder sb = path(qPath, serviceName, regionName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "cron", cron);
+		addBody(o, "instanceId", instanceId);
+		addBody(o, "maxExecutionCount", maxExecutionCount);
+		addBody(o, "name", name);
+		addBody(o, "rotation", rotation);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhBackupWorkflow.class);
+	}
+
+	/**
+	 * Remove an autobackup
+	 *
+	 * REST: DELETE /cloud/project/{serviceName}/region/{regionName}/workflow/backup/{backupName}
+	 * @param backupName [required] Backup Name
+	 * @param regionName [required] Region name
+	 * @param serviceName [required] Service name
+	 *
+	 * API beta
+	 */
+	public void project_serviceName_region_regionName_workflow_backup_backupName_DELETE(String serviceName, String regionName, String backupName) throws IOException {
+		String qPath = "/cloud/project/{serviceName}/region/{regionName}/workflow/backup/{backupName}";
+		StringBuilder sb = path(qPath, serviceName, regionName, backupName);
+		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
 	 * Confirm termination of your service
 	 *
 	 * REST: POST /cloud/project/{serviceName}/confirmTermination
@@ -1021,9 +1087,9 @@ public class ApiOvhCloud extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "region", region);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t7);
+		return convertTo(resp, t8);
 	}
-	private static TypeReference<ArrayList<OvhInstance>> t7 = new TypeReference<ArrayList<OvhInstance>>() {};
+	private static TypeReference<ArrayList<OvhInstance>> t8 = new TypeReference<ArrayList<OvhInstance>>() {};
 
 	/**
 	 * Create a new instance
@@ -1071,9 +1137,9 @@ public class ApiOvhCloud extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "region", region);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t8);
+		return convertTo(resp, t9);
 	}
-	private static TypeReference<ArrayList<OvhInstanceGroup>> t8 = new TypeReference<ArrayList<OvhInstanceGroup>>() {};
+	private static TypeReference<ArrayList<OvhInstanceGroup>> t9 = new TypeReference<ArrayList<OvhInstanceGroup>>() {};
 
 	/**
 	 * Create a group
@@ -1292,9 +1358,9 @@ public class ApiOvhCloud extends ApiOvhBase {
 		String qPath = "/cloud/project/{serviceName}/instance/{instanceId}/interface";
 		StringBuilder sb = path(qPath, serviceName, instanceId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t9);
+		return convertTo(resp, t10);
 	}
-	private static TypeReference<ArrayList<OvhInterface>> t9 = new TypeReference<ArrayList<OvhInterface>>() {};
+	private static TypeReference<ArrayList<OvhInterface>> t10 = new TypeReference<ArrayList<OvhInterface>>() {};
 
 	/**
 	 * Create interface on an instance and attached it to a network
@@ -1421,7 +1487,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 		addBody(o, "userData", userData);
 		addBody(o, "volumeId", volumeId);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t7);
+		return convertTo(resp, t8);
 	}
 
 	/**
@@ -1485,9 +1551,9 @@ public class ApiOvhCloud extends ApiOvhBase {
 		String qPath = "/cloud/project/{serviceName}/quota";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t10);
+		return convertTo(resp, t11);
 	}
-	private static TypeReference<ArrayList<OvhQuotas>> t10 = new TypeReference<ArrayList<OvhQuotas>>() {};
+	private static TypeReference<ArrayList<OvhQuotas>> t11 = new TypeReference<ArrayList<OvhQuotas>>() {};
 
 	/**
 	 * Get ips
@@ -1499,9 +1565,9 @@ public class ApiOvhCloud extends ApiOvhBase {
 		String qPath = "/cloud/project/{serviceName}/ip";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t11);
+		return convertTo(resp, t12);
 	}
-	private static TypeReference<ArrayList<OvhCloudIp>> t11 = new TypeReference<ArrayList<OvhCloudIp>>() {};
+	private static TypeReference<ArrayList<OvhCloudIp>> t12 = new TypeReference<ArrayList<OvhCloudIp>>() {};
 
 	/**
 	 * Get failover ips
@@ -1513,9 +1579,9 @@ public class ApiOvhCloud extends ApiOvhBase {
 		String qPath = "/cloud/project/{serviceName}/ip/failover";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t12);
+		return convertTo(resp, t13);
 	}
-	private static TypeReference<ArrayList<OvhFailoverIp>> t12 = new TypeReference<ArrayList<OvhFailoverIp>>() {};
+	private static TypeReference<ArrayList<OvhFailoverIp>> t13 = new TypeReference<ArrayList<OvhFailoverIp>>() {};
 
 	/**
 	 * Get failover ip
@@ -1653,9 +1719,9 @@ public class ApiOvhCloud extends ApiOvhBase {
 		query(sb, "flavorType", flavorType);
 		query(sb, "region", region);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t13);
+		return convertTo(resp, t14);
 	}
-	private static TypeReference<ArrayList<OvhImage>> t13 = new TypeReference<ArrayList<OvhImage>>() {};
+	private static TypeReference<ArrayList<OvhImage>> t14 = new TypeReference<ArrayList<OvhImage>>() {};
 
 	/**
 	 * Get usage forecast
@@ -1684,9 +1750,9 @@ public class ApiOvhCloud extends ApiOvhBase {
 		query(sb, "from", from);
 		query(sb, "to", to);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t14);
+		return convertTo(resp, t15);
 	}
-	private static TypeReference<ArrayList<OvhUsageHistory>> t14 = new TypeReference<ArrayList<OvhUsageHistory>>() {};
+	private static TypeReference<ArrayList<OvhUsageHistory>> t15 = new TypeReference<ArrayList<OvhUsageHistory>>() {};
 
 	/**
 	 * Usage information details
@@ -1739,9 +1805,9 @@ public class ApiOvhCloud extends ApiOvhBase {
 		String qPath = "/cloud/project/{serviceName}/migration";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t15);
+		return convertTo(resp, t16);
 	}
-	private static TypeReference<ArrayList<OvhMigration>> t15 = new TypeReference<ArrayList<OvhMigration>>() {};
+	private static TypeReference<ArrayList<OvhMigration>> t16 = new TypeReference<ArrayList<OvhMigration>>() {};
 
 	/**
 	 * Get planned migration
@@ -1790,9 +1856,9 @@ public class ApiOvhCloud extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "region", region);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t16);
+		return convertTo(resp, t17);
 	}
-	private static TypeReference<ArrayList<OvhVolume>> t16 = new TypeReference<ArrayList<OvhVolume>>() {};
+	private static TypeReference<ArrayList<OvhVolume>> t17 = new TypeReference<ArrayList<OvhVolume>>() {};
 
 	/**
 	 * Create a volume
@@ -1977,9 +2043,9 @@ public class ApiOvhCloud extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "region", region);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t17);
+		return convertTo(resp, t18);
 	}
-	private static TypeReference<ArrayList<OvhSnapshot>> t17 = new TypeReference<ArrayList<OvhSnapshot>>() {};
+	private static TypeReference<ArrayList<OvhSnapshot>> t18 = new TypeReference<ArrayList<OvhSnapshot>>() {};
 
 	/**
 	 * Get your credit
@@ -2139,7 +2205,7 @@ public class ApiOvhCloud extends ApiOvhBase {
 		query(sb, "osType", osType);
 		query(sb, "region", region);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t13);
+		return convertTo(resp, t14);
 	}
 
 	/**
@@ -2180,9 +2246,9 @@ public class ApiOvhCloud extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "region", region);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t18);
+		return convertTo(resp, t19);
 	}
-	private static TypeReference<ArrayList<OvhSshKey>> t18 = new TypeReference<ArrayList<OvhSshKey>>() {};
+	private static TypeReference<ArrayList<OvhSshKey>> t19 = new TypeReference<ArrayList<OvhSshKey>>() {};
 
 	/**
 	 * Create SSH key
@@ -2241,9 +2307,9 @@ public class ApiOvhCloud extends ApiOvhBase {
 		String qPath = "/cloud/project/{serviceName}/storage";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t19);
+		return convertTo(resp, t20);
 	}
-	private static TypeReference<ArrayList<OvhContainer>> t19 = new TypeReference<ArrayList<OvhContainer>>() {};
+	private static TypeReference<ArrayList<OvhContainer>> t20 = new TypeReference<ArrayList<OvhContainer>>() {};
 
 	/**
 	 * Create container
@@ -2415,9 +2481,9 @@ public class ApiOvhCloud extends ApiOvhBase {
 		query(sb, "from", from);
 		query(sb, "to", to);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t20);
+		return convertTo(resp, t21);
 	}
-	private static TypeReference<ArrayList<OvhBill>> t20 = new TypeReference<ArrayList<OvhBill>>() {};
+	private static TypeReference<ArrayList<OvhBill>> t21 = new TypeReference<ArrayList<OvhBill>>() {};
 
 	/**
 	 * List available services
@@ -2444,9 +2510,9 @@ public class ApiOvhCloud extends ApiOvhBase {
 		StringBuilder sb = path(qPath);
 		query(sb, "planCode", planCode);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t21);
+		return convertTo(resp, t22);
 	}
-	private static TypeReference<ArrayList<OvhOrder>> t21 = new TypeReference<ArrayList<OvhOrder>>() {};
+	private static TypeReference<ArrayList<OvhOrder>> t22 = new TypeReference<ArrayList<OvhOrder>>() {};
 
 	/**
 	 * Get services prices for a subsidiary

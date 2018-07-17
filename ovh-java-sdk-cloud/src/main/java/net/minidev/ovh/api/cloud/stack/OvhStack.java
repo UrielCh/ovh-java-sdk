@@ -5,6 +5,13 @@ package net.minidev.ovh.api.cloud.stack;
  */
 public class OvhStack {
 	/**
+	 * Instructions to start the stack
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhInstructionGuide[] instructions;
+
+	/**
 	 * GIT repository
 	 *
 	 * canBeNull && readOnly
@@ -19,20 +26,6 @@ public class OvhStack {
 	public String release;
 
 	/**
-	 * List of customer inputs
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhInput[] inputs;
-
-	/**
-	 * Stack name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String name;
-
-	/**
 	 * Stack last commit
 	 *
 	 * canBeNull && readOnly
@@ -40,11 +33,11 @@ public class OvhStack {
 	public String commit;
 
 	/**
-	 * Resources used
+	 * Stack name
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhResources resources;
+	public String name;
 
 	/**
 	 * Stack description
@@ -59,11 +52,4 @@ public class OvhStack {
 	 * canBeNull && readOnly
 	 */
 	public String uuid;
-
-	/**
-	 * List of stack commands shortcuts
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhCommand[] commands;
 }
