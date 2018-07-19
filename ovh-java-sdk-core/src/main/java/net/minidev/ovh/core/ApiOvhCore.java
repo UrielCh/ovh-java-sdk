@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.Proxy;
 import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.nio.charset.Charset;
@@ -33,6 +34,11 @@ import net.minidev.ovh.api.auth.OvhCredential;
 import net.minidev.ovh.api.auth.OvhMethodEnum;
 
 public class ApiOvhCore {
+	/**
+	 * Optional proxy used for connection
+	 */
+	private Proxy proxy;
+	
 	private String[] DEFAULT_ACCESS_RULES = new String[] { "DELETE /*", "GET /*", "POST /*", "PUT /*" };
 	/**
 	 * Optional Handlers
@@ -71,6 +77,10 @@ public class ApiOvhCore {
 		this.cacheManager = cacheManager;
 	}
 
+	public void setProxy(Proxy proxy) {
+		this.proxy = proxy;
+	}
+	
 	private ApiOvhConfig config;
 	/**
 	 * log
@@ -256,7 +266,11 @@ public class ApiOvhCore {
 	 * @throws IOException
 	 */
 	private HttpURLConnection getRequest(String method, URL url) throws IOException {
-		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+		HttpURLConnection connection;
+		if (proxy == null)
+			connection = (HttpURLConnection) url.openConnection();
+		else
+			connection = (HttpURLConnection) url.openConnection(proxy);
 		connection.setRequestMethod(method);
 		connection.setReadTimeout(config.getReadTimeout());
 		connection.setConnectTimeout(config.getConnectTimeout());
@@ -278,6 +292,7 @@ public class ApiOvhCore {
 		api.timeInSec = this.timeInSec;
 		api.timeOffset = this.timeOffset;
 		api.mtdHandler = this.mtdHandler;
+		api.proxy = this.proxy;
 		return api;
 	}
 
