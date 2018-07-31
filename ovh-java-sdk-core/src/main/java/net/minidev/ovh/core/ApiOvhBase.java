@@ -45,6 +45,7 @@ public abstract class ApiOvhBase {
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
 			String s = sdf.format((Date) value);
 			s = s.replaceAll("([+-])([0-9]{2})(00)$", "$1$2:$3");
+			s = s.replace("+", "%2B");
 			sb.append(s);
 		} else if (value instanceof String) {
 			try {
