@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>net.minidev</groupId>
 		<artifactId>ovh-java-sdk-pom</artifactId>
-		<version>0.9.14</version>
+		<version>0.9.15</version>
 	</parent>
 	<artifactId>ovh-java-sdk-licensevirtuozzo</artifactId>
 	<name>OVH Java SDK for OVH licensevirtuozzo</name>

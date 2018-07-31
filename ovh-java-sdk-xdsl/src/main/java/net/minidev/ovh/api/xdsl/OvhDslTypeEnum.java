@@ -5,6 +5,7 @@ package net.minidev.ovh.api.xdsl;
  */
 public enum OvhDslTypeEnum {
 	adsl("adsl"),
+	ftth("ftth"),
 	sdsl("sdsl"),
 	vdsl("vdsl");
 

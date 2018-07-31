@@ -7,6 +7,7 @@ public enum OvhStateEnum {
 	expired("expired"),
 	inCreation("inCreation"),
 	ok("ok"),
+	pendingDebt("pendingDebt"),
 	unPaid("unPaid");
 
 	final String value;

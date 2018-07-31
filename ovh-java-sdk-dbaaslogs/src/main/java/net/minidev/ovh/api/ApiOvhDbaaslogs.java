@@ -9,6 +9,8 @@ import net.minidev.ovh.api.dbaas.logs.OvhAllowedNetwork;
 import net.minidev.ovh.api.dbaas.logs.OvhArchive;
 import net.minidev.ovh.api.dbaas.logs.OvhArchiveUrl;
 import net.minidev.ovh.api.dbaas.logs.OvhCluster;
+import net.minidev.ovh.api.dbaas.logs.OvhClusterAllowedNetwork;
+import net.minidev.ovh.api.dbaas.logs.OvhClusterAllowedNetworkFlowTypeEnum;
 import net.minidev.ovh.api.dbaas.logs.OvhDashboard;
 import net.minidev.ovh.api.dbaas.logs.OvhEngine;
 import net.minidev.ovh.api.dbaas.logs.OvhFlowggerConfiguration;
@@ -35,6 +37,7 @@ import net.minidev.ovh.api.dbaas.logs.OvhStreamAlertConditionConstraintTypeEnum;
 import net.minidev.ovh.api.dbaas.logs.OvhStreamAlertConditionThresholdTypeEnum;
 import net.minidev.ovh.api.dbaas.logs.OvhStreamColdStorageCompressionEnum;
 import net.minidev.ovh.api.dbaas.logs.OvhStreamRule;
+import net.minidev.ovh.api.dbaas.logs.OvhStreamRuleOperatorEnum;
 import net.minidev.ovh.api.dbaas.logs.OvhTemporaryLogsLink;
 import net.minidev.ovh.api.dbaas.logs.OvhTestResult;
 import net.minidev.ovh.api.dbaas.logs.OvhToken;
@@ -104,16 +107,14 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * REST: PUT /dbaas/logs/{serviceName}
 	 * @param serviceName [required] Service name
 	 * @param displayName [required] Service custom name
-	 * @param contactId [required] Contact ID
 	 *
 	 * API beta
 	 */
-	public OvhOperation serviceName_PUT(String serviceName, String displayName, Long contactId) throws IOException {
+	public OvhOperation serviceName_PUT(String serviceName, String displayName) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "displayName", displayName);
-		addBody(o, "contactId", contactId);
 		String resp = exec(qPath, "PUT", sb.toString(), o);
 		return convertTo(resp, OvhOperation.class);
 	}
@@ -148,6 +149,77 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName, clusterId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhCluster.class);
+	}
+
+	/**
+	 * List all the network UUID allowed to contact given cluster
+	 *
+	 * REST: GET /dbaas/logs/{serviceName}/cluster/{clusterId}/allowedNetwork
+	 * @param serviceName [required] Service name
+	 * @param clusterId [required] Cluster ID
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> serviceName_cluster_clusterId_allowedNetwork_GET(String serviceName, String clusterId) throws IOException {
+		String qPath = "/dbaas/logs/{serviceName}/cluster/{clusterId}/allowedNetwork";
+		StringBuilder sb = path(qPath, serviceName, clusterId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Allow an IP to contact cluster
+	 *
+	 * REST: POST /dbaas/logs/{serviceName}/cluster/{clusterId}/allowedNetwork
+	 * @param serviceName [required] Service name
+	 * @param clusterId [required] Cluster ID
+	 * @param network [required] IP block
+	 * @param flowType [required] Flow type
+	 *
+	 * API beta
+	 */
+	public OvhOperation serviceName_cluster_clusterId_allowedNetwork_POST(String serviceName, String clusterId, String network, OvhClusterAllowedNetworkFlowTypeEnum flowType) throws IOException {
+		String qPath = "/dbaas/logs/{serviceName}/cluster/{clusterId}/allowedNetwork";
+		StringBuilder sb = path(qPath, serviceName, clusterId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "network", network);
+		addBody(o, "flowType", flowType);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhOperation.class);
+	}
+
+	/**
+	 * Remove the specified IP from the list of allowed networks
+	 *
+	 * REST: DELETE /dbaas/logs/{serviceName}/cluster/{clusterId}/allowedNetwork/{allowedNetworkId}
+	 * @param serviceName [required] Service name
+	 * @param clusterId [required] Cluster ID
+	 * @param allowedNetworkId [required] Allowed network UUID
+	 *
+	 * API beta
+	 */
+	public OvhOperation serviceName_cluster_clusterId_allowedNetwork_allowedNetworkId_DELETE(String serviceName, String clusterId, String allowedNetworkId) throws IOException {
+		String qPath = "/dbaas/logs/{serviceName}/cluster/{clusterId}/allowedNetwork/{allowedNetworkId}";
+		StringBuilder sb = path(qPath, serviceName, clusterId, allowedNetworkId);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhOperation.class);
+	}
+
+	/**
+	 * Return details of an allowed network
+	 *
+	 * REST: GET /dbaas/logs/{serviceName}/cluster/{clusterId}/allowedNetwork/{allowedNetworkId}
+	 * @param serviceName [required] Service name
+	 * @param clusterId [required] Cluster ID
+	 * @param allowedNetworkId [required] Allowed network UUID
+	 *
+	 * API beta
+	 */
+	public OvhClusterAllowedNetwork serviceName_cluster_clusterId_allowedNetwork_allowedNetworkId_GET(String serviceName, String clusterId, String allowedNetworkId) throws IOException {
+		String qPath = "/dbaas/logs/{serviceName}/cluster/{clusterId}/allowedNetwork/{allowedNetworkId}";
+		StringBuilder sb = path(qPath, serviceName, clusterId, allowedNetworkId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhClusterAllowedNetwork.class);
 	}
 
 	/**
@@ -904,13 +976,14 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 	 * @param coldStorageCompression [required] Cold storage compression
 	 * @param optionId [required] Option ID
 	 * @param coldStorageNotifyEnabled [required] Cold storage notify enabled
+	 * @param parentStreamId [required] Parent stream id
 	 * @param description [required] Description
 	 * @param title [required] Title
 	 * @param coldStorageEnabled [required] Cold storage enabled
 	 *
 	 * API beta
 	 */
-	public OvhOperation serviceName_output_graylog_stream_POST(String serviceName, Boolean autoSelectOption, Boolean webSocketEnabled, Long coldStorageRetention, OvhStreamColdStorageCompressionEnum coldStorageCompression, String optionId, Boolean coldStorageNotifyEnabled, String description, String title, Boolean coldStorageEnabled) throws IOException {
+	public OvhOperation serviceName_output_graylog_stream_POST(String serviceName, Boolean autoSelectOption, Boolean webSocketEnabled, Long coldStorageRetention, OvhStreamColdStorageCompressionEnum coldStorageCompression, String optionId, Boolean coldStorageNotifyEnabled, String parentStreamId, String description, String title, Boolean coldStorageEnabled) throws IOException {
 		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
@@ -920,6 +993,7 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 		addBody(o, "coldStorageCompression", coldStorageCompression);
 		addBody(o, "optionId", optionId);
 		addBody(o, "coldStorageNotifyEnabled", coldStorageNotifyEnabled);
+		addBody(o, "parentStreamId", parentStreamId);
 		addBody(o, "description", description);
 		addBody(o, "title", title);
 		addBody(o, "coldStorageEnabled", coldStorageEnabled);
@@ -1201,6 +1275,48 @@ public class ApiOvhDbaaslogs extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName, streamId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Register a new rule on specified graylog stream
+	 *
+	 * REST: POST /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/rule
+	 * @param serviceName [required] Service name
+	 * @param streamId [required] Stream ID
+	 * @param value [required] Field value
+	 * @param field [required] Field name
+	 * @param operator [required] Field operator
+	 * @param isInverted [required] Invert condition
+	 *
+	 * API beta
+	 */
+	public OvhOperation serviceName_output_graylog_stream_streamId_rule_POST(String serviceName, String streamId, String value, String field, OvhStreamRuleOperatorEnum operator, Boolean isInverted) throws IOException {
+		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/rule";
+		StringBuilder sb = path(qPath, serviceName, streamId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "value", value);
+		addBody(o, "field", field);
+		addBody(o, "operator", operator);
+		addBody(o, "isInverted", isInverted);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhOperation.class);
+	}
+
+	/**
+	 * Remove specified graylog stream rule
+	 *
+	 * REST: DELETE /dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/rule/{ruleId}
+	 * @param serviceName [required] Service name
+	 * @param streamId [required] Stream ID
+	 * @param ruleId [required] Rule ID
+	 *
+	 * API beta
+	 */
+	public OvhOperation serviceName_output_graylog_stream_streamId_rule_ruleId_DELETE(String serviceName, String streamId, String ruleId) throws IOException {
+		String qPath = "/dbaas/logs/{serviceName}/output/graylog/stream/{streamId}/rule/{ruleId}";
+		StringBuilder sb = path(qPath, serviceName, streamId, ruleId);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhOperation.class);
 	}
 
 	/**

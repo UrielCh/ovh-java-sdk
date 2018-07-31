@@ -11,6 +11,7 @@ import net.minidev.ovh.api.dnssec.OvhKeyStatusEnum;
 import net.minidev.ovh.api.domain.OvhCurrentNameServer;
 import net.minidev.ovh.api.domain.OvhDnssecKey;
 import net.minidev.ovh.api.domain.OvhDomain;
+import net.minidev.ovh.api.domain.OvhDomainContactTypeEnum;
 import net.minidev.ovh.api.domain.OvhDomainNs;
 import net.minidev.ovh.api.domain.OvhDomainNsStatus;
 import net.minidev.ovh.api.domain.OvhGlueRecord;
@@ -281,6 +282,21 @@ public class ApiOvhDomain extends ApiOvhBase {
 		addBody(o, "contactBilling", contactBilling);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Regenerate the obfuscated email address
+	 *
+	 * REST: POST /domain/{serviceName}/email/obfuscated/refresh
+	 * @param contactType [required] Contact type
+	 * @param serviceName [required] The internal name of your domain
+	 */
+	public void serviceName_email_obfuscated_refresh_POST(String serviceName, OvhDomainContactTypeEnum[] contactType) throws IOException {
+		String qPath = "/domain/{serviceName}/email/obfuscated/refresh";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "contactType", contactType);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**

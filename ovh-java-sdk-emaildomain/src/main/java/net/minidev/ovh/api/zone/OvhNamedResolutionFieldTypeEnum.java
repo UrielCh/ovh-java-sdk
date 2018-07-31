@@ -9,6 +9,7 @@ public enum OvhNamedResolutionFieldTypeEnum {
 	CAA("CAA"),
 	CNAME("CNAME"),
 	DKIM("DKIM"),
+	DMARC("DMARC"),
 	LOC("LOC"),
 	MX("MX"),
 	NAPTR("NAPTR"),

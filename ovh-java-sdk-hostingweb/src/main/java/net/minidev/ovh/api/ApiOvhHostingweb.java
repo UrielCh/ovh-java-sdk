@@ -44,6 +44,7 @@ import net.minidev.ovh.api.hosting.web.backup.OvhTypeEnum;
 import net.minidev.ovh.api.hosting.web.cron.OvhLanguageEnum;
 import net.minidev.ovh.api.hosting.web.database.OvhAvailableVersionStruct;
 import net.minidev.ovh.api.hosting.web.database.OvhCreationDatabaseCapabilities;
+import net.minidev.ovh.api.hosting.web.database.OvhDatabaseCapabilities;
 import net.minidev.ovh.api.hosting.web.database.OvhDatabaseCapabilitiesTypeEnum;
 import net.minidev.ovh.api.hosting.web.database.OvhDatabaseTypeEnum;
 import net.minidev.ovh.api.hosting.web.database.OvhExtraSqlQuotaEnum;
@@ -1521,6 +1522,20 @@ public class ApiOvhHostingweb extends ApiOvhBase {
 		addBody(o, "flushDatabase", flushDatabase);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get available capabilities for this database
+	 *
+	 * REST: GET /hosting/web/{serviceName}/database/{name}/capabilities
+	 * @param serviceName [required] The internal name of your hosting
+	 * @param name [required] Database name (like mydb.mysql.db or mydb.postgres.db)
+	 */
+	public OvhDatabaseCapabilities serviceName_database_name_capabilities_GET(String serviceName, String name) throws IOException {
+		String qPath = "/hosting/web/{serviceName}/database/{name}/capabilities";
+		StringBuilder sb = path(qPath, serviceName, name);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhDatabaseCapabilities.class);
 	}
 
 	/**

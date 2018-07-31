@@ -24,4 +24,11 @@ public class OvhCity {
 	 * canBeNull
 	 */
 	public String name;
+
+	/**
+	 * Locality (subset of a city)
+	 *
+	 * canBeNull
+	 */
+	public String locality;
 }

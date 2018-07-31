@@ -74,45 +74,6 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /dedicatedCloud/{serviceName}/serviceInfos
-	 * @param serviceName [required] Domain of the service
-	 */
-	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhService.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /dedicatedCloud/{serviceName}/serviceInfos
-	 * @param body [required] New object properties
-	 * @param serviceName [required] Domain of the service
-	 */
-	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Get the current password policy for your Private Cloud
-	 *
-	 * REST: GET /dedicatedCloud/{serviceName}/passwordPolicy
-	 * @param serviceName [required] Domain of the service
-	 */
-	public OvhPasswordPolicy serviceName_passwordPolicy_GET(String serviceName) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/passwordPolicy";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPasswordPolicy.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
 	 * REST: GET /dedicatedCloud/{serviceName}
 	 * @param serviceName [required] Domain of the service
 	 */
@@ -1154,308 +1115,6 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	}
 
 	/**
-	 * Ip Blocks attached to this Private Cloud
-	 *
-	 * REST: GET /dedicatedCloud/{serviceName}/ip
-	 * @param serviceName [required] Domain of the service
-	 */
-	public ArrayList<String> serviceName_ip_GET(String serviceName) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/ip";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t4);
-	}
-	private static TypeReference<ArrayList<String>> t4 = new TypeReference<ArrayList<String>>() {};
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /dedicatedCloud/{serviceName}/ip/{network}
-	 * @param serviceName [required] Domain of the service
-	 * @param network [required] IP ex: 213.186.33.34/24
-	 */
-	public OvhIp serviceName_ip_network_GET(String serviceName, String network) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/ip/{network}";
-		StringBuilder sb = path(qPath, serviceName, network);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhIp.class);
-	}
-
-	/**
-	 * Tasks associated with this Filer
-	 *
-	 * REST: GET /dedicatedCloud/{serviceName}/ip/{network}/task
-	 * @param name [required] Filter the value of name property (like)
-	 * @param state [required] Filter the value of state property (=)
-	 * @param serviceName [required] Domain of the service
-	 * @param network [required] IP ex: 213.186.33.34/24
-	 */
-	public ArrayList<Long> serviceName_ip_network_task_GET(String serviceName, String network, String name, OvhTaskStateEnum state) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/ip/{network}/task";
-		StringBuilder sb = path(qPath, serviceName, network);
-		query(sb, "name", name);
-		query(sb, "state", state);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /dedicatedCloud/{serviceName}/ip/{network}/task/{taskId}
-	 * @param serviceName [required] Domain of the service
-	 * @param network [required] IP ex: 213.186.33.34/24
-	 * @param taskId [required] Task id
-	 */
-	public OvhTask serviceName_ip_network_task_taskId_GET(String serviceName, String network, Long taskId) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/ip/{network}/task/{taskId}";
-		StringBuilder sb = path(qPath, serviceName, network, taskId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Change the execution date of a maintenance. Works only if task type is maintenance and if it has not started yet.
-	 *
-	 * REST: POST /dedicatedCloud/{serviceName}/ip/{network}/task/{taskId}/changeMaintenanceExecutionDate
-	 * @param executionDate [required] The new execution date
-	 * @param serviceName [required] Domain of the service
-	 * @param network [required] IP ex: 213.186.33.34/24
-	 * @param taskId [required] Task id
-	 */
-	public OvhTask serviceName_ip_network_task_taskId_changeMaintenanceExecutionDate_POST(String serviceName, String network, Long taskId, Date executionDate) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/ip/{network}/task/{taskId}/changeMaintenanceExecutionDate";
-		StringBuilder sb = path(qPath, serviceName, network, taskId);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "executionDate", executionDate);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Restart task in error.
-	 *
-	 * REST: POST /dedicatedCloud/{serviceName}/ip/{network}/task/{taskId}/resetTaskState
-	 * @param reason [required] Reason of task restart
-	 * @param serviceName [required] Domain of the service
-	 * @param network [required] IP ex: 213.186.33.34/24
-	 * @param taskId [required] Task id
-	 */
-	public OvhTask serviceName_ip_network_task_taskId_resetTaskState_POST(String serviceName, String network, Long taskId, String reason) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/ip/{network}/task/{taskId}/resetTaskState";
-		StringBuilder sb = path(qPath, serviceName, network, taskId);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "reason", reason);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Check if Nsx option can be disabled
-	 *
-	 * REST: GET /dedicatedCloud/{serviceName}/nsx/canBeDisabled
-	 * @param serviceName [required] Domain of the service
-	 */
-	public OvhOptionCompatibility serviceName_nsx_canBeDisabled_GET(String serviceName) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/nsx/canBeDisabled";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhOptionCompatibility.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /dedicatedCloud/{serviceName}/nsx
-	 * @param serviceName [required] Domain of the service
-	 */
-	public OvhNsx serviceName_nsx_GET(String serviceName) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/nsx";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhNsx.class);
-	}
-
-	/**
-	 * Enable Nsx option
-	 *
-	 * REST: POST /dedicatedCloud/{serviceName}/nsx/enable
-	 * @param serviceName [required] Domain of the service
-	 */
-	public OvhTask serviceName_nsx_enable_POST(String serviceName) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/nsx/enable";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Check if Nsx option can be enabled
-	 *
-	 * REST: GET /dedicatedCloud/{serviceName}/nsx/canBeEnabled
-	 * @param serviceName [required] Domain of the service
-	 */
-	public OvhOptionCompatibility serviceName_nsx_canBeEnabled_GET(String serviceName) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/nsx/canBeEnabled";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhOptionCompatibility.class);
-	}
-
-	/**
-	 * Disable Nsx option
-	 *
-	 * REST: POST /dedicatedCloud/{serviceName}/nsx/disable
-	 * @param serviceName [required] Domain of the service
-	 */
-	public OvhTask serviceName_nsx_disable_POST(String serviceName) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/nsx/disable";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Terminate your service
-	 *
-	 * REST: POST /dedicatedCloud/{serviceName}/terminate
-	 * @param serviceName [required] Domain of the service
-	 */
-	public String serviceName_terminate_POST(String serviceName) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/terminate";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /dedicatedCloud/{serviceName}/federation
-	 * @param serviceName [required] Domain of the service
-	 */
-	public OvhFederation serviceName_federation_GET(String serviceName) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/federation";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhFederation.class);
-	}
-
-	/**
-	 * Active Directories linked to this Private Cloud
-	 *
-	 * REST: GET /dedicatedCloud/{serviceName}/federation/activeDirectory
-	 * @param serviceName [required] Domain of the service
-	 */
-	public ArrayList<Long> serviceName_federation_activeDirectory_GET(String serviceName) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/federation/activeDirectory";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Add a new option user access
-	 *
-	 * REST: POST /dedicatedCloud/{serviceName}/federation/activeDirectory
-	 * @param baseDnForGroups [required] Active Directory base DN for groups, e.g. dc=example,dc=com
-	 * @param domainAlias [required] Active Directory NetBIOS name, e.g. example
-	 * @param ip [required] IP address of the remote service, e.g. 123.100.200.0
-	 * @param description [required] Description of your option access network
-	 * @param username [required] Active Directory username, e.g. jdoe@example.com
-	 * @param password [required] Active Directory password
-	 * @param baseDnForUsers [required] Active Directory base DN for users, e.g. dc=example,dc=com
-	 * @param domainName [required] Active Directory domain name, e.g. example.com
-	 * @param serviceName [required] Domain of the service
-	 */
-	public OvhTask serviceName_federation_activeDirectory_POST(String serviceName, String baseDnForGroups, String domainAlias, String ip, String description, String username, String password, String baseDnForUsers, String domainName) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/federation/activeDirectory";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "baseDnForGroups", baseDnForGroups);
-		addBody(o, "domainAlias", domainAlias);
-		addBody(o, "ip", ip);
-		addBody(o, "description", description);
-		addBody(o, "username", username);
-		addBody(o, "password", password);
-		addBody(o, "baseDnForUsers", baseDnForUsers);
-		addBody(o, "domainName", domainName);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /dedicatedCloud/{serviceName}/federation/activeDirectory/{activeDirectoryId}
-	 * @param serviceName [required] Domain of the service
-	 * @param activeDirectoryId [required] Id of the Active Directory
-	 */
-	public OvhFederationAccessNetwork serviceName_federation_activeDirectory_activeDirectoryId_GET(String serviceName, Long activeDirectoryId) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/federation/activeDirectory/{activeDirectoryId}";
-		StringBuilder sb = path(qPath, serviceName, activeDirectoryId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhFederationAccessNetwork.class);
-	}
-
-	/**
-	 * Remove an option user access
-	 *
-	 * REST: DELETE /dedicatedCloud/{serviceName}/federation/activeDirectory/{activeDirectoryId}
-	 * @param serviceName [required] Domain of the service
-	 * @param activeDirectoryId [required] Id of the Active Directory
-	 */
-	public OvhTask serviceName_federation_activeDirectory_activeDirectoryId_DELETE(String serviceName, Long activeDirectoryId) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/federation/activeDirectory/{activeDirectoryId}";
-		StringBuilder sb = path(qPath, serviceName, activeDirectoryId);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Grant Active Directory user
-	 *
-	 * REST: POST /dedicatedCloud/{serviceName}/federation/activeDirectory/{activeDirectoryId}/grantActiveDirectoryUser
-	 * @param username [required] Active Directory username, e.g. jdoe@example.com
-	 * @param serviceName [required] Domain of the service
-	 * @param activeDirectoryId [required] Id of the Active Directory
-	 */
-	public OvhTask serviceName_federation_activeDirectory_activeDirectoryId_grantActiveDirectoryUser_POST(String serviceName, Long activeDirectoryId, String username) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/federation/activeDirectory/{activeDirectoryId}/grantActiveDirectoryUser";
-		StringBuilder sb = path(qPath, serviceName, activeDirectoryId);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "username", username);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get the name of the commercial ranges compliant with your Private Cloud
-	 *
-	 * REST: GET /dedicatedCloud/{serviceName}/commercialRange/compliance
-	 * @param serviceName [required] Domain of the service
-	 */
-	public ArrayList<String> serviceName_commercialRange_compliance_GET(String serviceName) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/commercialRange/compliance";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t4);
-	}
-
-	/**
-	 * Get the name of the commercial ranges orderable in your Private Cloud
-	 *
-	 * REST: GET /dedicatedCloud/{serviceName}/commercialRange/orderable
-	 * @param serviceName [required] Domain of the service
-	 */
-	public ArrayList<String> serviceName_commercialRange_orderable_GET(String serviceName) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/commercialRange/orderable";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t4);
-	}
-
-	/**
 	 * Filers mounted on all Datacenters of your Private Cloud Vsphere
 	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/filer
@@ -1580,26 +1239,6 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	}
 
 	/**
-	 * Launch a contact change procedure
-	 *
-	 * REST: POST /dedicatedCloud/{serviceName}/changeContact
-	 * @param contactAdmin The contact to set as admin contact
-	 * @param contactTech The contact to set as tech contact
-	 * @param contactBilling The contact to set as billing contact
-	 * @param serviceName [required] Domain of the service
-	 */
-	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/changeContact";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "contactAdmin", contactAdmin);
-		addBody(o, "contactTech", contactTech);
-		addBody(o, "contactBilling", contactBilling);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t1);
-	}
-
-	/**
 	 * Get the new Prices for your Private Cloud
 	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/newPrices
@@ -1686,7 +1325,7 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	}
 
 	/**
-	 * Tasks associated with this Filer
+	 * Tasks associated with this allowed network
 	 *
 	 * REST: GET /dedicatedCloud/{serviceName}/allowedNetwork/{networkAccessId}/task
 	 * @param name [required] Filter the value of name property (like)
@@ -1751,19 +1390,6 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "reason", reason);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Upgrade your hypervisor to the next released version
-	 *
-	 * REST: POST /dedicatedCloud/{serviceName}/upgradeHypervisor
-	 * @param serviceName [required] Domain of the service
-	 */
-	public OvhTask serviceName_upgradeHypervisor_POST(String serviceName) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/upgradeHypervisor";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -2122,19 +1748,6 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	}
 
 	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /dedicatedCloud/{serviceName}/hcx
-	 * @param serviceName [required] Domain of the service
-	 */
-	public OvhHcx serviceName_hcx_GET(String serviceName) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/hcx";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhHcx.class);
-	}
-
-	/**
 	 * Reset all triggered alarms on PCC
 	 *
 	 * REST: POST /dedicatedCloud/{serviceName}/resetTriggeredAlarm
@@ -2145,33 +1758,6 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Robots that can run on this Private Cloud
-	 *
-	 * REST: GET /dedicatedCloud/{serviceName}/robot
-	 * @param serviceName [required] Domain of the service
-	 */
-	public ArrayList<String> serviceName_robot_GET(String serviceName) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/robot";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t4);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /dedicatedCloud/{serviceName}/robot/{name}
-	 * @param serviceName [required] Domain of the service
-	 * @param name [required] The name of this robot
-	 */
-	public OvhRobot serviceName_robot_name_GET(String serviceName, String name) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/robot/{name}";
-		StringBuilder sb = path(qPath, serviceName, name);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhRobot.class);
 	}
 
 	/**
@@ -2259,6 +1845,536 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 		addBody(o, "token", token);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Order a new hourly Filer mounted in every Datacenter of a given Private Cloud
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/orderNewFilerHourly
+	 * @param name [required] Filer profile you want to order
+	 * @param serviceName [required] Domain of the service
+	 */
+	public OvhTask serviceName_orderNewFilerHourly_POST(String serviceName, String name) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/orderNewFilerHourly";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "name", name);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * This Private Cloud vrack
+	 *
+	 * REST: GET /dedicatedCloud/{serviceName}/vrack
+	 * @param serviceName [required] Domain of the service
+	 */
+	public ArrayList<String> serviceName_vrack_GET(String serviceName) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/vrack";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t4);
+	}
+	private static TypeReference<ArrayList<String>> t4 = new TypeReference<ArrayList<String>>() {};
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /dedicatedCloud/{serviceName}/vrack/{vrack}
+	 * @param serviceName [required] Domain of the service
+	 * @param vrack [required] vrack name
+	 */
+	public net.minidev.ovh.api.vrack.OvhDedicatedCloud serviceName_vrack_vrack_GET(String serviceName, String vrack) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/vrack/{vrack}";
+		StringBuilder sb = path(qPath, serviceName, vrack);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, net.minidev.ovh.api.vrack.OvhDedicatedCloud.class);
+	}
+
+	/**
+	 * remove this dedicatedCloud (VmNetwork) from this vrack
+	 *
+	 * REST: DELETE /dedicatedCloud/{serviceName}/vrack/{vrack}
+	 * @param serviceName [required] Domain of the service
+	 * @param vrack [required] vrack name
+	 */
+	public net.minidev.ovh.api.vrack.OvhTask serviceName_vrack_vrack_DELETE(String serviceName, String vrack) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/vrack/{vrack}";
+		StringBuilder sb = path(qPath, serviceName, vrack);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, net.minidev.ovh.api.vrack.OvhTask.class);
+	}
+
+	/**
+	 * Get the countries you can select in /order/dedicatedCloud/{serviceName}/ip
+	 *
+	 * REST: GET /dedicatedCloud/{serviceName}/orderableIpCountries
+	 * @param serviceName [required] Domain of the service
+	 */
+	public ArrayList<OvhIpCountriesEnum> serviceName_orderableIpCountries_GET(String serviceName) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/orderableIpCountries";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t5);
+	}
+	private static TypeReference<ArrayList<OvhIpCountriesEnum>> t5 = new TypeReference<ArrayList<OvhIpCountriesEnum>>() {};
+
+	/**
+	 * Get the current password policy for your Private Cloud
+	 *
+	 * REST: GET /dedicatedCloud/{serviceName}/passwordPolicy
+	 * @param serviceName [required] Domain of the service
+	 */
+	public OvhPasswordPolicy serviceName_passwordPolicy_GET(String serviceName) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/passwordPolicy";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPasswordPolicy.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /dedicatedCloud/{serviceName}/serviceInfos
+	 * @param serviceName [required] Domain of the service
+	 */
+	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhService.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /dedicatedCloud/{serviceName}/serviceInfos
+	 * @param body [required] New object properties
+	 * @param serviceName [required] Domain of the service
+	 */
+	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Ip Blocks attached to this Private Cloud
+	 *
+	 * REST: GET /dedicatedCloud/{serviceName}/ip
+	 * @param serviceName [required] Domain of the service
+	 */
+	public ArrayList<String> serviceName_ip_GET(String serviceName) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/ip";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t4);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /dedicatedCloud/{serviceName}/ip/{network}
+	 * @param serviceName [required] Domain of the service
+	 * @param network [required] IP ex: 213.186.33.34/24
+	 */
+	public OvhIp serviceName_ip_network_GET(String serviceName, String network) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/ip/{network}";
+		StringBuilder sb = path(qPath, serviceName, network);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhIp.class);
+	}
+
+	/**
+	 * Tasks associated with this IP Block
+	 *
+	 * REST: GET /dedicatedCloud/{serviceName}/ip/{network}/task
+	 * @param name [required] Filter the value of name property (like)
+	 * @param state [required] Filter the value of state property (=)
+	 * @param serviceName [required] Domain of the service
+	 * @param network [required] IP ex: 213.186.33.34/24
+	 */
+	public ArrayList<Long> serviceName_ip_network_task_GET(String serviceName, String network, String name, OvhTaskStateEnum state) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/ip/{network}/task";
+		StringBuilder sb = path(qPath, serviceName, network);
+		query(sb, "name", name);
+		query(sb, "state", state);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /dedicatedCloud/{serviceName}/ip/{network}/task/{taskId}
+	 * @param serviceName [required] Domain of the service
+	 * @param network [required] IP ex: 213.186.33.34/24
+	 * @param taskId [required] Task id
+	 */
+	public OvhTask serviceName_ip_network_task_taskId_GET(String serviceName, String network, Long taskId) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/ip/{network}/task/{taskId}";
+		StringBuilder sb = path(qPath, serviceName, network, taskId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Change the execution date of a maintenance. Works only if task type is maintenance and if it has not started yet.
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/ip/{network}/task/{taskId}/changeMaintenanceExecutionDate
+	 * @param executionDate [required] The new execution date
+	 * @param serviceName [required] Domain of the service
+	 * @param network [required] IP ex: 213.186.33.34/24
+	 * @param taskId [required] Task id
+	 */
+	public OvhTask serviceName_ip_network_task_taskId_changeMaintenanceExecutionDate_POST(String serviceName, String network, Long taskId, Date executionDate) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/ip/{network}/task/{taskId}/changeMaintenanceExecutionDate";
+		StringBuilder sb = path(qPath, serviceName, network, taskId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "executionDate", executionDate);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Restart task in error.
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/ip/{network}/task/{taskId}/resetTaskState
+	 * @param reason [required] Reason of task restart
+	 * @param serviceName [required] Domain of the service
+	 * @param network [required] IP ex: 213.186.33.34/24
+	 * @param taskId [required] Task id
+	 */
+	public OvhTask serviceName_ip_network_task_taskId_resetTaskState_POST(String serviceName, String network, Long taskId, String reason) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/ip/{network}/task/{taskId}/resetTaskState";
+		StringBuilder sb = path(qPath, serviceName, network, taskId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "reason", reason);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Check if Nsx option can be disabled
+	 *
+	 * REST: GET /dedicatedCloud/{serviceName}/nsx/canBeDisabled
+	 * @param serviceName [required] Domain of the service
+	 */
+	public OvhOptionCompatibility serviceName_nsx_canBeDisabled_GET(String serviceName) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/nsx/canBeDisabled";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhOptionCompatibility.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /dedicatedCloud/{serviceName}/nsx
+	 * @param serviceName [required] Domain of the service
+	 */
+	public OvhNsx serviceName_nsx_GET(String serviceName) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/nsx";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhNsx.class);
+	}
+
+	/**
+	 * Enable Nsx option
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/nsx/enable
+	 * @param serviceName [required] Domain of the service
+	 */
+	public OvhTask serviceName_nsx_enable_POST(String serviceName) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/nsx/enable";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Check if Nsx option can be enabled
+	 *
+	 * REST: GET /dedicatedCloud/{serviceName}/nsx/canBeEnabled
+	 * @param serviceName [required] Domain of the service
+	 */
+	public OvhOptionCompatibility serviceName_nsx_canBeEnabled_GET(String serviceName) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/nsx/canBeEnabled";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhOptionCompatibility.class);
+	}
+
+	/**
+	 * Disable Nsx option
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/nsx/disable
+	 * @param serviceName [required] Domain of the service
+	 */
+	public OvhTask serviceName_nsx_disable_POST(String serviceName) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/nsx/disable";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /dedicatedCloud/{serviceName}/federation
+	 * @param serviceName [required] Domain of the service
+	 */
+	public OvhFederation serviceName_federation_GET(String serviceName) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/federation";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhFederation.class);
+	}
+
+	/**
+	 * Active Directories linked to this Private Cloud
+	 *
+	 * REST: GET /dedicatedCloud/{serviceName}/federation/activeDirectory
+	 * @param serviceName [required] Domain of the service
+	 */
+	public ArrayList<Long> serviceName_federation_activeDirectory_GET(String serviceName) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/federation/activeDirectory";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Add a new option user access
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/federation/activeDirectory
+	 * @param baseDnForGroups [required] Active Directory base DN for groups, e.g. dc=example,dc=com
+	 * @param domainAlias [required] Active Directory NetBIOS name, e.g. example
+	 * @param ip [required] IP address of the remote service, e.g. 123.100.200.0
+	 * @param description [required] Description of your option access network
+	 * @param username [required] Active Directory username, e.g. jdoe@example.com
+	 * @param password [required] Active Directory password
+	 * @param baseDnForUsers [required] Active Directory base DN for users, e.g. dc=example,dc=com
+	 * @param domainName [required] Active Directory domain name, e.g. example.com
+	 * @param serviceName [required] Domain of the service
+	 */
+	public OvhTask serviceName_federation_activeDirectory_POST(String serviceName, String baseDnForGroups, String domainAlias, String ip, String description, String username, String password, String baseDnForUsers, String domainName) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/federation/activeDirectory";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "baseDnForGroups", baseDnForGroups);
+		addBody(o, "domainAlias", domainAlias);
+		addBody(o, "ip", ip);
+		addBody(o, "description", description);
+		addBody(o, "username", username);
+		addBody(o, "password", password);
+		addBody(o, "baseDnForUsers", baseDnForUsers);
+		addBody(o, "domainName", domainName);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /dedicatedCloud/{serviceName}/federation/activeDirectory/{activeDirectoryId}
+	 * @param serviceName [required] Domain of the service
+	 * @param activeDirectoryId [required] Id of the Active Directory
+	 */
+	public OvhFederationAccessNetwork serviceName_federation_activeDirectory_activeDirectoryId_GET(String serviceName, Long activeDirectoryId) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/federation/activeDirectory/{activeDirectoryId}";
+		StringBuilder sb = path(qPath, serviceName, activeDirectoryId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhFederationAccessNetwork.class);
+	}
+
+	/**
+	 * Remove an option user access
+	 *
+	 * REST: DELETE /dedicatedCloud/{serviceName}/federation/activeDirectory/{activeDirectoryId}
+	 * @param serviceName [required] Domain of the service
+	 * @param activeDirectoryId [required] Id of the Active Directory
+	 */
+	public OvhTask serviceName_federation_activeDirectory_activeDirectoryId_DELETE(String serviceName, Long activeDirectoryId) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/federation/activeDirectory/{activeDirectoryId}";
+		StringBuilder sb = path(qPath, serviceName, activeDirectoryId);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Grant Active Directory user
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/federation/activeDirectory/{activeDirectoryId}/grantActiveDirectoryUser
+	 * @param username [required] Active Directory username, e.g. jdoe@example.com
+	 * @param serviceName [required] Domain of the service
+	 * @param activeDirectoryId [required] Id of the Active Directory
+	 */
+	public OvhTask serviceName_federation_activeDirectory_activeDirectoryId_grantActiveDirectoryUser_POST(String serviceName, Long activeDirectoryId, String username) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/federation/activeDirectory/{activeDirectoryId}/grantActiveDirectoryUser";
+		StringBuilder sb = path(qPath, serviceName, activeDirectoryId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "username", username);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Terminate your service
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/terminate
+	 * @param serviceName [required] Domain of the service
+	 */
+	public String serviceName_terminate_POST(String serviceName) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/terminate";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Get the name of the commercial ranges compliant with your Private Cloud
+	 *
+	 * REST: GET /dedicatedCloud/{serviceName}/commercialRange/compliance
+	 * @param serviceName [required] Domain of the service
+	 */
+	public ArrayList<String> serviceName_commercialRange_compliance_GET(String serviceName) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/commercialRange/compliance";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t4);
+	}
+
+	/**
+	 * Get the name of the commercial ranges orderable in your Private Cloud
+	 *
+	 * REST: GET /dedicatedCloud/{serviceName}/commercialRange/orderable
+	 * @param serviceName [required] Domain of the service
+	 */
+	public ArrayList<String> serviceName_commercialRange_orderable_GET(String serviceName) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/commercialRange/orderable";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t4);
+	}
+
+	/**
+	 * Launch a contact change procedure
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/changeContact
+	 * @param contactAdmin The contact to set as admin contact
+	 * @param contactTech The contact to set as tech contact
+	 * @param contactBilling The contact to set as billing contact
+	 * @param serviceName [required] Domain of the service
+	 */
+	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/changeContact";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "contactAdmin", contactAdmin);
+		addBody(o, "contactTech", contactTech);
+		addBody(o, "contactBilling", contactBilling);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Get filtered tasks associated with this Private Cloud
+	 *
+	 * REST: GET /dedicatedCloud/{serviceName}/globalTasks
+	 * @param endDate_from [required] Filter the tasks by end date (>=)
+	 * @param datacenterId [required] Filter the tasks by datacenter Id
+	 * @param state [required] Filter the tasks by state
+	 * @param vlanId [required] Filter the tasks by vlan Id
+	 * @param lastModificationDate_to [required] Filter the tasks by last modification date (<=)
+	 * @param parentTaskId [required] Filter the tasks by parent task Id
+	 * @param networkAccessId [required] Filter the tasks by network access Id
+	 * @param executionDate_to [required] Filter the tasks by execution date (<=)
+	 * @param orderId [required] Filter the tasks by order Id
+	 * @param executionDate_from [required] Filter the tasks by execution date (>=)
+	 * @param endDate_to [required] Filter the tasks by end date (<=)
+	 * @param userId [required] Filter the tasks by user Id
+	 * @param name [required] Filter the tasks by name
+	 * @param lastModificationDate_from [required] Filter the tasks by last modification date (>=)
+	 * @param hostId [required] Filter the tasks by host Id
+	 * @param filerId [required] Filter the tasks by filer Id
+	 * @param serviceName [required] Domain of the service
+	 */
+	public ArrayList<Long> serviceName_globalTasks_GET(String serviceName, Long datacenterId, Date endDate_from, Date endDate_to, Date executionDate_from, Date executionDate_to, Long filerId, Long hostId, Date lastModificationDate_from, Date lastModificationDate_to, String name, Long networkAccessId, Long orderId, Long parentTaskId, OvhTaskStateEnum[] state, Long userId, Long vlanId) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/globalTasks";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "datacenterId", datacenterId);
+		query(sb, "endDate.from", endDate_from);
+		query(sb, "endDate.to", endDate_to);
+		query(sb, "executionDate.from", executionDate_from);
+		query(sb, "executionDate.to", executionDate_to);
+		query(sb, "filerId", filerId);
+		query(sb, "hostId", hostId);
+		query(sb, "lastModificationDate.from", lastModificationDate_from);
+		query(sb, "lastModificationDate.to", lastModificationDate_to);
+		query(sb, "name", name);
+		query(sb, "networkAccessId", networkAccessId);
+		query(sb, "orderId", orderId);
+		query(sb, "parentTaskId", parentTaskId);
+		query(sb, "state", state);
+		query(sb, "userId", userId);
+		query(sb, "vlanId", vlanId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Upgrade your hypervisor to the next released version
+	 *
+	 * REST: POST /dedicatedCloud/{serviceName}/upgradeHypervisor
+	 * @param serviceName [required] Domain of the service
+	 */
+	public OvhTask serviceName_upgradeHypervisor_POST(String serviceName) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/upgradeHypervisor";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /dedicatedCloud/{serviceName}/hcx
+	 * @param serviceName [required] Domain of the service
+	 */
+	public OvhHcx serviceName_hcx_GET(String serviceName) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/hcx";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhHcx.class);
+	}
+
+	/**
+	 * Robots that can run on this Private Cloud
+	 *
+	 * REST: GET /dedicatedCloud/{serviceName}/robot
+	 * @param serviceName [required] Domain of the service
+	 */
+	public ArrayList<String> serviceName_robot_GET(String serviceName) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/robot";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t4);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /dedicatedCloud/{serviceName}/robot/{name}
+	 * @param serviceName [required] Domain of the service
+	 * @param name [required] The name of this robot
+	 */
+	public OvhRobot serviceName_robot_name_GET(String serviceName, String name) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/robot/{name}";
+		StringBuilder sb = path(qPath, serviceName, name);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhRobot.class);
 	}
 
 	/**
@@ -2419,75 +2535,48 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 	}
 
 	/**
-	 * Order a new hourly Filer mounted in every Datacenter of a given Private Cloud
+	 * Get this object properties
 	 *
-	 * REST: POST /dedicatedCloud/{serviceName}/orderNewFilerHourly
-	 * @param name [required] Filer profile you want to order
+	 * REST: GET /dedicatedCloud/{serviceName}/vendor
 	 * @param serviceName [required] Domain of the service
 	 */
-	public OvhTask serviceName_orderNewFilerHourly_POST(String serviceName, String name) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/orderNewFilerHourly";
+	public OvhVendor serviceName_vendor_GET(String serviceName) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/vendor";
 		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "name", name);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhVendor.class);
 	}
 
 	/**
-	 * This Private Cloud vrack
+	 * Get available object types
 	 *
-	 * REST: GET /dedicatedCloud/{serviceName}/vrack
+	 * REST: POST /dedicatedCloud/{serviceName}/vendor/objectType
 	 * @param serviceName [required] Domain of the service
 	 */
-	public ArrayList<String> serviceName_vrack_GET(String serviceName) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/vrack";
+	public ArrayList<String> serviceName_vendor_objectType_POST(String serviceName) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/vendor/objectType";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, t4);
 	}
 
 	/**
-	 * Get this object properties
+	 * Get ovh id from object type
 	 *
-	 * REST: GET /dedicatedCloud/{serviceName}/vrack/{vrack}
-	 * @param serviceName [required] Domain of the service
-	 * @param vrack [required] vrack name
-	 */
-	public net.minidev.ovh.api.vrack.OvhDedicatedCloud serviceName_vrack_vrack_GET(String serviceName, String vrack) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/vrack/{vrack}";
-		StringBuilder sb = path(qPath, serviceName, vrack);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, net.minidev.ovh.api.vrack.OvhDedicatedCloud.class);
-	}
-
-	/**
-	 * remove this dedicatedCloud (VmNetwork) from this vrack
-	 *
-	 * REST: DELETE /dedicatedCloud/{serviceName}/vrack/{vrack}
-	 * @param serviceName [required] Domain of the service
-	 * @param vrack [required] vrack name
-	 */
-	public net.minidev.ovh.api.vrack.OvhTask serviceName_vrack_vrack_DELETE(String serviceName, String vrack) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/vrack/{vrack}";
-		StringBuilder sb = path(qPath, serviceName, vrack);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, net.minidev.ovh.api.vrack.OvhTask.class);
-	}
-
-	/**
-	 * Get the countries you can select in /order/dedicatedCloud/{serviceName}/ip
-	 *
-	 * REST: GET /dedicatedCloud/{serviceName}/orderableIpCountries
+	 * REST: POST /dedicatedCloud/{serviceName}/vendor/ovhId
+	 * @param vendorId [required] object type id
+	 * @param objectType [required] object type
 	 * @param serviceName [required] Domain of the service
 	 */
-	public ArrayList<OvhIpCountriesEnum> serviceName_orderableIpCountries_GET(String serviceName) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/orderableIpCountries";
+	public OvhOvhId serviceName_vendor_ovhId_POST(String serviceName, String vendorId, OvhVendorObjectTypeEnum objectType) throws IOException {
+		String qPath = "/dedicatedCloud/{serviceName}/vendor/ovhId";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t5);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "vendorId", vendorId);
+		addBody(o, "objectType", objectType);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhOvhId.class);
 	}
-	private static TypeReference<ArrayList<OvhIpCountriesEnum>> t5 = new TypeReference<ArrayList<OvhIpCountriesEnum>>() {};
 
 	/**
 	 * Check if Hds option can be disabled
@@ -2552,50 +2641,6 @@ public class ApiOvhDedicatedCloud extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /dedicatedCloud/{serviceName}/vendor
-	 * @param serviceName [required] Domain of the service
-	 */
-	public OvhVendor serviceName_vendor_GET(String serviceName) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/vendor";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhVendor.class);
-	}
-
-	/**
-	 * Get available object types
-	 *
-	 * REST: POST /dedicatedCloud/{serviceName}/vendor/objectType
-	 * @param serviceName [required] Domain of the service
-	 */
-	public ArrayList<String> serviceName_vendor_objectType_POST(String serviceName) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/vendor/objectType";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, t4);
-	}
-
-	/**
-	 * Get ovh id from object type
-	 *
-	 * REST: POST /dedicatedCloud/{serviceName}/vendor/ovhId
-	 * @param vendorId [required] object type id
-	 * @param objectType [required] object type
-	 * @param serviceName [required] Domain of the service
-	 */
-	public OvhOvhId serviceName_vendor_ovhId_POST(String serviceName, String vendorId, OvhVendorObjectTypeEnum objectType) throws IOException {
-		String qPath = "/dedicatedCloud/{serviceName}/vendor/ovhId";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "vendorId", vendorId);
-		addBody(o, "objectType", objectType);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhOvhId.class);
 	}
 
 	/**

@@ -31,7 +31,6 @@ import net.minidev.ovh.api.iploadbalancing.OvhTaskActionEnum;
 import net.minidev.ovh.api.iploadbalancing.OvhTaskStatusEnum;
 import net.minidev.ovh.api.iploadbalancing.OvhVrackInformation;
 import net.minidev.ovh.api.iploadbalancing.OvhVrackNetworkCreationRules;
-import net.minidev.ovh.api.iploadbalancing.backendcustomerserver.OvhBackendServer;
 import net.minidev.ovh.api.iploadbalancing.backendhttp.OvhBackendHttp;
 import net.minidev.ovh.api.iploadbalancing.backendhttpcustomerserver.OvhBackendHTTPServer;
 import net.minidev.ovh.api.iploadbalancing.backendtcp.OvhBackendTcp;
@@ -1047,7 +1046,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 *
 	 * API beta
 	 */
-	public OvhBackendServer serviceName_udp_farm_farmId_server_POST(String serviceName, Long farmId, OvhBackendCustomerServerStatusEnum status, String address, Long port, String displayName) throws IOException {
+	public OvhBackendUDPServer serviceName_udp_farm_farmId_server_POST(String serviceName, Long farmId, OvhBackendCustomerServerStatusEnum status, String address, Long port, String displayName) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/udp/farm/{farmId}/server";
 		StringBuilder sb = path(qPath, serviceName, farmId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
@@ -1056,7 +1055,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		addBody(o, "port", port);
 		addBody(o, "displayName", displayName);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhBackendServer.class);
+		return convertTo(resp, OvhBackendUDPServer.class);
 	}
 
 	/**
@@ -1658,7 +1657,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 * @param farmId [required] Id of your farm
 	 */
-	public OvhBackendServer serviceName_tcp_farm_farmId_server_POST(String serviceName, Long farmId, Boolean ssl, OvhBackendCustomerServerStatusEnum status, Long port, OvhProxyProtocolVersionEnum proxyProtocolVersion, String chain, Long weight, String address, Boolean backup, Boolean probe, String displayName) throws IOException {
+	public OvhBackendTCPServer serviceName_tcp_farm_farmId_server_POST(String serviceName, Long farmId, Boolean ssl, OvhBackendCustomerServerStatusEnum status, Long port, OvhProxyProtocolVersionEnum proxyProtocolVersion, String chain, Long weight, String address, Boolean backup, Boolean probe, String displayName) throws IOException {
 		String qPath = "/ipLoadbalancing/{serviceName}/tcp/farm/{farmId}/server";
 		StringBuilder sb = path(qPath, serviceName, farmId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
@@ -1673,7 +1672,7 @@ public class ApiOvhIpLoadbalancing extends ApiOvhBase {
 		addBody(o, "probe", probe);
 		addBody(o, "displayName", displayName);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhBackendServer.class);
+		return convertTo(resp, OvhBackendTCPServer.class);
 	}
 
 	/**

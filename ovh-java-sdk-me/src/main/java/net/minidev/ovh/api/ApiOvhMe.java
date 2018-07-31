@@ -39,6 +39,7 @@ import net.minidev.ovh.api.billing.OvhWithdrawal;
 import net.minidev.ovh.api.billing.OvhWithdrawalDetail;
 import net.minidev.ovh.api.billing.credit.OvhBalance;
 import net.minidev.ovh.api.billing.credit.balance.OvhMovement;
+import net.minidev.ovh.api.billing.credit.balance.OvhType;
 import net.minidev.ovh.api.billing.order.OvhOrderStatusEnum;
 import net.minidev.ovh.api.billing.order.OvhPaymentMeans;
 import net.minidev.ovh.api.billing.order.OvhRegisteredPaymentMean;
@@ -2911,10 +2912,12 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * Retrieve credit balance names
 	 *
 	 * REST: GET /me/credit/balance
+	 * @param type [required] Balance type
 	 */
-	public ArrayList<String> credit_balance_GET() throws IOException {
+	public ArrayList<String> credit_balance_GET(OvhType type) throws IOException {
 		String qPath = "/me/credit/balance";
 		StringBuilder sb = path(qPath);
+		query(sb, "type", type);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}

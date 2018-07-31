@@ -14,13 +14,6 @@ public class OvhService {
 	public Date createdAt;
 
 	/**
-	 * Contact ID to use
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long contactId;
-
-	/**
 	 * Service custom name
 	 *
 	 * canBeNull && readOnly

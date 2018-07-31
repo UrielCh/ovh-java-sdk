@@ -35,6 +35,13 @@ public class OvhStream {
 	public String description;
 
 	/**
+	 * Parent stream id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String parentStreamId;
+
+	/**
 	 * Stream description
 	 *
 	 * canBeNull && readOnly

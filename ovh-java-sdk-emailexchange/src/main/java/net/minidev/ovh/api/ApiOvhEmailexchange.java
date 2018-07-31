@@ -55,6 +55,7 @@ import net.minidev.ovh.api.email.exchange.OvhResourceTypeEnum;
 import net.minidev.ovh.api.email.exchange.OvhServer;
 import net.minidev.ovh.api.email.exchange.OvhSharedAccount;
 import net.minidev.ovh.api.email.exchange.OvhSharedAccountQuota;
+import net.minidev.ovh.api.email.exchange.OvhShowMeetingDetailsEnum;
 import net.minidev.ovh.api.email.exchange.OvhSpamAndVirusConfiguration;
 import net.minidev.ovh.api.email.exchange.OvhTask;
 import net.minidev.ovh.api.services.OvhService;
@@ -2430,24 +2431,36 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	 * create new resource account in exchange server
 	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/resourceAccount
+	 * @param deleteComments [required] remove any text in the message body of incoming meeting requests on resourceAccount
 	 * @param location [required] resource location
 	 * @param resourceEmailAddress [required] resource address
 	 * @param allowConflict [required] resource can be scheduled by more than one person during the same time period
-	 * @param type [required] field of your reservation
+	 * @param bookingWindow [required] maximum number of days in advance that the resource can be reserved
 	 * @param capacity [required] number of the same equipment or capacity of a room
+	 * @param deleteSubject [required] remove email subject of incoming meeting requests on resourceAccount
+	 * @param maximumDuration [required] maximum duration in minutes for meeting requests
+	 * @param addOrganizerToSubject [required] meeting organizer's name is used as the subject of the meeting request
+	 * @param type [required] type of your reservation
+	 * @param showMeetingDetails [required] granted right on a calendar of that resourceAccount
 	 * @param displayName [required] resource account display name
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 */
-	public OvhTask organizationName_service_exchangeService_resourceAccount_POST(String organizationName, String exchangeService, String location, String resourceEmailAddress, Boolean allowConflict, OvhResourceTypeEnum type, Long capacity, String displayName) throws IOException {
+	public OvhTask organizationName_service_exchangeService_resourceAccount_POST(String organizationName, String exchangeService, Boolean deleteComments, String location, String resourceEmailAddress, Boolean allowConflict, Long bookingWindow, Long capacity, Boolean deleteSubject, Long maximumDuration, Boolean addOrganizerToSubject, OvhResourceTypeEnum type, OvhShowMeetingDetailsEnum showMeetingDetails, String displayName) throws IOException {
 		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/resourceAccount";
 		StringBuilder sb = path(qPath, organizationName, exchangeService);
 		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "deleteComments", deleteComments);
 		addBody(o, "location", location);
 		addBody(o, "resourceEmailAddress", resourceEmailAddress);
 		addBody(o, "allowConflict", allowConflict);
-		addBody(o, "type", type);
+		addBody(o, "bookingWindow", bookingWindow);
 		addBody(o, "capacity", capacity);
+		addBody(o, "deleteSubject", deleteSubject);
+		addBody(o, "maximumDuration", maximumDuration);
+		addBody(o, "addOrganizerToSubject", addOrganizerToSubject);
+		addBody(o, "type", type);
+		addBody(o, "showMeetingDetails", showMeetingDetails);
 		addBody(o, "displayName", displayName);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);

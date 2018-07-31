@@ -7,6 +7,90 @@ import java.util.Date;
  */
 public class OvhExchangeInformation {
 	/**
+	 * Spam activity detected on this mailbox
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean spamDetected;
+
+	/**
+	 * Outlook licence attached
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean outlookLicense;
+
+	/**
+	 * Ticket number of spam detection
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long spamTicketNumber;
+
+	/**
+	 * Spam and Antivirus configuration
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhSpamAndVirusConfiguration spamAndVirusConfiguration;
+
+	/**
+	 * Primary address of the mailbox
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String primaryEmailAddress;
+
+	/**
+	 * OWA policy restriction is applied
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean owaLimited;
+
+	/**
+	 * Visibility in Global Address List
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean hiddenFromGAL;
+
+	/**
+	 * Litigation hold period in days (0 means unlimited). This setting covers all items in the mailbox.
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long litigationPeriod;
+
+	/**
+	 * Maximum mailbox usage in GB (overall size)
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long quota;
+
+	/**
+	 * Mailbox state
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhObjectStateEnum state;
+
+	/**
+	 * Account id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long id;
+
+	/**
+	 * Expiration date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date expirationDate;
+
+	/**
 	 * Indicates if the account is configured
 	 *
 	 * canBeNull && readOnly
@@ -35,27 +119,6 @@ public class OvhExchangeInformation {
 	public Date expirationOutlookDate;
 
 	/**
-	 * Spam activity detected on this mailbox
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean spamDetected;
-
-	/**
-	 * Outlook licence attached
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean outlookLicense;
-
-	/**
-	 * Ticket number of spam detection
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long spamTicketNumber;
-
-	/**
 	 * Enable or disable anti-virus and anti-spam
 	 *
 	 * canBeNull && readOnly
@@ -77,25 +140,11 @@ public class OvhExchangeInformation {
 	public Date creationDate;
 
 	/**
-	 * Spam and Antivirus configuration
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhSpamAndVirusConfiguration spamAndVirusConfiguration;
-
-	/**
 	 * Delete Outlook license at expiration date
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean deleteOutlookAtExpiration;
-
-	/**
-	 * Primary address of the mailbox
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String primaryEmailAddress;
 
 	/**
 	 * Pending task id for this account
@@ -112,13 +161,6 @@ public class OvhExchangeInformation {
 	public OvhExchangeLicenceEnum accountLicense;
 
 	/**
-	 * OWA policy restriction is applied
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean owaLimited;
-
-	/**
 	 * Frequency of mailbox license renewals
 	 *
 	 * canBeNull && readOnly
@@ -126,32 +168,11 @@ public class OvhExchangeInformation {
 	public OvhRenewPeriodEnum renewPeriod;
 
 	/**
-	 * Visibility in Global Address List
+	 * Litigation hold feature enabled on this mailbox
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Boolean hiddenFromGAL;
-
-	/**
-	 * Maximum mailbox usage in GB (overall size)
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long quota;
-
-	/**
-	 * Mailbox state
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhObjectStateEnum state;
-
-	/**
-	 * Account id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long id;
+	public Boolean litigation;
 
 	/**
 	 * Property needed for mailbox manual configuration (GUID)
@@ -159,11 +180,4 @@ public class OvhExchangeInformation {
 	 * canBeNull && readOnly
 	 */
 	public String exchangeGuid;
-
-	/**
-	 * Expiration date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date expirationDate;
 }

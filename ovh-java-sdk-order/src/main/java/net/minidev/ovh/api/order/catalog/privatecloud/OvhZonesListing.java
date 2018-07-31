@@ -5,6 +5,13 @@ package net.minidev.ovh.api.order.catalog.privatecloud;
  */
 public class OvhZonesListing {
 	/**
+	 * Zone definition for LIM datacenter
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhZone lim;
+
+	/**
 	 * Zone definition for SBG datacenter
 	 *
 	 * canBeNull && readOnly
@@ -17,6 +24,13 @@ public class OvhZonesListing {
 	 * canBeNull && readOnly
 	 */
 	public OvhZone rbx;
+
+	/**
+	 * Zone definition for WAW datacenter
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhZone waw;
 
 	/**
 	 * Zone definition for BHS datacenter

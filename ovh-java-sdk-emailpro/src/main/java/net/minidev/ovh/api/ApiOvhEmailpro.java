@@ -891,4 +891,19 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhServer.class);
 	}
+
+	/**
+	 * Detects billing transition status for the service
+	 *
+	 * REST: GET /email/pro/{service}/billingMigrated
+	 * @param service [required] The internal name of your pro organization
+	 *
+	 * API beta
+	 */
+	public Boolean service_billingMigrated_GET(String service) throws IOException {
+		String qPath = "/email/pro/{service}/billingMigrated";
+		StringBuilder sb = path(qPath, service);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, Boolean.class);
+	}
 }

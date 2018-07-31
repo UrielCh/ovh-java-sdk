@@ -430,6 +430,21 @@ public class ApiOvhMsServices extends ApiOvhBase {
 	}
 
 	/**
+	 * Detects billing transition status for the service
+	 *
+	 * REST: GET /msServices/{serviceName}/sharepoint/billingMigrated
+	 * @param serviceName [required] The internal name of your Active Directory organization
+	 *
+	 * API beta
+	 */
+	public Boolean serviceName_sharepoint_billingMigrated_GET(String serviceName) throws IOException {
+		String qPath = "/msServices/{serviceName}/sharepoint/billingMigrated";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, Boolean.class);
+	}
+
+	/**
 	 * Pending actions
 	 *
 	 * REST: GET /msServices/{serviceName}/sharepoint/task
@@ -646,6 +661,21 @@ public class ApiOvhMsServices extends ApiOvhBase {
 		String qPath = "/msServices/{serviceName}/exchange";
 		StringBuilder sb = path(qPath, serviceName);
 		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Detects billing transition status for the service
+	 *
+	 * REST: GET /msServices/{serviceName}/exchange/billingMigrated
+	 * @param serviceName [required] The internal name of your Active Directory organization
+	 *
+	 * API beta
+	 */
+	public Boolean serviceName_exchange_billingMigrated_GET(String serviceName) throws IOException {
+		String qPath = "/msServices/{serviceName}/exchange/billingMigrated";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, Boolean.class);
 	}
 
 	/**
