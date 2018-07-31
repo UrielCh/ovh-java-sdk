@@ -648,6 +648,11 @@ public class ApiOvhCore {
 				if (err.isErrorCode(OvhErrorMessage.INVALID_CREDENTIAL)) {
 					log.error("INVALID_CREDENTIAL with AppKey:{} CK:{} failure:{}", config.getApplicationKey(),
 							currentCK, failure);
+					if (config.getAppSecret() != null) {
+						OvhCredential credential = requestToken(null);
+						log.error("consumer_key looks to be expired/invalid, you can activate the new consumer_key: {} by updating {} and auth url: {}",
+								credential.consumerKey, ApiOvhConfigBasic.getOvhConfig(), credential.validationUrl);
+					}
 					throw new OvhException(method, query, err, queryId);
 				}
 				throw new OvhException(method, query, err, queryId);
