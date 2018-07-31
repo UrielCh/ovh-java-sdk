@@ -8,6 +8,9 @@ import net.minidev.ovh.api.services.OvhService;
 import net.minidev.ovh.core.ApiOvhCore;
 
 public class ListDoms {
+	/**
+	 * Login using nic handler
+	 */
 	public static void main(String[] args) throws Exception {
 		if (args.length != 2) {
 			System.out.println("usage: ListDoms nic password");
