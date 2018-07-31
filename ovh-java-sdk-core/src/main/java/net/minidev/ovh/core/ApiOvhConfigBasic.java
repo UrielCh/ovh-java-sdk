@@ -64,7 +64,7 @@ public class ApiOvhConfigBasic extends ApiOvhConfig {
 			File tmp = new File(path);
 			if (tmp.exists()) {
 				configFile = tmp;
-				log.info("api-ovh-java Using configuration file:{}", path);
+				log.info("api-ovh-java Using configuration file: {}", path);
 				return tmp;
 			}
 		}
