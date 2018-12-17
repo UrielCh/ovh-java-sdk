@@ -5,6 +5,41 @@ package net.minidev.ovh.api.telephony;
  */
 public class OvhVoicemailProperties {
 	/**
+	 * Quantity of unread voicemails
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long unreadMessages;
+
+	/**
+	 * Sound ID of the temporary greeeting
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long temporaryGreetingSoundId;
+
+	/**
+	 * Name of the voicemail panel announce file
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String annouceMessage;
+
+	/**
+	 * Format of the voicemail audio file attached to emails
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhServiceVoicemailAudioFormatEnum audioFormat;
+
+	/**
+	 * Email address from which emails will be sent
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String fromEmail;
+
+	/**
 	 * Email addresses to notify when a new voicemail is left
 	 *
 	 * canBeNull && readOnly
@@ -26,11 +61,18 @@ public class OvhVoicemailProperties {
 	public Boolean doNotRecord;
 
 	/**
-	 * Quantity of unread voicemails
+	 * Sound ID of the short greeting played before an automated message
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long unreadMessages;
+	public Long shortGreetingSoundId;
+
+	/**
+	 * Play the temporary greeting instead of the regular one
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean temporaryGreetingActivated;
 
 	/**
 	 * Don't delete voicemails after they've been sent by email
@@ -47,18 +89,11 @@ public class OvhVoicemailProperties {
 	public String fromName;
 
 	/**
-	 * Name of the voicemail panel announce file
+	 * Type of the greeting to play
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String annouceMessage;
-
-	/**
-	 * Format of the voicemail audio file attached to emails
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhServiceVoicemailAudioFormatEnum audioFormat;
+	public OvhVoicemailGreetingEnum greetingType;
 
 	/**
 	 * Force password request to access the voicemail panel
@@ -68,9 +103,9 @@ public class OvhVoicemailProperties {
 	public Boolean forcePassword;
 
 	/**
-	 * Email address from which emails will be sent
+	 * Sound ID of the long greeeting
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String fromEmail;
+	public Long fullGreetingSoundId;
 }

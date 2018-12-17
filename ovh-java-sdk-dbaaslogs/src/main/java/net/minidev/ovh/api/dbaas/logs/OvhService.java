@@ -35,16 +35,16 @@ public class OvhService {
 	public String serviceName;
 
 	/**
-	 * Service last update
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date updatedAt;
-
-	/**
 	 * Username on DBaaS Logs
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String username;
+
+	/**
+	 * Service last update
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date updatedAt;
 }

@@ -11,18 +11,18 @@ import net.minidev.ovh.api.nichandle.OvhLegalFormEnum;
  */
 public class OvhContact {
 	/**
-	 * Birth date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date birthDay;
-
-	/**
 	 * Last name
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String lastName;
+
+	/**
+	 * Birth date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date birthDay;
 
 	/**
 	 * Address for this contact
@@ -46,18 +46,18 @@ public class OvhContact {
 	public String vat;
 
 	/**
-	 * National identification number of your company
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String companyNationalIdentificationNumber;
-
-	/**
 	 * Birth city
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String birthCity;
+
+	/**
+	 * National identification number of your company
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String companyNationalIdentificationNumber;
 
 	/**
 	 * Language
@@ -137,13 +137,6 @@ public class OvhContact {
 	public String fax;
 
 	/**
-	 * Email address
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String email;
-
-	/**
 	 * Cellphone number
 	 *
 	 * canBeNull && readOnly
@@ -151,11 +144,11 @@ public class OvhContact {
 	public String cellPhone;
 
 	/**
-	 * National identification number of the contact
+	 * Email address
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String nationalIdentificationNumber;
+	public String email;
 
 	/**
 	 * Birth Zipcode
@@ -163,4 +156,11 @@ public class OvhContact {
 	 * canBeNull && readOnly
 	 */
 	public String birthZip;
+
+	/**
+	 * National identification number of the contact
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String nationalIdentificationNumber;
 }

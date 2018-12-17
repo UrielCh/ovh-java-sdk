@@ -43,18 +43,18 @@ public class OvhVolume {
 	public OvhResource[] attachedTo;
 
 	/**
-	 * Volume region
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String region;
-
-	/**
 	 * Volume creation date
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date creationDate;
+
+	/**
+	 * Volume region
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String region;
 
 	/**
 	 * Volume type

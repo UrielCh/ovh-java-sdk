@@ -29,18 +29,18 @@ public class OvhLocalSeoAccount {
 	public Date creationDate;
 
 	/**
-	 * Email address associated to the account
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String email;
-
-	/**
 	 * Running task associated to the account
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long taskId;
+
+	/**
+	 * Email address associated to the account
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String email;
 
 	/**
 	 * Current status of the account

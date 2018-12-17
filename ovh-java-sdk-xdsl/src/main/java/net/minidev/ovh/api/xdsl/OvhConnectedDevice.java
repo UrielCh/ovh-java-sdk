@@ -22,18 +22,18 @@ public class OvhConnectedDevice {
 	public String interfaceType;
 
 	/**
-	 * How did the device got its IP address
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhConnectedDeviceAddressSourceEnum addressSource;
-
-	/**
 	 * MAC address of the device
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String macAddress;
+
+	/**
+	 * How did the device got its IP address
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhConnectedDeviceAddressSourceEnum addressSource;
 
 	/**
 	 * The IP address of the device
@@ -50,16 +50,16 @@ public class OvhConnectedDevice {
 	public Boolean active;
 
 	/**
-	 * The date time of the last update of thoses informations
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date informationDate;
-
-	/**
 	 * The remaining time in seconds of the DHCP lease of this device (-1 means infinite)
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long leaseTimeRemaining;
+
+	/**
+	 * The date time of the last update of thoses informations
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date informationDate;
 }

@@ -26,16 +26,16 @@ public class OvhStorage {
 	public OvhStorageSpecifications specifications;
 
 	/**
-	 * Describes if filer is orderable on a initial Order
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean onInitialOrder;
-
-	/**
 	 * Plan Code
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String planCode;
+
+	/**
+	 * Describes if filer is orderable on a initial Order
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean onInitialOrder;
 }

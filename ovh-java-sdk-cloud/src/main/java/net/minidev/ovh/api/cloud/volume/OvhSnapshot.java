@@ -14,18 +14,18 @@ public class OvhSnapshot {
 	public Long size;
 
 	/**
-	 * Volume source id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String volumeId;
-
-	/**
 	 * Snapshot name
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String name;
+
+	/**
+	 * Volume source id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String volumeId;
 
 	/**
 	 * Snapshot description

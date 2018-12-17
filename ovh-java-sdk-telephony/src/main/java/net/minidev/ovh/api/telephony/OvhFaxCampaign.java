@@ -56,16 +56,16 @@ public class OvhFaxCampaign {
 	public Long id;
 
 	/**
-	 * The status of the fax campaign
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String status;
-
-	/**
 	 * The count of success faxes in the campaign
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long countSuccess;
+
+	/**
+	 * The status of the fax campaign
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String status;
 }

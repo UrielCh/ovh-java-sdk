@@ -28,81 +28,35 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	}
 
 	/**
-	 * Get this object properties
+	 * List available services
 	 *
-	 * REST: GET /caas/registry/{serviceName}/serviceInfos
-	 * @param serviceName [required] The internal ID of your project
-	 *
-	 * API beta
-	 */
-	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
-		String qPath = "/caas/registry/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhService.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /caas/registry/{serviceName}/serviceInfos
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal ID of your project
+	 * REST: GET /caas/registry
 	 *
 	 * API beta
 	 */
-	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
-		String qPath = "/caas/registry/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Inspect service.
-	 *
-	 * REST: GET /caas/registry/{serviceName}
-	 * @param serviceName [required] Service name
-	 *
-	 * API beta
-	 */
-	public net.minidev.ovh.api.registry.OvhService serviceName_GET(String serviceName) throws IOException {
-		String qPath = "/caas/registry/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, net.minidev.ovh.api.registry.OvhService.class);
-	}
-
-	/**
-	 * Create user
-	 *
-	 * REST: POST /caas/registry/{serviceName}/users
-	 * @param body [required] A registry user account
-	 * @param serviceName [required] Service name
-	 *
-	 * API beta
-	 */
-	public OvhUser serviceName_users_POST(String serviceName, OvhInputUser body) throws IOException {
-		String qPath = "/caas/registry/{serviceName}/users";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), body);
-		return convertTo(resp, OvhUser.class);
-	}
-
-	/**
-	 * List users
-	 *
-	 * REST: GET /caas/registry/{serviceName}/users
-	 * @param serviceName [required] Service name
-	 *
-	 * API beta
-	 */
-	public ArrayList<String> serviceName_users_GET(String serviceName) throws IOException {
-		String qPath = "/caas/registry/{serviceName}/users";
-		StringBuilder sb = path(qPath, serviceName);
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/caas/registry";
+		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
+
+	/**
+	 * Update user password
+	 *
+	 * REST: POST /caas/registry/{serviceName}/users/{userId}/changePassword
+	 * @param serviceName [required] Service name
+	 * @param userId [required] User id
+	 *
+	 * API beta
+	 */
+	public OvhUser serviceName_users_userId_changePassword_POST(String serviceName, String userId) throws IOException {
+		String qPath = "/caas/registry/{serviceName}/users/{userId}/changePassword";
+		StringBuilder sb = path(qPath, serviceName, userId);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhUser.class);
+	}
 
 	/**
 	 * Delete user
@@ -136,19 +90,34 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	}
 
 	/**
-	 * Update user password
+	 * Create user
 	 *
-	 * REST: POST /caas/registry/{serviceName}/users/{userId}/changePassword
+	 * REST: POST /caas/registry/{serviceName}/users
+	 * @param body [required] A registry user account
 	 * @param serviceName [required] Service name
-	 * @param userId [required] User id
 	 *
 	 * API beta
 	 */
-	public OvhUser serviceName_users_userId_changePassword_POST(String serviceName, String userId) throws IOException {
-		String qPath = "/caas/registry/{serviceName}/users/{userId}/changePassword";
-		StringBuilder sb = path(qPath, serviceName, userId);
-		String resp = exec(qPath, "POST", sb.toString(), null);
+	public OvhUser serviceName_users_POST(String serviceName, OvhInputUser body) throws IOException {
+		String qPath = "/caas/registry/{serviceName}/users";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), body);
 		return convertTo(resp, OvhUser.class);
+	}
+
+	/**
+	 * List users
+	 *
+	 * REST: GET /caas/registry/{serviceName}/users
+	 * @param serviceName [required] Service name
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> serviceName_users_GET(String serviceName) throws IOException {
+		String qPath = "/caas/registry/{serviceName}/users";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
 	}
 
 	/**
@@ -206,48 +175,71 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	}
 
 	/**
-	 * Delete namespace
+	 * Delete image permissions.
 	 *
-	 * REST: DELETE /caas/registry/{serviceName}/namespaces/{namespaceId}
+	 * REST: DELETE /caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/permissions/{permissionId}
+	 * @param imageId [required] Image id
 	 * @param namespaceId [required] Namespace id
+	 * @param permissionId [required] Permission id
 	 * @param serviceName [required] Service name
 	 *
 	 * API beta
 	 */
-	public void serviceName_namespaces_namespaceId_DELETE(String serviceName, String namespaceId) throws IOException {
-		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}";
-		StringBuilder sb = path(qPath, serviceName, namespaceId);
+	public void serviceName_namespaces_namespaceId_images_imageId_permissions_permissionId_DELETE(String serviceName, String namespaceId, String imageId, String permissionId) throws IOException {
+		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/permissions/{permissionId}";
+		StringBuilder sb = path(qPath, serviceName, namespaceId, imageId, permissionId);
 		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
-	 * Inspect namespace
+	 * Inspect image permissions
 	 *
-	 * REST: GET /caas/registry/{serviceName}/namespaces/{namespaceId}
+	 * REST: GET /caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/permissions/{permissionId}
+	 * @param imageId [required] Image id
 	 * @param namespaceId [required] Namespace id
+	 * @param permissionId [required] Permission id
 	 * @param serviceName [required] Service name
 	 *
 	 * API beta
 	 */
-	public OvhNamespace serviceName_namespaces_namespaceId_GET(String serviceName, String namespaceId) throws IOException {
-		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}";
-		StringBuilder sb = path(qPath, serviceName, namespaceId);
+	public OvhPermissions serviceName_namespaces_namespaceId_images_imageId_permissions_permissionId_GET(String serviceName, String namespaceId, String imageId, String permissionId) throws IOException {
+		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/permissions/{permissionId}";
+		StringBuilder sb = path(qPath, serviceName, namespaceId, imageId, permissionId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhNamespace.class);
+		return convertTo(resp, OvhPermissions.class);
 	}
 
 	/**
-	 * List all images in namespace
+	 * Create image permissions
 	 *
-	 * REST: GET /caas/registry/{serviceName}/namespaces/{namespaceId}/images
+	 * REST: POST /caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/permissions
+	 * @param imageId [required] Image id
+	 * @param namespaceId [required] Namespace id
+	 * @param body [required] Permissions of a user over a namespace
+	 * @param serviceName [required] Service name
+	 *
+	 * API beta
+	 */
+	public OvhPermissions serviceName_namespaces_namespaceId_images_imageId_permissions_POST(String serviceName, String namespaceId, String imageId, OvhInputPermissions body) throws IOException {
+		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/permissions";
+		StringBuilder sb = path(qPath, serviceName, namespaceId, imageId);
+		String resp = exec(qPath, "POST", sb.toString(), body);
+		return convertTo(resp, OvhPermissions.class);
+	}
+
+	/**
+	 * List image permissions
+	 *
+	 * REST: GET /caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/permissions
+	 * @param imageId [required] Image id
 	 * @param namespaceId [required] Namespace id
 	 * @param serviceName [required] Service name
 	 *
 	 * API beta
 	 */
-	public ArrayList<String> serviceName_namespaces_namespaceId_images_GET(String serviceName, String namespaceId) throws IOException {
-		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}/images";
-		StringBuilder sb = path(qPath, serviceName, namespaceId);
+	public ArrayList<String> serviceName_namespaces_namespaceId_images_imageId_permissions_GET(String serviceName, String namespaceId, String imageId) throws IOException {
+		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/permissions";
+		StringBuilder sb = path(qPath, serviceName, namespaceId, imageId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
@@ -304,76 +296,6 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	}
 
 	/**
-	 * Create image permissions
-	 *
-	 * REST: POST /caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/permissions
-	 * @param imageId [required] Image id
-	 * @param namespaceId [required] Namespace id
-	 * @param body [required] Permissions of a user over a namespace
-	 * @param serviceName [required] Service name
-	 *
-	 * API beta
-	 */
-	public OvhPermissions serviceName_namespaces_namespaceId_images_imageId_permissions_POST(String serviceName, String namespaceId, String imageId, OvhInputPermissions body) throws IOException {
-		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/permissions";
-		StringBuilder sb = path(qPath, serviceName, namespaceId, imageId);
-		String resp = exec(qPath, "POST", sb.toString(), body);
-		return convertTo(resp, OvhPermissions.class);
-	}
-
-	/**
-	 * List image permissions
-	 *
-	 * REST: GET /caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/permissions
-	 * @param imageId [required] Image id
-	 * @param namespaceId [required] Namespace id
-	 * @param serviceName [required] Service name
-	 *
-	 * API beta
-	 */
-	public ArrayList<String> serviceName_namespaces_namespaceId_images_imageId_permissions_GET(String serviceName, String namespaceId, String imageId) throws IOException {
-		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/permissions";
-		StringBuilder sb = path(qPath, serviceName, namespaceId, imageId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Delete image permissions.
-	 *
-	 * REST: DELETE /caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/permissions/{permissionId}
-	 * @param imageId [required] Image id
-	 * @param namespaceId [required] Namespace id
-	 * @param permissionId [required] Permission id
-	 * @param serviceName [required] Service name
-	 *
-	 * API beta
-	 */
-	public void serviceName_namespaces_namespaceId_images_imageId_permissions_permissionId_DELETE(String serviceName, String namespaceId, String imageId, String permissionId) throws IOException {
-		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/permissions/{permissionId}";
-		StringBuilder sb = path(qPath, serviceName, namespaceId, imageId, permissionId);
-		exec(qPath, "DELETE", sb.toString(), null);
-	}
-
-	/**
-	 * Inspect image permissions
-	 *
-	 * REST: GET /caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/permissions/{permissionId}
-	 * @param imageId [required] Image id
-	 * @param namespaceId [required] Namespace id
-	 * @param permissionId [required] Permission id
-	 * @param serviceName [required] Service name
-	 *
-	 * API beta
-	 */
-	public OvhPermissions serviceName_namespaces_namespaceId_images_imageId_permissions_permissionId_GET(String serviceName, String namespaceId, String imageId, String permissionId) throws IOException {
-		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/permissions/{permissionId}";
-		StringBuilder sb = path(qPath, serviceName, namespaceId, imageId, permissionId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPermissions.class);
-	}
-
-	/**
 	 * Inspect image tag
 	 *
 	 * REST: GET /caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/tags/{tagId}
@@ -404,6 +326,22 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	public ArrayList<String> serviceName_namespaces_namespaceId_images_imageId_tags_GET(String serviceName, String namespaceId, String imageId) throws IOException {
 		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}/images/{imageId}/tags";
 		StringBuilder sb = path(qPath, serviceName, namespaceId, imageId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * List all images in namespace
+	 *
+	 * REST: GET /caas/registry/{serviceName}/namespaces/{namespaceId}/images
+	 * @param namespaceId [required] Namespace id
+	 * @param serviceName [required] Service name
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> serviceName_namespaces_namespaceId_images_GET(String serviceName, String namespaceId) throws IOException {
+		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}/images";
+		StringBuilder sb = path(qPath, serviceName, namespaceId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
@@ -475,16 +413,78 @@ public class ApiOvhCaasregistry extends ApiOvhBase {
 	}
 
 	/**
-	 * List available services
+	 * Delete namespace
 	 *
-	 * REST: GET /caas/registry
+	 * REST: DELETE /caas/registry/{serviceName}/namespaces/{namespaceId}
+	 * @param namespaceId [required] Namespace id
+	 * @param serviceName [required] Service name
 	 *
 	 * API beta
 	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/caas/registry";
-		StringBuilder sb = path(qPath);
+	public void serviceName_namespaces_namespaceId_DELETE(String serviceName, String namespaceId) throws IOException {
+		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}";
+		StringBuilder sb = path(qPath, serviceName, namespaceId);
+		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
+	 * Inspect namespace
+	 *
+	 * REST: GET /caas/registry/{serviceName}/namespaces/{namespaceId}
+	 * @param namespaceId [required] Namespace id
+	 * @param serviceName [required] Service name
+	 *
+	 * API beta
+	 */
+	public OvhNamespace serviceName_namespaces_namespaceId_GET(String serviceName, String namespaceId) throws IOException {
+		String qPath = "/caas/registry/{serviceName}/namespaces/{namespaceId}";
+		StringBuilder sb = path(qPath, serviceName, namespaceId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, OvhNamespace.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /caas/registry/{serviceName}/serviceInfos
+	 * @param serviceName [required] The internal ID of your project
+	 *
+	 * API beta
+	 */
+	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
+		String qPath = "/caas/registry/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhService.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /caas/registry/{serviceName}/serviceInfos
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal ID of your project
+	 *
+	 * API beta
+	 */
+	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
+		String qPath = "/caas/registry/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Inspect service.
+	 *
+	 * REST: GET /caas/registry/{serviceName}
+	 * @param serviceName [required] Service name
+	 *
+	 * API beta
+	 */
+	public net.minidev.ovh.api.registry.OvhService serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/caas/registry/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, net.minidev.ovh.api.registry.OvhService.class);
 	}
 }

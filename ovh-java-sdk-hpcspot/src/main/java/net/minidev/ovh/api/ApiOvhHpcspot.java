@@ -22,53 +22,14 @@ public class ApiOvhHpcspot extends ApiOvhBase {
 	}
 
 	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /hpcspot/{serviceName}/serviceInfos
-	 * @param serviceName [required] The internal name of your HPC Spot account
-	 */
-	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
-		String qPath = "/hpcspot/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhService.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /hpcspot/{serviceName}/serviceInfos
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your HPC Spot account
-	 */
-	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
-		String qPath = "/hpcspot/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /hpcspot/{serviceName}
-	 * @param serviceName [required] The internal name of your HPC Spot account
-	 */
-	public OvhAccount serviceName_GET(String serviceName) throws IOException {
-		String qPath = "/hpcspot/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhAccount.class);
-	}
-
-	/**
 	 * Details of the consumption of your account
 	 *
 	 * REST: GET /hpcspot/{serviceName}/consumption
 	 * @param hpcspotItemId [required] Filter the value of hpcspotItemId property (=)
+	 * @param hpcspotItemEndDate_from [required] Filter the value of hpcspotItemEndDate property (>=)
 	 * @param hpcspotItemEndDate_to [required] Filter the value of hpcspotItemEndDate property (<=)
 	 * @param orderId [required] Filter the value of orderId property (=)
 	 * @param type [required] Filter the value of type property (=)
-	 * @param hpcspotItemEndDate_from [required] Filter the value of hpcspotItemEndDate property (>=)
 	 * @param serviceName [required] The internal name of your HPC Spot account
 	 */
 	public ArrayList<Long> serviceName_consumption_GET(String serviceName, Date hpcspotItemEndDate_from, Date hpcspotItemEndDate_to, Long hpcspotItemId, Long orderId, OvhConsumptionTypeEnum type) throws IOException {
@@ -96,6 +57,45 @@ public class ApiOvhHpcspot extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName, id);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhConsumption.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /hpcspot/{serviceName}
+	 * @param serviceName [required] The internal name of your HPC Spot account
+	 */
+	public OvhAccount serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/hpcspot/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhAccount.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /hpcspot/{serviceName}/serviceInfos
+	 * @param serviceName [required] The internal name of your HPC Spot account
+	 */
+	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
+		String qPath = "/hpcspot/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhService.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /hpcspot/{serviceName}/serviceInfos
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your HPC Spot account
+	 */
+	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
+		String qPath = "/hpcspot/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**

@@ -7,7 +7,7 @@ public class OvhFaxProperties {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String callNumber;
+	public String receiver;
 
 	/**
 	 * canBeNull && readOnly
@@ -18,6 +18,16 @@ public class OvhFaxProperties {
 	 * canBeNull && readOnly
 	 */
 	public OvhFaxQualityEnum faxQuality;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public String callNumber;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public String sender;
 
 	/**
 	 * canBeNull && readOnly
@@ -37,12 +47,12 @@ public class OvhFaxProperties {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhFaxMailFormatEnum mailFormat;
+	public OvhFaxSendingTries faxMaxCall;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhFaxSendingTries faxMaxCall;
+	public OvhFaxMailFormatEnum mailFormat;
 
 	/**
 	 * canBeNull && readOnly

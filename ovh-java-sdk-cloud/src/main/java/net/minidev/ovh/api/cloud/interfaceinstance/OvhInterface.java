@@ -21,16 +21,16 @@ public class OvhInterface {
 	public OvhIP[] ips;
 
 	/**
-	 * Interface network
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhResource network;
-
-	/**
 	 * Interface status
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String status;
+
+	/**
+	 * Interface network
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhResource network;
 }

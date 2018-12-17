@@ -12,6 +12,13 @@ public class OvhDiagnostic {
 	public OvhDiagnosticData data;
 
 	/**
+	 * Detected fault type
+	 *
+	 * canBeNull
+	 */
+	public OvhFaultTypeEnum faultType;
+
+	/**
 	 * Diagnostic id
 	 *
 	 * canBeNull

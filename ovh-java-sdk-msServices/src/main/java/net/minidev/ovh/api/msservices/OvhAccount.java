@@ -28,18 +28,18 @@ public class OvhAccount {
 	public Date lastUpdateDate;
 
 	/**
-	 * Time of account's password last update
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date passwordLastUpdate;
-
-	/**
 	 * Account display name
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String displayName;
+
+	/**
+	 * Time of account's password last update
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date passwordLastUpdate;
 
 	/**
 	 * Creation date
@@ -84,18 +84,18 @@ public class OvhAccount {
 	public String SAMAccountName;
 
 	/**
-	 * Account state
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhObjectStateEnum state;
-
-	/**
 	 * Account id
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long id;
+
+	/**
+	 * Account state
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhObjectStateEnum state;
 
 	/**
 	 * Last logon

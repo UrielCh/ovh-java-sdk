@@ -14,18 +14,18 @@ public class OvhBackupFtpAcl {
 	public Boolean ftp;
 
 	/**
-	 * The IP Block specific to this ACL
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String ipBlock;
-
-	/**
 	 * Date of the last object modification
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date lastUpdate;
+
+	/**
+	 * The IP Block specific to this ACL
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String ipBlock;
 
 	/**
 	 * Wether to allow the NFS protocol for this ACL

@@ -21,13 +21,6 @@ public class OvhDatacenter {
 	public String cityName;
 
 	/**
-	 * Describes if a Private Cloud can be ordered on a Datacenter
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean orderable;
-
-	/**
 	 * Country Code of a Datacenter
 	 *
 	 * canBeNull && readOnly
@@ -42,18 +35,11 @@ public class OvhDatacenter {
 	public String cityCode;
 
 	/**
-	 * List of filers add in case of a No Pack order
+	 * Describes if a Private Cloud can be ordered on a Datacenter
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String[] storagesNoPack;
-
-	/**
-	 * Describes if options can be ordered on a Datacenter
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean orderableOptions;
+	public Boolean orderable;
 
 	/**
 	 * Zone Code of a datacenter
@@ -63,6 +49,20 @@ public class OvhDatacenter {
 	public String zoneFullName;
 
 	/**
+	 * Describes if options can be ordered on a Datacenter
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean orderableOptions;
+
+	/**
+	 * List of filers add in case of a No Pack order
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String[] storagesNoPack;
+
+	/**
 	 * Describes Private Cloud Hypervisors
 	 *
 	 * canBeNull && readOnly
@@ -70,18 +70,18 @@ public class OvhDatacenter {
 	public OvhHypervisor[] hypervisors;
 
 	/**
-	 * Name of the default hypervisor of a Datacenter
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String defaultHypervisor;
-
-	/**
 	 * Zone Name of a datacenter
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String zoneName;
+
+	/**
+	 * Name of the default hypervisor of a Datacenter
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String defaultHypervisor;
 
 	/**
 	 * Main plan code to use for a Datacenter

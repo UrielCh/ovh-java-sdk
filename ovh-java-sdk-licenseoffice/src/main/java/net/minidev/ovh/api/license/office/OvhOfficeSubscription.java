@@ -28,18 +28,18 @@ public class OvhOfficeSubscription {
 	public Long id;
 
 	/**
-	 * Creation date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date creationDate;
-
-	/**
 	 * License's type id
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long licenseId;
+
+	/**
+	 * Creation date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date creationDate;
 
 	/**
 	 * Pending task's unique identifier

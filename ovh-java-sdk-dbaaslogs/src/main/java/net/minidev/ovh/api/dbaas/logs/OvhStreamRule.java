@@ -26,16 +26,16 @@ public class OvhStreamRule {
 	public String value;
 
 	/**
-	 * Field operator
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhStreamRuleOperatorEnum operator;
-
-	/**
 	 * Invert condition
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean isInverted;
+
+	/**
+	 * Field operator
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhStreamRuleOperatorEnum operator;
 }

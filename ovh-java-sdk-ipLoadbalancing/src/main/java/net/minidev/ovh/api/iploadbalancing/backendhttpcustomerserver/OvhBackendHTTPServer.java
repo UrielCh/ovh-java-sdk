@@ -16,7 +16,7 @@ public class OvhBackendHTTPServer {
 	public String chain;
 
 	/**
-	 * Backup state
+	 * Backup state. Default: 'false'
 	 *
 	 * canBeNull && readOnly
 	 */
@@ -58,13 +58,6 @@ public class OvhBackendHTTPServer {
 	public Long weight;
 
 	/**
-	 * SSL ciphering. Probes will also be sent ciphered
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean ssl;
-
-	/**
 	 * Id of your server
 	 *
 	 * canBeNull && readOnly
@@ -72,7 +65,14 @@ public class OvhBackendHTTPServer {
 	public Long serverId;
 
 	/**
-	 * Probe state
+	 * SSL ciphering. Probes will also be sent ciphered. Default: 'false'
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean ssl;
+
+	/**
+	 * Probe state. Default: 'false'
 	 *
 	 * canBeNull && readOnly
 	 */

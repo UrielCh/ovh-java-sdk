@@ -20,6 +20,11 @@ public class OvhWithdrawal {
 	/**
 	 * canBeNull && readOnly
 	 */
+	public String withdrawalId;
+
+	/**
+	 * canBeNull && readOnly
+	 */
 	public String pdfUrl;
 
 	/**
@@ -31,11 +36,6 @@ public class OvhWithdrawal {
 	 * canBeNull && readOnly
 	 */
 	public String password;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public String withdrawalId;
 
 	/**
 	 * canBeNull && readOnly

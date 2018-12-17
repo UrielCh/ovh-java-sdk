@@ -42,18 +42,18 @@ public class OvhHardwareSpecificationsDisk {
 	public String raidController;
 
 	/**
-	 * identifier of this disk group
-	 *
-	 * canBeNull
-	 */
-	public Long diskGroupId;
-
-	/**
 	 * type of the disk (SSD, SATA, SAS, ...)
 	 *
 	 * canBeNull
 	 */
 	public String diskType;
+
+	/**
+	 * identifier of this disk group
+	 *
+	 * canBeNull
+	 */
+	public Long diskGroupId;
 
 	/**
 	 * number of disks in this group

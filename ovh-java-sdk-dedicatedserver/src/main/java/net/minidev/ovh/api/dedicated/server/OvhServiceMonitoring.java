@@ -19,18 +19,18 @@ public class OvhServiceMonitoring {
 	public Long port;
 
 	/**
-	 * The ip to monitor
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String ip;
-
-	/**
 	 * The expected return
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String challengeText;
+
+	/**
+	 * The ip to monitor
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String ip;
 
 	/**
 	 * The test interval in seconds
@@ -40,18 +40,18 @@ public class OvhServiceMonitoring {
 	public OvhMonitoringIntervalEnum interval;
 
 	/**
-	 * The URL to test
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String url;
-
-	/**
 	 * Is this service monitoring is enabled
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean enabled;
+
+	/**
+	 * The URL to test
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String url;
 
 	/**
 	 * This monitoring id

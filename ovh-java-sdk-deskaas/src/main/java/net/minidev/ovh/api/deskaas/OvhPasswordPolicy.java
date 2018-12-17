@@ -12,18 +12,18 @@ public class OvhPasswordPolicy {
 	public Boolean uppercaseLetterMandatory;
 
 	/**
-	 * Minimum lenght of the password
-	 *
-	 * canBeNull
-	 */
-	public Long minLength;
-
-	/**
 	 * Whether or not a letter (a-z or A-Z) is mandatory in the password
 	 *
 	 * canBeNull
 	 */
 	public Boolean letterMandatory;
+
+	/**
+	 * Minimum lenght of the password
+	 *
+	 * canBeNull
+	 */
+	public Long minLength;
 
 	/**
 	 * Whether or not a special character (\W or _) is mandatory in the password

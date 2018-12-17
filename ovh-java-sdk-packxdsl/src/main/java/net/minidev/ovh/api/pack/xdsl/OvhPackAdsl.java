@@ -7,18 +7,18 @@ import net.minidev.ovh.api.order.OvhPrice;
  */
 public class OvhPackAdsl {
 	/**
-	 * Capabilities of the pack
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhPackCapabilities capabilities;
-
-	/**
 	 * Price of the offer
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhPrice offerPrice;
+
+	/**
+	 * Capabilities of the pack
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhPackCapabilities capabilities;
 
 	/**
 	 * Name of the offer

@@ -19,16 +19,16 @@ public class OvhDeferredPaymentAccount {
 	public String description;
 
 	/**
-	 * canBeNull && readOnly
-	 */
-	public Long id;
-
-	/**
 	 * Deferred account type
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String label;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public Long id;
 
 	/**
 	 * canBeNull && readOnly

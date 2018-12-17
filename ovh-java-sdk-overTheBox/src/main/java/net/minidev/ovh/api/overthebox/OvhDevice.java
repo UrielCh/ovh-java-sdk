@@ -7,13 +7,6 @@ import java.util.Date;
  */
 public class OvhDevice {
 	/**
-	 * Last time the device has been seen on the provisionning servers
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date lastSeen;
-
-	/**
 	 * Network interfaces of the device
 	 *
 	 * canBeNull && readOnly
@@ -21,18 +14,18 @@ public class OvhDevice {
 	public OvhDeviceInterface[] networkInterfaces;
 
 	/**
+	 * Last time the device has been seen on the provisionning servers
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date lastSeen;
+
+	/**
 	 * The public IP of the device
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String publicIp;
-
-	/**
-	 * The id of the device
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String deviceId;
 
 	/**
 	 * System version of the device
@@ -47,6 +40,13 @@ public class OvhDevice {
 	 * canBeNull && readOnly
 	 */
 	public String version;
+
+	/**
+	 * The id of the device
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String deviceId;
 
 	/**
 	 * Whether or not this device is associated to a service

@@ -70,18 +70,18 @@ public class OvhExchangeInformation {
 	public Long quota;
 
 	/**
-	 * Mailbox state
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhObjectStateEnum state;
-
-	/**
 	 * Account id
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long id;
+
+	/**
+	 * Mailbox state
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhObjectStateEnum state;
 
 	/**
 	 * Expiration date

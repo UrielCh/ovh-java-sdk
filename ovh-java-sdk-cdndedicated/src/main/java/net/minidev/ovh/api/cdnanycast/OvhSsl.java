@@ -21,12 +21,12 @@ public class OvhSsl {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String name;
+	public Date certificateValidTo;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Date certificateValidTo;
+	public String name;
 
 	/**
 	 * canBeNull && readOnly

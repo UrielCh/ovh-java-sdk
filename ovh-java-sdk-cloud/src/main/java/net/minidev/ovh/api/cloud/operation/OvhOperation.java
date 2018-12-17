@@ -35,13 +35,6 @@ public class OvhOperation {
 	public OvhResource resource;
 
 	/**
-	 * The started date of the operation
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date startedAt;
-
-	/**
 	 * The progression in percentage of the operation
 	 *
 	 * canBeNull && readOnly
@@ -54,6 +47,13 @@ public class OvhOperation {
 	 * canBeNull && readOnly
 	 */
 	public String action;
+
+	/**
+	 * The started date of the operation
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date startedAt;
 
 	/**
 	 * Unique id to describe the operation

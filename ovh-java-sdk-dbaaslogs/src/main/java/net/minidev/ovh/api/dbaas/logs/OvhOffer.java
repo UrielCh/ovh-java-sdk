@@ -26,18 +26,18 @@ public class OvhOffer {
 	public Long curNbRole;
 
 	/**
-	 * Current number of stream booked
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long curNbStream;
-
-	/**
 	 * Current number of alias booked
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long curNbAlias;
+
+	/**
+	 * Current number of stream booked
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long curNbStream;
 
 	/**
 	 * Maximum number of role allowed
@@ -47,18 +47,18 @@ public class OvhOffer {
 	public Long maxNbRole;
 
 	/**
-	 * Maximum number of input allowed
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long maxNbInput;
-
-	/**
 	 * Current number of dashboard booked
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long curNbDashboard;
+
+	/**
+	 * Maximum number of input allowed
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long maxNbInput;
 
 	/**
 	 * Option unique reference
@@ -89,18 +89,18 @@ public class OvhOffer {
 	public Long curNbInput;
 
 	/**
-	 * Maximum number of dashboard allowed
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long maxNbDashboard;
-
-	/**
 	 * Data retention in hours
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long retention;
+
+	/**
+	 * Maximum number of dashboard allowed
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long maxNbDashboard;
 
 	/**
 	 * Maximum number of alias allowed

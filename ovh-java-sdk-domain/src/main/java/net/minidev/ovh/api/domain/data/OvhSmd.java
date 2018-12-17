@@ -7,6 +7,13 @@ import java.util.Date;
  */
 public class OvhSmd {
 	/**
+	 * List of the labels that are protected with that SMD file
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhSmdLabel[] protectedLabels;
+
+	/**
 	 * Date when information about SMD file aren't valid anymore
 	 *
 	 * canBeNull && readOnly
@@ -19,13 +26,6 @@ public class OvhSmd {
 	 * canBeNull && readOnly
 	 */
 	public String smdId;
-
-	/**
-	 * List of the labels that are protected with that SMD file
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhSmdLabel[] protectedLabels;
 
 	/**
 	 * SMD file content

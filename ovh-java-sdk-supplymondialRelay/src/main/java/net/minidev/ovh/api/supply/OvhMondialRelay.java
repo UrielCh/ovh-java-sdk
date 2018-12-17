@@ -21,18 +21,18 @@ public class OvhMondialRelay {
 	public String address;
 
 	/**
-	 * Distance between address and relay point
-	 *
-	 * canBeNull
-	 */
-	public Double distance;
-
-	/**
 	 * Relay point longitude
 	 *
 	 * canBeNull
 	 */
 	public Double lng;
+
+	/**
+	 * Distance between address and relay point
+	 *
+	 * canBeNull
+	 */
+	public Double distance;
 
 	/**
 	 * City
@@ -70,18 +70,18 @@ public class OvhMondialRelay {
 	public OvhMondialRelayClosingPeriod[] closing;
 
 	/**
-	 * Relay point name
-	 *
-	 * canBeNull
-	 */
-	public String name;
-
-	/**
 	 * URL of short map
 	 *
 	 * canBeNull
 	 */
 	public String mapUrl;
+
+	/**
+	 * Relay point name
+	 *
+	 * canBeNull
+	 */
+	public String name;
 
 	/**
 	 * Mondial Relay point ID

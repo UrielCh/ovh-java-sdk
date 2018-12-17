@@ -1,5 +1,7 @@
 package net.minidev.ovh.api.cloud.imageregion;
 
+import java.util.Date;
+
 /**
  * Image
  */
@@ -12,18 +14,18 @@ public class OvhImage {
 	public String visibility;
 
 	/**
-	 * Image creation date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String creationDate;
-
-	/**
 	 * Image type
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhImageTypeEnum type;
+
+	/**
+	 * Image creation date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date creationDate;
 
 	/**
 	 * Minimum disks required to use image (in GiB)
@@ -75,18 +77,18 @@ public class OvhImage {
 	public String id;
 
 	/**
-	 * Image region
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String region;
-
-	/**
 	 * Image category. 'official' are public images provided by OVH, 'customer' are imported images or instance snapshots, 'shared' are shared images from other projects
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhImageCategoryEnum category;
+
+	/**
+	 * Image region
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String region;
 
 	/**
 	 * User to connect with

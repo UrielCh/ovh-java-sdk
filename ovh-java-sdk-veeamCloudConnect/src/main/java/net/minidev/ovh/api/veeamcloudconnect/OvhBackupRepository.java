@@ -21,18 +21,18 @@ public class OvhBackupRepository {
 	public OvhUnitAndValue<Long> quota;
 
 	/**
-	 * The usage in percent of this backup repository
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long usage;
-
-	/**
 	 * The inventory name of your backup repository
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String inventoryName;
+
+	/**
+	 * The usage in percent of this backup repository
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long usage;
 
 	/**
 	 * The state of your backup repository

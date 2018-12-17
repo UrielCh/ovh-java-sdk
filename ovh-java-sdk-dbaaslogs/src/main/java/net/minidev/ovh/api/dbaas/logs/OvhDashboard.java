@@ -28,6 +28,13 @@ public class OvhDashboard {
 	public String dashboardId;
 
 	/**
+	 * Indicates if you are allowed to share entry
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean isShareable;
+
+	/**
 	 * Dashboard description
 	 *
 	 * canBeNull && readOnly

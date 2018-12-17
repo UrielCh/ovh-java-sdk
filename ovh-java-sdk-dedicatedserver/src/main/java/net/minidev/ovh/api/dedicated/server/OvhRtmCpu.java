@@ -21,16 +21,16 @@ public class OvhRtmCpu {
 	public OvhUnitAndValue<Long> cache;
 
 	/**
-	 * CPU frequency
-	 *
-	 * canBeNull
-	 */
-	public OvhUnitAndValue<Long> freq;
-
-	/**
 	 * CPU  name
 	 *
 	 * canBeNull
 	 */
 	public String name;
+
+	/**
+	 * CPU frequency
+	 *
+	 * canBeNull
+	 */
+	public OvhUnitAndValue<Long> freq;
 }

@@ -37,11 +37,11 @@ public class OvhTask {
 	public String fromAccount;
 
 	/**
-	 * Contacts to be changed
+	 * Date at which the request has been made
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhContactTypeEnum[] contactTypes;
+	public Date dateRequest;
 
 	/**
 	 * Current state of the request
@@ -56,11 +56,11 @@ public class OvhTask {
 	public Long id;
 
 	/**
-	 * Date at which the request has been made
+	 * Contacts to be changed
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Date dateRequest;
+	public OvhContactTypeEnum[] contactTypes;
 
 	/**
 	 * The service on which the task runs

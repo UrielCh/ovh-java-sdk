@@ -5,18 +5,18 @@ package net.minidev.ovh.api.license.office;
  */
 public class OvhOfficeUser {
 	/**
-	 * User's first name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String firstName;
-
-	/**
 	 * User's last name
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String lastName;
+
+	/**
+	 * User's first name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String firstName;
 
 	/**
 	 * Whether or not this user slot will be resigned at the next renew period

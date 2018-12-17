@@ -63,18 +63,18 @@ public class OvhVm {
 	public OvhVmNetwork[] networks;
 
 	/**
-	 * Maximum CPU performance, in MHz.
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Double cpuMax;
-
-	/**
 	 * Current memory utilization, in MB
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long memoryUsed;
+
+	/**
+	 * Maximum CPU performance, in MHz.
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Double cpuMax;
 
 	/**
 	 * Percentage of time that the virtual machine was ready, but could not get scheduled to run on the physical CPU. In percent
@@ -126,18 +126,18 @@ public class OvhVm {
 	public Double readPerSecond;
 
 	/**
-	 * Rate of reading data from the virtual disk. In KB/s
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Double readRate;
-
-	/**
 	 * Amount of guest memory that is shared with other virtual machines, in Mb
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String memoryTps;
+
+	/**
+	 * Rate of reading data from the virtual disk. In KB/s
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Double readRate;
 
 	/**
 	 * Virtual machine cdroms devices
@@ -161,18 +161,18 @@ public class OvhVm {
 	public String vmwareToolsVersion;
 
 	/**
-	 * Amount of time for a read operation from the virtual disk. In millisecond
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Double readLatency;
-
-	/**
 	 * Number of processors in the virtual machine.
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long cpuNum;
+
+	/**
+	 * Amount of time for a read operation from the virtual disk. In millisecond
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Double readLatency;
 
 	/**
 	 * The index of the current VM in instanceUuids array starting from 1, so 1 means that it is the primary VM.
@@ -182,18 +182,18 @@ public class OvhVm {
 	public String roleFt;
 
 	/**
-	 * Time that the virtual machine was ready, but could not get scheduled to run on the physical CPU. In millisecond
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Double cpuReady;
-
-	/**
 	 * Rate of writing data from the virtual disk. In KB/s
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Double writeRate;
+
+	/**
+	 * Time that the virtual machine was ready, but could not get scheduled to run on the physical CPU. In millisecond
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Double cpuReady;
 
 	/**
 	 * Number of packets received.

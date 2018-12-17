@@ -30,13 +30,6 @@ public class OvhDump {
 	public Long id;
 
 	/**
-	 * If source database was deleted
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean orphan;
-
-	/**
 	 * Creation date of the dump
 	 *
 	 * canBeNull && readOnly
@@ -51,11 +44,11 @@ public class OvhDump {
 	public OvhDateEnum type;
 
 	/**
-	 * The task ID working on this dump
+	 * If source database was deleted
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long taskId;
+	public Boolean orphan;
 
 	/**
 	 * Dump url access
@@ -63,6 +56,13 @@ public class OvhDump {
 	 * canBeNull && readOnly
 	 */
 	public String url;
+
+	/**
+	 * The task ID working on this dump
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long taskId;
 
 	/**
 	 * The dump status

@@ -16,18 +16,18 @@ public class OvhWLAN {
 	public Boolean bandSteering;
 
 	/**
-	 * How the channel is chosen (Auto / Manual)
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhChannelModeEnum channelMode;
-
-	/**
 	 * Name of the Wifi
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String wifiName;
+
+	/**
+	 * How the channel is chosen (Auto / Manual)
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhChannelModeEnum channelMode;
 
 	/**
 	 * Security (None | WEP | WPA | WPA2 | WPAandWPA2)
@@ -72,18 +72,18 @@ public class OvhWLAN {
 	public String SSID;
 
 	/**
-	 * ID of the ongoing todo (NULL if none)
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long taskId;
-
-	/**
 	 * Wifi state
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean enabled;
+
+	/**
+	 * ID of the ongoing todo (NULL if none)
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long taskId;
 
 	/**
 	 * Frequency (2.4GHz | 5GHz)

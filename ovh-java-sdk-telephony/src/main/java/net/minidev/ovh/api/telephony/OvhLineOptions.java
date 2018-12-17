@@ -17,6 +17,13 @@ public class OvhLineOptions {
 	public String displayNumber;
 
 	/**
+	 * Whether or not the line has restriction on outgoing calls
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean callRestrictionOutgoing;
+
+	/**
 	 * Do not display your number
 	 *
 	 * canBeNull && readOnly
@@ -29,13 +36,6 @@ public class OvhLineOptions {
 	 * canBeNull && readOnly
 	 */
 	public String voicemailExternalNumber;
-
-	/**
-	 * Whether or not the line has restriction on outgoing calls
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean callRestrictionOutgoing;
 
 	/**
 	 * Nature of the unconditional forward
@@ -85,18 +85,18 @@ public class OvhLineOptions {
 	public Boolean doNotDisturb;
 
 	/**
-	 * Enable or disable record of outgoing calls
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean recordOutgoingCallsBeta;
-
-	/**
 	 * Nature of the forward on no-reply
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhLineOptionForwardNatureTypeEnum forwardNoReplyNature;
+
+	/**
+	 * Enable or disable record of outgoing calls
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean recordOutgoingCallsBeta;
 
 	/**
 	 * Enable calls forward when the line is unavailable

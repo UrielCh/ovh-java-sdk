@@ -29,18 +29,18 @@ public class OvhPermissions {
 	public Boolean canWrite;
 
 	/**
-	 * Permission Id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String id;
-
-	/**
 	 * Whether a user can delete images on the namespace
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean isAdmin;
+
+	/**
+	 * Permission Id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String id;
 
 	/**
 	 * User Id
@@ -50,16 +50,16 @@ public class OvhPermissions {
 	public String userId;
 
 	/**
-	 * Date of the resource last update
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date updatedAt;
-
-	/**
 	 * The status of the permission
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhStatus status;
+
+	/**
+	 * Date of the resource last update
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date updatedAt;
 }

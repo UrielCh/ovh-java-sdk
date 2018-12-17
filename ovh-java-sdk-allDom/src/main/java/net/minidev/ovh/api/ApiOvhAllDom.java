@@ -20,6 +20,48 @@ public class ApiOvhAllDom extends ApiOvhBase {
 	}
 
 	/**
+	 * List available services
+	 *
+	 * REST: GET /allDom
+	 */
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/allDom";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /allDom/{serviceName}/domain/{domain}
+	 * @param serviceName [required] The internal name of your allDom
+	 * @param domain [required] Domain name
+	 */
+	public OvhAllDomDomain serviceName_domain_domain_GET(String serviceName, String domain) throws IOException {
+		String qPath = "/allDom/{serviceName}/domain/{domain}";
+		StringBuilder sb = path(qPath, serviceName, domain);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhAllDomDomain.class);
+	}
+
+	/**
+	 * Domains attached to this allDom
+	 *
+	 * REST: GET /allDom/{serviceName}/domain
+	 * @param domain [required] Filter the value of domain property (like)
+	 * @param serviceName [required] The internal name of your allDom
+	 */
+	public ArrayList<String> serviceName_domain_GET(String serviceName, String domain) throws IOException {
+		String qPath = "/allDom/{serviceName}/domain";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "domain", domain);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /allDom/{serviceName}/serviceInfos
@@ -56,47 +98,5 @@ public class ApiOvhAllDom extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhAllDom.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /allDom/{serviceName}/domain/{domain}
-	 * @param serviceName [required] The internal name of your allDom
-	 * @param domain [required] Domain name
-	 */
-	public OvhAllDomDomain serviceName_domain_domain_GET(String serviceName, String domain) throws IOException {
-		String qPath = "/allDom/{serviceName}/domain/{domain}";
-		StringBuilder sb = path(qPath, serviceName, domain);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhAllDomDomain.class);
-	}
-
-	/**
-	 * Domains attached to this allDom
-	 *
-	 * REST: GET /allDom/{serviceName}/domain
-	 * @param domain [required] Filter the value of domain property (like)
-	 * @param serviceName [required] The internal name of your allDom
-	 */
-	public ArrayList<String> serviceName_domain_GET(String serviceName, String domain) throws IOException {
-		String qPath = "/allDom/{serviceName}/domain";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "domain", domain);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
-
-	/**
-	 * List available services
-	 *
-	 * REST: GET /allDom
-	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/allDom";
-		StringBuilder sb = path(qPath);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
 	}
 }

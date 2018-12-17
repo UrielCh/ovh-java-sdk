@@ -17,13 +17,6 @@ public class OvhPrice {
 	public OvhFlavorPrice[] instances;
 
 	/**
-	 * Price for incoming bandwidth on archive storage
-	 *
-	 * canBeNull
-	 */
-	public OvhBandwidthStoragePrice[] bandwidthArchiveIn;
-
-	/**
 	 * Price for bandwidth storage
 	 *
 	 * canBeNull
@@ -31,11 +24,11 @@ public class OvhPrice {
 	public OvhBandwidthStoragePrice[] bandwidthStorage;
 
 	/**
-	 * Price for project creation
+	 * Price for incoming bandwidth on archive storage
 	 *
 	 * canBeNull
 	 */
-	public net.minidev.ovh.api.order.OvhPrice projectCreation;
+	public OvhBandwidthStoragePrice[] bandwidthArchiveIn;
 
 	/**
 	 * Price for outgoing bandwidth on archive storage
@@ -43,6 +36,13 @@ public class OvhPrice {
 	 * canBeNull
 	 */
 	public OvhBandwidthStoragePrice[] bandwidthArchiveOut;
+
+	/**
+	 * Price for project creation
+	 *
+	 * canBeNull
+	 */
+	public net.minidev.ovh.api.order.OvhPrice projectCreation;
 
 	/**
 	 * Prices for volumes

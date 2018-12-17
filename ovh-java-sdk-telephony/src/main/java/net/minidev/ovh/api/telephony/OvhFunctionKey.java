@@ -15,18 +15,18 @@ public class OvhFunctionKey {
 	public String _default;
 
 	/**
-	 * The function parameter
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String parameter;
-
-	/**
 	 * The function active on the key
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String function;
+
+	/**
+	 * The function parameter
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String parameter;
 
 	/**
 	 * The number of the function key

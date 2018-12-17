@@ -29,18 +29,18 @@ public class OvhBilling {
 	public Long total;
 
 	/**
-	 * Quantity of bytes for operation
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long quantity;
-
-	/**
 	 * Billing action is billed.
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean billed;
+
+	/**
+	 * Quantity of bytes for operation
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long quantity;
 
 	/**
 	 * Billing id

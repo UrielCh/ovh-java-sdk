@@ -35,16 +35,16 @@ public class OvhSsl {
 	public Long taskId;
 
 	/**
-	 * Status of the HostedSsl
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhStatusEnum status;
-
-	/**
 	 * Regenerable flag
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean regenerable;
+
+	/**
+	 * Status of the HostedSsl
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhStatusEnum status;
 }

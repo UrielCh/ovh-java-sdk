@@ -14,18 +14,18 @@ public class OvhDatabaseExtension {
 	public String extensionName;
 
 	/**
-	 * Name of required extensions to enable this one
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String[] requiredExtensions;
-
-	/**
 	 * Extension description
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String description;
+
+	/**
+	 * Name of required extensions to enable this one
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String[] requiredExtensions;
 
 	/**
 	 * Extension status

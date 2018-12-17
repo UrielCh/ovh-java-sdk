@@ -12,16 +12,16 @@ public class OvhMiniPabxHunting {
 	public Long queueSize;
 
 	/**
-	 * canBeNull && readOnly
-	 */
-	public OvhEasyMiniPabxHuntingPatternEnum pattern;
-
-	/**
 	 * True if the tone on closure is enabled
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean toneOnClosure;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public OvhEasyMiniPabxHuntingPatternEnum pattern;
 
 	/**
 	 * Sound ID of ringback tone

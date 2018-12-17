@@ -9,18 +9,18 @@ import net.minidev.ovh.api.iploadbalancing.OvhServerState;
  */
 public class OvhBackendTCPServer {
 	/**
+	 * Backup state. Default: 'false'
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean backup;
+
+	/**
 	 * Certificate chain. Allow server certificate verification (Avoid man-in-the-middle attacks)
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String chain;
-
-	/**
-	 * Backup state
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean backup;
 
 	/**
 	 * Address of your server
@@ -37,13 +37,6 @@ public class OvhBackendTCPServer {
 	public String displayName;
 
 	/**
-	 * Farm id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long backendId;
-
-	/**
 	 * Weight value. Defaults to 1. 0 if not used in load balancing. Servers with higher weight get more requests.
 	 *
 	 * canBeNull && readOnly
@@ -51,11 +44,11 @@ public class OvhBackendTCPServer {
 	public Long weight;
 
 	/**
-	 * SSL ciphering. Probes will also be sent ciphered
+	 * Farm id
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Boolean ssl;
+	public Long backendId;
 
 	/**
 	 * Id of your server
@@ -65,7 +58,14 @@ public class OvhBackendTCPServer {
 	public Long serverId;
 
 	/**
-	 * Probe state. 'False' if null
+	 * SSL ciphering. Probes will also be sent ciphered
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean ssl;
+
+	/**
+	 * Probe state. Default: 'false'
 	 *
 	 * canBeNull && readOnly
 	 */
@@ -86,16 +86,16 @@ public class OvhBackendTCPServer {
 	public Long port;
 
 	/**
-	 * Status attached to your server
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhBackendCustomerServerStatusEnum status;
-
-	/**
 	 * Disabled if null. Send PROXY protocol header. Requires a compatible server.
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhProxyProtocolVersionEnum proxyProtocolVersion;
+
+	/**
+	 * Status attached to your server
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhBackendCustomerServerStatusEnum status;
 }

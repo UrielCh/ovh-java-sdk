@@ -33,7 +33,7 @@ public class OvhFrontendHttp {
 	public Long frontendId;
 
 	/**
-	 * SSL deciphering
+	 * SSL deciphering. Default: 'false'
 	 *
 	 * canBeNull && readOnly
 	 */
@@ -47,18 +47,18 @@ public class OvhFrontendHttp {
 	public Long defaultSslId;
 
 	/**
-	 * Zone of you frontend
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String zone;
-
-	/**
 	 * Listening port(s) on the server
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String port;
+
+	/**
+	 * Zone of you frontend
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String zone;
 
 	/**
 	 * Restrict IP Load Balancing access to these ip block. No restriction if null
@@ -68,14 +68,14 @@ public class OvhFrontendHttp {
 	public String[] allowedSource;
 
 	/**
-	 * Disable frontend
+	 * Disable frontend. Default: 'false'
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean disabled;
 
 	/**
-	 * HTTP Strict Transport Security
+	 * HTTP Strict Transport Security. Default: 'false'
 	 *
 	 * canBeNull && readOnly
 	 */

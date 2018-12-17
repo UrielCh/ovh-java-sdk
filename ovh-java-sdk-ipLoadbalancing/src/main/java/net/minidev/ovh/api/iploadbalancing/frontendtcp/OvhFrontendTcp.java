@@ -40,18 +40,11 @@ public class OvhFrontendTcp {
 	public String displayName;
 
 	/**
-	 * Disable frontend
+	 * Disable frontend. Default: 'false'
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean disabled;
-
-	/**
-	 * Only attach frontend on these ip. No restriction if null
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String[] dedicatedIpfo;
 
 	/**
 	 * Id of your frontend
@@ -61,7 +54,14 @@ public class OvhFrontendTcp {
 	public Long frontendId;
 
 	/**
-	 * SSL deciphering
+	 * Only attach frontend on these ip. No restriction if null
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String[] dedicatedIpfo;
+
+	/**
+	 * SSL deciphering. Default: 'false'
 	 *
 	 * canBeNull && readOnly
 	 */

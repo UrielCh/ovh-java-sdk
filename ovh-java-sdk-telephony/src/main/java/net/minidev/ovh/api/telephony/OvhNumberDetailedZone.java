@@ -5,6 +5,20 @@ package net.minidev.ovh.api.telephony;
  */
 public class OvhNumberDetailedZone {
 	/**
+	 * The number's range of this zone
+	 *
+	 * canBeNull
+	 */
+	public String number;
+
+	/**
+	 * The criteria that matched the searched value
+	 *
+	 * canBeNull
+	 */
+	public OvhNumberDetailedZoneMatchingCriteriaEnum matchingCriteria;
+
+	/**
 	 * The country of the zone
 	 *
 	 * canBeNull
@@ -17,20 +31,6 @@ public class OvhNumberDetailedZone {
 	 * canBeNull
 	 */
 	public String zipCode;
-
-	/**
-	 * The criteria that matched the searched value
-	 *
-	 * canBeNull
-	 */
-	public OvhNumberDetailedZoneMatchingCriteriaEnum matchingCriteria;
-
-	/**
-	 * The number's range of this zone
-	 *
-	 * canBeNull
-	 */
-	public String number;
 
 	/**
 	 * The city of the zone

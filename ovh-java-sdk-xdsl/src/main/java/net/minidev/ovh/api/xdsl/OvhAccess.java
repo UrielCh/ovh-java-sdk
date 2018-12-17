@@ -17,11 +17,6 @@ public class OvhAccess {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhAccessCapabilities capabilities;
-
-	/**
-	 * canBeNull && readOnly
-	 */
 	public OvhAddressDetail address;
 
 	/**
@@ -30,16 +25,21 @@ public class OvhAccess {
 	public OvhAccessRoleEnum role;
 
 	/**
-	 * Rate limit on the LNS in kbps - Only available if canApplyLnsRateLimit capability is set to true - Must be a multiple of 64 - Min value 64 / Max value 100032
-	 *
 	 * canBeNull && readOnly
 	 */
-	public Long lnsRateLimit;
+	public OvhAccessCapabilities capabilities;
 
 	/**
 	 * canBeNull && readOnly
 	 */
 	public String accessName;
+
+	/**
+	 * Rate limit on the LNS in kbps - Only available if canApplyLnsRateLimit capability is set to true - Must be a multiple of 64 - Min value 64 / Max value 100032
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long lnsRateLimit;
 
 	/**
 	 * canBeNull && readOnly
@@ -52,16 +52,16 @@ public class OvhAccess {
 	public Boolean ipv6Enabled;
 
 	/**
+	 * canBeNull && readOnly
+	 */
+	public String nra;
+
+	/**
 	 * Whether or not this access is monitored
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean monitoring;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public String nra;
 
 	/**
 	 * canBeNull && readOnly

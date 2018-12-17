@@ -7,18 +7,18 @@ import java.util.Date;
  */
 public class OvhService {
 	/**
-	 * Date of the resource creation
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date createdAt;
-
-	/**
 	 * Maximal number of registered users in the service
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long maxUsers;
+
+	/**
+	 * Date of the resource creation
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date createdAt;
 
 	/**
 	 * The endpoint used for docker login

@@ -14,18 +14,18 @@ public class OvhRtmRaidVolumePort {
 	public String disk;
 
 	/**
-	 * Serial of this port
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String serial;
-
-	/**
 	 * Raid volume port
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String port;
+
+	/**
+	 * Serial of this port
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String serial;
 
 	/**
 	 * Raid port synchronization progress
@@ -42,16 +42,16 @@ public class OvhRtmRaidVolumePort {
 	public String model;
 
 	/**
-	 * Status of this port
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhRtmRaidStatusEnum status;
-
-	/**
 	 * Port capacity
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhUnitAndValue<Double> capacity;
+
+	/**
+	 * Status of this port
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhRtmRaidStatusEnum status;
 }

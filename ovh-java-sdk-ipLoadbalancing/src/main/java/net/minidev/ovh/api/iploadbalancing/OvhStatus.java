@@ -22,16 +22,16 @@ public class OvhStatus {
 	public OvhComponent frontends;
 
 	/**
-	 * The Load Balancer farms status informations
-	 *
-	 * canBeNull
-	 */
-	public OvhComponent farms;
-
-	/**
 	 * The Load Balancer service status informations
 	 *
 	 * canBeNull
 	 */
 	public OvhService service;
+
+	/**
+	 * The Load Balancer farms status informations
+	 *
+	 * canBeNull
+	 */
+	public OvhComponent farms;
 }

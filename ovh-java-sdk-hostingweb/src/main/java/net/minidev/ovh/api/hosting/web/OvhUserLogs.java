@@ -22,18 +22,18 @@ public class OvhUserLogs {
 	public String description;
 
 	/**
-	 * Date of the user creation
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date creationDate;
-
-	/**
 	 * The userLogs login used to connect to logs.ovh.net
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String login;
+
+	/**
+	 * Date of the user creation
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date creationDate;
 
 	/**
 	 * The task ID working on this userLogs

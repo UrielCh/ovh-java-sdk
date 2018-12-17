@@ -12,6 +12,8 @@ public enum OvhOrderableVersionEnum {
 	mariadb_10_2("mariadb_10.2"),
 	@JsonProperty("mongodb_3.4")
 	mongodb_3_4("mongodb_3.4"),
+	@JsonProperty("mongodb_4.0")
+	mongodb_4_0("mongodb_4.0"),
 	@JsonProperty("mysql_5.5")
 	mysql_5_5("mysql_5.5"),
 	@JsonProperty("mysql_5.6")
@@ -26,7 +28,9 @@ public enum OvhOrderableVersionEnum {
 	@JsonProperty("postgresql_9.6")
 	postgresql_9_6("postgresql_9.6"),
 	@JsonProperty("redis_3.2")
-	redis_3_2("redis_3.2");
+	redis_3_2("redis_3.2"),
+	@JsonProperty("redis_4.0")
+	redis_4_0("redis_4.0");
 
 	final String value;
 

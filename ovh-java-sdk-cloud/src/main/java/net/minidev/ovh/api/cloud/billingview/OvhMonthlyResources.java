@@ -10,4 +10,11 @@ public class OvhMonthlyResources {
 	 * canBeNull && readOnly
 	 */
 	public OvhMonthlyInstance[] instance;
+
+	/**
+	 * Details about monthly instances options
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhMonthlyInstanceOption[] instanceOption;
 }

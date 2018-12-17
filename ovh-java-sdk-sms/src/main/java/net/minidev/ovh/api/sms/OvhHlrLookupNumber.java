@@ -42,18 +42,18 @@ public class OvhHlrLookupNumber {
 	public Long id;
 
 	/**
-	 * The {Mobile Country Code, Mobile Network Code} unique identifier
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String operatorCode;
-
-	/**
 	 * MSISDN
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String msisdn;
+
+	/**
+	 * The {Mobile Country Code, Mobile Network Code} unique identifier
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String operatorCode;
 
 	/**
 	 * Is the MSISDN currently reachable

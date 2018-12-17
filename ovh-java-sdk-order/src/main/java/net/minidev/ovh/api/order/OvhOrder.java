@@ -17,12 +17,12 @@ public class OvhOrder {
 	/**
 	 * canBeNull
 	 */
-	public OvhContract[] contracts;
+	public OvhOrderPrices prices;
 
 	/**
 	 * canBeNull
 	 */
-	public OvhOrderPrices prices;
+	public OvhContract[] contracts;
 
 	/**
 	 * canBeNull

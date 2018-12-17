@@ -99,6 +99,13 @@ public class OvhCapabilities {
 	public Long runtimes;
 
 	/**
+	 * Number of database engines allowed for your hosting
+	 *
+	 * canBeNull
+	 */
+	public Long databaseEngines;
+
+	/**
 	 * Number of ftp user you can create
 	 *
 	 * canBeNull

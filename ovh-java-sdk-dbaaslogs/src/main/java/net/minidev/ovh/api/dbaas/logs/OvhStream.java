@@ -84,6 +84,13 @@ public class OvhStream {
 	public Boolean coldStorageNotifyEnabled;
 
 	/**
+	 * Indicates if you are allowed to share entry
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean isShareable;
+
+	/**
 	 * Associated DBaaS Logs option
 	 *
 	 * canBeNull && readOnly
@@ -96,6 +103,13 @@ public class OvhStream {
 	 * canBeNull && readOnly
 	 */
 	public Boolean coldStorageEnabled;
+
+	/**
+	 * Enable ES indexing
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean indexingEnabled;
 
 	/**
 	 * ColdStorage compression method

@@ -6,6 +6,7 @@ package net.minidev.ovh.api.msservices;
 public enum OvhObjectStateEnum {
 	creating("creating"),
 	deleting("deleting"),
+	modifying("modifying"),
 	ok("ok"),
 	reopening("reopening"),
 	suspended("suspended"),

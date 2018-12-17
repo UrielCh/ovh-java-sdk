@@ -12,18 +12,18 @@ public class OvhGameMitigationRule {
 	public OvhGameMitigationRuleProtocolEnum protocol;
 
 	/**
-	 * ID of the rule
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long id;
-
-	/**
 	 * Current state of your rule
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhGameMitigationRuleStateEnum state;
+
+	/**
+	 * ID of the rule
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long id;
 
 	/**
 	 * canBeNull && readOnly

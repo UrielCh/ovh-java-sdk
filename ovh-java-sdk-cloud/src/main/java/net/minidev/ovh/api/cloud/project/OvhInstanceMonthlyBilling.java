@@ -8,16 +8,16 @@ import net.minidev.ovh.api.order.OvhPrice;
  */
 public class OvhInstanceMonthlyBilling {
 	/**
-	 * Cost
-	 *
-	 * canBeNull
-	 */
-	public OvhPrice cost;
-
-	/**
 	 * Monthly billing activation date
 	 *
 	 * canBeNull
 	 */
 	public Date activatedOn;
+
+	/**
+	 * Cost
+	 *
+	 * canBeNull
+	 */
+	public OvhPrice cost;
 }

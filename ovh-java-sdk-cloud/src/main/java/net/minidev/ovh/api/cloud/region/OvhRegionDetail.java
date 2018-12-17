@@ -26,6 +26,13 @@ public class OvhRegionDetail {
 	public OvhOpenstackService[] services;
 
 	/**
+	 * Openstack region status
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhOpenstackRegionStatusEnum status;
+
+	/**
 	 * Region continent code
 	 *
 	 * canBeNull && readOnly

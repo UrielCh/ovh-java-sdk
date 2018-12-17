@@ -20,6 +20,36 @@ public class ApiOvhSsl extends ApiOvhBase {
 	}
 
 	/**
+	 * List available services
+	 *
+	 * REST: GET /ssl
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/ssl";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /ssl/{serviceName}
+	 * @param serviceName [required] The internal name of your SSL service
+	 *
+	 * API beta
+	 */
+	public OvhCertificate serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/ssl/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhCertificate.class);
+	}
+
+	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /ssl/{serviceName}/serviceInfos
@@ -50,21 +80,6 @@ public class ApiOvhSsl extends ApiOvhBase {
 	}
 
 	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /ssl/{serviceName}
-	 * @param serviceName [required] The internal name of your SSL service
-	 *
-	 * API beta
-	 */
-	public OvhCertificate serviceName_GET(String serviceName) throws IOException {
-		String qPath = "/ssl/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhCertificate.class);
-	}
-
-	/**
 	 * Tasks associated to this ssl
 	 *
 	 * REST: GET /ssl/{serviceName}/tasks
@@ -76,9 +91,9 @@ public class ApiOvhSsl extends ApiOvhBase {
 		String qPath = "/ssl/{serviceName}/tasks";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, t2);
 	}
-	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
+	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
 
 	/**
 	 * Get this object properties
@@ -95,19 +110,4 @@ public class ApiOvhSsl extends ApiOvhBase {
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOperation.class);
 	}
-
-	/**
-	 * List available services
-	 *
-	 * REST: GET /ssl
-	 *
-	 * API beta
-	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/ssl";
-		StringBuilder sb = path(qPath);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};
 }

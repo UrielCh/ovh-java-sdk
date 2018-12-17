@@ -5,16 +5,16 @@ package net.minidev.ovh.api.telephony;
  */
 public class OvhVoicemailNumbers {
 	/**
-	 * The external voicemail number
-	 *
-	 * canBeNull
-	 */
-	public String external;
-
-	/**
 	 * The internal voicemail number
 	 *
 	 * canBeNull
 	 */
 	public String internal;
+
+	/**
+	 * The external voicemail number
+	 *
+	 * canBeNull
+	 */
+	public String external;
 }

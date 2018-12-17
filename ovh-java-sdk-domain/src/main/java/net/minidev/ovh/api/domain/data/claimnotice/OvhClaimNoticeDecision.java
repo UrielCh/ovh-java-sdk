@@ -47,18 +47,18 @@ public class OvhClaimNoticeDecision {
 	public OvhCourtDecision[] courtDecisions;
 
 	/**
-	 * Goods and services on which apply claim notice
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String goodsAndServices;
-
-	/**
 	 * Jurisdiction country code
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String jurisdictionCountryCode;
+
+	/**
+	 * Goods and services on which apply claim notice
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String goodsAndServices;
 
 	/**
 	 * Trademark UDRP informations

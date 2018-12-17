@@ -8,18 +8,18 @@ import net.minidev.ovh.api.dedicatedcloud.backup.OvhOfferTypeEnum;
  */
 public class OvhBackup {
 	/**
-	 * RestorePoint number on mail report
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean restorePointInReport;
-
-	/**
 	 * The moref of the backup server virtual machine
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String vmwareVmId;
+
+	/**
+	 * RestorePoint number on mail report
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean restorePointInReport;
 
 	/**
 	 * Name of the backup server virtual machine.
@@ -71,6 +71,13 @@ public class OvhBackup {
 	public OvhBackupStateEnum state;
 
 	/**
+	 * Duration on email report
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean backupDurationInReport;
+
+	/**
 	 * Backup offer type
 	 *
 	 * canBeNull && readOnly
@@ -83,11 +90,4 @@ public class OvhBackup {
 	 * canBeNull && readOnly
 	 */
 	public Boolean diskSizeInReport;
-
-	/**
-	 * Duration on email report
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean backupDurationInReport;
 }

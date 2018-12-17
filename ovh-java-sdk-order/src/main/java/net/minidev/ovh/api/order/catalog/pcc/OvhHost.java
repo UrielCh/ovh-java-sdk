@@ -33,16 +33,16 @@ public class OvhHost {
 	public OvhHostSpecifications specifications;
 
 	/**
-	 * Describes if host is orderable on a initial Order
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean onInitialOrder;
-
-	/**
 	 * Plan Code
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String planCode;
+
+	/**
+	 * Describes if host is orderable on a initial Order
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean onInitialOrder;
 }

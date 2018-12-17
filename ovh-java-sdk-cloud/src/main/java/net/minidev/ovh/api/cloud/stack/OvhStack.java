@@ -26,18 +26,18 @@ public class OvhStack {
 	public String release;
 
 	/**
-	 * Stack last commit
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String commit;
-
-	/**
 	 * Stack name
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String name;
+
+	/**
+	 * Stack last commit
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String commit;
 
 	/**
 	 * Stack description

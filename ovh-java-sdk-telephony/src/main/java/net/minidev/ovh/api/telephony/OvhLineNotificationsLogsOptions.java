@@ -5,18 +5,18 @@ package net.minidev.ovh.api.telephony;
  */
 public class OvhLineNotificationsLogsOptions {
 	/**
-	 * Email address where to send notifications
-	 *
-	 * canBeNull
-	 */
-	public String email;
-
-	/**
 	 * Send a blank notification if there is no diagnosticReports entries for the period
 	 *
 	 * canBeNull
 	 */
 	public Boolean sendIfNull;
+
+	/**
+	 * Email address where to send notifications
+	 *
+	 * canBeNull
+	 */
+	public String email;
 
 	/**
 	 * Frequency at which the notifications will be send

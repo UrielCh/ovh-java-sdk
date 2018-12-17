@@ -28,11 +28,11 @@ public class OvhAccount {
 	public Boolean outlookLicense;
 
 	/**
-	 * Ticket number of spam detection
+	 * Last update
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long spamTicketNumber;
+	public Date lastUpdateDate;
 
 	/**
 	 * Time of account's password last update
@@ -42,11 +42,11 @@ public class OvhAccount {
 	public Date passwordLastUpdate;
 
 	/**
-	 * Last update
+	 * Ticket number of spam detection
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Date lastUpdateDate;
+	public Long spamTicketNumber;
 
 	/**
 	 * Account display name
@@ -103,6 +103,13 @@ public class OvhAccount {
 	 * canBeNull && readOnly
 	 */
 	public Long quota;
+
+	/**
+	 * Company name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String company;
 
 	/**
 	 * Account state
@@ -182,18 +189,18 @@ public class OvhAccount {
 	public Date creationDate;
 
 	/**
-	 * delete outlook at expiration
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean deleteOutlookAtExpiration;
-
-	/**
 	 * Pending task for this account
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long taskPendingId;
+
+	/**
+	 * delete outlook at expiration
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean deleteOutlookAtExpiration;
 
 	/**
 	 * Exchange account type

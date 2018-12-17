@@ -19,18 +19,18 @@ public class OvhProject {
 	public String displayName;
 
 	/**
-	 * subscribed offer
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String offerId;
-
-	/**
 	 * description of your project
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String description;
+
+	/**
+	 * subscribed offer
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String offerId;
 
 	/**
 	 * timeseries Project id

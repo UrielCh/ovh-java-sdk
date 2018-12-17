@@ -21,6 +21,19 @@ public class ApiOvhVip extends ApiOvhBase {
 	/**
 	 * Get this object properties
 	 *
+	 * REST: GET /vip/{serviceName}
+	 * @param serviceName [required] The internal name of your VIP support offer
+	 */
+	public OvhSupportVip serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/vip/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhSupportVip.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
 	 * REST: GET /vip/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your VIP support offer
 	 */
@@ -42,19 +55,6 @@ public class ApiOvhVip extends ApiOvhBase {
 		String qPath = "/vip/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
 		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /vip/{serviceName}
-	 * @param serviceName [required] The internal name of your VIP support offer
-	 */
-	public OvhSupportVip serviceName_GET(String serviceName) throws IOException {
-		String qPath = "/vip/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhSupportVip.class);
 	}
 
 	/**

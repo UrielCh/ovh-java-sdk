@@ -33,16 +33,16 @@ public class OvhExternalCertifications {
 	public Boolean microsoft;
 
 	/**
-	 * Cisco
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean cisco;
-
-	/**
 	 * Intel
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean intel;
+
+	/**
+	 * Cisco
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean cisco;
 }

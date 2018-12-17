@@ -36,11 +36,6 @@ public class OvhBankAccount {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhBankAccountStateEnum state;
-
-	/**
-	 * canBeNull && readOnly
-	 */
 	public Date mandateSignatureDate;
 
 	/**
@@ -52,6 +47,11 @@ public class OvhBankAccount {
 	 * canBeNull && readOnly
 	 */
 	public Long id;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public OvhBankAccountStateEnum state;
 
 	/**
 	 * canBeNull && readOnly

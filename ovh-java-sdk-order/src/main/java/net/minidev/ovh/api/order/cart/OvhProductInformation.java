@@ -33,13 +33,6 @@ public class OvhProductInformation {
 	public String pricingMode;
 
 	/**
-	 * Informations about the estimated delivery time for the product
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String deliveryTime;
-
-	/**
 	 * Product identifier
 	 *
 	 * canBeNull && readOnly
@@ -52,6 +45,13 @@ public class OvhProductInformation {
 	 * canBeNull && readOnly
 	 */
 	public Long quantityMax;
+
+	/**
+	 * Informations about the estimated delivery time for the product
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String deliveryTime;
 
 	/**
 	 * Indicates if the product is orderable or not

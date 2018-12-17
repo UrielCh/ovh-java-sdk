@@ -12,12 +12,12 @@ public class OvhTask {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long id;
+	public OvhTaskStateEnum state;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhTaskStateEnum state;
+	public Long id;
 
 	/**
 	 * canBeNull && readOnly

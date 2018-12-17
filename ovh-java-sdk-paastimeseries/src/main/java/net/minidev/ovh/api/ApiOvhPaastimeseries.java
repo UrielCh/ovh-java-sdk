@@ -26,19 +26,32 @@ public class ApiOvhPaastimeseries extends ApiOvhBase {
 	}
 
 	/**
-	 * Get quotas
+	 * Get this object properties
 	 *
-	 * REST: GET /paas/timeseries/{serviceName}/quota
-	 * @param serviceName [required] Service Name
+	 * REST: GET /paas/timeseries/{serviceName}
+	 * @param serviceName [required] The internal name of your timeseries project
 	 * @deprecated
 	 */
-	public ArrayList<OvhQuota> serviceName_quota_GET(String serviceName) throws IOException {
-		String qPath = "/paas/timeseries/{serviceName}/quota";
+	public OvhProject serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/paas/timeseries/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, OvhProject.class);
 	}
-	private static TypeReference<ArrayList<OvhQuota>> t1 = new TypeReference<ArrayList<OvhQuota>>() {};
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /paas/timeseries/{serviceName}
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your timeseries project
+	 * @deprecated
+	 */
+	public void serviceName_PUT(String serviceName, OvhProject body) throws IOException {
+		String qPath = "/paas/timeseries/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
 
 	/**
 	 * Get this object properties
@@ -69,34 +82,6 @@ public class ApiOvhPaastimeseries extends ApiOvhBase {
 	}
 
 	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /paas/timeseries/{serviceName}
-	 * @param serviceName [required] The internal name of your timeseries project
-	 * @deprecated
-	 */
-	public OvhProject serviceName_GET(String serviceName) throws IOException {
-		String qPath = "/paas/timeseries/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhProject.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /paas/timeseries/{serviceName}
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your timeseries project
-	 * @deprecated
-	 */
-	public void serviceName_PUT(String serviceName, OvhProject body) throws IOException {
-		String qPath = "/paas/timeseries/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
 	 * Setup a project
 	 *
 	 * REST: POST /paas/timeseries/{serviceName}/setup
@@ -122,19 +107,41 @@ public class ApiOvhPaastimeseries extends ApiOvhBase {
 	}
 
 	/**
-	 * Get consumption
+	 * Get quotas
 	 *
-	 * REST: GET /paas/timeseries/{serviceName}/consumption
+	 * REST: GET /paas/timeseries/{serviceName}/quota
 	 * @param serviceName [required] Service Name
 	 * @deprecated
 	 */
-	public ArrayList<OvhConsumption> serviceName_consumption_GET(String serviceName) throws IOException {
-		String qPath = "/paas/timeseries/{serviceName}/consumption";
+	public ArrayList<OvhQuota> serviceName_quota_GET(String serviceName) throws IOException {
+		String qPath = "/paas/timeseries/{serviceName}/quota";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+	private static TypeReference<ArrayList<OvhQuota>> t1 = new TypeReference<ArrayList<OvhQuota>>() {};
+
+	/**
+	 * Launch a contact change procedure
+	 *
+	 * REST: POST /paas/timeseries/{serviceName}/changeContact
+	 * @param contactAdmin The contact to set as admin contact
+	 * @param contactTech The contact to set as tech contact
+	 * @param contactBilling The contact to set as billing contact
+	 * @param serviceName [required] The internal name of your timeseries project
+	 * @deprecated
+	 */
+	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
+		String qPath = "/paas/timeseries/{serviceName}/changeContact";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "contactAdmin", contactAdmin);
+		addBody(o, "contactTech", contactTech);
+		addBody(o, "contactBilling", contactBilling);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, t2);
 	}
-	private static TypeReference<ArrayList<OvhConsumption>> t2 = new TypeReference<ArrayList<OvhConsumption>>() {};
+	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
 
 	/**
 	 * Get keys for a project
@@ -225,40 +232,19 @@ public class ApiOvhPaastimeseries extends ApiOvhBase {
 	}
 
 	/**
-	 * Launch a contact change procedure
+	 * Get consumption
 	 *
-	 * REST: POST /paas/timeseries/{serviceName}/changeContact
-	 * @param contactAdmin The contact to set as admin contact
-	 * @param contactTech The contact to set as tech contact
-	 * @param contactBilling The contact to set as billing contact
-	 * @param serviceName [required] The internal name of your timeseries project
+	 * REST: GET /paas/timeseries/{serviceName}/consumption
+	 * @param serviceName [required] Service Name
 	 * @deprecated
 	 */
-	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
-		String qPath = "/paas/timeseries/{serviceName}/changeContact";
+	public ArrayList<OvhConsumption> serviceName_consumption_GET(String serviceName) throws IOException {
+		String qPath = "/paas/timeseries/{serviceName}/consumption";
 		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "contactAdmin", contactAdmin);
-		addBody(o, "contactTech", contactTech);
-		addBody(o, "contactBilling", contactBilling);
-		String resp = exec(qPath, "POST", sb.toString(), o);
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t4);
 	}
-	private static TypeReference<ArrayList<Long>> t4 = new TypeReference<ArrayList<Long>>() {};
-
-	/**
-	 * List available services
-	 *
-	 * REST: GET /paas/timeseries
-	 * @deprecated
-	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/paas/timeseries";
-		StringBuilder sb = path(qPath);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t5);
-	}
-	private static TypeReference<ArrayList<String>> t5 = new TypeReference<ArrayList<String>>() {};
+	private static TypeReference<ArrayList<OvhConsumption>> t4 = new TypeReference<ArrayList<OvhConsumption>>() {};
 
 	/**
 	 * Get available regions
@@ -270,7 +256,21 @@ public class ApiOvhPaastimeseries extends ApiOvhBase {
 		String qPath = "/paas/timeseries/region";
 		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t5);
+	}
+	private static TypeReference<ArrayList<OvhRegion>> t5 = new TypeReference<ArrayList<OvhRegion>>() {};
+
+	/**
+	 * List available services
+	 *
+	 * REST: GET /paas/timeseries
+	 * @deprecated
+	 */
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/paas/timeseries";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t6);
 	}
-	private static TypeReference<ArrayList<OvhRegion>> t6 = new TypeReference<ArrayList<OvhRegion>>() {};
+	private static TypeReference<ArrayList<String>> t6 = new TypeReference<ArrayList<String>>() {};
 }

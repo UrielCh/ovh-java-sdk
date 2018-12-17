@@ -12,9 +12,11 @@ public class OvhEasyPabxHunting {
 	public String voicemail;
 
 	/**
+	 * The maximum no-reply time before forwarding the call to the voicemail
+	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhEasyMiniPabxHuntingPatternEnum pattern;
+	public Long noReplyTimer;
 
 	/**
 	 * True if the tone on closure is enabled
@@ -24,11 +26,9 @@ public class OvhEasyPabxHunting {
 	public Boolean toneOnClosure;
 
 	/**
-	 * The maximum no-reply time before forwarding the call to the voicemail
-	 *
 	 * canBeNull && readOnly
 	 */
-	public Long noReplyTimer;
+	public OvhEasyMiniPabxHuntingPatternEnum pattern;
 
 	/**
 	 * Sound ID of ringback tone

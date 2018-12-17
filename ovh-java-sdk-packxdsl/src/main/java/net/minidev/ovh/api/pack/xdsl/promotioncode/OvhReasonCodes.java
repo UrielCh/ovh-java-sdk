@@ -4,6 +4,7 @@ package net.minidev.ovh.api.pack.xdsl.promotioncode;
  * Reasons why the promotion code can not be generated
  */
 public enum OvhReasonCodes {
+	noMoreAvailable("noMoreAvailable"),
 	offerNotCompatible("offerNotCompatible"),
 	serviceNotInOkState("serviceNotInOkState"),
 	stillEngaged("stillEngaged"),

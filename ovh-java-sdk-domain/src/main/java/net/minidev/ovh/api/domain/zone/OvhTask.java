@@ -57,13 +57,6 @@ public class OvhTask {
 	public Date creationDate;
 
 	/**
-	 * Done date of the task
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date doneDate;
-
-	/**
 	 * Can relaunch the task
 	 *
 	 * canBeNull && readOnly
@@ -71,11 +64,11 @@ public class OvhTask {
 	public Boolean canRelaunch;
 
 	/**
-	 * Status of the task
+	 * Done date of the task
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhOperationStatusEnum status;
+	public Date doneDate;
 
 	/**
 	 * Can cancel the task
@@ -83,4 +76,11 @@ public class OvhTask {
 	 * canBeNull && readOnly
 	 */
 	public Boolean canCancel;
+
+	/**
+	 * Status of the task
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhOperationStatusEnum status;
 }

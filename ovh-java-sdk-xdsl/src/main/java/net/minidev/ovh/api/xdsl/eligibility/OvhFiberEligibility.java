@@ -9,7 +9,7 @@ public class OvhFiberEligibility {
 	 *
 	 * canBeNull
 	 */
-	public OvhOffer[] offers;
+	public OvhFiberOffer[] offers;
 
 	/**
 	 * Eligibility UUID

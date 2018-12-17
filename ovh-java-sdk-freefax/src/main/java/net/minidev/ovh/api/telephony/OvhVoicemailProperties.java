@@ -5,25 +5,11 @@ package net.minidev.ovh.api.telephony;
  */
 public class OvhVoicemailProperties {
 	/**
-	 * Email addresses to notify when a new voicemail is left
+	 * Sound ID of the temporary greeeting
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhServiceVoicemailNotifications[] redirectionEmails;
-
-	/**
-	 * Current voicemail version
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean isNewVersion;
-
-	/**
-	 * Don't allow callers to leave voicemails
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean doNotRecord;
+	public Long temporaryGreetingSoundId;
 
 	/**
 	 * Quantity of unread voicemails
@@ -31,20 +17,6 @@ public class OvhVoicemailProperties {
 	 * canBeNull && readOnly
 	 */
 	public Long unreadMessages;
-
-	/**
-	 * Don't delete voicemails after they've been sent by email
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean keepMessage;
-
-	/**
-	 * Name from which emails will be sent
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String fromName;
 
 	/**
 	 * Name of the voicemail panel announce file
@@ -61,6 +33,69 @@ public class OvhVoicemailProperties {
 	public OvhServiceVoicemailAudioFormatEnum audioFormat;
 
 	/**
+	 * Email address from which emails will be sent
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String fromEmail;
+
+	/**
+	 * Email addresses to notify when a new voicemail is left
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhServiceVoicemailNotifications[] redirectionEmails;
+
+	/**
+	 * Current voicemail version
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean isNewVersion;
+
+	/**
+	 * Sound ID of the short greeting played before an automated message
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long shortGreetingSoundId;
+
+	/**
+	 * Don't allow callers to leave voicemails
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean doNotRecord;
+
+	/**
+	 * Play the temporary greeting instead of the regular one
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean temporaryGreetingActivated;
+
+	/**
+	 * Don't delete voicemails after they've been sent by email
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean keepMessage;
+
+	/**
+	 * Name from which emails will be sent
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String fromName;
+
+	/**
+	 * Type of the greeting to play
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhVoicemailGreetingEnum greetingType;
+
+	/**
 	 * Force password request to access the voicemail panel
 	 *
 	 * canBeNull && readOnly
@@ -68,9 +103,9 @@ public class OvhVoicemailProperties {
 	public Boolean forcePassword;
 
 	/**
-	 * Email address from which emails will be sent
+	 * Sound ID of the long greeeting
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String fromEmail;
+	public Long fullGreetingSoundId;
 }

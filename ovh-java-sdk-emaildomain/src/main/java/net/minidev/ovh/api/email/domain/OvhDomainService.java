@@ -36,18 +36,18 @@ public class OvhDomainService {
 	public String domain;
 
 	/**
-	 * Creation date of domain
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date creationDate;
-
-	/**
 	 * Filerz of domain
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long filerz;
+
+	/**
+	 * Creation date of domain
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date creationDate;
 
 	/**
 	 * Domain Status

@@ -17,18 +17,18 @@ public class OvhPlesk {
 	public Boolean deleteAtExpiration;
 
 	/**
-	 * The ip on which this license is attached
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String ip;
-
-	/**
 	 * The internal name of your license
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String domain;
+
+	/**
+	 * The ip on which this license is attached
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String ip;
 
 	/**
 	 * The amount of domain this license can manage
@@ -52,18 +52,18 @@ public class OvhPlesk {
 	public String licenseId;
 
 	/**
-	 * This license version
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhPleskVersionEnum version;
-
-	/**
 	 * This license Information key
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String informationKey;
+
+	/**
+	 * This license version
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhPleskVersionEnum version;
 
 	/**
 	 * This license key

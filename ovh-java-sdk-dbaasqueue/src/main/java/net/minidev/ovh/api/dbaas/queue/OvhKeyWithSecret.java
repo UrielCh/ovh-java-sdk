@@ -19,16 +19,16 @@ public class OvhKeyWithSecret {
 	public String humanAppId;
 
 	/**
-	 * Key ID
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String id;
-
-	/**
 	 * Key secret
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String secret;
+
+	/**
+	 * Key ID
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String id;
 }

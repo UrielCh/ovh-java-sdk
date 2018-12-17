@@ -28,6 +28,19 @@ public class ApiOvhLicensedirectadmin extends ApiOvhBase {
 	}
 
 	/**
+	 * Terminate your service
+	 *
+	 * REST: POST /license/directadmin/{serviceName}/terminate
+	 * @param serviceName [required] The name of your DirectAdmin license
+	 */
+	public String serviceName_terminate_POST(String serviceName) throws IOException {
+		String qPath = "/license/directadmin/{serviceName}/terminate";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
+
+	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /license/directadmin/{serviceName}/serviceInfos
@@ -51,6 +64,107 @@ public class ApiOvhLicensedirectadmin extends ApiOvhBase {
 		String qPath = "/license/directadmin/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
 		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Move this license to another Ip
+	 *
+	 * REST: POST /license/directadmin/{serviceName}/changeIp
+	 * @param destinationIp [required] The Ip on which you want to move this license
+	 * @param serviceName [required] The name of your DirectAdmin license
+	 */
+	public OvhTask serviceName_changeIp_POST(String serviceName, String destinationIp) throws IOException {
+		String qPath = "/license/directadmin/{serviceName}/changeIp";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "destinationIp", destinationIp);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /license/directadmin/{serviceName}/tasks/{taskId}
+	 * @param serviceName [required] The name of your DirectAdmin license
+	 * @param taskId [required] This Task id
+	 */
+	public OvhTask serviceName_tasks_taskId_GET(String serviceName, Long taskId) throws IOException {
+		String qPath = "/license/directadmin/{serviceName}/tasks/{taskId}";
+		StringBuilder sb = path(qPath, serviceName, taskId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * tasks linked to this license
+	 *
+	 * REST: GET /license/directadmin/{serviceName}/tasks
+	 * @param status [required] Filter the value of status property (=)
+	 * @param action [required] Filter the value of action property (=)
+	 * @param serviceName [required] The name of your DirectAdmin license
+	 */
+	public ArrayList<Long> serviceName_tasks_GET(String serviceName, OvhActionType action, OvhTaskStateEnum status) throws IOException {
+		String qPath = "/license/directadmin/{serviceName}/tasks";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "action", action);
+		query(sb, "status", status);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
+
+	/**
+	 * Confirm termination of your service
+	 *
+	 * REST: POST /license/directadmin/{serviceName}/confirmTermination
+	 * @param futureUse What next after your termination request
+	 * @param reason Reason of your termination request
+	 * @param commentary Commentary about your termination request
+	 * @param token [required] The termination token sent by mail to the admin contact
+	 * @param serviceName [required] The name of your DirectAdmin license
+	 */
+	public String serviceName_confirmTermination_POST(String serviceName, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
+		String qPath = "/license/directadmin/{serviceName}/confirmTermination";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "futureUse", futureUse);
+		addBody(o, "reason", reason);
+		addBody(o, "commentary", commentary);
+		addBody(o, "token", token);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Will tell if the ip can accept the license
+	 *
+	 * REST: GET /license/directadmin/{serviceName}/canLicenseBeMovedTo
+	 * @param destinationIp [required] The Ip on which you want to move this license
+	 * @param serviceName [required] The name of your DirectAdmin license
+	 */
+	public OvhChangeIpStatus serviceName_canLicenseBeMovedTo_GET(String serviceName, String destinationIp) throws IOException {
+		String qPath = "/license/directadmin/{serviceName}/canLicenseBeMovedTo";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "destinationIp", destinationIp);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhChangeIpStatus.class);
+	}
+
+	/**
+	 * Change the Operating System for a license
+	 *
+	 * REST: POST /license/directadmin/{serviceName}/changeOs
+	 * @param os [required] The operating system you want for this license
+	 * @param serviceName [required] The name of your DirectAdmin license
+	 */
+	public OvhTask serviceName_changeOs_POST(String serviceName, OvhDirectAdminOsEnum os) throws IOException {
+		String qPath = "/license/directadmin/{serviceName}/changeOs";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "os", os);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
@@ -80,38 +194,6 @@ public class ApiOvhLicensedirectadmin extends ApiOvhBase {
 	}
 
 	/**
-	 * tasks linked to this license
-	 *
-	 * REST: GET /license/directadmin/{serviceName}/tasks
-	 * @param status [required] Filter the value of status property (=)
-	 * @param action [required] Filter the value of action property (=)
-	 * @param serviceName [required] The name of your DirectAdmin license
-	 */
-	public ArrayList<Long> serviceName_tasks_GET(String serviceName, OvhActionType action, OvhTaskStateEnum status) throws IOException {
-		String qPath = "/license/directadmin/{serviceName}/tasks";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "action", action);
-		query(sb, "status", status);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /license/directadmin/{serviceName}/tasks/{taskId}
-	 * @param serviceName [required] The name of your DirectAdmin license
-	 * @param taskId [required] This Task id
-	 */
-	public OvhTask serviceName_tasks_taskId_GET(String serviceName, Long taskId) throws IOException {
-		String qPath = "/license/directadmin/{serviceName}/tasks/{taskId}";
-		StringBuilder sb = path(qPath, serviceName, taskId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
 	 * Returns an array of ips where the license can be moved to
 	 *
 	 * REST: GET /license/directadmin/{serviceName}/allowedDestinationIp
@@ -124,88 +206,6 @@ public class ApiOvhLicensedirectadmin extends ApiOvhBase {
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};
-
-	/**
-	 * Confirm termination of your service
-	 *
-	 * REST: POST /license/directadmin/{serviceName}/confirmTermination
-	 * @param futureUse What next after your termination request
-	 * @param reason Reason of your termination request
-	 * @param commentary Commentary about your termination request
-	 * @param token [required] The termination token sent by mail to the admin contact
-	 * @param serviceName [required] The name of your DirectAdmin license
-	 */
-	public String serviceName_confirmTermination_POST(String serviceName, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
-		String qPath = "/license/directadmin/{serviceName}/confirmTermination";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "futureUse", futureUse);
-		addBody(o, "reason", reason);
-		addBody(o, "commentary", commentary);
-		addBody(o, "token", token);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * Terminate your service
-	 *
-	 * REST: POST /license/directadmin/{serviceName}/terminate
-	 * @param serviceName [required] The name of your DirectAdmin license
-	 */
-	public String serviceName_terminate_POST(String serviceName) throws IOException {
-		String qPath = "/license/directadmin/{serviceName}/terminate";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * Will tell if the ip can accept the license
-	 *
-	 * REST: GET /license/directadmin/{serviceName}/canLicenseBeMovedTo
-	 * @param destinationIp [required] The Ip on which you want to move this license
-	 * @param serviceName [required] The name of your DirectAdmin license
-	 */
-	public OvhChangeIpStatus serviceName_canLicenseBeMovedTo_GET(String serviceName, String destinationIp) throws IOException {
-		String qPath = "/license/directadmin/{serviceName}/canLicenseBeMovedTo";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "destinationIp", destinationIp);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhChangeIpStatus.class);
-	}
-
-	/**
-	 * Move this license to another Ip
-	 *
-	 * REST: POST /license/directadmin/{serviceName}/changeIp
-	 * @param destinationIp [required] The Ip on which you want to move this license
-	 * @param serviceName [required] The name of your DirectAdmin license
-	 */
-	public OvhTask serviceName_changeIp_POST(String serviceName, String destinationIp) throws IOException {
-		String qPath = "/license/directadmin/{serviceName}/changeIp";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "destinationIp", destinationIp);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Change the Operating System for a license
-	 *
-	 * REST: POST /license/directadmin/{serviceName}/changeOs
-	 * @param os [required] The operating system you want for this license
-	 * @param serviceName [required] The name of your DirectAdmin license
-	 */
-	public OvhTask serviceName_changeOs_POST(String serviceName, OvhDirectAdminOsEnum os) throws IOException {
-		String qPath = "/license/directadmin/{serviceName}/changeOs";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "os", os);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
 
 	/**
 	 * List available services

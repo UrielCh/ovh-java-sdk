@@ -26,18 +26,18 @@ public class OvhNetwork {
 	public String id;
 
 	/**
-	 * Network region
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String region;
-
-	/**
 	 * Network type
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhNetworkType type;
+
+	/**
+	 * Network region
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String region;
 
 	/**
 	 * Network status

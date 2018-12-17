@@ -24,4 +24,11 @@ public class OvhOvhPabxHunting {
 	 * canBeNull && readOnly
 	 */
 	public Boolean g729;
+
+	/**
+	 * Enable/Disable the status change IVR on your callcenter. The IVR is enabled by default.
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean statusIvrEnabled;
 }

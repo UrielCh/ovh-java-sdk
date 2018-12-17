@@ -16,18 +16,18 @@ public class OvhDnssecKey {
 	public OvhKeyFlagEnum flags;
 
 	/**
-	 * Id of the DNSSEC key
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long id;
-
-	/**
 	 * Tag of the DNSSEC key
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long tag;
+
+	/**
+	 * Id of the DNSSEC key
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long id;
 
 	/**
 	 * Public key

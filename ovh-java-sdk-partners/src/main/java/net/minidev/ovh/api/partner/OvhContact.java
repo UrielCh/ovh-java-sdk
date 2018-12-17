@@ -12,18 +12,18 @@ public class OvhContact {
 	public String firstName;
 
 	/**
-	 * Newsletter subscription choice
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String newsletter;
-
-	/**
 	 * Contact's last name
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String lastName;
+
+	/**
+	 * Newsletter subscription choice
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String newsletter;
 
 	/**
 	 * Contact's twitter url

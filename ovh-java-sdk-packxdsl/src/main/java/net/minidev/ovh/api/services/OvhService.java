@@ -17,12 +17,12 @@ public class OvhService {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Date engagedUpTo;
+	public String contactBilling;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String contactBilling;
+	public Date engagedUpTo;
 
 	/**
 	 * canBeNull && readOnly

@@ -35,10 +35,10 @@ public class OvhOvhAccount {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Date openDate;
+	public Boolean isActive;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Boolean isActive;
+	public Date openDate;
 }

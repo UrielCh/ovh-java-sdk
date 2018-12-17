@@ -45,6 +45,13 @@ public class OvhModuleList {
 	public OvhLanguageEnum[] language;
 
 	/**
+	 * Minimal language version required to run this module
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhUnitAndValue<String> languageRequirement;
+
+	/**
 	 * The version of the module
 	 *
 	 * canBeNull && readOnly
@@ -59,11 +66,11 @@ public class OvhModuleList {
 	public OvhBranchEnum branch;
 
 	/**
-	 * Minimal language version required to run this module
+	 * Size of the module
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhUnitAndValue<String> languageRequirement;
+	public OvhUnitAndValue<Double> size;
 
 	/**
 	 * The type of the admin name
@@ -71,13 +78,6 @@ public class OvhModuleList {
 	 * canBeNull && readOnly
 	 */
 	public OvhAdminNameTypeEnum adminNameType;
-
-	/**
-	 * Size of the module
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhUnitAndValue<Double> size;
 
 	/**
 	 * The name of the module

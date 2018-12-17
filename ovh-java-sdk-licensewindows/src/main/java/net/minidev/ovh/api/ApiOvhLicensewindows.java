@@ -29,30 +29,17 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 	}
 
 	/**
-	 * Get this object properties
+	 * List available services
 	 *
-	 * REST: GET /license/windows/{serviceName}/serviceInfos
-	 * @param serviceName [required] The name of your Windows license
+	 * REST: GET /license/windows
 	 */
-	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
-		String qPath = "/license/windows/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/license/windows";
+		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhService.class);
+		return convertTo(resp, t1);
 	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /license/windows/{serviceName}/serviceInfos
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The name of your Windows license
-	 */
-	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
-		String qPath = "/license/windows/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
+	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
 
 	/**
 	 * Get this object properties
@@ -81,6 +68,45 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 	}
 
 	/**
+	 * Terminate your service
+	 *
+	 * REST: POST /license/windows/{serviceName}/terminate
+	 * @param serviceName [required] The name of your Windows license
+	 */
+	public String serviceName_terminate_POST(String serviceName) throws IOException {
+		String qPath = "/license/windows/{serviceName}/terminate";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /license/windows/{serviceName}/serviceInfos
+	 * @param serviceName [required] The name of your Windows license
+	 */
+	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
+		String qPath = "/license/windows/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhService.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /license/windows/{serviceName}/serviceInfos
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The name of your Windows license
+	 */
+	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
+		String qPath = "/license/windows/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
 	 * tasks linked to this license
 	 *
 	 * REST: GET /license/windows/{serviceName}/tasks
@@ -94,9 +120,9 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 		query(sb, "action", action);
 		query(sb, "status", status);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, t2);
 	}
-	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
+	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
 
 	/**
 	 * Get this object properties
@@ -135,51 +161,6 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 	}
 
 	/**
-	 * Terminate your service
-	 *
-	 * REST: POST /license/windows/{serviceName}/terminate
-	 * @param serviceName [required] The name of your Windows license
-	 */
-	public String serviceName_terminate_POST(String serviceName) throws IOException {
-		String qPath = "/license/windows/{serviceName}/terminate";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * Link your own sql server license to this Windows license
-	 *
-	 * REST: POST /license/windows/{serviceName}/sqlServer
-	 * @param licenseId [required] Your license serial number
-	 * @param version [required] Your license version
-	 * @param serviceName [required] The name of your Windows license
-	 */
-	public OvhTask serviceName_sqlServer_POST(String serviceName, String licenseId, OvhWindowsSqlVersionEnum version) throws IOException {
-		String qPath = "/license/windows/{serviceName}/sqlServer";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "licenseId", licenseId);
-		addBody(o, "version", version);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * options attached to this license
-	 *
-	 * REST: GET /license/windows/{serviceName}/option
-	 * @param serviceName [required] The name of your Windows license
-	 */
-	public ArrayList<OvhOptionLabel> serviceName_option_GET(String serviceName) throws IOException {
-		String qPath = "/license/windows/{serviceName}/option";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-	private static TypeReference<ArrayList<OvhOptionLabel>> t2 = new TypeReference<ArrayList<OvhOptionLabel>>() {};
-
-	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /license/windows/{serviceName}/option/{label}
@@ -208,17 +189,36 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 	}
 
 	/**
-	 * List available services
+	 * options attached to this license
 	 *
-	 * REST: GET /license/windows
+	 * REST: GET /license/windows/{serviceName}/option
+	 * @param serviceName [required] The name of your Windows license
 	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/license/windows";
-		StringBuilder sb = path(qPath);
+	public ArrayList<OvhOptionLabel> serviceName_option_GET(String serviceName) throws IOException {
+		String qPath = "/license/windows/{serviceName}/option";
+		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
-	private static TypeReference<ArrayList<String>> t3 = new TypeReference<ArrayList<String>>() {};
+	private static TypeReference<ArrayList<OvhOptionLabel>> t3 = new TypeReference<ArrayList<OvhOptionLabel>>() {};
+
+	/**
+	 * Link your own sql server license to this Windows license
+	 *
+	 * REST: POST /license/windows/{serviceName}/sqlServer
+	 * @param version [required] Your license version
+	 * @param licenseId [required] Your license serial number
+	 * @param serviceName [required] The name of your Windows license
+	 */
+	public OvhTask serviceName_sqlServer_POST(String serviceName, OvhWindowsSqlVersionEnum version, String licenseId) throws IOException {
+		String qPath = "/license/windows/{serviceName}/sqlServer";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "version", version);
+		addBody(o, "licenseId", licenseId);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
 
 	/**
 	 * Get the orderable Windows versions

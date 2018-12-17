@@ -21,13 +21,6 @@ public class OvhArchive {
 	public String filename;
 
 	/**
-	 * File size in bytes
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long size;
-
-	/**
 	 * Retrieval delay
 	 *
 	 * canBeNull && readOnly
@@ -40,6 +33,13 @@ public class OvhArchive {
 	 * canBeNull && readOnly
 	 */
 	public String sha256;
+
+	/**
+	 * File size in bytes
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long size;
 
 	/**
 	 * Retrieval state

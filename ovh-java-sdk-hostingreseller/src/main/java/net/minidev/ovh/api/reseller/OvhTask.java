@@ -21,18 +21,18 @@ public class OvhTask {
 	public Date lastUpdateDate;
 
 	/**
-	 * Task expected done date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date expectedDoneDate;
-
-	/**
 	 * Task percentage progression
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long progress;
+
+	/**
+	 * Task expected done date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date expectedDoneDate;
 
 	/**
 	 * Task name

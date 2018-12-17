@@ -36,18 +36,18 @@ public class OvhTemplatePartitions {
 	public OvhTemplateOsFileSystemEnum filesystem;
 
 	/**
-	 * raid partition type
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhPartitionRaidEnum raid;
-
-	/**
 	 * specifies the creation order of the partition on the disk
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long order;
+
+	/**
+	 * raid partition type
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhPartitionRaidEnum raid;
 
 	/**
 	 * partition mount point

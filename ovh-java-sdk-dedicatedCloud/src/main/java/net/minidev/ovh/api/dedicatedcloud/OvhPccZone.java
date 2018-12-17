@@ -5,16 +5,16 @@ package net.minidev.ovh.api.dedicatedcloud;
  */
 public class OvhPccZone {
 	/**
-	 * Name of pccZone
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String pccZone;
-
-	/**
 	 * Id of pccZone
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long id;
+
+	/**
+	 * Name of pccZone
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String pccZone;
 }

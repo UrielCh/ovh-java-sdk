@@ -7,18 +7,18 @@ import java.util.Date;
  */
 public class OvhIpTask {
 	/**
-	 * Function name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhTaskFunctionEnum function;
-
-	/**
 	 * last update
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date lastUpdate;
+
+	/**
+	 * Function name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhTaskFunctionEnum function;
 
 	/**
 	 * Destination for moveFloatingIp tasks

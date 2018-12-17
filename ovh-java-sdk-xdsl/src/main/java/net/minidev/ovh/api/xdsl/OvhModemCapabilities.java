@@ -68,4 +68,9 @@ public class OvhModemCapabilities {
 	 * canBeNull
 	 */
 	public Boolean canChangeMtu;
+
+	/**
+	 * canBeNull
+	 */
+	public Boolean canChangeFirmware;
 }

@@ -14,17 +14,17 @@ public class OvhJob {
 	/**
 	 * canBeNull && readOnly
 	 */
+	public Long messageLength;
+
+	/**
+	 * canBeNull && readOnly
+	 */
 	public String receiver;
 
 	/**
 	 * canBeNull && readOnly
 	 */
 	public Long deliveryReceipt;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public Long messageLength;
 
 	/**
 	 * canBeNull && readOnly

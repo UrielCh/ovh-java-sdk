@@ -28,18 +28,18 @@ public class OvhBackupFtpAcl {
 	public Date lastUpdate;
 
 	/**
-	 * Wether to allow the NFS protocol for this ACL
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean nfs;
-
-	/**
 	 * Whether the rule has been applied on the Backup Ftp
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean isApplied;
+
+	/**
+	 * Wether to allow the NFS protocol for this ACL
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean nfs;
 
 	/**
 	 * Wether to allow the CIFS (SMB) protocol for this ACL

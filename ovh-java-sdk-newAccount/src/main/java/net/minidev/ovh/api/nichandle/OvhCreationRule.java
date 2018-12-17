@@ -19,18 +19,18 @@ public class OvhCreationRule {
 	public String[] examples;
 
 	/**
-	 * List of allowed values for the field
-	 *
-	 * canBeNull
-	 */
-	public String[] in;
-
-	/**
 	 * Regular expression to validate the field value
 	 *
 	 * canBeNull
 	 */
 	public String regularExpression;
+
+	/**
+	 * List of allowed values for the field
+	 *
+	 * canBeNull
+	 */
+	public String[] in;
 
 	/**
 	 * Default value of the field

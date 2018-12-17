@@ -29,6 +29,86 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	}
 
 	/**
+	 * Associate the stack with some credentials to an authenticated registry.
+	 *
+	 * REST: POST /caas/containers/{serviceName}/registry/credentials
+	 * @param body [required] Credentials providing authentication to an external registry
+	 * @param serviceName [required] service name
+	 *
+	 * API beta
+	 */
+	public OvhRegistryCredentials serviceName_registry_credentials_POST(String serviceName, OvhInputCustomSsl body) throws IOException {
+		String qPath = "/caas/containers/{serviceName}/registry/credentials";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), body);
+		return convertTo(resp, OvhRegistryCredentials.class);
+	}
+
+	/**
+	 * List the registry credentials associated to the stack.
+	 *
+	 * REST: GET /caas/containers/{serviceName}/registry/credentials
+	 * @param serviceName [required] service name
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> serviceName_registry_credentials_GET(String serviceName) throws IOException {
+		String qPath = "/caas/containers/{serviceName}/registry/credentials";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
+
+	/**
+	 * Update the registry credentials.
+	 *
+	 * REST: PUT /caas/containers/{serviceName}/registry/credentials/{credentialsId}
+	 * @param body [required] Credentials providing authentication to an external registry
+	 * @param credentialsId [required] credentials id
+	 * @param serviceName [required] service name
+	 *
+	 * API beta
+	 */
+	public OvhRegistryCredentials serviceName_registry_credentials_credentialsId_PUT(String serviceName, String credentialsId, OvhInputCustomSsl body) throws IOException {
+		String qPath = "/caas/containers/{serviceName}/registry/credentials/{credentialsId}";
+		StringBuilder sb = path(qPath, serviceName, credentialsId);
+		String resp = exec(qPath, "PUT", sb.toString(), body);
+		return convertTo(resp, OvhRegistryCredentials.class);
+	}
+
+	/**
+	 * Inspect the image registry credentials associated to the stack
+	 *
+	 * REST: GET /caas/containers/{serviceName}/registry/credentials/{credentialsId}
+	 * @param credentialsId [required] credentials id
+	 * @param serviceName [required] service name
+	 *
+	 * API beta
+	 */
+	public OvhRegistryCredentials serviceName_registry_credentials_credentialsId_GET(String serviceName, String credentialsId) throws IOException {
+		String qPath = "/caas/containers/{serviceName}/registry/credentials/{credentialsId}";
+		StringBuilder sb = path(qPath, serviceName, credentialsId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhRegistryCredentials.class);
+	}
+
+	/**
+	 * Delete the registry credentials.
+	 *
+	 * REST: DELETE /caas/containers/{serviceName}/registry/credentials/{credentialsId}
+	 * @param credentialsId [required] credentials id
+	 * @param serviceName [required] service name
+	 *
+	 * API beta
+	 */
+	public void serviceName_registry_credentials_credentialsId_DELETE(String serviceName, String credentialsId) throws IOException {
+		String qPath = "/caas/containers/{serviceName}/registry/credentials/{credentialsId}";
+		StringBuilder sb = path(qPath, serviceName, credentialsId);
+		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /caas/containers/{serviceName}/serviceInfos
@@ -56,6 +136,100 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 		String qPath = "/caas/containers/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
 		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * List the frameworks installed on the argument stack
+	 *
+	 * REST: GET /caas/containers/{serviceName}/frameworks
+	 * @param serviceName [required] service name
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> serviceName_frameworks_GET(String serviceName) throws IOException {
+		String qPath = "/caas/containers/{serviceName}/frameworks";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * List apps in the framework
+	 *
+	 * REST: GET /caas/containers/{serviceName}/frameworks/{frameworkId}/apps
+	 * @param frameworkId [required] framework id
+	 * @param serviceName [required] service name
+	 *
+	 * API beta
+	 */
+	public OvhApplication serviceName_frameworks_frameworkId_apps_GET(String serviceName, String frameworkId) throws IOException {
+		String qPath = "/caas/containers/{serviceName}/frameworks/{frameworkId}/apps";
+		StringBuilder sb = path(qPath, serviceName, frameworkId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhApplication.class);
+	}
+
+	/**
+	 * Inspect the stack framework
+	 *
+	 * REST: GET /caas/containers/{serviceName}/frameworks/{frameworkId}
+	 * @param frameworkId [required] framework id
+	 * @param serviceName [required] service name
+	 *
+	 * API beta
+	 */
+	public OvhFramework serviceName_frameworks_frameworkId_GET(String serviceName, String frameworkId) throws IOException {
+		String qPath = "/caas/containers/{serviceName}/frameworks/{frameworkId}";
+		StringBuilder sb = path(qPath, serviceName, frameworkId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhFramework.class);
+	}
+
+	/**
+	 * Update the framework access password
+	 *
+	 * REST: PUT /caas/containers/{serviceName}/frameworks/{frameworkId}/password
+	 * @param frameworkId [required] framework id
+	 * @param serviceName [required] service name
+	 * @param body [required] The new framework password
+	 *
+	 * API beta
+	 */
+	public void serviceName_frameworks_frameworkId_password_PUT(String serviceName, String frameworkId, OvhPassword body) throws IOException {
+		String qPath = "/caas/containers/{serviceName}/frameworks/{frameworkId}/password";
+		StringBuilder sb = path(qPath, serviceName, frameworkId);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Inspect the argument user slave instance
+	 *
+	 * REST: GET /caas/containers/{serviceName}/slaves/{slaveId}
+	 * @param slaveId [required] slave id
+	 * @param serviceName [required] service name
+	 *
+	 * API beta
+	 */
+	public OvhSlave serviceName_slaves_slaveId_GET(String serviceName, String slaveId) throws IOException {
+		String qPath = "/caas/containers/{serviceName}/slaves/{slaveId}";
+		StringBuilder sb = path(qPath, serviceName, slaveId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhSlave.class);
+	}
+
+	/**
+	 * List the id of the registered slave instances
+	 *
+	 * REST: GET /caas/containers/{serviceName}/slaves
+	 * @param serviceName [required] service name
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> serviceName_slaves_GET(String serviceName) throws IOException {
+		String qPath = "/caas/containers/{serviceName}/slaves";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
 	}
 
 	/**
@@ -120,177 +294,18 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 	}
 
 	/**
-	 * List the id of the registered slave instances
+	 * List all the installable Mesos frameworks
 	 *
-	 * REST: GET /caas/containers/{serviceName}/slaves
+	 * REST: GET /caas/containers/{serviceName}/availableFrameworks
 	 * @param serviceName [required] service name
 	 *
 	 * API beta
 	 */
-	public ArrayList<String> serviceName_slaves_GET(String serviceName) throws IOException {
-		String qPath = "/caas/containers/{serviceName}/slaves";
+	public ArrayList<String> serviceName_availableFrameworks_GET(String serviceName) throws IOException {
+		String qPath = "/caas/containers/{serviceName}/availableFrameworks";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
-	}
-	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
-
-	/**
-	 * Inspect the argument user slave instance
-	 *
-	 * REST: GET /caas/containers/{serviceName}/slaves/{slaveId}
-	 * @param slaveId [required] slave id
-	 * @param serviceName [required] service name
-	 *
-	 * API beta
-	 */
-	public OvhSlave serviceName_slaves_slaveId_GET(String serviceName, String slaveId) throws IOException {
-		String qPath = "/caas/containers/{serviceName}/slaves/{slaveId}";
-		StringBuilder sb = path(qPath, serviceName, slaveId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhSlave.class);
-	}
-
-	/**
-	 * Associate the stack with some credentials to an authenticated registry.
-	 *
-	 * REST: POST /caas/containers/{serviceName}/registry/credentials
-	 * @param body [required] Credentials providing authentication to an external registry
-	 * @param serviceName [required] service name
-	 *
-	 * API beta
-	 */
-	public OvhRegistryCredentials serviceName_registry_credentials_POST(String serviceName, OvhInputCustomSsl body) throws IOException {
-		String qPath = "/caas/containers/{serviceName}/registry/credentials";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), body);
-		return convertTo(resp, OvhRegistryCredentials.class);
-	}
-
-	/**
-	 * List the registry credentials associated to the stack.
-	 *
-	 * REST: GET /caas/containers/{serviceName}/registry/credentials
-	 * @param serviceName [required] service name
-	 *
-	 * API beta
-	 */
-	public ArrayList<String> serviceName_registry_credentials_GET(String serviceName) throws IOException {
-		String qPath = "/caas/containers/{serviceName}/registry/credentials";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Update the registry credentials.
-	 *
-	 * REST: PUT /caas/containers/{serviceName}/registry/credentials/{credentialsId}
-	 * @param body [required] Credentials providing authentication to an external registry
-	 * @param credentialsId [required] credentials id
-	 * @param serviceName [required] service name
-	 *
-	 * API beta
-	 */
-	public OvhRegistryCredentials serviceName_registry_credentials_credentialsId_PUT(String serviceName, String credentialsId, OvhInputCustomSsl body) throws IOException {
-		String qPath = "/caas/containers/{serviceName}/registry/credentials/{credentialsId}";
-		StringBuilder sb = path(qPath, serviceName, credentialsId);
-		String resp = exec(qPath, "PUT", sb.toString(), body);
-		return convertTo(resp, OvhRegistryCredentials.class);
-	}
-
-	/**
-	 * Inspect the image registry credentials associated to the stack
-	 *
-	 * REST: GET /caas/containers/{serviceName}/registry/credentials/{credentialsId}
-	 * @param credentialsId [required] credentials id
-	 * @param serviceName [required] service name
-	 *
-	 * API beta
-	 */
-	public OvhRegistryCredentials serviceName_registry_credentials_credentialsId_GET(String serviceName, String credentialsId) throws IOException {
-		String qPath = "/caas/containers/{serviceName}/registry/credentials/{credentialsId}";
-		StringBuilder sb = path(qPath, serviceName, credentialsId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhRegistryCredentials.class);
-	}
-
-	/**
-	 * Delete the registry credentials.
-	 *
-	 * REST: DELETE /caas/containers/{serviceName}/registry/credentials/{credentialsId}
-	 * @param credentialsId [required] credentials id
-	 * @param serviceName [required] service name
-	 *
-	 * API beta
-	 */
-	public void serviceName_registry_credentials_credentialsId_DELETE(String serviceName, String credentialsId) throws IOException {
-		String qPath = "/caas/containers/{serviceName}/registry/credentials/{credentialsId}";
-		StringBuilder sb = path(qPath, serviceName, credentialsId);
-		exec(qPath, "DELETE", sb.toString(), null);
-	}
-
-	/**
-	 * List the frameworks installed on the argument stack
-	 *
-	 * REST: GET /caas/containers/{serviceName}/frameworks
-	 * @param serviceName [required] service name
-	 *
-	 * API beta
-	 */
-	public ArrayList<String> serviceName_frameworks_GET(String serviceName) throws IOException {
-		String qPath = "/caas/containers/{serviceName}/frameworks";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Inspect the stack framework
-	 *
-	 * REST: GET /caas/containers/{serviceName}/frameworks/{frameworkId}
-	 * @param frameworkId [required] framework id
-	 * @param serviceName [required] service name
-	 *
-	 * API beta
-	 */
-	public OvhFramework serviceName_frameworks_frameworkId_GET(String serviceName, String frameworkId) throws IOException {
-		String qPath = "/caas/containers/{serviceName}/frameworks/{frameworkId}";
-		StringBuilder sb = path(qPath, serviceName, frameworkId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhFramework.class);
-	}
-
-	/**
-	 * Update the framework access password
-	 *
-	 * REST: PUT /caas/containers/{serviceName}/frameworks/{frameworkId}/password
-	 * @param frameworkId [required] framework id
-	 * @param serviceName [required] service name
-	 * @param body [required] The new framework password
-	 *
-	 * API beta
-	 */
-	public void serviceName_frameworks_frameworkId_password_PUT(String serviceName, String frameworkId, OvhPassword body) throws IOException {
-		String qPath = "/caas/containers/{serviceName}/frameworks/{frameworkId}/password";
-		StringBuilder sb = path(qPath, serviceName, frameworkId);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * List apps in the framework
-	 *
-	 * REST: GET /caas/containers/{serviceName}/frameworks/{frameworkId}/apps
-	 * @param frameworkId [required] framework id
-	 * @param serviceName [required] service name
-	 *
-	 * API beta
-	 */
-	public OvhApplication serviceName_frameworks_frameworkId_apps_GET(String serviceName, String frameworkId) throws IOException {
-		String qPath = "/caas/containers/{serviceName}/frameworks/{frameworkId}/apps";
-		StringBuilder sb = path(qPath, serviceName, frameworkId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhApplication.class);
 	}
 
 	/**
@@ -315,35 +330,6 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 		return convertTo(resp, t2);
 	}
 	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
-
-	/**
-	 * List all the installable Mesos frameworks
-	 *
-	 * REST: GET /caas/containers/{serviceName}/availableFrameworks
-	 * @param serviceName [required] service name
-	 *
-	 * API beta
-	 */
-	public ArrayList<String> serviceName_availableFrameworks_GET(String serviceName) throws IOException {
-		String qPath = "/caas/containers/{serviceName}/availableFrameworks";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * List available services
-	 *
-	 * REST: GET /caas/containers
-	 *
-	 * API beta
-	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/caas/containers";
-		StringBuilder sb = path(qPath);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
 
 	/**
 	 * List the /cloud flavors available for the Docker PaaS slaves
@@ -372,5 +358,19 @@ public class ApiOvhCaascontainers extends ApiOvhBase {
 		StringBuilder sb = path(qPath, flavorId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhFlavor.class);
+	}
+
+	/**
+	 * List available services
+	 *
+	 * REST: GET /caas/containers
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/caas/containers";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
 	}
 }

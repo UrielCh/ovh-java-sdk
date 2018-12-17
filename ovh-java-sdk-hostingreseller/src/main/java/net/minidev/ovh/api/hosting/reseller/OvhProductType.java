@@ -5,18 +5,18 @@ package net.minidev.ovh.api.hosting.reseller;
  */
 public class OvhProductType {
 	/**
-	 * Number of allowed databases
-	 *
-	 * canBeNull
-	 */
-	public Long databases;
-
-	/**
 	 * Number of allowed email accounts
 	 *
 	 * canBeNull
 	 */
 	public Long emailAccounts;
+
+	/**
+	 * Number of allowed databases
+	 *
+	 * canBeNull
+	 */
+	public Long databases;
 
 	/**
 	 * Disk size of the instance (in GB)

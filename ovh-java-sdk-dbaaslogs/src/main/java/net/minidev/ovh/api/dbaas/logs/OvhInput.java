@@ -91,18 +91,18 @@ public class OvhInput {
 	public Boolean singleInstanceEnabled;
 
 	/**
-	 * Input last update
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date updatedAt;
-
-	/**
 	 * init: configuration required, pending: ready to start, running: available
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhInputStatusEnum status;
+
+	/**
+	 * Input last update
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date updatedAt;
 
 	/**
 	 * Input engine UUID

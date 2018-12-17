@@ -5,18 +5,18 @@ package net.minidev.ovh.api.telephony;
  */
 public class OvhOvhPabxHuntingQueue {
 	/**
-	 * Follow the calls forwarding
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean followCallForwards;
-
-	/**
 	 * Key to press to disable record
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhOvhPabxHuntingQueueRecordDisablingDigitEnum recordDisablingDigit;
+
+	/**
+	 * Follow the calls forwarding
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean followCallForwards;
 
 	/**
 	 * canBeNull && readOnly

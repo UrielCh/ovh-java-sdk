@@ -26,6 +26,13 @@ public class OvhHourlyResources {
 	public OvhHourlyStorage[] storage;
 
 	/**
+	 * Details about hourly instances options
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhHourlyInstanceOption[] instanceOption;
+
+	/**
 	 * Details about hourly snapshots
 	 *
 	 * canBeNull && readOnly

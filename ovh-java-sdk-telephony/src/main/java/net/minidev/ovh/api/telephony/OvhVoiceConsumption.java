@@ -44,12 +44,12 @@ public class OvhVoiceConsumption {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long consumptionId;
+	public OvhVoiceConsumptionWayTypeEnum wayType;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhVoiceConsumptionWayTypeEnum wayType;
+	public Long consumptionId;
 
 	/**
 	 * canBeNull && readOnly

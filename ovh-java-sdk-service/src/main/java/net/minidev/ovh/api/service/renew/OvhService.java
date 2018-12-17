@@ -12,16 +12,16 @@ public class OvhService {
 	public String serviceType;
 
 	/**
-	 * Name of the service
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String serviceName;
-
-	/**
 	 * ID of the service
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long serviceId;
+
+	/**
+	 * Name of the service
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String serviceName;
 }

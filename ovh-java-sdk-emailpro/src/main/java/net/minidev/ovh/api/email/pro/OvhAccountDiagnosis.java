@@ -42,13 +42,6 @@ public class OvhAccountDiagnosis {
 	public Boolean isSuspended;
 
 	/**
-	 * Determines if SRV (autodiscovery) record for account's domain is properly set
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean isSrvValid;
-
-	/**
 	 * Determines if outgoing message has been delivered
 	 *
 	 * canBeNull && readOnly
@@ -56,11 +49,11 @@ public class OvhAccountDiagnosis {
 	public Boolean canSendEmail;
 
 	/**
-	 * Determines if account is locked
+	 * Determines if SRV (autodiscovery) record for account's domain is properly set
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Boolean isLocked;
+	public Boolean isSrvValid;
 
 	/**
 	 * Determines if possible to authenticate with credentials
@@ -68,4 +61,11 @@ public class OvhAccountDiagnosis {
 	 * canBeNull && readOnly
 	 */
 	public Boolean connectiveWebmail;
+
+	/**
+	 * Determines if account is locked
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean isLocked;
 }

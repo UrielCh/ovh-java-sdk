@@ -7,18 +7,18 @@ import java.util.Date;
  */
 public class OvhContainerObject {
 	/**
-	 * Object retrieval delay (when unsealing)
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long retrievalDelay;
-
-	/**
 	 * Object size
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long size;
+
+	/**
+	 * Object retrieval delay (when unsealing)
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long retrievalDelay;
 
 	/**
 	 * Object name

@@ -12,10 +12,10 @@ public class OvhU2FSignRequest {
 	/**
 	 * canBeNull
 	 */
-	public String version;
+	public String keyHandle;
 
 	/**
 	 * canBeNull
 	 */
-	public String keyHandle;
+	public String version;
 }

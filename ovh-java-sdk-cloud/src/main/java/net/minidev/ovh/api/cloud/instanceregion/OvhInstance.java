@@ -43,18 +43,18 @@ public class OvhInstance {
 	public String name;
 
 	/**
-	 * Instance monthly billing status
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhMonthlyBilling monthlyBilling;
-
-	/**
 	 * Instance IP addresses
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhIpAddress[] ipAddresses;
+
+	/**
+	 * Instance monthly billing status
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhMonthlyBilling monthlyBilling;
 
 	/**
 	 * Instance id

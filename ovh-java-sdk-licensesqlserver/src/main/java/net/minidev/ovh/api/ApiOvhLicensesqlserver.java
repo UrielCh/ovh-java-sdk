@@ -28,32 +28,6 @@ public class ApiOvhLicensesqlserver extends ApiOvhBase {
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /license/sqlserver/{serviceName}/serviceInfos
-	 * @param serviceName [required] The name of your SQL Server license
-	 */
-	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
-		String qPath = "/license/sqlserver/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhService.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /license/sqlserver/{serviceName}/serviceInfos
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The name of your SQL Server license
-	 */
-	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
-		String qPath = "/license/sqlserver/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Get this object properties
-	 *
 	 * REST: GET /license/sqlserver/{serviceName}
 	 * @param serviceName [required] The name of your SQL Server license
 	 */
@@ -65,35 +39,16 @@ public class ApiOvhLicensesqlserver extends ApiOvhBase {
 	}
 
 	/**
-	 * Tasks linked to this license
+	 * Terminate your service
 	 *
-	 * REST: GET /license/sqlserver/{serviceName}/tasks
-	 * @param status [required] Filter the value of status property (=)
-	 * @param action [required] Filter the value of action property (=)
+	 * REST: POST /license/sqlserver/{serviceName}/terminate
 	 * @param serviceName [required] The name of your SQL Server license
 	 */
-	public ArrayList<Long> serviceName_tasks_GET(String serviceName, OvhActionType action, OvhTaskStateEnum status) throws IOException {
-		String qPath = "/license/sqlserver/{serviceName}/tasks";
+	public String serviceName_terminate_POST(String serviceName) throws IOException {
+		String qPath = "/license/sqlserver/{serviceName}/terminate";
 		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "action", action);
-		query(sb, "status", status);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /license/sqlserver/{serviceName}/tasks/{taskId}
-	 * @param serviceName [required] The name of your SQL Server license
-	 * @param taskId [required] This Task id
-	 */
-	public OvhTask serviceName_tasks_taskId_GET(String serviceName, Long taskId) throws IOException {
-		String qPath = "/license/sqlserver/{serviceName}/tasks/{taskId}";
-		StringBuilder sb = path(qPath, serviceName, taskId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, String.class);
 	}
 
 	/**
@@ -119,30 +74,62 @@ public class ApiOvhLicensesqlserver extends ApiOvhBase {
 	}
 
 	/**
-	 * Terminate your service
+	 * Get this object properties
 	 *
-	 * REST: POST /license/sqlserver/{serviceName}/terminate
+	 * REST: GET /license/sqlserver/{serviceName}/tasks/{taskId}
 	 * @param serviceName [required] The name of your SQL Server license
+	 * @param taskId [required] This Task id
 	 */
-	public String serviceName_terminate_POST(String serviceName) throws IOException {
-		String qPath = "/license/sqlserver/{serviceName}/terminate";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, String.class);
+	public OvhTask serviceName_tasks_taskId_GET(String serviceName, Long taskId) throws IOException {
+		String qPath = "/license/sqlserver/{serviceName}/tasks/{taskId}";
+		StringBuilder sb = path(qPath, serviceName, taskId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
-	 * List available services
+	 * Tasks linked to this license
 	 *
-	 * REST: GET /license/sqlserver
+	 * REST: GET /license/sqlserver/{serviceName}/tasks
+	 * @param status [required] Filter the value of status property (=)
+	 * @param action [required] Filter the value of action property (=)
+	 * @param serviceName [required] The name of your SQL Server license
 	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/license/sqlserver";
-		StringBuilder sb = path(qPath);
+	public ArrayList<Long> serviceName_tasks_GET(String serviceName, OvhActionType action, OvhTaskStateEnum status) throws IOException {
+		String qPath = "/license/sqlserver/{serviceName}/tasks";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "action", action);
+		query(sb, "status", status);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
+		return convertTo(resp, t1);
 	}
-	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};
+	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /license/sqlserver/{serviceName}/serviceInfos
+	 * @param serviceName [required] The name of your SQL Server license
+	 */
+	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
+		String qPath = "/license/sqlserver/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhService.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /license/sqlserver/{serviceName}/serviceInfos
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The name of your SQL Server license
+	 */
+	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
+		String qPath = "/license/sqlserver/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
 
 	/**
 	 * Get the orderable Sql Server versions
@@ -155,7 +142,20 @@ public class ApiOvhLicensesqlserver extends ApiOvhBase {
 		StringBuilder sb = path(qPath);
 		query(sb, "ip", ip);
 		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+	private static TypeReference<ArrayList<OvhSqlServerOrderConfiguration>> t2 = new TypeReference<ArrayList<OvhSqlServerOrderConfiguration>>() {};
+
+	/**
+	 * List available services
+	 *
+	 * REST: GET /license/sqlserver
+	 */
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/license/sqlserver";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
-	private static TypeReference<ArrayList<OvhSqlServerOrderConfiguration>> t3 = new TypeReference<ArrayList<OvhSqlServerOrderConfiguration>>() {};
+	private static TypeReference<ArrayList<String>> t3 = new TypeReference<ArrayList<String>>() {};
 }

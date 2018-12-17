@@ -36,18 +36,18 @@ public class OvhService {
 	public OvhCapability[] capabilities;
 
 	/**
-	 * Private database ftp hostname
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String hostnameFtp;
-
-	/**
 	 * Set the name displayed in customer panel for your private database (max 50 chars)
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String displayName;
+
+	/**
+	 * Private database ftp hostname
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String hostnameFtp;
 
 	/**
 	 * Private database ip
@@ -78,18 +78,18 @@ public class OvhService {
 	public OvhDatacenterEnum datacenter;
 
 	/**
-	 * Service name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String serviceName;
-
-	/**
 	 * Return the TLS certificate authority used by the private database
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String tlsCa;
+
+	/**
+	 * Service name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String serviceName;
 
 	/**
 	 * Private database type
@@ -141,13 +141,6 @@ public class OvhService {
 	public Long port;
 
 	/**
-	 * Infrastructure where service was stored
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String infrastructure;
-
-	/**
 	 * Total space used on your private database
 	 *
 	 * canBeNull && readOnly
@@ -155,11 +148,11 @@ public class OvhService {
 	public OvhUnitAndValue<Long> quotaUsed;
 
 	/**
-	 * Private database state
+	 * Infrastructure where service was stored
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhStateEnum state;
+	public String infrastructure;
 
 	/**
 	 * Space allowed on your private database
@@ -167,6 +160,13 @@ public class OvhService {
 	 * canBeNull && readOnly
 	 */
 	public OvhUnitAndValue<Long> quotaSize;
+
+	/**
+	 * Private database state
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhStateEnum state;
 
 	/**
 	 * Amount of ram on your private database

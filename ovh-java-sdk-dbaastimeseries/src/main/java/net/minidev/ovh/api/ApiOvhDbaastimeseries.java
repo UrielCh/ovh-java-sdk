@@ -6,11 +6,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import net.minidev.ovh.api.paas.timeseries.OvhConsumption;
 import net.minidev.ovh.api.paas.timeseries.OvhKey;
+import net.minidev.ovh.api.paas.timeseries.OvhProject;
 import net.minidev.ovh.api.paas.timeseries.OvhQuota;
 import net.minidev.ovh.api.paas.timeseries.OvhRegion;
 import net.minidev.ovh.api.paas.timeseries.OvhTag;
 import net.minidev.ovh.api.services.OvhService;
-import net.minidev.ovh.api.timeseries.OvhProject;
 import net.minidev.ovh.api.tsaas.OvhOpenTSDBToken;
 import net.minidev.ovh.api.tsaas.OvhPermissionEnum;
 import net.minidev.ovh.core.ApiOvhBase;
@@ -27,69 +27,27 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 	}
 
 	/**
-	 * Get quotas
+	 * Setup a project
 	 *
-	 * REST: GET /dbaas/timeseries/{serviceName}/quota
+	 * REST: POST /dbaas/timeseries/{serviceName}/setup
 	 * @param serviceName [required] Service Name
+	 * @param displayName [required] Project name
+	 * @param description [required] Project description
+	 * @param regionId [required] Region to use
+	 * @param raTokenId [required] Your runabove app token id
+	 * @param raTokenKey [required] Your runabove app token key
 	 */
-	public ArrayList<OvhQuota> serviceName_quota_GET(String serviceName) throws IOException {
-		String qPath = "/dbaas/timeseries/{serviceName}/quota";
+	public OvhProject serviceName_setup_POST(String serviceName, String displayName, String description, String regionId, String raTokenId, String raTokenKey) throws IOException {
+		String qPath = "/dbaas/timeseries/{serviceName}/setup";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-	private static TypeReference<ArrayList<OvhQuota>> t1 = new TypeReference<ArrayList<OvhQuota>>() {};
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /dbaas/timeseries/{serviceName}/serviceInfos
-	 * @param serviceName [required] The internal name of your timeseries project
-	 */
-	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
-		String qPath = "/dbaas/timeseries/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhService.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /dbaas/timeseries/{serviceName}/serviceInfos
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your timeseries project
-	 */
-	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
-		String qPath = "/dbaas/timeseries/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /dbaas/timeseries/{serviceName}
-	 * @param serviceName [required] The internal name of your timeseries project
-	 */
-	public OvhProject serviceName_GET(String serviceName) throws IOException {
-		String qPath = "/dbaas/timeseries/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "displayName", displayName);
+		addBody(o, "description", description);
+		addBody(o, "regionId", regionId);
+		addBody(o, "raTokenId", raTokenId);
+		addBody(o, "raTokenKey", raTokenKey);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhProject.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /dbaas/timeseries/{serviceName}
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your timeseries project
-	 */
-	public void serviceName_PUT(String serviceName, OvhProject body) throws IOException {
-		String qPath = "/dbaas/timeseries/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -103,9 +61,9 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 		String qPath = "/dbaas/timeseries/{serviceName}/key";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
+		return convertTo(resp, t1);
 	}
-	private static TypeReference<ArrayList<OvhKey>> t2 = new TypeReference<ArrayList<OvhKey>>() {};
+	private static TypeReference<ArrayList<OvhKey>> t1 = new TypeReference<ArrayList<OvhKey>>() {};
 
 	/**
 	 * Create a key for a project
@@ -197,32 +155,48 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 		addBody(o, "contactTech", contactTech);
 		addBody(o, "contactBilling", contactBilling);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t3);
+		return convertTo(resp, t2);
 	}
-	private static TypeReference<ArrayList<Long>> t3 = new TypeReference<ArrayList<Long>>() {};
+	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
 
 	/**
-	 * Setup a project
+	 * Get quotas
 	 *
-	 * REST: POST /dbaas/timeseries/{serviceName}/setup
+	 * REST: GET /dbaas/timeseries/{serviceName}/quota
 	 * @param serviceName [required] Service Name
-	 * @param displayName [required] Project name
-	 * @param description [required] Project description
-	 * @param regionId [required] Region to use
-	 * @param raTokenId [required] Your runabove app token id
-	 * @param raTokenKey [required] Your runabove app token key
 	 */
-	public net.minidev.ovh.api.paas.timeseries.OvhProject serviceName_setup_POST(String serviceName, String displayName, String description, String regionId, String raTokenId, String raTokenKey) throws IOException {
-		String qPath = "/dbaas/timeseries/{serviceName}/setup";
+	public ArrayList<OvhQuota> serviceName_quota_GET(String serviceName) throws IOException {
+		String qPath = "/dbaas/timeseries/{serviceName}/quota";
 		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "displayName", displayName);
-		addBody(o, "description", description);
-		addBody(o, "regionId", regionId);
-		addBody(o, "raTokenId", raTokenId);
-		addBody(o, "raTokenKey", raTokenKey);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, net.minidev.ovh.api.paas.timeseries.OvhProject.class);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+	private static TypeReference<ArrayList<OvhQuota>> t3 = new TypeReference<ArrayList<OvhQuota>>() {};
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /dbaas/timeseries/{serviceName}
+	 * @param serviceName [required] The internal name of your timeseries project
+	 */
+	public net.minidev.ovh.api.timeseries.OvhProject serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/dbaas/timeseries/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, net.minidev.ovh.api.timeseries.OvhProject.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /dbaas/timeseries/{serviceName}
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your timeseries project
+	 */
+	public void serviceName_PUT(String serviceName, net.minidev.ovh.api.timeseries.OvhProject body) throws IOException {
+		String qPath = "/dbaas/timeseries/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -307,6 +281,32 @@ public class ApiOvhDbaastimeseries extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName, tokenId);
 		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, Boolean.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /dbaas/timeseries/{serviceName}/serviceInfos
+	 * @param serviceName [required] The internal name of your timeseries project
+	 */
+	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
+		String qPath = "/dbaas/timeseries/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhService.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /dbaas/timeseries/{serviceName}/serviceInfos
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your timeseries project
+	 */
+	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
+		String qPath = "/dbaas/timeseries/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**

@@ -5,6 +5,13 @@ package net.minidev.ovh.api.veeam.veeamenterprise;
  */
 public class OvhAccount {
 	/**
+	 * OVH Enterprise Manager IP
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String sourceIp;
+
+	/**
 	 * This Backup Server port
 	 *
 	 * canBeNull && readOnly

@@ -5,16 +5,16 @@ package net.minidev.ovh.api.telephony;
  */
 public class OvhLine {
 	/**
-	 * canBeNull && readOnly
-	 */
-	public OvhTypeServiceEnum serviceType;
-
-	/**
 	 * The line offers
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhLineOffer getPublicOffer;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public OvhTypeServiceEnum serviceType;
 
 	/**
 	 * The line offers (Deprecated, prefer "name" in getPublicOffer)

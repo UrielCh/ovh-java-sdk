@@ -19,18 +19,18 @@ public class OvhFirewallNetworkRule {
 	public Long sequence;
 
 	/**
-	 * Network protocol
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhFirewallProtocolEnum protocol;
-
-	/**
 	 * Source port range for your rule. Only with TCP/UDP protocol
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String sourcePort;
+
+	/**
+	 * Network protocol
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhFirewallProtocolEnum protocol;
 
 	/**
 	 * TCP option on your rule

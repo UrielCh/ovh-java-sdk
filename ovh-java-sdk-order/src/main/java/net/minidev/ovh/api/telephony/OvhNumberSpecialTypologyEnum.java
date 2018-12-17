@@ -10,6 +10,7 @@ public enum OvhNumberSpecialTypologyEnum {
 	be_general("be_general"),
 	be_relaxing("be_relaxing"),
 	fr_access("fr_access"),
+	fr_adults("fr_adults"),
 	fr_announced("fr_announced"),
 	fr_conferencing("fr_conferencing"),
 	fr_contentsAuto("fr_contentsAuto"),

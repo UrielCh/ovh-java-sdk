@@ -37,18 +37,18 @@ public class OvhDatabaseDump {
 	public OvhDateEnum type;
 
 	/**
-	 * The task ID working on this dump
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long taskId;
-
-	/**
 	 * Dump url access
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String url;
+
+	/**
+	 * The task ID working on this dump
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long taskId;
 
 	/**
 	 * The dump status

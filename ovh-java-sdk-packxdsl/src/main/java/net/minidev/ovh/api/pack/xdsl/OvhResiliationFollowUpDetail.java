@@ -21,16 +21,16 @@ public class OvhResiliationFollowUpDetail {
 	public Date registrationDate;
 
 	/**
-	 * Status of the resiliation
-	 *
-	 * canBeNull
-	 */
-	public String status;
-
-	/**
 	 * Date when the resiliation will take effect
 	 *
 	 * canBeNull
 	 */
 	public Date dateTodo;
+
+	/**
+	 * Status of the resiliation
+	 *
+	 * canBeNull
+	 */
+	public String status;
 }

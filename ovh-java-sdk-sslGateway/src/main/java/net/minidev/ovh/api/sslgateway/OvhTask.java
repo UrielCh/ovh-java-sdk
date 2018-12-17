@@ -7,18 +7,18 @@ import java.util.Date;
  */
 public class OvhTask {
 	/**
-	 * Task progress percentage
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long progress;
-
-	/**
 	 * The action made
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhTaskActionEnum action;
+
+	/**
+	 * Task progress percentage
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long progress;
 
 	/**
 	 * Id of the task

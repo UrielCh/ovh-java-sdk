@@ -1,16 +1,15 @@
 package net.minidev.ovh.api.license;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * All versions for SQL Server product
  */
 public enum OvhSqlServerVersionEnum {
-	SQL_SERVER_2008_STANDARD_EDITION("SQL_SERVER_2008_STANDARD_EDITION"),
 	SQL_SERVER_2008_STANDARD_EDITION_2_CPU("SQL_SERVER_2008_STANDARD_EDITION_2_CPU"),
 	SQL_SERVER_2008_STANDARD_EDITION_4_CPU("SQL_SERVER_2008_STANDARD_EDITION_4_CPU"),
-	SQL_SERVER_2008_WEB_EDITION("SQL_SERVER_2008_WEB_EDITION"),
 	SQL_SERVER_2008_WEB_EDITION_2_CPU("SQL_SERVER_2008_WEB_EDITION_2_CPU"),
 	SQL_SERVER_2008_WEB_EDITION_4_CPU("SQL_SERVER_2008_WEB_EDITION_4_CPU"),
-	SQL_SERVER_2012_STANDARD_EDITION("SQL_SERVER_2012_STANDARD_EDITION"),
 	SQL_SERVER_2012_STANDARD_EDITION_10_CORES("SQL_SERVER_2012_STANDARD_EDITION_10_CORES"),
 	SQL_SERVER_2012_STANDARD_EDITION_12_CORES("SQL_SERVER_2012_STANDARD_EDITION_12_CORES"),
 	SQL_SERVER_2012_STANDARD_EDITION_16_CORES("SQL_SERVER_2012_STANDARD_EDITION_16_CORES"),
@@ -52,16 +51,132 @@ public enum OvhSqlServerVersionEnum {
 	SQL_SERVER_2014_WEB_EDITION_8_CORES("SQL_SERVER_2014_WEB_EDITION_8_CORES"),
 	SQL_SERVER_2016_STANDARD_EDITION_10_CORES("SQL_SERVER_2016_STANDARD_EDITION_10_CORES"),
 	SQL_SERVER_2016_STANDARD_EDITION_12_CORES("SQL_SERVER_2016_STANDARD_EDITION_12_CORES"),
+	SQL_SERVER_2016_STANDARD_EDITION_14_CORES("SQL_SERVER_2016_STANDARD_EDITION_14_CORES"),
 	SQL_SERVER_2016_STANDARD_EDITION_16_CORES("SQL_SERVER_2016_STANDARD_EDITION_16_CORES"),
 	SQL_SERVER_2016_STANDARD_EDITION_4_CORES("SQL_SERVER_2016_STANDARD_EDITION_4_CORES"),
 	SQL_SERVER_2016_STANDARD_EDITION_6_CORES("SQL_SERVER_2016_STANDARD_EDITION_6_CORES"),
 	SQL_SERVER_2016_STANDARD_EDITION_8_CORES("SQL_SERVER_2016_STANDARD_EDITION_8_CORES"),
 	SQL_SERVER_2016_WEB_EDITION_10_CORES("SQL_SERVER_2016_WEB_EDITION_10_CORES"),
 	SQL_SERVER_2016_WEB_EDITION_12_CORES("SQL_SERVER_2016_WEB_EDITION_12_CORES"),
+	SQL_SERVER_2016_WEB_EDITION_14_CORES("SQL_SERVER_2016_WEB_EDITION_14_CORES"),
 	SQL_SERVER_2016_WEB_EDITION_16_CORES("SQL_SERVER_2016_WEB_EDITION_16_CORES"),
 	SQL_SERVER_2016_WEB_EDITION_4_CORES("SQL_SERVER_2016_WEB_EDITION_4_CORES"),
 	SQL_SERVER_2016_WEB_EDITION_6_CORES("SQL_SERVER_2016_WEB_EDITION_6_CORES"),
-	SQL_SERVER_2016_WEB_EDITION_8_CORES("SQL_SERVER_2016_WEB_EDITION_8_CORES");
+	SQL_SERVER_2016_WEB_EDITION_8_CORES("SQL_SERVER_2016_WEB_EDITION_8_CORES"),
+	@JsonProperty("sql-server-2008-license-standard-edition-2-cpu")
+	sql_server_2008_license_standard_edition_2_cpu("sql-server-2008-license-standard-edition-2-cpu"),
+	@JsonProperty("sql-server-2008-license-standard-edition-4-cpu")
+	sql_server_2008_license_standard_edition_4_cpu("sql-server-2008-license-standard-edition-4-cpu"),
+	@JsonProperty("sql-server-2008-license-web-edition-2-cpu")
+	sql_server_2008_license_web_edition_2_cpu("sql-server-2008-license-web-edition-2-cpu"),
+	@JsonProperty("sql-server-2008-license-web-edition-4-cpu")
+	sql_server_2008_license_web_edition_4_cpu("sql-server-2008-license-web-edition-4-cpu"),
+	@JsonProperty("sql-server-2012-license-standard-edition-10-cores")
+	sql_server_2012_license_standard_edition_10_cores("sql-server-2012-license-standard-edition-10-cores"),
+	@JsonProperty("sql-server-2012-license-standard-edition-12-cores")
+	sql_server_2012_license_standard_edition_12_cores("sql-server-2012-license-standard-edition-12-cores"),
+	@JsonProperty("sql-server-2012-license-standard-edition-16-cores")
+	sql_server_2012_license_standard_edition_16_cores("sql-server-2012-license-standard-edition-16-cores"),
+	@JsonProperty("sql-server-2012-license-standard-edition-18-cores")
+	sql_server_2012_license_standard_edition_18_cores("sql-server-2012-license-standard-edition-18-cores"),
+	@JsonProperty("sql-server-2012-license-standard-edition-2-cpu")
+	sql_server_2012_license_standard_edition_2_cpu("sql-server-2012-license-standard-edition-2-cpu"),
+	@JsonProperty("sql-server-2012-license-standard-edition-20-cores")
+	sql_server_2012_license_standard_edition_20_cores("sql-server-2012-license-standard-edition-20-cores"),
+	@JsonProperty("sql-server-2012-license-standard-edition-24-cores")
+	sql_server_2012_license_standard_edition_24_cores("sql-server-2012-license-standard-edition-24-cores"),
+	@JsonProperty("sql-server-2012-license-standard-edition-32-cores")
+	sql_server_2012_license_standard_edition_32_cores("sql-server-2012-license-standard-edition-32-cores"),
+	@JsonProperty("sql-server-2012-license-standard-edition-4-cores")
+	sql_server_2012_license_standard_edition_4_cores("sql-server-2012-license-standard-edition-4-cores"),
+	@JsonProperty("sql-server-2012-license-standard-edition-6-cores")
+	sql_server_2012_license_standard_edition_6_cores("sql-server-2012-license-standard-edition-6-cores"),
+	@JsonProperty("sql-server-2012-license-standard-edition-8-cores")
+	sql_server_2012_license_standard_edition_8_cores("sql-server-2012-license-standard-edition-8-cores"),
+	@JsonProperty("sql-server-2012-license-web-edition-10-cores")
+	sql_server_2012_license_web_edition_10_cores("sql-server-2012-license-web-edition-10-cores"),
+	@JsonProperty("sql-server-2012-license-web-edition-12-cores")
+	sql_server_2012_license_web_edition_12_cores("sql-server-2012-license-web-edition-12-cores"),
+	@JsonProperty("sql-server-2012-license-web-edition-16-cores")
+	sql_server_2012_license_web_edition_16_cores("sql-server-2012-license-web-edition-16-cores"),
+	@JsonProperty("sql-server-2012-license-web-edition-18-cores")
+	sql_server_2012_license_web_edition_18_cores("sql-server-2012-license-web-edition-18-cores"),
+	@JsonProperty("sql-server-2012-license-web-edition-20-cores")
+	sql_server_2012_license_web_edition_20_cores("sql-server-2012-license-web-edition-20-cores"),
+	@JsonProperty("sql-server-2012-license-web-edition-24-cores")
+	sql_server_2012_license_web_edition_24_cores("sql-server-2012-license-web-edition-24-cores"),
+	@JsonProperty("sql-server-2012-license-web-edition-32-cores")
+	sql_server_2012_license_web_edition_32_cores("sql-server-2012-license-web-edition-32-cores"),
+	@JsonProperty("sql-server-2012-license-web-edition-4-cores")
+	sql_server_2012_license_web_edition_4_cores("sql-server-2012-license-web-edition-4-cores"),
+	@JsonProperty("sql-server-2012-license-web-edition-6-cores")
+	sql_server_2012_license_web_edition_6_cores("sql-server-2012-license-web-edition-6-cores"),
+	@JsonProperty("sql-server-2012-license-web-edition-8-cores")
+	sql_server_2012_license_web_edition_8_cores("sql-server-2012-license-web-edition-8-cores"),
+	@JsonProperty("sql-server-2014-license-standard-edition-10-cores")
+	sql_server_2014_license_standard_edition_10_cores("sql-server-2014-license-standard-edition-10-cores"),
+	@JsonProperty("sql-server-2014-license-standard-edition-12-cores")
+	sql_server_2014_license_standard_edition_12_cores("sql-server-2014-license-standard-edition-12-cores"),
+	@JsonProperty("sql-server-2014-license-standard-edition-16-cores")
+	sql_server_2014_license_standard_edition_16_cores("sql-server-2014-license-standard-edition-16-cores"),
+	@JsonProperty("sql-server-2014-license-standard-edition-18-cores")
+	sql_server_2014_license_standard_edition_18_cores("sql-server-2014-license-standard-edition-18-cores"),
+	@JsonProperty("sql-server-2014-license-standard-edition-20-cores")
+	sql_server_2014_license_standard_edition_20_cores("sql-server-2014-license-standard-edition-20-cores"),
+	@JsonProperty("sql-server-2014-license-standard-edition-24-cores")
+	sql_server_2014_license_standard_edition_24_cores("sql-server-2014-license-standard-edition-24-cores"),
+	@JsonProperty("sql-server-2014-license-standard-edition-4-cores")
+	sql_server_2014_license_standard_edition_4_cores("sql-server-2014-license-standard-edition-4-cores"),
+	@JsonProperty("sql-server-2014-license-standard-edition-6-cores")
+	sql_server_2014_license_standard_edition_6_cores("sql-server-2014-license-standard-edition-6-cores"),
+	@JsonProperty("sql-server-2014-license-standard-edition-8-cores")
+	sql_server_2014_license_standard_edition_8_cores("sql-server-2014-license-standard-edition-8-cores"),
+	@JsonProperty("sql-server-2014-license-web-edition-10-cores")
+	sql_server_2014_license_web_edition_10_cores("sql-server-2014-license-web-edition-10-cores"),
+	@JsonProperty("sql-server-2014-license-web-edition-12-cores")
+	sql_server_2014_license_web_edition_12_cores("sql-server-2014-license-web-edition-12-cores"),
+	@JsonProperty("sql-server-2014-license-web-edition-16-cores")
+	sql_server_2014_license_web_edition_16_cores("sql-server-2014-license-web-edition-16-cores"),
+	@JsonProperty("sql-server-2014-license-web-edition-18-cores")
+	sql_server_2014_license_web_edition_18_cores("sql-server-2014-license-web-edition-18-cores"),
+	@JsonProperty("sql-server-2014-license-web-edition-20-cores")
+	sql_server_2014_license_web_edition_20_cores("sql-server-2014-license-web-edition-20-cores"),
+	@JsonProperty("sql-server-2014-license-web-edition-24-cores")
+	sql_server_2014_license_web_edition_24_cores("sql-server-2014-license-web-edition-24-cores"),
+	@JsonProperty("sql-server-2014-license-web-edition-4-cores")
+	sql_server_2014_license_web_edition_4_cores("sql-server-2014-license-web-edition-4-cores"),
+	@JsonProperty("sql-server-2014-license-web-edition-6-cores")
+	sql_server_2014_license_web_edition_6_cores("sql-server-2014-license-web-edition-6-cores"),
+	@JsonProperty("sql-server-2014-license-web-edition-8-cores")
+	sql_server_2014_license_web_edition_8_cores("sql-server-2014-license-web-edition-8-cores"),
+	@JsonProperty("sql-server-2016-license-standard-edition-10-cores")
+	sql_server_2016_license_standard_edition_10_cores("sql-server-2016-license-standard-edition-10-cores"),
+	@JsonProperty("sql-server-2016-license-standard-edition-12-cores")
+	sql_server_2016_license_standard_edition_12_cores("sql-server-2016-license-standard-edition-12-cores"),
+	@JsonProperty("sql-server-2016-license-standard-edition-14-cores")
+	sql_server_2016_license_standard_edition_14_cores("sql-server-2016-license-standard-edition-14-cores"),
+	@JsonProperty("sql-server-2016-license-standard-edition-16-cores")
+	sql_server_2016_license_standard_edition_16_cores("sql-server-2016-license-standard-edition-16-cores"),
+	@JsonProperty("sql-server-2016-license-standard-edition-4-cores")
+	sql_server_2016_license_standard_edition_4_cores("sql-server-2016-license-standard-edition-4-cores"),
+	@JsonProperty("sql-server-2016-license-standard-edition-6-cores")
+	sql_server_2016_license_standard_edition_6_cores("sql-server-2016-license-standard-edition-6-cores"),
+	@JsonProperty("sql-server-2016-license-standard-edition-8-cores")
+	sql_server_2016_license_standard_edition_8_cores("sql-server-2016-license-standard-edition-8-cores"),
+	@JsonProperty("sql-server-2016-license-web-edition-10-cores")
+	sql_server_2016_license_web_edition_10_cores("sql-server-2016-license-web-edition-10-cores"),
+	@JsonProperty("sql-server-2016-license-web-edition-12-cores")
+	sql_server_2016_license_web_edition_12_cores("sql-server-2016-license-web-edition-12-cores"),
+	@JsonProperty("sql-server-2016-license-web-edition-14-cores")
+	sql_server_2016_license_web_edition_14_cores("sql-server-2016-license-web-edition-14-cores"),
+	@JsonProperty("sql-server-2016-license-web-edition-16-cores")
+	sql_server_2016_license_web_edition_16_cores("sql-server-2016-license-web-edition-16-cores"),
+	@JsonProperty("sql-server-2016-license-web-edition-4-cores")
+	sql_server_2016_license_web_edition_4_cores("sql-server-2016-license-web-edition-4-cores"),
+	@JsonProperty("sql-server-2016-license-web-edition-6-cores")
+	sql_server_2016_license_web_edition_6_cores("sql-server-2016-license-web-edition-6-cores"),
+	@JsonProperty("sql-server-2016-license-web-edition-8-cores")
+	sql_server_2016_license_web_edition_8_cores("sql-server-2016-license-web-edition-8-cores");
 
 	final String value;
 

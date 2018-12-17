@@ -26,18 +26,18 @@ public class OvhHypervisor {
 	public Boolean orderable;
 
 	/**
-	 * Describes Private Cloud Options
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhOption[] options;
-
-	/**
 	 * Name of the hypervisor
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String name;
+
+	/**
+	 * Describes Private Cloud Options
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhOption[] options;
 
 	/**
 	 * Type of the hypervisor

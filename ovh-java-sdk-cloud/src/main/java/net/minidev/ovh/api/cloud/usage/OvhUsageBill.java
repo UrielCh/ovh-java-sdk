@@ -12,18 +12,18 @@ public class OvhUsageBill {
 	public String bill_id;
 
 	/**
-	 * Payment type
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhPaymentTypeEnum payment_type;
-
-	/**
 	 * Total amount of the bill, credits not taken into account
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Double total;
+
+	/**
+	 * Payment type
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhPaymentTypeEnum payment_type;
 
 	/**
 	 * Amount of the bill that accounts for services for the usage period, credits not taken into account

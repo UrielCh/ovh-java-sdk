@@ -7,6 +7,13 @@ import java.util.Date;
  */
 public class OvhRma {
 	/**
+	 * Process determined for merchandise returned
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhRmaReplaceTypeEnum process;
+
+	/**
 	 * Reception datetime of the return merchandise authorisation ticket
 	 *
 	 * canBeNull && readOnly
@@ -35,11 +42,11 @@ public class OvhRma {
 	public OvhRmaTypeEnum type;
 
 	/**
-	 * Indicates the current status of the RMA with a list of steps
+	 * Is the RMA cancellable?
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhRmaStep[] steps;
+	public Boolean cancellable;
 
 	/**
 	 * New merchandise brand in case of exchange
@@ -49,18 +56,11 @@ public class OvhRma {
 	public String newMerchandise;
 
 	/**
-	 * Is the RMA cancellable?
+	 * Indicates the current status of the RMA with a list of steps
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Boolean cancellable;
-
-	/**
-	 * Merchandise reference
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String equipmentReference;
+	public OvhRmaStep[] steps;
 
 	/**
 	 * Creation datetime of the return merchandise authorisation ticket
@@ -68,6 +68,13 @@ public class OvhRma {
 	 * canBeNull && readOnly
 	 */
 	public Date creationDatetime;
+
+	/**
+	 * Merchandise reference
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String equipmentReference;
 
 	/**
 	 * Return merchandise authorisation identifier
@@ -84,16 +91,16 @@ public class OvhRma {
 	public Date terminationDatetime;
 
 	/**
-	 * Return merchandise authorisation step
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhRmaStatusEnum status;
-
-	/**
 	 * Offer type of the return merchandise
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhRmaOfferTypeEnum offerTypeOld;
+
+	/**
+	 * Return merchandise authorisation step
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhRmaStatusEnum status;
 }

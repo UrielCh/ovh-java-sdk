@@ -61,16 +61,16 @@ public class OvhPool {
 	public Boolean twoFA;
 
 	/**
-	 * Next hop IP to reach virtual desktops network for private Access Point
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String intercoPrivateNextHop;
-
-	/**
 	 * DHCP network in this port group
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String dhcpNetwork;
+
+	/**
+	 * Next hop IP to reach virtual desktops network for private Access Point
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String intercoPrivateNextHop;
 }

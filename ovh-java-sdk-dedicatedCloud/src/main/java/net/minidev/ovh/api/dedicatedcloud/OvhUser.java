@@ -22,6 +22,13 @@ public class OvhUser {
 	public String lastName;
 
 	/**
+	 * Defines if the user receives technical alerts
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean receiveAlerts;
+
+	/**
 	 * Defines if the user is a full admin in readonly
 	 *
 	 * canBeNull && readOnly
@@ -88,6 +95,13 @@ public class OvhUser {
 	 * canBeNull && readOnly
 	 */
 	public Boolean canManageNetwork;
+
+	/**
+	 * Defines if the user can manage users rights
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean canManageRights;
 
 	/**
 	 * State of the user account

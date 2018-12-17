@@ -21,18 +21,18 @@ public class OvhPricing {
 	public String intervalUnit;
 
 	/**
-	 * Description
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String description;
-
-	/**
 	 * Engagement period
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long commitment;
+
+	/**
+	 * Description
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String description;
 
 	/**
 	 * Maximum repeat duration
@@ -63,18 +63,18 @@ public class OvhPricing {
 	public OvhPrice price;
 
 	/**
-	 * Strategy on which the pricing can change
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String pricingStrategy;
-
-	/**
 	 * Whether the catalog must reach max repeat before subscription can use another one
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean mustBeCompleted;
+
+	/**
+	 * Strategy on which the pricing can change
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String pricingStrategy;
 
 	/**
 	 * Install, renew ... What the pricing can be used for

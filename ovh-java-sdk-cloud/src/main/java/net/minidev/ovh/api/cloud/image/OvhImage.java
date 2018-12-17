@@ -1,5 +1,7 @@
 package net.minidev.ovh.api.cloud.image;
 
+import java.util.Date;
+
 /**
  * Image
  */
@@ -12,18 +14,18 @@ public class OvhImage {
 	public String visibility;
 
 	/**
-	 * Image creation date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String creationDate;
-
-	/**
 	 * Image type
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String type;
+
+	/**
+	 * Image creation date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date creationDate;
 
 	/**
 	 * Minimum disks required to use image

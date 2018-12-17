@@ -46,18 +46,18 @@ public class OvhTelephonyService {
 	public String serviceName;
 
 	/**
-	 * Current outplan
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhPrice currentOutplan;
-
-	/**
 	 * The service offers
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhLineOffer getPublicOffer;
+
+	/**
+	 * Current outplan
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhPrice currentOutplan;
 
 	/**
 	 * The country code of the number

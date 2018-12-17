@@ -7,18 +7,18 @@ import java.util.Date;
  */
 public class OvhMailingList {
 	/**
-	 * Account was sending spam
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean spamDetected;
-
-	/**
 	 * Maximum receive email size in MB
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long maxReceiveSize;
+
+	/**
+	 * Account was sending spam
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean spamDetected;
 
 	/**
 	 * Ticket number of spam detection

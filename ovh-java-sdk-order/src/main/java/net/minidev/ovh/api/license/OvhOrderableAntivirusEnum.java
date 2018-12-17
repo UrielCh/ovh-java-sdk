@@ -5,7 +5,8 @@ package net.minidev.ovh.api.license;
  */
 public enum OvhOrderableAntivirusEnum {
 	DR_WEB("DR_WEB"),
-	KASPERSKY_UNLIMITED_MAILBOXES("KASPERSKY_UNLIMITED_MAILBOXES");
+	KASPERSKY_UNLIMITED_MAILBOXES("KASPERSKY_UNLIMITED_MAILBOXES"),
+	kaspersky("kaspersky");
 
 	final String value;
 

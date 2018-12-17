@@ -7,12 +7,12 @@ public class OvhOrderDetail {
 	/**
 	 * canBeNull
 	 */
-	public OvhOrderDetailTypeEnum detailType;
+	public OvhPrice unitPrice;
 
 	/**
 	 * canBeNull
 	 */
-	public OvhPrice unitPrice;
+	public OvhOrderDetailTypeEnum detailType;
 
 	/**
 	 * canBeNull

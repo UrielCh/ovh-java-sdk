@@ -23,18 +23,18 @@ public class OvhXdslEmailPro {
 	public String initial;
 
 	/**
-	 * Time of account's password last update
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date passwordLastUpdate;
-
-	/**
 	 * Account display name
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String displayName;
+
+	/**
+	 * Time of account's password last update
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date passwordLastUpdate;
 
 	/**
 	 * Mailbox usage
@@ -72,18 +72,18 @@ public class OvhXdslEmailPro {
 	public String firstName;
 
 	/**
-	 * Account maximum size
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhUnitAndValue<Long> quota;
-
-	/**
 	 * Email domain
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String domain;
+
+	/**
+	 * Account maximum size
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhUnitAndValue<Long> quota;
 
 	/**
 	 * Last logoff
@@ -93,18 +93,18 @@ public class OvhXdslEmailPro {
 	public Date lastLogoffDate;
 
 	/**
-	 * Account state
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhObjectStateEnum state;
-
-	/**
 	 * Account id
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long id;
+
+	/**
+	 * Account state
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhObjectStateEnum state;
 
 	/**
 	 * Last logon

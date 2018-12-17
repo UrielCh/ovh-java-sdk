@@ -12,12 +12,12 @@ public class OvhNichandle {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String firstname;
+	public OvhLegalFormEnum legalform;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhLegalFormEnum legalform;
+	public String firstname;
 
 	/**
 	 * canBeNull && readOnly
@@ -57,16 +57,16 @@ public class OvhNichandle {
 	public String spareEmail;
 
 	/**
+	 * canBeNull && readOnly
+	 */
+	public String corporationType;
+
+	/**
 	 * Customer currency
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhCurrency currency;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public String corporationType;
 
 	/**
 	 * canBeNull && readOnly
@@ -96,12 +96,12 @@ public class OvhNichandle {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String area;
+	public String zip;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String zip;
+	public String area;
 
 	/**
 	 * canBeNull && readOnly

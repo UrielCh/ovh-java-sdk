@@ -51,16 +51,16 @@ public class OvhMonitoringNotification {
 	public Boolean enabled;
 
 	/**
-	 * The frenquency to send reminders when the access is still down
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhFrequencyEnum frequency;
-
-	/**
 	 * The number of seconds the access has to be down to trigger an alert
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long downThreshold;
+
+	/**
+	 * The frenquency to send reminders when the access is still down
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhFrequencyEnum frequency;
 }

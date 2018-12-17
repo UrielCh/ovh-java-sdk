@@ -5,7 +5,14 @@ package net.minidev.ovh.api.dedicated.server;
  */
 public class OvhIpmi {
 	/**
-	 * true, if IPMI is ivailable on this server
+	 * A structure describing the IPMI supported features
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhIpmiSupportedFeatures supportedFeatures;
+
+	/**
+	 * true, if IPMI is available on this server
 	 *
 	 * canBeNull && readOnly
 	 */

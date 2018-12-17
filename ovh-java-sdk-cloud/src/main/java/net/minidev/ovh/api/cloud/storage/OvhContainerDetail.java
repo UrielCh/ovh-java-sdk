@@ -21,12 +21,19 @@ public class OvhContainerDetail {
 	public String[] cors;
 
 	/**
-	 * Public container
+	 * Public container (DEPRECATED: see containerType)
 	 *
 	 * canBeNull && readOnly
 	 */
 	@JsonProperty("public")
 	public Boolean _public;
+
+	/**
+	 * Container type
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhTypeEnum containerType;
 
 	/**
 	 * Objects stored in container
@@ -50,18 +57,18 @@ public class OvhContainerDetail {
 	public Boolean archive;
 
 	/**
-	 * Container static URL
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String staticUrl;
-
-	/**
 	 * Total objects stored
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long storedObjects;
+
+	/**
+	 * Container static URL
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String staticUrl;
 
 	/**
 	 * Container region

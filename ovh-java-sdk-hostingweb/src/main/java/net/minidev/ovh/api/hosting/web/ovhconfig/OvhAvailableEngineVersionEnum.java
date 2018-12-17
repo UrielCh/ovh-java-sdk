@@ -17,7 +17,9 @@ public enum OvhAvailableEngineVersionEnum {
 	@JsonProperty("7.1")
 	_7_1("7.1"),
 	@JsonProperty("7.2")
-	_7_2("7.2");
+	_7_2("7.2"),
+	@JsonProperty("7.3")
+	_7_3("7.3");
 
 	final String value;
 

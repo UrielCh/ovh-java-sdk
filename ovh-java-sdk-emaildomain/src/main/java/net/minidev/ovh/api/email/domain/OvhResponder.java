@@ -21,18 +21,18 @@ public class OvhResponder {
 	public Date from;
 
 	/**
-	 * If true, emails will be copy to emailToCopy address
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean copy;
-
-	/**
 	 * Date of end responder
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date to;
+
+	/**
+	 * If false, emails will be dropped. If true and copyTo field is empty, emails will be delivered to your mailbox. If true and copyTo is set with an address, emails will be delivered to this address
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean copy;
 
 	/**
 	 * Name of account

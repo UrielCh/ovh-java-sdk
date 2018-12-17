@@ -26,16 +26,16 @@ public class OvhInstanceGroup {
 	public String id;
 
 	/**
-	 * region
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String region;
-
-	/**
 	 * Instance group type
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhInstanceGroupTypeEnum type;
+
+	/**
+	 * region
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String region;
 }

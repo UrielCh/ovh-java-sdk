@@ -66,10 +66,10 @@ public class OvhAddressDetail {
 	/**
 	 * canBeNull
 	 */
-	public String floor;
+	public String residence;
 
 	/**
 	 * canBeNull
 	 */
-	public String residence;
+	public String floor;
 }

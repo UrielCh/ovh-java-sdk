@@ -1,5 +1,7 @@
 package net.minidev.ovh.api.license;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * All versions available for Plesk products
  */
@@ -46,7 +48,17 @@ public enum OvhPleskVersionEnum {
 	PLESK_ONYX_WEB_HOST("PLESK_ONYX_WEB_HOST"),
 	PLESK_ONYX_WEB_HOST_CLNX("PLESK_ONYX_WEB_HOST_CLNX"),
 	PLESK_ONYX_WEB_PRO("PLESK_ONYX_WEB_PRO"),
-	PLESK_ONYX_WEB_PRO_CLNX("PLESK_ONYX_WEB_PRO_CLNX");
+	PLESK_ONYX_WEB_PRO_CLNX("PLESK_ONYX_WEB_PRO_CLNX"),
+	@JsonProperty("plesk-12-webadmin-for-vps")
+	plesk_12_webadmin_for_vps("plesk-12-webadmin-for-vps"),
+	@JsonProperty("plesk-12-webhost")
+	plesk_12_webhost("plesk-12-webhost"),
+	@JsonProperty("plesk-12-webhost-for-vps")
+	plesk_12_webhost_for_vps("plesk-12-webhost-for-vps"),
+	@JsonProperty("plesk-12-webpro")
+	plesk_12_webpro("plesk-12-webpro"),
+	@JsonProperty("plesk-12-webpro-for-vps")
+	plesk_12_webpro_for_vps("plesk-12-webpro-for-vps");
 
 	final String value;
 

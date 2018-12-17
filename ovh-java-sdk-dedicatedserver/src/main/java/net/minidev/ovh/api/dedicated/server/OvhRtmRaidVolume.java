@@ -35,18 +35,18 @@ public class OvhRtmRaidVolume {
 	public String letter;
 
 	/**
-	 * Raid volume stripe
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String stripe;
-
-	/**
 	 * Raid volume synchronization progress
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String syncprogress;
+
+	/**
+	 * Raid volume stripe
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String stripe;
 
 	/**
 	 * Raid volume label
@@ -63,16 +63,16 @@ public class OvhRtmRaidVolume {
 	public String type;
 
 	/**
-	 * Raid volume status
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhRtmRaidStatusEnum status;
-
-	/**
 	 * Raid volume capacity
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhUnitAndValue<Double> capacity;
+
+	/**
+	 * Raid volume status
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhRtmRaidStatusEnum status;
 }

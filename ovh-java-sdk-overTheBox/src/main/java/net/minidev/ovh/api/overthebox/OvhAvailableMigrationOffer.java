@@ -28,18 +28,18 @@ public class OvhAvailableMigrationOffer {
 	public String description;
 
 	/**
-	 * Specify if a hardware is available
-	 *
-	 * canBeNull
-	 */
-	public Boolean hardwareAvailable;
-
-	/**
 	 * Number of months of engagement
 	 *
 	 * canBeNull
 	 */
 	public Long engagementMonths;
+
+	/**
+	 * Specify if a hardware is available
+	 *
+	 * canBeNull
+	 */
+	public Boolean hardwareAvailable;
 
 	/**
 	 * Monthly price of the current offer

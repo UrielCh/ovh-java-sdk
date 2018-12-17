@@ -26,18 +26,18 @@ public class OvhOpenTSDBToken {
 	public String permission;
 
 	/**
-	 * Id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String id;
-
-	/**
 	 * Secret part
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String secret;
+
+	/**
+	 * Id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String id;
 
 	/**
 	 * List of tags

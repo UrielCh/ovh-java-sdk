@@ -1,6 +1,7 @@
 package net.minidev.ovh.core;
 
 import java.io.BufferedReader;
+import java.io.Console;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.IOException;
@@ -576,6 +577,7 @@ public class ApiOvhCore {
 			}
 			if (txt != null && txt.length() > 0) {
 				connection.setDoOutput(true);
+				//connection.int code = connection.getResponseCode();
 				DataOutputStream out = new DataOutputStream(connection.getOutputStream());
 				out.write(txt.getBytes(UTF8));
 				out.flush();
@@ -584,6 +586,10 @@ public class ApiOvhCore {
 
 			String inputLine;
 			int responseCode = connection.getResponseCode();
+			if (responseCode == 504) {// 504 Gateway Time-out
+				failure++;
+				continue;
+			}
 			InputStream stream = (responseCode == 200) ? connection.getInputStream() : connection.getErrorStream();
 			BufferedReader in = new BufferedReader(new InputStreamReader(stream));
 			// build response
@@ -621,7 +627,7 @@ public class ApiOvhCore {
 					// message);
 				}
 				// all other errors
-				if (failure < 3
+				if (failure <= 3
 						&& err.isErrorCode(OvhErrorMessage.INVALID_CREDENTIAL, OvhErrorMessage.NOT_CREDENTIAL)) {
 					if (nic == null) {
 						log.error("Get Error:{} and have no nic/password provided, reconnection feature non available.",

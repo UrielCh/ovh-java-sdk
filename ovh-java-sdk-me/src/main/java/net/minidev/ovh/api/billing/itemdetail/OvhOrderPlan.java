@@ -12,18 +12,18 @@ public class OvhOrderPlan {
 	public String duration;
 
 	/**
-	 * Pricing mode used when ordering through /order/cart
-	 *
-	 * canBeNull
-	 */
-	public String pricingMode;
-
-	/**
 	 * Product from /order/cart
 	 *
 	 * canBeNull
 	 */
 	public OvhOrderPlanProduct product;
+
+	/**
+	 * Pricing mode used when ordering through /order/cart
+	 *
+	 * canBeNull
+	 */
+	public String pricingMode;
 
 	/**
 	 * Quantity ordered

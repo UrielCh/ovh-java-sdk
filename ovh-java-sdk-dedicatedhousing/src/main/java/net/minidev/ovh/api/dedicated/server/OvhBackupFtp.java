@@ -15,18 +15,18 @@ public class OvhBackupFtp {
 	public Date readOnlyDate;
 
 	/**
-	 * The disk space available in gigabytes
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhUnitAndValue<Long> quota;
-
-	/**
 	 * The disk space currently used on your backup FTP in percent
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhUnitAndValue<Long> usage;
+
+	/**
+	 * The disk space available in gigabytes
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhUnitAndValue<Long> quota;
 
 	/**
 	 * The backup FTP server name

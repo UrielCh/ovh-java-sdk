@@ -5,6 +5,7 @@ package net.minidev.ovh.api.hosting.web;
  */
 public enum OvhDatacenterEnum {
 	gra1("gra1"),
+	gra2("gra2"),
 	p19("p19");
 
 	final String value;

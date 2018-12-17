@@ -9,18 +9,18 @@ import net.minidev.ovh.api.hosting.web.task.OvhStatusEnum;
  */
 public class OvhTask {
 	/**
-	 * Function name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String function;
-
-	/**
 	 * last update
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date lastUpdate;
+
+	/**
+	 * Function name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String function;
 
 	/**
 	 * the id of the task
@@ -37,13 +37,6 @@ public class OvhTask {
 	public Date doneDate;
 
 	/**
-	 * Task related object ID
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String objectId;
-
-	/**
 	 * Task Creation date
 	 *
 	 * canBeNull && readOnly
@@ -51,11 +44,11 @@ public class OvhTask {
 	public Date startDate;
 
 	/**
-	 * Task status
+	 * Task related object ID
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhStatusEnum status;
+	public String objectId;
 
 	/**
 	 * Task object type
@@ -63,4 +56,11 @@ public class OvhTask {
 	 * canBeNull && readOnly
 	 */
 	public OvhObjectTypeEnum objectType;
+
+	/**
+	 * Task status
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhStatusEnum status;
 }

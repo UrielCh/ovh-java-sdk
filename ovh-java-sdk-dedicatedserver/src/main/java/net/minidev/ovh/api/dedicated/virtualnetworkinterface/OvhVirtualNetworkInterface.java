@@ -19,18 +19,18 @@ public class OvhVirtualNetworkInterface {
 	public String name;
 
 	/**
-	 * vRack name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String vrack;
-
-	/**
 	 * Server bound to this VirtualNetworkInterface
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String serverName;
+
+	/**
+	 * vRack name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String vrack;
 
 	/**
 	 * VirtualNetworkInterface unique id

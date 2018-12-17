@@ -7,12 +7,12 @@ public class OvhAccountCredentials {
 	/**
 	 * canBeNull
 	 */
-	public String password;
+	public String endpoint;
 
 	/**
 	 * canBeNull
 	 */
-	public String endpoint;
+	public String password;
 
 	/**
 	 * canBeNull

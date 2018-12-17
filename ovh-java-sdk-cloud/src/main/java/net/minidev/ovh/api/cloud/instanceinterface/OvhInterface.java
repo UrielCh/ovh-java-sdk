@@ -26,18 +26,18 @@ public class OvhInterface {
 	public String networkId;
 
 	/**
-	 * Interface unique identifier
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String id;
-
-	/**
 	 * Openstack state
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String state;
+
+	/**
+	 * Interface unique identifier
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String id;
 
 	/**
 	 * Network type

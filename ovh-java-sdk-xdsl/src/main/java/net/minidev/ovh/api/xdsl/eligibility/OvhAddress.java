@@ -54,18 +54,18 @@ public class OvhAddress {
 	public String logo;
 
 	/**
-	 * Identifier of the floor, if any
-	 *
-	 * canBeNull
-	 */
-	public String floor;
-
-	/**
 	 * Name of the residence, if any
 	 *
 	 * canBeNull
 	 */
 	public String residence;
+
+	/**
+	 * Identifier of the floor, if any
+	 *
+	 * canBeNull
+	 */
+	public String floor;
 
 	/**
 	 * Name of the building, if any

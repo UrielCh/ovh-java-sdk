@@ -54,18 +54,18 @@ public class OvhActivitySectors {
 	public Boolean bankInsuranceFinance;
 
 	/**
-	 * Video games / Online games
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean videoGames;
-
-	/**
 	 * Communication / Media
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean communicationOrMedia;
+
+	/**
+	 * Video games / Online games
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean videoGames;
 
 	/**
 	 * Other IT / Telecom professions
@@ -82,18 +82,18 @@ public class OvhActivitySectors {
 	public Boolean webAgency;
 
 	/**
-	 * E-commerce
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean ecommerce;
-
-	/**
 	 * Business Services / Individuals
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean businessServiceOrIndividuals;
+
+	/**
+	 * E-commerce
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean ecommerce;
 
 	/**
 	 * Trade / Trading / Distribution

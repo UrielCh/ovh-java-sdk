@@ -16,18 +16,18 @@ public class OvhHost {
 	public String rack;
 
 	/**
-	 * Host is in maintenance mode
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean inMaintenance;
-
-	/**
 	 * Current cpu utilization, in Mhz
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long cpuUsed;
+
+	/**
+	 * Host is in maintenance mode
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean inMaintenance;
 
 	/**
 	 * Connection state of the host
@@ -114,11 +114,11 @@ public class OvhHost {
 	public String name;
 
 	/**
-	 * The speed of the CPU cores. This is an average value if there are multiple speeds. in Mhz
+	 * Host profile code
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long cpuMaxCore;
+	public String profileCode;
 
 	/**
 	 * Id of the parent host (if any)
@@ -126,6 +126,13 @@ public class OvhHost {
 	 * canBeNull && readOnly
 	 */
 	public Long parentHostId;
+
+	/**
+	 * The speed of the CPU cores. This is an average value if there are multiple speeds. in Mhz
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long cpuMaxCore;
 
 	/**
 	 * State of the host

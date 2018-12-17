@@ -47,18 +47,18 @@ public class OvhStreamAlertCondition {
 	public OvhStreamAlertConditionConditionTypeEnum conditionType;
 
 	/**
-	 * Time lapse in minutes
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long time;
-
-	/**
 	 * Stream alert condition UUID
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String alertId;
+
+	/**
+	 * Time lapse in minutes
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long time;
 
 	/**
 	 * Condition label
@@ -68,18 +68,18 @@ public class OvhStreamAlertCondition {
 	public String title;
 
 	/**
-	 * Field value
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String value;
-
-	/**
 	 * Repeat notifications
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean repeatNotificationsEnabled;
+
+	/**
+	 * Field value
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String value;
 
 	/**
 	 * Threshold condition

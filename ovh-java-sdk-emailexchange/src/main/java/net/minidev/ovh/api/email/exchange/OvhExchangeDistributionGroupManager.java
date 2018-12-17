@@ -21,16 +21,16 @@ public class OvhExchangeDistributionGroupManager {
 	public Date creationDate;
 
 	/**
-	 * Manager account id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long managerAccountId;
-
-	/**
 	 * Pending task id
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long taskPendingId;
+
+	/**
+	 * Manager account id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long managerAccountId;
 }

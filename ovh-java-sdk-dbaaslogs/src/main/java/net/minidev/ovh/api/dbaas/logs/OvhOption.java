@@ -42,18 +42,18 @@ public class OvhOption {
 	public Long maxNbRole;
 
 	/**
-	 * Maximum number of input allowed
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long maxNbInput;
-
-	/**
 	 * Current number of dashboard booked
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long curNbDashboard;
+
+	/**
+	 * Maximum number of input allowed
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long maxNbInput;
 
 	/**
 	 * Index size in bytes
@@ -91,18 +91,18 @@ public class OvhOption {
 	public Long maxNbStream;
 
 	/**
-	 * Current number of input booked
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long curNbInput;
-
-	/**
 	 * Option UUID
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String optionId;
+
+	/**
+	 * Current number of input booked
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long curNbInput;
 
 	/**
 	 * Option state
@@ -119,16 +119,16 @@ public class OvhOption {
 	public Long maxNbDashboard;
 
 	/**
-	 * Service last update
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date updatedAt;
-
-	/**
 	 * Maximum number of alias allowed
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long maxNbAlias;
+
+	/**
+	 * Service last update
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date updatedAt;
 }

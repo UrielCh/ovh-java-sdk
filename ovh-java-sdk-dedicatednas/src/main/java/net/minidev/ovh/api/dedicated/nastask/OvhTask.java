@@ -37,18 +37,18 @@ public class OvhTask {
 	public String details;
 
 	/**
-	 * Task type of operation
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhTaskFunctionEnum operation;
-
-	/**
 	 * the date when the task finished
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date doneDate;
+
+	/**
+	 * Task type of operation
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhTaskFunctionEnum operation;
 
 	/**
 	 * id of the task
@@ -58,16 +58,16 @@ public class OvhTask {
 	public Long taskId;
 
 	/**
-	 * the name of your service
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String storageName;
-
-	/**
 	 * The actual state of the task
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhTaskStatusEnum status;
+
+	/**
+	 * the name of your service
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String storageName;
 }

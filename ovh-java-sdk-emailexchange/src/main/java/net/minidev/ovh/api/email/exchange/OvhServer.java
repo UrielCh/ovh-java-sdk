@@ -19,6 +19,13 @@ public class OvhServer {
 	public String ip;
 
 	/**
+	 * Indicates if Multi Factor Authentication is activated on Outlook Web Access interface
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean owaMfa;
+
+	/**
 	 * ExchangeServer version
 	 *
 	 * canBeNull && readOnly

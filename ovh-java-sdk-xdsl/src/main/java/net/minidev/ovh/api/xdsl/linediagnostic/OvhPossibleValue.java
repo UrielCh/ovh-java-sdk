@@ -5,18 +5,18 @@ package net.minidev.ovh.api.xdsl.linediagnostic;
  */
 public class OvhPossibleValue {
 	/**
-	 * answer id
-	 *
-	 * canBeNull
-	 */
-	public Long id;
-
-	/**
 	 * answer choice string
 	 *
 	 * canBeNull
 	 */
 	public String label;
+
+	/**
+	 * answer id
+	 *
+	 * canBeNull
+	 */
+	public Long id;
 
 	/**
 	 * answer choice value

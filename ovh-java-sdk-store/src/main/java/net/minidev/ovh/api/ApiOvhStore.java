@@ -23,6 +23,52 @@ public class ApiOvhStore extends ApiOvhBase {
 	}
 
 	/**
+	 * Get document info
+	 *
+	 * REST: GET /store/document/{documentId}
+	 * @param documentId [required] Id of the document to fetch
+	 *
+	 * API beta
+	 */
+	public OvhDocument document_documentId_GET(String documentId) throws IOException {
+		String qPath = "/store/document/{documentId}";
+		StringBuilder sb = path(qPath, documentId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhDocument.class);
+	}
+
+	/**
+	 * Delete document
+	 *
+	 * REST: DELETE /store/document/{documentId}
+	 * @param documentId [required] Id of the object to delete
+	 *
+	 * API beta
+	 */
+	public String document_documentId_DELETE(String documentId) throws IOException {
+		String qPath = "/store/document/{documentId}";
+		StringBuilder sb = path(qPath, documentId);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Add CORS support on your container
+	 *
+	 * REST: POST /store/document/cors
+	 * @param origin [required] Allow this origin
+	 *
+	 * API beta
+	 */
+	public void document_cors_POST(String origin) throws IOException {
+		String qPath = "/store/document/cors";
+		StringBuilder sb = path(qPath);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "origin", origin);
+		exec(qPath, "POST", sb.toString(), o);
+	}
+
+	/**
 	 * List current customer documents
 	 *
 	 * REST: GET /store/document
@@ -57,99 +103,53 @@ public class ApiOvhStore extends ApiOvhBase {
 	}
 
 	/**
-	 * Add CORS support on your container
+	 * Unlink a document from a contact
 	 *
-	 * REST: POST /store/document/cors
-	 * @param origin [required] Allow this origin
-	 *
-	 * API beta
-	 */
-	public void document_cors_POST(String origin) throws IOException {
-		String qPath = "/store/document/cors";
-		StringBuilder sb = path(qPath);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "origin", origin);
-		exec(qPath, "POST", sb.toString(), o);
-	}
-
-	/**
-	 * Get document info
-	 *
-	 * REST: GET /store/document/{documentId}
-	 * @param documentId [required] Id of the document to fetch
+	 * REST: DELETE /store/contact/{contactId}/document/{documentId}
+	 * @param contactId [required] Id of the contact to fetch
+	 * @param documentId [required] Id of the document
 	 *
 	 * API beta
 	 */
-	public OvhDocument document_documentId_GET(String documentId) throws IOException {
-		String qPath = "/store/document/{documentId}";
-		StringBuilder sb = path(qPath, documentId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhDocument.class);
-	}
-
-	/**
-	 * Delete document
-	 *
-	 * REST: DELETE /store/document/{documentId}
-	 * @param documentId [required] Id of the object to delete
-	 *
-	 * API beta
-	 */
-	public String document_documentId_DELETE(String documentId) throws IOException {
-		String qPath = "/store/document/{documentId}";
-		StringBuilder sb = path(qPath, documentId);
+	public ArrayList<String> contact_contactId_document_documentId_DELETE(String contactId, String documentId) throws IOException {
+		String qPath = "/store/contact/{contactId}/document/{documentId}";
+		StringBuilder sb = path(qPath, contactId, documentId);
 		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, String.class);
+		return convertTo(resp, t2);
 	}
+	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};
 
 	/**
-	 * List current customer contacts
+	 * List document associated with contact
 	 *
-	 * REST: GET /store/contact
+	 * REST: GET /store/contact/{contactId}/document
+	 * @param contactId [required] Id of the contact to fetch
 	 *
 	 * API beta
 	 */
-	public ArrayList<OvhContact> contact_GET() throws IOException {
-		String qPath = "/store/contact";
-		StringBuilder sb = path(qPath);
+	public ArrayList<String> contact_contactId_document_GET(String contactId) throws IOException {
+		String qPath = "/store/contact/{contactId}/document";
+		StringBuilder sb = path(qPath, contactId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
-	private static TypeReference<ArrayList<OvhContact>> t2 = new TypeReference<ArrayList<OvhContact>>() {};
 
 	/**
-	 * Create a 'marketplace' contact for current nic
+	 * Add a document to a contact
 	 *
-	 * REST: POST /store/contact
-	 * @param title [required] Title
-	 * @param firstname [required] First name
-	 * @param lastname [required] Last name
-	 * @param email [required] Email address
-	 * @param street [required] Street address
-	 * @param country [required] Country
-	 * @param zip [required] Zipcode
-	 * @param province [required] Province name
-	 * @param city [required] City
-	 * @param phone [required] Phone number
+	 * REST: POST /store/contact/{contactId}/document
+	 * @param documentId [required] Document id to link
+	 * @param contactId [required] Id of the contact to fetch
 	 *
 	 * API beta
 	 */
-	public OvhContact contact_POST(String title, String firstname, String lastname, String email, String street, String country, String zip, String province, String city, String phone) throws IOException {
-		String qPath = "/store/contact";
-		StringBuilder sb = path(qPath);
+	public ArrayList<String> contact_contactId_document_POST(String contactId, String documentId) throws IOException {
+		String qPath = "/store/contact/{contactId}/document";
+		StringBuilder sb = path(qPath, contactId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "title", title);
-		addBody(o, "firstname", firstname);
-		addBody(o, "lastname", lastname);
-		addBody(o, "email", email);
-		addBody(o, "street", street);
-		addBody(o, "country", country);
-		addBody(o, "zip", zip);
-		addBody(o, "province", province);
-		addBody(o, "city", city);
-		addBody(o, "phone", phone);
+		addBody(o, "documentId", documentId);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhContact.class);
+		return convertTo(resp, t2);
 	}
 
 	/**
@@ -219,53 +219,53 @@ public class ApiOvhStore extends ApiOvhBase {
 	}
 
 	/**
-	 * List document associated with contact
+	 * List current customer contacts
 	 *
-	 * REST: GET /store/contact/{contactId}/document
-	 * @param contactId [required] Id of the contact to fetch
+	 * REST: GET /store/contact
 	 *
 	 * API beta
 	 */
-	public ArrayList<String> contact_contactId_document_GET(String contactId) throws IOException {
-		String qPath = "/store/contact/{contactId}/document";
-		StringBuilder sb = path(qPath, contactId);
+	public ArrayList<OvhContact> contact_GET() throws IOException {
+		String qPath = "/store/contact";
+		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
-	private static TypeReference<ArrayList<String>> t3 = new TypeReference<ArrayList<String>>() {};
+	private static TypeReference<ArrayList<OvhContact>> t3 = new TypeReference<ArrayList<OvhContact>>() {};
 
 	/**
-	 * Add a document to a contact
+	 * Create a 'marketplace' contact for current nic
 	 *
-	 * REST: POST /store/contact/{contactId}/document
-	 * @param documentId [required] Document id to link
-	 * @param contactId [required] Id of the contact to fetch
+	 * REST: POST /store/contact
+	 * @param title [required] Title
+	 * @param firstname [required] First name
+	 * @param lastname [required] Last name
+	 * @param email [required] Email address
+	 * @param street [required] Street address
+	 * @param country [required] Country
+	 * @param zip [required] Zipcode
+	 * @param province [required] Province name
+	 * @param city [required] City
+	 * @param phone [required] Phone number
 	 *
 	 * API beta
 	 */
-	public ArrayList<String> contact_contactId_document_POST(String contactId, String documentId) throws IOException {
-		String qPath = "/store/contact/{contactId}/document";
-		StringBuilder sb = path(qPath, contactId);
+	public OvhContact contact_POST(String title, String firstname, String lastname, String email, String street, String country, String zip, String province, String city, String phone) throws IOException {
+		String qPath = "/store/contact";
+		StringBuilder sb = path(qPath);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "documentId", documentId);
+		addBody(o, "title", title);
+		addBody(o, "firstname", firstname);
+		addBody(o, "lastname", lastname);
+		addBody(o, "email", email);
+		addBody(o, "street", street);
+		addBody(o, "country", country);
+		addBody(o, "zip", zip);
+		addBody(o, "province", province);
+		addBody(o, "city", city);
+		addBody(o, "phone", phone);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t3);
-	}
-
-	/**
-	 * Unlink a document from a contact
-	 *
-	 * REST: DELETE /store/contact/{contactId}/document/{documentId}
-	 * @param contactId [required] Id of the contact to fetch
-	 * @param documentId [required] Id of the document
-	 *
-	 * API beta
-	 */
-	public ArrayList<String> contact_contactId_document_documentId_DELETE(String contactId, String documentId) throws IOException {
-		String qPath = "/store/contact/{contactId}/document/{documentId}";
-		StringBuilder sb = path(qPath, contactId, documentId);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, t3);
+		return convertTo(resp, OvhContact.class);
 	}
 
 	/**
@@ -420,7 +420,7 @@ public class ApiOvhStore extends ApiOvhBase {
 		String qPath = "/store/partner/{partnerId}/document";
 		StringBuilder sb = path(qPath, partnerId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
+		return convertTo(resp, t2);
 	}
 
 	/**
@@ -438,7 +438,7 @@ public class ApiOvhStore extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "documentId", documentId);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t3);
+		return convertTo(resp, t2);
 	}
 
 	/**
@@ -454,47 +454,7 @@ public class ApiOvhStore extends ApiOvhBase {
 		String qPath = "/store/partner/{partnerId}/document/{documentId}";
 		StringBuilder sb = path(qPath, partnerId, documentId);
 		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, t3);
-	}
-
-	/**
-	 * List partner's products
-	 *
-	 * REST: GET /store/partner/{partnerId}/product
-	 * @param partnerId [required] Id of the partner
-	 *
-	 * API beta
-	 */
-	public ArrayList<OvhEditResponse> partner_partnerId_product_GET(String partnerId) throws IOException {
-		String qPath = "/store/partner/{partnerId}/product";
-		StringBuilder sb = path(qPath, partnerId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t5);
-	}
-	private static TypeReference<ArrayList<OvhEditResponse>> t5 = new TypeReference<ArrayList<OvhEditResponse>>() {};
-
-	/**
-	 * Create a new product for partner
-	 *
-	 * REST: POST /store/partner/{partnerId}/product
-	 * @param partnerId [required] Id of the partner
-	 * @param description [required] Description of product
-	 * @param name [required] Name of product
-	 * @param otherDetails [required] Additional information
-	 * @param category [required] Name of product category
-	 *
-	 * API beta
-	 */
-	public OvhEditResponse partner_partnerId_product_POST(String partnerId, String description, String name, String otherDetails, String category) throws IOException {
-		String qPath = "/store/partner/{partnerId}/product";
-		StringBuilder sb = path(qPath, partnerId);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "description", description);
-		addBody(o, "name", name);
-		addBody(o, "otherDetails", otherDetails);
-		addBody(o, "category", category);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhEditResponse.class);
+		return convertTo(resp, t2);
 	}
 
 	/**
@@ -555,6 +515,23 @@ public class ApiOvhStore extends ApiOvhBase {
 	}
 
 	/**
+	 * Unlink a document from a product
+	 *
+	 * REST: DELETE /store/partner/{partnerId}/product/{productId}/document/{documentId}
+	 * @param partnerId [required] Id of the partner
+	 * @param productId [required] Id of the product
+	 * @param documentId [required] Id of the document
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> partner_partnerId_product_productId_document_documentId_DELETE(String partnerId, String productId, String documentId) throws IOException {
+		String qPath = "/store/partner/{partnerId}/product/{productId}/document/{documentId}";
+		StringBuilder sb = path(qPath, partnerId, productId, documentId);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
 	 * List document associated with product
 	 *
 	 * REST: GET /store/partner/{partnerId}/product/{productId}/document
@@ -567,7 +544,7 @@ public class ApiOvhStore extends ApiOvhBase {
 		String qPath = "/store/partner/{partnerId}/product/{productId}/document";
 		StringBuilder sb = path(qPath, partnerId, productId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
+		return convertTo(resp, t2);
 	}
 
 	/**
@@ -586,23 +563,46 @@ public class ApiOvhStore extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "documentId", documentId);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t3);
+		return convertTo(resp, t2);
 	}
 
 	/**
-	 * Unlink a document from a product
+	 * List partner's products
 	 *
-	 * REST: DELETE /store/partner/{partnerId}/product/{productId}/document/{documentId}
+	 * REST: GET /store/partner/{partnerId}/product
 	 * @param partnerId [required] Id of the partner
-	 * @param productId [required] Id of the product
-	 * @param documentId [required] Id of the document
 	 *
 	 * API beta
 	 */
-	public ArrayList<String> partner_partnerId_product_productId_document_documentId_DELETE(String partnerId, String productId, String documentId) throws IOException {
-		String qPath = "/store/partner/{partnerId}/product/{productId}/document/{documentId}";
-		StringBuilder sb = path(qPath, partnerId, productId, documentId);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, t3);
+	public ArrayList<OvhEditResponse> partner_partnerId_product_GET(String partnerId) throws IOException {
+		String qPath = "/store/partner/{partnerId}/product";
+		StringBuilder sb = path(qPath, partnerId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t5);
+	}
+	private static TypeReference<ArrayList<OvhEditResponse>> t5 = new TypeReference<ArrayList<OvhEditResponse>>() {};
+
+	/**
+	 * Create a new product for partner
+	 *
+	 * REST: POST /store/partner/{partnerId}/product
+	 * @param partnerId [required] Id of the partner
+	 * @param description [required] Description of product
+	 * @param name [required] Name of product
+	 * @param otherDetails [required] Additional information
+	 * @param category [required] Name of product category
+	 *
+	 * API beta
+	 */
+	public OvhEditResponse partner_partnerId_product_POST(String partnerId, String description, String name, String otherDetails, String category) throws IOException {
+		String qPath = "/store/partner/{partnerId}/product";
+		StringBuilder sb = path(qPath, partnerId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "description", description);
+		addBody(o, "name", name);
+		addBody(o, "otherDetails", otherDetails);
+		addBody(o, "category", category);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhEditResponse.class);
 	}
 }

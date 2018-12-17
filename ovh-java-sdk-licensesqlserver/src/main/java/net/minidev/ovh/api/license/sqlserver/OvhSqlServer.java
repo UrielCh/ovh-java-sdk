@@ -9,18 +9,18 @@ import net.minidev.ovh.api.license.OvhStateEnum;
  */
 public class OvhSqlServer {
 	/**
-	 * The internal name of your license
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String domain;
-
-	/**
 	 * The ip on which this license is attached
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String ip;
+
+	/**
+	 * The internal name of your license
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String domain;
 
 	/**
 	 * The license id on license provider side

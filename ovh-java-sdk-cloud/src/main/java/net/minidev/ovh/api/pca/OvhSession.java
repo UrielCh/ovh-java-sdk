@@ -36,18 +36,18 @@ public class OvhSession {
 	public String name;
 
 	/**
-	 * Session state
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhSessionStateEnum state;
-
-	/**
 	 * Session ID
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String id;
+
+	/**
+	 * Session state
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhSessionStateEnum state;
 
 	/**
 	 * This is your login

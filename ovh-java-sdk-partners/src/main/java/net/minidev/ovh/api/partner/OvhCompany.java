@@ -12,18 +12,18 @@ public class OvhCompany {
 	public String zipCode;
 
 	/**
-	 * Company's country
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String country;
-
-	/**
 	 * Company's domain of competence
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhExpertisesChoices expertises;
+
+	/**
+	 * Company's country
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String country;
 
 	/**
 	 * OVH's product the company's solutions relies on
@@ -47,18 +47,18 @@ public class OvhCompany {
 	public String description;
 
 	/**
-	 * Company's linkedin profile url
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String linkedin;
-
-	/**
 	 * Estimation of the number of employees
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String employeesNumber;
+
+	/**
+	 * Company's linkedin profile url
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String linkedin;
 
 	/**
 	 * Certifications obtained from other enterprises
@@ -68,11 +68,11 @@ public class OvhCompany {
 	public OvhExternalCertifications externalCertifications;
 
 	/**
-	 * Company's twitter profile url
+	 * Kind of client the company target
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String twitter;
+	public OvhClientKinds clientKinds;
 
 	/**
 	 * Estimation of the revenue of the company
@@ -82,11 +82,11 @@ public class OvhCompany {
 	public String revenue;
 
 	/**
-	 * Kind of client the company target
+	 * Company's twitter profile url
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhClientKinds clientKinds;
+	public String twitter;
 
 	/**
 	 * Estimation of the number of accompanied customers in using OVH's solutions
@@ -110,18 +110,18 @@ public class OvhCompany {
 	public String email;
 
 	/**
-	 * In which country the company products of solutions are available
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhProductCountries productCountries;
-
-	/**
 	 * The commercial name of the company
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String commercialName;
+
+	/**
+	 * In which country the company products of solutions are available
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhProductCountries productCountries;
 
 	/**
 	 * Company's website
@@ -138,18 +138,18 @@ public class OvhCompany {
 	public String address;
 
 	/**
-	 * OVH certification acquired
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhOVHCertifications OVHCertifications;
-
-	/**
 	 * Company's facebook profile url
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String facebook;
+
+	/**
+	 * OVH certification acquired
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhOVHCertifications OVHCertifications;
 
 	/**
 	 * Estimation of the number of resources knowing OVH product the company has
@@ -166,18 +166,18 @@ public class OvhCompany {
 	public String phone;
 
 	/**
-	 * Company's registration number
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String registrationNumber;
-
-	/**
 	 * Estimation of the number of expert resources for OVH solutions the company has
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String OVHTechnicalExpertResources;
+
+	/**
+	 * Company's registration number
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String registrationNumber;
 
 	/**
 	 * Company's sector of activity
@@ -187,18 +187,18 @@ public class OvhCompany {
 	public OvhActivitySectors activitySectors;
 
 	/**
-	 * Name of the company
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String name;
-
-	/**
 	 * Estimation of the number of resources that have technical skills on OVH solutions the company has
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String OVHTechnicalAdvancedResources;
+
+	/**
+	 * Name of the company
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String name;
 
 	/**
 	 * How did you heard about the OVH's partnership program

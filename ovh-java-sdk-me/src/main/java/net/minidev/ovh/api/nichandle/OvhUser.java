@@ -35,18 +35,18 @@ public class OvhUser {
 	public String login;
 
 	/**
-	 * User's email
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String email;
-
-	/**
 	 * Creation date of this user
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date creation;
+
+	/**
+	 * User's email
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String email;
 
 	/**
 	 * Current user's status

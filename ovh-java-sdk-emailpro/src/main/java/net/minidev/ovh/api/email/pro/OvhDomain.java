@@ -5,13 +5,6 @@ package net.minidev.ovh.api.email.pro;
  */
 public class OvhDomain {
 	/**
-	 * If true your dns srv record is valid
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean srvIsValid;
-
-	/**
 	 * Cname that will be checked to prove the domain ownership
 	 *
 	 * canBeNull && readOnly
@@ -26,30 +19,11 @@ public class OvhDomain {
 	public String[] srvRecord;
 
 	/**
-	 * Domain name
+	 * Indicate if this domain is an alias for another domain
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String name;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public Boolean mxIsValid;
-
-	/**
-	 * If specified, emails to not existing address will be redirected to that domain
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String mxRelay;
-
-	/**
-	 * Domain state
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhObjectStateEnum state;
+	public Boolean isAliasDomain;
 
 	/**
 	 * Domain MX record configured in DNS
@@ -57,6 +31,13 @@ public class OvhDomain {
 	 * canBeNull && readOnly
 	 */
 	public String[] mxRecord;
+
+	/**
+	 * List of aliases for this domain
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String[] domainAliases;
 
 	/**
 	 * Domain validation status
@@ -78,4 +59,39 @@ public class OvhDomain {
 	 * canBeNull && readOnly
 	 */
 	public Long taskPendingId;
+
+	/**
+	 * If true your dns srv record is valid
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean srvIsValid;
+
+	/**
+	 * Domain name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String name;
+
+	/**
+	 * If specified, emails to not existing address will be redirected to that domain
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String mxRelay;
+
+	/**
+	 * If true your dns mx configuration is valid
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean mxIsValid;
+
+	/**
+	 * Domain state
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhObjectStateEnum state;
 }

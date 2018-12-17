@@ -7,12 +7,12 @@ public class OvhVersion {
 	/**
 	 * canBeNull
 	 */
-	public String minor;
+	public String major;
 
 	/**
 	 * canBeNull
 	 */
-	public String major;
+	public String minor;
 
 	/**
 	 * canBeNull

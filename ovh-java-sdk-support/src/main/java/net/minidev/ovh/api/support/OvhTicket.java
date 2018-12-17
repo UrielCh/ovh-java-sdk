@@ -35,18 +35,18 @@ public class OvhTicket {
 	public String subject;
 
 	/**
-	 * Name of service concerned by ticket
-	 *
-	 * canBeNull
-	 */
-	public String serviceName;
-
-	/**
 	 * Ticket creation date
 	 *
 	 * canBeNull
 	 */
 	public Date creationDate;
+
+	/**
+	 * Name of service concerned by ticket
+	 *
+	 * canBeNull
+	 */
+	public String serviceName;
 
 	/**
 	 * Ticket type
@@ -56,18 +56,18 @@ public class OvhTicket {
 	public OvhTicketTypeEnum type;
 
 	/**
-	 * Customer account identifier
-	 *
-	 * canBeNull
-	 */
-	public String accountId;
-
-	/**
 	 * Ticket score
 	 *
 	 * canBeNull
 	 */
 	public String score;
+
+	/**
+	 * Customer account identifier
+	 *
+	 * canBeNull
+	 */
+	public String accountId;
 
 	/**
 	 * Can this ticket be closed or not

@@ -18,12 +18,12 @@ public class OvhRight {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long rightId;
+	public Long datacenterId;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long datacenterId;
+	public Long rightId;
 
 	/**
 	 * Determine how this user can interact with the Private Cloud VM Network

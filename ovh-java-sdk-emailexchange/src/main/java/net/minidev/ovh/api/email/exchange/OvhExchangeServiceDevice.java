@@ -28,18 +28,18 @@ public class OvhExchangeServiceDevice {
 	public String guid;
 
 	/**
-	 * International Mobile Equipment Identity
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String IMEI;
-
-	/**
 	 * Model device
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String deviceModel;
+
+	/**
+	 * International Mobile Equipment Identity
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String IMEI;
 
 	/**
 	 * Device State

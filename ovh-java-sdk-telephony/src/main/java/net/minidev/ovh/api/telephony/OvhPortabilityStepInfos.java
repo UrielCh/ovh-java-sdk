@@ -7,18 +7,18 @@ import java.util.Date;
  */
 public class OvhPortabilityStepInfos {
 	/**
-	 * The last portability due date that has been proposed
-	 *
-	 * canBeNull
-	 */
-	public Date lastProposedDate;
-
-	/**
 	 * If the step status is "error", it is the reason
 	 *
 	 * canBeNull
 	 */
 	public String reason;
+
+	/**
+	 * The last portability due date that has been proposed
+	 *
+	 * canBeNull
+	 */
+	public Date lastProposedDate;
 
 	/**
 	 * A code representing the reason

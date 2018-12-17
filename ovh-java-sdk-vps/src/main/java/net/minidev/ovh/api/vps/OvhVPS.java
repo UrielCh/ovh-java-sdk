@@ -60,12 +60,12 @@ public class OvhVPS {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long memoryLimit;
+	public OvhModel model;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhModel model;
+	public Long memoryLimit;
 
 	/**
 	 * canBeNull && readOnly

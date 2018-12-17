@@ -49,18 +49,18 @@ public class OvhWarp10Token {
 	public Long maxFetch;
 
 	/**
-	 * Secret part
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String secret;
-
-	/**
 	 * Id
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String id;
+
+	/**
+	 * Secret part
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String secret;
 
 	/**
 	 * Maximum number of GTS retrieved allowed

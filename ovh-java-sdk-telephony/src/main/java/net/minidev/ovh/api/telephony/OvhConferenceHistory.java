@@ -7,18 +7,18 @@ import java.util.Date;
  */
 public class OvhConferenceHistory {
 	/**
-	 * The duration of the conference in seconds
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long duration;
-
-	/**
 	 * The date the conference began
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date dateBegin;
+
+	/**
+	 * The duration of the conference in seconds
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long duration;
 
 	/**
 	 * The count of unique participants of the conference

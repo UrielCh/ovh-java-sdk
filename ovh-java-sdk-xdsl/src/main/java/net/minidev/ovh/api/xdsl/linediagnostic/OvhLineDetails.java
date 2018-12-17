@@ -84,6 +84,20 @@ public class OvhLineDetails {
 	public OvhDslTypeEnum lineType;
 
 	/**
+	 * Access IP ping or not
+	 *
+	 * canBeNull
+	 */
+	public Boolean accessPing;
+
+	/**
+	 * informations directly get on DSLAM or Modem
+	 *
+	 * canBeNull
+	 */
+	public OvhConnectionInformations connectionInfo;
+
+	/**
 	 * customer phone number for contact
 	 *
 	 * canBeNull
@@ -96,11 +110,4 @@ public class OvhLineDetails {
 	 * canBeNull
 	 */
 	public String nra;
-
-	/**
-	 * informations directly get on DSLAM or Modem
-	 *
-	 * canBeNull
-	 */
-	public OvhConnectionInformations connectionInfo;
 }

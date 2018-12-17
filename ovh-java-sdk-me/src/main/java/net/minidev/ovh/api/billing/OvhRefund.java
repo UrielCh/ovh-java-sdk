@@ -50,10 +50,10 @@ public class OvhRefund {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String refundId;
+	public String url;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String url;
+	public String refundId;
 }

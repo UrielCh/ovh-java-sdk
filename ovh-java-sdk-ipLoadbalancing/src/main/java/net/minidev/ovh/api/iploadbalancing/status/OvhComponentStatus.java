@@ -12,18 +12,18 @@ public class OvhComponentStatus {
 	public Long warn;
 
 	/**
-	 * The number of component with status ok
-	 *
-	 * canBeNull
-	 */
-	public Long ok;
-
-	/**
 	 * The number of component with status error
 	 *
 	 * canBeNull
 	 */
 	public Long error;
+
+	/**
+	 * The number of component with status ok
+	 *
+	 * canBeNull
+	 */
+	public Long ok;
 
 	/**
 	 * The number of component with status unknown

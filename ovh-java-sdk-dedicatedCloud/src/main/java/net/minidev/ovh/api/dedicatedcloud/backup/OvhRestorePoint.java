@@ -8,18 +8,18 @@ import net.minidev.ovh.api.complextype.OvhUnitAndValue;
  */
 public class OvhRestorePoint {
 	/**
-	 * Creation time of the restore point
-	 *
-	 * canBeNull
-	 */
-	public Date creationTime;
-
-	/**
 	 * Size of the restore point
 	 *
 	 * canBeNull
 	 */
 	public OvhUnitAndValue<Long> size;
+
+	/**
+	 * Creation time of the restore point
+	 *
+	 * canBeNull
+	 */
+	public Date creationTime;
 
 	/**
 	 * Show if the restore point is corrupted

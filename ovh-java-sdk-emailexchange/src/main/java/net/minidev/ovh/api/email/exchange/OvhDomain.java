@@ -26,6 +26,20 @@ public class OvhDomain {
 	public Boolean main;
 
 	/**
+	 * Indicate if this domain is an alias for another domain
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean isAliasDomain;
+
+	/**
+	 * List of aliases for this domain
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String[] domainAliases;
+
+	/**
 	 * Domain MX record configured in DNS
 	 *
 	 * canBeNull && readOnly

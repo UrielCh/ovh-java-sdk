@@ -105,12 +105,12 @@ public class OvhDirectoryInfo {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String postBox;
+	public String socialNomination;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String socialNomination;
+	public String postBox;
 
 	/**
 	 * canBeNull && readOnly
@@ -120,12 +120,12 @@ public class OvhDirectoryInfo {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String wayNumber;
+	public String modificationType;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String modificationType;
+	public String wayNumber;
 
 	/**
 	 * canBeNull && readOnly
@@ -135,12 +135,12 @@ public class OvhDirectoryInfo {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String legalForm;
+	public Date birthDate;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Date birthDate;
+	public String legalForm;
 
 	/**
 	 * canBeNull && readOnly
@@ -150,22 +150,22 @@ public class OvhDirectoryInfo {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String firstName;
-
-	/**
-	 * canBeNull && readOnly
-	 */
 	public Boolean displayOnlyCity;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long areaCode;
+	public String firstName;
 
 	/**
 	 * canBeNull && readOnly
 	 */
 	public String modificationDate;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public Long areaCode;
 
 	/**
 	 * canBeNull && readOnly

@@ -1,5 +1,6 @@
 package net.minidev.ovh.api.hosting.web;
 
+import java.util.Date;
 import net.minidev.ovh.api.complextype.OvhUnitAndValue;
 
 /**
@@ -119,18 +120,18 @@ public class OvhService {
 	public OvhPhpVersion[] phpVersions;
 
 	/**
-	 * Path of your home
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String home;
-
-	/**
 	 * Use to link an external domain. ( This token has to be insert into a TXT field on your dns zone with ovhcontrol subdomain )
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String token;
+
+	/**
+	 * Path of your home
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String home;
 
 	/**
 	 * Available offers for boost option
@@ -145,6 +146,13 @@ public class OvhService {
 	 * canBeNull && readOnly
 	 */
 	public String clusterIpv6;
+
+	/**
+	 * /hosting/web/{serviceName}/ovhConfig is stored in cache. This date is the last refresh of this data
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date lastOvhConfigScan;
 
 	/**
 	 * Space used

@@ -5,6 +5,13 @@ package net.minidev.ovh.api.dedicatedcloud;
  */
 public class OvhDedicatedCloud {
 	/**
+	 * Generation of your Private Cloud
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhGenerationEnum generation;
+
+	/**
 	 * Advanced security state
 	 *
 	 * canBeNull && readOnly
@@ -73,13 +80,6 @@ public class OvhDedicatedCloud {
 	public String servicePackName;
 
 	/**
-	 * Access policy of your Private Cloud : opened to every IPs or filtered
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhUserAccessPolicyEnum userAccessPolicy;
-
-	/**
 	 * Service name of your Private Cloud
 	 *
 	 * canBeNull && readOnly
@@ -87,11 +87,11 @@ public class OvhDedicatedCloud {
 	public String serviceName;
 
 	/**
-	 * Url to the Private Cloud certified interface
+	 * Access policy of your Private Cloud : opened to every IPs or filtered
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String certifiedInterfaceUrl;
+	public OvhUserAccessPolicyEnum userAccessPolicy;
 
 	/**
 	 * Version of the management interface
@@ -99,6 +99,13 @@ public class OvhDedicatedCloud {
 	 * canBeNull && readOnly
 	 */
 	public OvhVersion version;
+
+	/**
+	 * Url to the Private Cloud certified interface
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String certifiedInterfaceUrl;
 
 	/**
 	 * Url to the Private Cloud web interface

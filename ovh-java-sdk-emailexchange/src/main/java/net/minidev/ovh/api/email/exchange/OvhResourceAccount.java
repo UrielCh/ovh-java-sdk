@@ -35,18 +35,18 @@ public class OvhResourceAccount {
 	public String displayName;
 
 	/**
-	 * Creation date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date creationDate;
-
-	/**
 	 * resource type
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhResourceTypeEnum type;
+
+	/**
+	 * Creation date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date creationDate;
 
 	/**
 	 * task pending id

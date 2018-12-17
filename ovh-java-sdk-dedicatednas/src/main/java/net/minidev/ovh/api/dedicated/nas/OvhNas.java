@@ -12,18 +12,18 @@ public class OvhNas {
 	public Long zpoolSize;
 
 	/**
-	 * True, if partition creation is allowed on this nas
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean canCreatePartition;
-
-	/**
 	 * The storage mount path
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String mountPath;
+
+	/**
+	 * True, if partition creation is allowed on this nas
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean canCreatePartition;
 
 	/**
 	 * Access ip of nas

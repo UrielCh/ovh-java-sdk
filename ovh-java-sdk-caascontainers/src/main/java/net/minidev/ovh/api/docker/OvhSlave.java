@@ -37,13 +37,6 @@ public class OvhSlave {
 	public String flavorId;
 
 	/**
-	 * The state of the slave
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhStatus state;
-
-	/**
 	 * Metrics about slave usage
 	 *
 	 * canBeNull && readOnly
@@ -56,6 +49,13 @@ public class OvhSlave {
 	 * canBeNull && readOnly
 	 */
 	public String id;
+
+	/**
+	 * The state of the slave
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhStatus state;
 
 	/**
 	 * The region where the slave is located

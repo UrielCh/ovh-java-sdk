@@ -5,18 +5,18 @@ package net.minidev.ovh.api.iploadbalancing.frontendudp;
  */
 public class OvhFrontendUdp {
 	/**
-	 * Zone of you frontend
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String zone;
-
-	/**
 	 * Listening port(s) on the server
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String port;
+
+	/**
+	 * Zone of you frontend
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String zone;
 
 	/**
 	 * Human readable name for your frontend, this field is for you
@@ -26,18 +26,11 @@ public class OvhFrontendUdp {
 	public String displayName;
 
 	/**
-	 * Disable frontend
+	 * Disable frontend. Default: 'false'
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean disabled;
-
-	/**
-	 * Only attach frontend on these ip. No restriction if null
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String[] dedicatedIpfo;
 
 	/**
 	 * Id of your frontend
@@ -45,6 +38,13 @@ public class OvhFrontendUdp {
 	 * canBeNull && readOnly
 	 */
 	public Long frontendId;
+
+	/**
+	 * Only attach frontend on these ip. No restriction if null
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String[] dedicatedIpfo;
 
 	/**
 	 * Default UDP Farm of your frontend

@@ -33,6 +33,40 @@ public class ApiOvhPacksiptrunk extends ApiOvhBase {
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
 
 	/**
+	 * Launch a contact change procedure
+	 *
+	 * REST: POST /pack/siptrunk/{packName}/changeContact
+	 * @param contactAdmin The contact to set as admin contact
+	 * @param contactTech The contact to set as tech contact
+	 * @param contactBilling The contact to set as billing contact
+	 * @param packName [required] The internal name of your pack
+	 */
+	public ArrayList<Long> packName_changeContact_POST(String packName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
+		String qPath = "/pack/siptrunk/{packName}/changeContact";
+		StringBuilder sb = path(qPath, packName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "contactAdmin", contactAdmin);
+		addBody(o, "contactTech", contactTech);
+		addBody(o, "contactBilling", contactBilling);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t2);
+	}
+	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /pack/siptrunk/{packName}
+	 * @param packName [required] The internal name of your pack
+	 */
+	public OvhPackSipTrunk packName_GET(String packName) throws IOException {
+		String qPath = "/pack/siptrunk/{packName}";
+		StringBuilder sb = path(qPath, packName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPackSipTrunk.class);
+	}
+
+	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /pack/siptrunk/{packName}/serviceInfos
@@ -57,38 +91,4 @@ public class ApiOvhPacksiptrunk extends ApiOvhBase {
 		StringBuilder sb = path(qPath, packName);
 		exec(qPath, "PUT", sb.toString(), body);
 	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /pack/siptrunk/{packName}
-	 * @param packName [required] The internal name of your pack
-	 */
-	public OvhPackSipTrunk packName_GET(String packName) throws IOException {
-		String qPath = "/pack/siptrunk/{packName}";
-		StringBuilder sb = path(qPath, packName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPackSipTrunk.class);
-	}
-
-	/**
-	 * Launch a contact change procedure
-	 *
-	 * REST: POST /pack/siptrunk/{packName}/changeContact
-	 * @param contactAdmin The contact to set as admin contact
-	 * @param contactTech The contact to set as tech contact
-	 * @param contactBilling The contact to set as billing contact
-	 * @param packName [required] The internal name of your pack
-	 */
-	public ArrayList<Long> packName_changeContact_POST(String packName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
-		String qPath = "/pack/siptrunk/{packName}/changeContact";
-		StringBuilder sb = path(qPath, packName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "contactAdmin", contactAdmin);
-		addBody(o, "contactTech", contactTech);
-		addBody(o, "contactBilling", contactBilling);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t2);
-	}
-	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
 }

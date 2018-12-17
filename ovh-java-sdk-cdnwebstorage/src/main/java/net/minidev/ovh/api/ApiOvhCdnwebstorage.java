@@ -23,6 +23,24 @@ public class ApiOvhCdnwebstorage extends ApiOvhBase {
 	}
 
 	/**
+	 * Return stats about bandwidth consumption
+	 *
+	 * REST: GET /cdn/webstorage/{serviceName}/statistics
+	 * @param period [required]
+	 * @param type [required]
+	 * @param serviceName [required] The internal name of your CDN Static offer
+	 */
+	public ArrayList<OvhStatsDataType> serviceName_statistics_GET(String serviceName, OvhStatsPeriodEnum period, OvhStatsTypeEnum type) throws IOException {
+		String qPath = "/cdn/webstorage/{serviceName}/statistics";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "period", period);
+		query(sb, "type", type);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+	private static TypeReference<ArrayList<OvhStatsDataType>> t1 = new TypeReference<ArrayList<OvhStatsDataType>>() {};
+
+	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /cdn/webstorage/{serviceName}/serviceInfos
@@ -60,24 +78,6 @@ public class ApiOvhCdnwebstorage extends ApiOvhBase {
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhAccount.class);
 	}
-
-	/**
-	 * Return stats about bandwidth consumption
-	 *
-	 * REST: GET /cdn/webstorage/{serviceName}/statistics
-	 * @param period [required]
-	 * @param type [required]
-	 * @param serviceName [required] The internal name of your CDN Static offer
-	 */
-	public ArrayList<OvhStatsDataType> serviceName_statistics_GET(String serviceName, OvhStatsPeriodEnum period, OvhStatsTypeEnum type) throws IOException {
-		String qPath = "/cdn/webstorage/{serviceName}/statistics";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "period", period);
-		query(sb, "type", type);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-	private static TypeReference<ArrayList<OvhStatsDataType>> t1 = new TypeReference<ArrayList<OvhStatsDataType>>() {};
 
 	/**
 	 * Gives for customer credentials to accesss swift account

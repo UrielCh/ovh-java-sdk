@@ -35,6 +35,13 @@ public class OvhIndex {
 	public String name;
 
 	/**
+	 * Indicates if you are allowed to share entry
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean isShareable;
+
+	/**
 	 * Index description
 	 *
 	 * canBeNull && readOnly

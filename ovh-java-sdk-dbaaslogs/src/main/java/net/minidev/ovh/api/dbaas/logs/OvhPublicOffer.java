@@ -26,18 +26,18 @@ public class OvhPublicOffer {
 	public Long maxNbIndex;
 
 	/**
-	 * Maximum number of stream allowed
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long maxNbStream;
-
-	/**
 	 * Maximum number of role allowed
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long maxNbRole;
+
+	/**
+	 * Maximum number of stream allowed
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long maxNbStream;
 
 	/**
 	 * Maximum number of input allowed

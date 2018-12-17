@@ -12,11 +12,11 @@ public class OvhOVHProductsUsedWeb {
 	public Boolean domainName;
 
 	/**
-	 * Microsoft Sharepoint 2016
+	 * Microsoft Exchange 2016
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Boolean sharepoint;
+	public Boolean exchange;
 
 	/**
 	 * Web Hosting
@@ -26,11 +26,11 @@ public class OvhOVHProductsUsedWeb {
 	public Boolean webHosting;
 
 	/**
-	 * Microsoft Exchange 2016
+	 * Microsoft Sharepoint 2016
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Boolean exchange;
+	public Boolean sharepoint;
 
 	/**
 	 * Microsoft Office 365 (CSP2)

@@ -5,11 +5,11 @@ package net.minidev.ovh.api.telephony;
  */
 public class OvhPhone {
 	/**
-	 * Phone protocol
+	 * The phone user password
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhProtocolEnum protocol;
+	public String userPassword;
 
 	/**
 	 * Mac Address
@@ -19,11 +19,11 @@ public class OvhPhone {
 	public String macAddress;
 
 	/**
-	 * The phone user password
+	 * Phone protocol
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String userPassword;
+	public OvhProtocolEnum protocol;
 
 	/**
 	 * Maximum number of lines managed by a phone

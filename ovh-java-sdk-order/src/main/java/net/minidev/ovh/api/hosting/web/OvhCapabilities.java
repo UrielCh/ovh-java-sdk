@@ -99,11 +99,11 @@ public class OvhCapabilities {
 	public Long runtimes;
 
 	/**
-	 * Number of ftp user you can create
+	 * Number of database engines allowed for your hosting
 	 *
 	 * canBeNull
 	 */
-	public Long extraUsers;
+	public Long databaseEngines;
 
 	/**
 	 * Does the offer allow access to web files browser?
@@ -111,6 +111,13 @@ public class OvhCapabilities {
 	 * canBeNull
 	 */
 	public Boolean filesBrowser;
+
+	/**
+	 * Number of ftp user you can create
+	 *
+	 * canBeNull
+	 */
+	public Long extraUsers;
 
 	/**
 	 * Traffic quota size for your hosting ( null for unlimited )

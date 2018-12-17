@@ -1,6 +1,7 @@
 package net.minidev.ovh.api.servicelist;
 
 import java.util.Date;
+import net.minidev.ovh.api.complextype.OvhSafeKeyValue;
 import net.minidev.ovh.api.service.OvhBillingStateEnum;
 import net.minidev.ovh.api.service.OvhPlan;
 import net.minidev.ovh.api.service.OvhRenew;
@@ -19,6 +20,13 @@ public class OvhService {
 	public Date nextBillingDate;
 
 	/**
+	 * Route to use in API
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhRoute route;
+
+	/**
 	 * Quantity
 	 *
 	 * canBeNull && readOnly
@@ -26,11 +34,11 @@ public class OvhService {
 	public Long quantity;
 
 	/**
-	 * Route to use in API
+	 * Resource service description
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhRoute route;
+	public OvhResource resource;
 
 	/**
 	 * Engagement date
@@ -40,11 +48,11 @@ public class OvhService {
 	public Date engagementDate;
 
 	/**
-	 * Resource service description
+	 * Resource details
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhResource resource;
+	public OvhSafeKeyValue<String>[] details;
 
 	/**
 	 * Billing state of your service

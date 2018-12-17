@@ -29,6 +29,13 @@ public class OvhMigrationOffer {
 	public String description;
 
 	/**
+	 * List of number of months possible for engagement
+	 *
+	 * canBeNull
+	 */
+	public Long[] engagementMonths;
+
+	/**
 	 * List of contracts for this offer
 	 *
 	 * canBeNull
@@ -36,18 +43,18 @@ public class OvhMigrationOffer {
 	public OvhContract[] contracts;
 
 	/**
-	 * Number of months of engagement
-	 *
-	 * canBeNull
-	 */
-	public Long engageMonths;
-
-	/**
 	 * List of sub services to delete
 	 *
 	 * canBeNull
 	 */
 	public OvhSubServiceToDelete[] subServicesToDelete;
+
+	/**
+	 * Number of months of engagement
+	 *
+	 * canBeNull
+	 */
+	public Long engageMonths;
 
 	/**
 	 * URL of the offer
@@ -64,18 +71,18 @@ public class OvhMigrationOffer {
 	public OvhPrice due;
 
 	/**
-	 * Price of the offer
-	 *
-	 * canBeNull
-	 */
-	public OvhPrice price;
-
-	/**
 	 * DEPRECATED - List of contracts
 	 *
 	 * canBeNull
 	 */
 	public String[] contractList;
+
+	/**
+	 * Price of the offer
+	 *
+	 * canBeNull
+	 */
+	public OvhPrice price;
 
 	/**
 	 * Tells if the customer will have to change its modem

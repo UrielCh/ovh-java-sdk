@@ -21,18 +21,18 @@ public class OvhExchangeAccountDiagnosis {
 	public Boolean isSpammer;
 
 	/**
-	 * Determines if ingoing message has been received
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean canReceiveEmail;
-
-	/**
 	 * Last performed diagnostics date
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date lastCheck;
+
+	/**
+	 * Determines if ingoing message has been received
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean canReceiveEmail;
 
 	/**
 	 * Determines if account is suspended

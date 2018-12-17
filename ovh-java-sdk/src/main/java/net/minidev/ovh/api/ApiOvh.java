@@ -18,6 +18,7 @@ public class ApiOvh extends ApiOvhBase {
 	final public ApiOvhCdnwebstorage cdnwebstorage;
 	final public ApiOvhCloud cloud;
 	final public ApiOvhClusterhadoop clusterhadoop;
+	final public ApiOvhConnectivity connectivity;
 	final public ApiOvhContact contact;
 	final public ApiOvhAuth auth;
 	final public ApiOvhDbaaslogs dbaaslogs;
@@ -44,6 +45,7 @@ public class ApiOvh extends ApiOvhBase {
 	final public ApiOvhHpcspot hpcspot;
 	final public ApiOvhIp ip;
 	final public ApiOvhIpLoadbalancing ipLoadbalancing;
+	final public ApiOvhKube kube;
 	final public ApiOvhLicensecloudLinux licensecloudLinux;
 	final public ApiOvhLicensecpanel licensecpanel;
 	final public ApiOvhLicensedirectadmin licensedirectadmin;
@@ -95,6 +97,7 @@ public class ApiOvh extends ApiOvhBase {
 		this.cdnwebstorage = new ApiOvhCdnwebstorage(core);
 		this.cloud = new ApiOvhCloud(core);
 		this.clusterhadoop = new ApiOvhClusterhadoop(core);
+		this.connectivity = new ApiOvhConnectivity(core);
 		this.contact = new ApiOvhContact(core);
 		this.auth = new ApiOvhAuth(core);
 		this.dbaaslogs = new ApiOvhDbaaslogs(core);
@@ -121,6 +124,7 @@ public class ApiOvh extends ApiOvhBase {
 		this.hpcspot = new ApiOvhHpcspot(core);
 		this.ip = new ApiOvhIp(core);
 		this.ipLoadbalancing = new ApiOvhIpLoadbalancing(core);
+		this.kube = new ApiOvhKube(core);
 		this.licensecloudLinux = new ApiOvhLicensecloudLinux(core);
 		this.licensecpanel = new ApiOvhLicensecpanel(core);
 		this.licensedirectadmin = new ApiOvhLicensedirectadmin(core);

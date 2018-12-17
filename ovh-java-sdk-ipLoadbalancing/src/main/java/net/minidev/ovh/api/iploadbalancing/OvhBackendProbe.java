@@ -33,18 +33,18 @@ public class OvhBackendProbe {
 	public Boolean forceSsl;
 
 	/**
-	 * Matcher to use to valide "expect". "default" uses HAProxy's default behavior for this type of check. "status" is only supported for HTTP probes
-	 *
-	 * canBeNull
-	 */
-	public OvhProbeExpectMatchEnum match;
-
-	/**
 	 * Server response expected when UP. Empty for "default", comma delimited list of statuses for "status", string for "contains", regex for "matches"
 	 *
 	 * canBeNull
 	 */
 	public String pattern;
+
+	/**
+	 * Matcher to use to valide "expect". "default" uses HAProxy's default behavior for this type of check. "status" is only supported for HTTP probes
+	 *
+	 * canBeNull
+	 */
+	public OvhProbeExpectMatchEnum match;
 
 	/**
 	 * Seconds between each probe check. Must be > 30sec. Defaults to 30

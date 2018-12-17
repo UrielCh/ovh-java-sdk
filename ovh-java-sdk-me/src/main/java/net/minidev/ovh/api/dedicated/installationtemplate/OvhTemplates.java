@@ -21,13 +21,6 @@ public class OvhTemplates {
 	public OvhBitFormatEnum bitFormat;
 
 	/**
-	 * Customizable template properties
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhTemplateOsProperties customization;
-
-	/**
 	 * This distribution supports the GUID Partition Table (GPT), providing up to 128 partitions that can have more than 2 TB
 	 *
 	 * canBeNull && readOnly
@@ -35,11 +28,11 @@ public class OvhTemplates {
 	public Boolean supportsGptLabel;
 
 	/**
-	 * list of all language available for this template
+	 * Customizable template properties
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhTemplateOsLanguageEnum[] availableLanguages;
+	public OvhTemplateOsProperties customization;
 
 	/**
 	 * is this distribution deprecated
@@ -47,6 +40,13 @@ public class OvhTemplates {
 	 * canBeNull && readOnly
 	 */
 	public Boolean deprecated;
+
+	/**
+	 * list of all language available for this template
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhTemplateOsLanguageEnum[] availableLanguages;
 
 	/**
 	 * information about this template
@@ -91,18 +91,18 @@ public class OvhTemplates {
 	public Boolean lvmReady;
 
 	/**
-	 * This distribution supports hardware raid configuration through the OVH API
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean hardRaidConfiguration;
-
-	/**
 	 * This distribution supports RTM software
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean supportsRTM;
+
+	/**
+	 * This distribution supports hardware raid configuration through the OVH API
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean hardRaidConfiguration;
 
 	/**
 	 * the default language of this template

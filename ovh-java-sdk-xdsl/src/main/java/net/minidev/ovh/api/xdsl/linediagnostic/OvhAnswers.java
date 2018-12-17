@@ -112,18 +112,18 @@ public class OvhAnswers {
 	public String startAfternoonHours;
 
 	/**
-	 * is non-professional site ?
-	 *
-	 * canBeNull
-	 */
-	public Boolean individualSite;
-
-	/**
 	 * days or period where site access is not possible
 	 *
 	 * canBeNull
 	 */
 	public String siteClosedDays;
+
+	/**
+	 * is non-professional site ?
+	 *
+	 * canBeNull
+	 */
+	public Boolean individualSite;
 
 	/**
 	 * modem brand and reference
@@ -133,18 +133,18 @@ public class OvhAnswers {
 	public String modemType;
 
 	/**
-	 * site opening hours or informations
-	 *
-	 * canBeNull
-	 */
-	public String siteOpening;
-
-	/**
 	 * Is modem synchronized ? (whatever internet connection)
 	 *
 	 * canBeNull
 	 */
 	public Boolean modemIsSynchronized;
+
+	/**
+	 * site opening hours or informations
+	 *
+	 * canBeNull
+	 */
+	public String siteOpening;
 
 	/**
 	 * morning opening informations or time for the site
@@ -154,18 +154,18 @@ public class OvhAnswers {
 	public String startMorningHours;
 
 	/**
-	 * customer knows that he can be charged (150 euros HT) if he is responsible for the problem or if tests have not been done correctly ?
-	 *
-	 * canBeNull
-	 */
-	public Boolean conditionsAccepted;
-
-	/**
 	 * bandwidth upload value on proof.ovh.net test
 	 *
 	 * canBeNull
 	 */
 	public Long uploadBandwidthTest;
+
+	/**
+	 * customer knows that he can be charged (150 euros HT) if he is responsible for the problem or if tests have not been done correctly ?
+	 *
+	 * canBeNull
+	 */
+	public Boolean conditionsAccepted;
 
 	/**
 	 * afternoon closing informations or time for the site

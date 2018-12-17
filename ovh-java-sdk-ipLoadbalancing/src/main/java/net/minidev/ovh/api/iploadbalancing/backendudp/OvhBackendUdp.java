@@ -12,18 +12,18 @@ public class OvhBackendUdp {
 	public Long vrackNetworkId;
 
 	/**
-	 * Zone of you farm
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String zone;
-
-	/**
 	 * Port attached to your farm. Inherited from frontend if null
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long port;
+
+	/**
+	 * Zone of you farm
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String zone;
 
 	/**
 	 * Human readable name for your backend, this field is for you

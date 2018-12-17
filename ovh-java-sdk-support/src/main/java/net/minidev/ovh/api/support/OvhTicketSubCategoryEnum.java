@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public enum OvhTicketSubCategoryEnum {
 	alerts("alerts"),
+	autorenew("autorenew"),
 	bill("bill"),
 	down("down"),
 	inProgress("inProgress"),

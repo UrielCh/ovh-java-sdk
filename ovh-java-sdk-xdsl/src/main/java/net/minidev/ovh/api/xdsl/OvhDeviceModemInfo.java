@@ -14,18 +14,18 @@ public class OvhDeviceModemInfo {
 	public String softVersion;
 
 	/**
-	 * Modem mac address
-	 *
-	 * canBeNull
-	 */
-	public String macAddress;
-
-	/**
 	 * Organizational Unique Identifier
 	 *
 	 * canBeNull
 	 */
 	public String oui;
+
+	/**
+	 * Modem mac address
+	 *
+	 * canBeNull
+	 */
+	public String macAddress;
 
 	/**
 	 * Modem serial key

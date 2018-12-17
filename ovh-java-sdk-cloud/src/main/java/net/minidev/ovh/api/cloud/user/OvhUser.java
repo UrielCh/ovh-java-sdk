@@ -28,16 +28,16 @@ public class OvhUser {
 	public Date creationDate;
 
 	/**
-	 * User status
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhUserStatusEnum status;
-
-	/**
 	 * Username
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String username;
+
+	/**
+	 * User status
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhUserStatusEnum status;
 }

@@ -14,18 +14,18 @@ public class OvhToken {
 	public Boolean isRevoked;
 
 	/**
-	 * Token expiration date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date expiredAt;
-
-	/**
 	 * Token creation date
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date createdAt;
+
+	/**
+	 * Token expiration date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date expiredAt;
 
 	/**
 	 * The actual access token

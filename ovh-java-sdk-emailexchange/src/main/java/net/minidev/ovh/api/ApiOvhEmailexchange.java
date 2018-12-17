@@ -99,70 +99,42 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	}
 
 	/**
-	 * Get this object properties
+	 * Update spam and virus flags on all active accounts
 	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/serviceInfos
+	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/updateFlagsOnAllAccounts
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 */
-	public OvhService organizationName_service_exchangeService_serviceInfos_GET(String organizationName, String exchangeService) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/serviceInfos";
+	public void organizationName_service_exchangeService_updateFlagsOnAllAccounts_POST(String organizationName, String exchangeService) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/updateFlagsOnAllAccounts";
 		StringBuilder sb = path(qPath, organizationName, exchangeService);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhService.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/serviceInfos
-	 * @param body [required] New object properties
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 */
-	public void organizationName_service_exchangeService_serviceInfos_PUT(String organizationName, String exchangeService, OvhService body) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/serviceInfos";
-		StringBuilder sb = path(qPath, organizationName, exchangeService);
-		exec(qPath, "PUT", sb.toString(), body);
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/protocol
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/task/{id}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param id [required] Task id
 	 */
-	public OvhExchangeServiceProtocol organizationName_service_exchangeService_protocol_GET(String organizationName, String exchangeService) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/protocol";
-		StringBuilder sb = path(qPath, organizationName, exchangeService);
+	public OvhTask organizationName_service_exchangeService_task_id_GET(String organizationName, String exchangeService, Long id) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/task/{id}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, id);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhExchangeServiceProtocol.class);
+		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
-	 * Alter this object properties
+	 * Pending actions
 	 *
-	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/protocol
-	 * @param body [required] New object properties
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/task
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 */
-	public void organizationName_service_exchangeService_protocol_PUT(String organizationName, String exchangeService, OvhExchangeServiceProtocol body) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/protocol";
-		StringBuilder sb = path(qPath, organizationName, exchangeService);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Exchange account id subscribed to ActiveSync quarantine notifications
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/protocol/activeSyncMailNotification
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 */
-	public ArrayList<Long> organizationName_service_exchangeService_protocol_activeSyncMailNotification_GET(String organizationName, String exchangeService) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/protocol/activeSyncMailNotification";
+	public ArrayList<Long> organizationName_service_exchangeService_task_GET(String organizationName, String exchangeService) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/task";
 		StringBuilder sb = path(qPath, organizationName, exchangeService);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
@@ -170,18 +142,39 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
 
 	/**
-	 * Subscribe new address to ActiveSync quarantine notifications
+	 * Get active licenses for specific period of time
 	 *
-	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/protocol/activeSyncMailNotification
-	 * @param notifiedAccountId [required] Exchange Account Id
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/license
+	 * @param fromDate [required] Get active licenses since date
+	 * @param license [required] License type
+	 * @param toDate [required] Get active licenses until date
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 */
-	public OvhTask organizationName_service_exchangeService_protocol_activeSyncMailNotification_POST(String organizationName, String exchangeService, Long notifiedAccountId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/protocol/activeSyncMailNotification";
+	public ArrayList<OvhDailyLicense> organizationName_service_exchangeService_license_GET(String organizationName, String exchangeService, Date fromDate, OvhOvhLicenceEnum license, Date toDate) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/license";
+		StringBuilder sb = path(qPath, organizationName, exchangeService);
+		query(sb, "fromDate", fromDate);
+		query(sb, "license", license);
+		query(sb, "toDate", toDate);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+	private static TypeReference<ArrayList<OvhDailyLicense>> t3 = new TypeReference<ArrayList<OvhDailyLicense>>() {};
+
+	/**
+	 * Renew SSL if it will expire in next 30 days
+	 *
+	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/renewSSL
+	 * @param dcv [required] DCV email require for order ssl varification process
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 */
+	public OvhTask organizationName_service_exchangeService_renewSSL_POST(String organizationName, String exchangeService, String dcv) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/renewSSL";
 		StringBuilder sb = path(qPath, organizationName, exchangeService);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "notifiedAccountId", notifiedAccountId);
+		addBody(o, "dcv", dcv);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
@@ -189,406 +182,83 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/protocol/activeSyncMailNotification/{notifiedAccountId}
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/domain/{domainName}/disclaimer
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param notifiedAccountId [required] Notified Account Id
+	 * @param domainName [required] Domain name
 	 */
-	public OvhExchangeServiceActiveSyncNotification organizationName_service_exchangeService_protocol_activeSyncMailNotification_notifiedAccountId_GET(String organizationName, String exchangeService, Long notifiedAccountId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/protocol/activeSyncMailNotification/{notifiedAccountId}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, notifiedAccountId);
+	public OvhDisclaimer organizationName_service_exchangeService_domain_domainName_disclaimer_GET(String organizationName, String exchangeService, String domainName) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/domain/{domainName}/disclaimer";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, domainName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhExchangeServiceActiveSyncNotification.class);
-	}
-
-	/**
-	 * Unubscribe address from ActiveSync quarantine notifications
-	 *
-	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/protocol/activeSyncMailNotification/{notifiedAccountId}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param notifiedAccountId [required] Notified Account Id
-	 */
-	public OvhTask organizationName_service_exchangeService_protocol_activeSyncMailNotification_notifiedAccountId_DELETE(String organizationName, String exchangeService, Long notifiedAccountId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/protocol/activeSyncMailNotification/{notifiedAccountId}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, notifiedAccountId);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 */
-	public OvhExchangeService organizationName_service_exchangeService_GET(String organizationName, String exchangeService) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhExchangeService.class);
+		return convertTo(resp, OvhDisclaimer.class);
 	}
 
 	/**
 	 * Alter this object properties
 	 *
-	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}
+	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/domain/{domainName}/disclaimer
 	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param domainName [required] Domain name
 	 */
-	public void organizationName_service_exchangeService_PUT(String organizationName, String exchangeService, OvhExchangeService body) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService);
+	public void organizationName_service_exchangeService_domain_domainName_disclaimer_PUT(String organizationName, String exchangeService, String domainName, OvhDisclaimer body) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/domain/{domainName}/disclaimer";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, domainName);
 		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
-	 * Shared accounts associated to this exchange service
+	 * Create organization disclaimer of each email
 	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount
-	 * @param sharedEmailAddress [required] Filter the value of sharedEmailAddress property (like)
+	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/domain/{domainName}/disclaimer
+	 * @param content [required] Signature, added at the bottom of your organization emails
+	 * @param outsideOnly [required] Activate the disclaimer only for external emails
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param domainName [required] Domain name
 	 */
-	public ArrayList<String> organizationName_service_exchangeService_sharedAccount_GET(String organizationName, String exchangeService, String sharedEmailAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount";
-		StringBuilder sb = path(qPath, organizationName, exchangeService);
-		query(sb, "sharedEmailAddress", sharedEmailAddress);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Create new shared mailbox in exchange server
-	 *
-	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount
-	 * @param initials [required] Shared account initials
-	 * @param firstName [required] Shared account first name
-	 * @param quota [required] Shared account maximum size
-	 * @param hiddenFromGAL [required] Hide the shared account in Global Address List
-	 * @param sharedEmailAddress [required] Shared account email address
-	 * @param lastName [required] Shared account last name
-	 * @param mailingFilter [required] Enable mailing filtrering
-	 * @param displayName [required] Shared account display name
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 */
-	public OvhTask organizationName_service_exchangeService_sharedAccount_POST(String organizationName, String exchangeService, String initials, String firstName, Long quota, Boolean hiddenFromGAL, String sharedEmailAddress, String lastName, OvhMailingFilterEnum[] mailingFilter, String displayName) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount";
-		StringBuilder sb = path(qPath, organizationName, exchangeService);
+	public OvhTask organizationName_service_exchangeService_domain_domainName_disclaimer_POST(String organizationName, String exchangeService, String domainName, String content, Boolean outsideOnly) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/domain/{domainName}/disclaimer";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, domainName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "initials", initials);
-		addBody(o, "firstName", firstName);
-		addBody(o, "quota", quota);
-		addBody(o, "hiddenFromGAL", hiddenFromGAL);
-		addBody(o, "sharedEmailAddress", sharedEmailAddress);
-		addBody(o, "lastName", lastName);
-		addBody(o, "mailingFilter", mailingFilter);
-		addBody(o, "displayName", displayName);
+		addBody(o, "content", content);
+		addBody(o, "outsideOnly", outsideOnly);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
-	 * Get this object properties
+	 * Delete existing organization disclaimer
 	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}
+	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/domain/{domainName}/disclaimer
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param sharedEmailAddress [required] Default email for this shared mailbox
+	 * @param domainName [required] Domain name
 	 */
-	public OvhSharedAccount organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_GET(String organizationName, String exchangeService, String sharedEmailAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhSharedAccount.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}
-	 * @param body [required] New object properties
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param sharedEmailAddress [required] Default email for this shared mailbox
-	 */
-	public void organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_PUT(String organizationName, String exchangeService, String sharedEmailAddress, OvhSharedAccount body) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Delete existing shared mailbox in exchange server
-	 *
-	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param sharedEmailAddress [required] Default email for this shared mailbox
-	 */
-	public OvhTask organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_DELETE(String organizationName, String exchangeService, String sharedEmailAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress);
+	public OvhTask organizationName_service_exchangeService_domain_domainName_disclaimer_DELETE(String organizationName, String exchangeService, String domainName) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/domain/{domainName}/disclaimer";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, domainName);
 		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
-	 * Pending task for this mailbox
+	 * Get diclaimer attributes to substitute with Active Directory properties
 	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/tasks
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/domain/{domainName}/disclaimerAttribute
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param sharedEmailAddress [required] Default email for this shared mailbox
+	 * @param domainName [required] Domain name
 	 */
-	public ArrayList<Long> organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_tasks_GET(String organizationName, String exchangeService, String sharedEmailAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/tasks";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress);
+	public ArrayList<OvhDisclaimerAttributeEnum> organizationName_service_exchangeService_domain_domainName_disclaimerAttribute_GET(String organizationName, String exchangeService, String domainName) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/domain/{domainName}/disclaimerAttribute";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, domainName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
+		return convertTo(resp, t4);
 	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/tasks/{id}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param sharedEmailAddress [required] Default email for this shared mailbox
-	 * @param id [required] Task id
-	 */
-	public OvhTask organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_tasks_id_GET(String organizationName, String exchangeService, String sharedEmailAddress, Long id) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/tasks/{id}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress, id);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * SendOnBehalfTo granted users for this shared mailbox
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendOnBehalfTo
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param sharedEmailAddress [required] Default email for this shared mailbox
-	 */
-	public ArrayList<Long> organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_sendOnBehalfTo_GET(String organizationName, String exchangeService, String sharedEmailAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendOnBehalfTo";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Allow another user to Send On Behalf To mails from this shared mailbox
-	 *
-	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendOnBehalfTo
-	 * @param allowAccountId [required] Account id to allow to send On Behalf To mails from this shared mailbox
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param sharedEmailAddress [required] Default email for this shared mailbox
-	 */
-	public OvhTask organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_sendOnBehalfTo_POST(String organizationName, String exchangeService, String sharedEmailAddress, Long allowAccountId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendOnBehalfTo";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "allowAccountId", allowAccountId);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendOnBehalfTo/{allowedAccountId}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param sharedEmailAddress [required] Default email for this shared mailbox
-	 * @param allowedAccountId [required] Account id to give send on behalf to
-	 */
-	public OvhExchangeSharedAccountSendOnBehalfTo organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_sendOnBehalfTo_allowedAccountId_GET(String organizationName, String exchangeService, String sharedEmailAddress, Long allowedAccountId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendOnBehalfTo/{allowedAccountId}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress, allowedAccountId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhExchangeSharedAccountSendOnBehalfTo.class);
-	}
-
-	/**
-	 * Delete allowed user for SendOnBehalfTo
-	 *
-	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendOnBehalfTo/{allowedAccountId}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param sharedEmailAddress [required] Default email for this shared mailbox
-	 * @param allowedAccountId [required] Account id to give send on behalf to
-	 */
-	public OvhTask organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_sendOnBehalfTo_allowedAccountId_DELETE(String organizationName, String exchangeService, String sharedEmailAddress, Long allowedAccountId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendOnBehalfTo/{allowedAccountId}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress, allowedAccountId);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Full access granted users for this shared mailbox
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/fullAccess
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param sharedEmailAddress [required] Default email for this shared mailbox
-	 */
-	public ArrayList<Long> organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_fullAccess_GET(String organizationName, String exchangeService, String sharedEmailAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/fullAccess";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Allow full access to a user
-	 *
-	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/fullAccess
-	 * @param allowedAccountId [required] User to give full access
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param sharedEmailAddress [required] Default email for this shared mailbox
-	 */
-	public OvhTask organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_fullAccess_POST(String organizationName, String exchangeService, String sharedEmailAddress, Long allowedAccountId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/fullAccess";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "allowedAccountId", allowedAccountId);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/fullAccess/{allowedAccountId}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param sharedEmailAddress [required] Default email for this shared mailbox
-	 * @param allowedAccountId [required] Account id to give full access
-	 */
-	public OvhExchangeSharedAccountFullAccess organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_fullAccess_allowedAccountId_GET(String organizationName, String exchangeService, String sharedEmailAddress, Long allowedAccountId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/fullAccess/{allowedAccountId}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress, allowedAccountId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhExchangeSharedAccountFullAccess.class);
-	}
-
-	/**
-	 * Revoke full access
-	 *
-	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/fullAccess/{allowedAccountId}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param sharedEmailAddress [required] Default email for this shared mailbox
-	 * @param allowedAccountId [required] Account id to give full access
-	 */
-	public OvhTask organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_fullAccess_allowedAccountId_DELETE(String organizationName, String exchangeService, String sharedEmailAddress, Long allowedAccountId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/fullAccess/{allowedAccountId}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress, allowedAccountId);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Send as granted users for this shared mailbox
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendAs
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param sharedEmailAddress [required] Default email for this shared mailbox
-	 */
-	public ArrayList<Long> organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_sendAs_GET(String organizationName, String exchangeService, String sharedEmailAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendAs";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Allow another user to send mails from this shared mailbox
-	 *
-	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendAs
-	 * @param allowAccountId [required] Account id to allow to send mails from this shared mailbox
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param sharedEmailAddress [required] Default email for this shared mailbox
-	 */
-	public OvhTask organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_sendAs_POST(String organizationName, String exchangeService, String sharedEmailAddress, Long allowAccountId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendAs";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "allowAccountId", allowAccountId);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendAs/{allowedAccountId}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param sharedEmailAddress [required] Default email for this shared mailbox
-	 * @param allowedAccountId [required] Account id to give send as
-	 */
-	public OvhExchangeSharedAccountSendAs organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_sendAs_allowedAccountId_GET(String organizationName, String exchangeService, String sharedEmailAddress, Long allowedAccountId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendAs/{allowedAccountId}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress, allowedAccountId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhExchangeSharedAccountSendAs.class);
-	}
-
-	/**
-	 * Delete allowed user for sendAs
-	 *
-	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendAs/{allowedAccountId}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param sharedEmailAddress [required] Default email for this shared mailbox
-	 * @param allowedAccountId [required] Account id to give send as
-	 */
-	public OvhTask organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_sendAs_allowedAccountId_DELETE(String organizationName, String exchangeService, String sharedEmailAddress, Long allowedAccountId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendAs/{allowedAccountId}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress, allowedAccountId);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get public folder quota usage in total available space
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/publicFolderQuota
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 */
-	public OvhPublicFolderQuota organizationName_service_exchangeService_publicFolderQuota_GET(String organizationName, String exchangeService) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/publicFolderQuota";
-		StringBuilder sb = path(qPath, organizationName, exchangeService);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPublicFolderQuota.class);
-	}
-
-	/**
-	 * Get DCV emails if your ssl will expire in next 30 days
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/dcvEmails
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 */
-	public ArrayList<String> organizationName_service_exchangeService_dcvEmails_GET(String organizationName, String exchangeService) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/dcvEmails";
-		StringBuilder sb = path(qPath, organizationName, exchangeService);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
+	private static TypeReference<ArrayList<OvhDisclaimerAttributeEnum>> t4 = new TypeReference<ArrayList<OvhDisclaimerAttributeEnum>>() {};
 
 	/**
 	 * Get this object properties
@@ -636,87 +306,6 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	}
 
 	/**
-	 * Get diclaimer attributes to substitute with Active Directory properties
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/domain/{domainName}/disclaimerAttribute
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param domainName [required] Domain name
-	 */
-	public ArrayList<OvhDisclaimerAttributeEnum> organizationName_service_exchangeService_domain_domainName_disclaimerAttribute_GET(String organizationName, String exchangeService, String domainName) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/domain/{domainName}/disclaimerAttribute";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, domainName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
-	}
-	private static TypeReference<ArrayList<OvhDisclaimerAttributeEnum>> t3 = new TypeReference<ArrayList<OvhDisclaimerAttributeEnum>>() {};
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/domain/{domainName}/disclaimer
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param domainName [required] Domain name
-	 */
-	public OvhDisclaimer organizationName_service_exchangeService_domain_domainName_disclaimer_GET(String organizationName, String exchangeService, String domainName) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/domain/{domainName}/disclaimer";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, domainName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhDisclaimer.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/domain/{domainName}/disclaimer
-	 * @param body [required] New object properties
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param domainName [required] Domain name
-	 */
-	public void organizationName_service_exchangeService_domain_domainName_disclaimer_PUT(String organizationName, String exchangeService, String domainName, OvhDisclaimer body) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/domain/{domainName}/disclaimer";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, domainName);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Create organization disclaimer of each email
-	 *
-	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/domain/{domainName}/disclaimer
-	 * @param outsideOnly [required] Activate the disclaimer only for external emails
-	 * @param content [required] Signature, added at the bottom of your organization emails
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param domainName [required] Domain name
-	 */
-	public OvhTask organizationName_service_exchangeService_domain_domainName_disclaimer_POST(String organizationName, String exchangeService, String domainName, Boolean outsideOnly, String content) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/domain/{domainName}/disclaimer";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, domainName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "outsideOnly", outsideOnly);
-		addBody(o, "content", content);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Delete existing organization disclaimer
-	 *
-	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/domain/{domainName}/disclaimer
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param domainName [required] Domain name
-	 */
-	public OvhTask organizationName_service_exchangeService_domain_domainName_disclaimer_DELETE(String organizationName, String exchangeService, String domainName) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/domain/{domainName}/disclaimer";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, domainName);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
 	 * Domains associated to this service
 	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/domain
@@ -738,214 +327,28 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	 * Create new domain in exchange services
 	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/domain
-	 * @param mxRelay [required] If specified, emails to not existing address will be redirected to that domain
-	 * @param configureAutodiscover [required] If you host domain in OVH we can configure autodiscover record automatically
-	 * @param organization2010 [required] If specified, indicates which organization this newly created domain will be part of (Exchange 2010 only)
 	 * @param name [required] Domain to install on server
-	 * @param type [required] Type of domain that You want to install
+	 * @param mxRelay [required] If specified, emails to not existing address will be redirected to that domain
+	 * @param organization2010 [required] If specified, indicates which organization this newly created domain will be part of (Exchange 2010 only)
 	 * @param configureMx [required] If you host domain in OVH we can configure mx record automatically
 	 * @param main [required] This newly created domain will be an organization (Exchange 2010 only)
+	 * @param configureAutodiscover [required] If you host domain in OVH we can configure autodiscover record automatically
+	 * @param type [required] Type of domain that You want to install
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 */
-	public OvhTask organizationName_service_exchangeService_domain_POST(String organizationName, String exchangeService, String mxRelay, Boolean configureAutodiscover, String organization2010, String name, OvhDomainTypeEnum type, Boolean configureMx, Boolean main) throws IOException {
+	public OvhTask organizationName_service_exchangeService_domain_POST(String organizationName, String exchangeService, String name, String mxRelay, String organization2010, Boolean configureMx, Boolean main, Boolean configureAutodiscover, OvhDomainTypeEnum type) throws IOException {
 		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/domain";
 		StringBuilder sb = path(qPath, organizationName, exchangeService);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "mxRelay", mxRelay);
-		addBody(o, "configureAutodiscover", configureAutodiscover);
-		addBody(o, "organization2010", organization2010);
 		addBody(o, "name", name);
-		addBody(o, "type", type);
+		addBody(o, "mxRelay", mxRelay);
+		addBody(o, "organization2010", organization2010);
 		addBody(o, "configureMx", configureMx);
 		addBody(o, "main", main);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Renew SSL if it will expire in next 30 days
-	 *
-	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/renewSSL
-	 * @param dcv [required] DCV email require for order ssl varification process
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 */
-	public OvhTask organizationName_service_exchangeService_renewSSL_POST(String organizationName, String exchangeService, String dcv) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/renewSSL";
-		StringBuilder sb = path(qPath, organizationName, exchangeService);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "dcv", dcv);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Public folders associated to this service
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/publicFolder
-	 * @param path [required] Filter the value of path property (like)
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 */
-	public ArrayList<String> organizationName_service_exchangeService_publicFolder_GET(String organizationName, String exchangeService, String path) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/publicFolder";
-		StringBuilder sb = path(qPath, organizationName, exchangeService);
-		query(sb, "path", path);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Create organization public folder
-	 *
-	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/publicFolder
-	 * @param quota [required] Quota for public folder in MB
-	 * @param anonymousPermission [required] [default=none] Access right for the guest users
-	 * @param type [required] Type for public folder
-	 * @param path [required] Path for public folder
-	 * @param defaultPermission [required] [default=none] Default access right
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 */
-	public OvhTask organizationName_service_exchangeService_publicFolder_POST(String organizationName, String exchangeService, Long quota, OvhPublicFolderRightTypeEnum anonymousPermission, OvhPublicFolderTypeEnum type, String path, OvhPublicFolderRightTypeEnum defaultPermission) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/publicFolder";
-		StringBuilder sb = path(qPath, organizationName, exchangeService);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "quota", quota);
-		addBody(o, "anonymousPermission", anonymousPermission);
+		addBody(o, "configureAutodiscover", configureAutodiscover);
 		addBody(o, "type", type);
-		addBody(o, "path", path);
-		addBody(o, "defaultPermission", defaultPermission);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param path [required] Path for public folder
-	 */
-	public OvhPublicFolder organizationName_service_exchangeService_publicFolder_path_GET(String organizationName, String exchangeService, String path) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, path);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPublicFolder.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}
-	 * @param body [required] New object properties
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param path [required] Path for public folder
-	 */
-	public void organizationName_service_exchangeService_publicFolder_path_PUT(String organizationName, String exchangeService, String path, OvhPublicFolder body) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, path);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Delete existing organization public folder
-	 *
-	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param path [required] Path for public folder
-	 */
-	public OvhTask organizationName_service_exchangeService_publicFolder_path_DELETE(String organizationName, String exchangeService, String path) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, path);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Public folder permission
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}/permission
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param path [required] Path for public folder
-	 */
-	public ArrayList<Long> organizationName_service_exchangeService_publicFolder_path_permission_GET(String organizationName, String exchangeService, String path) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}/permission";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, path);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Create public folder permission
-	 *
-	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}/permission
-	 * @param allowedAccountId [required] Account id to have access to public folder
-	 * @param accessRights [required] Access rights to be set for the account
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param path [required] Path for public folder
-	 */
-	public OvhTask organizationName_service_exchangeService_publicFolder_path_permission_POST(String organizationName, String exchangeService, String path, Long allowedAccountId, OvhPublicFolderRightTypeEnum accessRights) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}/permission";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, path);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "allowedAccountId", allowedAccountId);
-		addBody(o, "accessRights", accessRights);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}/permission/{allowedAccountId}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param path [required] Path for public folder
-	 * @param allowedAccountId [required] Account id
-	 */
-	public OvhExchangePublicFolderPermission organizationName_service_exchangeService_publicFolder_path_permission_allowedAccountId_GET(String organizationName, String exchangeService, String path, Long allowedAccountId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}/permission/{allowedAccountId}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, path, allowedAccountId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhExchangePublicFolderPermission.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}/permission/{allowedAccountId}
-	 * @param body [required] New object properties
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param path [required] Path for public folder
-	 * @param allowedAccountId [required] Account id
-	 */
-	public void organizationName_service_exchangeService_publicFolder_path_permission_allowedAccountId_PUT(String organizationName, String exchangeService, String path, Long allowedAccountId, OvhExchangePublicFolderPermission body) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}/permission/{allowedAccountId}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, path, allowedAccountId);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Delete existing permission from public folder
-	 *
-	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}/permission/{allowedAccountId}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param path [required] Path for public folder
-	 * @param allowedAccountId [required] Account id
-	 */
-	public OvhTask organizationName_service_exchangeService_publicFolder_path_permission_allowedAccountId_DELETE(String organizationName, String exchangeService, String path, Long allowedAccountId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}/permission/{allowedAccountId}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, path, allowedAccountId);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -964,12 +367,241 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	}
 
 	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/server
+	 * @param body [required] New object properties
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 */
+	public void organizationName_service_exchangeService_server_PUT(String organizationName, String exchangeService, OvhServer body) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/server";
+		StringBuilder sb = path(qPath, organizationName, exchangeService);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Get shared account quota usage in total available space
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccountQuota
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 */
+	public OvhSharedAccountQuota organizationName_service_exchangeService_sharedAccountQuota_GET(String organizationName, String exchangeService) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccountQuota";
+		StringBuilder sb = path(qPath, organizationName, exchangeService);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhSharedAccountQuota.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/externalContact/{externalEmailAddress}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param externalEmailAddress [required] Contact email
+	 */
+	public OvhExchangeExternalContact organizationName_service_exchangeService_externalContact_externalEmailAddress_GET(String organizationName, String exchangeService, String externalEmailAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/externalContact/{externalEmailAddress}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, externalEmailAddress);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhExchangeExternalContact.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/externalContact/{externalEmailAddress}
+	 * @param body [required] New object properties
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param externalEmailAddress [required] Contact email
+	 */
+	public void organizationName_service_exchangeService_externalContact_externalEmailAddress_PUT(String organizationName, String exchangeService, String externalEmailAddress, OvhExchangeExternalContact body) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/externalContact/{externalEmailAddress}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, externalEmailAddress);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * delete external contact
+	 *
+	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/externalContact/{externalEmailAddress}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param externalEmailAddress [required] Contact email
+	 */
+	public OvhTask organizationName_service_exchangeService_externalContact_externalEmailAddress_DELETE(String organizationName, String exchangeService, String externalEmailAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/externalContact/{externalEmailAddress}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, externalEmailAddress);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * External contacts for this service
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/externalContact
+	 * @param displayName [required] Filter the value of displayName property (like)
+	 * @param firstName [required] Filter the value of firstName property (like)
+	 * @param lastName [required] Filter the value of lastName property (like)
+	 * @param externalEmailAddress [required] Filter the value of externalEmailAddress property (like)
+	 * @param id [required] Filter the value of id property (like)
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 */
+	public ArrayList<String> organizationName_service_exchangeService_externalContact_GET(String organizationName, String exchangeService, String displayName, String externalEmailAddress, String firstName, Long id, String lastName) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/externalContact";
+		StringBuilder sb = path(qPath, organizationName, exchangeService);
+		query(sb, "displayName", displayName);
+		query(sb, "externalEmailAddress", externalEmailAddress);
+		query(sb, "firstName", firstName);
+		query(sb, "id", id);
+		query(sb, "lastName", lastName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * create new external contact
+	 *
+	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/externalContact
+	 * @param initials [required] Contact initials
+	 * @param organization2010 [required] Indicates to which organization this newly created external contact will belongs (Exchange 2010 only)
+	 * @param firstName [required] Contact first name
+	 * @param hiddenFromGAL [required] Hide the contact in Global Address List
+	 * @param displayName [required] Contact display name
+	 * @param lastName [required] Contact last name
+	 * @param externalEmailAddress [required] Contact email address
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 */
+	public OvhTask organizationName_service_exchangeService_externalContact_POST(String organizationName, String exchangeService, String initials, String organization2010, String firstName, Boolean hiddenFromGAL, String displayName, String lastName, String externalEmailAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/externalContact";
+		StringBuilder sb = path(qPath, organizationName, exchangeService);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "initials", initials);
+		addBody(o, "organization2010", organization2010);
+		addBody(o, "firstName", firstName);
+		addBody(o, "hiddenFromGAL", hiddenFromGAL);
+		addBody(o, "displayName", displayName);
+		addBody(o, "lastName", lastName);
+		addBody(o, "externalEmailAddress", externalEmailAddress);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get DCV emails if your ssl will expire in next 30 days
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/dcvEmails
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 */
+	public ArrayList<String> organizationName_service_exchangeService_dcvEmails_GET(String organizationName, String exchangeService) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/dcvEmails";
+		StringBuilder sb = path(qPath, organizationName, exchangeService);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/protocol/activeSyncMailNotification/{notifiedAccountId}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param notifiedAccountId [required] Notified Account Id
+	 */
+	public OvhExchangeServiceActiveSyncNotification organizationName_service_exchangeService_protocol_activeSyncMailNotification_notifiedAccountId_GET(String organizationName, String exchangeService, Long notifiedAccountId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/protocol/activeSyncMailNotification/{notifiedAccountId}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, notifiedAccountId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhExchangeServiceActiveSyncNotification.class);
+	}
+
+	/**
+	 * Unubscribe address from ActiveSync quarantine notifications
+	 *
+	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/protocol/activeSyncMailNotification/{notifiedAccountId}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param notifiedAccountId [required] Notified Account Id
+	 */
+	public OvhTask organizationName_service_exchangeService_protocol_activeSyncMailNotification_notifiedAccountId_DELETE(String organizationName, String exchangeService, Long notifiedAccountId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/protocol/activeSyncMailNotification/{notifiedAccountId}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, notifiedAccountId);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Exchange account id subscribed to ActiveSync quarantine notifications
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/protocol/activeSyncMailNotification
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 */
+	public ArrayList<Long> organizationName_service_exchangeService_protocol_activeSyncMailNotification_GET(String organizationName, String exchangeService) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/protocol/activeSyncMailNotification";
+		StringBuilder sb = path(qPath, organizationName, exchangeService);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Subscribe new address to ActiveSync quarantine notifications
+	 *
+	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/protocol/activeSyncMailNotification
+	 * @param notifiedAccountId [required] Exchange Account Id
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 */
+	public OvhTask organizationName_service_exchangeService_protocol_activeSyncMailNotification_POST(String organizationName, String exchangeService, Long notifiedAccountId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/protocol/activeSyncMailNotification";
+		StringBuilder sb = path(qPath, organizationName, exchangeService);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "notifiedAccountId", notifiedAccountId);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/protocol
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 */
+	public OvhExchangeServiceProtocol organizationName_service_exchangeService_protocol_GET(String organizationName, String exchangeService) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/protocol";
+		StringBuilder sb = path(qPath, organizationName, exchangeService);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhExchangeServiceProtocol.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/protocol
+	 * @param body [required] New object properties
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 */
+	public void organizationName_service_exchangeService_protocol_PUT(String organizationName, String exchangeService, OvhExchangeServiceProtocol body) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/protocol";
+		StringBuilder sb = path(qPath, organizationName, exchangeService);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
 	 * Accounts associated to this exchange service
 	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account
-	 * @param primaryEmailAddress [required] Filter the value of primaryEmailAddress property (like)
-	 * @param accountLicense [required] Filter the value of accountLicense property (=)
 	 * @param id [required] Filter the value of id property (like)
+	 * @param accountLicense [required] Filter the value of accountLicense property (=)
+	 * @param primaryEmailAddress [required] Filter the value of primaryEmailAddress property (like)
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 */
@@ -987,75 +619,47 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	 * Create new mailbox in exchange server
 	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/account
-	 * @param initials [required] Account initials
-	 * @param firstName [required] Account first name
-	 * @param hiddenFromGAL [required] Hide the account in Global Address List
-	 * @param litigationPeriod [required] Litigation length in days, 0 means unlimited
-	 * @param litigation [required] Litigation status
 	 * @param license [required] Exchange license
-	 * @param login [required] Account login
-	 * @param password [required] Account password
+	 * @param mailingFilter [required] Enable mailing filtrering
+	 * @param company [required] Company name
 	 * @param domain [required] Email domain
 	 * @param spamAndVirusConfiguration [required] Antispam and Antivirus configuration
-	 * @param SAMAccountName [required] SAM account name (exchange 2010 login)
-	 * @param mailingFilter [required] Enable mailing filtrering
-	 * @param lastName [required] Account last name
-	 * @param outlookLicense [required] Buy outlook license
+	 * @param initials [required] Account initials
+	 * @param login [required] Account login
+	 * @param firstName [required] Account first name
 	 * @param displayName [required] Account display name
+	 * @param password [required] Account password
+	 * @param outlookLicense [required] Buy outlook license
+	 * @param litigation [required] Litigation status
+	 * @param lastName [required] Account last name
+	 * @param litigationPeriod [required] Litigation length in days, 0 means unlimited
+	 * @param hiddenFromGAL [required] Hide the account in Global Address List
+	 * @param SAMAccountName [required] SAM account name (exchange 2010 login)
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 */
-	public OvhTask organizationName_service_exchangeService_account_POST(String organizationName, String exchangeService, String initials, String firstName, Boolean hiddenFromGAL, Long litigationPeriod, Boolean litigation, OvhOvhLicenceEnum license, String login, String password, String domain, OvhSpamAndVirusConfiguration spamAndVirusConfiguration, String SAMAccountName, OvhMailingFilterEnum[] mailingFilter, String lastName, Boolean outlookLicense, String displayName) throws IOException {
+	public OvhTask organizationName_service_exchangeService_account_POST(String organizationName, String exchangeService, OvhOvhLicenceEnum license, OvhMailingFilterEnum[] mailingFilter, String company, String domain, OvhSpamAndVirusConfiguration spamAndVirusConfiguration, String initials, String login, String firstName, String displayName, String password, Boolean outlookLicense, Boolean litigation, String lastName, Long litigationPeriod, Boolean hiddenFromGAL, String SAMAccountName) throws IOException {
 		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account";
 		StringBuilder sb = path(qPath, organizationName, exchangeService);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "initials", initials);
-		addBody(o, "firstName", firstName);
-		addBody(o, "hiddenFromGAL", hiddenFromGAL);
-		addBody(o, "litigationPeriod", litigationPeriod);
-		addBody(o, "litigation", litigation);
 		addBody(o, "license", license);
-		addBody(o, "login", login);
-		addBody(o, "password", password);
+		addBody(o, "mailingFilter", mailingFilter);
+		addBody(o, "company", company);
 		addBody(o, "domain", domain);
 		addBody(o, "spamAndVirusConfiguration", spamAndVirusConfiguration);
-		addBody(o, "SAMAccountName", SAMAccountName);
-		addBody(o, "mailingFilter", mailingFilter);
-		addBody(o, "lastName", lastName);
-		addBody(o, "outlookLicense", outlookLicense);
+		addBody(o, "initials", initials);
+		addBody(o, "login", login);
+		addBody(o, "firstName", firstName);
 		addBody(o, "displayName", displayName);
+		addBody(o, "password", password);
+		addBody(o, "outlookLicense", outlookLicense);
+		addBody(o, "litigation", litigation);
+		addBody(o, "lastName", lastName);
+		addBody(o, "litigationPeriod", litigationPeriod);
+		addBody(o, "hiddenFromGAL", hiddenFromGAL);
+		addBody(o, "SAMAccountName", SAMAccountName);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/protocol
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param primaryEmailAddress [required] Default email for this mailbox
-	 */
-	public OvhExchangeAccountProtocol organizationName_service_exchangeService_account_primaryEmailAddress_protocol_GET(String organizationName, String exchangeService, String primaryEmailAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/protocol";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhExchangeAccountProtocol.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/protocol
-	 * @param body [required] New object properties
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param primaryEmailAddress [required] Default email for this mailbox
-	 */
-	public void organizationName_service_exchangeService_account_primaryEmailAddress_protocol_PUT(String organizationName, String exchangeService, String primaryEmailAddress, OvhExchangeAccountProtocol body) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/protocol";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
-		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1100,37 +704,6 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}";
 		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
 		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Pending task for this mailbox
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/tasks
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param primaryEmailAddress [required] Default email for this mailbox
-	 */
-	public ArrayList<Long> organizationName_service_exchangeService_account_primaryEmailAddress_tasks_GET(String organizationName, String exchangeService, String primaryEmailAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/tasks";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/tasks/{id}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param primaryEmailAddress [required] Default email for this mailbox
-	 * @param id [required] Task id
-	 */
-	public OvhTask organizationName_service_exchangeService_account_primaryEmailAddress_tasks_id_GET(String organizationName, String exchangeService, String primaryEmailAddress, Long id) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/tasks/{id}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress, id);
-		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1198,21 +771,33 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	}
 
 	/**
-	 * Change mailbox password
+	 * Get this object properties
 	 *
-	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/changePassword
-	 * @param password [required] new password
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/protocol
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 * @param primaryEmailAddress [required] Default email for this mailbox
 	 */
-	public OvhTask organizationName_service_exchangeService_account_primaryEmailAddress_changePassword_POST(String organizationName, String exchangeService, String primaryEmailAddress, String password) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/changePassword";
+	public OvhExchangeAccountProtocol organizationName_service_exchangeService_account_primaryEmailAddress_protocol_GET(String organizationName, String exchangeService, String primaryEmailAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/protocol";
 		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "password", password);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhExchangeAccountProtocol.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/protocol
+	 * @param body [required] New object properties
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param primaryEmailAddress [required] Default email for this mailbox
+	 */
+	public void organizationName_service_exchangeService_account_primaryEmailAddress_protocol_PUT(String organizationName, String exchangeService, String primaryEmailAddress, OvhExchangeAccountProtocol body) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/protocol";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1233,62 +818,130 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/exportURL
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/alias/{alias}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 * @param primaryEmailAddress [required] Default email for this mailbox
+	 * @param alias [required] Alias
 	 */
-	public OvhExportUrl organizationName_service_exchangeService_account_primaryEmailAddress_exportURL_GET(String organizationName, String exchangeService, String primaryEmailAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/exportURL";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
+	public OvhExchangeAccountAlias organizationName_service_exchangeService_account_primaryEmailAddress_alias_alias_GET(String organizationName, String exchangeService, String primaryEmailAddress, String alias) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/alias/{alias}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress, alias);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhExportUrl.class);
+		return convertTo(resp, OvhExchangeAccountAlias.class);
 	}
 
 	/**
-	 * Generate temporary url to PST file
+	 * Delete existing alias
 	 *
-	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/exportURL
+	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/alias/{alias}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param primaryEmailAddress [required] Default email for this mailbox
+	 * @param alias [required] Alias
+	 */
+	public OvhTask organizationName_service_exchangeService_account_primaryEmailAddress_alias_alias_DELETE(String organizationName, String exchangeService, String primaryEmailAddress, String alias) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/alias/{alias}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress, alias);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Aliases associated to this mailbox
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/alias
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 * @param primaryEmailAddress [required] Default email for this mailbox
 	 */
-	public OvhTask organizationName_service_exchangeService_account_primaryEmailAddress_exportURL_POST(String organizationName, String exchangeService, String primaryEmailAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/exportURL";
+	public ArrayList<String> organizationName_service_exchangeService_account_primaryEmailAddress_alias_GET(String organizationName, String exchangeService, String primaryEmailAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/alias";
 		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
-		String resp = exec(qPath, "POST", sb.toString(), null);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Create new alias
+	 *
+	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/alias
+	 * @param alias [required] Alias
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param primaryEmailAddress [required] Default email for this mailbox
+	 */
+	public OvhTask organizationName_service_exchangeService_account_primaryEmailAddress_alias_POST(String organizationName, String exchangeService, String primaryEmailAddress, String alias) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/alias";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "alias", alias);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Pending task for this mailbox
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/tasks
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param primaryEmailAddress [required] Default email for this mailbox
+	 */
+	public ArrayList<Long> organizationName_service_exchangeService_account_primaryEmailAddress_tasks_GET(String organizationName, String exchangeService, String primaryEmailAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/tasks";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/tasks/{id}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param primaryEmailAddress [required] Default email for this mailbox
+	 * @param id [required] Task id
+	 */
+	public OvhTask organizationName_service_exchangeService_account_primaryEmailAddress_tasks_id_GET(String organizationName, String exchangeService, String primaryEmailAddress, Long id) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/tasks/{id}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/diagnostics
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/outlookURL
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 * @param primaryEmailAddress [required] Default email for this mailbox
 	 */
-	public OvhExchangeAccountDiagnosis organizationName_service_exchangeService_account_primaryEmailAddress_diagnostics_GET(String organizationName, String exchangeService, String primaryEmailAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/diagnostics";
+	public OvhOutlookUrl organizationName_service_exchangeService_account_primaryEmailAddress_outlookURL_GET(String organizationName, String exchangeService, String primaryEmailAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/outlookURL";
 		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhExchangeAccountDiagnosis.class);
+		return convertTo(resp, OvhOutlookUrl.class);
 	}
 
 	/**
-	 * Create new diagnosis request
+	 * Generate outlook url
 	 *
-	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/diagnostics
-	 * @param password [required] Account password
+	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/outlookURL
+	 * @param language [required] Language of outlook
+	 * @param version [required] Version of outlook
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 * @param primaryEmailAddress [required] Default email for this mailbox
 	 */
-	public OvhTask organizationName_service_exchangeService_account_primaryEmailAddress_diagnostics_POST(String organizationName, String exchangeService, String primaryEmailAddress, String password) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/diagnostics";
+	public OvhTask organizationName_service_exchangeService_account_primaryEmailAddress_outlookURL_POST(String organizationName, String exchangeService, String primaryEmailAddress, OvhLanguageEnum language, OvhOutlookVersionEnum version) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/outlookURL";
 		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "password", password);
+		addBody(o, "language", language);
+		addBody(o, "version", version);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
@@ -1359,47 +1012,85 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	}
 
 	/**
-	 * Get this object properties
+	 * Send as granted users for this mailbox
 	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/export
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/sendAs
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 * @param primaryEmailAddress [required] Default email for this mailbox
 	 */
-	public OvhExport organizationName_service_exchangeService_account_primaryEmailAddress_export_GET(String organizationName, String exchangeService, String primaryEmailAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/export";
+	public ArrayList<Long> organizationName_service_exchangeService_account_primaryEmailAddress_sendAs_GET(String organizationName, String exchangeService, String primaryEmailAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/sendAs";
 		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhExport.class);
+		return convertTo(resp, t2);
 	}
 
 	/**
-	 * Request PST file for the account
+	 * Allow another user to send mails from this mailbox
 	 *
-	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/export
+	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/sendAs
+	 * @param allowAccountId [required] Account id to allow to send mails from this mailbox
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 * @param primaryEmailAddress [required] Default email for this mailbox
 	 */
-	public OvhTask organizationName_service_exchangeService_account_primaryEmailAddress_export_POST(String organizationName, String exchangeService, String primaryEmailAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/export";
+	public OvhTask organizationName_service_exchangeService_account_primaryEmailAddress_sendAs_POST(String organizationName, String exchangeService, String primaryEmailAddress, Long allowAccountId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/sendAs";
 		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
-		String resp = exec(qPath, "POST", sb.toString(), null);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "allowAccountId", allowAccountId);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
-	 * Remove request of PST file
+	 * Get this object properties
 	 *
-	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/export
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/sendAs/{allowedAccountId}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param primaryEmailAddress [required] Default email for this mailbox
+	 * @param allowedAccountId [required] Account id to give send as
+	 */
+	public OvhExchangeAccountSendAs organizationName_service_exchangeService_account_primaryEmailAddress_sendAs_allowedAccountId_GET(String organizationName, String exchangeService, String primaryEmailAddress, Long allowedAccountId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/sendAs/{allowedAccountId}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress, allowedAccountId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhExchangeAccountSendAs.class);
+	}
+
+	/**
+	 * Delete allowed user for sendAs
+	 *
+	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/sendAs/{allowedAccountId}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param primaryEmailAddress [required] Default email for this mailbox
+	 * @param allowedAccountId [required] Account id to give send as
+	 */
+	public OvhTask organizationName_service_exchangeService_account_primaryEmailAddress_sendAs_allowedAccountId_DELETE(String organizationName, String exchangeService, String primaryEmailAddress, Long allowedAccountId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/sendAs/{allowedAccountId}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress, allowedAccountId);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Change mailbox password
+	 *
+	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/changePassword
+	 * @param password [required] new password
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 * @param primaryEmailAddress [required] Default email for this mailbox
 	 */
-	public OvhTask organizationName_service_exchangeService_account_primaryEmailAddress_export_DELETE(String organizationName, String exchangeService, String primaryEmailAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/export";
+	public OvhTask organizationName_service_exchangeService_account_primaryEmailAddress_changePassword_POST(String organizationName, String exchangeService, String primaryEmailAddress, String password) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/changePassword";
 		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "password", password);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -1471,67 +1162,32 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/outlookURL
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/diagnostics
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 * @param primaryEmailAddress [required] Default email for this mailbox
 	 */
-	public OvhOutlookUrl organizationName_service_exchangeService_account_primaryEmailAddress_outlookURL_GET(String organizationName, String exchangeService, String primaryEmailAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/outlookURL";
+	public OvhExchangeAccountDiagnosis organizationName_service_exchangeService_account_primaryEmailAddress_diagnostics_GET(String organizationName, String exchangeService, String primaryEmailAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/diagnostics";
 		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhOutlookUrl.class);
+		return convertTo(resp, OvhExchangeAccountDiagnosis.class);
 	}
 
 	/**
-	 * Generate outlook url
+	 * Create new diagnosis request
 	 *
-	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/outlookURL
-	 * @param language [required] Language of outlook
-	 * @param version [required] Version of outlook
+	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/diagnostics
+	 * @param password [required] Account password
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 * @param primaryEmailAddress [required] Default email for this mailbox
 	 */
-	public OvhTask organizationName_service_exchangeService_account_primaryEmailAddress_outlookURL_POST(String organizationName, String exchangeService, String primaryEmailAddress, OvhLanguageEnum language, OvhOutlookVersionEnum version) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/outlookURL";
+	public OvhTask organizationName_service_exchangeService_account_primaryEmailAddress_diagnostics_POST(String organizationName, String exchangeService, String primaryEmailAddress, String password) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/diagnostics";
 		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "language", language);
-		addBody(o, "version", version);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Aliases associated to this mailbox
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/alias
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param primaryEmailAddress [required] Default email for this mailbox
-	 */
-	public ArrayList<String> organizationName_service_exchangeService_account_primaryEmailAddress_alias_GET(String organizationName, String exchangeService, String primaryEmailAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/alias";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Create new alias
-	 *
-	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/alias
-	 * @param alias [required] Alias
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param primaryEmailAddress [required] Default email for this mailbox
-	 */
-	public OvhTask organizationName_service_exchangeService_account_primaryEmailAddress_alias_POST(String organizationName, String exchangeService, String primaryEmailAddress, String alias) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/alias";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "alias", alias);
+		addBody(o, "password", password);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
@@ -1539,264 +1195,129 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/alias/{alias}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param primaryEmailAddress [required] Default email for this mailbox
-	 * @param alias [required] Alias
-	 */
-	public OvhExchangeAccountAlias organizationName_service_exchangeService_account_primaryEmailAddress_alias_alias_GET(String organizationName, String exchangeService, String primaryEmailAddress, String alias) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/alias/{alias}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress, alias);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhExchangeAccountAlias.class);
-	}
-
-	/**
-	 * Delete existing alias
-	 *
-	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/alias/{alias}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param primaryEmailAddress [required] Default email for this mailbox
-	 * @param alias [required] Alias
-	 */
-	public OvhTask organizationName_service_exchangeService_account_primaryEmailAddress_alias_alias_DELETE(String organizationName, String exchangeService, String primaryEmailAddress, String alias) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/alias/{alias}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress, alias);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Send as granted users for this mailbox
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/sendAs
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/exportURL
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 * @param primaryEmailAddress [required] Default email for this mailbox
 	 */
-	public ArrayList<Long> organizationName_service_exchangeService_account_primaryEmailAddress_sendAs_GET(String organizationName, String exchangeService, String primaryEmailAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/sendAs";
+	public OvhExportUrl organizationName_service_exchangeService_account_primaryEmailAddress_exportURL_GET(String organizationName, String exchangeService, String primaryEmailAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/exportURL";
 		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
+		return convertTo(resp, OvhExportUrl.class);
 	}
 
 	/**
-	 * Allow another user to send mails from this mailbox
+	 * Generate temporary url to PST file
 	 *
-	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/sendAs
-	 * @param allowAccountId [required] Account id to allow to send mails from this mailbox
+	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/exportURL
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 * @param primaryEmailAddress [required] Default email for this mailbox
 	 */
-	public OvhTask organizationName_service_exchangeService_account_primaryEmailAddress_sendAs_POST(String organizationName, String exchangeService, String primaryEmailAddress, Long allowAccountId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/sendAs";
+	public OvhTask organizationName_service_exchangeService_account_primaryEmailAddress_exportURL_POST(String organizationName, String exchangeService, String primaryEmailAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/exportURL";
 		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "allowAccountId", allowAccountId);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/sendAs/{allowedAccountId}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param primaryEmailAddress [required] Default email for this mailbox
-	 * @param allowedAccountId [required] Account id to give send as
-	 */
-	public OvhExchangeAccountSendAs organizationName_service_exchangeService_account_primaryEmailAddress_sendAs_allowedAccountId_GET(String organizationName, String exchangeService, String primaryEmailAddress, Long allowedAccountId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/sendAs/{allowedAccountId}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress, allowedAccountId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhExchangeAccountSendAs.class);
-	}
-
-	/**
-	 * Delete allowed user for sendAs
-	 *
-	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/sendAs/{allowedAccountId}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param primaryEmailAddress [required] Default email for this mailbox
-	 * @param allowedAccountId [required] Account id to give send as
-	 */
-	public OvhTask organizationName_service_exchangeService_account_primaryEmailAddress_sendAs_allowedAccountId_DELETE(String organizationName, String exchangeService, String primaryEmailAddress, Long allowedAccountId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/sendAs/{allowedAccountId}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress, allowedAccountId);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Pending actions
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/task
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 */
-	public ArrayList<Long> organizationName_service_exchangeService_task_GET(String organizationName, String exchangeService) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/task";
-		StringBuilder sb = path(qPath, organizationName, exchangeService);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/task/{id}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param id [required] Task id
-	 */
-	public OvhTask organizationName_service_exchangeService_task_id_GET(String organizationName, String exchangeService, Long id) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/task/{id}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, id);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * List of your ActiveSync devices registered on this Exchange service
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/device
-	 * @param identity [required] Filter the value of identity property (like)
-	 * @param IMEI [required] Filter the value of IMEI property (like)
-	 * @param deviceState [required] Filter the value of deviceState property (=)
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 */
-	public ArrayList<String> organizationName_service_exchangeService_device_GET(String organizationName, String exchangeService, String IMEI, OvhDeviceActiveSyncStateEnum deviceState, String identity) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/device";
-		StringBuilder sb = path(qPath, organizationName, exchangeService);
-		query(sb, "IMEI", IMEI);
-		query(sb, "deviceState", deviceState);
-		query(sb, "identity", identity);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/device/{identity}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param identity [required] Exchange identity
-	 */
-	public OvhExchangeServiceDevice organizationName_service_exchangeService_device_identity_GET(String organizationName, String exchangeService, String identity) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/device/{identity}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, identity);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhExchangeServiceDevice.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/device/{identity}
-	 * @param body [required] New object properties
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param identity [required] Exchange identity
-	 */
-	public void organizationName_service_exchangeService_device_identity_PUT(String organizationName, String exchangeService, String identity, OvhExchangeServiceDevice body) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/device/{identity}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, identity);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Executes a factory reset on the device. THIS OPERATION CANNOT BE REVERSED, ALL DATA ON THE DEVICE WILL BE LOST.
-	 *
-	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/device/{identity}/clearDevice
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param identity [required] Exchange identity
-	 */
-	public OvhTask organizationName_service_exchangeService_device_identity_clearDevice_POST(String organizationName, String exchangeService, String identity) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/device/{identity}/clearDevice";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, identity);
 		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
-	 * Get active licenses for specific period of time
+	 * Get this object properties
 	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/license
-	 * @param license [required] License type
-	 * @param toDate [required] Get active licenses until date
-	 * @param fromDate [required] Get active licenses since date
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/export
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param primaryEmailAddress [required] Default email for this mailbox
 	 */
-	public ArrayList<OvhDailyLicense> organizationName_service_exchangeService_license_GET(String organizationName, String exchangeService, Date fromDate, OvhOvhLicenceEnum license, Date toDate) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/license";
-		StringBuilder sb = path(qPath, organizationName, exchangeService);
-		query(sb, "fromDate", fromDate);
-		query(sb, "license", license);
-		query(sb, "toDate", toDate);
+	public OvhExport organizationName_service_exchangeService_account_primaryEmailAddress_export_GET(String organizationName, String exchangeService, String primaryEmailAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/export";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t4);
+		return convertTo(resp, OvhExport.class);
 	}
-	private static TypeReference<ArrayList<OvhDailyLicense>> t4 = new TypeReference<ArrayList<OvhDailyLicense>>() {};
 
 	/**
-	 * External contacts for this service
+	 * Request PST file for the account
 	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/externalContact
-	 * @param firstName [required] Filter the value of firstName property (like)
-	 * @param id [required] Filter the value of id property (like)
-	 * @param lastName [required] Filter the value of lastName property (like)
-	 * @param displayName [required] Filter the value of displayName property (like)
-	 * @param externalEmailAddress [required] Filter the value of externalEmailAddress property (like)
+	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/export
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param primaryEmailAddress [required] Default email for this mailbox
+	 */
+	public OvhTask organizationName_service_exchangeService_account_primaryEmailAddress_export_POST(String organizationName, String exchangeService, String primaryEmailAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/export";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Remove request of PST file
+	 *
+	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/export
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param primaryEmailAddress [required] Default email for this mailbox
+	 */
+	public OvhTask organizationName_service_exchangeService_account_primaryEmailAddress_export_DELETE(String organizationName, String exchangeService, String primaryEmailAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/export";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, primaryEmailAddress);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Resource account associated to this service
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/resourceAccount
+	 * @param resourceEmailAddress [required] Filter the value of resourceEmailAddress property (like)
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 */
-	public ArrayList<String> organizationName_service_exchangeService_externalContact_GET(String organizationName, String exchangeService, String displayName, String externalEmailAddress, String firstName, Long id, String lastName) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/externalContact";
+	public ArrayList<String> organizationName_service_exchangeService_resourceAccount_GET(String organizationName, String exchangeService, String resourceEmailAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/resourceAccount";
 		StringBuilder sb = path(qPath, organizationName, exchangeService);
-		query(sb, "displayName", displayName);
-		query(sb, "externalEmailAddress", externalEmailAddress);
-		query(sb, "firstName", firstName);
-		query(sb, "id", id);
-		query(sb, "lastName", lastName);
+		query(sb, "resourceEmailAddress", resourceEmailAddress);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
 	/**
-	 * create new external contact
+	 * create new resource account in exchange server
 	 *
-	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/externalContact
-	 * @param initials [required] Contact initials
-	 * @param firstName [required] Contact first name
-	 * @param hiddenFromGAL [required] Hide the contact in Global Address List
-	 * @param organization2010 [required] Indicates to which organization this newly created external contact will belongs (Exchange 2010 only)
-	 * @param lastName [required] Contact last name
-	 * @param displayName [required] Contact display name
-	 * @param externalEmailAddress [required] Contact email address
+	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/resourceAccount
+	 * @param displayName [required] resource account display name
+	 * @param capacity [required] number of the same equipment or capacity of a room
+	 * @param maximumDuration [required] maximum duration in minutes for meeting requests
+	 * @param allowConflict [required] resource can be scheduled by more than one person during the same time period
+	 * @param location [required] resource location
+	 * @param addOrganizerToSubject [required] meeting organizer's name is used as the subject of the meeting request
+	 * @param resourceEmailAddress [required] resource address
+	 * @param showMeetingDetails [required] granted right on a calendar of that resourceAccount
+	 * @param deleteSubject [required] remove email subject of incoming meeting requests on resourceAccount
+	 * @param bookingWindow [required] maximum number of days in advance that the resource can be reserved
+	 * @param deleteComments [required] remove any text in the message body of incoming meeting requests on resourceAccount
+	 * @param type [required] type of your reservation
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 */
-	public OvhTask organizationName_service_exchangeService_externalContact_POST(String organizationName, String exchangeService, String initials, String firstName, Boolean hiddenFromGAL, String organization2010, String lastName, String displayName, String externalEmailAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/externalContact";
+	public OvhTask organizationName_service_exchangeService_resourceAccount_POST(String organizationName, String exchangeService, String displayName, Long capacity, Long maximumDuration, Boolean allowConflict, String location, Boolean addOrganizerToSubject, String resourceEmailAddress, OvhShowMeetingDetailsEnum showMeetingDetails, Boolean deleteSubject, Long bookingWindow, Boolean deleteComments, OvhResourceTypeEnum type) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/resourceAccount";
 		StringBuilder sb = path(qPath, organizationName, exchangeService);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "initials", initials);
-		addBody(o, "firstName", firstName);
-		addBody(o, "hiddenFromGAL", hiddenFromGAL);
-		addBody(o, "organization2010", organization2010);
-		addBody(o, "lastName", lastName);
 		addBody(o, "displayName", displayName);
-		addBody(o, "externalEmailAddress", externalEmailAddress);
+		addBody(o, "capacity", capacity);
+		addBody(o, "maximumDuration", maximumDuration);
+		addBody(o, "allowConflict", allowConflict);
+		addBody(o, "location", location);
+		addBody(o, "addOrganizerToSubject", addOrganizerToSubject);
+		addBody(o, "resourceEmailAddress", resourceEmailAddress);
+		addBody(o, "showMeetingDetails", showMeetingDetails);
+		addBody(o, "deleteSubject", deleteSubject);
+		addBody(o, "bookingWindow", bookingWindow);
+		addBody(o, "deleteComments", deleteComments);
+		addBody(o, "type", type);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
@@ -1804,78 +1325,139 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/externalContact/{externalEmailAddress}
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param externalEmailAddress [required] Contact email
+	 * @param resourceEmailAddress [required] resource as email
 	 */
-	public OvhExchangeExternalContact organizationName_service_exchangeService_externalContact_externalEmailAddress_GET(String organizationName, String exchangeService, String externalEmailAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/externalContact/{externalEmailAddress}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, externalEmailAddress);
+	public OvhResourceAccount organizationName_service_exchangeService_resourceAccount_resourceEmailAddress_GET(String organizationName, String exchangeService, String resourceEmailAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, resourceEmailAddress);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhExchangeExternalContact.class);
+		return convertTo(resp, OvhResourceAccount.class);
 	}
 
 	/**
 	 * Alter this object properties
 	 *
-	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/externalContact/{externalEmailAddress}
+	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}
 	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param externalEmailAddress [required] Contact email
+	 * @param resourceEmailAddress [required] resource as email
 	 */
-	public void organizationName_service_exchangeService_externalContact_externalEmailAddress_PUT(String organizationName, String exchangeService, String externalEmailAddress, OvhExchangeExternalContact body) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/externalContact/{externalEmailAddress}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, externalEmailAddress);
+	public void organizationName_service_exchangeService_resourceAccount_resourceEmailAddress_PUT(String organizationName, String exchangeService, String resourceEmailAddress, OvhResourceAccount body) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, resourceEmailAddress);
 		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
-	 * delete external contact
+	 * delete existing resource account in exchange server
 	 *
-	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/externalContact/{externalEmailAddress}
+	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param externalEmailAddress [required] Contact email
+	 * @param resourceEmailAddress [required] resource as email
 	 */
-	public OvhTask organizationName_service_exchangeService_externalContact_externalEmailAddress_DELETE(String organizationName, String exchangeService, String externalEmailAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/externalContact/{externalEmailAddress}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, externalEmailAddress);
+	public OvhTask organizationName_service_exchangeService_resourceAccount_resourceEmailAddress_DELETE(String organizationName, String exchangeService, String resourceEmailAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, resourceEmailAddress);
 		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
-	 * Show available outlooks
+	 * Resource account manager
 	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/outlookAvailability
-	 * @param outlookLanguage [required] Language version of outlook
-	 * @param outlookVersion [required] OS version of outlook
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}/delegate
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param resourceEmailAddress [required] resource as email
 	 */
-	public ArrayList<OvhOutlookVersions> organizationName_service_exchangeService_outlookAvailability_GET(String organizationName, String exchangeService, OvhLanguageEnum outlookLanguage, OvhOutlookVersionEnum outlookVersion) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/outlookAvailability";
-		StringBuilder sb = path(qPath, organizationName, exchangeService);
-		query(sb, "outlookLanguage", outlookLanguage);
-		query(sb, "outlookVersion", outlookVersion);
+	public ArrayList<Long> organizationName_service_exchangeService_resourceAccount_resourceEmailAddress_delegate_GET(String organizationName, String exchangeService, String resourceEmailAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}/delegate";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, resourceEmailAddress);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t5);
+		return convertTo(resp, t2);
 	}
-	private static TypeReference<ArrayList<OvhOutlookVersions>> t5 = new TypeReference<ArrayList<OvhOutlookVersions>>() {};
 
 	/**
-	 * Update spam and virus flags on all active accounts
+	 * add new resource account delegate in exchange server
 	 *
-	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/updateFlagsOnAllAccounts
+	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}/delegate
+	 * @param allowedAccountId [required] delegate's account id
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param resourceEmailAddress [required] resource as email
+	 */
+	public OvhTask organizationName_service_exchangeService_resourceAccount_resourceEmailAddress_delegate_POST(String organizationName, String exchangeService, String resourceEmailAddress, Long allowedAccountId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}/delegate";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, resourceEmailAddress);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "allowedAccountId", allowedAccountId);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}/delegate/{allowedAccountId}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param resourceEmailAddress [required] resource as email
+	 * @param allowedAccountId [required] delegate's account id
+	 */
+	public OvhExchangeResourceAccountDelegate organizationName_service_exchangeService_resourceAccount_resourceEmailAddress_delegate_allowedAccountId_GET(String organizationName, String exchangeService, String resourceEmailAddress, Long allowedAccountId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}/delegate/{allowedAccountId}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, resourceEmailAddress, allowedAccountId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhExchangeResourceAccountDelegate.class);
+	}
+
+	/**
+	 * delete existing resource account delegate in exchange server
+	 *
+	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}/delegate/{allowedAccountId}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param resourceEmailAddress [required] resource as email
+	 * @param allowedAccountId [required] delegate's account id
+	 */
+	public OvhTask organizationName_service_exchangeService_resourceAccount_resourceEmailAddress_delegate_allowedAccountId_DELETE(String organizationName, String exchangeService, String resourceEmailAddress, Long allowedAccountId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}/delegate/{allowedAccountId}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, resourceEmailAddress, allowedAccountId);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/serviceInfos
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 */
-	public void organizationName_service_exchangeService_updateFlagsOnAllAccounts_POST(String organizationName, String exchangeService) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/updateFlagsOnAllAccounts";
+	public OvhService organizationName_service_exchangeService_serviceInfos_GET(String organizationName, String exchangeService) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/serviceInfos";
 		StringBuilder sb = path(qPath, organizationName, exchangeService);
-		exec(qPath, "POST", sb.toString(), null);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhService.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/serviceInfos
+	 * @param body [required] New object properties
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 */
+	public void organizationName_service_exchangeService_serviceInfos_PUT(String organizationName, String exchangeService, OvhService body) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/serviceInfos";
+		StringBuilder sb = path(qPath, organizationName, exchangeService);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -1899,29 +1481,289 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/mailingList
 	 * @param joinRestriction [required] Join restriction policy
-	 * @param departRestriction [required] Depart restriction policy
-	 * @param hiddenFromGAL [required] If true mailing list is hiddend in Global Address List
-	 * @param mailingListAddress [required] The mailing list address
-	 * @param senderAuthentification [required] If true sender has to authenticate
 	 * @param maxSendSize [required] Maximum send email size in MB
+	 * @param senderAuthentification [required] If true sender has to authenticate
 	 * @param maxReceiveSize [required] Maximum receive email size in MB
+	 * @param departRestriction [required] Depart restriction policy
+	 * @param mailingListAddress [required] The mailing list address
+	 * @param hiddenFromGAL [required] If true mailing list is hiddend in Global Address List
 	 * @param displayName [required] Name displayed in Global Access List
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 */
-	public OvhTask organizationName_service_exchangeService_mailingList_POST(String organizationName, String exchangeService, OvhMailingListJoinRestrictionEnum joinRestriction, OvhMailingListDepartRestrictionEnum departRestriction, Boolean hiddenFromGAL, String mailingListAddress, Boolean senderAuthentification, Long maxSendSize, Long maxReceiveSize, String displayName) throws IOException {
+	public OvhTask organizationName_service_exchangeService_mailingList_POST(String organizationName, String exchangeService, OvhMailingListJoinRestrictionEnum joinRestriction, Long maxSendSize, Boolean senderAuthentification, Long maxReceiveSize, OvhMailingListDepartRestrictionEnum departRestriction, String mailingListAddress, Boolean hiddenFromGAL, String displayName) throws IOException {
 		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList";
 		StringBuilder sb = path(qPath, organizationName, exchangeService);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "joinRestriction", joinRestriction);
-		addBody(o, "departRestriction", departRestriction);
-		addBody(o, "hiddenFromGAL", hiddenFromGAL);
-		addBody(o, "mailingListAddress", mailingListAddress);
-		addBody(o, "senderAuthentification", senderAuthentification);
 		addBody(o, "maxSendSize", maxSendSize);
+		addBody(o, "senderAuthentification", senderAuthentification);
 		addBody(o, "maxReceiveSize", maxReceiveSize);
+		addBody(o, "departRestriction", departRestriction);
+		addBody(o, "mailingListAddress", mailingListAddress);
+		addBody(o, "hiddenFromGAL", hiddenFromGAL);
 		addBody(o, "displayName", displayName);
 		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendOnBehalfTo/{allowedAccountId}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param mailingListAddress [required] The mailing list address
+	 * @param allowedAccountId [required] Account id to give send on behalf to
+	 */
+	public OvhExchangeDistributionGroupSendOnBehalfTo organizationName_service_exchangeService_mailingList_mailingListAddress_sendOnBehalfTo_allowedAccountId_GET(String organizationName, String exchangeService, String mailingListAddress, Long allowedAccountId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendOnBehalfTo/{allowedAccountId}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress, allowedAccountId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhExchangeDistributionGroupSendOnBehalfTo.class);
+	}
+
+	/**
+	 * Delete allowed user for SendOnBehalfTo
+	 *
+	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendOnBehalfTo/{allowedAccountId}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param mailingListAddress [required] The mailing list address
+	 * @param allowedAccountId [required] Account id to give send on behalf to
+	 */
+	public OvhTask organizationName_service_exchangeService_mailingList_mailingListAddress_sendOnBehalfTo_allowedAccountId_DELETE(String organizationName, String exchangeService, String mailingListAddress, Long allowedAccountId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendOnBehalfTo/{allowedAccountId}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress, allowedAccountId);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * sendOnBehalfTo
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendOnBehalfTo
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param mailingListAddress [required] The mailing list address
+	 */
+	public ArrayList<Long> organizationName_service_exchangeService_mailingList_mailingListAddress_sendOnBehalfTo_GET(String organizationName, String exchangeService, String mailingListAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendOnBehalfTo";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Allow another user to Send aso mails from this mailing list
+	 *
+	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendOnBehalfTo
+	 * @param allowAccountId [required] Account id to allow to send as mails from this mailing list
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param mailingListAddress [required] The mailing list address
+	 */
+	public OvhTask organizationName_service_exchangeService_mailingList_mailingListAddress_sendOnBehalfTo_POST(String organizationName, String exchangeService, String mailingListAddress, Long allowAccountId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendOnBehalfTo";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "allowAccountId", allowAccountId);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Mailing list account manager
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/manager/account
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param mailingListAddress [required] The mailing list address
+	 */
+	public ArrayList<Long> organizationName_service_exchangeService_mailingList_mailingListAddress_manager_account_GET(String organizationName, String exchangeService, String mailingListAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/manager/account";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Add new mailing list manager
+	 *
+	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/manager/account
+	 * @param managerAccountId [required] Manager account id
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param mailingListAddress [required] The mailing list address
+	 */
+	public OvhTask organizationName_service_exchangeService_mailingList_mailingListAddress_manager_account_POST(String organizationName, String exchangeService, String mailingListAddress, Long managerAccountId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/manager/account";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "managerAccountId", managerAccountId);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/manager/account/{managerAccountId}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param mailingListAddress [required] The mailing list address
+	 * @param managerAccountId [required] Manager account id
+	 */
+	public OvhExchangeDistributionGroupManager organizationName_service_exchangeService_mailingList_mailingListAddress_manager_account_managerAccountId_GET(String organizationName, String exchangeService, String mailingListAddress, Long managerAccountId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/manager/account/{managerAccountId}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress, managerAccountId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhExchangeDistributionGroupManager.class);
+	}
+
+	/**
+	 * Delete mailing list manager
+	 *
+	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/manager/account/{managerAccountId}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param mailingListAddress [required] The mailing list address
+	 * @param managerAccountId [required] Manager account id
+	 */
+	public OvhTask organizationName_service_exchangeService_mailingList_mailingListAddress_manager_account_managerAccountId_DELETE(String organizationName, String exchangeService, String mailingListAddress, Long managerAccountId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/manager/account/{managerAccountId}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress, managerAccountId);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Aliases associated to this mailingList
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/alias
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param mailingListAddress [required] The mailing list address
+	 */
+	public ArrayList<String> organizationName_service_exchangeService_mailingList_mailingListAddress_alias_GET(String organizationName, String exchangeService, String mailingListAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/alias";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Create new alias
+	 *
+	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/alias
+	 * @param alias [required] Alias
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param mailingListAddress [required] The mailing list address
+	 */
+	public OvhTask organizationName_service_exchangeService_mailingList_mailingListAddress_alias_POST(String organizationName, String exchangeService, String mailingListAddress, String alias) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/alias";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "alias", alias);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/alias/{alias}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param mailingListAddress [required] The mailing list address
+	 * @param alias [required] Alias
+	 */
+	public OvhExchangeMailingListAlias organizationName_service_exchangeService_mailingList_mailingListAddress_alias_alias_GET(String organizationName, String exchangeService, String mailingListAddress, String alias) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/alias/{alias}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress, alias);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhExchangeMailingListAlias.class);
+	}
+
+	/**
+	 * Delete existing alias
+	 *
+	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/alias/{alias}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param mailingListAddress [required] The mailing list address
+	 * @param alias [required] Alias
+	 */
+	public OvhTask organizationName_service_exchangeService_mailingList_mailingListAddress_alias_alias_DELETE(String organizationName, String exchangeService, String mailingListAddress, String alias) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/alias/{alias}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress, alias);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * sendAs
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendAs
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param mailingListAddress [required] The mailing list address
+	 */
+	public ArrayList<Long> organizationName_service_exchangeService_mailingList_mailingListAddress_sendAs_GET(String organizationName, String exchangeService, String mailingListAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendAs";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Allow another user to Send aso mails from this mailing list
+	 *
+	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendAs
+	 * @param allowAccountId [required] Account id to allow to send as mails from this mailing list
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param mailingListAddress [required] The mailing list address
+	 */
+	public OvhTask organizationName_service_exchangeService_mailingList_mailingListAddress_sendAs_POST(String organizationName, String exchangeService, String mailingListAddress, Long allowAccountId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendAs";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "allowAccountId", allowAccountId);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendAs/{allowedAccountId}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param mailingListAddress [required] The mailing list address
+	 * @param allowedAccountId [required] Account id to give send on behalf to
+	 */
+	public OvhExchangeDistributionGroupSendAs organizationName_service_exchangeService_mailingList_mailingListAddress_sendAs_allowedAccountId_GET(String organizationName, String exchangeService, String mailingListAddress, Long allowedAccountId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendAs/{allowedAccountId}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress, allowedAccountId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhExchangeDistributionGroupSendAs.class);
+	}
+
+	/**
+	 * Delete allowed user for SendAs
+	 *
+	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendAs/{allowedAccountId}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param mailingListAddress [required] The mailing list address
+	 * @param allowedAccountId [required] Account id to give send on behalf to
+	 */
+	public OvhTask organizationName_service_exchangeService_mailingList_mailingListAddress_sendAs_allowedAccountId_DELETE(String organizationName, String exchangeService, String mailingListAddress, Long allowedAccountId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendAs/{allowedAccountId}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress, allowedAccountId);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -2038,6 +1880,38 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	}
 
 	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/member/contact/{memberContactId}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param mailingListAddress [required] The mailing list address
+	 * @param memberContactId [required] Member account id
+	 */
+	public OvhExchangeDistributionGroupMember organizationName_service_exchangeService_mailingList_mailingListAddress_member_contact_memberContactId_GET(String organizationName, String exchangeService, String mailingListAddress, Long memberContactId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/member/contact/{memberContactId}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress, memberContactId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhExchangeDistributionGroupMember.class);
+	}
+
+	/**
+	 * Delete mailing list member
+	 *
+	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/member/contact/{memberContactId}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param mailingListAddress [required] The mailing list address
+	 * @param memberContactId [required] Member account id
+	 */
+	public OvhTask organizationName_service_exchangeService_mailingList_mailingListAddress_member_contact_memberContactId_DELETE(String organizationName, String exchangeService, String mailingListAddress, Long memberContactId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/member/contact/{memberContactId}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress, memberContactId);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
 	 * Mailing list contact member
 	 *
 	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/member/contact
@@ -2073,328 +1947,41 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	}
 
 	/**
-	 * Get this object properties
+	 * Show available outlooks
 	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/member/contact/{memberContactId}
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/outlookAvailability
+	 * @param outlookVersion [required] OS version of outlook
+	 * @param outlookLanguage [required] Language version of outlook
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param mailingListAddress [required] The mailing list address
-	 * @param memberContactId [required] Member account id
 	 */
-	public OvhExchangeDistributionGroupMember organizationName_service_exchangeService_mailingList_mailingListAddress_member_contact_memberContactId_GET(String organizationName, String exchangeService, String mailingListAddress, Long memberContactId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/member/contact/{memberContactId}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress, memberContactId);
+	public ArrayList<OvhOutlookVersions> organizationName_service_exchangeService_outlookAvailability_GET(String organizationName, String exchangeService, OvhLanguageEnum outlookLanguage, OvhOutlookVersionEnum outlookVersion) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/outlookAvailability";
+		StringBuilder sb = path(qPath, organizationName, exchangeService);
+		query(sb, "outlookLanguage", outlookLanguage);
+		query(sb, "outlookVersion", outlookVersion);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhExchangeDistributionGroupMember.class);
+		return convertTo(resp, t5);
 	}
-
-	/**
-	 * Delete mailing list member
-	 *
-	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/member/contact/{memberContactId}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param mailingListAddress [required] The mailing list address
-	 * @param memberContactId [required] Member account id
-	 */
-	public OvhTask organizationName_service_exchangeService_mailingList_mailingListAddress_member_contact_memberContactId_DELETE(String organizationName, String exchangeService, String mailingListAddress, Long memberContactId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/member/contact/{memberContactId}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress, memberContactId);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * sendOnBehalfTo
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendOnBehalfTo
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param mailingListAddress [required] The mailing list address
-	 */
-	public ArrayList<Long> organizationName_service_exchangeService_mailingList_mailingListAddress_sendOnBehalfTo_GET(String organizationName, String exchangeService, String mailingListAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendOnBehalfTo";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Allow another user to Send aso mails from this mailing list
-	 *
-	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendOnBehalfTo
-	 * @param allowAccountId [required] Account id to allow to send as mails from this mailing list
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param mailingListAddress [required] The mailing list address
-	 */
-	public OvhTask organizationName_service_exchangeService_mailingList_mailingListAddress_sendOnBehalfTo_POST(String organizationName, String exchangeService, String mailingListAddress, Long allowAccountId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendOnBehalfTo";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "allowAccountId", allowAccountId);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendOnBehalfTo/{allowedAccountId}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param mailingListAddress [required] The mailing list address
-	 * @param allowedAccountId [required] Account id to give send on behalf to
-	 */
-	public OvhExchangeDistributionGroupSendOnBehalfTo organizationName_service_exchangeService_mailingList_mailingListAddress_sendOnBehalfTo_allowedAccountId_GET(String organizationName, String exchangeService, String mailingListAddress, Long allowedAccountId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendOnBehalfTo/{allowedAccountId}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress, allowedAccountId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhExchangeDistributionGroupSendOnBehalfTo.class);
-	}
-
-	/**
-	 * Delete allowed user for SendOnBehalfTo
-	 *
-	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendOnBehalfTo/{allowedAccountId}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param mailingListAddress [required] The mailing list address
-	 * @param allowedAccountId [required] Account id to give send on behalf to
-	 */
-	public OvhTask organizationName_service_exchangeService_mailingList_mailingListAddress_sendOnBehalfTo_allowedAccountId_DELETE(String organizationName, String exchangeService, String mailingListAddress, Long allowedAccountId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendOnBehalfTo/{allowedAccountId}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress, allowedAccountId);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Aliases associated to this mailingList
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/alias
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param mailingListAddress [required] The mailing list address
-	 */
-	public ArrayList<String> organizationName_service_exchangeService_mailingList_mailingListAddress_alias_GET(String organizationName, String exchangeService, String mailingListAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/alias";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Create new alias
-	 *
-	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/alias
-	 * @param alias [required] Alias
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param mailingListAddress [required] The mailing list address
-	 */
-	public OvhTask organizationName_service_exchangeService_mailingList_mailingListAddress_alias_POST(String organizationName, String exchangeService, String mailingListAddress, String alias) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/alias";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "alias", alias);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/alias/{alias}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param mailingListAddress [required] The mailing list address
-	 * @param alias [required] Alias
-	 */
-	public OvhExchangeMailingListAlias organizationName_service_exchangeService_mailingList_mailingListAddress_alias_alias_GET(String organizationName, String exchangeService, String mailingListAddress, String alias) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/alias/{alias}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress, alias);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhExchangeMailingListAlias.class);
-	}
-
-	/**
-	 * Delete existing alias
-	 *
-	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/alias/{alias}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param mailingListAddress [required] The mailing list address
-	 * @param alias [required] Alias
-	 */
-	public OvhTask organizationName_service_exchangeService_mailingList_mailingListAddress_alias_alias_DELETE(String organizationName, String exchangeService, String mailingListAddress, String alias) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/alias/{alias}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress, alias);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Mailing list account manager
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/manager/account
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param mailingListAddress [required] The mailing list address
-	 */
-	public ArrayList<Long> organizationName_service_exchangeService_mailingList_mailingListAddress_manager_account_GET(String organizationName, String exchangeService, String mailingListAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/manager/account";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Add new mailing list manager
-	 *
-	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/manager/account
-	 * @param managerAccountId [required] Manager account id
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param mailingListAddress [required] The mailing list address
-	 */
-	public OvhTask organizationName_service_exchangeService_mailingList_mailingListAddress_manager_account_POST(String organizationName, String exchangeService, String mailingListAddress, Long managerAccountId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/manager/account";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "managerAccountId", managerAccountId);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/manager/account/{managerAccountId}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param mailingListAddress [required] The mailing list address
-	 * @param managerAccountId [required] Manager account id
-	 */
-	public OvhExchangeDistributionGroupManager organizationName_service_exchangeService_mailingList_mailingListAddress_manager_account_managerAccountId_GET(String organizationName, String exchangeService, String mailingListAddress, Long managerAccountId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/manager/account/{managerAccountId}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress, managerAccountId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhExchangeDistributionGroupManager.class);
-	}
-
-	/**
-	 * Delete mailing list manager
-	 *
-	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/manager/account/{managerAccountId}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param mailingListAddress [required] The mailing list address
-	 * @param managerAccountId [required] Manager account id
-	 */
-	public OvhTask organizationName_service_exchangeService_mailingList_mailingListAddress_manager_account_managerAccountId_DELETE(String organizationName, String exchangeService, String mailingListAddress, Long managerAccountId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/manager/account/{managerAccountId}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress, managerAccountId);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * sendAs
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendAs
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param mailingListAddress [required] The mailing list address
-	 */
-	public ArrayList<Long> organizationName_service_exchangeService_mailingList_mailingListAddress_sendAs_GET(String organizationName, String exchangeService, String mailingListAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendAs";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Allow another user to Send aso mails from this mailing list
-	 *
-	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendAs
-	 * @param allowAccountId [required] Account id to allow to send as mails from this mailing list
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param mailingListAddress [required] The mailing list address
-	 */
-	public OvhTask organizationName_service_exchangeService_mailingList_mailingListAddress_sendAs_POST(String organizationName, String exchangeService, String mailingListAddress, Long allowAccountId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendAs";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "allowAccountId", allowAccountId);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendAs/{allowedAccountId}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param mailingListAddress [required] The mailing list address
-	 * @param allowedAccountId [required] Account id to give send on behalf to
-	 */
-	public OvhExchangeDistributionGroupSendAs organizationName_service_exchangeService_mailingList_mailingListAddress_sendAs_allowedAccountId_GET(String organizationName, String exchangeService, String mailingListAddress, Long allowedAccountId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendAs/{allowedAccountId}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress, allowedAccountId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhExchangeDistributionGroupSendAs.class);
-	}
-
-	/**
-	 * Delete allowed user for SendAs
-	 *
-	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendAs/{allowedAccountId}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param mailingListAddress [required] The mailing list address
-	 * @param allowedAccountId [required] Account id to give send on behalf to
-	 */
-	public OvhTask organizationName_service_exchangeService_mailingList_mailingListAddress_sendAs_allowedAccountId_DELETE(String organizationName, String exchangeService, String mailingListAddress, Long allowedAccountId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/mailingList/{mailingListAddress}/sendAs/{allowedAccountId}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, mailingListAddress, allowedAccountId);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
+	private static TypeReference<ArrayList<OvhOutlookVersions>> t5 = new TypeReference<ArrayList<OvhOutlookVersions>>() {};
 
 	/**
 	 * Activate Sharepoint infra connected to this exchange service
 	 *
 	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/activateSharepoint
-	 * @param primaryEmailAddress [required] primary email address of a user that will be admin of sharepoint (You will not be able to change it!)
 	 * @param subDomain [required] sub domain that will be used for Your sharepoint infra (You will not be able to change it!)
+	 * @param primaryEmailAddress [required] primary email address of a user that will be admin of sharepoint (You will not be able to change it!)
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 */
-	public OvhTask organizationName_service_exchangeService_activateSharepoint_POST(String organizationName, String exchangeService, String primaryEmailAddress, String subDomain) throws IOException {
+	public OvhTask organizationName_service_exchangeService_activateSharepoint_POST(String organizationName, String exchangeService, String subDomain, String primaryEmailAddress) throws IOException {
 		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/activateSharepoint";
 		StringBuilder sb = path(qPath, organizationName, exchangeService);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "primaryEmailAddress", primaryEmailAddress);
 		addBody(o, "subDomain", subDomain);
+		addBody(o, "primaryEmailAddress", primaryEmailAddress);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get shared account quota usage in total available space
-	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccountQuota
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 */
-	public OvhSharedAccountQuota organizationName_service_exchangeService_sharedAccountQuota_GET(String organizationName, String exchangeService) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccountQuota";
-		StringBuilder sb = path(qPath, organizationName, exchangeService);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhSharedAccountQuota.class);
 	}
 
 	/**
@@ -2412,56 +1999,176 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	}
 
 	/**
-	 * Resource account associated to this service
+	 * Get public folder quota usage in total available space
 	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/resourceAccount
-	 * @param resourceEmailAddress [required] Filter the value of resourceEmailAddress property (like)
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/publicFolderQuota
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
 	 */
-	public ArrayList<String> organizationName_service_exchangeService_resourceAccount_GET(String organizationName, String exchangeService, String resourceEmailAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/resourceAccount";
+	public OvhPublicFolderQuota organizationName_service_exchangeService_publicFolderQuota_GET(String organizationName, String exchangeService) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/publicFolderQuota";
 		StringBuilder sb = path(qPath, organizationName, exchangeService);
-		query(sb, "resourceEmailAddress", resourceEmailAddress);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPublicFolderQuota.class);
+	}
+
+	/**
+	 * List of your ActiveSync devices registered on this Exchange service
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/device
+	 * @param deviceState [required] Filter the value of deviceState property (=)
+	 * @param identity [required] Filter the value of identity property (like)
+	 * @param IMEI [required] Filter the value of IMEI property (like)
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 */
+	public ArrayList<String> organizationName_service_exchangeService_device_GET(String organizationName, String exchangeService, String IMEI, OvhDeviceActiveSyncStateEnum deviceState, String identity) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/device";
+		StringBuilder sb = path(qPath, organizationName, exchangeService);
+		query(sb, "IMEI", IMEI);
+		query(sb, "deviceState", deviceState);
+		query(sb, "identity", identity);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
 	/**
-	 * create new resource account in exchange server
+	 * Get this object properties
 	 *
-	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/resourceAccount
-	 * @param deleteComments [required] remove any text in the message body of incoming meeting requests on resourceAccount
-	 * @param location [required] resource location
-	 * @param resourceEmailAddress [required] resource address
-	 * @param allowConflict [required] resource can be scheduled by more than one person during the same time period
-	 * @param bookingWindow [required] maximum number of days in advance that the resource can be reserved
-	 * @param capacity [required] number of the same equipment or capacity of a room
-	 * @param deleteSubject [required] remove email subject of incoming meeting requests on resourceAccount
-	 * @param maximumDuration [required] maximum duration in minutes for meeting requests
-	 * @param addOrganizerToSubject [required] meeting organizer's name is used as the subject of the meeting request
-	 * @param type [required] type of your reservation
-	 * @param showMeetingDetails [required] granted right on a calendar of that resourceAccount
-	 * @param displayName [required] resource account display name
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/device/{identity}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param identity [required] Exchange identity
 	 */
-	public OvhTask organizationName_service_exchangeService_resourceAccount_POST(String organizationName, String exchangeService, Boolean deleteComments, String location, String resourceEmailAddress, Boolean allowConflict, Long bookingWindow, Long capacity, Boolean deleteSubject, Long maximumDuration, Boolean addOrganizerToSubject, OvhResourceTypeEnum type, OvhShowMeetingDetailsEnum showMeetingDetails, String displayName) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/resourceAccount";
-		StringBuilder sb = path(qPath, organizationName, exchangeService);
+	public OvhExchangeServiceDevice organizationName_service_exchangeService_device_identity_GET(String organizationName, String exchangeService, String identity) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/device/{identity}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, identity);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhExchangeServiceDevice.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/device/{identity}
+	 * @param body [required] New object properties
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param identity [required] Exchange identity
+	 */
+	public void organizationName_service_exchangeService_device_identity_PUT(String organizationName, String exchangeService, String identity, OvhExchangeServiceDevice body) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/device/{identity}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, identity);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Executes a factory reset on the device. THIS OPERATION CANNOT BE REVERSED, ALL DATA ON THE DEVICE WILL BE LOST.
+	 *
+	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/device/{identity}/clearDevice
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param identity [required] Exchange identity
+	 */
+	public OvhTask organizationName_service_exchangeService_device_identity_clearDevice_POST(String organizationName, String exchangeService, String identity) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/device/{identity}/clearDevice";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, identity);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Pending task for this mailbox
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/tasks
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param sharedEmailAddress [required] Default email for this shared mailbox
+	 */
+	public ArrayList<Long> organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_tasks_GET(String organizationName, String exchangeService, String sharedEmailAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/tasks";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/tasks/{id}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param sharedEmailAddress [required] Default email for this shared mailbox
+	 * @param id [required] Task id
+	 */
+	public OvhTask organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_tasks_id_GET(String organizationName, String exchangeService, String sharedEmailAddress, Long id) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/tasks/{id}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendOnBehalfTo/{allowedAccountId}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param sharedEmailAddress [required] Default email for this shared mailbox
+	 * @param allowedAccountId [required] Account id to give send on behalf to
+	 */
+	public OvhExchangeSharedAccountSendOnBehalfTo organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_sendOnBehalfTo_allowedAccountId_GET(String organizationName, String exchangeService, String sharedEmailAddress, Long allowedAccountId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendOnBehalfTo/{allowedAccountId}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress, allowedAccountId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhExchangeSharedAccountSendOnBehalfTo.class);
+	}
+
+	/**
+	 * Delete allowed user for SendOnBehalfTo
+	 *
+	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendOnBehalfTo/{allowedAccountId}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param sharedEmailAddress [required] Default email for this shared mailbox
+	 * @param allowedAccountId [required] Account id to give send on behalf to
+	 */
+	public OvhTask organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_sendOnBehalfTo_allowedAccountId_DELETE(String organizationName, String exchangeService, String sharedEmailAddress, Long allowedAccountId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendOnBehalfTo/{allowedAccountId}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress, allowedAccountId);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * SendOnBehalfTo granted users for this shared mailbox
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendOnBehalfTo
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param sharedEmailAddress [required] Default email for this shared mailbox
+	 */
+	public ArrayList<Long> organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_sendOnBehalfTo_GET(String organizationName, String exchangeService, String sharedEmailAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendOnBehalfTo";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Allow another user to Send On Behalf To mails from this shared mailbox
+	 *
+	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendOnBehalfTo
+	 * @param allowAccountId [required] Account id to allow to send On Behalf To mails from this shared mailbox
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param sharedEmailAddress [required] Default email for this shared mailbox
+	 */
+	public OvhTask organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_sendOnBehalfTo_POST(String organizationName, String exchangeService, String sharedEmailAddress, Long allowAccountId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendOnBehalfTo";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "deleteComments", deleteComments);
-		addBody(o, "location", location);
-		addBody(o, "resourceEmailAddress", resourceEmailAddress);
-		addBody(o, "allowConflict", allowConflict);
-		addBody(o, "bookingWindow", bookingWindow);
-		addBody(o, "capacity", capacity);
-		addBody(o, "deleteSubject", deleteSubject);
-		addBody(o, "maximumDuration", maximumDuration);
-		addBody(o, "addOrganizerToSubject", addOrganizerToSubject);
-		addBody(o, "type", type);
-		addBody(o, "showMeetingDetails", showMeetingDetails);
-		addBody(o, "displayName", displayName);
+		addBody(o, "allowAccountId", allowAccountId);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
@@ -2469,76 +2176,341 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/fullAccess/{allowedAccountId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param resourceEmailAddress [required] resource as email
+	 * @param sharedEmailAddress [required] Default email for this shared mailbox
+	 * @param allowedAccountId [required] Account id to give full access
 	 */
-	public OvhResourceAccount organizationName_service_exchangeService_resourceAccount_resourceEmailAddress_GET(String organizationName, String exchangeService, String resourceEmailAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, resourceEmailAddress);
+	public OvhExchangeSharedAccountFullAccess organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_fullAccess_allowedAccountId_GET(String organizationName, String exchangeService, String sharedEmailAddress, Long allowedAccountId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/fullAccess/{allowedAccountId}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress, allowedAccountId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhResourceAccount.class);
+		return convertTo(resp, OvhExchangeSharedAccountFullAccess.class);
 	}
 
 	/**
-	 * Alter this object properties
+	 * Revoke full access
 	 *
-	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}
-	 * @param body [required] New object properties
+	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/fullAccess/{allowedAccountId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param resourceEmailAddress [required] resource as email
+	 * @param sharedEmailAddress [required] Default email for this shared mailbox
+	 * @param allowedAccountId [required] Account id to give full access
 	 */
-	public void organizationName_service_exchangeService_resourceAccount_resourceEmailAddress_PUT(String organizationName, String exchangeService, String resourceEmailAddress, OvhResourceAccount body) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, resourceEmailAddress);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * delete existing resource account in exchange server
-	 *
-	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}
-	 * @param organizationName [required] The internal name of your exchange organization
-	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param resourceEmailAddress [required] resource as email
-	 */
-	public OvhTask organizationName_service_exchangeService_resourceAccount_resourceEmailAddress_DELETE(String organizationName, String exchangeService, String resourceEmailAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, resourceEmailAddress);
+	public OvhTask organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_fullAccess_allowedAccountId_DELETE(String organizationName, String exchangeService, String sharedEmailAddress, Long allowedAccountId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/fullAccess/{allowedAccountId}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress, allowedAccountId);
 		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
-	 * Resource account manager
+	 * Full access granted users for this shared mailbox
 	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}/delegate
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/fullAccess
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param resourceEmailAddress [required] resource as email
+	 * @param sharedEmailAddress [required] Default email for this shared mailbox
 	 */
-	public ArrayList<Long> organizationName_service_exchangeService_resourceAccount_resourceEmailAddress_delegate_GET(String organizationName, String exchangeService, String resourceEmailAddress) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}/delegate";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, resourceEmailAddress);
+	public ArrayList<Long> organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_fullAccess_GET(String organizationName, String exchangeService, String sharedEmailAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/fullAccess";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
 	/**
-	 * add new resource account delegate in exchange server
+	 * Allow full access to a user
 	 *
-	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}/delegate
-	 * @param allowedAccountId [required] delegate's account id
+	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/fullAccess
+	 * @param allowedAccountId [required] User to give full access
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param resourceEmailAddress [required] resource as email
+	 * @param sharedEmailAddress [required] Default email for this shared mailbox
 	 */
-	public OvhTask organizationName_service_exchangeService_resourceAccount_resourceEmailAddress_delegate_POST(String organizationName, String exchangeService, String resourceEmailAddress, Long allowedAccountId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}/delegate";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, resourceEmailAddress);
+	public OvhTask organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_fullAccess_POST(String organizationName, String exchangeService, String sharedEmailAddress, Long allowedAccountId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/fullAccess";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress);
 		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "allowedAccountId", allowedAccountId);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Send as granted users for this shared mailbox
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendAs
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param sharedEmailAddress [required] Default email for this shared mailbox
+	 */
+	public ArrayList<Long> organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_sendAs_GET(String organizationName, String exchangeService, String sharedEmailAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendAs";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Allow another user to send mails from this shared mailbox
+	 *
+	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendAs
+	 * @param allowAccountId [required] Account id to allow to send mails from this shared mailbox
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param sharedEmailAddress [required] Default email for this shared mailbox
+	 */
+	public OvhTask organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_sendAs_POST(String organizationName, String exchangeService, String sharedEmailAddress, Long allowAccountId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendAs";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "allowAccountId", allowAccountId);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendAs/{allowedAccountId}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param sharedEmailAddress [required] Default email for this shared mailbox
+	 * @param allowedAccountId [required] Account id to give send as
+	 */
+	public OvhExchangeSharedAccountSendAs organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_sendAs_allowedAccountId_GET(String organizationName, String exchangeService, String sharedEmailAddress, Long allowedAccountId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendAs/{allowedAccountId}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress, allowedAccountId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhExchangeSharedAccountSendAs.class);
+	}
+
+	/**
+	 * Delete allowed user for sendAs
+	 *
+	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendAs/{allowedAccountId}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param sharedEmailAddress [required] Default email for this shared mailbox
+	 * @param allowedAccountId [required] Account id to give send as
+	 */
+	public OvhTask organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_sendAs_allowedAccountId_DELETE(String organizationName, String exchangeService, String sharedEmailAddress, Long allowedAccountId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}/sendAs/{allowedAccountId}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress, allowedAccountId);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param sharedEmailAddress [required] Default email for this shared mailbox
+	 */
+	public OvhSharedAccount organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_GET(String organizationName, String exchangeService, String sharedEmailAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhSharedAccount.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}
+	 * @param body [required] New object properties
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param sharedEmailAddress [required] Default email for this shared mailbox
+	 */
+	public void organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_PUT(String organizationName, String exchangeService, String sharedEmailAddress, OvhSharedAccount body) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Delete existing shared mailbox in exchange server
+	 *
+	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param sharedEmailAddress [required] Default email for this shared mailbox
+	 */
+	public OvhTask organizationName_service_exchangeService_sharedAccount_sharedEmailAddress_DELETE(String organizationName, String exchangeService, String sharedEmailAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount/{sharedEmailAddress}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, sharedEmailAddress);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Shared accounts associated to this exchange service
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount
+	 * @param sharedEmailAddress [required] Filter the value of sharedEmailAddress property (like)
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 */
+	public ArrayList<String> organizationName_service_exchangeService_sharedAccount_GET(String organizationName, String exchangeService, String sharedEmailAddress) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount";
+		StringBuilder sb = path(qPath, organizationName, exchangeService);
+		query(sb, "sharedEmailAddress", sharedEmailAddress);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Create new shared mailbox in exchange server
+	 *
+	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/sharedAccount
+	 * @param lastName [required] Shared account last name
+	 * @param sharedEmailAddress [required] Shared account email address
+	 * @param displayName [required] Shared account display name
+	 * @param hiddenFromGAL [required] Hide the shared account in Global Address List
+	 * @param firstName [required] Shared account first name
+	 * @param initials [required] Shared account initials
+	 * @param quota [required] Shared account maximum size
+	 * @param mailingFilter [required] Enable mailing filtrering
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 */
+	public OvhTask organizationName_service_exchangeService_sharedAccount_POST(String organizationName, String exchangeService, String lastName, String sharedEmailAddress, String displayName, Boolean hiddenFromGAL, String firstName, String initials, Long quota, OvhMailingFilterEnum[] mailingFilter) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/sharedAccount";
+		StringBuilder sb = path(qPath, organizationName, exchangeService);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "lastName", lastName);
+		addBody(o, "sharedEmailAddress", sharedEmailAddress);
+		addBody(o, "displayName", displayName);
+		addBody(o, "hiddenFromGAL", hiddenFromGAL);
+		addBody(o, "firstName", firstName);
+		addBody(o, "initials", initials);
+		addBody(o, "quota", quota);
+		addBody(o, "mailingFilter", mailingFilter);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Public folders associated to this service
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/publicFolder
+	 * @param path [required] Filter the value of path property (like)
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 */
+	public ArrayList<String> organizationName_service_exchangeService_publicFolder_GET(String organizationName, String exchangeService, String path) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/publicFolder";
+		StringBuilder sb = path(qPath, organizationName, exchangeService);
+		query(sb, "path", path);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Create organization public folder
+	 *
+	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/publicFolder
+	 * @param anonymousPermission [required] [default=none] Access right for the guest users
+	 * @param path [required] Path for public folder
+	 * @param quota [required] Quota for public folder in MB
+	 * @param type [required] Type for public folder
+	 * @param defaultPermission [required] [default=none] Default access right
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 */
+	public OvhTask organizationName_service_exchangeService_publicFolder_POST(String organizationName, String exchangeService, OvhPublicFolderRightTypeEnum anonymousPermission, String path, Long quota, OvhPublicFolderTypeEnum type, OvhPublicFolderRightTypeEnum defaultPermission) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/publicFolder";
+		StringBuilder sb = path(qPath, organizationName, exchangeService);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "anonymousPermission", anonymousPermission);
+		addBody(o, "path", path);
+		addBody(o, "quota", quota);
+		addBody(o, "type", type);
+		addBody(o, "defaultPermission", defaultPermission);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param path [required] Path for public folder
+	 */
+	public OvhPublicFolder organizationName_service_exchangeService_publicFolder_path_GET(String organizationName, String exchangeService, String path) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, path);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPublicFolder.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}
+	 * @param body [required] New object properties
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param path [required] Path for public folder
+	 */
+	public void organizationName_service_exchangeService_publicFolder_path_PUT(String organizationName, String exchangeService, String path, OvhPublicFolder body) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, path);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Delete existing organization public folder
+	 *
+	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param path [required] Path for public folder
+	 */
+	public OvhTask organizationName_service_exchangeService_publicFolder_path_DELETE(String organizationName, String exchangeService, String path) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, path);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Public folder permission
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}/permission
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param path [required] Path for public folder
+	 */
+	public ArrayList<Long> organizationName_service_exchangeService_publicFolder_path_permission_GET(String organizationName, String exchangeService, String path) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}/permission";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, path);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Create public folder permission
+	 *
+	 * REST: POST /email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}/permission
+	 * @param accessRights [required] Access rights to be set for the account
+	 * @param allowedAccountId [required] Account id to have access to public folder
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param path [required] Path for public folder
+	 */
+	public OvhTask organizationName_service_exchangeService_publicFolder_path_permission_POST(String organizationName, String exchangeService, String path, OvhPublicFolderRightTypeEnum accessRights, Long allowedAccountId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}/permission";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, path);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "accessRights", accessRights);
 		addBody(o, "allowedAccountId", allowedAccountId);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
@@ -2547,32 +2519,76 @@ public class ApiOvhEmailexchange extends ApiOvhBase {
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}/delegate/{allowedAccountId}
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}/permission/{allowedAccountId}
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param resourceEmailAddress [required] resource as email
-	 * @param allowedAccountId [required] delegate's account id
+	 * @param path [required] Path for public folder
+	 * @param allowedAccountId [required] Account id
 	 */
-	public OvhExchangeResourceAccountDelegate organizationName_service_exchangeService_resourceAccount_resourceEmailAddress_delegate_allowedAccountId_GET(String organizationName, String exchangeService, String resourceEmailAddress, Long allowedAccountId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}/delegate/{allowedAccountId}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, resourceEmailAddress, allowedAccountId);
+	public OvhExchangePublicFolderPermission organizationName_service_exchangeService_publicFolder_path_permission_allowedAccountId_GET(String organizationName, String exchangeService, String path, Long allowedAccountId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}/permission/{allowedAccountId}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, path, allowedAccountId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhExchangeResourceAccountDelegate.class);
+		return convertTo(resp, OvhExchangePublicFolderPermission.class);
 	}
 
 	/**
-	 * delete existing resource account delegate in exchange server
+	 * Alter this object properties
 	 *
-	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}/delegate/{allowedAccountId}
+	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}/permission/{allowedAccountId}
+	 * @param body [required] New object properties
 	 * @param organizationName [required] The internal name of your exchange organization
 	 * @param exchangeService [required] The internal name of your exchange service
-	 * @param resourceEmailAddress [required] resource as email
-	 * @param allowedAccountId [required] delegate's account id
+	 * @param path [required] Path for public folder
+	 * @param allowedAccountId [required] Account id
 	 */
-	public OvhTask organizationName_service_exchangeService_resourceAccount_resourceEmailAddress_delegate_allowedAccountId_DELETE(String organizationName, String exchangeService, String resourceEmailAddress, Long allowedAccountId) throws IOException {
-		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/resourceAccount/{resourceEmailAddress}/delegate/{allowedAccountId}";
-		StringBuilder sb = path(qPath, organizationName, exchangeService, resourceEmailAddress, allowedAccountId);
+	public void organizationName_service_exchangeService_publicFolder_path_permission_allowedAccountId_PUT(String organizationName, String exchangeService, String path, Long allowedAccountId, OvhExchangePublicFolderPermission body) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}/permission/{allowedAccountId}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, path, allowedAccountId);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Delete existing permission from public folder
+	 *
+	 * REST: DELETE /email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}/permission/{allowedAccountId}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 * @param path [required] Path for public folder
+	 * @param allowedAccountId [required] Account id
+	 */
+	public OvhTask organizationName_service_exchangeService_publicFolder_path_permission_allowedAccountId_DELETE(String organizationName, String exchangeService, String path, Long allowedAccountId) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}/publicFolder/{path}/permission/{allowedAccountId}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService, path, allowedAccountId);
 		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /email/exchange/{organizationName}/service/{exchangeService}
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 */
+	public OvhExchangeService organizationName_service_exchangeService_GET(String organizationName, String exchangeService) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhExchangeService.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /email/exchange/{organizationName}/service/{exchangeService}
+	 * @param body [required] New object properties
+	 * @param organizationName [required] The internal name of your exchange organization
+	 * @param exchangeService [required] The internal name of your exchange service
+	 */
+	public void organizationName_service_exchangeService_PUT(String organizationName, String exchangeService, OvhExchangeService body) throws IOException {
+		String qPath = "/email/exchange/{organizationName}/service/{exchangeService}";
+		StringBuilder sb = path(qPath, organizationName, exchangeService);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 }

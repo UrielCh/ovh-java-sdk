@@ -19,16 +19,16 @@ public class OvhAccount {
 	public Long vmCount;
 
 	/**
-	 * The commercial offer linked to your veeam cloud connect
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhOffer productOffer;
-
-	/**
 	 * Your login in the Veeam Cloud Connect interface
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String serviceName;
+
+	/**
+	 * The commercial offer linked to your veeam cloud connect
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhOffer productOffer;
 }
