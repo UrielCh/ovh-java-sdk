@@ -42,30 +42,18 @@ public class ApiOvhLicensecpanel extends ApiOvhBase {
 	private static TypeReference<ArrayList<OvhCpanelOrderConfiguration>> t1 = new TypeReference<ArrayList<OvhCpanelOrderConfiguration>>() {};
 
 	/**
-	 * Returns an array of ips where the license can be moved to
+	 * Will tell if the ip can accept the license
 	 *
-	 * REST: GET /license/cpanel/{serviceName}/allowedDestinationIp
+	 * REST: GET /license/cpanel/{serviceName}/canLicenseBeMovedTo
+	 * @param destinationIp [required] The Ip on which you want to move this license
 	 * @param serviceName [required] The name of your Cpanel license
 	 */
-	public ArrayList<String> serviceName_allowedDestinationIp_GET(String serviceName) throws IOException {
-		String qPath = "/license/cpanel/{serviceName}/allowedDestinationIp";
+	public OvhChangeIpStatus serviceName_canLicenseBeMovedTo_GET(String serviceName, String destinationIp) throws IOException {
+		String qPath = "/license/cpanel/{serviceName}/canLicenseBeMovedTo";
 		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "destinationIp", destinationIp);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};
-
-	/**
-	 * Terminate your service
-	 *
-	 * REST: POST /license/cpanel/{serviceName}/terminate
-	 * @param serviceName [required] The name of your Cpanel license
-	 */
-	public String serviceName_terminate_POST(String serviceName) throws IOException {
-		String qPath = "/license/cpanel/{serviceName}/terminate";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, String.class);
+		return convertTo(resp, OvhChangeIpStatus.class);
 	}
 
 	/**
@@ -95,50 +83,16 @@ public class ApiOvhLicensecpanel extends ApiOvhBase {
 	}
 
 	/**
-	 * Will tell if the ip can accept the license
+	 * Terminate your service
 	 *
-	 * REST: GET /license/cpanel/{serviceName}/canLicenseBeMovedTo
-	 * @param destinationIp [required] The Ip on which you want to move this license
+	 * REST: POST /license/cpanel/{serviceName}/terminate
 	 * @param serviceName [required] The name of your Cpanel license
 	 */
-	public OvhChangeIpStatus serviceName_canLicenseBeMovedTo_GET(String serviceName, String destinationIp) throws IOException {
-		String qPath = "/license/cpanel/{serviceName}/canLicenseBeMovedTo";
+	public String serviceName_terminate_POST(String serviceName) throws IOException {
+		String qPath = "/license/cpanel/{serviceName}/terminate";
 		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "destinationIp", destinationIp);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhChangeIpStatus.class);
-	}
-
-	/**
-	 * tasks linked to this license
-	 *
-	 * REST: GET /license/cpanel/{serviceName}/tasks
-	 * @param status [required] Filter the value of status property (=)
-	 * @param action [required] Filter the value of action property (=)
-	 * @param serviceName [required] The name of your Cpanel license
-	 */
-	public ArrayList<Long> serviceName_tasks_GET(String serviceName, OvhActionType action, OvhTaskStateEnum status) throws IOException {
-		String qPath = "/license/cpanel/{serviceName}/tasks";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "action", action);
-		query(sb, "status", status);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
-	}
-	private static TypeReference<ArrayList<Long>> t3 = new TypeReference<ArrayList<Long>>() {};
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /license/cpanel/{serviceName}/tasks/{taskId}
-	 * @param serviceName [required] The name of your Cpanel license
-	 * @param taskId [required] This Task id
-	 */
-	public OvhTask serviceName_tasks_taskId_GET(String serviceName, Long taskId) throws IOException {
-		String qPath = "/license/cpanel/{serviceName}/tasks/{taskId}";
-		StringBuilder sb = path(qPath, serviceName, taskId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, String.class);
 	}
 
 	/**
@@ -161,6 +115,54 @@ public class ApiOvhLicensecpanel extends ApiOvhBase {
 		addBody(o, "token", token);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * tasks linked to this license
+	 *
+	 * REST: GET /license/cpanel/{serviceName}/tasks
+	 * @param status [required] Filter the value of status property (=)
+	 * @param action [required] Filter the value of action property (=)
+	 * @param serviceName [required] The name of your Cpanel license
+	 */
+	public ArrayList<Long> serviceName_tasks_GET(String serviceName, OvhActionType action, OvhTaskStateEnum status) throws IOException {
+		String qPath = "/license/cpanel/{serviceName}/tasks";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "action", action);
+		query(sb, "status", status);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /license/cpanel/{serviceName}/tasks/{taskId}
+	 * @param serviceName [required] The name of your Cpanel license
+	 * @param taskId [required] This Task id
+	 */
+	public OvhTask serviceName_tasks_taskId_GET(String serviceName, Long taskId) throws IOException {
+		String qPath = "/license/cpanel/{serviceName}/tasks/{taskId}";
+		StringBuilder sb = path(qPath, serviceName, taskId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Move this license to another Ip
+	 *
+	 * REST: POST /license/cpanel/{serviceName}/changeIp
+	 * @param destinationIp [required] The Ip on which you want to move this license
+	 * @param serviceName [required] The name of your Cpanel license
+	 */
+	public OvhTask serviceName_changeIp_POST(String serviceName, String destinationIp) throws IOException {
+		String qPath = "/license/cpanel/{serviceName}/changeIp";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "destinationIp", destinationIp);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
@@ -190,20 +192,18 @@ public class ApiOvhLicensecpanel extends ApiOvhBase {
 	}
 
 	/**
-	 * Move this license to another Ip
+	 * Returns an array of ips where the license can be moved to
 	 *
-	 * REST: POST /license/cpanel/{serviceName}/changeIp
-	 * @param destinationIp [required] The Ip on which you want to move this license
+	 * REST: GET /license/cpanel/{serviceName}/allowedDestinationIp
 	 * @param serviceName [required] The name of your Cpanel license
 	 */
-	public OvhTask serviceName_changeIp_POST(String serviceName, String destinationIp) throws IOException {
-		String qPath = "/license/cpanel/{serviceName}/changeIp";
+	public ArrayList<String> serviceName_allowedDestinationIp_GET(String serviceName) throws IOException {
+		String qPath = "/license/cpanel/{serviceName}/allowedDestinationIp";
 		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "destinationIp", destinationIp);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
 	}
+	private static TypeReference<ArrayList<String>> t3 = new TypeReference<ArrayList<String>>() {};
 
 	/**
 	 * List available services
@@ -214,6 +214,6 @@ public class ApiOvhLicensecpanel extends ApiOvhBase {
 		String qPath = "/license/cpanel";
 		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
+		return convertTo(resp, t3);
 	}
 }

@@ -5,18 +5,18 @@ package net.minidev.ovh.api.xdsl.eligibility;
  */
 public class OvhEligibility {
 	/**
-	 * The eligible offers list
-	 *
-	 * canBeNull
-	 */
-	public OvhOffer[] offers;
-
-	/**
 	 * Portability capabilities
 	 *
 	 * canBeNull
 	 */
 	public OvhPortability portability;
+
+	/**
+	 * The eligible offers list
+	 *
+	 * canBeNull
+	 */
+	public OvhOffer[] offers;
 
 	/**
 	 * The line characteristics

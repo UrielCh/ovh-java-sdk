@@ -5,18 +5,18 @@ package net.minidev.ovh.api.partner;
  */
 public class OvhOVHProductsUsedCloud {
 	/**
-	 * Dedicated Serveurs
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean dedicated;
-
-	/**
 	 * NAS
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean nas;
+
+	/**
+	 * Dedicated Serveurs
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean dedicated;
 
 	/**
 	 * VPS
@@ -26,18 +26,18 @@ public class OvhOVHProductsUsedCloud {
 	public Boolean vps;
 
 	/**
-	 * vRack / vRack Connect
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean vrack;
-
-	/**
 	 * Private Cloud
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean privateCloud;
+
+	/**
+	 * vRack / vRack Connect
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean vrack;
 
 	/**
 	 * Cloud Desktop Infrastructure
@@ -47,18 +47,18 @@ public class OvhOVHProductsUsedCloud {
 	public Boolean cloudDesktopInfrastructure;
 
 	/**
-	 * Public Cloud
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean publicCloud;
-
-	/**
 	 * Cloud Desktop
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean cloudDesktop;
+
+	/**
+	 * Public Cloud
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean publicCloud;
 
 	/**
 	 * Network and security solutions

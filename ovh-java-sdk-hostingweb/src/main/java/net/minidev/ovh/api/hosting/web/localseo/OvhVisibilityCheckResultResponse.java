@@ -70,18 +70,18 @@ public class OvhVisibilityCheckResultResponse {
 	public String street;
 
 	/**
-	 * Zipcode of the location (sync status)
-	 *
-	 * canBeNull
-	 */
-	public OvhFieldStatusEnum zipStatus;
-
-	/**
 	 * A localized combination of street and streetNo
 	 *
 	 * canBeNull
 	 */
 	public String streetAndNo;
+
+	/**
+	 * Zipcode of the location (sync status)
+	 *
+	 * canBeNull
+	 */
+	public OvhFieldStatusEnum zipStatus;
 
 	/**
 	 * The location's contact phone number (sync status)
@@ -105,18 +105,18 @@ public class OvhVisibilityCheckResultResponse {
 	public String zip;
 
 	/**
-	 * The street type for Spain
-	 *
-	 * canBeNull
-	 */
-	public String streetType;
-
-	/**
 	 * A valid url for the location's website
 	 *
 	 * canBeNull
 	 */
 	public String website;
+
+	/**
+	 * The street type for Spain
+	 *
+	 * canBeNull
+	 */
+	public String streetType;
 
 	/**
 	 * The location's street number
@@ -168,18 +168,18 @@ public class OvhVisibilityCheckResultResponse {
 	public OvhFieldStatusEnum provinceStatus;
 
 	/**
-	 * The location's name used for this listing
-	 *
-	 * canBeNull
-	 */
-	public String name;
-
-	/**
 	 * City of the location (sync status)
 	 *
 	 * canBeNull
 	 */
 	public OvhFieldStatusEnum cityStatus;
+
+	/**
+	 * The location's name used for this listing
+	 *
+	 * canBeNull
+	 */
+	public String name;
 
 	/**
 	 * The location's name used for this listing (sync status)

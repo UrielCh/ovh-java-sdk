@@ -33,18 +33,18 @@ public class OvhContact {
 	public String province;
 
 	/**
-	 * Phone number
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String phone;
-
-	/**
 	 * City
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String city;
+
+	/**
+	 * Phone number
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String phone;
 
 	/**
 	 * Street address

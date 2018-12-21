@@ -5,18 +5,18 @@ package net.minidev.ovh.api.domain;
  */
 public class OvhDomainQuota {
 	/**
-	 * Maximum number of aliases
-	 *
-	 * canBeNull
-	 */
-	public Long alias;
-
-	/**
 	 * Maximum number of responders
 	 *
 	 * canBeNull
 	 */
 	public Long responder;
+
+	/**
+	 * Maximum number of aliases
+	 *
+	 * canBeNull
+	 */
+	public Long alias;
 
 	/**
 	 * Maximum number of redirections

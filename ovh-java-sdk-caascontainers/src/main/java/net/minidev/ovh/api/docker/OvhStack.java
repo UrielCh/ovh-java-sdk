@@ -8,13 +8,6 @@ import net.minidev.ovh.api.docker.slave.OvhMetrics;
  */
 public class OvhStack {
 	/**
-	 * A list of slave UUIDs
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String[] slaves;
-
-	/**
 	 * The cluster on which the stack is deployed
 	 *
 	 * canBeNull && readOnly
@@ -27,6 +20,13 @@ public class OvhStack {
 	 * canBeNull && readOnly
 	 */
 	public Date createdAt;
+
+	/**
+	 * A list of slave UUIDs
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String[] slaves;
 
 	/**
 	 * The DNS address of the stack load balancer

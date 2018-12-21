@@ -21,18 +21,18 @@ public class OvhExchangeDistributionGroupMember {
 	public String memberEmailAddress;
 
 	/**
-	 * Member account id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long memberAccountId;
-
-	/**
 	 * Creation date
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date creationDate;
+
+	/**
+	 * Member account id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long memberAccountId;
 
 	/**
 	 * Pending task id

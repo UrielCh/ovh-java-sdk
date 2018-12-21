@@ -20,16 +20,16 @@ public class OvhVoiceConsumption {
 	public OvhVoiceConsumptionPlanTypeEnum planType;
 
 	/**
+	 * canBeNull && readOnly
+	 */
+	public String called;
+
+	/**
 	 * Country suffix destination
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String countrySuffix;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public String called;
 
 	/**
 	 * canBeNull && readOnly

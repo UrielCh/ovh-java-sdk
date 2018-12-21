@@ -14,18 +14,18 @@ public class OvhSmd {
 	public OvhSmdLabel[] protectedLabels;
 
 	/**
-	 * Date when information about SMD file aren't valid anymore
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date notAfter;
-
-	/**
 	 * TMCH Internal identifier
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String smdId;
+
+	/**
+	 * Date when information about SMD file aren't valid anymore
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date notAfter;
 
 	/**
 	 * SMD file content

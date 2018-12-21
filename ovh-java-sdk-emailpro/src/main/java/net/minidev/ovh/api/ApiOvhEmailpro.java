@@ -17,8 +17,8 @@ import net.minidev.ovh.api.email.pro.OvhDomainTypeEnum;
 import net.minidev.ovh.api.email.pro.OvhExternalContact;
 import net.minidev.ovh.api.email.pro.OvhObjectStateEnum;
 import net.minidev.ovh.api.email.pro.OvhServer;
+import net.minidev.ovh.api.email.pro.OvhService;
 import net.minidev.ovh.api.email.pro.OvhTask;
-import net.minidev.ovh.api.services.OvhService;
 import net.minidev.ovh.core.ApiOvhBase;
 import net.minidev.ovh.core.ApiOvhCore;
 
@@ -48,6 +48,132 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
 
 	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /email/pro/{service}
+	 * @param service [required] The internal name of your pro organization
+	 *
+	 * API beta
+	 */
+	public OvhService service_GET(String service) throws IOException {
+		String qPath = "/email/pro/{service}";
+		StringBuilder sb = path(qPath, service);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhService.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /email/pro/{service}
+	 * @param body [required] New object properties
+	 * @param service [required] The internal name of your pro organization
+	 *
+	 * API beta
+	 */
+	public void service_PUT(String service, OvhService body) throws IOException {
+		String qPath = "/email/pro/{service}";
+		StringBuilder sb = path(qPath, service);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Emailpro billing plan
+	 *
+	 * REST: GET /email/pro/{service}/billingPlan
+	 * @param service [required] The internal name of your pro organization
+	 *
+	 * API beta
+	 */
+	public String service_billingPlan_GET(String service) throws IOException {
+		String qPath = "/email/pro/{service}/billingPlan";
+		StringBuilder sb = path(qPath, service);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /email/pro/{service}/serviceInfos
+	 * @param service [required] The internal name of your pro organization
+	 *
+	 * API beta
+	 */
+	public net.minidev.ovh.api.services.OvhService service_serviceInfos_GET(String service) throws IOException {
+		String qPath = "/email/pro/{service}/serviceInfos";
+		StringBuilder sb = path(qPath, service);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, net.minidev.ovh.api.services.OvhService.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /email/pro/{service}/serviceInfos
+	 * @param body [required] New object properties
+	 * @param service [required] The internal name of your pro organization
+	 *
+	 * API beta
+	 */
+	public void service_serviceInfos_PUT(String service, net.minidev.ovh.api.services.OvhService body) throws IOException {
+		String qPath = "/email/pro/{service}/serviceInfos";
+		StringBuilder sb = path(qPath, service);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /email/pro/{service}/task/{id}
+	 * @param service [required] The internal name of your pro organization
+	 * @param id [required] Task id
+	 *
+	 * API beta
+	 */
+	public OvhTask service_task_id_GET(String service, Long id) throws IOException {
+		String qPath = "/email/pro/{service}/task/{id}";
+		StringBuilder sb = path(qPath, service, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Pending actions
+	 *
+	 * REST: GET /email/pro/{service}/task
+	 * @param service [required] The internal name of your pro organization
+	 *
+	 * API beta
+	 */
+	public ArrayList<Long> service_task_GET(String service) throws IOException {
+		String qPath = "/email/pro/{service}/task";
+		StringBuilder sb = path(qPath, service);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
+
+	/**
+	 * Accounts associated to this pro service
+	 *
+	 * REST: GET /email/pro/{service}/account
+	 * @param primaryEmailAddress [required] Filter the value of primaryEmailAddress property (like)
+	 * @param id [required] Filter the value of id property (like)
+	 * @param service [required] The internal name of your pro organization
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> service_account_GET(String service, Long id, String primaryEmailAddress) throws IOException {
+		String qPath = "/email/pro/{service}/account";
+		StringBuilder sb = path(qPath, service);
+		query(sb, "id", id);
+		query(sb, "primaryEmailAddress", primaryEmailAddress);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
 	 * Terminate account at expiration date
 	 *
 	 * REST: POST /email/pro/{service}/account/{email}/terminate
@@ -61,6 +187,22 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 		StringBuilder sb = path(qPath, service, email);
 		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Pending task for this mailbox
+	 *
+	 * REST: GET /email/pro/{service}/account/{email}/tasks
+	 * @param service [required] The internal name of your pro organization
+	 * @param email [required] Default email for this mailbox
+	 *
+	 * API beta
+	 */
+	public ArrayList<Long> service_account_email_tasks_GET(String service, String email) throws IOException {
+		String qPath = "/email/pro/{service}/account/{email}/tasks";
+		StringBuilder sb = path(qPath, service, email);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
 	}
 
 	/**
@@ -81,21 +223,73 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	}
 
 	/**
-	 * Pending task for this mailbox
+	 * Get this object properties
 	 *
-	 * REST: GET /email/pro/{service}/account/{email}/tasks
+	 * REST: GET /email/pro/{service}/account/{email}/sendOnBehalfTo/{allowedAccountId}
+	 * @param service [required] The internal name of your pro organization
+	 * @param email [required] Default email for this mailbox
+	 * @param allowedAccountId [required] Account id to give send on behalf to
+	 *
+	 * API beta
+	 */
+	public OvhAccountSendOnBehalfTo service_account_email_sendOnBehalfTo_allowedAccountId_GET(String service, String email, Long allowedAccountId) throws IOException {
+		String qPath = "/email/pro/{service}/account/{email}/sendOnBehalfTo/{allowedAccountId}";
+		StringBuilder sb = path(qPath, service, email, allowedAccountId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhAccountSendOnBehalfTo.class);
+	}
+
+	/**
+	 * Delete allowed user for SendOnBehalfTo
+	 *
+	 * REST: DELETE /email/pro/{service}/account/{email}/sendOnBehalfTo/{allowedAccountId}
+	 * @param service [required] The internal name of your pro organization
+	 * @param email [required] Default email for this mailbox
+	 * @param allowedAccountId [required] Account id to give send on behalf to
+	 *
+	 * API beta
+	 */
+	public OvhTask service_account_email_sendOnBehalfTo_allowedAccountId_DELETE(String service, String email, Long allowedAccountId) throws IOException {
+		String qPath = "/email/pro/{service}/account/{email}/sendOnBehalfTo/{allowedAccountId}";
+		StringBuilder sb = path(qPath, service, email, allowedAccountId);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * SendOnBehalfTo granted users for this mailbox
+	 *
+	 * REST: GET /email/pro/{service}/account/{email}/sendOnBehalfTo
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
 	 *
 	 * API beta
 	 */
-	public ArrayList<Long> service_account_email_tasks_GET(String service, String email) throws IOException {
-		String qPath = "/email/pro/{service}/account/{email}/tasks";
+	public ArrayList<Long> service_account_email_sendOnBehalfTo_GET(String service, String email) throws IOException {
+		String qPath = "/email/pro/{service}/account/{email}/sendOnBehalfTo";
 		StringBuilder sb = path(qPath, service, email);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
-	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
+
+	/**
+	 * Allow another user to Send On Behalf To mails from this mailbox
+	 *
+	 * REST: POST /email/pro/{service}/account/{email}/sendOnBehalfTo
+	 * @param allowAccountId [required] Account id to allow to send On Behalf To mails from this mailbox
+	 * @param service [required] The internal name of your pro organization
+	 * @param email [required] Default email for this mailbox
+	 *
+	 * API beta
+	 */
+	public OvhTask service_account_email_sendOnBehalfTo_POST(String service, String email, Long allowAccountId) throws IOException {
+		String qPath = "/email/pro/{service}/account/{email}/sendOnBehalfTo";
+		StringBuilder sb = path(qPath, service, email);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "allowAccountId", allowAccountId);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
 
 	/**
 	 * Full access granted users for this mailbox
@@ -167,71 +361,21 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	}
 
 	/**
-	 * SendOnBehalfTo granted users for this mailbox
+	 * Change mailbox password
 	 *
-	 * REST: GET /email/pro/{service}/account/{email}/sendOnBehalfTo
+	 * REST: POST /email/pro/{service}/account/{email}/changePassword
+	 * @param password [required] new password
 	 * @param service [required] The internal name of your pro organization
 	 * @param email [required] Default email for this mailbox
 	 *
 	 * API beta
 	 */
-	public ArrayList<Long> service_account_email_sendOnBehalfTo_GET(String service, String email) throws IOException {
-		String qPath = "/email/pro/{service}/account/{email}/sendOnBehalfTo";
-		StringBuilder sb = path(qPath, service, email);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Allow another user to Send On Behalf To mails from this mailbox
-	 *
-	 * REST: POST /email/pro/{service}/account/{email}/sendOnBehalfTo
-	 * @param allowAccountId [required] Account id to allow to send On Behalf To mails from this mailbox
-	 * @param service [required] The internal name of your pro organization
-	 * @param email [required] Default email for this mailbox
-	 *
-	 * API beta
-	 */
-	public OvhTask service_account_email_sendOnBehalfTo_POST(String service, String email, Long allowAccountId) throws IOException {
-		String qPath = "/email/pro/{service}/account/{email}/sendOnBehalfTo";
+	public OvhTask service_account_email_changePassword_POST(String service, String email, String password) throws IOException {
+		String qPath = "/email/pro/{service}/account/{email}/changePassword";
 		StringBuilder sb = path(qPath, service, email);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "allowAccountId", allowAccountId);
+		addBody(o, "password", password);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /email/pro/{service}/account/{email}/sendOnBehalfTo/{allowedAccountId}
-	 * @param service [required] The internal name of your pro organization
-	 * @param email [required] Default email for this mailbox
-	 * @param allowedAccountId [required] Account id to give send on behalf to
-	 *
-	 * API beta
-	 */
-	public OvhAccountSendOnBehalfTo service_account_email_sendOnBehalfTo_allowedAccountId_GET(String service, String email, Long allowedAccountId) throws IOException {
-		String qPath = "/email/pro/{service}/account/{email}/sendOnBehalfTo/{allowedAccountId}";
-		StringBuilder sb = path(qPath, service, email, allowedAccountId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhAccountSendOnBehalfTo.class);
-	}
-
-	/**
-	 * Delete allowed user for SendOnBehalfTo
-	 *
-	 * REST: DELETE /email/pro/{service}/account/{email}/sendOnBehalfTo/{allowedAccountId}
-	 * @param service [required] The internal name of your pro organization
-	 * @param email [required] Default email for this mailbox
-	 * @param allowedAccountId [required] Account id to give send on behalf to
-	 *
-	 * API beta
-	 */
-	public OvhTask service_account_email_sendOnBehalfTo_allowedAccountId_DELETE(String service, String email, Long allowedAccountId) throws IOException {
-		String qPath = "/email/pro/{service}/account/{email}/sendOnBehalfTo/{allowedAccountId}";
-		StringBuilder sb = path(qPath, service, email, allowedAccountId);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -267,73 +411,6 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "password", password);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Change mailbox password
-	 *
-	 * REST: POST /email/pro/{service}/account/{email}/changePassword
-	 * @param password [required] new password
-	 * @param service [required] The internal name of your pro organization
-	 * @param email [required] Default email for this mailbox
-	 *
-	 * API beta
-	 */
-	public OvhTask service_account_email_changePassword_POST(String service, String email, String password) throws IOException {
-		String qPath = "/email/pro/{service}/account/{email}/changePassword";
-		StringBuilder sb = path(qPath, service, email);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "password", password);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /email/pro/{service}/account/{email}
-	 * @param service [required] The internal name of your pro organization
-	 * @param email [required] Default email for this mailbox
-	 *
-	 * API beta
-	 */
-	public OvhAccount service_account_email_GET(String service, String email) throws IOException {
-		String qPath = "/email/pro/{service}/account/{email}";
-		StringBuilder sb = path(qPath, service, email);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhAccount.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /email/pro/{service}/account/{email}
-	 * @param body [required] New object properties
-	 * @param service [required] The internal name of your pro organization
-	 * @param email [required] Default email for this mailbox
-	 *
-	 * API beta
-	 */
-	public void service_account_email_PUT(String service, String email, OvhAccount body) throws IOException {
-		String qPath = "/email/pro/{service}/account/{email}";
-		StringBuilder sb = path(qPath, service, email);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Delete existing mailbox in pro server
-	 *
-	 * REST: DELETE /email/pro/{service}/account/{email}
-	 * @param service [required] The internal name of your pro organization
-	 * @param email [required] Default email for this mailbox
-	 *
-	 * API beta
-	 */
-	public OvhTask service_account_email_DELETE(String service, String email) throws IOException {
-		String qPath = "/email/pro/{service}/account/{email}";
-		StringBuilder sb = path(qPath, service, email);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -476,66 +553,66 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	}
 
 	/**
-	 * Accounts associated to this pro service
-	 *
-	 * REST: GET /email/pro/{service}/account
-	 * @param id [required] Filter the value of id property (like)
-	 * @param primaryEmailAddress [required] Filter the value of primaryEmailAddress property (like)
-	 * @param service [required] The internal name of your pro organization
-	 *
-	 * API beta
-	 */
-	public ArrayList<String> service_account_GET(String service, Long id, String primaryEmailAddress) throws IOException {
-		String qPath = "/email/pro/{service}/account";
-		StringBuilder sb = path(qPath, service);
-		query(sb, "id", id);
-		query(sb, "primaryEmailAddress", primaryEmailAddress);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Emailpro billing plan
-	 *
-	 * REST: GET /email/pro/{service}/billingPlan
-	 * @param service [required] The internal name of your pro organization
-	 *
-	 * API beta
-	 */
-	public String service_billingPlan_GET(String service) throws IOException {
-		String qPath = "/email/pro/{service}/billingPlan";
-		StringBuilder sb = path(qPath, service);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, String.class);
-	}
-
-	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /email/pro/{service}/server
+	 * REST: GET /email/pro/{service}/account/{email}
 	 * @param service [required] The internal name of your pro organization
+	 * @param email [required] Default email for this mailbox
 	 *
 	 * API beta
 	 */
-	public OvhServer service_server_GET(String service) throws IOException {
-		String qPath = "/email/pro/{service}/server";
-		StringBuilder sb = path(qPath, service);
+	public OvhAccount service_account_email_GET(String service, String email) throws IOException {
+		String qPath = "/email/pro/{service}/account/{email}";
+		StringBuilder sb = path(qPath, service, email);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhServer.class);
+		return convertTo(resp, OvhAccount.class);
 	}
 
 	/**
-	 * Update spam and virus flags on all active accounts
+	 * Alter this object properties
 	 *
-	 * REST: POST /email/pro/{service}/updateFlagsOnAllAccounts
+	 * REST: PUT /email/pro/{service}/account/{email}
+	 * @param body [required] New object properties
+	 * @param service [required] The internal name of your pro organization
+	 * @param email [required] Default email for this mailbox
+	 *
+	 * API beta
+	 */
+	public void service_account_email_PUT(String service, String email, OvhAccount body) throws IOException {
+		String qPath = "/email/pro/{service}/account/{email}";
+		StringBuilder sb = path(qPath, service, email);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Delete existing mailbox in pro server
+	 *
+	 * REST: DELETE /email/pro/{service}/account/{email}
+	 * @param service [required] The internal name of your pro organization
+	 * @param email [required] Default email for this mailbox
+	 *
+	 * API beta
+	 */
+	public OvhTask service_account_email_DELETE(String service, String email) throws IOException {
+		String qPath = "/email/pro/{service}/account/{email}";
+		StringBuilder sb = path(qPath, service, email);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Detects billing transition status for the service
+	 *
+	 * REST: GET /email/pro/{service}/billingMigrated
 	 * @param service [required] The internal name of your pro organization
 	 *
 	 * API beta
 	 */
-	public void service_updateFlagsOnAllAccounts_POST(String service) throws IOException {
-		String qPath = "/email/pro/{service}/updateFlagsOnAllAccounts";
+	public Boolean service_billingMigrated_GET(String service) throws IOException {
+		String qPath = "/email/pro/{service}/billingMigrated";
 		StringBuilder sb = path(qPath, service);
-		exec(qPath, "POST", sb.toString(), null);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, Boolean.class);
 	}
 
 	/**
@@ -559,24 +636,24 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * Create new domain in pro services
 	 *
 	 * REST: POST /email/pro/{service}/domain
-	 * @param name [required] Domain to install on server
 	 * @param configureAutodiscover [required] If you host domain in OVH we can configure autodiscover record automatically
 	 * @param mxRelay [required] If specified, emails to not existing address will be redirected to that domain
-	 * @param configureMx [required] If you host domain in OVH we can configure mx record automatically
+	 * @param name [required] Domain to install on server
 	 * @param type [required] Type of domain that You want to install
+	 * @param configureMx [required] If you host domain in OVH we can configure mx record automatically
 	 * @param service [required] The internal name of your pro organization
 	 *
 	 * API beta
 	 */
-	public OvhTask service_domain_POST(String service, String name, Boolean configureAutodiscover, String mxRelay, Boolean configureMx, OvhDomainTypeEnum type) throws IOException {
+	public OvhTask service_domain_POST(String service, Boolean configureAutodiscover, String mxRelay, String name, OvhDomainTypeEnum type, Boolean configureMx) throws IOException {
 		String qPath = "/email/pro/{service}/domain";
 		StringBuilder sb = path(qPath, service);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "name", name);
 		addBody(o, "configureAutodiscover", configureAutodiscover);
 		addBody(o, "mxRelay", mxRelay);
-		addBody(o, "configureMx", configureMx);
+		addBody(o, "name", name);
 		addBody(o, "type", type);
+		addBody(o, "configureMx", configureMx);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
@@ -716,44 +793,14 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	private static TypeReference<ArrayList<OvhDisclaimerAttributeEnum>> t3 = new TypeReference<ArrayList<OvhDisclaimerAttributeEnum>>() {};
 
 	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /email/pro/{service}/serviceInfos
-	 * @param service [required] The internal name of your pro organization
-	 *
-	 * API beta
-	 */
-	public OvhService service_serviceInfos_GET(String service) throws IOException {
-		String qPath = "/email/pro/{service}/serviceInfos";
-		StringBuilder sb = path(qPath, service);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhService.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /email/pro/{service}/serviceInfos
-	 * @param body [required] New object properties
-	 * @param service [required] The internal name of your pro organization
-	 *
-	 * API beta
-	 */
-	public void service_serviceInfos_PUT(String service, OvhService body) throws IOException {
-		String qPath = "/email/pro/{service}/serviceInfos";
-		StringBuilder sb = path(qPath, service);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
 	 * External contacts for this service
 	 *
 	 * REST: GET /email/pro/{service}/externalContact
-	 * @param displayName [required] Filter the value of displayName property (like)
-	 * @param id [required] Filter the value of id property (like)
-	 * @param externalEmailAddress [required] Filter the value of externalEmailAddress property (like)
-	 * @param firstName [required] Filter the value of firstName property (like)
 	 * @param lastName [required] Filter the value of lastName property (like)
+	 * @param id [required] Filter the value of id property (like)
+	 * @param firstName [required] Filter the value of firstName property (like)
+	 * @param displayName [required] Filter the value of displayName property (like)
+	 * @param externalEmailAddress [required] Filter the value of externalEmailAddress property (like)
 	 * @param service [required] The internal name of your pro organization
 	 *
 	 * API beta
@@ -774,26 +821,26 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	 * create new external contact
 	 *
 	 * REST: POST /email/pro/{service}/externalContact
-	 * @param firstName [required] Contact first name
-	 * @param lastName [required] Contact last name
 	 * @param externalEmailAddress [required] Contact email address
-	 * @param hiddenFromGAL [required] Hide the contact in Global Address List
 	 * @param initials [required] Contact initials
 	 * @param displayName [required] Contact display name
+	 * @param lastName [required] Contact last name
+	 * @param hiddenFromGAL [required] Hide the contact in Global Address List
+	 * @param firstName [required] Contact first name
 	 * @param service [required] The internal name of your pro organization
 	 *
 	 * API beta
 	 */
-	public OvhTask service_externalContact_POST(String service, String firstName, String lastName, String externalEmailAddress, Boolean hiddenFromGAL, String initials, String displayName) throws IOException {
+	public OvhTask service_externalContact_POST(String service, String externalEmailAddress, String initials, String displayName, String lastName, Boolean hiddenFromGAL, String firstName) throws IOException {
 		String qPath = "/email/pro/{service}/externalContact";
 		StringBuilder sb = path(qPath, service);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "firstName", firstName);
-		addBody(o, "lastName", lastName);
 		addBody(o, "externalEmailAddress", externalEmailAddress);
-		addBody(o, "hiddenFromGAL", hiddenFromGAL);
 		addBody(o, "initials", initials);
 		addBody(o, "displayName", displayName);
+		addBody(o, "lastName", lastName);
+		addBody(o, "hiddenFromGAL", hiddenFromGAL);
+		addBody(o, "firstName", firstName);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
@@ -847,78 +894,31 @@ public class ApiOvhEmailpro extends ApiOvhBase {
 	}
 
 	/**
-	 * Pending actions
+	 * Update spam and virus flags on all active accounts
 	 *
-	 * REST: GET /email/pro/{service}/task
+	 * REST: POST /email/pro/{service}/updateFlagsOnAllAccounts
 	 * @param service [required] The internal name of your pro organization
 	 *
 	 * API beta
 	 */
-	public ArrayList<Long> service_task_GET(String service) throws IOException {
-		String qPath = "/email/pro/{service}/task";
+	public void service_updateFlagsOnAllAccounts_POST(String service) throws IOException {
+		String qPath = "/email/pro/{service}/updateFlagsOnAllAccounts";
 		StringBuilder sb = path(qPath, service);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /email/pro/{service}/task/{id}
-	 * @param service [required] The internal name of your pro organization
-	 * @param id [required] Task id
-	 *
-	 * API beta
-	 */
-	public OvhTask service_task_id_GET(String service, Long id) throws IOException {
-		String qPath = "/email/pro/{service}/task/{id}";
-		StringBuilder sb = path(qPath, service, id);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Detects billing transition status for the service
-	 *
-	 * REST: GET /email/pro/{service}/billingMigrated
+	 * REST: GET /email/pro/{service}/server
 	 * @param service [required] The internal name of your pro organization
 	 *
 	 * API beta
 	 */
-	public Boolean service_billingMigrated_GET(String service) throws IOException {
-		String qPath = "/email/pro/{service}/billingMigrated";
+	public OvhServer service_server_GET(String service) throws IOException {
+		String qPath = "/email/pro/{service}/server";
 		StringBuilder sb = path(qPath, service);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, Boolean.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /email/pro/{service}
-	 * @param service [required] The internal name of your pro organization
-	 *
-	 * API beta
-	 */
-	public net.minidev.ovh.api.email.pro.OvhService service_GET(String service) throws IOException {
-		String qPath = "/email/pro/{service}";
-		StringBuilder sb = path(qPath, service);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, net.minidev.ovh.api.email.pro.OvhService.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /email/pro/{service}
-	 * @param body [required] New object properties
-	 * @param service [required] The internal name of your pro organization
-	 *
-	 * API beta
-	 */
-	public void service_PUT(String service, net.minidev.ovh.api.email.pro.OvhService body) throws IOException {
-		String qPath = "/email/pro/{service}";
-		StringBuilder sb = path(qPath, service);
-		exec(qPath, "PUT", sb.toString(), body);
+		return convertTo(resp, OvhServer.class);
 	}
 }

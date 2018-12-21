@@ -41,173 +41,96 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 	}
 
 	/**
-	 * List available services
+	 * Databases linked to your private database service
 	 *
-	 * REST: GET /hosting/privateDatabase
+	 * REST: GET /hosting/privateDatabase/{serviceName}/database
+	 * @param serviceName [required] The internal name of your private database
 	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/hosting/privateDatabase";
-		StringBuilder sb = path(qPath);
+	public ArrayList<String> serviceName_database_GET(String serviceName) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/database";
+		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
 
 	/**
-	 * Get available order capacitie
+	 * Create a new database on your private database service
 	 *
-	 * REST: GET /hosting/privateDatabase/availableOrderCapacities
-	 * @param offer [required] Offer available order capacities to choose
+	 * REST: POST /hosting/privateDatabase/{serviceName}/database
+	 * @param databaseName [required] Name of your new database
+	 * @param serviceName [required] The internal name of your private database
 	 */
-	public OvhAvailableOrderCapacities availableOrderCapacities_GET(OvhOfferEnum offer) throws IOException {
-		String qPath = "/hosting/privateDatabase/availableOrderCapacities";
-		StringBuilder sb = path(qPath);
-		query(sb, "offer", offer);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhAvailableOrderCapacities.class);
+	public OvhTask serviceName_database_POST(String serviceName, String databaseName) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/database";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "databaseName", databaseName);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
-	 * Change the private database engine version
+	 * Enable an extension on a database
 	 *
-	 * REST: POST /hosting/privateDatabase/{serviceName}/changeVersion
-	 * @param version [required] Private database versions
+	 * REST: POST /hosting/privateDatabase/{serviceName}/database/{databaseName}/extension/{extensionName}/enable
 	 * @param serviceName [required] The internal name of your private database
+	 * @param databaseName [required] Database name
+	 * @param extensionName [required] Extension name
 	 */
-	public OvhTask serviceName_changeVersion_POST(String serviceName, OvhAvailableVersionEnum version) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/changeVersion";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "version", version);
-		String resp = exec(qPath, "POST", sb.toString(), o);
+	public OvhTask serviceName_database_databaseName_extension_extensionName_enable_POST(String serviceName, String databaseName, String extensionName) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/database/{databaseName}/extension/{extensionName}/enable";
+		StringBuilder sb = path(qPath, serviceName, databaseName, extensionName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Disable an extension from a database
+	 *
+	 * REST: POST /hosting/privateDatabase/{serviceName}/database/{databaseName}/extension/{extensionName}/disable
+	 * @param serviceName [required] The internal name of your private database
+	 * @param databaseName [required] Database name
+	 * @param extensionName [required] Extension name
+	 */
+	public OvhTask serviceName_database_databaseName_extension_extensionName_disable_POST(String serviceName, String databaseName, String extensionName) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/database/{databaseName}/extension/{extensionName}/disable";
+		StringBuilder sb = path(qPath, serviceName, databaseName, extensionName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /hosting/privateDatabase/{serviceName}
+	 * REST: GET /hosting/privateDatabase/{serviceName}/database/{databaseName}/extension/{extensionName}
 	 * @param serviceName [required] The internal name of your private database
+	 * @param databaseName [required] Database name
+	 * @param extensionName [required] Extension name
 	 */
-	public OvhService serviceName_GET(String serviceName) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
+	public OvhDatabaseExtension serviceName_database_databaseName_extension_extensionName_GET(String serviceName, String databaseName, String extensionName) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/database/{databaseName}/extension/{extensionName}";
+		StringBuilder sb = path(qPath, serviceName, databaseName, extensionName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhService.class);
+		return convertTo(resp, OvhDatabaseExtension.class);
 	}
 
 	/**
-	 * Alter this object properties
+	 * Extensions linked to your database
 	 *
-	 * REST: PUT /hosting/privateDatabase/{serviceName}
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your private database
-	 */
-	public void serviceName_PUT(String serviceName, OvhService body) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Change your ftp admin password
-	 *
-	 * REST: POST /hosting/privateDatabase/{serviceName}/changeFtpPassword
-	 * @param password [required] New ftp admin password ( alphanumeric and 8 characters minimum )
-	 * @param serviceName [required] The internal name of your private database
-	 */
-	public OvhTask serviceName_changeFtpPassword_POST(String serviceName, String password) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/changeFtpPassword";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "password", password);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /hosting/privateDatabase/{serviceName}/database/{databaseName}
+	 * REST: GET /hosting/privateDatabase/{serviceName}/database/{databaseName}/extension
+	 * @param status [required] Filter the value of status property (=)
+	 * @param extensionName [required] Filter the value of extensionName property (like)
 	 * @param serviceName [required] The internal name of your private database
 	 * @param databaseName [required] Database name
 	 */
-	public OvhDatabase serviceName_database_databaseName_GET(String serviceName, String databaseName) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/database/{databaseName}";
+	public ArrayList<String> serviceName_database_databaseName_extension_GET(String serviceName, String databaseName, String extensionName, OvhStatus status) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/database/{databaseName}/extension";
 		StringBuilder sb = path(qPath, serviceName, databaseName);
+		query(sb, "extensionName", extensionName);
+		query(sb, "status", status);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhDatabase.class);
-	}
-
-	/**
-	 * Delete the database
-	 *
-	 * REST: DELETE /hosting/privateDatabase/{serviceName}/database/{databaseName}
-	 * @param serviceName [required] The internal name of your private database
-	 * @param databaseName [required] Database name
-	 */
-	public OvhTask serviceName_database_databaseName_DELETE(String serviceName, String databaseName) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/database/{databaseName}";
-		StringBuilder sb = path(qPath, serviceName, databaseName);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Request the import in this database
-	 *
-	 * REST: POST /hosting/privateDatabase/{serviceName}/database/{databaseName}/import
-	 * @param flushDatabase [required] If database will be flushed before importing the dump. Default: false
-	 * @param sendEmail [required] Send an email when the import will be done? Default: false
-	 * @param documentId [required] Documents ID of the dump from /me/documents
-	 * @param serviceName [required] The internal name of your private database
-	 * @param databaseName [required] Database name
-	 */
-	public OvhTask serviceName_database_databaseName_import_POST(String serviceName, String databaseName, Boolean flushDatabase, Boolean sendEmail, String documentId) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/database/{databaseName}/import";
-		StringBuilder sb = path(qPath, serviceName, databaseName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "flushDatabase", flushDatabase);
-		addBody(o, "sendEmail", sendEmail);
-		addBody(o, "documentId", documentId);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Dump available for your databases
-	 *
-	 * REST: GET /hosting/privateDatabase/{serviceName}/database/{databaseName}/dump
-	 * @param deletionDate [required] Filter the value of deletionDate property (like)
-	 * @param creationDate [required] Filter the value of creationDate property (like)
-	 * @param serviceName [required] The internal name of your private database
-	 * @param databaseName [required] Database name
-	 */
-	public ArrayList<Long> serviceName_database_databaseName_dump_GET(String serviceName, String databaseName, Date creationDate, Date deletionDate) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/database/{databaseName}/dump";
-		StringBuilder sb = path(qPath, serviceName, databaseName);
-		query(sb, "creationDate", creationDate);
-		query(sb, "deletionDate", deletionDate);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
-
-	/**
-	 * Request the dump of this database ( an email will be send with a link available 30 days )
-	 *
-	 * REST: POST /hosting/privateDatabase/{serviceName}/database/{databaseName}/dump
-	 * @param sendEmail [required] Send an email when dump will be available? Default: false
-	 * @param serviceName [required] The internal name of your private database
-	 * @param databaseName [required] Database name
-	 */
-	public OvhTask serviceName_database_databaseName_dump_POST(String serviceName, String databaseName, Boolean sendEmail) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/database/{databaseName}/dump";
-		StringBuilder sb = path(qPath, serviceName, databaseName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "sendEmail", sendEmail);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
+		return convertTo(resp, t1);
 	}
 
 	/**
@@ -256,91 +179,270 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 	}
 
 	/**
-	 * Extensions linked to your database
+	 * Dump available for your databases
 	 *
-	 * REST: GET /hosting/privateDatabase/{serviceName}/database/{databaseName}/extension
-	 * @param status [required] Filter the value of status property (=)
-	 * @param extensionName [required] Filter the value of extensionName property (like)
+	 * REST: GET /hosting/privateDatabase/{serviceName}/database/{databaseName}/dump
+	 * @param creationDate [required] Filter the value of creationDate property (like)
+	 * @param deletionDate [required] Filter the value of deletionDate property (like)
 	 * @param serviceName [required] The internal name of your private database
 	 * @param databaseName [required] Database name
 	 */
-	public ArrayList<String> serviceName_database_databaseName_extension_GET(String serviceName, String databaseName, String extensionName, OvhStatus status) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/database/{databaseName}/extension";
+	public ArrayList<Long> serviceName_database_databaseName_dump_GET(String serviceName, String databaseName, Date creationDate, Date deletionDate) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/database/{databaseName}/dump";
 		StringBuilder sb = path(qPath, serviceName, databaseName);
-		query(sb, "extensionName", extensionName);
-		query(sb, "status", status);
+		query(sb, "creationDate", creationDate);
+		query(sb, "deletionDate", deletionDate);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, t2);
+	}
+	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
+
+	/**
+	 * Request the dump of this database ( an email will be send with a link available 30 days )
+	 *
+	 * REST: POST /hosting/privateDatabase/{serviceName}/database/{databaseName}/dump
+	 * @param sendEmail [required] Send an email when dump will be available? Default: false
+	 * @param serviceName [required] The internal name of your private database
+	 * @param databaseName [required] Database name
+	 */
+	public OvhTask serviceName_database_databaseName_dump_POST(String serviceName, String databaseName, Boolean sendEmail) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/database/{databaseName}/dump";
+		StringBuilder sb = path(qPath, serviceName, databaseName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "sendEmail", sendEmail);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
-	 * Disable an extension from a database
+	 * Request the import in this database
 	 *
-	 * REST: POST /hosting/privateDatabase/{serviceName}/database/{databaseName}/extension/{extensionName}/disable
+	 * REST: POST /hosting/privateDatabase/{serviceName}/database/{databaseName}/import
+	 * @param documentId [required] Documents ID of the dump from /me/documents
+	 * @param sendEmail [required] Send an email when the import will be done? Default: false
+	 * @param flushDatabase [required] If database will be flushed before importing the dump. Default: false
 	 * @param serviceName [required] The internal name of your private database
 	 * @param databaseName [required] Database name
-	 * @param extensionName [required] Extension name
 	 */
-	public OvhTask serviceName_database_databaseName_extension_extensionName_disable_POST(String serviceName, String databaseName, String extensionName) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/database/{databaseName}/extension/{extensionName}/disable";
-		StringBuilder sb = path(qPath, serviceName, databaseName, extensionName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
+	public OvhTask serviceName_database_databaseName_import_POST(String serviceName, String databaseName, String documentId, Boolean sendEmail, Boolean flushDatabase) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/database/{databaseName}/import";
+		StringBuilder sb = path(qPath, serviceName, databaseName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "documentId", documentId);
+		addBody(o, "sendEmail", sendEmail);
+		addBody(o, "flushDatabase", flushDatabase);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /hosting/privateDatabase/{serviceName}/database/{databaseName}/extension/{extensionName}
+	 * REST: GET /hosting/privateDatabase/{serviceName}/database/{databaseName}
 	 * @param serviceName [required] The internal name of your private database
 	 * @param databaseName [required] Database name
-	 * @param extensionName [required] Extension name
 	 */
-	public OvhDatabaseExtension serviceName_database_databaseName_extension_extensionName_GET(String serviceName, String databaseName, String extensionName) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/database/{databaseName}/extension/{extensionName}";
-		StringBuilder sb = path(qPath, serviceName, databaseName, extensionName);
+	public OvhDatabase serviceName_database_databaseName_GET(String serviceName, String databaseName) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/database/{databaseName}";
+		StringBuilder sb = path(qPath, serviceName, databaseName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhDatabaseExtension.class);
+		return convertTo(resp, OvhDatabase.class);
 	}
 
 	/**
-	 * Enable an extension on a database
+	 * Delete the database
 	 *
-	 * REST: POST /hosting/privateDatabase/{serviceName}/database/{databaseName}/extension/{extensionName}/enable
+	 * REST: DELETE /hosting/privateDatabase/{serviceName}/database/{databaseName}
 	 * @param serviceName [required] The internal name of your private database
 	 * @param databaseName [required] Database name
-	 * @param extensionName [required] Extension name
 	 */
-	public OvhTask serviceName_database_databaseName_extension_extensionName_enable_POST(String serviceName, String databaseName, String extensionName) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/database/{databaseName}/extension/{extensionName}/enable";
-		StringBuilder sb = path(qPath, serviceName, databaseName, extensionName);
+	public OvhTask serviceName_database_databaseName_DELETE(String serviceName, String databaseName) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/database/{databaseName}";
+		StringBuilder sb = path(qPath, serviceName, databaseName);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Change the private database engine version
+	 *
+	 * REST: POST /hosting/privateDatabase/{serviceName}/changeVersion
+	 * @param version [required] Private database versions
+	 * @param serviceName [required] The internal name of your private database
+	 */
+	public OvhTask serviceName_changeVersion_POST(String serviceName, OvhAvailableVersionEnum version) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/changeVersion";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "version", version);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Start the private database
+	 *
+	 * REST: POST /hosting/privateDatabase/{serviceName}/start
+	 * @param serviceName [required] The internal name of your private database
+	 */
+	public OvhTask serviceName_start_POST(String serviceName) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/start";
+		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
-	 * Databases linked to your private database service
+	 * List linked webs
 	 *
-	 * REST: GET /hosting/privateDatabase/{serviceName}/database
+	 * REST: GET /hosting/privateDatabase/{serviceName}/webs
 	 * @param serviceName [required] The internal name of your private database
 	 */
-	public ArrayList<String> serviceName_database_GET(String serviceName) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/database";
+	public ArrayList<String> serviceName_webs_GET(String serviceName) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/webs";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
 	/**
-	 * Create a new database on your private database service
+	 * Stop the private database
 	 *
-	 * REST: POST /hosting/privateDatabase/{serviceName}/database
-	 * @param databaseName [required] Name of your new database
+	 * REST: POST /hosting/privateDatabase/{serviceName}/stop
 	 * @param serviceName [required] The internal name of your private database
 	 */
-	public OvhTask serviceName_database_POST(String serviceName, String databaseName) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/database";
+	public OvhTask serviceName_stop_POST(String serviceName) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/stop";
 		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Change your ftp admin password
+	 *
+	 * REST: POST /hosting/privateDatabase/{serviceName}/changeFtpPassword
+	 * @param password [required] New ftp admin password ( alphanumeric and 8 characters minimum )
+	 * @param serviceName [required] The internal name of your private database
+	 */
+	public OvhTask serviceName_changeFtpPassword_POST(String serviceName, String password) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/changeFtpPassword";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "password", password);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Terminate your service
+	 *
+	 * REST: POST /hosting/privateDatabase/{serviceName}/terminate
+	 * @param serviceName [required] The internal name of your private database
+	 */
+	public String serviceName_terminate_POST(String serviceName) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/terminate";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /hosting/privateDatabase/{serviceName}
+	 * @param serviceName [required] The internal name of your private database
+	 */
+	public OvhService serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhService.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /hosting/privateDatabase/{serviceName}
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your private database
+	 */
+	public void serviceName_PUT(String serviceName, OvhService body) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Launch a contact change procedure
+	 *
+	 * REST: POST /hosting/privateDatabase/{serviceName}/changeContact
+	 * @param contactAdmin The contact to set as admin contact
+	 * @param contactTech The contact to set as tech contact
+	 * @param contactBilling The contact to set as billing contact
+	 * @param serviceName [required] The internal name of your private database
+	 */
+	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/changeContact";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "contactAdmin", contactAdmin);
+		addBody(o, "contactTech", contactTech);
+		addBody(o, "contactBilling", contactBilling);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Create a new database/user and grant it
+	 *
+	 * REST: POST /hosting/privateDatabase/{serviceName}/databaseWizard
+	 * @param grant [required] Grant of the user on this database
+	 * @param userName [required] New user name used to connect on your database
+	 * @param databaseName [required] Name of your new database
+	 * @param password [required] Password for the new user ( alphanumeric and 8 characters minimum )
+	 * @param serviceName [required] The internal name of your private database
+	 */
+	public OvhTask serviceName_databaseWizard_POST(String serviceName, OvhGrantEnum grant, String userName, String databaseName, String password) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/databaseWizard";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "grant", grant);
+		addBody(o, "userName", userName);
+		addBody(o, "databaseName", databaseName);
+		addBody(o, "password", password);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Dumps available for your private database service
+	 *
+	 * REST: GET /hosting/privateDatabase/{serviceName}/dump
+	 * @param databaseName [required] Filter the value of databaseName property (like)
+	 * @param orphan [required] Filter the value of orphan property (=)
+	 * @param serviceName [required] The internal name of your private database
+	 */
+	public ArrayList<Long> serviceName_dump_GET(String serviceName, String databaseName, Boolean orphan) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/dump";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "databaseName", databaseName);
+		query(sb, "orphan", orphan);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Request the restore from this dump
+	 *
+	 * REST: POST /hosting/privateDatabase/{serviceName}/dump/{dumpId}/restore
+	 * @param databaseName [required] The database where you want to restore this dump
+	 * @param serviceName [required] The internal name of your private database
+	 * @param dumpId [required] Dump id
+	 */
+	public OvhTask serviceName_dump_dumpId_restore_POST(String serviceName, Long dumpId, String databaseName) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/dump/{dumpId}/restore";
+		StringBuilder sb = path(qPath, serviceName, dumpId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "databaseName", databaseName);
 		String resp = exec(qPath, "POST", sb.toString(), o);
@@ -348,77 +450,69 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 	}
 
 	/**
-	 * User allowed to connect on your databases
-	 *
-	 * REST: GET /hosting/privateDatabase/{serviceName}/user
-	 * @param serviceName [required] The internal name of your private database
-	 */
-	public ArrayList<String> serviceName_user_GET(String serviceName) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/user";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Create a new user on your service
-	 *
-	 * REST: POST /hosting/privateDatabase/{serviceName}/user
-	 * @param password [required] Password for the new user ( alphanumeric and 8 characters minimum )
-	 * @param userName [required] User name used to connect on your databases
-	 * @param serviceName [required] The internal name of your private database
-	 */
-	public OvhTask serviceName_user_POST(String serviceName, String password, String userName) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/user";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "password", password);
-		addBody(o, "userName", userName);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /hosting/privateDatabase/{serviceName}/user/{userName}
+	 * REST: GET /hosting/privateDatabase/{serviceName}/dump/{dumpId}
 	 * @param serviceName [required] The internal name of your private database
-	 * @param userName [required] User name used to connect to your databases
+	 * @param dumpId [required] Dump id
 	 */
-	public OvhUser serviceName_user_userName_GET(String serviceName, String userName) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/user/{userName}";
-		StringBuilder sb = path(qPath, serviceName, userName);
+	public OvhDump serviceName_dump_dumpId_GET(String serviceName, Long dumpId) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/dump/{dumpId}";
+		StringBuilder sb = path(qPath, serviceName, dumpId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhUser.class);
+		return convertTo(resp, OvhDump.class);
 	}
 
 	/**
-	 * Delete a user
+	 * Delete dump before expiration date
 	 *
-	 * REST: DELETE /hosting/privateDatabase/{serviceName}/user/{userName}
+	 * REST: DELETE /hosting/privateDatabase/{serviceName}/dump/{dumpId}
 	 * @param serviceName [required] The internal name of your private database
-	 * @param userName [required] User name used to connect to your databases
+	 * @param dumpId [required] Dump id
 	 */
-	public OvhTask serviceName_user_userName_DELETE(String serviceName, String userName) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/user/{userName}";
-		StringBuilder sb = path(qPath, serviceName, userName);
+	public OvhTask serviceName_dump_dumpId_DELETE(String serviceName, Long dumpId) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/dump/{dumpId}";
+		StringBuilder sb = path(qPath, serviceName, dumpId);
 		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
-	 * Request a change password for a user
+	 * Confirm termination of your service
 	 *
-	 * REST: POST /hosting/privateDatabase/{serviceName}/user/{userName}/changePassword
-	 * @param password [required] The new user password ( alphanumeric and 8 characters minimum )
+	 * REST: POST /hosting/privateDatabase/{serviceName}/confirmTermination
+	 * @param futureUse What next after your termination request
+	 * @param reason Reason of your termination request
+	 * @param commentary Commentary about your termination request
+	 * @param token [required] The termination token sent by mail to the admin contact
+	 * @param serviceName [required] The internal name of your private database
+	 */
+	public String serviceName_confirmTermination_POST(String serviceName, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/confirmTermination";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "futureUse", futureUse);
+		addBody(o, "reason", reason);
+		addBody(o, "commentary", commentary);
+		addBody(o, "token", token);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Update user grant
+	 *
+	 * REST: POST /hosting/privateDatabase/{serviceName}/user/{userName}/grant/{databaseName}/update
+	 * @param grant [required] Grant you want set on the database for this user
 	 * @param serviceName [required] The internal name of your private database
 	 * @param userName [required] User name used to connect to your databases
+	 * @param databaseName [required] Database name where grant is set
 	 */
-	public OvhTask serviceName_user_userName_changePassword_POST(String serviceName, String userName, String password) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/user/{userName}/changePassword";
-		StringBuilder sb = path(qPath, serviceName, userName);
+	public OvhTask serviceName_user_userName_grant_databaseName_update_POST(String serviceName, String userName, String databaseName, OvhGrantEnum grant) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/user/{userName}/grant/{databaseName}/update";
+		StringBuilder sb = path(qPath, serviceName, userName, databaseName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "password", password);
+		addBody(o, "grant", grant);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
@@ -450,24 +544,6 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 		String qPath = "/hosting/privateDatabase/{serviceName}/user/{userName}/grant/{databaseName}";
 		StringBuilder sb = path(qPath, serviceName, userName, databaseName);
 		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Update user grant
-	 *
-	 * REST: POST /hosting/privateDatabase/{serviceName}/user/{userName}/grant/{databaseName}/update
-	 * @param grant [required] Grant you want set on the database for this user
-	 * @param serviceName [required] The internal name of your private database
-	 * @param userName [required] User name used to connect to your databases
-	 * @param databaseName [required] Database name where grant is set
-	 */
-	public OvhTask serviceName_user_userName_grant_databaseName_update_POST(String serviceName, String userName, String databaseName, OvhGrantEnum grant) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/user/{userName}/grant/{databaseName}/update";
-		StringBuilder sb = path(qPath, serviceName, userName, databaseName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "grant", grant);
-		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -505,12 +581,227 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 	}
 
 	/**
+	 * Request a change password for a user
+	 *
+	 * REST: POST /hosting/privateDatabase/{serviceName}/user/{userName}/changePassword
+	 * @param password [required] The new user password ( alphanumeric and 8 characters minimum )
+	 * @param serviceName [required] The internal name of your private database
+	 * @param userName [required] User name used to connect to your databases
+	 */
+	public OvhTask serviceName_user_userName_changePassword_POST(String serviceName, String userName, String password) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/user/{userName}/changePassword";
+		StringBuilder sb = path(qPath, serviceName, userName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "password", password);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /hosting/privateDatabase/{serviceName}/user/{userName}
+	 * @param serviceName [required] The internal name of your private database
+	 * @param userName [required] User name used to connect to your databases
+	 */
+	public OvhUser serviceName_user_userName_GET(String serviceName, String userName) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/user/{userName}";
+		StringBuilder sb = path(qPath, serviceName, userName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhUser.class);
+	}
+
+	/**
+	 * Delete a user
+	 *
+	 * REST: DELETE /hosting/privateDatabase/{serviceName}/user/{userName}
+	 * @param serviceName [required] The internal name of your private database
+	 * @param userName [required] User name used to connect to your databases
+	 */
+	public OvhTask serviceName_user_userName_DELETE(String serviceName, String userName) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/user/{userName}";
+		StringBuilder sb = path(qPath, serviceName, userName);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * User allowed to connect on your databases
+	 *
+	 * REST: GET /hosting/privateDatabase/{serviceName}/user
+	 * @param serviceName [required] The internal name of your private database
+	 */
+	public ArrayList<String> serviceName_user_GET(String serviceName) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/user";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Create a new user on your service
+	 *
+	 * REST: POST /hosting/privateDatabase/{serviceName}/user
+	 * @param userName [required] User name used to connect on your databases
+	 * @param password [required] Password for the new user ( alphanumeric and 8 characters minimum )
+	 * @param serviceName [required] The internal name of your private database
+	 */
+	public OvhTask serviceName_user_POST(String serviceName, String userName, String password) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/user";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "userName", userName);
+		addBody(o, "password", password);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /hosting/privateDatabase/{serviceName}/tasks/{id}
+	 * @param serviceName [required] The internal name of your private database
+	 * @param id [required] The id of the task
+	 */
+	public OvhTask serviceName_tasks_id_GET(String serviceName, Long id) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/tasks/{id}";
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Tasks attached to your private database service
+	 *
+	 * REST: GET /hosting/privateDatabase/{serviceName}/tasks
+	 * @param status [required] Filter the value of status property (=)
+	 * @param function [required] Filter the value of function property (=)
+	 * @param serviceName [required] The internal name of your private database
+	 */
+	public ArrayList<Long> serviceName_tasks_GET(String serviceName, OvhFunctionEnum function, OvhStatusEnum status) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/tasks";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "function", function);
+		query(sb, "status", status);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Generate a temporary url to retrieve instance logs
+	 *
+	 * REST: POST /hosting/privateDatabase/{serviceName}/generateTemporaryLogsLink
+	 * @param serviceName [required] The internal name of your private database
+	 */
+	public OvhTemporaryLogsLink serviceName_generateTemporaryLogsLink_POST(String serviceName) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/generateTemporaryLogsLink";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTemporaryLogsLink.class);
+	}
+
+	/**
+	 * Synchronize your informations from your private database
+	 *
+	 * REST: POST /hosting/privateDatabase/{serviceName}/refresh
+	 * @param serviceName [required] The internal name of your private database
+	 */
+	public OvhTask serviceName_refresh_POST(String serviceName) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/refresh";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Update the configuration
+	 *
+	 * REST: POST /hosting/privateDatabase/{serviceName}/config/update
+	 * @param parameters [required] Array of instance configuration parameters
+	 * @param serviceName [required] The internal name of your private database
+	 */
+	public OvhConfiguration serviceName_config_update_POST(String serviceName, OvhSafeKeyValue<String>[] parameters) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/config/update";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "parameters", parameters);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhConfiguration.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /hosting/privateDatabase/{serviceName}/config
+	 * @param serviceName [required] The internal name of your private database
+	 */
+	public OvhConfiguration serviceName_config_GET(String serviceName) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/config";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhConfiguration.class);
+	}
+
+	/**
+	 * Restart the private database
+	 *
+	 * REST: POST /hosting/privateDatabase/{serviceName}/restart
+	 * @param serviceName [required] The internal name of your private database
+	 */
+	public OvhTask serviceName_restart_POST(String serviceName) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/restart";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get the availables versions for this private database
+	 *
+	 * REST: GET /hosting/privateDatabase/{serviceName}/availableVersions
+	 * @param serviceName [required] The internal name of your private database
+	 */
+	public ArrayList<OvhAvailableVersionEnum> serviceName_availableVersions_GET(String serviceName) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/availableVersions";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+	private static TypeReference<ArrayList<OvhAvailableVersionEnum>> t3 = new TypeReference<ArrayList<OvhAvailableVersionEnum>>() {};
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /hosting/privateDatabase/{serviceName}/serviceInfos
+	 * @param serviceName [required] The internal name of your private database
+	 */
+	public net.minidev.ovh.api.services.OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, net.minidev.ovh.api.services.OvhService.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /hosting/privateDatabase/{serviceName}/serviceInfos
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your private database
+	 */
+	public void serviceName_serviceInfos_PUT(String serviceName, net.minidev.ovh.api.services.OvhService body) throws IOException {
+		String qPath = "/hosting/privateDatabase/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
 	 * Whitelist allowed on your privatesql
 	 *
 	 * REST: GET /hosting/privateDatabase/{serviceName}/whitelist
-	 * @param sftp [required] Filter the value of sftp property (=)
 	 * @param service [required] Filter the value of service property (=)
 	 * @param ip [required] Filter the value of ip property (contains or equals)
+	 * @param sftp [required] Filter the value of sftp property (=)
 	 * @param serviceName [required] The internal name of your private database
 	 */
 	public ArrayList<String> serviceName_whitelist_GET(String serviceName, String ip, Boolean service, Boolean sftp) throws IOException {
@@ -528,19 +819,19 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 	 *
 	 * REST: POST /hosting/privateDatabase/{serviceName}/whitelist
 	 * @param ip [required] The IP to whitelist in your instance
+	 * @param sftp [required] Authorize this IP to access sftp port
 	 * @param service [required] Authorize this IP to access service port
 	 * @param name [required] Custom name for your Whitelisted IP
-	 * @param sftp [required] Authorize this IP to access sftp port
 	 * @param serviceName [required] The internal name of your private database
 	 */
-	public OvhTask serviceName_whitelist_POST(String serviceName, String ip, Boolean service, String name, Boolean sftp) throws IOException {
+	public OvhTask serviceName_whitelist_POST(String serviceName, String ip, Boolean sftp, Boolean service, String name) throws IOException {
 		String qPath = "/hosting/privateDatabase/{serviceName}/whitelist";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "ip", ip);
+		addBody(o, "sftp", sftp);
 		addBody(o, "service", service);
 		addBody(o, "name", name);
-		addBody(o, "sftp", sftp);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
@@ -588,215 +879,6 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 	}
 
 	/**
-	 * Restart the private database
-	 *
-	 * REST: POST /hosting/privateDatabase/{serviceName}/restart
-	 * @param serviceName [required] The internal name of your private database
-	 */
-	public OvhTask serviceName_restart_POST(String serviceName) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/restart";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /hosting/privateDatabase/{serviceName}/tasks/{id}
-	 * @param serviceName [required] The internal name of your private database
-	 * @param id [required] The id of the task
-	 */
-	public OvhTask serviceName_tasks_id_GET(String serviceName, Long id) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/tasks/{id}";
-		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Tasks attached to your private database service
-	 *
-	 * REST: GET /hosting/privateDatabase/{serviceName}/tasks
-	 * @param function [required] Filter the value of function property (=)
-	 * @param status [required] Filter the value of status property (=)
-	 * @param serviceName [required] The internal name of your private database
-	 */
-	public ArrayList<Long> serviceName_tasks_GET(String serviceName, OvhFunctionEnum function, OvhStatusEnum status) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/tasks";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "function", function);
-		query(sb, "status", status);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Synchronize your informations from your private database
-	 *
-	 * REST: POST /hosting/privateDatabase/{serviceName}/refresh
-	 * @param serviceName [required] The internal name of your private database
-	 */
-	public OvhTask serviceName_refresh_POST(String serviceName) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/refresh";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Start the private database
-	 *
-	 * REST: POST /hosting/privateDatabase/{serviceName}/start
-	 * @param serviceName [required] The internal name of your private database
-	 */
-	public OvhTask serviceName_start_POST(String serviceName) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/start";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Confirm termination of your service
-	 *
-	 * REST: POST /hosting/privateDatabase/{serviceName}/confirmTermination
-	 * @param futureUse What next after your termination request
-	 * @param reason Reason of your termination request
-	 * @param commentary Commentary about your termination request
-	 * @param token [required] The termination token sent by mail to the admin contact
-	 * @param serviceName [required] The internal name of your private database
-	 */
-	public String serviceName_confirmTermination_POST(String serviceName, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/confirmTermination";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "futureUse", futureUse);
-		addBody(o, "reason", reason);
-		addBody(o, "commentary", commentary);
-		addBody(o, "token", token);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * List linked webs
-	 *
-	 * REST: GET /hosting/privateDatabase/{serviceName}/webs
-	 * @param serviceName [required] The internal name of your private database
-	 */
-	public ArrayList<String> serviceName_webs_GET(String serviceName) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/webs";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Generate a temporary url to retrieve instance logs
-	 *
-	 * REST: POST /hosting/privateDatabase/{serviceName}/generateTemporaryLogsLink
-	 * @param serviceName [required] The internal name of your private database
-	 */
-	public OvhTemporaryLogsLink serviceName_generateTemporaryLogsLink_POST(String serviceName) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/generateTemporaryLogsLink";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, OvhTemporaryLogsLink.class);
-	}
-
-	/**
-	 * Create a new database/user and grant it
-	 *
-	 * REST: POST /hosting/privateDatabase/{serviceName}/databaseWizard
-	 * @param grant [required] Grant of the user on this database
-	 * @param password [required] Password for the new user ( alphanumeric and 8 characters minimum )
-	 * @param databaseName [required] Name of your new database
-	 * @param userName [required] New user name used to connect on your database
-	 * @param serviceName [required] The internal name of your private database
-	 */
-	public OvhTask serviceName_databaseWizard_POST(String serviceName, OvhGrantEnum grant, String password, String databaseName, String userName) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/databaseWizard";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "grant", grant);
-		addBody(o, "password", password);
-		addBody(o, "databaseName", databaseName);
-		addBody(o, "userName", userName);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get the availables versions for this private database
-	 *
-	 * REST: GET /hosting/privateDatabase/{serviceName}/availableVersions
-	 * @param serviceName [required] The internal name of your private database
-	 */
-	public ArrayList<OvhAvailableVersionEnum> serviceName_availableVersions_GET(String serviceName) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/availableVersions";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
-	}
-	private static TypeReference<ArrayList<OvhAvailableVersionEnum>> t3 = new TypeReference<ArrayList<OvhAvailableVersionEnum>>() {};
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /hosting/privateDatabase/{serviceName}/serviceInfos
-	 * @param serviceName [required] The internal name of your private database
-	 */
-	public net.minidev.ovh.api.services.OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, net.minidev.ovh.api.services.OvhService.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /hosting/privateDatabase/{serviceName}/serviceInfos
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your private database
-	 */
-	public void serviceName_serviceInfos_PUT(String serviceName, net.minidev.ovh.api.services.OvhService body) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /hosting/privateDatabase/{serviceName}/config
-	 * @param serviceName [required] The internal name of your private database
-	 */
-	public OvhConfiguration serviceName_config_GET(String serviceName) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/config";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhConfiguration.class);
-	}
-
-	/**
-	 * Update the configuration
-	 *
-	 * REST: POST /hosting/privateDatabase/{serviceName}/config/update
-	 * @param parameters [required] Array of instance configuration parameters
-	 * @param serviceName [required] The internal name of your private database
-	 */
-	public OvhConfiguration serviceName_config_update_POST(String serviceName, OvhSafeKeyValue<String>[] parameters) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/config/update";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "parameters", parameters);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhConfiguration.class);
-	}
-
-	/**
 	 * List of privatesql OOM kill
 	 *
 	 * REST: GET /hosting/privateDatabase/{serviceName}/oom
@@ -811,110 +893,28 @@ public class ApiOvhHostingprivateDatabase extends ApiOvhBase {
 	private static TypeReference<ArrayList<OvhOom>> t4 = new TypeReference<ArrayList<OvhOom>>() {};
 
 	/**
-	 * Terminate your service
+	 * List available services
 	 *
-	 * REST: POST /hosting/privateDatabase/{serviceName}/terminate
-	 * @param serviceName [required] The internal name of your private database
+	 * REST: GET /hosting/privateDatabase
 	 */
-	public String serviceName_terminate_POST(String serviceName) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/terminate";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * Stop the private database
-	 *
-	 * REST: POST /hosting/privateDatabase/{serviceName}/stop
-	 * @param serviceName [required] The internal name of your private database
-	 */
-	public OvhTask serviceName_stop_POST(String serviceName) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/stop";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /hosting/privateDatabase/{serviceName}/dump/{dumpId}
-	 * @param serviceName [required] The internal name of your private database
-	 * @param dumpId [required] Dump id
-	 */
-	public OvhDump serviceName_dump_dumpId_GET(String serviceName, Long dumpId) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/dump/{dumpId}";
-		StringBuilder sb = path(qPath, serviceName, dumpId);
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/hosting/privateDatabase";
+		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhDump.class);
+		return convertTo(resp, t1);
 	}
 
 	/**
-	 * Delete dump before expiration date
+	 * Get available order capacitie
 	 *
-	 * REST: DELETE /hosting/privateDatabase/{serviceName}/dump/{dumpId}
-	 * @param serviceName [required] The internal name of your private database
-	 * @param dumpId [required] Dump id
+	 * REST: GET /hosting/privateDatabase/availableOrderCapacities
+	 * @param offer [required] Offer available order capacities to choose
 	 */
-	public OvhTask serviceName_dump_dumpId_DELETE(String serviceName, Long dumpId) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/dump/{dumpId}";
-		StringBuilder sb = path(qPath, serviceName, dumpId);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Request the restore from this dump
-	 *
-	 * REST: POST /hosting/privateDatabase/{serviceName}/dump/{dumpId}/restore
-	 * @param databaseName [required] The database where you want to restore this dump
-	 * @param serviceName [required] The internal name of your private database
-	 * @param dumpId [required] Dump id
-	 */
-	public OvhTask serviceName_dump_dumpId_restore_POST(String serviceName, Long dumpId, String databaseName) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/dump/{dumpId}/restore";
-		StringBuilder sb = path(qPath, serviceName, dumpId);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "databaseName", databaseName);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Dumps available for your private database service
-	 *
-	 * REST: GET /hosting/privateDatabase/{serviceName}/dump
-	 * @param databaseName [required] Filter the value of databaseName property (like)
-	 * @param orphan [required] Filter the value of orphan property (=)
-	 * @param serviceName [required] The internal name of your private database
-	 */
-	public ArrayList<Long> serviceName_dump_GET(String serviceName, String databaseName, Boolean orphan) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/dump";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "databaseName", databaseName);
-		query(sb, "orphan", orphan);
+	public OvhAvailableOrderCapacities availableOrderCapacities_GET(OvhOfferEnum offer) throws IOException {
+		String qPath = "/hosting/privateDatabase/availableOrderCapacities";
+		StringBuilder sb = path(qPath);
+		query(sb, "offer", offer);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Launch a contact change procedure
-	 *
-	 * REST: POST /hosting/privateDatabase/{serviceName}/changeContact
-	 * @param contactAdmin The contact to set as admin contact
-	 * @param contactTech The contact to set as tech contact
-	 * @param contactBilling The contact to set as billing contact
-	 * @param serviceName [required] The internal name of your private database
-	 */
-	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
-		String qPath = "/hosting/privateDatabase/{serviceName}/changeContact";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "contactAdmin", contactAdmin);
-		addBody(o, "contactTech", contactTech);
-		addBody(o, "contactBilling", contactBilling);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t2);
+		return convertTo(resp, OvhAvailableOrderCapacities.class);
 	}
 }

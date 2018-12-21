@@ -58,16 +58,16 @@ public class OvhTask {
 	public Long taskId;
 
 	/**
-	 * The actual state of the task
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhTaskStatusEnum status;
-
-	/**
 	 * the name of your service
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String storageName;
+
+	/**
+	 * The actual state of the task
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhTaskStatusEnum status;
 }

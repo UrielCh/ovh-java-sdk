@@ -5,18 +5,18 @@ package net.minidev.ovh.api.iploadbalancing.frontendudp;
  */
 public class OvhFrontendUdp {
 	/**
-	 * Listening port(s) on the server
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String port;
-
-	/**
 	 * Zone of you frontend
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String zone;
+
+	/**
+	 * Listening port(s) on the server
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String port;
 
 	/**
 	 * Human readable name for your frontend, this field is for you

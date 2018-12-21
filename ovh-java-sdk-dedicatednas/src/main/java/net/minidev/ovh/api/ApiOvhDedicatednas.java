@@ -27,134 +27,61 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 	}
 
 	/**
-	 * List available services
+	 * Get this object properties
 	 *
-	 * REST: GET /dedicated/nas
+	 * REST: GET /dedicated/nas/{serviceName}
+	 * @param serviceName [required] The internal name of your storage
 	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/dedicated/nas";
-		StringBuilder sb = path(qPath);
+	public OvhNas serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/dedicated/nas/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhNas.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /dedicated/nas/{serviceName}
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your storage
+	 */
+	public void serviceName_PUT(String serviceName, OvhNas body) throws IOException {
+		String qPath = "/dedicated/nas/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Get partition list
+	 *
+	 * REST: GET /dedicated/nas/{serviceName}/partition
+	 * @param serviceName [required] The internal name of your storage
+	 */
+	public ArrayList<String> serviceName_partition_GET(String serviceName) throws IOException {
+		String qPath = "/dedicated/nas/{serviceName}/partition";
+		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
 
 	/**
-	 * Get this object properties
+	 * Create a  new partition
 	 *
-	 * REST: GET /dedicated/nas/{serviceName}/partition/{partitionName}
+	 * REST: POST /dedicated/nas/{serviceName}/partition
+	 * @param partitionName [required] Partition name
+	 * @param size [required] Partition size
+	 * @param protocol [required]
 	 * @param serviceName [required] The internal name of your storage
-	 * @param partitionName [required] the given name of partition
 	 */
-	public OvhPartition serviceName_partition_partitionName_GET(String serviceName, String partitionName) throws IOException {
-		String qPath = "/dedicated/nas/{serviceName}/partition/{partitionName}";
-		StringBuilder sb = path(qPath, serviceName, partitionName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPartition.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /dedicated/nas/{serviceName}/partition/{partitionName}
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your storage
-	 * @param partitionName [required] the given name of partition
-	 */
-	public void serviceName_partition_partitionName_PUT(String serviceName, String partitionName, OvhPartition body) throws IOException {
-		String qPath = "/dedicated/nas/{serviceName}/partition/{partitionName}";
-		StringBuilder sb = path(qPath, serviceName, partitionName);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Delete this partition
-	 *
-	 * REST: DELETE /dedicated/nas/{serviceName}/partition/{partitionName}
-	 * @param serviceName [required] The internal name of your storage
-	 * @param partitionName [required] the given name of partition
-	 */
-	public OvhTask serviceName_partition_partitionName_DELETE(String serviceName, String partitionName) throws IOException {
-		String qPath = "/dedicated/nas/{serviceName}/partition/{partitionName}";
-		StringBuilder sb = path(qPath, serviceName, partitionName);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get all IPs that can be used in the ACL
-	 *
-	 * REST: GET /dedicated/nas/{serviceName}/partition/{partitionName}/authorizableIps
-	 * @param serviceName [required] The internal name of your storage
-	 * @param partitionName [required] the given name of partition
-	 */
-	public ArrayList<String> serviceName_partition_partitionName_authorizableIps_GET(String serviceName, String partitionName) throws IOException {
-		String qPath = "/dedicated/nas/{serviceName}/partition/{partitionName}/authorizableIps";
-		StringBuilder sb = path(qPath, serviceName, partitionName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /dedicated/nas/{serviceName}/partition/{partitionName}/quota/{uid}
-	 * @param serviceName [required] The internal name of your storage
-	 * @param partitionName [required] the given name of partition
-	 * @param uid [required] the uid to set quota on
-	 */
-	public OvhQuota serviceName_partition_partitionName_quota_uid_GET(String serviceName, String partitionName, Long uid) throws IOException {
-		String qPath = "/dedicated/nas/{serviceName}/partition/{partitionName}/quota/{uid}";
-		StringBuilder sb = path(qPath, serviceName, partitionName, uid);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhQuota.class);
-	}
-
-	/**
-	 * Delete a given quota
-	 *
-	 * REST: DELETE /dedicated/nas/{serviceName}/partition/{partitionName}/quota/{uid}
-	 * @param serviceName [required] The internal name of your storage
-	 * @param partitionName [required] the given name of partition
-	 * @param uid [required] the uid to set quota on
-	 */
-	public OvhTask serviceName_partition_partitionName_quota_uid_DELETE(String serviceName, String partitionName, Long uid) throws IOException {
-		String qPath = "/dedicated/nas/{serviceName}/partition/{partitionName}/quota/{uid}";
-		StringBuilder sb = path(qPath, serviceName, partitionName, uid);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get quota for this partition
-	 *
-	 * REST: GET /dedicated/nas/{serviceName}/partition/{partitionName}/quota
-	 * @param serviceName [required] The internal name of your storage
-	 * @param partitionName [required] the given name of partition
-	 */
-	public ArrayList<Long> serviceName_partition_partitionName_quota_GET(String serviceName, String partitionName) throws IOException {
-		String qPath = "/dedicated/nas/{serviceName}/partition/{partitionName}/quota";
-		StringBuilder sb = path(qPath, serviceName, partitionName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
-
-	/**
-	 * Set a new quota
-	 *
-	 * REST: POST /dedicated/nas/{serviceName}/partition/{partitionName}/quota
-	 * @param uid [required] the uid to set quota on
-	 * @param size [required] the size to set in MB
-	 * @param serviceName [required] The internal name of your storage
-	 * @param partitionName [required] the given name of partition
-	 */
-	public OvhTask serviceName_partition_partitionName_quota_POST(String serviceName, String partitionName, Long uid, Long size) throws IOException {
-		String qPath = "/dedicated/nas/{serviceName}/partition/{partitionName}/quota";
-		StringBuilder sb = path(qPath, serviceName, partitionName);
+	public OvhTask serviceName_partition_POST(String serviceName, String partitionName, Long size, OvhProtocolEnum protocol) throws IOException {
+		String qPath = "/dedicated/nas/{serviceName}/partition";
+		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "uid", uid);
+		addBody(o, "partitionName", partitionName);
 		addBody(o, "size", size);
+		addBody(o, "protocol", protocol);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
@@ -221,53 +148,123 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 	}
 
 	/**
-	 * Get partition list
+	 * Get all IPs that can be used in the ACL
 	 *
-	 * REST: GET /dedicated/nas/{serviceName}/partition
+	 * REST: GET /dedicated/nas/{serviceName}/partition/{partitionName}/authorizableIps
 	 * @param serviceName [required] The internal name of your storage
+	 * @param partitionName [required] the given name of partition
 	 */
-	public ArrayList<String> serviceName_partition_GET(String serviceName) throws IOException {
-		String qPath = "/dedicated/nas/{serviceName}/partition";
-		StringBuilder sb = path(qPath, serviceName);
+	public ArrayList<String> serviceName_partition_partitionName_authorizableIps_GET(String serviceName, String partitionName) throws IOException {
+		String qPath = "/dedicated/nas/{serviceName}/partition/{partitionName}/authorizableIps";
+		StringBuilder sb = path(qPath, serviceName, partitionName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
 	/**
-	 * Create a  new partition
+	 * Get this object properties
 	 *
-	 * REST: POST /dedicated/nas/{serviceName}/partition
-	 * @param partitionName [required] Partition name
-	 * @param size [required] Partition size
-	 * @param protocol [required]
+	 * REST: GET /dedicated/nas/{serviceName}/partition/{partitionName}
 	 * @param serviceName [required] The internal name of your storage
+	 * @param partitionName [required] the given name of partition
 	 */
-	public OvhTask serviceName_partition_POST(String serviceName, String partitionName, Long size, OvhProtocolEnum protocol) throws IOException {
-		String qPath = "/dedicated/nas/{serviceName}/partition";
-		StringBuilder sb = path(qPath, serviceName);
+	public OvhPartition serviceName_partition_partitionName_GET(String serviceName, String partitionName) throws IOException {
+		String qPath = "/dedicated/nas/{serviceName}/partition/{partitionName}";
+		StringBuilder sb = path(qPath, serviceName, partitionName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPartition.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /dedicated/nas/{serviceName}/partition/{partitionName}
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your storage
+	 * @param partitionName [required] the given name of partition
+	 */
+	public void serviceName_partition_partitionName_PUT(String serviceName, String partitionName, OvhPartition body) throws IOException {
+		String qPath = "/dedicated/nas/{serviceName}/partition/{partitionName}";
+		StringBuilder sb = path(qPath, serviceName, partitionName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Delete this partition
+	 *
+	 * REST: DELETE /dedicated/nas/{serviceName}/partition/{partitionName}
+	 * @param serviceName [required] The internal name of your storage
+	 * @param partitionName [required] the given name of partition
+	 */
+	public OvhTask serviceName_partition_partitionName_DELETE(String serviceName, String partitionName) throws IOException {
+		String qPath = "/dedicated/nas/{serviceName}/partition/{partitionName}";
+		StringBuilder sb = path(qPath, serviceName, partitionName);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get quota for this partition
+	 *
+	 * REST: GET /dedicated/nas/{serviceName}/partition/{partitionName}/quota
+	 * @param serviceName [required] The internal name of your storage
+	 * @param partitionName [required] the given name of partition
+	 */
+	public ArrayList<Long> serviceName_partition_partitionName_quota_GET(String serviceName, String partitionName) throws IOException {
+		String qPath = "/dedicated/nas/{serviceName}/partition/{partitionName}/quota";
+		StringBuilder sb = path(qPath, serviceName, partitionName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
+
+	/**
+	 * Set a new quota
+	 *
+	 * REST: POST /dedicated/nas/{serviceName}/partition/{partitionName}/quota
+	 * @param uid [required] the uid to set quota on
+	 * @param size [required] the size to set in MB
+	 * @param serviceName [required] The internal name of your storage
+	 * @param partitionName [required] the given name of partition
+	 */
+	public OvhTask serviceName_partition_partitionName_quota_POST(String serviceName, String partitionName, Long uid, Long size) throws IOException {
+		String qPath = "/dedicated/nas/{serviceName}/partition/{partitionName}/quota";
+		StringBuilder sb = path(qPath, serviceName, partitionName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "partitionName", partitionName);
+		addBody(o, "uid", uid);
 		addBody(o, "size", size);
-		addBody(o, "protocol", protocol);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
-	 * View task list
+	 * Get this object properties
 	 *
-	 * REST: GET /dedicated/nas/{serviceName}/task
-	 * @param status [required] Filter the value of status property (=)
-	 * @param operation [required] Filter the value of operation property (=)
+	 * REST: GET /dedicated/nas/{serviceName}/partition/{partitionName}/quota/{uid}
 	 * @param serviceName [required] The internal name of your storage
+	 * @param partitionName [required] the given name of partition
+	 * @param uid [required] the uid to set quota on
 	 */
-	public ArrayList<Long> serviceName_task_GET(String serviceName, OvhTaskFunctionEnum operation, OvhTaskStatusEnum status) throws IOException {
-		String qPath = "/dedicated/nas/{serviceName}/task";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "operation", operation);
-		query(sb, "status", status);
+	public OvhQuota serviceName_partition_partitionName_quota_uid_GET(String serviceName, String partitionName, Long uid) throws IOException {
+		String qPath = "/dedicated/nas/{serviceName}/partition/{partitionName}/quota/{uid}";
+		StringBuilder sb = path(qPath, serviceName, partitionName, uid);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
+		return convertTo(resp, OvhQuota.class);
+	}
+
+	/**
+	 * Delete a given quota
+	 *
+	 * REST: DELETE /dedicated/nas/{serviceName}/partition/{partitionName}/quota/{uid}
+	 * @param serviceName [required] The internal name of your storage
+	 * @param partitionName [required] the given name of partition
+	 * @param uid [required] the uid to set quota on
+	 */
+	public OvhTask serviceName_partition_partitionName_quota_uid_DELETE(String serviceName, String partitionName, Long uid) throws IOException {
+		String qPath = "/dedicated/nas/{serviceName}/partition/{partitionName}/quota/{uid}";
+		StringBuilder sb = path(qPath, serviceName, partitionName, uid);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
@@ -282,6 +279,23 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName, taskId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * View task list
+	 *
+	 * REST: GET /dedicated/nas/{serviceName}/task
+	 * @param operation [required] Filter the value of operation property (=)
+	 * @param status [required] Filter the value of status property (=)
+	 * @param serviceName [required] The internal name of your storage
+	 */
+	public ArrayList<Long> serviceName_task_GET(String serviceName, OvhTaskFunctionEnum operation, OvhTaskStatusEnum status) throws IOException {
+		String qPath = "/dedicated/nas/{serviceName}/task";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "operation", operation);
+		query(sb, "status", status);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
 	}
 
 	/**
@@ -311,28 +325,14 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 	}
 
 	/**
-	 * Get this object properties
+	 * List available services
 	 *
-	 * REST: GET /dedicated/nas/{serviceName}
-	 * @param serviceName [required] The internal name of your storage
+	 * REST: GET /dedicated/nas
 	 */
-	public OvhNas serviceName_GET(String serviceName) throws IOException {
-		String qPath = "/dedicated/nas/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/dedicated/nas";
+		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhNas.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /dedicated/nas/{serviceName}
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your storage
-	 */
-	public void serviceName_PUT(String serviceName, OvhNas body) throws IOException {
-		String qPath = "/dedicated/nas/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
+		return convertTo(resp, t1);
 	}
 }

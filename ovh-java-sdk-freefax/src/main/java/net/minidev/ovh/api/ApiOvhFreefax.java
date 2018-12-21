@@ -24,6 +24,44 @@ public class ApiOvhFreefax extends ApiOvhBase {
 	}
 
 	/**
+	 * List available services
+	 *
+	 * REST: GET /freefax
+	 */
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/freefax";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
+
+	/**
+	 * Get the credit balance and the remaining pages available for all our freefax
+	 *
+	 * REST: GET /freefax/credits
+	 */
+	public OvhBalanceInformations credits_GET() throws IOException {
+		String qPath = "/freefax/credits";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhBalanceInformations.class);
+	}
+
+	/**
+	 * Get the status of the voicemail. Available only if the line has fax capabilities
+	 *
+	 * REST: GET /freefax/{serviceName}/voicemail/routing
+	 * @param serviceName [required] Freefax number
+	 */
+	public OvhVoicefaxRoutingEnum serviceName_voicemail_routing_GET(String serviceName) throws IOException {
+		String qPath = "/freefax/{serviceName}/voicemail/routing";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhVoicefaxRoutingEnum.class);
+	}
+
+	/**
 	 * Disable/Enable voicemail. Available only if the line has fax capabilities
 	 *
 	 * REST: POST /freefax/{serviceName}/voicemail/changeRouting
@@ -36,6 +74,32 @@ public class ApiOvhFreefax extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "routing", routing);
 		exec(qPath, "POST", sb.toString(), o);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /freefax/{serviceName}/voicemail
+	 * @param serviceName [required] Freefax number
+	 */
+	public OvhVoicemailProperties serviceName_voicemail_GET(String serviceName) throws IOException {
+		String qPath = "/freefax/{serviceName}/voicemail";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhVoicemailProperties.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /freefax/{serviceName}/voicemail
+	 * @param body [required] New object properties
+	 * @param serviceName [required] Freefax number
+	 */
+	public void serviceName_voicemail_PUT(String serviceName, OvhVoicemailProperties body) throws IOException {
+		String qPath = "/freefax/{serviceName}/voicemail";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -67,45 +131,6 @@ public class ApiOvhFreefax extends ApiOvhBase {
 	}
 
 	/**
-	 * Get the status of the voicemail. Available only if the line has fax capabilities
-	 *
-	 * REST: GET /freefax/{serviceName}/voicemail/routing
-	 * @param serviceName [required] Freefax number
-	 */
-	public OvhVoicefaxRoutingEnum serviceName_voicemail_routing_GET(String serviceName) throws IOException {
-		String qPath = "/freefax/{serviceName}/voicemail/routing";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhVoicefaxRoutingEnum.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /freefax/{serviceName}/voicemail
-	 * @param serviceName [required] Freefax number
-	 */
-	public OvhVoicemailProperties serviceName_voicemail_GET(String serviceName) throws IOException {
-		String qPath = "/freefax/{serviceName}/voicemail";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhVoicemailProperties.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /freefax/{serviceName}/voicemail
-	 * @param body [required] New object properties
-	 * @param serviceName [required] Freefax number
-	 */
-	public void serviceName_voicemail_PUT(String serviceName, OvhVoicemailProperties body) throws IOException {
-		String qPath = "/freefax/{serviceName}/voicemail";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /freefax/{serviceName}
@@ -129,19 +154,6 @@ public class ApiOvhFreefax extends ApiOvhBase {
 		String qPath = "/freefax/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
 		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Generates a new password for your fax account
-	 *
-	 * REST: POST /freefax/{serviceName}/changePassword
-	 * @param serviceName [required] Freefax number
-	 */
-	public String serviceName_changePassword_POST(String serviceName) throws IOException {
-		String qPath = "/freefax/{serviceName}/changePassword";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, String.class);
 	}
 
 	/**
@@ -171,6 +183,19 @@ public class ApiOvhFreefax extends ApiOvhBase {
 	}
 
 	/**
+	 * Generates a new password for your fax account
+	 *
+	 * REST: POST /freefax/{serviceName}/changePassword
+	 * @param serviceName [required] Freefax number
+	 */
+	public String serviceName_changePassword_POST(String serviceName) throws IOException {
+		String qPath = "/freefax/{serviceName}/changePassword";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
+
+	/**
 	 * Main service attached to freefax
 	 *
 	 * REST: GET /freefax/{serviceName}/mainService
@@ -182,29 +207,4 @@ public class ApiOvhFreefax extends ApiOvhBase {
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, String.class);
 	}
-
-	/**
-	 * Get the credit balance and the remaining pages available for all our freefax
-	 *
-	 * REST: GET /freefax/credits
-	 */
-	public OvhBalanceInformations credits_GET() throws IOException {
-		String qPath = "/freefax/credits";
-		StringBuilder sb = path(qPath);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhBalanceInformations.class);
-	}
-
-	/**
-	 * List available services
-	 *
-	 * REST: GET /freefax
-	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/freefax";
-		StringBuilder sb = path(qPath);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
 }

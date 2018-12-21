@@ -42,13 +42,6 @@ public class OvhFaxCampaign {
 	public Long countTotal;
 
 	/**
-	 * The end date of the fax campaign
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date dateEnd;
-
-	/**
 	 * The id of the fax campaign
 	 *
 	 * canBeNull && readOnly
@@ -56,11 +49,11 @@ public class OvhFaxCampaign {
 	public Long id;
 
 	/**
-	 * The count of success faxes in the campaign
+	 * The end date of the fax campaign
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long countSuccess;
+	public Date dateEnd;
 
 	/**
 	 * The status of the fax campaign
@@ -68,4 +61,11 @@ public class OvhFaxCampaign {
 	 * canBeNull && readOnly
 	 */
 	public String status;
+
+	/**
+	 * The count of success faxes in the campaign
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long countSuccess;
 }

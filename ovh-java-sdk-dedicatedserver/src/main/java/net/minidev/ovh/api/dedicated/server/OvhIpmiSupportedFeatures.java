@@ -12,18 +12,18 @@ public class OvhIpmiSupportedFeatures {
 	public Boolean serialOverLanSshKey;
 
 	/**
-	 * Access to the KVM through a Java web launch application
-	 *
-	 * canBeNull
-	 */
-	public Boolean kvmipJnlp;
-
-	/**
 	 * Access to the KVM through an HTML web interface
 	 *
 	 * canBeNull
 	 */
 	public Boolean kvmipHtml5URL;
+
+	/**
+	 * Access to the KVM through a Java web launch application
+	 *
+	 * canBeNull
+	 */
+	public Boolean kvmipJnlp;
 
 	/**
 	 * Access to the virtual serial port of your server through an HTML command line interface

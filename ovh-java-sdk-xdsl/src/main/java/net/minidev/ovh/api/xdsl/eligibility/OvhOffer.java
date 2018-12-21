@@ -37,11 +37,11 @@ public class OvhOffer {
 	public OvhGtrEnum[] gtr;
 
 	/**
-	 * DEPRECATED Please use downloadRate instead /DEPRECATED - Estimated or guaranteed rate in Mbit/s, if applicable
+	 * Allowed unbundling methods
 	 *
 	 * canBeNull
 	 */
-	public Double rate;
+	public OvhDeconsolidationEnum[] unbundling;
 
 	/**
 	 * Provider, if applicable
@@ -51,11 +51,11 @@ public class OvhOffer {
 	public OvhProviderEnum provider;
 
 	/**
-	 * Allowed unbundling methods
+	 * DEPRECATED Please use downloadRate instead /DEPRECATED - Estimated or guaranteed rate in Mbit/s, if applicable
 	 *
 	 * canBeNull
 	 */
-	public OvhDeconsolidationEnum[] unbundling;
+	public Double rate;
 
 	/**
 	 * Is the rate guaranteed ?

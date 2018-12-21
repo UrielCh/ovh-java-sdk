@@ -12,18 +12,18 @@ public class OvhItem {
 	public String duration;
 
 	/**
-	 * Domain related settings
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhDomainSettings settings;
-
-	/**
 	 * Current product identifier
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long itemId;
+
+	/**
+	 * Domain related settings
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhDomainSettings settings;
 
 	/**
 	 * Id of parent item (if item is an option)

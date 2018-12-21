@@ -66,18 +66,18 @@ public class OvhFirewallNetworkRule {
 	public Boolean fragments;
 
 	/**
-	 * Source ip for your rule
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String source;
-
-	/**
 	 * Current state of your rule
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhFirewallRuleStateEnum state;
+
+	/**
+	 * Source ip for your rule
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String source;
 
 	/**
 	 * canBeNull && readOnly

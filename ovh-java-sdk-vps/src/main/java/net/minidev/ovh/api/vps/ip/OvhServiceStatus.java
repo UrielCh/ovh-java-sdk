@@ -22,12 +22,12 @@ public class OvhServiceStatus {
 	/**
 	 * canBeNull
 	 */
-	public OvhServiceStatusService ssh;
+	public OvhServiceStatusService http;
 
 	/**
 	 * canBeNull
 	 */
-	public OvhServiceStatusService http;
+	public OvhServiceStatusService ssh;
 
 	/**
 	 * canBeNull

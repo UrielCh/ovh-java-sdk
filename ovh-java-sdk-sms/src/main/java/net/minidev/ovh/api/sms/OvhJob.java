@@ -14,7 +14,7 @@ public class OvhJob {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long messageLength;
+	public Long deliveryReceipt;
 
 	/**
 	 * canBeNull && readOnly
@@ -24,7 +24,7 @@ public class OvhJob {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long deliveryReceipt;
+	public Long messageLength;
 
 	/**
 	 * canBeNull && readOnly
@@ -39,12 +39,12 @@ public class OvhJob {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long differedDelivery;
+	public Long numberOfSms;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long numberOfSms;
+	public Long differedDelivery;
 
 	/**
 	 * canBeNull && readOnly

@@ -17,17 +17,17 @@ public class OvhAccess {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhAddressDetail address;
-
-	/**
-	 * canBeNull && readOnly
-	 */
 	public OvhAccessRoleEnum role;
 
 	/**
 	 * canBeNull && readOnly
 	 */
 	public OvhAccessCapabilities capabilities;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public OvhAddressDetail address;
 
 	/**
 	 * canBeNull && readOnly
@@ -52,16 +52,16 @@ public class OvhAccess {
 	public Boolean ipv6Enabled;
 
 	/**
-	 * canBeNull && readOnly
-	 */
-	public String nra;
-
-	/**
 	 * Whether or not this access is monitored
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean monitoring;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public String nra;
 
 	/**
 	 * canBeNull && readOnly

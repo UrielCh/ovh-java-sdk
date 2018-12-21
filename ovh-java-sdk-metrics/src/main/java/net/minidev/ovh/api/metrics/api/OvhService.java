@@ -33,13 +33,6 @@ public class OvhService {
 	public String description;
 
 	/**
-	 * Type of the service: cloud or live
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhOfferTypeEnum type;
-
-	/**
 	 * Region holding the service
 	 *
 	 * canBeNull && readOnly
@@ -47,11 +40,11 @@ public class OvhService {
 	public OvhRegion region;
 
 	/**
-	 * Indicator if the service should be upgraded based on current quota and offer
+	 * Type of the service: cloud or live
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Boolean shouldUpgrade;
+	public OvhOfferTypeEnum type;
 
 	/**
 	 * Status of a service
@@ -59,4 +52,11 @@ public class OvhService {
 	 * canBeNull && readOnly
 	 */
 	public OvhServiceStatusEnum status;
+
+	/**
+	 * Indicator if the service should be upgraded based on current quota and offer
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean shouldUpgrade;
 }

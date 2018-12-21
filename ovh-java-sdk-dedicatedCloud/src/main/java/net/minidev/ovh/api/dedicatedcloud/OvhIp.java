@@ -29,16 +29,16 @@ public class OvhIp {
 	public Long vlanNumber;
 
 	/**
-	 * IP ex: 213.186.33.34/24
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String network;
-
-	/**
 	 * The Regional Internet Registry of this Ip Block
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhBlockRegisterEnum register;
+
+	/**
+	 * IP ex: 213.186.33.34/24
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String network;
 }

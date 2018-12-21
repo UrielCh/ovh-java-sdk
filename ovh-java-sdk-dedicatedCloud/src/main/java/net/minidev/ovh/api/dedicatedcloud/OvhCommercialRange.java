@@ -14,18 +14,18 @@ public class OvhCommercialRange {
 	public OvhHypervisorVersionEnum[] allowedHypervisorVersions;
 
 	/**
-	 * The name of this commercial range
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String commercialRangeName;
-
-	/**
 	 * The name of the dedicated Cloud version associated to this commercial range
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String dedicatedCloudVersion;
+
+	/**
+	 * The name of this commercial range
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String commercialRangeName;
 
 	/**
 	 * The range of this Datacenter in this Private Cloud version

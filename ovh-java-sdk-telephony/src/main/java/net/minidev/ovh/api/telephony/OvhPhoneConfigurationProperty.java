@@ -16,18 +16,18 @@ public class OvhPhoneConfigurationProperty {
 	public String _default;
 
 	/**
-	 * Provisioning level
-	 *
-	 * canBeNull
-	 */
-	public OvhPhoneConfigurationLevelEnum level;
-
-	/**
 	 * Max string chars
 	 *
 	 * canBeNull
 	 */
 	public Long maxlength;
+
+	/**
+	 * Provisioning level
+	 *
+	 * canBeNull
+	 */
+	public OvhPhoneConfigurationLevelEnum level;
 
 	/**
 	 * The property name

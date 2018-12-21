@@ -49,16 +49,16 @@ public class OvhCluster {
 	public String url;
 
 	/**
-	 * Cluster last update date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date updatedAt;
-
-	/**
 	 * Cluster status
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhClusterStatus status;
+
+	/**
+	 * Cluster last update date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date updatedAt;
 }

@@ -26,19 +26,17 @@ public class ApiOvhLicensecloudLinux extends ApiOvhBase {
 	}
 
 	/**
-	 * Get the orderable CloudLinux versions
+	 * List available services
 	 *
-	 * REST: GET /license/cloudLinux/orderableVersions
-	 * @param ip [required] Your license Ip
+	 * REST: GET /license/cloudLinux
 	 */
-	public ArrayList<OvhCloudLinuxOrderConfiguration> orderableVersions_GET(String ip) throws IOException {
-		String qPath = "/license/cloudLinux/orderableVersions";
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/license/cloudLinux";
 		StringBuilder sb = path(qPath);
-		query(sb, "ip", ip);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
-	private static TypeReference<ArrayList<OvhCloudLinuxOrderConfiguration>> t1 = new TypeReference<ArrayList<OvhCloudLinuxOrderConfiguration>>() {};
+	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
 
 	/**
 	 * Get this object properties
@@ -54,6 +52,38 @@ public class ApiOvhLicensecloudLinux extends ApiOvhBase {
 	}
 
 	/**
+	 * Tasks linked to this license
+	 *
+	 * REST: GET /license/cloudLinux/{serviceName}/tasks
+	 * @param action [required] Filter the value of action property (=)
+	 * @param status [required] Filter the value of status property (=)
+	 * @param serviceName [required] The name of your CloudLinux license
+	 */
+	public ArrayList<Long> serviceName_tasks_GET(String serviceName, OvhActionType action, OvhTaskStateEnum status) throws IOException {
+		String qPath = "/license/cloudLinux/{serviceName}/tasks";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "action", action);
+		query(sb, "status", status);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /license/cloudLinux/{serviceName}/tasks/{taskId}
+	 * @param serviceName [required] The name of your CloudLinux license
+	 * @param taskId [required] This Task id
+	 */
+	public OvhTask serviceName_tasks_taskId_GET(String serviceName, Long taskId) throws IOException {
+		String qPath = "/license/cloudLinux/{serviceName}/tasks/{taskId}";
+		StringBuilder sb = path(qPath, serviceName, taskId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
 	 * Terminate your service
 	 *
 	 * REST: POST /license/cloudLinux/{serviceName}/terminate
@@ -63,6 +93,28 @@ public class ApiOvhLicensecloudLinux extends ApiOvhBase {
 		String qPath = "/license/cloudLinux/{serviceName}/terminate";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Confirm termination of your service
+	 *
+	 * REST: POST /license/cloudLinux/{serviceName}/confirmTermination
+	 * @param futureUse What next after your termination request
+	 * @param reason Reason of your termination request
+	 * @param commentary Commentary about your termination request
+	 * @param token [required] The termination token sent by mail to the admin contact
+	 * @param serviceName [required] The name of your CloudLinux license
+	 */
+	public String serviceName_confirmTermination_POST(String serviceName, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
+		String qPath = "/license/cloudLinux/{serviceName}/confirmTermination";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "futureUse", futureUse);
+		addBody(o, "reason", reason);
+		addBody(o, "commentary", commentary);
+		addBody(o, "token", token);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -93,69 +145,17 @@ public class ApiOvhLicensecloudLinux extends ApiOvhBase {
 	}
 
 	/**
-	 * Confirm termination of your service
+	 * Get the orderable CloudLinux versions
 	 *
-	 * REST: POST /license/cloudLinux/{serviceName}/confirmTermination
-	 * @param futureUse What next after your termination request
-	 * @param reason Reason of your termination request
-	 * @param commentary Commentary about your termination request
-	 * @param token [required] The termination token sent by mail to the admin contact
-	 * @param serviceName [required] The name of your CloudLinux license
+	 * REST: GET /license/cloudLinux/orderableVersions
+	 * @param ip [required] Your license Ip
 	 */
-	public String serviceName_confirmTermination_POST(String serviceName, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
-		String qPath = "/license/cloudLinux/{serviceName}/confirmTermination";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "futureUse", futureUse);
-		addBody(o, "reason", reason);
-		addBody(o, "commentary", commentary);
-		addBody(o, "token", token);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /license/cloudLinux/{serviceName}/tasks/{taskId}
-	 * @param serviceName [required] The name of your CloudLinux license
-	 * @param taskId [required] This Task id
-	 */
-	public OvhTask serviceName_tasks_taskId_GET(String serviceName, Long taskId) throws IOException {
-		String qPath = "/license/cloudLinux/{serviceName}/tasks/{taskId}";
-		StringBuilder sb = path(qPath, serviceName, taskId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Tasks linked to this license
-	 *
-	 * REST: GET /license/cloudLinux/{serviceName}/tasks
-	 * @param action [required] Filter the value of action property (=)
-	 * @param status [required] Filter the value of status property (=)
-	 * @param serviceName [required] The name of your CloudLinux license
-	 */
-	public ArrayList<Long> serviceName_tasks_GET(String serviceName, OvhActionType action, OvhTaskStateEnum status) throws IOException {
-		String qPath = "/license/cloudLinux/{serviceName}/tasks";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "action", action);
-		query(sb, "status", status);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
-
-	/**
-	 * List available services
-	 *
-	 * REST: GET /license/cloudLinux
-	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/license/cloudLinux";
+	public ArrayList<OvhCloudLinuxOrderConfiguration> orderableVersions_GET(String ip) throws IOException {
+		String qPath = "/license/cloudLinux/orderableVersions";
 		StringBuilder sb = path(qPath);
+		query(sb, "ip", ip);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
-	private static TypeReference<ArrayList<String>> t3 = new TypeReference<ArrayList<String>>() {};
+	private static TypeReference<ArrayList<OvhCloudLinuxOrderConfiguration>> t3 = new TypeReference<ArrayList<OvhCloudLinuxOrderConfiguration>>() {};
 }

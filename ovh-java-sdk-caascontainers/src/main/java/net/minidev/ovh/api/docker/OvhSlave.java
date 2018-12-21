@@ -37,11 +37,11 @@ public class OvhSlave {
 	public String flavorId;
 
 	/**
-	 * Metrics about slave usage
+	 * The state of the slave
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhMetrics metrics;
+	public OvhStatus state;
 
 	/**
 	 * The slave UUID
@@ -51,11 +51,11 @@ public class OvhSlave {
 	public String id;
 
 	/**
-	 * The state of the slave
+	 * Metrics about slave usage
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhStatus state;
+	public OvhMetrics metrics;
 
 	/**
 	 * The region where the slave is located

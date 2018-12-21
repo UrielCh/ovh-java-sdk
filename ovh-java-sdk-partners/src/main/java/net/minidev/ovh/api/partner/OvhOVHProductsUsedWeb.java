@@ -19,18 +19,18 @@ public class OvhOVHProductsUsedWeb {
 	public Boolean exchange;
 
 	/**
-	 * Web Hosting
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean webHosting;
-
-	/**
 	 * Microsoft Sharepoint 2016
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean sharepoint;
+
+	/**
+	 * Web Hosting
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean webHosting;
 
 	/**
 	 * Microsoft Office 365 (CSP2)

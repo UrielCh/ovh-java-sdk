@@ -14,18 +14,18 @@ public class OvhRouteRule {
 	public String field;
 
 	/**
-	 * Invert the matching operator effect
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean negate;
-
-	/**
 	 * Human readable name for your rule
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String displayName;
+
+	/**
+	 * Invert the matching operator effect
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean negate;
 
 	/**
 	 * Matching operator. Not all operators are available for all fields. See "/ipLoadbalancing/{serviceName}/availableRouteRules"

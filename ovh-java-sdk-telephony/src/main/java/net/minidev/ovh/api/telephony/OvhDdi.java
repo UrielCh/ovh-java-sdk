@@ -12,12 +12,12 @@ public class OvhDdi {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhTypeEnum featureType;
+	public String destination;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String destination;
+	public OvhTypeEnum featureType;
 
 	/**
 	 * canBeNull && readOnly

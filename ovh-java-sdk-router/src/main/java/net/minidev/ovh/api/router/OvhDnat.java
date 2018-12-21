@@ -19,18 +19,18 @@ public class OvhDnat {
 	public OvhProtocolEnum protocol;
 
 	/**
-	 * New destination IP
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String newDestinationNet;
-
-	/**
 	 * Source IP or network
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String sourceNet;
+
+	/**
+	 * New destination IP
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String newDestinationNet;
 
 	/**
 	 * New destination port number

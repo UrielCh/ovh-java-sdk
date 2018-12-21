@@ -17,17 +17,17 @@ public class OvhCreationRules {
 	/**
 	 * canBeNull
 	 */
+	public OvhCreationRule ovhCompany;
+
+	/**
+	 * canBeNull
+	 */
 	public OvhCreationRule birthDay;
 
 	/**
 	 * canBeNull
 	 */
 	public OvhCreationRule country;
-
-	/**
-	 * canBeNull
-	 */
-	public OvhCreationRule ovhCompany;
 
 	/**
 	 * canBeNull
@@ -72,12 +72,12 @@ public class OvhCreationRules {
 	/**
 	 * canBeNull
 	 */
-	public OvhCreationRule companyNationalIdentificationNumber;
+	public OvhCreationRule birthCity;
 
 	/**
 	 * canBeNull
 	 */
-	public OvhCreationRule birthCity;
+	public OvhCreationRule companyNationalIdentificationNumber;
 
 	/**
 	 * canBeNull
@@ -97,12 +97,12 @@ public class OvhCreationRules {
 	/**
 	 * canBeNull
 	 */
-	public OvhCreationRule spareEmail;
+	public OvhCreationRule corporationType;
 
 	/**
 	 * canBeNull
 	 */
-	public OvhCreationRule corporationType;
+	public OvhCreationRule spareEmail;
 
 	/**
 	 * canBeNull
@@ -112,12 +112,12 @@ public class OvhCreationRules {
 	/**
 	 * canBeNull
 	 */
-	public OvhCreationRule email;
+	public OvhCreationRule ovhSubsidiary;
 
 	/**
 	 * canBeNull
 	 */
-	public OvhCreationRule ovhSubsidiary;
+	public OvhCreationRule email;
 
 	/**
 	 * canBeNull

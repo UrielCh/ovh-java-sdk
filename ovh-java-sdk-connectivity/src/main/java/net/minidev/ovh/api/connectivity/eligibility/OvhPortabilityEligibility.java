@@ -12,16 +12,16 @@ public class OvhPortabilityEligibility {
 	public OvhMessage[] reasons;
 
 	/**
-	 * Is the portability eligible for this line ?
-	 *
-	 * canBeNull
-	 */
-	public Boolean eligible;
-
-	/**
 	 * Warnings to consider when eligible, if any
 	 *
 	 * canBeNull
 	 */
 	public OvhMessage[] underConditions;
+
+	/**
+	 * Is the portability eligible for this line ?
+	 *
+	 * canBeNull
+	 */
+	public Boolean eligible;
 }

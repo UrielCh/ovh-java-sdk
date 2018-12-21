@@ -26,16 +26,16 @@ public class OvhExpertisesChoicesConsulting {
 	public Boolean ITSecurity;
 
 	/**
-	 * Infrastructure Architecture
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean infrastructureArchitecture;
-
-	/**
 	 * SEO-SEA Search Engine Optimization
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean searchEngineOptimization;
+
+	/**
+	 * Infrastructure Architecture
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean infrastructureArchitecture;
 }

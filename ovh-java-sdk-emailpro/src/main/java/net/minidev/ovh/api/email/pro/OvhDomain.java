@@ -26,18 +26,18 @@ public class OvhDomain {
 	public Boolean isAliasDomain;
 
 	/**
-	 * Domain MX record configured in DNS
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String[] mxRecord;
-
-	/**
 	 * List of aliases for this domain
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String[] domainAliases;
+
+	/**
+	 * Domain MX record configured in DNS
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String[] mxRecord;
 
 	/**
 	 * Domain validation status
@@ -75,18 +75,18 @@ public class OvhDomain {
 	public String name;
 
 	/**
-	 * If specified, emails to not existing address will be redirected to that domain
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String mxRelay;
-
-	/**
 	 * If true your dns mx configuration is valid
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean mxIsValid;
+
+	/**
+	 * If specified, emails to not existing address will be redirected to that domain
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String mxRelay;
 
 	/**
 	 * Domain state

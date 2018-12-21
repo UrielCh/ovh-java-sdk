@@ -5,30 +5,16 @@ package net.minidev.ovh.api.telephony;
  */
 public class OvhLineOptions {
 	/**
-	 * Nature of the forward when the line is unavailable
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhLineOptionForwardNatureTypeEnum forwardBackupNature;
-
-	/**
 	 * canBeNull && readOnly
 	 */
 	public String displayNumber;
 
 	/**
-	 * Whether or not the line has restriction on outgoing calls
+	 * Nature of the forward when the line is unavailable
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Boolean callRestrictionOutgoing;
-
-	/**
-	 * Do not display your number
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean identificationRestriction;
+	public OvhLineOptionForwardNatureTypeEnum forwardBackupNature;
 
 	/**
 	 * Voicemail number to dial from any other line
@@ -38,6 +24,13 @@ public class OvhLineOptions {
 	public String voicemailExternalNumber;
 
 	/**
+	 * Do not display your number
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean identificationRestriction;
+
+	/**
 	 * Nature of the unconditional forward
 	 *
 	 * canBeNull && readOnly
@@ -45,11 +38,11 @@ public class OvhLineOptions {
 	public OvhLineOptionForwardNatureTypeEnum forwardUnconditionalNature;
 
 	/**
-	 * The ip restrictions of your line
+	 * Whether or not the line has restriction on outgoing calls
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String[] ipRestrictions;
+	public Boolean callRestrictionOutgoing;
 
 	/**
 	 * Language of the line
@@ -57,6 +50,13 @@ public class OvhLineOptions {
 	 * canBeNull && readOnly
 	 */
 	public OvhLineOptionLanguageEnum language;
+
+	/**
+	 * The ip restrictions of your line
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String[] ipRestrictions;
 
 	/**
 	 * Sound ID of ringback tone
@@ -85,18 +85,18 @@ public class OvhLineOptions {
 	public Boolean doNotDisturb;
 
 	/**
-	 * Nature of the forward on no-reply
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhLineOptionForwardNatureTypeEnum forwardNoReplyNature;
-
-	/**
 	 * Enable or disable record of outgoing calls
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean recordOutgoingCallsBeta;
+
+	/**
+	 * Nature of the forward on no-reply
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhLineOptionForwardNatureTypeEnum forwardNoReplyNature;
 
 	/**
 	 * Enable calls forward when the line is unavailable

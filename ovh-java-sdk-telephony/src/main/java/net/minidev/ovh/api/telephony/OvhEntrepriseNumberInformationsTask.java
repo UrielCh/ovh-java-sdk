@@ -5,16 +5,16 @@ package net.minidev.ovh.api.telephony;
  */
 public class OvhEntrepriseNumberInformationsTask {
 	/**
-	 * Task status
-	 *
-	 * canBeNull
-	 */
-	public OvhTaskStatusEnum status;
-
-	/**
 	 * Informations about the enterprise
 	 *
 	 * canBeNull
 	 */
 	public OvhEntrepriseNumberInformations informations;
+
+	/**
+	 * Task status
+	 *
+	 * canBeNull
+	 */
+	public OvhTaskStatusEnum status;
 }

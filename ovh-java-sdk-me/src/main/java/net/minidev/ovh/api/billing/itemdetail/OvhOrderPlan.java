@@ -26,16 +26,16 @@ public class OvhOrderPlan {
 	public String pricingMode;
 
 	/**
-	 * Quantity ordered
-	 *
-	 * canBeNull
-	 */
-	public Long quantity;
-
-	/**
 	 * Plan code used when ordering through /order/cart
 	 *
 	 * canBeNull
 	 */
 	public String code;
+
+	/**
+	 * Quantity ordered
+	 *
+	 * canBeNull
+	 */
+	public Long quantity;
 }

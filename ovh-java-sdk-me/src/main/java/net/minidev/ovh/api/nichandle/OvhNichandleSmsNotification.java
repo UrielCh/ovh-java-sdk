@@ -14,18 +14,18 @@ public class OvhNichandleSmsNotification {
 	public Date updateDate;
 
 	/**
-	 * The phone number you want to receive notification on
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String phoneNumber;
-
-	/**
 	 * Receive notification for abuse reports
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean abuse;
+
+	/**
+	 * The phone number you want to receive notification on
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String phoneNumber;
 
 	/**
 	 * Creation date

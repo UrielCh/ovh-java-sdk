@@ -33,18 +33,18 @@ public class OvhGenericOptionDefinition {
 	public Boolean mandatory;
 
 	/**
-	 * Product offer identifier
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String planCode;
-
-	/**
 	 * Name of the product
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String productName;
+
+	/**
+	 * Product offer identifier
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String planCode;
 
 	/**
 	 * Product type

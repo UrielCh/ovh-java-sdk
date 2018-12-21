@@ -68,18 +68,18 @@ public class OvhStreamAlertCondition {
 	public String title;
 
 	/**
-	 * Repeat notifications
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean repeatNotificationsEnabled;
-
-	/**
 	 * Field value
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String value;
+
+	/**
+	 * Repeat notifications
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean repeatNotificationsEnabled;
 
 	/**
 	 * Threshold condition

@@ -44,52 +44,27 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
 
 	/**
-	 * Get an application
+	 * Launch a contact change procedure
 	 *
-	 * REST: GET /dbaas/queue/{serviceName}
-	 * @param serviceName [required] Application ID
-	 *
-	 * API beta
-	 */
-	public OvhApp serviceName_GET(String serviceName) throws IOException {
-		String qPath = "/dbaas/queue/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhApp.class);
-	}
-
-	/**
-	 * Update an application
-	 *
-	 * REST: PUT /dbaas/queue/{serviceName}
-	 * @param serviceName [required] Application ID
-	 * @param name [required] Application name
+	 * REST: POST /dbaas/queue/{serviceName}/changeContact
+	 * @param contactAdmin The contact to set as admin contact
+	 * @param contactTech The contact to set as tech contact
+	 * @param contactBilling The contact to set as billing contact
+	 * @param serviceName [required] The internal ID of your Queue app
 	 *
 	 * API beta
 	 */
-	public OvhApp serviceName_PUT(String serviceName, String name) throws IOException {
-		String qPath = "/dbaas/queue/{serviceName}";
+	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
+		String qPath = "/dbaas/queue/{serviceName}/changeContact";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "name", name);
-		String resp = exec(qPath, "PUT", sb.toString(), o);
-		return convertTo(resp, OvhApp.class);
+		addBody(o, "contactAdmin", contactAdmin);
+		addBody(o, "contactTech", contactTech);
+		addBody(o, "contactBilling", contactBilling);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t2);
 	}
-
-	/**
-	 * Get metrics account
-	 *
-	 * REST: GET /dbaas/queue/{serviceName}/metrics/account
-	 * @param serviceName [required] Application ID
-	 *
-	 * API beta
-	 */
-	public OvhMetricsAccount serviceName_metrics_account_GET(String serviceName) throws IOException {
-		String qPath = "/dbaas/queue/{serviceName}/metrics/account";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhMetricsAccount.class);
-	}
+	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
 
 	/**
 	 * Configure an application
@@ -109,6 +84,139 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 		addBody(o, "regionId", regionId);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhAppConfiguration.class);
+	}
+
+	/**
+	 * Get one region
+	 *
+	 * REST: GET /dbaas/queue/{serviceName}/region/{regionId}
+	 * @param serviceName [required] Application ID
+	 * @param regionId [required] Region ID
+	 *
+	 * API beta
+	 */
+	public OvhRegion serviceName_region_regionId_GET(String serviceName, String regionId) throws IOException {
+		String qPath = "/dbaas/queue/{serviceName}/region/{regionId}";
+		StringBuilder sb = path(qPath, serviceName, regionId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhRegion.class);
+	}
+
+	/**
+	 * List all regions ID
+	 *
+	 * REST: GET /dbaas/queue/{serviceName}/region
+	 * @param serviceName [required] Application ID
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> serviceName_region_GET(String serviceName) throws IOException {
+		String qPath = "/dbaas/queue/{serviceName}/region";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Get a topic
+	 *
+	 * REST: GET /dbaas/queue/{serviceName}/topic/{topicId}
+	 * @param serviceName [required] Application ID
+	 * @param topicId [required] Topic ID
+	 *
+	 * API beta
+	 */
+	public OvhTopic serviceName_topic_topicId_GET(String serviceName, String topicId) throws IOException {
+		String qPath = "/dbaas/queue/{serviceName}/topic/{topicId}";
+		StringBuilder sb = path(qPath, serviceName, topicId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhTopic.class);
+	}
+
+	/**
+	 * Update a topic configuration
+	 *
+	 * REST: PUT /dbaas/queue/{serviceName}/topic/{topicId}
+	 * @param serviceName [required] Application ID
+	 * @param topicId [required] Topic ID
+	 * @param partitions [required] Number of partitions
+	 *
+	 * API beta
+	 */
+	public OvhTopic serviceName_topic_topicId_PUT(String serviceName, String topicId, Long partitions) throws IOException {
+		String qPath = "/dbaas/queue/{serviceName}/topic/{topicId}";
+		StringBuilder sb = path(qPath, serviceName, topicId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "partitions", partitions);
+		String resp = exec(qPath, "PUT", sb.toString(), o);
+		return convertTo(resp, OvhTopic.class);
+	}
+
+	/**
+	 * Delete a topic
+	 *
+	 * REST: DELETE /dbaas/queue/{serviceName}/topic/{topicId}
+	 * @param serviceName [required] Application ID
+	 * @param topicId [required] Topic ID
+	 *
+	 * API beta
+	 */
+	public void serviceName_topic_topicId_DELETE(String serviceName, String topicId) throws IOException {
+		String qPath = "/dbaas/queue/{serviceName}/topic/{topicId}";
+		StringBuilder sb = path(qPath, serviceName, topicId);
+		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
+	 * List all topics of the application
+	 *
+	 * REST: GET /dbaas/queue/{serviceName}/topic
+	 * @param serviceName [required] Application ID
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> serviceName_topic_GET(String serviceName) throws IOException {
+		String qPath = "/dbaas/queue/{serviceName}/topic";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Create a topic
+	 *
+	 * REST: POST /dbaas/queue/{serviceName}/topic
+	 * @param serviceName [required] Application ID
+	 * @param id [required] Topic ID
+	 * @param partitions [required] Number of partitions
+	 * @param replicationFactor [required] Replication factor
+	 *
+	 * API beta
+	 */
+	public OvhTopic serviceName_topic_POST(String serviceName, String id, Long partitions, Long replicationFactor) throws IOException {
+		String qPath = "/dbaas/queue/{serviceName}/topic";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "id", id);
+		addBody(o, "partitions", partitions);
+		addBody(o, "replicationFactor", replicationFactor);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTopic.class);
+	}
+
+	/**
+	 * Get metrics account
+	 *
+	 * REST: GET /dbaas/queue/{serviceName}/metrics/account
+	 * @param serviceName [required] Application ID
+	 *
+	 * API beta
+	 */
+	public OvhMetricsAccount serviceName_metrics_account_GET(String serviceName) throws IOException {
+		String qPath = "/dbaas/queue/{serviceName}/metrics/account";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhMetricsAccount.class);
 	}
 
 	/**
@@ -207,27 +315,37 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	}
 
 	/**
-	 * Launch a contact change procedure
+	 * Create a key
 	 *
-	 * REST: POST /dbaas/queue/{serviceName}/changeContact
-	 * @param contactAdmin The contact to set as admin contact
-	 * @param contactTech The contact to set as tech contact
-	 * @param contactBilling The contact to set as billing contact
-	 * @param serviceName [required] The internal ID of your Queue app
+	 * REST: POST /dbaas/queue/{serviceName}/key
+	 * @param serviceName [required] Application ID
+	 * @param name [required] Key name
 	 *
 	 * API beta
 	 */
-	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
-		String qPath = "/dbaas/queue/{serviceName}/changeContact";
+	public OvhKeyWithSecret serviceName_key_POST(String serviceName, String name) throws IOException {
+		String qPath = "/dbaas/queue/{serviceName}/key";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "contactAdmin", contactAdmin);
-		addBody(o, "contactTech", contactTech);
-		addBody(o, "contactBilling", contactBilling);
+		addBody(o, "name", name);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t2);
+		return convertTo(resp, OvhKeyWithSecret.class);
 	}
-	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
+
+	/**
+	 * List all keys of the application
+	 *
+	 * REST: GET /dbaas/queue/{serviceName}/key
+	 * @param serviceName [required] Application ID
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> serviceName_key_GET(String serviceName) throws IOException {
+		String qPath = "/dbaas/queue/{serviceName}/key";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
 
 	/**
 	 * Get a key
@@ -296,39 +414,6 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	}
 
 	/**
-	 * Create a key
-	 *
-	 * REST: POST /dbaas/queue/{serviceName}/key
-	 * @param serviceName [required] Application ID
-	 * @param name [required] Key name
-	 *
-	 * API beta
-	 */
-	public OvhKeyWithSecret serviceName_key_POST(String serviceName, String name) throws IOException {
-		String qPath = "/dbaas/queue/{serviceName}/key";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "name", name);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhKeyWithSecret.class);
-	}
-
-	/**
-	 * List all keys of the application
-	 *
-	 * REST: GET /dbaas/queue/{serviceName}/key
-	 * @param serviceName [required] Application ID
-	 *
-	 * API beta
-	 */
-	public ArrayList<String> serviceName_key_GET(String serviceName) throws IOException {
-		String qPath = "/dbaas/queue/{serviceName}/key";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /dbaas/queue/{serviceName}/serviceInfos
@@ -356,159 +441,6 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 		String qPath = "/dbaas/queue/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
 		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Get a topic
-	 *
-	 * REST: GET /dbaas/queue/{serviceName}/topic/{topicId}
-	 * @param serviceName [required] Application ID
-	 * @param topicId [required] Topic ID
-	 *
-	 * API beta
-	 */
-	public OvhTopic serviceName_topic_topicId_GET(String serviceName, String topicId) throws IOException {
-		String qPath = "/dbaas/queue/{serviceName}/topic/{topicId}";
-		StringBuilder sb = path(qPath, serviceName, topicId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhTopic.class);
-	}
-
-	/**
-	 * Update a topic configuration
-	 *
-	 * REST: PUT /dbaas/queue/{serviceName}/topic/{topicId}
-	 * @param serviceName [required] Application ID
-	 * @param topicId [required] Topic ID
-	 * @param partitions [required] Number of partitions
-	 *
-	 * API beta
-	 */
-	public OvhTopic serviceName_topic_topicId_PUT(String serviceName, String topicId, Long partitions) throws IOException {
-		String qPath = "/dbaas/queue/{serviceName}/topic/{topicId}";
-		StringBuilder sb = path(qPath, serviceName, topicId);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "partitions", partitions);
-		String resp = exec(qPath, "PUT", sb.toString(), o);
-		return convertTo(resp, OvhTopic.class);
-	}
-
-	/**
-	 * Delete a topic
-	 *
-	 * REST: DELETE /dbaas/queue/{serviceName}/topic/{topicId}
-	 * @param serviceName [required] Application ID
-	 * @param topicId [required] Topic ID
-	 *
-	 * API beta
-	 */
-	public void serviceName_topic_topicId_DELETE(String serviceName, String topicId) throws IOException {
-		String qPath = "/dbaas/queue/{serviceName}/topic/{topicId}";
-		StringBuilder sb = path(qPath, serviceName, topicId);
-		exec(qPath, "DELETE", sb.toString(), null);
-	}
-
-	/**
-	 * List all topics of the application
-	 *
-	 * REST: GET /dbaas/queue/{serviceName}/topic
-	 * @param serviceName [required] Application ID
-	 *
-	 * API beta
-	 */
-	public ArrayList<String> serviceName_topic_GET(String serviceName) throws IOException {
-		String qPath = "/dbaas/queue/{serviceName}/topic";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Create a topic
-	 *
-	 * REST: POST /dbaas/queue/{serviceName}/topic
-	 * @param serviceName [required] Application ID
-	 * @param id [required] Topic ID
-	 * @param partitions [required] Number of partitions
-	 * @param replicationFactor [required] Replication factor
-	 *
-	 * API beta
-	 */
-	public OvhTopic serviceName_topic_POST(String serviceName, String id, Long partitions, Long replicationFactor) throws IOException {
-		String qPath = "/dbaas/queue/{serviceName}/topic";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "id", id);
-		addBody(o, "partitions", partitions);
-		addBody(o, "replicationFactor", replicationFactor);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTopic.class);
-	}
-
-	/**
-	 * List all regions ID
-	 *
-	 * REST: GET /dbaas/queue/{serviceName}/region
-	 * @param serviceName [required] Application ID
-	 *
-	 * API beta
-	 */
-	public ArrayList<String> serviceName_region_GET(String serviceName) throws IOException {
-		String qPath = "/dbaas/queue/{serviceName}/region";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Get one region
-	 *
-	 * REST: GET /dbaas/queue/{serviceName}/region/{regionId}
-	 * @param serviceName [required] Application ID
-	 * @param regionId [required] Region ID
-	 *
-	 * API beta
-	 */
-	public OvhRegion serviceName_region_regionId_GET(String serviceName, String regionId) throws IOException {
-		String qPath = "/dbaas/queue/{serviceName}/region/{regionId}";
-		StringBuilder sb = path(qPath, serviceName, regionId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhRegion.class);
-	}
-
-	/**
-	 * Create a user
-	 *
-	 * REST: POST /dbaas/queue/{serviceName}/user
-	 * @param serviceName [required] Application ID
-	 * @param name [required] User name
-	 * @param roles [required] User roles
-	 *
-	 * API beta
-	 */
-	public OvhUserWithPassword serviceName_user_POST(String serviceName, String name, String[] roles) throws IOException {
-		String qPath = "/dbaas/queue/{serviceName}/user";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "name", name);
-		addBody(o, "roles", roles);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhUserWithPassword.class);
-	}
-
-	/**
-	 * List all users of the application
-	 *
-	 * REST: GET /dbaas/queue/{serviceName}/user
-	 * @param serviceName [required] Application ID
-	 *
-	 * API beta
-	 */
-	public ArrayList<String> serviceName_user_GET(String serviceName) throws IOException {
-		String qPath = "/dbaas/queue/{serviceName}/user";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
 	}
 
 	/**
@@ -540,6 +472,22 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 		String qPath = "/dbaas/queue/{serviceName}/user/{userId}";
 		StringBuilder sb = path(qPath, serviceName, userId);
 		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
+	 * Generate a new user password
+	 *
+	 * REST: POST /dbaas/queue/{serviceName}/user/{userId}/changePassword
+	 * @param serviceName [required] Application ID
+	 * @param userId [required] User ID
+	 *
+	 * API beta
+	 */
+	public OvhUserWithPassword serviceName_user_userId_changePassword_POST(String serviceName, String userId) throws IOException {
+		String qPath = "/dbaas/queue/{serviceName}/user/{userId}/changePassword";
+		StringBuilder sb = path(qPath, serviceName, userId);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhUserWithPassword.class);
 	}
 
 	/**
@@ -594,18 +542,70 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	}
 
 	/**
-	 * Generate a new user password
+	 * Create a user
 	 *
-	 * REST: POST /dbaas/queue/{serviceName}/user/{userId}/changePassword
+	 * REST: POST /dbaas/queue/{serviceName}/user
 	 * @param serviceName [required] Application ID
-	 * @param userId [required] User ID
+	 * @param name [required] User name
+	 * @param roles [required] User roles
 	 *
 	 * API beta
 	 */
-	public OvhUserWithPassword serviceName_user_userId_changePassword_POST(String serviceName, String userId) throws IOException {
-		String qPath = "/dbaas/queue/{serviceName}/user/{userId}/changePassword";
-		StringBuilder sb = path(qPath, serviceName, userId);
-		String resp = exec(qPath, "POST", sb.toString(), null);
+	public OvhUserWithPassword serviceName_user_POST(String serviceName, String name, String[] roles) throws IOException {
+		String qPath = "/dbaas/queue/{serviceName}/user";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "name", name);
+		addBody(o, "roles", roles);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhUserWithPassword.class);
+	}
+
+	/**
+	 * List all users of the application
+	 *
+	 * REST: GET /dbaas/queue/{serviceName}/user
+	 * @param serviceName [required] Application ID
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> serviceName_user_GET(String serviceName) throws IOException {
+		String qPath = "/dbaas/queue/{serviceName}/user";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Get an application
+	 *
+	 * REST: GET /dbaas/queue/{serviceName}
+	 * @param serviceName [required] Application ID
+	 *
+	 * API beta
+	 */
+	public OvhApp serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/dbaas/queue/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhApp.class);
+	}
+
+	/**
+	 * Update an application
+	 *
+	 * REST: PUT /dbaas/queue/{serviceName}
+	 * @param serviceName [required] Application ID
+	 * @param name [required] Application name
+	 *
+	 * API beta
+	 */
+	public OvhApp serviceName_PUT(String serviceName, String name) throws IOException {
+		String qPath = "/dbaas/queue/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "name", name);
+		String resp = exec(qPath, "PUT", sb.toString(), o);
+		return convertTo(resp, OvhApp.class);
 	}
 }

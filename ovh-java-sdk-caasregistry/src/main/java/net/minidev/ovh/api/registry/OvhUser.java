@@ -29,13 +29,6 @@ public class OvhUser {
 	public String id;
 
 	/**
-	 * Date of the resource last update
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date updatedAt;
-
-	/**
 	 * The user name
 	 *
 	 * canBeNull && readOnly
@@ -48,4 +41,11 @@ public class OvhUser {
 	 * canBeNull && readOnly
 	 */
 	public OvhStatus status;
+
+	/**
+	 * Date of the resource last update
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date updatedAt;
 }

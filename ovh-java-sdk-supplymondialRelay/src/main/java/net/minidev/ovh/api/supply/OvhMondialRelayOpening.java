@@ -30,6 +30,13 @@ public class OvhMondialRelayOpening {
 	 *
 	 * canBeNull
 	 */
+	public OvhMondialRelayDayPeriod[] thursday;
+
+	/**
+	 * Opening range
+	 *
+	 * canBeNull
+	 */
 	public OvhMondialRelayDayPeriod[] wednesday;
 
 	/**
@@ -38,13 +45,6 @@ public class OvhMondialRelayOpening {
 	 * canBeNull
 	 */
 	public OvhMondialRelayDayPeriod[] friday;
-
-	/**
-	 * Opening range
-	 *
-	 * canBeNull
-	 */
-	public OvhMondialRelayDayPeriod[] thursday;
 
 	/**
 	 * Opening range

@@ -17,12 +17,12 @@ public class OvhVrackTransparentIp {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long id;
+	public Long farmId;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long farmId;
+	public Long id;
 
 	/**
 	 * canBeNull && readOnly

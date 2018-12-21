@@ -5,18 +5,18 @@ package net.minidev.ovh.api.dedicated;
  */
 public class OvhAvailabilitiesRaw {
 	/**
-	 * Last availability rule applied
-	 *
-	 * canBeNull
-	 */
-	public String lastRule;
-
-	/**
 	 * Product reference
 	 *
 	 * canBeNull
 	 */
 	public String reference;
+
+	/**
+	 * Last availability rule applied
+	 *
+	 * canBeNull
+	 */
+	public String lastRule;
 
 	/**
 	 * Ordered count
@@ -26,13 +26,6 @@ public class OvhAvailabilitiesRaw {
 	public Long ordered;
 
 	/**
-	 * 4H count
-	 *
-	 * canBeNull
-	 */
-	public Long trueAvailable4H;
-
-	/**
 	 * Validating order count
 	 *
 	 * canBeNull
@@ -40,11 +33,11 @@ public class OvhAvailabilitiesRaw {
 	public Long orderedCheck;
 
 	/**
-	 * Region where is located the product
+	 * 4H count
 	 *
 	 * canBeNull
 	 */
-	public OvhAvailabilityRegionEnum zone;
+	public Long trueAvailable4H;
 
 	/**
 	 * 24H count
@@ -52,6 +45,13 @@ public class OvhAvailabilitiesRaw {
 	 * canBeNull
 	 */
 	public Long trueAvailable24H;
+
+	/**
+	 * Region where is located the product
+	 *
+	 * canBeNull
+	 */
+	public OvhAvailabilityRegionEnum zone;
 
 	/**
 	 * Real stock (considering order in validating)
@@ -68,18 +68,18 @@ public class OvhAvailabilitiesRaw {
 	public Long available;
 
 	/**
-	 * Stock in datacenter
-	 *
-	 * canBeNull
-	 */
-	public Long incomingDatacenter;
-
-	/**
 	 * Blockbuster stock count
 	 *
 	 * canBeNull
 	 */
 	public Long parentAvailable;
+
+	/**
+	 * Stock in datacenter
+	 *
+	 * canBeNull
+	 */
+	public Long incomingDatacenter;
 
 	/**
 	 * The availability

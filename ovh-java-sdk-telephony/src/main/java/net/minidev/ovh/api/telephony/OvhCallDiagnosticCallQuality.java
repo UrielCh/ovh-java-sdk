@@ -70,18 +70,18 @@ public class OvhCallDiagnosticCallQuality {
 	public OvhCallDiagnosticCodecEnum codec;
 
 	/**
-	 * Number of packet RTP lost in the direction flow
-	 *
-	 * canBeNull
-	 */
-	public Long rtpLost;
-
-	/**
 	 * Variation in the delay of received packets. Smaller is better and less is more
 	 *
 	 * canBeNull
 	 */
 	public Double maxJitter;
+
+	/**
+	 * Number of packet RTP lost in the direction flow
+	 *
+	 * canBeNull
+	 */
+	public Long rtpLost;
 
 	/**
 	 * Identifier of the metric performance value

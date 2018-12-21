@@ -12,6 +12,11 @@ public class OvhDatacenter {
 	public String horizonViewName;
 
 	/**
+	 * canBeNull && readOnly
+	 */
+	public Long datacenterId;
+
+	/**
 	 * The commercial range associated to this Datacenter
 	 *
 	 * canBeNull && readOnly
@@ -22,11 +27,6 @@ public class OvhDatacenter {
 	 * canBeNull && readOnly
 	 */
 	public String name;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public Long datacenterId;
 
 	/**
 	 * canBeNull && readOnly

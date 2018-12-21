@@ -7,18 +7,18 @@ import java.util.Date;
  */
 public class OvhTask {
 	/**
-	 * Function of the task
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String function;
-
-	/**
 	 * Last update date of the task
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date lastUpdate;
+
+	/**
+	 * Function of the task
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String function;
 
 	/**
 	 * Todo date of the task
@@ -56,13 +56,6 @@ public class OvhTask {
 	public Date creationDate;
 
 	/**
-	 * Can relaunch the task
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean canRelaunch;
-
-	/**
 	 * Done date of the task
 	 *
 	 * canBeNull && readOnly
@@ -70,11 +63,11 @@ public class OvhTask {
 	public Date doneDate;
 
 	/**
-	 * Status of the task
+	 * Can relaunch the task
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhOperationStatusEnum status;
+	public Boolean canRelaunch;
 
 	/**
 	 * Can cancel the task
@@ -82,4 +75,11 @@ public class OvhTask {
 	 * canBeNull && readOnly
 	 */
 	public Boolean canCancel;
+
+	/**
+	 * Status of the task
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhOperationStatusEnum status;
 }

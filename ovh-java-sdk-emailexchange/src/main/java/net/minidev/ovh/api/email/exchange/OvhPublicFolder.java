@@ -21,18 +21,18 @@ public class OvhPublicFolder {
 	public Date lastModificationTime;
 
 	/**
-	 * Creation date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date creationDate;
-
-	/**
 	 * Type for public folder
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhPublicFolderTypeEnum type;
+
+	/**
+	 * Creation date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date creationDate;
 
 	/**
 	 * task pending id
@@ -98,14 +98,14 @@ public class OvhPublicFolder {
 	public Long totalItemSize;
 
 	/**
+	 * canBeNull && readOnly
+	 */
+	public OvhObjectStateEnum state;
+
+	/**
 	 * Time for which public folder was accessed for the last time by the user
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date lastUserAccessTime;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public OvhObjectStateEnum state;
 }

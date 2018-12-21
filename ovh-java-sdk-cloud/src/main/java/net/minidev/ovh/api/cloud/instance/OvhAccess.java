@@ -12,18 +12,18 @@ public class OvhAccess {
 	public String password;
 
 	/**
-	 * Application access type
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String type;
-
-	/**
 	 * Login
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String login;
+
+	/**
+	 * Application access type
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String type;
 
 	/**
 	 * Url

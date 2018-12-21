@@ -26,11 +26,11 @@ public class OvhEasyHuntingTimeConditionsSettings {
 	public OvhTimeConditionsSettingsForwardTypeEnum slot2Type;
 
 	/**
-	 * Number associated to the third slot action
+	 * Status of time conditions
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String slot3Number;
+	public Boolean enable;
 
 	/**
 	 * Action type executed when the third slot is used
@@ -40,11 +40,11 @@ public class OvhEasyHuntingTimeConditionsSettings {
 	public OvhTimeConditionsSettingsForwardTypeEnum slot3Type;
 
 	/**
-	 * Status of time conditions
+	 * Number associated to the third slot action
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Boolean enable;
+	public String slot3Number;
 
 	/**
 	 * Number associated to the first slot action

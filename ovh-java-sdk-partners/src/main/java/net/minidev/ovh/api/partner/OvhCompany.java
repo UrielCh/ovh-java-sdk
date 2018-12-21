@@ -5,11 +5,11 @@ package net.minidev.ovh.api.partner;
  */
 public class OvhCompany {
 	/**
-	 * Company's zipCode
+	 * Company's country
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String zipCode;
+	public String country;
 
 	/**
 	 * Company's domain of competence
@@ -19,11 +19,11 @@ public class OvhCompany {
 	public OvhExpertisesChoices expertises;
 
 	/**
-	 * Company's country
+	 * Company's zipCode
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String country;
+	public String zipCode;
 
 	/**
 	 * OVH's product the company's solutions relies on
@@ -47,18 +47,18 @@ public class OvhCompany {
 	public String description;
 
 	/**
-	 * Estimation of the number of employees
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String employeesNumber;
-
-	/**
 	 * Company's linkedin profile url
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String linkedin;
+
+	/**
+	 * Estimation of the number of employees
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String employeesNumber;
 
 	/**
 	 * Certifications obtained from other enterprises
@@ -75,18 +75,18 @@ public class OvhCompany {
 	public OvhClientKinds clientKinds;
 
 	/**
-	 * Estimation of the revenue of the company
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String revenue;
-
-	/**
 	 * Company's twitter profile url
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String twitter;
+
+	/**
+	 * Estimation of the revenue of the company
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String revenue;
 
 	/**
 	 * Estimation of the number of accompanied customers in using OVH's solutions

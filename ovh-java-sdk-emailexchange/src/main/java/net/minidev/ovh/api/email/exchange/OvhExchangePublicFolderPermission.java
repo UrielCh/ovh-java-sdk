@@ -14,16 +14,16 @@ public class OvhExchangePublicFolderPermission {
 	public Long allowedAccountId;
 
 	/**
-	 * canBeNull && readOnly
-	 */
-	public OvhObjectStateEnum state;
-
-	/**
 	 * Access right set for the account
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhPublicFolderRightTypeEnum accessRights;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public OvhObjectStateEnum state;
 
 	/**
 	 * Creation date

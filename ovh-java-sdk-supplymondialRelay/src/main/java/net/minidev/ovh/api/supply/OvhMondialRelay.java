@@ -21,18 +21,18 @@ public class OvhMondialRelay {
 	public String address;
 
 	/**
-	 * Relay point longitude
-	 *
-	 * canBeNull
-	 */
-	public Double lng;
-
-	/**
 	 * Distance between address and relay point
 	 *
 	 * canBeNull
 	 */
 	public Double distance;
+
+	/**
+	 * Relay point longitude
+	 *
+	 * canBeNull
+	 */
+	public Double lng;
 
 	/**
 	 * City

@@ -28,18 +28,18 @@ public class OvhRemoteAccess {
 	public String authorizedBy;
 
 	/**
-	 * The id of the remote access
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String remoteAccessId;
-
-	/**
 	 * The device's port which will be exposed
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long exposedPort;
+
+	/**
+	 * The id of the remote access
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String remoteAccessId;
 
 	/**
 	 * If the remote access was accepted by the remote user
@@ -56,16 +56,16 @@ public class OvhRemoteAccess {
 	public Date askDate;
 
 	/**
-	 * When the remote access will be automatically deleted
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date expirationDate;
-
-	/**
 	 * Status of the remote access
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhRemoteAccessStatusEnum status;
+
+	/**
+	 * When the remote access will be automatically deleted
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date expirationDate;
 }

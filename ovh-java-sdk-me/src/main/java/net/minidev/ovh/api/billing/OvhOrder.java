@@ -10,12 +10,12 @@ public class OvhOrder {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Date date;
+	public Date retractionDate;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Date retractionDate;
+	public Date date;
 
 	/**
 	 * canBeNull && readOnly

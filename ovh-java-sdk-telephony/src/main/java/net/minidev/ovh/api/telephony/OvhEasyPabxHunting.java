@@ -31,6 +31,13 @@ public class OvhEasyPabxHunting {
 	public OvhEasyMiniPabxHuntingPatternEnum pattern;
 
 	/**
+	 * Sound ID of on-hold tone
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long toneOnHoldSoundId;
+
+	/**
 	 * Sound ID of ringback tone
 	 *
 	 * canBeNull && readOnly
@@ -45,13 +52,6 @@ public class OvhEasyPabxHunting {
 	public Long numberOfCalls;
 
 	/**
-	 * Sound ID of on-hold tone
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long toneOnHoldSoundId;
-
-	/**
 	 * canBeNull && readOnly
 	 */
 	public String name;
@@ -64,16 +64,16 @@ public class OvhEasyPabxHunting {
 	public Boolean toneOnHold;
 
 	/**
-	 * canBeNull && readOnly
-	 */
-	public OvhEasyMiniPabxHuntingStrategyEnum strategy;
-
-	/**
 	 * Reject anonymous calls
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean anonymousCallRejection;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public OvhEasyMiniPabxHuntingStrategyEnum strategy;
 
 	/**
 	 * True if the ring back tone is enabled

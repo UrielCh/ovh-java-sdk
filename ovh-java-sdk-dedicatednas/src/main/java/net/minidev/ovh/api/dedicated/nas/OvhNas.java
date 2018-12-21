@@ -33,18 +33,18 @@ public class OvhNas {
 	public String ip;
 
 	/**
-	 * area of nas
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String datacenter;
-
-	/**
 	 * The name you give to the nas
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String customName;
+
+	/**
+	 * area of nas
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String datacenter;
 
 	/**
 	 * The storage service name

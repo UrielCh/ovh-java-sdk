@@ -40,16 +40,16 @@ public class OvhBackupContainer {
 	public String region;
 
 	/**
-	 * Swift related information to reach the container
-	 *
-	 * canBeNull
-	 */
-	public OvhBackupSwift swift;
-
-	/**
 	 * /cloud project which the container belongs to.
 	 *
 	 * canBeNull
 	 */
 	public OvhBackupProject cloudProject;
+
+	/**
+	 * Swift related information to reach the container
+	 *
+	 * canBeNull
+	 */
+	public OvhBackupSwift swift;
 }

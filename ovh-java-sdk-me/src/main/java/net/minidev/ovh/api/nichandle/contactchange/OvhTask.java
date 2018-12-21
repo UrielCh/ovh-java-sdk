@@ -37,13 +37,6 @@ public class OvhTask {
 	public String fromAccount;
 
 	/**
-	 * Date at which the request has been made
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date dateRequest;
-
-	/**
 	 * Current state of the request
 	 *
 	 * canBeNull && readOnly
@@ -54,6 +47,13 @@ public class OvhTask {
 	 * canBeNull && readOnly
 	 */
 	public Long id;
+
+	/**
+	 * Date at which the request has been made
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date dateRequest;
 
 	/**
 	 * Contacts to be changed

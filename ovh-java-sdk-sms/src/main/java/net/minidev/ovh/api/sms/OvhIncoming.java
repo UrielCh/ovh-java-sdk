@@ -19,12 +19,12 @@ public class OvhIncoming {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long id;
+	public String tag;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String tag;
+	public Long id;
 
 	/**
 	 * canBeNull && readOnly

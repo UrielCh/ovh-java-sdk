@@ -21,18 +21,18 @@ public class OvhAccessDiagnostic {
 	public Boolean isModemConnected;
 
 	/**
-	 * Datime of the diagnostic
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date diagnosticTime;
-
-	/**
 	 * Test details by line
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhLineDiagnostic[] lineDetails;
+
+	/**
+	 * Datime of the diagnostic
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date diagnosticTime;
 
 	/**
 	 * Does the access ping ?

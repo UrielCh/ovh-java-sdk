@@ -21,18 +21,18 @@ public class OvhTemplates {
 	public OvhBitFormatEnum bitFormat;
 
 	/**
-	 * This distribution supports the GUID Partition Table (GPT), providing up to 128 partitions that can have more than 2 TB
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean supportsGptLabel;
-
-	/**
 	 * Customizable template properties
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhTemplateOsProperties customization;
+
+	/**
+	 * This distribution supports the GUID Partition Table (GPT), providing up to 128 partitions that can have more than 2 TB
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean supportsGptLabel;
 
 	/**
 	 * is this distribution deprecated

@@ -7,18 +7,18 @@ import net.minidev.ovh.api.order.OvhPrice;
  */
 public class OvhGenericProductPricing {
 	/**
-	 * Duration for ordering the product
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String duration;
-
-	/**
 	 * Price of the product in micro-centims
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long priceInUcents;
+
+	/**
+	 * Duration for ordering the product
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String duration;
 
 	/**
 	 * Pricing model identifier
@@ -49,11 +49,11 @@ public class OvhGenericProductPricing {
 	public String description;
 
 	/**
-	 * Maximum repeat for renewal
+	 * Interval of renewal
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long maximumRepeat;
+	public Long interval;
 
 	/**
 	 * Capacities of the pricing (type of pricing)
@@ -63,11 +63,11 @@ public class OvhGenericProductPricing {
 	public OvhGenericProductPricingCapacitiesEnum[] capacities;
 
 	/**
-	 * Interval of renewal
+	 * Maximum repeat for renewal
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long interval;
+	public Long maximumRepeat;
 
 	/**
 	 * Minimum quantity that can be ordered

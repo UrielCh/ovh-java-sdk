@@ -85,12 +85,12 @@ public class OvhDirectoryInfo {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Boolean displaySearchReverse;
+	public String lineDescription;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String lineDescription;
+	public Boolean displaySearchReverse;
 
 	/**
 	 * canBeNull && readOnly
@@ -120,12 +120,12 @@ public class OvhDirectoryInfo {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String modificationType;
+	public String wayNumber;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String wayNumber;
+	public String modificationType;
 
 	/**
 	 * canBeNull && readOnly
@@ -160,12 +160,12 @@ public class OvhDirectoryInfo {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String modificationDate;
+	public Long areaCode;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long areaCode;
+	public String modificationDate;
 
 	/**
 	 * canBeNull && readOnly

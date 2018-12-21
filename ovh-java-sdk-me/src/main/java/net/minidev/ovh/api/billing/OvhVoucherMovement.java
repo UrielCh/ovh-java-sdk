@@ -41,10 +41,10 @@ public class OvhVoucherMovement {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long order;
+	public OvhPrice previousBalance;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhPrice previousBalance;
+	public Long order;
 }

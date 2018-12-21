@@ -14,18 +14,18 @@ public class OvhRtmRaidVolume {
 	public String volume;
 
 	/**
-	 * Raid volume chunks
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String chunks;
-
-	/**
 	 * Raid volume phys
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String phys;
+
+	/**
+	 * Raid volume chunks
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String chunks;
 
 	/**
 	 * Raid volume letter
@@ -63,16 +63,16 @@ public class OvhRtmRaidVolume {
 	public String type;
 
 	/**
-	 * Raid volume capacity
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhUnitAndValue<Double> capacity;
-
-	/**
 	 * Raid volume status
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhRtmRaidStatusEnum status;
+
+	/**
+	 * Raid volume capacity
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhUnitAndValue<Double> capacity;
 }

@@ -55,18 +55,18 @@ public class OvhUser {
 	public Long userId;
 
 	/**
-	 * First name of the user
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String firstName;
-
-	/**
 	 * Check if the given Private Cloud user can be enabled or disabled ?
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean isEnableManageable;
+
+	/**
+	 * First name of the user
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String firstName;
 
 	/**
 	 * Defines if the user can confirm security tokens (if a compatible option is enabled)
@@ -97,18 +97,18 @@ public class OvhUser {
 	public Boolean canManageNetwork;
 
 	/**
-	 * Defines if the user can manage users rights
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean canManageRights;
-
-	/**
 	 * State of the user account
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhStateEnum state;
+
+	/**
+	 * Defines if the user can manage users rights
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean canManageRights;
 
 	/**
 	 * Email address of the user

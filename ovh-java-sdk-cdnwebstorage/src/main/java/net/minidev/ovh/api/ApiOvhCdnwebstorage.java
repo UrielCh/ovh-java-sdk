@@ -23,22 +23,17 @@ public class ApiOvhCdnwebstorage extends ApiOvhBase {
 	}
 
 	/**
-	 * Return stats about bandwidth consumption
+	 * List available services
 	 *
-	 * REST: GET /cdn/webstorage/{serviceName}/statistics
-	 * @param period [required]
-	 * @param type [required]
-	 * @param serviceName [required] The internal name of your CDN Static offer
+	 * REST: GET /cdn/webstorage
 	 */
-	public ArrayList<OvhStatsDataType> serviceName_statistics_GET(String serviceName, OvhStatsPeriodEnum period, OvhStatsTypeEnum type) throws IOException {
-		String qPath = "/cdn/webstorage/{serviceName}/statistics";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "period", period);
-		query(sb, "type", type);
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/cdn/webstorage";
+		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
-	private static TypeReference<ArrayList<OvhStatsDataType>> t1 = new TypeReference<ArrayList<OvhStatsDataType>>() {};
+	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
 
 	/**
 	 * Get this object properties
@@ -93,15 +88,20 @@ public class ApiOvhCdnwebstorage extends ApiOvhBase {
 	}
 
 	/**
-	 * List available services
+	 * Return stats about bandwidth consumption
 	 *
-	 * REST: GET /cdn/webstorage
+	 * REST: GET /cdn/webstorage/{serviceName}/statistics
+	 * @param type [required]
+	 * @param period [required]
+	 * @param serviceName [required] The internal name of your CDN Static offer
 	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/cdn/webstorage";
-		StringBuilder sb = path(qPath);
+	public ArrayList<OvhStatsDataType> serviceName_statistics_GET(String serviceName, OvhStatsPeriodEnum period, OvhStatsTypeEnum type) throws IOException {
+		String qPath = "/cdn/webstorage/{serviceName}/statistics";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "period", period);
+		query(sb, "type", type);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
-	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};
+	private static TypeReference<ArrayList<OvhStatsDataType>> t2 = new TypeReference<ArrayList<OvhStatsDataType>>() {};
 }

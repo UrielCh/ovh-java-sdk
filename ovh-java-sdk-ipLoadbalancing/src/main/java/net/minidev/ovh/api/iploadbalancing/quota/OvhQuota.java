@@ -21,18 +21,18 @@ public class OvhQuota {
 	public Date resetDate;
 
 	/**
-	 * Quota alert value in bytes. When reached, we will send you an alert. Default : included quota with your offer
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long alert;
-
-	/**
 	 * Zone of your quota
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String zone;
+
+	/**
+	 * Quota alert value in bytes. When reached, we will send you an alert. Default : included quota with your offer
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long alert;
 
 	/**
 	 * The last time your quota was updated from your Load Balancer instance

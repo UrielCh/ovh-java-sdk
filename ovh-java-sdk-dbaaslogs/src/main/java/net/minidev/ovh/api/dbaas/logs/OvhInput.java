@@ -14,18 +14,18 @@ public class OvhInput {
 	public String inputId;
 
 	/**
-	 * Associated Graylog stream
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String streamId;
-
-	/**
 	 * Indicate if input need to be restarted
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean isRestartRequired;
+
+	/**
+	 * Associated Graylog stream
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String streamId;
 
 	/**
 	 * Port
@@ -98,16 +98,16 @@ public class OvhInput {
 	public OvhInputStatusEnum status;
 
 	/**
-	 * Input last update
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date updatedAt;
-
-	/**
 	 * Input engine UUID
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String engineId;
+
+	/**
+	 * Input last update
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date updatedAt;
 }

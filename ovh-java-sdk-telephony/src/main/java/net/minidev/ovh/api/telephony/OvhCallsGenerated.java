@@ -7,18 +7,18 @@ import java.util.Date;
  */
 public class OvhCallsGenerated {
 	/**
-	 * call duration on seconds
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long callDuration;
-
-	/**
 	 * Generated call identifier
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String identifier;
+
+	/**
+	 * call duration on seconds
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long callDuration;
 
 	/**
 	 * original call uuid if it's a transfer

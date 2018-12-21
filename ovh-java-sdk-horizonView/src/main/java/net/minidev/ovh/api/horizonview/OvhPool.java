@@ -54,18 +54,18 @@ public class OvhPool {
 	public OvhPoolType type;
 
 	/**
-	 * Two factor authentication
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean twoFA;
-
-	/**
 	 * DHCP network in this port group
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String dhcpNetwork;
+
+	/**
+	 * Two factor authentication
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean twoFA;
 
 	/**
 	 * Next hop IP to reach virtual desktops network for private Access Point

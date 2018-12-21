@@ -43,13 +43,6 @@ public class OvhModem {
 	public String model;
 
 	/**
-	 * IP Address of the DMZ (To modify or delete the DMZ IP on the modem, a re-configuration of your modem has to be made, your configuration will be maintained, but you will lose your connection a few minutes)
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String dmzIP;
-
-	/**
 	 * Whether or not the modem supports IPv6
 	 *
 	 * canBeNull && readOnly
@@ -57,11 +50,11 @@ public class OvhModem {
 	public Boolean ipv6Support;
 
 	/**
-	 * Whether or not the user can configure his modem via OVH Interface (will lock telnet and local HTTP configuration page)
+	 * IP Address of the DMZ (To modify or delete the DMZ IP on the modem, a re-configuration of your modem has to be made, your configuration will be maintained, but you will lose your connection a few minutes)
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Boolean managedByOvh;
+	public String dmzIP;
 
 	/**
 	 * Size of the Maximum Transmission Unit on the modem's interfaces
@@ -69,6 +62,13 @@ public class OvhModem {
 	 * canBeNull && readOnly
 	 */
 	public OvhMTUSizeEnum mtuSize;
+
+	/**
+	 * Whether or not the user can configure his modem via OVH Interface (will lock telnet and local HTTP configuration page)
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean managedByOvh;
 
 	/**
 	 * Level of the FireWall on the modem

@@ -26,13 +26,6 @@ public class OvhHypervisor {
 	public Boolean orderable;
 
 	/**
-	 * Name of the hypervisor
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String name;
-
-	/**
 	 * Describes Private Cloud Options
 	 *
 	 * canBeNull && readOnly
@@ -40,11 +33,11 @@ public class OvhHypervisor {
 	public OvhOption[] options;
 
 	/**
-	 * Type of the hypervisor
+	 * Name of the hypervisor
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String type;
+	public String name;
 
 	/**
 	 * Short Name of the hypervisor
@@ -52,6 +45,13 @@ public class OvhHypervisor {
 	 * canBeNull && readOnly
 	 */
 	public String shortName;
+
+	/**
+	 * Type of the hypervisor
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String type;
 
 	/**
 	 * Describes Private Cloud Service Packs

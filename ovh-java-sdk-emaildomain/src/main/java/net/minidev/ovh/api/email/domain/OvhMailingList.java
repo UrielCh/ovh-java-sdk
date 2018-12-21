@@ -23,13 +23,6 @@ public class OvhMailingList {
 	public Date nbSubscribersUpdateDate;
 
 	/**
-	 * Name of mailing list
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String name;
-
-	/**
 	 * Email to reply of mailing list
 	 *
 	 * canBeNull && readOnly
@@ -42,6 +35,13 @@ public class OvhMailingList {
 	 * canBeNull && readOnly
 	 */
 	public OvhDomainMlOptionsStruct options;
+
+	/**
+	 * Name of mailing list
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String name;
 
 	/**
 	 * Language of mailing list

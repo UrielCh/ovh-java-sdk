@@ -5,16 +5,16 @@ package net.minidev.ovh.api.vrack;
  */
 public class OvhCloudProject {
 	/**
-	 * vrack name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String vrack;
-
-	/**
 	 * publicCloud project
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String project;
+
+	/**
+	 * vrack name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String vrack;
 }

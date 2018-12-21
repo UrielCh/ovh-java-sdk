@@ -29,17 +29,46 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 	}
 
 	/**
-	 * List available services
+	 * options attached to this license
 	 *
-	 * REST: GET /license/windows
+	 * REST: GET /license/windows/{serviceName}/option
+	 * @param serviceName [required] The name of your Windows license
 	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/license/windows";
-		StringBuilder sb = path(qPath);
+	public ArrayList<OvhOptionLabel> serviceName_option_GET(String serviceName) throws IOException {
+		String qPath = "/license/windows/{serviceName}/option";
+		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
-	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
+	private static TypeReference<ArrayList<OvhOptionLabel>> t1 = new TypeReference<ArrayList<OvhOptionLabel>>() {};
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /license/windows/{serviceName}/option/{label}
+	 * @param serviceName [required] The name of your Windows license
+	 * @param label [required] This option designation
+	 */
+	public OvhOption serviceName_option_label_GET(String serviceName, net.minidev.ovh.api.license.OvhOptionLabel label) throws IOException {
+		String qPath = "/license/windows/{serviceName}/option/{label}";
+		StringBuilder sb = path(qPath, serviceName, label);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhOption.class);
+	}
+
+	/**
+	 * release this Option
+	 *
+	 * REST: DELETE /license/windows/{serviceName}/option/{label}
+	 * @param serviceName [required] The name of your Windows license
+	 * @param label [required] This option designation
+	 */
+	public OvhTask serviceName_option_label_DELETE(String serviceName, net.minidev.ovh.api.license.OvhOptionLabel label) throws IOException {
+		String qPath = "/license/windows/{serviceName}/option/{label}";
+		StringBuilder sb = path(qPath, serviceName, label);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
 
 	/**
 	 * Get this object properties
@@ -107,34 +136,20 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 	}
 
 	/**
-	 * tasks linked to this license
+	 * Link your own sql server license to this Windows license
 	 *
-	 * REST: GET /license/windows/{serviceName}/tasks
-	 * @param status [required] Filter the value of status property (=)
-	 * @param action [required] Filter the value of action property (=)
+	 * REST: POST /license/windows/{serviceName}/sqlServer
+	 * @param version [required] Your license version
+	 * @param licenseId [required] Your license serial number
 	 * @param serviceName [required] The name of your Windows license
 	 */
-	public ArrayList<Long> serviceName_tasks_GET(String serviceName, OvhActionType action, OvhTaskStateEnum status) throws IOException {
-		String qPath = "/license/windows/{serviceName}/tasks";
+	public OvhTask serviceName_sqlServer_POST(String serviceName, OvhWindowsSqlVersionEnum version, String licenseId) throws IOException {
+		String qPath = "/license/windows/{serviceName}/sqlServer";
 		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "action", action);
-		query(sb, "status", status);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /license/windows/{serviceName}/tasks/{taskId}
-	 * @param serviceName [required] The name of your Windows license
-	 * @param taskId [required] This Task id
-	 */
-	public OvhTask serviceName_tasks_taskId_GET(String serviceName, Long taskId) throws IOException {
-		String qPath = "/license/windows/{serviceName}/tasks/{taskId}";
-		StringBuilder sb = path(qPath, serviceName, taskId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "version", version);
+		addBody(o, "licenseId", licenseId);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -163,62 +178,47 @@ public class ApiOvhLicensewindows extends ApiOvhBase {
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /license/windows/{serviceName}/option/{label}
+	 * REST: GET /license/windows/{serviceName}/tasks/{taskId}
 	 * @param serviceName [required] The name of your Windows license
-	 * @param label [required] This option designation
+	 * @param taskId [required] This Task id
 	 */
-	public OvhOption serviceName_option_label_GET(String serviceName, net.minidev.ovh.api.license.OvhOptionLabel label) throws IOException {
-		String qPath = "/license/windows/{serviceName}/option/{label}";
-		StringBuilder sb = path(qPath, serviceName, label);
+	public OvhTask serviceName_tasks_taskId_GET(String serviceName, Long taskId) throws IOException {
+		String qPath = "/license/windows/{serviceName}/tasks/{taskId}";
+		StringBuilder sb = path(qPath, serviceName, taskId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhOption.class);
-	}
-
-	/**
-	 * release this Option
-	 *
-	 * REST: DELETE /license/windows/{serviceName}/option/{label}
-	 * @param serviceName [required] The name of your Windows license
-	 * @param label [required] This option designation
-	 */
-	public OvhTask serviceName_option_label_DELETE(String serviceName, net.minidev.ovh.api.license.OvhOptionLabel label) throws IOException {
-		String qPath = "/license/windows/{serviceName}/option/{label}";
-		StringBuilder sb = path(qPath, serviceName, label);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
-	 * options attached to this license
+	 * tasks linked to this license
 	 *
-	 * REST: GET /license/windows/{serviceName}/option
+	 * REST: GET /license/windows/{serviceName}/tasks
+	 * @param status [required] Filter the value of status property (=)
+	 * @param action [required] Filter the value of action property (=)
 	 * @param serviceName [required] The name of your Windows license
 	 */
-	public ArrayList<OvhOptionLabel> serviceName_option_GET(String serviceName) throws IOException {
-		String qPath = "/license/windows/{serviceName}/option";
+	public ArrayList<Long> serviceName_tasks_GET(String serviceName, OvhActionType action, OvhTaskStateEnum status) throws IOException {
+		String qPath = "/license/windows/{serviceName}/tasks";
 		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "action", action);
+		query(sb, "status", status);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
+
+	/**
+	 * List available services
+	 *
+	 * REST: GET /license/windows
+	 */
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/license/windows";
+		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
-	private static TypeReference<ArrayList<OvhOptionLabel>> t3 = new TypeReference<ArrayList<OvhOptionLabel>>() {};
-
-	/**
-	 * Link your own sql server license to this Windows license
-	 *
-	 * REST: POST /license/windows/{serviceName}/sqlServer
-	 * @param version [required] Your license version
-	 * @param licenseId [required] Your license serial number
-	 * @param serviceName [required] The name of your Windows license
-	 */
-	public OvhTask serviceName_sqlServer_POST(String serviceName, OvhWindowsSqlVersionEnum version, String licenseId) throws IOException {
-		String qPath = "/license/windows/{serviceName}/sqlServer";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "version", version);
-		addBody(o, "licenseId", licenseId);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
+	private static TypeReference<ArrayList<String>> t3 = new TypeReference<ArrayList<String>>() {};
 
 	/**
 	 * Get the orderable Windows versions

@@ -12,18 +12,18 @@ public class OvhRtmConnection {
 	public Long uid;
 
 	/**
-	 * Path to the program
-	 *
-	 * canBeNull
-	 */
-	public String exe;
-
-	/**
 	 * Complete command line used for starting this process
 	 *
 	 * canBeNull
 	 */
 	public String cmdline;
+
+	/**
+	 * Path to the program
+	 *
+	 * canBeNull
+	 */
+	public String exe;
 
 	/**
 	 * Port opened

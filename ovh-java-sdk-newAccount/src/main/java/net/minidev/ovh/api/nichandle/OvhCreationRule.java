@@ -19,13 +19,6 @@ public class OvhCreationRule {
 	public String[] examples;
 
 	/**
-	 * Regular expression to validate the field value
-	 *
-	 * canBeNull
-	 */
-	public String regularExpression;
-
-	/**
 	 * List of allowed values for the field
 	 *
 	 * canBeNull
@@ -33,11 +26,11 @@ public class OvhCreationRule {
 	public String[] in;
 
 	/**
-	 * Default value of the field
+	 * Regular expression to validate the field value
 	 *
 	 * canBeNull
 	 */
-	public String defaultValue;
+	public String regularExpression;
 
 	/**
 	 * Prefix of the field value
@@ -45,6 +38,13 @@ public class OvhCreationRule {
 	 * canBeNull
 	 */
 	public String prefix;
+
+	/**
+	 * Default value of the field
+	 *
+	 * canBeNull
+	 */
+	public String defaultValue;
 
 	/**
 	 * Whether the field is mandatory

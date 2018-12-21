@@ -7,13 +7,6 @@ import java.util.Date;
  */
 public class OvhIncident {
 	/**
-	 * Estimated end date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date endDate;
-
-	/**
 	 * Operator
 	 *
 	 * canBeNull && readOnly
@@ -21,16 +14,16 @@ public class OvhIncident {
 	public OvhOperatorTypeEnum[] operators;
 
 	/**
-	 * canBeNull && readOnly
-	 */
-	public String comment;
-
-	/**
-	 * Department list
+	 * Estimated end date
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String[] departments;
+	public Date endDate;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public String comment;
 
 	/**
 	 * ID of the incident
@@ -38,6 +31,13 @@ public class OvhIncident {
 	 * canBeNull && readOnly
 	 */
 	public Long id;
+
+	/**
+	 * Department list
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String[] departments;
 
 	/**
 	 * Estimated start date

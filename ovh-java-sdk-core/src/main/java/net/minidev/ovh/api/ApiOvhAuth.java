@@ -29,18 +29,6 @@ public class ApiOvhAuth extends ApiOvhBase {
 	}
 
 	/**
-	 * Get the current time of the OVH servers, since UNIX epoch
-	 *
-	 * REST: GET /auth/time
-	 */
-	public Long time_GET() throws IOException {
-		String qPath = "/auth/time";
-		StringBuilder sb = path(qPath);
-		String resp = execN(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, Long.class);
-	}
-
-	/**
 	 * Get the current credential details
 	 *
 	 * REST: GET /auth/currentCredential
@@ -50,6 +38,18 @@ public class ApiOvhAuth extends ApiOvhBase {
 		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhCredential.class);
+	}
+
+	/**
+	 * Get the current time of the OVH servers, since UNIX epoch
+	 *
+	 * REST: GET /auth/time
+	 */
+	public Long time_GET() throws IOException {
+		String qPath = "/auth/time";
+		StringBuilder sb = path(qPath);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, Long.class);
 	}
 
 	/**

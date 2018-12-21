@@ -26,18 +26,18 @@ public class OvhServer {
 	public Boolean owaMfa;
 
 	/**
-	 * ExchangeServer version
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long version;
-
-	/**
 	 * Exchange commercial version
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhExchangeCommercialVersionEnum commercialVersion;
+
+	/**
+	 * ExchangeServer version
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long version;
 
 	/**
 	 * Task pending id

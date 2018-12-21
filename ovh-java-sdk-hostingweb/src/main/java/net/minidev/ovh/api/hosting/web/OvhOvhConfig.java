@@ -12,18 +12,18 @@ import net.minidev.ovh.api.hosting.web.ovhconfig.OvhStatusEnum;
  */
 public class OvhOvhConfig {
 	/**
-	 * Container to run this website
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String container;
-
-	/**
 	 * Name of engine you want
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhEngineVersionEnum engineVersion;
+
+	/**
+	 * Container to run this website
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String container;
 
 	/**
 	 * Config path, relative to your home directory
@@ -68,18 +68,18 @@ public class OvhOvhConfig {
 	public OvhHttpFirewallEnum httpFirewall;
 
 	/**
-	 * Version of engine you want
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhEngineNameEnum engineName;
-
-	/**
 	 * When ovhconfig was created, or found for the first time, on the hosting servers
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date creationDate;
+
+	/**
+	 * Version of engine you want
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhEngineNameEnum engineName;
 
 	/**
 	 * The task ID working on this configuration

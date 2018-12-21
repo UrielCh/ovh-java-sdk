@@ -19,18 +19,18 @@ public class OvhSharepointService {
 	public String displayName;
 
 	/**
-	 * Shared space maximum size in byte
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long quota;
-
-	/**
 	 * Internal service name
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String domain;
+
+	/**
+	 * Shared space maximum size in byte
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long quota;
 
 	/**
 	 * Shared space usage in byte

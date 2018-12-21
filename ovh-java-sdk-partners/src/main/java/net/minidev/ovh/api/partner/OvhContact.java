@@ -5,11 +5,11 @@ package net.minidev.ovh.api.partner;
  */
 public class OvhContact {
 	/**
-	 * Contact's first name
+	 * Newsletter subscription choice
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String firstName;
+	public String newsletter;
 
 	/**
 	 * Contact's last name
@@ -19,11 +19,11 @@ public class OvhContact {
 	public String lastName;
 
 	/**
-	 * Newsletter subscription choice
+	 * Contact's first name
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String newsletter;
+	public String firstName;
 
 	/**
 	 * Contact's twitter url

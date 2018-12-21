@@ -40,18 +40,18 @@ public class OvhTemplateModem {
 	public OvhWLAN[] WLAN;
 
 	/**
-	 * Template creation date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date creationDate;
-
-	/**
 	 * IP Address of the DMZ
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String dmzIP;
+
+	/**
+	 * Template creation date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date creationDate;
 
 	/**
 	 * Size of the Maximum Transmission Unit on the modem's interfaces

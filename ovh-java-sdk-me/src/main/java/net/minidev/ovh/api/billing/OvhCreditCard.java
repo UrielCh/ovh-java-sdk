@@ -33,12 +33,12 @@ public class OvhCreditCard {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long id;
+	public OvhCreditCardStateEnum state;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhCreditCardStateEnum state;
+	public Long id;
 
 	/**
 	 * canBeNull && readOnly

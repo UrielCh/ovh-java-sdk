@@ -42,11 +42,11 @@ public class OvhRma {
 	public OvhContact shippingContact;
 
 	/**
-	 * New merchandise brand in case of exchange
+	 * Indicates the current status of the RMA with a list of steps
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String newMerchandise;
+	public OvhRmaStep[] steps;
 
 	/**
 	 * Is the RMA cancellable?
@@ -56,18 +56,11 @@ public class OvhRma {
 	public Boolean cancellable;
 
 	/**
-	 * Indicates the current status of the RMA with a list of steps
+	 * New merchandise brand in case of exchange
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhRmaStep[] steps;
-
-	/**
-	 * Creation datetime of the return merchandise authorisation ticket
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date creationDatetime;
+	public String newMerchandise;
 
 	/**
 	 * Merchandise reference
@@ -75,6 +68,13 @@ public class OvhRma {
 	 * canBeNull && readOnly
 	 */
 	public String equipmentReference;
+
+	/**
+	 * Creation datetime of the return merchandise authorisation ticket
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date creationDatetime;
 
 	/**
 	 * Return merchandise authorisation identifier

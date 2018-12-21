@@ -42,16 +42,16 @@ public class OvhNode {
 	public String projectId;
 
 	/**
-	 * Node last update date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date updatedAt;
-
-	/**
 	 * Status
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhNodeStatus status;
+
+	/**
+	 * Node last update date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date updatedAt;
 }

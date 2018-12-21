@@ -15,18 +15,18 @@ public class OvhCredit {
 	public OvhPrice used_credit;
 
 	/**
-	 * Total credit
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhPrice total_credit;
-
-	/**
 	 * Voucher code
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String voucher;
+
+	/**
+	 * Total credit
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhPrice total_credit;
 
 	/**
 	 * Credit description
@@ -43,18 +43,18 @@ public class OvhCredit {
 	public String bill;
 
 	/**
-	 * Credit id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long id;
-
-	/**
 	 * Credit validity
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhVoucherValidity validity;
+
+	/**
+	 * Credit id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long id;
 
 	/**
 	 * Available credit

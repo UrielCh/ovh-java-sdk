@@ -51,16 +51,16 @@ public class OvhTransaction {
 	public Long id;
 
 	/**
-	 * Creation date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date creationDate;
-
-	/**
 	 * Service ID
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long serviceId;
+
+	/**
+	 * Creation date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date creationDate;
 }

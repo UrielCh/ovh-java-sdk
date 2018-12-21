@@ -15,18 +15,18 @@ public class OvhWLAN {
 	public Boolean bandSteering;
 
 	/**
-	 * Wifi Name
-	 *
-	 * canBeNull
-	 */
-	public String wifiName;
-
-	/**
 	 * How the channel is chosen (Auto / Manual)
 	 *
 	 * canBeNull
 	 */
 	public OvhChannelModeEnum channelMode;
+
+	/**
+	 * Wifi Name
+	 *
+	 * canBeNull
+	 */
+	public String wifiName;
 
 	/**
 	 * Security (None | WPA | WPA2 | WPAandWPA2)

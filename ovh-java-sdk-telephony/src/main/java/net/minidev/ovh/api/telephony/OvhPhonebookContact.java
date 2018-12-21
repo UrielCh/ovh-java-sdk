@@ -5,18 +5,18 @@ package net.minidev.ovh.api.telephony;
  */
 public class OvhPhonebookContact {
 	/**
-	 * Contact surname
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String surname;
-
-	/**
 	 * Home mobile phone number of the contact
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String homeMobile;
+
+	/**
+	 * Contact surname
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String surname;
 
 	/**
 	 * Home landline phone number of the contact

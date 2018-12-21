@@ -26,18 +26,18 @@ public class OvhFlavor {
 	public Boolean diskHa;
 
 	/**
-	 * The amount of (v)CPUs
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long cpus;
-
-	/**
 	 * The network bandwidth, in Mbps
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long bandwidth;
+
+	/**
+	 * The amount of (v)CPUs
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long cpus;
 
 	/**
 	 * The flavor UUID

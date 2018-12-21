@@ -39,19 +39,6 @@ public class ApiOvhLicensesqlserver extends ApiOvhBase {
 	}
 
 	/**
-	 * Terminate your service
-	 *
-	 * REST: POST /license/sqlserver/{serviceName}/terminate
-	 * @param serviceName [required] The name of your SQL Server license
-	 */
-	public String serviceName_terminate_POST(String serviceName) throws IOException {
-		String qPath = "/license/sqlserver/{serviceName}/terminate";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, String.class);
-	}
-
-	/**
 	 * Confirm termination of your service
 	 *
 	 * REST: POST /license/sqlserver/{serviceName}/confirmTermination
@@ -74,20 +61,6 @@ public class ApiOvhLicensesqlserver extends ApiOvhBase {
 	}
 
 	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /license/sqlserver/{serviceName}/tasks/{taskId}
-	 * @param serviceName [required] The name of your SQL Server license
-	 * @param taskId [required] This Task id
-	 */
-	public OvhTask serviceName_tasks_taskId_GET(String serviceName, Long taskId) throws IOException {
-		String qPath = "/license/sqlserver/{serviceName}/tasks/{taskId}";
-		StringBuilder sb = path(qPath, serviceName, taskId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
 	 * Tasks linked to this license
 	 *
 	 * REST: GET /license/sqlserver/{serviceName}/tasks
@@ -104,6 +77,33 @@ public class ApiOvhLicensesqlserver extends ApiOvhBase {
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /license/sqlserver/{serviceName}/tasks/{taskId}
+	 * @param serviceName [required] The name of your SQL Server license
+	 * @param taskId [required] This Task id
+	 */
+	public OvhTask serviceName_tasks_taskId_GET(String serviceName, Long taskId) throws IOException {
+		String qPath = "/license/sqlserver/{serviceName}/tasks/{taskId}";
+		StringBuilder sb = path(qPath, serviceName, taskId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Terminate your service
+	 *
+	 * REST: POST /license/sqlserver/{serviceName}/terminate
+	 * @param serviceName [required] The name of your SQL Server license
+	 */
+	public String serviceName_terminate_POST(String serviceName) throws IOException {
+		String qPath = "/license/sqlserver/{serviceName}/terminate";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
 
 	/**
 	 * Get this object properties
@@ -132,6 +132,19 @@ public class ApiOvhLicensesqlserver extends ApiOvhBase {
 	}
 
 	/**
+	 * List available services
+	 *
+	 * REST: GET /license/sqlserver
+	 */
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/license/sqlserver";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};
+
+	/**
 	 * Get the orderable Sql Server versions
 	 *
 	 * REST: GET /license/sqlserver/orderableVersions
@@ -142,20 +155,7 @@ public class ApiOvhLicensesqlserver extends ApiOvhBase {
 		StringBuilder sb = path(qPath);
 		query(sb, "ip", ip);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-	private static TypeReference<ArrayList<OvhSqlServerOrderConfiguration>> t2 = new TypeReference<ArrayList<OvhSqlServerOrderConfiguration>>() {};
-
-	/**
-	 * List available services
-	 *
-	 * REST: GET /license/sqlserver
-	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/license/sqlserver";
-		StringBuilder sb = path(qPath);
-		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t3);
 	}
-	private static TypeReference<ArrayList<String>> t3 = new TypeReference<ArrayList<String>>() {};
+	private static TypeReference<ArrayList<OvhSqlServerOrderConfiguration>> t3 = new TypeReference<ArrayList<OvhSqlServerOrderConfiguration>>() {};
 }

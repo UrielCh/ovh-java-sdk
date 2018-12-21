@@ -16,6 +16,13 @@ public class OvhDnssecKey {
 	public OvhKeyFlagEnum flags;
 
 	/**
+	 * Public key
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String publicKey;
+
+	/**
 	 * Tag of the DNSSEC key
 	 *
 	 * canBeNull && readOnly
@@ -28,13 +35,6 @@ public class OvhDnssecKey {
 	 * canBeNull && readOnly
 	 */
 	public Long id;
-
-	/**
-	 * Public key
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String publicKey;
 
 	/**
 	 * Algorithm number of the DNSSEC key

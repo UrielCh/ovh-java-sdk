@@ -29,12 +29,12 @@ public class OvhOrderDetail {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Boolean cancelled;
+	public String description;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String description;
+	public Boolean cancelled;
 
 	/**
 	 * canBeNull && readOnly

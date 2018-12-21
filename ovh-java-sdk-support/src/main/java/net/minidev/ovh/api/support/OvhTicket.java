@@ -35,6 +35,13 @@ public class OvhTicket {
 	public String subject;
 
 	/**
+	 * Ticket type
+	 *
+	 * canBeNull
+	 */
+	public OvhTicketTypeEnum type;
+
+	/**
 	 * Ticket creation date
 	 *
 	 * canBeNull
@@ -47,13 +54,6 @@ public class OvhTicket {
 	 * canBeNull
 	 */
 	public String serviceName;
-
-	/**
-	 * Ticket type
-	 *
-	 * canBeNull
-	 */
-	public OvhTicketTypeEnum type;
 
 	/**
 	 * Ticket score

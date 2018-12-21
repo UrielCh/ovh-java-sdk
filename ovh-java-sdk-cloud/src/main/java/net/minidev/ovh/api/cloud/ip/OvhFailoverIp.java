@@ -19,18 +19,18 @@ public class OvhFailoverIp {
 	public String ip;
 
 	/**
-	 * Ip location
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String geoloc;
-
-	/**
 	 * Current operation progress in percent
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long progress;
+
+	/**
+	 * Ip location
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String geoloc;
 
 	/**
 	 * IP block

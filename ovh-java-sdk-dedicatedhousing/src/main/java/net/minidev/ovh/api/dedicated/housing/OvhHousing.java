@@ -12,18 +12,18 @@ public class OvhHousing {
 	public String rack;
 
 	/**
-	 * The name you give to the bay
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String name;
-
-	/**
 	 * Housing bay options
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhOptions options;
+
+	/**
+	 * The name you give to the bay
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String name;
 
 	/**
 	 * Bay Security code

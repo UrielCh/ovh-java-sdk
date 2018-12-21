@@ -37,21 +37,6 @@ public class ApiOvhSsl extends ApiOvhBase {
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /ssl/{serviceName}
-	 * @param serviceName [required] The internal name of your SSL service
-	 *
-	 * API beta
-	 */
-	public OvhCertificate serviceName_GET(String serviceName) throws IOException {
-		String qPath = "/ssl/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhCertificate.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
 	 * REST: GET /ssl/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your SSL service
 	 *
@@ -80,6 +65,22 @@ public class ApiOvhSsl extends ApiOvhBase {
 	}
 
 	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /ssl/{serviceName}/tasks/{taskId}
+	 * @param serviceName [required] The internal name of your SSL service
+	 * @param taskId [required]
+	 *
+	 * API beta
+	 */
+	public OvhOperation serviceName_tasks_taskId_GET(String serviceName, Long taskId) throws IOException {
+		String qPath = "/ssl/{serviceName}/tasks/{taskId}";
+		StringBuilder sb = path(qPath, serviceName, taskId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhOperation.class);
+	}
+
+	/**
 	 * Tasks associated to this ssl
 	 *
 	 * REST: GET /ssl/{serviceName}/tasks
@@ -98,16 +99,15 @@ public class ApiOvhSsl extends ApiOvhBase {
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /ssl/{serviceName}/tasks/{taskId}
+	 * REST: GET /ssl/{serviceName}
 	 * @param serviceName [required] The internal name of your SSL service
-	 * @param taskId [required]
 	 *
 	 * API beta
 	 */
-	public OvhOperation serviceName_tasks_taskId_GET(String serviceName, Long taskId) throws IOException {
-		String qPath = "/ssl/{serviceName}/tasks/{taskId}";
-		StringBuilder sb = path(qPath, serviceName, taskId);
+	public OvhCertificate serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/ssl/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhOperation.class);
+		return convertTo(resp, OvhCertificate.class);
 	}
 }

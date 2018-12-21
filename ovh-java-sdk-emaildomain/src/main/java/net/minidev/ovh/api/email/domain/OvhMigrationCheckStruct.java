@@ -19,18 +19,18 @@ public class OvhMigrationCheckStruct {
 	public String[] forward;
 
 	/**
-	 * List of warnings
-	 *
-	 * canBeNull
-	 */
-	public OvhMigrationCheckResultStruct[] warning;
-
-	/**
 	 * List of aliases
 	 *
 	 * canBeNull
 	 */
 	public String[] alias;
+
+	/**
+	 * List of warnings
+	 *
+	 * canBeNull
+	 */
+	public OvhMigrationCheckResultStruct[] warning;
 
 	/**
 	 * List of errors

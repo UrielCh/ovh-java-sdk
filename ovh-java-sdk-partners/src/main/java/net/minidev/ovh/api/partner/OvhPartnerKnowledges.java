@@ -12,18 +12,18 @@ public class OvhPartnerKnowledges {
 	public Boolean forum;
 
 	/**
-	 * OVH website
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean website;
-
-	/**
 	 * Other (specify)
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String other;
+
+	/**
+	 * OVH website
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean website;
 
 	/**
 	 * Search engine

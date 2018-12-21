@@ -36,18 +36,18 @@ public class OvhDocument {
 	public String name;
 
 	/**
-	 * Document id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String id;
-
-	/**
 	 * Document validation
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date validationDate;
+
+	/**
+	 * Document id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String id;
 
 	/**
 	 * Document creation
@@ -57,16 +57,16 @@ public class OvhDocument {
 	public Date creationDate;
 
 	/**
-	 * Document tags
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhSafeKeyValue<String>[] tags;
-
-	/**
 	 * Document expiration
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date expirationDate;
+
+	/**
+	 * Document tags
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhSafeKeyValue<String>[] tags;
 }

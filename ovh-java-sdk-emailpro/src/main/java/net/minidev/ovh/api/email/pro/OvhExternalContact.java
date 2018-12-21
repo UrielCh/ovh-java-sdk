@@ -7,18 +7,18 @@ import java.util.Date;
  */
 public class OvhExternalContact {
 	/**
-	 * Contact first name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String firstName;
-
-	/**
 	 * Contact last name
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String lastName;
+
+	/**
+	 * Contact first name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String firstName;
 
 	/**
 	 * Hide the contact in Global Address List
@@ -28,18 +28,18 @@ public class OvhExternalContact {
 	public Boolean hiddenFromGAL;
 
 	/**
-	 * Contact initals
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String initials;
-
-	/**
 	 * Contact display name
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String displayName;
+
+	/**
+	 * Contact initals
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String initials;
 
 	/**
 	 * Contact email
@@ -49,18 +49,18 @@ public class OvhExternalContact {
 	public String externalEmailAddress;
 
 	/**
-	 * Contact state
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhObjectStateEnum state;
-
-	/**
 	 * Contact id
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long id;
+
+	/**
+	 * Contact state
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhObjectStateEnum state;
 
 	/**
 	 * Creation date

@@ -35,18 +35,18 @@ public class OvhDiagnosticData {
 	public OvhRobotActionsEnum robotAction;
 
 	/**
-	 * Diagnostic creation date
-	 *
-	 * canBeNull
-	 */
-	public Date creationDate;
-
-	/**
 	 * Error message
 	 *
 	 * canBeNull
 	 */
 	public String error;
+
+	/**
+	 * Diagnostic creation date
+	 *
+	 * canBeNull
+	 */
+	public Date creationDate;
 
 	/**
 	 * Diagnostic timeout in minutes. Any action restart timeout
@@ -56,18 +56,18 @@ public class OvhDiagnosticData {
 	public Long timeout;
 
 	/**
-	 * List of actions that must be done by customer
-	 *
-	 * canBeNull
-	 */
-	public OvhCustomerActionToDo[] actionsToDo;
-
-	/**
 	 * List of questions that must be answered by customer
 	 *
 	 * canBeNull
 	 */
 	public OvhQuestion[] toAnswer;
+
+	/**
+	 * List of actions that must be done by customer
+	 *
+	 * canBeNull
+	 */
+	public OvhCustomerActionToDo[] actionsToDo;
 
 	/**
 	 * List of actions already done by customer

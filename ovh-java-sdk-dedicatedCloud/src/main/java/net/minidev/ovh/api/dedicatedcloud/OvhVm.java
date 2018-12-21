@@ -63,18 +63,18 @@ public class OvhVm {
 	public OvhVmNetwork[] networks;
 
 	/**
-	 * Current memory utilization, in MB
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long memoryUsed;
-
-	/**
 	 * Maximum CPU performance, in MHz.
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Double cpuMax;
+
+	/**
+	 * Current memory utilization, in MB
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long memoryUsed;
 
 	/**
 	 * Percentage of time that the virtual machine was ready, but could not get scheduled to run on the physical CPU. In percent
@@ -126,18 +126,18 @@ public class OvhVm {
 	public Double readPerSecond;
 
 	/**
-	 * Amount of guest memory that is shared with other virtual machines, in Mb
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String memoryTps;
-
-	/**
 	 * Rate of reading data from the virtual disk. In KB/s
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Double readRate;
+
+	/**
+	 * Amount of guest memory that is shared with other virtual machines, in Mb
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String memoryTps;
 
 	/**
 	 * Virtual machine cdroms devices
@@ -175,11 +175,11 @@ public class OvhVm {
 	public Double readLatency;
 
 	/**
-	 * The index of the current VM in instanceUuids array starting from 1, so 1 means that it is the primary VM.
+	 * Time that the virtual machine was ready, but could not get scheduled to run on the physical CPU. In millisecond
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String roleFt;
+	public Double cpuReady;
 
 	/**
 	 * Rate of writing data from the virtual disk. In KB/s
@@ -189,11 +189,11 @@ public class OvhVm {
 	public Double writeRate;
 
 	/**
-	 * Time that the virtual machine was ready, but could not get scheduled to run on the physical CPU. In millisecond
+	 * The index of the current VM in instanceUuids array starting from 1, so 1 means that it is the primary VM.
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Double cpuReady;
+	public String roleFt;
 
 	/**
 	 * Number of packets received.

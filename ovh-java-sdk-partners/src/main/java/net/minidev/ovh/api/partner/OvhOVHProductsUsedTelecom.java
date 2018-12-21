@@ -26,16 +26,16 @@ public class OvhOVHProductsUsedTelecom {
 	public Boolean sms;
 
 	/**
-	 * ADSL / SDSL
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean dsl;
-
-	/**
 	 * Fax
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean fax;
+
+	/**
+	 * ADSL / SDSL
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean dsl;
 }

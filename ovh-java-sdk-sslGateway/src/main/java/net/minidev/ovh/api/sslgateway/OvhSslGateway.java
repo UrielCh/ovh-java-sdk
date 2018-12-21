@@ -68,18 +68,18 @@ public class OvhSslGateway {
 	public String ipv4;
 
 	/**
-	 * Set to true to enable https redirect
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean httpsRedirect;
-
-	/**
 	 * Restrict SSL Gateway access to these ip block. No restriction if null
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String[] allowedSource;
+
+	/**
+	 * Set to true to enable https redirect
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean httpsRedirect;
 
 	/**
 	 * The IPv6 you need to put in the AAAA field of your domain name
@@ -89,16 +89,16 @@ public class OvhSslGateway {
 	public String ipv6;
 
 	/**
-	 * Set to true to enable Strict-Transport-Security HTTP header
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean hsts;
-
-	/**
 	 * Current state of your SSL Gateway
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhStateEnum state;
+
+	/**
+	 * Set to true to enable Strict-Transport-Security HTTP header
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean hsts;
 }

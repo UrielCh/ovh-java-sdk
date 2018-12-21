@@ -21,13 +21,6 @@ public class OvhDomain {
 	public OvhDomainLockStatusEnum transferLockStatus;
 
 	/**
-	 * Contact Owner (you can edit it via /me/contact/<ID>)
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String whoisOwner;
-
-	/**
 	 * Name servers type
 	 *
 	 * canBeNull && readOnly
@@ -35,11 +28,11 @@ public class OvhDomain {
 	public OvhDomainNsTypeEnum nameServerType;
 
 	/**
-	 * Is DNSSEC implemented for this domain name's tld
+	 * Contact Owner (you can edit it via /me/contact/<ID>)
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Boolean dnssecSupported;
+	public String whoisOwner;
 
 	/**
 	 * Is whois obfuscation supported by this domain name's registry
@@ -49,11 +42,11 @@ public class OvhDomain {
 	public Boolean owoSupported;
 
 	/**
-	 * Domain name
+	 * Is DNSSEC implemented for this domain name's tld
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String domain;
+	public Boolean dnssecSupported;
 
 	/**
 	 * Last update date
@@ -63,11 +56,11 @@ public class OvhDomain {
 	public Date lastUpdate;
 
 	/**
-	 * Does the registry support multi ip glue record
+	 * Domain name
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Boolean glueRecordMultiIpSupported;
+	public String domain;
 
 	/**
 	 * Parent service
@@ -75,6 +68,13 @@ public class OvhDomain {
 	 * canBeNull && readOnly
 	 */
 	public OvhParentService parentService;
+
+	/**
+	 * Does the registry support multi ip glue record
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean glueRecordMultiIpSupported;
 
 	/**
 	 * Does the registry support ipv6 glue record

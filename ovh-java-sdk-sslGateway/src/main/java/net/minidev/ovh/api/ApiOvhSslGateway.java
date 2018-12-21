@@ -27,35 +27,6 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 	}
 
 	/**
-	 * List available services
-	 *
-	 * REST: GET /sslGateway
-	 *
-	 * API beta
-	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/sslGateway";
-		StringBuilder sb = path(qPath);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
-
-	/**
-	 * List of zone available for an SSL Gateway
-	 *
-	 * REST: GET /sslGateway/availableZones
-	 *
-	 * API beta
-	 */
-	public ArrayList<String> availableZones_GET() throws IOException {
-		String qPath = "/sslGateway/availableZones";
-		StringBuilder sb = path(qPath);
-		String resp = execN(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
 	 * Check domain eligibility. Return list of eligible IP(s) for this domain.
 	 *
 	 * REST: GET /sslGateway/eligibility
@@ -72,103 +43,19 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 	}
 
 	/**
-	 * Launch a contact change procedure
+	 * List available services
 	 *
-	 * REST: POST /sslGateway/{serviceName}/changeContact
-	 * @param contactAdmin The contact to set as admin contact
-	 * @param contactTech The contact to set as tech contact
-	 * @param contactBilling The contact to set as billing contact
-	 * @param serviceName [required] The internal name of your SSL Gateway
+	 * REST: GET /sslGateway
 	 *
 	 * API beta
 	 */
-	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
-		String qPath = "/sslGateway/{serviceName}/changeContact";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "contactAdmin", contactAdmin);
-		addBody(o, "contactTech", contactTech);
-		addBody(o, "contactBilling", contactBilling);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t2);
-	}
-	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
-
-	/**
-	 * Task for this SSL Gateway
-	 *
-	 * REST: GET /sslGateway/{serviceName}/task
-	 * @param serviceName [required] The internal name of your SSL Gateway
-	 *
-	 * API beta
-	 */
-	public ArrayList<Long> serviceName_task_GET(String serviceName) throws IOException {
-		String qPath = "/sslGateway/{serviceName}/task";
-		StringBuilder sb = path(qPath, serviceName);
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/sslGateway";
+		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
+		return convertTo(resp, t1);
 	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /sslGateway/{serviceName}/task/{id}
-	 * @param serviceName [required] The internal name of your SSL Gateway
-	 * @param id [required] Id of the task
-	 *
-	 * API beta
-	 */
-	public OvhTask serviceName_task_id_GET(String serviceName, Long id) throws IOException {
-		String qPath = "/sslGateway/{serviceName}/task/{id}";
-		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Terminate your service
-	 *
-	 * REST: POST /sslGateway/{serviceName}/terminate
-	 * @param serviceName [required] The internal name of your SSL Gateway
-	 *
-	 * API beta
-	 */
-	public String serviceName_terminate_POST(String serviceName) throws IOException {
-		String qPath = "/sslGateway/{serviceName}/terminate";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /sslGateway/{serviceName}/serviceInfos
-	 * @param serviceName [required] The internal name of your SSL Gateway
-	 *
-	 * API beta
-	 */
-	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
-		String qPath = "/sslGateway/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhService.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /sslGateway/{serviceName}/serviceInfos
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your SSL Gateway
-	 *
-	 * API beta
-	 */
-	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
-		String qPath = "/sslGateway/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
+	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
 
 	/**
 	 * Servers attached to your SSL Gateway
@@ -184,6 +71,7 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
+	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
 
 	/**
 	 * Add a new server to your SSL Gateway
@@ -253,6 +141,28 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 	}
 
 	/**
+	 * Launch a contact change procedure
+	 *
+	 * REST: POST /sslGateway/{serviceName}/changeContact
+	 * @param contactAdmin The contact to set as admin contact
+	 * @param contactTech The contact to set as tech contact
+	 * @param contactBilling The contact to set as billing contact
+	 * @param serviceName [required] The internal name of your SSL Gateway
+	 *
+	 * API beta
+	 */
+	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
+		String qPath = "/sslGateway/{serviceName}/changeContact";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "contactAdmin", contactAdmin);
+		addBody(o, "contactTech", contactTech);
+		addBody(o, "contactBilling", contactBilling);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t2);
+	}
+
+	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /sslGateway/{serviceName}
@@ -283,50 +193,33 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 	}
 
 	/**
-	 * Ip subnet used by OVH to nat requests to your SSL Gateway backends.
-	 *
-	 * REST: GET /sslGateway/{serviceName}/natIp
-	 * @param serviceName [required] The internal name of your SSL Gateway
-	 *
-	 * API beta
-	 */
-	public ArrayList<OvhNatIps> serviceName_natIp_GET(String serviceName) throws IOException {
-		String qPath = "/sslGateway/{serviceName}/natIp";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
-	}
-	private static TypeReference<ArrayList<OvhNatIps>> t3 = new TypeReference<ArrayList<OvhNatIps>>() {};
-
-	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /sslGateway/{serviceName}/domain/{id}
+	 * REST: GET /sslGateway/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your SSL Gateway
-	 * @param id [required] Id of your domain
 	 *
 	 * API beta
 	 */
-	public OvhDomain serviceName_domain_id_GET(String serviceName, Long id) throws IOException {
-		String qPath = "/sslGateway/{serviceName}/domain/{id}";
-		StringBuilder sb = path(qPath, serviceName, id);
+	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
+		String qPath = "/sslGateway/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhDomain.class);
+		return convertTo(resp, OvhService.class);
 	}
 
 	/**
-	 * Detach a domain from your SSL Gateway
+	 * Alter this object properties
 	 *
-	 * REST: DELETE /sslGateway/{serviceName}/domain/{id}
+	 * REST: PUT /sslGateway/{serviceName}/serviceInfos
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The internal name of your SSL Gateway
-	 * @param id [required] Id of your domain
 	 *
 	 * API beta
 	 */
-	public void serviceName_domain_id_DELETE(String serviceName, Long id) throws IOException {
-		String qPath = "/sslGateway/{serviceName}/domain/{id}";
-		StringBuilder sb = path(qPath, serviceName, id);
-		exec(qPath, "DELETE", sb.toString(), null);
+	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
+		String qPath = "/sslGateway/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -363,6 +256,70 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 	}
 
 	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /sslGateway/{serviceName}/domain/{id}
+	 * @param serviceName [required] The internal name of your SSL Gateway
+	 * @param id [required] Id of your domain
+	 *
+	 * API beta
+	 */
+	public OvhDomain serviceName_domain_id_GET(String serviceName, Long id) throws IOException {
+		String qPath = "/sslGateway/{serviceName}/domain/{id}";
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhDomain.class);
+	}
+
+	/**
+	 * Detach a domain from your SSL Gateway
+	 *
+	 * REST: DELETE /sslGateway/{serviceName}/domain/{id}
+	 * @param serviceName [required] The internal name of your SSL Gateway
+	 * @param id [required] Id of your domain
+	 *
+	 * API beta
+	 */
+	public void serviceName_domain_id_DELETE(String serviceName, Long id) throws IOException {
+		String qPath = "/sslGateway/{serviceName}/domain/{id}";
+		StringBuilder sb = path(qPath, serviceName, id);
+		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
+	 * Terminate your service
+	 *
+	 * REST: POST /sslGateway/{serviceName}/terminate
+	 * @param serviceName [required] The internal name of your SSL Gateway
+	 *
+	 * API beta
+	 */
+	public String serviceName_terminate_POST(String serviceName) throws IOException {
+		String qPath = "/sslGateway/{serviceName}/terminate";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Renew your SSL certificates
+	 *
+	 * REST: POST /sslGateway/{serviceName}/renewCertificate
+	 * @param domain [required] Domain on which you want to renew certificate
+	 * @param serviceName [required] The internal name of your SSL Gateway
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> serviceName_renewCertificate_POST(String serviceName, String domain) throws IOException {
+		String qPath = "/sslGateway/{serviceName}/renewCertificate";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "domain", domain);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t1);
+	}
+
+	/**
 	 * Confirm termination of your service
 	 *
 	 * REST: POST /sslGateway/{serviceName}/confirmTermination
@@ -387,20 +344,63 @@ public class ApiOvhSslGateway extends ApiOvhBase {
 	}
 
 	/**
-	 * Renew your SSL certificates
+	 * Ip subnet used by OVH to nat requests to your SSL Gateway backends.
 	 *
-	 * REST: POST /sslGateway/{serviceName}/renewCertificate
-	 * @param domain [required] Domain on which you want to renew certificate
+	 * REST: GET /sslGateway/{serviceName}/natIp
 	 * @param serviceName [required] The internal name of your SSL Gateway
 	 *
 	 * API beta
 	 */
-	public ArrayList<String> serviceName_renewCertificate_POST(String serviceName, String domain) throws IOException {
-		String qPath = "/sslGateway/{serviceName}/renewCertificate";
+	public ArrayList<OvhNatIps> serviceName_natIp_GET(String serviceName) throws IOException {
+		String qPath = "/sslGateway/{serviceName}/natIp";
 		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "domain", domain);
-		String resp = exec(qPath, "POST", sb.toString(), o);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+	private static TypeReference<ArrayList<OvhNatIps>> t3 = new TypeReference<ArrayList<OvhNatIps>>() {};
+
+	/**
+	 * Task for this SSL Gateway
+	 *
+	 * REST: GET /sslGateway/{serviceName}/task
+	 * @param serviceName [required] The internal name of your SSL Gateway
+	 *
+	 * API beta
+	 */
+	public ArrayList<Long> serviceName_task_GET(String serviceName) throws IOException {
+		String qPath = "/sslGateway/{serviceName}/task";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /sslGateway/{serviceName}/task/{id}
+	 * @param serviceName [required] The internal name of your SSL Gateway
+	 * @param id [required] Id of the task
+	 *
+	 * API beta
+	 */
+	public OvhTask serviceName_task_id_GET(String serviceName, Long id) throws IOException {
+		String qPath = "/sslGateway/{serviceName}/task/{id}";
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * List of zone available for an SSL Gateway
+	 *
+	 * REST: GET /sslGateway/availableZones
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> availableZones_GET() throws IOException {
+		String qPath = "/sslGateway/availableZones";
+		StringBuilder sb = path(qPath);
+		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 }

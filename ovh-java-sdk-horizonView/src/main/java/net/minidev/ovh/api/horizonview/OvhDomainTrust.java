@@ -12,18 +12,18 @@ public class OvhDomainTrust {
 	public String dns2;
 
 	/**
-	 * IP of your first DNS
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String dns1;
-
-	/**
 	 * Name of your private domain
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String domain;
+
+	/**
+	 * IP of your first DNS
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String dns1;
 
 	/**
 	 * Domain trust id

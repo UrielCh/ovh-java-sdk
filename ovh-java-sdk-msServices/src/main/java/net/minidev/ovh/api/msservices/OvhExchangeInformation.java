@@ -28,18 +28,18 @@ public class OvhExchangeInformation {
 	public Long spamTicketNumber;
 
 	/**
-	 * Spam and Antivirus configuration
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhSpamAndVirusConfiguration spamAndVirusConfiguration;
-
-	/**
 	 * Primary address of the mailbox
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String primaryEmailAddress;
+
+	/**
+	 * Spam and Antivirus configuration
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhSpamAndVirusConfiguration spamAndVirusConfiguration;
 
 	/**
 	 * OWA policy restriction is applied
@@ -70,18 +70,18 @@ public class OvhExchangeInformation {
 	public Long quota;
 
 	/**
-	 * Account id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long id;
-
-	/**
 	 * Mailbox state
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhObjectStateEnum state;
+
+	/**
+	 * Account id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long id;
 
 	/**
 	 * Expiration date
@@ -140,18 +140,18 @@ public class OvhExchangeInformation {
 	public Date creationDate;
 
 	/**
-	 * Delete Outlook license at expiration date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean deleteOutlookAtExpiration;
-
-	/**
 	 * Pending task id for this account
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long taskPendingId;
+
+	/**
+	 * Delete Outlook license at expiration date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean deleteOutlookAtExpiration;
 
 	/**
 	 * Exchange account license

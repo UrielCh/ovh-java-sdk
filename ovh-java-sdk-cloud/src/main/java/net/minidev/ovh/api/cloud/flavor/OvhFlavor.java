@@ -61,18 +61,18 @@ public class OvhFlavor {
 	public String id;
 
 	/**
-	 * Number of VCPUs
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long vcpus;
-
-	/**
 	 * Flavor region
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String region;
+
+	/**
+	 * Number of VCPUs
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long vcpus;
 
 	/**
 	 * Flavor type

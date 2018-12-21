@@ -38,10 +38,10 @@ public class OvhUser {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhQuota quotaInformations;
+	public OvhAlertThreshold alertThresholdInformations;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhAlertThreshold alertThresholdInformations;
+	public OvhQuota quotaInformations;
 }

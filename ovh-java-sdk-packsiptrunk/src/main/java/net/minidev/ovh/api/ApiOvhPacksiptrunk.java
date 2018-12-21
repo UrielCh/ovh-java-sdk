@@ -33,6 +33,32 @@ public class ApiOvhPacksiptrunk extends ApiOvhBase {
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
 
 	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /pack/siptrunk/{packName}/serviceInfos
+	 * @param packName [required] The internal name of your pack
+	 */
+	public OvhService packName_serviceInfos_GET(String packName) throws IOException {
+		String qPath = "/pack/siptrunk/{packName}/serviceInfos";
+		StringBuilder sb = path(qPath, packName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhService.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /pack/siptrunk/{packName}/serviceInfos
+	 * @param body [required] New object properties
+	 * @param packName [required] The internal name of your pack
+	 */
+	public void packName_serviceInfos_PUT(String packName, OvhService body) throws IOException {
+		String qPath = "/pack/siptrunk/{packName}/serviceInfos";
+		StringBuilder sb = path(qPath, packName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
 	 * Launch a contact change procedure
 	 *
 	 * REST: POST /pack/siptrunk/{packName}/changeContact
@@ -64,31 +90,5 @@ public class ApiOvhPacksiptrunk extends ApiOvhBase {
 		StringBuilder sb = path(qPath, packName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPackSipTrunk.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /pack/siptrunk/{packName}/serviceInfos
-	 * @param packName [required] The internal name of your pack
-	 */
-	public OvhService packName_serviceInfos_GET(String packName) throws IOException {
-		String qPath = "/pack/siptrunk/{packName}/serviceInfos";
-		StringBuilder sb = path(qPath, packName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhService.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /pack/siptrunk/{packName}/serviceInfos
-	 * @param body [required] New object properties
-	 * @param packName [required] The internal name of your pack
-	 */
-	public void packName_serviceInfos_PUT(String packName, OvhService body) throws IOException {
-		String qPath = "/pack/siptrunk/{packName}/serviceInfos";
-		StringBuilder sb = path(qPath, packName);
-		exec(qPath, "PUT", sb.toString(), body);
 	}
 }

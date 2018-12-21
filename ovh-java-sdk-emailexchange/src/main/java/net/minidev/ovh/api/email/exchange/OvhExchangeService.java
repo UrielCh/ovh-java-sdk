@@ -47,11 +47,11 @@ public class OvhExchangeService {
 	public Boolean complexityEnabled;
 
 	/**
-	 * Spam and Antivirus configuration
+	 * Task pending id
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhSpamAndVirusConfiguration spamAndVirusConfiguration;
+	public Long taskPendingId;
 
 	/**
 	 * maximum number of days that account's password is valid before expiration
@@ -61,11 +61,11 @@ public class OvhExchangeService {
 	public Long maxPasswordAge;
 
 	/**
-	 * Task pending id
+	 * Spam and Antivirus configuration
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long taskPendingId;
+	public OvhSpamAndVirusConfiguration spamAndVirusConfiguration;
 
 	/**
 	 * canBeNull && readOnly
@@ -85,11 +85,11 @@ public class OvhExchangeService {
 	public String hostname;
 
 	/**
-	 * number of attempts before account to be locked
+	 * number of historical password that cannot be reused
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long lockoutThreshold;
+	public Long passwordHistoryCount;
 
 	/**
 	 * number of minutes account will remain locked if it occurs
@@ -99,11 +99,11 @@ public class OvhExchangeService {
 	public Long lockoutDuration;
 
 	/**
-	 * number of historical password that cannot be reused
+	 * number of attempts before account to be locked
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long passwordHistoryCount;
+	public Long lockoutThreshold;
 
 	/**
 	 * minimum number of characters password must contain

@@ -22,12 +22,12 @@ public class OvhTemplates {
 	/**
 	 * canBeNull
 	 */
-	public String emailFrom;
+	public String smsBody;
 
 	/**
 	 * canBeNull
 	 */
-	public String smsBody;
+	public String emailFrom;
 
 	/**
 	 * canBeNull

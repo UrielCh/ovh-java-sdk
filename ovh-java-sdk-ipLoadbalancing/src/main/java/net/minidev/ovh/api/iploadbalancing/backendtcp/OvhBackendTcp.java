@@ -23,13 +23,6 @@ public class OvhBackendTcp {
 	public OvhBalanceTCPEnum balance;
 
 	/**
-	 * Zone of you farm
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String zone;
-
-	/**
 	 * Port attached to your farm. Inherited from frontend if null
 	 *
 	 * canBeNull && readOnly
@@ -37,11 +30,11 @@ public class OvhBackendTcp {
 	public Long port;
 
 	/**
-	 * Human readable name for your backend, this field is for you
+	 * Zone of you farm
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String displayName;
+	public String zone;
 
 	/**
 	 * Stickiness type. No stickiness if null
@@ -49,6 +42,13 @@ public class OvhBackendTcp {
 	 * canBeNull && readOnly
 	 */
 	public OvhStickinessTCPEnum stickiness;
+
+	/**
+	 * Human readable name for your backend, this field is for you
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String displayName;
 
 	/**
 	 * Id of your farm

@@ -12,16 +12,16 @@ public class OvhClusterAllowedNetwork {
 	public String allowedNetworkId;
 
 	/**
-	 * IP block
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String network;
-
-	/**
 	 * Flow type
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhClusterAllowedNetworkFlowTypeEnum flowType;
+
+	/**
+	 * IP block
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String network;
 }

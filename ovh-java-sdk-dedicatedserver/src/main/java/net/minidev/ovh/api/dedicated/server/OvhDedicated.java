@@ -88,16 +88,16 @@ public class OvhDedicated {
 	public OvhStateEnum state;
 
 	/**
-	 * canBeNull && readOnly
-	 */
-	public String rootDevice;
-
-	/**
 	 * Does this server have professional use option
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean professionalUse;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public String rootDevice;
 
 	/**
 	 * dedicater server commercial range

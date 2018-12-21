@@ -50,16 +50,16 @@ public class OvhPermissions {
 	public String userId;
 
 	/**
-	 * The status of the permission
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhStatus status;
-
-	/**
 	 * Date of the resource last update
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date updatedAt;
+
+	/**
+	 * The status of the permission
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhStatus status;
 }

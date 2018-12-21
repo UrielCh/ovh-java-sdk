@@ -28,13 +28,6 @@ public class OvhIndex {
 	public Boolean isEditable;
 
 	/**
-	 * Index name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String name;
-
-	/**
 	 * Indicates if you are allowed to share entry
 	 *
 	 * canBeNull && readOnly
@@ -42,11 +35,11 @@ public class OvhIndex {
 	public Boolean isShareable;
 
 	/**
-	 * Index description
+	 * Index name
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String description;
+	public String name;
 
 	/**
 	 * Index UUID
@@ -56,11 +49,11 @@ public class OvhIndex {
 	public String indexId;
 
 	/**
-	 * Maximum index size (in bytes)
+	 * Index description
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long maxSize;
+	public String description;
 
 	/**
 	 * Associated DBaaS Logs option
@@ -68,6 +61,13 @@ public class OvhIndex {
 	 * canBeNull && readOnly
 	 */
 	public String optionId;
+
+	/**
+	 * Maximum index size (in bytes)
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long maxSize;
 
 	/**
 	 * Index last update

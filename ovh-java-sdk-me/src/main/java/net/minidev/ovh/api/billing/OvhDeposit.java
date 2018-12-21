@@ -16,7 +16,12 @@ public class OvhDeposit {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String depositId;
+	public OvhPrice amount;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public String password;
 
 	/**
 	 * canBeNull && readOnly
@@ -26,12 +31,7 @@ public class OvhDeposit {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhPrice amount;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public String password;
+	public String depositId;
 
 	/**
 	 * canBeNull && readOnly

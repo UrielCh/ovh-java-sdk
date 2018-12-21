@@ -84,18 +84,18 @@ public class OvhAnswers {
 	public Boolean modemStillSynchronized;
 
 	/**
-	 * bandwidth unit for proof.ovh.net test values
-	 *
-	 * canBeNull
-	 */
-	public OvhBandwidthTestUnitEnum bandwidthTestUnit;
-
-	/**
 	 * digicode for site entrance
 	 *
 	 * canBeNull
 	 */
 	public String siteDigicode;
+
+	/**
+	 * bandwidth unit for proof.ovh.net test values
+	 *
+	 * canBeNull
+	 */
+	public OvhBandwidthTestUnitEnum bandwidthTestUnit;
 
 	/**
 	 * id of appointment chosen ("possibleValues" contains choices list with id)
@@ -112,18 +112,18 @@ public class OvhAnswers {
 	public String startAfternoonHours;
 
 	/**
-	 * days or period where site access is not possible
-	 *
-	 * canBeNull
-	 */
-	public String siteClosedDays;
-
-	/**
 	 * is non-professional site ?
 	 *
 	 * canBeNull
 	 */
 	public Boolean individualSite;
+
+	/**
+	 * days or period where site access is not possible
+	 *
+	 * canBeNull
+	 */
+	public String siteClosedDays;
 
 	/**
 	 * modem brand and reference
@@ -133,18 +133,18 @@ public class OvhAnswers {
 	public String modemType;
 
 	/**
-	 * Is modem synchronized ? (whatever internet connection)
-	 *
-	 * canBeNull
-	 */
-	public Boolean modemIsSynchronized;
-
-	/**
 	 * site opening hours or informations
 	 *
 	 * canBeNull
 	 */
 	public String siteOpening;
+
+	/**
+	 * Is modem synchronized ? (whatever internet connection)
+	 *
+	 * canBeNull
+	 */
+	public Boolean modemIsSynchronized;
 
 	/**
 	 * morning opening informations or time for the site
@@ -154,18 +154,18 @@ public class OvhAnswers {
 	public String startMorningHours;
 
 	/**
-	 * bandwidth upload value on proof.ovh.net test
-	 *
-	 * canBeNull
-	 */
-	public Long uploadBandwidthTest;
-
-	/**
 	 * customer knows that he can be charged (150 euros HT) if he is responsible for the problem or if tests have not been done correctly ?
 	 *
 	 * canBeNull
 	 */
 	public Boolean conditionsAccepted;
+
+	/**
+	 * bandwidth upload value on proof.ovh.net test
+	 *
+	 * canBeNull
+	 */
+	public Long uploadBandwidthTest;
 
 	/**
 	 * afternoon closing informations or time for the site

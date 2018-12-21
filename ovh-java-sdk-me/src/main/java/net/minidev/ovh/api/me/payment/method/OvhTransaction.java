@@ -17,18 +17,18 @@ public class OvhTransaction {
 	public OvhPrice amount;
 
 	/**
-	 * Transaction type
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhType type;
-
-	/**
 	 * Creation date
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date creationDate;
+
+	/**
+	 * Transaction type
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhType type;
 
 	/**
 	 * Transaction ID

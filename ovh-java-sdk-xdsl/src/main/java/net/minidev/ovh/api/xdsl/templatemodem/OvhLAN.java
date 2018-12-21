@@ -14,18 +14,18 @@ public class OvhLAN {
 	public OvhAddressingTypeEnum addressingType;
 
 	/**
-	 * The IP address of the LAN interface of the modem
-	 *
-	 * canBeNull
-	 */
-	public String IPAddress;
-
-	/**
 	 * The subnet mask of the LAN interface of the modem
 	 *
 	 * canBeNull
 	 */
 	public String subnetMask;
+
+	/**
+	 * The IP address of the LAN interface of the modem
+	 *
+	 * canBeNull
+	 */
+	public String IPAddress;
 
 	/**
 	 * Name of the LAN

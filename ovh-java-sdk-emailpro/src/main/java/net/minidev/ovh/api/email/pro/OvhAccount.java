@@ -21,18 +21,18 @@ public class OvhAccount {
 	public Boolean spamDetected;
 
 	/**
+	 * Last update
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date lastUpdateDate;
+
+	/**
 	 * Time of account's password last update
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date passwordLastUpdate;
-
-	/**
-	 * Ticket number of spam detection
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long spamTicketNumber;
 
 	/**
 	 * Account display name
@@ -42,11 +42,11 @@ public class OvhAccount {
 	public String displayName;
 
 	/**
-	 * Last update
+	 * Ticket number of spam detection
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Date lastUpdateDate;
+	public Long spamTicketNumber;
 
 	/**
 	 * Account login
@@ -56,18 +56,18 @@ public class OvhAccount {
 	public String login;
 
 	/**
-	 * Spam and Antivirus configuration
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhSpamAndVirusConfiguration spamAndVirusConfiguration;
-
-	/**
 	 * Default email for this mailbox
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String primaryEmailAddress;
+
+	/**
+	 * Spam and Antivirus configuration
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhSpamAndVirusConfiguration spamAndVirusConfiguration;
 
 	/**
 	 * Hide account in Global Address List
@@ -84,18 +84,18 @@ public class OvhAccount {
 	public Long quota;
 
 	/**
-	 * Account state
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhObjectStateEnum state;
-
-	/**
 	 * Account id
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long id;
+
+	/**
+	 * Account state
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhObjectStateEnum state;
 
 	/**
 	 * expiration date

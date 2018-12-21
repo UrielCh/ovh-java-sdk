@@ -22,13 +22,6 @@ public class OvhDebt {
 	public OvhPrice amount;
 
 	/**
-	 * Amount you still owe for that debt
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhPrice dueAmount;
-
-	/**
 	 * Reserved amount awaiting payment
 	 *
 	 * canBeNull && readOnly
@@ -41,6 +34,13 @@ public class OvhDebt {
 	 * canBeNull && readOnly
 	 */
 	public Long orderId;
+
+	/**
+	 * Amount you still owe for that debt
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhPrice dueAmount;
 
 	/**
 	 * Unmatured amount for deferred payment term

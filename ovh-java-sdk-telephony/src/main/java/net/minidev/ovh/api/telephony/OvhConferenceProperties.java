@@ -5,13 +5,6 @@ package net.minidev.ovh.api.telephony;
  */
 public class OvhConferenceProperties {
 	/**
-	 * Whether or not anonmyous participants are allowed
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean anonymousRejection;
-
-	/**
 	 * The events channel hash
 	 *
 	 * canBeNull && readOnly
@@ -19,18 +12,11 @@ public class OvhConferenceProperties {
 	public String eventsChannel;
 
 	/**
-	 * The announce file name
+	 * Whether or not anonmyous participants are allowed
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String announceFilename;
-
-	/**
-	 * Whether or not announce file is played before entrance
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean announceFile;
+	public Boolean anonymousRejection;
 
 	/**
 	 * Whether or not conference is recorded
@@ -40,11 +26,18 @@ public class OvhConferenceProperties {
 	public Boolean recordStatus;
 
 	/**
-	 * The conference pin number
+	 * Whether or not announce file is played before entrance
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String pin;
+	public Boolean announceFile;
+
+	/**
+	 * The announce file name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String announceFilename;
 
 	/**
 	 * The email address to send conference report to
@@ -52,6 +45,13 @@ public class OvhConferenceProperties {
 	 * canBeNull && readOnly
 	 */
 	public String reportEmail;
+
+	/**
+	 * The conference pin number
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String pin;
 
 	/**
 	 * Whether or not participants enter conference room muted

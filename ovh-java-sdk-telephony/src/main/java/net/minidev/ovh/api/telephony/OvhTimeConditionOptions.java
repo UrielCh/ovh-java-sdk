@@ -26,18 +26,18 @@ public class OvhTimeConditionOptions {
 	public OvhTimeConditionsSlotTypeEnum slot2Type;
 
 	/**
-	 * Number associated to the third slot action
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String slot3Number;
-
-	/**
 	 * Action type executed when the third slot is used
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhTimeConditionsSlotTypeEnum slot3Type;
+
+	/**
+	 * Number associated to the third slot action
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String slot3Number;
 
 	/**
 	 * Number associated to the first slot action

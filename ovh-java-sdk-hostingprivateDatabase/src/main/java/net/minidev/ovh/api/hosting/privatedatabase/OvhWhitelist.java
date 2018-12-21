@@ -15,18 +15,18 @@ public class OvhWhitelist {
 	public Boolean service;
 
 	/**
-	 * The whitelisted IP in your instance
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String ip;
-
-	/**
 	 * The last update date of this whitelist
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date lastUpdate;
+
+	/**
+	 * The whitelisted IP in your instance
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String ip;
 
 	/**
 	 * Custom name for your Whitelisted IP

@@ -61,18 +61,18 @@ public class OvhSharepointInformation {
 	public OvhObjectStateEnum state;
 
 	/**
-	 * The rights assigned to the sharepoint account
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhSharepointAccountAccessRightsEnum accessRights;
-
-	/**
 	 * Sharepoint account id
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long id;
+
+	/**
+	 * The rights assigned to the sharepoint account
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhSharepointAccountAccessRightsEnum accessRights;
 
 	/**
 	 * Pending task for this sharepoint account

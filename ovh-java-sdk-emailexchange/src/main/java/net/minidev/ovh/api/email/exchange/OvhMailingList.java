@@ -28,18 +28,18 @@ public class OvhMailingList {
 	public Long spamTicketNumber;
 
 	/**
-	 * Update date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date lastUpdateDate;
-
-	/**
 	 * Name displayed in Global Access List
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String displayName;
+
+	/**
+	 * Update date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date lastUpdateDate;
 
 	/**
 	 * If true sender has to authenticate

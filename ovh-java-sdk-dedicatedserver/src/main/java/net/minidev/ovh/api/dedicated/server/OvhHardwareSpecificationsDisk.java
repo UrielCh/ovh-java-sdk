@@ -28,18 +28,18 @@ public class OvhHardwareSpecificationsDisk {
 	public String description;
 
 	/**
-	 * default hardware raid type for this disk group
-	 *
-	 * canBeNull
-	 */
-	public OvhHardwareSpecificationsRaidHardEnum defaultHardwareRaidType;
-
-	/**
 	 * raid controller, if any, managing this group of disks
 	 *
 	 * canBeNull
 	 */
 	public String raidController;
+
+	/**
+	 * default hardware raid type for this disk group
+	 *
+	 * canBeNull
+	 */
+	public OvhHardwareSpecificationsRaidHardEnum defaultHardwareRaidType;
 
 	/**
 	 * type of the disk (SSD, SATA, SAS, ...)

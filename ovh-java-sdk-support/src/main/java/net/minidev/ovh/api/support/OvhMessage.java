@@ -28,18 +28,18 @@ public class OvhMessage {
 	public OvhMessageSenderEnum from;
 
 	/**
-	 * Message body
-	 *
-	 * canBeNull
-	 */
-	public String body;
-
-	/**
 	 * Message creation date
 	 *
 	 * canBeNull
 	 */
 	public Date creationDate;
+
+	/**
+	 * Message body
+	 *
+	 * canBeNull
+	 */
+	public String body;
 
 	/**
 	 * Ticket identifier

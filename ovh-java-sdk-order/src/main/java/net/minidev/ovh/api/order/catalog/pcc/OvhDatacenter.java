@@ -21,13 +21,6 @@ public class OvhDatacenter {
 	public String cityName;
 
 	/**
-	 * Country Code of a Datacenter
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhCountryEnum countryCode;
-
-	/**
 	 * City Code of a Datacenter
 	 *
 	 * canBeNull && readOnly
@@ -42,11 +35,11 @@ public class OvhDatacenter {
 	public Boolean orderable;
 
 	/**
-	 * Zone Code of a datacenter
+	 * Country Code of a Datacenter
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String zoneFullName;
+	public OvhCountryEnum countryCode;
 
 	/**
 	 * Describes if options can be ordered on a Datacenter
@@ -61,6 +54,13 @@ public class OvhDatacenter {
 	 * canBeNull && readOnly
 	 */
 	public String[] storagesNoPack;
+
+	/**
+	 * Zone Code of a datacenter
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String zoneFullName;
 
 	/**
 	 * Describes Private Cloud Hypervisors

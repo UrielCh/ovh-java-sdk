@@ -5,16 +5,16 @@ package net.minidev.ovh.api.contact;
  */
 public class OvhKeyFormCharacteristic {
 	/**
-	 * Key required or not
-	 *
-	 * canBeNull
-	 */
-	public Boolean required;
-
-	/**
 	 * Key name
 	 *
 	 * canBeNull
 	 */
 	public String key;
+
+	/**
+	 * Key required or not
+	 *
+	 * canBeNull
+	 */
+	public Boolean required;
 }

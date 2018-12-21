@@ -38,13 +38,6 @@ public class OvhModule {
 	public OvhLanguageEnum language;
 
 	/**
-	 * Installation ID
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long id;
-
-	/**
 	 * The admin folder, relative to the module's installation path
 	 *
 	 * canBeNull && readOnly
@@ -52,11 +45,11 @@ public class OvhModule {
 	public String adminFolder;
 
 	/**
-	 * ID of the module associated with this installation
+	 * Installation ID
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long moduleId;
+	public Long id;
 
 	/**
 	 * Date of the installation of the module
@@ -64,6 +57,13 @@ public class OvhModule {
 	 * canBeNull && readOnly
 	 */
 	public Date creationDate;
+
+	/**
+	 * ID of the module associated with this installation
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long moduleId;
 
 	/**
 	 * The URL from where your module can be reached

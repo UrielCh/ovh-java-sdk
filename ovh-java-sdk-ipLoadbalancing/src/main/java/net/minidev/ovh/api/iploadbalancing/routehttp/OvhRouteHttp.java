@@ -23,18 +23,18 @@ public class OvhRouteHttp {
 	public String displayName;
 
 	/**
-	 * Route priority ([0..255]). 0 if null. Highest priority routes are evaluated last. Only the first matching route will trigger an action
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long weight;
-
-	/**
 	 * Action triggered when all rules match
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhRouteHttpAction action;
+
+	/**
+	 * Route priority ([0..255]). 0 if null. Highest priority routes are evaluated last. Only the first matching route will trigger an action
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long weight;
 
 	/**
 	 * List of rules to match to trigger action

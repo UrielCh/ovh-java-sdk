@@ -35,18 +35,18 @@ public class OvhHardwareRaidConfiguration {
 	public Long diskSpanSize;
 
 	/**
-	 * RAID controller type
-	 *
-	 * canBeNull
-	 */
-	public String type;
-
-	/**
 	 * Disk count
 	 *
 	 * canBeNull
 	 */
 	public Long diskCount;
+
+	/**
+	 * RAID controller type
+	 *
+	 * canBeNull
+	 */
+	public String type;
 
 	/**
 	 * RAID total capacity

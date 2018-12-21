@@ -14,16 +14,16 @@ public class OvhNicAutorenewInfos {
 	public Date lastRenew;
 
 	/**
-	 * Renewal active or not
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean active;
-
-	/**
 	 * give the renewal day
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long renewDay;
+
+	/**
+	 * Renewal active or not
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean active;
 }

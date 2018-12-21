@@ -33,18 +33,18 @@ public class OvhPasswordPolicy {
 	public Boolean specialMandatory;
 
 	/**
-	 * Whether or not a lowercase letter (a-z) is mandatory in the password
-	 *
-	 * canBeNull
-	 */
-	public Boolean lowercaseLetterMandatory;
-
-	/**
 	 * Whether or not a digit (0-9) is mandatory in the password
 	 *
 	 * canBeNull
 	 */
 	public Boolean digitMandatory;
+
+	/**
+	 * Whether or not a lowercase letter (a-z) is mandatory in the password
+	 *
+	 * canBeNull
+	 */
+	public Boolean lowercaseLetterMandatory;
 
 	/**
 	 * Maximum lenght of the password

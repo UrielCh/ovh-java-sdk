@@ -26,16 +26,16 @@ public class OvhHourlyVolume {
 	public OvhHourlyVolumeDetail[] details;
 
 	/**
-	 * Volume type
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String type;
-
-	/**
 	 * Region
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String region;
+
+	/**
+	 * Volume type
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String type;
 }

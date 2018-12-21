@@ -37,138 +37,43 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /cdn/dedicated/{serviceName}/ssl
-	 * @param serviceName [required] The internal name of your CDN offer
+	 * REST: GET /cdn/dedicated/pops/{name}
+	 * @param name [required] Name of the pop
 	 */
-	public OvhSsl serviceName_ssl_GET(String serviceName) throws IOException {
-		String qPath = "/cdn/dedicated/{serviceName}/ssl";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhSsl.class);
+	public OvhPop pops_name_GET(String name) throws IOException {
+		String qPath = "/cdn/dedicated/pops/{name}";
+		StringBuilder sb = path(qPath, name);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPop.class);
 	}
 
 	/**
-	 * Add a SSL on CDN or Generate a Lets Encrypt certificate
+	 * List of CDN Pops
 	 *
-	 * REST: POST /cdn/dedicated/{serviceName}/ssl
-	 * @param certificate [required] certificate (empty for lets encrypt generation)
-	 * @param name [required] ssl name to add on CDN
-	 * @param chain [required] certificate chain (empty for lets encrypt generation)
-	 * @param key [required] certificate key (empty for lets encrypt generation)
-	 * @param serviceName [required] The internal name of your CDN offer
+	 * REST: GET /cdn/dedicated/pops
 	 */
-	public OvhSsl serviceName_ssl_POST(String serviceName, String certificate, String name, String chain, String key) throws IOException {
-		String qPath = "/cdn/dedicated/{serviceName}/ssl";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "certificate", certificate);
-		addBody(o, "name", name);
-		addBody(o, "chain", chain);
-		addBody(o, "key", key);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhSsl.class);
-	}
-
-	/**
-	 * Remove SSL of the CDN
-	 *
-	 * REST: DELETE /cdn/dedicated/{serviceName}/ssl
-	 * @param serviceName [required] The internal name of your CDN offer
-	 */
-	public OvhTask serviceName_ssl_DELETE(String serviceName) throws IOException {
-		String qPath = "/cdn/dedicated/{serviceName}/ssl";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Task associated to the ssl
-	 *
-	 * REST: GET /cdn/dedicated/{serviceName}/ssl/tasks
-	 * @param function [required] Filter the value of function property (=)
-	 * @param status [required] Filter the value of status property (=)
-	 * @param serviceName [required] The internal name of your CDN offer
-	 */
-	public ArrayList<Long> serviceName_ssl_tasks_GET(String serviceName, OvhTaskFunctionEnum function, OvhTaskStateEnum status) throws IOException {
-		String qPath = "/cdn/dedicated/{serviceName}/ssl/tasks";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "function", function);
-		query(sb, "status", status);
-		String resp = exec(qPath, "GET", sb.toString(), null);
+	public ArrayList<String> pops_GET() throws IOException {
+		String qPath = "/cdn/dedicated/pops";
+		StringBuilder sb = path(qPath);
+		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
-	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
+	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
 
 	/**
-	 * Get this object properties
+	 * Generate URL to real time logs
 	 *
-	 * REST: GET /cdn/dedicated/{serviceName}/ssl/tasks/{taskId}
+	 * REST: POST /cdn/dedicated/{serviceName}/logs
 	 * @param serviceName [required] The internal name of your CDN offer
-	 * @param taskId [required]
-	 */
-	public OvhTask serviceName_ssl_tasks_taskId_GET(String serviceName, Long taskId) throws IOException {
-		String qPath = "/cdn/dedicated/{serviceName}/ssl/tasks/{taskId}";
-		StringBuilder sb = path(qPath, serviceName, taskId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Update an existing SSL with a custom certificate
 	 *
-	 * REST: POST /cdn/dedicated/{serviceName}/ssl/update
-	 * @param chain [required] certificate chain
-	 * @param key [required] certificate key
-	 * @param certificate [required] certificate
-	 * @param serviceName [required] The internal name of your CDN offer
+	 * API beta
 	 */
-	public OvhTask serviceName_ssl_update_POST(String serviceName, String chain, String key, String certificate) throws IOException {
-		String qPath = "/cdn/dedicated/{serviceName}/ssl/update";
+	public OvhLogsURL serviceName_logs_POST(String serviceName) throws IOException {
+		String qPath = "/cdn/dedicated/{serviceName}/logs";
 		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "chain", chain);
-		addBody(o, "key", key);
-		addBody(o, "certificate", certificate);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhLogsURL.class);
 	}
-
-	/**
-	 * Launch a contact change procedure
-	 *
-	 * REST: POST /cdn/dedicated/{serviceName}/changeContact
-	 * @param contactAdmin The contact to set as admin contact
-	 * @param contactTech The contact to set as tech contact
-	 * @param contactBilling The contact to set as billing contact
-	 * @param serviceName [required] The internal name of your CDN offer
-	 */
-	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
-		String qPath = "/cdn/dedicated/{serviceName}/changeContact";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "contactAdmin", contactAdmin);
-		addBody(o, "contactTech", contactTech);
-		addBody(o, "contactBilling", contactBilling);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Return quota history
-	 *
-	 * REST: GET /cdn/dedicated/{serviceName}/quota
-	 * @param period [required]
-	 * @param serviceName [required] The internal name of your CDN offer
-	 */
-	public ArrayList<OvhStatsDataType> serviceName_quota_GET(String serviceName, OvhStatsPeriodEnum period) throws IOException {
-		String qPath = "/cdn/dedicated/{serviceName}/quota";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "period", period);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-	private static TypeReference<ArrayList<OvhStatsDataType>> t2 = new TypeReference<ArrayList<OvhStatsDataType>>() {};
 
 	/**
 	 * Domains associated to this anycast
@@ -180,9 +85,8 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 		String qPath = "/cdn/dedicated/{serviceName}/domains";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
+		return convertTo(resp, t1);
 	}
-	private static TypeReference<ArrayList<String>> t3 = new TypeReference<ArrayList<String>>() {};
 
 	/**
 	 * Add a domain on CDN
@@ -201,6 +105,22 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 	}
 
 	/**
+	 * Generate URL to real time logs
+	 *
+	 * REST: POST /cdn/dedicated/{serviceName}/domains/{domain}/logs
+	 * @param serviceName [required] The internal name of your CDN offer
+	 * @param domain [required] Domain of this object
+	 *
+	 * API beta
+	 */
+	public OvhLogsURL serviceName_domains_domain_logs_POST(String serviceName, String domain) throws IOException {
+		String qPath = "/cdn/dedicated/{serviceName}/domains/{domain}/logs";
+		StringBuilder sb = path(qPath, serviceName, domain);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhLogsURL.class);
+	}
+
+	/**
 	 * Flush all cache
 	 *
 	 * REST: POST /cdn/dedicated/{serviceName}/domains/{domain}/flush
@@ -212,40 +132,6 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName, domain);
 		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Return stats about a domain
-	 *
-	 * REST: GET /cdn/dedicated/{serviceName}/domains/{domain}/statistics
-	 * @param value [required]
-	 * @param period [required]
-	 * @param type [required]
-	 * @param serviceName [required] The internal name of your CDN offer
-	 * @param domain [required] Domain of this object
-	 */
-	public ArrayList<OvhStatsDataType> serviceName_domains_domain_statistics_GET(String serviceName, String domain, OvhStatsPeriodEnum period, OvhStatsTypeEnum type, OvhStatsValueEnum value) throws IOException {
-		String qPath = "/cdn/dedicated/{serviceName}/domains/{domain}/statistics";
-		StringBuilder sb = path(qPath, serviceName, domain);
-		query(sb, "period", period);
-		query(sb, "type", type);
-		query(sb, "value", value);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Task associated to the domain
-	 *
-	 * REST: GET /cdn/dedicated/{serviceName}/domains/{domain}/tasks
-	 * @param serviceName [required] The internal name of your CDN offer
-	 * @param domain [required] Domain of this object
-	 */
-	public ArrayList<Long> serviceName_domains_domain_tasks_GET(String serviceName, String domain) throws IOException {
-		String qPath = "/cdn/dedicated/{serviceName}/domains/{domain}/tasks";
-		StringBuilder sb = path(qPath, serviceName, domain);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
 	}
 
 	/**
@@ -264,134 +150,19 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 	}
 
 	/**
-	 * Get this object properties
+	 * Task associated to the domain
 	 *
-	 * REST: GET /cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}
-	 * @param serviceName [required] The internal name of your CDN offer
-	 * @param domain [required] Domain of this object
-	 * @param cacheRuleId [required] Id for this cache rule
-	 */
-	public OvhCacheRule serviceName_domains_domain_cacheRules_cacheRuleId_GET(String serviceName, String domain, Long cacheRuleId) throws IOException {
-		String qPath = "/cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}";
-		StringBuilder sb = path(qPath, serviceName, domain, cacheRuleId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhCacheRule.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your CDN offer
-	 * @param domain [required] Domain of this object
-	 * @param cacheRuleId [required] Id for this cache rule
-	 */
-	public void serviceName_domains_domain_cacheRules_cacheRuleId_PUT(String serviceName, String domain, Long cacheRuleId, OvhCacheRule body) throws IOException {
-		String qPath = "/cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}";
-		StringBuilder sb = path(qPath, serviceName, domain, cacheRuleId);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Remove cache rule
-	 *
-	 * REST: DELETE /cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}
-	 * @param serviceName [required] The internal name of your CDN offer
-	 * @param domain [required] Domain of this object
-	 * @param cacheRuleId [required] Id for this cache rule
-	 */
-	public OvhTask serviceName_domains_domain_cacheRules_cacheRuleId_DELETE(String serviceName, String domain, Long cacheRuleId) throws IOException {
-		String qPath = "/cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}";
-		StringBuilder sb = path(qPath, serviceName, domain, cacheRuleId);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}/tasks/{taskId}
-	 * @param serviceName [required] The internal name of your CDN offer
-	 * @param domain [required] Domain of this object
-	 * @param cacheRuleId [required] Id for this cache rule
-	 * @param taskId [required]
-	 */
-	public OvhTask serviceName_domains_domain_cacheRules_cacheRuleId_tasks_taskId_GET(String serviceName, String domain, Long cacheRuleId, Long taskId) throws IOException {
-		String qPath = "/cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}/tasks/{taskId}";
-		StringBuilder sb = path(qPath, serviceName, domain, cacheRuleId, taskId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Task associated to the cache rule
-	 *
-	 * REST: GET /cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}/tasks
-	 * @param serviceName [required] The internal name of your CDN offer
-	 * @param domain [required] Domain of this object
-	 * @param cacheRuleId [required] Id for this cache rule
-	 */
-	public ArrayList<Long> serviceName_domains_domain_cacheRules_cacheRuleId_tasks_GET(String serviceName, String domain, Long cacheRuleId) throws IOException {
-		String qPath = "/cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}/tasks";
-		StringBuilder sb = path(qPath, serviceName, domain, cacheRuleId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Flush the cache
-	 *
-	 * REST: POST /cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}/flush
-	 * @param serviceName [required] The internal name of your CDN offer
-	 * @param domain [required] Domain of this object
-	 * @param cacheRuleId [required] Id for this cache rule
-	 */
-	public OvhTask serviceName_domains_domain_cacheRules_cacheRuleId_flush_POST(String serviceName, String domain, Long cacheRuleId) throws IOException {
-		String qPath = "/cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}/flush";
-		StringBuilder sb = path(qPath, serviceName, domain, cacheRuleId);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Cache rules associated to the domain
-	 *
-	 * REST: GET /cdn/dedicated/{serviceName}/domains/{domain}/cacheRules
-	 * @param fileMatch [required] Filter the value of fileMatch property (like)
+	 * REST: GET /cdn/dedicated/{serviceName}/domains/{domain}/tasks
 	 * @param serviceName [required] The internal name of your CDN offer
 	 * @param domain [required] Domain of this object
 	 */
-	public ArrayList<Long> serviceName_domains_domain_cacheRules_GET(String serviceName, String domain, String fileMatch) throws IOException {
-		String qPath = "/cdn/dedicated/{serviceName}/domains/{domain}/cacheRules";
+	public ArrayList<Long> serviceName_domains_domain_tasks_GET(String serviceName, String domain) throws IOException {
+		String qPath = "/cdn/dedicated/{serviceName}/domains/{domain}/tasks";
 		StringBuilder sb = path(qPath, serviceName, domain);
-		query(sb, "fileMatch", fileMatch);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, t2);
 	}
-
-	/**
-	 * Add a cache rule to a domain
-	 *
-	 * REST: POST /cdn/dedicated/{serviceName}/domains/{domain}/cacheRules
-	 * @param fileMatch [required] File match for cache rule to add to the domain
-	 * @param ttl [required] ttl for cache rule to add to the domain
-	 * @param cacheType [required] Type of cache rule to add to the domain
-	 * @param fileType [required] File type for cache rule to add to the domain
-	 * @param serviceName [required] The internal name of your CDN offer
-	 * @param domain [required] Domain of this object
-	 */
-	public OvhCacheRule serviceName_domains_domain_cacheRules_POST(String serviceName, String domain, String fileMatch, Long ttl, OvhCacheRuleCacheTypeEnum cacheType, OvhCacheRuleFileTypeEnum fileType) throws IOException {
-		String qPath = "/cdn/dedicated/{serviceName}/domains/{domain}/cacheRules";
-		StringBuilder sb = path(qPath, serviceName, domain);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "fileMatch", fileMatch);
-		addBody(o, "ttl", ttl);
-		addBody(o, "cacheType", cacheType);
-		addBody(o, "fileType", fileType);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhCacheRule.class);
-	}
+	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
 
 	/**
 	 * Backend associated to the domain
@@ -404,7 +175,7 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 		String qPath = "/cdn/dedicated/{serviceName}/domains/{domain}/backends";
 		StringBuilder sb = path(qPath, serviceName, domain);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
+		return convertTo(resp, t1);
 	}
 
 	/**
@@ -455,19 +226,154 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 	}
 
 	/**
-	 * Generate URL to real time logs
+	 * Return stats about a domain
 	 *
-	 * REST: POST /cdn/dedicated/{serviceName}/domains/{domain}/logs
+	 * REST: GET /cdn/dedicated/{serviceName}/domains/{domain}/statistics
+	 * @param period [required]
+	 * @param value [required]
+	 * @param type [required]
 	 * @param serviceName [required] The internal name of your CDN offer
 	 * @param domain [required] Domain of this object
-	 *
-	 * API beta
 	 */
-	public OvhLogsURL serviceName_domains_domain_logs_POST(String serviceName, String domain) throws IOException {
-		String qPath = "/cdn/dedicated/{serviceName}/domains/{domain}/logs";
+	public ArrayList<OvhStatsDataType> serviceName_domains_domain_statistics_GET(String serviceName, String domain, OvhStatsPeriodEnum period, OvhStatsTypeEnum type, OvhStatsValueEnum value) throws IOException {
+		String qPath = "/cdn/dedicated/{serviceName}/domains/{domain}/statistics";
 		StringBuilder sb = path(qPath, serviceName, domain);
+		query(sb, "period", period);
+		query(sb, "type", type);
+		query(sb, "value", value);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+	private static TypeReference<ArrayList<OvhStatsDataType>> t3 = new TypeReference<ArrayList<OvhStatsDataType>>() {};
+
+	/**
+	 * Cache rules associated to the domain
+	 *
+	 * REST: GET /cdn/dedicated/{serviceName}/domains/{domain}/cacheRules
+	 * @param fileMatch [required] Filter the value of fileMatch property (like)
+	 * @param serviceName [required] The internal name of your CDN offer
+	 * @param domain [required] Domain of this object
+	 */
+	public ArrayList<Long> serviceName_domains_domain_cacheRules_GET(String serviceName, String domain, String fileMatch) throws IOException {
+		String qPath = "/cdn/dedicated/{serviceName}/domains/{domain}/cacheRules";
+		StringBuilder sb = path(qPath, serviceName, domain);
+		query(sb, "fileMatch", fileMatch);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Add a cache rule to a domain
+	 *
+	 * REST: POST /cdn/dedicated/{serviceName}/domains/{domain}/cacheRules
+	 * @param fileMatch [required] File match for cache rule to add to the domain
+	 * @param fileType [required] File type for cache rule to add to the domain
+	 * @param ttl [required] ttl for cache rule to add to the domain
+	 * @param cacheType [required] Type of cache rule to add to the domain
+	 * @param serviceName [required] The internal name of your CDN offer
+	 * @param domain [required] Domain of this object
+	 */
+	public OvhCacheRule serviceName_domains_domain_cacheRules_POST(String serviceName, String domain, String fileMatch, OvhCacheRuleFileTypeEnum fileType, Long ttl, OvhCacheRuleCacheTypeEnum cacheType) throws IOException {
+		String qPath = "/cdn/dedicated/{serviceName}/domains/{domain}/cacheRules";
+		StringBuilder sb = path(qPath, serviceName, domain);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "fileMatch", fileMatch);
+		addBody(o, "fileType", fileType);
+		addBody(o, "ttl", ttl);
+		addBody(o, "cacheType", cacheType);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhCacheRule.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}
+	 * @param serviceName [required] The internal name of your CDN offer
+	 * @param domain [required] Domain of this object
+	 * @param cacheRuleId [required] Id for this cache rule
+	 */
+	public OvhCacheRule serviceName_domains_domain_cacheRules_cacheRuleId_GET(String serviceName, String domain, Long cacheRuleId) throws IOException {
+		String qPath = "/cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}";
+		StringBuilder sb = path(qPath, serviceName, domain, cacheRuleId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhCacheRule.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your CDN offer
+	 * @param domain [required] Domain of this object
+	 * @param cacheRuleId [required] Id for this cache rule
+	 */
+	public void serviceName_domains_domain_cacheRules_cacheRuleId_PUT(String serviceName, String domain, Long cacheRuleId, OvhCacheRule body) throws IOException {
+		String qPath = "/cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}";
+		StringBuilder sb = path(qPath, serviceName, domain, cacheRuleId);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Remove cache rule
+	 *
+	 * REST: DELETE /cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}
+	 * @param serviceName [required] The internal name of your CDN offer
+	 * @param domain [required] Domain of this object
+	 * @param cacheRuleId [required] Id for this cache rule
+	 */
+	public OvhTask serviceName_domains_domain_cacheRules_cacheRuleId_DELETE(String serviceName, String domain, Long cacheRuleId) throws IOException {
+		String qPath = "/cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}";
+		StringBuilder sb = path(qPath, serviceName, domain, cacheRuleId);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Flush the cache
+	 *
+	 * REST: POST /cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}/flush
+	 * @param serviceName [required] The internal name of your CDN offer
+	 * @param domain [required] Domain of this object
+	 * @param cacheRuleId [required] Id for this cache rule
+	 */
+	public OvhTask serviceName_domains_domain_cacheRules_cacheRuleId_flush_POST(String serviceName, String domain, Long cacheRuleId) throws IOException {
+		String qPath = "/cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}/flush";
+		StringBuilder sb = path(qPath, serviceName, domain, cacheRuleId);
 		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, OvhLogsURL.class);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}/tasks/{taskId}
+	 * @param serviceName [required] The internal name of your CDN offer
+	 * @param domain [required] Domain of this object
+	 * @param cacheRuleId [required] Id for this cache rule
+	 * @param taskId [required]
+	 */
+	public OvhTask serviceName_domains_domain_cacheRules_cacheRuleId_tasks_taskId_GET(String serviceName, String domain, Long cacheRuleId, Long taskId) throws IOException {
+		String qPath = "/cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}/tasks/{taskId}";
+		StringBuilder sb = path(qPath, serviceName, domain, cacheRuleId, taskId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Task associated to the cache rule
+	 *
+	 * REST: GET /cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}/tasks
+	 * @param serviceName [required] The internal name of your CDN offer
+	 * @param domain [required] Domain of this object
+	 * @param cacheRuleId [required] Id for this cache rule
+	 */
+	public ArrayList<Long> serviceName_domains_domain_cacheRules_cacheRuleId_tasks_GET(String serviceName, String domain, Long cacheRuleId) throws IOException {
+		String qPath = "/cdn/dedicated/{serviceName}/domains/{domain}/cacheRules/{cacheRuleId}/tasks";
+		StringBuilder sb = path(qPath, serviceName, domain, cacheRuleId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
 	}
 
 	/**
@@ -513,6 +419,41 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 	}
 
 	/**
+	 * Return quota history
+	 *
+	 * REST: GET /cdn/dedicated/{serviceName}/quota
+	 * @param period [required]
+	 * @param serviceName [required] The internal name of your CDN offer
+	 */
+	public ArrayList<OvhStatsDataType> serviceName_quota_GET(String serviceName, OvhStatsPeriodEnum period) throws IOException {
+		String qPath = "/cdn/dedicated/{serviceName}/quota";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "period", period);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+
+	/**
+	 * Launch a contact change procedure
+	 *
+	 * REST: POST /cdn/dedicated/{serviceName}/changeContact
+	 * @param contactAdmin The contact to set as admin contact
+	 * @param contactTech The contact to set as tech contact
+	 * @param contactBilling The contact to set as billing contact
+	 * @param serviceName [required] The internal name of your CDN offer
+	 */
+	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
+		String qPath = "/cdn/dedicated/{serviceName}/changeContact";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "contactAdmin", contactAdmin);
+		addBody(o, "contactTech", contactTech);
+		addBody(o, "contactBilling", contactBilling);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t2);
+	}
+
+	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /cdn/dedicated/{serviceName}/serviceInfos
@@ -552,18 +493,102 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 	}
 
 	/**
-	 * Generate URL to real time logs
+	 * Task associated to the ssl
 	 *
-	 * REST: POST /cdn/dedicated/{serviceName}/logs
+	 * REST: GET /cdn/dedicated/{serviceName}/ssl/tasks
+	 * @param function [required] Filter the value of function property (=)
+	 * @param status [required] Filter the value of status property (=)
 	 * @param serviceName [required] The internal name of your CDN offer
-	 *
-	 * API beta
 	 */
-	public OvhLogsURL serviceName_logs_POST(String serviceName) throws IOException {
-		String qPath = "/cdn/dedicated/{serviceName}/logs";
+	public ArrayList<Long> serviceName_ssl_tasks_GET(String serviceName, OvhTaskFunctionEnum function, OvhTaskStateEnum status) throws IOException {
+		String qPath = "/cdn/dedicated/{serviceName}/ssl/tasks";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, OvhLogsURL.class);
+		query(sb, "function", function);
+		query(sb, "status", status);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /cdn/dedicated/{serviceName}/ssl/tasks/{taskId}
+	 * @param serviceName [required] The internal name of your CDN offer
+	 * @param taskId [required]
+	 */
+	public OvhTask serviceName_ssl_tasks_taskId_GET(String serviceName, Long taskId) throws IOException {
+		String qPath = "/cdn/dedicated/{serviceName}/ssl/tasks/{taskId}";
+		StringBuilder sb = path(qPath, serviceName, taskId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /cdn/dedicated/{serviceName}/ssl
+	 * @param serviceName [required] The internal name of your CDN offer
+	 */
+	public OvhSsl serviceName_ssl_GET(String serviceName) throws IOException {
+		String qPath = "/cdn/dedicated/{serviceName}/ssl";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhSsl.class);
+	}
+
+	/**
+	 * Add a SSL on CDN or Generate a Lets Encrypt certificate
+	 *
+	 * REST: POST /cdn/dedicated/{serviceName}/ssl
+	 * @param key [required] certificate key (empty for lets encrypt generation)
+	 * @param certificate [required] certificate (empty for lets encrypt generation)
+	 * @param chain [required] certificate chain (empty for lets encrypt generation)
+	 * @param name [required] ssl name to add on CDN
+	 * @param serviceName [required] The internal name of your CDN offer
+	 */
+	public OvhSsl serviceName_ssl_POST(String serviceName, String key, String certificate, String chain, String name) throws IOException {
+		String qPath = "/cdn/dedicated/{serviceName}/ssl";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "key", key);
+		addBody(o, "certificate", certificate);
+		addBody(o, "chain", chain);
+		addBody(o, "name", name);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhSsl.class);
+	}
+
+	/**
+	 * Remove SSL of the CDN
+	 *
+	 * REST: DELETE /cdn/dedicated/{serviceName}/ssl
+	 * @param serviceName [required] The internal name of your CDN offer
+	 */
+	public OvhTask serviceName_ssl_DELETE(String serviceName) throws IOException {
+		String qPath = "/cdn/dedicated/{serviceName}/ssl";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Update an existing SSL with a custom certificate
+	 *
+	 * REST: POST /cdn/dedicated/{serviceName}/ssl/update
+	 * @param key [required] certificate key
+	 * @param chain [required] certificate chain
+	 * @param certificate [required] certificate
+	 * @param serviceName [required] The internal name of your CDN offer
+	 */
+	public OvhTask serviceName_ssl_update_POST(String serviceName, String key, String chain, String certificate) throws IOException {
+		String qPath = "/cdn/dedicated/{serviceName}/ssl/update";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "key", key);
+		addBody(o, "chain", chain);
+		addBody(o, "certificate", certificate);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
@@ -575,31 +600,6 @@ public class ApiOvhCdndedicated extends ApiOvhBase {
 		String qPath = "/cdn/dedicated";
 		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
-	}
-
-	/**
-	 * List of CDN Pops
-	 *
-	 * REST: GET /cdn/dedicated/pops
-	 */
-	public ArrayList<String> pops_GET() throws IOException {
-		String qPath = "/cdn/dedicated/pops";
-		StringBuilder sb = path(qPath);
-		String resp = execN(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /cdn/dedicated/pops/{name}
-	 * @param name [required] Name of the pop
-	 */
-	public OvhPop pops_name_GET(String name) throws IOException {
-		String qPath = "/cdn/dedicated/pops/{name}";
-		StringBuilder sb = path(qPath, name);
-		String resp = execN(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPop.class);
+		return convertTo(resp, t1);
 	}
 }

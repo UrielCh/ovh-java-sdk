@@ -19,13 +19,6 @@ public class OvhProduct {
 	public String ip;
 
 	/**
-	 * Progression of an action on the instance if any
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Double progress;
-
-	/**
 	 * Current action done on the instance
 	 *
 	 * canBeNull && readOnly
@@ -33,11 +26,11 @@ public class OvhProduct {
 	public String action;
 
 	/**
-	 * Details about the plesk type
+	 * Progression of an action on the instance if any
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhProductType typeDetail;
+	public Double progress;
 
 	/**
 	 * Reseller flavor
@@ -45,6 +38,13 @@ public class OvhProduct {
 	 * canBeNull && readOnly
 	 */
 	public OvhResellerTypeEnum type;
+
+	/**
+	 * Details about the plesk type
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhProductType typeDetail;
 
 	/**
 	 * Plesk server address

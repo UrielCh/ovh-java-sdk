@@ -21,18 +21,18 @@ public class OvhOvhPabxHuntingQueueLiveCalls {
 	public String callerIdNumber;
 
 	/**
-	 * Whether or not the call is on hold
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean onHold;
-
-	/**
 	 * Answer date of the call
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date answered;
+
+	/**
+	 * Whether or not the call is on hold
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean onHold;
 
 	/**
 	 * End date of the call

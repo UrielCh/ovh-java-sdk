@@ -19,6 +19,19 @@ public class ApiOvhVip extends ApiOvhBase {
 	}
 
 	/**
+	 * List available services
+	 *
+	 * REST: GET /vip
+	 */
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/vip";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
+
+	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /vip/{serviceName}
@@ -56,17 +69,4 @@ public class ApiOvhVip extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		exec(qPath, "PUT", sb.toString(), body);
 	}
-
-	/**
-	 * List available services
-	 *
-	 * REST: GET /vip
-	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/vip";
-		StringBuilder sb = path(qPath);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
 }

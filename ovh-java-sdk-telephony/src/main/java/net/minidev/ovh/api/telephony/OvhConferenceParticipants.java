@@ -21,18 +21,18 @@ public class OvhConferenceParticipants {
 	public Boolean speak;
 
 	/**
-	 * The id of the participant
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long id;
-
-	/**
 	 * The arrival datetime of the participant in the conference.
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date arrivalDateTime;
+
+	/**
+	 * The id of the participant
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long id;
 
 	/**
 	 * Whether or not the participant is talking

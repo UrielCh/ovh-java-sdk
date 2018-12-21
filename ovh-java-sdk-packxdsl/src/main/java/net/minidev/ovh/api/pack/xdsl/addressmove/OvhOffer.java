@@ -15,18 +15,18 @@ import net.minidev.ovh.api.xdsl.eligibility.OvhProviderEnum;
  */
 public class OvhOffer {
 	/**
-	 * The download synchronisation in kbps
-	 *
-	 * canBeNull
-	 */
-	public Long syncDownload;
-
-	/**
 	 * Address of the landline
 	 *
 	 * canBeNull
 	 */
 	public OvhAddress address;
+
+	/**
+	 * The download synchronisation in kbps
+	 *
+	 * canBeNull
+	 */
+	public Long syncDownload;
 
 	/**
 	 * Whether this is a reseller offer or not
@@ -50,6 +50,13 @@ public class OvhOffer {
 	public Long estimatedUpload;
 
 	/**
+	 * The status of the landline
+	 *
+	 * canBeNull
+	 */
+	public OvhLandlineStatusEnum lineStatus;
+
+	/**
 	 * Available meeting slots for the creation of this offer.
 	 *
 	 * canBeNull
@@ -64,11 +71,11 @@ public class OvhOffer {
 	public OvhPortability portability;
 
 	/**
-	 * The status of the landline
+	 * The upload synchronisation in kbps
 	 *
 	 * canBeNull
 	 */
-	public OvhLandlineStatusEnum lineStatus;
+	public Long syncUpload;
 
 	/**
 	 * The unbundling type
@@ -85,11 +92,11 @@ public class OvhOffer {
 	public OvhProviderEnum provider;
 
 	/**
-	 * The upload synchronisation in kbps
+	 * The price of this offer
 	 *
 	 * canBeNull
 	 */
-	public Long syncUpload;
+	public OvhPrice price;
 
 	/**
 	 * The code of the offer
@@ -97,13 +104,6 @@ public class OvhOffer {
 	 * canBeNull
 	 */
 	public String offerCode;
-
-	/**
-	 * The price of this offer
-	 *
-	 * canBeNull
-	 */
-	public OvhPrice price;
 
 	/**
 	 * The estimated download synchronisation in kbps

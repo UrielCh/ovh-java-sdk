@@ -21,18 +21,18 @@ public class OvhTask {
 	public String name;
 
 	/**
-	 * Current progress description
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String description;
-
-	/**
 	 * Current progress
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long progress;
+
+	/**
+	 * Current progress description
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String description;
 
 	/**
 	 * Current Task state

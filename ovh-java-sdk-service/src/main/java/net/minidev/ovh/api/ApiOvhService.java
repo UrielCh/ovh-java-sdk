@@ -35,20 +35,6 @@ public class ApiOvhService extends ApiOvhBase {
 	}
 
 	/**
-	 * Terminates a suspended service
-	 *
-	 * REST: POST /service/{serviceId}/terminate
-	 * @param serviceId [required] The internal ID of your service
-	 *
-	 * API beta
-	 */
-	public void serviceId_terminate_POST(Long serviceId) throws IOException {
-		String qPath = "/service/{serviceId}/terminate";
-		StringBuilder sb = path(qPath, serviceId);
-		exec(qPath, "POST", sb.toString(), null);
-	}
-
-	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /service/{serviceId}
@@ -76,6 +62,34 @@ public class ApiOvhService extends ApiOvhBase {
 		String qPath = "/service/{serviceId}";
 		StringBuilder sb = path(qPath, serviceId);
 		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Suspend the service. The service won't be accessible, but you will still be charged for it
+	 *
+	 * REST: POST /service/{serviceId}/suspend
+	 * @param serviceId [required] The internal ID of your service
+	 *
+	 * API beta
+	 */
+	public void serviceId_suspend_POST(Long serviceId) throws IOException {
+		String qPath = "/service/{serviceId}/suspend";
+		StringBuilder sb = path(qPath, serviceId);
+		exec(qPath, "POST", sb.toString(), null);
+	}
+
+	/**
+	 * Terminates a suspended service
+	 *
+	 * REST: POST /service/{serviceId}/terminate
+	 * @param serviceId [required] The internal ID of your service
+	 *
+	 * API beta
+	 */
+	public void serviceId_terminate_POST(Long serviceId) throws IOException {
+		String qPath = "/service/{serviceId}/terminate";
+		StringBuilder sb = path(qPath, serviceId);
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
@@ -116,20 +130,6 @@ public class ApiOvhService extends ApiOvhBase {
 		addBody(o, "services", services);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhRenewOrder.class);
-	}
-
-	/**
-	 * Suspend the service. The service won't be accessible, but you will still be charged for it
-	 *
-	 * REST: POST /service/{serviceId}/suspend
-	 * @param serviceId [required] The internal ID of your service
-	 *
-	 * API beta
-	 */
-	public void serviceId_suspend_POST(Long serviceId) throws IOException {
-		String qPath = "/service/{serviceId}/suspend";
-		StringBuilder sb = path(qPath, serviceId);
-		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**

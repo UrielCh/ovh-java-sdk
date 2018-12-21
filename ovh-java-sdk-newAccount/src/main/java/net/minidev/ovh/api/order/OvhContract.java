@@ -12,10 +12,10 @@ public class OvhContract {
 	/**
 	 * canBeNull
 	 */
-	public String content;
+	public String url;
 
 	/**
 	 * canBeNull
 	 */
-	public String url;
+	public String content;
 }

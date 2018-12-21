@@ -12,10 +12,10 @@ public class OvhRedirectionGlobal {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String id;
+	public String to;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String to;
+	public String id;
 }

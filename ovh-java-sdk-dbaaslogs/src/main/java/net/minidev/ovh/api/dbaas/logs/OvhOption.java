@@ -91,18 +91,18 @@ public class OvhOption {
 	public Long maxNbStream;
 
 	/**
-	 * Option UUID
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String optionId;
-
-	/**
 	 * Current number of input booked
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long curNbInput;
+
+	/**
+	 * Option UUID
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String optionId;
 
 	/**
 	 * Option state
@@ -119,16 +119,16 @@ public class OvhOption {
 	public Long maxNbDashboard;
 
 	/**
-	 * Maximum number of alias allowed
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long maxNbAlias;
-
-	/**
 	 * Service last update
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date updatedAt;
+
+	/**
+	 * Maximum number of alias allowed
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long maxNbAlias;
 }

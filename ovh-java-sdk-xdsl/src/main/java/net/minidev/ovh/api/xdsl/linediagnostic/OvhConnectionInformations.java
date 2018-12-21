@@ -33,18 +33,18 @@ public class OvhConnectionInformations {
 	public Double upstreamAttenuation;
 
 	/**
-	 * Modem interface name
-	 *
-	 * canBeNull
-	 */
-	public String ifName;
-
-	/**
 	 * Profile on the DSLAM
 	 *
 	 * canBeNull
 	 */
 	public String profile;
+
+	/**
+	 * Modem interface name
+	 *
+	 * canBeNull
+	 */
+	public String ifName;
 
 	/**
 	 * Amount of CRC error detected

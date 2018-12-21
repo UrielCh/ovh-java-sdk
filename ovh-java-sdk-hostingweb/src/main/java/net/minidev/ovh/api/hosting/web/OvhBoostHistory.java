@@ -7,18 +7,18 @@ import java.util.Date;
  */
 public class OvhBoostHistory {
 	/**
-	 * Offer when the change was made
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhOfferCapabilitiesEnum offer;
-
-	/**
 	 * The date when the change has been requested
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date date;
+
+	/**
+	 * Offer when the change was made
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhOfferCapabilitiesEnum offer;
 
 	/**
 	 * Account who requested the change

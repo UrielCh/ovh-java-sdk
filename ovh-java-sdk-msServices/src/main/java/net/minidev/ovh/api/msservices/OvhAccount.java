@@ -14,13 +14,6 @@ public class OvhAccount {
 	public String lastName;
 
 	/**
-	 * Account initials
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String initials;
-
-	/**
 	 * Last update
 	 *
 	 * canBeNull && readOnly
@@ -28,11 +21,11 @@ public class OvhAccount {
 	public Date lastUpdateDate;
 
 	/**
-	 * Account display name
+	 * Account initials
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String displayName;
+	public String initials;
 
 	/**
 	 * Time of account's password last update
@@ -40,6 +33,13 @@ public class OvhAccount {
 	 * canBeNull && readOnly
 	 */
 	public Date passwordLastUpdate;
+
+	/**
+	 * Account display name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String displayName;
 
 	/**
 	 * Creation date

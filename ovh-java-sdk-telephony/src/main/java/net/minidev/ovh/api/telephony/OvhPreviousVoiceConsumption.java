@@ -39,12 +39,12 @@ public class OvhPreviousVoiceConsumption {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long consumptionId;
+	public OvhVoiceConsumptionWayTypeEnum wayType;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhVoiceConsumptionWayTypeEnum wayType;
+	public Long consumptionId;
 
 	/**
 	 * canBeNull && readOnly
@@ -54,12 +54,12 @@ public class OvhPreviousVoiceConsumption {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhVoiceConsumptionDestinationTypeEnum destinationType;
+	public OvhPrice priceWithoutTax;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhPrice priceWithoutTax;
+	public OvhVoiceConsumptionDestinationTypeEnum destinationType;
 
 	/**
 	 * Description of the destination

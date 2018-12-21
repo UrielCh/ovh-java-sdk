@@ -19,16 +19,16 @@ public class OvhCity {
 	public String inseeCode;
 
 	/**
-	 * Name of the city
-	 *
-	 * canBeNull
-	 */
-	public String name;
-
-	/**
 	 * Locality (subset of a city)
 	 *
 	 * canBeNull
 	 */
 	public String locality;
+
+	/**
+	 * Name of the city
+	 *
+	 * canBeNull
+	 */
+	public String name;
 }

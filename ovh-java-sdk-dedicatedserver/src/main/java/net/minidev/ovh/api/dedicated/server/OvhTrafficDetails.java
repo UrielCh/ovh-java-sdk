@@ -7,18 +7,18 @@ import net.minidev.ovh.api.complextype.OvhUnitAndValue;
  */
 public class OvhTrafficDetails {
 	/**
-	 * Monthly output traffic quota allowed
-	 *
-	 * canBeNull
-	 */
-	public OvhUnitAndValue<Long> outputQuotaSize;
-
-	/**
 	 * Monthly input traffic quota allowed
 	 *
 	 * canBeNull
 	 */
 	public OvhUnitAndValue<Long> inputQuotaSize;
+
+	/**
+	 * Monthly output traffic quota allowed
+	 *
+	 * canBeNull
+	 */
+	public OvhUnitAndValue<Long> outputQuotaSize;
 
 	/**
 	 * Is bandwidth throttleted for being over quota

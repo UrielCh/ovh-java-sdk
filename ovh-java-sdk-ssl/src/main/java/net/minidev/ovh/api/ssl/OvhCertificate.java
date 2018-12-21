@@ -56,13 +56,6 @@ public class OvhCertificate {
 	public Date validityStart;
 
 	/**
-	 * Type of your certificate
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhCertificateTypeEnum type;
-
-	/**
 	 * The internal name of your certificate offer
 	 *
 	 * canBeNull && readOnly
@@ -70,11 +63,11 @@ public class OvhCertificate {
 	public String serviceName;
 
 	/**
-	 * The SAN field for multidomain certificate
+	 * Type of your certificate
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String[] subjectAltName;
+	public OvhCertificateTypeEnum type;
 
 	/**
 	 * Current status of your certificate
@@ -82,4 +75,11 @@ public class OvhCertificate {
 	 * canBeNull && readOnly
 	 */
 	public OvhCertificateStatusEnum status;
+
+	/**
+	 * The SAN field for multidomain certificate
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String[] subjectAltName;
 }

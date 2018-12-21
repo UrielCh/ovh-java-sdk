@@ -27,22 +27,22 @@ public class OvhIpv4Org {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String organisationId;
-
-	/**
-	 * canBeNull && readOnly
-	 */
 	public String address;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String phone;
+	public String organisationId;
 
 	/**
 	 * canBeNull && readOnly
 	 */
 	public String city;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public String phone;
 
 	/**
 	 * canBeNull && readOnly

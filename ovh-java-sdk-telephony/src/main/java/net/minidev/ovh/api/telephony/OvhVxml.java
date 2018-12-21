@@ -7,12 +7,12 @@ public class OvhVxml {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhTypeServiceEnum serviceType;
+	public String[] offers;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String[] offers;
+	public OvhTypeServiceEnum serviceType;
 
 	/**
 	 * canBeNull && readOnly

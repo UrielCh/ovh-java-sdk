@@ -21,18 +21,18 @@ public class OvhPricing {
 	public String intervalUnit;
 
 	/**
-	 * Engagement period
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long commitment;
-
-	/**
 	 * Description
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String description;
+
+	/**
+	 * Engagement period
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long commitment;
 
 	/**
 	 * Maximum repeat duration

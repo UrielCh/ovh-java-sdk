@@ -18,13 +18,6 @@ public class OvhOfficeTenant {
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String lastName;
-
-	/**
-	 * Contact's fisrt name
-	 *
-	 * canBeNull && readOnly
-	 */
 	public String firstName;
 
 	/**
@@ -33,6 +26,13 @@ public class OvhOfficeTenant {
 	 * canBeNull && readOnly
 	 */
 	public String zipCode;
+
+	/**
+	 * Contact's fisrt name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String lastName;
 
 	/**
 	 * Contact's address line

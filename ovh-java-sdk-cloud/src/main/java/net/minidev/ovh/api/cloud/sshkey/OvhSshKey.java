@@ -19,16 +19,16 @@ public class OvhSshKey {
 	public String name;
 
 	/**
-	 * SSH public key
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String publicKey;
-
-	/**
 	 * SSH key id
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String id;
+
+	/**
+	 * SSH public key
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String publicKey;
 }

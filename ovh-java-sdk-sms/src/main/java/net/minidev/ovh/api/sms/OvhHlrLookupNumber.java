@@ -7,18 +7,18 @@ import java.util.Date;
  */
 public class OvhHlrLookupNumber {
 	/**
-	 * Has the MSISDN been ported from its original network
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean ported;
-
-	/**
 	 * Is the MSISDN valid
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean valid;
+
+	/**
+	 * Has the MSISDN been ported from its original network
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean ported;
 
 	/**
 	 * HLR creation datetime

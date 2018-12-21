@@ -28,13 +28,6 @@ public class OvhOperation {
 	public String[] regions;
 
 	/**
-	 * The started date of the operation
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date startedAt;
-
-	/**
 	 * The action of the operation
 	 *
 	 * canBeNull && readOnly
@@ -47,6 +40,13 @@ public class OvhOperation {
 	 * canBeNull && readOnly
 	 */
 	public Long progress;
+
+	/**
+	 * The started date of the operation
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date startedAt;
 
 	/**
 	 * Unique ID to describe the operation

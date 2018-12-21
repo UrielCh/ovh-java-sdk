@@ -15,12 +15,12 @@ public class OvhVoucherAccount {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String voucherAccountId;
+	public Date lastUpdate;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Date lastUpdate;
+	public String voucherAccountId;
 
 	/**
 	 * canBeNull && readOnly

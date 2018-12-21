@@ -70,18 +70,18 @@ public class OvhStatsModemInfo {
 	public Double upstreamMargin;
 
 	/**
-	 * Count from last refresh in seconds
-	 *
-	 * canBeNull
-	 */
-	public Long quarterHourStart;
-
-	/**
 	 * Time of last refresh
 	 *
 	 * canBeNull
 	 */
 	public Date lastUpdate;
+
+	/**
+	 * Count from last refresh in seconds
+	 *
+	 * canBeNull
+	 */
+	public Long quarterHourStart;
 
 	/**
 	 * Amount of CRC error detected

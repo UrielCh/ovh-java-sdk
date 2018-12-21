@@ -5,18 +5,18 @@ package net.minidev.ovh.api.cloud.billingview;
  */
 public class OvhHourlyInstanceDetail {
 	/**
-	 * Instance ID
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String instanceId;
-
-	/**
 	 * Hours of run instances
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhQuantity quantity;
+
+	/**
+	 * Instance ID
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String instanceId;
 
 	/**
 	 * Total price

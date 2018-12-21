@@ -14,18 +14,18 @@ public class OvhLineDetails {
 	public String address;
 
 	/**
-	 * access name
-	 *
-	 * canBeNull
-	 */
-	public String accessName;
-
-	/**
 	 * is GTR access or not
 	 *
 	 * canBeNull
 	 */
 	public Boolean gtr;
+
+	/**
+	 * access name
+	 *
+	 * canBeNull
+	 */
+	public String accessName;
 
 	/**
 	 * Line length in meters
@@ -56,18 +56,18 @@ public class OvhLineDetails {
 	public OvhLineCapabilities lineCapabilities;
 
 	/**
-	 * provider for internet connexion
-	 *
-	 * canBeNull
-	 */
-	public OvhProviderEnum operator;
-
-	/**
 	 * cables sections details
 	 *
 	 * canBeNull
 	 */
 	public OvhSection[] sections;
+
+	/**
+	 * provider for internet connexion
+	 *
+	 * canBeNull
+	 */
+	public OvhProviderEnum operator;
 
 	/**
 	 * line number
@@ -91,11 +91,11 @@ public class OvhLineDetails {
 	public Boolean accessPing;
 
 	/**
-	 * informations directly get on DSLAM or Modem
+	 * NRA name
 	 *
 	 * canBeNull
 	 */
-	public OvhConnectionInformations connectionInfo;
+	public String nra;
 
 	/**
 	 * customer phone number for contact
@@ -105,9 +105,9 @@ public class OvhLineDetails {
 	public String contactPhone;
 
 	/**
-	 * NRA name
+	 * informations directly get on DSLAM or Modem
 	 *
 	 * canBeNull
 	 */
-	public String nra;
+	public OvhConnectionInformations connectionInfo;
 }

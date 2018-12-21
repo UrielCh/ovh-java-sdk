@@ -9,12 +9,12 @@ public class OvhTelephonyService {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhTypeServiceEnum serviceType;
+	public String[] offers;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String[] offers;
+	public OvhTypeServiceEnum serviceType;
 
 	/**
 	 * The country of the number
@@ -46,18 +46,18 @@ public class OvhTelephonyService {
 	public String serviceName;
 
 	/**
-	 * The service offers
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhLineOffer getPublicOffer;
-
-	/**
 	 * Current outplan
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhPrice currentOutplan;
+
+	/**
+	 * The service offers
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhLineOffer getPublicOffer;
 
 	/**
 	 * The country code of the number

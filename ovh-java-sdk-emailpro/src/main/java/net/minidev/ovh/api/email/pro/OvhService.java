@@ -21,13 +21,6 @@ public class OvhService {
 	public Long minPasswordAge;
 
 	/**
-	 * service displayName
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String displayName;
-
-	/**
 	 * Update date
 	 *
 	 * canBeNull && readOnly
@@ -35,18 +28,11 @@ public class OvhService {
 	public Date lastUpdateDate;
 
 	/**
-	 * Task pending id
+	 * service displayName
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long taskPendingId;
-
-	/**
-	 * Spam and Antivirus configuration
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhSpamAndVirusConfiguration spamAndVirusConfiguration;
+	public String displayName;
 
 	/**
 	 * maximum number of days that account's password is valid before expiration
@@ -56,11 +42,25 @@ public class OvhService {
 	public Long maxPasswordAge;
 
 	/**
+	 * Task pending id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long taskPendingId;
+
+	/**
 	 * enable policy for strong and secure passwords
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean complexityEnabled;
+
+	/**
+	 * Spam and Antivirus configuration
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhSpamAndVirusConfiguration spamAndVirusConfiguration;
 
 	/**
 	 * Type of your offer

@@ -11,18 +11,18 @@ import net.minidev.ovh.api.order.OvhPrice;
  */
 public class OvhBalance {
 	/**
-	 * Movement expiring soon
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhExpiringMovement[] expiring;
-
-	/**
 	 * Balance amount
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhPrice amount;
+
+	/**
+	 * Movement expiring soon
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhExpiringMovement[] expiring;
 
 	/**
 	 * Movement already booked on orders

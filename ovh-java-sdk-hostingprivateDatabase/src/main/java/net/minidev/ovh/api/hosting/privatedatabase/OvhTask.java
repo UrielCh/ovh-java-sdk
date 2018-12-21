@@ -16,18 +16,18 @@ public class OvhTask {
 	public String databaseName;
 
 	/**
-	 * Function name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhFunctionEnum function;
-
-	/**
 	 * DumpId on which the task is working
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long dumpId;
+
+	/**
+	 * Function name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhFunctionEnum function;
 
 	/**
 	 * Last update

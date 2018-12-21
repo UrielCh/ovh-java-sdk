@@ -1,6 +1,7 @@
 package net.minidev.ovh.api.hosting.web;
 
 import java.util.Date;
+import net.minidev.ovh.api.hosting.web.runtime.OvhEnvEnum;
 import net.minidev.ovh.api.hosting.web.runtime.OvhStateEnum;
 import net.minidev.ovh.api.hosting.web.runtime.OvhTypeEnum;
 
@@ -41,7 +42,7 @@ public class OvhRuntime {
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String appEnv;
+	public OvhEnvEnum appEnv;
 
 	/**
 	 * The client application public directory
@@ -65,18 +66,18 @@ public class OvhRuntime {
 	public Long id;
 
 	/**
-	 * The backend type of the runtime
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhTypeEnum type;
-
-	/**
 	 * The creation date of the runtime configuration
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date creationDate;
+
+	/**
+	 * The backend type of the runtime
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhTypeEnum type;
 
 	/**
 	 * The link current task for the runtime configuration

@@ -70,10 +70,10 @@ public class OvhVPS {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhVpsStateEnum state;
+	public Boolean slaMonitoring;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Boolean slaMonitoring;
+	public OvhVpsStateEnum state;
 }

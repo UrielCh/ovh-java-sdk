@@ -21,16 +21,16 @@ public class OvhVolumePrice {
 	public String volumeName;
 
 	/**
-	 * Volume region
-	 *
-	 * canBeNull
-	 */
-	public String region;
-
-	/**
 	 * Monthly volume price (for 1GB per month)
 	 *
 	 * canBeNull
 	 */
 	public OvhPrice monthlyPrice;
+
+	/**
+	 * Volume region
+	 *
+	 * canBeNull
+	 */
+	public String region;
 }

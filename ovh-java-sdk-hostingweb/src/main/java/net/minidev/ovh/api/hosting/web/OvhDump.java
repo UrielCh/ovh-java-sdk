@@ -30,13 +30,6 @@ public class OvhDump {
 	public Long id;
 
 	/**
-	 * Creation date of the dump
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date creationDate;
-
-	/**
 	 * Dump type
 	 *
 	 * canBeNull && readOnly
@@ -51,11 +44,11 @@ public class OvhDump {
 	public Boolean orphan;
 
 	/**
-	 * Dump url access
+	 * Creation date of the dump
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String url;
+	public Date creationDate;
 
 	/**
 	 * The task ID working on this dump
@@ -63,6 +56,13 @@ public class OvhDump {
 	 * canBeNull && readOnly
 	 */
 	public Long taskId;
+
+	/**
+	 * Dump url access
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String url;
 
 	/**
 	 * The dump status

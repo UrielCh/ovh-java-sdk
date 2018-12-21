@@ -26,16 +26,16 @@ public class OvhSimultaneousChannelsDetails {
 	public Long maximum;
 
 	/**
-	 * Quantity of simultaneous channels going to be deleted at the end of the billing cycle.
-	 *
-	 * canBeNull
-	 */
-	public Long toBeDeleted;
-
-	/**
 	 * Basic quantity of simultaneous channels included in the line.
 	 *
 	 * canBeNull
 	 */
 	public Long basic;
+
+	/**
+	 * Quantity of simultaneous channels going to be deleted at the end of the billing cycle.
+	 *
+	 * canBeNull
+	 */
+	public Long toBeDeleted;
 }

@@ -7,7 +7,7 @@ public class OvhAddressDetail {
 	/**
 	 * canBeNull
 	 */
-	public String zipCode;
+	public String lastName;
 
 	/**
 	 * canBeNull
@@ -17,17 +17,17 @@ public class OvhAddressDetail {
 	/**
 	 * canBeNull
 	 */
-	public String lastName;
-
-	/**
-	 * canBeNull
-	 */
-	public String numberStreet;
+	public String zipCode;
 
 	/**
 	 * canBeNull
 	 */
 	public String city;
+
+	/**
+	 * canBeNull
+	 */
+	public String numberStreet;
 
 	/**
 	 * canBeNull
@@ -66,10 +66,10 @@ public class OvhAddressDetail {
 	/**
 	 * canBeNull
 	 */
-	public String residence;
+	public String floor;
 
 	/**
 	 * canBeNull
 	 */
-	public String floor;
+	public String residence;
 }

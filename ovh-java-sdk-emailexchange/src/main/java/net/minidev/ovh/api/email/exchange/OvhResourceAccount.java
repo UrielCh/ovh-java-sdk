@@ -21,13 +21,6 @@ public class OvhResourceAccount {
 	public Long maximumDuration;
 
 	/**
-	 * remove any text in the message body of incoming meeting requests on resourceAccount
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean deleteComments;
-
-	/**
 	 * name of resource
 	 *
 	 * canBeNull && readOnly
@@ -35,11 +28,11 @@ public class OvhResourceAccount {
 	public String displayName;
 
 	/**
-	 * resource type
+	 * remove any text in the message body of incoming meeting requests on resourceAccount
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhResourceTypeEnum type;
+	public Boolean deleteComments;
 
 	/**
 	 * Creation date
@@ -47,6 +40,13 @@ public class OvhResourceAccount {
 	 * canBeNull && readOnly
 	 */
 	public Date creationDate;
+
+	/**
+	 * resource type
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhResourceTypeEnum type;
 
 	/**
 	 * task pending id

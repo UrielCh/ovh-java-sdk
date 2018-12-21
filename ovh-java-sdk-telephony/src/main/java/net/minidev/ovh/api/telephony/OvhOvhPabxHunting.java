@@ -12,18 +12,18 @@ public class OvhOvhPabxHunting {
 	public String crmUrlTemplate;
 
 	/**
-	 * The name of your callcenter offer
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String name;
-
-	/**
 	 * Enable G729 codec on your callcenter
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean g729;
+
+	/**
+	 * The name of your callcenter offer
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String name;
 
 	/**
 	 * Enable/Disable the status change IVR on your callcenter. The IVR is enabled by default.

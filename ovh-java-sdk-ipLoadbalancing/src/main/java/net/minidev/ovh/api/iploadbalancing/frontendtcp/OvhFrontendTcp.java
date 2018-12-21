@@ -12,13 +12,6 @@ public class OvhFrontendTcp {
 	public Long defaultSslId;
 
 	/**
-	 * Zone of you frontend
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String zone;
-
-	/**
 	 * Listening port(s) on the server
 	 *
 	 * canBeNull && readOnly
@@ -26,11 +19,11 @@ public class OvhFrontendTcp {
 	public String port;
 
 	/**
-	 * Restrict IP Load Balancing access to these ip block. No restriction if null
+	 * Zone of you frontend
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String[] allowedSource;
+	public String zone;
 
 	/**
 	 * Human readable name for your frontend, this field is for you
@@ -38,6 +31,13 @@ public class OvhFrontendTcp {
 	 * canBeNull && readOnly
 	 */
 	public String displayName;
+
+	/**
+	 * Restrict IP Load Balancing access to these ip block. No restriction if null
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String[] allowedSource;
 
 	/**
 	 * Disable frontend. Default: 'false'

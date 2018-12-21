@@ -14,13 +14,6 @@ public class OvhTask {
 	public Date maintenanceDateFrom;
 
 	/**
-	 * vlanId of the parent dedicatedCloud.Vlan object
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long vlanId;
-
-	/**
 	 * Task end date
 	 *
 	 * canBeNull && readOnly
@@ -42,6 +35,13 @@ public class OvhTask {
 	public Long orderId;
 
 	/**
+	 * vlanId of the parent dedicatedCloud.Vlan object
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long vlanId;
+
+	/**
 	 * taskId of the parent dedicatedCloud.Task object
 	 *
 	 * canBeNull && readOnly
@@ -49,18 +49,18 @@ public class OvhTask {
 	public Long parentTaskId;
 
 	/**
-	 * Task execution date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date executionDate;
-
-	/**
 	 * datacenterId of the associated dedicatedCloud.Datacenter object
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long datacenterId;
+
+	/**
+	 * Task execution date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date executionDate;
 
 	/**
 	 * hostId of the associated dedicatedCloud.Host object
@@ -126,18 +126,18 @@ public class OvhTask {
 	public String createdBy;
 
 	/**
-	 * filerId of the associated dedicatedCloud.Filer object
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long filerId;
-
-	/**
 	 * Task name
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String name;
+
+	/**
+	 * filerId of the associated dedicatedCloud.Filer object
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long filerId;
 
 	/**
 	 * Current progress

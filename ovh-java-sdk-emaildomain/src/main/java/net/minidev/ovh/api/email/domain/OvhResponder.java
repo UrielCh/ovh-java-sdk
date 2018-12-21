@@ -21,13 +21,6 @@ public class OvhResponder {
 	public Date from;
 
 	/**
-	 * Date of end responder
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date to;
-
-	/**
 	 * If false, emails will be dropped. If true and copyTo field is empty, emails will be delivered to your mailbox. If true and copyTo is set with an address, emails will be delivered to this address
 	 *
 	 * canBeNull && readOnly
@@ -35,11 +28,11 @@ public class OvhResponder {
 	public Boolean copy;
 
 	/**
-	 * Name of account
+	 * Date of end responder
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String account;
+	public Date to;
 
 	/**
 	 * Content of responder
@@ -47,4 +40,11 @@ public class OvhResponder {
 	 * canBeNull && readOnly
 	 */
 	public String content;
+
+	/**
+	 * Name of account
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String account;
 }

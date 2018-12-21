@@ -19,16 +19,16 @@ public class OvhOvhPabxMenu {
 	public String name;
 
 	/**
-	 * canBeNull && readOnly
-	 */
-	public Long menuId;
-
-	/**
 	 * The id of the OvhPabxSound played when the caller uses an invalid DTMF
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long invalidSound;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public Long menuId;
 
 	/**
 	 * The id of the OvhPabxSound played to greet

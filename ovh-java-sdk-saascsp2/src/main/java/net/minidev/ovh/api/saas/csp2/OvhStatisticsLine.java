@@ -12,18 +12,18 @@ public class OvhStatisticsLine {
 	public Long endOfDayCount;
 
 	/**
-	 * Name of the Office license.
-	 *
-	 * canBeNull
-	 */
-	public String licenceName;
-
-	/**
 	 * Id of the Office license.
 	 *
 	 * canBeNull
 	 */
 	public Long licenceId;
+
+	/**
+	 * Name of the Office license.
+	 *
+	 * canBeNull
+	 */
+	public String licenceName;
 
 	/**
 	 * Maximum count of simultaneous activated licences.

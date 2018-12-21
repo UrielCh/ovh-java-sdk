@@ -19,18 +19,18 @@ public class OvhDedicatedCloud {
 	public Boolean advancedSecurity;
 
 	/**
-	 * Enable SSL v3 support. Warning : this option is not recommended as it was recognized as a security breach. If this is enabled, we advise you to enable the filtered User access policy
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean sslV3;
-
-	/**
 	 * The timeout (in seconds) for the user sessions on the Private Cloud management interface. 0 value disable the timeout
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long userSessionTimeout;
+
+	/**
+	 * Enable SSL v3 support. Warning : this option is not recommended as it was recognized as a security breach. If this is enabled, we advise you to enable the filtered User access policy
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean sslV3;
 
 	/**
 	 * The current bandwidth of your Private Cloud

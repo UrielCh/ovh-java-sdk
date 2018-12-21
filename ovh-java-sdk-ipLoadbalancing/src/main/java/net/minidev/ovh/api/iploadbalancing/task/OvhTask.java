@@ -9,18 +9,18 @@ import net.minidev.ovh.api.iploadbalancing.OvhTaskStatusEnum;
  */
 public class OvhTask {
 	/**
-	 * Operation progress percentage
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long progress;
-
-	/**
 	 * Operation type
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhTaskActionEnum action;
+
+	/**
+	 * Operation progress percentage
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long progress;
 
 	/**
 	 * Id of the operation

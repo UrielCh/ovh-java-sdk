@@ -26,18 +26,18 @@ public class OvhOffer {
 	public Long curNbRole;
 
 	/**
-	 * Current number of alias booked
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long curNbAlias;
-
-	/**
 	 * Current number of stream booked
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long curNbStream;
+
+	/**
+	 * Current number of alias booked
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long curNbAlias;
 
 	/**
 	 * Maximum number of role allowed

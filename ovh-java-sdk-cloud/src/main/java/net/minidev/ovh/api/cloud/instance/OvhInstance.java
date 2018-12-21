@@ -35,18 +35,18 @@ public class OvhInstance {
 	public String flavorId;
 
 	/**
-	 * Instance monthly billing status
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhMonthlyBilling monthlyBilling;
-
-	/**
 	 * Instance IP addresses
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhIpAddress[] ipAddresses;
+
+	/**
+	 * Instance monthly billing status
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhMonthlyBilling monthlyBilling;
 
 	/**
 	 * Instance id
@@ -63,18 +63,18 @@ public class OvhInstance {
 	public String region;
 
 	/**
-	 * Order plan code
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String planCode;
-
-	/**
 	 * Instance ssh key id
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String sshKeyId;
+
+	/**
+	 * Order plan code
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String planCode;
 
 	/**
 	 * Instance status

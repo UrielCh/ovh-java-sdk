@@ -9,13 +9,6 @@ import net.minidev.ovh.api.domain.OvhOperationStatusEnum;
  */
 public class OvhDomainTask {
 	/**
-	 * Function of the task
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhNicOperationFunctionEnum function;
-
-	/**
 	 * Domain of the task
 	 *
 	 * canBeNull && readOnly
@@ -28,6 +21,13 @@ public class OvhDomainTask {
 	 * canBeNull && readOnly
 	 */
 	public Date lastUpdate;
+
+	/**
+	 * Function of the task
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhNicOperationFunctionEnum function;
 
 	/**
 	 * Todo date of the task
@@ -44,18 +44,18 @@ public class OvhDomainTask {
 	public String comment;
 
 	/**
-	 * Id of the task
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long id;
-
-	/**
 	 * Can accelerate the task
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean canAccelerate;
+
+	/**
+	 * Id of the task
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long id;
 
 	/**
 	 * Creation date of the task
@@ -79,16 +79,16 @@ public class OvhDomainTask {
 	public Date doneDate;
 
 	/**
-	 * Can cancel the task
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean canCancel;
-
-	/**
 	 * Status of the task
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhOperationStatusEnum status;
+
+	/**
+	 * Can cancel the task
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean canCancel;
 }

@@ -5,18 +5,18 @@ package net.minidev.ovh.api.telephony;
  */
 public class OvhOvhPabxHuntingAgent {
 	/**
-	 * The number of the agent
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String number;
-
-	/**
 	 * The id of the current break status of the agent
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long breakStatus;
+
+	/**
+	 * The number of the agent
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String number;
 
 	/**
 	 * canBeNull && readOnly

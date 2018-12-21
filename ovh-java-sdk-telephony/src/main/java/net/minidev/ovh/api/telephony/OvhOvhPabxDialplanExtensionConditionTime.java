@@ -14,16 +14,16 @@ public class OvhOvhPabxDialplanExtensionConditionTime {
 	public Date timeFrom;
 
 	/**
+	 * canBeNull && readOnly
+	 */
+	public Long conditionId;
+
+	/**
 	 * The time of the day when the extension will stop to be executed
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date timeTo;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public Long conditionId;
 
 	/**
 	 * The day of the week when the extension will be executed

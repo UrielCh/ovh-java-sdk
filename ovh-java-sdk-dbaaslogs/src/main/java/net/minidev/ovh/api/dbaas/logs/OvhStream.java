@@ -105,18 +105,18 @@ public class OvhStream {
 	public Boolean coldStorageEnabled;
 
 	/**
-	 * Enable ES indexing
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean indexingEnabled;
-
-	/**
 	 * ColdStorage compression method
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhStreamColdStorageCompressionEnum coldStorageCompression;
+
+	/**
+	 * Enable ES indexing
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean indexingEnabled;
 
 	/**
 	 * Stream last update

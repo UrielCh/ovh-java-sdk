@@ -12,17 +12,17 @@ public class OvhFaxProperties {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Boolean rejectAnonymous;
-
-	/**
-	 * canBeNull && readOnly
-	 */
 	public OvhFaxQualityEnum faxQuality;
 
 	/**
 	 * canBeNull && readOnly
 	 */
 	public String callNumber;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public Boolean rejectAnonymous;
 
 	/**
 	 * canBeNull && readOnly

@@ -61,18 +61,18 @@ public class OvhAddress {
 	public String housingComplex;
 
 	/**
-	 * Identifier of the stair, if any
-	 *
-	 * canBeNull
-	 */
-	public String stairs;
-
-	/**
 	 * Street code, an unique identifier of the street, hidden for unlisted number
 	 *
 	 * canBeNull
 	 */
 	public String streetCode;
+
+	/**
+	 * Identifier of the stair, if any
+	 *
+	 * canBeNull
+	 */
+	public String stairs;
 
 	/**
 	 * Identifier of the floor, if any

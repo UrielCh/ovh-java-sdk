@@ -37,10 +37,10 @@ public class OvhPaymentMeans {
 	/**
 	 * canBeNull
 	 */
-	public OvhPaymentMean[] promotion;
+	public OvhPaymentMean[] multibanco;
 
 	/**
 	 * canBeNull
 	 */
-	public OvhPaymentMean[] multibanco;
+	public OvhPaymentMean[] promotion;
 }

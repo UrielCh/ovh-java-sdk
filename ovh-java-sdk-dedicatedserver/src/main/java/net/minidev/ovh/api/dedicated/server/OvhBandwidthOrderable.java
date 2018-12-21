@@ -19,16 +19,16 @@ public class OvhBandwidthOrderable {
 	public OvhBandwidthOrderEnum[] premium;
 
 	/**
-	 * Bandwidth "ultimate" orderable in mbps
-	 *
-	 * canBeNull
-	 */
-	public OvhBandwidthOrderEnum[] ultimate;
-
-	/**
 	 * Is bandwidth orderable for this server
 	 *
 	 * canBeNull
 	 */
 	public Boolean orderable;
+
+	/**
+	 * Bandwidth "ultimate" orderable in mbps
+	 *
+	 * canBeNull
+	 */
+	public OvhBandwidthOrderEnum[] ultimate;
 }

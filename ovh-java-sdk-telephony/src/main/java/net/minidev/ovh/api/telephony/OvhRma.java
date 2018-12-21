@@ -42,6 +42,13 @@ public class OvhRma {
 	public OvhRmaTypeEnum type;
 
 	/**
+	 * Indicates the current status of the RMA with a list of steps
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhRmaStep[] steps;
+
+	/**
 	 * Is the RMA cancellable?
 	 *
 	 * canBeNull && readOnly
@@ -54,13 +61,6 @@ public class OvhRma {
 	 * canBeNull && readOnly
 	 */
 	public String newMerchandise;
-
-	/**
-	 * Indicates the current status of the RMA with a list of steps
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhRmaStep[] steps;
 
 	/**
 	 * Creation datetime of the return merchandise authorisation ticket
@@ -91,16 +91,16 @@ public class OvhRma {
 	public Date terminationDatetime;
 
 	/**
-	 * Offer type of the return merchandise
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhRmaOfferTypeEnum offerTypeOld;
-
-	/**
 	 * Return merchandise authorisation step
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhRmaStatusEnum status;
+
+	/**
+	 * Offer type of the return merchandise
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhRmaOfferTypeEnum offerTypeOld;
 }

@@ -30,25 +30,25 @@ public class ApiOvhSupport extends ApiOvhBase {
 	 * Create a new ticket
 	 *
 	 * REST: POST /support/tickets/create
-	 * @param category [required] Ticket message category
-	 * @param serviceName [required] Ticket message service name
-	 * @param product [required] Ticket message product
-	 * @param type [required] Ticket type (criticalIntervention requires VIP support level)
 	 * @param body [required] Ticket message body
-	 * @param subcategory [required] Ticket message subcategory
 	 * @param subject [required] Ticket message subject
+	 * @param category [required] Ticket message category
+	 * @param product [required] Ticket message product
+	 * @param serviceName [required] Ticket message service name
+	 * @param type [required] Ticket type (criticalIntervention requires VIP support level)
+	 * @param subcategory [required] Ticket message subcategory
 	 */
-	public OvhNewMessageInfo tickets_create_POST(OvhTicketCategoryEnum category, String serviceName, OvhTicketProductEnum product, OvhTicketTypeEnum type, String body, OvhTicketSubCategoryEnum subcategory, String subject) throws IOException {
+	public OvhNewMessageInfo tickets_create_POST(String body, String subject, OvhTicketCategoryEnum category, OvhTicketProductEnum product, String serviceName, OvhTicketTypeEnum type, OvhTicketSubCategoryEnum subcategory) throws IOException {
 		String qPath = "/support/tickets/create";
 		StringBuilder sb = path(qPath);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "category", category);
-		addBody(o, "serviceName", serviceName);
-		addBody(o, "product", product);
-		addBody(o, "type", type);
 		addBody(o, "body", body);
-		addBody(o, "subcategory", subcategory);
 		addBody(o, "subject", subject);
+		addBody(o, "category", category);
+		addBody(o, "product", product);
+		addBody(o, "serviceName", serviceName);
+		addBody(o, "type", type);
+		addBody(o, "subcategory", subcategory);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhNewMessageInfo.class);
 	}
@@ -57,15 +57,15 @@ public class ApiOvhSupport extends ApiOvhBase {
 	 * List support tickets identifiers for this service
 	 *
 	 * REST: GET /support/tickets
-	 * @param minCreationDate [required] Minimum creation date
-	 * @param category [required] Search by ticket category
-	 * @param serviceName [required] Ticket message service name
-	 * @param subject [required] Search by ticket subject
-	 * @param status [required] Status of ticket
-	 * @param maxCreationDate [required] Maximum creation date
-	 * @param product [required] Search by ticket product
-	 * @param archived [required] Search archived tickets
 	 * @param ticketNumber [required] Search by ticket number
+	 * @param archived [required] Search archived tickets
+	 * @param minCreationDate [required] Minimum creation date
+	 * @param subject [required] Search by ticket subject
+	 * @param serviceName [required] Ticket message service name
+	 * @param status [required] Status of ticket
+	 * @param product [required] Search by ticket product
+	 * @param category [required] Search by ticket category
+	 * @param maxCreationDate [required] Maximum creation date
 	 */
 	public ArrayList<Long> tickets_GET(Boolean archived, OvhTicketCategoryEnum category, Date maxCreationDate, Date minCreationDate, OvhTicketProductEnum product, String serviceName, OvhTicketStatusEnum status, String subject, String ticketNumber) throws IOException {
 		String qPath = "/support/tickets";
@@ -85,52 +85,14 @@ public class ApiOvhSupport extends ApiOvhBase {
 	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
 
 	/**
-	 * Close ticket
+	 * Reply to ticket
 	 *
-	 * REST: POST /support/tickets/{ticketId}/close
+	 * REST: POST /support/tickets/{ticketId}/reply
 	 * @param ticketId [required] internal ticket identifier
+	 * @param body [required] text body of ticket response
 	 */
-	public void tickets_ticketId_close_POST(Long ticketId) throws IOException {
-		String qPath = "/support/tickets/{ticketId}/close";
-		StringBuilder sb = path(qPath, ticketId);
-		exec(qPath, "POST", sb.toString(), null);
-	}
-
-	/**
-	 * Get ticket
-	 *
-	 * REST: GET /support/tickets/{ticketId}
-	 * @param ticketId [required] internal identifier ticket
-	 */
-	public OvhTicket tickets_ticketId_GET(Long ticketId) throws IOException {
-		String qPath = "/support/tickets/{ticketId}";
-		StringBuilder sb = path(qPath, ticketId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhTicket.class);
-	}
-
-	/**
-	 * Checks whether ticket can be scored
-	 *
-	 * REST: GET /support/tickets/{ticketId}/canBeScored
-	 * @param ticketId [required] internal ticket identifier
-	 */
-	public Boolean tickets_ticketId_canBeScored_GET(Long ticketId) throws IOException {
-		String qPath = "/support/tickets/{ticketId}/canBeScored";
-		StringBuilder sb = path(qPath, ticketId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, Boolean.class);
-	}
-
-	/**
-	 * Reopen a ticket
-	 *
-	 * REST: POST /support/tickets/{ticketId}/reopen
-	 * @param ticketId [required] internal ticket identifier
-	 * @param body [required] ticket reopen reason
-	 */
-	public void tickets_ticketId_reopen_POST(Long ticketId, String body) throws IOException {
-		String qPath = "/support/tickets/{ticketId}/reopen";
+	public void tickets_ticketId_reply_POST(Long ticketId, String body) throws IOException {
+		String qPath = "/support/tickets/{ticketId}/reply";
 		StringBuilder sb = path(qPath, ticketId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "body", body);
@@ -169,17 +131,55 @@ public class ApiOvhSupport extends ApiOvhBase {
 	private static TypeReference<ArrayList<OvhMessage>> t2 = new TypeReference<ArrayList<OvhMessage>>() {};
 
 	/**
-	 * Reply to ticket
+	 * Get ticket
 	 *
-	 * REST: POST /support/tickets/{ticketId}/reply
-	 * @param ticketId [required] internal ticket identifier
-	 * @param body [required] text body of ticket response
+	 * REST: GET /support/tickets/{ticketId}
+	 * @param ticketId [required] internal identifier ticket
 	 */
-	public void tickets_ticketId_reply_POST(Long ticketId, String body) throws IOException {
-		String qPath = "/support/tickets/{ticketId}/reply";
+	public OvhTicket tickets_ticketId_GET(Long ticketId) throws IOException {
+		String qPath = "/support/tickets/{ticketId}";
+		StringBuilder sb = path(qPath, ticketId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhTicket.class);
+	}
+
+	/**
+	 * Reopen a ticket
+	 *
+	 * REST: POST /support/tickets/{ticketId}/reopen
+	 * @param ticketId [required] internal ticket identifier
+	 * @param body [required] ticket reopen reason
+	 */
+	public void tickets_ticketId_reopen_POST(Long ticketId, String body) throws IOException {
+		String qPath = "/support/tickets/{ticketId}/reopen";
 		StringBuilder sb = path(qPath, ticketId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "body", body);
 		exec(qPath, "POST", sb.toString(), o);
+	}
+
+	/**
+	 * Checks whether ticket can be scored
+	 *
+	 * REST: GET /support/tickets/{ticketId}/canBeScored
+	 * @param ticketId [required] internal ticket identifier
+	 */
+	public Boolean tickets_ticketId_canBeScored_GET(Long ticketId) throws IOException {
+		String qPath = "/support/tickets/{ticketId}/canBeScored";
+		StringBuilder sb = path(qPath, ticketId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, Boolean.class);
+	}
+
+	/**
+	 * Close ticket
+	 *
+	 * REST: POST /support/tickets/{ticketId}/close
+	 * @param ticketId [required] internal ticket identifier
+	 */
+	public void tickets_ticketId_close_POST(Long ticketId) throws IOException {
+		String qPath = "/support/tickets/{ticketId}/close";
+		StringBuilder sb = path(qPath, ticketId);
+		exec(qPath, "POST", sb.toString(), null);
 	}
 }

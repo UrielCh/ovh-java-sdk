@@ -27,17 +27,12 @@ public class OvhDisk {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long id;
-
-	/**
-	 * canBeNull && readOnly
-	 */
 	public OvhStateEnum state;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhTypeEnum type;
+	public Long id;
 
 	/**
 	 * The monitoring state of this disk
@@ -45,4 +40,9 @@ public class OvhDisk {
 	 * canBeNull && readOnly
 	 */
 	public Boolean monitoring;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public OvhTypeEnum type;
 }

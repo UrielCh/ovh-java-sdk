@@ -12,18 +12,18 @@ public class OvhHourlyStorage {
 	public Double totalPrice;
 
 	/**
-	 * Information about stored data
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhStoredStorage stored;
-
-	/**
 	 * Storage incoming bandwidth details
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhBandwidthStorage incomingBandwidth;
+
+	/**
+	 * Information about stored data
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhStoredStorage stored;
 
 	/**
 	 * Storage outgoing bandwidth details

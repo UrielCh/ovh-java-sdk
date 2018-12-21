@@ -44,13 +44,6 @@ public class OvhBackendHTTPServer {
 	public String displayName;
 
 	/**
-	 * farm id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long backendId;
-
-	/**
 	 * Weight value. Defaults to 1. 0 if not used in load balancing. Servers with higher weight get more requests.
 	 *
 	 * canBeNull && readOnly
@@ -58,11 +51,11 @@ public class OvhBackendHTTPServer {
 	public Long weight;
 
 	/**
-	 * Id of your server
+	 * farm id
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long serverId;
+	public Long backendId;
 
 	/**
 	 * SSL ciphering. Probes will also be sent ciphered. Default: 'false'
@@ -70,6 +63,13 @@ public class OvhBackendHTTPServer {
 	 * canBeNull && readOnly
 	 */
 	public Boolean ssl;
+
+	/**
+	 * Id of your server
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long serverId;
 
 	/**
 	 * Probe state. Default: 'false'

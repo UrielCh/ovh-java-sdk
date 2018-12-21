@@ -7,18 +7,18 @@ import java.util.Date;
  */
 public class OvhOperation {
 	/**
-	 * Task last update
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date lastUpdate;
-
-	/**
 	 * Task function name
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhOperationFunctionEnum function;
+
+	/**
+	 * Task last update
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date lastUpdate;
 
 	/**
 	 * Completion date
@@ -28,16 +28,16 @@ public class OvhOperation {
 	public Date doneDate;
 
 	/**
+	 * canBeNull && readOnly
+	 */
+	public Long taskId;
+
+	/**
 	 * Task Creation date
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date startDate;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public Long taskId;
 
 	/**
 	 * Task status

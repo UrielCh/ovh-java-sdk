@@ -5,13 +5,6 @@ package net.minidev.ovh.api.order.cart;
  */
 public class OvhProductInformation {
 	/**
-	 * Informations about the domain's offer (gold|diamond|platinium)
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String offer;
-
-	/**
 	 * List all the duration allowed for the product
 	 *
 	 * canBeNull && readOnly
@@ -26,25 +19,18 @@ public class OvhProductInformation {
 	public String phase;
 
 	/**
+	 * Informations about the domain's offer (gold|diamond|platinium)
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String offer;
+
+	/**
 	 * Pricing model identifier for this product
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String pricingMode;
-
-	/**
-	 * Product identifier
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String productId;
-
-	/**
-	 * Maximum quantity purchasable for this product
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long quantityMax;
 
 	/**
 	 * Informations about the estimated delivery time for the product
@@ -54,11 +40,18 @@ public class OvhProductInformation {
 	public String deliveryTime;
 
 	/**
-	 * Indicates if the product is orderable or not
+	 * Maximum quantity purchasable for this product
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Boolean orderable;
+	public Long quantityMax;
+
+	/**
+	 * Product identifier
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String productId;
 
 	/**
 	 * Informations about the configurations required
@@ -66,6 +59,13 @@ public class OvhProductInformation {
 	 * canBeNull && readOnly
 	 */
 	public OvhConfigurationRequirements[] configurations;
+
+	/**
+	 * Indicates if the product is orderable or not
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean orderable;
 
 	/**
 	 * Price details of the product

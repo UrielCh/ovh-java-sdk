@@ -15,12 +15,12 @@ public class OvhBill {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String pdfUrl;
+	public String password;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String password;
+	public String pdfUrl;
 
 	/**
 	 * canBeNull && readOnly
@@ -30,12 +30,12 @@ public class OvhBill {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String billId;
+	public OvhPrice priceWithTax;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhPrice priceWithTax;
+	public String billId;
 
 	/**
 	 * canBeNull && readOnly

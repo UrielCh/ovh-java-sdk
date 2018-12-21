@@ -14,18 +14,18 @@ public class OvhIpRestriction {
 	public String ip;
 
 	/**
-	 * Send an email if someone try to access with this IP address
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean warning;
-
-	/**
 	 * Accept or deny IP access
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhIpRestrictionRuleEnum rule;
+
+	/**
+	 * Send an email if someone try to access with this IP address
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean warning;
 
 	/**
 	 * The Id of the restriction

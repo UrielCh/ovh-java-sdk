@@ -15,16 +15,16 @@ public class OvhGrant {
 	public String databaseName;
 
 	/**
-	 * Creation date of the grant
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date creationDate;
-
-	/**
 	 * Grant set
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhGrantEnum grant;
+
+	/**
+	 * Creation date of the grant
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date creationDate;
 }
