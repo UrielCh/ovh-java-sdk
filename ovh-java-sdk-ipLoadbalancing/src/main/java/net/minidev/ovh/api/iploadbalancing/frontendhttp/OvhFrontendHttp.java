@@ -19,18 +19,18 @@ public class OvhFrontendHttp {
 	public String displayName;
 
 	/**
-	 * Only attach frontend on these ip. No restriction if null
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String[] dedicatedIpfo;
-
-	/**
 	 * Id of your frontend
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long frontendId;
+
+	/**
+	 * Only attach frontend on these ip. No restriction if null
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String[] dedicatedIpfo;
 
 	/**
 	 * SSL deciphering. Default: 'false'

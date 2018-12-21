@@ -12,13 +12,6 @@ public class OvhEasyPabxHunting {
 	public String voicemail;
 
 	/**
-	 * The maximum no-reply time before forwarding the call to the voicemail
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long noReplyTimer;
-
-	/**
 	 * True if the tone on closure is enabled
 	 *
 	 * canBeNull && readOnly
@@ -31,11 +24,11 @@ public class OvhEasyPabxHunting {
 	public OvhEasyMiniPabxHuntingPatternEnum pattern;
 
 	/**
-	 * Sound ID of on-hold tone
+	 * The maximum no-reply time before forwarding the call to the voicemail
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long toneOnHoldSoundId;
+	public Long noReplyTimer;
 
 	/**
 	 * Sound ID of ringback tone
@@ -43,6 +36,13 @@ public class OvhEasyPabxHunting {
 	 * canBeNull && readOnly
 	 */
 	public Long toneRingbackSoundId;
+
+	/**
+	 * Sound ID of on-hold tone
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long toneOnHoldSoundId;
 
 	/**
 	 * Number of simultaneous calls
@@ -64,16 +64,16 @@ public class OvhEasyPabxHunting {
 	public Boolean toneOnHold;
 
 	/**
+	 * canBeNull && readOnly
+	 */
+	public OvhEasyMiniPabxHuntingStrategyEnum strategy;
+
+	/**
 	 * Reject anonymous calls
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean anonymousCallRejection;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public OvhEasyMiniPabxHuntingStrategyEnum strategy;
 
 	/**
 	 * True if the ring back tone is enabled

@@ -7,18 +7,18 @@ import net.minidev.ovh.api.telephony.OvhProtocolEnum;
  */
 public class OvhTelephonySpare {
 	/**
-	 * Phone protocol
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhProtocolEnum protocol;
-
-	/**
 	 * Mac address
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String macAddress;
+
+	/**
+	 * Phone protocol
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhProtocolEnum protocol;
 
 	/**
 	 * Phone brand model

@@ -12,10 +12,10 @@ public class OvhPrice {
 	/**
 	 * canBeNull
 	 */
-	public Double value;
+	public OvhCurrencyCodeEnum currencyCode;
 
 	/**
 	 * canBeNull
 	 */
-	public OvhCurrencyCodeEnum currencyCode;
+	public Double value;
 }

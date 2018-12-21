@@ -5,18 +5,18 @@ package net.minidev.ovh.api.ip;
  */
 public class OvhSpamTarget {
 	/**
-	 * IP address of the target
-	 *
-	 * canBeNull
-	 */
-	public String destinationIp;
-
-	/**
 	 * Timestamp when the email was sent
 	 *
 	 * canBeNull
 	 */
 	public Long date;
+
+	/**
+	 * IP address of the target
+	 *
+	 * canBeNull
+	 */
+	public String destinationIp;
 
 	/**
 	 * Spam score for the email

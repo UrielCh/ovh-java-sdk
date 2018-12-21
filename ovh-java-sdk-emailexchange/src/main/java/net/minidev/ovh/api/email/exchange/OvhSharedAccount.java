@@ -21,11 +21,11 @@ public class OvhSharedAccount {
 	public Boolean spamDetected;
 
 	/**
-	 * Ticket number of spam detection
+	 * Shared account initials
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long spamTicketNumber;
+	public String initials;
 
 	/**
 	 * Shared account display name
@@ -35,11 +35,11 @@ public class OvhSharedAccount {
 	public String displayName;
 
 	/**
-	 * Shared account initials
+	 * Ticket number of spam detection
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String initials;
+	public Long spamTicketNumber;
 
 	/**
 	 * Enable or disable anti-virus and anti-spam
@@ -84,18 +84,18 @@ public class OvhSharedAccount {
 	public Boolean hiddenFromGAL;
 
 	/**
-	 * Shared account maximum size
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long quota;
-
-	/**
 	 * Default email for this shared mailbox
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String sharedEmailAddress;
+
+	/**
+	 * Shared account maximum size
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long quota;
 
 	/**
 	 * Last logoff
@@ -105,18 +105,18 @@ public class OvhSharedAccount {
 	public Date lastLogoffDate;
 
 	/**
-	 * Shared account id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long id;
-
-	/**
 	 * Shared account state
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhObjectStateEnum state;
+
+	/**
+	 * Shared account id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long id;
 
 	/**
 	 * Last logon

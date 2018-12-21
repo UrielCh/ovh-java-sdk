@@ -19,18 +19,18 @@ public class OvhClaimNotice {
 	public OvhClaimNoticeDecision[] claims;
 
 	/**
-	 * Label referring to claim notice
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String label;
-
-	/**
 	 * Claim notice ID
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String id;
+
+	/**
+	 * Label referring to claim notice
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String label;
 
 	/**
 	 * Type of claim notice

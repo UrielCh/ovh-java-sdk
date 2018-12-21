@@ -29,18 +29,18 @@ public class OvhDomainTaskArgument {
 	public Long maximumSize;
 
 	/**
-	 * Description of the argument
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String description;
-
-	/**
 	 * List of accepted formats
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhDocumentFormatsEnum[] acceptedFormats;
+
+	/**
+	 * Description of the argument
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String description;
 
 	/**
 	 * True if the argument is in read only
@@ -50,18 +50,18 @@ public class OvhDomainTaskArgument {
 	public Boolean readOnly;
 
 	/**
-	 * Type of the argument
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String type;
-
-	/**
 	 * List of impacted field names
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhContactFieldEnum[] fields;
+
+	/**
+	 * Type of the argument
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String type;
 
 	/**
 	 * Value of the argument

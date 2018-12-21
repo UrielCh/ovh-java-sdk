@@ -19,18 +19,18 @@ public class OvhProduct {
 	public String ip;
 
 	/**
-	 * Current action done on the instance
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String action;
-
-	/**
 	 * Progression of an action on the instance if any
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Double progress;
+
+	/**
+	 * Current action done on the instance
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String action;
 
 	/**
 	 * Reseller flavor

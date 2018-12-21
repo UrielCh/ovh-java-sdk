@@ -28,18 +28,18 @@ public class OvhGenericProductPricing {
 	public String pricingMode;
 
 	/**
-	 * Minimum repeat for renewal
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long minimumRepeat;
-
-	/**
 	 * Price of the product
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhPrice price;
+
+	/**
+	 * Minimum repeat for renewal
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long minimumRepeat;
 
 	/**
 	 * Description of the pricing
@@ -77,16 +77,16 @@ public class OvhGenericProductPricing {
 	public Long minimumQuantity;
 
 	/**
-	 * Pricing type
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhGenericProductPricingTypeEnum pricingType;
-
-	/**
 	 * Maximum quantity that can be ordered
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long maximumQuantity;
+
+	/**
+	 * Pricing type
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhGenericProductPricingTypeEnum pricingType;
 }

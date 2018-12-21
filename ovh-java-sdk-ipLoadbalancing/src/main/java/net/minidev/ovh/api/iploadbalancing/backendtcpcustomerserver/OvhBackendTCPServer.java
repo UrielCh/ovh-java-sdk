@@ -9,18 +9,18 @@ import net.minidev.ovh.api.iploadbalancing.OvhServerState;
  */
 public class OvhBackendTCPServer {
 	/**
-	 * Certificate chain. Allow server certificate verification (Avoid man-in-the-middle attacks)
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String chain;
-
-	/**
 	 * Backup state. Default: 'false'
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean backup;
+
+	/**
+	 * Certificate chain. Allow server certificate verification (Avoid man-in-the-middle attacks)
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String chain;
 
 	/**
 	 * Address of your server

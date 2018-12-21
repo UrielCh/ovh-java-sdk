@@ -64,12 +64,12 @@ public class OvhVoiceConsumption {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhPrice priceWithoutTax;
+	public OvhVoiceConsumptionDestinationTypeEnum destinationType;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhVoiceConsumptionDestinationTypeEnum destinationType;
+	public OvhPrice priceWithoutTax;
 
 	/**
 	 * Description of the destination

@@ -19,18 +19,18 @@ public class OvhDomain {
 	public String[] srvRecord;
 
 	/**
-	 * Indicate if this domain is an alias for another domain
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean isAliasDomain;
-
-	/**
 	 * If true this is an organization (Exchange 2010 only)
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean main;
+
+	/**
+	 * Indicate if this domain is an alias for another domain
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean isAliasDomain;
 
 	/**
 	 * List of aliases for this domain
@@ -40,18 +40,18 @@ public class OvhDomain {
 	public String[] domainAliases;
 
 	/**
-	 * Domain validation status
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean domainValidated;
-
-	/**
 	 * Domain MX record configured in DNS
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String[] mxRecord;
+
+	/**
+	 * Domain validation status
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean domainValidated;
 
 	/**
 	 * Domain type
@@ -82,18 +82,18 @@ public class OvhDomain {
 	public String name;
 
 	/**
-	 * If true your dns mx configuration is valid
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean mxIsValid;
-
-	/**
 	 * If specified, emails to not existing address will be redirected to that domain
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String mxRelay;
+
+	/**
+	 * If true your dns mx configuration is valid
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean mxIsValid;
 
 	/**
 	 * Domain state

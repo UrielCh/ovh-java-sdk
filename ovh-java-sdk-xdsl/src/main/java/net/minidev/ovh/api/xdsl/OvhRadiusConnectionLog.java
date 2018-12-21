@@ -19,10 +19,10 @@ public class OvhRadiusConnectionLog {
 	/**
 	 * canBeNull
 	 */
-	public String message;
+	public String login;
 
 	/**
 	 * canBeNull
 	 */
-	public String login;
+	public String message;
 }

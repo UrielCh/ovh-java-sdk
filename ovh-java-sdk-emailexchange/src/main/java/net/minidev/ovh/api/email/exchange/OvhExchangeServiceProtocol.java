@@ -49,16 +49,16 @@ public class OvhExchangeServiceProtocol {
 	public Date creationDate;
 
 	/**
-	 * ActiveSync policy to apply at device's first connection
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhActiveSyncPolicyEnum activeSyncPolicy;
-
-	/**
 	 * Pending task id
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long taskPendingId;
+
+	/**
+	 * ActiveSync policy to apply at device's first connection
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhActiveSyncPolicyEnum activeSyncPolicy;
 }

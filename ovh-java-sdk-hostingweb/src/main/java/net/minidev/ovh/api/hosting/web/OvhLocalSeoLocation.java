@@ -17,18 +17,18 @@ public class OvhLocalSeoLocation {
 	public OvhOfferEnum offer;
 
 	/**
-	 * Account id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long accountId;
-
-	/**
 	 * Country of the location
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhCountryEnum country;
+
+	/**
+	 * Account id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long accountId;
 
 	/**
 	 * Address of the location

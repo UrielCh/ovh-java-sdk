@@ -5,13 +5,6 @@ package net.minidev.ovh.api.telephony;
  */
 public class OvhOvhPabxHuntingQueue {
 	/**
-	 * Key to press to disable record
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhOvhPabxHuntingQueueRecordDisablingDigitEnum recordDisablingDigit;
-
-	/**
 	 * Follow the calls forwarding
 	 *
 	 * canBeNull && readOnly
@@ -19,16 +12,16 @@ public class OvhOvhPabxHuntingQueue {
 	public Boolean followCallForwards;
 
 	/**
-	 * canBeNull && readOnly
-	 */
-	public Long queueId;
-
-	/**
-	 * The maximum waiting time (in seconds) in the queue
+	 * Key to press to disable record
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long maxWaitTime;
+	public OvhOvhPabxHuntingQueueRecordDisablingDigitEnum recordDisablingDigit;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public Long queueId;
 
 	/**
 	 * The id of the OvhPabxSound played to caller when on hold
@@ -36,6 +29,13 @@ public class OvhOvhPabxHuntingQueue {
 	 * canBeNull && readOnly
 	 */
 	public Long soundOnHold;
+
+	/**
+	 * The maximum waiting time (in seconds) in the queue
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long maxWaitTime;
 
 	/**
 	 * The additionnal parameter of the on closure action
@@ -87,18 +87,18 @@ public class OvhOvhPabxHuntingQueue {
 	public Boolean record;
 
 	/**
-	 * The calls dispatching strategy
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhOvhPabxHuntingQueueStrategyEnum strategy;
-
-	/**
 	 * Action executed when there is no member in queue
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhOvhPabxQueueActionEnum actionOnClosure;
+
+	/**
+	 * The calls dispatching strategy
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhOvhPabxHuntingQueueStrategyEnum strategy;
 
 	/**
 	 * The additionnal parameter of the overflow action

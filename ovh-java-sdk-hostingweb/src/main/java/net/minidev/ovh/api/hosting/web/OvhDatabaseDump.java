@@ -23,18 +23,18 @@ public class OvhDatabaseDump {
 	public Long id;
 
 	/**
-	 * Creation date of the dump
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date creationDate;
-
-	/**
 	 * Dump type
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhDateEnum type;
+
+	/**
+	 * Creation date of the dump
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date creationDate;
 
 	/**
 	 * Dump url access

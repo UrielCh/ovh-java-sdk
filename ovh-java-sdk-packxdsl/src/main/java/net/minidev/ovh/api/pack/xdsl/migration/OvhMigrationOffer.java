@@ -71,18 +71,18 @@ public class OvhMigrationOffer {
 	public OvhPrice due;
 
 	/**
-	 * DEPRECATED - List of contracts
-	 *
-	 * canBeNull
-	 */
-	public String[] contractList;
-
-	/**
 	 * Price of the offer
 	 *
 	 * canBeNull
 	 */
 	public OvhPrice price;
+
+	/**
+	 * DEPRECATED - List of contracts
+	 *
+	 * canBeNull
+	 */
+	public String[] contractList;
 
 	/**
 	 * Tells if the customer will have to change its modem

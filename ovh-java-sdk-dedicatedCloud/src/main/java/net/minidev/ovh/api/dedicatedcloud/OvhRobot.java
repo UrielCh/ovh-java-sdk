@@ -12,18 +12,18 @@ public class OvhRobot {
 	public String name;
 
 	/**
-	 * The criticity of this robot
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String criticity;
-
-	/**
 	 * Description of this robot
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String description;
+
+	/**
+	 * The criticity of this robot
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String criticity;
 
 	/**
 	 * The type of this robot

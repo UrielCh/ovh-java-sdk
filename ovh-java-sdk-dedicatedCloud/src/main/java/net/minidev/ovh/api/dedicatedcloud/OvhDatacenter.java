@@ -14,6 +14,11 @@ public class OvhDatacenter {
 	/**
 	 * canBeNull && readOnly
 	 */
+	public String name;
+
+	/**
+	 * canBeNull && readOnly
+	 */
 	public Long datacenterId;
 
 	/**
@@ -22,11 +27,6 @@ public class OvhDatacenter {
 	 * canBeNull && readOnly
 	 */
 	public String commercialRangeName;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public String name;
 
 	/**
 	 * canBeNull && readOnly

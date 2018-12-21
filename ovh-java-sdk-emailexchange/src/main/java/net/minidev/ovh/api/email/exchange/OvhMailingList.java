@@ -21,11 +21,11 @@ public class OvhMailingList {
 	public Boolean spamDetected;
 
 	/**
-	 * Ticket number of spam detection
+	 * Update date
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long spamTicketNumber;
+	public Date lastUpdateDate;
 
 	/**
 	 * Name displayed in Global Access List
@@ -35,11 +35,11 @@ public class OvhMailingList {
 	public String displayName;
 
 	/**
-	 * Update date
+	 * Ticket number of spam detection
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Date lastUpdateDate;
+	public Long spamTicketNumber;
 
 	/**
 	 * If true sender has to authenticate

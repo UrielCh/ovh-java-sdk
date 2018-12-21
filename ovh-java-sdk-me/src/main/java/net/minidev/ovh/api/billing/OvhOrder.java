@@ -10,22 +10,22 @@ public class OvhOrder {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Date retractionDate;
-
-	/**
-	 * canBeNull && readOnly
-	 */
 	public Date date;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String password;
+	public Date retractionDate;
 
 	/**
 	 * canBeNull && readOnly
 	 */
 	public String pdfUrl;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public String password;
 
 	/**
 	 * canBeNull && readOnly

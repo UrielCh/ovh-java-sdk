@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>net.minidev</groupId>
 		<artifactId>ovh-java-sdk-pom</artifactId>
-		<version>0.9.16</version>
+		<version>1.0.17</version>
 	</parent>
 	<artifactId>ovh-java-sdk-dbaasqueue</artifactId>
 	<name>OVH Java SDK for OVH dbaasqueue</name>

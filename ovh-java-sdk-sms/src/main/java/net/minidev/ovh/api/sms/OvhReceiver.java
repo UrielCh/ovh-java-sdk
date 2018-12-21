@@ -21,18 +21,18 @@ public class OvhReceiver {
 	public Boolean autoUpdate;
 
 	/**
-	 * Is the object compatible with autoUpdate
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean canAutoUpdate;
-
-	/**
 	 * Number of receiver records in the document
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long records;
+
+	/**
+	 * Is the object compatible with autoUpdate
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean canAutoUpdate;
 
 	/**
 	 * Description name of the document

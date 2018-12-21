@@ -19,17 +19,12 @@ public class OvhAccount {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long userQuantityWithQuota;
-
-	/**
-	 * canBeNull && readOnly
-	 */
 	public OvhTemplates templates;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String name;
+	public Long userQuantityWithQuota;
 
 	/**
 	 * URL called when state of a sent SMS changes
@@ -37,6 +32,11 @@ public class OvhAccount {
 	 * canBeNull && readOnly
 	 */
 	public String callBack;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public String name;
 
 	/**
 	 * URL called when a STOP is received after a receiver replied stop to a SMS
@@ -48,12 +48,12 @@ public class OvhAccount {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhPackQuantityAutomaticRecreditEnum automaticRecreditAmount;
+	public String description;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String description;
+	public OvhPackQuantityAutomaticRecreditEnum automaticRecreditAmount;
 
 	/**
 	 * canBeNull && readOnly

@@ -12,12 +12,12 @@ public class OvhIpv4Org {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhIpRegistryEnum registry;
+	public OvhCountryEnum country;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhCountryEnum country;
+	public OvhIpRegistryEnum registry;
 
 	/**
 	 * canBeNull && readOnly

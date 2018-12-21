@@ -12,18 +12,18 @@ public class OvhHypervisor {
 	public OvhStorage[] storages;
 
 	/**
-	 * Describes Private Cloud Hosts
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhHost[] hosts;
-
-	/**
 	 * Describes if an hypervisor is orderable
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean orderable;
+
+	/**
+	 * Describes Private Cloud Hosts
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhHost[] hosts;
 
 	/**
 	 * Describes Private Cloud Options

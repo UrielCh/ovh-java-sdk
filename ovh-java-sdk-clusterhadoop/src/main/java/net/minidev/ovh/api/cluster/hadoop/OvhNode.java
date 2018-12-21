@@ -33,16 +33,16 @@ public class OvhNode {
 	public OvhNodeProfileEnum softwareProfile;
 
 	/**
-	 * Wether or not the Node is removable
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean isRemovable;
-
-	/**
 	 * State of the Node
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhNodeStateEnum state;
+
+	/**
+	 * Wether or not the Node is removable
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean isRemovable;
 }

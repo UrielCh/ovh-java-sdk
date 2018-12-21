@@ -56,16 +56,16 @@ public class OvhAccountDiagnosis {
 	public Boolean isSrvValid;
 
 	/**
-	 * Determines if account is locked
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean isLocked;
-
-	/**
 	 * Determines if possible to authenticate with credentials
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean connectiveWebmail;
+
+	/**
+	 * Determines if account is locked
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean isLocked;
 }

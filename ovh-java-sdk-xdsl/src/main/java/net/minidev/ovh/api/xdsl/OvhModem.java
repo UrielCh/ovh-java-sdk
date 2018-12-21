@@ -9,6 +9,11 @@ import net.minidev.ovh.api.xdsl.xdslmodemconfig.OvhMTUSizeEnum;
  */
 public class OvhModem {
 	/**
+	 * canBeNull && readOnly
+	 */
+	public String brandName;
+
+	/**
 	 * Whether or not the modem is in bridge mode. To pass from bridge mode to routed mode, a reset is necessary. If the modem is managedByOvh, the bridge state will be kept after a reset
 	 *
 	 * canBeNull && readOnly
@@ -19,11 +24,6 @@ public class OvhModem {
 	 * canBeNull && readOnly
 	 */
 	public String macAddress;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public String brandName;
 
 	/**
 	 * canBeNull && readOnly

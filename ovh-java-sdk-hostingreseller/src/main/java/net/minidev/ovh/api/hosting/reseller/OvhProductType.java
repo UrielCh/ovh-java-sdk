@@ -33,18 +33,18 @@ public class OvhProductType {
 	public String cpu;
 
 	/**
-	 * Number of allowed customers
-	 *
-	 * canBeNull
-	 */
-	public Long consumers;
-
-	/**
 	 * Number of allowed websites
 	 *
 	 * canBeNull
 	 */
 	public Long websites;
+
+	/**
+	 * Number of allowed customers
+	 *
+	 * canBeNull
+	 */
+	public Long consumers;
 
 	/**
 	 * Type name

@@ -23,18 +23,18 @@ public class OvhXdslEmailPro {
 	public String initial;
 
 	/**
-	 * Time of account's password last update
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date passwordLastUpdate;
-
-	/**
 	 * Account display name
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String displayName;
+
+	/**
+	 * Time of account's password last update
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date passwordLastUpdate;
 
 	/**
 	 * Mailbox usage
@@ -51,18 +51,18 @@ public class OvhXdslEmailPro {
 	public String login;
 
 	/**
-	 * Pending tasks for this account
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long taskPendingId;
-
-	/**
 	 * Default email for this mailbox
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String primaryEmailAddress;
+
+	/**
+	 * Pending tasks for this account
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long taskPendingId;
 
 	/**
 	 * Account first name
@@ -93,18 +93,18 @@ public class OvhXdslEmailPro {
 	public Date lastLogoffDate;
 
 	/**
-	 * Account state
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhObjectStateEnum state;
-
-	/**
 	 * Account id
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long id;
+
+	/**
+	 * Account state
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhObjectStateEnum state;
 
 	/**
 	 * Last logon

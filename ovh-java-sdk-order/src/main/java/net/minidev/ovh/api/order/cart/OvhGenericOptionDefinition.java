@@ -12,18 +12,18 @@ public class OvhGenericOptionDefinition {
 	public Boolean exclusive;
 
 	/**
-	 * Option family
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String family;
-
-	/**
 	 * Prices of the product offer
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhGenericProductPricing[] prices;
+
+	/**
+	 * Option family
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String family;
 
 	/**
 	 * Define if an option of this family is mandatory
@@ -40,16 +40,16 @@ public class OvhGenericOptionDefinition {
 	public String productName;
 
 	/**
-	 * Product offer identifier
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String planCode;
-
-	/**
 	 * Product type
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhGenericProductTypeEnum productType;
+
+	/**
+	 * Product offer identifier
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String planCode;
 }

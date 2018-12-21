@@ -21,18 +21,18 @@ public class OvhPublicFolder {
 	public Date lastModificationTime;
 
 	/**
-	 * Type for public folder
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhPublicFolderTypeEnum type;
-
-	/**
 	 * Creation date
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date creationDate;
+
+	/**
+	 * Type for public folder
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhPublicFolderTypeEnum type;
 
 	/**
 	 * task pending id

@@ -54,11 +54,11 @@ public class OvhSharepointInformation {
 	public Boolean officeLicense;
 
 	/**
-	 * Sharepoint account state
+	 * The rights assigned to the sharepoint account
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhObjectStateEnum state;
+	public OvhSharepointAccountAccessRightsEnum accessRights;
 
 	/**
 	 * Sharepoint account id
@@ -68,11 +68,11 @@ public class OvhSharepointInformation {
 	public Long id;
 
 	/**
-	 * The rights assigned to the sharepoint account
+	 * Sharepoint account state
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhSharepointAccountAccessRightsEnum accessRights;
+	public OvhObjectStateEnum state;
 
 	/**
 	 * Pending task for this sharepoint account

@@ -14,18 +14,18 @@ public class OvhCdn {
 	public String domain;
 
 	/**
-	 * Type of the CDN
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String type;
-
-	/**
 	 * Option CDN free with the hosting ?
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean free;
+
+	/**
+	 * Type of the CDN
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String type;
 
 	/**
 	 * Version of the CDN

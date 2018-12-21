@@ -70,16 +70,16 @@ public class OvhCertificate {
 	public OvhCertificateTypeEnum type;
 
 	/**
-	 * Current status of your certificate
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhCertificateStatusEnum status;
-
-	/**
 	 * The SAN field for multidomain certificate
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String[] subjectAltName;
+
+	/**
+	 * Current status of your certificate
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhCertificateStatusEnum status;
 }

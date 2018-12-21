@@ -52,13 +52,6 @@ public class OvhNichandle {
 	public OvhCountryEnum phoneCountry;
 
 	/**
-	 * Customer currency
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhCurrency currency;
-
-	/**
 	 * canBeNull && readOnly
 	 */
 	public String corporationType;
@@ -67,6 +60,13 @@ public class OvhNichandle {
 	 * canBeNull && readOnly
 	 */
 	public String spareEmail;
+
+	/**
+	 * Customer currency
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhCurrency currency;
 
 	/**
 	 * canBeNull && readOnly

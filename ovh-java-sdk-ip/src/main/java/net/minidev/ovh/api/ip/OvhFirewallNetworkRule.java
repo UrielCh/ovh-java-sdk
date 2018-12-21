@@ -19,18 +19,18 @@ public class OvhFirewallNetworkRule {
 	public Long sequence;
 
 	/**
-	 * Source port range for your rule. Only with TCP/UDP protocol
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String sourcePort;
-
-	/**
 	 * Network protocol
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhFirewallProtocolEnum protocol;
+
+	/**
+	 * Source port range for your rule. Only with TCP/UDP protocol
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String sourcePort;
 
 	/**
 	 * TCP option on your rule
@@ -66,18 +66,18 @@ public class OvhFirewallNetworkRule {
 	public Boolean fragments;
 
 	/**
-	 * Current state of your rule
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhFirewallRuleStateEnum state;
-
-	/**
 	 * Source ip for your rule
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String source;
+
+	/**
+	 * Current state of your rule
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhFirewallRuleStateEnum state;
 
 	/**
 	 * canBeNull && readOnly

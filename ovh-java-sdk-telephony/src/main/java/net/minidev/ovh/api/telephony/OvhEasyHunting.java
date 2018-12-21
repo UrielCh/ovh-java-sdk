@@ -26,18 +26,18 @@ public class OvhEasyHunting {
 	public String voicemail;
 
 	/**
-	 * The presented number when bridging calls
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhOvhPabxDialplanNumberPresentationEnum showCallerNumber;
-
-	/**
 	 * Tone played just before call is hang up
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long toneOnClosing;
+
+	/**
+	 * The presented number when bridging calls
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhOvhPabxDialplanNumberPresentationEnum showCallerNumber;
 
 	/**
 	 * Max wait time when caller is in queue (in seconds)
@@ -94,16 +94,16 @@ public class OvhEasyHunting {
 	public Long toneOnHold;
 
 	/**
-	 * Enable/Disable the status change IVR on your callcenter. The IVR is enabled by default.
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean statusIvrEnabled;
-
-	/**
 	 * The calls dispatching strategy
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhOvhPabxHuntingQueueStrategyEnum strategy;
+
+	/**
+	 * Enable/Disable the status change IVR on your callcenter. The IVR is enabled by default.
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean statusIvrEnabled;
 }

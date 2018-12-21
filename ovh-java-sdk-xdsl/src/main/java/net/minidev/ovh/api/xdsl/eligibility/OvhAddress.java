@@ -26,18 +26,18 @@ public class OvhAddress {
 	public String stair;
 
 	/**
-	 * Informations about the city
-	 *
-	 * canBeNull
-	 */
-	public OvhCity city;
-
-	/**
 	 * Number on the street
 	 *
 	 * canBeNull
 	 */
 	public String streetNumber;
+
+	/**
+	 * Informations about the city
+	 *
+	 * canBeNull
+	 */
+	public OvhCity city;
 
 	/**
 	 * Informations about the street
@@ -54,18 +54,18 @@ public class OvhAddress {
 	public String logo;
 
 	/**
-	 * Identifier of the floor, if any
-	 *
-	 * canBeNull
-	 */
-	public String floor;
-
-	/**
 	 * Name of the residence, if any
 	 *
 	 * canBeNull
 	 */
 	public String residence;
+
+	/**
+	 * Identifier of the floor, if any
+	 *
+	 * canBeNull
+	 */
+	public String floor;
 
 	/**
 	 * Name of the building, if any

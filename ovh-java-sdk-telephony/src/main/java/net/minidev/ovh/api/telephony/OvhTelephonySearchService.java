@@ -12,16 +12,16 @@ public class OvhTelephonySearchService {
 	public String domain;
 
 	/**
-	 * The offer description
-	 *
-	 * canBeNull
-	 */
-	public OvhTelephonySearchServiceTypeEnum type;
-
-	/**
 	 * The billing account of the service
 	 *
 	 * canBeNull
 	 */
 	public String billingAccount;
+
+	/**
+	 * The offer description
+	 *
+	 * canBeNull
+	 */
+	public OvhTelephonySearchServiceTypeEnum type;
 }

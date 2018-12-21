@@ -26,12 +26,12 @@ public class OvhPaypal {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhPaypalStateEnum state;
+	public Long id;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long id;
+	public OvhPaypalStateEnum state;
 
 	/**
 	 * canBeNull && readOnly

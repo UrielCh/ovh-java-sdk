@@ -33,18 +33,18 @@ public class OvhFailoverIp {
 	public String geoloc;
 
 	/**
-	 * IP block
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String block;
-
-	/**
 	 * IP sub type
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhIpSubTypeEnum subType;
+
+	/**
+	 * IP block
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String block;
 
 	/**
 	 * Ip id
@@ -54,16 +54,16 @@ public class OvhFailoverIp {
 	public String id;
 
 	/**
-	 * Ip status
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhIpStatusEnum status;
-
-	/**
 	 * Ip continent
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String continentCode;
+
+	/**
+	 * Ip status
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhIpStatusEnum status;
 }

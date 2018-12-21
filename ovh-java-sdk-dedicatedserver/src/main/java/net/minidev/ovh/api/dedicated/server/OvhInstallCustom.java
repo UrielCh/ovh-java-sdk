@@ -26,18 +26,18 @@ public class OvhInstallCustom {
 	public Boolean noRaid;
 
 	/**
-	 * true if you want to install windows with your spla license
-	 *
-	 * canBeNull
-	 */
-	public Boolean useSpla;
-
-	/**
 	 * the url to your custom install script
 	 *
 	 * canBeNull
 	 */
 	public String postInstallationScriptLink;
+
+	/**
+	 * true if you want to install windows with your spla license
+	 *
+	 * canBeNull
+	 */
+	public Boolean useSpla;
 
 	/**
 	 * Number of devices to use for system's software RAID
@@ -68,18 +68,18 @@ public class OvhInstallCustom {
 	public Boolean installSqlServer;
 
 	/**
-	 * install language for ovh install choice
-	 *
-	 * canBeNull
-	 */
-	public String language;
-
-	/**
 	 * true if you want to install with distrib kernel
 	 *
 	 * canBeNull
 	 */
 	public Boolean useDistribKernel;
+
+	/**
+	 * install language for ovh install choice
+	 *
+	 * canBeNull
+	 */
+	public String language;
 
 	/**
 	 * Disk group id to process install on (only available for some templates)

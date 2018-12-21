@@ -19,6 +19,13 @@ public class OvhConferenceProperties {
 	public Boolean anonymousRejection;
 
 	/**
+	 * The announce file name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String announceFilename;
+
+	/**
 	 * Whether or not conference is recorded
 	 *
 	 * canBeNull && readOnly
@@ -33,11 +40,11 @@ public class OvhConferenceProperties {
 	public Boolean announceFile;
 
 	/**
-	 * The announce file name
+	 * The conference pin number
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String announceFilename;
+	public String pin;
 
 	/**
 	 * The email address to send conference report to
@@ -45,13 +52,6 @@ public class OvhConferenceProperties {
 	 * canBeNull && readOnly
 	 */
 	public String reportEmail;
-
-	/**
-	 * The conference pin number
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String pin;
 
 	/**
 	 * Whether or not participants enter conference room muted

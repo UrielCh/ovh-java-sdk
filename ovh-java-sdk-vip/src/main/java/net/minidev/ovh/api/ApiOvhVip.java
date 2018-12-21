@@ -19,32 +19,6 @@ public class ApiOvhVip extends ApiOvhBase {
 	}
 
 	/**
-	 * List available services
-	 *
-	 * REST: GET /vip
-	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/vip";
-		StringBuilder sb = path(qPath);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /vip/{serviceName}
-	 * @param serviceName [required] The internal name of your VIP support offer
-	 */
-	public OvhSupportVip serviceName_GET(String serviceName) throws IOException {
-		String qPath = "/vip/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhSupportVip.class);
-	}
-
-	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /vip/{serviceName}/serviceInfos
@@ -69,4 +43,30 @@ public class ApiOvhVip extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		exec(qPath, "PUT", sb.toString(), body);
 	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /vip/{serviceName}
+	 * @param serviceName [required] The internal name of your VIP support offer
+	 */
+	public OvhSupportVip serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/vip/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhSupportVip.class);
+	}
+
+	/**
+	 * List available services
+	 *
+	 * REST: GET /vip
+	 */
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/vip";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
 }

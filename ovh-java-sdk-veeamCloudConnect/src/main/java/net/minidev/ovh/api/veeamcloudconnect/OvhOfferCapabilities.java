@@ -5,18 +5,18 @@ package net.minidev.ovh.api.veeamcloudconnect;
  */
 public class OvhOfferCapabilities {
 	/**
-	 * Is wan accelerator enabled
-	 *
-	 * canBeNull
-	 */
-	public Boolean wanAccelerator;
-
-	/**
 	 * Are data replicated over two storages
 	 *
 	 * canBeNull
 	 */
 	public Boolean replication;
+
+	/**
+	 * Is wan accelerator enabled
+	 *
+	 * canBeNull
+	 */
+	public Boolean wanAccelerator;
 
 	/**
 	 * Is account allowed to add new repositories

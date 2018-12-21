@@ -33,16 +33,16 @@ public class OvhRouteRule {
 	public String pattern;
 
 	/**
-	 * Name of sub-field, if applicable. This may be a Cookie or Header name for instance
-	 *
-	 * canBeNull
-	 */
-	public String subField;
-
-	/**
 	 * Id of your rule
 	 *
 	 * canBeNull
 	 */
 	public Long ruleId;
+
+	/**
+	 * Name of sub-field, if applicable. This may be a Cookie or Header name for instance
+	 *
+	 * canBeNull
+	 */
+	public String subField;
 }

@@ -61,14 +61,28 @@ public class ApiOvhHpcspot extends ApiOvhBase {
 	}
 
 	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /hpcspot/{serviceName}/consumption/{id}
+	 * @param serviceName [required] The internal name of your HPC Spot account
+	 * @param id [required] ID of the detail
+	 */
+	public OvhConsumption serviceName_consumption_id_GET(String serviceName, Long id) throws IOException {
+		String qPath = "/hpcspot/{serviceName}/consumption/{id}";
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhConsumption.class);
+	}
+
+	/**
 	 * Details of the consumption of your account
 	 *
 	 * REST: GET /hpcspot/{serviceName}/consumption
+	 * @param type [required] Filter the value of type property (=)
+	 * @param hpcspotItemEndDate_from [required] Filter the value of hpcspotItemEndDate property (>=)
+	 * @param hpcspotItemEndDate_to [required] Filter the value of hpcspotItemEndDate property (<=)
 	 * @param orderId [required] Filter the value of orderId property (=)
 	 * @param hpcspotItemId [required] Filter the value of hpcspotItemId property (=)
-	 * @param hpcspotItemEndDate_from [required] Filter the value of hpcspotItemEndDate property (>=)
-	 * @param type [required] Filter the value of type property (=)
-	 * @param hpcspotItemEndDate_to [required] Filter the value of hpcspotItemEndDate property (<=)
 	 * @param serviceName [required] The internal name of your HPC Spot account
 	 */
 	public ArrayList<Long> serviceName_consumption_GET(String serviceName, Date hpcspotItemEndDate_from, Date hpcspotItemEndDate_to, Long hpcspotItemId, Long orderId, OvhConsumptionTypeEnum type) throws IOException {
@@ -83,20 +97,6 @@ public class ApiOvhHpcspot extends ApiOvhBase {
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /hpcspot/{serviceName}/consumption/{id}
-	 * @param serviceName [required] The internal name of your HPC Spot account
-	 * @param id [required] ID of the detail
-	 */
-	public OvhConsumption serviceName_consumption_id_GET(String serviceName, Long id) throws IOException {
-		String qPath = "/hpcspot/{serviceName}/consumption/{id}";
-		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhConsumption.class);
-	}
 
 	/**
 	 * List available services

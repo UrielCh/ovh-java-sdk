@@ -21,13 +21,6 @@ public class OvhResponderAccount {
 	public Date from;
 
 	/**
-	 * If true, emails will be copy to emailToCopy address
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean copy;
-
-	/**
 	 * Date of end responder
 	 *
 	 * canBeNull && readOnly
@@ -35,11 +28,11 @@ public class OvhResponderAccount {
 	public Date to;
 
 	/**
-	 * Name of account
+	 * If true, emails will be copy to emailToCopy address
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String account;
+	public Boolean copy;
 
 	/**
 	 * Content of responder
@@ -47,4 +40,11 @@ public class OvhResponderAccount {
 	 * canBeNull && readOnly
 	 */
 	public String content;
+
+	/**
+	 * Name of account
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String account;
 }

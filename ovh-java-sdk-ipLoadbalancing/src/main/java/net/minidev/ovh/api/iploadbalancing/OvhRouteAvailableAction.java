@@ -5,18 +5,18 @@ package net.minidev.ovh.api.iploadbalancing;
  */
 public class OvhRouteAvailableAction {
 	/**
-	 * Type of the destination for this action
-	 *
-	 * canBeNull
-	 */
-	public String destination;
-
-	/**
 	 * Action name
 	 *
 	 * canBeNull
 	 */
 	public String name;
+
+	/**
+	 * Type of the destination for this action
+	 *
+	 * canBeNull
+	 */
+	public String destination;
 
 	/**
 	 * Protocol supported by this action

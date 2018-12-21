@@ -207,13 +207,13 @@ public class ApiOvhPaastimeseries extends ApiOvhBase {
 	 * @param serviceName [required] The internal name of your timeseries project
 	 * @deprecated
 	 */
-	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
+	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactBilling, String contactTech) throws IOException {
 		String qPath = "/paas/timeseries/{serviceName}/changeContact";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "contactAdmin", contactAdmin);
-		addBody(o, "contactTech", contactTech);
 		addBody(o, "contactBilling", contactBilling);
+		addBody(o, "contactTech", contactTech);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, t4);
 	}
@@ -261,15 +261,15 @@ public class ApiOvhPaastimeseries extends ApiOvhBase {
 	 * @param raTokenKey [required] Your runabove app token key
 	 * @deprecated
 	 */
-	public net.minidev.ovh.api.paas.timeseries.OvhProject serviceName_setup_POST(String serviceName, String displayName, String description, String regionId, String raTokenId, String raTokenKey) throws IOException {
+	public net.minidev.ovh.api.paas.timeseries.OvhProject serviceName_setup_POST(String serviceName, String description, String displayName, String raTokenId, String raTokenKey, String regionId) throws IOException {
 		String qPath = "/paas/timeseries/{serviceName}/setup";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "displayName", displayName);
 		addBody(o, "description", description);
-		addBody(o, "regionId", regionId);
+		addBody(o, "displayName", displayName);
 		addBody(o, "raTokenId", raTokenId);
 		addBody(o, "raTokenKey", raTokenKey);
+		addBody(o, "regionId", regionId);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, net.minidev.ovh.api.paas.timeseries.OvhProject.class);
 	}

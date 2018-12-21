@@ -39,18 +39,18 @@ public class OvhTask {
 	public String impactedService;
 
 	/**
-	 * The type of the task
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhTaskTypeEnum type;
-
-	/**
 	 * The title of the task
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String title;
+
+	/**
+	 * The type of the task
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhTaskTypeEnum type;
 
 	/**
 	 * The task uuid

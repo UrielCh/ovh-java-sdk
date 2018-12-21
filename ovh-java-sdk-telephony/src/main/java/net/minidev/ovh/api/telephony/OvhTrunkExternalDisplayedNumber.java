@@ -7,18 +7,18 @@ import java.util.Date;
  */
 public class OvhTrunkExternalDisplayedNumber {
 	/**
-	 * External displayed number linked to a trunk
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String number;
-
-	/**
 	 * Creation date
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date createdAt;
+
+	/**
+	 * External displayed number linked to a trunk
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String number;
 
 	/**
 	 * Validation date

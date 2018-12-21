@@ -17,14 +17,14 @@ public class OvhPrivateLinkRoute {
 	public Date creationDate;
 
 	/**
+	 * canBeNull && readOnly
+	 */
+	public OvhStatusEnum status;
+
+	/**
 	 * Network allowed to be routed outside
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String network;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public OvhStatusEnum status;
 }

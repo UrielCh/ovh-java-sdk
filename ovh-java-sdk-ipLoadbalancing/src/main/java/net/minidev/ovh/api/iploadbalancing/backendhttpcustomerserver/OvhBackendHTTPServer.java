@@ -58,18 +58,18 @@ public class OvhBackendHTTPServer {
 	public Long backendId;
 
 	/**
-	 * SSL ciphering. Probes will also be sent ciphered. Default: 'false'
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean ssl;
-
-	/**
 	 * Id of your server
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long serverId;
+
+	/**
+	 * SSL ciphering. Probes will also be sent ciphered. Default: 'false'
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean ssl;
 
 	/**
 	 * Probe state. Default: 'false'
@@ -93,16 +93,16 @@ public class OvhBackendHTTPServer {
 	public Long port;
 
 	/**
-	 * Status attached to your server
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhBackendCustomerServerStatusEnum status;
-
-	/**
 	 * Disabled if null. Send PROXY protocol header. Requires a compatible server.
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhProxyProtocolVersionEnum proxyProtocolVersion;
+
+	/**
+	 * Status attached to your server
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhBackendCustomerServerStatusEnum status;
 }

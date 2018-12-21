@@ -12,18 +12,18 @@ public class OvhIpDetails {
 	public String usageDetails;
 
 	/**
-	 * IP address
-	 *
-	 * canBeNull
-	 */
-	public String ip;
-
-	/**
 	 * IP address usage
 	 *
 	 * canBeNull
 	 */
 	public OvhIpUsageEnum usage;
+
+	/**
+	 * IP address
+	 *
+	 * canBeNull
+	 */
+	public String ip;
 
 	/**
 	 * IP address reverse record

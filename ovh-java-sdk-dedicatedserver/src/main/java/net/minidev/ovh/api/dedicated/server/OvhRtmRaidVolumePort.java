@@ -14,18 +14,18 @@ public class OvhRtmRaidVolumePort {
 	public String disk;
 
 	/**
-	 * Raid volume port
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String port;
-
-	/**
 	 * Serial of this port
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String serial;
+
+	/**
+	 * Raid volume port
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String port;
 
 	/**
 	 * Raid port synchronization progress

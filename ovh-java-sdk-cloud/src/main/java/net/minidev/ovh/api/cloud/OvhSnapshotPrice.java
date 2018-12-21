@@ -14,16 +14,16 @@ public class OvhSnapshotPrice {
 	public OvhPrice price;
 
 	/**
-	 * Monthly flavor price (for 1GB per month)
-	 *
-	 * canBeNull
-	 */
-	public OvhPrice monthlyPrice;
-
-	/**
 	 * Snapshot region
 	 *
 	 * canBeNull
 	 */
 	public String region;
+
+	/**
+	 * Monthly flavor price (for 1GB per month)
+	 *
+	 * canBeNull
+	 */
+	public OvhPrice monthlyPrice;
 }

@@ -9,18 +9,18 @@ import net.minidev.ovh.api.license.OvhStateEnum;
  */
 public class OvhCloudLinux {
 	/**
-	 * The ip on which this license is attached
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String ip;
-
-	/**
 	 * The internal name of your license
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String domain;
+
+	/**
+	 * The ip on which this license is attached
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String ip;
 
 	/**
 	 * The license id on license provider side

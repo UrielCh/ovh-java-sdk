@@ -30,18 +30,18 @@ public class OvhBackupJob {
 	public Boolean encryption;
 
 	/**
-	 * Disk space allocated to the virtual machine
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Double allocatedDisk;
-
-	/**
 	 * List of days your Virtual Machine will be backuped
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhBackupDaysEnum[] backupDays;
+
+	/**
+	 * Disk space allocated to the virtual machine
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Double allocatedDisk;
 
 	/**
 	 * State of the backup job

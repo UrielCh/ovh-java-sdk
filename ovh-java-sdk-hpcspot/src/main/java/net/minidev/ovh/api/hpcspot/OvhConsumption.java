@@ -8,18 +8,18 @@ import net.minidev.ovh.api.complextype.OvhUnitAndValue;
  */
 public class OvhConsumption {
 	/**
-	 * Reference of the item. This reference is linked with the type of the item
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhConsumptionReferenceEnum reference;
-
-	/**
 	 * ID of the linked job on HPC Spot interface
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long hpcspotItemId;
+
+	/**
+	 * Reference of the item. This reference is linked with the type of the item
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhConsumptionReferenceEnum reference;
 
 	/**
 	 * Date of the completion of the item consumption

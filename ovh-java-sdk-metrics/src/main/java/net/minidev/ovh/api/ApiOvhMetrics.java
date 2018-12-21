@@ -25,54 +25,20 @@ public class ApiOvhMetrics extends ApiOvhBase {
 	}
 
 	/**
-	 * List available services
+	 * Get consumption for your service
 	 *
-	 * REST: GET /metrics
+	 * REST: GET /metrics/{serviceName}/consumption
+	 * @param serviceName [required] Name of your service
+	 * @param duration [required] Last 'm' minutes. Default is 60min
 	 *
 	 * API beta
 	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/metrics";
-		StringBuilder sb = path(qPath);
+	public OvhConsumption serviceName_consumption_GET(String serviceName, Long duration) throws IOException {
+		String qPath = "/metrics/{serviceName}/consumption";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "duration", duration);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
-
-	/**
-	 * Find TokenID for a specific token
-	 *
-	 * REST: POST /metrics/{serviceName}/lookup/token
-	 * @param serviceName [required] Name of your service
-	 * @param accessToken [required] access token
-	 *
-	 * API beta
-	 */
-	public ArrayList<String> serviceName_lookup_token_POST(String serviceName, String accessToken) throws IOException {
-		String qPath = "/metrics/{serviceName}/lookup/token";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "accessToken", accessToken);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Set overquota
-	 *
-	 * REST: PUT /metrics/{serviceName}/quota
-	 * @param serviceName [required] Name of your service
-	 * @param quota [required] New value for overquota
-	 *
-	 * API beta
-	 */
-	public String serviceName_quota_PUT(String serviceName, Long quota) throws IOException {
-		String qPath = "/metrics/{serviceName}/quota";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "quota", quota);
-		String resp = exec(qPath, "PUT", sb.toString(), o);
-		return convertTo(resp, String.class);
+		return convertTo(resp, OvhConsumption.class);
 	}
 
 	/**
@@ -101,33 +67,34 @@ public class ApiOvhMetrics extends ApiOvhBase {
 	 *
 	 * API beta
 	 */
-	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
+	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactBilling, String contactTech) throws IOException {
 		String qPath = "/metrics/{serviceName}/changeContact";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "contactAdmin", contactAdmin);
-		addBody(o, "contactTech", contactTech);
 		addBody(o, "contactBilling", contactBilling);
+		addBody(o, "contactTech", contactTech);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t2);
+		return convertTo(resp, t1);
 	}
-	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
+	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
 
 	/**
-	 * Get consumption for your service
+	 * Set overquota
 	 *
-	 * REST: GET /metrics/{serviceName}/consumption
+	 * REST: PUT /metrics/{serviceName}/quota
 	 * @param serviceName [required] Name of your service
-	 * @param duration [required] Last 'm' minutes. Default is 60min
+	 * @param quota [required] New value for overquota
 	 *
 	 * API beta
 	 */
-	public OvhConsumption serviceName_consumption_GET(String serviceName, Long duration) throws IOException {
-		String qPath = "/metrics/{serviceName}/consumption";
+	public String serviceName_quota_PUT(String serviceName, Long quota) throws IOException {
+		String qPath = "/metrics/{serviceName}/quota";
 		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "duration", duration);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhConsumption.class);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "quota", quota);
+		String resp = exec(qPath, "PUT", sb.toString(), o);
+		return convertTo(resp, String.class);
 	}
 
 	/**
@@ -162,6 +129,79 @@ public class ApiOvhMetrics extends ApiOvhBase {
 		String resp = exec(qPath, "PUT", sb.toString(), o);
 		return convertTo(resp, OvhService.class);
 	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /metrics/{serviceName}/serviceInfos
+	 * @param serviceName [required] The internal ID of your metrics
+	 *
+	 * API beta
+	 */
+	public net.minidev.ovh.api.services.OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
+		String qPath = "/metrics/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, net.minidev.ovh.api.services.OvhService.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /metrics/{serviceName}/serviceInfos
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal ID of your metrics
+	 *
+	 * API beta
+	 */
+	public void serviceName_serviceInfos_PUT(String serviceName, net.minidev.ovh.api.services.OvhService body) throws IOException {
+		String qPath = "/metrics/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Confirm termination of your service
+	 *
+	 * REST: POST /metrics/{serviceName}/confirmTermination
+	 * @param futureUse What next after your termination request
+	 * @param reason Reason of your termination request
+	 * @param commentary Commentary about your termination request
+	 * @param token [required] The termination token sent by mail to the admin contact
+	 * @param serviceName [required] The internal ID of your metrics
+	 *
+	 * API beta
+	 */
+	public String serviceName_confirmTermination_POST(String serviceName, String commentary, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String token) throws IOException {
+		String qPath = "/metrics/{serviceName}/confirmTermination";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "commentary", commentary);
+		addBody(o, "futureUse", futureUse);
+		addBody(o, "reason", reason);
+		addBody(o, "token", token);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Find TokenID for a specific token
+	 *
+	 * REST: POST /metrics/{serviceName}/lookup/token
+	 * @param serviceName [required] Name of your service
+	 * @param accessToken [required] access token
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> serviceName_lookup_token_POST(String serviceName, String accessToken) throws IOException {
+		String qPath = "/metrics/{serviceName}/lookup/token";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "accessToken", accessToken);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t2);
+	}
+	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};
 
 	/**
 	 * Revoke a token
@@ -225,7 +265,7 @@ public class ApiOvhMetrics extends ApiOvhBase {
 		String qPath = "/metrics/{serviceName}/token";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, t2);
 	}
 
 	/**
@@ -251,56 +291,16 @@ public class ApiOvhMetrics extends ApiOvhBase {
 	}
 
 	/**
-	 * Confirm termination of your service
+	 * List available services
 	 *
-	 * REST: POST /metrics/{serviceName}/confirmTermination
-	 * @param futureUse What next after your termination request
-	 * @param reason Reason of your termination request
-	 * @param commentary Commentary about your termination request
-	 * @param token [required] The termination token sent by mail to the admin contact
-	 * @param serviceName [required] The internal ID of your metrics
+	 * REST: GET /metrics
 	 *
 	 * API beta
 	 */
-	public String serviceName_confirmTermination_POST(String serviceName, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
-		String qPath = "/metrics/{serviceName}/confirmTermination";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "futureUse", futureUse);
-		addBody(o, "reason", reason);
-		addBody(o, "commentary", commentary);
-		addBody(o, "token", token);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /metrics/{serviceName}/serviceInfos
-	 * @param serviceName [required] The internal ID of your metrics
-	 *
-	 * API beta
-	 */
-	public net.minidev.ovh.api.services.OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
-		String qPath = "/metrics/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/metrics";
+		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, net.minidev.ovh.api.services.OvhService.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /metrics/{serviceName}/serviceInfos
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal ID of your metrics
-	 *
-	 * API beta
-	 */
-	public void serviceName_serviceInfos_PUT(String serviceName, net.minidev.ovh.api.services.OvhService body) throws IOException {
-		String qPath = "/metrics/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
+		return convertTo(resp, t2);
 	}
 }

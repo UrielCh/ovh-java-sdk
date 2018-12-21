@@ -105,13 +105,13 @@ public class ApiOvhLicensecpanel extends ApiOvhBase {
 	 * @param token [required] The termination token sent by mail to the admin contact
 	 * @param serviceName [required] The name of your Cpanel license
 	 */
-	public String serviceName_confirmTermination_POST(String serviceName, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
+	public String serviceName_confirmTermination_POST(String serviceName, String commentary, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String token) throws IOException {
 		String qPath = "/license/cpanel/{serviceName}/confirmTermination";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "commentary", commentary);
 		addBody(o, "futureUse", futureUse);
 		addBody(o, "reason", reason);
-		addBody(o, "commentary", commentary);
 		addBody(o, "token", token);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);

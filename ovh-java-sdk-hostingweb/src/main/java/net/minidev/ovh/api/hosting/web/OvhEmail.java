@@ -14,18 +14,18 @@ public class OvhEmail {
 	public Long bounce;
 
 	/**
-	 * Max email to sent per day
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long maxPerDay;
-
-	/**
 	 * Email state
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhStateEnum state;
+
+	/**
+	 * Max email to sent per day
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long maxPerDay;
 
 	/**
 	 * Email sent since hosting creation

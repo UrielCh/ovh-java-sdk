@@ -19,18 +19,18 @@ public class OvhDatabaseCapabilities {
 	public Boolean getRight;
 
 	/**
-	 * Availability of the restore function
-	 *
-	 * canBeNull
-	 */
-	public Boolean restore;
-
-	/**
 	 * Availability of the optimize function
 	 *
 	 * canBeNull
 	 */
 	public Boolean optimize;
+
+	/**
+	 * Availability of the restore function
+	 *
+	 * canBeNull
+	 */
+	public Boolean restore;
 
 	/**
 	 * Availability of the changeRight function

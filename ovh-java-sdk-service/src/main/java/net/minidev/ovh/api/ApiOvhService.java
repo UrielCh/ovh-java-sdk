@@ -21,50 +21,6 @@ public class ApiOvhService extends ApiOvhBase {
 	}
 
 	/**
-	 * Reopen a suspended service
-	 *
-	 * REST: POST /service/{serviceId}/reopen
-	 * @param serviceId [required] The internal ID of your service
-	 *
-	 * API beta
-	 */
-	public void serviceId_reopen_POST(Long serviceId) throws IOException {
-		String qPath = "/service/{serviceId}/reopen";
-		StringBuilder sb = path(qPath, serviceId);
-		exec(qPath, "POST", sb.toString(), null);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /service/{serviceId}
-	 * @param serviceId [required] The internal ID of your service
-	 *
-	 * API beta
-	 */
-	public OvhService serviceId_GET(Long serviceId) throws IOException {
-		String qPath = "/service/{serviceId}";
-		StringBuilder sb = path(qPath, serviceId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhService.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /service/{serviceId}
-	 * @param body [required] New object properties
-	 * @param serviceId [required] The internal ID of your service
-	 *
-	 * API beta
-	 */
-	public void serviceId_PUT(Long serviceId, OvhService body) throws IOException {
-		String qPath = "/service/{serviceId}";
-		StringBuilder sb = path(qPath, serviceId);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
 	 * Suspend the service. The service won't be accessible, but you will still be charged for it
 	 *
 	 * REST: POST /service/{serviceId}/suspend
@@ -79,15 +35,15 @@ public class ApiOvhService extends ApiOvhBase {
 	}
 
 	/**
-	 * Terminates a suspended service
+	 * Reopen a suspended service
 	 *
-	 * REST: POST /service/{serviceId}/terminate
+	 * REST: POST /service/{serviceId}/reopen
 	 * @param serviceId [required] The internal ID of your service
 	 *
 	 * API beta
 	 */
-	public void serviceId_terminate_POST(Long serviceId) throws IOException {
-		String qPath = "/service/{serviceId}/terminate";
+	public void serviceId_reopen_POST(Long serviceId) throws IOException {
+		String qPath = "/service/{serviceId}/reopen";
 		StringBuilder sb = path(qPath, serviceId);
 		exec(qPath, "POST", sb.toString(), null);
 	}
@@ -130,6 +86,50 @@ public class ApiOvhService extends ApiOvhBase {
 		addBody(o, "services", services);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhRenewOrder.class);
+	}
+
+	/**
+	 * Terminates a suspended service
+	 *
+	 * REST: POST /service/{serviceId}/terminate
+	 * @param serviceId [required] The internal ID of your service
+	 *
+	 * API beta
+	 */
+	public void serviceId_terminate_POST(Long serviceId) throws IOException {
+		String qPath = "/service/{serviceId}/terminate";
+		StringBuilder sb = path(qPath, serviceId);
+		exec(qPath, "POST", sb.toString(), null);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /service/{serviceId}
+	 * @param serviceId [required] The internal ID of your service
+	 *
+	 * API beta
+	 */
+	public OvhService serviceId_GET(Long serviceId) throws IOException {
+		String qPath = "/service/{serviceId}";
+		StringBuilder sb = path(qPath, serviceId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhService.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /service/{serviceId}
+	 * @param body [required] New object properties
+	 * @param serviceId [required] The internal ID of your service
+	 *
+	 * API beta
+	 */
+	public void serviceId_PUT(Long serviceId, OvhService body) throws IOException {
+		String qPath = "/service/{serviceId}";
+		StringBuilder sb = path(qPath, serviceId);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**

@@ -14,16 +14,16 @@ public class OvhSubServiceToDelete {
 	public String[] services;
 
 	/**
-	 * Number of services to be deleted
-	 *
-	 * canBeNull
-	 */
-	public Long numberToDelete;
-
-	/**
 	 * Type of service to be deleted
 	 *
 	 * canBeNull
 	 */
 	public OvhServiceNameEnum type;
+
+	/**
+	 * Number of services to be deleted
+	 *
+	 * canBeNull
+	 */
+	public Long numberToDelete;
 }

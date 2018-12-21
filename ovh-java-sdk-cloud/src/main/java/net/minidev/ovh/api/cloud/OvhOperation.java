@@ -28,11 +28,11 @@ public class OvhOperation {
 	public String[] regions;
 
 	/**
-	 * The action of the operation
+	 * The started date of the operation
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String action;
+	public Date startedAt;
 
 	/**
 	 * The progression in percentage of the operation
@@ -42,11 +42,11 @@ public class OvhOperation {
 	public Long progress;
 
 	/**
-	 * The started date of the operation
+	 * The action of the operation
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Date startedAt;
+	public String action;
 
 	/**
 	 * Unique ID to describe the operation

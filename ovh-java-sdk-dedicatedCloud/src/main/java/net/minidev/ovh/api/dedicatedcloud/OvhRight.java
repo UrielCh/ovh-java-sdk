@@ -16,6 +16,11 @@ public class OvhRight {
 	public OvhNetworkRoleEnum networkRole;
 
 	/**
+	 * canBeNull && readOnly
+	 */
+	public Long datacenterId;
+
+	/**
 	 * Determine how this user can interact with the Private Cloud VM Network
 	 *
 	 * canBeNull && readOnly
@@ -26,11 +31,6 @@ public class OvhRight {
 	 * canBeNull && readOnly
 	 */
 	public Long rightId;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public Long datacenterId;
 
 	/**
 	 * Determine if the user can add ressources in your Private Cloud

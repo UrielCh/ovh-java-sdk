@@ -56,13 +56,6 @@ public class OvhPortability {
 	public Long id;
 
 	/**
-	 * Show the redirection that will be configured when the portability will be done
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String lineToRedirectTo;
-
-	/**
 	 * Indicates that portability is in error
 	 *
 	 * canBeNull && readOnly
@@ -70,18 +63,25 @@ public class OvhPortability {
 	public Boolean error;
 
 	/**
-	 * The billing account where the numbers will be inserted
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String billingAccount;
-
-	/**
 	 * The portability's creation date
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date creationDate;
+
+	/**
+	 * Show the redirection that will be configured when the portability will be done
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String lineToRedirectTo;
+
+	/**
+	 * The billing account where the numbers will be inserted
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String billingAccount;
 
 	/**
 	 * The operator that currently holds the numbers

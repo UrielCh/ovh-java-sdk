@@ -19,16 +19,16 @@ public class OvhTwoFAWhitelist {
 	public String description;
 
 	/**
-	 * State of the whitelist
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhTwoFAWhitelistStateEnum state;
-
-	/**
 	 * Id of the trusted IP
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long id;
+
+	/**
+	 * State of the whitelist
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhTwoFAWhitelistStateEnum state;
 }

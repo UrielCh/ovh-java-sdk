@@ -44,18 +44,18 @@ public class OvhOffer {
 	public OvhDeconsolidationEnum[] unbundling;
 
 	/**
-	 * Provider, if applicable
-	 *
-	 * canBeNull
-	 */
-	public OvhProviderEnum provider;
-
-	/**
 	 * DEPRECATED Please use downloadRate instead /DEPRECATED - Estimated or guaranteed rate in Mbit/s, if applicable
 	 *
 	 * canBeNull
 	 */
 	public Double rate;
+
+	/**
+	 * Provider, if applicable
+	 *
+	 * canBeNull
+	 */
+	public OvhProviderEnum provider;
 
 	/**
 	 * Is the rate guaranteed ?

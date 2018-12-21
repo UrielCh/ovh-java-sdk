@@ -22,12 +22,12 @@ public class OvhTemplate {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String distribution;
+	public String locale;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String locale;
+	public String distribution;
 
 	/**
 	 * canBeNull && readOnly

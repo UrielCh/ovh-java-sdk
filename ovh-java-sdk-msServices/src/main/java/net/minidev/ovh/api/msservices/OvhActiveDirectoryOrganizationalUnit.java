@@ -19,18 +19,18 @@ public class OvhActiveDirectoryOrganizationalUnit {
 	public Long minPasswordAge;
 
 	/**
-	 * Maximum number of password tries before account locking
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long lockoutThreshold;
-
-	/**
 	 * Account lock time (in minutes) when too much passwords have been tried
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long lockoutDuration;
+
+	/**
+	 * Maximum number of password tries before account locking
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long lockoutThreshold;
 
 	/**
 	 * Minimum number of characters passwords must contain

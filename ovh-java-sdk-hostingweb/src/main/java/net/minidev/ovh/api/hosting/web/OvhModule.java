@@ -80,16 +80,16 @@ public class OvhModule {
 	public Long taskId;
 
 	/**
-	 * The dependencies to which the module has access. A dependency can be a standard database (like MySQL or PostgreSQL) or a key-value store (like Redis or Memcached) for example
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhDependencyType[] dependencies;
-
-	/**
 	 * The module status
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhStatusEnum status;
+
+	/**
+	 * The dependencies to which the module has access. A dependency can be a standard database (like MySQL or PostgreSQL) or a key-value store (like Redis or Memcached) for example
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhDependencyType[] dependencies;
 }

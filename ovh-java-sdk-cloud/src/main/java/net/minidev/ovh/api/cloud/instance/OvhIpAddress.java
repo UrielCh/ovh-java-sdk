@@ -12,18 +12,18 @@ public class OvhIpAddress {
 	public String ip;
 
 	/**
-	 * Network ID
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String networkId;
-
-	/**
 	 * Gateway IP
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String gatewayIp;
+
+	/**
+	 * Network ID
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String networkId;
 
 	/**
 	 * Instance IP address type

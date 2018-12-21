@@ -47,16 +47,16 @@ public class OvhDownloadCredentials {
 	public String tenantId;
 
 	/**
-	 * Openstack region name
-	 *
-	 * canBeNull
-	 */
-	public String region;
-
-	/**
 	 * Openstack user login
 	 *
 	 * canBeNull
 	 */
 	public String login;
+
+	/**
+	 * Openstack region name
+	 *
+	 * canBeNull
+	 */
+	public String region;
 }

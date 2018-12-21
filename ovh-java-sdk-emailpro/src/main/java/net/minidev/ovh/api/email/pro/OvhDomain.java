@@ -26,13 +26,6 @@ public class OvhDomain {
 	public Boolean isAliasDomain;
 
 	/**
-	 * List of aliases for this domain
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String[] domainAliases;
-
-	/**
 	 * Domain MX record configured in DNS
 	 *
 	 * canBeNull && readOnly
@@ -45,6 +38,13 @@ public class OvhDomain {
 	 * canBeNull && readOnly
 	 */
 	public Boolean domainValidated;
+
+	/**
+	 * List of aliases for this domain
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String[] domainAliases;
 
 	/**
 	 * Domain type

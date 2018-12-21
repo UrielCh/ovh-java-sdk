@@ -49,13 +49,6 @@ public class OvhDeskaas {
 	public OvhStateEnum state;
 
 	/**
-	 * Data allocated to desktop
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhUnitAndValue<Double> dataDisk;
-
-	/**
 	 * Service name of your Desktop As A Service
 	 *
 	 * canBeNull && readOnly
@@ -63,11 +56,11 @@ public class OvhDeskaas {
 	public String serviceName;
 
 	/**
-	 * Profile of Virtual Desktop
+	 * Data allocated to desktop
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String planCode;
+	public OvhUnitAndValue<Double> dataDisk;
 
 	/**
 	 * URL to connect to the virtualDesktop
@@ -75,6 +68,13 @@ public class OvhDeskaas {
 	 * canBeNull && readOnly
 	 */
 	public String url;
+
+	/**
+	 * Profile of Virtual Desktop
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String planCode;
 
 	/**
 	 * RAM allocated to desktop

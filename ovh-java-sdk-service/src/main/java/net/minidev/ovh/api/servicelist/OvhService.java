@@ -55,18 +55,18 @@ public class OvhService {
 	public OvhSafeKeyValue<String>[] details;
 
 	/**
-	 * Billing state of your service
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhBillingStateEnum state;
-
-	/**
 	 * Renew service description
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhRenew renew;
+
+	/**
+	 * Billing state of your service
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhBillingStateEnum state;
 
 	/**
 	 * Creation date

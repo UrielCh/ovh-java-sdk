@@ -54,16 +54,16 @@ public class OvhTemplateModem {
 	public Date creationDate;
 
 	/**
-	 * Size of the Maximum Transmission Unit on the modem's interfaces
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhMTUSizeEnum mtuSize;
-
-	/**
 	 * List of DHCP for this template
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhDHCP[] DHCP;
+
+	/**
+	 * Size of the Maximum Transmission Unit on the modem's interfaces
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhMTUSizeEnum mtuSize;
 }

@@ -5,16 +5,16 @@ package net.minidev.ovh.api.hosting.web;
  */
 public class OvhPhpVersion {
 	/**
-	 * Current support of this php version
-	 *
-	 * canBeNull
-	 */
-	public OvhPhpVersionStateEnum support;
-
-	/**
 	 * PHP version
 	 *
 	 * canBeNull
 	 */
 	public String version;
+
+	/**
+	 * Current support of this php version
+	 *
+	 * canBeNull
+	 */
+	public OvhPhpVersionStateEnum support;
 }

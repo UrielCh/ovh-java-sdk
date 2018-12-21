@@ -22,18 +22,18 @@ public class OvhDetailedRateCodeInformation {
 	public OvhPrice pricePerMinuteWithoutTax;
 
 	/**
-	 * Effective datetime
-	 *
-	 * canBeNull
-	 */
-	public Date effectiveDatetime;
-
-	/**
 	 * Cancelable datetime deadline for the new scheduled rateCode
 	 *
 	 * canBeNull
 	 */
 	public Date cancelLimitDatetime;
+
+	/**
+	 * Effective datetime
+	 *
+	 * canBeNull
+	 */
+	public Date effectiveDatetime;
 
 	/**
 	 * Price per call

@@ -35,18 +35,18 @@ public class OvhFederationAccessNetwork {
 	public String sslThumbprint;
 
 	/**
-	 * Active Directory domain name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String domainName;
-
-	/**
 	 * IP address of the remote service
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String ip;
+
+	/**
+	 * Active Directory domain name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String domainName;
 
 	/**
 	 * Active Directory base DN for groups

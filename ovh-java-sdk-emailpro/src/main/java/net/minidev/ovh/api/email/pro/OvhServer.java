@@ -54,18 +54,18 @@ public class OvhServer {
 	public Boolean isAValid;
 
 	/**
-	 * If true your dns AAAA record is valid
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean isAaaaValid;
-
-	/**
 	 * Server state
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhServerStateEnum state;
+
+	/**
+	 * If true your dns AAAA record is valid
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean isAaaaValid;
 
 	/**
 	 * Server version

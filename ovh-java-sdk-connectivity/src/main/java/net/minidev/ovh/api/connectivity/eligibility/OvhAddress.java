@@ -5,18 +5,18 @@ package net.minidev.ovh.api.connectivity.eligibility;
  */
 public class OvhAddress {
 	/**
-	 * ZIP code
-	 *
-	 * canBeNull
-	 */
-	public String zipCode;
-
-	/**
 	 * Identifier of the door, if any
 	 *
 	 * canBeNull
 	 */
 	public String door;
+
+	/**
+	 * ZIP code
+	 *
+	 * canBeNull
+	 */
+	public String zipCode;
 
 	/**
 	 * Street name, hidden for unlisted number
@@ -40,13 +40,6 @@ public class OvhAddress {
 	public String ownerName;
 
 	/**
-	 * City name
-	 *
-	 * canBeNull
-	 */
-	public String city;
-
-	/**
 	 * Street number, usually a number and an indication if applicable (B for bis, T for ter, etc...) and hidden for unlisted number
 	 *
 	 * canBeNull
@@ -59,6 +52,13 @@ public class OvhAddress {
 	 * canBeNull
 	 */
 	public String housingComplex;
+
+	/**
+	 * City name
+	 *
+	 * canBeNull
+	 */
+	public String city;
 
 	/**
 	 * Street code, an unique identifier of the street, hidden for unlisted number

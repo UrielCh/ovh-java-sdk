@@ -52,22 +52,17 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 	}
 
 	/**
-	 * View task list
+	 * Get this object properties
 	 *
-	 * REST: GET /dedicated/housing/{serviceName}/task
-	 * @param function [required] Filter the value of function property (=)
-	 * @param status [required] Filter the value of status property (=)
+	 * REST: GET /dedicated/housing/{serviceName}
 	 * @param serviceName [required] The internal name of your Housing bay
 	 */
-	public ArrayList<Long> serviceName_task_GET(String serviceName, OvhTaskFunctionEnum function, OvhTaskStatusEnum status) throws IOException {
-		String qPath = "/dedicated/housing/{serviceName}/task";
+	public OvhHousing serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/dedicated/housing/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "function", function);
-		query(sb, "status", status);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
+		return convertTo(resp, OvhHousing.class);
 	}
-	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
 
 	/**
 	 * Get this object properties
@@ -97,17 +92,22 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 	}
 
 	/**
-	 * Get all IP blocks that can be used in the ACL
+	 * View task list
 	 *
-	 * REST: GET /dedicated/housing/{serviceName}/features/backupFTP/authorizableBlocks
+	 * REST: GET /dedicated/housing/{serviceName}/task
+	 * @param status [required] Filter the value of status property (=)
+	 * @param function [required] Filter the value of function property (=)
 	 * @param serviceName [required] The internal name of your Housing bay
 	 */
-	public ArrayList<String> serviceName_features_backupFTP_authorizableBlocks_GET(String serviceName) throws IOException {
-		String qPath = "/dedicated/housing/{serviceName}/features/backupFTP/authorizableBlocks";
+	public ArrayList<Long> serviceName_task_GET(String serviceName, OvhTaskFunctionEnum function, OvhTaskStatusEnum status) throws IOException {
+		String qPath = "/dedicated/housing/{serviceName}/task";
 		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "function", function);
+		query(sb, "status", status);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, t2);
 	}
+	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
 
 	/**
 	 * Get this object properties
@@ -168,34 +168,21 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 	 * Create a new Backup FTP ACL
 	 *
 	 * REST: POST /dedicated/housing/{serviceName}/features/backupFTP/access
+	 * @param ftp [required] Wether to allow the FTP protocol for this ACL
+	 * @param ipBlock [required] The IP Block specific to this ACL. It musts belong to your server.
 	 * @param nfs [required] Wether to allow the NFS protocol for this ACL
 	 * @param cifs [required] Wether to allow the CIFS (SMB) protocol for this ACL
-	 * @param ipBlock [required] The IP Block specific to this ACL. It musts belong to your server.
-	 * @param ftp [required] Wether to allow the FTP protocol for this ACL
 	 * @param serviceName [required] The internal name of your Housing bay
 	 */
-	public net.minidev.ovh.api.dedicated.server.OvhTask serviceName_features_backupFTP_access_POST(String serviceName, Boolean nfs, Boolean cifs, String ipBlock, Boolean ftp) throws IOException {
+	public net.minidev.ovh.api.dedicated.server.OvhTask serviceName_features_backupFTP_access_POST(String serviceName, Boolean cifs, Boolean ftp, String ipBlock, Boolean nfs) throws IOException {
 		String qPath = "/dedicated/housing/{serviceName}/features/backupFTP/access";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "nfs", nfs);
 		addBody(o, "cifs", cifs);
-		addBody(o, "ipBlock", ipBlock);
 		addBody(o, "ftp", ftp);
+		addBody(o, "ipBlock", ipBlock);
+		addBody(o, "nfs", nfs);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, net.minidev.ovh.api.dedicated.server.OvhTask.class);
-	}
-
-	/**
-	 * Change your Backup FTP password
-	 *
-	 * REST: POST /dedicated/housing/{serviceName}/features/backupFTP/password
-	 * @param serviceName [required] The internal name of your Housing bay
-	 */
-	public net.minidev.ovh.api.dedicated.server.OvhTask serviceName_features_backupFTP_password_POST(String serviceName) throws IOException {
-		String qPath = "/dedicated/housing/{serviceName}/features/backupFTP/password";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, net.minidev.ovh.api.dedicated.server.OvhTask.class);
 	}
 
@@ -239,16 +226,29 @@ public class ApiOvhDedicatedhousing extends ApiOvhBase {
 	}
 
 	/**
-	 * Get this object properties
+	 * Get all IP blocks that can be used in the ACL
 	 *
-	 * REST: GET /dedicated/housing/{serviceName}
+	 * REST: GET /dedicated/housing/{serviceName}/features/backupFTP/authorizableBlocks
 	 * @param serviceName [required] The internal name of your Housing bay
 	 */
-	public OvhHousing serviceName_GET(String serviceName) throws IOException {
-		String qPath = "/dedicated/housing/{serviceName}";
+	public ArrayList<String> serviceName_features_backupFTP_authorizableBlocks_GET(String serviceName) throws IOException {
+		String qPath = "/dedicated/housing/{serviceName}/features/backupFTP/authorizableBlocks";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhHousing.class);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Change your Backup FTP password
+	 *
+	 * REST: POST /dedicated/housing/{serviceName}/features/backupFTP/password
+	 * @param serviceName [required] The internal name of your Housing bay
+	 */
+	public net.minidev.ovh.api.dedicated.server.OvhTask serviceName_features_backupFTP_password_POST(String serviceName) throws IOException {
+		String qPath = "/dedicated/housing/{serviceName}/features/backupFTP/password";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, net.minidev.ovh.api.dedicated.server.OvhTask.class);
 	}
 
 	/**

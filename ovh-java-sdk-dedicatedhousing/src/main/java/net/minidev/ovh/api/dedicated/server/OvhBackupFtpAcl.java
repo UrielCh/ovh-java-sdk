@@ -14,13 +14,6 @@ public class OvhBackupFtpAcl {
 	public Boolean ftp;
 
 	/**
-	 * Date of the last object modification
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date lastUpdate;
-
-	/**
 	 * The IP Block specific to this ACL
 	 *
 	 * canBeNull && readOnly
@@ -28,11 +21,11 @@ public class OvhBackupFtpAcl {
 	public String ipBlock;
 
 	/**
-	 * Whether the rule has been applied on the Backup Ftp
+	 * Date of the last object modification
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Boolean isApplied;
+	public Date lastUpdate;
 
 	/**
 	 * Wether to allow the NFS protocol for this ACL
@@ -40,6 +33,13 @@ public class OvhBackupFtpAcl {
 	 * canBeNull && readOnly
 	 */
 	public Boolean nfs;
+
+	/**
+	 * Whether the rule has been applied on the Backup Ftp
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean isApplied;
 
 	/**
 	 * Wether to allow the CIFS (SMB) protocol for this ACL

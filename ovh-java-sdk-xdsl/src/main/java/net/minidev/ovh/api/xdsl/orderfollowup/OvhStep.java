@@ -19,12 +19,12 @@ public class OvhStep {
 	/**
 	 * canBeNull
 	 */
-	public OvhDurationUnitEnum durationUnit;
+	public Long expectedDuration;
 
 	/**
 	 * canBeNull
 	 */
-	public Long expectedDuration;
+	public OvhDurationUnitEnum durationUnit;
 
 	/**
 	 * canBeNull

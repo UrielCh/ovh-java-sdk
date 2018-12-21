@@ -70,18 +70,18 @@ public class OvhVisibilityCheckResultResponse {
 	public String street;
 
 	/**
-	 * A localized combination of street and streetNo
-	 *
-	 * canBeNull
-	 */
-	public String streetAndNo;
-
-	/**
 	 * Zipcode of the location (sync status)
 	 *
 	 * canBeNull
 	 */
 	public OvhFieldStatusEnum zipStatus;
+
+	/**
+	 * A localized combination of street and streetNo
+	 *
+	 * canBeNull
+	 */
+	public String streetAndNo;
 
 	/**
 	 * The location's contact phone number (sync status)
@@ -126,18 +126,18 @@ public class OvhVisibilityCheckResultResponse {
 	public String streetNo;
 
 	/**
-	 * The location's street address (sync status)
-	 *
-	 * canBeNull
-	 */
-	public OvhFieldStatusEnum streetStatus;
-
-	/**
 	 * The listing id in the directory database
 	 *
 	 * canBeNull
 	 */
 	public String listingId;
+
+	/**
+	 * The location's street address (sync status)
+	 *
+	 * canBeNull
+	 */
+	public OvhFieldStatusEnum streetStatus;
 
 	/**
 	 * A contact email for the location (sync status)
@@ -168,13 +168,6 @@ public class OvhVisibilityCheckResultResponse {
 	public OvhFieldStatusEnum provinceStatus;
 
 	/**
-	 * City of the location (sync status)
-	 *
-	 * canBeNull
-	 */
-	public OvhFieldStatusEnum cityStatus;
-
-	/**
 	 * The location's name used for this listing
 	 *
 	 * canBeNull
@@ -182,11 +175,11 @@ public class OvhVisibilityCheckResultResponse {
 	public String name;
 
 	/**
-	 * The location's name used for this listing (sync status)
+	 * City of the location (sync status)
 	 *
 	 * canBeNull
 	 */
-	public OvhFieldStatusEnum nameStatus;
+	public OvhFieldStatusEnum cityStatus;
 
 	/**
 	 * The listing url on the directory website
@@ -194,6 +187,13 @@ public class OvhVisibilityCheckResultResponse {
 	 * canBeNull
 	 */
 	public String listingUrl;
+
+	/**
+	 * The location's name used for this listing (sync status)
+	 *
+	 * canBeNull
+	 */
+	public OvhFieldStatusEnum nameStatus;
 
 	/**
 	 * Country of the location (sync status)

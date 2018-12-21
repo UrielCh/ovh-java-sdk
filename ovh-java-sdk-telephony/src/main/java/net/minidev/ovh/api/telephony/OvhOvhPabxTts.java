@@ -12,14 +12,14 @@ public class OvhOvhPabxTts {
 	public OvhOvhPabxTtsVoiceEnum voice;
 
 	/**
+	 * canBeNull && readOnly
+	 */
+	public Long id;
+
+	/**
 	 * The text that will be played
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String text;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public Long id;
 }

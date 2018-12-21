@@ -50,13 +50,6 @@ public class OvhOffer {
 	public Long estimatedUpload;
 
 	/**
-	 * The status of the landline
-	 *
-	 * canBeNull
-	 */
-	public OvhLandlineStatusEnum lineStatus;
-
-	/**
 	 * Available meeting slots for the creation of this offer.
 	 *
 	 * canBeNull
@@ -71,18 +64,11 @@ public class OvhOffer {
 	public OvhPortability portability;
 
 	/**
-	 * The upload synchronisation in kbps
+	 * The status of the landline
 	 *
 	 * canBeNull
 	 */
-	public Long syncUpload;
-
-	/**
-	 * The unbundling type
-	 *
-	 * canBeNull
-	 */
-	public OvhDeconsolidationEnum unbundling;
+	public OvhLandlineStatusEnum lineStatus;
 
 	/**
 	 * Status of the request
@@ -92,11 +78,18 @@ public class OvhOffer {
 	public OvhProviderEnum provider;
 
 	/**
-	 * The price of this offer
+	 * The unbundling type
 	 *
 	 * canBeNull
 	 */
-	public OvhPrice price;
+	public OvhDeconsolidationEnum unbundling;
+
+	/**
+	 * The upload synchronisation in kbps
+	 *
+	 * canBeNull
+	 */
+	public Long syncUpload;
 
 	/**
 	 * The code of the offer
@@ -104,6 +97,13 @@ public class OvhOffer {
 	 * canBeNull
 	 */
 	public String offerCode;
+
+	/**
+	 * The price of this offer
+	 *
+	 * canBeNull
+	 */
+	public OvhPrice price;
 
 	/**
 	 * The estimated download synchronisation in kbps

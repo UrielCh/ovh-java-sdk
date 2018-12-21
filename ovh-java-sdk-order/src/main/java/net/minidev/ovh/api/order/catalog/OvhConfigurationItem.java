@@ -19,18 +19,18 @@ public class OvhConfigurationItem {
 	public String[] values;
 
 	/**
-	 * Label of the configuration
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String name;
-
-	/**
 	 * Indicates if the configuration is free for writing (true) or have to follow an enum (false - have to follow values field)
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean isCustom;
+
+	/**
+	 * Label of the configuration
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String name;
 
 	/**
 	 * Indicates if configuration is required

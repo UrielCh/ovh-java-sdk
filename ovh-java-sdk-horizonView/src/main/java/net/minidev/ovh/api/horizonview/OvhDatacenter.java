@@ -19,13 +19,6 @@ public class OvhDatacenter {
 	public String customerIntercoIP;
 
 	/**
-	 * Datacenter ids
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long datacenterId;
-
-	/**
 	 * Name of the datacenter
 	 *
 	 * canBeNull && readOnly
@@ -33,11 +26,11 @@ public class OvhDatacenter {
 	public String name;
 
 	/**
-	 * Private network of the admin infrastructure
+	 * Datacenter ids
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String adminPrivateNetwork;
+	public Long datacenterId;
 
 	/**
 	 * Next hop to contact the private admin network
@@ -45,6 +38,13 @@ public class OvhDatacenter {
 	 * canBeNull && readOnly
 	 */
 	public String adminNetworkNextHop;
+
+	/**
+	 * Private network of the admin infrastructure
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String adminPrivateNetwork;
 
 	/**
 	 * Domain of your Horizon

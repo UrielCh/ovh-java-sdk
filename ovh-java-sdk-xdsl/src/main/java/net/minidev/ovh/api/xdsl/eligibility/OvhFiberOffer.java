@@ -30,18 +30,18 @@ public class OvhFiberOffer {
 	public Double downloadRate;
 
 	/**
-	 * Allowed GTR
-	 *
-	 * canBeNull
-	 */
-	public OvhGtrEnum[] gtr;
-
-	/**
 	 * The availibility date if the fiber is planned but not available yet
 	 *
 	 * canBeNull
 	 */
 	public Date availibilityDate;
+
+	/**
+	 * Allowed GTR
+	 *
+	 * canBeNull
+	 */
+	public OvhGtrEnum[] gtr;
 
 	/**
 	 * Are you eligible to this offer ?

@@ -14,18 +14,18 @@ public class OvhTask {
 	public Date maintenanceDateFrom;
 
 	/**
-	 * Task end date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date endDate;
-
-	/**
 	 * Maintenance task max allowed execution date
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date maintenanceDateTo;
+
+	/**
+	 * Task end date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date endDate;
 
 	/**
 	 * orderId of the associated billing.Order object

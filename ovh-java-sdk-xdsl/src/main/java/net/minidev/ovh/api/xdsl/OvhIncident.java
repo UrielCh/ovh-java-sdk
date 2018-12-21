@@ -26,18 +26,18 @@ public class OvhIncident {
 	public String comment;
 
 	/**
-	 * ID of the incident
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long id;
-
-	/**
 	 * Department list
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String[] departments;
+
+	/**
+	 * ID of the incident
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long id;
 
 	/**
 	 * Estimated start date

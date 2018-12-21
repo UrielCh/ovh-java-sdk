@@ -21,18 +21,18 @@ public class OvhBillingAccount {
 	public OvhPrice allowedOutplan;
 
 	/**
-	 * Is the billing account trusted
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean trusted;
-
-	/**
 	 * Override number display for calls between services of your billing account
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean overrideDisplayedNumber;
+
+	/**
+	 * Is the billing account trusted
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean trusted;
 
 	/**
 	 * Description of the billing account

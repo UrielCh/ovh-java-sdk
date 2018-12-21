@@ -7,18 +7,18 @@ import java.util.Date;
  */
 public class OvhTask {
 	/**
-	 * Last update date of the task
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date lastUpdate;
-
-	/**
 	 * Function of the task
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String function;
+
+	/**
+	 * Last update date of the task
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date lastUpdate;
 
 	/**
 	 * Todo date of the task

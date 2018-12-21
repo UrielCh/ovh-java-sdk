@@ -19,18 +19,18 @@ public class OvhFiberInfo {
 	public String nro;
 
 	/**
-	 * Building unique identifier
-	 *
-	 * canBeNull
-	 */
-	public String buildingReference;
-
-	/**
 	 * Operator code
 	 *
 	 * canBeNull
 	 */
 	public String operatorCode;
+
+	/**
+	 * Building unique identifier
+	 *
+	 * canBeNull
+	 */
+	public String buildingReference;
 
 	/**
 	 * Operator name

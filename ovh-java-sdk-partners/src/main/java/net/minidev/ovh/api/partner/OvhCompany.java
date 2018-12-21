@@ -5,6 +5,13 @@ package net.minidev.ovh.api.partner;
  */
 public class OvhCompany {
 	/**
+	 * Company's zipCode
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String zipCode;
+
+	/**
 	 * Company's country
 	 *
 	 * canBeNull && readOnly
@@ -17,13 +24,6 @@ public class OvhCompany {
 	 * canBeNull && readOnly
 	 */
 	public OvhExpertisesChoices expertises;
-
-	/**
-	 * Company's zipCode
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String zipCode;
 
 	/**
 	 * OVH's product the company's solutions relies on
@@ -68,11 +68,11 @@ public class OvhCompany {
 	public OvhExternalCertifications externalCertifications;
 
 	/**
-	 * Kind of client the company target
+	 * Estimation of the revenue of the company
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhClientKinds clientKinds;
+	public String revenue;
 
 	/**
 	 * Company's twitter profile url
@@ -82,11 +82,11 @@ public class OvhCompany {
 	public String twitter;
 
 	/**
-	 * Estimation of the revenue of the company
+	 * Kind of client the company target
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String revenue;
+	public OvhClientKinds clientKinds;
 
 	/**
 	 * Estimation of the number of accompanied customers in using OVH's solutions
@@ -138,18 +138,18 @@ public class OvhCompany {
 	public String address;
 
 	/**
-	 * Company's facebook profile url
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String facebook;
-
-	/**
 	 * OVH certification acquired
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhOVHCertifications OVHCertifications;
+
+	/**
+	 * Company's facebook profile url
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String facebook;
 
 	/**
 	 * Estimation of the number of resources knowing OVH product the company has
@@ -187,18 +187,18 @@ public class OvhCompany {
 	public OvhActivitySectors activitySectors;
 
 	/**
-	 * Estimation of the number of resources that have technical skills on OVH solutions the company has
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String OVHTechnicalAdvancedResources;
-
-	/**
 	 * Name of the company
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String name;
+
+	/**
+	 * Estimation of the number of resources that have technical skills on OVH solutions the company has
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String OVHTechnicalAdvancedResources;
 
 	/**
 	 * How did you heard about the OVH's partnership program

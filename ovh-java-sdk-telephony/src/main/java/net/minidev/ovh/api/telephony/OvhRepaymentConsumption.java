@@ -26,16 +26,16 @@ public class OvhRepaymentConsumption {
 	public Long consumptionId;
 
 	/**
-	 * canBeNull && readOnly
-	 */
-	public String dialed;
-
-	/**
 	 * Price repayed with the call
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Double price;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public String dialed;
 
 	/**
 	 * Calling number of the call

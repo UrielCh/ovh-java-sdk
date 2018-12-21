@@ -26,18 +26,18 @@ public class OvhServer {
 	public Boolean owaMfa;
 
 	/**
-	 * Exchange commercial version
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhExchangeCommercialVersionEnum commercialVersion;
-
-	/**
 	 * ExchangeServer version
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long version;
+
+	/**
+	 * Exchange commercial version
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhExchangeCommercialVersionEnum commercialVersion;
 
 	/**
 	 * Task pending id
@@ -89,16 +89,16 @@ public class OvhServer {
 	public Boolean isAValid;
 
 	/**
-	 * Server state
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhServerStateEnum state;
-
-	/**
 	 * If true your dns AAAA record is valid
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean isAaaaValid;
+
+	/**
+	 * Server state
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhServerStateEnum state;
 }

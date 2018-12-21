@@ -24,12 +24,12 @@ public class OvhCacheRule {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long ttl;
+	public OvhCacheRuleCacheTypeEnum cacheType;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhCacheRuleCacheTypeEnum cacheType;
+	public Long ttl;
 
 	/**
 	 * canBeNull && readOnly

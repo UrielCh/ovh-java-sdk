@@ -21,13 +21,6 @@ public class OvhDomain {
 	public OvhDomainLockStatusEnum transferLockStatus;
 
 	/**
-	 * Name servers type
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhDomainNsTypeEnum nameServerType;
-
-	/**
 	 * Contact Owner (you can edit it via /me/contact/<ID>)
 	 *
 	 * canBeNull && readOnly
@@ -35,11 +28,11 @@ public class OvhDomain {
 	public String whoisOwner;
 
 	/**
-	 * Is whois obfuscation supported by this domain name's registry
+	 * Name servers type
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Boolean owoSupported;
+	public OvhDomainNsTypeEnum nameServerType;
 
 	/**
 	 * Is DNSSEC implemented for this domain name's tld
@@ -47,6 +40,13 @@ public class OvhDomain {
 	 * canBeNull && readOnly
 	 */
 	public Boolean dnssecSupported;
+
+	/**
+	 * Is whois obfuscation supported by this domain name's registry
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean owoSupported;
 
 	/**
 	 * Last update date

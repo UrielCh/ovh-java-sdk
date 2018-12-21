@@ -14,18 +14,18 @@ public class OvhDeviceModemInfo {
 	public String softVersion;
 
 	/**
-	 * Modem mac address
-	 *
-	 * canBeNull
-	 */
-	public String macAddress;
-
-	/**
 	 * Organizational Unique Identifier
 	 *
 	 * canBeNull
 	 */
 	public String oui;
+
+	/**
+	 * Modem mac address
+	 *
+	 * canBeNull
+	 */
+	public String macAddress;
 
 	/**
 	 * Modem serial key
@@ -42,18 +42,18 @@ public class OvhDeviceModemInfo {
 	public String pppLogin;
 
 	/**
-	 * Time of last information refresh
-	 *
-	 * canBeNull
-	 */
-	public Date lastUpdate;
-
-	/**
 	 * Modem ip address
 	 *
 	 * canBeNull
 	 */
 	public String ip;
+
+	/**
+	 * Time of last information refresh
+	 *
+	 * canBeNull
+	 */
+	public Date lastUpdate;
 
 	/**
 	 * Modem type of model

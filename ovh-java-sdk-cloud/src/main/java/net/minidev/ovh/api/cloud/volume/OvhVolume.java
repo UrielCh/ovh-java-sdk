@@ -35,11 +35,11 @@ public class OvhVolume {
 	public String id;
 
 	/**
-	 * Volume region
+	 * Volume creation date
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String region;
+	public Date creationDate;
 
 	/**
 	 * Volume attached to instances id
@@ -49,18 +49,18 @@ public class OvhVolume {
 	public String[] attachedTo;
 
 	/**
+	 * Volume region
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String region;
+
+	/**
 	 * Volume type
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhVolumeTypeEnum type;
-
-	/**
-	 * Volume creation date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date creationDate;
 
 	/**
 	 * Volume bootable

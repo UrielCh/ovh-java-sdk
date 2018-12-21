@@ -56,16 +56,16 @@ public class OvhRtmLoad {
 	public Double loadavg5;
 
 	/**
-	 * Server uptime
-	 *
-	 * canBeNull
-	 */
-	public Long uptime;
-
-	/**
 	 * Number of process running
 	 *
 	 * canBeNull
 	 */
 	public Long processRunning;
+
+	/**
+	 * Server uptime
+	 *
+	 * canBeNull
+	 */
+	public Long uptime;
 }

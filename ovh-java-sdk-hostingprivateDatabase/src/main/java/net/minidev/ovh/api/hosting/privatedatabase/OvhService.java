@@ -8,18 +8,18 @@ import net.minidev.ovh.api.complextype.OvhUnitAndValue;
  */
 public class OvhService {
 	/**
-	 * Private database server name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String server;
-
-	/**
 	 * Private database ftp port
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long portFtp;
+
+	/**
+	 * Private database server name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String server;
 
 	/**
 	 * Date of the last data synchronization
@@ -36,18 +36,18 @@ public class OvhService {
 	public OvhCapability[] capabilities;
 
 	/**
-	 * Set the name displayed in customer panel for your private database (max 50 chars)
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String displayName;
-
-	/**
 	 * Private database ftp hostname
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String hostnameFtp;
+
+	/**
+	 * Set the name displayed in customer panel for your private database (max 50 chars)
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String displayName;
 
 	/**
 	 * Private database ip
@@ -78,6 +78,13 @@ public class OvhService {
 	public OvhDatacenterEnum datacenter;
 
 	/**
+	 * Return the TLS certificate authority used by the private database
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String tlsCa;
+
+	/**
 	 * Private database type
 	 *
 	 * canBeNull && readOnly
@@ -90,13 +97,6 @@ public class OvhService {
 	 * canBeNull && readOnly
 	 */
 	public String serviceName;
-
-	/**
-	 * Return the TLS certificate authority used by the private database
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String tlsCa;
 
 	/**
 	 * Private database version
@@ -113,18 +113,18 @@ public class OvhService {
 	public Double versionNumber;
 
 	/**
-	 * URL for the graphical user interface
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String guiURL;
-
-	/**
 	 * Type of the private database offer
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhOfferEnum offer;
+
+	/**
+	 * URL for the graphical user interface
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String guiURL;
 
 	/**
 	 * Private database hostname
@@ -155,18 +155,18 @@ public class OvhService {
 	public OvhUnitAndValue<Long> quotaUsed;
 
 	/**
-	 * Private database state
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhStateEnum state;
-
-	/**
 	 * Space allowed on your private database
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhUnitAndValue<Long> quotaSize;
+
+	/**
+	 * Private database state
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhStateEnum state;
 
 	/**
 	 * Amount of ram on your private database

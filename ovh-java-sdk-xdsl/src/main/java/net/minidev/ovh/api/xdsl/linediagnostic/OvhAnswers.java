@@ -84,18 +84,18 @@ public class OvhAnswers {
 	public Boolean modemStillSynchronized;
 
 	/**
-	 * digicode for site entrance
-	 *
-	 * canBeNull
-	 */
-	public String siteDigicode;
-
-	/**
 	 * bandwidth unit for proof.ovh.net test values
 	 *
 	 * canBeNull
 	 */
 	public OvhBandwidthTestUnitEnum bandwidthTestUnit;
+
+	/**
+	 * digicode for site entrance
+	 *
+	 * canBeNull
+	 */
+	public String siteDigicode;
 
 	/**
 	 * id of appointment chosen ("possibleValues" contains choices list with id)
@@ -154,18 +154,18 @@ public class OvhAnswers {
 	public String startMorningHours;
 
 	/**
-	 * customer knows that he can be charged (150 euros HT) if he is responsible for the problem or if tests have not been done correctly ?
-	 *
-	 * canBeNull
-	 */
-	public Boolean conditionsAccepted;
-
-	/**
 	 * bandwidth upload value on proof.ovh.net test
 	 *
 	 * canBeNull
 	 */
 	public Long uploadBandwidthTest;
+
+	/**
+	 * customer knows that he can be charged (150 euros HT) if he is responsible for the problem or if tests have not been done correctly ?
+	 *
+	 * canBeNull
+	 */
+	public Boolean conditionsAccepted;
 
 	/**
 	 * afternoon closing informations or time for the site

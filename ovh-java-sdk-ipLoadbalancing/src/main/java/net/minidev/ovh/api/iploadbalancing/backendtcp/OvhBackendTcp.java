@@ -37,18 +37,18 @@ public class OvhBackendTcp {
 	public String zone;
 
 	/**
-	 * Stickiness type. No stickiness if null
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhStickinessTCPEnum stickiness;
-
-	/**
 	 * Human readable name for your backend, this field is for you
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String displayName;
+
+	/**
+	 * Stickiness type. No stickiness if null
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhStickinessTCPEnum stickiness;
 
 	/**
 	 * Id of your farm

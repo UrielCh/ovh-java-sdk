@@ -33,13 +33,6 @@ public class OvhPasswordPolicy {
 	public Long minLength;
 
 	/**
-	 * Whether or not a special character (\W or _) is mandatory in the password
-	 *
-	 * canBeNull
-	 */
-	public Boolean specialMandatory;
-
-	/**
 	 * Number of previous passwords to keep
 	 *
 	 * canBeNull
@@ -47,11 +40,11 @@ public class OvhPasswordPolicy {
 	public Long historyCheck;
 
 	/**
-	 * Whether or not a lowercase letter (a-z) is mandatory in the password
+	 * Whether or not a special character (\W or _) is mandatory in the password
 	 *
 	 * canBeNull
 	 */
-	public Boolean lowercaseLetterMandatory;
+	public Boolean specialMandatory;
 
 	/**
 	 * Whether or not a digit (0-9) is mandatory in the password
@@ -59,6 +52,13 @@ public class OvhPasswordPolicy {
 	 * canBeNull
 	 */
 	public Boolean digitMandatory;
+
+	/**
+	 * Whether or not a lowercase letter (a-z) is mandatory in the password
+	 *
+	 * canBeNull
+	 */
+	public Boolean lowercaseLetterMandatory;
 
 	/**
 	 * Maximum lenght of the password

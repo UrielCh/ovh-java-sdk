@@ -27,6 +27,51 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 	}
 
 	/**
+	 * List available services
+	 *
+	 * REST: GET /dedicated/nas
+	 */
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/dedicated/nas";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /dedicated/nas/{serviceName}/task/{taskId}
+	 * @param serviceName [required] The internal name of your storage
+	 * @param taskId [required] id of the task
+	 */
+	public OvhTask serviceName_task_taskId_GET(String serviceName, Long taskId) throws IOException {
+		String qPath = "/dedicated/nas/{serviceName}/task/{taskId}";
+		StringBuilder sb = path(qPath, serviceName, taskId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * View task list
+	 *
+	 * REST: GET /dedicated/nas/{serviceName}/task
+	 * @param status [required] Filter the value of status property (=)
+	 * @param operation [required] Filter the value of operation property (=)
+	 * @param serviceName [required] The internal name of your storage
+	 */
+	public ArrayList<Long> serviceName_task_GET(String serviceName, OvhTaskFunctionEnum operation, OvhTaskStatusEnum status) throws IOException {
+		String qPath = "/dedicated/nas/{serviceName}/task";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "operation", operation);
+		query(sb, "status", status);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
+
+	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /dedicated/nas/{serviceName}
@@ -64,24 +109,23 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
-	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
 
 	/**
 	 * Create a  new partition
 	 *
 	 * REST: POST /dedicated/nas/{serviceName}/partition
-	 * @param partitionName [required] Partition name
 	 * @param size [required] Partition size
+	 * @param partitionName [required] Partition name
 	 * @param protocol [required]
 	 * @param serviceName [required] The internal name of your storage
 	 */
-	public OvhTask serviceName_partition_POST(String serviceName, String partitionName, Long size, OvhProtocolEnum protocol) throws IOException {
+	public OvhTask serviceName_partition_POST(String serviceName, String partitionName, OvhProtocolEnum protocol, Long size) throws IOException {
 		String qPath = "/dedicated/nas/{serviceName}/partition";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "partitionName", partitionName);
-		addBody(o, "size", size);
 		addBody(o, "protocol", protocol);
+		addBody(o, "size", size);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
@@ -148,20 +192,6 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 	}
 
 	/**
-	 * Get all IPs that can be used in the ACL
-	 *
-	 * REST: GET /dedicated/nas/{serviceName}/partition/{partitionName}/authorizableIps
-	 * @param serviceName [required] The internal name of your storage
-	 * @param partitionName [required] the given name of partition
-	 */
-	public ArrayList<String> serviceName_partition_partitionName_authorizableIps_GET(String serviceName, String partitionName) throws IOException {
-		String qPath = "/dedicated/nas/{serviceName}/partition/{partitionName}/authorizableIps";
-		StringBuilder sb = path(qPath, serviceName, partitionName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /dedicated/nas/{serviceName}/partition/{partitionName}
@@ -204,6 +234,20 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 	}
 
 	/**
+	 * Get all IPs that can be used in the ACL
+	 *
+	 * REST: GET /dedicated/nas/{serviceName}/partition/{partitionName}/authorizableIps
+	 * @param serviceName [required] The internal name of your storage
+	 * @param partitionName [required] the given name of partition
+	 */
+	public ArrayList<String> serviceName_partition_partitionName_authorizableIps_GET(String serviceName, String partitionName) throws IOException {
+		String qPath = "/dedicated/nas/{serviceName}/partition/{partitionName}/authorizableIps";
+		StringBuilder sb = path(qPath, serviceName, partitionName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
 	 * Get quota for this partition
 	 *
 	 * REST: GET /dedicated/nas/{serviceName}/partition/{partitionName}/quota
@@ -216,7 +260,6 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
-	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
 
 	/**
 	 * Set a new quota
@@ -227,12 +270,12 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 	 * @param serviceName [required] The internal name of your storage
 	 * @param partitionName [required] the given name of partition
 	 */
-	public OvhTask serviceName_partition_partitionName_quota_POST(String serviceName, String partitionName, Long uid, Long size) throws IOException {
+	public OvhTask serviceName_partition_partitionName_quota_POST(String serviceName, String partitionName, Long size, Long uid) throws IOException {
 		String qPath = "/dedicated/nas/{serviceName}/partition/{partitionName}/quota";
 		StringBuilder sb = path(qPath, serviceName, partitionName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "uid", uid);
 		addBody(o, "size", size);
+		addBody(o, "uid", uid);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
@@ -270,37 +313,6 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /dedicated/nas/{serviceName}/task/{taskId}
-	 * @param serviceName [required] The internal name of your storage
-	 * @param taskId [required] id of the task
-	 */
-	public OvhTask serviceName_task_taskId_GET(String serviceName, Long taskId) throws IOException {
-		String qPath = "/dedicated/nas/{serviceName}/task/{taskId}";
-		StringBuilder sb = path(qPath, serviceName, taskId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * View task list
-	 *
-	 * REST: GET /dedicated/nas/{serviceName}/task
-	 * @param operation [required] Filter the value of operation property (=)
-	 * @param status [required] Filter the value of status property (=)
-	 * @param serviceName [required] The internal name of your storage
-	 */
-	public ArrayList<Long> serviceName_task_GET(String serviceName, OvhTaskFunctionEnum operation, OvhTaskStatusEnum status) throws IOException {
-		String qPath = "/dedicated/nas/{serviceName}/task";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "operation", operation);
-		query(sb, "status", status);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Get this object properties
-	 *
 	 * REST: GET /dedicated/nas/{serviceName}/serviceInfos
 	 * @param serviceName [required] The internal name of your storage
 	 */
@@ -322,17 +334,5 @@ public class ApiOvhDedicatednas extends ApiOvhBase {
 		String qPath = "/dedicated/nas/{serviceName}/serviceInfos";
 		StringBuilder sb = path(qPath, serviceName);
 		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * List available services
-	 *
-	 * REST: GET /dedicated/nas
-	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/dedicated/nas";
-		StringBuilder sb = path(qPath);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
 	}
 }

@@ -42,13 +42,6 @@ public class OvhVm {
 	public Long cpuUsed;
 
 	/**
-	 * Amount of time for a write operation from the virtual disk. In millisecond
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Double writeLatency;
-
-	/**
 	 * Memory size of the virtual machine, in MB
 	 *
 	 * canBeNull && readOnly
@@ -56,11 +49,18 @@ public class OvhVm {
 	public Long memoryMax;
 
 	/**
-	 * List of the networks link to this virtual machine
+	 * Amount of time for a write operation from the virtual disk. In millisecond
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhVmNetwork[] networks;
+	public Double writeLatency;
+
+	/**
+	 * Current memory utilization, in MB
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long memoryUsed;
 
 	/**
 	 * Maximum CPU performance, in MHz.
@@ -70,11 +70,11 @@ public class OvhVm {
 	public Double cpuMax;
 
 	/**
-	 * Current memory utilization, in MB
+	 * List of the networks link to this virtual machine
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long memoryUsed;
+	public OvhVmNetwork[] networks;
 
 	/**
 	 * Percentage of time that the virtual machine was ready, but could not get scheduled to run on the physical CPU. In percent
@@ -126,13 +126,6 @@ public class OvhVm {
 	public Double readPerSecond;
 
 	/**
-	 * Rate of reading data from the virtual disk. In KB/s
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Double readRate;
-
-	/**
 	 * Amount of guest memory that is shared with other virtual machines, in Mb
 	 *
 	 * canBeNull && readOnly
@@ -140,11 +133,11 @@ public class OvhVm {
 	public String memoryTps;
 
 	/**
-	 * Virtual machine cdroms devices
+	 * Rate of reading data from the virtual disk. In KB/s
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhVirtualMachineCdrom[] cdroms;
+	public Double readRate;
 
 	/**
 	 * moRef of the virtual machine.
@@ -152,6 +145,13 @@ public class OvhVm {
 	 * canBeNull && readOnly
 	 */
 	public String moRef;
+
+	/**
+	 * Virtual machine cdroms devices
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhVirtualMachineCdrom[] cdroms;
 
 	/**
 	 * Current version of VMware Tools
@@ -175,11 +175,11 @@ public class OvhVm {
 	public Double readLatency;
 
 	/**
-	 * Time that the virtual machine was ready, but could not get scheduled to run on the physical CPU. In millisecond
+	 * The index of the current VM in instanceUuids array starting from 1, so 1 means that it is the primary VM.
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Double cpuReady;
+	public String roleFt;
 
 	/**
 	 * Rate of writing data from the virtual disk. In KB/s
@@ -189,11 +189,11 @@ public class OvhVm {
 	public Double writeRate;
 
 	/**
-	 * The index of the current VM in instanceUuids array starting from 1, so 1 means that it is the primary VM.
+	 * Time that the virtual machine was ready, but could not get scheduled to run on the physical CPU. In millisecond
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String roleFt;
+	public Double cpuReady;
 
 	/**
 	 * Number of packets received.

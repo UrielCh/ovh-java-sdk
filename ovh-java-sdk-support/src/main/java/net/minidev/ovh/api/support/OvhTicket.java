@@ -56,18 +56,18 @@ public class OvhTicket {
 	public String serviceName;
 
 	/**
-	 * Ticket score
-	 *
-	 * canBeNull
-	 */
-	public String score;
-
-	/**
 	 * Customer account identifier
 	 *
 	 * canBeNull
 	 */
 	public String accountId;
+
+	/**
+	 * Ticket score
+	 *
+	 * canBeNull
+	 */
+	public String score;
 
 	/**
 	 * Can this ticket be closed or not

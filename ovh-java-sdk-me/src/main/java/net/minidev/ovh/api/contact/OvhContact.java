@@ -46,18 +46,18 @@ public class OvhContact {
 	public String vat;
 
 	/**
-	 * National identification number of your company
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String companyNationalIdentificationNumber;
-
-	/**
 	 * Birth city
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String birthCity;
+
+	/**
+	 * National identification number of your company
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String companyNationalIdentificationNumber;
 
 	/**
 	 * Language

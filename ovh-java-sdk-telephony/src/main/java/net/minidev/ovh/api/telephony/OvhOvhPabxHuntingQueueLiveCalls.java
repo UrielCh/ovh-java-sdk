@@ -42,13 +42,6 @@ public class OvhOvhPabxHuntingQueueLiveCalls {
 	public Date end;
 
 	/**
-	 * Name of the caller (or anonymous if unknown)
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String callerIdName;
-
-	/**
 	 * canBeNull && readOnly
 	 */
 	public Long id;
@@ -59,6 +52,13 @@ public class OvhOvhPabxHuntingQueueLiveCalls {
 	 * canBeNull && readOnly
 	 */
 	public OvhOvhPabxHuntingLiveCallsStateEnum state;
+
+	/**
+	 * Name of the caller (or anonymous if unknown)
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String callerIdName;
 
 	/**
 	 * Begin date of the call

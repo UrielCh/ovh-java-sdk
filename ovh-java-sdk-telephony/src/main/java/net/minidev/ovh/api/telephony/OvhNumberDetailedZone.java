@@ -5,13 +5,6 @@ package net.minidev.ovh.api.telephony;
  */
 public class OvhNumberDetailedZone {
 	/**
-	 * The country of the zone
-	 *
-	 * canBeNull
-	 */
-	public OvhNumberCountryEnum country;
-
-	/**
 	 * The number's range of this zone
 	 *
 	 * canBeNull
@@ -31,6 +24,13 @@ public class OvhNumberDetailedZone {
 	 * canBeNull
 	 */
 	public String zipCode;
+
+	/**
+	 * The country of the zone
+	 *
+	 * canBeNull
+	 */
+	public OvhNumberCountryEnum country;
 
 	/**
 	 * The city of the zone

@@ -17,12 +17,12 @@ public class OvhService {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String contactBilling;
+	public Date engagedUpTo;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Date engagedUpTo;
+	public String contactBilling;
 
 	/**
 	 * canBeNull && readOnly
@@ -69,14 +69,14 @@ public class OvhService {
 	public Date creation;
 
 	/**
-	 * canBeNull && readOnly
-	 */
-	public OvhStateEnum status;
-
-	/**
 	 * Indicates that the service can be set up to be deleted at expiration
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean canDeleteAtExpiration;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public OvhStateEnum status;
 }

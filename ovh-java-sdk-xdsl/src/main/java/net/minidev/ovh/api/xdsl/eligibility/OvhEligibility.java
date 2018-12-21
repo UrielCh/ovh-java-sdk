@@ -5,13 +5,6 @@ package net.minidev.ovh.api.xdsl.eligibility;
  */
 public class OvhEligibility {
 	/**
-	 * Portability capabilities
-	 *
-	 * canBeNull
-	 */
-	public OvhPortability portability;
-
-	/**
 	 * The eligible offers list
 	 *
 	 * canBeNull
@@ -19,11 +12,11 @@ public class OvhEligibility {
 	public OvhOffer[] offers;
 
 	/**
-	 * The line characteristics
+	 * Portability capabilities
 	 *
 	 * canBeNull
 	 */
-	public OvhLineCharacteristics characteristics;
+	public OvhPortability portability;
 
 	/**
 	 * The eligibility endpoint type
@@ -31,6 +24,13 @@ public class OvhEligibility {
 	 * canBeNull
 	 */
 	public OvhLineEndpointEnum endpoint;
+
+	/**
+	 * The line characteristics
+	 *
+	 * canBeNull
+	 */
+	public OvhLineCharacteristics characteristics;
 
 	/**
 	 * The line address

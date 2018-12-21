@@ -5,18 +5,18 @@ package net.minidev.ovh.api.connectivity.eligibility;
  */
 public class OvhEndpoint {
 	/**
-	 * Reference of the endpoint
-	 *
-	 * canBeNull
-	 */
-	public String reference;
-
-	/**
 	 * Portability informations, for copper only
 	 *
 	 * canBeNull
 	 */
 	public OvhPortability portability;
+
+	/**
+	 * Reference of the endpoint
+	 *
+	 * canBeNull
+	 */
+	public String reference;
 
 	/**
 	 * Address

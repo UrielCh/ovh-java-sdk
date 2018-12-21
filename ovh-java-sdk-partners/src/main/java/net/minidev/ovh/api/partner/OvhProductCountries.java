@@ -54,18 +54,18 @@ public class OvhProductCountries {
 	public Boolean netherlands;
 
 	/**
-	 * Australia
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean australia;
-
-	/**
 	 * Lithuania
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean lithuania;
+
+	/**
+	 * Australia
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean australia;
 
 	/**
 	 * Senegal
@@ -131,16 +131,16 @@ public class OvhProductCountries {
 	public Boolean italy;
 
 	/**
-	 * Finland
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean finland;
-
-	/**
 	 * Ireland
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean ireland;
+
+	/**
+	 * Finland
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean finland;
 }

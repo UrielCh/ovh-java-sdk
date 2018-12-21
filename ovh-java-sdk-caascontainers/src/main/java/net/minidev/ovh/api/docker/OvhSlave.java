@@ -37,18 +37,18 @@ public class OvhSlave {
 	public String flavorId;
 
 	/**
-	 * The state of the slave
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhStatus state;
-
-	/**
 	 * The slave UUID
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String id;
+
+	/**
+	 * The state of the slave
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhStatus state;
 
 	/**
 	 * Metrics about slave usage

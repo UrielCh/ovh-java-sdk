@@ -42,18 +42,18 @@ public class OvhHardwareSpecificationsDisk {
 	public OvhHardwareSpecificationsRaidHardEnum defaultHardwareRaidType;
 
 	/**
-	 * type of the disk (SSD, SATA, SAS, ...)
-	 *
-	 * canBeNull
-	 */
-	public String diskType;
-
-	/**
 	 * identifier of this disk group
 	 *
 	 * canBeNull
 	 */
 	public Long diskGroupId;
+
+	/**
+	 * type of the disk (SSD, SATA, SAS, ...)
+	 *
+	 * canBeNull
+	 */
+	public String diskType;
 
 	/**
 	 * number of disks in this group

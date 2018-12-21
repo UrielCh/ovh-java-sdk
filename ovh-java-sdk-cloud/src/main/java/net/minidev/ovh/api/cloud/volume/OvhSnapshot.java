@@ -42,18 +42,18 @@ public class OvhSnapshot {
 	public String id;
 
 	/**
-	 * Snapshot region
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String region;
-
-	/**
 	 * Snapshot creation date
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date creationDate;
+
+	/**
+	 * Snapshot region
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String region;
 
 	/**
 	 * Order plan code

@@ -19,18 +19,18 @@ public class OvhSpamAndVirusConfiguration {
 	public Boolean tagSpam;
 
 	/**
-	 * Check DKIM of message
-	 *
-	 * canBeNull
-	 */
-	public Boolean checkDKIM;
-
-	/**
 	 * If message is a spam delete it
 	 *
 	 * canBeNull
 	 */
 	public Boolean deleteSpam;
+
+	/**
+	 * Check DKIM of message
+	 *
+	 * canBeNull
+	 */
+	public Boolean checkDKIM;
 
 	/**
 	 * Check SPF of message

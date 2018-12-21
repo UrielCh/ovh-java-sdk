@@ -26,6 +26,46 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 	}
 
 	/**
+	 * List available services
+	 *
+	 * REST: GET /license/office
+	 */
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/license/office";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
+
+	/**
+	 * Domain associated to this office tenant
+	 *
+	 * REST: GET /license/office/{serviceName}/domain
+	 * @param serviceName [required] The unique identifier of your Office service
+	 */
+	public ArrayList<String> serviceName_domain_GET(String serviceName) throws IOException {
+		String qPath = "/license/office/{serviceName}/domain";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /license/office/{serviceName}/domain/{domainName}
+	 * @param serviceName [required] The unique identifier of your Office service
+	 * @param domainName [required] Domain name
+	 */
+	public OvhOfficeDomain serviceName_domain_domainName_GET(String serviceName, String domainName) throws IOException {
+		String qPath = "/license/office/{serviceName}/domain/{domainName}";
+		StringBuilder sb = path(qPath, serviceName, domainName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhOfficeDomain.class);
+	}
+
+	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /license/office/{serviceName}/pendingTask/{id}
@@ -49,9 +89,27 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 		String qPath = "/license/office/{serviceName}/pendingTask";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, t2);
 	}
-	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
+	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
+
+	/**
+	 * Shows the subscriptions' usage statistics for the given time period
+	 *
+	 * REST: GET /license/office/{serviceName}/usageStatistics
+	 * @param to [required] Period's end point.
+	 * @param from [required] Period's start point.
+	 * @param serviceName [required] The unique identifier of your Office service
+	 */
+	public ArrayList<OvhStatistics> serviceName_usageStatistics_GET(String serviceName, Date from, Date to) throws IOException {
+		String qPath = "/license/office/{serviceName}/usageStatistics";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "from", from);
+		query(sb, "to", to);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+	private static TypeReference<ArrayList<OvhStatistics>> t3 = new TypeReference<ArrayList<OvhStatistics>>() {};
 
 	/**
 	 * Get this object properties
@@ -106,50 +164,22 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 	}
 
 	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /license/office/{serviceName}/domain/{domainName}
-	 * @param serviceName [required] The unique identifier of your Office service
-	 * @param domainName [required] Domain name
-	 */
-	public OvhOfficeDomain serviceName_domain_domainName_GET(String serviceName, String domainName) throws IOException {
-		String qPath = "/license/office/{serviceName}/domain/{domainName}";
-		StringBuilder sb = path(qPath, serviceName, domainName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhOfficeDomain.class);
-	}
-
-	/**
-	 * Domain associated to this office tenant
-	 *
-	 * REST: GET /license/office/{serviceName}/domain
-	 * @param serviceName [required] The unique identifier of your Office service
-	 */
-	public ArrayList<String> serviceName_domain_GET(String serviceName) throws IOException {
-		String qPath = "/license/office/{serviceName}/domain";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};
-
-	/**
 	 * Change or reset  user's password
 	 *
 	 * REST: POST /license/office/{serviceName}/user/{activationEmail}/changePassword
-	 * @param password [required] New password or empty to receive a generated password by email
-	 * @param shouldSendMail [required] Specify if the new password should be send via email or not.
 	 * @param notifyEmail [required] Email to send the new password to. Default is nicAdmin's email.
+	 * @param shouldSendMail [required] Specify if the new password should be send via email or not.
+	 * @param password [required] New password or empty to receive a generated password by email
 	 * @param serviceName [required] The unique identifier of your Office service
 	 * @param activationEmail [required] Email used to activate Microsoft Office
 	 */
-	public OvhOfficeTask serviceName_user_activationEmail_changePassword_POST(String serviceName, String activationEmail, String password, Boolean shouldSendMail, String notifyEmail) throws IOException {
+	public OvhOfficeTask serviceName_user_activationEmail_changePassword_POST(String serviceName, String activationEmail, String notifyEmail, String password, Boolean shouldSendMail) throws IOException {
 		String qPath = "/license/office/{serviceName}/user/{activationEmail}/changePassword";
 		StringBuilder sb = path(qPath, serviceName, activationEmail);
 		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "notifyEmail", notifyEmail);
 		addBody(o, "password", password);
 		addBody(o, "shouldSendMail", shouldSendMail);
-		addBody(o, "notifyEmail", notifyEmail);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOfficeTask.class);
 	}
@@ -200,10 +230,10 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 	 * Accounts associated to this office tenant
 	 *
 	 * REST: GET /license/office/{serviceName}/user
-	 * @param activationEmail [required] Filter the value of activationEmail property (like)
 	 * @param firstName [required] Filter the value of firstName property (like)
-	 * @param lastName [required] Filter the value of lastName property (like)
+	 * @param activationEmail [required] Filter the value of activationEmail property (like)
 	 * @param licences [required] Filter the value of licences property (=)
+	 * @param lastName [required] Filter the value of lastName property (like)
 	 * @param serviceName [required] The unique identifier of your Office service
 	 */
 	public ArrayList<String> serviceName_user_GET(String serviceName, String activationEmail, String firstName, String lastName, OvhLicenceEnum[] licences) throws IOException {
@@ -214,7 +244,7 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 		query(sb, "lastName", lastName);
 		query(sb, "licences", licences);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
+		return convertTo(resp, t1);
 	}
 
 	/**
@@ -222,52 +252,22 @@ public class ApiOvhLicenseoffice extends ApiOvhBase {
 	 *
 	 * REST: POST /license/office/{serviceName}/user
 	 * @param domain [required] Office domain
-	 * @param lastName [required] Account last name
-	 * @param login [required] Account login
 	 * @param firstName [required] Account first name
+	 * @param login [required] Account login
+	 * @param lastName [required] Account last name
 	 * @param licence [required] Office licence
 	 * @param serviceName [required] The unique identifier of your Office service
 	 */
-	public OvhOfficeTask serviceName_user_POST(String serviceName, String domain, String lastName, String login, String firstName, OvhLicenceEnum licence) throws IOException {
+	public OvhOfficeTask serviceName_user_POST(String serviceName, String domain, String firstName, String lastName, OvhLicenceEnum licence, String login) throws IOException {
 		String qPath = "/license/office/{serviceName}/user";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "domain", domain);
-		addBody(o, "lastName", lastName);
-		addBody(o, "login", login);
 		addBody(o, "firstName", firstName);
+		addBody(o, "lastName", lastName);
 		addBody(o, "licence", licence);
+		addBody(o, "login", login);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOfficeTask.class);
-	}
-
-	/**
-	 * Shows the subscriptions' usage statistics for the given time period
-	 *
-	 * REST: GET /license/office/{serviceName}/usageStatistics
-	 * @param to [required] Period's end point.
-	 * @param from [required] Period's start point.
-	 * @param serviceName [required] The unique identifier of your Office service
-	 */
-	public ArrayList<OvhStatistics> serviceName_usageStatistics_GET(String serviceName, Date from, Date to) throws IOException {
-		String qPath = "/license/office/{serviceName}/usageStatistics";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "from", from);
-		query(sb, "to", to);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
-	}
-	private static TypeReference<ArrayList<OvhStatistics>> t3 = new TypeReference<ArrayList<OvhStatistics>>() {};
-
-	/**
-	 * List available services
-	 *
-	 * REST: GET /license/office
-	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/license/office";
-		StringBuilder sb = path(qPath);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
 	}
 }

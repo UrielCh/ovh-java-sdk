@@ -12,13 +12,6 @@ public class OvhItem {
 	public String duration;
 
 	/**
-	 * Current product identifier
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long itemId;
-
-	/**
 	 * Domain related settings
 	 *
 	 * canBeNull && readOnly
@@ -26,11 +19,11 @@ public class OvhItem {
 	public OvhDomainSettings settings;
 
 	/**
-	 * Id of parent item (if item is an option)
+	 * Current product identifier
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long parentItemId;
+	public Long itemId;
 
 	/**
 	 * Type of the product added
@@ -38,6 +31,13 @@ public class OvhItem {
 	 * canBeNull && readOnly
 	 */
 	public String productId;
+
+	/**
+	 * Id of parent item (if item is an option)
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long parentItemId;
 
 	/**
 	 * Configuration set for this product

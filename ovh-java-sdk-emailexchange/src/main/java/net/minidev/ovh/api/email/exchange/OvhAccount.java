@@ -28,13 +28,6 @@ public class OvhAccount {
 	public Boolean outlookLicense;
 
 	/**
-	 * Time of account's password last update
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date passwordLastUpdate;
-
-	/**
 	 * Account display name
 	 *
 	 * canBeNull && readOnly
@@ -42,18 +35,25 @@ public class OvhAccount {
 	public String displayName;
 
 	/**
-	 * Last update
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date lastUpdateDate;
-
-	/**
 	 * Ticket number of spam detection
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long spamTicketNumber;
+
+	/**
+	 * Time of account's password last update
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date passwordLastUpdate;
+
+	/**
+	 * Last update
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date lastUpdateDate;
 
 	/**
 	 * Account login

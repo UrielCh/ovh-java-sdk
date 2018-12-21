@@ -7,11 +7,11 @@ import java.util.Date;
  */
 public class OvhSmd {
 	/**
-	 * List of the labels that are protected with that SMD file
+	 * Date when information about SMD file aren't valid anymore
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhSmdLabel[] protectedLabels;
+	public Date notAfter;
 
 	/**
 	 * TMCH Internal identifier
@@ -21,11 +21,11 @@ public class OvhSmd {
 	public String smdId;
 
 	/**
-	 * Date when information about SMD file aren't valid anymore
+	 * List of the labels that are protected with that SMD file
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Date notAfter;
+	public OvhSmdLabel[] protectedLabels;
 
 	/**
 	 * SMD file content

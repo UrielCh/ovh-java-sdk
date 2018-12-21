@@ -9,12 +9,12 @@ public class OvhRefundDetail {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String reference;
+	public OvhPrice unitPrice;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhPrice unitPrice;
+	public String reference;
 
 	/**
 	 * canBeNull && readOnly

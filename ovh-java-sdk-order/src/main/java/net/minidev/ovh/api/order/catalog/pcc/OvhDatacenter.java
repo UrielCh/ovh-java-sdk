@@ -21,6 +21,13 @@ public class OvhDatacenter {
 	public String cityName;
 
 	/**
+	 * Country Code of a Datacenter
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhCountryEnum countryCode;
+
+	/**
 	 * City Code of a Datacenter
 	 *
 	 * canBeNull && readOnly
@@ -35,11 +42,11 @@ public class OvhDatacenter {
 	public Boolean orderable;
 
 	/**
-	 * Country Code of a Datacenter
+	 * List of filers add in case of a No Pack order
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhCountryEnum countryCode;
+	public String[] storagesNoPack;
 
 	/**
 	 * Describes if options can be ordered on a Datacenter
@@ -47,13 +54,6 @@ public class OvhDatacenter {
 	 * canBeNull && readOnly
 	 */
 	public Boolean orderableOptions;
-
-	/**
-	 * List of filers add in case of a No Pack order
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String[] storagesNoPack;
 
 	/**
 	 * Zone Code of a datacenter

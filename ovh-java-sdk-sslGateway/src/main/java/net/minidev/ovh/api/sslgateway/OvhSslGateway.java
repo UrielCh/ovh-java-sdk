@@ -19,18 +19,18 @@ public class OvhSslGateway {
 	public String displayName;
 
 	/**
-	 * The internal name of your SSL Gateway
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String serviceName;
-
-	/**
 	 * Set to true to contact backend servers over HTTPS
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean serverHttps;
+
+	/**
+	 * The internal name of your SSL Gateway
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String serviceName;
 
 	/**
 	 * Zones of your SSL Gateway
@@ -75,18 +75,18 @@ public class OvhSslGateway {
 	public String[] allowedSource;
 
 	/**
-	 * Set to true to enable https redirect
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean httpsRedirect;
-
-	/**
 	 * The IPv6 you need to put in the AAAA field of your domain name
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String ipv6;
+
+	/**
+	 * Set to true to enable https redirect
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean httpsRedirect;
 
 	/**
 	 * Current state of your SSL Gateway

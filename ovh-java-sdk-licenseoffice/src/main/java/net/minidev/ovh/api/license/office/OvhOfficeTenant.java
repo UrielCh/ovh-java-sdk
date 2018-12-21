@@ -42,18 +42,18 @@ public class OvhOfficeTenant {
 	public String address;
 
 	/**
-	 * Primary phone number
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String phone;
-
-	/**
 	 * Contact's city
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String city;
+
+	/**
+	 * Primary phone number
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String phone;
 
 	/**
 	 * Tenant's display name

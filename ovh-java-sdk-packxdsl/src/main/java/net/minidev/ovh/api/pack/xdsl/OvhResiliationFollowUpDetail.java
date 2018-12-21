@@ -7,13 +7,6 @@ import java.util.Date;
  */
 public class OvhResiliationFollowUpDetail {
 	/**
-	 * Date when the resiliation was asked
-	 *
-	 * canBeNull
-	 */
-	public Date registrationDate;
-
-	/**
 	 * If the customer needs to return his modem
 	 *
 	 * canBeNull
@@ -21,11 +14,11 @@ public class OvhResiliationFollowUpDetail {
 	public Boolean needModemReturn;
 
 	/**
-	 * Status of the resiliation
+	 * Date when the resiliation was asked
 	 *
 	 * canBeNull
 	 */
-	public String status;
+	public Date registrationDate;
 
 	/**
 	 * Date when the resiliation will take effect
@@ -33,4 +26,11 @@ public class OvhResiliationFollowUpDetail {
 	 * canBeNull
 	 */
 	public Date dateTodo;
+
+	/**
+	 * Status of the resiliation
+	 *
+	 * canBeNull
+	 */
+	public String status;
 }

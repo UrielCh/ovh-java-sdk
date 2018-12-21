@@ -27,10 +27,10 @@ public class OvhTimeCondition {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String status;
+	public OvhTimeConditionsPolicyEnum policy;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhTimeConditionsPolicyEnum policy;
+	public String status;
 }

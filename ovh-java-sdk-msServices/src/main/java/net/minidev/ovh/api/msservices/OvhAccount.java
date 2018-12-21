@@ -14,11 +14,11 @@ public class OvhAccount {
 	public String lastName;
 
 	/**
-	 * Last update
+	 * Time of account's password last update
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Date lastUpdateDate;
+	public Date passwordLastUpdate;
 
 	/**
 	 * Account initials
@@ -28,11 +28,11 @@ public class OvhAccount {
 	public String initials;
 
 	/**
-	 * Time of account's password last update
+	 * Last update
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Date passwordLastUpdate;
+	public Date lastUpdateDate;
 
 	/**
 	 * Account display name

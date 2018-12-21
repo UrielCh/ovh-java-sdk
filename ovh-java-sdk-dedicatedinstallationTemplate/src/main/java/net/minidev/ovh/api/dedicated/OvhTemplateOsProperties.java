@@ -26,16 +26,16 @@ public class OvhTemplateOsProperties {
 	public String postInstallationScriptReturn;
 
 	/**
+	 * canBeNull
+	 */
+	public Long rating;
+
+	/**
 	 * Set up the server using the provided hostname instead of the default hostname
 	 *
 	 * canBeNull
 	 */
 	public String customHostname;
-
-	/**
-	 * canBeNull
-	 */
-	public Long rating;
 
 	/**
 	 * Template change log details

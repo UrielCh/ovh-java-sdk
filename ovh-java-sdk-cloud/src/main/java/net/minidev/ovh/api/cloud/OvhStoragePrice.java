@@ -14,16 +14,16 @@ public class OvhStoragePrice {
 	public OvhPrice price;
 
 	/**
-	 * Monthly storage price (for 1GB stored per month)
-	 *
-	 * canBeNull
-	 */
-	public OvhPrice monthlyPrice;
-
-	/**
 	 * Storage region
 	 *
 	 * canBeNull
 	 */
 	public String region;
+
+	/**
+	 * Monthly storage price (for 1GB stored per month)
+	 *
+	 * canBeNull
+	 */
+	public OvhPrice monthlyPrice;
 }

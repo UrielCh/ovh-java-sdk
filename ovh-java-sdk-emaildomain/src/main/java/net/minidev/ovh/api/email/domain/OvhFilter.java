@@ -28,18 +28,18 @@ public class OvhFilter {
 	public String name;
 
 	/**
-	 * Action of filter
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhDomainFilterActionEnum action;
-
-	/**
 	 * If true filter is active
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean active;
+
+	/**
+	 * Action of filter
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhDomainFilterActionEnum action;
 
 	/**
 	 * Priority of filter

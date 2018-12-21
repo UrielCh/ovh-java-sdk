@@ -14,7 +14,7 @@ public class OvhVirtualNumberJob {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long messageLength;
+	public Long deliveryReceipt;
 
 	/**
 	 * canBeNull && readOnly
@@ -24,7 +24,7 @@ public class OvhVirtualNumberJob {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long deliveryReceipt;
+	public Long messageLength;
 
 	/**
 	 * canBeNull && readOnly
@@ -34,7 +34,7 @@ public class OvhVirtualNumberJob {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long id;
+	public Long numberOfSms;
 
 	/**
 	 * canBeNull && readOnly
@@ -44,7 +44,7 @@ public class OvhVirtualNumberJob {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long numberOfSms;
+	public Long id;
 
 	/**
 	 * canBeNull && readOnly

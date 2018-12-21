@@ -35,18 +35,18 @@ public class OvhAccount {
 	public Date passwordLastUpdate;
 
 	/**
-	 * Account display name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String displayName;
-
-	/**
 	 * Ticket number of spam detection
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long spamTicketNumber;
+
+	/**
+	 * Account display name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String displayName;
 
 	/**
 	 * Account login
@@ -56,18 +56,18 @@ public class OvhAccount {
 	public String login;
 
 	/**
-	 * Default email for this mailbox
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String primaryEmailAddress;
-
-	/**
 	 * Spam and Antivirus configuration
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhSpamAndVirusConfiguration spamAndVirusConfiguration;
+
+	/**
+	 * Default email for this mailbox
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String primaryEmailAddress;
 
 	/**
 	 * Hide account in Global Address List

@@ -35,18 +35,18 @@ public class OvhRtmRaidVolume {
 	public String letter;
 
 	/**
-	 * Raid volume synchronization progress
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String syncprogress;
-
-	/**
 	 * Raid volume stripe
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String stripe;
+
+	/**
+	 * Raid volume synchronization progress
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String syncprogress;
 
 	/**
 	 * Raid volume label

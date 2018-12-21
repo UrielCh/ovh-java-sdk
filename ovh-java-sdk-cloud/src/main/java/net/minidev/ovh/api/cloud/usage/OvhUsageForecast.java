@@ -17,18 +17,18 @@ public class OvhUsageForecast {
 	public OvhUsedCredits usableCredits;
 
 	/**
-	 * Monthly forecast
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhMonthlyResources monthlyUsage;
-
-	/**
 	 * Forecast dates (from/to)
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhPeriod period;
+
+	/**
+	 * Monthly forecast
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhMonthlyResources monthlyUsage;
 
 	/**
 	 * Entry last update

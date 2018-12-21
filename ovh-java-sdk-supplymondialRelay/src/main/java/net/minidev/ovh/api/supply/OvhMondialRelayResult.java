@@ -5,16 +5,16 @@ package net.minidev.ovh.api.supply;
  */
 public class OvhMondialRelayResult {
 	/**
-	 * Array of relay points
-	 *
-	 * canBeNull
-	 */
-	public OvhMondialRelay[] relayPoints;
-
-	/**
 	 * Reference address for finding RelayPoints
 	 *
 	 * canBeNull
 	 */
 	public String referenceAddress;
+
+	/**
+	 * Array of relay points
+	 *
+	 * canBeNull
+	 */
+	public OvhMondialRelay[] relayPoints;
 }

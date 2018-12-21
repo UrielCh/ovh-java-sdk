@@ -37,16 +37,16 @@ public class OvhDnssecKey {
 	public Long id;
 
 	/**
-	 * Algorithm number of the DNSSEC key
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhKeyAlgorithmEnum algorithm;
-
-	/**
 	 * Key status of the DNSSEC key
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhKeyStatusEnum status;
+
+	/**
+	 * Algorithm number of the DNSSEC key
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhKeyAlgorithmEnum algorithm;
 }

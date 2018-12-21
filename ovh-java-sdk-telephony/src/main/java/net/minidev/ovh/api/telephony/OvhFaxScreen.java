@@ -33,18 +33,18 @@ public class OvhFaxScreen {
 	public String callNumber;
 
 	/**
-	 * Country code of the fax service
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String countryCode;
-
-	/**
 	 * List of logins (TSI or ID) not allowed to send a fax
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String[] blacklistedTSI;
+
+	/**
+	 * Country code of the fax service
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String countryCode;
 
 	/**
 	 * canBeNull && readOnly

@@ -5,18 +5,18 @@ package net.minidev.ovh.api.zone;
  */
 public class OvhStatus {
 	/**
-	 * True if the zone has successfully been deployed
-	 *
-	 * canBeNull
-	 */
-	public Boolean isDeployed;
-
-	/**
 	 * Warning list
 	 *
 	 * canBeNull
 	 */
 	public String[] warnings;
+
+	/**
+	 * True if the zone has successfully been deployed
+	 *
+	 * canBeNull
+	 */
+	public Boolean isDeployed;
 
 	/**
 	 * Error list

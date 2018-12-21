@@ -14,16 +14,16 @@ public class OvhBandwidthStorageUsage {
 	public OvhPrice total;
 
 	/**
-	 * Downloaded bytes from your containers
-	 *
-	 * canBeNull
-	 */
-	public Long downloadedBytes;
-
-	/**
 	 * Region
 	 *
 	 * canBeNull
 	 */
 	public String region;
+
+	/**
+	 * Downloaded bytes from your containers
+	 *
+	 * canBeNull
+	 */
+	public Long downloadedBytes;
 }

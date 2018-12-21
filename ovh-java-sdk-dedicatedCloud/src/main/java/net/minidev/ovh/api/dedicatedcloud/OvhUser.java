@@ -55,13 +55,6 @@ public class OvhUser {
 	public Long userId;
 
 	/**
-	 * Check if the given Private Cloud user can be enabled or disabled ?
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean isEnableManageable;
-
-	/**
 	 * First name of the user
 	 *
 	 * canBeNull && readOnly
@@ -69,11 +62,11 @@ public class OvhUser {
 	public String firstName;
 
 	/**
-	 * Defines if the user can confirm security tokens (if a compatible option is enabled)
+	 * Check if the given Private Cloud user can be enabled or disabled ?
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Boolean isTokenValidator;
+	public Boolean isEnableManageable;
 
 	/**
 	 * Mobile phone number of the user
@@ -81,6 +74,13 @@ public class OvhUser {
 	 * canBeNull && readOnly
 	 */
 	public String phoneNumber;
+
+	/**
+	 * Defines if the user can confirm security tokens (if a compatible option is enabled)
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean isTokenValidator;
 
 	/**
 	 * Name of the user

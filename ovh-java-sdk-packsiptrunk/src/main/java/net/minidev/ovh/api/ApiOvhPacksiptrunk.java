@@ -20,19 +20,6 @@ public class ApiOvhPacksiptrunk extends ApiOvhBase {
 	}
 
 	/**
-	 * List available services
-	 *
-	 * REST: GET /pack/siptrunk
-	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/pack/siptrunk";
-		StringBuilder sb = path(qPath);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
-
-	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /pack/siptrunk/{packName}/serviceInfos
@@ -67,17 +54,17 @@ public class ApiOvhPacksiptrunk extends ApiOvhBase {
 	 * @param contactBilling The contact to set as billing contact
 	 * @param packName [required] The internal name of your pack
 	 */
-	public ArrayList<Long> packName_changeContact_POST(String packName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
+	public ArrayList<Long> packName_changeContact_POST(String packName, String contactAdmin, String contactBilling, String contactTech) throws IOException {
 		String qPath = "/pack/siptrunk/{packName}/changeContact";
 		StringBuilder sb = path(qPath, packName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "contactAdmin", contactAdmin);
-		addBody(o, "contactTech", contactTech);
 		addBody(o, "contactBilling", contactBilling);
+		addBody(o, "contactTech", contactTech);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t2);
+		return convertTo(resp, t1);
 	}
-	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
+	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
 
 	/**
 	 * Get this object properties
@@ -91,4 +78,17 @@ public class ApiOvhPacksiptrunk extends ApiOvhBase {
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhPackSipTrunk.class);
 	}
+
+	/**
+	 * List available services
+	 *
+	 * REST: GET /pack/siptrunk
+	 */
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/pack/siptrunk";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};
 }

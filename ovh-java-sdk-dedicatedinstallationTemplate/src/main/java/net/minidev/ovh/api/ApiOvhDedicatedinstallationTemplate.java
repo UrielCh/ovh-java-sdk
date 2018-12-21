@@ -21,58 +21,27 @@ public class ApiOvhDedicatedinstallationTemplate extends ApiOvhBase {
 	}
 
 	/**
-	 * Get this object properties
+	 * OVH operating system installation templates
 	 *
-	 * REST: GET /dedicated/installationTemplate/{templateName}
-	 * @param templateName [required] This template name
+	 * REST: GET /dedicated/installationTemplate
 	 */
-	public OvhTemplates templateName_GET(String templateName) throws IOException {
-		String qPath = "/dedicated/installationTemplate/{templateName}";
-		StringBuilder sb = path(qPath, templateName);
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/dedicated/installationTemplate";
+		StringBuilder sb = path(qPath);
 		String resp = execN(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhTemplates.class);
-	}
-
-	/**
-	 * Partitions defined in this partitioning scheme
-	 *
-	 * REST: GET /dedicated/installationTemplate/{templateName}/partitionScheme/{schemeName}/partition
-	 * @param templateName [required] This template name
-	 * @param schemeName [required] name of this partitioning scheme
-	 */
-	public ArrayList<String> templateName_partitionScheme_schemeName_partition_GET(String templateName, String schemeName) throws IOException {
-		String qPath = "/dedicated/installationTemplate/{templateName}/partitionScheme/{schemeName}/partition";
-		StringBuilder sb = path(qPath, templateName, schemeName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
 
 	/**
-	 * Get this object properties
+	 * Partitioning schemes available on this template
 	 *
-	 * REST: GET /dedicated/installationTemplate/{templateName}/partitionScheme/{schemeName}/partition/{mountpoint}
+	 * REST: GET /dedicated/installationTemplate/{templateName}/partitionScheme
 	 * @param templateName [required] This template name
-	 * @param schemeName [required] name of this partitioning scheme
-	 * @param mountpoint [required] partition mount point
 	 */
-	public OvhTemplatePartitions templateName_partitionScheme_schemeName_partition_mountpoint_GET(String templateName, String schemeName, String mountpoint) throws IOException {
-		String qPath = "/dedicated/installationTemplate/{templateName}/partitionScheme/{schemeName}/partition/{mountpoint}";
-		StringBuilder sb = path(qPath, templateName, schemeName, mountpoint);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhTemplatePartitions.class);
-	}
-
-	/**
-	 * Hardware RAIDs defined in this partitioning scheme
-	 *
-	 * REST: GET /dedicated/installationTemplate/{templateName}/partitionScheme/{schemeName}/hardwareRaid
-	 * @param templateName [required] This template name
-	 * @param schemeName [required] name of this partitioning scheme
-	 */
-	public ArrayList<String> templateName_partitionScheme_schemeName_hardwareRaid_GET(String templateName, String schemeName) throws IOException {
-		String qPath = "/dedicated/installationTemplate/{templateName}/partitionScheme/{schemeName}/hardwareRaid";
-		StringBuilder sb = path(qPath, templateName, schemeName);
+	public ArrayList<String> templateName_partitionScheme_GET(String templateName) throws IOException {
+		String qPath = "/dedicated/installationTemplate/{templateName}/partitionScheme";
+		StringBuilder sb = path(qPath, templateName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
@@ -93,6 +62,49 @@ public class ApiOvhDedicatedinstallationTemplate extends ApiOvhBase {
 	}
 
 	/**
+	 * Hardware RAIDs defined in this partitioning scheme
+	 *
+	 * REST: GET /dedicated/installationTemplate/{templateName}/partitionScheme/{schemeName}/hardwareRaid
+	 * @param templateName [required] This template name
+	 * @param schemeName [required] name of this partitioning scheme
+	 */
+	public ArrayList<String> templateName_partitionScheme_schemeName_hardwareRaid_GET(String templateName, String schemeName) throws IOException {
+		String qPath = "/dedicated/installationTemplate/{templateName}/partitionScheme/{schemeName}/hardwareRaid";
+		StringBuilder sb = path(qPath, templateName, schemeName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Partitions defined in this partitioning scheme
+	 *
+	 * REST: GET /dedicated/installationTemplate/{templateName}/partitionScheme/{schemeName}/partition
+	 * @param templateName [required] This template name
+	 * @param schemeName [required] name of this partitioning scheme
+	 */
+	public ArrayList<String> templateName_partitionScheme_schemeName_partition_GET(String templateName, String schemeName) throws IOException {
+		String qPath = "/dedicated/installationTemplate/{templateName}/partitionScheme/{schemeName}/partition";
+		StringBuilder sb = path(qPath, templateName, schemeName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /dedicated/installationTemplate/{templateName}/partitionScheme/{schemeName}/partition/{mountpoint}
+	 * @param templateName [required] This template name
+	 * @param schemeName [required] name of this partitioning scheme
+	 * @param mountpoint [required] partition mount point
+	 */
+	public OvhTemplatePartitions templateName_partitionScheme_schemeName_partition_mountpoint_GET(String templateName, String schemeName, String mountpoint) throws IOException {
+		String qPath = "/dedicated/installationTemplate/{templateName}/partitionScheme/{schemeName}/partition/{mountpoint}";
+		StringBuilder sb = path(qPath, templateName, schemeName, mountpoint);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhTemplatePartitions.class);
+	}
+
+	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /dedicated/installationTemplate/{templateName}/partitionScheme/{schemeName}
@@ -107,27 +119,15 @@ public class ApiOvhDedicatedinstallationTemplate extends ApiOvhBase {
 	}
 
 	/**
-	 * Partitioning schemes available on this template
+	 * Get this object properties
 	 *
-	 * REST: GET /dedicated/installationTemplate/{templateName}/partitionScheme
+	 * REST: GET /dedicated/installationTemplate/{templateName}
 	 * @param templateName [required] This template name
 	 */
-	public ArrayList<String> templateName_partitionScheme_GET(String templateName) throws IOException {
-		String qPath = "/dedicated/installationTemplate/{templateName}/partitionScheme";
+	public OvhTemplates templateName_GET(String templateName) throws IOException {
+		String qPath = "/dedicated/installationTemplate/{templateName}";
 		StringBuilder sb = path(qPath, templateName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * OVH operating system installation templates
-	 *
-	 * REST: GET /dedicated/installationTemplate
-	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/dedicated/installationTemplate";
-		StringBuilder sb = path(qPath);
 		String resp = execN(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, OvhTemplates.class);
 	}
 }

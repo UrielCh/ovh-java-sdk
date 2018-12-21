@@ -20,22 +20,6 @@ public class ApiOvhContact extends ApiOvhBase {
 	}
 
 	/**
-	 * Send form following characteristics of /contact/form
-	 *
-	 * REST: POST /contact/form/send
-	 * @param form [required] Form informations
-	 * @param type [required] Form type
-	 */
-	public void form_send_POST(OvhSafeKeyValue<String>[] form, String type) throws IOException {
-		String qPath = "/contact/form/send";
-		StringBuilder sb = path(qPath);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "form", form);
-		addBody(o, "type", type);
-		execN(qPath, "POST", sb.toString(), o);
-	}
-
-	/**
 	 * Get form characteristics
 	 *
 	 * REST: GET /contact/form
@@ -47,4 +31,20 @@ public class ApiOvhContact extends ApiOvhBase {
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<OvhFormCharacteristic>> t1 = new TypeReference<ArrayList<OvhFormCharacteristic>>() {};
+
+	/**
+	 * Send form following characteristics of /contact/form
+	 *
+	 * REST: POST /contact/form/send
+	 * @param type [required] Form type
+	 * @param form [required] Form informations
+	 */
+	public void form_send_POST(OvhSafeKeyValue<String>[] form, String type) throws IOException {
+		String qPath = "/contact/form/send";
+		StringBuilder sb = path(qPath);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "form", form);
+		addBody(o, "type", type);
+		execN(qPath, "POST", sb.toString(), o);
+	}
 }

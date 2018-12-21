@@ -35,18 +35,18 @@ public class OvhExchangeService {
 	public Long maxReceiveSize;
 
 	/**
-	 * Service family name displayed
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String displayName;
-
-	/**
 	 * Expiration date of SSL certificate
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date sslExpirationDate;
+
+	/**
+	 * Service family name displayed
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String displayName;
 
 	/**
 	 * Exchange service name

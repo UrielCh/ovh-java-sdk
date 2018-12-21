@@ -19,12 +19,12 @@ public class OvhWithdrawalDetail {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhPrice totalPrice;
+	public String withdrawalDetailId;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String withdrawalDetailId;
+	public OvhPrice totalPrice;
 
 	/**
 	 * canBeNull && readOnly

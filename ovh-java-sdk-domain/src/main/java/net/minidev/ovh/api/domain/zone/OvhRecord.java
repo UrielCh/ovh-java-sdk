@@ -28,18 +28,18 @@ public class OvhRecord {
 	public Long id;
 
 	/**
-	 * Resource record Name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhNamedResolutionFieldTypeEnum fieldType;
-
-	/**
 	 * Resource record ttl
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long ttl;
+
+	/**
+	 * Resource record Name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhNamedResolutionFieldTypeEnum fieldType;
 
 	/**
 	 * Resource record target

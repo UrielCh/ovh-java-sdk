@@ -40,18 +40,18 @@ public class OvhVoicemailProperties {
 	public String fromEmail;
 
 	/**
-	 * Current voicemail version
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean isNewVersion;
-
-	/**
 	 * Email addresses to notify when a new voicemail is left
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhServiceVoicemailNotifications[] redirectionEmails;
+
+	/**
+	 * Current voicemail version
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean isNewVersion;
 
 	/**
 	 * Sound ID of the short greeting played before an automated message

@@ -21,16 +21,16 @@ public class OvhRegistryCredentials {
 	public Date createdAt;
 
 	/**
-	 * Date of the resource last update
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date updatedAt;
-
-	/**
 	 * The registry account username
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String username;
+
+	/**
+	 * Date of the resource last update
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date updatedAt;
 }

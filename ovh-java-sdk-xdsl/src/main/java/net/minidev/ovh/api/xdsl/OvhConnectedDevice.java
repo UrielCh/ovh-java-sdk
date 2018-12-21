@@ -50,16 +50,16 @@ public class OvhConnectedDevice {
 	public Boolean active;
 
 	/**
-	 * The date time of the last update of thoses informations
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date informationDate;
-
-	/**
 	 * The remaining time in seconds of the DHCP lease of this device (-1 means infinite)
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long leaseTimeRemaining;
+
+	/**
+	 * The date time of the last update of thoses informations
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date informationDate;
 }

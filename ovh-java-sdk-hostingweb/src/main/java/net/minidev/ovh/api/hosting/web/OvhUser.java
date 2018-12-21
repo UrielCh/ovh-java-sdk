@@ -52,16 +52,16 @@ public class OvhUser {
 	public Long taskId;
 
 	/**
-	 * Home directory
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String home;
-
-	/**
 	 * The user status
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhStatusEnum status;
+
+	/**
+	 * Home directory
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String home;
 }

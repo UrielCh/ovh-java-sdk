@@ -12,18 +12,18 @@ public class OvhKey {
 	public OvhKeyFlagEnum flags;
 
 	/**
-	 * Public key
-	 *
-	 * canBeNull
-	 */
-	public String publicKey;
-
-	/**
 	 * Key tag
 	 *
 	 * canBeNull
 	 */
 	public Long tag;
+
+	/**
+	 * Public key
+	 *
+	 * canBeNull
+	 */
+	public String publicKey;
 
 	/**
 	 * Algorithm

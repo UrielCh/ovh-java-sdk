@@ -49,18 +49,18 @@ public class OvhCallDiagnosticCallQuality {
 	public Long packets;
 
 	/**
-	 * The max delay between two packet in the given direction flow
-	 *
-	 * canBeNull
-	 */
-	public Double maxDelay;
-
-	/**
 	 * Mean Opinion Score expressed in one number, from 1 to 5, 1 being the worst and 5 the best.
 	 *
 	 * canBeNull
 	 */
 	public Long mos;
+
+	/**
+	 * The max delay between two packet in the given direction flow
+	 *
+	 * canBeNull
+	 */
+	public Double maxDelay;
 
 	/**
 	 * Codec used in this direction flow

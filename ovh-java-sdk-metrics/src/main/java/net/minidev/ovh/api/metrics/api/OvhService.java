@@ -47,16 +47,16 @@ public class OvhService {
 	public OvhOfferTypeEnum type;
 
 	/**
-	 * Status of a service
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhServiceStatusEnum status;
-
-	/**
 	 * Indicator if the service should be upgraded based on current quota and offer
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean shouldUpgrade;
+
+	/**
+	 * Status of a service
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhServiceStatusEnum status;
 }

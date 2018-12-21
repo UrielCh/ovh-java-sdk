@@ -21,18 +21,18 @@ public class OvhBackupRepository {
 	public Long usage;
 
 	/**
-	 * The inventory name of your backup repository
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String inventoryName;
-
-	/**
 	 * The quota allowed on this Backup repository
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhUnitAndValue<Long> quota;
+
+	/**
+	 * The inventory name of your backup repository
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String inventoryName;
 
 	/**
 	 * The state of your backup repository

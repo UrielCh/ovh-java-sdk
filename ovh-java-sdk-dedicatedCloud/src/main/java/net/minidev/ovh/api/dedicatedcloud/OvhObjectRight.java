@@ -29,16 +29,16 @@ public class OvhObjectRight {
 	public OvhRightEnum right;
 
 	/**
+	 * canBeNull && readOnly
+	 */
+	public Long objectRightId;
+
+	/**
 	 * Type of the object
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhUserObjectRightTypeEnum type;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public Long objectRightId;
 
 	/**
 	 * The VMware MoRef of the object

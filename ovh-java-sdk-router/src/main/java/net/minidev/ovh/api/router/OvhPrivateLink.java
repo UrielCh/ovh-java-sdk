@@ -19,16 +19,16 @@ public class OvhPrivateLink {
 	public Long id;
 
 	/**
+	 * canBeNull && readOnly
+	 */
+	public Date creationDate;
+
+	/**
 	 * Service name of the other side of this link
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String peerServiceName;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public Date creationDate;
 
 	/**
 	 * canBeNull && readOnly

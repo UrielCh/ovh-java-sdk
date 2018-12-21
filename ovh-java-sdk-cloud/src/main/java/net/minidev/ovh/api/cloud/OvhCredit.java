@@ -43,18 +43,18 @@ public class OvhCredit {
 	public String bill;
 
 	/**
-	 * Credit validity
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhVoucherValidity validity;
-
-	/**
 	 * Credit id
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long id;
+
+	/**
+	 * Credit validity
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhVoucherValidity validity;
 
 	/**
 	 * Available credit

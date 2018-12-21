@@ -40,10 +40,10 @@ public class OvhFidelityMovement {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long order;
+	public Long previousBalance;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long previousBalance;
+	public Long order;
 }

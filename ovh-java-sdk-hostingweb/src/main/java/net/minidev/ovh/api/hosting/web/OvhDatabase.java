@@ -56,18 +56,18 @@ public class OvhDatabase {
 	public OvhVersionEnum version;
 
 	/**
-	 * URL for the graphical user interface
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String guiURL;
-
-	/**
 	 * Mode of your database
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhModeEnum mode;
+
+	/**
+	 * URL for the graphical user interface
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String guiURL;
 
 	/**
 	 * The port on where to contact this database

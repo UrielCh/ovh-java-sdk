@@ -33,16 +33,16 @@ public class OvhDnat {
 	public String newDestinationNet;
 
 	/**
+	 * canBeNull && readOnly
+	 */
+	public Long id;
+
+	/**
 	 * New destination port number
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long newDestinationPort;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public Long id;
 
 	/**
 	 * canBeNull && readOnly

@@ -1011,15 +1011,15 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * @param bic [required] Account's BIC
 	 * @param setDefault [required] Set as default payment mean once validated
 	 */
-	public OvhPaymentMeanValidation paymentMean_bankAccount_POST(String ownerAddress, String description, String ownerName, String iban, String bic, Boolean setDefault) throws IOException {
+	public OvhPaymentMeanValidation paymentMean_bankAccount_POST(String bic, String description, String iban, String ownerAddress, String ownerName, Boolean setDefault) throws IOException {
 		String qPath = "/me/paymentMean/bankAccount";
 		StringBuilder sb = path(qPath);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "ownerAddress", ownerAddress);
-		addBody(o, "description", description);
-		addBody(o, "ownerName", ownerName);
-		addBody(o, "iban", iban);
 		addBody(o, "bic", bic);
+		addBody(o, "description", description);
+		addBody(o, "iban", iban);
+		addBody(o, "ownerAddress", ownerAddress);
+		addBody(o, "ownerName", ownerName);
 		addBody(o, "setDefault", setDefault);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhPaymentMeanValidation.class);
@@ -1045,13 +1045,13 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * @param description [required] Custom description of this account
 	 * @param returnUrl [required] Callback URL where the customer will be redirected to after validation
 	 */
-	public OvhPaymentMeanValidation paymentMean_paypal_POST(Boolean setDefault, String description, String returnUrl) throws IOException {
+	public OvhPaymentMeanValidation paymentMean_paypal_POST(String description, String returnUrl, Boolean setDefault) throws IOException {
 		String qPath = "/me/paymentMean/paypal";
 		StringBuilder sb = path(qPath);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "setDefault", setDefault);
 		addBody(o, "description", description);
 		addBody(o, "returnUrl", returnUrl);
+		addBody(o, "setDefault", setDefault);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhPaymentMeanValidation.class);
 	}
@@ -1301,12 +1301,12 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * @param paymentMean [required] The registered payment mean you want to use
 	 * @param orderId [required]
 	 */
-	public void order_orderId_payWithRegisteredPaymentMean_POST(Long orderId, Long paymentMeanId, OvhReusablePaymentMeanEnum paymentMean) throws IOException {
+	public void order_orderId_payWithRegisteredPaymentMean_POST(Long orderId, OvhReusablePaymentMeanEnum paymentMean, Long paymentMeanId) throws IOException {
 		String qPath = "/me/order/{orderId}/payWithRegisteredPaymentMean";
 		StringBuilder sb = path(qPath, orderId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "paymentMeanId", paymentMeanId);
 		addBody(o, "paymentMean", paymentMean);
+		addBody(o, "paymentMeanId", paymentMeanId);
 		exec(qPath, "POST", sb.toString(), o);
 	}
 
@@ -1387,12 +1387,12 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * @param comment [required] An optional comment of why you want to retract
 	 * @param orderId [required]
 	 */
-	public void order_orderId_retraction_POST(Long orderId, OvhRetractionReasonEnum reason, String comment) throws IOException {
+	public void order_orderId_retraction_POST(Long orderId, String comment, OvhRetractionReasonEnum reason) throws IOException {
 		String qPath = "/me/order/{orderId}/retraction";
 		StringBuilder sb = path(qPath, orderId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "reason", reason);
 		addBody(o, "comment", comment);
+		addBody(o, "reason", reason);
 		exec(qPath, "POST", sb.toString(), o);
 	}
 
@@ -1787,13 +1787,13 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * @param script [required] Content of your IPXE script
 	 * @param description [required] A personnal description of this script
 	 */
-	public OvhIpxe ipxeScript_POST(String name, String script, String description) throws IOException {
+	public OvhIpxe ipxeScript_POST(String description, String name, String script) throws IOException {
 		String qPath = "/me/ipxeScript";
 		StringBuilder sb = path(qPath);
 		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "description", description);
 		addBody(o, "name", name);
 		addBody(o, "script", script);
-		addBody(o, "description", description);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhIpxe.class);
 	}
@@ -1856,15 +1856,15 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * @param password [required] User's password
 	 * @param group [required] User's group
 	 */
-	public void identity_user_POST(String login, String description, String email, String password, String group) throws IOException {
+	public void identity_user_POST(String description, String email, String group, String login, String password) throws IOException {
 		String qPath = "/me/identity/user";
 		StringBuilder sb = path(qPath);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "login", login);
 		addBody(o, "description", description);
 		addBody(o, "email", email);
-		addBody(o, "password", password);
 		addBody(o, "group", group);
+		addBody(o, "login", login);
+		addBody(o, "password", password);
 		exec(qPath, "POST", sb.toString(), o);
 	}
 
@@ -1914,12 +1914,12 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * @param description [required] User's description
 	 * @param group [required] User's group
 	 */
-	public void identity_user_user_PUT(String user, String email, String description, String group) throws IOException {
+	public void identity_user_user_PUT(String user, String description, String email, String group) throws IOException {
 		String qPath = "/me/identity/user/{user}";
 		StringBuilder sb = path(qPath, user);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "email", email);
 		addBody(o, "description", description);
+		addBody(o, "email", email);
 		addBody(o, "group", group);
 		exec(qPath, "PUT", sb.toString(), o);
 	}
@@ -1956,12 +1956,12 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * @param description [required] Group's description
 	 * @param role [required] Group's Role
 	 */
-	public OvhGroup identity_group_POST(String name, String description, OvhRoleEnum role) throws IOException {
+	public OvhGroup identity_group_POST(String description, String name, OvhRoleEnum role) throws IOException {
 		String qPath = "/me/identity/group";
 		StringBuilder sb = path(qPath);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "name", name);
 		addBody(o, "description", description);
+		addBody(o, "name", name);
 		addBody(o, "role", role);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhGroup.class);
@@ -2381,20 +2381,20 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * @param firstname [required]
 	 * @param phone [required]
 	 */
-	public void ipOrganisation_POST(String state, OvhCountryEnum country, OvhIpRegistryEnum registry, String address, String city, String lastname, String zip, String abuse_mailbox, String firstname, String phone) throws IOException {
+	public void ipOrganisation_POST(String abuse_mailbox, String address, String city, OvhCountryEnum country, String firstname, String lastname, String phone, OvhIpRegistryEnum registry, String state, String zip) throws IOException {
 		String qPath = "/me/ipOrganisation";
 		StringBuilder sb = path(qPath);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "state", state);
-		addBody(o, "country", country);
-		addBody(o, "registry", registry);
+		addBody(o, "abuse_mailbox", abuse_mailbox);
 		addBody(o, "address", address);
 		addBody(o, "city", city);
-		addBody(o, "lastname", lastname);
-		addBody(o, "zip", zip);
-		addBody(o, "abuse_mailbox", abuse_mailbox);
+		addBody(o, "country", country);
 		addBody(o, "firstname", firstname);
+		addBody(o, "lastname", lastname);
 		addBody(o, "phone", phone);
+		addBody(o, "registry", registry);
+		addBody(o, "state", state);
+		addBody(o, "zip", zip);
 		exec(qPath, "POST", sb.toString(), o);
 	}
 
@@ -2630,30 +2630,30 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * @param lastName [required] Last name
 	 * @param legalForm [required] Legal form of the contact
 	 */
-	public OvhContact contact_POST(OvhAddress address, String cellPhone, String phone, String fax, Date birthDay, String birthCity, String birthZip, OvhCountryEnum birthCountry, String vat, String companyNationalIdentificationNumber, String nationalIdentificationNumber, String organisationType, String organisationName, String email, String firstName, OvhGenderEnum gender, OvhLanguageEnum language, OvhCountryEnum nationality, String lastName, OvhLegalFormEnum legalForm) throws IOException {
+	public OvhContact contact_POST(OvhAddress address, String birthCity, OvhCountryEnum birthCountry, Date birthDay, String birthZip, String cellPhone, String companyNationalIdentificationNumber, String email, String fax, String firstName, OvhGenderEnum gender, OvhLanguageEnum language, String lastName, OvhLegalFormEnum legalForm, String nationalIdentificationNumber, OvhCountryEnum nationality, String organisationName, String organisationType, String phone, String vat) throws IOException {
 		String qPath = "/me/contact";
 		StringBuilder sb = path(qPath);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "address", address);
-		addBody(o, "cellPhone", cellPhone);
-		addBody(o, "phone", phone);
-		addBody(o, "fax", fax);
-		addBody(o, "birthDay", birthDay);
 		addBody(o, "birthCity", birthCity);
-		addBody(o, "birthZip", birthZip);
 		addBody(o, "birthCountry", birthCountry);
-		addBody(o, "vat", vat);
+		addBody(o, "birthDay", birthDay);
+		addBody(o, "birthZip", birthZip);
+		addBody(o, "cellPhone", cellPhone);
 		addBody(o, "companyNationalIdentificationNumber", companyNationalIdentificationNumber);
-		addBody(o, "nationalIdentificationNumber", nationalIdentificationNumber);
-		addBody(o, "organisationType", organisationType);
-		addBody(o, "organisationName", organisationName);
 		addBody(o, "email", email);
+		addBody(o, "fax", fax);
 		addBody(o, "firstName", firstName);
 		addBody(o, "gender", gender);
 		addBody(o, "language", language);
-		addBody(o, "nationality", nationality);
 		addBody(o, "lastName", lastName);
 		addBody(o, "legalForm", legalForm);
+		addBody(o, "nationalIdentificationNumber", nationalIdentificationNumber);
+		addBody(o, "nationality", nationality);
+		addBody(o, "organisationName", organisationName);
+		addBody(o, "organisationType", organisationType);
+		addBody(o, "phone", phone);
+		addBody(o, "vat", vat);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhContact.class);
 	}
@@ -2697,30 +2697,30 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * @param lastName [required] Last name
 	 * @param legalForm [required] Legal form of the contact
 	 */
-	public OvhContact contact_contactId_PUT(Long contactId, OvhAddress address, String cellPhone, String phone, String fax, Date birthDay, String birthCity, String birthZip, OvhCountryEnum birthCountry, String vat, String companyNationalIdentificationNumber, String nationalIdentificationNumber, String organisationType, String organisationName, String email, String firstName, OvhGenderEnum gender, OvhLanguageEnum language, OvhCountryEnum nationality, String lastName, OvhLegalFormEnum legalForm) throws IOException {
+	public OvhContact contact_contactId_PUT(Long contactId, OvhAddress address, String birthCity, OvhCountryEnum birthCountry, Date birthDay, String birthZip, String cellPhone, String companyNationalIdentificationNumber, String email, String fax, String firstName, OvhGenderEnum gender, OvhLanguageEnum language, String lastName, OvhLegalFormEnum legalForm, String nationalIdentificationNumber, OvhCountryEnum nationality, String organisationName, String organisationType, String phone, String vat) throws IOException {
 		String qPath = "/me/contact/{contactId}";
 		StringBuilder sb = path(qPath, contactId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "address", address);
-		addBody(o, "cellPhone", cellPhone);
-		addBody(o, "phone", phone);
-		addBody(o, "fax", fax);
-		addBody(o, "birthDay", birthDay);
 		addBody(o, "birthCity", birthCity);
-		addBody(o, "birthZip", birthZip);
 		addBody(o, "birthCountry", birthCountry);
-		addBody(o, "vat", vat);
+		addBody(o, "birthDay", birthDay);
+		addBody(o, "birthZip", birthZip);
+		addBody(o, "cellPhone", cellPhone);
 		addBody(o, "companyNationalIdentificationNumber", companyNationalIdentificationNumber);
-		addBody(o, "nationalIdentificationNumber", nationalIdentificationNumber);
-		addBody(o, "organisationType", organisationType);
-		addBody(o, "organisationName", organisationName);
 		addBody(o, "email", email);
+		addBody(o, "fax", fax);
 		addBody(o, "firstName", firstName);
 		addBody(o, "gender", gender);
 		addBody(o, "language", language);
-		addBody(o, "nationality", nationality);
 		addBody(o, "lastName", lastName);
 		addBody(o, "legalForm", legalForm);
+		addBody(o, "nationalIdentificationNumber", nationalIdentificationNumber);
+		addBody(o, "nationality", nationality);
+		addBody(o, "organisationName", organisationName);
+		addBody(o, "organisationType", organisationType);
+		addBody(o, "phone", phone);
+		addBody(o, "vat", vat);
 		String resp = exec(qPath, "PUT", sb.toString(), o);
 		return convertTo(resp, OvhContact.class);
 	}
@@ -3104,13 +3104,13 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * @param rule [required] Accept or deny IP access
 	 * @param ip [required] An IP range where we will apply the rule
 	 */
-	public void accessRestriction_ip_POST(Boolean warning, OvhIpRestrictionRuleEnum rule, String ip) throws IOException {
+	public void accessRestriction_ip_POST(String ip, OvhIpRestrictionRuleEnum rule, Boolean warning) throws IOException {
 		String qPath = "/me/accessRestriction/ip";
 		StringBuilder sb = path(qPath);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "warning", warning);
-		addBody(o, "rule", rule);
 		addBody(o, "ip", ip);
+		addBody(o, "rule", rule);
+		addBody(o, "warning", warning);
 		exec(qPath, "POST", sb.toString(), o);
 	}
 
@@ -3208,12 +3208,12 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * @param clientData [required]
 	 * @param id [required] The Id of the restriction
 	 */
-	public void accessRestriction_u2f_id_disable_POST(Long id, String signatureData, String clientData) throws IOException {
+	public void accessRestriction_u2f_id_disable_POST(Long id, String clientData, String signatureData) throws IOException {
 		String qPath = "/me/accessRestriction/u2f/{id}/disable";
 		StringBuilder sb = path(qPath, id);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "signatureData", signatureData);
 		addBody(o, "clientData", clientData);
+		addBody(o, "signatureData", signatureData);
 		exec(qPath, "POST", sb.toString(), o);
 	}
 
@@ -3225,12 +3225,12 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * @param clientData [required]
 	 * @param id [required] The Id of the restriction
 	 */
-	public void accessRestriction_u2f_id_validate_POST(Long id, String registrationData, String clientData) throws IOException {
+	public void accessRestriction_u2f_id_validate_POST(Long id, String clientData, String registrationData) throws IOException {
 		String qPath = "/me/accessRestriction/u2f/{id}/validate";
 		StringBuilder sb = path(qPath, id);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "registrationData", registrationData);
 		addBody(o, "clientData", clientData);
+		addBody(o, "registrationData", registrationData);
 		exec(qPath, "POST", sb.toString(), o);
 	}
 
@@ -3567,12 +3567,12 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * @param amount [required] The amount in cents you want to transfer
 	 * @param ovhAccountId [required]
 	 */
-	public OvhOrder ovhAccount_ovhAccountId_retrieveMoney_POST(String ovhAccountId, Long bankAccountId, Long amount) throws IOException {
+	public OvhOrder ovhAccount_ovhAccountId_retrieveMoney_POST(String ovhAccountId, Long amount, Long bankAccountId) throws IOException {
 		String qPath = "/me/ovhAccount/{ovhAccountId}/retrieveMoney";
 		StringBuilder sb = path(qPath, ovhAccountId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "bankAccountId", bankAccountId);
 		addBody(o, "amount", amount);
+		addBody(o, "bankAccountId", bankAccountId);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhOrder.class);
 	}
@@ -3670,14 +3670,14 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * @param templateName [required] This template name
 	 * @param schemeName [required] name of this partitioning scheme
 	 */
-	public void installationTemplate_templateName_partitionScheme_schemeName_hardwareRaid_POST(String templateName, String schemeName, String name, OvhTemplateOsHardwareRaidEnum mode, Long step, String[] disks) throws IOException {
+	public void installationTemplate_templateName_partitionScheme_schemeName_hardwareRaid_POST(String templateName, String schemeName, String[] disks, OvhTemplateOsHardwareRaidEnum mode, String name, Long step) throws IOException {
 		String qPath = "/me/installationTemplate/{templateName}/partitionScheme/{schemeName}/hardwareRaid";
 		StringBuilder sb = path(qPath, templateName, schemeName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "name", name);
-		addBody(o, "mode", mode);
-		addBody(o, "step", step);
 		addBody(o, "disks", disks);
+		addBody(o, "mode", mode);
+		addBody(o, "name", name);
+		addBody(o, "step", step);
 		exec(qPath, "POST", sb.toString(), o);
 	}
 
@@ -3797,15 +3797,15 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * @param templateName [required] This template name
 	 * @param schemeName [required] name of this partitioning scheme
 	 */
-	public void installationTemplate_templateName_partitionScheme_schemeName_partition_POST(String templateName, String schemeName, OvhTemplateOsFileSystemEnum filesystem, Long step, Long raid, Long size, String mountpoint, OvhTemplatePartitionTypeEnum type, String volumeName) throws IOException {
+	public void installationTemplate_templateName_partitionScheme_schemeName_partition_POST(String templateName, String schemeName, OvhTemplateOsFileSystemEnum filesystem, String mountpoint, Long raid, Long size, Long step, OvhTemplatePartitionTypeEnum type, String volumeName) throws IOException {
 		String qPath = "/me/installationTemplate/{templateName}/partitionScheme/{schemeName}/partition";
 		StringBuilder sb = path(qPath, templateName, schemeName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "filesystem", filesystem);
-		addBody(o, "step", step);
+		addBody(o, "mountpoint", mountpoint);
 		addBody(o, "raid", raid);
 		addBody(o, "size", size);
-		addBody(o, "mountpoint", mountpoint);
+		addBody(o, "step", step);
 		addBody(o, "type", type);
 		addBody(o, "volumeName", volumeName);
 		exec(qPath, "POST", sb.toString(), o);
@@ -3873,12 +3873,12 @@ public class ApiOvhMe extends ApiOvhBase {
 	 * @param name [required] name of this partitioning scheme
 	 * @param templateName [required] This template name
 	 */
-	public void installationTemplate_templateName_partitionScheme_POST(String templateName, Long priority, String name) throws IOException {
+	public void installationTemplate_templateName_partitionScheme_POST(String templateName, String name, Long priority) throws IOException {
 		String qPath = "/me/installationTemplate/{templateName}/partitionScheme";
 		StringBuilder sb = path(qPath, templateName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "priority", priority);
 		addBody(o, "name", name);
+		addBody(o, "priority", priority);
 		exec(qPath, "POST", sb.toString(), o);
 	}
 

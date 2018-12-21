@@ -5,16 +5,23 @@ package net.minidev.ovh.api.telephony;
  */
 public class OvhLineOptions {
 	/**
-	 * canBeNull && readOnly
-	 */
-	public String displayNumber;
-
-	/**
 	 * Nature of the forward when the line is unavailable
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhLineOptionForwardNatureTypeEnum forwardBackupNature;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public String displayNumber;
+
+	/**
+	 * Whether or not the line has restriction on outgoing calls
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean callRestrictionOutgoing;
 
 	/**
 	 * Voicemail number to dial from any other line
@@ -36,13 +43,6 @@ public class OvhLineOptions {
 	 * canBeNull && readOnly
 	 */
 	public OvhLineOptionForwardNatureTypeEnum forwardUnconditionalNature;
-
-	/**
-	 * Whether or not the line has restriction on outgoing calls
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean callRestrictionOutgoing;
 
 	/**
 	 * Language of the line
@@ -85,18 +85,18 @@ public class OvhLineOptions {
 	public Boolean doNotDisturb;
 
 	/**
-	 * Enable or disable record of outgoing calls
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean recordOutgoingCallsBeta;
-
-	/**
 	 * Nature of the forward on no-reply
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhLineOptionForwardNatureTypeEnum forwardNoReplyNature;
+
+	/**
+	 * Enable or disable record of outgoing calls
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean recordOutgoingCallsBeta;
 
 	/**
 	 * Enable calls forward when the line is unavailable
@@ -181,18 +181,18 @@ public class OvhLineOptions {
 	public String forwardUnconditionalNumber;
 
 	/**
-	 * Enable unconditional calls forward
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean forwardUnconditional;
-
-	/**
 	 * Delay before forward on no-reply
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long forwardNoReplyDelay;
+
+	/**
+	 * Enable unconditional calls forward
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean forwardUnconditional;
 
 	/**
 	 * The SIP domain of the line

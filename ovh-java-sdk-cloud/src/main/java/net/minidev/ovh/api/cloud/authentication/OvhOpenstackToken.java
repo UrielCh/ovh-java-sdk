@@ -14,12 +14,12 @@ public class OvhOpenstackToken {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String[] methods;
+	public OvhCatalog[] catalog;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhCatalog[] catalog;
+	public String[] methods;
 
 	/**
 	 * canBeNull && readOnly

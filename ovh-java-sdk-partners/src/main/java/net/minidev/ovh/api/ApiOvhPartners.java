@@ -83,39 +83,39 @@ public class ApiOvhPartners extends ApiOvhBase {
 	 * @param externalCertifications [required] Certifications obtained from other enterprises
 	 * @param partnerKnowledges [required] How did you heard about the OVH's partnership program
 	 */
-	public OvhCompany register_company_POST(String name, String commercialName, String registrationNumber, String address, String city, String zipCode, OvhCountryEnum country, String phone, String website, String description, String email, String linkedin, String facebook, String twitter, String logo, OvhEmployeesNumberEnum employeesNumber, OvhRevenueRangeEnum revenue, OvhKnowledgeResourcesRangeEnum OVHKnowledgeResources, OvhTechnicalAdvancedResourcesRangeEnum OVHTechnicalAdvancedResources, OvhTechnicalExpertResourcesRangeEnum OVHTechnicalExpertResources, OvhOVHCustomersAdvisedEnum OVHCustomersAdvised, OvhExpertisesChoices expertises, OvhOVHCertifications OVHCertifications, OvhOVHProductsUsed OVHProductsUsed, OvhClientKinds clientKinds, OvhActivitySectors activitySectors, OvhProductCountries productCountries, OvhExternalCertifications externalCertifications, OvhPartnerKnowledges partnerKnowledges) throws IOException {
+	public OvhCompany register_company_POST(OvhOVHCertifications OVHCertifications, OvhOVHCustomersAdvisedEnum OVHCustomersAdvised, OvhKnowledgeResourcesRangeEnum OVHKnowledgeResources, OvhOVHProductsUsed OVHProductsUsed, OvhTechnicalAdvancedResourcesRangeEnum OVHTechnicalAdvancedResources, OvhTechnicalExpertResourcesRangeEnum OVHTechnicalExpertResources, OvhActivitySectors activitySectors, String address, String city, OvhClientKinds clientKinds, String commercialName, OvhCountryEnum country, String description, String email, OvhEmployeesNumberEnum employeesNumber, OvhExpertisesChoices expertises, OvhExternalCertifications externalCertifications, String facebook, String linkedin, String logo, String name, OvhPartnerKnowledges partnerKnowledges, String phone, OvhProductCountries productCountries, String registrationNumber, OvhRevenueRangeEnum revenue, String twitter, String website, String zipCode) throws IOException {
 		String qPath = "/partners/register/company";
 		StringBuilder sb = path(qPath);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "name", name);
-		addBody(o, "commercialName", commercialName);
-		addBody(o, "registrationNumber", registrationNumber);
-		addBody(o, "address", address);
-		addBody(o, "city", city);
-		addBody(o, "zipCode", zipCode);
-		addBody(o, "country", country);
-		addBody(o, "phone", phone);
-		addBody(o, "website", website);
-		addBody(o, "description", description);
-		addBody(o, "email", email);
-		addBody(o, "linkedin", linkedin);
-		addBody(o, "facebook", facebook);
-		addBody(o, "twitter", twitter);
-		addBody(o, "logo", logo);
-		addBody(o, "employeesNumber", employeesNumber);
-		addBody(o, "revenue", revenue);
+		addBody(o, "OVHCertifications", OVHCertifications);
+		addBody(o, "OVHCustomersAdvised", OVHCustomersAdvised);
 		addBody(o, "OVHKnowledgeResources", OVHKnowledgeResources);
+		addBody(o, "OVHProductsUsed", OVHProductsUsed);
 		addBody(o, "OVHTechnicalAdvancedResources", OVHTechnicalAdvancedResources);
 		addBody(o, "OVHTechnicalExpertResources", OVHTechnicalExpertResources);
-		addBody(o, "OVHCustomersAdvised", OVHCustomersAdvised);
-		addBody(o, "expertises", expertises);
-		addBody(o, "OVHCertifications", OVHCertifications);
-		addBody(o, "OVHProductsUsed", OVHProductsUsed);
-		addBody(o, "clientKinds", clientKinds);
 		addBody(o, "activitySectors", activitySectors);
-		addBody(o, "productCountries", productCountries);
+		addBody(o, "address", address);
+		addBody(o, "city", city);
+		addBody(o, "clientKinds", clientKinds);
+		addBody(o, "commercialName", commercialName);
+		addBody(o, "country", country);
+		addBody(o, "description", description);
+		addBody(o, "email", email);
+		addBody(o, "employeesNumber", employeesNumber);
+		addBody(o, "expertises", expertises);
 		addBody(o, "externalCertifications", externalCertifications);
+		addBody(o, "facebook", facebook);
+		addBody(o, "linkedin", linkedin);
+		addBody(o, "logo", logo);
+		addBody(o, "name", name);
 		addBody(o, "partnerKnowledges", partnerKnowledges);
+		addBody(o, "phone", phone);
+		addBody(o, "productCountries", productCountries);
+		addBody(o, "registrationNumber", registrationNumber);
+		addBody(o, "revenue", revenue);
+		addBody(o, "twitter", twitter);
+		addBody(o, "website", website);
+		addBody(o, "zipCode", zipCode);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhCompany.class);
 	}
@@ -168,39 +168,39 @@ public class ApiOvhPartners extends ApiOvhBase {
 	 * @param externalCertifications [required] Certifications obtained from other enterprises
 	 * @param partnerKnowledges [required] How did you heard about the OVH's partnership program
 	 */
-	public OvhCompany register_company_companyId_PUT(String companyId, String name, String commercialName, String registrationNumber, String address, String city, String zipCode, OvhCountryEnum country, String phone, String website, String description, String email, String linkedin, String facebook, String twitter, String logo, OvhEmployeesNumberEnum effective, OvhRevenueRangeEnum revenue, OvhKnowledgeResourcesRangeEnum OVHKnowledgeResources, OvhTechnicalAdvancedResourcesRangeEnum OVHTechnicalAdvancedResources, OvhTechnicalExpertResourcesRangeEnum OVHTechnicalExpertResources, OvhExpertisesChoices expertises, OvhOVHCertifications OVHCertifications, OvhOVHCustomersAdvisedEnum OVHCustomersAdvised, OvhOVHProductsUsed OVHProductsUsed, OvhClientKinds clientKinds, OvhActivitySectors activitySectors, OvhProductCountries productCountries, OvhExternalCertifications externalCertifications, OvhPartnerKnowledges partnerKnowledges) throws IOException {
+	public OvhCompany register_company_companyId_PUT(String companyId, OvhOVHCertifications OVHCertifications, OvhOVHCustomersAdvisedEnum OVHCustomersAdvised, OvhKnowledgeResourcesRangeEnum OVHKnowledgeResources, OvhOVHProductsUsed OVHProductsUsed, OvhTechnicalAdvancedResourcesRangeEnum OVHTechnicalAdvancedResources, OvhTechnicalExpertResourcesRangeEnum OVHTechnicalExpertResources, OvhActivitySectors activitySectors, String address, String city, OvhClientKinds clientKinds, String commercialName, OvhCountryEnum country, String description, OvhEmployeesNumberEnum effective, String email, OvhExpertisesChoices expertises, OvhExternalCertifications externalCertifications, String facebook, String linkedin, String logo, String name, OvhPartnerKnowledges partnerKnowledges, String phone, OvhProductCountries productCountries, String registrationNumber, OvhRevenueRangeEnum revenue, String twitter, String website, String zipCode) throws IOException {
 		String qPath = "/partners/register/company/{companyId}";
 		StringBuilder sb = path(qPath, companyId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "name", name);
-		addBody(o, "commercialName", commercialName);
-		addBody(o, "registrationNumber", registrationNumber);
-		addBody(o, "address", address);
-		addBody(o, "city", city);
-		addBody(o, "zipCode", zipCode);
-		addBody(o, "country", country);
-		addBody(o, "phone", phone);
-		addBody(o, "website", website);
-		addBody(o, "description", description);
-		addBody(o, "email", email);
-		addBody(o, "linkedin", linkedin);
-		addBody(o, "facebook", facebook);
-		addBody(o, "twitter", twitter);
-		addBody(o, "logo", logo);
-		addBody(o, "effective", effective);
-		addBody(o, "revenue", revenue);
-		addBody(o, "OVHKnowledgeResources", OVHKnowledgeResources);
-		addBody(o, "OVHTechnicalAdvancedResources", OVHTechnicalAdvancedResources);
-		addBody(o, "OVHTechnicalExpertResources", OVHTechnicalExpertResources);
-		addBody(o, "expertises", expertises);
 		addBody(o, "OVHCertifications", OVHCertifications);
 		addBody(o, "OVHCustomersAdvised", OVHCustomersAdvised);
+		addBody(o, "OVHKnowledgeResources", OVHKnowledgeResources);
 		addBody(o, "OVHProductsUsed", OVHProductsUsed);
-		addBody(o, "clientKinds", clientKinds);
+		addBody(o, "OVHTechnicalAdvancedResources", OVHTechnicalAdvancedResources);
+		addBody(o, "OVHTechnicalExpertResources", OVHTechnicalExpertResources);
 		addBody(o, "activitySectors", activitySectors);
-		addBody(o, "productCountries", productCountries);
+		addBody(o, "address", address);
+		addBody(o, "city", city);
+		addBody(o, "clientKinds", clientKinds);
+		addBody(o, "commercialName", commercialName);
+		addBody(o, "country", country);
+		addBody(o, "description", description);
+		addBody(o, "effective", effective);
+		addBody(o, "email", email);
+		addBody(o, "expertises", expertises);
 		addBody(o, "externalCertifications", externalCertifications);
+		addBody(o, "facebook", facebook);
+		addBody(o, "linkedin", linkedin);
+		addBody(o, "logo", logo);
+		addBody(o, "name", name);
 		addBody(o, "partnerKnowledges", partnerKnowledges);
+		addBody(o, "phone", phone);
+		addBody(o, "productCountries", productCountries);
+		addBody(o, "registrationNumber", registrationNumber);
+		addBody(o, "revenue", revenue);
+		addBody(o, "twitter", twitter);
+		addBody(o, "website", website);
+		addBody(o, "zipCode", zipCode);
 		String resp = exec(qPath, "PUT", sb.toString(), o);
 		return convertTo(resp, OvhCompany.class);
 	}
@@ -214,69 +214,6 @@ public class ApiOvhPartners extends ApiOvhBase {
 	public String register_company_companyId_DELETE(String companyId) throws IOException {
 		String qPath = "/partners/register/company/{companyId}";
 		StringBuilder sb = path(qPath, companyId);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * Get information on a created contact
-	 *
-	 * REST: GET /partners/register/company/{companyId}/contact/{contactId}
-	 * @param companyId [required] Company's id
-	 * @param contactId [required] Contact's id
-	 */
-	public OvhContact register_company_companyId_contact_contactId_GET(String companyId, String contactId) throws IOException {
-		String qPath = "/partners/register/company/{companyId}/contact/{contactId}";
-		StringBuilder sb = path(qPath, companyId, contactId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhContact.class);
-	}
-
-	/**
-	 * Update some fields on a created contact
-	 *
-	 * REST: PUT /partners/register/company/{companyId}/contact/{contactId}
-	 * @param companyId [required] Company's id
-	 * @param contactId [required] Contact's id
-	 * @param otherNics [required] List of nics to associate with this contact
-	 * @param firstName [required] Contact's first name
-	 * @param lastName [required] Contact's last name
-	 * @param email [required] Contact's email
-	 * @param role [required] Contact's role in the company
-	 * @param phone [required] Contact's phone number
-	 * @param linkedin [required] Contact's linkedin url, must resemble "https://www.linkedin.com/in/ovh")
-	 * @param facebook [required] Contact's facebook url, must resemble "https://www.facebook.com/ovh")
-	 * @param twitter [required] Contact's twitter url, must resemble "https://twitter.com/ovh")
-	 * @param newsletter [required] Newsletter subscription choice
-	 */
-	public OvhContact register_company_companyId_contact_contactId_PUT(String companyId, String contactId, OvhNic[] otherNics, String firstName, String lastName, String email, String role, String phone, String linkedin, String facebook, String twitter, Boolean newsletter) throws IOException {
-		String qPath = "/partners/register/company/{companyId}/contact/{contactId}";
-		StringBuilder sb = path(qPath, companyId, contactId);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "otherNics", otherNics);
-		addBody(o, "firstName", firstName);
-		addBody(o, "lastName", lastName);
-		addBody(o, "email", email);
-		addBody(o, "role", role);
-		addBody(o, "phone", phone);
-		addBody(o, "linkedin", linkedin);
-		addBody(o, "facebook", facebook);
-		addBody(o, "twitter", twitter);
-		addBody(o, "newsletter", newsletter);
-		String resp = exec(qPath, "PUT", sb.toString(), o);
-		return convertTo(resp, OvhContact.class);
-	}
-
-	/**
-	 * Remove a contact
-	 *
-	 * REST: DELETE /partners/register/company/{companyId}/contact/{contactId}
-	 * @param companyId [required] Company's id
-	 * @param contactId [required] Contact's id
-	 */
-	public String register_company_companyId_contact_contactId_DELETE(String companyId, String contactId) throws IOException {
-		String qPath = "/partners/register/company/{companyId}/contact/{contactId}";
-		StringBuilder sb = path(qPath, companyId, contactId);
 		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, String.class);
 	}
@@ -310,22 +247,85 @@ public class ApiOvhPartners extends ApiOvhBase {
 	 * @param twitter [required] Contact's twitter url, must resemble "https://twitter.com/ovh")
 	 * @param newsletter [required] Newsletter subscription choice
 	 */
-	public OvhContact register_company_companyId_contact_POST(String companyId, OvhNic[] otherNics, String firstName, String lastName, String email, String role, String phone, String linkedin, String facebook, String twitter, Boolean newsletter) throws IOException {
+	public OvhContact register_company_companyId_contact_POST(String companyId, String email, String facebook, String firstName, String lastName, String linkedin, Boolean newsletter, OvhNic[] otherNics, String phone, String role, String twitter) throws IOException {
 		String qPath = "/partners/register/company/{companyId}/contact";
 		StringBuilder sb = path(qPath, companyId);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "otherNics", otherNics);
+		addBody(o, "email", email);
+		addBody(o, "facebook", facebook);
 		addBody(o, "firstName", firstName);
 		addBody(o, "lastName", lastName);
-		addBody(o, "email", email);
-		addBody(o, "role", role);
-		addBody(o, "phone", phone);
 		addBody(o, "linkedin", linkedin);
-		addBody(o, "facebook", facebook);
-		addBody(o, "twitter", twitter);
 		addBody(o, "newsletter", newsletter);
+		addBody(o, "otherNics", otherNics);
+		addBody(o, "phone", phone);
+		addBody(o, "role", role);
+		addBody(o, "twitter", twitter);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhContact.class);
+	}
+
+	/**
+	 * Get information on a created contact
+	 *
+	 * REST: GET /partners/register/company/{companyId}/contact/{contactId}
+	 * @param companyId [required] Company's id
+	 * @param contactId [required] Contact's id
+	 */
+	public OvhContact register_company_companyId_contact_contactId_GET(String companyId, String contactId) throws IOException {
+		String qPath = "/partners/register/company/{companyId}/contact/{contactId}";
+		StringBuilder sb = path(qPath, companyId, contactId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhContact.class);
+	}
+
+	/**
+	 * Update some fields on a created contact
+	 *
+	 * REST: PUT /partners/register/company/{companyId}/contact/{contactId}
+	 * @param companyId [required] Company's id
+	 * @param contactId [required] Contact's id
+	 * @param otherNics [required] List of nics to associate with this contact
+	 * @param firstName [required] Contact's first name
+	 * @param lastName [required] Contact's last name
+	 * @param email [required] Contact's email
+	 * @param role [required] Contact's role in the company
+	 * @param phone [required] Contact's phone number
+	 * @param linkedin [required] Contact's linkedin url, must resemble "https://www.linkedin.com/in/ovh")
+	 * @param facebook [required] Contact's facebook url, must resemble "https://www.facebook.com/ovh")
+	 * @param twitter [required] Contact's twitter url, must resemble "https://twitter.com/ovh")
+	 * @param newsletter [required] Newsletter subscription choice
+	 */
+	public OvhContact register_company_companyId_contact_contactId_PUT(String companyId, String contactId, String email, String facebook, String firstName, String lastName, String linkedin, Boolean newsletter, OvhNic[] otherNics, String phone, String role, String twitter) throws IOException {
+		String qPath = "/partners/register/company/{companyId}/contact/{contactId}";
+		StringBuilder sb = path(qPath, companyId, contactId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "email", email);
+		addBody(o, "facebook", facebook);
+		addBody(o, "firstName", firstName);
+		addBody(o, "lastName", lastName);
+		addBody(o, "linkedin", linkedin);
+		addBody(o, "newsletter", newsletter);
+		addBody(o, "otherNics", otherNics);
+		addBody(o, "phone", phone);
+		addBody(o, "role", role);
+		addBody(o, "twitter", twitter);
+		String resp = exec(qPath, "PUT", sb.toString(), o);
+		return convertTo(resp, OvhContact.class);
+	}
+
+	/**
+	 * Remove a contact
+	 *
+	 * REST: DELETE /partners/register/company/{companyId}/contact/{contactId}
+	 * @param companyId [required] Company's id
+	 * @param contactId [required] Contact's id
+	 */
+	public String register_company_companyId_contact_contactId_DELETE(String companyId, String contactId) throws IOException {
+		String qPath = "/partners/register/company/{companyId}/contact/{contactId}";
+		StringBuilder sb = path(qPath, companyId, contactId);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, String.class);
 	}
 
 	/**

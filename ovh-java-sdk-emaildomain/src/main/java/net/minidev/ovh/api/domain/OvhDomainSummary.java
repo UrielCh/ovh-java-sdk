@@ -19,16 +19,16 @@ public class OvhDomainSummary {
 	public Long redirection;
 
 	/**
-	 * Number of mailing lists
-	 *
-	 * canBeNull
-	 */
-	public Long mailingList;
-
-	/**
 	 * Number of mailboxes
 	 *
 	 * canBeNull
 	 */
 	public Long account;
+
+	/**
+	 * Number of mailing lists
+	 *
+	 * canBeNull
+	 */
+	public Long mailingList;
 }

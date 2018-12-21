@@ -42,18 +42,18 @@ public class OvhRma {
 	public OvhContact shippingContact;
 
 	/**
-	 * Indicates the current status of the RMA with a list of steps
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhRmaStep[] steps;
-
-	/**
 	 * Is the RMA cancellable?
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean cancellable;
+
+	/**
+	 * Indicates the current status of the RMA with a list of steps
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhRmaStep[] steps;
 
 	/**
 	 * New merchandise brand in case of exchange

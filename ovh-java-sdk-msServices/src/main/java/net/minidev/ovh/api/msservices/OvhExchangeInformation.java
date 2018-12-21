@@ -140,18 +140,18 @@ public class OvhExchangeInformation {
 	public Date creationDate;
 
 	/**
-	 * Pending task id for this account
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long taskPendingId;
-
-	/**
 	 * Delete Outlook license at expiration date
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean deleteOutlookAtExpiration;
+
+	/**
+	 * Pending task id for this account
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long taskPendingId;
 
 	/**
 	 * Exchange account license

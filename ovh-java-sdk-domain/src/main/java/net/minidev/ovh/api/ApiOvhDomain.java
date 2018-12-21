@@ -23,12 +23,12 @@ import net.minidev.ovh.api.domain.OvhTask;
 import net.minidev.ovh.api.domain.OvhUkRegistrar;
 import net.minidev.ovh.api.domain.OvhWhoisObfuscatorFieldsEnum;
 import net.minidev.ovh.api.domain.configurations.OvhObfuscatedEmails;
+import net.minidev.ovh.api.domain.configurations.OvhOptin;
 import net.minidev.ovh.api.domain.data.OvhAfnicCorporationTrademarkContact;
 import net.minidev.ovh.api.domain.data.OvhAssociationContact;
 import net.minidev.ovh.api.domain.data.OvhProContact;
 import net.minidev.ovh.api.domain.data.OvhSmd;
 import net.minidev.ovh.api.domain.data.claimnotice.OvhClaimNotice;
-import net.minidev.ovh.api.domain.rules.OvhOptin;
 import net.minidev.ovh.api.domain.zone.OvhDnssec;
 import net.minidev.ovh.api.domain.zone.OvhDynHostLogin;
 import net.minidev.ovh.api.domain.zone.OvhDynHostRecord;
@@ -59,451 +59,46 @@ public class ApiOvhDomain extends ApiOvhBase {
 	}
 
 	/**
-	 * Accelerate the task
+	 * List available services
 	 *
-	 * REST: POST /domain/{serviceName}/task/{id}/accelerate
-	 * @param serviceName [required] The internal name of your domain
-	 * @param id [required] Id of the object
+	 * REST: GET /domain
+	 * @param whoisOwner Filter the value of whoisOwner property (=)
 	 */
-	public void serviceName_task_id_accelerate_POST(String serviceName, Long id) throws IOException {
-		String qPath = "/domain/{serviceName}/task/{id}/accelerate";
-		StringBuilder sb = path(qPath, serviceName, id);
-		exec(qPath, "POST", sb.toString(), null);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /domain/{serviceName}/task/{id}
-	 * @param serviceName [required] The internal name of your domain
-	 * @param id [required] Id of the object
-	 */
-	public OvhTask serviceName_task_id_GET(String serviceName, Long id) throws IOException {
-		String qPath = "/domain/{serviceName}/task/{id}";
-		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Cancel the task
-	 *
-	 * REST: POST /domain/{serviceName}/task/{id}/cancel
-	 * @param serviceName [required] The internal name of your domain
-	 * @param id [required] Id of the object
-	 */
-	public void serviceName_task_id_cancel_POST(String serviceName, Long id) throws IOException {
-		String qPath = "/domain/{serviceName}/task/{id}/cancel";
-		StringBuilder sb = path(qPath, serviceName, id);
-		exec(qPath, "POST", sb.toString(), null);
-	}
-
-	/**
-	 * Relaunch the task
-	 *
-	 * REST: POST /domain/{serviceName}/task/{id}/relaunch
-	 * @param serviceName [required] The internal name of your domain
-	 * @param id [required] Id of the object
-	 */
-	public void serviceName_task_id_relaunch_POST(String serviceName, Long id) throws IOException {
-		String qPath = "/domain/{serviceName}/task/{id}/relaunch";
-		StringBuilder sb = path(qPath, serviceName, id);
-		exec(qPath, "POST", sb.toString(), null);
-	}
-
-	/**
-	 * Domain pending tasks
-	 *
-	 * REST: GET /domain/{serviceName}/task
-	 * @param status [required] Filter the value of status property (=)
-	 * @param function [required] Filter the value of function property (like)
-	 * @param serviceName [required] The internal name of your domain
-	 */
-	public ArrayList<Long> serviceName_task_GET(String serviceName, String function, OvhOperationStatusEnum status) throws IOException {
-		String qPath = "/domain/{serviceName}/task";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "function", function);
-		query(sb, "status", status);
+	public ArrayList<String> GET(String whoisOwner) throws IOException {
+		String qPath = "/domain";
+		StringBuilder sb = path(qPath);
+		query(sb, "whoisOwner", whoisOwner);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
-	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
+	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
 
 	/**
-	 * Regenerate the obfuscated email address
+	 * List of current name servers
 	 *
-	 * REST: POST /domain/{serviceName}/email/obfuscated/refresh
-	 * @param contactType [required] Contact type
-	 * @param serviceName [required] The internal name of your domain
-	 * @deprecated
-	 */
-	public void serviceName_email_obfuscated_refresh_POST(String serviceName, OvhDomainContactTypeEnum[] contactType) throws IOException {
-		String qPath = "/domain/{serviceName}/email/obfuscated/refresh";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "contactType", contactType);
-		exec(qPath, "POST", sb.toString(), o);
-	}
-
-	/**
-	 * Retrieve optin rule
-	 *
-	 * REST: GET /domain/{serviceName}/rules/optin
+	 * REST: GET /domain/{serviceName}/nameServer
 	 * @param serviceName [required] The internal name of your domain
 	 */
-	public ArrayList<OvhOptin> serviceName_rules_optin_GET(String serviceName) throws IOException {
-		String qPath = "/domain/{serviceName}/rules/optin";
+	public ArrayList<Long> serviceName_nameServer_GET(String serviceName) throws IOException {
+		String qPath = "/domain/{serviceName}/nameServer";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
-	private static TypeReference<ArrayList<OvhOptin>> t2 = new TypeReference<ArrayList<OvhOptin>>() {};
+	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
 
 	/**
-	 * Retrieve emails obfuscation rule
+	 * Add new name server
 	 *
-	 * REST: GET /domain/{serviceName}/rules/emailsObfuscation
+	 * REST: POST /domain/{serviceName}/nameServer
+	 * @param nameServer [required] New name server
 	 * @param serviceName [required] The internal name of your domain
 	 */
-	public ArrayList<OvhContactAllTypesEnum> serviceName_rules_emailsObfuscation_GET(String serviceName) throws IOException {
-		String qPath = "/domain/{serviceName}/rules/emailsObfuscation";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
-	}
-	private static TypeReference<ArrayList<OvhContactAllTypesEnum>> t3 = new TypeReference<ArrayList<OvhContactAllTypesEnum>>() {};
-
-	/**
-	 * Launch a contact change procedure
-	 *
-	 * REST: POST /domain/{serviceName}/changeContact
-	 * @param contactAdmin The contact to set as admin contact
-	 * @param contactTech The contact to set as tech contact
-	 * @param contactBilling The contact to set as billing contact
-	 * @param serviceName [required] The internal name of your domain
-	 */
-	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
-		String qPath = "/domain/{serviceName}/changeContact";
+	public OvhTask serviceName_nameServer_POST(String serviceName, OvhDomainNs[] nameServer) throws IOException {
+		String qPath = "/domain/{serviceName}/nameServer";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "contactAdmin", contactAdmin);
-		addBody(o, "contactTech", contactTech);
-		addBody(o, "contactBilling", contactBilling);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /domain/{serviceName}/dsRecord/{id}
-	 * @param serviceName [required] The internal name of your domain
-	 * @param id [required] Id of the object
-	 */
-	public OvhDnssecKey serviceName_dsRecord_id_GET(String serviceName, Long id) throws IOException {
-		String qPath = "/domain/{serviceName}/dsRecord/{id}";
-		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhDnssecKey.class);
-	}
-
-	/**
-	 * List of domain's DS Records
-	 *
-	 * REST: GET /domain/{serviceName}/dsRecord
-	 * @param flags [required] Filter the value of flags property (=)
-	 * @param status [required] Filter the value of status property (=)
-	 * @param serviceName [required] The internal name of your domain
-	 */
-	public ArrayList<Long> serviceName_dsRecord_GET(String serviceName, OvhKeyFlagEnum flags, OvhKeyStatusEnum status) throws IOException {
-		String qPath = "/domain/{serviceName}/dsRecord";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "flags", flags);
-		query(sb, "status", status);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Update DS records
-	 *
-	 * REST: POST /domain/{serviceName}/dsRecord
-	 * @param keys [required] New Keys
-	 * @param serviceName [required] The internal name of your domain
-	 */
-	public OvhTask serviceName_dsRecord_POST(String serviceName, OvhKey[] keys) throws IOException {
-		String qPath = "/domain/{serviceName}/dsRecord";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "keys", keys);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Return authInfo code if the domain is unlocked
-	 *
-	 * REST: GET /domain/{serviceName}/authInfo
-	 * @param serviceName [required] The internal name of your domain
-	 */
-	public String serviceName_authInfo_GET(String serviceName) throws IOException {
-		String qPath = "/domain/{serviceName}/authInfo";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /domain/{serviceName}/serviceInfos
-	 * @param serviceName [required] The internal name of your domain
-	 */
-	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
-		String qPath = "/domain/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhService.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /domain/{serviceName}/serviceInfos
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your domain
-	 */
-	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
-		String qPath = "/domain/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * List of whois obfuscators
-	 *
-	 * REST: GET /domain/{serviceName}/owo
-	 * @param field [required] Filter the value of field property (=)
-	 * @param serviceName [required] The internal name of your domain
-	 */
-	public ArrayList<OvhWhoisObfuscatorFieldsEnum> serviceName_owo_GET(String serviceName, OvhWhoisObfuscatorFieldsEnum field) throws IOException {
-		String qPath = "/domain/{serviceName}/owo";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "field", field);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t4);
-	}
-	private static TypeReference<ArrayList<OvhWhoisObfuscatorFieldsEnum>> t4 = new TypeReference<ArrayList<OvhWhoisObfuscatorFieldsEnum>>() {};
-
-	/**
-	 * Add whois obfuscators
-	 *
-	 * REST: POST /domain/{serviceName}/owo
-	 * @param fields [required] Fields to obfuscate
-	 * @param serviceName [required] The internal name of your domain
-	 */
-	public ArrayList<OvhWhoisObfuscatorFieldsEnum> serviceName_owo_POST(String serviceName, OvhWhoisObfuscatorFieldsEnum[] fields) throws IOException {
-		String qPath = "/domain/{serviceName}/owo";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "fields", fields);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t4);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /domain/{serviceName}/owo/{field}
-	 * @param serviceName [required] The internal name of your domain
-	 * @param field [required] Obfuscated field
-	 */
-	public OvhOwo serviceName_owo_field_GET(String serviceName, net.minidev.ovh.api.domain.OvhWhoisObfuscatorFieldsEnum field) throws IOException {
-		String qPath = "/domain/{serviceName}/owo/{field}";
-		StringBuilder sb = path(qPath, serviceName, field);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhOwo.class);
-	}
-
-	/**
-	 * Delete a whois obfuscator
-	 *
-	 * REST: DELETE /domain/{serviceName}/owo/{field}
-	 * @param serviceName [required] The internal name of your domain
-	 * @param field [required] Obfuscated field
-	 */
-	public void serviceName_owo_field_DELETE(String serviceName, net.minidev.ovh.api.domain.OvhWhoisObfuscatorFieldsEnum field) throws IOException {
-		String qPath = "/domain/{serviceName}/owo/{field}";
-		StringBuilder sb = path(qPath, serviceName, field);
-		exec(qPath, "DELETE", sb.toString(), null);
-	}
-
-	/**
-	 * List of glue record
-	 *
-	 * REST: GET /domain/{serviceName}/glueRecord
-	 * @param host [required] Filter the value of host property (like)
-	 * @param serviceName [required] The internal name of your domain
-	 */
-	public ArrayList<String> serviceName_glueRecord_GET(String serviceName, String host) throws IOException {
-		String qPath = "/domain/{serviceName}/glueRecord";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "host", host);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t5);
-	}
-	private static TypeReference<ArrayList<String>> t5 = new TypeReference<ArrayList<String>>() {};
-
-	/**
-	 * Create a glue record
-	 *
-	 * REST: POST /domain/{serviceName}/glueRecord
-	 * @param host [required] Host of the glue record
-	 * @param ips [required] Ips of the glue record
-	 * @param serviceName [required] The internal name of your domain
-	 */
-	public OvhTask serviceName_glueRecord_POST(String serviceName, String host, String[] ips) throws IOException {
-		String qPath = "/domain/{serviceName}/glueRecord";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "host", host);
-		addBody(o, "ips", ips);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /domain/{serviceName}/glueRecord/{host}
-	 * @param serviceName [required] The internal name of your domain
-	 * @param host [required] Host of the glue record
-	 */
-	public OvhGlueRecord serviceName_glueRecord_host_GET(String serviceName, String host) throws IOException {
-		String qPath = "/domain/{serviceName}/glueRecord/{host}";
-		StringBuilder sb = path(qPath, serviceName, host);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhGlueRecord.class);
-	}
-
-	/**
-	 * Delete the glue record
-	 *
-	 * REST: DELETE /domain/{serviceName}/glueRecord/{host}
-	 * @param serviceName [required] The internal name of your domain
-	 * @param host [required] Host of the glue record
-	 */
-	public OvhTask serviceName_glueRecord_host_DELETE(String serviceName, String host) throws IOException {
-		String qPath = "/domain/{serviceName}/glueRecord/{host}";
-		StringBuilder sb = path(qPath, serviceName, host);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Update the glue record
-	 *
-	 * REST: POST /domain/{serviceName}/glueRecord/{host}/update
-	 * @param ips [required] Ips of the glue record
-	 * @param serviceName [required] The internal name of your domain
-	 * @param host [required] Host of the glue record
-	 */
-	public OvhTask serviceName_glueRecord_host_update_POST(String serviceName, String host, String[] ips) throws IOException {
-		String qPath = "/domain/{serviceName}/glueRecord/{host}/update";
-		StringBuilder sb = path(qPath, serviceName, host);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "ips", ips);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Retrieve obfuscated emails configuration
-	 *
-	 * REST: GET /domain/{serviceName}/configurations/obfuscatedEmails
-	 * @param serviceName [required] The internal name of your domain
-	 */
-	public ArrayList<OvhObfuscatedEmails> serviceName_configurations_obfuscatedEmails_GET(String serviceName) throws IOException {
-		String qPath = "/domain/{serviceName}/configurations/obfuscatedEmails";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t6);
-	}
-	private static TypeReference<ArrayList<OvhObfuscatedEmails>> t6 = new TypeReference<ArrayList<OvhObfuscatedEmails>>() {};
-
-	/**
-	 * Save a new obfuscated emails configuration
-	 *
-	 * REST: PUT /domain/{serviceName}/configurations/obfuscatedEmails
-	 * @param contacts [required] Contact types where obfuscated emails can be activated
-	 * @param serviceName [required] The internal name of your domain
-	 */
-	public ArrayList<OvhObfuscatedEmails> serviceName_configurations_obfuscatedEmails_PUT(String serviceName, OvhContactAllTypesEnum[] contacts) throws IOException {
-		String qPath = "/domain/{serviceName}/configurations/obfuscatedEmails";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "contacts", contacts);
-		String resp = exec(qPath, "PUT", sb.toString(), o);
-		return convertTo(resp, t6);
-	}
-
-	/**
-	 * Refresh an obfuscated emails configuration
-	 *
-	 * REST: POST /domain/{serviceName}/configurations/obfuscatedEmails/refresh
-	 * @param contacts [required] Contact types where obfuscated emails will be refreshed
-	 * @param serviceName [required] The internal name of your domain
-	 */
-	public void serviceName_configurations_obfuscatedEmails_refresh_POST(String serviceName, OvhContactAllTypesEnum[] contacts) throws IOException {
-		String qPath = "/domain/{serviceName}/configurations/obfuscatedEmails/refresh";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "contacts", contacts);
-		exec(qPath, "POST", sb.toString(), o);
-	}
-
-	/**
-	 * Retrieve optin configuration
-	 *
-	 * REST: GET /domain/{serviceName}/configurations/optin
-	 * @param serviceName [required] The internal name of your domain
-	 */
-	public ArrayList<net.minidev.ovh.api.domain.configurations.OvhOptin> serviceName_configurations_optin_GET(String serviceName) throws IOException {
-		String qPath = "/domain/{serviceName}/configurations/optin";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t7);
-	}
-	private static TypeReference<ArrayList<net.minidev.ovh.api.domain.configurations.OvhOptin>> t7 = new TypeReference<ArrayList<net.minidev.ovh.api.domain.configurations.OvhOptin>>() {};
-
-	/**
-	 * Save a new optin configuration
-	 *
-	 * REST: PUT /domain/{serviceName}/configurations/optin
-	 * @param optin [required] New configuration about optin
-	 * @param serviceName [required] The internal name of your domain
-	 */
-	public ArrayList<net.minidev.ovh.api.domain.configurations.OvhOptin> serviceName_configurations_optin_PUT(String serviceName, net.minidev.ovh.api.domain.configurations.OvhOptin[] optin) throws IOException {
-		String qPath = "/domain/{serviceName}/configurations/optin";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "optin", optin);
-		String resp = exec(qPath, "PUT", sb.toString(), o);
-		return convertTo(resp, t7);
-	}
-
-	/**
-	 * Update DNS servers
-	 *
-	 * REST: POST /domain/{serviceName}/nameServers/update
-	 * @param nameServers [required] New name servers
-	 * @param serviceName [required] The internal name of your domain
-	 */
-	public OvhTask serviceName_nameServers_update_POST(String serviceName, OvhDomainNs[] nameServers) throws IOException {
-		String qPath = "/domain/{serviceName}/nameServers/update";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "nameServers", nameServers);
+		addBody(o, "nameServer", nameServer);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
@@ -551,62 +146,120 @@ public class ApiOvhDomain extends ApiOvhBase {
 	}
 
 	/**
-	 * List of current name servers
+	 * Return authInfo code if the domain is unlocked
 	 *
-	 * REST: GET /domain/{serviceName}/nameServer
+	 * REST: GET /domain/{serviceName}/authInfo
 	 * @param serviceName [required] The internal name of your domain
 	 */
-	public ArrayList<Long> serviceName_nameServer_GET(String serviceName) throws IOException {
-		String qPath = "/domain/{serviceName}/nameServer";
+	public String serviceName_authInfo_GET(String serviceName) throws IOException {
+		String qPath = "/domain/{serviceName}/authInfo";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, String.class);
 	}
 
 	/**
-	 * Add new name server
+	 * Refresh an obfuscated emails configuration
 	 *
-	 * REST: POST /domain/{serviceName}/nameServer
-	 * @param nameServer [required] New name server
+	 * REST: POST /domain/{serviceName}/configurations/obfuscatedEmails/refresh
+	 * @param contacts [required] Contact types where obfuscated emails will be refreshed
 	 * @param serviceName [required] The internal name of your domain
 	 */
-	public OvhTask serviceName_nameServer_POST(String serviceName, OvhDomainNs[] nameServer) throws IOException {
-		String qPath = "/domain/{serviceName}/nameServer";
+	public void serviceName_configurations_obfuscatedEmails_refresh_POST(String serviceName, OvhContactAllTypesEnum[] contacts) throws IOException {
+		String qPath = "/domain/{serviceName}/configurations/obfuscatedEmails/refresh";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "nameServer", nameServer);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Return the list of all .uk registrars
-	 *
-	 * REST: GET /domain/{serviceName}/ukRegistrars
-	 * @param serviceName [required] The internal name of your domain
-	 */
-	public ArrayList<OvhUkRegistrar> serviceName_ukRegistrars_GET(String serviceName) throws IOException {
-		String qPath = "/domain/{serviceName}/ukRegistrars";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t8);
-	}
-	private static TypeReference<ArrayList<OvhUkRegistrar>> t8 = new TypeReference<ArrayList<OvhUkRegistrar>>() {};
-
-	/**
-	 * Activate the DNS zone for this domain
-	 *
-	 * REST: POST /domain/{serviceName}/activateZone
-	 * @param minimized [required] Create only mandatory records
-	 * @param serviceName [required] The internal name of your domain
-	 */
-	public void serviceName_activateZone_POST(String serviceName, Boolean minimized) throws IOException {
-		String qPath = "/domain/{serviceName}/activateZone";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "minimized", minimized);
+		addBody(o, "contacts", contacts);
 		exec(qPath, "POST", sb.toString(), o);
 	}
+
+	/**
+	 * Retrieve obfuscated emails configuration
+	 *
+	 * REST: GET /domain/{serviceName}/configurations/obfuscatedEmails
+	 * @param serviceName [required] The internal name of your domain
+	 */
+	public ArrayList<OvhObfuscatedEmails> serviceName_configurations_obfuscatedEmails_GET(String serviceName) throws IOException {
+		String qPath = "/domain/{serviceName}/configurations/obfuscatedEmails";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+	private static TypeReference<ArrayList<OvhObfuscatedEmails>> t3 = new TypeReference<ArrayList<OvhObfuscatedEmails>>() {};
+
+	/**
+	 * Save a new obfuscated emails configuration
+	 *
+	 * REST: PUT /domain/{serviceName}/configurations/obfuscatedEmails
+	 * @param contacts [required] Contact types where obfuscated emails can be activated
+	 * @param serviceName [required] The internal name of your domain
+	 */
+	public ArrayList<OvhObfuscatedEmails> serviceName_configurations_obfuscatedEmails_PUT(String serviceName, OvhContactAllTypesEnum[] contacts) throws IOException {
+		String qPath = "/domain/{serviceName}/configurations/obfuscatedEmails";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "contacts", contacts);
+		String resp = exec(qPath, "PUT", sb.toString(), o);
+		return convertTo(resp, t3);
+	}
+
+	/**
+	 * Retrieve optin configuration
+	 *
+	 * REST: GET /domain/{serviceName}/configurations/optin
+	 * @param serviceName [required] The internal name of your domain
+	 */
+	public ArrayList<OvhOptin> serviceName_configurations_optin_GET(String serviceName) throws IOException {
+		String qPath = "/domain/{serviceName}/configurations/optin";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t4);
+	}
+	private static TypeReference<ArrayList<OvhOptin>> t4 = new TypeReference<ArrayList<OvhOptin>>() {};
+
+	/**
+	 * Save a new optin configuration
+	 *
+	 * REST: PUT /domain/{serviceName}/configurations/optin
+	 * @param optin [required] New configuration about optin
+	 * @param serviceName [required] The internal name of your domain
+	 */
+	public ArrayList<OvhOptin> serviceName_configurations_optin_PUT(String serviceName, OvhOptin[] optin) throws IOException {
+		String qPath = "/domain/{serviceName}/configurations/optin";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "optin", optin);
+		String resp = exec(qPath, "PUT", sb.toString(), o);
+		return convertTo(resp, t4);
+	}
+
+	/**
+	 * Retrieve optin rule
+	 *
+	 * REST: GET /domain/{serviceName}/rules/optin
+	 * @param serviceName [required] The internal name of your domain
+	 */
+	public ArrayList<net.minidev.ovh.api.domain.rules.OvhOptin> serviceName_rules_optin_GET(String serviceName) throws IOException {
+		String qPath = "/domain/{serviceName}/rules/optin";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t5);
+	}
+	private static TypeReference<ArrayList<net.minidev.ovh.api.domain.rules.OvhOptin>> t5 = new TypeReference<ArrayList<net.minidev.ovh.api.domain.rules.OvhOptin>>() {};
+
+	/**
+	 * Retrieve emails obfuscation rule
+	 *
+	 * REST: GET /domain/{serviceName}/rules/emailsObfuscation
+	 * @param serviceName [required] The internal name of your domain
+	 */
+	public ArrayList<OvhContactAllTypesEnum> serviceName_rules_emailsObfuscation_GET(String serviceName) throws IOException {
+		String qPath = "/domain/{serviceName}/rules/emailsObfuscation";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t6);
+	}
+	private static TypeReference<ArrayList<OvhContactAllTypesEnum>> t6 = new TypeReference<ArrayList<OvhContactAllTypesEnum>>() {};
 
 	/**
 	 * Schedule an outgoing transfer task for this domain (.uk only)
@@ -622,6 +275,36 @@ public class ApiOvhDomain extends ApiOvhBase {
 		addBody(o, "tag", tag);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Return the list of all .uk registrars
+	 *
+	 * REST: GET /domain/{serviceName}/ukRegistrars
+	 * @param serviceName [required] The internal name of your domain
+	 */
+	public ArrayList<OvhUkRegistrar> serviceName_ukRegistrars_GET(String serviceName) throws IOException {
+		String qPath = "/domain/{serviceName}/ukRegistrars";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t7);
+	}
+	private static TypeReference<ArrayList<OvhUkRegistrar>> t7 = new TypeReference<ArrayList<OvhUkRegistrar>>() {};
+
+	/**
+	 * Regenerate the obfuscated email address
+	 *
+	 * REST: POST /domain/{serviceName}/email/obfuscated/refresh
+	 * @param contactType [required] Contact type
+	 * @param serviceName [required] The internal name of your domain
+	 * @deprecated
+	 */
+	public void serviceName_email_obfuscated_refresh_POST(String serviceName, OvhDomainContactTypeEnum[] contactType) throws IOException {
+		String qPath = "/domain/{serviceName}/email/obfuscated/refresh";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "contactType", contactType);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -651,6 +334,337 @@ public class ApiOvhDomain extends ApiOvhBase {
 	}
 
 	/**
+	 * Activate the DNS zone for this domain
+	 *
+	 * REST: POST /domain/{serviceName}/activateZone
+	 * @param minimized [required] Create only mandatory records
+	 * @param serviceName [required] The internal name of your domain
+	 */
+	public void serviceName_activateZone_POST(String serviceName, Boolean minimized) throws IOException {
+		String qPath = "/domain/{serviceName}/activateZone";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "minimized", minimized);
+		exec(qPath, "POST", sb.toString(), o);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /domain/{serviceName}/serviceInfos
+	 * @param serviceName [required] The internal name of your domain
+	 */
+	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
+		String qPath = "/domain/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhService.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /domain/{serviceName}/serviceInfos
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your domain
+	 */
+	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
+		String qPath = "/domain/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Relaunch the task
+	 *
+	 * REST: POST /domain/{serviceName}/task/{id}/relaunch
+	 * @param serviceName [required] The internal name of your domain
+	 * @param id [required] Id of the object
+	 */
+	public void serviceName_task_id_relaunch_POST(String serviceName, Long id) throws IOException {
+		String qPath = "/domain/{serviceName}/task/{id}/relaunch";
+		StringBuilder sb = path(qPath, serviceName, id);
+		exec(qPath, "POST", sb.toString(), null);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /domain/{serviceName}/task/{id}
+	 * @param serviceName [required] The internal name of your domain
+	 * @param id [required] Id of the object
+	 */
+	public OvhTask serviceName_task_id_GET(String serviceName, Long id) throws IOException {
+		String qPath = "/domain/{serviceName}/task/{id}";
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Accelerate the task
+	 *
+	 * REST: POST /domain/{serviceName}/task/{id}/accelerate
+	 * @param serviceName [required] The internal name of your domain
+	 * @param id [required] Id of the object
+	 */
+	public void serviceName_task_id_accelerate_POST(String serviceName, Long id) throws IOException {
+		String qPath = "/domain/{serviceName}/task/{id}/accelerate";
+		StringBuilder sb = path(qPath, serviceName, id);
+		exec(qPath, "POST", sb.toString(), null);
+	}
+
+	/**
+	 * Cancel the task
+	 *
+	 * REST: POST /domain/{serviceName}/task/{id}/cancel
+	 * @param serviceName [required] The internal name of your domain
+	 * @param id [required] Id of the object
+	 */
+	public void serviceName_task_id_cancel_POST(String serviceName, Long id) throws IOException {
+		String qPath = "/domain/{serviceName}/task/{id}/cancel";
+		StringBuilder sb = path(qPath, serviceName, id);
+		exec(qPath, "POST", sb.toString(), null);
+	}
+
+	/**
+	 * Domain pending tasks
+	 *
+	 * REST: GET /domain/{serviceName}/task
+	 * @param function [required] Filter the value of function property (like)
+	 * @param status [required] Filter the value of status property (=)
+	 * @param serviceName [required] The internal name of your domain
+	 */
+	public ArrayList<Long> serviceName_task_GET(String serviceName, String function, OvhOperationStatusEnum status) throws IOException {
+		String qPath = "/domain/{serviceName}/task";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "function", function);
+		query(sb, "status", status);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * List of whois obfuscators
+	 *
+	 * REST: GET /domain/{serviceName}/owo
+	 * @param field [required] Filter the value of field property (=)
+	 * @param serviceName [required] The internal name of your domain
+	 */
+	public ArrayList<OvhWhoisObfuscatorFieldsEnum> serviceName_owo_GET(String serviceName, OvhWhoisObfuscatorFieldsEnum field) throws IOException {
+		String qPath = "/domain/{serviceName}/owo";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "field", field);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t8);
+	}
+	private static TypeReference<ArrayList<OvhWhoisObfuscatorFieldsEnum>> t8 = new TypeReference<ArrayList<OvhWhoisObfuscatorFieldsEnum>>() {};
+
+	/**
+	 * Add whois obfuscators
+	 *
+	 * REST: POST /domain/{serviceName}/owo
+	 * @param fields [required] Fields to obfuscate
+	 * @param serviceName [required] The internal name of your domain
+	 */
+	public ArrayList<OvhWhoisObfuscatorFieldsEnum> serviceName_owo_POST(String serviceName, OvhWhoisObfuscatorFieldsEnum[] fields) throws IOException {
+		String qPath = "/domain/{serviceName}/owo";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "fields", fields);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t8);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /domain/{serviceName}/owo/{field}
+	 * @param serviceName [required] The internal name of your domain
+	 * @param field [required] Obfuscated field
+	 */
+	public OvhOwo serviceName_owo_field_GET(String serviceName, net.minidev.ovh.api.domain.OvhWhoisObfuscatorFieldsEnum field) throws IOException {
+		String qPath = "/domain/{serviceName}/owo/{field}";
+		StringBuilder sb = path(qPath, serviceName, field);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhOwo.class);
+	}
+
+	/**
+	 * Delete a whois obfuscator
+	 *
+	 * REST: DELETE /domain/{serviceName}/owo/{field}
+	 * @param serviceName [required] The internal name of your domain
+	 * @param field [required] Obfuscated field
+	 */
+	public void serviceName_owo_field_DELETE(String serviceName, net.minidev.ovh.api.domain.OvhWhoisObfuscatorFieldsEnum field) throws IOException {
+		String qPath = "/domain/{serviceName}/owo/{field}";
+		StringBuilder sb = path(qPath, serviceName, field);
+		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /domain/{serviceName}/dsRecord/{id}
+	 * @param serviceName [required] The internal name of your domain
+	 * @param id [required] Id of the object
+	 */
+	public OvhDnssecKey serviceName_dsRecord_id_GET(String serviceName, Long id) throws IOException {
+		String qPath = "/domain/{serviceName}/dsRecord/{id}";
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhDnssecKey.class);
+	}
+
+	/**
+	 * List of domain's DS Records
+	 *
+	 * REST: GET /domain/{serviceName}/dsRecord
+	 * @param flags [required] Filter the value of flags property (=)
+	 * @param status [required] Filter the value of status property (=)
+	 * @param serviceName [required] The internal name of your domain
+	 */
+	public ArrayList<Long> serviceName_dsRecord_GET(String serviceName, OvhKeyFlagEnum flags, OvhKeyStatusEnum status) throws IOException {
+		String qPath = "/domain/{serviceName}/dsRecord";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "flags", flags);
+		query(sb, "status", status);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Update DS records
+	 *
+	 * REST: POST /domain/{serviceName}/dsRecord
+	 * @param keys [required] New Keys
+	 * @param serviceName [required] The internal name of your domain
+	 */
+	public OvhTask serviceName_dsRecord_POST(String serviceName, OvhKey[] keys) throws IOException {
+		String qPath = "/domain/{serviceName}/dsRecord";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "keys", keys);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Update the glue record
+	 *
+	 * REST: POST /domain/{serviceName}/glueRecord/{host}/update
+	 * @param ips [required] Ips of the glue record
+	 * @param serviceName [required] The internal name of your domain
+	 * @param host [required] Host of the glue record
+	 */
+	public OvhTask serviceName_glueRecord_host_update_POST(String serviceName, String host, String[] ips) throws IOException {
+		String qPath = "/domain/{serviceName}/glueRecord/{host}/update";
+		StringBuilder sb = path(qPath, serviceName, host);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "ips", ips);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /domain/{serviceName}/glueRecord/{host}
+	 * @param serviceName [required] The internal name of your domain
+	 * @param host [required] Host of the glue record
+	 */
+	public OvhGlueRecord serviceName_glueRecord_host_GET(String serviceName, String host) throws IOException {
+		String qPath = "/domain/{serviceName}/glueRecord/{host}";
+		StringBuilder sb = path(qPath, serviceName, host);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhGlueRecord.class);
+	}
+
+	/**
+	 * Delete the glue record
+	 *
+	 * REST: DELETE /domain/{serviceName}/glueRecord/{host}
+	 * @param serviceName [required] The internal name of your domain
+	 * @param host [required] Host of the glue record
+	 */
+	public OvhTask serviceName_glueRecord_host_DELETE(String serviceName, String host) throws IOException {
+		String qPath = "/domain/{serviceName}/glueRecord/{host}";
+		StringBuilder sb = path(qPath, serviceName, host);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * List of glue record
+	 *
+	 * REST: GET /domain/{serviceName}/glueRecord
+	 * @param host [required] Filter the value of host property (like)
+	 * @param serviceName [required] The internal name of your domain
+	 */
+	public ArrayList<String> serviceName_glueRecord_GET(String serviceName, String host) throws IOException {
+		String qPath = "/domain/{serviceName}/glueRecord";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "host", host);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Create a glue record
+	 *
+	 * REST: POST /domain/{serviceName}/glueRecord
+	 * @param ips [required] Ips of the glue record
+	 * @param host [required] Host of the glue record
+	 * @param serviceName [required] The internal name of your domain
+	 */
+	public OvhTask serviceName_glueRecord_POST(String serviceName, String host, String[] ips) throws IOException {
+		String qPath = "/domain/{serviceName}/glueRecord";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "host", host);
+		addBody(o, "ips", ips);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Update DNS servers
+	 *
+	 * REST: POST /domain/{serviceName}/nameServers/update
+	 * @param nameServers [required] New name servers
+	 * @param serviceName [required] The internal name of your domain
+	 */
+	public OvhTask serviceName_nameServers_update_POST(String serviceName, OvhDomainNs[] nameServers) throws IOException {
+		String qPath = "/domain/{serviceName}/nameServers/update";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "nameServers", nameServers);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Launch a contact change procedure
+	 *
+	 * REST: POST /domain/{serviceName}/changeContact
+	 * @param contactAdmin The contact to set as admin contact
+	 * @param contactTech The contact to set as tech contact
+	 * @param contactBilling The contact to set as billing contact
+	 * @param serviceName [required] The internal name of your domain
+	 */
+	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactBilling, String contactTech) throws IOException {
+		String qPath = "/domain/{serviceName}/changeContact";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "contactAdmin", contactAdmin);
+		addBody(o, "contactBilling", contactBilling);
+		addBody(o, "contactTech", contactTech);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t2);
+	}
+
+	/**
 	 * List all the rules for a specific cartId/itemId
 	 *
 	 * REST: GET /domain/rules
@@ -677,7 +691,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 		String qPath = "/domain/data/proContact";
 		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, t2);
 	}
 
 	/**
@@ -690,15 +704,15 @@ public class ApiOvhDomain extends ApiOvhBase {
 	 * @param licenseNumber [required] License number given by the authority
 	 * @param contactId [required] Contact ID that refer to that .pro information
 	 */
-	public OvhProContact data_proContact_POST(String jobDescription, String authority, String authorityWebsite, String licenseNumber, Long contactId) throws IOException {
+	public OvhProContact data_proContact_POST(String authority, String authorityWebsite, Long contactId, String jobDescription, String licenseNumber) throws IOException {
 		String qPath = "/domain/data/proContact";
 		StringBuilder sb = path(qPath);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "jobDescription", jobDescription);
 		addBody(o, "authority", authority);
 		addBody(o, "authorityWebsite", authorityWebsite);
-		addBody(o, "licenseNumber", licenseNumber);
 		addBody(o, "contactId", contactId);
+		addBody(o, "jobDescription", jobDescription);
+		addBody(o, "licenseNumber", licenseNumber);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhProContact.class);
 	}
@@ -714,6 +728,111 @@ public class ApiOvhDomain extends ApiOvhBase {
 		StringBuilder sb = path(qPath, proContactId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhProContact.class);
+	}
+
+	/**
+	 * List all the extensions for a specific country
+	 *
+	 * REST: GET /domain/data/extension
+	 * @param country [required] Country targeted
+	 */
+	public ArrayList<String> data_extension_GET(OvhCountryEnum country) throws IOException {
+		String qPath = "/domain/data/extension";
+		StringBuilder sb = path(qPath);
+		query(sb, "country", country);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Retrieve all association information according to Afnic
+	 *
+	 * REST: GET /domain/data/afnicAssociationInformation
+	 */
+	public ArrayList<Long> data_afnicAssociationInformation_GET() throws IOException {
+		String qPath = "/domain/data/afnicAssociationInformation";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Post a new association information according to Afnic
+	 *
+	 * REST: POST /domain/data/afnicAssociationInformation
+	 * @param declarationDate [required] Date of the declaration of the association
+	 * @param publicationDate [required] Date of the publication of the declaration of the association
+	 * @param publicationNumber [required] Number of the publication of the declaration of the association
+	 * @param publicationPageNumber [required] Page number of the publication of the declaration of the association
+	 * @param contactId [required] Contact ID related to the association contact information
+	 */
+	public OvhAssociationContact data_afnicAssociationInformation_POST(Long contactId, Date declarationDate, Date publicationDate, String publicationNumber, String publicationPageNumber) throws IOException {
+		String qPath = "/domain/data/afnicAssociationInformation";
+		StringBuilder sb = path(qPath);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "contactId", contactId);
+		addBody(o, "declarationDate", declarationDate);
+		addBody(o, "publicationDate", publicationDate);
+		addBody(o, "publicationNumber", publicationNumber);
+		addBody(o, "publicationPageNumber", publicationPageNumber);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhAssociationContact.class);
+	}
+
+	/**
+	 * Retrieve an association information according to Afnic
+	 *
+	 * REST: GET /domain/data/afnicAssociationInformation/{associationInformationId}
+	 * @param associationInformationId [required] Association Information ID
+	 */
+	public OvhAssociationContact data_afnicAssociationInformation_associationInformationId_GET(Long associationInformationId) throws IOException {
+		String qPath = "/domain/data/afnicAssociationInformation/{associationInformationId}";
+		StringBuilder sb = path(qPath, associationInformationId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhAssociationContact.class);
+	}
+
+	/**
+	 * Retrieve claim notices associated to a domain
+	 *
+	 * REST: GET /domain/data/claimNotice
+	 * @param domain [required] Domain name
+	 */
+	public OvhClaimNotice data_claimNotice_GET(String domain) throws IOException {
+		String qPath = "/domain/data/claimNotice";
+		StringBuilder sb = path(qPath);
+		query(sb, "domain", domain);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhClaimNotice.class);
+	}
+
+	/**
+	 * List all your SMD files
+	 *
+	 * REST: GET /domain/data/smd
+	 * @param protectedLabels_label [required] Filter the value of protectedLabels.label property (=)
+	 */
+	public ArrayList<Long> data_smd_GET(String protectedLabels_label) throws IOException {
+		String qPath = "/domain/data/smd";
+		StringBuilder sb = path(qPath);
+		query(sb, "protectedLabels.label", protectedLabels_label);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Post a new SMD file
+	 *
+	 * REST: POST /domain/data/smd
+	 * @param data [required] SMD content file
+	 */
+	public OvhSmd data_smd_POST(String data) throws IOException {
+		String qPath = "/domain/data/smd";
+		StringBuilder sb = path(qPath);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "data", data);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhSmd.class);
 	}
 
 	/**
@@ -758,111 +877,6 @@ public class ApiOvhDomain extends ApiOvhBase {
 	}
 
 	/**
-	 * List all your SMD files
-	 *
-	 * REST: GET /domain/data/smd
-	 * @param protectedLabels_label [required] Filter the value of protectedLabels.label property (=)
-	 */
-	public ArrayList<Long> data_smd_GET(String protectedLabels_label) throws IOException {
-		String qPath = "/domain/data/smd";
-		StringBuilder sb = path(qPath);
-		query(sb, "protectedLabels.label", protectedLabels_label);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Post a new SMD file
-	 *
-	 * REST: POST /domain/data/smd
-	 * @param data [required] SMD content file
-	 */
-	public OvhSmd data_smd_POST(String data) throws IOException {
-		String qPath = "/domain/data/smd";
-		StringBuilder sb = path(qPath);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "data", data);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhSmd.class);
-	}
-
-	/**
-	 * Retrieve an association information according to Afnic
-	 *
-	 * REST: GET /domain/data/afnicAssociationInformation/{associationInformationId}
-	 * @param associationInformationId [required] Association Information ID
-	 */
-	public OvhAssociationContact data_afnicAssociationInformation_associationInformationId_GET(Long associationInformationId) throws IOException {
-		String qPath = "/domain/data/afnicAssociationInformation/{associationInformationId}";
-		StringBuilder sb = path(qPath, associationInformationId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhAssociationContact.class);
-	}
-
-	/**
-	 * Retrieve all association information according to Afnic
-	 *
-	 * REST: GET /domain/data/afnicAssociationInformation
-	 */
-	public ArrayList<Long> data_afnicAssociationInformation_GET() throws IOException {
-		String qPath = "/domain/data/afnicAssociationInformation";
-		StringBuilder sb = path(qPath);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Post a new association information according to Afnic
-	 *
-	 * REST: POST /domain/data/afnicAssociationInformation
-	 * @param declarationDate [required] Date of the declaration of the association
-	 * @param publicationDate [required] Date of the publication of the declaration of the association
-	 * @param publicationNumber [required] Number of the publication of the declaration of the association
-	 * @param publicationPageNumber [required] Page number of the publication of the declaration of the association
-	 * @param contactId [required] Contact ID related to the association contact information
-	 */
-	public OvhAssociationContact data_afnicAssociationInformation_POST(Date declarationDate, Date publicationDate, String publicationNumber, String publicationPageNumber, Long contactId) throws IOException {
-		String qPath = "/domain/data/afnicAssociationInformation";
-		StringBuilder sb = path(qPath);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "declarationDate", declarationDate);
-		addBody(o, "publicationDate", publicationDate);
-		addBody(o, "publicationNumber", publicationNumber);
-		addBody(o, "publicationPageNumber", publicationPageNumber);
-		addBody(o, "contactId", contactId);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhAssociationContact.class);
-	}
-
-	/**
-	 * List all the extensions for a specific country
-	 *
-	 * REST: GET /domain/data/extension
-	 * @param country [required] Country targeted
-	 */
-	public ArrayList<String> data_extension_GET(OvhCountryEnum country) throws IOException {
-		String qPath = "/domain/data/extension";
-		StringBuilder sb = path(qPath);
-		query(sb, "country", country);
-		String resp = execN(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t5);
-	}
-
-	/**
-	 * Retrieve claim notices associated to a domain
-	 *
-	 * REST: GET /domain/data/claimNotice
-	 * @param domain [required] Domain name
-	 */
-	public OvhClaimNotice data_claimNotice_GET(String domain) throws IOException {
-		String qPath = "/domain/data/claimNotice";
-		StringBuilder sb = path(qPath);
-		query(sb, "domain", domain);
-		String resp = execN(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhClaimNotice.class);
-	}
-
-	/**
 	 * Retrieve all corporation trademark information according to Afnic
 	 *
 	 * REST: GET /domain/data/afnicCorporationTrademarkInformation
@@ -871,7 +885,7 @@ public class ApiOvhDomain extends ApiOvhBase {
 		String qPath = "/domain/data/afnicCorporationTrademarkInformation";
 		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, t2);
 	}
 
 	/**
@@ -882,13 +896,13 @@ public class ApiOvhDomain extends ApiOvhBase {
 	 * @param inpiTrademarkOwner [required] Owner of the trademark
 	 * @param contactId [required] Contact ID related to the Inpi additional information
 	 */
-	public OvhAfnicCorporationTrademarkContact data_afnicCorporationTrademarkInformation_POST(String inpiNumber, String inpiTrademarkOwner, Long contactId) throws IOException {
+	public OvhAfnicCorporationTrademarkContact data_afnicCorporationTrademarkInformation_POST(Long contactId, String inpiNumber, String inpiTrademarkOwner) throws IOException {
 		String qPath = "/domain/data/afnicCorporationTrademarkInformation";
 		StringBuilder sb = path(qPath);
 		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "contactId", contactId);
 		addBody(o, "inpiNumber", inpiNumber);
 		addBody(o, "inpiTrademarkOwner", inpiTrademarkOwner);
-		addBody(o, "contactId", contactId);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhAfnicCorporationTrademarkContact.class);
 	}
@@ -907,50 +921,19 @@ public class ApiOvhDomain extends ApiOvhBase {
 	}
 
 	/**
-	 * List available services
+	 * Import zone
 	 *
-	 * REST: GET /domain
-	 * @param whoisOwner Filter the value of whoisOwner property (=)
-	 */
-	public ArrayList<String> GET(String whoisOwner) throws IOException {
-		String qPath = "/domain";
-		StringBuilder sb = path(qPath);
-		query(sb, "whoisOwner", whoisOwner);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t5);
-	}
-
-	/**
-	 * Launch a contact change procedure
-	 *
-	 * REST: POST /domain/zone/{zoneName}/changeContact
-	 * @param contactAdmin The contact to set as admin contact
-	 * @param contactTech The contact to set as tech contact
-	 * @param contactBilling The contact to set as billing contact
+	 * REST: POST /domain/zone/{zoneName}/import
+	 * @param zoneFile [required] Zone file that will be imported
 	 * @param zoneName [required] The internal name of your zone
 	 */
-	public ArrayList<Long> zone_zoneName_changeContact_POST(String zoneName, String contactAdmin, String contactTech, String contactBilling) throws IOException {
-		String qPath = "/domain/zone/{zoneName}/changeContact";
+	public net.minidev.ovh.api.domain.zone.OvhTask zone_zoneName_import_POST(String zoneName, String zoneFile) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/import";
 		StringBuilder sb = path(qPath, zoneName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "contactAdmin", contactAdmin);
-		addBody(o, "contactTech", contactTech);
-		addBody(o, "contactBilling", contactBilling);
+		addBody(o, "zoneFile", zoneFile);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Export zone
-	 *
-	 * REST: GET /domain/zone/{zoneName}/export
-	 * @param zoneName [required] The internal name of your zone
-	 */
-	public String zone_zoneName_export_GET(String zoneName) throws IOException {
-		String qPath = "/domain/zone/{zoneName}/export";
-		StringBuilder sb = path(qPath, zoneName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, String.class);
+		return convertTo(resp, net.minidev.ovh.api.domain.zone.OvhTask.class);
 	}
 
 	/**
@@ -1006,183 +989,132 @@ public class ApiOvhDomain extends ApiOvhBase {
 		StringBuilder sb = path(qPath, zoneName);
 		query(sb, "subDomain", subDomain);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, t2);
 	}
 
 	/**
 	 * Create a new redirection (Don't forget to refresh the zone)
 	 *
 	 * REST: POST /domain/zone/{zoneName}/redirection
-	 * @param description [required] Desciption for invisible redirection
-	 * @param target [required] Target of the redirection
-	 * @param title [required] Title for invisible redirection
 	 * @param keywords [required] Keywords for invisible redirection
 	 * @param type [required] Redirection type
 	 * @param subDomain [required] subdomain to redirect
+	 * @param target [required] Target of the redirection
+	 * @param title [required] Title for invisible redirection
+	 * @param description [required] Desciption for invisible redirection
 	 * @param zoneName [required] The internal name of your zone
 	 */
-	public OvhRedirection zone_zoneName_redirection_POST(String zoneName, String description, String target, String title, String keywords, OvhRedirectionTypeEnum type, String subDomain) throws IOException {
+	public OvhRedirection zone_zoneName_redirection_POST(String zoneName, String description, String keywords, String subDomain, String target, String title, OvhRedirectionTypeEnum type) throws IOException {
 		String qPath = "/domain/zone/{zoneName}/redirection";
 		StringBuilder sb = path(qPath, zoneName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "description", description);
+		addBody(o, "keywords", keywords);
+		addBody(o, "subDomain", subDomain);
 		addBody(o, "target", target);
 		addBody(o, "title", title);
-		addBody(o, "keywords", keywords);
 		addBody(o, "type", type);
-		addBody(o, "subDomain", subDomain);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhRedirection.class);
 	}
 
 	/**
-	 * Domain pending tasks
+	 * Zone status
 	 *
-	 * REST: GET /domain/zone/{zoneName}/task
-	 * @param status [required] Filter the value of status property (=)
-	 * @param function [required] Filter the value of function property (like)
+	 * REST: GET /domain/zone/{zoneName}/status
 	 * @param zoneName [required] The internal name of your zone
 	 */
-	public ArrayList<Long> zone_zoneName_task_GET(String zoneName, String function, OvhOperationStatusEnum status) throws IOException {
-		String qPath = "/domain/zone/{zoneName}/task";
+	public OvhStatus zone_zoneName_status_GET(String zoneName) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/status";
 		StringBuilder sb = path(qPath, zoneName);
-		query(sb, "function", function);
-		query(sb, "status", status);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, OvhStatus.class);
 	}
 
 	/**
-	 * Cancel the task
+	 * Apply zone modification on DNS servers
 	 *
-	 * REST: POST /domain/zone/{zoneName}/task/{id}/cancel
+	 * REST: POST /domain/zone/{zoneName}/refresh
 	 * @param zoneName [required] The internal name of your zone
-	 * @param id [required] Id of the object
 	 */
-	public void zone_zoneName_task_id_cancel_POST(String zoneName, Long id) throws IOException {
-		String qPath = "/domain/zone/{zoneName}/task/{id}/cancel";
-		StringBuilder sb = path(qPath, zoneName, id);
-		exec(qPath, "POST", sb.toString(), null);
-	}
-
-	/**
-	 * Relaunch the task
-	 *
-	 * REST: POST /domain/zone/{zoneName}/task/{id}/relaunch
-	 * @param zoneName [required] The internal name of your zone
-	 * @param id [required] Id of the object
-	 */
-	public void zone_zoneName_task_id_relaunch_POST(String zoneName, Long id) throws IOException {
-		String qPath = "/domain/zone/{zoneName}/task/{id}/relaunch";
-		StringBuilder sb = path(qPath, zoneName, id);
+	public void zone_zoneName_refresh_POST(String zoneName) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/refresh";
+		StringBuilder sb = path(qPath, zoneName);
 		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /domain/zone/{zoneName}/task/{id}
+	 * REST: GET /domain/zone/{zoneName}/dynHost/record/{id}
 	 * @param zoneName [required] The internal name of your zone
 	 * @param id [required] Id of the object
 	 */
-	public net.minidev.ovh.api.domain.zone.OvhTask zone_zoneName_task_id_GET(String zoneName, Long id) throws IOException {
-		String qPath = "/domain/zone/{zoneName}/task/{id}";
+	public OvhDynHostRecord zone_zoneName_dynHost_record_id_GET(String zoneName, Long id) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/dynHost/record/{id}";
 		StringBuilder sb = path(qPath, zoneName, id);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, net.minidev.ovh.api.domain.zone.OvhTask.class);
-	}
-
-	/**
-	 * Accelerate the task
-	 *
-	 * REST: POST /domain/zone/{zoneName}/task/{id}/accelerate
-	 * @param zoneName [required] The internal name of your zone
-	 * @param id [required] Id of the object
-	 */
-	public void zone_zoneName_task_id_accelerate_POST(String zoneName, Long id) throws IOException {
-		String qPath = "/domain/zone/{zoneName}/task/{id}/accelerate";
-		StringBuilder sb = path(qPath, zoneName, id);
-		exec(qPath, "POST", sb.toString(), null);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /domain/zone/{zoneName}/record/{id}
-	 * @param zoneName [required] The internal name of your zone
-	 * @param id [required] Id of the object
-	 */
-	public OvhRecord zone_zoneName_record_id_GET(String zoneName, Long id) throws IOException {
-		String qPath = "/domain/zone/{zoneName}/record/{id}";
-		StringBuilder sb = path(qPath, zoneName, id);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhRecord.class);
+		return convertTo(resp, OvhDynHostRecord.class);
 	}
 
 	/**
 	 * Alter this object properties
 	 *
-	 * REST: PUT /domain/zone/{zoneName}/record/{id}
+	 * REST: PUT /domain/zone/{zoneName}/dynHost/record/{id}
 	 * @param body [required] New object properties
 	 * @param zoneName [required] The internal name of your zone
 	 * @param id [required] Id of the object
 	 */
-	public void zone_zoneName_record_id_PUT(String zoneName, Long id, OvhRecord body) throws IOException {
-		String qPath = "/domain/zone/{zoneName}/record/{id}";
+	public void zone_zoneName_dynHost_record_id_PUT(String zoneName, Long id, OvhDynHostRecord body) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/dynHost/record/{id}";
 		StringBuilder sb = path(qPath, zoneName, id);
 		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
-	 * Delete a DNS record (Don't forget to refresh the zone)
+	 * Delete a DynHost record (Don't forget to refresh the zone)
 	 *
-	 * REST: DELETE /domain/zone/{zoneName}/record/{id}
+	 * REST: DELETE /domain/zone/{zoneName}/dynHost/record/{id}
 	 * @param zoneName [required] The internal name of your zone
 	 * @param id [required] Id of the object
 	 */
-	public void zone_zoneName_record_id_DELETE(String zoneName, Long id) throws IOException {
-		String qPath = "/domain/zone/{zoneName}/record/{id}";
+	public void zone_zoneName_dynHost_record_id_DELETE(String zoneName, Long id) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/dynHost/record/{id}";
 		StringBuilder sb = path(qPath, zoneName, id);
 		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
-	 * Records of the zone
+	 * DynHost' records
 	 *
-	 * REST: GET /domain/zone/{zoneName}/record
-	 * @param fieldType [required] Filter the value of fieldType property (like)
+	 * REST: GET /domain/zone/{zoneName}/dynHost/record
 	 * @param subDomain [required] Filter the value of subDomain property (like)
 	 * @param zoneName [required] The internal name of your zone
 	 */
-	public ArrayList<Long> zone_zoneName_record_GET(String zoneName, OvhNamedResolutionFieldTypeEnum fieldType, String subDomain) throws IOException {
-		String qPath = "/domain/zone/{zoneName}/record";
+	public ArrayList<Long> zone_zoneName_dynHost_record_GET(String zoneName, String subDomain) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/dynHost/record";
 		StringBuilder sb = path(qPath, zoneName);
-		query(sb, "fieldType", fieldType);
 		query(sb, "subDomain", subDomain);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, t2);
 	}
 
 	/**
-	 * Create a new DNS record (Don't forget to refresh the zone)
+	 * Create a new DynHost record (Don't forget to refresh the zone)
 	 *
-	 * REST: POST /domain/zone/{zoneName}/record
-	 * @param fieldType [required] Resource record Name
-	 * @param subDomain [required] Resource record subdomain
-	 * @param ttl [required] Resource record ttl
-	 * @param target [required] Resource record target
+	 * REST: POST /domain/zone/{zoneName}/dynHost/record
+	 * @param subDomain [required] Subdomain of the DynHost record
+	 * @param ip [required] Ip address of the DynHost record
 	 * @param zoneName [required] The internal name of your zone
 	 */
-	public OvhRecord zone_zoneName_record_POST(String zoneName, OvhNamedResolutionFieldTypeEnum fieldType, String subDomain, Long ttl, String target) throws IOException {
-		String qPath = "/domain/zone/{zoneName}/record";
+	public OvhDynHostRecord zone_zoneName_dynHost_record_POST(String zoneName, String ip, String subDomain) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/dynHost/record";
 		StringBuilder sb = path(qPath, zoneName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "fieldType", fieldType);
+		addBody(o, "ip", ip);
 		addBody(o, "subDomain", subDomain);
-		addBody(o, "ttl", ttl);
-		addBody(o, "target", target);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhRecord.class);
+		return convertTo(resp, OvhDynHostRecord.class);
 	}
 
 	/**
@@ -1199,25 +1131,25 @@ public class ApiOvhDomain extends ApiOvhBase {
 		query(sb, "login", login);
 		query(sb, "subDomain", subDomain);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t5);
+		return convertTo(resp, t1);
 	}
 
 	/**
 	 * Create a new DynHost login
 	 *
 	 * REST: POST /domain/zone/{zoneName}/dynHost/login
+	 * @param password [required] Password of the login
 	 * @param loginSuffix [required] Suffix that will be concatenated to the zoneName to create the login
 	 * @param subDomain [required] Subdomain that the login will be allowed to update (use * to allow all)
-	 * @param password [required] Password of the login
 	 * @param zoneName [required] The internal name of your zone
 	 */
-	public OvhDynHostLogin zone_zoneName_dynHost_login_POST(String zoneName, String loginSuffix, String subDomain, String password) throws IOException {
+	public OvhDynHostLogin zone_zoneName_dynHost_login_POST(String zoneName, String loginSuffix, String password, String subDomain) throws IOException {
 		String qPath = "/domain/zone/{zoneName}/dynHost/login";
 		StringBuilder sb = path(qPath, zoneName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "loginSuffix", loginSuffix);
-		addBody(o, "subDomain", subDomain);
 		addBody(o, "password", password);
+		addBody(o, "subDomain", subDomain);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhDynHostLogin.class);
 	}
@@ -1280,89 +1212,318 @@ public class ApiOvhDomain extends ApiOvhBase {
 	}
 
 	/**
-	 * DynHost' records
+	 * Reset the DNS zone
 	 *
-	 * REST: GET /domain/zone/{zoneName}/dynHost/record
-	 * @param subDomain [required] Filter the value of subDomain property (like)
+	 * REST: POST /domain/zone/{zoneName}/reset
+	 * @param minimized [required] Create only mandatory records
+	 * @param DnsRecords [required] Records that will be set after reset
 	 * @param zoneName [required] The internal name of your zone
 	 */
-	public ArrayList<Long> zone_zoneName_dynHost_record_GET(String zoneName, String subDomain) throws IOException {
-		String qPath = "/domain/zone/{zoneName}/dynHost/record";
-		StringBuilder sb = path(qPath, zoneName);
-		query(sb, "subDomain", subDomain);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Create a new DynHost record (Don't forget to refresh the zone)
-	 *
-	 * REST: POST /domain/zone/{zoneName}/dynHost/record
-	 * @param ip [required] Ip address of the DynHost record
-	 * @param subDomain [required] Subdomain of the DynHost record
-	 * @param zoneName [required] The internal name of your zone
-	 */
-	public OvhDynHostRecord zone_zoneName_dynHost_record_POST(String zoneName, String ip, String subDomain) throws IOException {
-		String qPath = "/domain/zone/{zoneName}/dynHost/record";
+	public void zone_zoneName_reset_POST(String zoneName, OvhResetRecord[] DnsRecords, Boolean minimized) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/reset";
 		StringBuilder sb = path(qPath, zoneName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "ip", ip);
-		addBody(o, "subDomain", subDomain);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhDynHostRecord.class);
+		addBody(o, "DnsRecords", DnsRecords);
+		addBody(o, "minimized", minimized);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /domain/zone/{zoneName}/dynHost/record/{id}
+	 * REST: GET /domain/zone/{zoneName}/dnssec
+	 * @param zoneName [required] The internal name of your zone
+	 */
+	public OvhDnssec zone_zoneName_dnssec_GET(String zoneName) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/dnssec";
+		StringBuilder sb = path(qPath, zoneName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhDnssec.class);
+	}
+
+	/**
+	 * Enable Dnssec
+	 *
+	 * REST: POST /domain/zone/{zoneName}/dnssec
+	 * @param zoneName [required] The internal name of your zone
+	 */
+	public void zone_zoneName_dnssec_POST(String zoneName) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/dnssec";
+		StringBuilder sb = path(qPath, zoneName);
+		exec(qPath, "POST", sb.toString(), null);
+	}
+
+	/**
+	 * Disable Dnssec
+	 *
+	 * REST: DELETE /domain/zone/{zoneName}/dnssec
+	 * @param zoneName [required] The internal name of your zone
+	 */
+	public void zone_zoneName_dnssec_DELETE(String zoneName) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/dnssec";
+		StringBuilder sb = path(qPath, zoneName);
+		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
+	 * Export zone
+	 *
+	 * REST: GET /domain/zone/{zoneName}/export
+	 * @param zoneName [required] The internal name of your zone
+	 */
+	public String zone_zoneName_export_GET(String zoneName) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/export";
+		StringBuilder sb = path(qPath, zoneName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /domain/zone/{zoneName}
+	 * @param zoneName [required] The internal name of your zone
+	 */
+	public OvhZone zone_zoneName_GET(String zoneName) throws IOException {
+		String qPath = "/domain/zone/{zoneName}";
+		StringBuilder sb = path(qPath, zoneName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhZone.class);
+	}
+
+	/**
+	 * Domain pending tasks
+	 *
+	 * REST: GET /domain/zone/{zoneName}/task
+	 * @param status [required] Filter the value of status property (=)
+	 * @param function [required] Filter the value of function property (like)
+	 * @param zoneName [required] The internal name of your zone
+	 */
+	public ArrayList<Long> zone_zoneName_task_GET(String zoneName, String function, OvhOperationStatusEnum status) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/task";
+		StringBuilder sb = path(qPath, zoneName);
+		query(sb, "function", function);
+		query(sb, "status", status);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Relaunch the task
+	 *
+	 * REST: POST /domain/zone/{zoneName}/task/{id}/relaunch
 	 * @param zoneName [required] The internal name of your zone
 	 * @param id [required] Id of the object
 	 */
-	public OvhDynHostRecord zone_zoneName_dynHost_record_id_GET(String zoneName, Long id) throws IOException {
-		String qPath = "/domain/zone/{zoneName}/dynHost/record/{id}";
+	public void zone_zoneName_task_id_relaunch_POST(String zoneName, Long id) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/task/{id}/relaunch";
+		StringBuilder sb = path(qPath, zoneName, id);
+		exec(qPath, "POST", sb.toString(), null);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /domain/zone/{zoneName}/task/{id}
+	 * @param zoneName [required] The internal name of your zone
+	 * @param id [required] Id of the object
+	 */
+	public net.minidev.ovh.api.domain.zone.OvhTask zone_zoneName_task_id_GET(String zoneName, Long id) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/task/{id}";
 		StringBuilder sb = path(qPath, zoneName, id);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhDynHostRecord.class);
+		return convertTo(resp, net.minidev.ovh.api.domain.zone.OvhTask.class);
+	}
+
+	/**
+	 * Cancel the task
+	 *
+	 * REST: POST /domain/zone/{zoneName}/task/{id}/cancel
+	 * @param zoneName [required] The internal name of your zone
+	 * @param id [required] Id of the object
+	 */
+	public void zone_zoneName_task_id_cancel_POST(String zoneName, Long id) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/task/{id}/cancel";
+		StringBuilder sb = path(qPath, zoneName, id);
+		exec(qPath, "POST", sb.toString(), null);
+	}
+
+	/**
+	 * Accelerate the task
+	 *
+	 * REST: POST /domain/zone/{zoneName}/task/{id}/accelerate
+	 * @param zoneName [required] The internal name of your zone
+	 * @param id [required] Id of the object
+	 */
+	public void zone_zoneName_task_id_accelerate_POST(String zoneName, Long id) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/task/{id}/accelerate";
+		StringBuilder sb = path(qPath, zoneName, id);
+		exec(qPath, "POST", sb.toString(), null);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /domain/zone/{zoneName}/serviceInfos
+	 * @param zoneName [required] The internal name of your zone
+	 */
+	public OvhService zone_zoneName_serviceInfos_GET(String zoneName) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/serviceInfos";
+		StringBuilder sb = path(qPath, zoneName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhService.class);
 	}
 
 	/**
 	 * Alter this object properties
 	 *
-	 * REST: PUT /domain/zone/{zoneName}/dynHost/record/{id}
+	 * REST: PUT /domain/zone/{zoneName}/serviceInfos
+	 * @param body [required] New object properties
+	 * @param zoneName [required] The internal name of your zone
+	 */
+	public void zone_zoneName_serviceInfos_PUT(String zoneName, OvhService body) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/serviceInfos";
+		StringBuilder sb = path(qPath, zoneName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /domain/zone/{zoneName}/record/{id}
+	 * @param zoneName [required] The internal name of your zone
+	 * @param id [required] Id of the object
+	 */
+	public OvhRecord zone_zoneName_record_id_GET(String zoneName, Long id) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/record/{id}";
+		StringBuilder sb = path(qPath, zoneName, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhRecord.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /domain/zone/{zoneName}/record/{id}
 	 * @param body [required] New object properties
 	 * @param zoneName [required] The internal name of your zone
 	 * @param id [required] Id of the object
 	 */
-	public void zone_zoneName_dynHost_record_id_PUT(String zoneName, Long id, OvhDynHostRecord body) throws IOException {
-		String qPath = "/domain/zone/{zoneName}/dynHost/record/{id}";
+	public void zone_zoneName_record_id_PUT(String zoneName, Long id, OvhRecord body) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/record/{id}";
 		StringBuilder sb = path(qPath, zoneName, id);
 		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
-	 * Delete a DynHost record (Don't forget to refresh the zone)
+	 * Delete a DNS record (Don't forget to refresh the zone)
 	 *
-	 * REST: DELETE /domain/zone/{zoneName}/dynHost/record/{id}
+	 * REST: DELETE /domain/zone/{zoneName}/record/{id}
 	 * @param zoneName [required] The internal name of your zone
 	 * @param id [required] Id of the object
 	 */
-	public void zone_zoneName_dynHost_record_id_DELETE(String zoneName, Long id) throws IOException {
-		String qPath = "/domain/zone/{zoneName}/dynHost/record/{id}";
+	public void zone_zoneName_record_id_DELETE(String zoneName, Long id) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/record/{id}";
 		StringBuilder sb = path(qPath, zoneName, id);
 		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
-	 * Apply zone modification on DNS servers
+	 * Records of the zone
 	 *
-	 * REST: POST /domain/zone/{zoneName}/refresh
+	 * REST: GET /domain/zone/{zoneName}/record
+	 * @param subDomain [required] Filter the value of subDomain property (like)
+	 * @param fieldType [required] Filter the value of fieldType property (like)
 	 * @param zoneName [required] The internal name of your zone
 	 */
-	public void zone_zoneName_refresh_POST(String zoneName) throws IOException {
-		String qPath = "/domain/zone/{zoneName}/refresh";
+	public ArrayList<Long> zone_zoneName_record_GET(String zoneName, OvhNamedResolutionFieldTypeEnum fieldType, String subDomain) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/record";
 		StringBuilder sb = path(qPath, zoneName);
-		exec(qPath, "POST", sb.toString(), null);
+		query(sb, "fieldType", fieldType);
+		query(sb, "subDomain", subDomain);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Create a new DNS record (Don't forget to refresh the zone)
+	 *
+	 * REST: POST /domain/zone/{zoneName}/record
+	 * @param target [required] Resource record target
+	 * @param ttl [required] Resource record ttl
+	 * @param subDomain [required] Resource record subdomain
+	 * @param fieldType [required] Resource record Name
+	 * @param zoneName [required] The internal name of your zone
+	 */
+	public OvhRecord zone_zoneName_record_POST(String zoneName, OvhNamedResolutionFieldTypeEnum fieldType, String subDomain, String target, Long ttl) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/record";
+		StringBuilder sb = path(qPath, zoneName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "fieldType", fieldType);
+		addBody(o, "subDomain", subDomain);
+		addBody(o, "target", target);
+		addBody(o, "ttl", ttl);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhRecord.class);
+	}
+
+	/**
+	 * Terminate your service
+	 *
+	 * REST: POST /domain/zone/{zoneName}/terminate
+	 * @param zoneName [required] The internal name of your zone
+	 */
+	public String zone_zoneName_terminate_POST(String zoneName) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/terminate";
+		StringBuilder sb = path(qPath, zoneName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /domain/zone/{zoneName}/soa
+	 * @param zoneName [required] The internal name of your zone
+	 */
+	public OvhSoa zone_zoneName_soa_GET(String zoneName) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/soa";
+		StringBuilder sb = path(qPath, zoneName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhSoa.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /domain/zone/{zoneName}/soa
+	 * @param body [required] New object properties
+	 * @param zoneName [required] The internal name of your zone
+	 */
+	public void zone_zoneName_soa_PUT(String zoneName, OvhSoa body) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/soa";
+		StringBuilder sb = path(qPath, zoneName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Launch a contact change procedure
+	 *
+	 * REST: POST /domain/zone/{zoneName}/changeContact
+	 * @param contactAdmin The contact to set as admin contact
+	 * @param contactTech The contact to set as tech contact
+	 * @param contactBilling The contact to set as billing contact
+	 * @param zoneName [required] The internal name of your zone
+	 */
+	public ArrayList<Long> zone_zoneName_changeContact_POST(String zoneName, String contactAdmin, String contactBilling, String contactTech) throws IOException {
+		String qPath = "/domain/zone/{zoneName}/changeContact";
+		StringBuilder sb = path(qPath, zoneName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "contactAdmin", contactAdmin);
+		addBody(o, "contactBilling", contactBilling);
+		addBody(o, "contactTech", contactTech);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t2);
 	}
 
 	/**
@@ -1418,137 +1579,6 @@ public class ApiOvhDomain extends ApiOvhBase {
 	private static TypeReference<ArrayList<Date>> t9 = new TypeReference<ArrayList<Date>>() {};
 
 	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /domain/zone/{zoneName}/soa
-	 * @param zoneName [required] The internal name of your zone
-	 */
-	public OvhSoa zone_zoneName_soa_GET(String zoneName) throws IOException {
-		String qPath = "/domain/zone/{zoneName}/soa";
-		StringBuilder sb = path(qPath, zoneName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhSoa.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /domain/zone/{zoneName}/soa
-	 * @param body [required] New object properties
-	 * @param zoneName [required] The internal name of your zone
-	 */
-	public void zone_zoneName_soa_PUT(String zoneName, OvhSoa body) throws IOException {
-		String qPath = "/domain/zone/{zoneName}/soa";
-		StringBuilder sb = path(qPath, zoneName);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /domain/zone/{zoneName}/dnssec
-	 * @param zoneName [required] The internal name of your zone
-	 */
-	public OvhDnssec zone_zoneName_dnssec_GET(String zoneName) throws IOException {
-		String qPath = "/domain/zone/{zoneName}/dnssec";
-		StringBuilder sb = path(qPath, zoneName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhDnssec.class);
-	}
-
-	/**
-	 * Enable Dnssec
-	 *
-	 * REST: POST /domain/zone/{zoneName}/dnssec
-	 * @param zoneName [required] The internal name of your zone
-	 */
-	public void zone_zoneName_dnssec_POST(String zoneName) throws IOException {
-		String qPath = "/domain/zone/{zoneName}/dnssec";
-		StringBuilder sb = path(qPath, zoneName);
-		exec(qPath, "POST", sb.toString(), null);
-	}
-
-	/**
-	 * Disable Dnssec
-	 *
-	 * REST: DELETE /domain/zone/{zoneName}/dnssec
-	 * @param zoneName [required] The internal name of your zone
-	 */
-	public void zone_zoneName_dnssec_DELETE(String zoneName) throws IOException {
-		String qPath = "/domain/zone/{zoneName}/dnssec";
-		StringBuilder sb = path(qPath, zoneName);
-		exec(qPath, "DELETE", sb.toString(), null);
-	}
-
-	/**
-	 * Zone status
-	 *
-	 * REST: GET /domain/zone/{zoneName}/status
-	 * @param zoneName [required] The internal name of your zone
-	 */
-	public OvhStatus zone_zoneName_status_GET(String zoneName) throws IOException {
-		String qPath = "/domain/zone/{zoneName}/status";
-		StringBuilder sb = path(qPath, zoneName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhStatus.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /domain/zone/{zoneName}/serviceInfos
-	 * @param zoneName [required] The internal name of your zone
-	 */
-	public OvhService zone_zoneName_serviceInfos_GET(String zoneName) throws IOException {
-		String qPath = "/domain/zone/{zoneName}/serviceInfos";
-		StringBuilder sb = path(qPath, zoneName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhService.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /domain/zone/{zoneName}/serviceInfos
-	 * @param body [required] New object properties
-	 * @param zoneName [required] The internal name of your zone
-	 */
-	public void zone_zoneName_serviceInfos_PUT(String zoneName, OvhService body) throws IOException {
-		String qPath = "/domain/zone/{zoneName}/serviceInfos";
-		StringBuilder sb = path(qPath, zoneName);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Import zone
-	 *
-	 * REST: POST /domain/zone/{zoneName}/import
-	 * @param zoneFile [required] Zone file that will be imported
-	 * @param zoneName [required] The internal name of your zone
-	 */
-	public net.minidev.ovh.api.domain.zone.OvhTask zone_zoneName_import_POST(String zoneName, String zoneFile) throws IOException {
-		String qPath = "/domain/zone/{zoneName}/import";
-		StringBuilder sb = path(qPath, zoneName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "zoneFile", zoneFile);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, net.minidev.ovh.api.domain.zone.OvhTask.class);
-	}
-
-	/**
-	 * Terminate your service
-	 *
-	 * REST: POST /domain/zone/{zoneName}/terminate
-	 * @param zoneName [required] The internal name of your zone
-	 */
-	public String zone_zoneName_terminate_POST(String zoneName) throws IOException {
-		String qPath = "/domain/zone/{zoneName}/terminate";
-		StringBuilder sb = path(qPath, zoneName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, String.class);
-	}
-
-	/**
 	 * Confirm termination of your service
 	 *
 	 * REST: POST /domain/zone/{zoneName}/confirmTermination
@@ -1558,46 +1588,16 @@ public class ApiOvhDomain extends ApiOvhBase {
 	 * @param token [required] The termination token sent by mail to the admin contact
 	 * @param zoneName [required] The internal name of your zone
 	 */
-	public String zone_zoneName_confirmTermination_POST(String zoneName, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String commentary, String token) throws IOException {
+	public String zone_zoneName_confirmTermination_POST(String zoneName, String commentary, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String token) throws IOException {
 		String qPath = "/domain/zone/{zoneName}/confirmTermination";
 		StringBuilder sb = path(qPath, zoneName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "commentary", commentary);
 		addBody(o, "futureUse", futureUse);
 		addBody(o, "reason", reason);
-		addBody(o, "commentary", commentary);
 		addBody(o, "token", token);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /domain/zone/{zoneName}
-	 * @param zoneName [required] The internal name of your zone
-	 */
-	public OvhZone zone_zoneName_GET(String zoneName) throws IOException {
-		String qPath = "/domain/zone/{zoneName}";
-		StringBuilder sb = path(qPath, zoneName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhZone.class);
-	}
-
-	/**
-	 * Reset the DNS zone
-	 *
-	 * REST: POST /domain/zone/{zoneName}/reset
-	 * @param minimized [required] Create only mandatory records
-	 * @param DnsRecords [required] Records that will be set after reset
-	 * @param zoneName [required] The internal name of your zone
-	 */
-	public void zone_zoneName_reset_POST(String zoneName, Boolean minimized, OvhResetRecord[] DnsRecords) throws IOException {
-		String qPath = "/domain/zone/{zoneName}/reset";
-		StringBuilder sb = path(qPath, zoneName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "minimized", minimized);
-		addBody(o, "DnsRecords", DnsRecords);
-		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -1609,6 +1609,6 @@ public class ApiOvhDomain extends ApiOvhBase {
 		String qPath = "/domain/zone";
 		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t5);
+		return convertTo(resp, t1);
 	}
 }

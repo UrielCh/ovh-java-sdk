@@ -21,18 +21,18 @@ public class OvhInstance {
 	public Date created;
 
 	/**
-	 * Instance name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String name;
-
-	/**
 	 * Instance flavor id
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String flavorId;
+
+	/**
+	 * Instance name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String name;
 
 	/**
 	 * Instance IP addresses

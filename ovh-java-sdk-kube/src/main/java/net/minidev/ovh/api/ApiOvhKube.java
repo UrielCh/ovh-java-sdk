@@ -23,21 +23,6 @@ public class ApiOvhKube extends ApiOvhBase {
 	}
 
 	/**
-	 * List available services
-	 *
-	 * REST: GET /kube
-	 *
-	 * API beta
-	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/kube";
-		StringBuilder sb = path(qPath);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
-
-	/**
 	 * Get information about your managed Kubernetes cluster
 	 *
 	 * REST: GET /kube/{serviceName}
@@ -67,20 +52,6 @@ public class ApiOvhKube extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "name", name);
 		exec(qPath, "PUT", sb.toString(), o);
-	}
-
-	/**
-	 * Reset cluster: all Kubernetes data will be erased (pods, services, configuration, etc), your nodes will be deleted
-	 *
-	 * REST: POST /kube/{serviceName}/reset
-	 * @param serviceName [required] Cluster ID
-	 *
-	 * API beta
-	 */
-	public void serviceName_reset_POST(String serviceName) throws IOException {
-		String qPath = "/kube/{serviceName}/reset";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
@@ -125,9 +96,9 @@ public class ApiOvhKube extends ApiOvhBase {
 		String qPath = "/kube/{serviceName}/publiccloud/node";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
+		return convertTo(resp, t1);
 	}
-	private static TypeReference<ArrayList<OvhNode>> t2 = new TypeReference<ArrayList<OvhNode>>() {};
+	private static TypeReference<ArrayList<OvhNode>> t1 = new TypeReference<ArrayList<OvhNode>>() {};
 
 	/**
 	 * Deploy a node for your cluster on Public Cloud
@@ -190,9 +161,9 @@ public class ApiOvhKube extends ApiOvhBase {
 		String qPath = "/kube/{serviceName}/publiccloud/project";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
+		return convertTo(resp, t2);
 	}
-	private static TypeReference<ArrayList<OvhPublicCloudProject>> t3 = new TypeReference<ArrayList<OvhPublicCloudProject>>() {};
+	private static TypeReference<ArrayList<OvhPublicCloudProject>> t2 = new TypeReference<ArrayList<OvhPublicCloudProject>>() {};
 
 	/**
 	 * Get kubeconfig file
@@ -208,4 +179,33 @@ public class ApiOvhKube extends ApiOvhBase {
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhKubeconfig.class);
 	}
+
+	/**
+	 * Reset cluster: all Kubernetes data will be erased (pods, services, configuration, etc), your nodes will be deleted
+	 *
+	 * REST: POST /kube/{serviceName}/reset
+	 * @param serviceName [required] Cluster ID
+	 *
+	 * API beta
+	 */
+	public void serviceName_reset_POST(String serviceName) throws IOException {
+		String qPath = "/kube/{serviceName}/reset";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "POST", sb.toString(), null);
+	}
+
+	/**
+	 * List available services
+	 *
+	 * REST: GET /kube
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/kube";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+	private static TypeReference<ArrayList<String>> t3 = new TypeReference<ArrayList<String>>() {};
 }

@@ -35,16 +35,16 @@ public class OvhServerState {
 	public String lastCheckContent;
 
 	/**
-	 * Layer5-7 code, if available
-	 *
-	 * canBeNull
-	 */
-	public String checkCode;
-
-	/**
 	 * Status
 	 *
 	 * canBeNull
 	 */
 	public String status;
+
+	/**
+	 * Layer5-7 code, if available
+	 *
+	 * canBeNull
+	 */
+	public String checkCode;
 }

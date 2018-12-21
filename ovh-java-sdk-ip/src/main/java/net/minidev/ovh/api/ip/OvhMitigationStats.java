@@ -12,16 +12,16 @@ public class OvhMitigationStats {
 	public OvhMitigationTraffic in;
 
 	/**
-	 * Traffic timestamp
-	 *
-	 * canBeNull
-	 */
-	public Long timestamp;
-
-	/**
 	 * Traffic out
 	 *
 	 * canBeNull
 	 */
 	public OvhMitigationTraffic out;
+
+	/**
+	 * Traffic timestamp
+	 *
+	 * canBeNull
+	 */
+	public Long timestamp;
 }

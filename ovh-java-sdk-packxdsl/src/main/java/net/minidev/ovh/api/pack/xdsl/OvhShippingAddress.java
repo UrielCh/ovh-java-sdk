@@ -7,12 +7,12 @@ public class OvhShippingAddress {
 	/**
 	 * canBeNull
 	 */
-	public String lastName;
+	public String zipCode;
 
 	/**
 	 * canBeNull
 	 */
-	public String zipCode;
+	public String lastName;
 
 	/**
 	 * canBeNull

@@ -12,18 +12,18 @@ public class OvhLine {
 	public Boolean portability;
 
 	/**
-	 * The number of the line
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String number;
-
-	/**
 	 * The number used to place the order. Null if the same as the current number.
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String originalNumber;
+
+	/**
+	 * The number of the line
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String number;
 
 	/**
 	 * Data to identify the line at the concentration point
@@ -52,18 +52,18 @@ public class OvhLine {
 	public OvhFaultRepairTimeEnum faultRepairTime;
 
 	/**
-	 * True if the line is directly wired on the DSLAM
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean directDistribution;
-
-	/**
 	 * Detailed information about the sections between the DSLAM and the telephone jack
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhLineSectionLength[] lineSectionsLength;
+
+	/**
+	 * True if the line is directly wired on the DSLAM
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean directDistribution;
 
 	/**
 	 * The download synchronisation on the DSLAM in Kbps

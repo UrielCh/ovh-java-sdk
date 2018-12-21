@@ -7,18 +7,18 @@ import net.minidev.ovh.api.order.OvhPrice;
  */
 public class OvhStorageVolumeUsage {
 	/**
-	 * Bytes stored in your containers
-	 *
-	 * canBeNull
-	 */
-	public Long storedBytes;
-
-	/**
 	 * Cost for your storage bandwidth
 	 *
 	 * canBeNull
 	 */
 	public OvhPrice total;
+
+	/**
+	 * Bytes stored in your containers
+	 *
+	 * canBeNull
+	 */
+	public Long storedBytes;
 
 	/**
 	 * Region

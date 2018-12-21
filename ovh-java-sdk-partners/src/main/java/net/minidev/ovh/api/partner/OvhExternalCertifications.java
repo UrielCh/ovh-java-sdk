@@ -19,13 +19,6 @@ public class OvhExternalCertifications {
 	public Boolean vmware;
 
 	/**
-	 * AWS
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean aws;
-
-	/**
 	 * Microsoft
 	 *
 	 * canBeNull && readOnly
@@ -33,11 +26,11 @@ public class OvhExternalCertifications {
 	public Boolean microsoft;
 
 	/**
-	 * Cisco
+	 * AWS
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Boolean cisco;
+	public Boolean aws;
 
 	/**
 	 * Intel
@@ -45,4 +38,11 @@ public class OvhExternalCertifications {
 	 * canBeNull && readOnly
 	 */
 	public Boolean intel;
+
+	/**
+	 * Cisco
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean cisco;
 }
