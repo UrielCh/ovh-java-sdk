@@ -119,13 +119,6 @@ public class OvhTemplates {
 	public String templateName;
 
 	/**
-	 * Date of last modification of the base image
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date lastModification;
-
-	/**
 	 * This distribution supports installation using the distribution's native kernel instead of the recommended OVH kernel
 	 *
 	 * canBeNull && readOnly
@@ -133,11 +126,11 @@ public class OvhTemplates {
 	public Boolean supportsDistributionKernel;
 
 	/**
-	 * category of this template (informative only)
+	 * Date of last modification of the base image
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhTemplateOsUsageEnum category;
+	public Date lastModification;
 
 	/**
 	 * this template family type
@@ -145,6 +138,13 @@ public class OvhTemplates {
 	 * canBeNull && readOnly
 	 */
 	public OvhTemplateOsTypeEnum family;
+
+	/**
+	 * category of this template (informative only)
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhTemplateOsUsageEnum category;
 
 	/**
 	 * This distribution is new, and although tested and functional, may still display odd behaviour

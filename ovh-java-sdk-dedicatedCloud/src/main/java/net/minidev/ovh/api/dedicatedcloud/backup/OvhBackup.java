@@ -15,18 +15,18 @@ public class OvhBackup {
 	public OvhOfferTypeEnum offerType;
 
 	/**
-	 * Last successful creation time of the backup job
-	 *
-	 * canBeNull
-	 */
-	public Date lastSuccessfulCreationTime;
-
-	/**
 	 * Last duration of the backup job
 	 *
 	 * canBeNull
 	 */
 	public OvhUnitAndValue<Long> lastDuration;
+
+	/**
+	 * Last successful creation time of the backup job
+	 *
+	 * canBeNull
+	 */
+	public Date lastSuccessfulCreationTime;
 
 	/**
 	 * Last creation time of the backup job
@@ -36,13 +36,6 @@ public class OvhBackup {
 	public Date lastCreationTime;
 
 	/**
-	 * Backup is encrypted
-	 *
-	 * canBeNull
-	 */
-	public Boolean encryption;
-
-	/**
 	 * Last successful duration of the backup job
 	 *
 	 * canBeNull
@@ -50,11 +43,11 @@ public class OvhBackup {
 	public OvhUnitAndValue<Long> lastSuccessfulDuration;
 
 	/**
-	 * Disk space allocated to the virtual machine (in GB)
+	 * Backup is encrypted
 	 *
 	 * canBeNull
 	 */
-	public Double allocatedDisk;
+	public Boolean encryption;
 
 	/**
 	 * List of days your Virtual Machine will be backuped
@@ -62,6 +55,13 @@ public class OvhBackup {
 	 * canBeNull
 	 */
 	public OvhBackupDaysEnum[] backupDays;
+
+	/**
+	 * Disk space allocated to the virtual machine (in GB)
+	 *
+	 * canBeNull
+	 */
+	public Double allocatedDisk;
 
 	/**
 	 * Last result of the backup job

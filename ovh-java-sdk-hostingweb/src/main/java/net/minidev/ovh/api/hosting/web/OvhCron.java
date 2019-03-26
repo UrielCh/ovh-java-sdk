@@ -29,13 +29,6 @@ public class OvhCron {
 	public Long id;
 
 	/**
-	 * Email used to receive error log ( stderr )
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String email;
-
-	/**
 	 * Command to execute
 	 *
 	 * canBeNull && readOnly
@@ -43,11 +36,11 @@ public class OvhCron {
 	public String command;
 
 	/**
-	 * Frequency ( crontab format ) defined for the script ( minutes are ignored )
+	 * Email used to receive error log ( stderr )
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String frequency;
+	public String email;
 
 	/**
 	 * Cron status
@@ -55,4 +48,11 @@ public class OvhCron {
 	 * canBeNull && readOnly
 	 */
 	public OvhStatusEnum status;
+
+	/**
+	 * Frequency ( crontab format ) defined for the script ( minutes are ignored )
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String frequency;
 }

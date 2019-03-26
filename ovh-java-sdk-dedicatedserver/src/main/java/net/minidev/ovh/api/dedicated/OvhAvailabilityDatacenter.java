@@ -5,14 +5,14 @@ package net.minidev.ovh.api.dedicated;
  */
 public class OvhAvailabilityDatacenter {
 	/**
-	 * The code of the datacenter
+	 * Datacenter code
 	 *
 	 * canBeNull
 	 */
 	public OvhAvailabilityDatacenterEnum datacenter;
 
 	/**
-	 * The availability
+	 * Availability status
 	 *
 	 * canBeNull
 	 */

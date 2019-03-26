@@ -16,18 +16,18 @@ public class OvhConsumptionItem {
 	public OvhPrice unitPrice;
 
 	/**
-	 * Quantity consumed in unit
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhUnitAndValue<Double> quantity;
-
-	/**
 	 * Metric name
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhMetricNameEnum metricName;
+
+	/**
+	 * Quantity consumed in unit
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhUnitAndValue<Double> quantity;
 
 	/**
 	 * Price

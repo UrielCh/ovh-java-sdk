@@ -26,18 +26,18 @@ public class OvhPermissions {
 	public Boolean classWrite;
 
 	/**
-	 * Write permission
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean write;
-
-	/**
 	 * Execute permission
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean execute;
+
+	/**
+	 * Write permission
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean write;
 
 	/**
 	 * Name of Ceph pool

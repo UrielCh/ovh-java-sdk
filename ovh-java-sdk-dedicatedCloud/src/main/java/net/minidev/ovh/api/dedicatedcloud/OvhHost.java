@@ -121,18 +121,18 @@ public class OvhHost {
 	public String profileCode;
 
 	/**
-	 * The speed of the CPU cores. This is an average value if there are multiple speeds. in Mhz
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long cpuMaxCore;
-
-	/**
 	 * Id of the parent host (if any)
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long parentHostId;
+
+	/**
+	 * The speed of the CPU cores. This is an average value if there are multiple speeds. in Mhz
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long cpuMaxCore;
 
 	/**
 	 * State of the host

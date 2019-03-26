@@ -47,18 +47,18 @@ public class OvhFrontendHttp {
 	public Long defaultSslId;
 
 	/**
-	 * Listening port(s) on the server
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String port;
-
-	/**
 	 * Zone of you frontend
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String zone;
+
+	/**
+	 * Listening port(s) on the server
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String port;
 
 	/**
 	 * Restrict IP Load Balancing access to these ip block. No restriction if null

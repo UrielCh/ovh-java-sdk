@@ -27,19 +27,6 @@ public class ApiOvhLicenseworklight extends ApiOvhBase {
 	}
 
 	/**
-	 * List available services
-	 *
-	 * REST: GET /license/worklight
-	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/license/worklight";
-		StringBuilder sb = path(qPath);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
-
-	/**
 	 * Get the orderable WorkLight versions
 	 *
 	 * REST: GET /license/worklight/orderableVersions
@@ -50,72 +37,22 @@ public class ApiOvhLicenseworklight extends ApiOvhBase {
 		StringBuilder sb = path(qPath);
 		query(sb, "ip", ip);
 		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+	private static TypeReference<ArrayList<OvhWorkLightOrderConfiguration>> t1 = new TypeReference<ArrayList<OvhWorkLightOrderConfiguration>>() {};
+
+	/**
+	 * List available services
+	 *
+	 * REST: GET /license/worklight
+	 */
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/license/worklight";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
-	private static TypeReference<ArrayList<OvhWorkLightOrderConfiguration>> t2 = new TypeReference<ArrayList<OvhWorkLightOrderConfiguration>>() {};
-
-	/**
-	 * Will tell if the ip can accept the license
-	 *
-	 * REST: GET /license/worklight/{serviceName}/canLicenseBeMovedTo
-	 * @param destinationIp [required] The Ip on which you want to move this license
-	 * @param serviceName [required] The name of your WorkLight license
-	 */
-	public OvhChangeIpStatus serviceName_canLicenseBeMovedTo_GET(String serviceName, String destinationIp) throws IOException {
-		String qPath = "/license/worklight/{serviceName}/canLicenseBeMovedTo";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "destinationIp", destinationIp);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhChangeIpStatus.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /license/worklight/{serviceName}
-	 * @param serviceName [required] The name of your WorkLight license
-	 */
-	public OvhWorkLight serviceName_GET(String serviceName) throws IOException {
-		String qPath = "/license/worklight/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhWorkLight.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /license/worklight/{serviceName}
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The name of your WorkLight license
-	 */
-	public void serviceName_PUT(String serviceName, OvhWorkLight body) throws IOException {
-		String qPath = "/license/worklight/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Confirm termination of your service
-	 *
-	 * REST: POST /license/worklight/{serviceName}/confirmTermination
-	 * @param futureUse What next after your termination request
-	 * @param reason Reason of your termination request
-	 * @param commentary Commentary about your termination request
-	 * @param token [required] The termination token sent by mail to the admin contact
-	 * @param serviceName [required] The name of your WorkLight license
-	 */
-	public String serviceName_confirmTermination_POST(String serviceName, String commentary, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String token) throws IOException {
-		String qPath = "/license/worklight/{serviceName}/confirmTermination";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "commentary", commentary);
-		addBody(o, "futureUse", futureUse);
-		addBody(o, "reason", reason);
-		addBody(o, "token", token);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, String.class);
-	}
+	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};
 
 	/**
 	 * Terminate your service
@@ -131,53 +68,11 @@ public class ApiOvhLicenseworklight extends ApiOvhBase {
 	}
 
 	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /license/worklight/{serviceName}/serviceInfos
-	 * @param serviceName [required] The name of your WorkLight license
-	 */
-	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
-		String qPath = "/license/worklight/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhService.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /license/worklight/{serviceName}/serviceInfos
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The name of your WorkLight license
-	 */
-	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
-		String qPath = "/license/worklight/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Move this license to another Ip
-	 *
-	 * REST: POST /license/worklight/{serviceName}/changeIp
-	 * @param destinationIp [required] The Ip on which you want to move this license
-	 * @param serviceName [required] The name of your WorkLight license
-	 */
-	public OvhTask serviceName_changeIp_POST(String serviceName, String destinationIp) throws IOException {
-		String qPath = "/license/worklight/{serviceName}/changeIp";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "destinationIp", destinationIp);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
 	 * Tasks linked to this license
 	 *
 	 * REST: GET /license/worklight/{serviceName}/tasks
-	 * @param action [required] Filter the value of action property (=)
 	 * @param status [required] Filter the value of status property (=)
+	 * @param action [required] Filter the value of action property (=)
 	 * @param serviceName [required] The name of your WorkLight license
 	 */
 	public ArrayList<Long> serviceName_tasks_GET(String serviceName, OvhActionType action, OvhTaskStateEnum status) throws IOException {
@@ -214,6 +109,111 @@ public class ApiOvhLicenseworklight extends ApiOvhBase {
 		String qPath = "/license/worklight/{serviceName}/allowedDestinationIp";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /license/worklight/{serviceName}/serviceInfos
+	 * @param serviceName [required] The name of your WorkLight license
+	 */
+	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
+		String qPath = "/license/worklight/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhService.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /license/worklight/{serviceName}/serviceInfos
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The name of your WorkLight license
+	 */
+	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
+		String qPath = "/license/worklight/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Confirm termination of your service
+	 *
+	 * REST: POST /license/worklight/{serviceName}/confirmTermination
+	 * @param futureUse What next after your termination request
+	 * @param reason Reason of your termination request
+	 * @param commentary Commentary about your termination request
+	 * @param token [required] The termination token sent by mail to the admin contact
+	 * @param serviceName [required] The name of your WorkLight license
+	 */
+	public String serviceName_confirmTermination_POST(String serviceName, String commentary, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String token) throws IOException {
+		String qPath = "/license/worklight/{serviceName}/confirmTermination";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "commentary", commentary);
+		addBody(o, "futureUse", futureUse);
+		addBody(o, "reason", reason);
+		addBody(o, "token", token);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /license/worklight/{serviceName}
+	 * @param serviceName [required] The name of your WorkLight license
+	 */
+	public OvhWorkLight serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/license/worklight/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhWorkLight.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /license/worklight/{serviceName}
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The name of your WorkLight license
+	 */
+	public void serviceName_PUT(String serviceName, OvhWorkLight body) throws IOException {
+		String qPath = "/license/worklight/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Will tell if the ip can accept the license
+	 *
+	 * REST: GET /license/worklight/{serviceName}/canLicenseBeMovedTo
+	 * @param destinationIp [required] The Ip on which you want to move this license
+	 * @param serviceName [required] The name of your WorkLight license
+	 */
+	public OvhChangeIpStatus serviceName_canLicenseBeMovedTo_GET(String serviceName, String destinationIp) throws IOException {
+		String qPath = "/license/worklight/{serviceName}/canLicenseBeMovedTo";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "destinationIp", destinationIp);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhChangeIpStatus.class);
+	}
+
+	/**
+	 * Move this license to another Ip
+	 *
+	 * REST: POST /license/worklight/{serviceName}/changeIp
+	 * @param destinationIp [required] The Ip on which you want to move this license
+	 * @param serviceName [required] The name of your WorkLight license
+	 */
+	public OvhTask serviceName_changeIp_POST(String serviceName, String destinationIp) throws IOException {
+		String qPath = "/license/worklight/{serviceName}/changeIp";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "destinationIp", destinationIp);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
 	}
 }

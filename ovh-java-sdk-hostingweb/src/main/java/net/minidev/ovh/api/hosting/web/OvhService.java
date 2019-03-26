@@ -120,13 +120,6 @@ public class OvhService {
 	public OvhPhpVersion[] phpVersions;
 
 	/**
-	 * Use to link an external domain. ( This token has to be insert into a TXT field on your dns zone with ovhcontrol subdomain )
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String token;
-
-	/**
 	 * Path of your home
 	 *
 	 * canBeNull && readOnly
@@ -134,11 +127,11 @@ public class OvhService {
 	public String home;
 
 	/**
-	 * Available offers for boost option
+	 * Use to link an external domain. ( This token has to be insert into a TXT field on your dns zone with ovhcontrol subdomain )
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhAvailableOfferStruct[] availableBoostOffer;
+	public String token;
 
 	/**
 	 * This direct ipv6 to your cluster ( usefull for application like api )
@@ -146,6 +139,13 @@ public class OvhService {
 	 * canBeNull && readOnly
 	 */
 	public String clusterIpv6;
+
+	/**
+	 * Available offers for boost option
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhAvailableOfferStruct[] availableBoostOffer;
 
 	/**
 	 * /hosting/web/{serviceName}/ovhConfig is stored in cache. This date is the last refresh of this data
@@ -176,18 +176,18 @@ public class OvhService {
 	public String filer;
 
 	/**
-	 * If your offer is old, return a recommended offer to migrate on
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhOfferEnum recommendedOffer;
-
-	/**
 	 * The recommended ipv6 for your hosting ( depends on hosting's linked services, e.g CDN or hostedSSL )
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String hostingIpv6;
+
+	/**
+	 * If your offer is old, return a recommended offer to migrate on
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhOfferEnum recommendedOffer;
 
 	/**
 	 * Space allowed
@@ -204,16 +204,16 @@ public class OvhService {
 	public OvhServiceAccess serviceManagementAccess;
 
 	/**
-	 * This direct ip to your cluster ( usefull for application like api )
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String clusterIp;
-
-	/**
 	 * Hosting resource type
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhResourceEnum resourceType;
+
+	/**
+	 * This direct ip to your cluster ( usefull for application like api )
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String clusterIp;
 }

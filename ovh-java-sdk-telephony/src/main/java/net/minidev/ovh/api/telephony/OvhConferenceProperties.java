@@ -5,13 +5,6 @@ package net.minidev.ovh.api.telephony;
  */
 public class OvhConferenceProperties {
 	/**
-	 * The events channel hash
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String eventsChannel;
-
-	/**
 	 * Whether or not anonmyous participants are allowed
 	 *
 	 * canBeNull && readOnly
@@ -19,18 +12,11 @@ public class OvhConferenceProperties {
 	public Boolean anonymousRejection;
 
 	/**
-	 * The announce file name
+	 * The events channel hash
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String announceFilename;
-
-	/**
-	 * Whether or not conference is recorded
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean recordStatus;
+	public String eventsChannel;
 
 	/**
 	 * Whether or not announce file is played before entrance
@@ -40,11 +26,18 @@ public class OvhConferenceProperties {
 	public Boolean announceFile;
 
 	/**
-	 * The conference pin number
+	 * Whether or not conference is recorded
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String pin;
+	public Boolean recordStatus;
+
+	/**
+	 * The announce file name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String announceFilename;
 
 	/**
 	 * The email address to send conference report to
@@ -54,6 +47,13 @@ public class OvhConferenceProperties {
 	public String reportEmail;
 
 	/**
+	 * The conference pin number
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String pin;
+
+	/**
 	 * Whether or not participants enter conference room muted
 	 *
 	 * canBeNull && readOnly
@@ -61,18 +61,18 @@ public class OvhConferenceProperties {
 	public Boolean enterMuted;
 
 	/**
-	 * The status of the reporting
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhConferenceReportStatusEnum reportStatus;
-
-	/**
 	 * The announce sound id
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long announceSoundId;
+
+	/**
+	 * The status of the reporting
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhConferenceReportStatusEnum reportStatus;
 
 	/**
 	 * The conference sounds language

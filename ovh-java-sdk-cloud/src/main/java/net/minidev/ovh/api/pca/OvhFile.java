@@ -33,18 +33,18 @@ public class OvhFile {
 	public String name;
 
 	/**
-	 * File id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String id;
-
-	/**
 	 * File state
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String state;
+
+	/**
+	 * File id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String id;
 
 	/**
 	 * File type

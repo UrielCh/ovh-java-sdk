@@ -26,11 +26,11 @@ public class OvhSslGateway {
 	public Boolean serverHttps;
 
 	/**
-	 * The internal name of your SSL Gateway
+	 * Custom reverse for your SSL Gateway
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String serviceName;
+	public String reverse;
 
 	/**
 	 * Zones of your SSL Gateway
@@ -40,11 +40,11 @@ public class OvhSslGateway {
 	public String[] zones;
 
 	/**
-	 * Custom reverse for your SSL Gateway
+	 * The internal name of your SSL Gateway
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String reverse;
+	public String serviceName;
 
 	/**
 	 * Current offer for your SSL Gateway
@@ -68,6 +68,13 @@ public class OvhSslGateway {
 	public String ipv4;
 
 	/**
+	 * Set to true to enable https redirect
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean httpsRedirect;
+
+	/**
 	 * Restrict SSL Gateway access to these ip block. No restriction if null
 	 *
 	 * canBeNull && readOnly
@@ -82,11 +89,11 @@ public class OvhSslGateway {
 	public String ipv6;
 
 	/**
-	 * Set to true to enable https redirect
+	 * Set to true to enable Strict-Transport-Security HTTP header
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Boolean httpsRedirect;
+	public Boolean hsts;
 
 	/**
 	 * Current state of your SSL Gateway
@@ -94,11 +101,4 @@ public class OvhSslGateway {
 	 * canBeNull && readOnly
 	 */
 	public OvhStateEnum state;
-
-	/**
-	 * Set to true to enable Strict-Transport-Security HTTP header
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean hsts;
 }

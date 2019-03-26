@@ -26,18 +26,18 @@ public class OvhOVHProductsUsedCloud {
 	public Boolean vps;
 
 	/**
-	 * vRack / vRack Connect
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean vrack;
-
-	/**
 	 * Private Cloud
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean privateCloud;
+
+	/**
+	 * vRack / vRack Connect
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean vrack;
 
 	/**
 	 * Cloud Desktop Infrastructure

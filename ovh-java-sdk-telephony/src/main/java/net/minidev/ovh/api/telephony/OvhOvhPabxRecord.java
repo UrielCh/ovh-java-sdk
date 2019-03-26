@@ -42,16 +42,16 @@ public class OvhOvhPabxRecord {
 	public String fileUrl;
 
 	/**
-	 * canBeNull && readOnly
-	 */
-	public Long id;
-
-	/**
 	 * The caller name of the recorded call
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String callerIdName;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public Long id;
 
 	/**
 	 * The end date of the recorded call

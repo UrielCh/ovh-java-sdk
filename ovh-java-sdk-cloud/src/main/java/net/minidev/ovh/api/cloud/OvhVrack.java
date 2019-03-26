@@ -17,4 +17,11 @@ public class OvhVrack {
 	 * canBeNull && readOnly
 	 */
 	public String description;
+
+	/**
+	 * Vrack ID
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String id;
 }

@@ -5,18 +5,18 @@ package net.minidev.ovh.api.horizonview;
  */
 public class OvhCustomerNetwork {
 	/**
-	 * Customer Network id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long customerNetworkId;
-
-	/**
 	 * Name of your network
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String name;
+
+	/**
+	 * Customer Network id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long customerNetworkId;
 
 	/**
 	 * Customer network

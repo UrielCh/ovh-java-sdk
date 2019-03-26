@@ -5,18 +5,18 @@ package net.minidev.ovh.api.order.catalog.privatecloud;
  */
 public class OvhCapabilities {
 	/**
-	 * Define if NSX is part of this type of service
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean nsx;
-
-	/**
 	 * Define if VROPS is part of this type of service
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean vrops;
+
+	/**
+	 * Define if NSX is part of this type of service
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean nsx;
 
 	/**
 	 * Define if HIPAA is part of this type of service

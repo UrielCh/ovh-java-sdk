@@ -33,18 +33,18 @@ public class OvhProduct {
 	public String action;
 
 	/**
-	 * Reseller flavor
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhResellerTypeEnum type;
-
-	/**
 	 * Details about the plesk type
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhProductType typeDetail;
+
+	/**
+	 * Reseller flavor
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhResellerTypeEnum type;
 
 	/**
 	 * Plesk server address

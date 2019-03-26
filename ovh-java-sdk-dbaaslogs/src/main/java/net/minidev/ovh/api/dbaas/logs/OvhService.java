@@ -35,11 +35,11 @@ public class OvhService {
 	public String serviceName;
 
 	/**
-	 * Service last update
+	 * Is capped plan enabled?
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Date updatedAt;
+	public Boolean isCapped;
 
 	/**
 	 * Username on DBaaS Logs
@@ -47,4 +47,11 @@ public class OvhService {
 	 * canBeNull && readOnly
 	 */
 	public String username;
+
+	/**
+	 * Service last update
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date updatedAt;
 }

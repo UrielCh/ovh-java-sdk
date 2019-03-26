@@ -36,6 +36,7 @@ public class ApiOvh extends ApiOvhBase {
 	final public ApiOvhDomain domain;
 	final public ApiOvhEmaildomain emaildomain;
 	final public ApiOvhEmailexchange emailexchange;
+	final public ApiOvhEmailmxplan emailmxplan;
 	final public ApiOvhEmailpro emailpro;
 	final public ApiOvhFreefax freefax;
 	final public ApiOvhHorizonView horizonView;
@@ -70,6 +71,7 @@ public class ApiOvh extends ApiOvhBase {
 	final public ApiOvhSaascsp2 saascsp2;
 	final public ApiOvhSecret secret;
 	final public ApiOvhService service;
+	// final public ApiOvhServices services;
 	final public ApiOvhSms sms;
 	final public ApiOvhSsl ssl;
 	final public ApiOvhSslGateway sslGateway;
@@ -115,6 +117,7 @@ public class ApiOvh extends ApiOvhBase {
 		this.domain = new ApiOvhDomain(core);
 		this.emaildomain = new ApiOvhEmaildomain(core);
 		this.emailexchange = new ApiOvhEmailexchange(core);
+		this.emailmxplan = new ApiOvhEmailmxplan(core);
 		this.emailpro = new ApiOvhEmailpro(core);
 		this.freefax = new ApiOvhFreefax(core);
 		this.horizonView = new ApiOvhHorizonView(core);
@@ -149,6 +152,7 @@ public class ApiOvh extends ApiOvhBase {
 		this.saascsp2 = new ApiOvhSaascsp2(core);
 		this.secret = new ApiOvhSecret(core);
 		this.service = new ApiOvhService(core);
+		// this.services = new ApiOvhServices(core);
 		this.sms = new ApiOvhSms(core);
 		this.ssl = new ApiOvhSsl(core);
 		this.sslGateway = new ApiOvhSslGateway(core);

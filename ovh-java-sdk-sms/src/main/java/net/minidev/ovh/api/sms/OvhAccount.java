@@ -39,6 +39,11 @@ public class OvhAccount {
 	public String name;
 
 	/**
+	 * canBeNull && readOnly
+	 */
+	public OvhPackQuantityAutomaticRecreditEnum automaticRecreditAmount;
+
+	/**
 	 * URL called when a STOP is received after a receiver replied stop to a SMS
 	 *
 	 * canBeNull && readOnly
@@ -49,11 +54,6 @@ public class OvhAccount {
 	 * canBeNull && readOnly
 	 */
 	public String description;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public OvhPackQuantityAutomaticRecreditEnum automaticRecreditAmount;
 
 	/**
 	 * canBeNull && readOnly

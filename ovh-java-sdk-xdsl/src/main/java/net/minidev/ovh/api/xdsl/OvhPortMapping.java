@@ -42,18 +42,18 @@ public class OvhPortMapping {
 	public String description;
 
 	/**
-	 * ID of the port mapping entry
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long id;
-
-	/**
 	 * An ip which will access to the defined rule. Default : no restriction applied
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String allowedRemoteIp;
+
+	/**
+	 * ID of the port mapping entry
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long id;
 
 	/**
 	 * The IP address of the destination of the packets

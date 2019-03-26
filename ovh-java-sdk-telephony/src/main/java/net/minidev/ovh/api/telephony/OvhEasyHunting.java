@@ -94,16 +94,16 @@ public class OvhEasyHunting {
 	public Long toneOnHold;
 
 	/**
-	 * The calls dispatching strategy
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhOvhPabxHuntingQueueStrategyEnum strategy;
-
-	/**
 	 * Enable/Disable the status change IVR on your callcenter. The IVR is enabled by default.
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean statusIvrEnabled;
+
+	/**
+	 * The calls dispatching strategy
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhOvhPabxHuntingQueueStrategyEnum strategy;
 }

@@ -15,18 +15,18 @@ public class OvhStack {
 	public String cluster;
 
 	/**
-	 * Date of the resource creation
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date createdAt;
-
-	/**
 	 * A list of slave UUIDs
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String[] slaves;
+
+	/**
+	 * Date of the resource creation
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date createdAt;
 
 	/**
 	 * The DNS address of the stack load balancer

@@ -40,18 +40,18 @@ public class OvhIp {
 	public OvhSslConfigurationEnum sslConfiguration;
 
 	/**
-	 * The IPV4 associated to your IP load balancing
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String ipv4;
-
-	/**
 	 * Vrack eligibility
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean vrackEligibility;
+
+	/**
+	 * The IPV4 associated to your IP load balancing
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String ipv4;
 
 	/**
 	 * Location where your service is

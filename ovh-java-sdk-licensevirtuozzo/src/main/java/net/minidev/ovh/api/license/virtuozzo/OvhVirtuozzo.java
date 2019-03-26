@@ -24,18 +24,18 @@ public class OvhVirtuozzo {
 	public OvhVirtuozzoContainerNumberEnum containerNumber;
 
 	/**
-	 * The internal name of your license
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String domain;
-
-	/**
 	 * The ip on which this license is attached
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String ip;
+
+	/**
+	 * The internal name of your license
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String domain;
 
 	/**
 	 * This license product key
@@ -52,18 +52,18 @@ public class OvhVirtuozzo {
 	public String licenseId;
 
 	/**
-	 * This license version
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhVirtuozzoVersionEnum version;
-
-	/**
 	 * This license Information key
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String informationKey;
+
+	/**
+	 * This license version
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhVirtuozzoVersionEnum version;
 
 	/**
 	 * This license creation date

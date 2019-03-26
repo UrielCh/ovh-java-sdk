@@ -40,18 +40,18 @@ public class OvhOfficeUser {
 	public OvhLicenceEnum[] licences;
 
 	/**
-	 * Email used to activate Microsoft Office
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String activationEmail;
-
-	/**
 	 * Pending task id
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long taskPendingId;
+
+	/**
+	 * Email used to activate Microsoft Office
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String activationEmail;
 
 	/**
 	 * User state

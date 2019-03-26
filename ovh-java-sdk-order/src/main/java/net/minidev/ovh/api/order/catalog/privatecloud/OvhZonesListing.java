@@ -26,18 +26,18 @@ public class OvhZonesListing {
 	public OvhZone sbg;
 
 	/**
-	 * Zone definition for WAW datacenter
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhZone waw;
-
-	/**
 	 * Zone definition for BHS datacenter
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhZone bhs;
+
+	/**
+	 * Zone definition for WAW datacenter
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhZone waw;
 
 	/**
 	 * Zone definition for ERI datacenter

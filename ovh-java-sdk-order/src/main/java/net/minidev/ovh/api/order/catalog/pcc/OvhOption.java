@@ -19,18 +19,18 @@ public class OvhOption {
 	public String name;
 
 	/**
-	 * Category of the option
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String type;
-
-	/**
 	 * Describes the maximum quantity on the initial order
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long maxInitialQuantity;
+
+	/**
+	 * Category of the option
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String type;
 
 	/**
 	 * Plan Code

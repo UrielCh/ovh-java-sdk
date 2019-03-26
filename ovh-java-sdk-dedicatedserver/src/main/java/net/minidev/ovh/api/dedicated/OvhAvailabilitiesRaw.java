@@ -5,18 +5,18 @@ package net.minidev.ovh.api.dedicated;
  */
 public class OvhAvailabilitiesRaw {
 	/**
-	 * Last availability rule applied
-	 *
-	 * canBeNull
-	 */
-	public String lastRule;
-
-	/**
 	 * Product reference
 	 *
 	 * canBeNull
 	 */
 	public String reference;
+
+	/**
+	 * Last availability rule applied
+	 *
+	 * canBeNull
+	 */
+	public String lastRule;
 
 	/**
 	 * Ordered count
@@ -26,18 +26,18 @@ public class OvhAvailabilitiesRaw {
 	public Long ordered;
 
 	/**
-	 * Validating order count
-	 *
-	 * canBeNull
-	 */
-	public Long orderedCheck;
-
-	/**
 	 * 4H count
 	 *
 	 * canBeNull
 	 */
 	public Long trueAvailable4H;
+
+	/**
+	 * Validating order count
+	 *
+	 * canBeNull
+	 */
+	public Long orderedCheck;
 
 	/**
 	 * 24H count

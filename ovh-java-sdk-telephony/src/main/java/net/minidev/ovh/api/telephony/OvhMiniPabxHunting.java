@@ -24,11 +24,11 @@ public class OvhMiniPabxHunting {
 	public Boolean toneOnClosure;
 
 	/**
-	 * Number of simultaneous calls
+	 * Sound ID of ringback tone
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long numberOfCalls;
+	public Long toneRingbackSoundId;
 
 	/**
 	 * Sound ID of on-hold tone
@@ -38,11 +38,11 @@ public class OvhMiniPabxHunting {
 	public Long toneOnHoldSoundId;
 
 	/**
-	 * Sound ID of ringback tone
+	 * Number of simultaneous calls
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long toneRingbackSoundId;
+	public Long numberOfCalls;
 
 	/**
 	 * The maximum waiting time in the calls queue

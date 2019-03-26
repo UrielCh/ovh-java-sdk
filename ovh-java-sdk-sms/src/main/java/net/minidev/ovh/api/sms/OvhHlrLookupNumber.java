@@ -7,18 +7,18 @@ import java.util.Date;
  */
 public class OvhHlrLookupNumber {
 	/**
-	 * Is the MSISDN valid
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean valid;
-
-	/**
 	 * Has the MSISDN been ported from its original network
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean ported;
+
+	/**
+	 * Is the MSISDN valid
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean valid;
 
 	/**
 	 * HLR creation datetime
@@ -42,18 +42,18 @@ public class OvhHlrLookupNumber {
 	public Long id;
 
 	/**
-	 * MSISDN
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String msisdn;
-
-	/**
 	 * The {Mobile Country Code, Mobile Network Code} unique identifier
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String operatorCode;
+
+	/**
+	 * MSISDN
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String msisdn;
 
 	/**
 	 * Is the MSISDN currently reachable

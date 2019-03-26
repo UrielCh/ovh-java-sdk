@@ -14,18 +14,18 @@ public class OvhOfficeTenant {
 	public OvhServiceTypeEnum serviceType;
 
 	/**
-	 * Contact's fisrt name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String firstName;
-
-	/**
 	 * Contact's zip code
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String zipCode;
+
+	/**
+	 * Contact's fisrt name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String firstName;
 
 	/**
 	 * Contact's fisrt name

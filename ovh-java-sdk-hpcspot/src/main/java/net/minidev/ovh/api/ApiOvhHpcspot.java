@@ -78,11 +78,11 @@ public class ApiOvhHpcspot extends ApiOvhBase {
 	 * Details of the consumption of your account
 	 *
 	 * REST: GET /hpcspot/{serviceName}/consumption
-	 * @param type [required] Filter the value of type property (=)
 	 * @param hpcspotItemEndDate_from [required] Filter the value of hpcspotItemEndDate property (>=)
-	 * @param hpcspotItemEndDate_to [required] Filter the value of hpcspotItemEndDate property (<=)
-	 * @param orderId [required] Filter the value of orderId property (=)
 	 * @param hpcspotItemId [required] Filter the value of hpcspotItemId property (=)
+	 * @param orderId [required] Filter the value of orderId property (=)
+	 * @param hpcspotItemEndDate_to [required] Filter the value of hpcspotItemEndDate property (<=)
+	 * @param type [required] Filter the value of type property (=)
 	 * @param serviceName [required] The internal name of your HPC Spot account
 	 */
 	public ArrayList<Long> serviceName_consumption_GET(String serviceName, Date hpcspotItemEndDate_from, Date hpcspotItemEndDate_to, Long hpcspotItemId, Long orderId, OvhConsumptionTypeEnum type) throws IOException {

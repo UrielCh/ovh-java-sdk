@@ -40,18 +40,18 @@ public class OvhServiceMonitoring {
 	public OvhMonitoringIntervalEnum interval;
 
 	/**
-	 * The URL to test
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String url;
-
-	/**
 	 * Is this service monitoring is enabled
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean enabled;
+
+	/**
+	 * The URL to test
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String url;
 
 	/**
 	 * This monitoring id

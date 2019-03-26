@@ -29,18 +29,18 @@ public class OvhPermissions {
 	public Boolean canWrite;
 
 	/**
-	 * Permission Id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String id;
-
-	/**
 	 * Whether a user can delete images on the namespace
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean isAdmin;
+
+	/**
+	 * Permission Id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String id;
 
 	/**
 	 * User Id

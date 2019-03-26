@@ -14,13 +14,6 @@ public class OvhAccount {
 	public String lastName;
 
 	/**
-	 * Time of account's password last update
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date passwordLastUpdate;
-
-	/**
 	 * Account initials
 	 *
 	 * canBeNull && readOnly
@@ -40,6 +33,13 @@ public class OvhAccount {
 	 * canBeNull && readOnly
 	 */
 	public String displayName;
+
+	/**
+	 * Time of account's password last update
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date passwordLastUpdate;
 
 	/**
 	 * Creation date
@@ -84,18 +84,18 @@ public class OvhAccount {
 	public String SAMAccountName;
 
 	/**
-	 * Account id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long id;
-
-	/**
 	 * Account state
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhObjectStateEnum state;
+
+	/**
+	 * Account id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long id;
 
 	/**
 	 * Last logon

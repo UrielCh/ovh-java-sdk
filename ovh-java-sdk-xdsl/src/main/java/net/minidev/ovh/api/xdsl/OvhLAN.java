@@ -14,18 +14,18 @@ public class OvhLAN {
 	public OvhAddressingTypeEnum addressingType;
 
 	/**
-	 * The IP address of the LAN interface of the modem
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String IPAddress;
-
-	/**
 	 * The subnet mask of the LAN interface of the modem
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String subnetMask;
+
+	/**
+	 * The IP address of the LAN interface of the modem
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String IPAddress;
 
 	/**
 	 * ID of the ongoing todo (NULL if none)

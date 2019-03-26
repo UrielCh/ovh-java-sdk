@@ -89,18 +89,18 @@ public class OvhOffer {
 	public Long curNbInput;
 
 	/**
-	 * Data retention in hours
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long retention;
-
-	/**
 	 * Maximum number of dashboard allowed
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long maxNbDashboard;
+
+	/**
+	 * Data retention in hours
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long retention;
 
 	/**
 	 * Maximum number of alias allowed

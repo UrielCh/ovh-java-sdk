@@ -12,6 +12,13 @@ public class OvhNewProject {
 	public Long orderId;
 
 	/**
+	 * Cloud project description
+	 *
+	 * canBeNull
+	 */
+	public String description;
+
+	/**
 	 * Cloud project
 	 *
 	 * canBeNull
@@ -24,13 +31,6 @@ public class OvhNewProject {
 	 * canBeNull
 	 */
 	public Long[] agreements;
-
-	/**
-	 * Cloud project description
-	 *
-	 * canBeNull
-	 */
-	public String description;
 
 	/**
 	 * Cloud credit

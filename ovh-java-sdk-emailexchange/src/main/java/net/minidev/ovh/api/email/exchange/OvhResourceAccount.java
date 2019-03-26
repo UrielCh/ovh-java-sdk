@@ -35,18 +35,18 @@ public class OvhResourceAccount {
 	public Boolean deleteComments;
 
 	/**
-	 * Creation date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date creationDate;
-
-	/**
 	 * resource type
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhResourceTypeEnum type;
+
+	/**
+	 * Creation date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date creationDate;
 
 	/**
 	 * task pending id
@@ -84,18 +84,18 @@ public class OvhResourceAccount {
 	public Long bookingWindow;
 
 	/**
-	 * resource location name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String location;
-
-	/**
 	 * resource can be scheduled by more than one person during the same time period
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean allowConflict;
+
+	/**
+	 * resource location name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String location;
 
 	/**
 	 * account state

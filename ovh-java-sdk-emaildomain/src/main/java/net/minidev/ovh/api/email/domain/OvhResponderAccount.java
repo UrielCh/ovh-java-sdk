@@ -21,18 +21,18 @@ public class OvhResponderAccount {
 	public Date from;
 
 	/**
-	 * Date of end responder
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date to;
-
-	/**
 	 * If true, emails will be copy to emailToCopy address
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean copy;
+
+	/**
+	 * Date of end responder
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date to;
 
 	/**
 	 * Content of responder

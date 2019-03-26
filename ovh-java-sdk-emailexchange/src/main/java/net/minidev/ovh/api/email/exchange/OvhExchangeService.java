@@ -40,11 +40,11 @@ public class OvhExchangeService {
 	public Date sslExpirationDate;
 
 	/**
-	 * Task pending id
+	 * maximum number of days that account's password is valid before expiration
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long taskPendingId;
+	public Long maxPasswordAge;
 
 	/**
 	 * Spam and Antivirus configuration
@@ -54,18 +54,18 @@ public class OvhExchangeService {
 	public OvhSpamAndVirusConfiguration spamAndVirusConfiguration;
 
 	/**
+	 * Task pending id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long taskPendingId;
+
+	/**
 	 * enable policy for strong and secure passwords
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean complexityEnabled;
-
-	/**
-	 * maximum number of days that account's password is valid before expiration
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long maxPasswordAge;
 
 	/**
 	 * canBeNull && readOnly
@@ -85,6 +85,13 @@ public class OvhExchangeService {
 	public String hostname;
 
 	/**
+	 * number of historical password that cannot be reused
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long passwordHistoryCount;
+
+	/**
 	 * number of minutes account will remain locked if it occurs
 	 *
 	 * canBeNull && readOnly
@@ -99,18 +106,18 @@ public class OvhExchangeService {
 	public Long lockoutThreshold;
 
 	/**
-	 * number of historical password that cannot be reused
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long passwordHistoryCount;
-
-	/**
 	 * minimum number of characters password must contain
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long minPasswordLength;
+
+	/**
+	 * URL for web interface
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String webUrl;
 
 	/**
 	 * canBeNull && readOnly

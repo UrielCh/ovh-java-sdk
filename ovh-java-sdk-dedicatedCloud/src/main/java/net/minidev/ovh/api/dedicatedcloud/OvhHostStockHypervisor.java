@@ -5,16 +5,16 @@ package net.minidev.ovh.api.dedicatedcloud;
  */
 public class OvhHostStockHypervisor {
 	/**
-	 * Version of hypervisor
-	 *
-	 * canBeNull
-	 */
-	public String version;
-
-	/**
 	 * Number of available hypervisors
 	 *
 	 * canBeNull
 	 */
 	public Long value;
+
+	/**
+	 * Version of hypervisor
+	 *
+	 * canBeNull
+	 */
+	public String version;
 }

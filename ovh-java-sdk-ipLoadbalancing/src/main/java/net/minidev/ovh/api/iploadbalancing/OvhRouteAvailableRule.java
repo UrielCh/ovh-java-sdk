@@ -7,18 +7,18 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class OvhRouteAvailableRule {
 	/**
-	 * Expected type for the pattern. Like "enum", "backend", "cidr", ...
-	 *
-	 * canBeNull
-	 */
-	public String pattern;
-
-	/**
 	 * Rule name
 	 *
 	 * canBeNull
 	 */
 	public String name;
+
+	/**
+	 * Expected type for the pattern. Like "enum", "backend", "cidr", ...
+	 *
+	 * canBeNull
+	 */
+	public String pattern;
 
 	/**
 	 * Protocol supported by this action

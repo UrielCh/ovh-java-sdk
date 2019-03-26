@@ -23,18 +23,18 @@ public class OvhAttachedDomain {
 	public String ownLog;
 
 	/**
-	 * IP location of the domain linked
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhCountryEnum ipLocation;
-
-	/**
 	 * Firewall state for this path
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhFirewallEnum firewall;
+
+	/**
+	 * IP location of the domain linked
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhCountryEnum ipLocation;
 
 	/**
 	 * Domain linked (fqdn)

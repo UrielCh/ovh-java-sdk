@@ -14,18 +14,18 @@ public class OvhInput {
 	public String inputId;
 
 	/**
-	 * Indicate if input need to be restarted
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean isRestartRequired;
-
-	/**
 	 * Associated Graylog stream
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String streamId;
+
+	/**
+	 * Indicate if input need to be restarted
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean isRestartRequired;
 
 	/**
 	 * Port
@@ -91,6 +91,13 @@ public class OvhInput {
 	public Boolean singleInstanceEnabled;
 
 	/**
+	 * Input last update
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date updatedAt;
+
+	/**
 	 * init: configuration required, pending: ready to start, running: available
 	 *
 	 * canBeNull && readOnly
@@ -103,11 +110,4 @@ public class OvhInput {
 	 * canBeNull && readOnly
 	 */
 	public String engineId;
-
-	/**
-	 * Input last update
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date updatedAt;
 }

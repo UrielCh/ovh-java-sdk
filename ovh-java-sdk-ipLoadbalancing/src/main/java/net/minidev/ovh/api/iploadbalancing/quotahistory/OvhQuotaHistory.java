@@ -21,18 +21,18 @@ public class OvhQuotaHistory {
 	public Date resetDate;
 
 	/**
-	 * Zone of your quota
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String zone;
-
-	/**
 	 * Historized date for this quota entry
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date historizedDate;
+
+	/**
+	 * Zone of your quota
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String zone;
 
 	/**
 	 * The last time your quota was updated from your Load Balancer instance

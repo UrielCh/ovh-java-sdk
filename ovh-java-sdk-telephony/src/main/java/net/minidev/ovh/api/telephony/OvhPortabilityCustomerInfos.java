@@ -33,18 +33,18 @@ public class OvhPortabilityCustomerInfos {
 	public String stair;
 
 	/**
-	 * Street number of the customer's address
-	 *
-	 * canBeNull
-	 */
-	public String streetNumber;
-
-	/**
 	 * City of the customer's address
 	 *
 	 * canBeNull
 	 */
 	public String city;
+
+	/**
+	 * Street number of the customer's address
+	 *
+	 * canBeNull
+	 */
+	public String streetNumber;
 
 	/**
 	 * Name of the customer

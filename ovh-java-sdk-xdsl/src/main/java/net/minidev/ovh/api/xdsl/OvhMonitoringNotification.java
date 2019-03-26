@@ -39,6 +39,11 @@ public class OvhMonitoringNotification {
 	public OvhTypeEnum type;
 
 	/**
+	 * canBeNull && readOnly
+	 */
+	public Boolean enabled;
+
+	/**
 	 * The e-mail address, if type is mail
 	 *
 	 * canBeNull && readOnly
@@ -46,9 +51,11 @@ public class OvhMonitoringNotification {
 	public String email;
 
 	/**
+	 * The frenquency to send reminders when the access is still down
+	 *
 	 * canBeNull && readOnly
 	 */
-	public Boolean enabled;
+	public OvhFrequencyEnum frequency;
 
 	/**
 	 * The number of seconds the access has to be down to trigger an alert
@@ -56,11 +63,4 @@ public class OvhMonitoringNotification {
 	 * canBeNull && readOnly
 	 */
 	public Long downThreshold;
-
-	/**
-	 * The frenquency to send reminders when the access is still down
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhFrequencyEnum frequency;
 }

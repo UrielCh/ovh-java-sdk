@@ -14,18 +14,18 @@ public class OvhImage {
 	public String visibility;
 
 	/**
-	 * Image creation date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date creationDate;
-
-	/**
 	 * Image type
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String type;
+
+	/**
+	 * Image creation date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date creationDate;
 
 	/**
 	 * Minimum disks required to use image

@@ -12,4 +12,11 @@ public class OvhVrops {
 	 * canBeNull && readOnly
 	 */
 	public OvhStateEnum state;
+
+	/**
+	 * Url of the vRealize Operations interface
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String url;
 }

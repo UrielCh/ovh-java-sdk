@@ -42,120 +42,50 @@ public class ApiOvhLicenseplesk extends ApiOvhBase {
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
 
 	/**
-	 * Get the orderable Plesk versions and their associated compatibilities
-	 *
-	 * REST: GET /license/plesk/orderableVersions
-	 * @param ip [required] Your license Ip
-	 */
-	public ArrayList<OvhPleskOrderConfiguration> orderableVersions_GET(String ip) throws IOException {
-		String qPath = "/license/plesk/orderableVersions";
-		StringBuilder sb = path(qPath);
-		query(sb, "ip", ip);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-	private static TypeReference<ArrayList<OvhPleskOrderConfiguration>> t2 = new TypeReference<ArrayList<OvhPleskOrderConfiguration>>() {};
-
-	/**
-	 * options attached to this license
-	 *
-	 * REST: GET /license/plesk/{serviceName}/option
-	 * @param serviceName [required] The name of your Plesk license
-	 */
-	public ArrayList<OvhOptionLabel> serviceName_option_GET(String serviceName) throws IOException {
-		String qPath = "/license/plesk/{serviceName}/option";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
-	}
-	private static TypeReference<ArrayList<OvhOptionLabel>> t3 = new TypeReference<ArrayList<OvhOptionLabel>>() {};
-
-	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /license/plesk/{serviceName}/option/{label}
+	 * REST: GET /license/plesk/{serviceName}/serviceInfos
 	 * @param serviceName [required] The name of your Plesk license
-	 * @param label [required] This option designation
 	 */
-	public OvhOption serviceName_option_label_GET(String serviceName, net.minidev.ovh.api.license.OvhOptionLabel label) throws IOException {
-		String qPath = "/license/plesk/{serviceName}/option/{label}";
-		StringBuilder sb = path(qPath, serviceName, label);
+	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
+		String qPath = "/license/plesk/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhOption.class);
+		return convertTo(resp, OvhService.class);
 	}
 
 	/**
-	 * release this Option
+	 * Alter this object properties
 	 *
-	 * REST: DELETE /license/plesk/{serviceName}/option/{label}
+	 * REST: PUT /license/plesk/{serviceName}/serviceInfos
+	 * @param body [required] New object properties
 	 * @param serviceName [required] The name of your Plesk license
-	 * @param label [required] This option designation
 	 */
-	public OvhTask serviceName_option_label_DELETE(String serviceName, net.minidev.ovh.api.license.OvhOptionLabel label) throws IOException {
-		String qPath = "/license/plesk/{serviceName}/option/{label}";
-		StringBuilder sb = path(qPath, serviceName, label);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
+	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
+		String qPath = "/license/plesk/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
-	 * Move this license to another Ip
+	 * Confirm termination of your service
 	 *
-	 * REST: POST /license/plesk/{serviceName}/changeIp
-	 * @param destinationIp [required] The Ip on which you want to move this license
+	 * REST: POST /license/plesk/{serviceName}/confirmTermination
+	 * @param futureUse What next after your termination request
+	 * @param reason Reason of your termination request
+	 * @param commentary Commentary about your termination request
+	 * @param token [required] The termination token sent by mail to the admin contact
 	 * @param serviceName [required] The name of your Plesk license
 	 */
-	public OvhTask serviceName_changeIp_POST(String serviceName, String destinationIp) throws IOException {
-		String qPath = "/license/plesk/{serviceName}/changeIp";
+	public String serviceName_confirmTermination_POST(String serviceName, String commentary, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String token) throws IOException {
+		String qPath = "/license/plesk/{serviceName}/confirmTermination";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "destinationIp", destinationIp);
+		addBody(o, "commentary", commentary);
+		addBody(o, "futureUse", futureUse);
+		addBody(o, "reason", reason);
+		addBody(o, "token", token);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /license/plesk/{serviceName}/tasks/{taskId}
-	 * @param serviceName [required] The name of your Plesk license
-	 * @param taskId [required] This Task id
-	 */
-	public OvhTask serviceName_tasks_taskId_GET(String serviceName, Long taskId) throws IOException {
-		String qPath = "/license/plesk/{serviceName}/tasks/{taskId}";
-		StringBuilder sb = path(qPath, serviceName, taskId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * tasks linked to this license
-	 *
-	 * REST: GET /license/plesk/{serviceName}/tasks
-	 * @param action [required] Filter the value of action property (=)
-	 * @param status [required] Filter the value of status property (=)
-	 * @param serviceName [required] The name of your Plesk license
-	 */
-	public ArrayList<Long> serviceName_tasks_GET(String serviceName, OvhActionType action, OvhTaskStateEnum status) throws IOException {
-		String qPath = "/license/plesk/{serviceName}/tasks";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "action", action);
-		query(sb, "status", status);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t4);
-	}
-	private static TypeReference<ArrayList<Long>> t4 = new TypeReference<ArrayList<Long>>() {};
-
-	/**
-	 * Terminate your service
-	 *
-	 * REST: POST /license/plesk/{serviceName}/terminate
-	 * @param serviceName [required] The name of your Plesk license
-	 */
-	public String serviceName_terminate_POST(String serviceName) throws IOException {
-		String qPath = "/license/plesk/{serviceName}/terminate";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, String.class);
 	}
 
@@ -201,25 +131,51 @@ public class ApiOvhLicenseplesk extends ApiOvhBase {
 	}
 
 	/**
-	 * Confirm termination of your service
+	 * Move this license to another Ip
 	 *
-	 * REST: POST /license/plesk/{serviceName}/confirmTermination
-	 * @param futureUse What next after your termination request
-	 * @param reason Reason of your termination request
-	 * @param commentary Commentary about your termination request
-	 * @param token [required] The termination token sent by mail to the admin contact
+	 * REST: POST /license/plesk/{serviceName}/changeIp
+	 * @param destinationIp [required] The Ip on which you want to move this license
 	 * @param serviceName [required] The name of your Plesk license
 	 */
-	public String serviceName_confirmTermination_POST(String serviceName, String commentary, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String token) throws IOException {
-		String qPath = "/license/plesk/{serviceName}/confirmTermination";
+	public OvhTask serviceName_changeIp_POST(String serviceName, String destinationIp) throws IOException {
+		String qPath = "/license/plesk/{serviceName}/changeIp";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "commentary", commentary);
-		addBody(o, "futureUse", futureUse);
-		addBody(o, "reason", reason);
-		addBody(o, "token", token);
+		addBody(o, "destinationIp", destinationIp);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, String.class);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * tasks linked to this license
+	 *
+	 * REST: GET /license/plesk/{serviceName}/tasks
+	 * @param action [required] Filter the value of action property (=)
+	 * @param status [required] Filter the value of status property (=)
+	 * @param serviceName [required] The name of your Plesk license
+	 */
+	public ArrayList<Long> serviceName_tasks_GET(String serviceName, OvhActionType action, OvhTaskStateEnum status) throws IOException {
+		String qPath = "/license/plesk/{serviceName}/tasks";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "action", action);
+		query(sb, "status", status);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /license/plesk/{serviceName}/tasks/{taskId}
+	 * @param serviceName [required] The name of your Plesk license
+	 * @param taskId [required] This Task id
+	 */
+	public OvhTask serviceName_tasks_taskId_GET(String serviceName, Long taskId) throws IOException {
+		String qPath = "/license/plesk/{serviceName}/tasks/{taskId}";
+		StringBuilder sb = path(qPath, serviceName, taskId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
@@ -236,28 +192,72 @@ public class ApiOvhLicenseplesk extends ApiOvhBase {
 	}
 
 	/**
-	 * Get this object properties
+	 * Terminate your service
 	 *
-	 * REST: GET /license/plesk/{serviceName}/serviceInfos
+	 * REST: POST /license/plesk/{serviceName}/terminate
 	 * @param serviceName [required] The name of your Plesk license
 	 */
-	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
-		String qPath = "/license/plesk/{serviceName}/serviceInfos";
+	public String serviceName_terminate_POST(String serviceName) throws IOException {
+		String qPath = "/license/plesk/{serviceName}/terminate";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhService.class);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, String.class);
 	}
 
 	/**
-	 * Alter this object properties
+	 * Get this object properties
 	 *
-	 * REST: PUT /license/plesk/{serviceName}/serviceInfos
-	 * @param body [required] New object properties
+	 * REST: GET /license/plesk/{serviceName}/option/{label}
+	 * @param serviceName [required] The name of your Plesk license
+	 * @param label [required] This option designation
+	 */
+	public OvhOption serviceName_option_label_GET(String serviceName, net.minidev.ovh.api.license.OvhOptionLabel label) throws IOException {
+		String qPath = "/license/plesk/{serviceName}/option/{label}";
+		StringBuilder sb = path(qPath, serviceName, label);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhOption.class);
+	}
+
+	/**
+	 * release this Option
+	 *
+	 * REST: DELETE /license/plesk/{serviceName}/option/{label}
+	 * @param serviceName [required] The name of your Plesk license
+	 * @param label [required] This option designation
+	 */
+	public OvhTask serviceName_option_label_DELETE(String serviceName, net.minidev.ovh.api.license.OvhOptionLabel label) throws IOException {
+		String qPath = "/license/plesk/{serviceName}/option/{label}";
+		StringBuilder sb = path(qPath, serviceName, label);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * options attached to this license
+	 *
+	 * REST: GET /license/plesk/{serviceName}/option
 	 * @param serviceName [required] The name of your Plesk license
 	 */
-	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
-		String qPath = "/license/plesk/{serviceName}/serviceInfos";
+	public ArrayList<OvhOptionLabel> serviceName_option_GET(String serviceName) throws IOException {
+		String qPath = "/license/plesk/{serviceName}/option";
 		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
 	}
+	private static TypeReference<ArrayList<OvhOptionLabel>> t3 = new TypeReference<ArrayList<OvhOptionLabel>>() {};
+
+	/**
+	 * Get the orderable Plesk versions and their associated compatibilities
+	 *
+	 * REST: GET /license/plesk/orderableVersions
+	 * @param ip [required] Your license Ip
+	 */
+	public ArrayList<OvhPleskOrderConfiguration> orderableVersions_GET(String ip) throws IOException {
+		String qPath = "/license/plesk/orderableVersions";
+		StringBuilder sb = path(qPath);
+		query(sb, "ip", ip);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t4);
+	}
+	private static TypeReference<ArrayList<OvhPleskOrderConfiguration>> t4 = new TypeReference<ArrayList<OvhPleskOrderConfiguration>>() {};
 }

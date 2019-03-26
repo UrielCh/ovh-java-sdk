@@ -12,12 +12,12 @@ public class OvhTemplates {
 	/**
 	 * canBeNull
 	 */
-	public Boolean customizedSmsMode;
+	public String emailBody;
 
 	/**
 	 * canBeNull
 	 */
-	public String emailBody;
+	public Boolean customizedSmsMode;
 
 	/**
 	 * canBeNull

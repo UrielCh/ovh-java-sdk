@@ -17,4 +17,11 @@ public class OvhAvailableRegion {
 	 * canBeNull && readOnly
 	 */
 	public String datacenterLocation;
+
+	/**
+	 * Region continent code
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhRegionContinent continentCode;
 }

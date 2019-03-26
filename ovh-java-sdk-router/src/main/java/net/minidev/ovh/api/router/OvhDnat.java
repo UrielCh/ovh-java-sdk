@@ -19,13 +19,6 @@ public class OvhDnat {
 	public OvhProtocolEnum protocol;
 
 	/**
-	 * Source IP or network
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String sourceNet;
-
-	/**
 	 * New destination IP
 	 *
 	 * canBeNull && readOnly
@@ -33,9 +26,11 @@ public class OvhDnat {
 	public String newDestinationNet;
 
 	/**
+	 * Source IP or network
+	 *
 	 * canBeNull && readOnly
 	 */
-	public Long id;
+	public String sourceNet;
 
 	/**
 	 * New destination port number
@@ -43,6 +38,11 @@ public class OvhDnat {
 	 * canBeNull && readOnly
 	 */
 	public Long newDestinationPort;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public Long id;
 
 	/**
 	 * canBeNull && readOnly

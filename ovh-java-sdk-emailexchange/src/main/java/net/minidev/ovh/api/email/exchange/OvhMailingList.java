@@ -7,13 +7,6 @@ import java.util.Date;
  */
 public class OvhMailingList {
 	/**
-	 * Maximum receive email size in MB
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long maxReceiveSize;
-
-	/**
 	 * Account was sending spam
 	 *
 	 * canBeNull && readOnly
@@ -21,11 +14,18 @@ public class OvhMailingList {
 	public Boolean spamDetected;
 
 	/**
-	 * Update date
+	 * Maximum receive email size in MB
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Date lastUpdateDate;
+	public Long maxReceiveSize;
+
+	/**
+	 * Ticket number of spam detection
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long spamTicketNumber;
 
 	/**
 	 * Name displayed in Global Access List
@@ -35,11 +35,11 @@ public class OvhMailingList {
 	public String displayName;
 
 	/**
-	 * Ticket number of spam detection
+	 * Update date
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long spamTicketNumber;
+	public Date lastUpdateDate;
 
 	/**
 	 * If true sender has to authenticate

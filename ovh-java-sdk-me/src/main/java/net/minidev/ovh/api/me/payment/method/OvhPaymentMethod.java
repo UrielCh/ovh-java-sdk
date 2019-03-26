@@ -30,18 +30,18 @@ public class OvhPaymentMethod {
 	public String label;
 
 	/**
-	 * Creation date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date creationDate;
-
-	/**
 	 * Associated billing contact ID
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long billingContactId;
+
+	/**
+	 * Creation date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date creationDate;
 
 	/**
 	 * Payment method type

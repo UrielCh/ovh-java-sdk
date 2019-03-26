@@ -26,18 +26,18 @@ public class OvhEntrepriseNumberInformations {
 	public String entrepriseNumber;
 
 	/**
-	 * Entreprise's category code for directory services
-	 *
-	 * canBeNull
-	 */
-	public String ape;
-
-	/**
 	 * Is this a valid entreprise number?
 	 *
 	 * canBeNull
 	 */
 	public Boolean isValid;
+
+	/**
+	 * Entreprise's category code for directory services
+	 *
+	 * canBeNull
+	 */
+	public String ape;
 
 	/**
 	 * Name of the entreprise

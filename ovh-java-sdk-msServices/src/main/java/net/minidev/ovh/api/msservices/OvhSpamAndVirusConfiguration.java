@@ -40,16 +40,16 @@ public class OvhSpamAndVirusConfiguration {
 	public Boolean checkSPF;
 
 	/**
-	 * If message is a spam or virus put in junk. Overridden by deleteSpam or deleteVirus
-	 *
-	 * canBeNull
-	 */
-	public Boolean putInJunk;
-
-	/**
 	 * If message is a virus delete it
 	 *
 	 * canBeNull
 	 */
 	public Boolean deleteVirus;
+
+	/**
+	 * If message is a spam or virus put in junk. Overridden by deleteSpam or deleteVirus
+	 *
+	 * canBeNull
+	 */
+	public Boolean putInJunk;
 }

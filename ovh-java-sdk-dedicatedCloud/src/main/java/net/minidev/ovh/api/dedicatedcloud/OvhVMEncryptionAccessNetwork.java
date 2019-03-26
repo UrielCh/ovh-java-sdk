@@ -21,18 +21,18 @@ public class OvhVMEncryptionAccessNetwork {
 	public String ip;
 
 	/**
-	 * Description of your option access network
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String description;
-
-	/**
 	 * VM Encryption KMS TCP port
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long kmsTcpPort;
+
+	/**
+	 * Description of your option access network
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String description;
 
 	/**
 	 * Id of the VM Encryption KMS

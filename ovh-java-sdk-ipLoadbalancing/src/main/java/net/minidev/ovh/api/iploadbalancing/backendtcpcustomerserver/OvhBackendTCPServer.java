@@ -37,13 +37,6 @@ public class OvhBackendTCPServer {
 	public String displayName;
 
 	/**
-	 * Farm id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long backendId;
-
-	/**
 	 * Weight value. Defaults to 1. 0 if not used in load balancing. Servers with higher weight get more requests.
 	 *
 	 * canBeNull && readOnly
@@ -51,11 +44,11 @@ public class OvhBackendTCPServer {
 	public Long weight;
 
 	/**
-	 * SSL ciphering. Probes will also be sent ciphered
+	 * Farm id
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Boolean ssl;
+	public Long backendId;
 
 	/**
 	 * Id of your server
@@ -63,6 +56,13 @@ public class OvhBackendTCPServer {
 	 * canBeNull && readOnly
 	 */
 	public Long serverId;
+
+	/**
+	 * SSL ciphering. Probes will also be sent ciphered
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean ssl;
 
 	/**
 	 * Probe state. Default: 'false'
@@ -86,16 +86,16 @@ public class OvhBackendTCPServer {
 	public Long port;
 
 	/**
-	 * Status attached to your server
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhBackendCustomerServerStatusEnum status;
-
-	/**
 	 * Disabled if null. Send PROXY protocol header. Requires a compatible server.
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhProxyProtocolVersionEnum proxyProtocolVersion;
+
+	/**
+	 * Status attached to your server
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhBackendCustomerServerStatusEnum status;
 }

@@ -33,18 +33,18 @@ public class OvhPartnerKnowledges {
 	public Boolean searchEngine;
 
 	/**
-	 * Media
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean media;
-
-	/**
 	 * Social Networks
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean socialNetwork;
+
+	/**
+	 * Media
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean media;
 
 	/**
 	 * Events

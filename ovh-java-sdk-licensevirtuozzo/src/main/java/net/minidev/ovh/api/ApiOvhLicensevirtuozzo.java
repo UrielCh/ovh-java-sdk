@@ -42,34 +42,6 @@ public class ApiOvhLicensevirtuozzo extends ApiOvhBase {
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
 
 	/**
-	 * Get the orderable Virtuozzo versions
-	 *
-	 * REST: GET /license/virtuozzo/orderableVersions
-	 * @param ip [required] Your license Ip
-	 */
-	public ArrayList<OvhVirtuozzoOrderConfiguration> orderableVersions_GET(String ip) throws IOException {
-		String qPath = "/license/virtuozzo/orderableVersions";
-		StringBuilder sb = path(qPath);
-		query(sb, "ip", ip);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-	private static TypeReference<ArrayList<OvhVirtuozzoOrderConfiguration>> t2 = new TypeReference<ArrayList<OvhVirtuozzoOrderConfiguration>>() {};
-
-	/**
-	 * Returns an array of ips where the license can be moved to
-	 *
-	 * REST: GET /license/virtuozzo/{serviceName}/allowedDestinationIp
-	 * @param serviceName [required] The name of your Virtuozzo license
-	 */
-	public ArrayList<String> serviceName_allowedDestinationIp_GET(String serviceName) throws IOException {
-		String qPath = "/license/virtuozzo/{serviceName}/allowedDestinationIp";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /license/virtuozzo/{serviceName}/tasks/{taskId}
@@ -87,8 +59,8 @@ public class ApiOvhLicensevirtuozzo extends ApiOvhBase {
 	 * tasks linked to this license
 	 *
 	 * REST: GET /license/virtuozzo/{serviceName}/tasks
-	 * @param action [required] Filter the value of action property (=)
 	 * @param status [required] Filter the value of status property (=)
+	 * @param action [required] Filter the value of action property (=)
 	 * @param serviceName [required] The name of your Virtuozzo license
 	 */
 	public ArrayList<Long> serviceName_tasks_GET(String serviceName, OvhActionType action, OvhTaskStateEnum status) throws IOException {
@@ -97,25 +69,79 @@ public class ApiOvhLicensevirtuozzo extends ApiOvhBase {
 		query(sb, "action", action);
 		query(sb, "status", status);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
+		return convertTo(resp, t2);
 	}
-	private static TypeReference<ArrayList<Long>> t3 = new TypeReference<ArrayList<Long>>() {};
+	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
 
 	/**
-	 * Move this license to another Ip
+	 * Returns an array of ips where the license can be moved to
 	 *
-	 * REST: POST /license/virtuozzo/{serviceName}/changeIp
-	 * @param destinationIp [required] The Ip on which you want to move this license
+	 * REST: GET /license/virtuozzo/{serviceName}/allowedDestinationIp
 	 * @param serviceName [required] The name of your Virtuozzo license
 	 */
-	public OvhTask serviceName_changeIp_POST(String serviceName, String destinationIp) throws IOException {
-		String qPath = "/license/virtuozzo/{serviceName}/changeIp";
+	public ArrayList<String> serviceName_allowedDestinationIp_GET(String serviceName) throws IOException {
+		String qPath = "/license/virtuozzo/{serviceName}/allowedDestinationIp";
 		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "destinationIp", destinationIp);
-		String resp = exec(qPath, "POST", sb.toString(), o);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Terminate your service
+	 *
+	 * REST: POST /license/virtuozzo/{serviceName}/terminate
+	 * @param serviceName [required] The name of your Virtuozzo license
+	 */
+	public String serviceName_terminate_POST(String serviceName) throws IOException {
+		String qPath = "/license/virtuozzo/{serviceName}/terminate";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /license/virtuozzo/{serviceName}/option/{label}
+	 * @param serviceName [required] The name of your Virtuozzo license
+	 * @param label [required] This option designation
+	 */
+	public OvhOption serviceName_option_label_GET(String serviceName, net.minidev.ovh.api.license.OvhOptionLabel label) throws IOException {
+		String qPath = "/license/virtuozzo/{serviceName}/option/{label}";
+		StringBuilder sb = path(qPath, serviceName, label);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhOption.class);
+	}
+
+	/**
+	 * release this Option
+	 *
+	 * REST: DELETE /license/virtuozzo/{serviceName}/option/{label}
+	 * @param serviceName [required] The name of your Virtuozzo license
+	 * @param label [required] This option designation
+	 */
+	public OvhTask serviceName_option_label_DELETE(String serviceName, net.minidev.ovh.api.license.OvhOptionLabel label) throws IOException {
+		String qPath = "/license/virtuozzo/{serviceName}/option/{label}";
+		StringBuilder sb = path(qPath, serviceName, label);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
+
+	/**
+	 * Options linked to this license
+	 *
+	 * REST: GET /license/virtuozzo/{serviceName}/option
+	 * @param label [required] Filter the value of label property (=)
+	 * @param serviceName [required] The name of your Virtuozzo license
+	 */
+	public ArrayList<OvhOptionLabel> serviceName_option_GET(String serviceName, OvhOptionLabel label) throws IOException {
+		String qPath = "/license/virtuozzo/{serviceName}/option";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "label", label);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+	private static TypeReference<ArrayList<OvhOptionLabel>> t3 = new TypeReference<ArrayList<OvhOptionLabel>>() {};
 
 	/**
 	 * Get this object properties
@@ -144,19 +170,6 @@ public class ApiOvhLicensevirtuozzo extends ApiOvhBase {
 	}
 
 	/**
-	 * Terminate your service
-	 *
-	 * REST: POST /license/virtuozzo/{serviceName}/terminate
-	 * @param serviceName [required] The name of your Virtuozzo license
-	 */
-	public String serviceName_terminate_POST(String serviceName) throws IOException {
-		String qPath = "/license/virtuozzo/{serviceName}/terminate";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, String.class);
-	}
-
-	/**
 	 * Confirm termination of your service
 	 *
 	 * REST: POST /license/virtuozzo/{serviceName}/confirmTermination
@@ -176,50 +189,6 @@ public class ApiOvhLicensevirtuozzo extends ApiOvhBase {
 		addBody(o, "token", token);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * Options linked to this license
-	 *
-	 * REST: GET /license/virtuozzo/{serviceName}/option
-	 * @param label [required] Filter the value of label property (=)
-	 * @param serviceName [required] The name of your Virtuozzo license
-	 */
-	public ArrayList<OvhOptionLabel> serviceName_option_GET(String serviceName, OvhOptionLabel label) throws IOException {
-		String qPath = "/license/virtuozzo/{serviceName}/option";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "label", label);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t4);
-	}
-	private static TypeReference<ArrayList<OvhOptionLabel>> t4 = new TypeReference<ArrayList<OvhOptionLabel>>() {};
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /license/virtuozzo/{serviceName}/option/{label}
-	 * @param serviceName [required] The name of your Virtuozzo license
-	 * @param label [required] This option designation
-	 */
-	public OvhOption serviceName_option_label_GET(String serviceName, net.minidev.ovh.api.license.OvhOptionLabel label) throws IOException {
-		String qPath = "/license/virtuozzo/{serviceName}/option/{label}";
-		StringBuilder sb = path(qPath, serviceName, label);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhOption.class);
-	}
-
-	/**
-	 * release this Option
-	 *
-	 * REST: DELETE /license/virtuozzo/{serviceName}/option/{label}
-	 * @param serviceName [required] The name of your Virtuozzo license
-	 * @param label [required] This option designation
-	 */
-	public OvhTask serviceName_option_label_DELETE(String serviceName, net.minidev.ovh.api.license.OvhOptionLabel label) throws IOException {
-		String qPath = "/license/virtuozzo/{serviceName}/option/{label}";
-		StringBuilder sb = path(qPath, serviceName, label);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
@@ -262,4 +231,35 @@ public class ApiOvhLicensevirtuozzo extends ApiOvhBase {
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhChangeIpStatus.class);
 	}
+
+	/**
+	 * Move this license to another Ip
+	 *
+	 * REST: POST /license/virtuozzo/{serviceName}/changeIp
+	 * @param destinationIp [required] The Ip on which you want to move this license
+	 * @param serviceName [required] The name of your Virtuozzo license
+	 */
+	public OvhTask serviceName_changeIp_POST(String serviceName, String destinationIp) throws IOException {
+		String qPath = "/license/virtuozzo/{serviceName}/changeIp";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "destinationIp", destinationIp);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get the orderable Virtuozzo versions
+	 *
+	 * REST: GET /license/virtuozzo/orderableVersions
+	 * @param ip [required] Your license Ip
+	 */
+	public ArrayList<OvhVirtuozzoOrderConfiguration> orderableVersions_GET(String ip) throws IOException {
+		String qPath = "/license/virtuozzo/orderableVersions";
+		StringBuilder sb = path(qPath);
+		query(sb, "ip", ip);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t4);
+	}
+	private static TypeReference<ArrayList<OvhVirtuozzoOrderConfiguration>> t4 = new TypeReference<ArrayList<OvhVirtuozzoOrderConfiguration>>() {};
 }

@@ -14,12 +14,12 @@ public class OvhAnycast {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long cacheRuleLimitPerDomain;
+	public String anycast;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String anycast;
+	public Long cacheRuleLimitPerDomain;
 
 	/**
 	 * canBeNull && readOnly

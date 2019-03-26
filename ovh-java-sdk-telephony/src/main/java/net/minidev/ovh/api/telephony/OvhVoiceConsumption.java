@@ -20,16 +20,16 @@ public class OvhVoiceConsumption {
 	public OvhVoiceConsumptionPlanTypeEnum planType;
 
 	/**
-	 * canBeNull && readOnly
-	 */
-	public String called;
-
-	/**
 	 * Country suffix destination
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String countrySuffix;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public String called;
 
 	/**
 	 * canBeNull && readOnly
@@ -44,12 +44,12 @@ public class OvhVoiceConsumption {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhVoiceConsumptionWayTypeEnum wayType;
+	public Long consumptionId;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long consumptionId;
+	public OvhVoiceConsumptionWayTypeEnum wayType;
 
 	/**
 	 * canBeNull && readOnly

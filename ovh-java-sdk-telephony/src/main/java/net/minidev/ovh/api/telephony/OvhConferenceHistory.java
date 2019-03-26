@@ -7,18 +7,18 @@ import java.util.Date;
  */
 public class OvhConferenceHistory {
 	/**
-	 * The duration of the conference in seconds
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long duration;
-
-	/**
 	 * The date the conference began
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date dateBegin;
+
+	/**
+	 * The duration of the conference in seconds
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long duration;
 
 	/**
 	 * The count of unique participants of the conference
@@ -35,18 +35,18 @@ public class OvhConferenceHistory {
 	public String recordUrl;
 
 	/**
-	 * The id of the conference history
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long id;
-
-	/**
 	 * The date the conference end
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date dateEnd;
+
+	/**
+	 * The id of the conference history
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long id;
 
 	/**
 	 * The events of the conference (participants joining/left)

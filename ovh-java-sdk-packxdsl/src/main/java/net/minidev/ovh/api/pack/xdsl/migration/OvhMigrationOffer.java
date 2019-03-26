@@ -64,6 +64,20 @@ public class OvhMigrationOffer {
 	public String url;
 
 	/**
+	 * Price for modem rental
+	 *
+	 * canBeNull
+	 */
+	public OvhPrice modemRental;
+
+	/**
+	 * Installation fees
+	 *
+	 * canBeNull
+	 */
+	public OvhPrice installFees;
+
+	/**
 	 * Price to make the migration
 	 *
 	 * canBeNull
@@ -71,18 +85,18 @@ public class OvhMigrationOffer {
 	public OvhPrice due;
 
 	/**
-	 * Price of the offer
-	 *
-	 * canBeNull
-	 */
-	public OvhPrice price;
-
-	/**
 	 * DEPRECATED - List of contracts
 	 *
 	 * canBeNull
 	 */
 	public String[] contractList;
+
+	/**
+	 * Price of the offer
+	 *
+	 * canBeNull
+	 */
+	public OvhPrice price;
 
 	/**
 	 * Tells if the customer will have to change its modem
@@ -104,6 +118,13 @@ public class OvhMigrationOffer {
 	 * canBeNull
 	 */
 	public OvhPrice currentOfferPrice;
+
+	/**
+	 * Subscription price the first year
+	 *
+	 * canBeNull
+	 */
+	public OvhPrice firstYearPromo;
 
 	/**
 	 * Tells if the offer needs a modem

@@ -7,11 +7,9 @@ import java.util.Date;
  */
 public class OvhOutgoing {
 	/**
-	 * Tariff code applied on the sms
-	 *
 	 * canBeNull && readOnly
 	 */
-	public String tariffCode;
+	public String receiver;
 
 	/**
 	 * canBeNull && readOnly
@@ -24,9 +22,11 @@ public class OvhOutgoing {
 	public Long deliveryReceipt;
 
 	/**
+	 * Tariff code applied on the sms
+	 *
 	 * canBeNull && readOnly
 	 */
-	public String receiver;
+	public String tariffCode;
 
 	/**
 	 * canBeNull && readOnly
@@ -51,22 +51,22 @@ public class OvhOutgoing {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Double credits;
-
-	/**
-	 * canBeNull && readOnly
-	 */
 	public String sender;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long differedDelivery;
+	public Double credits;
 
 	/**
 	 * canBeNull && readOnly
 	 */
 	public String tag;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public Long differedDelivery;
 
 	/**
 	 * canBeNull && readOnly

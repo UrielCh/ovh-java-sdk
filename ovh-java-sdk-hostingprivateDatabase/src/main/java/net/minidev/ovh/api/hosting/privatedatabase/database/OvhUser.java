@@ -14,16 +14,16 @@ public class OvhUser {
 	public Long grantId;
 
 	/**
-	 * User's name granted on this database
-	 *
-	 * canBeNull
-	 */
-	public String userName;
-
-	/**
 	 * User's rights on this database
 	 *
 	 * canBeNull
 	 */
 	public OvhGrantEnum grantType;
+
+	/**
+	 * User's name granted on this database
+	 *
+	 * canBeNull
+	 */
+	public String userName;
 }

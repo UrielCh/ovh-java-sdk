@@ -5,18 +5,18 @@ package net.minidev.ovh.api.hosting.reseller;
  */
 public class OvhProductType {
 	/**
-	 * Number of allowed email accounts
-	 *
-	 * canBeNull
-	 */
-	public Long emailAccounts;
-
-	/**
 	 * Number of allowed databases
 	 *
 	 * canBeNull
 	 */
 	public Long databases;
+
+	/**
+	 * Number of allowed email accounts
+	 *
+	 * canBeNull
+	 */
+	public Long emailAccounts;
 
 	/**
 	 * Disk size of the instance (in GB)
@@ -33,18 +33,18 @@ public class OvhProductType {
 	public String cpu;
 
 	/**
-	 * Number of allowed websites
-	 *
-	 * canBeNull
-	 */
-	public Long websites;
-
-	/**
 	 * Number of allowed customers
 	 *
 	 * canBeNull
 	 */
 	public Long consumers;
+
+	/**
+	 * Number of allowed websites
+	 *
+	 * canBeNull
+	 */
+	public Long websites;
 
 	/**
 	 * Type name

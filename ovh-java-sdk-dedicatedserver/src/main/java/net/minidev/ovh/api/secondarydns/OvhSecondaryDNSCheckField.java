@@ -14,16 +14,16 @@ public class OvhSecondaryDNSCheckField {
 	public String subDomain;
 
 	/**
-	 * The field value to add on your DNS zone for this subDomain
-	 *
-	 * canBeNull
-	 */
-	public String fieldValue;
-
-	/**
 	 * The field type to add on your DNS zone for this subDomain
 	 *
 	 * canBeNull
 	 */
 	public OvhNamedResolutionFieldTypeEnum fieldType;
+
+	/**
+	 * The field value to add on your DNS zone for this subDomain
+	 *
+	 * canBeNull
+	 */
+	public String fieldValue;
 }

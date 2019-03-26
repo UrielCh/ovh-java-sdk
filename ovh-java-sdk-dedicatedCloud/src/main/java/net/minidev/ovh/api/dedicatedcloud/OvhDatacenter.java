@@ -17,16 +17,16 @@ public class OvhDatacenter {
 	public String name;
 
 	/**
-	 * canBeNull && readOnly
-	 */
-	public Long datacenterId;
-
-	/**
 	 * The commercial range associated to this Datacenter
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String commercialRangeName;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public Long datacenterId;
 
 	/**
 	 * canBeNull && readOnly

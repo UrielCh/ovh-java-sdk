@@ -28,18 +28,18 @@ public class OvhConferenceParticipants {
 	public Date arrivalDateTime;
 
 	/**
-	 * The id of the participant
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long id;
-
-	/**
 	 * Whether or not the participant is talking
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean talking;
+
+	/**
+	 * The id of the participant
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long id;
 
 	/**
 	 * Whether or not the participant is active in the room
@@ -56,16 +56,16 @@ public class OvhConferenceParticipants {
 	public Boolean hear;
 
 	/**
-	 * The caller name of the participant
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String callerName;
-
-	/**
 	 * The current level of the participant audio transmission
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long energy;
+
+	/**
+	 * The caller name of the participant
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String callerName;
 }

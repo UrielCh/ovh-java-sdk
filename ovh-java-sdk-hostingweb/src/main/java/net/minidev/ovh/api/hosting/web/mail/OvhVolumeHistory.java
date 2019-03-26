@@ -7,16 +7,16 @@ import java.util.Date;
  */
 public class OvhVolumeHistory {
 	/**
-	 * The volume history size
-	 *
-	 * canBeNull
-	 */
-	public Long volume;
-
-	/**
 	 * The datetime of this volume history point
 	 *
 	 * canBeNull
 	 */
 	public Date date;
+
+	/**
+	 * The volume history size
+	 *
+	 * canBeNull
+	 */
+	public Long volume;
 }

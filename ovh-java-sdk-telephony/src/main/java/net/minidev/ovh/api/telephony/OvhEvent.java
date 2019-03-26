@@ -7,18 +7,18 @@ import java.util.Date;
  */
 public class OvhEvent {
 	/**
-	 * Duration of the call
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long duration;
-
-	/**
 	 * Datetime call establishment
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date dateTime;
+
+	/**
+	 * Duration of the call
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long duration;
 
 	/**
 	 * Protocol (mgcp or sip)
@@ -35,18 +35,18 @@ public class OvhEvent {
 	public String callingIdentifier;
 
 	/**
-	 * Type of event
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhRealtimeEventType eventType;
-
-	/**
 	 * Uniq identifier of the call
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String id;
+
+	/**
+	 * Type of event
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhRealtimeEventType eventType;
 
 	/**
 	 * Called referer, could be the msisdn or the label name

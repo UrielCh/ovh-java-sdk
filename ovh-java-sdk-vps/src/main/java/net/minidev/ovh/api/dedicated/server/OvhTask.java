@@ -9,18 +9,18 @@ import net.minidev.ovh.api.dedicated.OvhTaskStatusEnum;
  */
 public class OvhTask {
 	/**
-	 * Function name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhTaskFunctionEnum function;
-
-	/**
 	 * last update
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date lastUpdate;
+
+	/**
+	 * Function name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhTaskFunctionEnum function;
 
 	/**
 	 * Details of this task

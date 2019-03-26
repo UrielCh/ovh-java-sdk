@@ -13,7 +13,9 @@ public enum OvhPhpVersionAvailableEnum {
 	@JsonProperty("phpfpm-7.1")
 	phpfpm_7_1("phpfpm-7.1"),
 	@JsonProperty("phpfpm-7.2")
-	phpfpm_7_2("phpfpm-7.2");
+	phpfpm_7_2("phpfpm-7.2"),
+	@JsonProperty("phpfpm-7.3")
+	phpfpm_7_3("phpfpm-7.3");
 
 	final String value;
 

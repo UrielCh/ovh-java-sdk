@@ -12,18 +12,18 @@ public class OvhOfficeLicence {
 	public OvhLicenseTypeEnum licenceType;
 
 	/**
-	 * Maximum purchasable license
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long limit;
-
-	/**
 	 * License name
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String name;
+
+	/**
+	 * Maximum purchasable license
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long limit;
 
 	/**
 	 * License unique identifier

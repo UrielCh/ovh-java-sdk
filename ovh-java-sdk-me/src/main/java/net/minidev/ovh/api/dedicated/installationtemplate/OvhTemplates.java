@@ -21,13 +21,6 @@ public class OvhTemplates {
 	public OvhBitFormatEnum bitFormat;
 
 	/**
-	 * This distribution supports the GUID Partition Table (GPT), providing up to 128 partitions that can have more than 2 TB
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean supportsGptLabel;
-
-	/**
 	 * Customizable template properties
 	 *
 	 * canBeNull && readOnly
@@ -35,11 +28,11 @@ public class OvhTemplates {
 	public OvhTemplateOsProperties customization;
 
 	/**
-	 * is this distribution deprecated
+	 * This distribution supports the GUID Partition Table (GPT), providing up to 128 partitions that can have more than 2 TB
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Boolean deprecated;
+	public Boolean supportsGptLabel;
 
 	/**
 	 * list of all language available for this template
@@ -47,6 +40,13 @@ public class OvhTemplates {
 	 * canBeNull && readOnly
 	 */
 	public OvhTemplateOsLanguageEnum[] availableLanguages;
+
+	/**
+	 * is this distribution deprecated
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean deprecated;
 
 	/**
 	 * information about this template
@@ -119,13 +119,6 @@ public class OvhTemplates {
 	public String templateName;
 
 	/**
-	 * Date of last modification of the base image
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date lastModification;
-
-	/**
 	 * This distribution supports installation using the distribution's native kernel instead of the recommended OVH kernel
 	 *
 	 * canBeNull && readOnly
@@ -133,11 +126,11 @@ public class OvhTemplates {
 	public Boolean supportsDistributionKernel;
 
 	/**
-	 * this template family type
+	 * Date of last modification of the base image
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhTemplateOsTypeEnum family;
+	public Date lastModification;
 
 	/**
 	 * category of this template (informative only)
@@ -145,6 +138,13 @@ public class OvhTemplates {
 	 * canBeNull && readOnly
 	 */
 	public OvhTemplateOsUsageEnum category;
+
+	/**
+	 * this template family type
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhTemplateOsTypeEnum family;
 
 	/**
 	 * This distribution is new, and although tested and functional, may still display odd behaviour

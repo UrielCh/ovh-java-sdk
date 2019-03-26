@@ -14,6 +14,13 @@ public class OvhCluster {
 	public String nodesUrl;
 
 	/**
+	 * True if all nodes and control-plane are up to date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean isUpToDate;
+
+	/**
 	 * Cluster creation date
 	 *
 	 * canBeNull && readOnly
@@ -21,11 +28,25 @@ public class OvhCluster {
 	public Date createdAt;
 
 	/**
+	 * Cluster last update date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String updatePolicy;
+
+	/**
 	 * Cluster name
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String name;
+
+	/**
+	 * True if control-plane is up to date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean controlPlaneIsUpToDate;
 
 	/**
 	 * Cluster ID

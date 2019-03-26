@@ -12,18 +12,18 @@ public class OvhSubnet {
 	public OvhIPPool[] ipPools;
 
 	/**
-	 * Subnet CIDR
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String cidr;
-
-	/**
 	 * Gateway IP in the subnet
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String gatewayIp;
+
+	/**
+	 * Subnet CIDR
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String cidr;
 
 	/**
 	 * Subnet id

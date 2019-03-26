@@ -33,18 +33,18 @@ public class OvhDedicatedHorizon {
 	public OvhZone masterZone;
 
 	/**
-	 * Current state of your Dedicated Horizon
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhStateEnum state;
-
-	/**
 	 * Your Horizon Private Cloud
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String privateCloudName;
+
+	/**
+	 * Current state of your Dedicated Horizon
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhStateEnum state;
 
 	/**
 	 * Version of your Dedicated Horizon

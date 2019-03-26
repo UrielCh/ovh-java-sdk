@@ -17,12 +17,12 @@ public class OvhFaxProperties {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Boolean rejectAnonymous;
+	public String callNumber;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String callNumber;
+	public Boolean rejectAnonymous;
 
 	/**
 	 * canBeNull && readOnly
@@ -37,22 +37,22 @@ public class OvhFaxProperties {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String[] redirectionEmail;
-
-	/**
-	 * canBeNull && readOnly
-	 */
 	public String fromName;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhFaxMailFormatEnum mailFormat;
+	public String[] redirectionEmail;
 
 	/**
 	 * canBeNull && readOnly
 	 */
 	public OvhFaxSendingTries faxMaxCall;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public OvhFaxMailFormatEnum mailFormat;
 
 	/**
 	 * canBeNull && readOnly

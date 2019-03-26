@@ -35,18 +35,18 @@ public class OvhContact {
 	public String address;
 
 	/**
-	 * Contact city
-	 *
-	 * canBeNull
-	 */
-	public String city;
-
-	/**
 	 * Contact phone
 	 *
 	 * canBeNull
 	 */
 	public String phone;
+
+	/**
+	 * Contact city
+	 *
+	 * canBeNull
+	 */
+	public String city;
 
 	/**
 	 * Contact name

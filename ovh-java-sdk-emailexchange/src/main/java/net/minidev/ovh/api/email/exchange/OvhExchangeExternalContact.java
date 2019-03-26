@@ -28,18 +28,18 @@ public class OvhExchangeExternalContact {
 	public Boolean hiddenFromGAL;
 
 	/**
-	 * Contact display name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String displayName;
-
-	/**
 	 * Contact initals
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String initials;
+
+	/**
+	 * Contact display name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String displayName;
 
 	/**
 	 * Contact email

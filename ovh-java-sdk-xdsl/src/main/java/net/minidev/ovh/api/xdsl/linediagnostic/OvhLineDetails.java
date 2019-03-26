@@ -56,18 +56,18 @@ public class OvhLineDetails {
 	public OvhLineCapabilities lineCapabilities;
 
 	/**
-	 * provider for internet connexion
-	 *
-	 * canBeNull
-	 */
-	public OvhProviderEnum operator;
-
-	/**
 	 * cables sections details
 	 *
 	 * canBeNull
 	 */
 	public OvhSection[] sections;
+
+	/**
+	 * provider for internet connexion
+	 *
+	 * canBeNull
+	 */
+	public OvhProviderEnum operator;
 
 	/**
 	 * line number
@@ -91,18 +91,18 @@ public class OvhLineDetails {
 	public Boolean accessPing;
 
 	/**
-	 * informations directly get on DSLAM or Modem
-	 *
-	 * canBeNull
-	 */
-	public OvhConnectionInformations connectionInfo;
-
-	/**
 	 * NRA name
 	 *
 	 * canBeNull
 	 */
 	public String nra;
+
+	/**
+	 * informations directly get on DSLAM or Modem
+	 *
+	 * canBeNull
+	 */
+	public OvhConnectionInformations connectionInfo;
 
 	/**
 	 * customer phone number for contact

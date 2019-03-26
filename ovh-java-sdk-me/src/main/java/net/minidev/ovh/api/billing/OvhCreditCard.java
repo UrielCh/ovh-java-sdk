@@ -9,12 +9,12 @@ public class OvhCreditCard {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String number;
+	public Boolean defaultPaymentMean;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Boolean defaultPaymentMean;
+	public String number;
 
 	/**
 	 * True if this credit card has been registered with a successful 3DSecure challenge

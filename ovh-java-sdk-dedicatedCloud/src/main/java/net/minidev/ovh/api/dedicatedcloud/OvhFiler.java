@@ -72,16 +72,16 @@ public class OvhFiler {
 	public Double spaceFree;
 
 	/**
-	 * Human-Readable profile name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String fullProfile;
-
-	/**
 	 * Number of virtual machine on the filer
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long vmTotal;
+
+	/**
+	 * Human-Readable profile name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String fullProfile;
 }

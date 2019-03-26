@@ -21,18 +21,18 @@ public class OvhOption {
 	public Long curNbRole;
 
 	/**
-	 * Current number of stream booked
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long curNbStream;
-
-	/**
 	 * Current number of alias booked
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long curNbAlias;
+
+	/**
+	 * Current number of stream booked
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long curNbStream;
 
 	/**
 	 * Maximum number of role allowed
@@ -42,18 +42,18 @@ public class OvhOption {
 	public Long maxNbRole;
 
 	/**
-	 * Current number of dashboard booked
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long curNbDashboard;
-
-	/**
 	 * Maximum number of input allowed
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long maxNbInput;
+
+	/**
+	 * Current number of dashboard booked
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long curNbDashboard;
 
 	/**
 	 * Index size in bytes
@@ -91,18 +91,18 @@ public class OvhOption {
 	public Long maxNbStream;
 
 	/**
-	 * Current number of input booked
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long curNbInput;
-
-	/**
 	 * Option UUID
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String optionId;
+
+	/**
+	 * Current number of input booked
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long curNbInput;
 
 	/**
 	 * Option state

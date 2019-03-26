@@ -19,18 +19,18 @@ public class OvhEligibility {
 	public OvhPortability portability;
 
 	/**
-	 * The eligibility endpoint type
-	 *
-	 * canBeNull
-	 */
-	public OvhLineEndpointEnum endpoint;
-
-	/**
 	 * The line characteristics
 	 *
 	 * canBeNull
 	 */
 	public OvhLineCharacteristics characteristics;
+
+	/**
+	 * The eligibility endpoint type
+	 *
+	 * canBeNull
+	 */
+	public OvhLineEndpointEnum endpoint;
 
 	/**
 	 * The line address

@@ -12,16 +12,16 @@ public class OvhServiceAccess {
 	public OvhAddress ftp;
 
 	/**
-	 * Address with url and port to manage webhosting by ssh
-	 *
-	 * canBeNull
-	 */
-	public OvhAddress ssh;
-
-	/**
 	 * Address to see your webhosting without domain
 	 *
 	 * canBeNull
 	 */
 	public OvhAddress http;
+
+	/**
+	 * Address with url and port to manage webhosting by ssh
+	 *
+	 * canBeNull
+	 */
+	public OvhAddress ssh;
 }

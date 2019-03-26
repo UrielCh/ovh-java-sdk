@@ -16,18 +16,18 @@ public class OvhMovement {
 	public OvhPrice amount;
 
 	/**
-	 * Order ID associated to this credit movement
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long orderId;
-
-	/**
 	 * Balance name
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String balanceName;
+
+	/**
+	 * Order ID associated to this credit movement
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long orderId;
 
 	/**
 	 * Movement last update
@@ -44,18 +44,18 @@ public class OvhMovement {
 	public OvhSubObject sourceObject;
 
 	/**
-	 * Movement creation date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date creationDate;
-
-	/**
 	 * Movement type
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String type;
+
+	/**
+	 * Movement creation date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date creationDate;
 
 	/**
 	 * Movement ID

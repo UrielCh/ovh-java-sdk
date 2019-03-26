@@ -11,8 +11,11 @@ public enum OvhAvailabilityDatacenterEnum {
 	_default("default"),
 	fra("fra"),
 	gra("gra"),
+	hil("hil"),
 	lon("lon"),
 	rbx("rbx"),
+	@JsonProperty("rbx-hz")
+	rbx_hz("rbx-hz"),
 	sbg("sbg"),
 	sgp("sgp"),
 	syd("syd"),

@@ -21,16 +21,16 @@ public class OvhSnapshot {
 	public String id;
 
 	/**
-	 * Snapshot type
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhSnapshotTypeEnum type;
-
-	/**
 	 * Snapshot creation date
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date creationDate;
+
+	/**
+	 * Snapshot type
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhSnapshotTypeEnum type;
 }

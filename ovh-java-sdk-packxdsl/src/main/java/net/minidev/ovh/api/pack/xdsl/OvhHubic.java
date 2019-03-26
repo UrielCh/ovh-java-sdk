@@ -12,18 +12,18 @@ public class OvhHubic {
 	public String size;
 
 	/**
-	 * Voucher to enter on HubiC website to activate the account
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String voucher;
-
-	/**
 	 * Size of the hubic account in bytes
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long bytes;
+
+	/**
+	 * Voucher to enter on HubiC website to activate the account
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String voucher;
 
 	/**
 	 * canBeNull && readOnly

@@ -5,18 +5,18 @@ package net.minidev.ovh.api.order.cart;
  */
 public class OvhConfigurationItem {
 	/**
-	 * Identifier of the resource
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String label;
-
-	/**
 	 * Configuration ID
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long id;
+
+	/**
+	 * Identifier of the resource
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String label;
 
 	/**
 	 * Path to the resource in API.OVH.COM

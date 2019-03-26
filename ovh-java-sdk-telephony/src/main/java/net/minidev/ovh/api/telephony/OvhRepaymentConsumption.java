@@ -26,16 +26,16 @@ public class OvhRepaymentConsumption {
 	public Long consumptionId;
 
 	/**
+	 * canBeNull && readOnly
+	 */
+	public String dialed;
+
+	/**
 	 * Price repayed with the call
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Double price;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public String dialed;
 
 	/**
 	 * Calling number of the call
@@ -52,16 +52,16 @@ public class OvhRepaymentConsumption {
 	public Boolean repayable;
 
 	/**
-	 * Calling number's operator
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String operator;
-
-	/**
 	 * the Datetime of the start of the call
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date creationDatetime;
+
+	/**
+	 * Calling number's operator
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String operator;
 }

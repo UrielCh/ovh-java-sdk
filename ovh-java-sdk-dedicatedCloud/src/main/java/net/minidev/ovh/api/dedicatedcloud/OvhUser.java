@@ -55,18 +55,18 @@ public class OvhUser {
 	public Long userId;
 
 	/**
-	 * First name of the user
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String firstName;
-
-	/**
 	 * Check if the given Private Cloud user can be enabled or disabled ?
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean isEnableManageable;
+
+	/**
+	 * First name of the user
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String firstName;
 
 	/**
 	 * Mobile phone number of the user

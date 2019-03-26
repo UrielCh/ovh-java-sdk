@@ -21,18 +21,18 @@ public class OvhCurrentUsage {
 	public OvhPrice total;
 
 	/**
-	 * Snapshots usage
-	 *
-	 * canBeNull
-	 */
-	public OvhSnapshotsUsage volumeSnapshots;
-
-	/**
 	 * Instances usage
 	 *
 	 * canBeNull
 	 */
 	public OvhInstancesUsage instances;
+
+	/**
+	 * Snapshots usage
+	 *
+	 * canBeNull
+	 */
+	public OvhSnapshotsUsage volumeSnapshots;
 
 	/**
 	 * Volumes usage

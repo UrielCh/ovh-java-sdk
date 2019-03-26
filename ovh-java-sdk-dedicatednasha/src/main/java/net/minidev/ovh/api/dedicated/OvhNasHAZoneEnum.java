@@ -4,6 +4,7 @@ package net.minidev.ovh.api.dedicated;
  * Nas HA localization
  */
 public enum OvhNasHAZoneEnum {
+	bhs("bhs"),
 	rbx("rbx"),
 	sbg("sbg");
 

@@ -12,11 +12,11 @@ public class OvhGenericProductDefinition {
 	public OvhGenericProductPricing[] prices;
 
 	/**
-	 * Product offer identifier
+	 * Name of the product
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String planCode;
+	public String productName;
 
 	/**
 	 * Product type
@@ -26,9 +26,9 @@ public class OvhGenericProductDefinition {
 	public OvhGenericProductTypeEnum productType;
 
 	/**
-	 * Name of the product
+	 * Product offer identifier
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String productName;
+	public String planCode;
 }

@@ -30,18 +30,18 @@ public class OvhDump {
 	public Long id;
 
 	/**
-	 * Dump type
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhDateEnum type;
-
-	/**
 	 * If source database was deleted
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean orphan;
+
+	/**
+	 * Dump type
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhDateEnum type;
 
 	/**
 	 * Creation date of the dump

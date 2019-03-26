@@ -44,18 +44,18 @@ public class OvhBackendHTTPServer {
 	public String displayName;
 
 	/**
-	 * Weight value. Defaults to 1. 0 if not used in load balancing. Servers with higher weight get more requests.
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long weight;
-
-	/**
 	 * farm id
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long backendId;
+
+	/**
+	 * Weight value. Defaults to 1. 0 if not used in load balancing. Servers with higher weight get more requests.
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long weight;
 
 	/**
 	 * Id of your server
@@ -93,16 +93,16 @@ public class OvhBackendHTTPServer {
 	public Long port;
 
 	/**
-	 * Disabled if null. Send PROXY protocol header. Requires a compatible server.
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhProxyProtocolVersionEnum proxyProtocolVersion;
-
-	/**
 	 * Status attached to your server
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhBackendCustomerServerStatusEnum status;
+
+	/**
+	 * Disabled if null. Send PROXY protocol header. Requires a compatible server.
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhProxyProtocolVersionEnum proxyProtocolVersion;
 }

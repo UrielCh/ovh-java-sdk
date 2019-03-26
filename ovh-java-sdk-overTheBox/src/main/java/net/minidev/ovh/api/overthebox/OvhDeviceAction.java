@@ -21,18 +21,18 @@ public class OvhDeviceAction {
 	public String name;
 
 	/**
-	 * Date of execution of the action
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date todoDate;
-
-	/**
 	 * The id of the action
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String actionId;
+
+	/**
+	 * Date of execution of the action
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date todoDate;
 
 	/**
 	 * The details of the action

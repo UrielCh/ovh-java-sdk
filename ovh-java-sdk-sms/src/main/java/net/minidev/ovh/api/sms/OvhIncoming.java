@@ -9,12 +9,12 @@ public class OvhIncoming {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String sender;
+	public Double credits;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Double credits;
+	public String sender;
 
 	/**
 	 * canBeNull && readOnly

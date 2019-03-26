@@ -6,6 +6,7 @@ package net.minidev.ovh.api.xdsl.linediagnostic;
 public enum OvhDiagnosticStatusEnum {
 	cancelled("cancelled"),
 	connectionProblem("connectionProblem"),
+	genericIncidentPending("genericIncidentPending"),
 	haveToConnectModemOnTheRightPlug("haveToConnectModemOnTheRightPlug"),
 	init("init"),
 	interventionRequested("interventionRequested"),

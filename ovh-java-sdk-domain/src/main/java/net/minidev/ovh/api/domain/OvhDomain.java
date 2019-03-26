@@ -35,18 +35,18 @@ public class OvhDomain {
 	public OvhDomainNsTypeEnum nameServerType;
 
 	/**
-	 * Is DNSSEC implemented for this domain name's tld
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean dnssecSupported;
-
-	/**
 	 * Is whois obfuscation supported by this domain name's registry
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean owoSupported;
+
+	/**
+	 * Is DNSSEC implemented for this domain name's tld
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean dnssecSupported;
 
 	/**
 	 * Last update date
@@ -63,18 +63,18 @@ public class OvhDomain {
 	public String domain;
 
 	/**
-	 * Parent service
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhParentService parentService;
-
-	/**
 	 * Does the registry support multi ip glue record
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean glueRecordMultiIpSupported;
+
+	/**
+	 * Parent service
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhParentService parentService;
 
 	/**
 	 * Does the registry support ipv6 glue record

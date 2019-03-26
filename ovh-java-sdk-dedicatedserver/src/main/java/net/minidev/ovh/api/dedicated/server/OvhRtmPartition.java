@@ -14,18 +14,18 @@ public class OvhRtmPartition {
 	public String mountPoint;
 
 	/**
-	 * Partition inode
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhUnitAndValue<Long> inodeUsage;
-
-	/**
 	 * Partition
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String partition;
+
+	/**
+	 * Partition inode
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhUnitAndValue<Long> inodeUsage;
 
 	/**
 	 * Partition usage

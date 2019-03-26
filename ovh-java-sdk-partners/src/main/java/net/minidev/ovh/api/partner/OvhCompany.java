@@ -5,13 +5,6 @@ package net.minidev.ovh.api.partner;
  */
 public class OvhCompany {
 	/**
-	 * Company's zipCode
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String zipCode;
-
-	/**
 	 * Company's country
 	 *
 	 * canBeNull && readOnly
@@ -24,6 +17,13 @@ public class OvhCompany {
 	 * canBeNull && readOnly
 	 */
 	public OvhExpertisesChoices expertises;
+
+	/**
+	 * Company's zipCode
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String zipCode;
 
 	/**
 	 * OVH's product the company's solutions relies on
@@ -75,18 +75,18 @@ public class OvhCompany {
 	public String revenue;
 
 	/**
-	 * Company's twitter profile url
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String twitter;
-
-	/**
 	 * Kind of client the company target
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhClientKinds clientKinds;
+
+	/**
+	 * Company's twitter profile url
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String twitter;
 
 	/**
 	 * Estimation of the number of accompanied customers in using OVH's solutions
@@ -110,18 +110,18 @@ public class OvhCompany {
 	public String email;
 
 	/**
-	 * The commercial name of the company
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String commercialName;
-
-	/**
 	 * In which country the company products of solutions are available
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhProductCountries productCountries;
+
+	/**
+	 * The commercial name of the company
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String commercialName;
 
 	/**
 	 * Company's website
@@ -166,13 +166,6 @@ public class OvhCompany {
 	public String phone;
 
 	/**
-	 * Estimation of the number of expert resources for OVH solutions the company has
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String OVHTechnicalExpertResources;
-
-	/**
 	 * Company's registration number
 	 *
 	 * canBeNull && readOnly
@@ -180,11 +173,11 @@ public class OvhCompany {
 	public String registrationNumber;
 
 	/**
-	 * Company's sector of activity
+	 * Estimation of the number of expert resources for OVH solutions the company has
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhActivitySectors activitySectors;
+	public String OVHTechnicalExpertResources;
 
 	/**
 	 * Name of the company
@@ -199,6 +192,13 @@ public class OvhCompany {
 	 * canBeNull && readOnly
 	 */
 	public String OVHTechnicalAdvancedResources;
+
+	/**
+	 * Company's sector of activity
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhActivitySectors activitySectors;
 
 	/**
 	 * How did you heard about the OVH's partnership program

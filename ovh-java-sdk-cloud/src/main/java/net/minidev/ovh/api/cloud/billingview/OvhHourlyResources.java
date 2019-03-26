@@ -19,6 +19,13 @@ public class OvhHourlyResources {
 	public OvhHourlyInstance[] instance;
 
 	/**
+	 * Details about instances bandwidth consumption
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhHourlyInstanceBandwidth[] instanceBandwidth;
+
+	/**
 	 * Details about hourly storage
 	 *
 	 * canBeNull && readOnly

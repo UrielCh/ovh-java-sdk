@@ -15,12 +15,12 @@ public class OvhUser {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhStateEnum state;
+	public OvhActivationStateEnum activationState;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhActivationStateEnum activationState;
+	public OvhStateEnum state;
 
 	/**
 	 * canBeNull && readOnly

@@ -12,18 +12,18 @@ public class OvhProductInformation {
 	public String[] duration;
 
 	/**
-	 * Informations about the domain's offer (gold|diamond|platinium)
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String offer;
-
-	/**
 	 * Informations about the domain phase
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String phase;
+
+	/**
+	 * Informations about the domain's offer (gold|diamond|platinium)
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String offer;
 
 	/**
 	 * Pricing model identifier for this product
@@ -40,13 +40,6 @@ public class OvhProductInformation {
 	public String productId;
 
 	/**
-	 * Maximum quantity purchasable for this product
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long quantityMax;
-
-	/**
 	 * Informations about the estimated delivery time for the product
 	 *
 	 * canBeNull && readOnly
@@ -54,11 +47,11 @@ public class OvhProductInformation {
 	public String deliveryTime;
 
 	/**
-	 * Informations about the configurations required
+	 * Maximum quantity purchasable for this product
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhConfigurationRequirements[] configurations;
+	public Long quantityMax;
 
 	/**
 	 * Indicates if the product is orderable or not
@@ -66,6 +59,13 @@ public class OvhProductInformation {
 	 * canBeNull && readOnly
 	 */
 	public Boolean orderable;
+
+	/**
+	 * Informations about the configurations required
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhConfigurationRequirements[] configurations;
 
 	/**
 	 * Price details of the product

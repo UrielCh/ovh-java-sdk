@@ -1,12 +1,19 @@
 package net.minidev.ovh.api.me.consumption.transaction;
 
+import net.minidev.ovh.api.me.consumption.OvhPrice;
 import net.minidev.ovh.api.me.consumption.transaction.element.OvhDetail;
-import net.minidev.ovh.api.order.OvhPrice;
 
 /**
  * Element of consumption for resource
  */
 public class OvhElement {
+	/**
+	 * Family of the offer
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String planFamily;
+
 	/**
 	 * Consumption quantity
 	 *

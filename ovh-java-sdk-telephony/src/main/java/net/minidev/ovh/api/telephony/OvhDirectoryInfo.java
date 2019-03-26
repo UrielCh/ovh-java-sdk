@@ -65,12 +65,12 @@ public class OvhDirectoryInfo {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String ape;
+	public String cedex;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String cedex;
+	public String ape;
 
 	/**
 	 * canBeNull && readOnly
@@ -85,22 +85,22 @@ public class OvhDirectoryInfo {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Boolean displaySearchReverse;
-
-	/**
-	 * canBeNull && readOnly
-	 */
 	public String lineDescription;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Boolean displayFirstName;
+	public Boolean displaySearchReverse;
 
 	/**
 	 * canBeNull && readOnly
 	 */
 	public String address;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public Boolean displayFirstName;
 
 	/**
 	 * canBeNull && readOnly
@@ -135,12 +135,12 @@ public class OvhDirectoryInfo {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Date birthDate;
+	public String legalForm;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String legalForm;
+	public Date birthDate;
 
 	/**
 	 * canBeNull && readOnly
@@ -160,12 +160,12 @@ public class OvhDirectoryInfo {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String modificationDate;
+	public Long areaCode;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long areaCode;
+	public String modificationDate;
 
 	/**
 	 * canBeNull && readOnly
@@ -185,12 +185,12 @@ public class OvhDirectoryInfo {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Boolean displayMarketingDirectory;
+	public Boolean receivePJDirectory;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Boolean receivePJDirectory;
+	public Boolean displayMarketingDirectory;
 
 	/**
 	 * canBeNull && readOnly

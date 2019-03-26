@@ -56,18 +56,18 @@ public class OvhDiagnosticData {
 	public Long timeout;
 
 	/**
-	 * List of actions that must be done by customer
-	 *
-	 * canBeNull
-	 */
-	public OvhCustomerActionToDo[] actionsToDo;
-
-	/**
 	 * List of questions that must be answered by customer
 	 *
 	 * canBeNull
 	 */
 	public OvhQuestion[] toAnswer;
+
+	/**
+	 * List of actions that must be done by customer
+	 *
+	 * canBeNull
+	 */
+	public OvhCustomerActionToDo[] actionsToDo;
 
 	/**
 	 * List of actions already done by customer

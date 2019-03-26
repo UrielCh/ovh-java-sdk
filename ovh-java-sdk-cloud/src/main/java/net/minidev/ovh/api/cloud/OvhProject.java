@@ -15,18 +15,18 @@ public class OvhProject {
 	public OvhAccessTypeEnum access;
 
 	/**
-	 * Project id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String project_id;
-
-	/**
 	 * Project order id
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long orderId;
+
+	/**
+	 * Project id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String project_id;
 
 	/**
 	 * Description of your project

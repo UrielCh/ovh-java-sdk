@@ -42,18 +42,18 @@ public class OvhRedirection {
 	public Long id;
 
 	/**
-	 * Title for invisible redirection
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String title;
-
-	/**
 	 * Redirection type
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhRedirectionTypeEnum type;
+
+	/**
+	 * Title for invisible redirection
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String title;
 
 	/**
 	 * Target of the redirection

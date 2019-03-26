@@ -12,13 +12,6 @@ public class OvhLine {
 	public Boolean portability;
 
 	/**
-	 * The number used to place the order. Null if the same as the current number.
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String originalNumber;
-
-	/**
 	 * The number of the line
 	 *
 	 * canBeNull && readOnly
@@ -31,6 +24,13 @@ public class OvhLine {
 	 * canBeNull && readOnly
 	 */
 	public OvhLandlineConcentrationPoint concentrationPoint;
+
+	/**
+	 * The number used to place the order. Null if the same as the current number.
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String originalNumber;
 
 	/**
 	 * Mitigation of the line in dB

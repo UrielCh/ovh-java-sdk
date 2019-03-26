@@ -19,18 +19,18 @@ public class OvhSpamAndVirusConfiguration {
 	public Boolean tagSpam;
 
 	/**
-	 * If message is a spam delete it
-	 *
-	 * canBeNull
-	 */
-	public Boolean deleteSpam;
-
-	/**
 	 * Check DKIM of message
 	 *
 	 * canBeNull
 	 */
 	public Boolean checkDKIM;
+
+	/**
+	 * If message is a spam delete it
+	 *
+	 * canBeNull
+	 */
+	public Boolean deleteSpam;
 
 	/**
 	 * Check SPF of message
@@ -40,16 +40,16 @@ public class OvhSpamAndVirusConfiguration {
 	public Boolean checkSPF;
 
 	/**
-	 * If message is a virus delete it
-	 *
-	 * canBeNull
-	 */
-	public Boolean deleteVirus;
-
-	/**
 	 * If message is a spam or virus put in junk. Overridden by deleteSpam or deleteVirus
 	 *
 	 * canBeNull
 	 */
 	public Boolean putInJunk;
+
+	/**
+	 * If message is a virus delete it
+	 *
+	 * canBeNull
+	 */
+	public Boolean deleteVirus;
 }

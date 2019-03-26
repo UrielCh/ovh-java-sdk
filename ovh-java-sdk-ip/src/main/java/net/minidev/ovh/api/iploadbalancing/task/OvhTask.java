@@ -9,18 +9,18 @@ import net.minidev.ovh.api.iploadbalancing.OvhTaskStatusEnum;
  */
 public class OvhTask {
 	/**
-	 * Operation progress percentage
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long progress;
-
-	/**
 	 * Operation type
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhTaskActionEnum action;
+
+	/**
+	 * Operation progress percentage
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long progress;
 
 	/**
 	 * Id of the operation
@@ -30,18 +30,18 @@ public class OvhTask {
 	public Long id;
 
 	/**
-	 * Zone of your Load Balancer which are updated by current Task
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String[] zones;
-
-	/**
 	 * Creation date of your operation
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date creationDate;
+
+	/**
+	 * Zone of your Load Balancer which are updated by current Task
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String[] zones;
 
 	/**
 	 * Done date of your operation

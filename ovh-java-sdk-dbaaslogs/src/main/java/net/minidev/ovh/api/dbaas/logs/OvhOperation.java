@@ -35,13 +35,6 @@ public class OvhOperation {
 	public String dashboardId;
 
 	/**
-	 * Role used
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String roleId;
-
-	/**
 	 * Alias used
 	 *
 	 * canBeNull && readOnly
@@ -49,11 +42,11 @@ public class OvhOperation {
 	public String aliasId;
 
 	/**
-	 * Operation UUID
+	 * Role used
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String operationId;
+	public String roleId;
 
 	/**
 	 * Index used
@@ -61,6 +54,13 @@ public class OvhOperation {
 	 * canBeNull && readOnly
 	 */
 	public String indexId;
+
+	/**
+	 * Operation UUID
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String operationId;
 
 	/**
 	 * Option used

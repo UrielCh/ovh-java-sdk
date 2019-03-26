@@ -23,18 +23,18 @@ public class OvhDatabase {
 	public OvhUnitAndValue<Long> quotaUsed;
 
 	/**
-	 * Time of the next backup ( every day )
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date backupTime;
-
-	/**
 	 * Creation date of the database
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date creationDate;
+
+	/**
+	 * Time of the next backup ( every day )
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date backupTime;
 
 	/**
 	 * Users granted to this database

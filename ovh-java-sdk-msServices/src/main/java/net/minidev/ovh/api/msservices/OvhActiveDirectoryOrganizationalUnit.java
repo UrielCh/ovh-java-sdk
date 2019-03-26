@@ -61,18 +61,18 @@ public class OvhActiveDirectoryOrganizationalUnit {
 	public Long lockoutObservationWindow;
 
 	/**
-	 * Maximum lifespan of passwords, in days
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long maxPasswordAge;
-
-	/**
 	 * Flag indicating if passwords should be forced to follow Microsoft's password guidelines
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean complexityEnabled;
+
+	/**
+	 * Maximum lifespan of passwords, in days
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long maxPasswordAge;
 
 	/**
 	 * Task pending id

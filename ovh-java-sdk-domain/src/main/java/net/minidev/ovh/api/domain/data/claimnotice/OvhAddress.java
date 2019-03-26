@@ -56,16 +56,16 @@ public class OvhAddress {
 	public String faxExtension;
 
 	/**
-	 * Fax number
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String fax;
-
-	/**
 	 * Phone number extension
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String voiceExtension;
+
+	/**
+	 * Fax number
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String fax;
 }

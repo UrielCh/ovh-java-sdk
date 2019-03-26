@@ -42,18 +42,18 @@ public class OvhAccount {
 	public Long spamTicketNumber;
 
 	/**
-	 * Time of account's password last update
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date passwordLastUpdate;
-
-	/**
 	 * Last update
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date lastUpdateDate;
+
+	/**
+	 * Time of account's password last update
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date passwordLastUpdate;
 
 	/**
 	 * Account login
@@ -112,18 +112,18 @@ public class OvhAccount {
 	public String company;
 
 	/**
-	 * Account id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long id;
-
-	/**
 	 * Account state
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhObjectStateEnum state;
+
+	/**
+	 * Account id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long id;
 
 	/**
 	 * expiration date

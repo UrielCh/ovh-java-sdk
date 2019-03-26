@@ -20,12 +20,12 @@ public class OvhFaxConsumption {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhFaxConsumptionWayTypeEnum wayType;
+	public Long consumptionId;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long consumptionId;
+	public OvhFaxConsumptionWayTypeEnum wayType;
 
 	/**
 	 * canBeNull && readOnly

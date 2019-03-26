@@ -37,18 +37,18 @@ public class OvhTask {
 	public String details;
 
 	/**
-	 * the date when the task finished
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date doneDate;
-
-	/**
 	 * Task type of operation
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhTaskFunctionEnum operation;
+
+	/**
+	 * the date when the task finished
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date doneDate;
 
 	/**
 	 * id of the task

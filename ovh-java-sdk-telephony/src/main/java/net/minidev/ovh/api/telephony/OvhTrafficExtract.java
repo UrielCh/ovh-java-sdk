@@ -7,18 +7,18 @@ import java.util.Date;
  */
 public class OvhTrafficExtract {
 	/**
-	 * The PCAP file size of the traffic extract
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long fileSize;
-
-	/**
 	 * The start date of the traffic extract
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date dateStart;
+
+	/**
+	 * The PCAP file size of the traffic extract
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long fileSize;
 
 	/**
 	 * The PCAP URL of the traffic extract

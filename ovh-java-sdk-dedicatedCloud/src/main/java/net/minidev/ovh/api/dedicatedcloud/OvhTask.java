@@ -14,18 +14,18 @@ public class OvhTask {
 	public Date maintenanceDateFrom;
 
 	/**
-	 * Maintenance task max allowed execution date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date maintenanceDateTo;
-
-	/**
 	 * Task end date
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date endDate;
+
+	/**
+	 * Maintenance task max allowed execution date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date maintenanceDateTo;
 
 	/**
 	 * orderId of the associated billing.Order object
@@ -49,13 +49,6 @@ public class OvhTask {
 	public Long parentTaskId;
 
 	/**
-	 * datacenterId of the associated dedicatedCloud.Datacenter object
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long datacenterId;
-
-	/**
 	 * Task execution date
 	 *
 	 * canBeNull && readOnly
@@ -63,11 +56,11 @@ public class OvhTask {
 	public Date executionDate;
 
 	/**
-	 * hostId of the associated dedicatedCloud.Host object
+	 * datacenterId of the associated dedicatedCloud.Datacenter object
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long hostId;
+	public Long datacenterId;
 
 	/**
 	 * Current progress description
@@ -75,6 +68,13 @@ public class OvhTask {
 	 * canBeNull && readOnly
 	 */
 	public String description;
+
+	/**
+	 * hostId of the associated dedicatedCloud.Host object
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long hostId;
 
 	/**
 	 * Task type
@@ -126,18 +126,18 @@ public class OvhTask {
 	public String createdBy;
 
 	/**
-	 * Task name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String name;
-
-	/**
 	 * filerId of the associated dedicatedCloud.Filer object
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long filerId;
+
+	/**
+	 * Task name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String name;
 
 	/**
 	 * Current progress

@@ -7,18 +7,18 @@ import net.minidev.ovh.api.order.catalog.OvhProductPlan;
  */
 public class OvhZone {
 	/**
-	 * Internal name of the zone
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String internalName;
-
-	/**
 	 * Country where Private Cloud instance will be delivered
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String country;
+
+	/**
+	 * Internal name of the zone
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String internalName;
 
 	/**
 	 * City where Private Cloud instance will be delivered

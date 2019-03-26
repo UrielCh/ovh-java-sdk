@@ -23,18 +23,18 @@ public class OvhTask {
 	public Date lastUpdate;
 
 	/**
-	 * Function name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhFunctionEnum function;
-
-	/**
 	 * DumpId on which the task is working
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long dumpId;
+
+	/**
+	 * Function name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhFunctionEnum function;
 
 	/**
 	 * The id of the task

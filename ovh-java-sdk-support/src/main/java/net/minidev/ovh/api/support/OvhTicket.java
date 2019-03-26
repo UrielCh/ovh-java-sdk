@@ -42,13 +42,6 @@ public class OvhTicket {
 	public OvhTicketTypeEnum type;
 
 	/**
-	 * Ticket creation date
-	 *
-	 * canBeNull
-	 */
-	public Date creationDate;
-
-	/**
 	 * Name of service concerned by ticket
 	 *
 	 * canBeNull
@@ -56,11 +49,11 @@ public class OvhTicket {
 	public String serviceName;
 
 	/**
-	 * Customer account identifier
+	 * Ticket creation date
 	 *
 	 * canBeNull
 	 */
-	public String accountId;
+	public Date creationDate;
 
 	/**
 	 * Ticket score
@@ -68,6 +61,13 @@ public class OvhTicket {
 	 * canBeNull
 	 */
 	public String score;
+
+	/**
+	 * Customer account identifier
+	 *
+	 * canBeNull
+	 */
+	public String accountId;
 
 	/**
 	 * Can this ticket be closed or not

@@ -27,12 +27,12 @@ public class OvhAccessDiagnosticCapabilities {
 	/**
 	 * canBeNull
 	 */
-	public Boolean incident;
+	public Boolean sync;
 
 	/**
 	 * canBeNull
 	 */
-	public Boolean sync;
+	public Boolean incident;
 
 	/**
 	 * canBeNull

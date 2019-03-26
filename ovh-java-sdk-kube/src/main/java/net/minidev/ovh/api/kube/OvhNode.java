@@ -7,6 +7,13 @@ import java.util.Date;
  */
 public class OvhNode {
 	/**
+	 * True if the node is up to date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean isUpToDate;
+
+	/**
 	 * Public Cloud flavor name
 	 *
 	 * canBeNull && readOnly
@@ -28,11 +35,25 @@ public class OvhNode {
 	public String instanceId;
 
 	/**
+	 * Node name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String name;
+
+	/**
 	 * Node ID
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String id;
+
+	/**
+	 * Node version
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String version;
 
 	/**
 	 * Public Cloud project ID where the node is started

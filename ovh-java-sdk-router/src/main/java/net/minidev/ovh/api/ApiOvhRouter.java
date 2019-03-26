@@ -31,130 +31,16 @@ public class ApiOvhRouter extends ApiOvhBase {
 	}
 
 	/**
-	 * List available services
+	 * Terminate your service
 	 *
-	 * REST: GET /router
-	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/router";
-		StringBuilder sb = path(qPath);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
-
-	/**
-	 * Networks mounted on this Router
-	 *
-	 * REST: GET /router/{serviceName}/network
+	 * REST: POST /router/{serviceName}/terminate
 	 * @param serviceName [required] The internal name of your Router offer
 	 */
-	public ArrayList<String> serviceName_network_GET(String serviceName) throws IOException {
-		String qPath = "/router/{serviceName}/network";
+	public String serviceName_terminate_POST(String serviceName) throws IOException {
+		String qPath = "/router/{serviceName}/terminate";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Add a network to your router
-	 *
-	 * REST: POST /router/{serviceName}/network
-	 * @param vlanTag [required] Vlan tag from range 1 to 4094 or NULL for untagged traffic
-	 * @param ipNet [required] Gateway IP / CIDR Netmask, (e.g. 192.168.1.254/24)
-	 * @param description [required]
-	 * @param serviceName [required] The internal name of your Router offer
-	 */
-	public OvhTask serviceName_network_POST(String serviceName, String description, String ipNet, Long vlanTag) throws IOException {
-		String qPath = "/router/{serviceName}/network";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "description", description);
-		addBody(o, "ipNet", ipNet);
-		addBody(o, "vlanTag", vlanTag);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /router/{serviceName}/network/{ipNet}
-	 * @param serviceName [required] The internal name of your Router offer
-	 * @param ipNet [required] Gateway IP / CIDR Netmask
-	 */
-	public OvhNetwork serviceName_network_ipNet_GET(String serviceName, String ipNet) throws IOException {
-		String qPath = "/router/{serviceName}/network/{ipNet}";
-		StringBuilder sb = path(qPath, serviceName, ipNet);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhNetwork.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /router/{serviceName}/network/{ipNet}
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your Router offer
-	 * @param ipNet [required] Gateway IP / CIDR Netmask
-	 */
-	public void serviceName_network_ipNet_PUT(String serviceName, String ipNet, OvhNetwork body) throws IOException {
-		String qPath = "/router/{serviceName}/network/{ipNet}";
-		StringBuilder sb = path(qPath, serviceName, ipNet);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Remove this network from your router
-	 *
-	 * REST: DELETE /router/{serviceName}/network/{ipNet}
-	 * @param serviceName [required] The internal name of your Router offer
-	 * @param ipNet [required] Gateway IP / CIDR Netmask
-	 */
-	public OvhTask serviceName_network_ipNet_DELETE(String serviceName, String ipNet) throws IOException {
-		String qPath = "/router/{serviceName}/network/{ipNet}";
-		StringBuilder sb = path(qPath, serviceName, ipNet);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /router/{serviceName}
-	 * @param serviceName [required] The internal name of your Router offer
-	 */
-	public OvhRouter serviceName_GET(String serviceName) throws IOException {
-		String qPath = "/router/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhRouter.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /router/{serviceName}/serviceInfos
-	 * @param serviceName [required] The internal name of your Router offer
-	 */
-	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
-		String qPath = "/router/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhService.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /router/{serviceName}/serviceInfos
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your Router offer
-	 */
-	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
-		String qPath = "/router/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, String.class);
 	}
 
 	/**
@@ -177,42 +63,6 @@ public class ApiOvhRouter extends ApiOvhBase {
 		addBody(o, "token", token);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * VPN associated with this Router
-	 *
-	 * REST: GET /router/{serviceName}/vpn
-	 * @param serviceName [required] The internal name of your Router offer
-	 */
-	public ArrayList<Long> serviceName_vpn_GET(String serviceName) throws IOException {
-		String qPath = "/router/{serviceName}/vpn";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
-
-	/**
-	 * Add a VPN to your router
-	 *
-	 * REST: POST /router/{serviceName}/vpn
-	 * @param psk [required] Your PSK key
-	 * @param clientIp [required] IP you will be connecting from / NULL (allow all)
-	 * @param serverPrivNet [required] Server's private network
-	 * @param clientPrivNet [required] Client's private network
-	 * @param serviceName [required] The internal name of your Router offer
-	 */
-	public OvhVpn serviceName_vpn_POST(String serviceName, String clientIp, String clientPrivNet, String psk, String serverPrivNet) throws IOException {
-		String qPath = "/router/{serviceName}/vpn";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "clientIp", clientIp);
-		addBody(o, "clientPrivNet", clientPrivNet);
-		addBody(o, "psk", psk);
-		addBody(o, "serverPrivNet", serverPrivNet);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhVpn.class);
 	}
 
 	/**
@@ -275,20 +125,78 @@ public class ApiOvhRouter extends ApiOvhBase {
 	}
 
 	/**
-	 * Tasks for this Router
+	 * VPN associated with this Router
 	 *
-	 * REST: GET /router/{serviceName}/task
-	 * @param function [required] Filter the value of function property (=)
-	 * @param status [required] Filter the value of status property (=)
+	 * REST: GET /router/{serviceName}/vpn
 	 * @param serviceName [required] The internal name of your Router offer
 	 */
-	public ArrayList<Long> serviceName_task_GET(String serviceName, OvhTaskFunctionEnum function, OvhTaskStatusEnum status) throws IOException {
-		String qPath = "/router/{serviceName}/task";
+	public ArrayList<Long> serviceName_vpn_GET(String serviceName) throws IOException {
+		String qPath = "/router/{serviceName}/vpn";
 		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "function", function);
-		query(sb, "status", status);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
+		return convertTo(resp, t1);
+	}
+	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
+
+	/**
+	 * Add a VPN to your router
+	 *
+	 * REST: POST /router/{serviceName}/vpn
+	 * @param serverPrivNet [required] Server's private network
+	 * @param psk [required] Your PSK key
+	 * @param clientIp [required] IP you will be connecting from / NULL (allow all)
+	 * @param clientPrivNet [required] Client's private network
+	 * @param serviceName [required] The internal name of your Router offer
+	 */
+	public OvhVpn serviceName_vpn_POST(String serviceName, String clientIp, String clientPrivNet, String psk, String serverPrivNet) throws IOException {
+		String qPath = "/router/{serviceName}/vpn";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "clientIp", clientIp);
+		addBody(o, "clientPrivNet", clientPrivNet);
+		addBody(o, "psk", psk);
+		addBody(o, "serverPrivNet", serverPrivNet);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhVpn.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /router/{serviceName}/serviceInfos
+	 * @param serviceName [required] The internal name of your Router offer
+	 */
+	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
+		String qPath = "/router/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhService.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /router/{serviceName}/serviceInfos
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your Router offer
+	 */
+	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
+		String qPath = "/router/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /router/{serviceName}
+	 * @param serviceName [required] The internal name of your Router offer
+	 */
+	public OvhRouter serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/router/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhRouter.class);
 	}
 
 	/**
@@ -306,61 +214,138 @@ public class ApiOvhRouter extends ApiOvhBase {
 	}
 
 	/**
-	 * Terminate your service
+	 * Tasks for this Router
 	 *
-	 * REST: POST /router/{serviceName}/terminate
+	 * REST: GET /router/{serviceName}/task
+	 * @param status [required] Filter the value of status property (=)
+	 * @param function [required] Filter the value of function property (=)
 	 * @param serviceName [required] The internal name of your Router offer
 	 */
-	public String serviceName_terminate_POST(String serviceName) throws IOException {
-		String qPath = "/router/{serviceName}/terminate";
+	public ArrayList<Long> serviceName_task_GET(String serviceName, OvhTaskFunctionEnum function, OvhTaskStatusEnum status) throws IOException {
+		String qPath = "/router/{serviceName}/task";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * Private links set up on this router
-	 *
-	 * REST: GET /router/{serviceName}/privateLink
-	 * @param serviceName [required] The internal name of your Router offer
-	 */
-	public ArrayList<String> serviceName_privateLink_GET(String serviceName) throws IOException {
-		String qPath = "/router/{serviceName}/privateLink";
-		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "function", function);
+		query(sb, "status", status);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
 	/**
-	 * Add a new Private Link to your Router service
+	 * Networks mounted on this Router
 	 *
-	 * REST: POST /router/{serviceName}/privateLink
-	 * @param peerServiceName [required] serviceName of the router service you want to create a private link with
-	 * @param name [required] Your memory-friendly name for this private link
+	 * REST: GET /router/{serviceName}/network
 	 * @param serviceName [required] The internal name of your Router offer
 	 */
-	public String serviceName_privateLink_POST(String serviceName, String name, String peerServiceName) throws IOException {
-		String qPath = "/router/{serviceName}/privateLink";
+	public ArrayList<String> serviceName_network_GET(String serviceName) throws IOException {
+		String qPath = "/router/{serviceName}/network";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};
+
+	/**
+	 * Add a network to your router
+	 *
+	 * REST: POST /router/{serviceName}/network
+	 * @param ipNet [required] Gateway IP / CIDR Netmask, (e.g. 192.168.1.254/24)
+	 * @param description [required]
+	 * @param vlanTag [required] Vlan tag from range 1 to 4094 or NULL for untagged traffic
+	 * @param serviceName [required] The internal name of your Router offer
+	 */
+	public OvhTask serviceName_network_POST(String serviceName, String description, String ipNet, Long vlanTag) throws IOException {
+		String qPath = "/router/{serviceName}/network";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "name", name);
-		addBody(o, "peerServiceName", peerServiceName);
+		addBody(o, "description", description);
+		addBody(o, "ipNet", ipNet);
+		addBody(o, "vlanTag", vlanTag);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, String.class);
+		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /router/{serviceName}/privateLink/{peerServiceName}/request
+	 * REST: GET /router/{serviceName}/network/{ipNet}
+	 * @param serviceName [required] The internal name of your Router offer
+	 * @param ipNet [required] Gateway IP / CIDR Netmask
+	 */
+	public OvhNetwork serviceName_network_ipNet_GET(String serviceName, String ipNet) throws IOException {
+		String qPath = "/router/{serviceName}/network/{ipNet}";
+		StringBuilder sb = path(qPath, serviceName, ipNet);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhNetwork.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /router/{serviceName}/network/{ipNet}
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your Router offer
+	 * @param ipNet [required] Gateway IP / CIDR Netmask
+	 */
+	public void serviceName_network_ipNet_PUT(String serviceName, String ipNet, OvhNetwork body) throws IOException {
+		String qPath = "/router/{serviceName}/network/{ipNet}";
+		StringBuilder sb = path(qPath, serviceName, ipNet);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Remove this network from your router
+	 *
+	 * REST: DELETE /router/{serviceName}/network/{ipNet}
+	 * @param serviceName [required] The internal name of your Router offer
+	 * @param ipNet [required] Gateway IP / CIDR Netmask
+	 */
+	public OvhTask serviceName_network_ipNet_DELETE(String serviceName, String ipNet) throws IOException {
+		String qPath = "/router/{serviceName}/network/{ipNet}";
+		StringBuilder sb = path(qPath, serviceName, ipNet);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /router/{serviceName}/privateLink/{peerServiceName}
 	 * @param serviceName [required] The internal name of your Router offer
 	 * @param peerServiceName [required] Service name of the other side of this link
 	 */
-	public OvhPrivateLinkRequest serviceName_privateLink_peerServiceName_request_GET(String serviceName, String peerServiceName) throws IOException {
-		String qPath = "/router/{serviceName}/privateLink/{peerServiceName}/request";
+	public OvhPrivateLink serviceName_privateLink_peerServiceName_GET(String serviceName, String peerServiceName) throws IOException {
+		String qPath = "/router/{serviceName}/privateLink/{peerServiceName}";
 		StringBuilder sb = path(qPath, serviceName, peerServiceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPrivateLinkRequest.class);
+		return convertTo(resp, OvhPrivateLink.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /router/{serviceName}/privateLink/{peerServiceName}
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your Router offer
+	 * @param peerServiceName [required] Service name of the other side of this link
+	 */
+	public void serviceName_privateLink_peerServiceName_PUT(String serviceName, String peerServiceName, OvhPrivateLink body) throws IOException {
+		String qPath = "/router/{serviceName}/privateLink/{peerServiceName}";
+		StringBuilder sb = path(qPath, serviceName, peerServiceName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Remove an existing Private Link from your Router service
+	 *
+	 * REST: DELETE /router/{serviceName}/privateLink/{peerServiceName}
+	 * @param serviceName [required] The internal name of your Router offer
+	 * @param peerServiceName [required] Service name of the other side of this link
+	 */
+	public OvhTask serviceName_privateLink_peerServiceName_DELETE(String serviceName, String peerServiceName) throws IOException {
+		String qPath = "/router/{serviceName}/privateLink/{peerServiceName}";
+		StringBuilder sb = path(qPath, serviceName, peerServiceName);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
@@ -381,6 +366,20 @@ public class ApiOvhRouter extends ApiOvhBase {
 	}
 
 	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /router/{serviceName}/privateLink/{peerServiceName}/request
+	 * @param serviceName [required] The internal name of your Router offer
+	 * @param peerServiceName [required] Service name of the other side of this link
+	 */
+	public OvhPrivateLinkRequest serviceName_privateLink_peerServiceName_request_GET(String serviceName, String peerServiceName) throws IOException {
+		String qPath = "/router/{serviceName}/privateLink/{peerServiceName}/request";
+		StringBuilder sb = path(qPath, serviceName, peerServiceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPrivateLinkRequest.class);
+	}
+
+	/**
 	 * Routes set up in a Private Link
 	 *
 	 * REST: GET /router/{serviceName}/privateLink/{peerServiceName}/route
@@ -391,7 +390,7 @@ public class ApiOvhRouter extends ApiOvhBase {
 		String qPath = "/router/{serviceName}/privateLink/{peerServiceName}/route";
 		StringBuilder sb = path(qPath, serviceName, peerServiceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, t2);
 	}
 
 	/**
@@ -442,44 +441,45 @@ public class ApiOvhRouter extends ApiOvhBase {
 	}
 
 	/**
-	 * Get this object properties
+	 * Private links set up on this router
 	 *
-	 * REST: GET /router/{serviceName}/privateLink/{peerServiceName}
+	 * REST: GET /router/{serviceName}/privateLink
 	 * @param serviceName [required] The internal name of your Router offer
-	 * @param peerServiceName [required] Service name of the other side of this link
 	 */
-	public OvhPrivateLink serviceName_privateLink_peerServiceName_GET(String serviceName, String peerServiceName) throws IOException {
-		String qPath = "/router/{serviceName}/privateLink/{peerServiceName}";
-		StringBuilder sb = path(qPath, serviceName, peerServiceName);
+	public ArrayList<String> serviceName_privateLink_GET(String serviceName) throws IOException {
+		String qPath = "/router/{serviceName}/privateLink";
+		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPrivateLink.class);
+		return convertTo(resp, t2);
 	}
 
 	/**
-	 * Alter this object properties
+	 * Add a new Private Link to your Router service
 	 *
-	 * REST: PUT /router/{serviceName}/privateLink/{peerServiceName}
-	 * @param body [required] New object properties
+	 * REST: POST /router/{serviceName}/privateLink
+	 * @param name [required] Your memory-friendly name for this private link
+	 * @param peerServiceName [required] serviceName of the router service you want to create a private link with
 	 * @param serviceName [required] The internal name of your Router offer
-	 * @param peerServiceName [required] Service name of the other side of this link
 	 */
-	public void serviceName_privateLink_peerServiceName_PUT(String serviceName, String peerServiceName, OvhPrivateLink body) throws IOException {
-		String qPath = "/router/{serviceName}/privateLink/{peerServiceName}";
-		StringBuilder sb = path(qPath, serviceName, peerServiceName);
-		exec(qPath, "PUT", sb.toString(), body);
+	public String serviceName_privateLink_POST(String serviceName, String name, String peerServiceName) throws IOException {
+		String qPath = "/router/{serviceName}/privateLink";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "name", name);
+		addBody(o, "peerServiceName", peerServiceName);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, String.class);
 	}
 
 	/**
-	 * Remove an existing Private Link from your Router service
+	 * List available services
 	 *
-	 * REST: DELETE /router/{serviceName}/privateLink/{peerServiceName}
-	 * @param serviceName [required] The internal name of your Router offer
-	 * @param peerServiceName [required] Service name of the other side of this link
+	 * REST: GET /router
 	 */
-	public OvhTask serviceName_privateLink_peerServiceName_DELETE(String serviceName, String peerServiceName) throws IOException {
-		String qPath = "/router/{serviceName}/privateLink/{peerServiceName}";
-		StringBuilder sb = path(qPath, serviceName, peerServiceName);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/router";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
 	}
 }

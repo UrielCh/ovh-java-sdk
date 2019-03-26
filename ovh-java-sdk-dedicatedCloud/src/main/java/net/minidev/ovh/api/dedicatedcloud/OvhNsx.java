@@ -12,4 +12,11 @@ public class OvhNsx {
 	 * canBeNull && readOnly
 	 */
 	public OvhStateEnum state;
+
+	/**
+	 * Url of the NSX API
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String url;
 }

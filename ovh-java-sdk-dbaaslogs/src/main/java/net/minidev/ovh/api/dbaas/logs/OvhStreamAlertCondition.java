@@ -5,6 +5,27 @@ package net.minidev.ovh.api.dbaas.logs;
  */
 public class OvhStreamAlertCondition {
 	/**
+	 * Query filter
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String queryFilter;
+
+	/**
+	 * Threshold
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long threshold;
+
+	/**
+	 * Condition label
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String title;
+
+	/**
 	 * Constraint type
 	 *
 	 * canBeNull && readOnly
@@ -33,25 +54,11 @@ public class OvhStreamAlertCondition {
 	public Long grace;
 
 	/**
-	 * Threshold
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long threshold;
-
-	/**
 	 * Alert condition type
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhStreamAlertConditionConditionTypeEnum conditionType;
-
-	/**
-	 * Stream alert condition UUID
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String alertId;
 
 	/**
 	 * Time lapse in minutes
@@ -61,11 +68,11 @@ public class OvhStreamAlertCondition {
 	public Long time;
 
 	/**
-	 * Condition label
+	 * Stream alert condition UUID
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String title;
+	public String alertId;
 
 	/**
 	 * Field value

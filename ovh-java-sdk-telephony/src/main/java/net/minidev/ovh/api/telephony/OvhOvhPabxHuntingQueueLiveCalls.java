@@ -7,13 +7,6 @@ import java.util.Date;
  */
 public class OvhOvhPabxHuntingQueueLiveCalls {
 	/**
-	 * Name or number of the agent who answered the call
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String agent;
-
-	/**
 	 * Phone number of the caller (or anonymous if unknown)
 	 *
 	 * canBeNull && readOnly
@@ -21,11 +14,11 @@ public class OvhOvhPabxHuntingQueueLiveCalls {
 	public String callerIdNumber;
 
 	/**
-	 * Answer date of the call
+	 * Name or number of the agent who answered the call
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Date answered;
+	public String agent;
 
 	/**
 	 * Whether or not the call is on hold
@@ -35,11 +28,25 @@ public class OvhOvhPabxHuntingQueueLiveCalls {
 	public Boolean onHold;
 
 	/**
+	 * Answer date of the call
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date answered;
+
+	/**
 	 * End date of the call
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date end;
+
+	/**
+	 * Name of the caller (or anonymous if unknown)
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String callerIdName;
 
 	/**
 	 * canBeNull && readOnly
@@ -52,13 +59,6 @@ public class OvhOvhPabxHuntingQueueLiveCalls {
 	 * canBeNull && readOnly
 	 */
 	public OvhOvhPabxHuntingLiveCallsStateEnum state;
-
-	/**
-	 * Name of the caller (or anonymous if unknown)
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String callerIdName;
 
 	/**
 	 * Begin date of the call

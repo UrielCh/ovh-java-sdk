@@ -33,18 +33,18 @@ public class OvhProductCountries {
 	public Boolean portugal;
 
 	/**
-	 * Poland
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean poland;
-
-	/**
 	 * Germany
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean germany;
+
+	/**
+	 * Poland
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean poland;
 
 	/**
 	 * Netherlands
@@ -61,18 +61,18 @@ public class OvhProductCountries {
 	public Boolean lithuania;
 
 	/**
-	 * Australia
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean australia;
-
-	/**
 	 * Senegal
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean senegal;
+
+	/**
+	 * Australia
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean australia;
 
 	/**
 	 * Singapore
@@ -89,18 +89,18 @@ public class OvhProductCountries {
 	public Boolean canada;
 
 	/**
-	 * UK
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean uk;
-
-	/**
 	 * Tunisia
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean tunisia;
+
+	/**
+	 * UK
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean uk;
 
 	/**
 	 * France
@@ -131,16 +131,16 @@ public class OvhProductCountries {
 	public Boolean italy;
 
 	/**
-	 * Ireland
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean ireland;
-
-	/**
 	 * Finland
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean finland;
+
+	/**
+	 * Ireland
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean ireland;
 }

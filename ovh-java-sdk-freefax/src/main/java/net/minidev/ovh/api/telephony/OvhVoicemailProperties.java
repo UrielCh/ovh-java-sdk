@@ -5,18 +5,18 @@ package net.minidev.ovh.api.telephony;
  */
 public class OvhVoicemailProperties {
 	/**
-	 * Sound ID of the temporary greeeting
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long temporaryGreetingSoundId;
-
-	/**
 	 * Quantity of unread voicemails
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long unreadMessages;
+
+	/**
+	 * Sound ID of the temporary greeeting
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long temporaryGreetingSoundId;
 
 	/**
 	 * Name of the voicemail panel announce file

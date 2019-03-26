@@ -33,18 +33,18 @@ public class OvhDatacenter {
 	public Long datacenterId;
 
 	/**
-	 * Next hop to contact the private admin network
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String adminNetworkNextHop;
-
-	/**
 	 * Private network of the admin infrastructure
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String adminPrivateNetwork;
+
+	/**
+	 * Next hop to contact the private admin network
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String adminNetworkNextHop;
 
 	/**
 	 * Domain of your Horizon

@@ -22,18 +22,18 @@ public class OvhEnvVar {
 	public String value;
 
 	/**
-	 * Name of the variable
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String key;
-
-	/**
 	 * The task ID working on this variable
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long taskId;
+
+	/**
+	 * Name of the variable
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String key;
 
 	/**
 	 * The environnement variable status

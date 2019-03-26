@@ -21,18 +21,18 @@ public class OvhInstance {
 	public Date created;
 
 	/**
-	 * Instance flavor id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String flavorId;
-
-	/**
 	 * Instance name
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String name;
+
+	/**
+	 * Instance flavor id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String flavorId;
 
 	/**
 	 * Instance IP addresses
@@ -63,18 +63,18 @@ public class OvhInstance {
 	public String region;
 
 	/**
-	 * Instance ssh key id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String sshKeyId;
-
-	/**
 	 * Order plan code
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String planCode;
+
+	/**
+	 * Instance ssh key id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String sshKeyId;
 
 	/**
 	 * Instance status

@@ -19,16 +19,16 @@ public class OvhEasyMiniPabxHuntingAgent {
 	public Long noReplyTimer;
 
 	/**
-	 * The position in the hunting
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long position;
-
-	/**
 	 * The phone number of the agent
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String agentNumber;
+
+	/**
+	 * The position in the hunting
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long position;
 }

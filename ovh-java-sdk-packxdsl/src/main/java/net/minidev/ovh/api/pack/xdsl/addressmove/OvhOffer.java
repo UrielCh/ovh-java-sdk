@@ -57,18 +57,18 @@ public class OvhOffer {
 	public OvhMeetingSlots meetingSlots;
 
 	/**
-	 * Tells whether the tested number can be ported to OVH or not
-	 *
-	 * canBeNull
-	 */
-	public OvhPortability portability;
-
-	/**
 	 * The status of the landline
 	 *
 	 * canBeNull
 	 */
 	public OvhLandlineStatusEnum lineStatus;
+
+	/**
+	 * Tells whether the tested number can be ported to OVH or not
+	 *
+	 * canBeNull
+	 */
+	public OvhPortability portability;
 
 	/**
 	 * Status of the request
@@ -78,13 +78,6 @@ public class OvhOffer {
 	public OvhProviderEnum provider;
 
 	/**
-	 * The unbundling type
-	 *
-	 * canBeNull
-	 */
-	public OvhDeconsolidationEnum unbundling;
-
-	/**
 	 * The upload synchronisation in kbps
 	 *
 	 * canBeNull
@@ -92,11 +85,11 @@ public class OvhOffer {
 	public Long syncUpload;
 
 	/**
-	 * The code of the offer
+	 * The unbundling type
 	 *
 	 * canBeNull
 	 */
-	public String offerCode;
+	public OvhDeconsolidationEnum unbundling;
 
 	/**
 	 * The price of this offer
@@ -104,6 +97,13 @@ public class OvhOffer {
 	 * canBeNull
 	 */
 	public OvhPrice price;
+
+	/**
+	 * The code of the offer
+	 *
+	 * canBeNull
+	 */
+	public String offerCode;
 
 	/**
 	 * The estimated download synchronisation in kbps

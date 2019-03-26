@@ -126,18 +126,18 @@ public class OvhVisibilityCheckResultResponse {
 	public String streetNo;
 
 	/**
-	 * The listing id in the directory database
-	 *
-	 * canBeNull
-	 */
-	public String listingId;
-
-	/**
 	 * The location's street address (sync status)
 	 *
 	 * canBeNull
 	 */
 	public OvhFieldStatusEnum streetStatus;
+
+	/**
+	 * The listing id in the directory database
+	 *
+	 * canBeNull
+	 */
+	public String listingId;
 
 	/**
 	 * A contact email for the location (sync status)

@@ -5,13 +5,6 @@ package net.minidev.ovh.api.telephony;
  */
 public class OvhLine {
 	/**
-	 * The line offers (Deprecated, prefer "name" in getPublicOffer)
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String[] offers;
-
-	/**
 	 * canBeNull && readOnly
 	 */
 	public OvhTypeServiceEnum serviceType;
@@ -22,6 +15,13 @@ public class OvhLine {
 	 * canBeNull && readOnly
 	 */
 	public OvhLineOffer getPublicOffer;
+
+	/**
+	 * The line offers (Deprecated, prefer "name" in getPublicOffer)
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String[] offers;
 
 	/**
 	 * Ability to manage SIP password on this service

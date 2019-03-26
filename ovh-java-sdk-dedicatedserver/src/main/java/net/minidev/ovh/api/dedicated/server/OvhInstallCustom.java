@@ -68,18 +68,18 @@ public class OvhInstallCustom {
 	public Boolean installSqlServer;
 
 	/**
-	 * true if you want to install with distrib kernel
-	 *
-	 * canBeNull
-	 */
-	public Boolean useDistribKernel;
-
-	/**
 	 * install language for ovh install choice
 	 *
 	 * canBeNull
 	 */
 	public String language;
+
+	/**
+	 * true if you want to install with distrib kernel
+	 *
+	 * canBeNull
+	 */
+	public Boolean useDistribKernel;
 
 	/**
 	 * Disk group id to process install on (only available for some templates)

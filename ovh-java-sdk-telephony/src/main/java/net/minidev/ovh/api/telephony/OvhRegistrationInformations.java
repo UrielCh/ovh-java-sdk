@@ -28,18 +28,18 @@ public class OvhRegistrationInformations {
 	public Long port;
 
 	/**
-	 * SIP registration's domain
-	 *
-	 * canBeNull
-	 */
-	public String domain;
-
-	/**
 	 * SIP registration's IP
 	 *
 	 * canBeNull
 	 */
 	public String ip;
+
+	/**
+	 * SIP registration's domain
+	 *
+	 * canBeNull
+	 */
+	public String domain;
 
 	/**
 	 * SIP registration's local device IP

@@ -39,17 +39,17 @@ public class OvhJob {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long numberOfSms;
-
-	/**
-	 * canBeNull && readOnly
-	 */
 	public Long differedDelivery;
 
 	/**
 	 * canBeNull && readOnly
 	 */
 	public Long id;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public Long numberOfSms;
 
 	/**
 	 * canBeNull && readOnly

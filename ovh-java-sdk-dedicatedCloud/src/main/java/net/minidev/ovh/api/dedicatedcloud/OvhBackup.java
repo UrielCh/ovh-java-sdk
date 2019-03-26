@@ -22,13 +22,6 @@ public class OvhBackup {
 	public Boolean restorePointInReport;
 
 	/**
-	 * Name of the backup server virtual machine.
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String hostname;
-
-	/**
 	 * Backup size on day on email report
 	 *
 	 * canBeNull && readOnly
@@ -36,11 +29,11 @@ public class OvhBackup {
 	public Boolean backupSizeInReport;
 
 	/**
-	 * Full day on mail report
+	 * Name of the backup server virtual machine.
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Boolean fullDayInReport;
+	public String hostname;
 
 	/**
 	 * Backup is encrypted
@@ -48,6 +41,13 @@ public class OvhBackup {
 	 * canBeNull && readOnly
 	 */
 	public Boolean encryption;
+
+	/**
+	 * Full day on mail report
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean fullDayInReport;
 
 	/**
 	 * Schedule hour for start backup
@@ -71,6 +71,13 @@ public class OvhBackup {
 	public OvhBackupStateEnum state;
 
 	/**
+	 * Backup offer type
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhOfferTypeEnum backupOffer;
+
+	/**
 	 * Duration on email report
 	 *
 	 * canBeNull && readOnly
@@ -83,11 +90,4 @@ public class OvhBackup {
 	 * canBeNull && readOnly
 	 */
 	public Boolean diskSizeInReport;
-
-	/**
-	 * Backup offer type
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhOfferTypeEnum backupOffer;
 }

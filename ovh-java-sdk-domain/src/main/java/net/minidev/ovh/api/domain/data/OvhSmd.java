@@ -7,18 +7,18 @@ import java.util.Date;
  */
 public class OvhSmd {
 	/**
-	 * Date when information about SMD file aren't valid anymore
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date notAfter;
-
-	/**
 	 * TMCH Internal identifier
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String smdId;
+
+	/**
+	 * Date when information about SMD file aren't valid anymore
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date notAfter;
 
 	/**
 	 * List of the labels that are protected with that SMD file

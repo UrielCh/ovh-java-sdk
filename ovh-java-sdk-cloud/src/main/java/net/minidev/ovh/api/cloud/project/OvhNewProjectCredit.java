@@ -22,18 +22,18 @@ public class OvhNewProjectCredit {
 	public String description;
 
 	/**
-	 * Credit validity
-	 *
-	 * canBeNull
-	 */
-	public OvhVoucherValidity validity;
-
-	/**
 	 * Credit id
 	 *
 	 * canBeNull
 	 */
 	public Long id;
+
+	/**
+	 * Credit validity
+	 *
+	 * canBeNull
+	 */
+	public OvhVoucherValidity validity;
 
 	/**
 	 * Use credits on following products

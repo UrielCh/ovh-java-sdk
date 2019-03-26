@@ -33,11 +33,11 @@ public class OvhFlavor {
 	public String osType;
 
 	/**
-	 * Flavor name
+	 * Available in stock
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String name;
+	public Boolean available;
 
 	/**
 	 * Plan codes to order instances
@@ -47,11 +47,11 @@ public class OvhFlavor {
 	public OvhFlavorPlanCodes planCodes;
 
 	/**
-	 * Available in stock
+	 * Flavor name
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Boolean available;
+	public String name;
 
 	/**
 	 * Flavor id

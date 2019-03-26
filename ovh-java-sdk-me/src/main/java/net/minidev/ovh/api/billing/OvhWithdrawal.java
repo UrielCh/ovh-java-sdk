@@ -20,7 +20,12 @@ public class OvhWithdrawal {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String withdrawalId;
+	public OvhPrice amount;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public String password;
 
 	/**
 	 * canBeNull && readOnly
@@ -30,12 +35,7 @@ public class OvhWithdrawal {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhPrice amount;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public String password;
+	public String withdrawalId;
 
 	/**
 	 * canBeNull && readOnly

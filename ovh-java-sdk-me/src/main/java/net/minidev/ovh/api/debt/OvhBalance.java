@@ -7,18 +7,18 @@ import net.minidev.ovh.api.order.OvhPrice;
  */
 public class OvhBalance {
 	/**
-	 * Amount of debts the account has
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhPrice dueAmount;
-
-	/**
 	 * Reserved amount awaiting payment
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhPrice todoAmount;
+
+	/**
+	 * Amount of debts the account has
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhPrice dueAmount;
 
 	/**
 	 * Unmatured amount for deferred payment term

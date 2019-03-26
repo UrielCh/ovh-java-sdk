@@ -4,7 +4,8 @@ package net.minidev.ovh.api.ssl;
  * All authority a SSL certificate can be issued from
  */
 public enum OvhCertificateAuthorityEnum {
-	comodo("comodo");
+	comodo("comodo"),
+	sectigo("sectigo");
 
 	final String value;
 

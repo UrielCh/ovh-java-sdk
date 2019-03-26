@@ -21,18 +21,18 @@ public class OvhAccountDiagnosis {
 	public Boolean isSpammer;
 
 	/**
-	 * Last performed diagnostics date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date lastCheck;
-
-	/**
 	 * Determines if ingoing message has been received
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean canReceiveEmail;
+
+	/**
+	 * Last performed diagnostics date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date lastCheck;
 
 	/**
 	 * Determines if account is suspended
@@ -56,16 +56,16 @@ public class OvhAccountDiagnosis {
 	public Boolean isSrvValid;
 
 	/**
-	 * Determines if possible to authenticate with credentials
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean connectiveWebmail;
-
-	/**
 	 * Determines if account is locked
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean isLocked;
+
+	/**
+	 * Determines if possible to authenticate with credentials
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean connectiveWebmail;
 }

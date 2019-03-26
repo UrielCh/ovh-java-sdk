@@ -7,6 +7,7 @@ public enum OvhPaymentMeanEnum {
 	cash("cash"),
 	chargeback("chargeback"),
 	cheque("cheque"),
+	creditAccount("creditAccount"),
 	creditCard("creditCard"),
 	debtAccount("debtAccount"),
 	deposit("deposit"),

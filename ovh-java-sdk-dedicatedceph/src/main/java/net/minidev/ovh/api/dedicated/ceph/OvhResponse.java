@@ -7,18 +7,18 @@ import net.minidev.ovh.api.dedicated.ceph.poollist.response.OvhPoolTypeEnum;
  */
 public class OvhResponse {
 	/**
-	 * Number of replica
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long replicaCount;
-
-	/**
 	 * Determine if pool should be backuped
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean backup;
+
+	/**
+	 * Number of replica
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long replicaCount;
 
 	/**
 	 * Name of ceph user

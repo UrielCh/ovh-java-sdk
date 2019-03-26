@@ -21,16 +21,16 @@ public class OvhSpamIp {
 	public String ipSpamming;
 
 	/**
-	 * Time (in seconds) while the IP will be blocked
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long time;
-
-	/**
 	 * Current state of the ip
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhSpamStateEnum state;
+
+	/**
+	 * Time (in seconds) while the IP will be blocked
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long time;
 }

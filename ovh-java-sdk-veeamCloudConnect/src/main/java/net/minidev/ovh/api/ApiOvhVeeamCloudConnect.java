@@ -40,27 +40,14 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /veeamCloudConnect/{serviceName}/serviceInfos
+	 * REST: GET /veeamCloudConnect/{serviceName}
 	 * @param serviceName [required] Domain of the service
 	 */
-	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
-		String qPath = "/veeamCloudConnect/{serviceName}/serviceInfos";
+	public OvhAccount serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/veeamCloudConnect/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhService.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /veeamCloudConnect/{serviceName}/serviceInfos
-	 * @param body [required] New object properties
-	 * @param serviceName [required] Domain of the service
-	 */
-	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
-		String qPath = "/veeamCloudConnect/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
+		return convertTo(resp, OvhAccount.class);
 	}
 
 	/**
@@ -136,16 +123,56 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 	}
 
 	/**
-	 * Get this object properties
+	 * List the possible upgrades on your Veeam Cloud Connect account
 	 *
-	 * REST: GET /veeamCloudConnect/{serviceName}
+	 * REST: GET /veeamCloudConnect/{serviceName}/orderableUpgrade
 	 * @param serviceName [required] Domain of the service
 	 */
-	public OvhAccount serviceName_GET(String serviceName) throws IOException {
-		String qPath = "/veeamCloudConnect/{serviceName}";
+	public ArrayList<OvhOffer> serviceName_orderableUpgrade_GET(String serviceName) throws IOException {
+		String qPath = "/veeamCloudConnect/{serviceName}/orderableUpgrade";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhAccount.class);
+		return convertTo(resp, t3);
+	}
+	private static TypeReference<ArrayList<OvhOffer>> t3 = new TypeReference<ArrayList<OvhOffer>>() {};
+
+	/**
+	 * Show capabilities of your current offer
+	 *
+	 * REST: GET /veeamCloudConnect/{serviceName}/capabilities
+	 * @param serviceName [required] Domain of the service
+	 */
+	public OvhOfferCapabilities serviceName_capabilities_GET(String serviceName) throws IOException {
+		String qPath = "/veeamCloudConnect/{serviceName}/capabilities";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhOfferCapabilities.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /veeamCloudConnect/{serviceName}/serviceInfos
+	 * @param serviceName [required] Domain of the service
+	 */
+	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
+		String qPath = "/veeamCloudConnect/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhService.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /veeamCloudConnect/{serviceName}/serviceInfos
+	 * @param body [required] New object properties
+	 * @param serviceName [required] Domain of the service
+	 */
+	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
+		String qPath = "/veeamCloudConnect/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -162,9 +189,9 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 		query(sb, "name", name);
 		query(sb, "state", state);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
+		return convertTo(resp, t4);
 	}
-	private static TypeReference<ArrayList<Long>> t3 = new TypeReference<ArrayList<Long>>() {};
+	private static TypeReference<ArrayList<Long>> t4 = new TypeReference<ArrayList<Long>>() {};
 
 	/**
 	 * Get this object properties
@@ -179,31 +206,4 @@ public class ApiOvhVeeamCloudConnect extends ApiOvhBase {
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
-
-	/**
-	 * Show capabilities of your current offer
-	 *
-	 * REST: GET /veeamCloudConnect/{serviceName}/capabilities
-	 * @param serviceName [required] Domain of the service
-	 */
-	public OvhOfferCapabilities serviceName_capabilities_GET(String serviceName) throws IOException {
-		String qPath = "/veeamCloudConnect/{serviceName}/capabilities";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhOfferCapabilities.class);
-	}
-
-	/**
-	 * List the possible upgrades on your Veeam Cloud Connect account
-	 *
-	 * REST: GET /veeamCloudConnect/{serviceName}/orderableUpgrade
-	 * @param serviceName [required] Domain of the service
-	 */
-	public ArrayList<OvhOffer> serviceName_orderableUpgrade_GET(String serviceName) throws IOException {
-		String qPath = "/veeamCloudConnect/{serviceName}/orderableUpgrade";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t4);
-	}
-	private static TypeReference<ArrayList<OvhOffer>> t4 = new TypeReference<ArrayList<OvhOffer>>() {};
 }

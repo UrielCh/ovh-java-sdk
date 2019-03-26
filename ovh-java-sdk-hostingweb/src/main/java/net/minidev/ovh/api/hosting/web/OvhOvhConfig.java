@@ -54,18 +54,18 @@ public class OvhOvhConfig {
 	public Boolean historical;
 
 	/**
-	 * Configuration you want for http firewall
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhHttpFirewallEnum httpFirewall;
-
-	/**
 	 * Configuration's id
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long id;
+
+	/**
+	 * Configuration you want for http firewall
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhHttpFirewallEnum httpFirewall;
 
 	/**
 	 * Version of engine you want

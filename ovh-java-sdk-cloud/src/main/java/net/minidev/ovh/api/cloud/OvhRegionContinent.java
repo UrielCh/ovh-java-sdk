@@ -6,7 +6,8 @@ package net.minidev.ovh.api.cloud;
 public enum OvhRegionContinent {
 	EU("EU"),
 	NA("NA"),
-	US("US");
+	US("US"),
+	ASIA("ASIA");
 
 	final String value;
 

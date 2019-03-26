@@ -36,18 +36,18 @@ public class OvhTask {
 	public String comment;
 
 	/**
-	 * Id of the task
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long id;
-
-	/**
 	 * Can accelerate the task
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean canAccelerate;
+
+	/**
+	 * Id of the task
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long id;
 
 	/**
 	 * Creation date of the task
@@ -57,18 +57,18 @@ public class OvhTask {
 	public Date creationDate;
 
 	/**
-	 * Can relaunch the task
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean canRelaunch;
-
-	/**
 	 * Done date of the task
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date doneDate;
+
+	/**
+	 * Can relaunch the task
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean canRelaunch;
 
 	/**
 	 * Can cancel the task

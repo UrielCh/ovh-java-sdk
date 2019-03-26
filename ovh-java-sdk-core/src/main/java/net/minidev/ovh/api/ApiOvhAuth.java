@@ -18,17 +18,6 @@ public class ApiOvhAuth extends ApiOvhBase {
 	}
 
 	/**
-	 * Expire current credential
-	 *
-	 * REST: POST /auth/logout
-	 */
-	public void logout_POST() throws IOException {
-		String qPath = "/auth/logout";
-		StringBuilder sb = path(qPath);
-		exec(qPath, "POST", sb.toString(), null);
-	}
-
-	/**
 	 * Get the current credential details
 	 *
 	 * REST: GET /auth/currentCredential
@@ -38,6 +27,17 @@ public class ApiOvhAuth extends ApiOvhBase {
 		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhCredential.class);
+	}
+
+	/**
+	 * Expire current credential
+	 *
+	 * REST: POST /auth/logout
+	 */
+	public void logout_POST() throws IOException {
+		String qPath = "/auth/logout";
+		StringBuilder sb = path(qPath);
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**

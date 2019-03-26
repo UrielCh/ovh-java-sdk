@@ -57,18 +57,18 @@ public class OvhModem {
 	public String dmzIP;
 
 	/**
-	 * Size of the Maximum Transmission Unit on the modem's interfaces
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhMTUSizeEnum mtuSize;
-
-	/**
 	 * Whether or not the user can configure his modem via OVH Interface (will lock telnet and local HTTP configuration page)
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean managedByOvh;
+
+	/**
+	 * Size of the Maximum Transmission Unit on the modem's interfaces
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhMTUSizeEnum mtuSize;
 
 	/**
 	 * Level of the FireWall on the modem

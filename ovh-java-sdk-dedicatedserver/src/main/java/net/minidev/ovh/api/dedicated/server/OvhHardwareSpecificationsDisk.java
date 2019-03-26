@@ -28,13 +28,6 @@ public class OvhHardwareSpecificationsDisk {
 	public String description;
 
 	/**
-	 * raid controller, if any, managing this group of disks
-	 *
-	 * canBeNull
-	 */
-	public String raidController;
-
-	/**
 	 * default hardware raid type for this disk group
 	 *
 	 * canBeNull
@@ -42,11 +35,11 @@ public class OvhHardwareSpecificationsDisk {
 	public OvhHardwareSpecificationsRaidHardEnum defaultHardwareRaidType;
 
 	/**
-	 * identifier of this disk group
+	 * raid controller, if any, managing this group of disks
 	 *
 	 * canBeNull
 	 */
-	public Long diskGroupId;
+	public String raidController;
 
 	/**
 	 * type of the disk (SSD, SATA, SAS, ...)
@@ -54,6 +47,13 @@ public class OvhHardwareSpecificationsDisk {
 	 * canBeNull
 	 */
 	public String diskType;
+
+	/**
+	 * identifier of this disk group
+	 *
+	 * canBeNull
+	 */
+	public Long diskGroupId;
 
 	/**
 	 * number of disks in this group

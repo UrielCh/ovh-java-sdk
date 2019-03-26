@@ -28,18 +28,18 @@ public class OvhVm {
 	public String vmwareTools;
 
 	/**
-	 * Id of the virtual machine.
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long vmId;
-
-	/**
 	 * Current CPU performance, in MHz.
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long cpuUsed;
+
+	/**
+	 * Id of the virtual machine.
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long vmId;
 
 	/**
 	 * Memory size of the virtual machine, in MB
@@ -56,6 +56,13 @@ public class OvhVm {
 	public Double writeLatency;
 
 	/**
+	 * List of the networks link to this virtual machine
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhVmNetwork[] networks;
+
+	/**
 	 * Current memory utilization, in MB
 	 *
 	 * canBeNull && readOnly
@@ -68,13 +75,6 @@ public class OvhVm {
 	 * canBeNull && readOnly
 	 */
 	public Double cpuMax;
-
-	/**
-	 * List of the networks link to this virtual machine
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhVmNetwork[] networks;
 
 	/**
 	 * Percentage of time that the virtual machine was ready, but could not get scheduled to run on the physical CPU. In percent
@@ -140,18 +140,18 @@ public class OvhVm {
 	public Double readRate;
 
 	/**
-	 * moRef of the virtual machine.
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String moRef;
-
-	/**
 	 * Virtual machine cdroms devices
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhVirtualMachineCdrom[] cdroms;
+
+	/**
+	 * moRef of the virtual machine.
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String moRef;
 
 	/**
 	 * Current version of VMware Tools
@@ -175,13 +175,6 @@ public class OvhVm {
 	public Double readLatency;
 
 	/**
-	 * The index of the current VM in instanceUuids array starting from 1, so 1 means that it is the primary VM.
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String roleFt;
-
-	/**
 	 * Rate of writing data from the virtual disk. In KB/s
 	 *
 	 * canBeNull && readOnly
@@ -194,6 +187,13 @@ public class OvhVm {
 	 * canBeNull && readOnly
 	 */
 	public Double cpuReady;
+
+	/**
+	 * The index of the current VM in instanceUuids array starting from 1, so 1 means that it is the primary VM.
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String roleFt;
 
 	/**
 	 * Number of packets received.

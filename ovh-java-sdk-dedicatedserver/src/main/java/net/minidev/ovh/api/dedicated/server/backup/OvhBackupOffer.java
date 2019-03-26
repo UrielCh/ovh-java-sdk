@@ -14,18 +14,18 @@ public class OvhBackupOffer {
 	public OvhUnitAndValue<Long> maxBandwidthStorage;
 
 	/**
-	 * Archive volume r/w bandwidth limit: read/write volume offered per month on the container.
-	 *
-	 * canBeNull
-	 */
-	public OvhUnitAndValue<Long> maxBandwidthArchive;
-
-	/**
 	 * Storage container max size.
 	 *
 	 * canBeNull
 	 */
 	public OvhUnitAndValue<Long> maxStorage;
+
+	/**
+	 * Archive volume r/w bandwidth limit: read/write volume offered per month on the container.
+	 *
+	 * canBeNull
+	 */
+	public OvhUnitAndValue<Long> maxBandwidthArchive;
 
 	/**
 	 * Archive container max size.

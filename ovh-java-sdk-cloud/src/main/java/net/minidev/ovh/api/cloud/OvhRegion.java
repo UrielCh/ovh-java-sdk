@@ -26,16 +26,16 @@ public class OvhRegion {
 	public OvhComponent[] services;
 
 	/**
-	 * Region continent code
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhRegionContinent continentCode;
-
-	/**
 	 * Openstack region status
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhRegionStatus status;
+
+	/**
+	 * Region continent code
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhRegionContinent continentCode;
 }

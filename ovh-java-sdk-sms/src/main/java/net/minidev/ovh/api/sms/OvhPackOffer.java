@@ -22,12 +22,12 @@ public class OvhPackOffer {
 	/**
 	 * canBeNull
 	 */
-	public Double price;
+	public Double smsQuantity;
 
 	/**
 	 * canBeNull
 	 */
-	public Double smsQuantity;
+	public Double price;
 
 	/**
 	 * canBeNull

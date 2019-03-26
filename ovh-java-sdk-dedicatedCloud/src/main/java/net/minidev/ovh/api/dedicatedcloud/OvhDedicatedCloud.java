@@ -19,18 +19,18 @@ public class OvhDedicatedCloud {
 	public Boolean advancedSecurity;
 
 	/**
-	 * The timeout (in seconds) for the user sessions on the Private Cloud management interface. 0 value disable the timeout
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long userSessionTimeout;
-
-	/**
 	 * Enable SSL v3 support. Warning : this option is not recommended as it was recognized as a security breach. If this is enabled, we advise you to enable the filtered User access policy
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean sslV3;
+
+	/**
+	 * The timeout (in seconds) for the user sessions on the Private Cloud management interface. 0 value disable the timeout
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long userSessionTimeout;
 
 	/**
 	 * The current bandwidth of your Private Cloud
@@ -80,13 +80,6 @@ public class OvhDedicatedCloud {
 	public String servicePackName;
 
 	/**
-	 * Access policy of your Private Cloud : opened to every IPs or filtered
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhUserAccessPolicyEnum userAccessPolicy;
-
-	/**
 	 * Service name of your Private Cloud
 	 *
 	 * canBeNull && readOnly
@@ -94,11 +87,11 @@ public class OvhDedicatedCloud {
 	public String serviceName;
 
 	/**
-	 * Version of the management interface
+	 * Access policy of your Private Cloud : opened to every IPs or filtered
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhVersion version;
+	public OvhUserAccessPolicyEnum userAccessPolicy;
 
 	/**
 	 * Url to the Private Cloud certified interface
@@ -106,6 +99,13 @@ public class OvhDedicatedCloud {
 	 * canBeNull && readOnly
 	 */
 	public String certifiedInterfaceUrl;
+
+	/**
+	 * Version of the management interface
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhVersion version;
 
 	/**
 	 * Url to the Private Cloud web interface

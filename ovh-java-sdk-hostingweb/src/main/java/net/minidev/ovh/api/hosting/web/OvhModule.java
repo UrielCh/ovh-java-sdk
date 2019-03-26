@@ -52,18 +52,18 @@ public class OvhModule {
 	public Long id;
 
 	/**
-	 * Date of the installation of the module
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date creationDate;
-
-	/**
 	 * ID of the module associated with this installation
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long moduleId;
+
+	/**
+	 * Date of the installation of the module
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date creationDate;
 
 	/**
 	 * The URL from where your module can be reached
@@ -80,16 +80,16 @@ public class OvhModule {
 	public Long taskId;
 
 	/**
-	 * The module status
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhStatusEnum status;
-
-	/**
 	 * The dependencies to which the module has access. A dependency can be a standard database (like MySQL or PostgreSQL) or a key-value store (like Redis or Memcached) for example
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhDependencyType[] dependencies;
+
+	/**
+	 * The module status
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhStatusEnum status;
 }

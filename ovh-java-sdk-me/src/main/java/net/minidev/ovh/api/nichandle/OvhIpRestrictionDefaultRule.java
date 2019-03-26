@@ -7,16 +7,16 @@ import net.minidev.ovh.api.nichandle.accessrestriction.OvhIpRestrictionRuleEnum;
  */
 public class OvhIpRestrictionDefaultRule {
 	/**
-	 * Accept or deny access
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhIpRestrictionRuleEnum rule;
-
-	/**
 	 * Send an email if someone try to access
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean warning;
+
+	/**
+	 * Accept or deny access
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhIpRestrictionRuleEnum rule;
 }

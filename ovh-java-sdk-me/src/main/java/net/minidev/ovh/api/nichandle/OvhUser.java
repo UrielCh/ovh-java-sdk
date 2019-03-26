@@ -49,16 +49,16 @@ public class OvhUser {
 	public String email;
 
 	/**
-	 * User's group
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String group;
-
-	/**
 	 * Current user's status
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhUserStatus status;
+
+	/**
+	 * User's group
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String group;
 }

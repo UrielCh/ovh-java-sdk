@@ -24,12 +24,12 @@ public class OvhDepositDetail {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String domain;
+	public String depositDetailId;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String depositDetailId;
+	public String domain;
 
 	/**
 	 * canBeNull && readOnly

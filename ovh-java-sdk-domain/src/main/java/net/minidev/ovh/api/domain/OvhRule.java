@@ -27,12 +27,12 @@ public class OvhRule {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String type;
+	public String[] fields;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String[] fields;
+	public String type;
 
 	/**
 	 * canBeNull && readOnly

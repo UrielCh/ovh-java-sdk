@@ -21,72 +21,19 @@ public class ApiOvhService extends ApiOvhBase {
 	}
 
 	/**
-	 * Suspend the service. The service won't be accessible, but you will still be charged for it
+	 * List available services
 	 *
-	 * REST: POST /service/{serviceId}/suspend
-	 * @param serviceId [required] The internal ID of your service
-	 *
-	 * API beta
-	 */
-	public void serviceId_suspend_POST(Long serviceId) throws IOException {
-		String qPath = "/service/{serviceId}/suspend";
-		StringBuilder sb = path(qPath, serviceId);
-		exec(qPath, "POST", sb.toString(), null);
-	}
-
-	/**
-	 * Reopen a suspended service
-	 *
-	 * REST: POST /service/{serviceId}/reopen
-	 * @param serviceId [required] The internal ID of your service
+	 * REST: GET /service
 	 *
 	 * API beta
 	 */
-	public void serviceId_reopen_POST(Long serviceId) throws IOException {
-		String qPath = "/service/{serviceId}/reopen";
-		StringBuilder sb = path(qPath, serviceId);
-		exec(qPath, "POST", sb.toString(), null);
-	}
-
-	/**
-	 * List possible renews for this service
-	 *
-	 * REST: GET /service/{serviceId}/renew
-	 * @param serviceId [required] Service Id
-	 * @param includeOptions [required] Include service's option(s)
-	 *
-	 * API beta
-	 */
-	public ArrayList<OvhRenewDescription> serviceId_renew_GET(String serviceId, Boolean includeOptions) throws IOException {
-		String qPath = "/service/{serviceId}/renew";
-		StringBuilder sb = path(qPath, serviceId);
-		query(sb, "includeOptions", includeOptions);
+	public ArrayList<Long> GET() throws IOException {
+		String qPath = "/service";
+		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
-	private static TypeReference<ArrayList<OvhRenewDescription>> t1 = new TypeReference<ArrayList<OvhRenewDescription>>() {};
-
-	/**
-	 * Create a renew order
-	 *
-	 * REST: POST /service/{serviceId}/renew
-	 * @param serviceId [required] Service Id
-	 * @param dryRun [required] Indicates if renew order is generated
-	 * @param duration [required] Renew duration
-	 * @param services [required] List of services to renew
-	 *
-	 * API beta
-	 */
-	public OvhRenewOrder serviceId_renew_POST(String serviceId, Boolean dryRun, String duration, Long[] services) throws IOException {
-		String qPath = "/service/{serviceId}/renew";
-		StringBuilder sb = path(qPath, serviceId);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "dryRun", dryRun);
-		addBody(o, "duration", duration);
-		addBody(o, "services", services);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhRenewOrder.class);
-	}
+	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
 
 	/**
 	 * Terminates a suspended service
@@ -133,17 +80,70 @@ public class ApiOvhService extends ApiOvhBase {
 	}
 
 	/**
-	 * List available services
+	 * List possible renews for this service
 	 *
-	 * REST: GET /service
+	 * REST: GET /service/{serviceId}/renew
+	 * @param serviceId [required] Service Id
+	 * @param includeOptions [required] Include service's option(s)
 	 *
 	 * API beta
 	 */
-	public ArrayList<Long> GET() throws IOException {
-		String qPath = "/service";
-		StringBuilder sb = path(qPath);
+	public ArrayList<OvhRenewDescription> serviceId_renew_GET(String serviceId, Boolean includeOptions) throws IOException {
+		String qPath = "/service/{serviceId}/renew";
+		StringBuilder sb = path(qPath, serviceId);
+		query(sb, "includeOptions", includeOptions);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
-	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
+	private static TypeReference<ArrayList<OvhRenewDescription>> t2 = new TypeReference<ArrayList<OvhRenewDescription>>() {};
+
+	/**
+	 * Create a renew order
+	 *
+	 * REST: POST /service/{serviceId}/renew
+	 * @param serviceId [required] Service Id
+	 * @param dryRun [required] Indicates if renew order is generated
+	 * @param duration [required] Renew duration
+	 * @param services [required] List of services to renew
+	 *
+	 * API beta
+	 */
+	public OvhRenewOrder serviceId_renew_POST(String serviceId, Boolean dryRun, String duration, Long[] services) throws IOException {
+		String qPath = "/service/{serviceId}/renew";
+		StringBuilder sb = path(qPath, serviceId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "dryRun", dryRun);
+		addBody(o, "duration", duration);
+		addBody(o, "services", services);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhRenewOrder.class);
+	}
+
+	/**
+	 * Suspend the service. The service won't be accessible, but you will still be charged for it
+	 *
+	 * REST: POST /service/{serviceId}/suspend
+	 * @param serviceId [required] The internal ID of your service
+	 *
+	 * API beta
+	 */
+	public void serviceId_suspend_POST(Long serviceId) throws IOException {
+		String qPath = "/service/{serviceId}/suspend";
+		StringBuilder sb = path(qPath, serviceId);
+		exec(qPath, "POST", sb.toString(), null);
+	}
+
+	/**
+	 * Reopen a suspended service
+	 *
+	 * REST: POST /service/{serviceId}/reopen
+	 * @param serviceId [required] The internal ID of your service
+	 *
+	 * API beta
+	 */
+	public void serviceId_reopen_POST(Long serviceId) throws IOException {
+		String qPath = "/service/{serviceId}/reopen";
+		StringBuilder sb = path(qPath, serviceId);
+		exec(qPath, "POST", sb.toString(), null);
+	}
 }

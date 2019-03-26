@@ -47,18 +47,18 @@ public class OvhRtmDiskSmart {
 	public Long realocated_event_count;
 
 	/**
-	 * Offline seek rate
-	 *
-	 * canBeNull
-	 */
-	public Long offline_seek_performance;
-
-	/**
 	 * Uncorrected read errors
 	 *
 	 * canBeNull
 	 */
 	public Long uncorrected_read_errors;
+
+	/**
+	 * Offline seek rate
+	 *
+	 * canBeNull
+	 */
+	public Long offline_seek_performance;
 
 	/**
 	 * Uncorrected write errors

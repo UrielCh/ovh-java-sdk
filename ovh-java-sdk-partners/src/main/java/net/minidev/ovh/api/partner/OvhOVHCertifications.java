@@ -5,18 +5,18 @@ package net.minidev.ovh.api.partner;
  */
 public class OvhOVHCertifications {
 	/**
-	 * Technical certification id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String technical;
-
-	/**
 	 * Business certification id
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String business;
+
+	/**
+	 * Technical certification id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String technical;
 
 	/**
 	 * Advanced certification id

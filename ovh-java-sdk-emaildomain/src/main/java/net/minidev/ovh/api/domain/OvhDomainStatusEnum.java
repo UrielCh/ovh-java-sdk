@@ -5,7 +5,9 @@ package net.minidev.ovh.api.domain;
  */
 public enum OvhDomainStatusEnum {
 	close("close"),
-	ok("ok");
+	ok("ok"),
+	readOnly("readOnly"),
+	unknown("unknown");
 
 	final String value;
 

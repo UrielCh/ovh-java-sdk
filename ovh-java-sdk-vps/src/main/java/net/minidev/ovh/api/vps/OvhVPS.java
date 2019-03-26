@@ -60,20 +60,20 @@ public class OvhVPS {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long memoryLimit;
-
-	/**
-	 * canBeNull && readOnly
-	 */
 	public OvhModel model;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Boolean slaMonitoring;
+	public Long memoryLimit;
 
 	/**
 	 * canBeNull && readOnly
 	 */
 	public OvhVpsStateEnum state;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public Boolean slaMonitoring;
 }

@@ -21,6 +21,7 @@ public enum OvhOrderableVersionEnum {
 	@JsonProperty("mysql_5.7")
 	mysql_5_7("mysql_5.7"),
 	postgresql_10("postgresql_10"),
+	postgresql_11("postgresql_11"),
 	@JsonProperty("postgresql_9.4")
 	postgresql_9_4("postgresql_9.4"),
 	@JsonProperty("postgresql_9.5")

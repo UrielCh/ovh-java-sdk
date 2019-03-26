@@ -14,18 +14,18 @@ public class OvhRtmRaidVolume {
 	public String volume;
 
 	/**
-	 * Raid volume phys
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String phys;
-
-	/**
 	 * Raid volume chunks
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String chunks;
+
+	/**
+	 * Raid volume phys
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String phys;
 
 	/**
 	 * Raid volume letter
@@ -35,18 +35,18 @@ public class OvhRtmRaidVolume {
 	public String letter;
 
 	/**
-	 * Raid volume stripe
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String stripe;
-
-	/**
 	 * Raid volume synchronization progress
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String syncprogress;
+
+	/**
+	 * Raid volume stripe
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String stripe;
 
 	/**
 	 * Raid volume label

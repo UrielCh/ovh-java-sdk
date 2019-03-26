@@ -27,12 +27,12 @@ public class OvhDisk {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhStateEnum state;
+	public Long id;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long id;
+	public OvhStateEnum state;
 
 	/**
 	 * canBeNull && readOnly

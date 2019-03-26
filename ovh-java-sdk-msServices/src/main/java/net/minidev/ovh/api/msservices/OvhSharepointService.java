@@ -5,6 +5,13 @@ package net.minidev.ovh.api.msservices;
  */
 public class OvhSharepointService {
 	/**
+	 * Sharepoint offer
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhSharepointServiceOfferEnum offer;
+
+	/**
 	 * Sharepoint farm url
 	 *
 	 * canBeNull && readOnly
@@ -19,18 +26,18 @@ public class OvhSharepointService {
 	public String displayName;
 
 	/**
-	 * Internal service name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String domain;
-
-	/**
 	 * Shared space maximum size in byte
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long quota;
+
+	/**
+	 * Internal service name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String domain;
 
 	/**
 	 * Shared space usage in byte
@@ -47,16 +54,16 @@ public class OvhSharepointService {
 	public OvhServiceStateEnum state;
 
 	/**
-	 * Task pending id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long taskPendingId;
-
-	/**
 	 * Sharepoint url
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String url;
+
+	/**
+	 * Task pending id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long taskPendingId;
 }

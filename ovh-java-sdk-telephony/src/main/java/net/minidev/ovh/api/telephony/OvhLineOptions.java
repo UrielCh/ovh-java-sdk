@@ -5,37 +5,16 @@ package net.minidev.ovh.api.telephony;
  */
 public class OvhLineOptions {
 	/**
-	 * Nature of the forward when the line is unavailable
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhLineOptionForwardNatureTypeEnum forwardBackupNature;
-
-	/**
 	 * canBeNull && readOnly
 	 */
 	public String displayNumber;
 
 	/**
-	 * Whether or not the line has restriction on outgoing calls
+	 * Nature of the forward when the line is unavailable
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Boolean callRestrictionOutgoing;
-
-	/**
-	 * Voicemail number to dial from any other line
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String voicemailExternalNumber;
-
-	/**
-	 * Do not display your number
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean identificationRestriction;
+	public OvhLineOptionForwardNatureTypeEnum forwardBackupNature;
 
 	/**
 	 * Nature of the unconditional forward
@@ -45,11 +24,25 @@ public class OvhLineOptions {
 	public OvhLineOptionForwardNatureTypeEnum forwardUnconditionalNature;
 
 	/**
-	 * Language of the line
+	 * Voicemail number to dial from any other line
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhLineOptionLanguageEnum language;
+	public String voicemailExternalNumber;
+
+	/**
+	 * Whether or not the line has restriction on outgoing calls
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean callRestrictionOutgoing;
+
+	/**
+	 * Do not display your number
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean identificationRestriction;
 
 	/**
 	 * The ip restrictions of your line
@@ -59,11 +52,11 @@ public class OvhLineOptions {
 	public String[] ipRestrictions;
 
 	/**
-	 * Sound ID of ringback tone
+	 * Language of the line
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long toneRingbackSoundId;
+	public OvhLineOptionLanguageEnum language;
 
 	/**
 	 * Nature of the forward when the line is busy
@@ -71,6 +64,13 @@ public class OvhLineOptions {
 	 * canBeNull && readOnly
 	 */
 	public OvhLineOptionForwardNatureTypeEnum forwardBusyNature;
+
+	/**
+	 * Sound ID of ringback tone
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long toneRingbackSoundId;
 
 	/**
 	 * Destination of the forward when the line is unavailable
@@ -85,18 +85,18 @@ public class OvhLineOptions {
 	public Boolean doNotDisturb;
 
 	/**
-	 * Nature of the forward on no-reply
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhLineOptionForwardNatureTypeEnum forwardNoReplyNature;
-
-	/**
 	 * Enable or disable record of outgoing calls
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean recordOutgoingCallsBeta;
+
+	/**
+	 * Nature of the forward on no-reply
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhLineOptionForwardNatureTypeEnum forwardNoReplyNature;
 
 	/**
 	 * Enable calls forward when the line is unavailable
@@ -155,16 +155,16 @@ public class OvhLineOptions {
 	public String defaultVoicemail;
 
 	/**
-	 * canBeNull && readOnly
-	 */
-	public Boolean absentSubscriber;
-
-	/**
 	 * If the line receives a new call and the line is already in communication, this new call is dispatched once the current call is completed
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean callWaiting;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public Boolean absentSubscriber;
 
 	/**
 	 * Sound ID of on-hold tone
@@ -181,18 +181,18 @@ public class OvhLineOptions {
 	public String forwardUnconditionalNumber;
 
 	/**
-	 * Delay before forward on no-reply
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long forwardNoReplyDelay;
-
-	/**
 	 * Enable unconditional calls forward
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean forwardUnconditional;
+
+	/**
+	 * Delay before forward on no-reply
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long forwardNoReplyDelay;
 
 	/**
 	 * The SIP domain of the line

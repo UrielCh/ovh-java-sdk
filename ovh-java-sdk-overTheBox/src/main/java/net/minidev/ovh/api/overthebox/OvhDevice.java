@@ -28,11 +28,11 @@ public class OvhDevice {
 	public String publicIp;
 
 	/**
-	 * The id of the device
+	 * Version of the device
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String deviceId;
+	public String version;
 
 	/**
 	 * System version of the device
@@ -42,11 +42,11 @@ public class OvhDevice {
 	public String systemVersion;
 
 	/**
-	 * Version of the device
+	 * The id of the device
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String version;
+	public String deviceId;
 
 	/**
 	 * Whether or not this device is associated to a service

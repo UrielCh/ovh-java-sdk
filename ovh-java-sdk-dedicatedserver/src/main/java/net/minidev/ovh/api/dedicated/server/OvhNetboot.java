@@ -5,18 +5,18 @@ package net.minidev.ovh.api.dedicated.server;
  */
 public class OvhNetboot {
 	/**
-	 * The boot kernel
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String kernel;
-
-	/**
 	 * boot id
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long bootId;
+
+	/**
+	 * The boot kernel
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String kernel;
 
 	/**
 	 * the boot system

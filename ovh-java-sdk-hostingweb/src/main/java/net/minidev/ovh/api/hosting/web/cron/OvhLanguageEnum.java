@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public enum OvhLanguageEnum {
 	node10("node10"),
+	node11("node11"),
 	node8("node8"),
 	node9("node9"),
 	other("other"),
@@ -28,7 +29,15 @@ public enum OvhLanguageEnum {
 	@JsonProperty("php7.2")
 	php7_2("php7.2"),
 	@JsonProperty("php7.3")
-	php7_3("php7.3");
+	php7_3("php7.3"),
+	python2("python2"),
+	python3("python3"),
+	@JsonProperty("ruby2.4")
+	ruby2_4("ruby2.4"),
+	@JsonProperty("ruby2.5")
+	ruby2_5("ruby2.5"),
+	@JsonProperty("ruby2.6")
+	ruby2_6("ruby2.6");
 
 	final String value;
 

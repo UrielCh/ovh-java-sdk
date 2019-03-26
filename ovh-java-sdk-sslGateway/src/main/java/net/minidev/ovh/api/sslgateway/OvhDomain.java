@@ -12,16 +12,16 @@ public class OvhDomain {
 	public String domain;
 
 	/**
-	 * Domain state
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhDomainStateEnum state;
-
-	/**
 	 * Id of your domain
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long id;
+
+	/**
+	 * Domain state
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhDomainStateEnum state;
 }

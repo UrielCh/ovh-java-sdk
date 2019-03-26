@@ -56,13 +56,6 @@ public class OvhPortability {
 	public Long id;
 
 	/**
-	 * Indicates that portability is in error
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean error;
-
-	/**
 	 * The portability's creation date
 	 *
 	 * canBeNull && readOnly
@@ -82,6 +75,13 @@ public class OvhPortability {
 	 * canBeNull && readOnly
 	 */
 	public String billingAccount;
+
+	/**
+	 * Indicates that portability is in error
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean error;
 
 	/**
 	 * The operator that currently holds the numbers

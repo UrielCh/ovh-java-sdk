@@ -19,19 +19,6 @@ public class ApiOvhStackmis extends ApiOvhBase {
 	}
 
 	/**
-	 * List available services
-	 *
-	 * REST: GET /stack/mis
-	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/stack/mis";
-		StringBuilder sb = path(qPath);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
-
-	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /stack/mis/{serviceName}/serviceInfos
@@ -69,4 +56,17 @@ public class ApiOvhStackmis extends ApiOvhBase {
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhProduct.class);
 	}
+
+	/**
+	 * List available services
+	 *
+	 * REST: GET /stack/mis
+	 */
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/stack/mis";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
 }

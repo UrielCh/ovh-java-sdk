@@ -99,7 +99,8 @@ public abstract class ApiOvhBase {
 	}
 
 	protected void addBody(HashMap<String, Object> o, String key, Object value) {
-		o.put(key, value);
+		if (value != null)
+			o.put(key, value);
 	}
 
 	/**

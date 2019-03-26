@@ -25,6 +25,11 @@ public class OvhNichandle {
 	public String city;
 
 	/**
+	 * canBeNull && readOnly
+	 */
+	public String organisation;
+
+	/**
 	 * Your customer code (a numerical value used for identification when contacting support via phone call)
 	 *
 	 * canBeNull && readOnly
@@ -34,7 +39,7 @@ public class OvhNichandle {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String organisation;
+	public OvhLanguageEnum language;
 
 	/**
 	 * canBeNull && readOnly
@@ -44,22 +49,7 @@ public class OvhNichandle {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhLanguageEnum language;
-
-	/**
-	 * canBeNull && readOnly
-	 */
 	public OvhCountryEnum phoneCountry;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public String corporationType;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public String spareEmail;
 
 	/**
 	 * Customer currency
@@ -67,6 +57,16 @@ public class OvhNichandle {
 	 * canBeNull && readOnly
 	 */
 	public OvhCurrency currency;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public String spareEmail;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public String corporationType;
 
 	/**
 	 * canBeNull && readOnly
@@ -96,22 +96,22 @@ public class OvhNichandle {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String area;
-
-	/**
-	 * canBeNull && readOnly
-	 */
 	public String zip;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String birthDay;
+	public String area;
 
 	/**
 	 * canBeNull && readOnly
 	 */
 	public OvhOvhCompanyEnum ovhCompany;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public String birthDay;
 
 	/**
 	 * canBeNull && readOnly

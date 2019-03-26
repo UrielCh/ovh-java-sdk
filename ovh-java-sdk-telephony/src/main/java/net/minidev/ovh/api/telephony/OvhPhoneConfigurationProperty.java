@@ -44,18 +44,18 @@ public class OvhPhoneConfigurationProperty {
 	public String description;
 
 	/**
-	 * Range property value
-	 *
-	 * canBeNull
-	 */
-	public OvhRange<Long> rangeValue;
-
-	/**
 	 * Provisioning type
 	 *
 	 * canBeNull
 	 */
 	public OvhPhoneConfigurationTypeEnum type;
+
+	/**
+	 * Range property value
+	 *
+	 * canBeNull
+	 */
+	public OvhRange<Long> rangeValue;
 
 	/**
 	 * Current property value

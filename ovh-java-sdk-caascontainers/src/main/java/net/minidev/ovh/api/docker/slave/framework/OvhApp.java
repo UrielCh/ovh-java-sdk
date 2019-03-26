@@ -51,18 +51,18 @@ public class OvhApp {
 	public String id;
 
 	/**
-	 * Application environment
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhEnvironment[] env;
-
-	/**
 	 * Application ports
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhPort[] ports;
+
+	/**
+	 * Application environment
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhEnvironment[] env;
 
 	/**
 	 * Application status

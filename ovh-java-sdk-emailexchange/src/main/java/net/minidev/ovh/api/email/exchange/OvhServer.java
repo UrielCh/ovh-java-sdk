@@ -26,18 +26,18 @@ public class OvhServer {
 	public Boolean owaMfa;
 
 	/**
-	 * ExchangeServer version
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long version;
-
-	/**
 	 * Exchange commercial version
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhExchangeCommercialVersionEnum commercialVersion;
+
+	/**
+	 * ExchangeServer version
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long version;
 
 	/**
 	 * Task pending id
@@ -61,18 +61,18 @@ public class OvhServer {
 	public Long currentDiskUsage;
 
 	/**
-	 * ipV6
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String ipV6;
-
-	/**
 	 * If true server is 2010 individual offer
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean individual2010;
+
+	/**
+	 * ipV6
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String ipV6;
 
 	/**
 	 * If true your dns ptr record is valid

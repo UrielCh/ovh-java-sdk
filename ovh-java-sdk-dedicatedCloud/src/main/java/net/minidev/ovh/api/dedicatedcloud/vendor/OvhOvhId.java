@@ -12,18 +12,18 @@ public class OvhOvhId {
 	public Long vmId;
 
 	/**
-	 * Datacenter id
-	 *
-	 * canBeNull
-	 */
-	public Long datacenterId;
-
-	/**
 	 * Filer id
 	 *
 	 * canBeNull
 	 */
 	public Long filerId;
+
+	/**
+	 * Datacenter id
+	 *
+	 * canBeNull
+	 */
+	public Long datacenterId;
 
 	/**
 	 * Host id

@@ -23,18 +23,18 @@ public class OvhSlave {
 	public String stack;
 
 	/**
-	 * The slave hostname
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String name;
-
-	/**
 	 * The framework UUID
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String flavorId;
+
+	/**
+	 * The slave hostname
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String name;
 
 	/**
 	 * The slave UUID
@@ -44,18 +44,18 @@ public class OvhSlave {
 	public String id;
 
 	/**
-	 * The state of the slave
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhStatus state;
-
-	/**
 	 * Metrics about slave usage
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhMetrics metrics;
+
+	/**
+	 * The state of the slave
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhStatus state;
 
 	/**
 	 * The region where the slave is located

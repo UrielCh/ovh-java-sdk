@@ -21,18 +21,18 @@ public class OvhExchangeAccountDiagnosis {
 	public Boolean isSpammer;
 
 	/**
-	 * Determines if ingoing message has been received
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean canReceiveEmail;
-
-	/**
 	 * Last performed diagnostics date
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date lastCheck;
+
+	/**
+	 * Determines if ingoing message has been received
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean canReceiveEmail;
 
 	/**
 	 * Determines if account is suspended
@@ -42,18 +42,18 @@ public class OvhExchangeAccountDiagnosis {
 	public Boolean isSuspended;
 
 	/**
-	 * Determines if outgoing message has been delivered
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean canSendEmail;
-
-	/**
 	 * Determines if SRV (autodiscovery) record for account's domain is properly set
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean isSrvValid;
+
+	/**
+	 * Determines if outgoing message has been delivered
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean canSendEmail;
 
 	/**
 	 * Determines if account is locked

@@ -24,45 +24,6 @@ public class ApiOvhFreefax extends ApiOvhBase {
 	}
 
 	/**
-	 * Generates a new password for your fax account
-	 *
-	 * REST: POST /freefax/{serviceName}/changePassword
-	 * @param serviceName [required] Freefax number
-	 */
-	public String serviceName_changePassword_POST(String serviceName) throws IOException {
-		String qPath = "/freefax/{serviceName}/changePassword";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /freefax/{serviceName}/serviceInfos
-	 * @param serviceName [required] Freefax number
-	 */
-	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
-		String qPath = "/freefax/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhService.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /freefax/{serviceName}/serviceInfos
-	 * @param body [required] New object properties
-	 * @param serviceName [required] Freefax number
-	 */
-	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
-		String qPath = "/freefax/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /freefax/{serviceName}
@@ -89,16 +50,16 @@ public class ApiOvhFreefax extends ApiOvhBase {
 	}
 
 	/**
-	 * Main service attached to freefax
+	 * Get the status of the voicemail. Available only if the line has fax capabilities
 	 *
-	 * REST: GET /freefax/{serviceName}/mainService
+	 * REST: GET /freefax/{serviceName}/voicemail/routing
 	 * @param serviceName [required] Freefax number
 	 */
-	public String serviceName_mainService_GET(String serviceName) throws IOException {
-		String qPath = "/freefax/{serviceName}/mainService";
+	public OvhVoicefaxRoutingEnum serviceName_voicemail_routing_GET(String serviceName) throws IOException {
+		String qPath = "/freefax/{serviceName}/voicemail/routing";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, String.class);
+		return convertTo(resp, OvhVoicefaxRoutingEnum.class);
 	}
 
 	/**
@@ -141,16 +102,18 @@ public class ApiOvhFreefax extends ApiOvhBase {
 	}
 
 	/**
-	 * Get the status of the voicemail. Available only if the line has fax capabilities
+	 * Change the voicemail password. It must be 4 digit
 	 *
-	 * REST: GET /freefax/{serviceName}/voicemail/routing
+	 * REST: POST /freefax/{serviceName}/voicemail/changePassword
+	 * @param password [required] The password
 	 * @param serviceName [required] Freefax number
 	 */
-	public OvhVoicefaxRoutingEnum serviceName_voicemail_routing_GET(String serviceName) throws IOException {
-		String qPath = "/freefax/{serviceName}/voicemail/routing";
+	public void serviceName_voicemail_changePassword_POST(String serviceName, String password) throws IOException {
+		String qPath = "/freefax/{serviceName}/voicemail/changePassword";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhVoicefaxRoutingEnum.class);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "password", password);
+		exec(qPath, "POST", sb.toString(), o);
 	}
 
 	/**
@@ -169,18 +132,55 @@ public class ApiOvhFreefax extends ApiOvhBase {
 	}
 
 	/**
-	 * Change the voicemail password. It must be 4 digit
+	 * Generates a new password for your fax account
 	 *
-	 * REST: POST /freefax/{serviceName}/voicemail/changePassword
-	 * @param password [required] The password
+	 * REST: POST /freefax/{serviceName}/changePassword
 	 * @param serviceName [required] Freefax number
 	 */
-	public void serviceName_voicemail_changePassword_POST(String serviceName, String password) throws IOException {
-		String qPath = "/freefax/{serviceName}/voicemail/changePassword";
+	public String serviceName_changePassword_POST(String serviceName) throws IOException {
+		String qPath = "/freefax/{serviceName}/changePassword";
 		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "password", password);
-		exec(qPath, "POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Main service attached to freefax
+	 *
+	 * REST: GET /freefax/{serviceName}/mainService
+	 * @param serviceName [required] Freefax number
+	 */
+	public String serviceName_mainService_GET(String serviceName) throws IOException {
+		String qPath = "/freefax/{serviceName}/mainService";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /freefax/{serviceName}/serviceInfos
+	 * @param serviceName [required] Freefax number
+	 */
+	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
+		String qPath = "/freefax/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhService.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /freefax/{serviceName}/serviceInfos
+	 * @param body [required] New object properties
+	 * @param serviceName [required] Freefax number
+	 */
+	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
+		String qPath = "/freefax/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**

@@ -14,18 +14,18 @@ public class OvhCapabilities {
 	public OvhFeatureStatusEnum userAccessPolicyStatus;
 
 	/**
-	 * Nexus 1000v feature order status in this Private Cloud ?
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhFeatureStatusEnum nexus1000vStatus;
-
-	/**
 	 * Backup feature order status for this Private Cloud
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhFeatureStatusEnum backupStatus;
+
+	/**
+	 * Nexus 1000v feature order status in this Private Cloud ?
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhFeatureStatusEnum nexus1000vStatus;
 
 	/**
 	 * if true user can be added in this Private Cloud (with POST /dedicatedCloud/{serviceName}/user

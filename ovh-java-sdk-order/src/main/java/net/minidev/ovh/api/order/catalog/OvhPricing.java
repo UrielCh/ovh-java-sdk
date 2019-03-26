@@ -77,18 +77,18 @@ public class OvhPricing {
 	public String pricingStrategy;
 
 	/**
-	 * Install, renew ... What the pricing can be used for
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String[] capacities;
-
-	/**
 	 * Number length of the interval
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long interval;
+
+	/**
+	 * Install, renew ... What the pricing can be used for
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String[] capacities;
 
 	/**
 	 * Minimum quantity

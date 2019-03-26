@@ -7,12 +7,12 @@ public class OvhScreenList {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String callNumber;
+	public OvhScreenListNatureEnum nature;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhScreenListNatureEnum nature;
+	public String callNumber;
 
 	/**
 	 * canBeNull && readOnly

@@ -12,18 +12,18 @@ public class OvhRenewType {
 	public Boolean manualPayment;
 
 	/**
-	 * The service will be deleted at expiration
-	 *
-	 * canBeNull
-	 */
-	public Boolean deleteAtExpiration;
-
-	/**
 	 * period of renew in month
 	 *
 	 * canBeNull
 	 */
 	public Long period;
+
+	/**
+	 * The service will be deleted at expiration
+	 *
+	 * canBeNull
+	 */
+	public Boolean deleteAtExpiration;
 
 	/**
 	 * The service forced to be renewed

@@ -14,12 +14,12 @@ public class OvhVirtualNumberJob {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long deliveryReceipt;
+	public String receiver;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String receiver;
+	public Long deliveryReceipt;
 
 	/**
 	 * canBeNull && readOnly
@@ -34,17 +34,17 @@ public class OvhVirtualNumberJob {
 	/**
 	 * canBeNull && readOnly
 	 */
+	public Long id;
+
+	/**
+	 * canBeNull && readOnly
+	 */
 	public Long numberOfSms;
 
 	/**
 	 * canBeNull && readOnly
 	 */
 	public Long differedDelivery;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public Long id;
 
 	/**
 	 * canBeNull && readOnly

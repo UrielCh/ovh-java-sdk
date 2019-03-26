@@ -28,18 +28,18 @@ public class OvhDump {
 	public Long dumpId;
 
 	/**
-	 * Dump orphan flag ( true if database does not exists )
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean orphan;
-
-	/**
 	 * Creation date of the dump
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date creationDate;
+
+	/**
+	 * Dump orphan flag ( true if database does not exists )
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean orphan;
 
 	/**
 	 * Dump url access

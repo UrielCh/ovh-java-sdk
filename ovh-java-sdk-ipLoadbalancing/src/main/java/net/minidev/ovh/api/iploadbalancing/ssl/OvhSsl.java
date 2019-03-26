@@ -22,18 +22,18 @@ public class OvhSsl {
 	public String serial;
 
 	/**
-	 * Subject of your SSL certificate
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String subject;
-
-	/**
 	 * Human readable name for your ssl certificate, this field is for you
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String displayName;
+
+	/**
+	 * Subject of your SSL certificate
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String subject;
 
 	/**
 	 * Fingerprint of your SSL certificate
