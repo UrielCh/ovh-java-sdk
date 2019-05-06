@@ -7,18 +7,18 @@ import java.util.Date;
  */
 public class OvhCart {
 	/**
-	 * Expiration time
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date expire;
-
-	/**
 	 * Cart identifier
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String cartId;
+
+	/**
+	 * Expiration time
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date expire;
 
 	/**
 	 * Description of your cart

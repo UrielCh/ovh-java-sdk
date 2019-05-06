@@ -19,16 +19,16 @@ public class OvhEmailAlert {
 	public Long alertId;
 
 	/**
-	 * Is this monitor enabled
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean enabled;
-
-	/**
 	 * Alert destination
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String email;
+
+	/**
+	 * Is this monitor enabled
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean enabled;
 }

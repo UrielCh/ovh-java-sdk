@@ -12,18 +12,18 @@ public class OvhConfigurationRequirements {
 	public String label;
 
 	/**
-	 * Type of the configuration item
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String type;
-
-	/**
 	 * Indicates if some particular fields have to be inputed during the creation of `type` resource
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String[] fields;
+
+	/**
+	 * Type of the configuration item
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String type;
 
 	/**
 	 * Indicates if the configuration item is required

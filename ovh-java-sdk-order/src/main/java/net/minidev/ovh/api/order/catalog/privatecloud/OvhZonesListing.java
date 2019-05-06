@@ -12,18 +12,18 @@ public class OvhZonesListing {
 	public OvhZone lim;
 
 	/**
-	 * Zone definition for RBX datacenter
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhZone rbx;
-
-	/**
 	 * Zone definition for SBG datacenter
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhZone sbg;
+
+	/**
+	 * Zone definition for RBX datacenter
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhZone rbx;
 
 	/**
 	 * Zone definition for BHS datacenter

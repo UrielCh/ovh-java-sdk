@@ -31,6 +31,13 @@ public class OvhDomainTaskProgressBar {
 	public Date lastUpdateDate;
 
 	/**
+	 * The estimated end date of the task
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date expectedDoneDate;
+
+	/**
 	 * all the steps of operation
 	 *
 	 * canBeNull && readOnly
@@ -43,13 +50,6 @@ public class OvhDomainTaskProgressBar {
 	 * canBeNull && readOnly
 	 */
 	public Long progress;
-
-	/**
-	 * The estimated end date of the task
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date expectedDoneDate;
 
 	/**
 	 * The status of the task

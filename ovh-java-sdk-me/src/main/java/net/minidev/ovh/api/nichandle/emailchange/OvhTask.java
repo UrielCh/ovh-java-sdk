@@ -22,6 +22,13 @@ public class OvhTask {
 	public String newEmail;
 
 	/**
+	 * Creation date of that request
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date dateRequest;
+
+	/**
 	 * canBeNull && readOnly
 	 */
 	public Long id;
@@ -32,11 +39,4 @@ public class OvhTask {
 	 * canBeNull && readOnly
 	 */
 	public OvhTaskStateEnum state;
-
-	/**
-	 * Creation date of that request
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date dateRequest;
 }

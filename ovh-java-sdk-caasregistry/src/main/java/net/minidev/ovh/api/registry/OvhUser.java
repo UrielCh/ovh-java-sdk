@@ -36,16 +36,16 @@ public class OvhUser {
 	public OvhStatus status;
 
 	/**
-	 * The user name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String username;
-
-	/**
 	 * Date of the resource last update
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date updatedAt;
+
+	/**
+	 * The user name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String username;
 }

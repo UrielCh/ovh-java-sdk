@@ -21,18 +21,18 @@ public class OvhAntiphishing {
 	public String urlPhishing;
 
 	/**
-	 * Current state of the phishing
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhAntiphishingStateEnum state;
-
-	/**
 	 * Internal ID of the phishing entry
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long id;
+
+	/**
+	 * Current state of the phishing
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhAntiphishingStateEnum state;
 
 	/**
 	 * Date of the event

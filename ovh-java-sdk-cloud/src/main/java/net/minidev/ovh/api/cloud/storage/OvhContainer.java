@@ -19,18 +19,18 @@ public class OvhContainer {
 	public String name;
 
 	/**
-	 * Storage id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String id;
-
-	/**
 	 * Total objects stored
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long storedObjects;
+
+	/**
+	 * Storage id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String id;
 
 	/**
 	 * canBeNull && readOnly

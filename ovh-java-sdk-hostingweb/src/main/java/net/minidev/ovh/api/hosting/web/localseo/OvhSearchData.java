@@ -26,18 +26,18 @@ public class OvhSearchData {
 	public String province;
 
 	/**
-	 * Street numero of the location
-	 *
-	 * canBeNull
-	 */
-	public String streetNo;
-
-	/**
 	 * City of the location
 	 *
 	 * canBeNull
 	 */
 	public String city;
+
+	/**
+	 * Street numero of the location
+	 *
+	 * canBeNull
+	 */
+	public String streetNo;
 
 	/**
 	 * Street of the location

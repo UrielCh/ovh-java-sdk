@@ -16,13 +16,6 @@ public class OvhTask {
 	public String databaseName;
 
 	/**
-	 * Last update
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date lastUpdate;
-
-	/**
 	 * DumpId on which the task is working
 	 *
 	 * canBeNull && readOnly
@@ -35,6 +28,13 @@ public class OvhTask {
 	 * canBeNull && readOnly
 	 */
 	public OvhFunctionEnum function;
+
+	/**
+	 * Last update
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date lastUpdate;
 
 	/**
 	 * The id of the task

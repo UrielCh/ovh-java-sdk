@@ -8,13 +8,6 @@ import net.minidev.ovh.api.order.OvhPrice;
  */
 public class OvhRenewOrder {
 	/**
-	 * Creation date of the renew Order
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date date;
-
-	/**
 	 * Retraction date
 	 *
 	 * canBeNull && readOnly
@@ -22,11 +15,11 @@ public class OvhRenewOrder {
 	public Date retractionDate;
 
 	/**
-	 * Password
+	 * Creation date of the renew Order
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String password;
+	public Date date;
 
 	/**
 	 * Public pdf URL of the generated renew Order
@@ -34,6 +27,13 @@ public class OvhRenewOrder {
 	 * canBeNull && readOnly
 	 */
 	public String pdfUrl;
+
+	/**
+	 * Password
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String password;
 
 	/**
 	 * ID of the renew Order

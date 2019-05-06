@@ -5,6 +5,13 @@ package net.minidev.ovh.api.telephony;
  */
 public class OvhPhone {
 	/**
+	 * The phone user password
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String userPassword;
+
+	/**
 	 * Mac Address
 	 *
 	 * canBeNull && readOnly
@@ -17,13 +24,6 @@ public class OvhPhone {
 	 * canBeNull && readOnly
 	 */
 	public OvhProtocolEnum protocol;
-
-	/**
-	 * The phone user password
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String userPassword;
 
 	/**
 	 * Maximum number of lines managed by a phone

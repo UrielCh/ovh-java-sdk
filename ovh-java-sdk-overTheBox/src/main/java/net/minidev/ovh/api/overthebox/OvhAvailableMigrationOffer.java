@@ -35,16 +35,16 @@ public class OvhAvailableMigrationOffer {
 	public Long engagementMonths;
 
 	/**
-	 * Monthly price of the current offer
-	 *
-	 * canBeNull
-	 */
-	public OvhPrice currentOfferPrice;
-
-	/**
 	 * Specify if a hardware is available
 	 *
 	 * canBeNull
 	 */
 	public Boolean hardwareAvailable;
+
+	/**
+	 * Monthly price of the current offer
+	 *
+	 * canBeNull
+	 */
+	public OvhPrice currentOfferPrice;
 }

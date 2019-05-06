@@ -30,18 +30,18 @@ public class OvhTask {
 	public Long id;
 
 	/**
-	 * Zone of your Load Balancer which are updated by current Task
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String[] zones;
-
-	/**
 	 * Creation date of your operation
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date creationDate;
+
+	/**
+	 * Zone of your Load Balancer which are updated by current Task
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String[] zones;
 
 	/**
 	 * Done date of your operation

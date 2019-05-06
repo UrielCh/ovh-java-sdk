@@ -42,18 +42,18 @@ public class OvhPortMapping {
 	public String description;
 
 	/**
-	 * An ip which will access to the defined rule. Default : no restriction applied
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String allowedRemoteIp;
-
-	/**
 	 * ID of the port mapping entry
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long id;
+
+	/**
+	 * An ip which will access to the defined rule. Default : no restriction applied
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String allowedRemoteIp;
 
 	/**
 	 * The IP address of the destination of the packets
@@ -63,16 +63,16 @@ public class OvhPortMapping {
 	public String internalClient;
 
 	/**
-	 * External Port that the modem will listen on. List of externalPorts not available for now in the API : 8, 21, 68, 5060, 21800-21805, 51005
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long externalPortStart;
-
-	/**
 	 * ID of the ongoing todo (NULL if none)
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long taskId;
+
+	/**
+	 * External Port that the modem will listen on. List of externalPorts not available for now in the API : 8, 21, 68, 5060, 21800-21805, 51005
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long externalPortStart;
 }

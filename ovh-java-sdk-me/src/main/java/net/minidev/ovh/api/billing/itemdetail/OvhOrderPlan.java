@@ -12,13 +12,6 @@ public class OvhOrderPlan {
 	public String duration;
 
 	/**
-	 * Product from /order/cart
-	 *
-	 * canBeNull
-	 */
-	public OvhOrderPlanProduct product;
-
-	/**
 	 * Pricing mode used when ordering through /order/cart
 	 *
 	 * canBeNull
@@ -26,11 +19,11 @@ public class OvhOrderPlan {
 	public String pricingMode;
 
 	/**
-	 * Quantity ordered
+	 * Product from /order/cart
 	 *
 	 * canBeNull
 	 */
-	public Long quantity;
+	public OvhOrderPlanProduct product;
 
 	/**
 	 * Plan code used when ordering through /order/cart
@@ -38,4 +31,11 @@ public class OvhOrderPlan {
 	 * canBeNull
 	 */
 	public String code;
+
+	/**
+	 * Quantity ordered
+	 *
+	 * canBeNull
+	 */
+	public Long quantity;
 }

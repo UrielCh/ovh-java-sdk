@@ -5,6 +5,13 @@ package net.minidev.ovh.api.partner;
  */
 public class OvhContact {
 	/**
+	 * Contact's first name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String firstName;
+
+	/**
 	 * Newsletter subscription choice
 	 *
 	 * canBeNull && readOnly
@@ -17,13 +24,6 @@ public class OvhContact {
 	 * canBeNull && readOnly
 	 */
 	public String lastName;
-
-	/**
-	 * Contact's first name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String firstName;
 
 	/**
 	 * Contact's twitter url

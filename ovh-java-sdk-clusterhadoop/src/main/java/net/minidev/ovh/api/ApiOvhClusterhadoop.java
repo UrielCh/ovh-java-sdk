@@ -33,6 +33,32 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	}
 
 	/**
+	 * List available services
+	 *
+	 * REST: GET /cluster/hadoop
+	 */
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/cluster/hadoop";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
+
+	/**
+	 * Start the Cloudera Manager Hadoop Cluster
+	 *
+	 * REST: POST /cluster/hadoop/{serviceName}/start
+	 * @param serviceName [required] The internal name of your cluster
+	 */
+	public OvhTask serviceName_start_POST(String serviceName) throws IOException {
+		String qPath = "/cluster/hadoop/{serviceName}/start";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /cluster/hadoop/{serviceName}/networkAcl/{block}
@@ -86,7 +112,6 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
-	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
 
 	/**
 	 * Add an ACL to your cluster
@@ -104,119 +129,6 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 		addBody(o, "description", description);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get the current consumptions that you will billed for on the next bill
-	 *
-	 * REST: GET /cluster/hadoop/{serviceName}/consumptions
-	 * @param serviceName [required] The internal name of your cluster
-	 */
-	public OvhClusterConsumption serviceName_consumptions_GET(String serviceName) throws IOException {
-		String qPath = "/cluster/hadoop/{serviceName}/consumptions";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhClusterConsumption.class);
-	}
-
-	/**
-	 * Restart a Cloudera Manager service (THIS ACTION WILL RESTART OTHER DEPENDANT SERVICES)
-	 *
-	 * REST: POST /cluster/hadoop/{serviceName}/service/restart
-	 * @param service [required] Name of the service to be restarted
-	 * @param serviceName [required] The internal name of your cluster
-	 */
-	public OvhTask serviceName_service_restart_POST(String serviceName, OvhClusterServiceNameEnum service) throws IOException {
-		String qPath = "/cluster/hadoop/{serviceName}/service/restart";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "service", service);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Stop a Cloudera Manager service (THIS ACTION WILL STOP OTHER DEPENDANT SERVICES)
-	 *
-	 * REST: POST /cluster/hadoop/{serviceName}/service/stop
-	 * @param service [required] Name of the service to be stopped
-	 * @param serviceName [required] The internal name of your cluster
-	 */
-	public OvhTask serviceName_service_stop_POST(String serviceName, OvhClusterServiceNameEnum service) throws IOException {
-		String qPath = "/cluster/hadoop/{serviceName}/service/stop";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "service", service);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Start a Cloudera Manager service
-	 *
-	 * REST: POST /cluster/hadoop/{serviceName}/service/start
-	 * @param service [required] Name of the service to be started
-	 * @param serviceName [required] The internal name of your cluster
-	 */
-	public OvhTask serviceName_service_start_POST(String serviceName, OvhClusterServiceNameEnum service) throws IOException {
-		String qPath = "/cluster/hadoop/{serviceName}/service/start";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "service", service);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * List of orderable Node profiles
-	 *
-	 * REST: GET /cluster/hadoop/{serviceName}/orderableNodeProfiles
-	 * @param serviceName [required] The internal name of your cluster
-	 */
-	public ArrayList<String> serviceName_orderableNodeProfiles_GET(String serviceName) throws IOException {
-		String qPath = "/cluster/hadoop/{serviceName}/orderableNodeProfiles";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Start the Cloudera Manager Hadoop Cluster
-	 *
-	 * REST: POST /cluster/hadoop/{serviceName}/start
-	 * @param serviceName [required] The internal name of your cluster
-	 */
-	public OvhTask serviceName_start_POST(String serviceName) throws IOException {
-		String qPath = "/cluster/hadoop/{serviceName}/start";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Terminate your service. THE CLUSTER WILL BE DELETED. ALL YOUR DATA WILL BE LOST
-	 *
-	 * REST: POST /cluster/hadoop/{serviceName}/terminate
-	 * @param serviceName [required] The internal name of your cluster
-	 */
-	public OvhTask serviceName_terminate_POST(String serviceName) throws IOException {
-		String qPath = "/cluster/hadoop/{serviceName}/terminate";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /cluster/hadoop/{serviceName}
-	 * @param serviceName [required] The internal name of your cluster
-	 */
-	public OvhHadoop serviceName_GET(String serviceName) throws IOException {
-		String qPath = "/cluster/hadoop/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhHadoop.class);
 	}
 
 	/**
@@ -262,6 +174,20 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	}
 
 	/**
+	 * Decommission the node and all the services on it
+	 *
+	 * REST: POST /cluster/hadoop/{serviceName}/node/{hostname}/decommission
+	 * @param serviceName [required] The internal name of your cluster
+	 * @param hostname [required] Hostname of the node
+	 */
+	public OvhTask serviceName_node_hostname_decommission_POST(String serviceName, String hostname) throws IOException {
+		String qPath = "/cluster/hadoop/{serviceName}/node/{hostname}/decommission";
+		StringBuilder sb = path(qPath, serviceName, hostname);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
 	 * Roles (ie set of Hadoop services) of the Node
 	 *
 	 * REST: GET /cluster/hadoop/{serviceName}/node/{hostname}/role
@@ -290,6 +216,21 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 		HashMap<String, Object>o = new HashMap<String, Object>();
 		addBody(o, "type", type);
 		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Start the role on the node
+	 *
+	 * REST: POST /cluster/hadoop/{serviceName}/node/{hostname}/role/{type}/start
+	 * @param serviceName [required] The internal name of your cluster
+	 * @param hostname [required] Hostname of the node
+	 * @param type [required] Role name
+	 */
+	public OvhTask serviceName_node_hostname_role_type_start_POST(String serviceName, String hostname, net.minidev.ovh.api.cluster.hadoop.OvhRoleTypeEnum type) throws IOException {
+		String qPath = "/cluster/hadoop/{serviceName}/node/{hostname}/role/{type}/start";
+		StringBuilder sb = path(qPath, serviceName, hostname, type);
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
@@ -339,21 +280,6 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	}
 
 	/**
-	 * Start the role on the node
-	 *
-	 * REST: POST /cluster/hadoop/{serviceName}/node/{hostname}/role/{type}/start
-	 * @param serviceName [required] The internal name of your cluster
-	 * @param hostname [required] Hostname of the node
-	 * @param type [required] Role name
-	 */
-	public OvhTask serviceName_node_hostname_role_type_start_POST(String serviceName, String hostname, net.minidev.ovh.api.cluster.hadoop.OvhRoleTypeEnum type) throws IOException {
-		String qPath = "/cluster/hadoop/{serviceName}/node/{hostname}/role/{type}/start";
-		StringBuilder sb = path(qPath, serviceName, hostname, type);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
 	 * Stop the role on the node (THIS ACTION WILL STOP OTHER DEPENDANT ROLES)
 	 *
 	 * REST: POST /cluster/hadoop/{serviceName}/node/{hostname}/role/{type}/stop
@@ -364,20 +290,6 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	public OvhTask serviceName_node_hostname_role_type_stop_POST(String serviceName, String hostname, net.minidev.ovh.api.cluster.hadoop.OvhRoleTypeEnum type) throws IOException {
 		String qPath = "/cluster/hadoop/{serviceName}/node/{hostname}/role/{type}/stop";
 		StringBuilder sb = path(qPath, serviceName, hostname, type);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Decommission the node and all the services on it
-	 *
-	 * REST: POST /cluster/hadoop/{serviceName}/node/{hostname}/decommission
-	 * @param serviceName [required] The internal name of your cluster
-	 * @param hostname [required] Hostname of the node
-	 */
-	public OvhTask serviceName_node_hostname_decommission_POST(String serviceName, String hostname) throws IOException {
-		String qPath = "/cluster/hadoop/{serviceName}/node/{hostname}/decommission";
-		StringBuilder sb = path(qPath, serviceName, hostname);
 		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
@@ -398,16 +310,59 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	}
 
 	/**
-	 * Restart the Cloudera Manager Hadoop Cluster (THIS ACTION WILL RESTART EVERY SERVICE)
+	 * Tasks associated with this Hadoop Cluster
 	 *
-	 * REST: POST /cluster/hadoop/{serviceName}/restart
+	 * REST: GET /cluster/hadoop/{serviceName}/task
+	 * @param status [required] Filter the value of status property (=)
 	 * @param serviceName [required] The internal name of your cluster
 	 */
-	public OvhTask serviceName_restart_POST(String serviceName) throws IOException {
-		String qPath = "/cluster/hadoop/{serviceName}/restart";
+	public ArrayList<Long> serviceName_task_GET(String serviceName, OvhOperationStateEnum status) throws IOException {
+		String qPath = "/cluster/hadoop/{serviceName}/task";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
+		query(sb, "status", status);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+	private static TypeReference<ArrayList<Long>> t3 = new TypeReference<ArrayList<Long>>() {};
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /cluster/hadoop/{serviceName}/task/{taskId}
+	 * @param serviceName [required] The internal name of your cluster
+	 * @param taskId [required]
+	 */
+	public OvhTask serviceName_task_taskId_GET(String serviceName, Long taskId) throws IOException {
+		String qPath = "/cluster/hadoop/{serviceName}/task/{taskId}";
+		StringBuilder sb = path(qPath, serviceName, taskId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /cluster/hadoop/{serviceName}/serviceInfos
+	 * @param serviceName [required] The internal name of your cluster
+	 */
+	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
+		String qPath = "/cluster/hadoop/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhService.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /cluster/hadoop/{serviceName}/serviceInfos
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your cluster
+	 */
+	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
+		String qPath = "/cluster/hadoop/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
@@ -427,34 +382,92 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	}
 
 	/**
-	 * Get this object properties
+	 * Restart the Cloudera Manager Hadoop Cluster (THIS ACTION WILL RESTART EVERY SERVICE)
 	 *
-	 * REST: GET /cluster/hadoop/{serviceName}/task/{taskId}
+	 * REST: POST /cluster/hadoop/{serviceName}/restart
 	 * @param serviceName [required] The internal name of your cluster
-	 * @param taskId [required]
 	 */
-	public OvhTask serviceName_task_taskId_GET(String serviceName, Long taskId) throws IOException {
-		String qPath = "/cluster/hadoop/{serviceName}/task/{taskId}";
-		StringBuilder sb = path(qPath, serviceName, taskId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
+	public OvhTask serviceName_restart_POST(String serviceName) throws IOException {
+		String qPath = "/cluster/hadoop/{serviceName}/restart";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
-	 * Tasks associated with this Hadoop Cluster
+	 * Detailed description for each Node profile
 	 *
-	 * REST: GET /cluster/hadoop/{serviceName}/task
-	 * @param status [required] Filter the value of status property (=)
+	 * REST: GET /cluster/hadoop/{serviceName}/nodeBillingProfiles
 	 * @param serviceName [required] The internal name of your cluster
 	 */
-	public ArrayList<Long> serviceName_task_GET(String serviceName, OvhOperationStateEnum status) throws IOException {
-		String qPath = "/cluster/hadoop/{serviceName}/task";
+	public ArrayList<OvhNodeBillingProfile> serviceName_nodeBillingProfiles_GET(String serviceName) throws IOException {
+		String qPath = "/cluster/hadoop/{serviceName}/nodeBillingProfiles";
 		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "status", status);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
+		return convertTo(resp, t4);
 	}
-	private static TypeReference<ArrayList<Long>> t3 = new TypeReference<ArrayList<Long>>() {};
+	private static TypeReference<ArrayList<OvhNodeBillingProfile>> t4 = new TypeReference<ArrayList<OvhNodeBillingProfile>>() {};
+
+	/**
+	 * List of orderable Node profiles
+	 *
+	 * REST: GET /cluster/hadoop/{serviceName}/orderableNodeProfiles
+	 * @param serviceName [required] The internal name of your cluster
+	 */
+	public ArrayList<String> serviceName_orderableNodeProfiles_GET(String serviceName) throws IOException {
+		String qPath = "/cluster/hadoop/{serviceName}/orderableNodeProfiles";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Stop a Cloudera Manager service (THIS ACTION WILL STOP OTHER DEPENDANT SERVICES)
+	 *
+	 * REST: POST /cluster/hadoop/{serviceName}/service/stop
+	 * @param service [required] Name of the service to be stopped
+	 * @param serviceName [required] The internal name of your cluster
+	 */
+	public OvhTask serviceName_service_stop_POST(String serviceName, OvhClusterServiceNameEnum service) throws IOException {
+		String qPath = "/cluster/hadoop/{serviceName}/service/stop";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "service", service);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Start a Cloudera Manager service
+	 *
+	 * REST: POST /cluster/hadoop/{serviceName}/service/start
+	 * @param service [required] Name of the service to be started
+	 * @param serviceName [required] The internal name of your cluster
+	 */
+	public OvhTask serviceName_service_start_POST(String serviceName, OvhClusterServiceNameEnum service) throws IOException {
+		String qPath = "/cluster/hadoop/{serviceName}/service/start";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "service", service);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Restart a Cloudera Manager service (THIS ACTION WILL RESTART OTHER DEPENDANT SERVICES)
+	 *
+	 * REST: POST /cluster/hadoop/{serviceName}/service/restart
+	 * @param service [required] Name of the service to be restarted
+	 * @param serviceName [required] The internal name of your cluster
+	 */
+	public OvhTask serviceName_service_restart_POST(String serviceName, OvhClusterServiceNameEnum service) throws IOException {
+		String qPath = "/cluster/hadoop/{serviceName}/service/restart";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "service", service);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
 
 	/**
 	 * Stop a Cloudera Manager Hadoop Cluster (THIS ACTION WILL STOP EVERY SERVICE)
@@ -479,23 +492,48 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 		String qPath = "/cluster/hadoop/{serviceName}/nodeConsumptions";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t4);
-	}
-	private static TypeReference<ArrayList<OvhNodeConsumption>> t4 = new TypeReference<ArrayList<OvhNodeConsumption>>() {};
-
-	/**
-	 * Detailed description for each Node profile
-	 *
-	 * REST: GET /cluster/hadoop/{serviceName}/nodeBillingProfiles
-	 * @param serviceName [required] The internal name of your cluster
-	 */
-	public ArrayList<OvhNodeBillingProfile> serviceName_nodeBillingProfiles_GET(String serviceName) throws IOException {
-		String qPath = "/cluster/hadoop/{serviceName}/nodeBillingProfiles";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t5);
 	}
-	private static TypeReference<ArrayList<OvhNodeBillingProfile>> t5 = new TypeReference<ArrayList<OvhNodeBillingProfile>>() {};
+	private static TypeReference<ArrayList<OvhNodeConsumption>> t5 = new TypeReference<ArrayList<OvhNodeConsumption>>() {};
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /cluster/hadoop/{serviceName}
+	 * @param serviceName [required] The internal name of your cluster
+	 */
+	public OvhHadoop serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/cluster/hadoop/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhHadoop.class);
+	}
+
+	/**
+	 * Get the current consumptions that you will billed for on the next bill
+	 *
+	 * REST: GET /cluster/hadoop/{serviceName}/consumptions
+	 * @param serviceName [required] The internal name of your cluster
+	 */
+	public OvhClusterConsumption serviceName_consumptions_GET(String serviceName) throws IOException {
+		String qPath = "/cluster/hadoop/{serviceName}/consumptions";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhClusterConsumption.class);
+	}
+
+	/**
+	 * Terminate your service. THE CLUSTER WILL BE DELETED. ALL YOUR DATA WILL BE LOST
+	 *
+	 * REST: POST /cluster/hadoop/{serviceName}/terminate
+	 * @param serviceName [required] The internal name of your cluster
+	 */
+	public OvhTask serviceName_terminate_POST(String serviceName) throws IOException {
+		String qPath = "/cluster/hadoop/{serviceName}/terminate";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
 
 	/**
 	 * Users associated with this Hadoop Cluster
@@ -516,9 +554,9 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	 * REST: POST /cluster/hadoop/{serviceName}/user
 	 * @param clouderaManager [required] Whether or not the User is allowed to access to the Cloudera Manager interface
 	 * @param hue [required] Whether or not the User is allowed to access to the Hue interface
-	 * @param password [required] Password of the User
 	 * @param httpFrontend [required] Whether or not the User is allowed to access to the WebUI interfaces
 	 * @param username [required] Username of the User
+	 * @param password [required] Password of the User
 	 * @param serviceName [required] The internal name of your cluster
 	 */
 	public OvhTask serviceName_user_POST(String serviceName, Boolean clouderaManager, Boolean httpFrontend, Boolean hue, String password, String username) throws IOException {
@@ -530,23 +568,6 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 		addBody(o, "hue", hue);
 		addBody(o, "password", password);
 		addBody(o, "username", username);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Reset the password for a given Hadoop Cluster User
-	 *
-	 * REST: POST /cluster/hadoop/{serviceName}/user/{username}/resetPassword
-	 * @param password [required] Password of the User
-	 * @param serviceName [required] The internal name of your cluster
-	 * @param username [required] The username of the User
-	 */
-	public OvhTask serviceName_user_username_resetPassword_POST(String serviceName, String username, String password) throws IOException {
-		String qPath = "/cluster/hadoop/{serviceName}/user/{username}/resetPassword";
-		StringBuilder sb = path(qPath, serviceName, username);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "password", password);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
 	}
@@ -594,29 +615,20 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 	}
 
 	/**
-	 * Get this object properties
+	 * Reset the password for a given Hadoop Cluster User
 	 *
-	 * REST: GET /cluster/hadoop/{serviceName}/serviceInfos
+	 * REST: POST /cluster/hadoop/{serviceName}/user/{username}/resetPassword
+	 * @param password [required] Password of the User
 	 * @param serviceName [required] The internal name of your cluster
+	 * @param username [required] The username of the User
 	 */
-	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
-		String qPath = "/cluster/hadoop/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhService.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /cluster/hadoop/{serviceName}/serviceInfos
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your cluster
-	 */
-	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
-		String qPath = "/cluster/hadoop/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
+	public OvhTask serviceName_user_username_resetPassword_POST(String serviceName, String username, String password) throws IOException {
+		String qPath = "/cluster/hadoop/{serviceName}/user/{username}/resetPassword";
+		StringBuilder sb = path(qPath, serviceName, username);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "password", password);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
 	}
 
 	/**
@@ -628,7 +640,7 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 		String qPath = "/cluster/hadoop/orderableNodeProfiles";
 		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t5);
+		return convertTo(resp, t4);
 	}
 
 	/**
@@ -641,17 +653,5 @@ public class ApiOvhClusterhadoop extends ApiOvhBase {
 		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhOrderInformations.class);
-	}
-
-	/**
-	 * List available services
-	 *
-	 * REST: GET /cluster/hadoop
-	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/cluster/hadoop";
-		StringBuilder sb = path(qPath);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
 	}
 }

@@ -28,23 +28,16 @@ public class OvhExchangeService {
 	public Date lastUpdateDate;
 
 	/**
-	 * service displayName
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String displayName;
-
-	/**
 	 * canBeNull && readOnly
 	 */
 	public Date sslExpirationDate;
 
 	/**
-	 * maximum number of days that account's password is valid before expiration
+	 * service displayName
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long maxPasswordAge;
+	public String displayName;
 
 	/**
 	 * Spam and Antivirus configuration
@@ -66,6 +59,13 @@ public class OvhExchangeService {
 	 * canBeNull && readOnly
 	 */
 	public Boolean complexityEnabled;
+
+	/**
+	 * maximum number of days that account's password is valid before expiration
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long maxPasswordAge;
 
 	/**
 	 * canBeNull && readOnly
@@ -106,18 +106,18 @@ public class OvhExchangeService {
 	public Long lockoutThreshold;
 
 	/**
-	 * minimum number of characters password must contain
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long minPasswordLength;
-
-	/**
 	 * URL for web interface
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String webUrl;
+
+	/**
+	 * minimum number of characters password must contain
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long minPasswordLength;
 
 	/**
 	 * canBeNull && readOnly

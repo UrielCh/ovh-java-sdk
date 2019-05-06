@@ -26,99 +26,11 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 	}
 
 	/**
-	 * Refresh the Operating system of the Desktop As A Service. All your personnal data are kept.
-	 *
-	 * REST: POST /deskaas/{serviceName}/refresh
-	 * @param serviceName [required] Domain of the service
-	 */
-	public OvhTask serviceName_refresh_POST(String serviceName) throws IOException {
-		String qPath = "/deskaas/{serviceName}/refresh";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /deskaas/{serviceName}/user/task/{taskId}
-	 * @param serviceName [required] Domain of the service
-	 * @param taskId [required] Task id
-	 */
-	public OvhTask serviceName_user_task_taskId_GET(String serviceName, Long taskId) throws IOException {
-		String qPath = "/deskaas/{serviceName}/user/task/{taskId}";
-		StringBuilder sb = path(qPath, serviceName, taskId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Tasks associated with this User
-	 *
-	 * REST: GET /deskaas/{serviceName}/user/task
-	 * @param state [required] Filter the value of state property (=)
-	 * @param serviceName [required] Domain of the service
-	 */
-	public ArrayList<Long> serviceName_user_task_GET(String serviceName, OvhTaskStateEnum state) throws IOException {
-		String qPath = "/deskaas/{serviceName}/user/task";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "state", state);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
-
-	/**
-	 * Change Desktop As A Service user properties
-	 *
-	 * REST: POST /deskaas/{serviceName}/user/changeProperties
-	 * @param email [required]
-	 * @param serviceName [required] Domain of the service
-	 */
-	public OvhTask serviceName_user_changeProperties_POST(String serviceName, String email) throws IOException {
-		String qPath = "/deskaas/{serviceName}/user/changeProperties";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "email", email);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /deskaas/{serviceName}/user
-	 * @param serviceName [required] Domain of the service
-	 */
-	public OvhUser serviceName_user_GET(String serviceName) throws IOException {
-		String qPath = "/deskaas/{serviceName}/user";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhUser.class);
-	}
-
-	/**
-	 * Change Desktop As A Service user password
-	 *
-	 * REST: POST /deskaas/{serviceName}/user/changePassword
-	 * @param password [required] New password for this Desktop As A Service user. It must fits your Desktop As A Service password policy. If this field is empty, a random password will be generated and sent by email.
-	 * @param serviceName [required] Domain of the service
-	 */
-	public OvhTask serviceName_user_changePassword_POST(String serviceName, String password) throws IOException {
-		String qPath = "/deskaas/{serviceName}/user/changePassword";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "password", password);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
 	 * Upgrading the Desktop As A Service to another profile. The Virtual Desktop will not be available during upgrade and has to be restarted. You cannot downgrade a Virtual Desktop
 	 *
 	 * REST: POST /deskaas/{serviceName}/upgrade
-	 * @param planCode [required] New plan of Desktop As A Service
 	 * @param newReference [required] New reference of Desktop As A Service
+	 * @param planCode [required] New plan of Desktop As A Service
 	 * @param serviceName [required] Domain of the service
 	 */
 	public OvhTask serviceName_upgrade_POST(String serviceName, String newReference, String planCode) throws IOException {
@@ -129,19 +41,6 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 		addBody(o, "planCode", planCode);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Terminate your service
-	 *
-	 * REST: POST /deskaas/{serviceName}/terminate
-	 * @param serviceName [required] Domain of the service
-	 */
-	public String serviceName_terminate_POST(String serviceName) throws IOException {
-		String qPath = "/deskaas/{serviceName}/terminate";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, String.class);
 	}
 
 	/**
@@ -171,6 +70,7 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
+	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
 
 	/**
 	 * Get this object properties
@@ -187,6 +87,26 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 	}
 
 	/**
+	 * Launch a contact change procedure
+	 *
+	 * REST: POST /deskaas/{serviceName}/changeContact
+	 * @param contactAdmin [required] The contact to set as admin contact
+	 * @param contactTech [required] The contact to set as tech contact
+	 * @param contactBilling [required] The contact to set as billing contact
+	 * @param serviceName [required] Domain of the service
+	 */
+	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactBilling, String contactTech) throws IOException {
+		String qPath = "/deskaas/{serviceName}/changeContact";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "contactAdmin", contactAdmin);
+		addBody(o, "contactBilling", contactBilling);
+		addBody(o, "contactTech", contactTech);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t1);
+	}
+
+	/**
 	 * Reboot the Operating system of the Cloud Desktop.
 	 *
 	 * REST: POST /deskaas/{serviceName}/reboot
@@ -200,13 +120,151 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 	}
 
 	/**
-	 * New console access
+	 * Get this object properties
 	 *
-	 * REST: POST /deskaas/{serviceName}/console
+	 * REST: GET /deskaas/{serviceName}/user
 	 * @param serviceName [required] Domain of the service
 	 */
-	public OvhTask serviceName_console_POST(String serviceName) throws IOException {
-		String qPath = "/deskaas/{serviceName}/console";
+	public OvhUser serviceName_user_GET(String serviceName) throws IOException {
+		String qPath = "/deskaas/{serviceName}/user";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhUser.class);
+	}
+
+	/**
+	 * Change Desktop As A Service user properties
+	 *
+	 * REST: POST /deskaas/{serviceName}/user/changeProperties
+	 * @param email [required]
+	 * @param serviceName [required] Domain of the service
+	 */
+	public OvhTask serviceName_user_changeProperties_POST(String serviceName, String email) throws IOException {
+		String qPath = "/deskaas/{serviceName}/user/changeProperties";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "email", email);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Change Desktop As A Service user password
+	 *
+	 * REST: POST /deskaas/{serviceName}/user/changePassword
+	 * @param password [required] New password for this Desktop As A Service user. It must fits your Desktop As A Service password policy. If this field is empty, a random password will be generated and sent by email.
+	 * @param serviceName [required] Domain of the service
+	 */
+	public OvhTask serviceName_user_changePassword_POST(String serviceName, String password) throws IOException {
+		String qPath = "/deskaas/{serviceName}/user/changePassword";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "password", password);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Tasks associated with this User
+	 *
+	 * REST: GET /deskaas/{serviceName}/user/task
+	 * @param state [required] Filter the value of state property (=)
+	 * @param serviceName [required] Domain of the service
+	 */
+	public ArrayList<Long> serviceName_user_task_GET(String serviceName, OvhTaskStateEnum state) throws IOException {
+		String qPath = "/deskaas/{serviceName}/user/task";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "state", state);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /deskaas/{serviceName}/user/task/{taskId}
+	 * @param serviceName [required] Domain of the service
+	 * @param taskId [required] Task id
+	 */
+	public OvhTask serviceName_user_task_taskId_GET(String serviceName, Long taskId) throws IOException {
+		String qPath = "/deskaas/{serviceName}/user/task/{taskId}";
+		StringBuilder sb = path(qPath, serviceName, taskId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /deskaas/{serviceName}
+	 * @param serviceName [required] Domain of the service
+	 */
+	public OvhDeskaas serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/deskaas/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhDeskaas.class);
+	}
+
+	/**
+	 * Confirm termination of your service
+	 *
+	 * REST: POST /deskaas/{serviceName}/confirmTermination
+	 * @param futureUse [required] What next after your termination request
+	 * @param reason [required] Reason of your termination request
+	 * @param commentary [required] Commentary about your termination request
+	 * @param token [required] The termination token sent by mail to the admin contact
+	 * @param serviceName [required] Domain of the service
+	 */
+	public String serviceName_confirmTermination_POST(String serviceName, String commentary, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String token) throws IOException {
+		String qPath = "/deskaas/{serviceName}/confirmTermination";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "commentary", commentary);
+		addBody(o, "futureUse", futureUse);
+		addBody(o, "reason", reason);
+		addBody(o, "token", token);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Change the Virtual Desktop alias
+	 *
+	 * REST: POST /deskaas/{serviceName}/changeAlias
+	 * @param alias [required] New alias of Desktop As A Service
+	 * @param serviceName [required] Domain of the service
+	 */
+	public OvhTask serviceName_changeAlias_POST(String serviceName, String alias) throws IOException {
+		String qPath = "/deskaas/{serviceName}/changeAlias";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "alias", alias);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Terminate your service
+	 *
+	 * REST: POST /deskaas/{serviceName}/terminate
+	 * @param serviceName [required] Domain of the service
+	 */
+	public String serviceName_terminate_POST(String serviceName) throws IOException {
+		String qPath = "/deskaas/{serviceName}/terminate";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Refresh the Operating system of the Desktop As A Service. All your personnal data are kept.
+	 *
+	 * REST: POST /deskaas/{serviceName}/refresh
+	 * @param serviceName [required] Domain of the service
+	 */
+	public OvhTask serviceName_refresh_POST(String serviceName) throws IOException {
+		String qPath = "/deskaas/{serviceName}/refresh";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
@@ -239,74 +297,16 @@ public class ApiOvhDeskaas extends ApiOvhBase {
 	}
 
 	/**
-	 * Confirm termination of your service
+	 * New console access
 	 *
-	 * REST: POST /deskaas/{serviceName}/confirmTermination
-	 * @param futureUse What next after your termination request
-	 * @param reason Reason of your termination request
-	 * @param commentary Commentary about your termination request
-	 * @param token [required] The termination token sent by mail to the admin contact
+	 * REST: POST /deskaas/{serviceName}/console
 	 * @param serviceName [required] Domain of the service
 	 */
-	public String serviceName_confirmTermination_POST(String serviceName, String commentary, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String token) throws IOException {
-		String qPath = "/deskaas/{serviceName}/confirmTermination";
+	public OvhTask serviceName_console_POST(String serviceName) throws IOException {
+		String qPath = "/deskaas/{serviceName}/console";
 		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "commentary", commentary);
-		addBody(o, "futureUse", futureUse);
-		addBody(o, "reason", reason);
-		addBody(o, "token", token);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /deskaas/{serviceName}
-	 * @param serviceName [required] Domain of the service
-	 */
-	public OvhDeskaas serviceName_GET(String serviceName) throws IOException {
-		String qPath = "/deskaas/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhDeskaas.class);
-	}
-
-	/**
-	 * Change the Virtual Desktop alias
-	 *
-	 * REST: POST /deskaas/{serviceName}/changeAlias
-	 * @param alias [required] New alias of Desktop As A Service
-	 * @param serviceName [required] Domain of the service
-	 */
-	public OvhTask serviceName_changeAlias_POST(String serviceName, String alias) throws IOException {
-		String qPath = "/deskaas/{serviceName}/changeAlias";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "alias", alias);
-		String resp = exec(qPath, "POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Launch a contact change procedure
-	 *
-	 * REST: POST /deskaas/{serviceName}/changeContact
-	 * @param contactAdmin The contact to set as admin contact
-	 * @param contactTech The contact to set as tech contact
-	 * @param contactBilling The contact to set as billing contact
-	 * @param serviceName [required] Domain of the service
-	 */
-	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactBilling, String contactTech) throws IOException {
-		String qPath = "/deskaas/{serviceName}/changeContact";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "contactAdmin", contactAdmin);
-		addBody(o, "contactBilling", contactBilling);
-		addBody(o, "contactTech", contactTech);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t1);
 	}
 
 	/**

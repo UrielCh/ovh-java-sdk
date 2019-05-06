@@ -14,6 +14,13 @@ public class OvhNewProjectInfo {
 	public Long[] agreements;
 
 	/**
+	 * Error to fix before trying to create a new Public Cloud project
+	 *
+	 * canBeNull
+	 */
+	public OvhNewProjectInfoError error;
+
+	/**
 	 * Cloud project order
 	 *
 	 * canBeNull

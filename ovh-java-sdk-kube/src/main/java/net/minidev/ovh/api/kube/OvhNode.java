@@ -7,18 +7,18 @@ import java.util.Date;
  */
 public class OvhNode {
 	/**
-	 * True if the node is up to date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean isUpToDate;
-
-	/**
 	 * Public Cloud flavor name
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String flavor;
+
+	/**
+	 * True if the node is up to date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean isUpToDate;
 
 	/**
 	 * Creation date
@@ -63,16 +63,16 @@ public class OvhNode {
 	public String projectId;
 
 	/**
-	 * Status
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhNodeStatus status;
-
-	/**
 	 * Node last update date
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date updatedAt;
+
+	/**
+	 * Status
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhNodeStatus status;
 }

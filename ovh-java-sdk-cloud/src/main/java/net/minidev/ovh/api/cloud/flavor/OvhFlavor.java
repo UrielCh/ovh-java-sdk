@@ -26,13 +26,6 @@ public class OvhFlavor {
 	public Long inboundBandwidth;
 
 	/**
-	 * OS to install on
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String osType;
-
-	/**
 	 * Available in stock
 	 *
 	 * canBeNull && readOnly
@@ -40,18 +33,25 @@ public class OvhFlavor {
 	public Boolean available;
 
 	/**
-	 * Plan codes to order instances
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhFlavorPlanCodes planCodes;
-
-	/**
 	 * Flavor name
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String name;
+
+	/**
+	 * OS to install on
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String osType;
+
+	/**
+	 * Plan codes to order instances
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhFlavorPlanCodes planCodes;
 
 	/**
 	 * Flavor id
@@ -68,18 +68,18 @@ public class OvhFlavor {
 	public String type;
 
 	/**
-	 * Flavor region
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String region;
-
-	/**
 	 * Number of VCPUs
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long vcpus;
+
+	/**
+	 * Flavor region
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String region;
 
 	/**
 	 * Ram quantity (Gio)

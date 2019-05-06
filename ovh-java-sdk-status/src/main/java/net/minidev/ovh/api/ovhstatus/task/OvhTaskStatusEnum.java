@@ -1,7 +1,7 @@
 package net.minidev.ovh.api.ovhstatus.task;
 
 /**
- * TaskStatusEnum
+ * Description not available
  */
 public enum OvhTaskStatusEnum {
 	planned("planned"),

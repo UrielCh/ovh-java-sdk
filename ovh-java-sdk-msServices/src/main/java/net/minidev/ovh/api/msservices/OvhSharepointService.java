@@ -54,16 +54,16 @@ public class OvhSharepointService {
 	public OvhServiceStateEnum state;
 
 	/**
-	 * Sharepoint url
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String url;
-
-	/**
 	 * Task pending id
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long taskPendingId;
+
+	/**
+	 * Sharepoint url
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String url;
 }

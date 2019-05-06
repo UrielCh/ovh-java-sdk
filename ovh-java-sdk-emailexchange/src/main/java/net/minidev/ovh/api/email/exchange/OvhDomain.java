@@ -19,13 +19,6 @@ public class OvhDomain {
 	public String[] srvRecord;
 
 	/**
-	 * Indicate if this domain is an alias for another domain
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean isAliasDomain;
-
-	/**
 	 * If true this is an organization (Exchange 2010 only)
 	 *
 	 * canBeNull && readOnly
@@ -33,11 +26,11 @@ public class OvhDomain {
 	public Boolean main;
 
 	/**
-	 * Domain MX record configured in DNS
+	 * Indicate if this domain is an alias for another domain
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String[] mxRecord;
+	public Boolean isAliasDomain;
 
 	/**
 	 * Domain validation status
@@ -52,6 +45,13 @@ public class OvhDomain {
 	 * canBeNull && readOnly
 	 */
 	public String[] domainAliases;
+
+	/**
+	 * Domain MX record configured in DNS
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String[] mxRecord;
 
 	/**
 	 * Domain type

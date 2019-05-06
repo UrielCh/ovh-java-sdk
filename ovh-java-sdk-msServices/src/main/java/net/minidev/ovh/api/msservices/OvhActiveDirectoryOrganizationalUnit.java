@@ -19,18 +19,18 @@ public class OvhActiveDirectoryOrganizationalUnit {
 	public Long minPasswordAge;
 
 	/**
-	 * Account lock time (in minutes) when too much passwords have been tried
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long lockoutDuration;
-
-	/**
 	 * Maximum number of password tries before account locking
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long lockoutThreshold;
+
+	/**
+	 * Account lock time (in minutes) when too much passwords have been tried
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long lockoutDuration;
 
 	/**
 	 * Minimum number of characters passwords must contain
@@ -61,6 +61,13 @@ public class OvhActiveDirectoryOrganizationalUnit {
 	public Long lockoutObservationWindow;
 
 	/**
+	 * Task pending id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long taskPendingId;
+
+	/**
 	 * Flag indicating if passwords should be forced to follow Microsoft's password guidelines
 	 *
 	 * canBeNull && readOnly
@@ -73,11 +80,4 @@ public class OvhActiveDirectoryOrganizationalUnit {
 	 * canBeNull && readOnly
 	 */
 	public Long maxPasswordAge;
-
-	/**
-	 * Task pending id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long taskPendingId;
 }

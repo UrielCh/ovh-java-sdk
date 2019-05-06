@@ -21,13 +21,6 @@ public class OvhInstance {
 	public Date created;
 
 	/**
-	 * Instance name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String name;
-
-	/**
 	 * Instance flavor id
 	 *
 	 * canBeNull && readOnly
@@ -35,11 +28,11 @@ public class OvhInstance {
 	public String flavorId;
 
 	/**
-	 * Instance IP addresses
+	 * Instance name
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhIpAddress[] ipAddresses;
+	public String name;
 
 	/**
 	 * Instance monthly billing status
@@ -47,6 +40,13 @@ public class OvhInstance {
 	 * canBeNull && readOnly
 	 */
 	public OvhMonthlyBilling monthlyBilling;
+
+	/**
+	 * Instance IP addresses
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhIpAddress[] ipAddresses;
 
 	/**
 	 * Instance id

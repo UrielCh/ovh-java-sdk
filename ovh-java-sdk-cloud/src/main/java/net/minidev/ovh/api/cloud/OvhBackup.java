@@ -21,18 +21,18 @@ public class OvhBackup {
 	public Date createdAt;
 
 	/**
-	 * Instance id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String instanceId;
-
-	/**
 	 * Executions logs
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhExecution[] executions;
+
+	/**
+	 * Instance id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String instanceId;
 
 	/**
 	 * Workflow name identifier

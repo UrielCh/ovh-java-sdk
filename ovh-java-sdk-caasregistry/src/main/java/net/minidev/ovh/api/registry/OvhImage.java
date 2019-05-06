@@ -38,16 +38,16 @@ public class OvhImage {
 	public String id;
 
 	/**
-	 * The status of the image
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhStatus status;
-
-	/**
 	 * Date of the resource last update
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date updatedAt;
+
+	/**
+	 * The status of the image
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhStatus status;
 }

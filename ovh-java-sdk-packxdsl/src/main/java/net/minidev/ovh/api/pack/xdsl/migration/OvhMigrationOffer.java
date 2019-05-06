@@ -43,18 +43,18 @@ public class OvhMigrationOffer {
 	public OvhContract[] contracts;
 
 	/**
-	 * Number of months of engagement
-	 *
-	 * canBeNull
-	 */
-	public Long engageMonths;
-
-	/**
 	 * List of sub services to delete
 	 *
 	 * canBeNull
 	 */
 	public OvhSubServiceToDelete[] subServicesToDelete;
+
+	/**
+	 * Number of months of engagement
+	 *
+	 * canBeNull
+	 */
+	public Long engageMonths;
 
 	/**
 	 * URL of the offer

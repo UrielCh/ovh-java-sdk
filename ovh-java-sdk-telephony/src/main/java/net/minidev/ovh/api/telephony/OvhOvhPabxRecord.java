@@ -14,18 +14,18 @@ public class OvhOvhPabxRecord {
 	public Long duration;
 
 	/**
-	 * The agent number of the recorded call
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String agent;
-
-	/**
 	 * The caller number of the recorded call
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String callerIdNumber;
+
+	/**
+	 * The agent number of the recorded call
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String agent;
 
 	/**
 	 * The begin date of the recorded call

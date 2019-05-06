@@ -26,16 +26,16 @@ public class OvhSnat {
 	public String destinationNet;
 
 	/**
-	 * canBeNull && readOnly
-	 */
-	public Long id;
-
-	/**
 	 * New source IP
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String newSourceNet;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public Long id;
 
 	/**
 	 * New destination port number

@@ -80,18 +80,18 @@ public class OvhDedicatedCloud {
 	public String servicePackName;
 
 	/**
-	 * Service name of your Private Cloud
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String serviceName;
-
-	/**
 	 * Access policy of your Private Cloud : opened to every IPs or filtered
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhUserAccessPolicyEnum userAccessPolicy;
+
+	/**
+	 * Service name of your Private Cloud
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String serviceName;
 
 	/**
 	 * Url to the Private Cloud certified interface

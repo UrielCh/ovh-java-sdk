@@ -105,18 +105,18 @@ public class OvhVisibilityCheckResultResponse {
 	public String zip;
 
 	/**
-	 * A valid url for the location's website
-	 *
-	 * canBeNull
-	 */
-	public String website;
-
-	/**
 	 * The street type for Spain
 	 *
 	 * canBeNull
 	 */
 	public String streetType;
+
+	/**
+	 * A valid url for the location's website
+	 *
+	 * canBeNull
+	 */
+	public String website;
 
 	/**
 	 * The location's street number
@@ -168,18 +168,18 @@ public class OvhVisibilityCheckResultResponse {
 	public OvhFieldStatusEnum provinceStatus;
 
 	/**
-	 * The location's name used for this listing
-	 *
-	 * canBeNull
-	 */
-	public String name;
-
-	/**
 	 * City of the location (sync status)
 	 *
 	 * canBeNull
 	 */
 	public OvhFieldStatusEnum cityStatus;
+
+	/**
+	 * The location's name used for this listing
+	 *
+	 * canBeNull
+	 */
+	public String name;
 
 	/**
 	 * The listing url on the directory website

@@ -14,18 +14,18 @@ public class OvhAddress {
 	public String voice;
 
 	/**
-	 * State of province
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String stateOrProvince;
-
-	/**
 	 * Array of street name
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String[] streets;
+
+	/**
+	 * State of province
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String stateOrProvince;
 
 	/**
 	 * City

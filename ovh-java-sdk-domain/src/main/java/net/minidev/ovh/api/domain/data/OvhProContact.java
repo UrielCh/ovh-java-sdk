@@ -12,18 +12,18 @@ public class OvhProContact {
 	public String authority;
 
 	/**
-	 * Description of your job
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String jobDescription;
-
-	/**
 	 * License number given by the authority
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String licenseNumber;
+
+	/**
+	 * Description of your job
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String jobDescription;
 
 	/**
 	 * .pro Contact ID

@@ -47,13 +47,6 @@ public class OvhAddress {
 	public String city;
 
 	/**
-	 * Name of the housing complex, if any
-	 *
-	 * canBeNull
-	 */
-	public String housingComplex;
-
-	/**
 	 * Street number, usually a number and an indication if applicable (B for bis, T for ter, etc...) and hidden for unlisted number
 	 *
 	 * canBeNull
@@ -61,11 +54,11 @@ public class OvhAddress {
 	public String streetNumber;
 
 	/**
-	 * Identifier of the stair, if any
+	 * Name of the housing complex, if any
 	 *
 	 * canBeNull
 	 */
-	public String stairs;
+	public String housingComplex;
 
 	/**
 	 * Street code, an unique identifier of the street, hidden for unlisted number
@@ -73,6 +66,13 @@ public class OvhAddress {
 	 * canBeNull
 	 */
 	public String streetCode;
+
+	/**
+	 * Identifier of the stair, if any
+	 *
+	 * canBeNull
+	 */
+	public String stairs;
 
 	/**
 	 * Identifier of the floor, if any

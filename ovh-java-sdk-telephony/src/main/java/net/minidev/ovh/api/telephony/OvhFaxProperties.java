@@ -12,11 +12,6 @@ public class OvhFaxProperties {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhFaxQualityEnum faxQuality;
-
-	/**
-	 * canBeNull && readOnly
-	 */
 	public String callNumber;
 
 	/**
@@ -32,12 +27,12 @@ public class OvhFaxProperties {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String countryCode;
+	public OvhFaxQualityEnum faxQuality;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String fromName;
+	public String countryCode;
 
 	/**
 	 * canBeNull && readOnly
@@ -47,12 +42,17 @@ public class OvhFaxProperties {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhFaxSendingTries faxMaxCall;
+	public String fromName;
 
 	/**
 	 * canBeNull && readOnly
 	 */
 	public OvhFaxMailFormatEnum mailFormat;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public OvhFaxSendingTries faxMaxCall;
 
 	/**
 	 * canBeNull && readOnly

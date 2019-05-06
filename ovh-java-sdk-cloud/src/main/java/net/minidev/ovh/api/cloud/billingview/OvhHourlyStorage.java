@@ -12,18 +12,18 @@ public class OvhHourlyStorage {
 	public Double totalPrice;
 
 	/**
-	 * Storage incoming bandwidth details
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhBandwidthStorage incomingBandwidth;
-
-	/**
 	 * Information about stored data
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhStoredStorage stored;
+
+	/**
+	 * Storage incoming bandwidth details
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhBandwidthStorage incomingBandwidth;
 
 	/**
 	 * Storage outgoing bandwidth details
@@ -33,16 +33,16 @@ public class OvhHourlyStorage {
 	public OvhBandwidthStorage outgoingBandwidth;
 
 	/**
-	 * Region
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String region;
-
-	/**
 	 * Storage type
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhStorageTypeEnum type;
+
+	/**
+	 * Region
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String region;
 }

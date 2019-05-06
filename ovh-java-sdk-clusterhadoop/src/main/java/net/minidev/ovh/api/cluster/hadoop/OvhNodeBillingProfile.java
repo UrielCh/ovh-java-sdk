@@ -42,16 +42,16 @@ public class OvhNodeBillingProfile {
 	public Long nbCPUThreads;
 
 	/**
-	 * Total capacity available for HDFS
-	 *
-	 * canBeNull
-	 */
-	public OvhUnitAndValue<Long> diskCapacity;
-
-	/**
 	 * Network speed of the link used for the Hadoop process
 	 *
 	 * canBeNull
 	 */
 	public OvhUnitAndValue<Long> networkBandwidth;
+
+	/**
+	 * Total capacity available for HDFS
+	 *
+	 * canBeNull
+	 */
+	public OvhUnitAndValue<Long> diskCapacity;
 }

@@ -50,12 +50,12 @@ public class OvhVPS {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long vcore;
+	public String name;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String name;
+	public Long vcore;
 
 	/**
 	 * canBeNull && readOnly

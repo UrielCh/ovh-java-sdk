@@ -51,18 +51,18 @@ public class OvhXdslEmailPro {
 	public String login;
 
 	/**
-	 * Pending tasks for this account
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long taskPendingId;
-
-	/**
 	 * Default email for this mailbox
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String primaryEmailAddress;
+
+	/**
+	 * Pending tasks for this account
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long taskPendingId;
 
 	/**
 	 * Account first name

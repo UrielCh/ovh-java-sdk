@@ -1,7 +1,7 @@
 package net.minidev.ovh.api.distribution.image;
 
 /**
- * service
+ * Description not available
  */
 public enum OvhService {
 	vps("vps"),

@@ -15,16 +15,16 @@ public class OvhUser {
 	public OvhDatabase[] databases;
 
 	/**
-	 * Creation date of the user
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date creationDate;
-
-	/**
 	 * User name used to connect to your databases
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String userName;
+
+	/**
+	 * Creation date of the user
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date creationDate;
 }

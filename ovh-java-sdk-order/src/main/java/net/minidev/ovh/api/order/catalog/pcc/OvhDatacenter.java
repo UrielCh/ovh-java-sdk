@@ -42,11 +42,11 @@ public class OvhDatacenter {
 	public OvhCountryEnum countryCode;
 
 	/**
-	 * Describes if options can be ordered on a Datacenter
+	 * Zone Code of a datacenter
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Boolean orderableOptions;
+	public String zoneFullName;
 
 	/**
 	 * List of filers add in case of a No Pack order
@@ -56,11 +56,11 @@ public class OvhDatacenter {
 	public String[] storagesNoPack;
 
 	/**
-	 * Zone Code of a datacenter
+	 * Describes if options can be ordered on a Datacenter
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String zoneFullName;
+	public Boolean orderableOptions;
 
 	/**
 	 * Describes Private Cloud Hypervisors
@@ -70,18 +70,18 @@ public class OvhDatacenter {
 	public OvhHypervisor[] hypervisors;
 
 	/**
-	 * Zone Name of a datacenter
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String zoneName;
-
-	/**
 	 * Name of the default hypervisor of a Datacenter
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String defaultHypervisor;
+
+	/**
+	 * Zone Name of a datacenter
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String zoneName;
 
 	/**
 	 * Main plan code to use for a Datacenter

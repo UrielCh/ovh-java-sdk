@@ -21,20 +21,6 @@ public class OvhAccount {
 	public Boolean spamDetected;
 
 	/**
-	 * Account display name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String displayName;
-
-	/**
-	 * Time of account's password last update
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date passwordLastUpdate;
-
-	/**
 	 * Last update
 	 *
 	 * canBeNull && readOnly
@@ -42,11 +28,25 @@ public class OvhAccount {
 	public Date lastUpdateDate;
 
 	/**
+	 * Account display name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String displayName;
+
+	/**
 	 * Ticket number of spam detection
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long spamTicketNumber;
+
+	/**
+	 * Time of account's password last update
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date passwordLastUpdate;
 
 	/**
 	 * Account login

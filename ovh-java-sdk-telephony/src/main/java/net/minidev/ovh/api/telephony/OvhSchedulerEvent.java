@@ -26,18 +26,18 @@ public class OvhSchedulerEvent {
 	public String description;
 
 	/**
-	 * The ending date of the event
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date dateEnd;
-
-	/**
 	 * The category of the event
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhSchedulerCategoryEnum categories;
+
+	/**
+	 * The ending date of the event
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date dateEnd;
 
 	/**
 	 * canBeNull && readOnly

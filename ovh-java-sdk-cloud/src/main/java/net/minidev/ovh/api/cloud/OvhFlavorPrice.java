@@ -28,16 +28,16 @@ public class OvhFlavorPrice {
 	public String flavorId;
 
 	/**
-	 * Monthly flavor price
-	 *
-	 * canBeNull
-	 */
-	public OvhPrice monthlyPrice;
-
-	/**
 	 * Flavor region
 	 *
 	 * canBeNull
 	 */
 	public String region;
+
+	/**
+	 * Monthly flavor price
+	 *
+	 * canBeNull
+	 */
+	public OvhPrice monthlyPrice;
 }

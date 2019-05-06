@@ -18,22 +18,6 @@ public class ApiOvhDistributionimage extends ApiOvhBase {
 	}
 
 	/**
-	 * Show image details
-	 *
-	 * REST: GET /distribution/image/{serviceType}/{imageName}
-	 * @param serviceType [required] service type name
-	 * @param imageName [required] image name
-	 *
-	 * API beta
-	 */
-	public OvhImage serviceType_imageName_GET(net.minidev.ovh.api.distribution.image.OvhService serviceType, String imageName) throws IOException {
-		String qPath = "/distribution/image/{serviceType}/{imageName}";
-		StringBuilder sb = path(qPath, serviceType, imageName);
-		String resp = execN(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhImage.class);
-	}
-
-	/**
 	 * List images for a service
 	 *
 	 * REST: GET /distribution/image/{serviceType}
@@ -48,4 +32,20 @@ public class ApiOvhDistributionimage extends ApiOvhBase {
 		return convertTo(resp, t1);
 	}
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
+
+	/**
+	 * Show image details
+	 *
+	 * REST: GET /distribution/image/{serviceType}/{imageName}
+	 * @param serviceType [required] service type name
+	 * @param imageName [required] image name
+	 *
+	 * API beta
+	 */
+	public OvhImage serviceType_imageName_GET(net.minidev.ovh.api.distribution.image.OvhService serviceType, String imageName) throws IOException {
+		String qPath = "/distribution/image/{serviceType}/{imageName}";
+		StringBuilder sb = path(qPath, serviceType, imageName);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhImage.class);
+	}
 }

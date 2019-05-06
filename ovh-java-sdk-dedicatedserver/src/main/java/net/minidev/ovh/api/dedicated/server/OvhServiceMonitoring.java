@@ -19,18 +19,18 @@ public class OvhServiceMonitoring {
 	public Long port;
 
 	/**
-	 * The ip to monitor
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String ip;
-
-	/**
 	 * The expected return
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String challengeText;
+
+	/**
+	 * The ip to monitor
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String ip;
 
 	/**
 	 * The test interval in seconds

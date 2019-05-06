@@ -55,13 +55,6 @@ public class OvhTemplateModem {
 	public Date creationDate;
 
 	/**
-	 * Do not apply these parameters from template. You can use parametersCapabilities to know availability
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhParametersToIgnore parametersToIgnore;
-
-	/**
 	 * IP Address of the DMZ
 	 *
 	 * canBeNull && readOnly
@@ -69,11 +62,11 @@ public class OvhTemplateModem {
 	public String dmzIP;
 
 	/**
-	 * List of DHCP for this template
+	 * Do not apply these parameters from template. You can use parametersCapabilities to know availability
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhDHCP[] DHCP;
+	public OvhParametersToIgnore parametersToIgnore;
 
 	/**
 	 * Size of the Maximum Transmission Unit on the modem's interfaces
@@ -81,4 +74,11 @@ public class OvhTemplateModem {
 	 * canBeNull && readOnly
 	 */
 	public OvhMTUSizeEnum mtuSize;
+
+	/**
+	 * List of DHCP for this template
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhDHCP[] DHCP;
 }

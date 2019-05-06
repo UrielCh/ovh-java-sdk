@@ -51,18 +51,18 @@ public class OvhBackendTCPServer {
 	public Long backendId;
 
 	/**
-	 * Id of your server
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long serverId;
-
-	/**
 	 * SSL ciphering. Probes will also be sent ciphered
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean ssl;
+
+	/**
+	 * Id of your server
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long serverId;
 
 	/**
 	 * Probe state. Default: 'false'

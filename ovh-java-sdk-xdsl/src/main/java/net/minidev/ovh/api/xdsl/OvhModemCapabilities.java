@@ -27,22 +27,22 @@ public class OvhModemCapabilities {
 	/**
 	 * canBeNull
 	 */
-	public Boolean canReset;
-
-	/**
-	 * canBeNull
-	 */
 	public Boolean canChangeDHCP;
 
 	/**
 	 * canBeNull
 	 */
-	public Boolean canChangeManagement;
+	public Boolean canReset;
 
 	/**
 	 * canBeNull
 	 */
 	public Boolean canChangeDMZ;
+
+	/**
+	 * canBeNull
+	 */
+	public Boolean canChangeManagement;
 
 	/**
 	 * canBeNull

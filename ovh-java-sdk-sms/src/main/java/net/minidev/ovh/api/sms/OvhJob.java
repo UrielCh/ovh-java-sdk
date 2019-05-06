@@ -14,6 +14,11 @@ public class OvhJob {
 	/**
 	 * canBeNull && readOnly
 	 */
+	public String receiver;
+
+	/**
+	 * canBeNull && readOnly
+	 */
 	public Long messageLength;
 
 	/**
@@ -24,7 +29,7 @@ public class OvhJob {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String receiver;
+	public String sender;
 
 	/**
 	 * canBeNull && readOnly
@@ -34,7 +39,7 @@ public class OvhJob {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String sender;
+	public Long numberOfSms;
 
 	/**
 	 * canBeNull && readOnly
@@ -45,11 +50,6 @@ public class OvhJob {
 	 * canBeNull && readOnly
 	 */
 	public Long id;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public Long numberOfSms;
 
 	/**
 	 * canBeNull && readOnly

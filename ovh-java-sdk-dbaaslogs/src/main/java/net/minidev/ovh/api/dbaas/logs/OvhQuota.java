@@ -26,13 +26,6 @@ public class OvhQuota {
 	public Long curNbRole;
 
 	/**
-	 * Current number of stream booked
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long curNbStream;
-
-	/**
 	 * Current number of alias booked
 	 *
 	 * canBeNull && readOnly
@@ -40,11 +33,11 @@ public class OvhQuota {
 	public Long curNbAlias;
 
 	/**
-	 * Maximum number of stream allowed
+	 * Current number of stream booked
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long maxNbStream;
+	public Long curNbStream;
 
 	/**
 	 * Maximum number of role allowed
@@ -54,6 +47,13 @@ public class OvhQuota {
 	public Long maxNbRole;
 
 	/**
+	 * Maximum number of stream allowed
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long maxNbStream;
+
+	/**
 	 * Current number of input booked
 	 *
 	 * canBeNull && readOnly
@@ -61,18 +61,18 @@ public class OvhQuota {
 	public Long curNbInput;
 
 	/**
-	 * Maximum number of input allowed
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long maxNbInput;
-
-	/**
 	 * Current number of dashboard booked
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long curNbDashboard;
+
+	/**
+	 * Maximum number of input allowed
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long maxNbInput;
 
 	/**
 	 * Maximum number of dashboard allowed

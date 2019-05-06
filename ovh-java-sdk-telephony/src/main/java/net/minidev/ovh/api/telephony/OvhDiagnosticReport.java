@@ -28,18 +28,18 @@ public class OvhDiagnosticReport {
 	public OvhDiagnosticReportLevelEnum level;
 
 	/**
-	 * Report of the diagnostic
-	 *
-	 * canBeNull
-	 */
-	public String report;
-
-	/**
 	 * Name of the rule detected
 	 *
 	 * canBeNull
 	 */
 	public String name;
+
+	/**
+	 * Report of the diagnostic
+	 *
+	 * canBeNull
+	 */
+	public String report;
 
 	/**
 	 * Explanation of the diagnostic

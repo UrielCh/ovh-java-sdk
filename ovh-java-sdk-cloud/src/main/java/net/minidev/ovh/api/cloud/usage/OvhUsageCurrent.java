@@ -9,18 +9,18 @@ import net.minidev.ovh.api.cloud.billingview.OvhMonthlyResources;
  */
 public class OvhUsageCurrent {
 	/**
-	 * Monthly usage
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhMonthlyResources monthlyUsage;
-
-	/**
 	 * Usage dates (from/to)
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhPeriod period;
+
+	/**
+	 * Monthly usage
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhMonthlyResources monthlyUsage;
 
 	/**
 	 * Entry last update

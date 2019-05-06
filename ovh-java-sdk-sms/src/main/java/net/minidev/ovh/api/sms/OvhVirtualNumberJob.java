@@ -34,12 +34,12 @@ public class OvhVirtualNumberJob {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long id;
+	public Long numberOfSms;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long numberOfSms;
+	public Long id;
 
 	/**
 	 * canBeNull && readOnly

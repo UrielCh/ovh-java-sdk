@@ -51,18 +51,18 @@ public class OvhService {
 	public OvhSpamAndVirusConfiguration spamAndVirusConfiguration;
 
 	/**
-	 * enable policy for strong and secure passwords
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean complexityEnabled;
-
-	/**
 	 * maximum number of days that account's password is valid before expiration
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long maxPasswordAge;
+
+	/**
+	 * enable policy for strong and secure passwords
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean complexityEnabled;
 
 	/**
 	 * Type of your offer
@@ -86,13 +86,6 @@ public class OvhService {
 	public String hostname;
 
 	/**
-	 * number of attempts before account to be locked
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long lockoutThreshold;
-
-	/**
 	 * number of minutes account will remain locked if it occurs
 	 *
 	 * canBeNull && readOnly
@@ -100,11 +93,11 @@ public class OvhService {
 	public Long lockoutDuration;
 
 	/**
-	 * URL for web interface
+	 * number of attempts before account to be locked
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String webUrl;
+	public Long lockoutThreshold;
 
 	/**
 	 * minimum number of characters password must contain
@@ -112,6 +105,13 @@ public class OvhService {
 	 * canBeNull && readOnly
 	 */
 	public Long minPasswordLength;
+
+	/**
+	 * URL for web interface
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String webUrl;
 
 	/**
 	 * Domain name of your service

@@ -12,12 +12,12 @@ public class OvhNichandle {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String firstname;
+	public OvhLegalFormEnum legalform;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhLegalFormEnum legalform;
+	public String firstname;
 
 	/**
 	 * canBeNull && readOnly
@@ -25,16 +25,16 @@ public class OvhNichandle {
 	public String city;
 
 	/**
-	 * canBeNull && readOnly
-	 */
-	public String organisation;
-
-	/**
 	 * Your customer code (a numerical value used for identification when contacting support via phone call)
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String customerCode;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public String organisation;
 
 	/**
 	 * canBeNull && readOnly
@@ -52,11 +52,9 @@ public class OvhNichandle {
 	public OvhCountryEnum phoneCountry;
 
 	/**
-	 * Customer currency
-	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhCurrency currency;
+	public String corporationType;
 
 	/**
 	 * canBeNull && readOnly
@@ -64,9 +62,11 @@ public class OvhNichandle {
 	public String spareEmail;
 
 	/**
+	 * Customer currency
+	 *
 	 * canBeNull && readOnly
 	 */
-	public String corporationType;
+	public OvhCurrency currency;
 
 	/**
 	 * canBeNull && readOnly

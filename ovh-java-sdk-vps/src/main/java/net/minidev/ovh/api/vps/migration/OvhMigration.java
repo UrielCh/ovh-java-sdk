@@ -3,7 +3,7 @@ package net.minidev.ovh.api.vps.migration;
 import java.util.Date;
 
 /**
- * Migration
+ * Description not available
  */
 public class OvhMigration {
 	/**

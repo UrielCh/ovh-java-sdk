@@ -31,18 +31,18 @@ public class OvhRuntime {
 	public Date lastUpdate;
 
 	/**
-	 * The client application environment
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhEnvEnum appEnv;
-
-	/**
 	 * The custom display name of the runtime configuration
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String name;
+
+	/**
+	 * The client application environment
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhEnvEnum appEnv;
 
 	/**
 	 * The client application public directory
@@ -66,18 +66,18 @@ public class OvhRuntime {
 	public Long id;
 
 	/**
-	 * The backend type of the runtime
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhTypeEnum type;
-
-	/**
 	 * The creation date of the runtime configuration
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date creationDate;
+
+	/**
+	 * The backend type of the runtime
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhTypeEnum type;
 
 	/**
 	 * The link current task for the runtime configuration

@@ -133,18 +133,18 @@ public class OvhAnswers {
 	public String modemType;
 
 	/**
-	 * Is modem synchronized ? (whatever internet connection)
-	 *
-	 * canBeNull
-	 */
-	public Boolean modemIsSynchronized;
-
-	/**
 	 * site opening hours or informations
 	 *
 	 * canBeNull
 	 */
 	public String siteOpening;
+
+	/**
+	 * Is modem synchronized ? (whatever internet connection)
+	 *
+	 * canBeNull
+	 */
+	public Boolean modemIsSynchronized;
 
 	/**
 	 * morning opening informations or time for the site

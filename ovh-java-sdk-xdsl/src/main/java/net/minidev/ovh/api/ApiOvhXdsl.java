@@ -26,6 +26,7 @@ import net.minidev.ovh.api.xdsl.OvhExtraIpRangeMove;
 import net.minidev.ovh.api.xdsl.OvhIP;
 import net.minidev.ovh.api.xdsl.OvhIncident;
 import net.minidev.ovh.api.xdsl.OvhLAN;
+import net.minidev.ovh.api.xdsl.OvhLine;
 import net.minidev.ovh.api.xdsl.OvhLineStatisticsTypeEnum;
 import net.minidev.ovh.api.xdsl.OvhModem;
 import net.minidev.ovh.api.xdsl.OvhModemInfo;
@@ -53,7 +54,6 @@ import net.minidev.ovh.api.xdsl.eligibility.OvhEligibility;
 import net.minidev.ovh.api.xdsl.eligibility.OvhFiberEligibility;
 import net.minidev.ovh.api.xdsl.eligibility.OvhFiberStreet;
 import net.minidev.ovh.api.xdsl.eligibility.OvhLandlineStatusEnum;
-import net.minidev.ovh.api.xdsl.eligibility.OvhLine;
 import net.minidev.ovh.api.xdsl.eligibility.OvhMeetingSlots;
 import net.minidev.ovh.api.xdsl.eligibility.OvhStreet;
 import net.minidev.ovh.api.xdsl.linediagnostic.OvhAnswers;
@@ -78,6 +78,1953 @@ public class ApiOvhXdsl extends ApiOvhBase {
 	}
 
 	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /xdsl/{serviceName}
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhAccess serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhAccess.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /xdsl/{serviceName}
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public void serviceName_PUT(String serviceName, OvhAccess body) throws IOException {
+		String qPath = "/xdsl/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Get resiliation terms
+	 *
+	 * REST: GET /xdsl/{serviceName}/resiliationTerms
+	 * @param resiliationDate [required] The desired resiliation date
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhResiliationTerms serviceName_resiliationTerms_GET(String serviceName, Date resiliationDate) throws IOException {
+		String qPath = "/xdsl/{serviceName}/resiliationTerms";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "resiliationDate", resiliationDate);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhResiliationTerms.class);
+	}
+
+	/**
+	 * Resiliate the access
+	 *
+	 * REST: POST /xdsl/{serviceName}/resiliate
+	 * @param resiliationDate [required] The desired resiliation date
+	 * @param resiliationSurvey [required] Comment about resiliation reasons
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhResiliationFollowUpDetail serviceName_resiliate_POST(String serviceName, Date resiliationDate, OvhResiliationSurvey resiliationSurvey) throws IOException {
+		String qPath = "/xdsl/{serviceName}/resiliate";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "resiliationDate", resiliationDate);
+		addBody(o, "resiliationSurvey", resiliationSurvey);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhResiliationFollowUpDetail.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /xdsl/{serviceName}/diagnostic
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhAccessDiagnostic serviceName_diagnostic_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/diagnostic";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhAccessDiagnostic.class);
+	}
+
+	/**
+	 * Run diagnostic on the access
+	 *
+	 * REST: POST /xdsl/{serviceName}/diagnostic
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhTask serviceName_diagnostic_POST(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/diagnostic";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /xdsl/{serviceName}/tasks/{id}
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param id [required] Id of the object
+	 */
+	public OvhTask serviceName_tasks_id_GET(String serviceName, Long id) throws IOException {
+		String qPath = "/xdsl/{serviceName}/tasks/{id}";
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Delete the task in problem from the results
+	 *
+	 * REST: POST /xdsl/{serviceName}/tasks/{id}/archive
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param id [required] Id of the object
+	 */
+	public void serviceName_tasks_id_archive_POST(String serviceName, Long id) throws IOException {
+		String qPath = "/xdsl/{serviceName}/tasks/{id}/archive";
+		StringBuilder sb = path(qPath, serviceName, id);
+		exec(qPath, "POST", sb.toString(), null);
+	}
+
+	/**
+	 * Tasks scheduled for this access
+	 *
+	 * REST: GET /xdsl/{serviceName}/tasks
+	 * @param status [required] Filter the value of status property (=)
+	 * @param function [required] Filter the value of function property (=)
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public ArrayList<Long> serviceName_tasks_GET(String serviceName, String function, OvhTaskStatusEnum status) throws IOException {
+		String qPath = "/xdsl/{serviceName}/tasks";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "function", function);
+		query(sb, "status", status);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
+
+	/**
+	 * Unlock order in "waitingCustomer" status. It only concerns orders whose modem is sent before anything have been forwarded to our provider
+	 *
+	 * REST: POST /xdsl/{serviceName}/sendOrderToProvider
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public void serviceName_sendOrderToProvider_POST(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/sendOrderToProvider";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "POST", sb.toString(), null);
+	}
+
+	/**
+	 * List of IPs addresses for this access
+	 *
+	 * REST: GET /xdsl/{serviceName}/ips
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public ArrayList<String> serviceName_ips_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/ips";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};
+
+	/**
+	 * Order an extra /29 range of IPv4 addresses
+	 *
+	 * REST: POST /xdsl/{serviceName}/ips
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhTask serviceName_ips_POST(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/ips";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /xdsl/{serviceName}/ips/{ip}
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param ip [required] The IP address
+	 */
+	public OvhIP serviceName_ips_ip_GET(String serviceName, String ip) throws IOException {
+		String qPath = "/xdsl/{serviceName}/ips/{ip}";
+		StringBuilder sb = path(qPath, serviceName, ip);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhIP.class);
+	}
+
+	/**
+	 * Stop renewing this extra IPv4 option
+	 *
+	 * REST: DELETE /xdsl/{serviceName}/ips/{ip}
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param ip [required] The IP address
+	 */
+	public void serviceName_ips_ip_DELETE(String serviceName, String ip) throws IOException {
+		String qPath = "/xdsl/{serviceName}/ips/{ip}";
+		StringBuilder sb = path(qPath, serviceName, ip);
+		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
+	 * Give the price to requestTotalDeconsolidation on the access
+	 *
+	 * REST: GET /xdsl/{serviceName}/totalDeconsolidationTerms
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhDeconsolidationTerms serviceName_totalDeconsolidationTerms_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/totalDeconsolidationTerms";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhDeconsolidationTerms.class);
+	}
+
+	/**
+	 * List the radius connection logs
+	 *
+	 * REST: GET /xdsl/{serviceName}/radiusConnectionLogs
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public ArrayList<OvhRadiusConnectionLog> serviceName_radiusConnectionLogs_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/radiusConnectionLogs";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+	private static TypeReference<ArrayList<OvhRadiusConnectionLog>> t3 = new TypeReference<ArrayList<OvhRadiusConnectionLog>>() {};
+
+	/**
+	 * Cancel the ongoing resiliation
+	 *
+	 * REST: POST /xdsl/{serviceName}/cancelResiliation
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public void serviceName_cancelResiliation_POST(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/cancelResiliation";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "POST", sb.toString(), null);
+	}
+
+	/**
+	 * Launch a contact change procedure
+	 *
+	 * REST: POST /xdsl/{serviceName}/changeContact
+	 * @param contactAdmin [required] The contact to set as admin contact
+	 * @param contactTech [required] The contact to set as tech contact
+	 * @param contactBilling [required] The contact to set as billing contact
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactBilling, String contactTech) throws IOException {
+		String qPath = "/xdsl/{serviceName}/changeContact";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "contactAdmin", contactAdmin);
+		addBody(o, "contactBilling", contactBilling);
+		addBody(o, "contactTech", contactTech);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Informations about the extra IP range during address move
+	 *
+	 * REST: GET /xdsl/{serviceName}/addressMove/extraIpRange
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhExtraIpRangeMove serviceName_addressMove_extraIpRange_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/addressMove/extraIpRange";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhExtraIpRangeMove.class);
+	}
+
+	/**
+	 * Initiate the extra IP range migration
+	 *
+	 * REST: POST /xdsl/{serviceName}/addressMove/extraIpRangeMove
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhTask serviceName_addressMove_extraIpRangeMove_POST(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/addressMove/extraIpRangeMove";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Switch this access to total deconsolidation
+	 *
+	 * REST: POST /xdsl/{serviceName}/requestTotalDeconsolidation
+	 * @param rio [required] A token to prove the ownership of the line number, needed to port the number
+	 * @param noPortability [required] Do not port the number
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhTask serviceName_requestTotalDeconsolidation_POST(String serviceName, Boolean noPortability, String rio) throws IOException {
+		String qPath = "/xdsl/{serviceName}/requestTotalDeconsolidation";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "noPortability", noPortability);
+		addBody(o, "rio", rio);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get information about the ongoing resiliation
+	 *
+	 * REST: GET /xdsl/{serviceName}/canCancelResiliation
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public Boolean serviceName_canCancelResiliation_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/canCancelResiliation";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, Boolean.class);
+	}
+
+	/**
+	 * List the notifications for this access
+	 *
+	 * REST: GET /xdsl/{serviceName}/monitoringNotifications
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public ArrayList<Long> serviceName_monitoringNotifications_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/monitoringNotifications";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Add a notification
+	 *
+	 * REST: POST /xdsl/{serviceName}/monitoringNotifications
+	 * @param smsAccount [required] The SMS account which will be debited for each sent SMS, if the type is sms
+	 * @param type [required]
+	 * @param email [required] The e-mail address, if type is mail
+	 * @param phone [required] The phone number, if type is sms
+	 * @param downThreshold [required] The number of seconds the access has to be down to trigger the alert
+	 * @param frequency [required]
+	 * @param allowIncident [required] Whether or not to allow notifications concerning generic incidents
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhMonitoringNotification serviceName_monitoringNotifications_POST(String serviceName, Boolean allowIncident, Long downThreshold, String email, OvhFrequencyEnum frequency, String phone, String smsAccount, OvhTypeEnum type) throws IOException {
+		String qPath = "/xdsl/{serviceName}/monitoringNotifications";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "allowIncident", allowIncident);
+		addBody(o, "downThreshold", downThreshold);
+		addBody(o, "email", email);
+		addBody(o, "frequency", frequency);
+		addBody(o, "phone", phone);
+		addBody(o, "smsAccount", smsAccount);
+		addBody(o, "type", type);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhMonitoringNotification.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /xdsl/{serviceName}/monitoringNotifications/{id}
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param id [required] Id of the object
+	 */
+	public OvhMonitoringNotification serviceName_monitoringNotifications_id_GET(String serviceName, Long id) throws IOException {
+		String qPath = "/xdsl/{serviceName}/monitoringNotifications/{id}";
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhMonitoringNotification.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /xdsl/{serviceName}/monitoringNotifications/{id}
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param id [required] Id of the object
+	 */
+	public void serviceName_monitoringNotifications_id_PUT(String serviceName, Long id, OvhMonitoringNotification body) throws IOException {
+		String qPath = "/xdsl/{serviceName}/monitoringNotifications/{id}";
+		StringBuilder sb = path(qPath, serviceName, id);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Delete this notification
+	 *
+	 * REST: DELETE /xdsl/{serviceName}/monitoringNotifications/{id}
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param id [required] Id of the object
+	 */
+	public void serviceName_monitoringNotifications_id_DELETE(String serviceName, Long id) throws IOException {
+		String qPath = "/xdsl/{serviceName}/monitoringNotifications/{id}";
+		StringBuilder sb = path(qPath, serviceName, id);
+		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
+	 * Renew PPP password and send the PPP login informations to the e-mail of the nicAdmin
+	 *
+	 * REST: POST /xdsl/{serviceName}/requestPPPLoginMail
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public void serviceName_requestPPPLoginMail_POST(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/requestPPPLoginMail";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "POST", sb.toString(), null);
+	}
+
+	/**
+	 * Get information about the ongoing resiliation
+	 *
+	 * REST: GET /xdsl/{serviceName}/resiliationFollowup
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhResiliationFollowUpDetail serviceName_resiliationFollowup_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/resiliationFollowup";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhResiliationFollowUpDetail.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /xdsl/{serviceName}/serviceInfos
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhService.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /xdsl/{serviceName}/serviceInfos
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
+		String qPath = "/xdsl/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /xdsl/{serviceName}/pendingAction
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhPendingAction serviceName_pendingAction_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/pendingAction";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPendingAction.class);
+	}
+
+	/**
+	 * Update RIO, or disable portability, for order in error because of missing or invalid RIO
+	 *
+	 * REST: POST /xdsl/{serviceName}/updateInvalidOrMissingRio
+	 * @param relaunchWithoutPortability [required] Do not set RIO, and relaunch order without portability
+	 * @param rio [required] RIO number for portability
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public void serviceName_updateInvalidOrMissingRio_POST(String serviceName, Boolean relaunchWithoutPortability, String rio) throws IOException {
+		String qPath = "/xdsl/{serviceName}/updateInvalidOrMissingRio";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "relaunchWithoutPortability", relaunchWithoutPortability);
+		addBody(o, "rio", rio);
+		exec(qPath, "POST", sb.toString(), o);
+	}
+
+	/**
+	 * Return Merchandise Authorisation associated
+	 *
+	 * REST: GET /xdsl/{serviceName}/rma
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public ArrayList<String> serviceName_rma_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/rma";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /xdsl/{serviceName}/rma/{id}
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param id [required] Return merchandise authorisation identifier
+	 */
+	public OvhRma serviceName_rma_id_GET(String serviceName, String id) throws IOException {
+		String qPath = "/xdsl/{serviceName}/rma/{id}";
+		StringBuilder sb = path(qPath, serviceName, id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhRma.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /xdsl/{serviceName}/rma/{id}
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param id [required] Return merchandise authorisation identifier
+	 */
+	public void serviceName_rma_id_PUT(String serviceName, String id, OvhRma body) throws IOException {
+		String qPath = "/xdsl/{serviceName}/rma/{id}";
+		StringBuilder sb = path(qPath, serviceName, id);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Cancel the rma
+	 *
+	 * REST: DELETE /xdsl/{serviceName}/rma/{id}
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param id [required] Return merchandise authorisation identifier
+	 */
+	public void serviceName_rma_id_DELETE(String serviceName, String id) throws IOException {
+		String qPath = "/xdsl/{serviceName}/rma/{id}";
+		StringBuilder sb = path(qPath, serviceName, id);
+		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
+	 * Get various statistics about this access
+	 *
+	 * REST: GET /xdsl/{serviceName}/statistics
+	 * @param period [required]
+	 * @param type [required]
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhUnitAndValues<OvhTimestampAndValue> serviceName_statistics_GET(String serviceName, OvhStatisticsPeriodEnum period, OvhAccessStatisticsTypeEnum type) throws IOException {
+		String qPath = "/xdsl/{serviceName}/statistics";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "period", period);
+		query(sb, "type", type);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t4);
+	}
+	private static TypeReference<OvhUnitAndValues<OvhTimestampAndValue>> t4 = new TypeReference<OvhUnitAndValues<OvhTimestampAndValue>>() {};
+
+	/**
+	 * Change the status of the IPv6 for this access
+	 *
+	 * REST: POST /xdsl/{serviceName}/ipv6
+	 * @param enabled [required] Should the IPv6 be enabled ?
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhTask serviceName_ipv6_POST(String serviceName, Boolean enabled) throws IOException {
+		String qPath = "/xdsl/{serviceName}/ipv6";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "enabled", enabled);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Apply TemplateModem to existing Modem
+	 *
+	 * REST: POST /xdsl/{serviceName}/applyTemplateToModem
+	 * @param templateName [required] Modem Template Name
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 *
+	 * API beta
+	 */
+	public OvhTask serviceName_applyTemplateToModem_POST(String serviceName, String templateName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/applyTemplateToModem";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "templateName", templateName);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * The lines of the access
+	 *
+	 * REST: GET /xdsl/{serviceName}/lines
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public ArrayList<String> serviceName_lines_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/lines";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /xdsl/{serviceName}/lines/{number}
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param number [required] The number of the line
+	 */
+	public OvhLine serviceName_lines_number_GET(String serviceName, String number) throws IOException {
+		String qPath = "/xdsl/{serviceName}/lines/{number}";
+		StringBuilder sb = path(qPath, serviceName, number);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhLine.class);
+	}
+
+	/**
+	 * Get various statistics about the line
+	 *
+	 * REST: GET /xdsl/{serviceName}/lines/{number}/statistics
+	 * @param period [required]
+	 * @param type [required]
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param number [required] The number of the line
+	 */
+	public OvhUnitAndValues<OvhTimestampAndValue> serviceName_lines_number_statistics_GET(String serviceName, String number, OvhStatisticsPeriodEnum period, OvhLineStatisticsTypeEnum type) throws IOException {
+		String qPath = "/xdsl/{serviceName}/lines/{number}/statistics";
+		StringBuilder sb = path(qPath, serviceName, number);
+		query(sb, "period", period);
+		query(sb, "type", type);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t4);
+	}
+
+	/**
+	 * Update and get advanced diagnostic of the line
+	 *
+	 * REST: POST /xdsl/{serviceName}/lines/{number}/diagnostic/run
+	 * @param answers [required] Customer answers for line diagnostic
+	 * @param actionsDone [required] Customer possible actions
+	 * @param faultType [required] Line diagnostic type. Depends of problem
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param number [required] The number of the line
+	 */
+	public OvhDiagnostic serviceName_lines_number_diagnostic_run_POST(String serviceName, String number, OvhCustomerActionsEnum[] actionsDone, OvhAnswers answers, OvhFaultTypeEnum faultType) throws IOException {
+		String qPath = "/xdsl/{serviceName}/lines/{number}/diagnostic/run";
+		StringBuilder sb = path(qPath, serviceName, number);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "actionsDone", actionsDone);
+		addBody(o, "answers", answers);
+		addBody(o, "faultType", faultType);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhDiagnostic.class);
+	}
+
+	/**
+	 * Cancel line diagnostic if possible
+	 *
+	 * REST: POST /xdsl/{serviceName}/lines/{number}/diagnostic/cancel
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param number [required] The number of the line
+	 */
+	public void serviceName_lines_number_diagnostic_cancel_POST(String serviceName, String number) throws IOException {
+		String qPath = "/xdsl/{serviceName}/lines/{number}/diagnostic/cancel";
+		StringBuilder sb = path(qPath, serviceName, number);
+		exec(qPath, "POST", sb.toString(), null);
+	}
+
+	/**
+	 * Change the profile of the port
+	 *
+	 * REST: POST /xdsl/{serviceName}/lines/{number}/dslamPort/changeProfile
+	 * @param dslamProfileId [required] The id of the xdsl.DslamLineProfile
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param number [required] The number of the line
+	 */
+	public OvhTask serviceName_lines_number_dslamPort_changeProfile_POST(String serviceName, String number, Long dslamProfileId) throws IOException {
+		String qPath = "/xdsl/{serviceName}/lines/{number}/dslamPort/changeProfile";
+		StringBuilder sb = path(qPath, serviceName, number);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "dslamProfileId", dslamProfileId);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get the logs emitted by the DSLAM for this port
+	 *
+	 * REST: GET /xdsl/{serviceName}/lines/{number}/dslamPort/logs
+	 * @param limit [required]
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param number [required] The number of the line
+	 */
+	public ArrayList<OvhDslamPortLog> serviceName_lines_number_dslamPort_logs_GET(String serviceName, String number, Long limit) throws IOException {
+		String qPath = "/xdsl/{serviceName}/lines/{number}/dslamPort/logs";
+		StringBuilder sb = path(qPath, serviceName, number);
+		query(sb, "limit", limit);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t5);
+	}
+	private static TypeReference<ArrayList<OvhDslamPortLog>> t5 = new TypeReference<ArrayList<OvhDslamPortLog>>() {};
+
+	/**
+	 * List all availables profiles for this port
+	 *
+	 * REST: GET /xdsl/{serviceName}/lines/{number}/dslamPort/availableProfiles
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param number [required] The number of the line
+	 */
+	public ArrayList<OvhDslamLineProfile> serviceName_lines_number_dslamPort_availableProfiles_GET(String serviceName, String number) throws IOException {
+		String qPath = "/xdsl/{serviceName}/lines/{number}/dslamPort/availableProfiles";
+		StringBuilder sb = path(qPath, serviceName, number);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t6);
+	}
+	private static TypeReference<ArrayList<OvhDslamLineProfile>> t6 = new TypeReference<ArrayList<OvhDslamLineProfile>>() {};
+
+	/**
+	 * Reset the port on the DSLAM
+	 *
+	 * REST: POST /xdsl/{serviceName}/lines/{number}/dslamPort/reset
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param number [required] The number of the line
+	 */
+	public OvhTask serviceName_lines_number_dslamPort_reset_POST(String serviceName, String number) throws IOException {
+		String qPath = "/xdsl/{serviceName}/lines/{number}/dslamPort/reset";
+		StringBuilder sb = path(qPath, serviceName, number);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /xdsl/{serviceName}/lines/{number}/dslamPort
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param number [required] The number of the line
+	 */
+	public OvhDslamPort serviceName_lines_number_dslamPort_GET(String serviceName, String number) throws IOException {
+		String qPath = "/xdsl/{serviceName}/lines/{number}/dslamPort";
+		StringBuilder sb = path(qPath, serviceName, number);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhDslamPort.class);
+	}
+
+	/**
+	 * Get the status of the order
+	 *
+	 * REST: GET /xdsl/{serviceName}/orderFollowup
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public ArrayList<OvhStep> serviceName_orderFollowup_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/orderFollowup";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t7);
+	}
+	private static TypeReference<ArrayList<OvhStep>> t7 = new TypeReference<ArrayList<OvhStep>>() {};
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /xdsl/{serviceName}/antiSpams/{ip}
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param ip [required] IP which spam
+	 */
+	public OvhAntiSpam serviceName_antiSpams_ip_GET(String serviceName, String ip) throws IOException {
+		String qPath = "/xdsl/{serviceName}/antiSpams/{ip}";
+		StringBuilder sb = path(qPath, serviceName, ip);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhAntiSpam.class);
+	}
+
+	/**
+	 * List of evidences stored on PCS for this ip
+	 *
+	 * REST: GET /xdsl/{serviceName}/antiSpams/{ip}/evidences
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param ip [required] IP which spam
+	 */
+	public OvhEvidencesInfo serviceName_antiSpams_ip_evidences_GET(String serviceName, String ip) throws IOException {
+		String qPath = "/xdsl/{serviceName}/antiSpams/{ip}/evidences";
+		StringBuilder sb = path(qPath, serviceName, ip);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhEvidencesInfo.class);
+	}
+
+	/**
+	 * List antiSpams for this access
+	 *
+	 * REST: GET /xdsl/{serviceName}/antiSpams
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public ArrayList<String> serviceName_antiSpams_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/antiSpams";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Refresh the list of connected devices on the modem
+	 *
+	 * REST: POST /xdsl/{serviceName}/modem/refreshConnectedDevices
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhTask serviceName_modem_refreshConnectedDevices_POST(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/refreshConnectedDevices";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /xdsl/{serviceName}/modem/connectedDevices/{macAddress}
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param macAddress [required] MAC address of the device
+	 */
+	public OvhConnectedDevice serviceName_modem_connectedDevices_macAddress_GET(String serviceName, String macAddress) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/connectedDevices/{macAddress}";
+		StringBuilder sb = path(qPath, serviceName, macAddress);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhConnectedDevice.class);
+	}
+
+	/**
+	 * List of devices connected on this modem
+	 *
+	 * REST: GET /xdsl/{serviceName}/modem/connectedDevices
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public ArrayList<String> serviceName_modem_connectedDevices_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/connectedDevices";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * List available WLAN channel for this modem
+	 *
+	 * REST: GET /xdsl/{serviceName}/modem/availableWLANChannel
+	 * @param frequency [required] WLAN frequency you want to retrieve channels
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public ArrayList<Long> serviceName_modem_availableWLANChannel_GET(String serviceName, OvhWLANFrequencyEnum frequency) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/availableWLANChannel";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "frequency", frequency);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * get general Modem information
+	 *
+	 * REST: POST /xdsl/{serviceName}/modem/retrieveInfo
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhAsyncTask<OvhModemInfo> serviceName_modem_retrieveInfo_POST(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/retrieveInfo";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, t8);
+	}
+	private static TypeReference<OvhAsyncTask<OvhModemInfo>> t8 = new TypeReference<OvhAsyncTask<OvhModemInfo>>() {};
+
+	/**
+	 * Change the status of the ipsec alg service on modem
+	 *
+	 * REST: POST /xdsl/{serviceName}/modem/ipsecAlg
+	 * @param ipsecAlg [required] the new status of the ipsec alg service
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhTask serviceName_modem_ipsecAlg_POST(String serviceName, OvhServiceStatusEnum ipsecAlg) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/ipsecAlg";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "ipsecAlg", ipsecAlg);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get the status of ipsec alg service on modem
+	 *
+	 * REST: GET /xdsl/{serviceName}/modem/ipsecAlg
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhServiceStatusEnum serviceName_modem_ipsecAlg_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/ipsecAlg";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhServiceStatusEnum.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /xdsl/{serviceName}/modem/lan/{lanName}
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param lanName [required] Name of the LAN
+	 */
+	public OvhLAN serviceName_modem_lan_lanName_GET(String serviceName, String lanName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/lan/{lanName}";
+		StringBuilder sb = path(qPath, serviceName, lanName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhLAN.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /xdsl/{serviceName}/modem/lan/{lanName}
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param lanName [required] Name of the LAN
+	 */
+	public void serviceName_modem_lan_lanName_PUT(String serviceName, String lanName, OvhLAN body) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/lan/{lanName}";
+		StringBuilder sb = path(qPath, serviceName, lanName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param lanName [required] Name of the LAN
+	 * @param dhcpName [required] Name of the DHCP
+	 */
+	public OvhDHCP serviceName_modem_lan_lanName_dhcp_dhcpName_GET(String serviceName, String lanName, String dhcpName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}";
+		StringBuilder sb = path(qPath, serviceName, lanName, dhcpName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhDHCP.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param lanName [required] Name of the LAN
+	 * @param dhcpName [required] Name of the DHCP
+	 */
+	public void serviceName_modem_lan_lanName_dhcp_dhcpName_PUT(String serviceName, String lanName, String dhcpName, OvhDHCP body) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}";
+		StringBuilder sb = path(qPath, serviceName, lanName, dhcpName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}/DHCPStaticAddresses/{MACAddress}
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param lanName [required] Name of the LAN
+	 * @param dhcpName [required] Name of the DHCP
+	 * @param MACAddress [required] The MAC address of the device
+	 */
+	public OvhDHCPStaticAddress serviceName_modem_lan_lanName_dhcp_dhcpName_DHCPStaticAddresses_MACAddress_GET(String serviceName, String lanName, String dhcpName, String MACAddress) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}/DHCPStaticAddresses/{MACAddress}";
+		StringBuilder sb = path(qPath, serviceName, lanName, dhcpName, MACAddress);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhDHCPStaticAddress.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}/DHCPStaticAddresses/{MACAddress}
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param lanName [required] Name of the LAN
+	 * @param dhcpName [required] Name of the DHCP
+	 * @param MACAddress [required] The MAC address of the device
+	 */
+	public void serviceName_modem_lan_lanName_dhcp_dhcpName_DHCPStaticAddresses_MACAddress_PUT(String serviceName, String lanName, String dhcpName, String MACAddress, OvhDHCPStaticAddress body) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}/DHCPStaticAddresses/{MACAddress}";
+		StringBuilder sb = path(qPath, serviceName, lanName, dhcpName, MACAddress);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Delete this port mapping
+	 *
+	 * REST: DELETE /xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}/DHCPStaticAddresses/{MACAddress}
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param lanName [required] Name of the LAN
+	 * @param dhcpName [required] Name of the DHCP
+	 * @param MACAddress [required] The MAC address of the device
+	 */
+	public OvhTask serviceName_modem_lan_lanName_dhcp_dhcpName_DHCPStaticAddresses_MACAddress_DELETE(String serviceName, String lanName, String dhcpName, String MACAddress) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}/DHCPStaticAddresses/{MACAddress}";
+		StringBuilder sb = path(qPath, serviceName, lanName, dhcpName, MACAddress);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * List of DHCP Static Address of this modem
+	 *
+	 * REST: GET /xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}/DHCPStaticAddresses
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param lanName [required] Name of the LAN
+	 * @param dhcpName [required] Name of the DHCP
+	 */
+	public ArrayList<String> serviceName_modem_lan_lanName_dhcp_dhcpName_DHCPStaticAddresses_GET(String serviceName, String lanName, String dhcpName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}/DHCPStaticAddresses";
+		StringBuilder sb = path(qPath, serviceName, lanName, dhcpName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Add a DHCP static lease
+	 *
+	 * REST: POST /xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}/DHCPStaticAddresses
+	 * @param name [required] Name of the DHCP static lease
+	 * @param IPAddress [required] The IP address of the device
+	 * @param MACAddress [required] The MAC address of the device
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param lanName [required] Name of the LAN
+	 * @param dhcpName [required] Name of the DHCP
+	 */
+	public OvhDHCPStaticAddress serviceName_modem_lan_lanName_dhcp_dhcpName_DHCPStaticAddresses_POST(String serviceName, String lanName, String dhcpName, String IPAddress, String MACAddress, String name) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}/DHCPStaticAddresses";
+		StringBuilder sb = path(qPath, serviceName, lanName, dhcpName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "IPAddress", IPAddress);
+		addBody(o, "MACAddress", MACAddress);
+		addBody(o, "name", name);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhDHCPStaticAddress.class);
+	}
+
+	/**
+	 * List of DHCP on this modem
+	 *
+	 * REST: GET /xdsl/{serviceName}/modem/lan/{lanName}/dhcp
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param lanName [required] Name of the LAN
+	 */
+	public ArrayList<String> serviceName_modem_lan_lanName_dhcp_GET(String serviceName, String lanName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/lan/{lanName}/dhcp";
+		StringBuilder sb = path(qPath, serviceName, lanName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * List of LANs on this modem
+	 *
+	 * REST: GET /xdsl/{serviceName}/modem/lan
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public ArrayList<String> serviceName_modem_lan_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/lan";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Get the status of ftp service on modem
+	 *
+	 * REST: GET /xdsl/{serviceName}/modem/ftp
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhServiceStatusEnum serviceName_modem_ftp_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/ftp";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhServiceStatusEnum.class);
+	}
+
+	/**
+	 * Change the status of the ftp service on modem
+	 *
+	 * REST: POST /xdsl/{serviceName}/modem/ftp
+	 * @param ftp [required] the new status of the ftp service
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhTask serviceName_modem_ftp_POST(String serviceName, OvhServiceStatusEnum ftp) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/ftp";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "ftp", ftp);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * List of PortMappings on this modem
+	 *
+	 * REST: GET /xdsl/{serviceName}/modem/portMappings
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public ArrayList<String> serviceName_modem_portMappings_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/portMappings";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Add a port mapping
+	 *
+	 * REST: POST /xdsl/{serviceName}/modem/portMappings
+	 * @param internalPort [required] The port on the Internal Client that will get the connections
+	 * @param description [required] Description of the Port Mapping
+	 * @param externalPortStart [required] External Port that the modem will listen on
+	 * @param internalClient [required] The IP address of the destination of the packets
+	 * @param allowedRemoteIp [required] An ip which will access to the defined rule. Default : no restriction applied
+	 * @param protocol [required] Protocol of the port mapping (TCP / UDP)
+	 * @param externalPortEnd [required] The last port of the interval on the External Client that will get the connections
+	 * @param name [required] Name of the port mapping entry
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhPortMapping serviceName_modem_portMappings_POST(String serviceName, String allowedRemoteIp, String description, Long externalPortEnd, Long externalPortStart, String internalClient, Long internalPort, String name, OvhProtocolTypeEnum protocol) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/portMappings";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "allowedRemoteIp", allowedRemoteIp);
+		addBody(o, "description", description);
+		addBody(o, "externalPortEnd", externalPortEnd);
+		addBody(o, "externalPortStart", externalPortStart);
+		addBody(o, "internalClient", internalClient);
+		addBody(o, "internalPort", internalPort);
+		addBody(o, "name", name);
+		addBody(o, "protocol", protocol);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhPortMapping.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /xdsl/{serviceName}/modem/portMappings/{name}
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param name [required] Name of the port mapping entry
+	 */
+	public OvhPortMapping serviceName_modem_portMappings_name_GET(String serviceName, String name) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/portMappings/{name}";
+		StringBuilder sb = path(qPath, serviceName, name);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhPortMapping.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /xdsl/{serviceName}/modem/portMappings/{name}
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param name [required] Name of the port mapping entry
+	 */
+	public void serviceName_modem_portMappings_name_PUT(String serviceName, String name, OvhPortMapping body) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/portMappings/{name}";
+		StringBuilder sb = path(qPath, serviceName, name);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Delete this port mapping
+	 *
+	 * REST: DELETE /xdsl/{serviceName}/modem/portMappings/{name}
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param name [required] Name of the port mapping entry
+	 */
+	public OvhTask serviceName_modem_portMappings_name_DELETE(String serviceName, String name) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/portMappings/{name}";
+		StringBuilder sb = path(qPath, serviceName, name);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get the status of the Bloc IP on modem
+	 *
+	 * REST: GET /xdsl/{serviceName}/modem/blocIp
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhServiceStatusEnum serviceName_modem_blocIp_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/blocIp";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhServiceStatusEnum.class);
+	}
+
+	/**
+	 * Change the status of the Bloc IP on modem
+	 *
+	 * REST: POST /xdsl/{serviceName}/modem/blocIp
+	 * @param status [required] the new status of the bloc ip service
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhTask serviceName_modem_blocIp_POST(String serviceName, OvhServiceStatusEnum status) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/blocIp";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "status", status);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Reboot the modem
+	 *
+	 * REST: POST /xdsl/{serviceName}/modem/reboot
+	 * @param todoDate [required] Date when the reboot will start
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhTask serviceName_modem_reboot_POST(String serviceName, Date todoDate) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/reboot";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "todoDate", todoDate);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * List of WLANs on this modem
+	 *
+	 * REST: GET /xdsl/{serviceName}/modem/wifi
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public ArrayList<String> serviceName_modem_wifi_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/wifi";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /xdsl/{serviceName}/modem/wifi/{wifiName}
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param wifiName [required] Name of the Wifi
+	 */
+	public OvhWLAN serviceName_modem_wifi_wifiName_GET(String serviceName, String wifiName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/wifi/{wifiName}";
+		StringBuilder sb = path(qPath, serviceName, wifiName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhWLAN.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /xdsl/{serviceName}/modem/wifi/{wifiName}
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @param wifiName [required] Name of the Wifi
+	 */
+	public void serviceName_modem_wifi_wifiName_PUT(String serviceName, String wifiName, OvhWLAN body) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/wifi/{wifiName}";
+		StringBuilder sb = path(qPath, serviceName, wifiName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Remove all the current port mapping rules
+	 *
+	 * REST: POST /xdsl/{serviceName}/modem/resetPortMappingConfig
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public void serviceName_modem_resetPortMappingConfig_POST(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/resetPortMappingConfig";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "POST", sb.toString(), null);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /xdsl/{serviceName}/modem
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhModem serviceName_modem_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhModem.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /xdsl/{serviceName}/modem
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public void serviceName_modem_PUT(String serviceName, OvhModem body) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * List available firmware for this modem
+	 *
+	 * REST: GET /xdsl/{serviceName}/modem/firmwareAvailable
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public ArrayList<String> serviceName_modem_firmwareAvailable_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/firmwareAvailable";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Reset the modem to its default configuration
+	 *
+	 * REST: POST /xdsl/{serviceName}/modem/reset
+	 * @param resetOvhConfig [required] Reset configuration stored in OVH databases
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhTask serviceName_modem_reset_POST(String serviceName, Boolean resetOvhConfig) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/reset";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "resetOvhConfig", resetOvhConfig);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Change the status of the Upnp on modem
+	 *
+	 * REST: POST /xdsl/{serviceName}/modem/upnp
+	 * @param upnp [required] the new status of the upnp service
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhTask serviceName_modem_upnp_POST(String serviceName, OvhServiceStatusEnum upnp) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/upnp";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "upnp", upnp);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get the status of the Upnp on modem
+	 *
+	 * REST: GET /xdsl/{serviceName}/modem/upnp
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhServiceStatusEnum serviceName_modem_upnp_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/upnp";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhServiceStatusEnum.class);
+	}
+
+	/**
+	 * Remove all the current port mapping rules and set the same config as the access given in parameters
+	 *
+	 * REST: POST /xdsl/{serviceName}/modem/duplicatePortMappingConfig
+	 * @param accessName [required] The access name with the config you want to duplicate
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 * @deprecated
+	 */
+	public void serviceName_modem_duplicatePortMappingConfig_POST(String serviceName, String accessName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/duplicatePortMappingConfig";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "accessName", accessName);
+		exec(qPath, "POST", sb.toString(), o);
+	}
+
+	/**
+	 * Change the status of callWaiting on modem
+	 *
+	 * REST: POST /xdsl/{serviceName}/modem/callWaiting
+	 * @param callWaiting [required] the new status of the callWaiting service
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhTask serviceName_modem_callWaiting_POST(String serviceName, OvhServiceStatusEnum callWaiting) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/callWaiting";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "callWaiting", callWaiting);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get the status of callWaiting on modem
+	 *
+	 * REST: GET /xdsl/{serviceName}/modem/callWaiting
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhServiceStatusEnum serviceName_modem_callWaiting_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/callWaiting";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhServiceStatusEnum.class);
+	}
+
+	/**
+	 * Change the status of contentSharing on modem
+	 *
+	 * REST: POST /xdsl/{serviceName}/modem/contentSharing
+	 * @param contentSharing [required] the new status of the contentSharing service
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhTask serviceName_modem_contentSharing_POST(String serviceName, OvhServiceStatusEnum contentSharing) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/contentSharing";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "contentSharing", contentSharing);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get the status of contentSharing on modem
+	 *
+	 * REST: GET /xdsl/{serviceName}/modem/contentSharing
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhServiceStatusEnum serviceName_modem_contentSharing_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/contentSharing";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhServiceStatusEnum.class);
+	}
+
+	/**
+	 * Get the firmware version installed on modem
+	 *
+	 * REST: GET /xdsl/{serviceName}/modem/firmware
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public String serviceName_modem_firmware_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/firmware";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Launch a task to install target firmware on modem
+	 *
+	 * REST: POST /xdsl/{serviceName}/modem/firmware
+	 * @param firmware [required] The firmware version to upgrade to
+	 * @param todoDate [required] Date of execution, default is now
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhTask serviceName_modem_firmware_POST(String serviceName, String firmware, Date todoDate) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/firmware";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "firmware", firmware);
+		addBody(o, "todoDate", todoDate);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get the status of sip alg service on modem
+	 *
+	 * REST: GET /xdsl/{serviceName}/modem/sipAlg
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhServiceStatusEnum serviceName_modem_sipAlg_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/sipAlg";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhServiceStatusEnum.class);
+	}
+
+	/**
+	 * Change the status of the sip alg service on modem
+	 *
+	 * REST: POST /xdsl/{serviceName}/modem/sipAlg
+	 * @param sipAlg [required] the new status of the sip alg service
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhTask serviceName_modem_sipAlg_POST(String serviceName, OvhServiceStatusEnum sipAlg) throws IOException {
+		String qPath = "/xdsl/{serviceName}/modem/sipAlg";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "sipAlg", sipAlg);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /xdsl/{serviceName}/incident
+	 * @param serviceName [required] The internal name of your XDSL offer
+	 */
+	public OvhIncident serviceName_incident_GET(String serviceName) throws IOException {
+		String qPath = "/xdsl/{serviceName}/incident";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhIncident.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /xdsl/incidents/{id}
+	 * @param id [required] ID of the incident
+	 */
+	public OvhIncident incidents_id_GET(Long id) throws IOException {
+		String qPath = "/xdsl/incidents/{id}";
+		StringBuilder sb = path(qPath, id);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhIncident.class);
+	}
+
+	/**
+	 * List of incidents
+	 *
+	 * REST: GET /xdsl/incidents
+	 * @param endDate [required] Filter the value of endDate property (<)
+	 * @param creationDate [required] Filter the value of creationDate property (>)
+	 */
+	public ArrayList<Long> incidents_GET(Date creationDate, Date endDate) throws IOException {
+		String qPath = "/xdsl/incidents";
+		StringBuilder sb = path(qPath);
+		query(sb, "creationDate", creationDate);
+		query(sb, "endDate", endDate);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * List available services
+	 *
+	 * REST: GET /xdsl/spare
+	 */
+	public ArrayList<String> spare_GET() throws IOException {
+		String qPath = "/xdsl/spare";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Get all available spare brands
+	 *
+	 * REST: GET /xdsl/spare/brands
+	 */
+	public ArrayList<String> spare_brands_GET() throws IOException {
+		String qPath = "/xdsl/spare/brands";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /xdsl/spare/{spare}/serviceInfos
+	 * @param spare [required] The internal name of your spare
+	 */
+	public OvhService spare_spare_serviceInfos_GET(String spare) throws IOException {
+		String qPath = "/xdsl/spare/{spare}/serviceInfos";
+		StringBuilder sb = path(qPath, spare);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhService.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /xdsl/spare/{spare}/serviceInfos
+	 * @param body [required] New object properties
+	 * @param spare [required] The internal name of your spare
+	 */
+	public void spare_spare_serviceInfos_PUT(String spare, OvhService body) throws IOException {
+		String qPath = "/xdsl/spare/{spare}/serviceInfos";
+		StringBuilder sb = path(qPath, spare);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /xdsl/spare/{spare}
+	 * @param spare [required] The internal name of your spare
+	 */
+	public OvhXdslSpare spare_spare_GET(String spare) throws IOException {
+		String qPath = "/xdsl/spare/{spare}";
+		StringBuilder sb = path(qPath, spare);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhXdslSpare.class);
+	}
+
+	/**
+	 * Delete the spare as if it was not belonging to OVH anymore
+	 *
+	 * REST: DELETE /xdsl/spare/{spare}
+	 * @param spare [required] The internal name of your spare
+	 */
+	public void spare_spare_DELETE(String spare) throws IOException {
+		String qPath = "/xdsl/spare/{spare}";
+		StringBuilder sb = path(qPath, spare);
+		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
+	 * Return the broken equipment in instantRefund
+	 *
+	 * REST: POST /xdsl/spare/{spare}/returnMerchandise
+	 * @param spare [required] The internal name of your spare
+	 */
+	public void spare_spare_returnMerchandise_POST(String spare) throws IOException {
+		String qPath = "/xdsl/spare/{spare}/returnMerchandise";
+		StringBuilder sb = path(qPath, spare);
+		exec(qPath, "POST", sb.toString(), null);
+	}
+
+	/**
+	 * Replace the modem by its spare
+	 *
+	 * REST: POST /xdsl/spare/{spare}/replace
+	 * @param domain [required] The modem to replace by the spare
+	 * @param spare [required] The internal name of your spare
+	 */
+	public void spare_spare_replace_POST(String spare, String domain) throws IOException {
+		String qPath = "/xdsl/spare/{spare}/replace";
+		StringBuilder sb = path(qPath, spare);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "domain", domain);
+		exec(qPath, "POST", sb.toString(), o);
+	}
+
+	/**
+	 * Return the list of brand compatible to be replaced
+	 *
+	 * REST: GET /xdsl/spare/{spare}/compatibleReplacement
+	 * @param spare [required] The internal name of your spare
+	 */
+	public ArrayList<String> spare_spare_compatibleReplacement_GET(String spare) throws IOException {
+		String qPath = "/xdsl/spare/{spare}/compatibleReplacement";
+		StringBuilder sb = path(qPath, spare);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * List available services
+	 *
+	 * REST: GET /xdsl/email/pro
+	 */
+	public ArrayList<String> email_pro_GET() throws IOException {
+		String qPath = "/xdsl/email/pro";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Change the email password
+	 *
+	 * REST: POST /xdsl/email/pro/{email}/changePassword
+	 * @param password [required] New email password
+	 * @param email [required] The email address if the XDSL Email Pro
+	 */
+	public net.minidev.ovh.api.xdsl.email.pro.OvhTask email_pro_email_changePassword_POST(String email, String password) throws IOException {
+		String qPath = "/xdsl/email/pro/{email}/changePassword";
+		StringBuilder sb = path(qPath, email);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "password", password);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, net.minidev.ovh.api.xdsl.email.pro.OvhTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /xdsl/email/pro/{email}
+	 * @param email [required] The email address if the XDSL Email Pro
+	 */
+	public OvhXdslEmailPro email_pro_email_GET(String email) throws IOException {
+		String qPath = "/xdsl/email/pro/{email}";
+		StringBuilder sb = path(qPath, email);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhXdslEmailPro.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /xdsl/email/pro/{email}
+	 * @param body [required] New object properties
+	 * @param email [required] The email address if the XDSL Email Pro
+	 */
+	public void email_pro_email_PUT(String email, OvhXdslEmailPro body) throws IOException {
+		String qPath = "/xdsl/email/pro/{email}";
+		StringBuilder sb = path(qPath, email);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Delete the email
+	 *
+	 * REST: DELETE /xdsl/email/pro/{email}
+	 * @param email [required] The email address if the XDSL Email Pro
+	 */
+	public void email_pro_email_DELETE(String email) throws IOException {
+		String qPath = "/xdsl/email/pro/{email}";
+		StringBuilder sb = path(qPath, email);
+		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
+	 * Get the cities from a zipCode
+	 *
+	 * REST: GET /xdsl/eligibility/cities
+	 * @param zipCode [required] The zipCode of the city
+	 * @deprecated
+	 */
+	public ArrayList<OvhCity> eligibility_cities_GET(String zipCode) throws IOException {
+		String qPath = "/xdsl/eligibility/cities";
+		StringBuilder sb = path(qPath);
+		query(sb, "zipCode", zipCode);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t9);
+	}
+	private static TypeReference<ArrayList<OvhCity>> t9 = new TypeReference<ArrayList<OvhCity>>() {};
+
+	/**
+	 * Get the streets from a city inseeCode and partial street name
+	 *
+	 * REST: GET /xdsl/eligibility/streets
+	 * @param inseeCode [required] The inseeCode of the city
+	 * @param partialName [required] The partial name to match against the name of the street
+	 * @deprecated
+	 */
+	public ArrayList<OvhStreet> eligibility_streets_GET(String inseeCode, String partialName) throws IOException {
+		String qPath = "/xdsl/eligibility/streets";
+		StringBuilder sb = path(qPath);
+		query(sb, "inseeCode", inseeCode);
+		query(sb, "partialName", partialName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t10);
+	}
+	private static TypeReference<ArrayList<OvhStreet>> t10 = new TypeReference<ArrayList<OvhStreet>>() {};
+
+	/**
+	 * Get an eligibility by its id
+	 *
+	 * REST: GET /xdsl/eligibility/test
+	 * @param id [required] The eligibility id
+	 * @deprecated
+	 */
+	public OvhEligibility eligibility_test_GET(String id) throws IOException {
+		String qPath = "/xdsl/eligibility/test";
+		StringBuilder sb = path(qPath);
+		query(sb, "id", id);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhEligibility.class);
+	}
+
+	/**
+	 * Perform a fiber eligibility for a building
+	 *
+	 * REST: POST /xdsl/eligibility/test/fiber/building
+	 * @param building [required] Unique identifier of the building (you can get it with POST /xdsl/eligibility/search/buildings)
+	 * @deprecated
+	 */
+	public OvhAsyncTask<OvhFiberEligibility> eligibility_test_fiber_building_POST(String building) throws IOException {
+		String qPath = "/xdsl/eligibility/test/fiber/building";
+		StringBuilder sb = path(qPath);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "building", building);
+		String resp = execN(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t11);
+	}
+	private static TypeReference<OvhAsyncTask<OvhFiberEligibility>> t11 = new TypeReference<OvhAsyncTask<OvhFiberEligibility>>() {};
+
+	/**
+	 * Do an eligibility for an address, if no line exist
+	 *
+	 * REST: POST /xdsl/eligibility/test/address
+	 * @param address [required] The address
+	 * @deprecated
+	 */
+	public OvhAsyncTask<OvhEligibility> eligibility_test_address_POST(OvhAddress address) throws IOException {
+		String qPath = "/xdsl/eligibility/test/address";
+		StringBuilder sb = path(qPath);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "address", address);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t12);
+	}
+	private static TypeReference<OvhAsyncTask<OvhEligibility>> t12 = new TypeReference<OvhAsyncTask<OvhEligibility>>() {};
+
+	/**
+	 * Do an eligibility for a line
+	 *
+	 * REST: POST /xdsl/eligibility/test/line
+	 * @param lineNumber [required] The line number
+	 * @param lineStatus [required] The line status
+	 * @deprecated
+	 */
+	public OvhAsyncTask<OvhEligibility> eligibility_test_line_POST(String lineNumber, OvhLandlineStatusEnum lineStatus) throws IOException {
+		String qPath = "/xdsl/eligibility/test/line";
+		StringBuilder sb = path(qPath);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "lineNumber", lineNumber);
+		addBody(o, "lineStatus", lineStatus);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t12);
+	}
+
+	/**
+	 * Search for meeting time slot
+	 *
+	 * REST: GET /xdsl/eligibility/meetings
+	 * @param offerLabel [required] The choosen offer label
+	 * @param eligibilityId [required] The eligibility test id
+	 * @deprecated
+	 */
+	public OvhAsyncTask<OvhMeetingSlots> eligibility_meetings_GET(String eligibilityId, String offerLabel) throws IOException {
+		String qPath = "/xdsl/eligibility/meetings";
+		StringBuilder sb = path(qPath);
+		query(sb, "eligibilityId", eligibilityId);
+		query(sb, "offerLabel", offerLabel);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t13);
+	}
+	private static TypeReference<OvhAsyncTask<OvhMeetingSlots>> t13 = new TypeReference<OvhAsyncTask<OvhMeetingSlots>>() {};
+
+	/**
+	 * Get the inactive lines at given address
+	 *
+	 * REST: POST /xdsl/eligibility/lines/inactive
+	 * @param streetNumber [required] The number in the street
+	 * @param contactName [required] The contact name first three letters
+	 * @param street [required] The information about the street
+	 * @param city [required] The information about the city
+	 * @deprecated
+	 */
+	public OvhAsyncTaskArray<net.minidev.ovh.api.xdsl.eligibility.OvhLine> eligibility_lines_inactive_POST(OvhCity city, String contactName, OvhStreet street, String streetNumber) throws IOException {
+		String qPath = "/xdsl/eligibility/lines/inactive";
+		StringBuilder sb = path(qPath);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "city", city);
+		addBody(o, "contactName", contactName);
+		addBody(o, "street", street);
+		addBody(o, "streetNumber", streetNumber);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t14);
+	}
+	private static TypeReference<OvhAsyncTaskArray<net.minidev.ovh.api.xdsl.eligibility.OvhLine>> t14 = new TypeReference<OvhAsyncTaskArray<net.minidev.ovh.api.xdsl.eligibility.OvhLine>>() {};
+
+	/**
+	 * Get the active lines at given address
+	 *
+	 * REST: POST /xdsl/eligibility/lines/active
+	 * @param city [required] The information about the city
+	 * @param street [required] The information about the street
+	 * @param contactName [required] The contact name first three letters
+	 * @param streetNumber [required] The number in the street
+	 * @deprecated
+	 */
+	public OvhAsyncTaskArray<net.minidev.ovh.api.xdsl.eligibility.OvhLine> eligibility_lines_active_POST(OvhCity city, String contactName, OvhStreet street, String streetNumber) throws IOException {
+		String qPath = "/xdsl/eligibility/lines/active";
+		StringBuilder sb = path(qPath);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "city", city);
+		addBody(o, "contactName", contactName);
+		addBody(o, "street", street);
+		addBody(o, "streetNumber", streetNumber);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t14);
+	}
+
+	/**
+	 * Get all street linked to a locality
+	 *
+	 * REST: POST /xdsl/eligibility/search/fiberStreets
+	 * @param inseeCode [required] French INSEE identifier (you can get it with POST /xdsl/eligibility/search/cities)
+	 * @deprecated
+	 */
+	public OvhAsyncTaskArray<OvhFiberStreet> eligibility_search_fiberStreets_POST(String inseeCode) throws IOException {
+		String qPath = "/xdsl/eligibility/search/fiberStreets";
+		StringBuilder sb = path(qPath);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "inseeCode", inseeCode);
+		String resp = execN(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t15);
+	}
+	private static TypeReference<OvhAsyncTaskArray<OvhFiberStreet>> t15 = new TypeReference<OvhAsyncTaskArray<OvhFiberStreet>>() {};
+
+	/**
+	 * Get all buildings for a specific address
+	 *
+	 * REST: POST /xdsl/eligibility/search/buildings
+	 * @param streetNumber [required] Street number
+	 * @param streetCode [required] Unique identifier of the street (you can get it with POST /xdsl/eligibility/search/streets)
+	 * @deprecated
+	 */
+	public OvhAsyncTaskArray<OvhBuilding> eligibility_search_buildings_POST(String streetCode, String streetNumber) throws IOException {
+		String qPath = "/xdsl/eligibility/search/buildings";
+		StringBuilder sb = path(qPath);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "streetCode", streetCode);
+		addBody(o, "streetNumber", streetNumber);
+		String resp = execN(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t16);
+	}
+	private static TypeReference<OvhAsyncTaskArray<OvhBuilding>> t16 = new TypeReference<OvhAsyncTaskArray<OvhBuilding>>() {};
+
+	/**
+	 * Get all localities linked to a zip code
+	 *
+	 * REST: POST /xdsl/eligibility/search/cities
+	 * @param zipCode [required] Zip code
+	 * @deprecated
+	 */
+	public OvhAsyncTaskArray<OvhCity> eligibility_search_cities_POST(String zipCode) throws IOException {
+		String qPath = "/xdsl/eligibility/search/cities";
+		StringBuilder sb = path(qPath);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "zipCode", zipCode);
+		String resp = execN(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t17);
+	}
+	private static TypeReference<OvhAsyncTaskArray<OvhCity>> t17 = new TypeReference<OvhAsyncTaskArray<OvhCity>>() {};
+
+	/**
+	 * Get the available street numbers for a given street code (unique identifier of a street you can get with the method POST /xdsl/eligibility/search/streets)
+	 *
+	 * REST: POST /xdsl/eligibility/search/streetNumbers
+	 * @param streetCode [required] Street code
+	 * @deprecated
+	 */
+	public OvhAsyncTaskArray<String> eligibility_search_streetNumbers_POST(String streetCode) throws IOException {
+		String qPath = "/xdsl/eligibility/search/streetNumbers";
+		StringBuilder sb = path(qPath);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "streetCode", streetCode);
+		String resp = execN(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t18);
+	}
+	private static TypeReference<OvhAsyncTaskArray<String>> t18 = new TypeReference<OvhAsyncTaskArray<String>>() {};
+
+	/**
 	 * List of TemplateModem
 	 *
 	 * REST: GET /xdsl/templateModem
@@ -88,9 +2035,8 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		String qPath = "/xdsl/templateModem";
 		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, t2);
 	}
-	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
 
 	/**
 	 * Create new Modem Template from existing modem
@@ -162,1952 +2108,6 @@ public class ApiOvhXdsl extends ApiOvhBase {
 		String qPath = "/xdsl";
 		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Get the cities from a zipCode
-	 *
-	 * REST: GET /xdsl/eligibility/cities
-	 * @param zipCode [required] The zipCode of the city
-	 * @deprecated
-	 */
-	public ArrayList<OvhCity> eligibility_cities_GET(String zipCode) throws IOException {
-		String qPath = "/xdsl/eligibility/cities";
-		StringBuilder sb = path(qPath);
-		query(sb, "zipCode", zipCode);
-		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
-	}
-	private static TypeReference<ArrayList<OvhCity>> t2 = new TypeReference<ArrayList<OvhCity>>() {};
-
-	/**
-	 * Do an eligibility for a line
-	 *
-	 * REST: POST /xdsl/eligibility/test/line
-	 * @param lineStatus [required] The line status
-	 * @param lineNumber [required] The line number
-	 * @deprecated
-	 */
-	public OvhAsyncTask<OvhEligibility> eligibility_test_line_POST(String lineNumber, OvhLandlineStatusEnum lineStatus) throws IOException {
-		String qPath = "/xdsl/eligibility/test/line";
-		StringBuilder sb = path(qPath);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "lineNumber", lineNumber);
-		addBody(o, "lineStatus", lineStatus);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t3);
-	}
-	private static TypeReference<OvhAsyncTask<OvhEligibility>> t3 = new TypeReference<OvhAsyncTask<OvhEligibility>>() {};
-
-	/**
-	 * Do an eligibility for an address, if no line exist
-	 *
-	 * REST: POST /xdsl/eligibility/test/address
-	 * @param address [required] The address
-	 * @deprecated
-	 */
-	public OvhAsyncTask<OvhEligibility> eligibility_test_address_POST(OvhAddress address) throws IOException {
-		String qPath = "/xdsl/eligibility/test/address";
-		StringBuilder sb = path(qPath);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "address", address);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t3);
-	}
-
-	/**
-	 * Get an eligibility by its id
-	 *
-	 * REST: GET /xdsl/eligibility/test
-	 * @param id [required] The eligibility id
-	 * @deprecated
-	 */
-	public OvhEligibility eligibility_test_GET(String id) throws IOException {
-		String qPath = "/xdsl/eligibility/test";
-		StringBuilder sb = path(qPath);
-		query(sb, "id", id);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhEligibility.class);
-	}
-
-	/**
-	 * Perform a fiber eligibility for a building
-	 *
-	 * REST: POST /xdsl/eligibility/test/fiber/building
-	 * @param building [required] Unique identifier of the building (you can get it with POST /xdsl/eligibility/search/buildings)
-	 * @deprecated
-	 */
-	public OvhAsyncTask<OvhFiberEligibility> eligibility_test_fiber_building_POST(String building) throws IOException {
-		String qPath = "/xdsl/eligibility/test/fiber/building";
-		StringBuilder sb = path(qPath);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "building", building);
-		String resp = execN(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t4);
-	}
-	private static TypeReference<OvhAsyncTask<OvhFiberEligibility>> t4 = new TypeReference<OvhAsyncTask<OvhFiberEligibility>>() {};
-
-	/**
-	 * Get the inactive lines at given address
-	 *
-	 * REST: POST /xdsl/eligibility/lines/inactive
-	 * @param streetNumber [required] The number in the street
-	 * @param contactName [required] The contact name first three letters
-	 * @param city [required] The information about the city
-	 * @param street [required] The information about the street
-	 * @deprecated
-	 */
-	public OvhAsyncTaskArray<OvhLine> eligibility_lines_inactive_POST(OvhCity city, String contactName, OvhStreet street, String streetNumber) throws IOException {
-		String qPath = "/xdsl/eligibility/lines/inactive";
-		StringBuilder sb = path(qPath);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "city", city);
-		addBody(o, "contactName", contactName);
-		addBody(o, "street", street);
-		addBody(o, "streetNumber", streetNumber);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t5);
-	}
-	private static TypeReference<OvhAsyncTaskArray<OvhLine>> t5 = new TypeReference<OvhAsyncTaskArray<OvhLine>>() {};
-
-	/**
-	 * Get the active lines at given address
-	 *
-	 * REST: POST /xdsl/eligibility/lines/active
-	 * @param street [required] The information about the street
-	 * @param contactName [required] The contact name first three letters
-	 * @param city [required] The information about the city
-	 * @param streetNumber [required] The number in the street
-	 * @deprecated
-	 */
-	public OvhAsyncTaskArray<OvhLine> eligibility_lines_active_POST(OvhCity city, String contactName, OvhStreet street, String streetNumber) throws IOException {
-		String qPath = "/xdsl/eligibility/lines/active";
-		StringBuilder sb = path(qPath);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "city", city);
-		addBody(o, "contactName", contactName);
-		addBody(o, "street", street);
-		addBody(o, "streetNumber", streetNumber);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t5);
-	}
-
-	/**
-	 * Get the streets from a city inseeCode and partial street name
-	 *
-	 * REST: GET /xdsl/eligibility/streets
-	 * @param inseeCode [required] The inseeCode of the city
-	 * @param partialName [required] The partial name to match against the name of the street
-	 * @deprecated
-	 */
-	public ArrayList<OvhStreet> eligibility_streets_GET(String inseeCode, String partialName) throws IOException {
-		String qPath = "/xdsl/eligibility/streets";
-		StringBuilder sb = path(qPath);
-		query(sb, "inseeCode", inseeCode);
-		query(sb, "partialName", partialName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t6);
-	}
-	private static TypeReference<ArrayList<OvhStreet>> t6 = new TypeReference<ArrayList<OvhStreet>>() {};
-
-	/**
-	 * Search for meeting time slot
-	 *
-	 * REST: GET /xdsl/eligibility/meetings
-	 * @param offerLabel [required] The choosen offer label
-	 * @param eligibilityId [required] The eligibility test id
-	 * @deprecated
-	 */
-	public OvhAsyncTask<OvhMeetingSlots> eligibility_meetings_GET(String eligibilityId, String offerLabel) throws IOException {
-		String qPath = "/xdsl/eligibility/meetings";
-		StringBuilder sb = path(qPath);
-		query(sb, "eligibilityId", eligibilityId);
-		query(sb, "offerLabel", offerLabel);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t7);
-	}
-	private static TypeReference<OvhAsyncTask<OvhMeetingSlots>> t7 = new TypeReference<OvhAsyncTask<OvhMeetingSlots>>() {};
-
-	/**
-	 * Get the available street numbers for a given street code (unique identifier of a street you can get with the method POST /xdsl/eligibility/search/streets)
-	 *
-	 * REST: POST /xdsl/eligibility/search/streetNumbers
-	 * @param streetCode [required] Street code
-	 * @deprecated
-	 */
-	public OvhAsyncTaskArray<String> eligibility_search_streetNumbers_POST(String streetCode) throws IOException {
-		String qPath = "/xdsl/eligibility/search/streetNumbers";
-		StringBuilder sb = path(qPath);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "streetCode", streetCode);
-		String resp = execN(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t8);
-	}
-	private static TypeReference<OvhAsyncTaskArray<String>> t8 = new TypeReference<OvhAsyncTaskArray<String>>() {};
-
-	/**
-	 * Get all buildings for a specific address
-	 *
-	 * REST: POST /xdsl/eligibility/search/buildings
-	 * @param streetCode [required] Unique identifier of the street (you can get it with POST /xdsl/eligibility/search/streets)
-	 * @param streetNumber [required] Street number
-	 * @deprecated
-	 */
-	public OvhAsyncTaskArray<OvhBuilding> eligibility_search_buildings_POST(String streetCode, String streetNumber) throws IOException {
-		String qPath = "/xdsl/eligibility/search/buildings";
-		StringBuilder sb = path(qPath);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "streetCode", streetCode);
-		addBody(o, "streetNumber", streetNumber);
-		String resp = execN(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t9);
-	}
-	private static TypeReference<OvhAsyncTaskArray<OvhBuilding>> t9 = new TypeReference<OvhAsyncTaskArray<OvhBuilding>>() {};
-
-	/**
-	 * Get all localities linked to a zip code
-	 *
-	 * REST: POST /xdsl/eligibility/search/cities
-	 * @param zipCode [required] Zip code
-	 * @deprecated
-	 */
-	public OvhAsyncTaskArray<OvhCity> eligibility_search_cities_POST(String zipCode) throws IOException {
-		String qPath = "/xdsl/eligibility/search/cities";
-		StringBuilder sb = path(qPath);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "zipCode", zipCode);
-		String resp = execN(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t10);
-	}
-	private static TypeReference<OvhAsyncTaskArray<OvhCity>> t10 = new TypeReference<OvhAsyncTaskArray<OvhCity>>() {};
-
-	/**
-	 * Get all street linked to a locality
-	 *
-	 * REST: POST /xdsl/eligibility/search/fiberStreets
-	 * @param inseeCode [required] French INSEE identifier (you can get it with POST /xdsl/eligibility/search/cities)
-	 * @deprecated
-	 */
-	public OvhAsyncTaskArray<OvhFiberStreet> eligibility_search_fiberStreets_POST(String inseeCode) throws IOException {
-		String qPath = "/xdsl/eligibility/search/fiberStreets";
-		StringBuilder sb = path(qPath);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "inseeCode", inseeCode);
-		String resp = execN(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t11);
-	}
-	private static TypeReference<OvhAsyncTaskArray<OvhFiberStreet>> t11 = new TypeReference<OvhAsyncTaskArray<OvhFiberStreet>>() {};
-
-	/**
-	 * Update and get advanced diagnostic of the line
-	 *
-	 * REST: POST /xdsl/{serviceName}/lines/{number}/diagnostic/run
-	 * @param actionsDone [required] Customer possible actions
-	 * @param answers [required] Customer answers for line diagnostic
-	 * @param faultType [required] [default=noSync] Line diagnostic type. Depends of problem
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param number [required] The number of the line
-	 */
-	public OvhDiagnostic serviceName_lines_number_diagnostic_run_POST(String serviceName, String number, OvhCustomerActionsEnum[] actionsDone, OvhAnswers answers, OvhFaultTypeEnum faultType) throws IOException {
-		String qPath = "/xdsl/{serviceName}/lines/{number}/diagnostic/run";
-		StringBuilder sb = path(qPath, serviceName, number);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "actionsDone", actionsDone);
-		addBody(o, "answers", answers);
-		addBody(o, "faultType", faultType);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhDiagnostic.class);
-	}
-
-	/**
-	 * Cancel line diagnostic if possible
-	 *
-	 * REST: POST /xdsl/{serviceName}/lines/{number}/diagnostic/cancel
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param number [required] The number of the line
-	 */
-	public void serviceName_lines_number_diagnostic_cancel_POST(String serviceName, String number) throws IOException {
-		String qPath = "/xdsl/{serviceName}/lines/{number}/diagnostic/cancel";
-		StringBuilder sb = path(qPath, serviceName, number);
-		exec(qPath, "POST", sb.toString(), null);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /xdsl/{serviceName}/lines/{number}
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param number [required] The number of the line
-	 */
-	public net.minidev.ovh.api.xdsl.OvhLine serviceName_lines_number_GET(String serviceName, String number) throws IOException {
-		String qPath = "/xdsl/{serviceName}/lines/{number}";
-		StringBuilder sb = path(qPath, serviceName, number);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, net.minidev.ovh.api.xdsl.OvhLine.class);
-	}
-
-	/**
-	 * Get various statistics about the line
-	 *
-	 * REST: GET /xdsl/{serviceName}/lines/{number}/statistics
-	 * @param type [required]
-	 * @param period [required]
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param number [required] The number of the line
-	 */
-	public OvhUnitAndValues<OvhTimestampAndValue> serviceName_lines_number_statistics_GET(String serviceName, String number, OvhStatisticsPeriodEnum period, OvhLineStatisticsTypeEnum type) throws IOException {
-		String qPath = "/xdsl/{serviceName}/lines/{number}/statistics";
-		StringBuilder sb = path(qPath, serviceName, number);
-		query(sb, "period", period);
-		query(sb, "type", type);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t12);
-	}
-	private static TypeReference<OvhUnitAndValues<OvhTimestampAndValue>> t12 = new TypeReference<OvhUnitAndValues<OvhTimestampAndValue>>() {};
-
-	/**
-	 * Change the profile of the port
-	 *
-	 * REST: POST /xdsl/{serviceName}/lines/{number}/dslamPort/changeProfile
-	 * @param dslamProfileId [required] The id of the xdsl.DslamLineProfile
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param number [required] The number of the line
-	 */
-	public OvhTask serviceName_lines_number_dslamPort_changeProfile_POST(String serviceName, String number, Long dslamProfileId) throws IOException {
-		String qPath = "/xdsl/{serviceName}/lines/{number}/dslamPort/changeProfile";
-		StringBuilder sb = path(qPath, serviceName, number);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "dslamProfileId", dslamProfileId);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /xdsl/{serviceName}/lines/{number}/dslamPort
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param number [required] The number of the line
-	 */
-	public OvhDslamPort serviceName_lines_number_dslamPort_GET(String serviceName, String number) throws IOException {
-		String qPath = "/xdsl/{serviceName}/lines/{number}/dslamPort";
-		StringBuilder sb = path(qPath, serviceName, number);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhDslamPort.class);
-	}
-
-	/**
-	 * Reset the port on the DSLAM
-	 *
-	 * REST: POST /xdsl/{serviceName}/lines/{number}/dslamPort/reset
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param number [required] The number of the line
-	 */
-	public OvhTask serviceName_lines_number_dslamPort_reset_POST(String serviceName, String number) throws IOException {
-		String qPath = "/xdsl/{serviceName}/lines/{number}/dslamPort/reset";
-		StringBuilder sb = path(qPath, serviceName, number);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get the logs emitted by the DSLAM for this port
-	 *
-	 * REST: GET /xdsl/{serviceName}/lines/{number}/dslamPort/logs
-	 * @param limit [required] [default=50]
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param number [required] The number of the line
-	 */
-	public ArrayList<OvhDslamPortLog> serviceName_lines_number_dslamPort_logs_GET(String serviceName, String number, Long limit) throws IOException {
-		String qPath = "/xdsl/{serviceName}/lines/{number}/dslamPort/logs";
-		StringBuilder sb = path(qPath, serviceName, number);
-		query(sb, "limit", limit);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t13);
-	}
-	private static TypeReference<ArrayList<OvhDslamPortLog>> t13 = new TypeReference<ArrayList<OvhDslamPortLog>>() {};
-
-	/**
-	 * List all availables profiles for this port
-	 *
-	 * REST: GET /xdsl/{serviceName}/lines/{number}/dslamPort/availableProfiles
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param number [required] The number of the line
-	 */
-	public ArrayList<OvhDslamLineProfile> serviceName_lines_number_dslamPort_availableProfiles_GET(String serviceName, String number) throws IOException {
-		String qPath = "/xdsl/{serviceName}/lines/{number}/dslamPort/availableProfiles";
-		StringBuilder sb = path(qPath, serviceName, number);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t14);
-	}
-	private static TypeReference<ArrayList<OvhDslamLineProfile>> t14 = new TypeReference<ArrayList<OvhDslamLineProfile>>() {};
-
-	/**
-	 * The lines of the access
-	 *
-	 * REST: GET /xdsl/{serviceName}/lines
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public ArrayList<String> serviceName_lines_GET(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/lines";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Initiate the extra IP range migration
-	 *
-	 * REST: POST /xdsl/{serviceName}/addressMove/extraIpRangeMove
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhTask serviceName_addressMove_extraIpRangeMove_POST(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/addressMove/extraIpRangeMove";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Informations about the extra IP range during address move
-	 *
-	 * REST: GET /xdsl/{serviceName}/addressMove/extraIpRange
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhExtraIpRangeMove serviceName_addressMove_extraIpRange_GET(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/addressMove/extraIpRange";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhExtraIpRangeMove.class);
-	}
-
-	/**
-	 * Get various statistics about this access
-	 *
-	 * REST: GET /xdsl/{serviceName}/statistics
-	 * @param period [required]
-	 * @param type [required]
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhUnitAndValues<OvhTimestampAndValue> serviceName_statistics_GET(String serviceName, OvhStatisticsPeriodEnum period, OvhAccessStatisticsTypeEnum type) throws IOException {
-		String qPath = "/xdsl/{serviceName}/statistics";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "period", period);
-		query(sb, "type", type);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t12);
-	}
-
-	/**
-	 * Change the status of the IPv6 for this access
-	 *
-	 * REST: POST /xdsl/{serviceName}/ipv6
-	 * @param enabled [required] Should the IPv6 be enabled ?
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhTask serviceName_ipv6_POST(String serviceName, Boolean enabled) throws IOException {
-		String qPath = "/xdsl/{serviceName}/ipv6";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "enabled", enabled);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Resiliate the access
-	 *
-	 * REST: POST /xdsl/{serviceName}/resiliate
-	 * @param resiliationSurvey [required] Comment about resiliation reasons
-	 * @param resiliationDate [required] The desired resiliation date
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhResiliationFollowUpDetail serviceName_resiliate_POST(String serviceName, Date resiliationDate, OvhResiliationSurvey resiliationSurvey) throws IOException {
-		String qPath = "/xdsl/{serviceName}/resiliate";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "resiliationDate", resiliationDate);
-		addBody(o, "resiliationSurvey", resiliationSurvey);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhResiliationFollowUpDetail.class);
-	}
-
-	/**
-	 * Update RIO, or disable portability, for order in error because of missing or invalid RIO
-	 *
-	 * REST: POST /xdsl/{serviceName}/updateInvalidOrMissingRio
-	 * @param rio [required] RIO number for portability
-	 * @param relaunchWithoutPortability [required] Do not set RIO, and relaunch order without portability
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public void serviceName_updateInvalidOrMissingRio_POST(String serviceName, Boolean relaunchWithoutPortability, String rio) throws IOException {
-		String qPath = "/xdsl/{serviceName}/updateInvalidOrMissingRio";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "relaunchWithoutPortability", relaunchWithoutPortability);
-		addBody(o, "rio", rio);
-		exec(qPath, "POST", sb.toString(), o);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /xdsl/{serviceName}
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhAccess serviceName_GET(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhAccess.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /xdsl/{serviceName}
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public void serviceName_PUT(String serviceName, OvhAccess body) throws IOException {
-		String qPath = "/xdsl/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Remove all the current port mapping rules and set the same config as the access given in parameters
-	 *
-	 * REST: POST /xdsl/{serviceName}/modem/duplicatePortMappingConfig
-	 * @param accessName [required] The access name with the config you want to duplicate
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @deprecated
-	 */
-	public void serviceName_modem_duplicatePortMappingConfig_POST(String serviceName, String accessName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/duplicatePortMappingConfig";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "accessName", accessName);
-		exec(qPath, "POST", sb.toString(), o);
-	}
-
-	/**
-	 * Change the status of the ftp service on modem
-	 *
-	 * REST: POST /xdsl/{serviceName}/modem/ftp
-	 * @param ftp [required] the new status of the ftp service
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhTask serviceName_modem_ftp_POST(String serviceName, OvhServiceStatusEnum ftp) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/ftp";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "ftp", ftp);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get the status of ftp service on modem
-	 *
-	 * REST: GET /xdsl/{serviceName}/modem/ftp
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhServiceStatusEnum serviceName_modem_ftp_GET(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/ftp";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhServiceStatusEnum.class);
-	}
-
-	/**
-	 * Get the status of sip alg service on modem
-	 *
-	 * REST: GET /xdsl/{serviceName}/modem/sipAlg
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhServiceStatusEnum serviceName_modem_sipAlg_GET(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/sipAlg";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhServiceStatusEnum.class);
-	}
-
-	/**
-	 * Change the status of the sip alg service on modem
-	 *
-	 * REST: POST /xdsl/{serviceName}/modem/sipAlg
-	 * @param sipAlg [required] the new status of the sip alg service
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhTask serviceName_modem_sipAlg_POST(String serviceName, OvhServiceStatusEnum sipAlg) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/sipAlg";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "sipAlg", sipAlg);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * List available WLAN channel for this modem
-	 *
-	 * REST: GET /xdsl/{serviceName}/modem/availableWLANChannel
-	 * @param frequency [required] WLAN frequency you want to retrieve channels
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public ArrayList<Long> serviceName_modem_availableWLANChannel_GET(String serviceName, OvhWLANFrequencyEnum frequency) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/availableWLANChannel";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "frequency", frequency);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t15);
-	}
-	private static TypeReference<ArrayList<Long>> t15 = new TypeReference<ArrayList<Long>>() {};
-
-	/**
-	 * Refresh the list of connected devices on the modem
-	 *
-	 * REST: POST /xdsl/{serviceName}/modem/refreshConnectedDevices
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhTask serviceName_modem_refreshConnectedDevices_POST(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/refreshConnectedDevices";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Reboot the modem
-	 *
-	 * REST: POST /xdsl/{serviceName}/modem/reboot
-	 * @param todoDate [required] Date when the reboot will start
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhTask serviceName_modem_reboot_POST(String serviceName, Date todoDate) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/reboot";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "todoDate", todoDate);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Change the status of the Bloc IP on modem
-	 *
-	 * REST: POST /xdsl/{serviceName}/modem/blocIp
-	 * @param status [required] the new status of the bloc ip service
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhTask serviceName_modem_blocIp_POST(String serviceName, OvhServiceStatusEnum status) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/blocIp";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "status", status);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get the status of the Bloc IP on modem
-	 *
-	 * REST: GET /xdsl/{serviceName}/modem/blocIp
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhServiceStatusEnum serviceName_modem_blocIp_GET(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/blocIp";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhServiceStatusEnum.class);
-	}
-
-	/**
-	 * get general Modem information
-	 *
-	 * REST: POST /xdsl/{serviceName}/modem/retrieveInfo
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhAsyncTask<OvhModemInfo> serviceName_modem_retrieveInfo_POST(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/retrieveInfo";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, t16);
-	}
-	private static TypeReference<OvhAsyncTask<OvhModemInfo>> t16 = new TypeReference<OvhAsyncTask<OvhModemInfo>>() {};
-
-	/**
-	 * Launch a task to install target firmware on modem
-	 *
-	 * REST: POST /xdsl/{serviceName}/modem/firmware
-	 * @param todoDate [required] Date of execution, default is now
-	 * @param firmware [required] The firmware version to upgrade to
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhTask serviceName_modem_firmware_POST(String serviceName, String firmware, Date todoDate) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/firmware";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "firmware", firmware);
-		addBody(o, "todoDate", todoDate);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get the firmware version installed on modem
-	 *
-	 * REST: GET /xdsl/{serviceName}/modem/firmware
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public String serviceName_modem_firmware_GET(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/firmware";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * Change the status of contentSharing on modem
-	 *
-	 * REST: POST /xdsl/{serviceName}/modem/contentSharing
-	 * @param contentSharing [required] the new status of the contentSharing service
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhTask serviceName_modem_contentSharing_POST(String serviceName, OvhServiceStatusEnum contentSharing) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/contentSharing";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "contentSharing", contentSharing);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get the status of contentSharing on modem
-	 *
-	 * REST: GET /xdsl/{serviceName}/modem/contentSharing
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhServiceStatusEnum serviceName_modem_contentSharing_GET(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/contentSharing";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhServiceStatusEnum.class);
-	}
-
-	/**
-	 * Get the status of the Upnp on modem
-	 *
-	 * REST: GET /xdsl/{serviceName}/modem/upnp
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhServiceStatusEnum serviceName_modem_upnp_GET(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/upnp";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhServiceStatusEnum.class);
-	}
-
-	/**
-	 * Change the status of the Upnp on modem
-	 *
-	 * REST: POST /xdsl/{serviceName}/modem/upnp
-	 * @param upnp [required] the new status of the upnp service
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhTask serviceName_modem_upnp_POST(String serviceName, OvhServiceStatusEnum upnp) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/upnp";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "upnp", upnp);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Change the status of the ipsec alg service on modem
-	 *
-	 * REST: POST /xdsl/{serviceName}/modem/ipsecAlg
-	 * @param ipsecAlg [required] the new status of the ipsec alg service
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhTask serviceName_modem_ipsecAlg_POST(String serviceName, OvhServiceStatusEnum ipsecAlg) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/ipsecAlg";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "ipsecAlg", ipsecAlg);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get the status of ipsec alg service on modem
-	 *
-	 * REST: GET /xdsl/{serviceName}/modem/ipsecAlg
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhServiceStatusEnum serviceName_modem_ipsecAlg_GET(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/ipsecAlg";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhServiceStatusEnum.class);
-	}
-
-	/**
-	 * List of LANs on this modem
-	 *
-	 * REST: GET /xdsl/{serviceName}/modem/lan
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public ArrayList<String> serviceName_modem_lan_GET(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/lan";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /xdsl/{serviceName}/modem/lan/{lanName}
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param lanName [required] Name of the LAN
-	 */
-	public OvhLAN serviceName_modem_lan_lanName_GET(String serviceName, String lanName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/lan/{lanName}";
-		StringBuilder sb = path(qPath, serviceName, lanName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhLAN.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /xdsl/{serviceName}/modem/lan/{lanName}
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param lanName [required] Name of the LAN
-	 */
-	public void serviceName_modem_lan_lanName_PUT(String serviceName, String lanName, OvhLAN body) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/lan/{lanName}";
-		StringBuilder sb = path(qPath, serviceName, lanName);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * List of DHCP on this modem
-	 *
-	 * REST: GET /xdsl/{serviceName}/modem/lan/{lanName}/dhcp
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param lanName [required] Name of the LAN
-	 */
-	public ArrayList<String> serviceName_modem_lan_lanName_dhcp_GET(String serviceName, String lanName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/lan/{lanName}/dhcp";
-		StringBuilder sb = path(qPath, serviceName, lanName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param lanName [required] Name of the LAN
-	 * @param dhcpName [required] Name of the DHCP
-	 */
-	public OvhDHCP serviceName_modem_lan_lanName_dhcp_dhcpName_GET(String serviceName, String lanName, String dhcpName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}";
-		StringBuilder sb = path(qPath, serviceName, lanName, dhcpName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhDHCP.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param lanName [required] Name of the LAN
-	 * @param dhcpName [required] Name of the DHCP
-	 */
-	public void serviceName_modem_lan_lanName_dhcp_dhcpName_PUT(String serviceName, String lanName, String dhcpName, OvhDHCP body) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}";
-		StringBuilder sb = path(qPath, serviceName, lanName, dhcpName);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * List of DHCP Static Address of this modem
-	 *
-	 * REST: GET /xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}/DHCPStaticAddresses
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param lanName [required] Name of the LAN
-	 * @param dhcpName [required] Name of the DHCP
-	 */
-	public ArrayList<String> serviceName_modem_lan_lanName_dhcp_dhcpName_DHCPStaticAddresses_GET(String serviceName, String lanName, String dhcpName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}/DHCPStaticAddresses";
-		StringBuilder sb = path(qPath, serviceName, lanName, dhcpName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Add a DHCP static lease
-	 *
-	 * REST: POST /xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}/DHCPStaticAddresses
-	 * @param name [required] Name of the DHCP static lease
-	 * @param IPAddress [required] The IP address of the device
-	 * @param MACAddress [required] The MAC address of the device
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param lanName [required] Name of the LAN
-	 * @param dhcpName [required] Name of the DHCP
-	 */
-	public OvhDHCPStaticAddress serviceName_modem_lan_lanName_dhcp_dhcpName_DHCPStaticAddresses_POST(String serviceName, String lanName, String dhcpName, String IPAddress, String MACAddress, String name) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}/DHCPStaticAddresses";
-		StringBuilder sb = path(qPath, serviceName, lanName, dhcpName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "IPAddress", IPAddress);
-		addBody(o, "MACAddress", MACAddress);
-		addBody(o, "name", name);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhDHCPStaticAddress.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}/DHCPStaticAddresses/{MACAddress}
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param lanName [required] Name of the LAN
-	 * @param dhcpName [required] Name of the DHCP
-	 * @param MACAddress [required] The MAC address of the device
-	 */
-	public OvhDHCPStaticAddress serviceName_modem_lan_lanName_dhcp_dhcpName_DHCPStaticAddresses_MACAddress_GET(String serviceName, String lanName, String dhcpName, String MACAddress) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}/DHCPStaticAddresses/{MACAddress}";
-		StringBuilder sb = path(qPath, serviceName, lanName, dhcpName, MACAddress);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhDHCPStaticAddress.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}/DHCPStaticAddresses/{MACAddress}
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param lanName [required] Name of the LAN
-	 * @param dhcpName [required] Name of the DHCP
-	 * @param MACAddress [required] The MAC address of the device
-	 */
-	public void serviceName_modem_lan_lanName_dhcp_dhcpName_DHCPStaticAddresses_MACAddress_PUT(String serviceName, String lanName, String dhcpName, String MACAddress, OvhDHCPStaticAddress body) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}/DHCPStaticAddresses/{MACAddress}";
-		StringBuilder sb = path(qPath, serviceName, lanName, dhcpName, MACAddress);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Delete this port mapping
-	 *
-	 * REST: DELETE /xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}/DHCPStaticAddresses/{MACAddress}
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param lanName [required] Name of the LAN
-	 * @param dhcpName [required] Name of the DHCP
-	 * @param MACAddress [required] The MAC address of the device
-	 */
-	public OvhTask serviceName_modem_lan_lanName_dhcp_dhcpName_DHCPStaticAddresses_MACAddress_DELETE(String serviceName, String lanName, String dhcpName, String MACAddress) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/lan/{lanName}/dhcp/{dhcpName}/DHCPStaticAddresses/{MACAddress}";
-		StringBuilder sb = path(qPath, serviceName, lanName, dhcpName, MACAddress);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * List available firmware for this modem
-	 *
-	 * REST: GET /xdsl/{serviceName}/modem/firmwareAvailable
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public ArrayList<String> serviceName_modem_firmwareAvailable_GET(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/firmwareAvailable";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Remove all the current port mapping rules
-	 *
-	 * REST: POST /xdsl/{serviceName}/modem/resetPortMappingConfig
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public void serviceName_modem_resetPortMappingConfig_POST(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/resetPortMappingConfig";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "POST", sb.toString(), null);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /xdsl/{serviceName}/modem/wifi/{wifiName}
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param wifiName [required] Name of the Wifi
-	 */
-	public OvhWLAN serviceName_modem_wifi_wifiName_GET(String serviceName, String wifiName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/wifi/{wifiName}";
-		StringBuilder sb = path(qPath, serviceName, wifiName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhWLAN.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /xdsl/{serviceName}/modem/wifi/{wifiName}
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param wifiName [required] Name of the Wifi
-	 */
-	public void serviceName_modem_wifi_wifiName_PUT(String serviceName, String wifiName, OvhWLAN body) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/wifi/{wifiName}";
-		StringBuilder sb = path(qPath, serviceName, wifiName);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * List of WLANs on this modem
-	 *
-	 * REST: GET /xdsl/{serviceName}/modem/wifi
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public ArrayList<String> serviceName_modem_wifi_GET(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/wifi";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Change the status of callWaiting on modem
-	 *
-	 * REST: POST /xdsl/{serviceName}/modem/callWaiting
-	 * @param callWaiting [required] the new status of the callWaiting service
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhTask serviceName_modem_callWaiting_POST(String serviceName, OvhServiceStatusEnum callWaiting) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/callWaiting";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "callWaiting", callWaiting);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get the status of callWaiting on modem
-	 *
-	 * REST: GET /xdsl/{serviceName}/modem/callWaiting
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhServiceStatusEnum serviceName_modem_callWaiting_GET(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/callWaiting";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhServiceStatusEnum.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /xdsl/{serviceName}/modem
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhModem serviceName_modem_GET(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhModem.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /xdsl/{serviceName}/modem
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public void serviceName_modem_PUT(String serviceName, OvhModem body) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Reset the modem to its default configuration
-	 *
-	 * REST: POST /xdsl/{serviceName}/modem/reset
-	 * @param resetOvhConfig [required] Reset configuration stored in OVH databases
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhTask serviceName_modem_reset_POST(String serviceName, Boolean resetOvhConfig) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/reset";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "resetOvhConfig", resetOvhConfig);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /xdsl/{serviceName}/modem/portMappings/{name}
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param name [required] Name of the port mapping entry
-	 */
-	public OvhPortMapping serviceName_modem_portMappings_name_GET(String serviceName, String name) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/portMappings/{name}";
-		StringBuilder sb = path(qPath, serviceName, name);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPortMapping.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /xdsl/{serviceName}/modem/portMappings/{name}
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param name [required] Name of the port mapping entry
-	 */
-	public void serviceName_modem_portMappings_name_PUT(String serviceName, String name, OvhPortMapping body) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/portMappings/{name}";
-		StringBuilder sb = path(qPath, serviceName, name);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Delete this port mapping
-	 *
-	 * REST: DELETE /xdsl/{serviceName}/modem/portMappings/{name}
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param name [required] Name of the port mapping entry
-	 */
-	public OvhTask serviceName_modem_portMappings_name_DELETE(String serviceName, String name) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/portMappings/{name}";
-		StringBuilder sb = path(qPath, serviceName, name);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * List of PortMappings on this modem
-	 *
-	 * REST: GET /xdsl/{serviceName}/modem/portMappings
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public ArrayList<String> serviceName_modem_portMappings_GET(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/portMappings";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Add a port mapping
-	 *
-	 * REST: POST /xdsl/{serviceName}/modem/portMappings
-	 * @param protocol [required] Protocol of the port mapping (TCP / UDP)
-	 * @param name [required] Name of the port mapping entry
-	 * @param allowedRemoteIp [required] An ip which will access to the defined rule. Default : no restriction applied
-	 * @param internalPort [required] The port on the Internal Client that will get the connections
-	 * @param internalClient [required] The IP address of the destination of the packets
-	 * @param externalPortEnd [required] The last port of the interval on the External Client that will get the connections
-	 * @param description [required] Description of the Port Mapping
-	 * @param externalPortStart [required] External Port that the modem will listen on
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhPortMapping serviceName_modem_portMappings_POST(String serviceName, String allowedRemoteIp, String description, Long externalPortEnd, Long externalPortStart, String internalClient, Long internalPort, String name, OvhProtocolTypeEnum protocol) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/portMappings";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "allowedRemoteIp", allowedRemoteIp);
-		addBody(o, "description", description);
-		addBody(o, "externalPortEnd", externalPortEnd);
-		addBody(o, "externalPortStart", externalPortStart);
-		addBody(o, "internalClient", internalClient);
-		addBody(o, "internalPort", internalPort);
-		addBody(o, "name", name);
-		addBody(o, "protocol", protocol);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhPortMapping.class);
-	}
-
-	/**
-	 * List of devices connected on this modem
-	 *
-	 * REST: GET /xdsl/{serviceName}/modem/connectedDevices
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public ArrayList<String> serviceName_modem_connectedDevices_GET(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/connectedDevices";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /xdsl/{serviceName}/modem/connectedDevices/{macAddress}
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param macAddress [required] MAC address of the device
-	 */
-	public OvhConnectedDevice serviceName_modem_connectedDevices_macAddress_GET(String serviceName, String macAddress) throws IOException {
-		String qPath = "/xdsl/{serviceName}/modem/connectedDevices/{macAddress}";
-		StringBuilder sb = path(qPath, serviceName, macAddress);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhConnectedDevice.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /xdsl/{serviceName}/monitoringNotifications/{id}
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param id [required] Id of the object
-	 */
-	public OvhMonitoringNotification serviceName_monitoringNotifications_id_GET(String serviceName, Long id) throws IOException {
-		String qPath = "/xdsl/{serviceName}/monitoringNotifications/{id}";
-		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhMonitoringNotification.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /xdsl/{serviceName}/monitoringNotifications/{id}
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param id [required] Id of the object
-	 */
-	public void serviceName_monitoringNotifications_id_PUT(String serviceName, Long id, OvhMonitoringNotification body) throws IOException {
-		String qPath = "/xdsl/{serviceName}/monitoringNotifications/{id}";
-		StringBuilder sb = path(qPath, serviceName, id);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Delete this notification
-	 *
-	 * REST: DELETE /xdsl/{serviceName}/monitoringNotifications/{id}
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param id [required] Id of the object
-	 */
-	public void serviceName_monitoringNotifications_id_DELETE(String serviceName, Long id) throws IOException {
-		String qPath = "/xdsl/{serviceName}/monitoringNotifications/{id}";
-		StringBuilder sb = path(qPath, serviceName, id);
-		exec(qPath, "DELETE", sb.toString(), null);
-	}
-
-	/**
-	 * List the notifications for this access
-	 *
-	 * REST: GET /xdsl/{serviceName}/monitoringNotifications
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public ArrayList<Long> serviceName_monitoringNotifications_GET(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/monitoringNotifications";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t15);
-	}
-
-	/**
-	 * Add a notification
-	 *
-	 * REST: POST /xdsl/{serviceName}/monitoringNotifications
-	 * @param frequency [required]
-	 * @param downThreshold [required] [default=120] The number of seconds the access has to be down to trigger the alert
-	 * @param phone [required] The phone number, if type is sms
-	 * @param type [required]
-	 * @param smsAccount [required] The SMS account which will be debited for each sent SMS, if the type is sms
-	 * @param allowIncident [required] [default=true] Whether or not to allow notifications concerning generic incidents
-	 * @param email [required] The e-mail address, if type is mail
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhMonitoringNotification serviceName_monitoringNotifications_POST(String serviceName, Boolean allowIncident, Long downThreshold, String email, OvhFrequencyEnum frequency, String phone, String smsAccount, OvhTypeEnum type) throws IOException {
-		String qPath = "/xdsl/{serviceName}/monitoringNotifications";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "allowIncident", allowIncident);
-		addBody(o, "downThreshold", downThreshold);
-		addBody(o, "email", email);
-		addBody(o, "frequency", frequency);
-		addBody(o, "phone", phone);
-		addBody(o, "smsAccount", smsAccount);
-		addBody(o, "type", type);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhMonitoringNotification.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /xdsl/{serviceName}/ips/{ip}
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param ip [required] The IP address
-	 */
-	public OvhIP serviceName_ips_ip_GET(String serviceName, String ip) throws IOException {
-		String qPath = "/xdsl/{serviceName}/ips/{ip}";
-		StringBuilder sb = path(qPath, serviceName, ip);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhIP.class);
-	}
-
-	/**
-	 * Stop renewing this extra IPv4 option
-	 *
-	 * REST: DELETE /xdsl/{serviceName}/ips/{ip}
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param ip [required] The IP address
-	 */
-	public void serviceName_ips_ip_DELETE(String serviceName, String ip) throws IOException {
-		String qPath = "/xdsl/{serviceName}/ips/{ip}";
-		StringBuilder sb = path(qPath, serviceName, ip);
-		exec(qPath, "DELETE", sb.toString(), null);
-	}
-
-	/**
-	 * List of IPs addresses for this access
-	 *
-	 * REST: GET /xdsl/{serviceName}/ips
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public ArrayList<String> serviceName_ips_GET(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/ips";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Order an extra /29 range of IPv4 addresses
-	 *
-	 * REST: POST /xdsl/{serviceName}/ips
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhTask serviceName_ips_POST(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/ips";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /xdsl/{serviceName}/antiSpams/{ip}
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param ip [required] IP which spam
-	 */
-	public OvhAntiSpam serviceName_antiSpams_ip_GET(String serviceName, String ip) throws IOException {
-		String qPath = "/xdsl/{serviceName}/antiSpams/{ip}";
-		StringBuilder sb = path(qPath, serviceName, ip);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhAntiSpam.class);
-	}
-
-	/**
-	 * List of evidences stored on PCS for this ip
-	 *
-	 * REST: GET /xdsl/{serviceName}/antiSpams/{ip}/evidences
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param ip [required] IP which spam
-	 */
-	public OvhEvidencesInfo serviceName_antiSpams_ip_evidences_GET(String serviceName, String ip) throws IOException {
-		String qPath = "/xdsl/{serviceName}/antiSpams/{ip}/evidences";
-		StringBuilder sb = path(qPath, serviceName, ip);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhEvidencesInfo.class);
-	}
-
-	/**
-	 * List antiSpams for this access
-	 *
-	 * REST: GET /xdsl/{serviceName}/antiSpams
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public ArrayList<String> serviceName_antiSpams_GET(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/antiSpams";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Get information about the ongoing resiliation
-	 *
-	 * REST: GET /xdsl/{serviceName}/canCancelResiliation
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public Boolean serviceName_canCancelResiliation_GET(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/canCancelResiliation";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, Boolean.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /xdsl/{serviceName}/diagnostic
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhAccessDiagnostic serviceName_diagnostic_GET(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/diagnostic";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhAccessDiagnostic.class);
-	}
-
-	/**
-	 * Run diagnostic on the access
-	 *
-	 * REST: POST /xdsl/{serviceName}/diagnostic
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhTask serviceName_diagnostic_POST(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/diagnostic";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Give the price to requestTotalDeconsolidation on the access
-	 *
-	 * REST: GET /xdsl/{serviceName}/totalDeconsolidationTerms
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhDeconsolidationTerms serviceName_totalDeconsolidationTerms_GET(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/totalDeconsolidationTerms";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhDeconsolidationTerms.class);
-	}
-
-	/**
-	 * List the radius connection logs
-	 *
-	 * REST: GET /xdsl/{serviceName}/radiusConnectionLogs
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public ArrayList<OvhRadiusConnectionLog> serviceName_radiusConnectionLogs_GET(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/radiusConnectionLogs";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t17);
-	}
-	private static TypeReference<ArrayList<OvhRadiusConnectionLog>> t17 = new TypeReference<ArrayList<OvhRadiusConnectionLog>>() {};
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /xdsl/{serviceName}/pendingAction
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhPendingAction serviceName_pendingAction_GET(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/pendingAction";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhPendingAction.class);
-	}
-
-	/**
-	 * Get information about the ongoing resiliation
-	 *
-	 * REST: GET /xdsl/{serviceName}/resiliationFollowup
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhResiliationFollowUpDetail serviceName_resiliationFollowup_GET(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/resiliationFollowup";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhResiliationFollowUpDetail.class);
-	}
-
-	/**
-	 * Launch a contact change procedure
-	 *
-	 * REST: POST /xdsl/{serviceName}/changeContact
-	 * @param contactAdmin The contact to set as admin contact
-	 * @param contactTech The contact to set as tech contact
-	 * @param contactBilling The contact to set as billing contact
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactBilling, String contactTech) throws IOException {
-		String qPath = "/xdsl/{serviceName}/changeContact";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "contactAdmin", contactAdmin);
-		addBody(o, "contactBilling", contactBilling);
-		addBody(o, "contactTech", contactTech);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t15);
-	}
-
-	/**
-	 * Tasks scheduled for this access
-	 *
-	 * REST: GET /xdsl/{serviceName}/tasks
-	 * @param function [required] Filter the value of function property (=)
-	 * @param status [required] Filter the value of status property (=)
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public ArrayList<Long> serviceName_tasks_GET(String serviceName, String function, OvhTaskStatusEnum status) throws IOException {
-		String qPath = "/xdsl/{serviceName}/tasks";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "function", function);
-		query(sb, "status", status);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t15);
-	}
-
-	/**
-	 * Delete the task in problem from the results
-	 *
-	 * REST: POST /xdsl/{serviceName}/tasks/{id}/archive
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param id [required] Id of the object
-	 */
-	public void serviceName_tasks_id_archive_POST(String serviceName, Long id) throws IOException {
-		String qPath = "/xdsl/{serviceName}/tasks/{id}/archive";
-		StringBuilder sb = path(qPath, serviceName, id);
-		exec(qPath, "POST", sb.toString(), null);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /xdsl/{serviceName}/tasks/{id}
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param id [required] Id of the object
-	 */
-	public OvhTask serviceName_tasks_id_GET(String serviceName, Long id) throws IOException {
-		String qPath = "/xdsl/{serviceName}/tasks/{id}";
-		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Renew PPP password and send the PPP login informations to the e-mail of the nicAdmin
-	 *
-	 * REST: POST /xdsl/{serviceName}/requestPPPLoginMail
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public void serviceName_requestPPPLoginMail_POST(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/requestPPPLoginMail";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "POST", sb.toString(), null);
-	}
-
-	/**
-	 * Switch this access to total deconsolidation
-	 *
-	 * REST: POST /xdsl/{serviceName}/requestTotalDeconsolidation
-	 * @param noPortability [required] Do not port the number
-	 * @param rio [required] A token to prove the ownership of the line number, needed to port the number
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhTask serviceName_requestTotalDeconsolidation_POST(String serviceName, Boolean noPortability, String rio) throws IOException {
-		String qPath = "/xdsl/{serviceName}/requestTotalDeconsolidation";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "noPortability", noPortability);
-		addBody(o, "rio", rio);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Unlock order in "waitingCustomer" status. It only concerns orders whose modem is sent before anything have been forwarded to our provider
-	 *
-	 * REST: POST /xdsl/{serviceName}/sendOrderToProvider
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public void serviceName_sendOrderToProvider_POST(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/sendOrderToProvider";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "POST", sb.toString(), null);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /xdsl/{serviceName}/incident
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhIncident serviceName_incident_GET(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/incident";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhIncident.class);
-	}
-
-	/**
-	 * Apply TemplateModem to existing Modem
-	 *
-	 * REST: POST /xdsl/{serviceName}/applyTemplateToModem
-	 * @param templateName [required] Modem Template Name
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 *
-	 * API beta
-	 */
-	public OvhTask serviceName_applyTemplateToModem_POST(String serviceName, String templateName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/applyTemplateToModem";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "templateName", templateName);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /xdsl/{serviceName}/rma/{id}
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param id [required] Return merchandise authorisation identifier
-	 */
-	public OvhRma serviceName_rma_id_GET(String serviceName, String id) throws IOException {
-		String qPath = "/xdsl/{serviceName}/rma/{id}";
-		StringBuilder sb = path(qPath, serviceName, id);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhRma.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /xdsl/{serviceName}/rma/{id}
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param id [required] Return merchandise authorisation identifier
-	 */
-	public void serviceName_rma_id_PUT(String serviceName, String id, OvhRma body) throws IOException {
-		String qPath = "/xdsl/{serviceName}/rma/{id}";
-		StringBuilder sb = path(qPath, serviceName, id);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Cancel the rma
-	 *
-	 * REST: DELETE /xdsl/{serviceName}/rma/{id}
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 * @param id [required] Return merchandise authorisation identifier
-	 */
-	public void serviceName_rma_id_DELETE(String serviceName, String id) throws IOException {
-		String qPath = "/xdsl/{serviceName}/rma/{id}";
-		StringBuilder sb = path(qPath, serviceName, id);
-		exec(qPath, "DELETE", sb.toString(), null);
-	}
-
-	/**
-	 * Return Merchandise Authorisation associated
-	 *
-	 * REST: GET /xdsl/{serviceName}/rma
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public ArrayList<String> serviceName_rma_GET(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/rma";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Get the status of the order
-	 *
-	 * REST: GET /xdsl/{serviceName}/orderFollowup
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public ArrayList<OvhStep> serviceName_orderFollowup_GET(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/orderFollowup";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t18);
-	}
-	private static TypeReference<ArrayList<OvhStep>> t18 = new TypeReference<ArrayList<OvhStep>>() {};
-
-	/**
-	 * Get resiliation terms
-	 *
-	 * REST: GET /xdsl/{serviceName}/resiliationTerms
-	 * @param resiliationDate [required] The desired resiliation date
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhResiliationTerms serviceName_resiliationTerms_GET(String serviceName, Date resiliationDate) throws IOException {
-		String qPath = "/xdsl/{serviceName}/resiliationTerms";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "resiliationDate", resiliationDate);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhResiliationTerms.class);
-	}
-
-	/**
-	 * Cancel the ongoing resiliation
-	 *
-	 * REST: POST /xdsl/{serviceName}/cancelResiliation
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public void serviceName_cancelResiliation_POST(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/cancelResiliation";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "POST", sb.toString(), null);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /xdsl/{serviceName}/serviceInfos
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
-		String qPath = "/xdsl/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhService.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /xdsl/{serviceName}/serviceInfos
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your XDSL offer
-	 */
-	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
-		String qPath = "/xdsl/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /xdsl/email/pro/{email}
-	 * @param email [required] The email address if the XDSL Email Pro
-	 */
-	public OvhXdslEmailPro email_pro_email_GET(String email) throws IOException {
-		String qPath = "/xdsl/email/pro/{email}";
-		StringBuilder sb = path(qPath, email);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhXdslEmailPro.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /xdsl/email/pro/{email}
-	 * @param body [required] New object properties
-	 * @param email [required] The email address if the XDSL Email Pro
-	 */
-	public void email_pro_email_PUT(String email, OvhXdslEmailPro body) throws IOException {
-		String qPath = "/xdsl/email/pro/{email}";
-		StringBuilder sb = path(qPath, email);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Delete the email
-	 *
-	 * REST: DELETE /xdsl/email/pro/{email}
-	 * @param email [required] The email address if the XDSL Email Pro
-	 */
-	public void email_pro_email_DELETE(String email) throws IOException {
-		String qPath = "/xdsl/email/pro/{email}";
-		StringBuilder sb = path(qPath, email);
-		exec(qPath, "DELETE", sb.toString(), null);
-	}
-
-	/**
-	 * Change the email password
-	 *
-	 * REST: POST /xdsl/email/pro/{email}/changePassword
-	 * @param password [required] New email password
-	 * @param email [required] The email address if the XDSL Email Pro
-	 */
-	public net.minidev.ovh.api.xdsl.email.pro.OvhTask email_pro_email_changePassword_POST(String email, String password) throws IOException {
-		String qPath = "/xdsl/email/pro/{email}/changePassword";
-		StringBuilder sb = path(qPath, email);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "password", password);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, net.minidev.ovh.api.xdsl.email.pro.OvhTask.class);
-	}
-
-	/**
-	 * List available services
-	 *
-	 * REST: GET /xdsl/email/pro
-	 */
-	public ArrayList<String> email_pro_GET() throws IOException {
-		String qPath = "/xdsl/email/pro";
-		StringBuilder sb = path(qPath);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * List of incidents
-	 *
-	 * REST: GET /xdsl/incidents
-	 * @param creationDate [required] Filter the value of creationDate property (>)
-	 * @param endDate [required] Filter the value of endDate property (<)
-	 */
-	public ArrayList<Long> incidents_GET(Date creationDate, Date endDate) throws IOException {
-		String qPath = "/xdsl/incidents";
-		StringBuilder sb = path(qPath);
-		query(sb, "creationDate", creationDate);
-		query(sb, "endDate", endDate);
-		String resp = execN(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t15);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /xdsl/incidents/{id}
-	 * @param id [required] ID of the incident
-	 */
-	public OvhIncident incidents_id_GET(Long id) throws IOException {
-		String qPath = "/xdsl/incidents/{id}";
-		StringBuilder sb = path(qPath, id);
-		String resp = execN(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhIncident.class);
-	}
-
-	/**
-	 * List available services
-	 *
-	 * REST: GET /xdsl/spare
-	 */
-	public ArrayList<String> spare_GET() throws IOException {
-		String qPath = "/xdsl/spare";
-		StringBuilder sb = path(qPath);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Replace the modem by its spare
-	 *
-	 * REST: POST /xdsl/spare/{spare}/replace
-	 * @param domain [required] The modem to replace by the spare
-	 * @param spare [required] The internal name of your spare
-	 */
-	public void spare_spare_replace_POST(String spare, String domain) throws IOException {
-		String qPath = "/xdsl/spare/{spare}/replace";
-		StringBuilder sb = path(qPath, spare);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "domain", domain);
-		exec(qPath, "POST", sb.toString(), o);
-	}
-
-	/**
-	 * Return the broken equipment in instantRefund
-	 *
-	 * REST: POST /xdsl/spare/{spare}/returnMerchandise
-	 * @param spare [required] The internal name of your spare
-	 */
-	public void spare_spare_returnMerchandise_POST(String spare) throws IOException {
-		String qPath = "/xdsl/spare/{spare}/returnMerchandise";
-		StringBuilder sb = path(qPath, spare);
-		exec(qPath, "POST", sb.toString(), null);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /xdsl/spare/{spare}/serviceInfos
-	 * @param spare [required] The internal name of your spare
-	 */
-	public OvhService spare_spare_serviceInfos_GET(String spare) throws IOException {
-		String qPath = "/xdsl/spare/{spare}/serviceInfos";
-		StringBuilder sb = path(qPath, spare);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhService.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /xdsl/spare/{spare}/serviceInfos
-	 * @param body [required] New object properties
-	 * @param spare [required] The internal name of your spare
-	 */
-	public void spare_spare_serviceInfos_PUT(String spare, OvhService body) throws IOException {
-		String qPath = "/xdsl/spare/{spare}/serviceInfos";
-		StringBuilder sb = path(qPath, spare);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Return the list of brand compatible to be replaced
-	 *
-	 * REST: GET /xdsl/spare/{spare}/compatibleReplacement
-	 * @param spare [required] The internal name of your spare
-	 */
-	public ArrayList<String> spare_spare_compatibleReplacement_GET(String spare) throws IOException {
-		String qPath = "/xdsl/spare/{spare}/compatibleReplacement";
-		StringBuilder sb = path(qPath, spare);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /xdsl/spare/{spare}
-	 * @param spare [required] The internal name of your spare
-	 */
-	public OvhXdslSpare spare_spare_GET(String spare) throws IOException {
-		String qPath = "/xdsl/spare/{spare}";
-		StringBuilder sb = path(qPath, spare);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhXdslSpare.class);
-	}
-
-	/**
-	 * Delete the spare as if it was not belonging to OVH anymore
-	 *
-	 * REST: DELETE /xdsl/spare/{spare}
-	 * @param spare [required] The internal name of your spare
-	 */
-	public void spare_spare_DELETE(String spare) throws IOException {
-		String qPath = "/xdsl/spare/{spare}";
-		StringBuilder sb = path(qPath, spare);
-		exec(qPath, "DELETE", sb.toString(), null);
-	}
-
-	/**
-	 * Get all available spare brands
-	 *
-	 * REST: GET /xdsl/spare/brands
-	 */
-	public ArrayList<String> spare_brands_GET() throws IOException {
-		String qPath = "/xdsl/spare/brands";
-		StringBuilder sb = path(qPath);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
 	}
 }

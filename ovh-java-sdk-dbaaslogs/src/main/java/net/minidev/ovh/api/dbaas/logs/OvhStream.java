@@ -49,7 +49,7 @@ public class OvhStream {
 	public String title;
 
 	/**
-	 * ColdStorage retention in year
+	 * Cold storage retention in year
 	 *
 	 * canBeNull && readOnly
 	 */
@@ -70,6 +70,13 @@ public class OvhStream {
 	public Long nbArchive;
 
 	/**
+	 * ColdStorage destination
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhStreamColdStorageTargetEnum coldStorageTarget;
+
+	/**
 	 * Indicates if you are allowed to edit entry
 	 *
 	 * canBeNull && readOnly
@@ -77,7 +84,7 @@ public class OvhStream {
 	public Boolean isEditable;
 
 	/**
-	 * Notify on new ColdStorage archive
+	 * Notify on new Cold storage archive
 	 *
 	 * canBeNull && readOnly
 	 */
@@ -98,11 +105,25 @@ public class OvhStream {
 	public String optionId;
 
 	/**
-	 * Is ColdStorage enabled?
+	 * ColdStorage content
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhStreamColdStorageContentEnum coldStorageContent;
+
+	/**
+	 * Is Cold storage enabled?
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean coldStorageEnabled;
+
+	/**
+	 * Cold storage compression method
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhStreamColdStorageCompressionEnum coldStorageCompression;
 
 	/**
 	 * Enable ES indexing
@@ -110,13 +131,6 @@ public class OvhStream {
 	 * canBeNull && readOnly
 	 */
 	public Boolean indexingEnabled;
-
-	/**
-	 * ColdStorage compression method
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhStreamColdStorageCompressionEnum coldStorageCompression;
 
 	/**
 	 * Stream last update

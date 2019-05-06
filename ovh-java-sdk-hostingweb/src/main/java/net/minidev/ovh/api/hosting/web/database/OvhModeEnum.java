@@ -5,7 +5,8 @@ package net.minidev.ovh.api.hosting.web.database;
  */
 public enum OvhModeEnum {
 	besteffort("besteffort"),
-	classic("classic");
+	classic("classic"),
+	module("module");
 
 	final String value;
 

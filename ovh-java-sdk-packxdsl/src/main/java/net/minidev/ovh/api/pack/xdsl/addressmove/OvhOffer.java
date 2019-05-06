@@ -50,18 +50,18 @@ public class OvhOffer {
 	public Long estimatedUpload;
 
 	/**
-	 * Available meeting slots for the creation of this offer.
-	 *
-	 * canBeNull
-	 */
-	public OvhMeetingSlots meetingSlots;
-
-	/**
 	 * The status of the landline
 	 *
 	 * canBeNull
 	 */
 	public OvhLandlineStatusEnum lineStatus;
+
+	/**
+	 * Available meeting slots for the creation of this offer.
+	 *
+	 * canBeNull
+	 */
+	public OvhMeetingSlots meetingSlots;
 
 	/**
 	 * Tells whether the tested number can be ported to OVH or not

@@ -28,18 +28,18 @@ public class OvhAlias {
 	public String aliasId;
 
 	/**
-	 * Alias name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String name;
-
-	/**
 	 * Indicates if you are allowed to share entry
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean isShareable;
+
+	/**
+	 * Alias name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String name;
 
 	/**
 	 * Alias description

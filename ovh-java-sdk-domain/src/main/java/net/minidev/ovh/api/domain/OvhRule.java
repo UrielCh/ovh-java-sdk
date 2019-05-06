@@ -1,7 +1,7 @@
 package net.minidev.ovh.api.domain;
 
 /**
- * Rule
+ * Description not available
  */
 public class OvhRule {
 	/**

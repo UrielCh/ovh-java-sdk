@@ -7,18 +7,18 @@ import java.util.Date;
  */
 public class OvhOperation {
 	/**
-	 * Operation creation
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date createdAt;
-
-	/**
 	 * Input used
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String inputId;
+
+	/**
+	 * Operation creation
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date createdAt;
 
 	/**
 	 * Stream used
@@ -49,18 +49,18 @@ public class OvhOperation {
 	public String roleId;
 
 	/**
-	 * Index used
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String indexId;
-
-	/**
 	 * Operation UUID
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String operationId;
+
+	/**
+	 * Index used
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String indexId;
 
 	/**
 	 * Option used

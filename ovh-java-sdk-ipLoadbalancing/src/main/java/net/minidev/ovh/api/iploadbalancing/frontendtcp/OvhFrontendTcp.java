@@ -12,18 +12,18 @@ public class OvhFrontendTcp {
 	public Long defaultSslId;
 
 	/**
-	 * Listening port(s) on the server
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String port;
-
-	/**
 	 * Zone of you frontend
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String zone;
+
+	/**
+	 * Listening port(s) on the server
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String port;
 
 	/**
 	 * Human readable name for your frontend, this field is for you
@@ -47,13 +47,6 @@ public class OvhFrontendTcp {
 	public Boolean disabled;
 
 	/**
-	 * Only attach frontend on these ip. No restriction if null
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String[] dedicatedIpfo;
-
-	/**
 	 * Id of your frontend
 	 *
 	 * canBeNull && readOnly
@@ -61,11 +54,11 @@ public class OvhFrontendTcp {
 	public Long frontendId;
 
 	/**
-	 * Default TCP Farm of your frontend
+	 * Only attach frontend on these ip. No restriction if null
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long defaultFarmId;
+	public String[] dedicatedIpfo;
 
 	/**
 	 * SSL deciphering. Default: 'false'
@@ -73,4 +66,11 @@ public class OvhFrontendTcp {
 	 * canBeNull && readOnly
 	 */
 	public Boolean ssl;
+
+	/**
+	 * Default TCP Farm of your frontend
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long defaultFarmId;
 }

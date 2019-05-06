@@ -28,13 +28,6 @@ public class OvhRouteRule {
 	public Boolean negate;
 
 	/**
-	 * Value to match against this match. Interpretation if this field depends on the match and field
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String pattern;
-
-	/**
 	 * Matching operator. Not all operators are available for all fields. See "/ipLoadbalancing/{serviceName}/availableRouteRules"
 	 *
 	 * canBeNull && readOnly
@@ -42,11 +35,11 @@ public class OvhRouteRule {
 	public OvhRouteRuleMatchesEnum match;
 
 	/**
-	 * Id of your rule
+	 * Value to match against this match. Interpretation if this field depends on the match and field
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long ruleId;
+	public String pattern;
 
 	/**
 	 * Name of sub-field, if applicable. This may be a Cookie or Header name for instance
@@ -54,4 +47,11 @@ public class OvhRouteRule {
 	 * canBeNull && readOnly
 	 */
 	public String subField;
+
+	/**
+	 * Id of your rule
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long ruleId;
 }

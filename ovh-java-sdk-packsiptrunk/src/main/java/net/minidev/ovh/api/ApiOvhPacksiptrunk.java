@@ -20,25 +20,12 @@ public class ApiOvhPacksiptrunk extends ApiOvhBase {
 	}
 
 	/**
-	 * List available services
-	 *
-	 * REST: GET /pack/siptrunk
-	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/pack/siptrunk";
-		StringBuilder sb = path(qPath);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
-
-	/**
 	 * Launch a contact change procedure
 	 *
 	 * REST: POST /pack/siptrunk/{packName}/changeContact
-	 * @param contactAdmin The contact to set as admin contact
-	 * @param contactTech The contact to set as tech contact
-	 * @param contactBilling The contact to set as billing contact
+	 * @param contactAdmin [required] The contact to set as admin contact
+	 * @param contactTech [required] The contact to set as tech contact
+	 * @param contactBilling [required] The contact to set as billing contact
 	 * @param packName [required] The internal name of your pack
 	 */
 	public ArrayList<Long> packName_changeContact_POST(String packName, String contactAdmin, String contactBilling, String contactTech) throws IOException {
@@ -49,9 +36,9 @@ public class ApiOvhPacksiptrunk extends ApiOvhBase {
 		addBody(o, "contactBilling", contactBilling);
 		addBody(o, "contactTech", contactTech);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t2);
+		return convertTo(resp, t1);
 	}
-	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
+	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
 
 	/**
 	 * Get this object properties
@@ -91,4 +78,17 @@ public class ApiOvhPacksiptrunk extends ApiOvhBase {
 		StringBuilder sb = path(qPath, packName);
 		exec(qPath, "PUT", sb.toString(), body);
 	}
+
+	/**
+	 * List available services
+	 *
+	 * REST: GET /pack/siptrunk
+	 */
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/pack/siptrunk";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};
 }

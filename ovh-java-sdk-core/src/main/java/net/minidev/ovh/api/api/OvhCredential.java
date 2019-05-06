@@ -28,12 +28,12 @@ public class OvhCredential {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhAccessRule[] rules;
+	public Date expiration;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Date expiration;
+	public OvhAccessRule[] rules;
 
 	/**
 	 * canBeNull && readOnly

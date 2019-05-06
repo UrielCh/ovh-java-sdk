@@ -63,16 +63,16 @@ public class OvhRtmRaidVolume {
 	public String type;
 
 	/**
-	 * Raid volume status
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhRtmRaidStatusEnum status;
-
-	/**
 	 * Raid volume capacity
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhUnitAndValue<Double> capacity;
+
+	/**
+	 * Raid volume status
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhRtmRaidStatusEnum status;
 }

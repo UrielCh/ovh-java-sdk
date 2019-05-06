@@ -47,18 +47,18 @@ public class OvhPartner {
 	public String description;
 
 	/**
-	 * Language
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String language;
-
-	/**
 	 * Company national identification number
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String companyNationalIdentificationNumber;
+
+	/**
+	 * Language
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String language;
 
 	/**
 	 * Legal form

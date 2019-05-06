@@ -22,18 +22,18 @@ public class OvhFreefaxProperties {
 	public OvhFaxQualityEnum faxQuality;
 
 	/**
-	 * Name of the sender of the email
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String fromName;
-
-	/**
 	 * Email address to redirect fax response.
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String[] redirectionEmail;
+
+	/**
+	 * Name of the sender of the email
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String fromName;
 
 	/**
 	 * Number of max tentative of fax sending

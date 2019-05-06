@@ -35,6 +35,13 @@ public class OvhService {
 	public String serviceName;
 
 	/**
+	 * Service last update
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date updatedAt;
+
+	/**
 	 * Is capped plan enabled?
 	 *
 	 * canBeNull && readOnly
@@ -47,11 +54,4 @@ public class OvhService {
 	 * canBeNull && readOnly
 	 */
 	public String username;
-
-	/**
-	 * Service last update
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date updatedAt;
 }

@@ -33,18 +33,18 @@ public class OvhFailoverIp {
 	public Long progress;
 
 	/**
-	 * IP block
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String block;
-
-	/**
 	 * IP sub type
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhIpSubTypeEnum subType;
+
+	/**
+	 * IP block
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String block;
 
 	/**
 	 * Ip id

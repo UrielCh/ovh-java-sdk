@@ -36,13 +36,6 @@ public class OvhTemplatePartitions {
 	public OvhTemplateOsFileSystemEnum filesystem;
 
 	/**
-	 * partition mount point
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String mountpoint;
-
-	/**
 	 * raid partition type
 	 *
 	 * canBeNull && readOnly
@@ -55,4 +48,11 @@ public class OvhTemplatePartitions {
 	 * canBeNull && readOnly
 	 */
 	public Long order;
+
+	/**
+	 * partition mount point
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String mountpoint;
 }

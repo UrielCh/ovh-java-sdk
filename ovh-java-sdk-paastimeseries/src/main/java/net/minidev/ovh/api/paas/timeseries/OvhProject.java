@@ -19,16 +19,16 @@ public class OvhProject {
 	public String description;
 
 	/**
-	 * Region
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhRegion region;
-
-	/**
 	 * Id
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String serviceName;
+
+	/**
+	 * Region
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhRegion region;
 }

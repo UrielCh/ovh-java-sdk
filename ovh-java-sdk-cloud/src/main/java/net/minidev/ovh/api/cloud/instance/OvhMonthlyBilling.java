@@ -7,16 +7,16 @@ import java.util.Date;
  */
 public class OvhMonthlyBilling {
 	/**
-	 * Monthly billing activated since
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date since;
-
-	/**
 	 * Monthly billing status
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhMonthlyBillingStatusEnum status;
+
+	/**
+	 * Monthly billing activated since
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date since;
 }

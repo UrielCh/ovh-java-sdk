@@ -23,18 +23,29 @@ public class ApiOvhHostingreseller extends ApiOvhBase {
 	}
 
 	/**
-	 * Change user email
+	 * List available services
 	 *
-	 * REST: POST /hosting/reseller/{serviceName}/email
-	 * @param serviceName [required] The internal name of your reseller service
-	 * @param email [required] New email
+	 * REST: GET /hosting/reseller
 	 */
-	public String serviceName_email_POST(String serviceName, String email) throws IOException {
-		String qPath = "/hosting/reseller/{serviceName}/email";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "email", email);
-		String resp = exec(qPath, "POST", sb.toString(), o);
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/hosting/reseller";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
+
+	/**
+	 * Restore a snapshot
+	 *
+	 * REST: POST /hosting/reseller/{serviceName}/snapshot/{snapshotId}/restore
+	 * @param serviceName [required] The internal name of your reseller service
+	 * @param snapshotId [required] Snapshot to restore
+	 */
+	public String serviceName_snapshot_snapshotId_restore_POST(String serviceName, String snapshotId) throws IOException {
+		String qPath = "/hosting/reseller/{serviceName}/snapshot/{snapshotId}/restore";
+		StringBuilder sb = path(qPath, serviceName, snapshotId);
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, String.class);
 	}
 
@@ -53,20 +64,6 @@ public class ApiOvhHostingreseller extends ApiOvhBase {
 	}
 
 	/**
-	 * Restore a snapshot
-	 *
-	 * REST: POST /hosting/reseller/{serviceName}/snapshot/{snapshotId}/restore
-	 * @param serviceName [required] The internal name of your reseller service
-	 * @param snapshotId [required] Snapshot to restore
-	 */
-	public String serviceName_snapshot_snapshotId_restore_POST(String serviceName, String snapshotId) throws IOException {
-		String qPath = "/hosting/reseller/{serviceName}/snapshot/{snapshotId}/restore";
-		StringBuilder sb = path(qPath, serviceName, snapshotId);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, String.class);
-	}
-
-	/**
 	 * List instance's current snapshots
 	 *
 	 * REST: GET /hosting/reseller/{serviceName}/snapshot
@@ -76,9 +73,9 @@ public class ApiOvhHostingreseller extends ApiOvhBase {
 		String qPath = "/hosting/reseller/{serviceName}/snapshot";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, t2);
 	}
-	private static TypeReference<ArrayList<OvhSnapshot>> t1 = new TypeReference<ArrayList<OvhSnapshot>>() {};
+	private static TypeReference<ArrayList<OvhSnapshot>> t2 = new TypeReference<ArrayList<OvhSnapshot>>() {};
 
 	/**
 	 * Make manual snapshot
@@ -90,48 +87,6 @@ public class ApiOvhHostingreseller extends ApiOvhBase {
 		String qPath = "/hosting/reseller/{serviceName}/snapshot";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * Get reset instance password url
-	 *
-	 * REST: GET /hosting/reseller/{serviceName}/resetPasswordUrl
-	 * @param serviceName [required] The internal name of your reseller service
-	 */
-	public String serviceName_resetPasswordUrl_GET(String serviceName) throws IOException {
-		String qPath = "/hosting/reseller/{serviceName}/resetPasswordUrl";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /hosting/reseller/{serviceName}
-	 * @param serviceName [required] The internal name of your reseller service
-	 */
-	public OvhProduct serviceName_GET(String serviceName) throws IOException {
-		String qPath = "/hosting/reseller/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhProduct.class);
-	}
-
-	/**
-	 * Set new reverse to ip
-	 *
-	 * REST: POST /hosting/reseller/{serviceName}/reverse
-	 * @param serviceName [required] The internal name of your reseller service
-	 * @param reverse [required] Domain to set the ip reverse
-	 */
-	public String serviceName_reverse_POST(String serviceName, String reverse) throws IOException {
-		String qPath = "/hosting/reseller/{serviceName}/reverse";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "reverse", reverse);
-		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -151,45 +106,30 @@ public class ApiOvhHostingreseller extends ApiOvhBase {
 	}
 
 	/**
-	 * Get list of tasks
+	 * Get reset instance password url
 	 *
-	 * REST: GET /hosting/reseller/{serviceName}/task
+	 * REST: GET /hosting/reseller/{serviceName}/resetPasswordUrl
 	 * @param serviceName [required] The internal name of your reseller service
 	 */
-	public ArrayList<OvhTask> serviceName_task_GET(String serviceName) throws IOException {
-		String qPath = "/hosting/reseller/{serviceName}/task";
+	public String serviceName_resetPasswordUrl_GET(String serviceName) throws IOException {
+		String qPath = "/hosting/reseller/{serviceName}/resetPasswordUrl";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-	private static TypeReference<ArrayList<OvhTask>> t2 = new TypeReference<ArrayList<OvhTask>>() {};
-
-	/**
-	 * Get task information given its id
-	 *
-	 * REST: GET /hosting/reseller/{serviceName}/task/{taskId}
-	 * @param serviceName [required] The internal name of your reseller service
-	 * @param taskId [required] Task id to retrieve
-	 */
-	public OvhTask serviceName_task_taskId_GET(String serviceName, String taskId) throws IOException {
-		String qPath = "/hosting/reseller/{serviceName}/task/{taskId}";
-		StringBuilder sb = path(qPath, serviceName, taskId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
+		return convertTo(resp, String.class);
 	}
 
 	/**
-	 * Change language of the Plesk instance
+	 * Set new reverse to ip
 	 *
-	 * REST: POST /hosting/reseller/{serviceName}/language
+	 * REST: POST /hosting/reseller/{serviceName}/reverse
 	 * @param serviceName [required] The internal name of your reseller service
-	 * @param language [required] Locale value
+	 * @param reverse [required] Domain to set the ip reverse
 	 */
-	public String serviceName_language_POST(String serviceName, OvhPleskLanguageTypeEnum language) throws IOException {
-		String qPath = "/hosting/reseller/{serviceName}/language";
+	public String serviceName_reverse_POST(String serviceName, String reverse) throws IOException {
+		String qPath = "/hosting/reseller/{serviceName}/reverse";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "language", language);
+		addBody(o, "reverse", reverse);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
@@ -198,9 +138,9 @@ public class ApiOvhHostingreseller extends ApiOvhBase {
 	 * Launch a contact change procedure
 	 *
 	 * REST: POST /hosting/reseller/{serviceName}/changeContact
-	 * @param contactAdmin The contact to set as admin contact
-	 * @param contactTech The contact to set as tech contact
-	 * @param contactBilling The contact to set as billing contact
+	 * @param contactAdmin [required] The contact to set as admin contact
+	 * @param contactTech [required] The contact to set as tech contact
+	 * @param contactBilling [required] The contact to set as billing contact
 	 * @param serviceName [required] The internal name of your reseller service
 	 */
 	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactBilling, String contactTech) throws IOException {
@@ -216,6 +156,22 @@ public class ApiOvhHostingreseller extends ApiOvhBase {
 	private static TypeReference<ArrayList<Long>> t3 = new TypeReference<ArrayList<Long>>() {};
 
 	/**
+	 * Change user email
+	 *
+	 * REST: POST /hosting/reseller/{serviceName}/email
+	 * @param serviceName [required] The internal name of your reseller service
+	 * @param email [required] New email
+	 */
+	public String serviceName_email_POST(String serviceName, String email) throws IOException {
+		String qPath = "/hosting/reseller/{serviceName}/email";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "email", email);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, String.class);
+	}
+
+	/**
 	 * Reinstall instance
 	 *
 	 * REST: POST /hosting/reseller/{serviceName}/reinstall
@@ -225,6 +181,22 @@ public class ApiOvhHostingreseller extends ApiOvhBase {
 		String qPath = "/hosting/reseller/{serviceName}/reinstall";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Change language of the Plesk instance
+	 *
+	 * REST: POST /hosting/reseller/{serviceName}/language
+	 * @param serviceName [required] The internal name of your reseller service
+	 * @param language [required] Locale value
+	 */
+	public String serviceName_language_POST(String serviceName, OvhPleskLanguageTypeEnum language) throws IOException {
+		String qPath = "/hosting/reseller/{serviceName}/language";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "language", language);
+		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
 
@@ -255,15 +227,43 @@ public class ApiOvhHostingreseller extends ApiOvhBase {
 	}
 
 	/**
-	 * List available services
+	 * Get this object properties
 	 *
-	 * REST: GET /hosting/reseller
+	 * REST: GET /hosting/reseller/{serviceName}
+	 * @param serviceName [required] The internal name of your reseller service
 	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/hosting/reseller";
-		StringBuilder sb = path(qPath);
+	public OvhProduct serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/hosting/reseller/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhProduct.class);
+	}
+
+	/**
+	 * Get task information given its id
+	 *
+	 * REST: GET /hosting/reseller/{serviceName}/task/{taskId}
+	 * @param serviceName [required] The internal name of your reseller service
+	 * @param taskId [required] Task id to retrieve
+	 */
+	public OvhTask serviceName_task_taskId_GET(String serviceName, String taskId) throws IOException {
+		String qPath = "/hosting/reseller/{serviceName}/task/{taskId}";
+		StringBuilder sb = path(qPath, serviceName, taskId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Get list of tasks
+	 *
+	 * REST: GET /hosting/reseller/{serviceName}/task
+	 * @param serviceName [required] The internal name of your reseller service
+	 */
+	public ArrayList<OvhTask> serviceName_task_GET(String serviceName) throws IOException {
+		String qPath = "/hosting/reseller/{serviceName}/task";
+		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t4);
 	}
-	private static TypeReference<ArrayList<String>> t4 = new TypeReference<ArrayList<String>>() {};
+	private static TypeReference<ArrayList<OvhTask>> t4 = new TypeReference<ArrayList<OvhTask>>() {};
 }

@@ -3,13 +3,15 @@ package net.minidev.ovh.api.kube;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Version
+ * Description not available
  */
 public enum OvhVersion {
 	@JsonProperty("1.11")
 	_1_11("1.11"),
 	@JsonProperty("1.12")
-	_1_12("1.12");
+	_1_12("1.12"),
+	@JsonProperty("1.13")
+	_1_13("1.13");
 
 	final String value;
 

@@ -14,18 +14,18 @@ public class OvhTicket {
 	public Long ticketNumber;
 
 	/**
-	 * Ticket last update date
-	 *
-	 * canBeNull
-	 */
-	public Date updateDate;
-
-	/**
 	 * Product service concerned by ticket
 	 *
 	 * canBeNull
 	 */
 	public OvhTicketProductEnum product;
+
+	/**
+	 * Ticket last update date
+	 *
+	 * canBeNull
+	 */
+	public Date updateDate;
 
 	/**
 	 * Ticket subject
@@ -42,18 +42,18 @@ public class OvhTicket {
 	public OvhTicketTypeEnum type;
 
 	/**
-	 * Name of service concerned by ticket
-	 *
-	 * canBeNull
-	 */
-	public String serviceName;
-
-	/**
 	 * Ticket creation date
 	 *
 	 * canBeNull
 	 */
 	public Date creationDate;
+
+	/**
+	 * Name of service concerned by ticket
+	 *
+	 * canBeNull
+	 */
+	public String serviceName;
 
 	/**
 	 * Ticket score

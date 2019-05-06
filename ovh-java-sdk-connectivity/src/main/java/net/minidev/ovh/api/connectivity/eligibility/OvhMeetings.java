@@ -5,16 +5,16 @@ package net.minidev.ovh.api.connectivity.eligibility;
  */
 public class OvhMeetings {
 	/**
-	 * Whether or not it is possible to book a fake meeting
-	 *
-	 * canBeNull
-	 */
-	public Boolean canBookFakeMeeting;
-
-	/**
 	 * A time slot
 	 *
 	 * canBeNull
 	 */
 	public OvhMeetingSlot[] meetingSlots;
+
+	/**
+	 * Whether or not it is possible to book a fake meeting
+	 *
+	 * canBeNull
+	 */
+	public Boolean canBookFakeMeeting;
 }

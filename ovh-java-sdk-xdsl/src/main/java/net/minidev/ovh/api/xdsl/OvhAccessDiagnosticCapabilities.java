@@ -7,12 +7,12 @@ public class OvhAccessDiagnosticCapabilities {
 	/**
 	 * canBeNull
 	 */
-	public Boolean isModemConnected;
+	public Boolean proposedProfileId;
 
 	/**
 	 * canBeNull
 	 */
-	public Boolean proposedProfileId;
+	public Boolean isModemConnected;
 
 	/**
 	 * canBeNull
@@ -27,12 +27,12 @@ public class OvhAccessDiagnosticCapabilities {
 	/**
 	 * canBeNull
 	 */
-	public Boolean sync;
+	public Boolean incident;
 
 	/**
 	 * canBeNull
 	 */
-	public Boolean incident;
+	public Boolean sync;
 
 	/**
 	 * canBeNull

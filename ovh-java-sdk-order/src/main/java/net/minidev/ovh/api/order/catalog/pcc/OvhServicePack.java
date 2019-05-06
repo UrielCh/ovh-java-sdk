@@ -5,18 +5,18 @@ package net.minidev.ovh.api.order.catalog.pcc;
  */
 public class OvhServicePack {
 	/**
-	 * Name of the service pack
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String name;
-
-	/**
 	 * Describes Option include in the service pack
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhServicePackOption[] options;
+
+	/**
+	 * Name of the service pack
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String name;
 
 	/**
 	 * List of available service pack upgrades

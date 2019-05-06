@@ -42,16 +42,16 @@ public class OvhRemoteSiteDetails {
 	public String serviceName;
 
 	/**
-	 * Type of hosting for the remote datacenter
-	 *
-	 * canBeNull
-	 */
-	public OvhSiteTypeEnum type;
-
-	/**
 	 * Installed version of Zerto
 	 *
 	 * canBeNull
 	 */
 	public String zertoVersion;
+
+	/**
+	 * Type of hosting for the remote datacenter
+	 *
+	 * canBeNull
+	 */
+	public OvhSiteTypeEnum type;
 }

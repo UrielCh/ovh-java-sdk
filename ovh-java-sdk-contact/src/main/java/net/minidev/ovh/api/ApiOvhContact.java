@@ -20,19 +20,6 @@ public class ApiOvhContact extends ApiOvhBase {
 	}
 
 	/**
-	 * Get form characteristics
-	 *
-	 * REST: GET /contact/form
-	 */
-	public ArrayList<OvhFormCharacteristic> form_GET() throws IOException {
-		String qPath = "/contact/form";
-		StringBuilder sb = path(qPath);
-		String resp = execN(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-	private static TypeReference<ArrayList<OvhFormCharacteristic>> t1 = new TypeReference<ArrayList<OvhFormCharacteristic>>() {};
-
-	/**
 	 * Send form following characteristics of /contact/form
 	 *
 	 * REST: POST /contact/form/send
@@ -47,4 +34,17 @@ public class ApiOvhContact extends ApiOvhBase {
 		addBody(o, "type", type);
 		execN(qPath, "POST", sb.toString(), o);
 	}
+
+	/**
+	 * Get form characteristics
+	 *
+	 * REST: GET /contact/form
+	 */
+	public ArrayList<OvhFormCharacteristic> form_GET() throws IOException {
+		String qPath = "/contact/form";
+		StringBuilder sb = path(qPath);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+	private static TypeReference<ArrayList<OvhFormCharacteristic>> t1 = new TypeReference<ArrayList<OvhFormCharacteristic>>() {};
 }

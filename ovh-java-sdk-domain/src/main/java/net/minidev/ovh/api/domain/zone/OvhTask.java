@@ -71,16 +71,16 @@ public class OvhTask {
 	public Boolean canRelaunch;
 
 	/**
-	 * Can cancel the task
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean canCancel;
-
-	/**
 	 * Status of the task
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhOperationStatusEnum status;
+
+	/**
+	 * Can cancel the task
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean canCancel;
 }

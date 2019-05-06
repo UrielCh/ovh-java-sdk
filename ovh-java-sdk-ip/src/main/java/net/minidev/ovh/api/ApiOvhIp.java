@@ -71,35 +71,480 @@ public class ApiOvhIp extends ApiOvhBase {
 	}
 
 	/**
-	 * Ip under anti-phishing
+	 * Your OVH IPs
 	 *
-	 * REST: GET /ip/{ip}/phishing
-	 * @param state [required] Filter the value of state property (=)
-	 * @param ipOnAntiphishing [required] Filter the value of ipOnAntiphishing property (within or equals)
-	 * @param ip [required]
+	 * REST: GET /ip
+	 * @param routedTo_serviceName [required] Filter the value of routedTo.serviceName property (like)
+	 * @param description [required] Filter the value of description property (like)
+	 * @param type [required] Filter the value of type property (=)
+	 * @param ip [required] Filter the value of ip property (contains or equals)
 	 */
-	public ArrayList<Long> ip_phishing_GET(String ip, String ipOnAntiphishing, OvhAntiphishingStateEnum state) throws IOException {
-		String qPath = "/ip/{ip}/phishing";
-		StringBuilder sb = path(qPath, ip);
-		query(sb, "ipOnAntiphishing", ipOnAntiphishing);
-		query(sb, "state", state);
+	public ArrayList<String> GET(String description, String ip, String routedTo_serviceName, OvhIpTypeEnum type) throws IOException {
+		String qPath = "/ip";
+		StringBuilder sb = path(qPath);
+		query(sb, "description", description);
+		query(sb, "ip", ip);
+		query(sb, "routedTo.serviceName", routedTo_serviceName);
+		query(sb, "type", type);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
-	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
+	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
+
+	/**
+	 * List available services
+	 *
+	 * REST: GET /ip/service
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> service_GET() throws IOException {
+		String qPath = "/ip/service";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
 
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /ip/{ip}/phishing/{id}
-	 * @param ip [required]
-	 * @param id [required] Internal ID of the phishing entry
+	 * REST: GET /ip/service/{serviceName}/serviceInfos
+	 * @param serviceName [required] The internal name of your IP services
+	 *
+	 * API beta
 	 */
-	public OvhAntiphishing ip_phishing_id_GET(String ip, Long id) throws IOException {
-		String qPath = "/ip/{ip}/phishing/{id}";
-		StringBuilder sb = path(qPath, ip, id);
+	public OvhNonExpiringService service_serviceName_serviceInfos_GET(String serviceName) throws IOException {
+		String qPath = "/ip/service/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhAntiphishing.class);
+		return convertTo(resp, OvhNonExpiringService.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /ip/service/{serviceName}
+	 * @param serviceName [required] The internal name of your IP services
+	 *
+	 * API beta
+	 */
+	public OvhServiceIp service_serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/ip/service/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhServiceIp.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /ip/service/{serviceName}
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The internal name of your IP services
+	 *
+	 * API beta
+	 */
+	public void service_serviceName_PUT(String serviceName, OvhServiceIp body) throws IOException {
+		String qPath = "/ip/service/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Confirm termination of your service
+	 *
+	 * REST: POST /ip/service/{serviceName}/confirmTermination
+	 * @param futureUse [required] What next after your termination request
+	 * @param reason [required] Reason of your termination request
+	 * @param commentary [required] Commentary about your termination request
+	 * @param token [required] The termination token sent by mail to the admin contact
+	 * @param serviceName [required] The internal name of your IP services
+	 *
+	 * API beta
+	 */
+	public String service_serviceName_confirmTermination_POST(String serviceName, String commentary, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String token) throws IOException {
+		String qPath = "/ip/service/{serviceName}/confirmTermination";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "commentary", commentary);
+		addBody(o, "futureUse", futureUse);
+		addBody(o, "reason", reason);
+		addBody(o, "token", token);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Terminate your service
+	 *
+	 * REST: POST /ip/service/{serviceName}/terminate
+	 * @param serviceName [required] The internal name of your IP services
+	 *
+	 * API beta
+	 */
+	public String service_serviceName_terminate_POST(String serviceName) throws IOException {
+		String qPath = "/ip/service/{serviceName}/terminate";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Launch a contact change procedure
+	 *
+	 * REST: POST /ip/service/{serviceName}/changeContact
+	 * @param contactAdmin [required] The contact to set as admin contact
+	 * @param contactTech [required] The contact to set as tech contact
+	 * @param contactBilling [required] The contact to set as billing contact
+	 * @param serviceName [required] The internal name of your IP services
+	 *
+	 * API beta
+	 */
+	public ArrayList<Long> service_serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactBilling, String contactTech) throws IOException {
+		String qPath = "/ip/service/{serviceName}/changeContact";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "contactAdmin", contactAdmin);
+		addBody(o, "contactBilling", contactBilling);
+		addBody(o, "contactTech", contactTech);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t2);
+	}
+	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
+
+	/**
+	 * Delete a failover IP
+	 *
+	 * REST: POST /ip/{ip}/terminate
+	 * @param ip [required]
+	 * @deprecated
+	 */
+	public OvhIpTask ip_terminate_POST(String ip) throws IOException {
+		String qPath = "/ip/{ip}/terminate";
+		StringBuilder sb = path(qPath, ip);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhIpTask.class);
+	}
+
+	/**
+	 * ARP blocked IP
+	 *
+	 * REST: GET /ip/{ip}/arp
+	 * @param state [required] Filter the value of state property (=)
+	 * @param ip [required]
+	 */
+	public ArrayList<String> ip_arp_GET(String ip, OvhArpStateEnum state) throws IOException {
+		String qPath = "/ip/{ip}/arp";
+		StringBuilder sb = path(qPath, ip);
+		query(sb, "state", state);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /ip/{ip}/arp/{ipBlocked}
+	 * @param ip [required]
+	 * @param ipBlocked [required] your IP
+	 */
+	public OvhArpBlockedIp ip_arp_ipBlocked_GET(String ip, String ipBlocked) throws IOException {
+		String qPath = "/ip/{ip}/arp/{ipBlocked}";
+		StringBuilder sb = path(qPath, ip, ipBlocked);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhArpBlockedIp.class);
+	}
+
+	/**
+	 * Unblock this IP
+	 *
+	 * REST: POST /ip/{ip}/arp/{ipBlocked}/unblock
+	 * @param ip [required]
+	 * @param ipBlocked [required] your IP
+	 */
+	public void ip_arp_ipBlocked_unblock_POST(String ip, String ipBlocked) throws IOException {
+		String qPath = "/ip/{ip}/arp/{ipBlocked}/unblock";
+		StringBuilder sb = path(qPath, ip, ipBlocked);
+		exec(qPath, "POST", sb.toString(), null);
+	}
+
+	/**
+	 * Park this IP
+	 *
+	 * REST: POST /ip/{ip}/park
+	 * @param ip [required]
+	 */
+	public OvhIpTask ip_park_POST(String ip) throws IOException {
+		String qPath = "/ip/{ip}/park";
+		StringBuilder sb = path(qPath, ip);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhIpTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /ip/{ip}/migrationToken
+	 * @param ip [required]
+	 */
+	public OvhIpMigrationToken ip_migrationToken_GET(String ip) throws IOException {
+		String qPath = "/ip/{ip}/migrationToken";
+		StringBuilder sb = path(qPath, ip);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhIpMigrationToken.class);
+	}
+
+	/**
+	 * Generate a migration token
+	 *
+	 * REST: POST /ip/{ip}/migrationToken
+	 * @param customerId [required] destination customer ID
+	 * @param ip [required]
+	 */
+	public OvhIpMigrationToken ip_migrationToken_POST(String ip, String customerId) throws IOException {
+		String qPath = "/ip/{ip}/migrationToken";
+		StringBuilder sb = path(qPath, ip);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "customerId", customerId);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhIpMigrationToken.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /ip/{ip}/ripe
+	 * @param ip [required]
+	 */
+	public OvhRipeInfos ip_ripe_GET(String ip) throws IOException {
+		String qPath = "/ip/{ip}/ripe";
+		StringBuilder sb = path(qPath, ip);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhRipeInfos.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /ip/{ip}/ripe
+	 * @param body [required] New object properties
+	 * @param ip [required]
+	 */
+	public void ip_ripe_PUT(String ip, OvhRipeInfos body) throws IOException {
+		String qPath = "/ip/{ip}/ripe";
+		StringBuilder sb = path(qPath, ip);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Move this IP to another service
+	 *
+	 * REST: POST /ip/{ip}/move
+	 * @param nexthop [required] Nexthop of destination service
+	 * @param to [required] Service destination
+	 * @param ip [required]
+	 */
+	public OvhIpTask ip_move_POST(String ip, String nexthop, String to) throws IOException {
+		String qPath = "/ip/{ip}/move";
+		StringBuilder sb = path(qPath, ip);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "nexthop", nexthop);
+		addBody(o, "to", to);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhIpTask.class);
+	}
+
+	/**
+	 * List services available as a destination
+	 *
+	 * REST: GET /ip/{ip}/move
+	 * @param ip [required]
+	 *
+	 * API beta
+	 */
+	public OvhDestinations ip_move_GET(String ip) throws IOException {
+		String qPath = "/ip/{ip}/move";
+		StringBuilder sb = path(qPath, ip);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhDestinations.class);
+	}
+
+	/**
+	 * Reverse on your ip
+	 *
+	 * REST: GET /ip/{ip}/reverse
+	 * @param ip [required]
+	 */
+	public ArrayList<String> ip_reverse_GET(String ip) throws IOException {
+		String qPath = "/ip/{ip}/reverse";
+		StringBuilder sb = path(qPath, ip);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Add reverse on an ip
+	 *
+	 * REST: POST /ip/{ip}/reverse
+	 * @param ipReverse [required]
+	 * @param reverse [required]
+	 * @param ip [required]
+	 */
+	public OvhReverseIp ip_reverse_POST(String ip, String ipReverse, String reverse) throws IOException {
+		String qPath = "/ip/{ip}/reverse";
+		StringBuilder sb = path(qPath, ip);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "ipReverse", ipReverse);
+		addBody(o, "reverse", reverse);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhReverseIp.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /ip/{ip}/reverse/{ipReverse}
+	 * @param ip [required]
+	 * @param ipReverse [required]
+	 */
+	public OvhReverseIp ip_reverse_ipReverse_GET(String ip, String ipReverse) throws IOException {
+		String qPath = "/ip/{ip}/reverse/{ipReverse}";
+		StringBuilder sb = path(qPath, ip, ipReverse);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhReverseIp.class);
+	}
+
+	/**
+	 * Delete a reverse on one IP
+	 *
+	 * REST: DELETE /ip/{ip}/reverse/{ipReverse}
+	 * @param ip [required]
+	 * @param ipReverse [required]
+	 */
+	public void ip_reverse_ipReverse_DELETE(String ip, String ipReverse) throws IOException {
+		String qPath = "/ip/{ip}/reverse/{ipReverse}";
+		StringBuilder sb = path(qPath, ip, ipReverse);
+		exec(qPath, "DELETE", sb.toString(), null);
+	}
+
+	/**
+	 * DirectAdmin licenses associated to this IP
+	 *
+	 * REST: GET /ip/{ip}/license/directadmin
+	 * @param ipAddress [required] Filter the value of ipAddress property (=)
+	 * @param ip [required]
+	 */
+	public ArrayList<String> ip_license_directadmin_GET(String ip, String ipAddress) throws IOException {
+		String qPath = "/ip/{ip}/license/directadmin";
+		StringBuilder sb = path(qPath, ip);
+		query(sb, "ipAddress", ipAddress);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Plesk licenses associated to this IP
+	 *
+	 * REST: GET /ip/{ip}/license/plesk
+	 * @param ipAddress [required] Filter the value of ipAddress property (=)
+	 * @param ip [required]
+	 */
+	public ArrayList<String> ip_license_plesk_GET(String ip, String ipAddress) throws IOException {
+		String qPath = "/ip/{ip}/license/plesk";
+		StringBuilder sb = path(qPath, ip);
+		query(sb, "ipAddress", ipAddress);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Windows licenses associated to this IP
+	 *
+	 * REST: GET /ip/{ip}/license/windows
+	 * @param ipAddress [required] Filter the value of ipAddress property (=)
+	 * @param ip [required]
+	 */
+	public ArrayList<String> ip_license_windows_GET(String ip, String ipAddress) throws IOException {
+		String qPath = "/ip/{ip}/license/windows";
+		StringBuilder sb = path(qPath, ip);
+		query(sb, "ipAddress", ipAddress);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Virtuozzo licenses associated to this IP
+	 *
+	 * REST: GET /ip/{ip}/license/virtuozzo
+	 * @param ipAddress [required] Filter the value of ipAddress property (=)
+	 * @param ip [required]
+	 */
+	public ArrayList<String> ip_license_virtuozzo_GET(String ip, String ipAddress) throws IOException {
+		String qPath = "/ip/{ip}/license/virtuozzo";
+		StringBuilder sb = path(qPath, ip);
+		query(sb, "ipAddress", ipAddress);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * SQL Server licenses associated to this IP
+	 *
+	 * REST: GET /ip/{ip}/license/sqlserver
+	 * @param ipAddress [required] Filter the value of ipAddress property (=)
+	 * @param ip [required]
+	 */
+	public ArrayList<String> ip_license_sqlserver_GET(String ip, String ipAddress) throws IOException {
+		String qPath = "/ip/{ip}/license/sqlserver";
+		StringBuilder sb = path(qPath, ip);
+		query(sb, "ipAddress", ipAddress);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Cloud Linux licenses associated to this IP
+	 *
+	 * REST: GET /ip/{ip}/license/cloudLinux
+	 * @param ipAddress [required] Filter the value of ipAddress property (=)
+	 * @param ip [required]
+	 */
+	public ArrayList<String> ip_license_cloudLinux_GET(String ip, String ipAddress) throws IOException {
+		String qPath = "/ip/{ip}/license/cloudLinux";
+		StringBuilder sb = path(qPath, ip);
+		query(sb, "ipAddress", ipAddress);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * WorkLight licenses associated to this IP
+	 *
+	 * REST: GET /ip/{ip}/license/worklight
+	 * @param ipAddress [required] Filter the value of ipAddress property (=)
+	 * @param ip [required]
+	 */
+	public ArrayList<String> ip_license_worklight_GET(String ip, String ipAddress) throws IOException {
+		String qPath = "/ip/{ip}/license/worklight";
+		StringBuilder sb = path(qPath, ip);
+		query(sb, "ipAddress", ipAddress);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Cpanel licenses associated to this IP
+	 *
+	 * REST: GET /ip/{ip}/license/cpanel
+	 * @param ipAddress [required] Filter the value of ipAddress property (=)
+	 * @param ip [required]
+	 */
+	public ArrayList<String> ip_license_cpanel_GET(String ip, String ipAddress) throws IOException {
+		String qPath = "/ip/{ip}/license/cpanel";
+		StringBuilder sb = path(qPath, ip);
+		query(sb, "ipAddress", ipAddress);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
 	}
 
 	/**
@@ -139,9 +584,8 @@ public class ApiOvhIp extends ApiOvhBase {
 		String qPath = "/ip/{ip}/delegation";
 		StringBuilder sb = path(qPath, ip);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
+		return convertTo(resp, t1);
 	}
-	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};
 
 	/**
 	 * Add target for reverse delegation on IPv6 subnet
@@ -160,32 +604,6 @@ public class ApiOvhIp extends ApiOvhBase {
 	}
 
 	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /ip/{ip}/ripe
-	 * @param ip [required]
-	 */
-	public OvhRipeInfos ip_ripe_GET(String ip) throws IOException {
-		String qPath = "/ip/{ip}/ripe";
-		StringBuilder sb = path(qPath, ip);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhRipeInfos.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /ip/{ip}/ripe
-	 * @param body [required] New object properties
-	 * @param ip [required]
-	 */
-	public void ip_ripe_PUT(String ip, OvhRipeInfos body) throws IOException {
-		String qPath = "/ip/{ip}/ripe";
-		StringBuilder sb = path(qPath, ip);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
 	 * Ip spamming
 	 *
 	 * REST: GET /ip/{ip}/spam
@@ -197,21 +615,7 @@ public class ApiOvhIp extends ApiOvhBase {
 		StringBuilder sb = path(qPath, ip);
 		query(sb, "state", state);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Release the ip from anti-spam system
-	 *
-	 * REST: POST /ip/{ip}/spam/{ipSpamming}/unblock
-	 * @param ip [required]
-	 * @param ipSpamming [required] IP address which is sending spam
-	 */
-	public OvhSpamIp ip_spam_ipSpamming_unblock_POST(String ip, String ipSpamming) throws IOException {
-		String qPath = "/ip/{ip}/spam/{ipSpamming}/unblock";
-		StringBuilder sb = path(qPath, ip, ipSpamming);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, OvhSpamIp.class);
+		return convertTo(resp, t1);
 	}
 
 	/**
@@ -229,11 +633,25 @@ public class ApiOvhIp extends ApiOvhBase {
 	}
 
 	/**
+	 * Release the ip from anti-spam system
+	 *
+	 * REST: POST /ip/{ip}/spam/{ipSpamming}/unblock
+	 * @param ip [required]
+	 * @param ipSpamming [required] IP address which is sending spam
+	 */
+	public OvhSpamIp ip_spam_ipSpamming_unblock_POST(String ip, String ipSpamming) throws IOException {
+		String qPath = "/ip/{ip}/spam/{ipSpamming}/unblock";
+		StringBuilder sb = path(qPath, ip, ipSpamming);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhSpamIp.class);
+	}
+
+	/**
 	 * Get statistics about the email traffic
 	 *
 	 * REST: GET /ip/{ip}/spam/{ipSpamming}/stats
-	 * @param from [required] Start date
 	 * @param to [required] End date
+	 * @param from [required] Start date
 	 * @param ip [required]
 	 * @param ipSpamming [required] IP address which is sending spam
 	 */
@@ -248,15 +666,17 @@ public class ApiOvhIp extends ApiOvhBase {
 	private static TypeReference<ArrayList<OvhSpamStats>> t3 = new TypeReference<ArrayList<OvhSpamStats>>() {};
 
 	/**
-	 * ARP blocked IP
+	 * Ip under anti-phishing
 	 *
-	 * REST: GET /ip/{ip}/arp
+	 * REST: GET /ip/{ip}/phishing
 	 * @param state [required] Filter the value of state property (=)
+	 * @param ipOnAntiphishing [required] Filter the value of ipOnAntiphishing property (within or equals)
 	 * @param ip [required]
 	 */
-	public ArrayList<String> ip_arp_GET(String ip, OvhArpStateEnum state) throws IOException {
-		String qPath = "/ip/{ip}/arp";
+	public ArrayList<Long> ip_phishing_GET(String ip, String ipOnAntiphishing, OvhAntiphishingStateEnum state) throws IOException {
+		String qPath = "/ip/{ip}/phishing";
 		StringBuilder sb = path(qPath, ip);
+		query(sb, "ipOnAntiphishing", ipOnAntiphishing);
 		query(sb, "state", state);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
@@ -265,399 +685,15 @@ public class ApiOvhIp extends ApiOvhBase {
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /ip/{ip}/arp/{ipBlocked}
+	 * REST: GET /ip/{ip}/phishing/{id}
 	 * @param ip [required]
-	 * @param ipBlocked [required] your IP
+	 * @param id [required] Internal ID of the phishing entry
 	 */
-	public OvhArpBlockedIp ip_arp_ipBlocked_GET(String ip, String ipBlocked) throws IOException {
-		String qPath = "/ip/{ip}/arp/{ipBlocked}";
-		StringBuilder sb = path(qPath, ip, ipBlocked);
+	public OvhAntiphishing ip_phishing_id_GET(String ip, Long id) throws IOException {
+		String qPath = "/ip/{ip}/phishing/{id}";
+		StringBuilder sb = path(qPath, ip, id);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhArpBlockedIp.class);
-	}
-
-	/**
-	 * Unblock this IP
-	 *
-	 * REST: POST /ip/{ip}/arp/{ipBlocked}/unblock
-	 * @param ip [required]
-	 * @param ipBlocked [required] your IP
-	 */
-	public void ip_arp_ipBlocked_unblock_POST(String ip, String ipBlocked) throws IOException {
-		String qPath = "/ip/{ip}/arp/{ipBlocked}/unblock";
-		StringBuilder sb = path(qPath, ip, ipBlocked);
-		exec(qPath, "POST", sb.toString(), null);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /ip/{ip}/migrationToken
-	 * @param ip [required]
-	 */
-	public OvhIpMigrationToken ip_migrationToken_GET(String ip) throws IOException {
-		String qPath = "/ip/{ip}/migrationToken";
-		StringBuilder sb = path(qPath, ip);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhIpMigrationToken.class);
-	}
-
-	/**
-	 * Generate a migration token
-	 *
-	 * REST: POST /ip/{ip}/migrationToken
-	 * @param customerId [required] destination customer ID
-	 * @param ip [required]
-	 */
-	public OvhIpMigrationToken ip_migrationToken_POST(String ip, String customerId) throws IOException {
-		String qPath = "/ip/{ip}/migrationToken";
-		StringBuilder sb = path(qPath, ip);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "customerId", customerId);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhIpMigrationToken.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /ip/{ip}/game/{ipOnGame}/rule/{id}
-	 * @param ip [required]
-	 * @param ipOnGame [required]
-	 * @param id [required] ID of the rule
-	 */
-	public OvhGameMitigationRule ip_game_ipOnGame_rule_id_GET(String ip, String ipOnGame, Long id) throws IOException {
-		String qPath = "/ip/{ip}/game/{ipOnGame}/rule/{id}";
-		StringBuilder sb = path(qPath, ip, ipOnGame, id);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhGameMitigationRule.class);
-	}
-
-	/**
-	 * Delete rule
-	 *
-	 * REST: DELETE /ip/{ip}/game/{ipOnGame}/rule/{id}
-	 * @param ip [required]
-	 * @param ipOnGame [required]
-	 * @param id [required] ID of the rule
-	 */
-	public OvhGameMitigationRule ip_game_ipOnGame_rule_id_DELETE(String ip, String ipOnGame, Long id) throws IOException {
-		String qPath = "/ip/{ip}/game/{ipOnGame}/rule/{id}";
-		StringBuilder sb = path(qPath, ip, ipOnGame, id);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhGameMitigationRule.class);
-	}
-
-	/**
-	 * IDs of rules configured for this IP
-	 *
-	 * REST: GET /ip/{ip}/game/{ipOnGame}/rule
-	 * @param ip [required]
-	 * @param ipOnGame [required]
-	 */
-	public ArrayList<Long> ip_game_ipOnGame_rule_GET(String ip, String ipOnGame) throws IOException {
-		String qPath = "/ip/{ip}/game/{ipOnGame}/rule";
-		StringBuilder sb = path(qPath, ip, ipOnGame);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Add new rule on your IP
-	 *
-	 * REST: POST /ip/{ip}/game/{ipOnGame}/rule
-	 * @param protocol [required] The protocol running behind the given port
-	 * @param ports [required] The UDP port range to apply the rule on
-	 * @param ip [required]
-	 * @param ipOnGame [required]
-	 */
-	public OvhGameMitigationRule ip_game_ipOnGame_rule_POST(String ip, String ipOnGame, OvhRange<Long> ports, OvhGameMitigationRuleProtocolEnum protocol) throws IOException {
-		String qPath = "/ip/{ip}/game/{ipOnGame}/rule";
-		StringBuilder sb = path(qPath, ip, ipOnGame);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "ports", ports);
-		addBody(o, "protocol", protocol);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhGameMitigationRule.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /ip/{ip}/game/{ipOnGame}
-	 * @param ip [required]
-	 * @param ipOnGame [required]
-	 */
-	public OvhGameMitigation ip_game_ipOnGame_GET(String ip, String ipOnGame) throws IOException {
-		String qPath = "/ip/{ip}/game/{ipOnGame}";
-		StringBuilder sb = path(qPath, ip, ipOnGame);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhGameMitigation.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /ip/{ip}/game/{ipOnGame}
-	 * @param body [required] New object properties
-	 * @param ip [required]
-	 * @param ipOnGame [required]
-	 */
-	public void ip_game_ipOnGame_PUT(String ip, String ipOnGame, OvhGameMitigation body) throws IOException {
-		String qPath = "/ip/{ip}/game/{ipOnGame}";
-		StringBuilder sb = path(qPath, ip, ipOnGame);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Ip under game anti-ddos
-	 *
-	 * REST: GET /ip/{ip}/game
-	 * @param ip [required]
-	 */
-	public ArrayList<String> ip_game_GET(String ip) throws IOException {
-		String qPath = "/ip/{ip}/game";
-		StringBuilder sb = path(qPath, ip);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /ip/{ip}/reverse/{ipReverse}
-	 * @param ip [required]
-	 * @param ipReverse [required]
-	 */
-	public OvhReverseIp ip_reverse_ipReverse_GET(String ip, String ipReverse) throws IOException {
-		String qPath = "/ip/{ip}/reverse/{ipReverse}";
-		StringBuilder sb = path(qPath, ip, ipReverse);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhReverseIp.class);
-	}
-
-	/**
-	 * Delete a reverse on one IP
-	 *
-	 * REST: DELETE /ip/{ip}/reverse/{ipReverse}
-	 * @param ip [required]
-	 * @param ipReverse [required]
-	 */
-	public void ip_reverse_ipReverse_DELETE(String ip, String ipReverse) throws IOException {
-		String qPath = "/ip/{ip}/reverse/{ipReverse}";
-		StringBuilder sb = path(qPath, ip, ipReverse);
-		exec(qPath, "DELETE", sb.toString(), null);
-	}
-
-	/**
-	 * Reverse on your ip
-	 *
-	 * REST: GET /ip/{ip}/reverse
-	 * @param ip [required]
-	 */
-	public ArrayList<String> ip_reverse_GET(String ip) throws IOException {
-		String qPath = "/ip/{ip}/reverse";
-		StringBuilder sb = path(qPath, ip);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Add reverse on an ip
-	 *
-	 * REST: POST /ip/{ip}/reverse
-	 * @param reverse [required]
-	 * @param ipReverse [required]
-	 * @param ip [required]
-	 */
-	public OvhReverseIp ip_reverse_POST(String ip, String ipReverse, String reverse) throws IOException {
-		String qPath = "/ip/{ip}/reverse";
-		StringBuilder sb = path(qPath, ip);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "ipReverse", ipReverse);
-		addBody(o, "reverse", reverse);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhReverseIp.class);
-	}
-
-	/**
-	 * Delete a failover IP
-	 *
-	 * REST: POST /ip/{ip}/terminate
-	 * @param ip [required]
-	 * @deprecated
-	 */
-	public OvhIpTask ip_terminate_POST(String ip) throws IOException {
-		String qPath = "/ip/{ip}/terminate";
-		StringBuilder sb = path(qPath, ip);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, OvhIpTask.class);
-	}
-
-	/**
-	 * Move this IP to another service
-	 *
-	 * REST: POST /ip/{ip}/move
-	 * @param nexthop [required] Nexthop of destination service
-	 * @param to [required] Service destination
-	 * @param ip [required]
-	 */
-	public OvhIpTask ip_move_POST(String ip, String nexthop, String to) throws IOException {
-		String qPath = "/ip/{ip}/move";
-		StringBuilder sb = path(qPath, ip);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "nexthop", nexthop);
-		addBody(o, "to", to);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhIpTask.class);
-	}
-
-	/**
-	 * List services available as a destination
-	 *
-	 * REST: GET /ip/{ip}/move
-	 * @param ip [required]
-	 *
-	 * API beta
-	 */
-	public OvhDestinations ip_move_GET(String ip) throws IOException {
-		String qPath = "/ip/{ip}/move";
-		StringBuilder sb = path(qPath, ip);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhDestinations.class);
-	}
-
-	/**
-	 * DirectAdmin licenses associated to this IP
-	 *
-	 * REST: GET /ip/{ip}/license/directadmin
-	 * @param ipAddress [required] Filter the value of ipAddress property (=)
-	 * @param ip [required]
-	 */
-	public ArrayList<String> ip_license_directadmin_GET(String ip, String ipAddress) throws IOException {
-		String qPath = "/ip/{ip}/license/directadmin";
-		StringBuilder sb = path(qPath, ip);
-		query(sb, "ipAddress", ipAddress);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Cloud Linux licenses associated to this IP
-	 *
-	 * REST: GET /ip/{ip}/license/cloudLinux
-	 * @param ipAddress [required] Filter the value of ipAddress property (=)
-	 * @param ip [required]
-	 */
-	public ArrayList<String> ip_license_cloudLinux_GET(String ip, String ipAddress) throws IOException {
-		String qPath = "/ip/{ip}/license/cloudLinux";
-		StringBuilder sb = path(qPath, ip);
-		query(sb, "ipAddress", ipAddress);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * SQL Server licenses associated to this IP
-	 *
-	 * REST: GET /ip/{ip}/license/sqlserver
-	 * @param ipAddress [required] Filter the value of ipAddress property (=)
-	 * @param ip [required]
-	 */
-	public ArrayList<String> ip_license_sqlserver_GET(String ip, String ipAddress) throws IOException {
-		String qPath = "/ip/{ip}/license/sqlserver";
-		StringBuilder sb = path(qPath, ip);
-		query(sb, "ipAddress", ipAddress);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Virtuozzo licenses associated to this IP
-	 *
-	 * REST: GET /ip/{ip}/license/virtuozzo
-	 * @param ipAddress [required] Filter the value of ipAddress property (=)
-	 * @param ip [required]
-	 */
-	public ArrayList<String> ip_license_virtuozzo_GET(String ip, String ipAddress) throws IOException {
-		String qPath = "/ip/{ip}/license/virtuozzo";
-		StringBuilder sb = path(qPath, ip);
-		query(sb, "ipAddress", ipAddress);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Windows licenses associated to this IP
-	 *
-	 * REST: GET /ip/{ip}/license/windows
-	 * @param ipAddress [required] Filter the value of ipAddress property (=)
-	 * @param ip [required]
-	 */
-	public ArrayList<String> ip_license_windows_GET(String ip, String ipAddress) throws IOException {
-		String qPath = "/ip/{ip}/license/windows";
-		StringBuilder sb = path(qPath, ip);
-		query(sb, "ipAddress", ipAddress);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * WorkLight licenses associated to this IP
-	 *
-	 * REST: GET /ip/{ip}/license/worklight
-	 * @param ipAddress [required] Filter the value of ipAddress property (=)
-	 * @param ip [required]
-	 */
-	public ArrayList<String> ip_license_worklight_GET(String ip, String ipAddress) throws IOException {
-		String qPath = "/ip/{ip}/license/worklight";
-		StringBuilder sb = path(qPath, ip);
-		query(sb, "ipAddress", ipAddress);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Cpanel licenses associated to this IP
-	 *
-	 * REST: GET /ip/{ip}/license/cpanel
-	 * @param ipAddress [required] Filter the value of ipAddress property (=)
-	 * @param ip [required]
-	 */
-	public ArrayList<String> ip_license_cpanel_GET(String ip, String ipAddress) throws IOException {
-		String qPath = "/ip/{ip}/license/cpanel";
-		StringBuilder sb = path(qPath, ip);
-		query(sb, "ipAddress", ipAddress);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Plesk licenses associated to this IP
-	 *
-	 * REST: GET /ip/{ip}/license/plesk
-	 * @param ipAddress [required] Filter the value of ipAddress property (=)
-	 * @param ip [required]
-	 */
-	public ArrayList<String> ip_license_plesk_GET(String ip, String ipAddress) throws IOException {
-		String qPath = "/ip/{ip}/license/plesk";
-		StringBuilder sb = path(qPath, ip);
-		query(sb, "ipAddress", ipAddress);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Park this IP
-	 *
-	 * REST: POST /ip/{ip}/park
-	 * @param ip [required]
-	 */
-	public OvhIpTask ip_park_POST(String ip) throws IOException {
-		String qPath = "/ip/{ip}/park";
-		StringBuilder sb = path(qPath, ip);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, OvhIpTask.class);
+		return convertTo(resp, OvhAntiphishing.class);
 	}
 
 	/**
@@ -689,154 +725,6 @@ public class ApiOvhIp extends ApiOvhBase {
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /ip/{ip}/mitigation/{ipOnMitigation}
-	 * @param ip [required]
-	 * @param ipOnMitigation [required]
-	 */
-	public OvhMitigationIp ip_mitigation_ipOnMitigation_GET(String ip, String ipOnMitigation) throws IOException {
-		String qPath = "/ip/{ip}/mitigation/{ipOnMitigation}";
-		StringBuilder sb = path(qPath, ip, ipOnMitigation);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhMitigationIp.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /ip/{ip}/mitigation/{ipOnMitigation}
-	 * @param body [required] New object properties
-	 * @param ip [required]
-	 * @param ipOnMitigation [required]
-	 */
-	public void ip_mitigation_ipOnMitigation_PUT(String ip, String ipOnMitigation, OvhMitigationIp body) throws IOException {
-		String qPath = "/ip/{ip}/mitigation/{ipOnMitigation}";
-		StringBuilder sb = path(qPath, ip, ipOnMitigation);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * AntiDDOS option. Delete IP from mitigation
-	 *
-	 * REST: DELETE /ip/{ip}/mitigation/{ipOnMitigation}
-	 * @param ip [required]
-	 * @param ipOnMitigation [required]
-	 */
-	public OvhMitigationIp ip_mitigation_ipOnMitigation_DELETE(String ip, String ipOnMitigation) throws IOException {
-		String qPath = "/ip/{ip}/mitigation/{ipOnMitigation}";
-		StringBuilder sb = path(qPath, ip, ipOnMitigation);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhMitigationIp.class);
-	}
-
-	/**
-	 * AntiDDOS option. Get statistics about your traffic in and out during this mitigation
-	 *
-	 * REST: GET /ip/{ip}/mitigation/{ipOnMitigation}/stats
-	 * @param to [required] End date
-	 * @param from [required] Start date
-	 * @param scale [required] Scale of aggregation
-	 * @param ip [required]
-	 * @param ipOnMitigation [required]
-	 */
-	public ArrayList<OvhMitigationStats> ip_mitigation_ipOnMitigation_stats_GET(String ip, String ipOnMitigation, Date from, OvhMitigationStatsScaleEnum scale, Date to) throws IOException {
-		String qPath = "/ip/{ip}/mitigation/{ipOnMitigation}/stats";
-		StringBuilder sb = path(qPath, ip, ipOnMitigation);
-		query(sb, "from", from);
-		query(sb, "scale", scale);
-		query(sb, "to", to);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t4);
-	}
-	private static TypeReference<ArrayList<OvhMitigationStats>> t4 = new TypeReference<ArrayList<OvhMitigationStats>>() {};
-
-	/**
-	 * AntiDDOS option. Get top stream on your ip on a specific timestamp
-	 *
-	 * REST: GET /ip/{ip}/mitigation/{ipOnMitigation}/topStream
-	 * @param date [required] Date to view top traffic
-	 * @param scale [required] Scale of aggregation
-	 * @param ip [required]
-	 * @param ipOnMitigation [required]
-	 */
-	public ArrayList<OvhMitigationDetailedStats> ip_mitigation_ipOnMitigation_topStream_GET(String ip, String ipOnMitigation, Date date, OvhMitigationStatsScaleEnum scale) throws IOException {
-		String qPath = "/ip/{ip}/mitigation/{ipOnMitigation}/topStream";
-		StringBuilder sb = path(qPath, ip, ipOnMitigation);
-		query(sb, "date", date);
-		query(sb, "scale", scale);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t5);
-	}
-	private static TypeReference<ArrayList<OvhMitigationDetailedStats>> t5 = new TypeReference<ArrayList<OvhMitigationDetailedStats>>() {};
-
-	/**
-	 * Ip under mitigation
-	 *
-	 * REST: GET /ip/{ip}/mitigation
-	 * @param state [required] Filter the value of state property (=)
-	 * @param auto [required] Filter the value of auto property (=)
-	 * @param ip [required]
-	 */
-	public ArrayList<String> ip_mitigation_GET(String ip, Boolean auto, OvhMitigationStateEnum state) throws IOException {
-		String qPath = "/ip/{ip}/mitigation";
-		StringBuilder sb = path(qPath, ip);
-		query(sb, "auto", auto);
-		query(sb, "state", state);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * AntiDDOS option. Add new IP on permanent mitigation
-	 *
-	 * REST: POST /ip/{ip}/mitigation
-	 * @param ipOnMitigation [required]
-	 * @param ip [required]
-	 */
-	public OvhMitigationIp ip_mitigation_POST(String ip, String ipOnMitigation) throws IOException {
-		String qPath = "/ip/{ip}/mitigation";
-		StringBuilder sb = path(qPath, ip);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "ipOnMitigation", ipOnMitigation);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhMitigationIp.class);
-	}
-
-	/**
-	 * Change organisation of this IP
-	 *
-	 * REST: POST /ip/{ip}/changeOrg
-	 * @param organisation [required] Your organisation id (RIPE_XXXX) to add on block informations
-	 * @param ip [required]
-	 */
-	public OvhIpTask ip_changeOrg_POST(String ip, String organisation) throws IOException {
-		String qPath = "/ip/{ip}/changeOrg";
-		StringBuilder sb = path(qPath, ip);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "organisation", organisation);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhIpTask.class);
-	}
-
-	/**
-	 * IP tasks
-	 *
-	 * REST: GET /ip/{ip}/task
-	 * @param status [required] Filter the value of status property (=)
-	 * @param function [required] Filter the value of function property (=)
-	 * @param ip [required]
-	 */
-	public ArrayList<Long> ip_task_GET(String ip, OvhTaskFunctionEnum function, OvhTaskStatusEnum status) throws IOException {
-		String qPath = "/ip/{ip}/task";
-		StringBuilder sb = path(qPath, ip);
-		query(sb, "function", function);
-		query(sb, "status", status);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Get this object properties
-	 *
 	 * REST: GET /ip/{ip}/task/{taskId}
 	 * @param ip [required]
 	 * @param taskId [required] the id of the task
@@ -849,125 +737,28 @@ public class ApiOvhIp extends ApiOvhBase {
 	}
 
 	/**
-	 * Anti-Hack blocked IP
+	 * IP tasks
 	 *
-	 * REST: GET /ip/{ip}/antihack
-	 * @param state [required] Filter the value of state property (=)
+	 * REST: GET /ip/{ip}/task
+	 * @param function [required] Filter the value of function property (=)
+	 * @param status [required] Filter the value of status property (=)
 	 * @param ip [required]
 	 */
-	public ArrayList<String> ip_antihack_GET(String ip, OvhBlockedIpStateEnum state) throws IOException {
-		String qPath = "/ip/{ip}/antihack";
+	public ArrayList<Long> ip_task_GET(String ip, OvhTaskFunctionEnum function, OvhTaskStatusEnum status) throws IOException {
+		String qPath = "/ip/{ip}/task";
 		StringBuilder sb = path(qPath, ip);
-		query(sb, "state", state);
+		query(sb, "function", function);
+		query(sb, "status", status);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /ip/{ip}/antihack/{ipBlocked}
-	 * @param ip [required]
-	 * @param ipBlocked [required] your IP
-	 */
-	public OvhBlockedIp ip_antihack_ipBlocked_GET(String ip, String ipBlocked) throws IOException {
-		String qPath = "/ip/{ip}/antihack/{ipBlocked}";
-		StringBuilder sb = path(qPath, ip, ipBlocked);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhBlockedIp.class);
-	}
-
-	/**
-	 * Unblock this IP
-	 *
-	 * REST: POST /ip/{ip}/antihack/{ipBlocked}/unblock
-	 * @param ip [required]
-	 * @param ipBlocked [required] your IP
-	 */
-	public void ip_antihack_ipBlocked_unblock_POST(String ip, String ipBlocked) throws IOException {
-		String qPath = "/ip/{ip}/antihack/{ipBlocked}/unblock";
-		StringBuilder sb = path(qPath, ip, ipBlocked);
-		exec(qPath, "POST", sb.toString(), null);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /ip/{ip}/mitigationProfiles/{ipMitigationProfile}
-	 * @param ip [required]
-	 * @param ipMitigationProfile [required]
-	 */
-	public OvhMitigationProfile ip_mitigationProfiles_ipMitigationProfile_GET(String ip, String ipMitigationProfile) throws IOException {
-		String qPath = "/ip/{ip}/mitigationProfiles/{ipMitigationProfile}";
-		StringBuilder sb = path(qPath, ip, ipMitigationProfile);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhMitigationProfile.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /ip/{ip}/mitigationProfiles/{ipMitigationProfile}
-	 * @param body [required] New object properties
-	 * @param ip [required]
-	 * @param ipMitigationProfile [required]
-	 */
-	public void ip_mitigationProfiles_ipMitigationProfile_PUT(String ip, String ipMitigationProfile, OvhMitigationProfile body) throws IOException {
-		String qPath = "/ip/{ip}/mitigationProfiles/{ipMitigationProfile}";
-		StringBuilder sb = path(qPath, ip, ipMitigationProfile);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Delete mitigation profile
-	 *
-	 * REST: DELETE /ip/{ip}/mitigationProfiles/{ipMitigationProfile}
-	 * @param ip [required]
-	 * @param ipMitigationProfile [required]
-	 */
-	public void ip_mitigationProfiles_ipMitigationProfile_DELETE(String ip, String ipMitigationProfile) throws IOException {
-		String qPath = "/ip/{ip}/mitigationProfiles/{ipMitigationProfile}";
-		StringBuilder sb = path(qPath, ip, ipMitigationProfile);
-		exec(qPath, "DELETE", sb.toString(), null);
-	}
-
-	/**
-	 * Manage mitigation profile on your IPs
-	 *
-	 * REST: GET /ip/{ip}/mitigationProfiles
-	 * @param ip [required]
-	 */
-	public ArrayList<String> ip_mitigationProfiles_GET(String ip) throws IOException {
-		String qPath = "/ip/{ip}/mitigationProfiles";
-		StringBuilder sb = path(qPath, ip);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * Create new profile for one of your ip
-	 *
-	 * REST: POST /ip/{ip}/mitigationProfiles
-	 * @param ipMitigationProfile [required]
-	 * @param autoMitigationTimeOut [required] Delay to wait before remove ip from auto mitigation after an attack
-	 * @param ip [required]
-	 */
-	public OvhMitigationProfile ip_mitigationProfiles_POST(String ip, OvhMitigationProfileAutoMitigationTimeOutEnum autoMitigationTimeOut, String ipMitigationProfile) throws IOException {
-		String qPath = "/ip/{ip}/mitigationProfiles";
-		StringBuilder sb = path(qPath, ip);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "autoMitigationTimeOut", autoMitigationTimeOut);
-		addBody(o, "ipMitigationProfile", ipMitigationProfile);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhMitigationProfile.class);
 	}
 
 	/**
 	 * Ip under firewall
 	 *
 	 * REST: GET /ip/{ip}/firewall
-	 * @param enabled [required] Filter the value of enabled property (=)
 	 * @param state [required] Filter the value of state property (=)
+	 * @param enabled [required] Filter the value of enabled property (=)
 	 * @param ip [required]
 	 */
 	public ArrayList<String> ip_firewall_GET(String ip, Boolean enabled, OvhFirewallStateEnum state) throws IOException {
@@ -976,7 +767,7 @@ public class ApiOvhIp extends ApiOvhBase {
 		query(sb, "enabled", enabled);
 		query(sb, "state", state);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
+		return convertTo(resp, t1);
 	}
 
 	/**
@@ -1080,20 +871,20 @@ public class ApiOvhIp extends ApiOvhBase {
 		StringBuilder sb = path(qPath, ip, ipOnFirewall);
 		query(sb, "state", state);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, t2);
 	}
 
 	/**
 	 * AntiDDOS option. Add new rule on your IP
 	 *
 	 * REST: POST /ip/{ip}/firewall/{ipOnFirewall}/rule
-	 * @param protocol [required] Network protocol
-	 * @param destinationPort [required] Destination port for your rule. Only with TCP/UDP protocol
-	 * @param action [required] Action on this rule
-	 * @param tcpOption [required] Option on your rule. Can only be used with TCP protocol
 	 * @param sourcePort [required] Source port for your rule. Only with TCP/UDP protocol
 	 * @param sequence [required] Sequence number of your rule
+	 * @param destinationPort [required] Destination port for your rule. Only with TCP/UDP protocol
+	 * @param action [required] Action on this rule
 	 * @param source [required] Source ip for your rule. Any if not set
+	 * @param tcpOption [required] Option on your rule. Can only be used with TCP protocol
+	 * @param protocol [required] Network protocol
 	 * @param ip [required]
 	 * @param ipOnFirewall [required]
 	 */
@@ -1113,143 +904,352 @@ public class ApiOvhIp extends ApiOvhBase {
 	}
 
 	/**
-	 * List available services
+	 * Ip under game anti-ddos
 	 *
-	 * REST: GET /ip/service
-	 *
-	 * API beta
+	 * REST: GET /ip/{ip}/game
+	 * @param ip [required]
 	 */
-	public ArrayList<String> service_GET() throws IOException {
-		String qPath = "/ip/service";
-		StringBuilder sb = path(qPath);
+	public ArrayList<String> ip_game_GET(String ip) throws IOException {
+		String qPath = "/ip/{ip}/game";
+		StringBuilder sb = path(qPath, ip);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
+		return convertTo(resp, t1);
 	}
 
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /ip/service/{serviceName}
-	 * @param serviceName [required] The internal name of your IP services
-	 *
-	 * API beta
+	 * REST: GET /ip/{ip}/game/{ipOnGame}/rule/{id}
+	 * @param ip [required]
+	 * @param ipOnGame [required]
+	 * @param id [required] ID of the rule
 	 */
-	public OvhServiceIp service_serviceName_GET(String serviceName) throws IOException {
-		String qPath = "/ip/service/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
+	public OvhGameMitigationRule ip_game_ipOnGame_rule_id_GET(String ip, String ipOnGame, Long id) throws IOException {
+		String qPath = "/ip/{ip}/game/{ipOnGame}/rule/{id}";
+		StringBuilder sb = path(qPath, ip, ipOnGame, id);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhServiceIp.class);
+		return convertTo(resp, OvhGameMitigationRule.class);
+	}
+
+	/**
+	 * Delete rule
+	 *
+	 * REST: DELETE /ip/{ip}/game/{ipOnGame}/rule/{id}
+	 * @param ip [required]
+	 * @param ipOnGame [required]
+	 * @param id [required] ID of the rule
+	 */
+	public OvhGameMitigationRule ip_game_ipOnGame_rule_id_DELETE(String ip, String ipOnGame, Long id) throws IOException {
+		String qPath = "/ip/{ip}/game/{ipOnGame}/rule/{id}";
+		StringBuilder sb = path(qPath, ip, ipOnGame, id);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhGameMitigationRule.class);
+	}
+
+	/**
+	 * IDs of rules configured for this IP
+	 *
+	 * REST: GET /ip/{ip}/game/{ipOnGame}/rule
+	 * @param ip [required]
+	 * @param ipOnGame [required]
+	 */
+	public ArrayList<Long> ip_game_ipOnGame_rule_GET(String ip, String ipOnGame) throws IOException {
+		String qPath = "/ip/{ip}/game/{ipOnGame}/rule";
+		StringBuilder sb = path(qPath, ip, ipOnGame);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Add new rule on your IP
+	 *
+	 * REST: POST /ip/{ip}/game/{ipOnGame}/rule
+	 * @param ports [required] The UDP port range to apply the rule on
+	 * @param protocol [required] The protocol running behind the given port
+	 * @param ip [required]
+	 * @param ipOnGame [required]
+	 */
+	public OvhGameMitigationRule ip_game_ipOnGame_rule_POST(String ip, String ipOnGame, OvhRange<Long> ports, OvhGameMitigationRuleProtocolEnum protocol) throws IOException {
+		String qPath = "/ip/{ip}/game/{ipOnGame}/rule";
+		StringBuilder sb = path(qPath, ip, ipOnGame);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "ports", ports);
+		addBody(o, "protocol", protocol);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhGameMitigationRule.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /ip/{ip}/game/{ipOnGame}
+	 * @param ip [required]
+	 * @param ipOnGame [required]
+	 */
+	public OvhGameMitigation ip_game_ipOnGame_GET(String ip, String ipOnGame) throws IOException {
+		String qPath = "/ip/{ip}/game/{ipOnGame}";
+		StringBuilder sb = path(qPath, ip, ipOnGame);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhGameMitigation.class);
 	}
 
 	/**
 	 * Alter this object properties
 	 *
-	 * REST: PUT /ip/service/{serviceName}
+	 * REST: PUT /ip/{ip}/game/{ipOnGame}
 	 * @param body [required] New object properties
-	 * @param serviceName [required] The internal name of your IP services
-	 *
-	 * API beta
+	 * @param ip [required]
+	 * @param ipOnGame [required]
 	 */
-	public void service_serviceName_PUT(String serviceName, OvhServiceIp body) throws IOException {
-		String qPath = "/ip/service/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
+	public void ip_game_ipOnGame_PUT(String ip, String ipOnGame, OvhGameMitigation body) throws IOException {
+		String qPath = "/ip/{ip}/game/{ipOnGame}";
+		StringBuilder sb = path(qPath, ip, ipOnGame);
 		exec(qPath, "PUT", sb.toString(), body);
 	}
 
 	/**
-	 * Terminate your service
+	 * Ip under mitigation
 	 *
-	 * REST: POST /ip/service/{serviceName}/terminate
-	 * @param serviceName [required] The internal name of your IP services
-	 *
-	 * API beta
+	 * REST: GET /ip/{ip}/mitigation
+	 * @param auto [required] Filter the value of auto property (=)
+	 * @param state [required] Filter the value of state property (=)
+	 * @param ip [required]
 	 */
-	public String service_serviceName_terminate_POST(String serviceName) throws IOException {
-		String qPath = "/ip/service/{serviceName}/terminate";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, String.class);
+	public ArrayList<String> ip_mitigation_GET(String ip, Boolean auto, OvhMitigationStateEnum state) throws IOException {
+		String qPath = "/ip/{ip}/mitigation";
+		StringBuilder sb = path(qPath, ip);
+		query(sb, "auto", auto);
+		query(sb, "state", state);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * AntiDDOS option. Add new IP on permanent mitigation
+	 *
+	 * REST: POST /ip/{ip}/mitigation
+	 * @param ipOnMitigation [required]
+	 * @param ip [required]
+	 */
+	public OvhMitigationIp ip_mitigation_POST(String ip, String ipOnMitigation) throws IOException {
+		String qPath = "/ip/{ip}/mitigation";
+		StringBuilder sb = path(qPath, ip);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "ipOnMitigation", ipOnMitigation);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhMitigationIp.class);
+	}
+
+	/**
+	 * AntiDDOS option. Get statistics about your traffic in and out during this mitigation
+	 *
+	 * REST: GET /ip/{ip}/mitigation/{ipOnMitigation}/stats
+	 * @param scale [required] Scale of aggregation
+	 * @param from [required] Start date
+	 * @param to [required] End date
+	 * @param ip [required]
+	 * @param ipOnMitigation [required]
+	 */
+	public ArrayList<OvhMitigationStats> ip_mitigation_ipOnMitigation_stats_GET(String ip, String ipOnMitigation, Date from, OvhMitigationStatsScaleEnum scale, Date to) throws IOException {
+		String qPath = "/ip/{ip}/mitigation/{ipOnMitigation}/stats";
+		StringBuilder sb = path(qPath, ip, ipOnMitigation);
+		query(sb, "from", from);
+		query(sb, "scale", scale);
+		query(sb, "to", to);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t4);
+	}
+	private static TypeReference<ArrayList<OvhMitigationStats>> t4 = new TypeReference<ArrayList<OvhMitigationStats>>() {};
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /ip/{ip}/mitigation/{ipOnMitigation}
+	 * @param ip [required]
+	 * @param ipOnMitigation [required]
+	 */
+	public OvhMitigationIp ip_mitigation_ipOnMitigation_GET(String ip, String ipOnMitigation) throws IOException {
+		String qPath = "/ip/{ip}/mitigation/{ipOnMitigation}";
+		StringBuilder sb = path(qPath, ip, ipOnMitigation);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhMitigationIp.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /ip/{ip}/mitigation/{ipOnMitigation}
+	 * @param body [required] New object properties
+	 * @param ip [required]
+	 * @param ipOnMitigation [required]
+	 */
+	public void ip_mitigation_ipOnMitigation_PUT(String ip, String ipOnMitigation, OvhMitigationIp body) throws IOException {
+		String qPath = "/ip/{ip}/mitigation/{ipOnMitigation}";
+		StringBuilder sb = path(qPath, ip, ipOnMitigation);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * AntiDDOS option. Delete IP from mitigation
+	 *
+	 * REST: DELETE /ip/{ip}/mitigation/{ipOnMitigation}
+	 * @param ip [required]
+	 * @param ipOnMitigation [required]
+	 */
+	public OvhMitigationIp ip_mitigation_ipOnMitigation_DELETE(String ip, String ipOnMitigation) throws IOException {
+		String qPath = "/ip/{ip}/mitigation/{ipOnMitigation}";
+		StringBuilder sb = path(qPath, ip, ipOnMitigation);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhMitigationIp.class);
+	}
+
+	/**
+	 * AntiDDOS option. Get top stream on your ip on a specific timestamp
+	 *
+	 * REST: GET /ip/{ip}/mitigation/{ipOnMitigation}/topStream
+	 * @param scale [required] Scale of aggregation
+	 * @param date [required] Date to view top traffic
+	 * @param ip [required]
+	 * @param ipOnMitigation [required]
+	 */
+	public ArrayList<OvhMitigationDetailedStats> ip_mitigation_ipOnMitigation_topStream_GET(String ip, String ipOnMitigation, Date date, OvhMitigationStatsScaleEnum scale) throws IOException {
+		String qPath = "/ip/{ip}/mitigation/{ipOnMitigation}/topStream";
+		StringBuilder sb = path(qPath, ip, ipOnMitigation);
+		query(sb, "date", date);
+		query(sb, "scale", scale);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t5);
+	}
+	private static TypeReference<ArrayList<OvhMitigationDetailedStats>> t5 = new TypeReference<ArrayList<OvhMitigationDetailedStats>>() {};
+
+	/**
+	 * Change organisation of this IP
+	 *
+	 * REST: POST /ip/{ip}/changeOrg
+	 * @param organisation [required] Your organisation id (RIPE_XXXX) to add on block informations
+	 * @param ip [required]
+	 */
+	public OvhIpTask ip_changeOrg_POST(String ip, String organisation) throws IOException {
+		String qPath = "/ip/{ip}/changeOrg";
+		StringBuilder sb = path(qPath, ip);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "organisation", organisation);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhIpTask.class);
+	}
+
+	/**
+	 * Unblock this IP
+	 *
+	 * REST: POST /ip/{ip}/antihack/{ipBlocked}/unblock
+	 * @param ip [required]
+	 * @param ipBlocked [required] your IP
+	 */
+	public void ip_antihack_ipBlocked_unblock_POST(String ip, String ipBlocked) throws IOException {
+		String qPath = "/ip/{ip}/antihack/{ipBlocked}/unblock";
+		StringBuilder sb = path(qPath, ip, ipBlocked);
+		exec(qPath, "POST", sb.toString(), null);
 	}
 
 	/**
 	 * Get this object properties
 	 *
-	 * REST: GET /ip/service/{serviceName}/serviceInfos
-	 * @param serviceName [required] The internal name of your IP services
-	 *
-	 * API beta
+	 * REST: GET /ip/{ip}/antihack/{ipBlocked}
+	 * @param ip [required]
+	 * @param ipBlocked [required] your IP
 	 */
-	public OvhNonExpiringService service_serviceName_serviceInfos_GET(String serviceName) throws IOException {
-		String qPath = "/ip/service/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
+	public OvhBlockedIp ip_antihack_ipBlocked_GET(String ip, String ipBlocked) throws IOException {
+		String qPath = "/ip/{ip}/antihack/{ipBlocked}";
+		StringBuilder sb = path(qPath, ip, ipBlocked);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhNonExpiringService.class);
+		return convertTo(resp, OvhBlockedIp.class);
 	}
 
 	/**
-	 * Launch a contact change procedure
+	 * Anti-Hack blocked IP
 	 *
-	 * REST: POST /ip/service/{serviceName}/changeContact
-	 * @param contactAdmin The contact to set as admin contact
-	 * @param contactTech The contact to set as tech contact
-	 * @param contactBilling The contact to set as billing contact
-	 * @param serviceName [required] The internal name of your IP services
-	 *
-	 * API beta
+	 * REST: GET /ip/{ip}/antihack
+	 * @param state [required] Filter the value of state property (=)
+	 * @param ip [required]
 	 */
-	public ArrayList<Long> service_serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactBilling, String contactTech) throws IOException {
-		String qPath = "/ip/service/{serviceName}/changeContact";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "contactAdmin", contactAdmin);
-		addBody(o, "contactBilling", contactBilling);
-		addBody(o, "contactTech", contactTech);
-		String resp = exec(qPath, "POST", sb.toString(), o);
+	public ArrayList<String> ip_antihack_GET(String ip, OvhBlockedIpStateEnum state) throws IOException {
+		String qPath = "/ip/{ip}/antihack";
+		StringBuilder sb = path(qPath, ip);
+		query(sb, "state", state);
+		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
 	/**
-	 * Confirm termination of your service
+	 * Manage mitigation profile on your IPs
 	 *
-	 * REST: POST /ip/service/{serviceName}/confirmTermination
-	 * @param futureUse What next after your termination request
-	 * @param reason Reason of your termination request
-	 * @param commentary Commentary about your termination request
-	 * @param token [required] The termination token sent by mail to the admin contact
-	 * @param serviceName [required] The internal name of your IP services
-	 *
-	 * API beta
+	 * REST: GET /ip/{ip}/mitigationProfiles
+	 * @param ip [required]
 	 */
-	public String service_serviceName_confirmTermination_POST(String serviceName, String commentary, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String token) throws IOException {
-		String qPath = "/ip/service/{serviceName}/confirmTermination";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "commentary", commentary);
-		addBody(o, "futureUse", futureUse);
-		addBody(o, "reason", reason);
-		addBody(o, "token", token);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, String.class);
+	public ArrayList<String> ip_mitigationProfiles_GET(String ip) throws IOException {
+		String qPath = "/ip/{ip}/mitigationProfiles";
+		StringBuilder sb = path(qPath, ip);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
 	}
 
 	/**
-	 * Your OVH IPs
+	 * Create new profile for one of your ip
 	 *
-	 * REST: GET /ip
-	 * @param description [required] Filter the value of description property (like)
-	 * @param ip [required] Filter the value of ip property (contains or equals)
-	 * @param routedTo_serviceName [required] Filter the value of routedTo.serviceName property (like)
-	 * @param type [required] Filter the value of type property (=)
+	 * REST: POST /ip/{ip}/mitigationProfiles
+	 * @param ipMitigationProfile [required]
+	 * @param autoMitigationTimeOut [required] Delay to wait before remove ip from auto mitigation after an attack
+	 * @param ip [required]
 	 */
-	public ArrayList<String> GET(String description, String ip, String routedTo_serviceName, OvhIpTypeEnum type) throws IOException {
-		String qPath = "/ip";
-		StringBuilder sb = path(qPath);
-		query(sb, "description", description);
-		query(sb, "ip", ip);
-		query(sb, "routedTo.serviceName", routedTo_serviceName);
-		query(sb, "type", type);
+	public OvhMitigationProfile ip_mitigationProfiles_POST(String ip, OvhMitigationProfileAutoMitigationTimeOutEnum autoMitigationTimeOut, String ipMitigationProfile) throws IOException {
+		String qPath = "/ip/{ip}/mitigationProfiles";
+		StringBuilder sb = path(qPath, ip);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "autoMitigationTimeOut", autoMitigationTimeOut);
+		addBody(o, "ipMitigationProfile", ipMitigationProfile);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhMitigationProfile.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /ip/{ip}/mitigationProfiles/{ipMitigationProfile}
+	 * @param ip [required]
+	 * @param ipMitigationProfile [required]
+	 */
+	public OvhMitigationProfile ip_mitigationProfiles_ipMitigationProfile_GET(String ip, String ipMitigationProfile) throws IOException {
+		String qPath = "/ip/{ip}/mitigationProfiles/{ipMitigationProfile}";
+		StringBuilder sb = path(qPath, ip, ipMitigationProfile);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
+		return convertTo(resp, OvhMitigationProfile.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /ip/{ip}/mitigationProfiles/{ipMitigationProfile}
+	 * @param body [required] New object properties
+	 * @param ip [required]
+	 * @param ipMitigationProfile [required]
+	 */
+	public void ip_mitigationProfiles_ipMitigationProfile_PUT(String ip, String ipMitigationProfile, OvhMitigationProfile body) throws IOException {
+		String qPath = "/ip/{ip}/mitigationProfiles/{ipMitigationProfile}";
+		StringBuilder sb = path(qPath, ip, ipMitigationProfile);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Delete mitigation profile
+	 *
+	 * REST: DELETE /ip/{ip}/mitigationProfiles/{ipMitigationProfile}
+	 * @param ip [required]
+	 * @param ipMitigationProfile [required]
+	 */
+	public void ip_mitigationProfiles_ipMitigationProfile_DELETE(String ip, String ipMitigationProfile) throws IOException {
+		String qPath = "/ip/{ip}/mitigationProfiles/{ipMitigationProfile}";
+		StringBuilder sb = path(qPath, ip, ipMitigationProfile);
+		exec(qPath, "DELETE", sb.toString(), null);
 	}
 
 	/**
@@ -1261,109 +1261,93 @@ public class ApiOvhIp extends ApiOvhBase {
 		String qPath = "/ip/loadBalancing";
 		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
+		return convertTo(resp, t1);
 	}
 
 	/**
-	 * Import your own ssl certificate on your IP load balancing. Ssl option is needed to use this url.
+	 * Get all srcPort
 	 *
-	 * REST: POST /ip/loadBalancing/{serviceName}/importCustomSsl
-	 * @param chain [required] certificate chain
-	 * @param key [required] certificate key
-	 * @param certificate [required] certificate
+	 * REST: GET /ip/loadBalancing/{serviceName}/portsRedirection
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
-	public OvhLoadBalancingTask loadBalancing_serviceName_importCustomSsl_POST(String serviceName, String certificate, String chain, String key) throws IOException {
-		String qPath = "/ip/loadBalancing/{serviceName}/importCustomSsl";
+	public ArrayList<OvhLoadBalancingAdditionalPortEnum> loadBalancing_serviceName_portsRedirection_GET(String serviceName) throws IOException {
+		String qPath = "/ip/loadBalancing/{serviceName}/portsRedirection";
 		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "certificate", certificate);
-		addBody(o, "chain", chain);
-		addBody(o, "key", key);
-		String resp = exec(qPath, "POST", sb.toString(), o);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t6);
+	}
+	private static TypeReference<ArrayList<OvhLoadBalancingAdditionalPortEnum>> t6 = new TypeReference<ArrayList<OvhLoadBalancingAdditionalPortEnum>>() {};
+
+	/**
+	 * Add a new port redirection
+	 *
+	 * REST: POST /ip/loadBalancing/{serviceName}/portsRedirection
+	 * @param body [required] The port you want to redirect to
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 */
+	public OvhLoadBalancingTask loadBalancing_serviceName_portsRedirection_POST(String serviceName, OvhLoadBalancingPort body) throws IOException {
+		String qPath = "/ip/loadBalancing/{serviceName}/portsRedirection";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), body);
 		return convertTo(resp, OvhLoadBalancingTask.class);
 	}
 
 	/**
-	 * Task list associated with this IP
+	 * Get the value for the given srcPort
 	 *
-	 * REST: GET /ip/loadBalancing/{serviceName}/task
+	 * REST: GET /ip/loadBalancing/{serviceName}/portsRedirection/{srcPort}
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 * @param srcPort [required] The port you want to redirect from
+	 */
+	public OvhLoadBalancingPort loadBalancing_serviceName_portsRedirection_srcPort_GET(String serviceName, net.minidev.ovh.api.ip.OvhLoadBalancingAdditionalPortEnum srcPort) throws IOException {
+		String qPath = "/ip/loadBalancing/{serviceName}/portsRedirection/{srcPort}";
+		StringBuilder sb = path(qPath, serviceName, srcPort);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhLoadBalancingPort.class);
+	}
+
+	/**
+	 * Delete a port redirection
+	 *
+	 * REST: DELETE /ip/loadBalancing/{serviceName}/portsRedirection/{srcPort}
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 * @param srcPort [required] The port you want to redirect from
+	 */
+	public OvhLoadBalancingTask loadBalancing_serviceName_portsRedirection_srcPort_DELETE(String serviceName, net.minidev.ovh.api.ip.OvhLoadBalancingAdditionalPortEnum srcPort) throws IOException {
+		String qPath = "/ip/loadBalancing/{serviceName}/portsRedirection/{srcPort}";
+		StringBuilder sb = path(qPath, serviceName, srcPort);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, OvhLoadBalancingTask.class);
+	}
+
+	/**
+	 * Backends for this IP load balancing
+	 *
+	 * REST: GET /ip/loadBalancing/{serviceName}/backend
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
-	public ArrayList<Long> loadBalancing_serviceName_task_GET(String serviceName) throws IOException {
-		String qPath = "/ip/loadBalancing/{serviceName}/task";
+	public ArrayList<String> loadBalancing_serviceName_backend_GET(String serviceName) throws IOException {
+		String qPath = "/ip/loadBalancing/{serviceName}/backend";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
 	/**
-	 * Get this object properties
+	 * Add a new backend on your IP load balancing
 	 *
-	 * REST: GET /ip/loadBalancing/{serviceName}/task/{taskId}
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 * @param taskId [required] Identifier of your task
-	 */
-	public OvhLoadBalancingTask loadBalancing_serviceName_task_taskId_GET(String serviceName, Long taskId) throws IOException {
-		String qPath = "/ip/loadBalancing/{serviceName}/task/{taskId}";
-		StringBuilder sb = path(qPath, serviceName, taskId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhLoadBalancingTask.class);
-	}
-
-	/**
-	 * Switch to ipLoadbalancing next-gen API. Benefits : additionnals probes, DDOS protection.
-	 *
-	 * REST: POST /ip/loadBalancing/{serviceName}/switchToIplbNextGenerationApi
+	 * REST: POST /ip/loadBalancing/{serviceName}/backend
+	 * @param weight [required] Weight of the backend on its zone, must be between 1 and 100
+	 * @param ipBackend [required] IP of your backend
+	 * @param probe [required] The type of probe used
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
-	public OvhTask loadBalancing_serviceName_switchToIplbNextGenerationApi_POST(String serviceName) throws IOException {
-		String qPath = "/ip/loadBalancing/{serviceName}/switchToIplbNextGenerationApi";
+	public OvhLoadBalancingTask loadBalancing_serviceName_backend_POST(String serviceName, String ipBackend, OvhLoadBalancingBackendProbeEnum probe, Long weight) throws IOException {
+		String qPath = "/ip/loadBalancing/{serviceName}/backend";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /ip/loadBalancing/{serviceName}
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 */
-	public OvhLoadBalancingIp loadBalancing_serviceName_GET(String serviceName) throws IOException {
-		String qPath = "/ip/loadBalancing/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhLoadBalancingIp.class);
-	}
-
-	/**
-	 * Ip subnet used by OVH to nat requests on your ip lb to your backends. You must ensure that your backends are not part of a network that overlap with this one.
-	 *
-	 * REST: GET /ip/loadBalancing/{serviceName}/internalNatIp
-	 * @param zone [required] one of your ip loadbalancing's zone
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 */
-	public String loadBalancing_serviceName_internalNatIp_GET(String serviceName, OvhLoadBalancingZoneEnum zone) throws IOException {
-		String qPath = "/ip/loadBalancing/{serviceName}/internalNatIp";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "zone", zone);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * Set the weight of a backend. For instance, if backend A has a weight of 8 and backup B was a weight of 16, backend B will receive twice more connections as backend A. Backends must be on the same POP for the weight parameter to take effect between them.
-	 *
-	 * REST: POST /ip/loadBalancing/{serviceName}/backend/{backend}/setWeight
-	 * @param weight [required] weight of the backend, must be between 1 and 100, default is 8
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 * @param backend [required] IP of your backend
-	 */
-	public OvhLoadBalancingTask loadBalancing_serviceName_backend_backend_setWeight_POST(String serviceName, String backend, Long weight) throws IOException {
-		String qPath = "/ip/loadBalancing/{serviceName}/backend/{backend}/setWeight";
-		StringBuilder sb = path(qPath, serviceName, backend);
 		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "ipBackend", ipBackend);
+		addBody(o, "probe", probe);
 		addBody(o, "weight", weight);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, OvhLoadBalancingTask.class);
@@ -1431,36 +1415,93 @@ public class ApiOvhIp extends ApiOvhBase {
 	}
 
 	/**
-	 * Backends for this IP load balancing
+	 * Set the weight of a backend. For instance, if backend A has a weight of 8 and backup B was a weight of 16, backend B will receive twice more connections as backend A. Backends must be on the same POP for the weight parameter to take effect between them.
 	 *
-	 * REST: GET /ip/loadBalancing/{serviceName}/backend
+	 * REST: POST /ip/loadBalancing/{serviceName}/backend/{backend}/setWeight
+	 * @param weight [required] weight of the backend, must be between 1 and 100, default is 8
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 * @param backend [required] IP of your backend
+	 */
+	public OvhLoadBalancingTask loadBalancing_serviceName_backend_backend_setWeight_POST(String serviceName, String backend, Long weight) throws IOException {
+		String qPath = "/ip/loadBalancing/{serviceName}/backend/{backend}/setWeight";
+		StringBuilder sb = path(qPath, serviceName, backend);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "weight", weight);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhLoadBalancingTask.class);
+	}
+
+	/**
+	 * Import your own ssl certificate on your IP load balancing. Ssl option is needed to use this url.
+	 *
+	 * REST: POST /ip/loadBalancing/{serviceName}/importCustomSsl
+	 * @param key [required] certificate key
+	 * @param certificate [required] certificate
+	 * @param chain [required] certificate chain
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
-	public ArrayList<String> loadBalancing_serviceName_backend_GET(String serviceName) throws IOException {
-		String qPath = "/ip/loadBalancing/{serviceName}/backend";
+	public OvhLoadBalancingTask loadBalancing_serviceName_importCustomSsl_POST(String serviceName, String certificate, String chain, String key) throws IOException {
+		String qPath = "/ip/loadBalancing/{serviceName}/importCustomSsl";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "certificate", certificate);
+		addBody(o, "chain", chain);
+		addBody(o, "key", key);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhLoadBalancingTask.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /ip/loadBalancing/{serviceName}/task/{taskId}
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 * @param taskId [required] Identifier of your task
+	 */
+	public OvhLoadBalancingTask loadBalancing_serviceName_task_taskId_GET(String serviceName, Long taskId) throws IOException {
+		String qPath = "/ip/loadBalancing/{serviceName}/task/{taskId}";
+		StringBuilder sb = path(qPath, serviceName, taskId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhLoadBalancingTask.class);
+	}
+
+	/**
+	 * Task list associated with this IP
+	 *
+	 * REST: GET /ip/loadBalancing/{serviceName}/task
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 */
+	public ArrayList<Long> loadBalancing_serviceName_task_GET(String serviceName) throws IOException {
+		String qPath = "/ip/loadBalancing/{serviceName}/task";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t2);
 	}
 
 	/**
-	 * Add a new backend on your IP load balancing
+	 * Get this object properties
 	 *
-	 * REST: POST /ip/loadBalancing/{serviceName}/backend
-	 * @param weight [required] Weight of the backend on its zone, must be between 1 and 100
-	 * @param probe [required] The type of probe used
-	 * @param ipBackend [required] IP of your backend
+	 * REST: GET /ip/loadBalancing/{serviceName}
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
-	public OvhLoadBalancingTask loadBalancing_serviceName_backend_POST(String serviceName, String ipBackend, OvhLoadBalancingBackendProbeEnum probe, Long weight) throws IOException {
-		String qPath = "/ip/loadBalancing/{serviceName}/backend";
+	public OvhLoadBalancingIp loadBalancing_serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/ip/loadBalancing/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "ipBackend", ipBackend);
-		addBody(o, "probe", probe);
-		addBody(o, "weight", weight);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhLoadBalancingTask.class);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhLoadBalancingIp.class);
+	}
+
+	/**
+	 * List of backends you can attach to your IP
+	 *
+	 * REST: GET /ip/loadBalancing/{serviceName}/allowedBackends
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 */
+	public ArrayList<String> loadBalancing_serviceName_allowedBackends_GET(String serviceName) throws IOException {
+		String qPath = "/ip/loadBalancing/{serviceName}/allowedBackends";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
 	}
 
 	/**
@@ -1490,59 +1531,18 @@ public class ApiOvhIp extends ApiOvhBase {
 	}
 
 	/**
-	 * Get the value for the given srcPort
+	 * Ip subnet used to send probes to your backends
 	 *
-	 * REST: GET /ip/loadBalancing/{serviceName}/portsRedirection/{srcPort}
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 * @param srcPort [required] The port you want to redirect from
-	 */
-	public OvhLoadBalancingPort loadBalancing_serviceName_portsRedirection_srcPort_GET(String serviceName, net.minidev.ovh.api.ip.OvhLoadBalancingAdditionalPortEnum srcPort) throws IOException {
-		String qPath = "/ip/loadBalancing/{serviceName}/portsRedirection/{srcPort}";
-		StringBuilder sb = path(qPath, serviceName, srcPort);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhLoadBalancingPort.class);
-	}
-
-	/**
-	 * Delete a port redirection
-	 *
-	 * REST: DELETE /ip/loadBalancing/{serviceName}/portsRedirection/{srcPort}
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 * @param srcPort [required] The port you want to redirect from
-	 */
-	public OvhLoadBalancingTask loadBalancing_serviceName_portsRedirection_srcPort_DELETE(String serviceName, net.minidev.ovh.api.ip.OvhLoadBalancingAdditionalPortEnum srcPort) throws IOException {
-		String qPath = "/ip/loadBalancing/{serviceName}/portsRedirection/{srcPort}";
-		StringBuilder sb = path(qPath, serviceName, srcPort);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, OvhLoadBalancingTask.class);
-	}
-
-	/**
-	 * Get all srcPort
-	 *
-	 * REST: GET /ip/loadBalancing/{serviceName}/portsRedirection
+	 * REST: GET /ip/loadBalancing/{serviceName}/probeIp
+	 * @param zone [required] one of your ip loadbalancing's zone
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
-	public ArrayList<OvhLoadBalancingAdditionalPortEnum> loadBalancing_serviceName_portsRedirection_GET(String serviceName) throws IOException {
-		String qPath = "/ip/loadBalancing/{serviceName}/portsRedirection";
+	public ArrayList<String> loadBalancing_serviceName_probeIp_GET(String serviceName, OvhLoadBalancingZoneEnum zone) throws IOException {
+		String qPath = "/ip/loadBalancing/{serviceName}/probeIp";
 		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "zone", zone);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t6);
-	}
-	private static TypeReference<ArrayList<OvhLoadBalancingAdditionalPortEnum>> t6 = new TypeReference<ArrayList<OvhLoadBalancingAdditionalPortEnum>>() {};
-
-	/**
-	 * Add a new port redirection
-	 *
-	 * REST: POST /ip/loadBalancing/{serviceName}/portsRedirection
-	 * @param body [required] The port you want to redirect to
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 */
-	public OvhLoadBalancingTask loadBalancing_serviceName_portsRedirection_POST(String serviceName, OvhLoadBalancingPort body) throws IOException {
-		String qPath = "/ip/loadBalancing/{serviceName}/portsRedirection";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), body);
-		return convertTo(resp, OvhLoadBalancingTask.class);
+		return convertTo(resp, t1);
 	}
 
 	/**
@@ -1556,6 +1556,21 @@ public class ApiOvhIp extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, OvhLoadBalancingTask.class);
+	}
+
+	/**
+	 * Ip subnet used by OVH to nat requests on your ip lb to your backends. You must ensure that your backends are not part of a network that overlap with this one.
+	 *
+	 * REST: GET /ip/loadBalancing/{serviceName}/internalNatIp
+	 * @param zone [required] one of your ip loadbalancing's zone
+	 * @param serviceName [required] The internal name of your IP load balancing
+	 */
+	public String loadBalancing_serviceName_internalNatIp_GET(String serviceName, OvhLoadBalancingZoneEnum zone) throws IOException {
+		String qPath = "/ip/loadBalancing/{serviceName}/internalNatIp";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "zone", zone);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, String.class);
 	}
 
 	/**
@@ -1575,30 +1590,15 @@ public class ApiOvhIp extends ApiOvhBase {
 	}
 
 	/**
-	 * Ip subnet used to send probes to your backends
+	 * Switch to ipLoadbalancing next-gen API. Benefits : additionnals probes, DDOS protection.
 	 *
-	 * REST: GET /ip/loadBalancing/{serviceName}/probeIp
-	 * @param zone [required] one of your ip loadbalancing's zone
+	 * REST: POST /ip/loadBalancing/{serviceName}/switchToIplbNextGenerationApi
 	 * @param serviceName [required] The internal name of your IP load balancing
 	 */
-	public ArrayList<String> loadBalancing_serviceName_probeIp_GET(String serviceName, OvhLoadBalancingZoneEnum zone) throws IOException {
-		String qPath = "/ip/loadBalancing/{serviceName}/probeIp";
+	public OvhTask loadBalancing_serviceName_switchToIplbNextGenerationApi_POST(String serviceName) throws IOException {
+		String qPath = "/ip/loadBalancing/{serviceName}/switchToIplbNextGenerationApi";
 		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "zone", zone);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-
-	/**
-	 * List of backends you can attach to your IP
-	 *
-	 * REST: GET /ip/loadBalancing/{serviceName}/allowedBackends
-	 * @param serviceName [required] The internal name of your IP load balancing
-	 */
-	public ArrayList<String> loadBalancing_serviceName_allowedBackends_GET(String serviceName) throws IOException {
-		String qPath = "/ip/loadBalancing/{serviceName}/allowedBackends";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhTask.class);
 	}
 }

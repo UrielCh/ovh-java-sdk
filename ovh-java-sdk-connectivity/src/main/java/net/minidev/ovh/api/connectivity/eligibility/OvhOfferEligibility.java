@@ -19,18 +19,18 @@ public class OvhOfferEligibility {
 	public OvhMessage[] reasons;
 
 	/**
-	 * Warnings to consider when eligible, if any
-	 *
-	 * canBeNull
-	 */
-	public OvhMessage[] underConditions;
-
-	/**
 	 * Is the endpoint eligible to this offer ?
 	 *
 	 * canBeNull
 	 */
 	public Boolean eligible;
+
+	/**
+	 * Warnings to consider when eligible, if any
+	 *
+	 * canBeNull
+	 */
+	public OvhMessage[] underConditions;
 
 	/**
 	 * Estimated download rate, for copper and non guaranteed offers only

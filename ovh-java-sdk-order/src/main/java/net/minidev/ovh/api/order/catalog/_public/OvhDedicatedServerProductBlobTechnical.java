@@ -33,18 +33,18 @@ public class OvhDedicatedServerProductBlobTechnical {
 	public OvhDedicatedServerProductBlobTechnicalNetwork bandwidth;
 
 	/**
-	 * CPU informations
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhDedicatedServerProductBlobTechnicalCPU cpu;
-
-	/**
 	 * vRack informations
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhDedicatedServerProductBlobTechnicalNetwork vrack;
+
+	/**
+	 * CPU informations
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhDedicatedServerProductBlobTechnicalCPU cpu;
 
 	/**
 	 * Disks informations

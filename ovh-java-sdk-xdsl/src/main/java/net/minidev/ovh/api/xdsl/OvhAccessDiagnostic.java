@@ -7,13 +7,6 @@ import java.util.Date;
  */
 public class OvhAccessDiagnostic {
 	/**
-	 * Is the modem connected ?
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean isModemConnected;
-
-	/**
 	 * Available tests for this access
 	 *
 	 * canBeNull && readOnly
@@ -21,11 +14,11 @@ public class OvhAccessDiagnostic {
 	public OvhAccessDiagnosticCapabilities capabilities;
 
 	/**
-	 * Datime of the diagnostic
+	 * Is the modem connected ?
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Date diagnosticTime;
+	public Boolean isModemConnected;
 
 	/**
 	 * Test details by line
@@ -33,6 +26,13 @@ public class OvhAccessDiagnostic {
 	 * canBeNull && readOnly
 	 */
 	public OvhLineDiagnostic[] lineDetails;
+
+	/**
+	 * Datime of the diagnostic
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date diagnosticTime;
 
 	/**
 	 * Does the access ping ?

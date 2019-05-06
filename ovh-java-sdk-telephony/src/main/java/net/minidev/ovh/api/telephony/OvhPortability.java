@@ -14,18 +14,18 @@ public class OvhPortability {
 	public Long orderId;
 
 	/**
-	 * The date when the portability will be done and when numbers will be ported
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date desiredExecutionDate;
-
-	/**
 	 * Customer informations about this portability
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhPortabilityCustomerInfos customerInfos;
+
+	/**
+	 * The date when the portability will be done and when numbers will be ported
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date desiredExecutionDate;
 
 	/**
 	 * Codes representing the error in current portability
@@ -56,13 +56,6 @@ public class OvhPortability {
 	public Long id;
 
 	/**
-	 * The portability's creation date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date creationDate;
-
-	/**
 	 * Show the redirection that will be configured when the portability will be done
 	 *
 	 * canBeNull && readOnly
@@ -70,18 +63,25 @@ public class OvhPortability {
 	public String lineToRedirectTo;
 
 	/**
-	 * The billing account where the numbers will be inserted
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String billingAccount;
-
-	/**
 	 * Indicates that portability is in error
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean error;
+
+	/**
+	 * The portability's creation date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date creationDate;
+
+	/**
+	 * The billing account where the numbers will be inserted
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String billingAccount;
 
 	/**
 	 * The operator that currently holds the numbers

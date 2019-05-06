@@ -121,6 +121,145 @@ public class ApiOvhPartners extends ApiOvhBase {
 	}
 
 	/**
+	 * Submit application information for validation
+	 *
+	 * REST: POST /partners/register/company/{companyId}/application
+	 * @param companyId [required] Company's id
+	 * @param termsAndConditionsOfServiceAccepted [required] I have read the terms and conditions of the OVH partner program and accept them
+	 */
+	public OvhApplication register_company_companyId_application_POST(String companyId, Boolean termsAndConditionsOfServiceAccepted) throws IOException {
+		String qPath = "/partners/register/company/{companyId}/application";
+		StringBuilder sb = path(qPath, companyId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "termsAndConditionsOfServiceAccepted", termsAndConditionsOfServiceAccepted);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhApplication.class);
+	}
+
+	/**
+	 * Compute scoring score without submitting application
+	 *
+	 * REST: GET /partners/register/company/{companyId}/application
+	 * @param companyId [required] Company's id
+	 */
+	public OvhApplication register_company_companyId_application_GET(String companyId) throws IOException {
+		String qPath = "/partners/register/company/{companyId}/application";
+		StringBuilder sb = path(qPath, companyId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhApplication.class);
+	}
+
+	/**
+	 * Get information on a created contact
+	 *
+	 * REST: GET /partners/register/company/{companyId}/contact/{contactId}
+	 * @param companyId [required] Company's id
+	 * @param contactId [required] Contact's id
+	 */
+	public OvhContact register_company_companyId_contact_contactId_GET(String companyId, String contactId) throws IOException {
+		String qPath = "/partners/register/company/{companyId}/contact/{contactId}";
+		StringBuilder sb = path(qPath, companyId, contactId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhContact.class);
+	}
+
+	/**
+	 * Update some fields on a created contact
+	 *
+	 * REST: PUT /partners/register/company/{companyId}/contact/{contactId}
+	 * @param companyId [required] Company's id
+	 * @param contactId [required] Contact's id
+	 * @param otherNics [required] List of nics to associate with this contact
+	 * @param firstName [required] Contact's first name
+	 * @param lastName [required] Contact's last name
+	 * @param email [required] Contact's email
+	 * @param role [required] Contact's role in the company
+	 * @param phone [required] Contact's phone number
+	 * @param linkedin [required] Contact's linkedin url, must resemble "https://www.linkedin.com/in/ovh")
+	 * @param facebook [required] Contact's facebook url, must resemble "https://www.facebook.com/ovh")
+	 * @param twitter [required] Contact's twitter url, must resemble "https://twitter.com/ovh")
+	 * @param newsletter [required] Newsletter subscription choice
+	 */
+	public OvhContact register_company_companyId_contact_contactId_PUT(String companyId, String contactId, String email, String facebook, String firstName, String lastName, String linkedin, Boolean newsletter, OvhNic[] otherNics, String phone, String role, String twitter) throws IOException {
+		String qPath = "/partners/register/company/{companyId}/contact/{contactId}";
+		StringBuilder sb = path(qPath, companyId, contactId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "email", email);
+		addBody(o, "facebook", facebook);
+		addBody(o, "firstName", firstName);
+		addBody(o, "lastName", lastName);
+		addBody(o, "linkedin", linkedin);
+		addBody(o, "newsletter", newsletter);
+		addBody(o, "otherNics", otherNics);
+		addBody(o, "phone", phone);
+		addBody(o, "role", role);
+		addBody(o, "twitter", twitter);
+		String resp = exec(qPath, "PUT", sb.toString(), o);
+		return convertTo(resp, OvhContact.class);
+	}
+
+	/**
+	 * Remove a contact
+	 *
+	 * REST: DELETE /partners/register/company/{companyId}/contact/{contactId}
+	 * @param companyId [required] Company's id
+	 * @param contactId [required] Contact's id
+	 */
+	public String register_company_companyId_contact_contactId_DELETE(String companyId, String contactId) throws IOException {
+		String qPath = "/partners/register/company/{companyId}/contact/{contactId}";
+		StringBuilder sb = path(qPath, companyId, contactId);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * List created contacts
+	 *
+	 * REST: GET /partners/register/company/{companyId}/contact
+	 * @param companyId [required] Company's id
+	 */
+	public ArrayList<String> register_company_companyId_contact_GET(String companyId) throws IOException {
+		String qPath = "/partners/register/company/{companyId}/contact";
+		StringBuilder sb = path(qPath, companyId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Created a new contact for the inscription
+	 *
+	 * REST: POST /partners/register/company/{companyId}/contact
+	 * @param companyId [required] Company's id
+	 * @param otherNics [required] List of nics to associate with this contact
+	 * @param firstName [required] Contact's first name
+	 * @param lastName [required] Contact's last name
+	 * @param email [required] Contact's email
+	 * @param role [required] Contact's function in the company
+	 * @param phone [required] Contact's phone number
+	 * @param linkedin [required] Contact's linkedin url, must resemble "https://www.linkedin.com/in/ovh")
+	 * @param facebook [required] Contact's facebook url, must resemble "https://www.facebook.com/ovh")
+	 * @param twitter [required] Contact's twitter url, must resemble "https://twitter.com/ovh")
+	 * @param newsletter [required] Newsletter subscription choice
+	 */
+	public OvhContact register_company_companyId_contact_POST(String companyId, String email, String facebook, String firstName, String lastName, String linkedin, Boolean newsletter, OvhNic[] otherNics, String phone, String role, String twitter) throws IOException {
+		String qPath = "/partners/register/company/{companyId}/contact";
+		StringBuilder sb = path(qPath, companyId);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "email", email);
+		addBody(o, "facebook", facebook);
+		addBody(o, "firstName", firstName);
+		addBody(o, "lastName", lastName);
+		addBody(o, "linkedin", linkedin);
+		addBody(o, "newsletter", newsletter);
+		addBody(o, "otherNics", otherNics);
+		addBody(o, "phone", phone);
+		addBody(o, "role", role);
+		addBody(o, "twitter", twitter);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhContact.class);
+	}
+
+	/**
 	 * Get information on a created company
 	 *
 	 * REST: GET /partners/register/company/{companyId}
@@ -216,144 +355,5 @@ public class ApiOvhPartners extends ApiOvhBase {
 		StringBuilder sb = path(qPath, companyId);
 		String resp = exec(qPath, "DELETE", sb.toString(), null);
 		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * List created contacts
-	 *
-	 * REST: GET /partners/register/company/{companyId}/contact
-	 * @param companyId [required] Company's id
-	 */
-	public ArrayList<String> register_company_companyId_contact_GET(String companyId) throws IOException {
-		String qPath = "/partners/register/company/{companyId}/contact";
-		StringBuilder sb = path(qPath, companyId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Created a new contact for the inscription
-	 *
-	 * REST: POST /partners/register/company/{companyId}/contact
-	 * @param companyId [required] Company's id
-	 * @param otherNics [required] List of nics to associate with this contact
-	 * @param firstName [required] Contact's first name
-	 * @param lastName [required] Contact's last name
-	 * @param email [required] Contact's email
-	 * @param role [required] Contact's function in the company
-	 * @param phone [required] Contact's phone number
-	 * @param linkedin [required] Contact's linkedin url, must resemble "https://www.linkedin.com/in/ovh")
-	 * @param facebook [required] Contact's facebook url, must resemble "https://www.facebook.com/ovh")
-	 * @param twitter [required] Contact's twitter url, must resemble "https://twitter.com/ovh")
-	 * @param newsletter [required] Newsletter subscription choice
-	 */
-	public OvhContact register_company_companyId_contact_POST(String companyId, String email, String facebook, String firstName, String lastName, String linkedin, Boolean newsletter, OvhNic[] otherNics, String phone, String role, String twitter) throws IOException {
-		String qPath = "/partners/register/company/{companyId}/contact";
-		StringBuilder sb = path(qPath, companyId);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "email", email);
-		addBody(o, "facebook", facebook);
-		addBody(o, "firstName", firstName);
-		addBody(o, "lastName", lastName);
-		addBody(o, "linkedin", linkedin);
-		addBody(o, "newsletter", newsletter);
-		addBody(o, "otherNics", otherNics);
-		addBody(o, "phone", phone);
-		addBody(o, "role", role);
-		addBody(o, "twitter", twitter);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhContact.class);
-	}
-
-	/**
-	 * Get information on a created contact
-	 *
-	 * REST: GET /partners/register/company/{companyId}/contact/{contactId}
-	 * @param companyId [required] Company's id
-	 * @param contactId [required] Contact's id
-	 */
-	public OvhContact register_company_companyId_contact_contactId_GET(String companyId, String contactId) throws IOException {
-		String qPath = "/partners/register/company/{companyId}/contact/{contactId}";
-		StringBuilder sb = path(qPath, companyId, contactId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhContact.class);
-	}
-
-	/**
-	 * Update some fields on a created contact
-	 *
-	 * REST: PUT /partners/register/company/{companyId}/contact/{contactId}
-	 * @param companyId [required] Company's id
-	 * @param contactId [required] Contact's id
-	 * @param otherNics [required] List of nics to associate with this contact
-	 * @param firstName [required] Contact's first name
-	 * @param lastName [required] Contact's last name
-	 * @param email [required] Contact's email
-	 * @param role [required] Contact's role in the company
-	 * @param phone [required] Contact's phone number
-	 * @param linkedin [required] Contact's linkedin url, must resemble "https://www.linkedin.com/in/ovh")
-	 * @param facebook [required] Contact's facebook url, must resemble "https://www.facebook.com/ovh")
-	 * @param twitter [required] Contact's twitter url, must resemble "https://twitter.com/ovh")
-	 * @param newsletter [required] Newsletter subscription choice
-	 */
-	public OvhContact register_company_companyId_contact_contactId_PUT(String companyId, String contactId, String email, String facebook, String firstName, String lastName, String linkedin, Boolean newsletter, OvhNic[] otherNics, String phone, String role, String twitter) throws IOException {
-		String qPath = "/partners/register/company/{companyId}/contact/{contactId}";
-		StringBuilder sb = path(qPath, companyId, contactId);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "email", email);
-		addBody(o, "facebook", facebook);
-		addBody(o, "firstName", firstName);
-		addBody(o, "lastName", lastName);
-		addBody(o, "linkedin", linkedin);
-		addBody(o, "newsletter", newsletter);
-		addBody(o, "otherNics", otherNics);
-		addBody(o, "phone", phone);
-		addBody(o, "role", role);
-		addBody(o, "twitter", twitter);
-		String resp = exec(qPath, "PUT", sb.toString(), o);
-		return convertTo(resp, OvhContact.class);
-	}
-
-	/**
-	 * Remove a contact
-	 *
-	 * REST: DELETE /partners/register/company/{companyId}/contact/{contactId}
-	 * @param companyId [required] Company's id
-	 * @param contactId [required] Contact's id
-	 */
-	public String register_company_companyId_contact_contactId_DELETE(String companyId, String contactId) throws IOException {
-		String qPath = "/partners/register/company/{companyId}/contact/{contactId}";
-		StringBuilder sb = path(qPath, companyId, contactId);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * Submit application information for validation
-	 *
-	 * REST: POST /partners/register/company/{companyId}/application
-	 * @param companyId [required] Company's id
-	 * @param termsAndConditionsOfServiceAccepted [required] I have read the terms and conditions of the OVH partner program and accept them
-	 */
-	public OvhApplication register_company_companyId_application_POST(String companyId, Boolean termsAndConditionsOfServiceAccepted) throws IOException {
-		String qPath = "/partners/register/company/{companyId}/application";
-		StringBuilder sb = path(qPath, companyId);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "termsAndConditionsOfServiceAccepted", termsAndConditionsOfServiceAccepted);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhApplication.class);
-	}
-
-	/**
-	 * Compute scoring score without submitting application
-	 *
-	 * REST: GET /partners/register/company/{companyId}/application
-	 * @param companyId [required] Company's id
-	 */
-	public OvhApplication register_company_companyId_application_GET(String companyId) throws IOException {
-		String qPath = "/partners/register/company/{companyId}/application";
-		StringBuilder sb = path(qPath, companyId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhApplication.class);
 	}
 }

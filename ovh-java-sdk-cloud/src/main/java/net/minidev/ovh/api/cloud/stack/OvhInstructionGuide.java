@@ -19,16 +19,16 @@ public class OvhInstructionGuide {
 	public String title;
 
 	/**
-	 * Guide introduction content
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhContent[] content;
-
-	/**
 	 * Sections of the guide
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhSection[] sections;
+
+	/**
+	 * Guide introduction content
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhContent[] content;
 }

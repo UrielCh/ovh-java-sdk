@@ -14,18 +14,18 @@ public class OvhSnapshot {
 	public Long size;
 
 	/**
-	 * Snapshot name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String name;
-
-	/**
 	 * Volume source id
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String volumeId;
+
+	/**
+	 * Snapshot name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String name;
 
 	/**
 	 * Snapshot description
@@ -42,18 +42,18 @@ public class OvhSnapshot {
 	public String id;
 
 	/**
-	 * Snapshot creation date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date creationDate;
-
-	/**
 	 * Snapshot region
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String region;
+
+	/**
+	 * Snapshot creation date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date creationDate;
 
 	/**
 	 * Order plan code

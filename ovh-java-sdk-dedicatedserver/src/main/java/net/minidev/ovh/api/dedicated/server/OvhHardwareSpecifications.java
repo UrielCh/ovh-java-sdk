@@ -63,13 +63,6 @@ public class OvhHardwareSpecifications {
 	public Long threadsPerProcessor;
 
 	/**
-	 * number of processors in this dedicated server
-	 *
-	 * canBeNull
-	 */
-	public Long numberOfProcessors;
-
-	/**
 	 * ram capacity
 	 *
 	 * canBeNull
@@ -82,6 +75,13 @@ public class OvhHardwareSpecifications {
 	 * canBeNull
 	 */
 	public OvhUnitAndValue<Long> defaultHardwareRaidSize;
+
+	/**
+	 * number of processors in this dedicated server
+	 *
+	 * canBeNull
+	 */
+	public Long numberOfProcessors;
 
 	/**
 	 * details about the groups of disks in the server

@@ -23,18 +23,18 @@ public class OvhBackendHttp {
 	public OvhBalanceHTTPEnum balance;
 
 	/**
-	 * Zone of you farm
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String zone;
-
-	/**
 	 * Port attached to your farm. Inherited from frontend if null
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long port;
+
+	/**
+	 * Zone of you farm
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String zone;
 
 	/**
 	 * Stickiness type. No stickiness if null

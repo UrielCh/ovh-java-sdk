@@ -29,13 +29,6 @@ public class OvhCredit {
 	public String voucher;
 
 	/**
-	 * Credit description
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String description;
-
-	/**
 	 * Credit bill id
 	 *
 	 * canBeNull && readOnly
@@ -43,11 +36,11 @@ public class OvhCredit {
 	public String bill;
 
 	/**
-	 * Credit id
+	 * Credit description
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long id;
+	public String description;
 
 	/**
 	 * Credit validity
@@ -55,6 +48,13 @@ public class OvhCredit {
 	 * canBeNull && readOnly
 	 */
 	public OvhVoucherValidity validity;
+
+	/**
+	 * Credit id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long id;
 
 	/**
 	 * Available credit

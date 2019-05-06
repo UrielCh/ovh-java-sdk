@@ -71,7 +71,6 @@ public class ApiOvh extends ApiOvhBase {
 	final public ApiOvhSaascsp2 saascsp2;
 	final public ApiOvhSecret secret;
 	final public ApiOvhService service;
-	// final public ApiOvhServices services;
 	final public ApiOvhSms sms;
 	final public ApiOvhSsl ssl;
 	final public ApiOvhSslGateway sslGateway;
@@ -152,7 +151,6 @@ public class ApiOvh extends ApiOvhBase {
 		this.saascsp2 = new ApiOvhSaascsp2(core);
 		this.secret = new ApiOvhSecret(core);
 		this.service = new ApiOvhService(core);
-		// this.services = new ApiOvhServices(core);
 		this.sms = new ApiOvhSms(core);
 		this.ssl = new ApiOvhSsl(core);
 		this.sslGateway = new ApiOvhSslGateway(core);

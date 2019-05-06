@@ -70,18 +70,18 @@ public class OvhMondialRelay {
 	public OvhMondialRelayClosingPeriod[] closing;
 
 	/**
-	 * URL of short map
-	 *
-	 * canBeNull
-	 */
-	public String mapUrl;
-
-	/**
 	 * Relay point name
 	 *
 	 * canBeNull
 	 */
 	public String name;
+
+	/**
+	 * URL of short map
+	 *
+	 * canBeNull
+	 */
+	public String mapUrl;
 
 	/**
 	 * Mondial Relay point ID

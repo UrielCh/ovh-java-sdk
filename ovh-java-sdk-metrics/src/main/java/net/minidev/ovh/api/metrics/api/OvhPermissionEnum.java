@@ -1,7 +1,7 @@
 package net.minidev.ovh.api.metrics.api;
 
 /**
- * PermissionEnum
+ * Description not available
  */
 public enum OvhPermissionEnum {
 	read("read"),

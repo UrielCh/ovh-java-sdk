@@ -19,12 +19,12 @@ public class OvhTask {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Date lastUpdate;
+	public String function;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String function;
+	public Date lastUpdate;
 
 	/**
 	 * canBeNull && readOnly

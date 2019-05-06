@@ -21,18 +21,18 @@ public class OvhKey {
 	public String description;
 
 	/**
-	 * Secret part
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String secret;
-
-	/**
 	 * Id
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String id;
+
+	/**
+	 * Secret part
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String secret;
 
 	/**
 	 * List of tags

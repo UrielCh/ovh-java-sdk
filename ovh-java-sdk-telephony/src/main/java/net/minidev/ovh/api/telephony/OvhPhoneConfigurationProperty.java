@@ -16,18 +16,18 @@ public class OvhPhoneConfigurationProperty {
 	public String _default;
 
 	/**
-	 * Max string chars
-	 *
-	 * canBeNull
-	 */
-	public Long maxlength;
-
-	/**
 	 * Provisioning level
 	 *
 	 * canBeNull
 	 */
 	public OvhPhoneConfigurationLevelEnum level;
+
+	/**
+	 * Max string chars
+	 *
+	 * canBeNull
+	 */
+	public Long maxlength;
 
 	/**
 	 * The property name
@@ -44,18 +44,18 @@ public class OvhPhoneConfigurationProperty {
 	public String description;
 
 	/**
-	 * Provisioning type
-	 *
-	 * canBeNull
-	 */
-	public OvhPhoneConfigurationTypeEnum type;
-
-	/**
 	 * Range property value
 	 *
 	 * canBeNull
 	 */
 	public OvhRange<Long> rangeValue;
+
+	/**
+	 * Provisioning type
+	 *
+	 * canBeNull
+	 */
+	public OvhPhoneConfigurationTypeEnum type;
 
 	/**
 	 * Current property value

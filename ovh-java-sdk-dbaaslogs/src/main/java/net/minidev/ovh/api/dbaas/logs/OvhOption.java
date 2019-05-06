@@ -21,18 +21,18 @@ public class OvhOption {
 	public Long curNbRole;
 
 	/**
-	 * Current number of alias booked
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long curNbAlias;
-
-	/**
 	 * Current number of stream booked
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long curNbStream;
+
+	/**
+	 * Current number of alias booked
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long curNbAlias;
 
 	/**
 	 * Maximum number of role allowed
@@ -119,16 +119,16 @@ public class OvhOption {
 	public Long maxNbDashboard;
 
 	/**
-	 * Service last update
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date updatedAt;
-
-	/**
 	 * Maximum number of alias allowed
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long maxNbAlias;
+
+	/**
+	 * Service last update
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date updatedAt;
 }

@@ -15,13 +15,6 @@ public class OvhDomainService {
 	public String offer;
 
 	/**
-	 * Name of servicelinked with this domain
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String linkTo;
-
-	/**
 	 * List of allowed sizes for this domain in bytes
 	 *
 	 * canBeNull && readOnly
@@ -29,11 +22,11 @@ public class OvhDomainService {
 	public Long[] allowedAccountSize;
 
 	/**
-	 * Name of domain
+	 * Name of servicelinked with this domain
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String domain;
+	public String linkTo;
 
 	/**
 	 * Name of new MXPlan service
@@ -43,11 +36,11 @@ public class OvhDomainService {
 	public String migratedMXPlanServiceName;
 
 	/**
-	 * Filerz of domain
+	 * Name of domain
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long filerz;
+	public String domain;
 
 	/**
 	 * Creation date of domain
@@ -55,6 +48,13 @@ public class OvhDomainService {
 	 * canBeNull && readOnly
 	 */
 	public Date creationDate;
+
+	/**
+	 * Filerz of domain
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long filerz;
 
 	/**
 	 * Domain Status

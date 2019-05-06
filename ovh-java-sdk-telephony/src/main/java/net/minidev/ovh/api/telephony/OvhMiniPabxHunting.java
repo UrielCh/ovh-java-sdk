@@ -12,16 +12,16 @@ public class OvhMiniPabxHunting {
 	public Long queueSize;
 
 	/**
-	 * canBeNull && readOnly
-	 */
-	public OvhEasyMiniPabxHuntingPatternEnum pattern;
-
-	/**
 	 * True if the tone on closure is enabled
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean toneOnClosure;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public OvhEasyMiniPabxHuntingPatternEnum pattern;
 
 	/**
 	 * Sound ID of ringback tone
@@ -31,18 +31,18 @@ public class OvhMiniPabxHunting {
 	public Long toneRingbackSoundId;
 
 	/**
-	 * Sound ID of on-hold tone
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long toneOnHoldSoundId;
-
-	/**
 	 * Number of simultaneous calls
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long numberOfCalls;
+
+	/**
+	 * Sound ID of on-hold tone
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long toneOnHoldSoundId;
 
 	/**
 	 * The maximum waiting time in the calls queue
@@ -64,16 +64,16 @@ public class OvhMiniPabxHunting {
 	public Boolean toneOnHold;
 
 	/**
+	 * canBeNull && readOnly
+	 */
+	public OvhEasyMiniPabxHuntingStrategyEnum strategy;
+
+	/**
 	 * Reject anonymous calls
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean anonymousCallRejection;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public OvhEasyMiniPabxHuntingStrategyEnum strategy;
 
 	/**
 	 * True if the ring back tone is enabled

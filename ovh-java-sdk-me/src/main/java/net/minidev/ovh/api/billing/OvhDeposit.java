@@ -21,7 +21,7 @@ public class OvhDeposit {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhPrice amount;
+	public String depositId;
 
 	/**
 	 * canBeNull && readOnly
@@ -31,7 +31,7 @@ public class OvhDeposit {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String depositId;
+	public OvhPrice amount;
 
 	/**
 	 * canBeNull && readOnly
@@ -41,10 +41,10 @@ public class OvhDeposit {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhPaymentInfo paymentInfo;
+	public String url;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String url;
+	public OvhPaymentInfo paymentInfo;
 }

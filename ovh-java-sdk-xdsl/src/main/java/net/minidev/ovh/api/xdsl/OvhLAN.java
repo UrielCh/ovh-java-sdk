@@ -28,16 +28,16 @@ public class OvhLAN {
 	public String IPAddress;
 
 	/**
-	 * ID of the ongoing todo (NULL if none)
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long taskId;
-
-	/**
 	 * Name of the LAN
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String lanName;
+
+	/**
+	 * ID of the ongoing todo (NULL if none)
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long taskId;
 }

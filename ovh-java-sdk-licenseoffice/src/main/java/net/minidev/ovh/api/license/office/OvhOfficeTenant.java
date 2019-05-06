@@ -14,6 +14,13 @@ public class OvhOfficeTenant {
 	public OvhServiceTypeEnum serviceType;
 
 	/**
+	 * Contact's fisrt name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String lastName;
+
+	/**
 	 * Contact's zip code
 	 *
 	 * canBeNull && readOnly
@@ -28,13 +35,6 @@ public class OvhOfficeTenant {
 	public String firstName;
 
 	/**
-	 * Contact's fisrt name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String lastName;
-
-	/**
 	 * Contact's address line
 	 *
 	 * canBeNull && readOnly
@@ -42,18 +42,18 @@ public class OvhOfficeTenant {
 	public String address;
 
 	/**
-	 * Contact's city
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String city;
-
-	/**
 	 * Primary phone number
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String phone;
+
+	/**
+	 * Contact's city
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String city;
 
 	/**
 	 * Tenant's display name

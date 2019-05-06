@@ -22,12 +22,12 @@ public class OvhModel {
 	/**
 	 * canBeNull
 	 */
-	public String name;
+	public Long vcore;
 
 	/**
 	 * canBeNull
 	 */
-	public Long vcore;
+	public String name;
 
 	/**
 	 * canBeNull

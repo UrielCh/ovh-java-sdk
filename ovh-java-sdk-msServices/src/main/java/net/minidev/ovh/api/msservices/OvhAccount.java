@@ -21,11 +21,11 @@ public class OvhAccount {
 	public String initials;
 
 	/**
-	 * Last update
+	 * Time of account's password last update
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Date lastUpdateDate;
+	public Date passwordLastUpdate;
 
 	/**
 	 * Account display name
@@ -35,11 +35,11 @@ public class OvhAccount {
 	public String displayName;
 
 	/**
-	 * Time of account's password last update
+	 * Last update
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Date passwordLastUpdate;
+	public Date lastUpdateDate;
 
 	/**
 	 * Creation date
@@ -84,18 +84,18 @@ public class OvhAccount {
 	public String SAMAccountName;
 
 	/**
-	 * Account state
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhObjectStateEnum state;
-
-	/**
 	 * Account id
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long id;
+
+	/**
+	 * Account state
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhObjectStateEnum state;
 
 	/**
 	 * Last logon

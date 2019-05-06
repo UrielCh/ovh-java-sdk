@@ -8,16 +8,16 @@ import net.minidev.ovh.api.domain.OvhOptinFieldsEnum;
  */
 public class OvhOptin {
 	/**
-	 * Displayed fields
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhOptinFieldsEnum[] fields;
-
-	/**
 	 * Contact's type associated to the optin rule
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhContactAllTypesEnum type;
+
+	/**
+	 * Displayed fields
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhOptinFieldsEnum[] fields;
 }

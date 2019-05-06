@@ -49,18 +49,18 @@ public class OvhDeskaas {
 	public OvhStateEnum state;
 
 	/**
-	 * Data allocated to desktop
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhUnitAndValue<Double> dataDisk;
-
-	/**
 	 * Service name of your Desktop As A Service
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String serviceName;
+
+	/**
+	 * Data allocated to desktop
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhUnitAndValue<Double> dataDisk;
 
 	/**
 	 * URL to connect to the virtualDesktop

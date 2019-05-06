@@ -28,18 +28,18 @@ public class OvhTrafficExtract {
 	public String fileUrl;
 
 	/**
-	 * The id of the traffic extract
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long id;
-
-	/**
 	 * The start date of the traffic extract
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date dateEnd;
+
+	/**
+	 * The id of the traffic extract
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long id;
 
 	/**
 	 * The status of the extract

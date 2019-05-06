@@ -3,7 +3,7 @@ package net.minidev.ovh.api.distribution.image;
 import net.minidev.ovh.api.distribution.image.properties.OvhCategory;
 
 /**
- * properties
+ * Description not available
  */
 public class OvhProperties {
 	/**

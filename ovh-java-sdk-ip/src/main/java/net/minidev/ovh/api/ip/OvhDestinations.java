@@ -33,16 +33,16 @@ public class OvhDestinations {
 	public OvhDestination[] hostingReseller;
 
 	/**
-	 * list of load balancing services
-	 *
-	 * canBeNull
-	 */
-	public OvhDestination[] ipLoadbalancing;
-
-	/**
 	 * list of public cloud projects
 	 *
 	 * canBeNull
 	 */
 	public OvhDestination[] cloudProject;
+
+	/**
+	 * list of load balancing services
+	 *
+	 * canBeNull
+	 */
+	public OvhDestination[] ipLoadbalancing;
 }

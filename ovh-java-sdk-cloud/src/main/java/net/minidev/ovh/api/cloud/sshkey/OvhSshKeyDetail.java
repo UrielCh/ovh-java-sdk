@@ -19,18 +19,18 @@ public class OvhSshKeyDetail {
 	public String name;
 
 	/**
-	 * SSH key id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String id;
-
-	/**
 	 * SSH public key
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String publicKey;
+
+	/**
+	 * SSH key id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String id;
 
 	/**
 	 * SSH key fingerprint

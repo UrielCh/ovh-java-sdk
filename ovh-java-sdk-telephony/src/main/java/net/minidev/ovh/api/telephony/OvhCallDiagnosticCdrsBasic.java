@@ -5,18 +5,18 @@ package net.minidev.ovh.api.telephony;
  */
 public class OvhCallDiagnosticCdrsBasic {
 	/**
-	 * SS7 ISUP cause codes
-	 *
-	 * canBeNull
-	 */
-	public String causeDescription;
-
-	/**
 	 * Hexadecimal SIP-to-SS7 ISUP cause codes
 	 *
 	 * canBeNull
 	 */
 	public OvhCallDiagnosticCauseEnum cause;
+
+	/**
+	 * SS7 ISUP cause codes
+	 *
+	 * canBeNull
+	 */
+	public String causeDescription;
 
 	/**
 	 * Release location type : forward if the calling hangup, backward if the caller hangup, else local

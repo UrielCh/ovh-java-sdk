@@ -22,13 +22,6 @@ public class OvhDomainTaskArgument {
 	public Long minimumSize;
 
 	/**
-	 * List of accepted formats
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhDocumentFormatsEnum[] acceptedFormats;
-
-	/**
 	 * Maximum of the content length that you can send
 	 *
 	 * canBeNull && readOnly
@@ -41,6 +34,13 @@ public class OvhDomainTaskArgument {
 	 * canBeNull && readOnly
 	 */
 	public String description;
+
+	/**
+	 * List of accepted formats
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhDocumentFormatsEnum[] acceptedFormats;
 
 	/**
 	 * True if the argument is in read only

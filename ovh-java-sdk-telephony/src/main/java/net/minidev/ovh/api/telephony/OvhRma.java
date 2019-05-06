@@ -28,13 +28,6 @@ public class OvhRma {
 	public OvhRmaOfferTypeEnum offerTypeNew;
 
 	/**
-	 * Contact information related to the delivery shipping in case of exchange
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhContact shippingContact;
-
-	/**
 	 * Typology process of merchandise return
 	 *
 	 * canBeNull && readOnly
@@ -42,11 +35,11 @@ public class OvhRma {
 	public OvhRmaTypeEnum type;
 
 	/**
-	 * New merchandise brand in case of exchange
+	 * Contact information related to the delivery shipping in case of exchange
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String newMerchandise;
+	public OvhContact shippingContact;
 
 	/**
 	 * Indicates the current status of the RMA with a list of steps
@@ -54,6 +47,13 @@ public class OvhRma {
 	 * canBeNull && readOnly
 	 */
 	public OvhRmaStep[] steps;
+
+	/**
+	 * New merchandise brand in case of exchange
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String newMerchandise;
 
 	/**
 	 * Is the RMA cancellable?
@@ -91,16 +91,16 @@ public class OvhRma {
 	public Date terminationDatetime;
 
 	/**
-	 * Return merchandise authorisation step
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhRmaStatusEnum status;
-
-	/**
 	 * Offer type of the return merchandise
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhRmaOfferTypeEnum offerTypeOld;
+
+	/**
+	 * Return merchandise authorisation step
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhRmaStatusEnum status;
 }

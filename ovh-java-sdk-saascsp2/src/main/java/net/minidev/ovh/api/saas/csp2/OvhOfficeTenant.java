@@ -7,6 +7,13 @@ import java.util.Date;
  */
 public class OvhOfficeTenant {
 	/**
+	 * Contact's first name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String firstName;
+
+	/**
 	 * Contact's last name
 	 *
 	 * canBeNull && readOnly
@@ -19,13 +26,6 @@ public class OvhOfficeTenant {
 	 * canBeNull && readOnly
 	 */
 	public String zipCode;
-
-	/**
-	 * Contact's first name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String firstName;
 
 	/**
 	 * Contact's address line
@@ -56,18 +56,18 @@ public class OvhOfficeTenant {
 	public String displayName;
 
 	/**
-	 * Creation date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date creationDate;
-
-	/**
 	 * Internal service name
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String serviceName;
+
+	/**
+	 * Creation date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date creationDate;
 
 	/**
 	 * Contact's email address

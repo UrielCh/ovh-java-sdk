@@ -14,25 +14,18 @@ public class OvhTask {
 	public Date maintenanceDateFrom;
 
 	/**
-	 * Task end date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date endDate;
-
-	/**
-	 * Maintenance task max allowed execution date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date maintenanceDateTo;
-
-	/**
 	 * orderId of the associated billing.Order object
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long orderId;
+
+	/**
+	 * Task end date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date endDate;
 
 	/**
 	 * vlanId of the parent dedicatedCloud.Vlan object
@@ -42,18 +35,18 @@ public class OvhTask {
 	public Long vlanId;
 
 	/**
+	 * Maintenance task max allowed execution date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date maintenanceDateTo;
+
+	/**
 	 * taskId of the parent dedicatedCloud.Task object
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long parentTaskId;
-
-	/**
-	 * Task execution date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date executionDate;
 
 	/**
 	 * datacenterId of the associated dedicatedCloud.Datacenter object
@@ -63,11 +56,11 @@ public class OvhTask {
 	public Long datacenterId;
 
 	/**
-	 * Current progress description
+	 * Task execution date
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String description;
+	public Date executionDate;
 
 	/**
 	 * hostId of the associated dedicatedCloud.Host object
@@ -75,6 +68,13 @@ public class OvhTask {
 	 * canBeNull && readOnly
 	 */
 	public Long hostId;
+
+	/**
+	 * Current progress description
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String description;
 
 	/**
 	 * Task type

@@ -38,18 +38,18 @@ public class OvhPlesk {
 	public OvhDomainNumberEnum domainNumber;
 
 	/**
-	 * The license id on license provider side
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String licenseId;
-
-	/**
 	 * This license product key
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String productKey;
+
+	/**
+	 * The license id on license provider side
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String licenseId;
 
 	/**
 	 * This license version
@@ -66,18 +66,18 @@ public class OvhPlesk {
 	public String informationKey;
 
 	/**
-	 * This license creation date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date creation;
-
-	/**
 	 * This license key
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String key;
+
+	/**
+	 * This license creation date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date creation;
 
 	/**
 	 * This license state

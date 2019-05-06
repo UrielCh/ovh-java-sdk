@@ -21,11 +21,6 @@ public class OvhDeferredPaymentAccount {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhDeferredPaymentAccountStatusEnum state;
-
-	/**
-	 * canBeNull && readOnly
-	 */
 	public Long id;
 
 	/**
@@ -34,6 +29,11 @@ public class OvhDeferredPaymentAccount {
 	 * canBeNull && readOnly
 	 */
 	public String label;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public OvhDeferredPaymentAccountStatusEnum state;
 
 	/**
 	 * canBeNull && readOnly

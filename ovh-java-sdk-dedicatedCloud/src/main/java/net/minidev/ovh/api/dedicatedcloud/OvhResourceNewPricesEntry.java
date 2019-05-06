@@ -31,10 +31,10 @@ public class OvhResourceNewPricesEntry {
 	/**
 	 * canBeNull
 	 */
-	public OvhResourceTypeEnum resourceType;
+	public Boolean changed;
 
 	/**
 	 * canBeNull
 	 */
-	public Boolean changed;
+	public OvhResourceTypeEnum resourceType;
 }

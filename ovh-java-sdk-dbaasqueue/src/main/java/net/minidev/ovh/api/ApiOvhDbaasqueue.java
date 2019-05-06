@@ -27,18 +27,81 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	}
 
 	/**
-	 * Get metrics account
+	 * List available services
 	 *
-	 * REST: GET /dbaas/queue/{serviceName}/metrics/account
+	 * REST: GET /dbaas/queue
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/dbaas/queue";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
+
+	/**
+	 * Get user roles
+	 *
+	 * REST: GET /dbaas/queue/{serviceName}/user/{userId}/roles
+	 * @param serviceName [required] Application ID
+	 * @param userId [required] User ID
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> serviceName_user_userId_roles_GET(String serviceName, String userId) throws IOException {
+		String qPath = "/dbaas/queue/{serviceName}/user/{userId}/roles";
+		StringBuilder sb = path(qPath, serviceName, userId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+
+	/**
+	 * Get a user
+	 *
+	 * REST: GET /dbaas/queue/{serviceName}/user/{userId}
+	 * @param serviceName [required] Application ID
+	 * @param userId [required] User ID
+	 *
+	 * API beta
+	 */
+	public OvhUser serviceName_user_userId_GET(String serviceName, String userId) throws IOException {
+		String qPath = "/dbaas/queue/{serviceName}/user/{userId}";
+		StringBuilder sb = path(qPath, serviceName, userId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhUser.class);
+	}
+
+	/**
+	 * Generate a new user password
+	 *
+	 * REST: POST /dbaas/queue/{serviceName}/user/{userId}/changePassword
+	 * @param serviceName [required] Application ID
+	 * @param userId [required] User ID
+	 *
+	 * API beta
+	 */
+	public OvhUserWithPassword serviceName_user_userId_changePassword_POST(String serviceName, String userId) throws IOException {
+		String qPath = "/dbaas/queue/{serviceName}/user/{userId}/changePassword";
+		StringBuilder sb = path(qPath, serviceName, userId);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, OvhUserWithPassword.class);
+	}
+
+	/**
+	 * List all users of the application
+	 *
+	 * REST: GET /dbaas/queue/{serviceName}/user
 	 * @param serviceName [required] Application ID
 	 *
 	 * API beta
 	 */
-	public OvhMetricsAccount serviceName_metrics_account_GET(String serviceName) throws IOException {
-		String qPath = "/dbaas/queue/{serviceName}/metrics/account";
+	public ArrayList<String> serviceName_user_GET(String serviceName) throws IOException {
+		String qPath = "/dbaas/queue/{serviceName}/user";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhMetricsAccount.class);
+		return convertTo(resp, t1);
 	}
 
 	/**
@@ -75,36 +138,35 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	}
 
 	/**
-	 * Get a key
+	 * Get one region
 	 *
-	 * REST: GET /dbaas/queue/{serviceName}/key/{keyId}
+	 * REST: GET /dbaas/queue/{serviceName}/region/{regionId}
 	 * @param serviceName [required] Application ID
-	 * @param keyId [required] Key ID
+	 * @param regionId [required] Region ID
 	 *
 	 * API beta
 	 */
-	public OvhKey serviceName_key_keyId_GET(String serviceName, String keyId) throws IOException {
-		String qPath = "/dbaas/queue/{serviceName}/key/{keyId}";
-		StringBuilder sb = path(qPath, serviceName, keyId);
+	public OvhRegion serviceName_region_regionId_GET(String serviceName, String regionId) throws IOException {
+		String qPath = "/dbaas/queue/{serviceName}/region/{regionId}";
+		StringBuilder sb = path(qPath, serviceName, regionId);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhKey.class);
+		return convertTo(resp, OvhRegion.class);
 	}
 
 	/**
-	 * List all keys of the application
+	 * List all regions ID
 	 *
-	 * REST: GET /dbaas/queue/{serviceName}/key
+	 * REST: GET /dbaas/queue/{serviceName}/region
 	 * @param serviceName [required] Application ID
 	 *
 	 * API beta
 	 */
-	public ArrayList<String> serviceName_key_GET(String serviceName) throws IOException {
-		String qPath = "/dbaas/queue/{serviceName}/key";
+	public ArrayList<String> serviceName_region_GET(String serviceName) throws IOException {
+		String qPath = "/dbaas/queue/{serviceName}/region";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
-	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
 
 	/**
 	 * Get this object properties
@@ -137,94 +199,15 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	}
 
 	/**
-	 * List all users of the application
+	 * List all topics of the application
 	 *
-	 * REST: GET /dbaas/queue/{serviceName}/user
+	 * REST: GET /dbaas/queue/{serviceName}/topic
 	 * @param serviceName [required] Application ID
 	 *
 	 * API beta
 	 */
-	public ArrayList<String> serviceName_user_GET(String serviceName) throws IOException {
-		String qPath = "/dbaas/queue/{serviceName}/user";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Generate a new user password
-	 *
-	 * REST: POST /dbaas/queue/{serviceName}/user/{userId}/changePassword
-	 * @param serviceName [required] Application ID
-	 * @param userId [required] User ID
-	 *
-	 * API beta
-	 */
-	public OvhUserWithPassword serviceName_user_userId_changePassword_POST(String serviceName, String userId) throws IOException {
-		String qPath = "/dbaas/queue/{serviceName}/user/{userId}/changePassword";
-		StringBuilder sb = path(qPath, serviceName, userId);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, OvhUserWithPassword.class);
-	}
-
-	/**
-	 * Get user roles
-	 *
-	 * REST: GET /dbaas/queue/{serviceName}/user/{userId}/roles
-	 * @param serviceName [required] Application ID
-	 * @param userId [required] User ID
-	 *
-	 * API beta
-	 */
-	public ArrayList<String> serviceName_user_userId_roles_GET(String serviceName, String userId) throws IOException {
-		String qPath = "/dbaas/queue/{serviceName}/user/{userId}/roles";
-		StringBuilder sb = path(qPath, serviceName, userId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Get a user
-	 *
-	 * REST: GET /dbaas/queue/{serviceName}/user/{userId}
-	 * @param serviceName [required] Application ID
-	 * @param userId [required] User ID
-	 *
-	 * API beta
-	 */
-	public OvhUser serviceName_user_userId_GET(String serviceName, String userId) throws IOException {
-		String qPath = "/dbaas/queue/{serviceName}/user/{userId}";
-		StringBuilder sb = path(qPath, serviceName, userId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhUser.class);
-	}
-
-	/**
-	 * Get a role
-	 *
-	 * REST: GET /dbaas/queue/{serviceName}/role/{roleName}
-	 * @param serviceName [required] Application ID
-	 * @param roleName [required] Role name
-	 *
-	 * API beta
-	 */
-	public OvhRole serviceName_role_roleName_GET(String serviceName, String roleName) throws IOException {
-		String qPath = "/dbaas/queue/{serviceName}/role/{roleName}";
-		StringBuilder sb = path(qPath, serviceName, roleName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhRole.class);
-	}
-
-	/**
-	 * List all roles of the application
-	 *
-	 * REST: GET /dbaas/queue/{serviceName}/role
-	 * @param serviceName [required] Application ID
-	 *
-	 * API beta
-	 */
-	public ArrayList<String> serviceName_role_GET(String serviceName) throws IOException {
-		String qPath = "/dbaas/queue/{serviceName}/role";
+	public ArrayList<String> serviceName_topic_GET(String serviceName) throws IOException {
+		String qPath = "/dbaas/queue/{serviceName}/topic";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
@@ -262,61 +245,78 @@ public class ApiOvhDbaasqueue extends ApiOvhBase {
 	}
 
 	/**
-	 * List all topics of the application
+	 * Get metrics account
 	 *
-	 * REST: GET /dbaas/queue/{serviceName}/topic
+	 * REST: GET /dbaas/queue/{serviceName}/metrics/account
 	 * @param serviceName [required] Application ID
 	 *
 	 * API beta
 	 */
-	public ArrayList<String> serviceName_topic_GET(String serviceName) throws IOException {
-		String qPath = "/dbaas/queue/{serviceName}/topic";
+	public OvhMetricsAccount serviceName_metrics_account_GET(String serviceName) throws IOException {
+		String qPath = "/dbaas/queue/{serviceName}/metrics/account";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhMetricsAccount.class);
+	}
+
+	/**
+	 * List all keys of the application
+	 *
+	 * REST: GET /dbaas/queue/{serviceName}/key
+	 * @param serviceName [required] Application ID
+	 *
+	 * API beta
+	 */
+	public ArrayList<String> serviceName_key_GET(String serviceName) throws IOException {
+		String qPath = "/dbaas/queue/{serviceName}/key";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
 
 	/**
-	 * List all regions ID
+	 * Get a key
 	 *
-	 * REST: GET /dbaas/queue/{serviceName}/region
+	 * REST: GET /dbaas/queue/{serviceName}/key/{keyId}
+	 * @param serviceName [required] Application ID
+	 * @param keyId [required] Key ID
+	 *
+	 * API beta
+	 */
+	public OvhKey serviceName_key_keyId_GET(String serviceName, String keyId) throws IOException {
+		String qPath = "/dbaas/queue/{serviceName}/key/{keyId}";
+		StringBuilder sb = path(qPath, serviceName, keyId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhKey.class);
+	}
+
+	/**
+	 * Get a role
+	 *
+	 * REST: GET /dbaas/queue/{serviceName}/role/{roleName}
+	 * @param serviceName [required] Application ID
+	 * @param roleName [required] Role name
+	 *
+	 * API beta
+	 */
+	public OvhRole serviceName_role_roleName_GET(String serviceName, String roleName) throws IOException {
+		String qPath = "/dbaas/queue/{serviceName}/role/{roleName}";
+		StringBuilder sb = path(qPath, serviceName, roleName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhRole.class);
+	}
+
+	/**
+	 * List all roles of the application
+	 *
+	 * REST: GET /dbaas/queue/{serviceName}/role
 	 * @param serviceName [required] Application ID
 	 *
 	 * API beta
 	 */
-	public ArrayList<String> serviceName_region_GET(String serviceName) throws IOException {
-		String qPath = "/dbaas/queue/{serviceName}/region";
+	public ArrayList<String> serviceName_role_GET(String serviceName) throws IOException {
+		String qPath = "/dbaas/queue/{serviceName}/role";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Get one region
-	 *
-	 * REST: GET /dbaas/queue/{serviceName}/region/{regionId}
-	 * @param serviceName [required] Application ID
-	 * @param regionId [required] Region ID
-	 *
-	 * API beta
-	 */
-	public OvhRegion serviceName_region_regionId_GET(String serviceName, String regionId) throws IOException {
-		String qPath = "/dbaas/queue/{serviceName}/region/{regionId}";
-		StringBuilder sb = path(qPath, serviceName, regionId);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhRegion.class);
-	}
-
-	/**
-	 * List available services
-	 *
-	 * REST: GET /dbaas/queue
-	 *
-	 * API beta
-	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/dbaas/queue";
-		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}

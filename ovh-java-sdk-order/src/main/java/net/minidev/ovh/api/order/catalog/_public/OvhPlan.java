@@ -24,18 +24,18 @@ public class OvhPlan {
 	public String invoiceName;
 
 	/**
-	 * List of possible Configurations for this Commercial offer
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhConfiguration[] configurations;
-
-	/**
 	 * List of possible Pricings for this Commercial offer
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhPricing[] pricings;
+
+	/**
+	 * List of possible Configurations for this Commercial offer
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhConfiguration[] configurations;
 
 	/**
 	 * Addon families for this offer

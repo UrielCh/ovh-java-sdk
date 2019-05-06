@@ -7,18 +7,18 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class OvhDedicatedServerProductBlobTechnicalDisk {
 	/**
-	 * Number of disks
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long number;
-
-	/**
 	 * Disk specs
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String specs;
+
+	/**
+	 * Number of disks
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long number;
 
 	/**
 	 * Disk technology

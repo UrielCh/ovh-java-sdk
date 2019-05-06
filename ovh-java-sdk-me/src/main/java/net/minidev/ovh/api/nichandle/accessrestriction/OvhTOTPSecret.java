@@ -12,10 +12,10 @@ public class OvhTOTPSecret {
 	/**
 	 * canBeNull
 	 */
-	public Long id;
+	public String secret;
 
 	/**
 	 * canBeNull
 	 */
-	public String secret;
+	public Long id;
 }

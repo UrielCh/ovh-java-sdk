@@ -28,16 +28,16 @@ public class OvhDisclaimer {
 	public Date creationDate;
 
 	/**
-	 * task pending id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long taskPendingId;
-
-	/**
 	 * Signature, added at the bottom of your organization emails
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String content;
+
+	/**
+	 * task pending id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long taskPendingId;
 }

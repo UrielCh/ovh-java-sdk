@@ -5,18 +5,18 @@ package net.minidev.ovh.api.telephony;
  */
 public class OvhEntrepriseNumberInformations {
 	/**
-	 * Short version of the entreprise number (FR only)
-	 *
-	 * canBeNull
-	 */
-	public String siren;
-
-	/**
 	 * Address of the entreprise
 	 *
 	 * canBeNull
 	 */
 	public String address;
+
+	/**
+	 * Short version of the entreprise number (FR only)
+	 *
+	 * canBeNull
+	 */
+	public String siren;
 
 	/**
 	 * Entreprise number

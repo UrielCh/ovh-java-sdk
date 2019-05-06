@@ -57,18 +57,18 @@ public class OvhContainerDetail {
 	public Boolean archive;
 
 	/**
-	 * Total objects stored
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long storedObjects;
-
-	/**
 	 * Container static URL
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String staticUrl;
+
+	/**
+	 * Total objects stored
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long storedObjects;
 
 	/**
 	 * Container region

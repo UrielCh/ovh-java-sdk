@@ -1,7 +1,7 @@
 package net.minidev.ovh.api.ovhstatus.task;
 
 /**
- * TaskTypeEnum
+ * Description not available
  */
 public enum OvhTaskTypeEnum {
 	incident("incident"),

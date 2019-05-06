@@ -1,7 +1,7 @@
 package net.minidev.ovh.api.ovhstatus.task;
 
 /**
- * TaskImpactEnum
+ * Description not available
  */
 public enum OvhTaskImpactEnum {
 	partialUnavailability("partialUnavailability"),

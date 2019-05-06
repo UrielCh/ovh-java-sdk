@@ -1,9 +1,19 @@
 package net.minidev.ovh.api.order.catalog._public;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * Describes an Addon family for a Commercial offer
  */
 public class OvhAddonFamily {
+	/**
+	 * Default Commercial offer that can be ordered as an Addon of the current Commercial offer for the current Family
+	 *
+	 * canBeNull && readOnly
+	 */
+	@JsonProperty("default")
+	public String _default;
+
 	/**
 	 * List of Commercial offers that can be ordered as an Addon of the current Commerical offer for the current Family
 	 *

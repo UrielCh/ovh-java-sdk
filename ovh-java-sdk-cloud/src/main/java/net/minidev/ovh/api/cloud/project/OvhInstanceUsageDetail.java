@@ -28,16 +28,16 @@ public class OvhInstanceUsageDetail {
 	public OvhInstanceMonthlyBilling monthly;
 
 	/**
-	 * Hourly price
-	 *
-	 * canBeNull
-	 */
-	public OvhPrice hourly;
-
-	/**
 	 * Is monthly billing enabled
 	 *
 	 * canBeNull
 	 */
 	public Boolean monthlyBilling;
+
+	/**
+	 * Hourly price
+	 *
+	 * canBeNull
+	 */
+	public OvhPrice hourly;
 }

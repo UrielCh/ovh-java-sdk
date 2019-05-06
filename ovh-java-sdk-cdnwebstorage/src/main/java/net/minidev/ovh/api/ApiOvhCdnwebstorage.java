@@ -23,30 +23,22 @@ public class ApiOvhCdnwebstorage extends ApiOvhBase {
 	}
 
 	/**
-	 * Get this object properties
+	 * Return stats about bandwidth consumption
 	 *
-	 * REST: GET /cdn/webstorage/{serviceName}
+	 * REST: GET /cdn/webstorage/{serviceName}/statistics
+	 * @param type [required]
+	 * @param period [required]
 	 * @param serviceName [required] The internal name of your CDN Static offer
 	 */
-	public OvhAccount serviceName_GET(String serviceName) throws IOException {
-		String qPath = "/cdn/webstorage/{serviceName}";
+	public ArrayList<OvhStatsDataType> serviceName_statistics_GET(String serviceName, OvhStatsPeriodEnum period, OvhStatsTypeEnum type) throws IOException {
+		String qPath = "/cdn/webstorage/{serviceName}/statistics";
 		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "period", period);
+		query(sb, "type", type);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhAccount.class);
+		return convertTo(resp, t1);
 	}
-
-	/**
-	 * Gives for customer credentials to accesss swift account
-	 *
-	 * REST: GET /cdn/webstorage/{serviceName}/credentials
-	 * @param serviceName [required] The internal name of your CDN Static offer
-	 */
-	public OvhAccountCredentials serviceName_credentials_GET(String serviceName) throws IOException {
-		String qPath = "/cdn/webstorage/{serviceName}/credentials";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhAccountCredentials.class);
-	}
+	private static TypeReference<ArrayList<OvhStatsDataType>> t1 = new TypeReference<ArrayList<OvhStatsDataType>>() {};
 
 	/**
 	 * Get this object properties
@@ -75,22 +67,30 @@ public class ApiOvhCdnwebstorage extends ApiOvhBase {
 	}
 
 	/**
-	 * Return stats about bandwidth consumption
+	 * Gives for customer credentials to accesss swift account
 	 *
-	 * REST: GET /cdn/webstorage/{serviceName}/statistics
-	 * @param type [required]
-	 * @param period [required]
+	 * REST: GET /cdn/webstorage/{serviceName}/credentials
 	 * @param serviceName [required] The internal name of your CDN Static offer
 	 */
-	public ArrayList<OvhStatsDataType> serviceName_statistics_GET(String serviceName, OvhStatsPeriodEnum period, OvhStatsTypeEnum type) throws IOException {
-		String qPath = "/cdn/webstorage/{serviceName}/statistics";
+	public OvhAccountCredentials serviceName_credentials_GET(String serviceName) throws IOException {
+		String qPath = "/cdn/webstorage/{serviceName}/credentials";
 		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "period", period);
-		query(sb, "type", type);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, OvhAccountCredentials.class);
 	}
-	private static TypeReference<ArrayList<OvhStatsDataType>> t1 = new TypeReference<ArrayList<OvhStatsDataType>>() {};
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /cdn/webstorage/{serviceName}
+	 * @param serviceName [required] The internal name of your CDN Static offer
+	 */
+	public OvhAccount serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/cdn/webstorage/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhAccount.class);
+	}
 
 	/**
 	 * List available services

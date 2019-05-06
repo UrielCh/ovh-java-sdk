@@ -28,18 +28,18 @@ public class OvhExchangeInformation {
 	public Long spamTicketNumber;
 
 	/**
-	 * Primary address of the mailbox
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String primaryEmailAddress;
-
-	/**
 	 * Spam and Antivirus configuration
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhSpamAndVirusConfiguration spamAndVirusConfiguration;
+
+	/**
+	 * Primary address of the mailbox
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String primaryEmailAddress;
 
 	/**
 	 * OWA policy restriction is applied
@@ -70,18 +70,18 @@ public class OvhExchangeInformation {
 	public Long quota;
 
 	/**
-	 * Mailbox state
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhObjectStateEnum state;
-
-	/**
 	 * Account id
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long id;
+
+	/**
+	 * Mailbox state
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhObjectStateEnum state;
 
 	/**
 	 * Expiration date

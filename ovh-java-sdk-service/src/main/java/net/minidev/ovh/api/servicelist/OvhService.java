@@ -34,18 +34,18 @@ public class OvhService {
 	public Long quantity;
 
 	/**
-	 * Resource service description
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhResource resource;
-
-	/**
 	 * Engagement date
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date engagementDate;
+
+	/**
+	 * Resource service description
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhResource resource;
 
 	/**
 	 * Resource details

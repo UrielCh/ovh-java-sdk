@@ -54,18 +54,18 @@ public class OvhVoicemailProperties {
 	public Boolean isNewVersion;
 
 	/**
-	 * Sound ID of the short greeting played before an automated message
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long shortGreetingSoundId;
-
-	/**
 	 * Don't allow callers to leave voicemails
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean doNotRecord;
+
+	/**
+	 * Sound ID of the short greeting played before an automated message
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long shortGreetingSoundId;
 
 	/**
 	 * Play the temporary greeting instead of the regular one

@@ -37,18 +37,18 @@ public class OvhTask {
 	public Date doneDate;
 
 	/**
-	 * the id of the task
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long taskId;
-
-	/**
 	 * Task Creation date
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date startDate;
+
+	/**
+	 * the id of the task
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long taskId;
 
 	/**
 	 * Task status

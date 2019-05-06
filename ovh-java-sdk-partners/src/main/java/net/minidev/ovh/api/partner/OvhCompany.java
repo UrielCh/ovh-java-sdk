@@ -68,6 +68,13 @@ public class OvhCompany {
 	public OvhExternalCertifications externalCertifications;
 
 	/**
+	 * Company's twitter profile url
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String twitter;
+
+	/**
 	 * Estimation of the revenue of the company
 	 *
 	 * canBeNull && readOnly
@@ -80,13 +87,6 @@ public class OvhCompany {
 	 * canBeNull && readOnly
 	 */
 	public OvhClientKinds clientKinds;
-
-	/**
-	 * Company's twitter profile url
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String twitter;
 
 	/**
 	 * Estimation of the number of accompanied customers in using OVH's solutions
@@ -110,18 +110,18 @@ public class OvhCompany {
 	public String email;
 
 	/**
-	 * In which country the company products of solutions are available
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhProductCountries productCountries;
-
-	/**
 	 * The commercial name of the company
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String commercialName;
+
+	/**
+	 * In which country the company products of solutions are available
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhProductCountries productCountries;
 
 	/**
 	 * Company's website

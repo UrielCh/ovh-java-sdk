@@ -72,18 +72,18 @@ public class OvhWLAN {
 	public String SSID;
 
 	/**
-	 * Wifi state
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean enabled;
-
-	/**
 	 * ID of the ongoing todo (NULL if none)
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long taskId;
+
+	/**
+	 * Wifi state
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean enabled;
 
 	/**
 	 * Frequency (2.4GHz | 5GHz)

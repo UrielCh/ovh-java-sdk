@@ -95,12 +95,12 @@ public class OvhDirectoryInfo {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String address;
+	public Boolean displayFirstName;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Boolean displayFirstName;
+	public String address;
 
 	/**
 	 * canBeNull && readOnly
@@ -160,12 +160,12 @@ public class OvhDirectoryInfo {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long areaCode;
+	public String modificationDate;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String modificationDate;
+	public Long areaCode;
 
 	/**
 	 * canBeNull && readOnly

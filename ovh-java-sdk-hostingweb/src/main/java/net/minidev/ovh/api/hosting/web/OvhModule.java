@@ -38,18 +38,18 @@ public class OvhModule {
 	public OvhLanguageEnum language;
 
 	/**
-	 * The admin folder, relative to the module's installation path
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String adminFolder;
-
-	/**
 	 * Installation ID
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long id;
+
+	/**
+	 * The admin folder, relative to the module's installation path
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String adminFolder;
 
 	/**
 	 * ID of the module associated with this installation
@@ -80,16 +80,16 @@ public class OvhModule {
 	public Long taskId;
 
 	/**
-	 * The dependencies to which the module has access. A dependency can be a standard database (like MySQL or PostgreSQL) or a key-value store (like Redis or Memcached) for example
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhDependencyType[] dependencies;
-
-	/**
 	 * The module status
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhStatusEnum status;
+
+	/**
+	 * The dependencies to which the module has access. A dependency can be a standard database (like MySQL or PostgreSQL) or a key-value store (like Redis or Memcached) for example
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhDependencyType[] dependencies;
 }

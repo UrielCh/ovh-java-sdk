@@ -29,18 +29,18 @@ public class OvhTransaction {
 	public OvhPrice price;
 
 	/**
-	 * Last update
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date lastUpdate;
-
-	/**
 	 * List of product plan code consumption
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhElement[] elements;
+
+	/**
+	 * Last update
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date lastUpdate;
 
 	/**
 	 * Transaction ID
@@ -50,16 +50,16 @@ public class OvhTransaction {
 	public Long id;
 
 	/**
-	 * Service ID
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long serviceId;
-
-	/**
 	 * Creation date
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date creationDate;
+
+	/**
+	 * Service ID
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long serviceId;
 }

@@ -12,12 +12,12 @@ public class OvhIpv4Org {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhIpRegistryEnum registry;
+	public OvhCountryEnum country;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhCountryEnum country;
+	public OvhIpRegistryEnum registry;
 
 	/**
 	 * canBeNull && readOnly
@@ -27,22 +27,22 @@ public class OvhIpv4Org {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String address;
-
-	/**
-	 * canBeNull && readOnly
-	 */
 	public String organisationId;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String city;
+	public String address;
 
 	/**
 	 * canBeNull && readOnly
 	 */
 	public String phone;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public String city;
 
 	/**
 	 * canBeNull && readOnly

@@ -47,18 +47,18 @@ public class OvhOffer {
 	public Long maxNbRole;
 
 	/**
-	 * Current number of dashboard booked
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long curNbDashboard;
-
-	/**
 	 * Maximum number of input allowed
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long maxNbInput;
+
+	/**
+	 * Current number of dashboard booked
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long curNbDashboard;
 
 	/**
 	 * Option unique reference

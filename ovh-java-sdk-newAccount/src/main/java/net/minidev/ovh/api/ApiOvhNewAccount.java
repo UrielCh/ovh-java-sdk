@@ -29,6 +29,21 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 	}
 
 	/**
+	 * All available corporation types for a given country
+	 *
+	 * REST: GET /newAccount/corporationType
+	 * @param country [required]
+	 */
+	public ArrayList<String> corporationType_GET(OvhCountryEnum country) throws IOException {
+		String qPath = "/newAccount/corporationType";
+		StringBuilder sb = path(qPath);
+		query(sb, "country", country);
+		String resp = execN(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
+
+	/**
 	 * All available legal forms for a given country
 	 *
 	 * REST: GET /newAccount/legalform
@@ -41,7 +56,67 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, t1);
 	}
-	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
+
+	/**
+	 * Create a new OVH identifier
+	 *
+	 * REST: POST /newAccount
+	 * @param sex [required]
+	 * @param zip [required]
+	 * @param nationalIdentificationNumber [required]
+	 * @param birthDay [required]
+	 * @param ovhCompany [required]
+	 * @param address [required]
+	 * @param birthCity [required]
+	 * @param firstname [required]
+	 * @param vat [required]
+	 * @param area [required]
+	 * @param companyNationalIdentificationNumber [required]
+	 * @param corporationType [required]
+	 * @param legalform [required]
+	 * @param country [required]
+	 * @param phone [required]
+	 * @param ovhSubsidiary [required]
+	 * @param name [required]
+	 * @param email [required]
+	 * @param fax [required]
+	 * @param organisation [required]
+	 * @param spareEmail [required]
+	 * @param phoneCountry [required]
+	 * @param city [required]
+	 * @param language [required]
+	 */
+	public OvhNewAccountAndToken POST(String address, String area, String birthCity, String birthDay, String city, String companyNationalIdentificationNumber, String corporationType, OvhCountryEnum country, String email, String fax, String firstname, OvhLanguageEnum language, OvhLegalFormEnum legalform, String name, String nationalIdentificationNumber, String organisation, OvhOvhCompanyEnum ovhCompany, OvhOvhSubsidiaryEnum ovhSubsidiary, String phone, OvhCountryEnum phoneCountry, OvhGenderEnum sex, String spareEmail, String vat, String zip) throws IOException {
+		String qPath = "/newAccount";
+		StringBuilder sb = path(qPath);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "address", address);
+		addBody(o, "area", area);
+		addBody(o, "birthCity", birthCity);
+		addBody(o, "birthDay", birthDay);
+		addBody(o, "city", city);
+		addBody(o, "companyNationalIdentificationNumber", companyNationalIdentificationNumber);
+		addBody(o, "corporationType", corporationType);
+		addBody(o, "country", country);
+		addBody(o, "email", email);
+		addBody(o, "fax", fax);
+		addBody(o, "firstname", firstname);
+		addBody(o, "language", language);
+		addBody(o, "legalform", legalform);
+		addBody(o, "name", name);
+		addBody(o, "nationalIdentificationNumber", nationalIdentificationNumber);
+		addBody(o, "organisation", organisation);
+		addBody(o, "ovhCompany", ovhCompany);
+		addBody(o, "ovhSubsidiary", ovhSubsidiary);
+		addBody(o, "phone", phone);
+		addBody(o, "phoneCountry", phoneCountry);
+		addBody(o, "sex", sex);
+		addBody(o, "spareEmail", spareEmail);
+		addBody(o, "vat", vat);
+		addBody(o, "zip", zip);
+		String resp = execN(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhNewAccountAndToken.class);
+	}
 
 	/**
 	 * All available countries for an ovh company and an ovh subsidiary
@@ -81,31 +156,31 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 	 * Give all the rules to follow in order to create and update an OVH identifier
 	 *
 	 * REST: POST /newAccount/rules
-	 * @param ovhSubsidiary [required]
-	 * @param phone [required]
-	 * @param phoneCountry [required]
-	 * @param country [required]
-	 * @param fax [required]
-	 * @param organisation [required]
-	 * @param nationalIdentificationNumber [required]
 	 * @param vat [required]
-	 * @param spareEmail [required]
-	 * @param action [required]
-	 * @param area [required]
-	 * @param zip [required]
-	 * @param address [required]
-	 * @param legalform [required]
-	 * @param sex [required]
-	 * @param name [required]
-	 * @param corporationType [required]
-	 * @param birthCity [required]
-	 * @param email [required]
-	 * @param city [required]
-	 * @param birthDay [required]
-	 * @param companyNationalIdentificationNumber [required]
 	 * @param firstname [required]
-	 * @param language [required]
+	 * @param companyNationalIdentificationNumber [required]
+	 * @param area [required]
 	 * @param ovhCompany [required]
+	 * @param birthDay [required]
+	 * @param nationalIdentificationNumber [required]
+	 * @param zip [required]
+	 * @param sex [required]
+	 * @param birthCity [required]
+	 * @param address [required]
+	 * @param phoneCountry [required]
+	 * @param spareEmail [required]
+	 * @param organisation [required]
+	 * @param language [required]
+	 * @param city [required]
+	 * @param phone [required]
+	 * @param country [required]
+	 * @param action [required]
+	 * @param legalform [required]
+	 * @param corporationType [required]
+	 * @param fax [required]
+	 * @param email [required]
+	 * @param name [required]
+	 * @param ovhSubsidiary [required]
 	 */
 	public ArrayList<OvhCreationRule> rules_POST(OvhCreationRulesActionEnum action, String address, String area, String birthCity, String birthDay, String city, String companyNationalIdentificationNumber, String corporationType, OvhCountryEnum country, String email, String fax, String firstname, OvhLanguageEnum language, OvhLegalFormEnum legalform, String name, String nationalIdentificationNumber, String organisation, OvhOvhCompanyEnum ovhCompany, OvhOvhSubsidiaryEnum ovhSubsidiary, String phone, OvhCountryEnum phoneCountry, OvhGenderEnum sex, String spareEmail, String vat, String zip) throws IOException {
 		String qPath = "/newAccount/rules";
@@ -159,10 +234,10 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 	 * Give all the rules to follow in order to create an OVH identifier
 	 *
 	 * REST: GET /newAccount/creationRules
-	 * @param legalform [required]
 	 * @param ovhCompany [required]
-	 * @param ovhSubsidiary [required]
 	 * @param country [required]
+	 * @param legalform [required]
+	 * @param ovhSubsidiary [required]
 	 */
 	public OvhCreationRules creationRules_GET(OvhCountryEnum country, OvhLegalFormEnum legalform, OvhOvhCompanyEnum ovhCompany, OvhOvhSubsidiaryEnum ovhSubsidiary) throws IOException {
 		String qPath = "/newAccount/creationRules";
@@ -173,80 +248,5 @@ public class ApiOvhNewAccount extends ApiOvhBase {
 		query(sb, "ovhSubsidiary", ovhSubsidiary);
 		String resp = execN(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhCreationRules.class);
-	}
-
-	/**
-	 * Create a new OVH identifier
-	 *
-	 * REST: POST /newAccount
-	 * @param nationalIdentificationNumber [required]
-	 * @param organisation [required]
-	 * @param vat [required]
-	 * @param spareEmail [required]
-	 * @param area [required]
-	 * @param zip [required]
-	 * @param ovhSubsidiary [required]
-	 * @param phone [required]
-	 * @param country [required]
-	 * @param phoneCountry [required]
-	 * @param fax [required]
-	 * @param corporationType [required]
-	 * @param name [required]
-	 * @param birthCity [required]
-	 * @param email [required]
-	 * @param city [required]
-	 * @param companyNationalIdentificationNumber [required]
-	 * @param birthDay [required]
-	 * @param firstname [required]
-	 * @param language [required]
-	 * @param ovhCompany [required]
-	 * @param address [required]
-	 * @param legalform [required]
-	 * @param sex [required]
-	 */
-	public OvhNewAccountAndToken POST(String address, String area, String birthCity, String birthDay, String city, String companyNationalIdentificationNumber, String corporationType, OvhCountryEnum country, String email, String fax, String firstname, OvhLanguageEnum language, OvhLegalFormEnum legalform, String name, String nationalIdentificationNumber, String organisation, OvhOvhCompanyEnum ovhCompany, OvhOvhSubsidiaryEnum ovhSubsidiary, String phone, OvhCountryEnum phoneCountry, OvhGenderEnum sex, String spareEmail, String vat, String zip) throws IOException {
-		String qPath = "/newAccount";
-		StringBuilder sb = path(qPath);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "address", address);
-		addBody(o, "area", area);
-		addBody(o, "birthCity", birthCity);
-		addBody(o, "birthDay", birthDay);
-		addBody(o, "city", city);
-		addBody(o, "companyNationalIdentificationNumber", companyNationalIdentificationNumber);
-		addBody(o, "corporationType", corporationType);
-		addBody(o, "country", country);
-		addBody(o, "email", email);
-		addBody(o, "fax", fax);
-		addBody(o, "firstname", firstname);
-		addBody(o, "language", language);
-		addBody(o, "legalform", legalform);
-		addBody(o, "name", name);
-		addBody(o, "nationalIdentificationNumber", nationalIdentificationNumber);
-		addBody(o, "organisation", organisation);
-		addBody(o, "ovhCompany", ovhCompany);
-		addBody(o, "ovhSubsidiary", ovhSubsidiary);
-		addBody(o, "phone", phone);
-		addBody(o, "phoneCountry", phoneCountry);
-		addBody(o, "sex", sex);
-		addBody(o, "spareEmail", spareEmail);
-		addBody(o, "vat", vat);
-		addBody(o, "zip", zip);
-		String resp = execN(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhNewAccountAndToken.class);
-	}
-
-	/**
-	 * All available corporation types for a given country
-	 *
-	 * REST: GET /newAccount/corporationType
-	 * @param country [required]
-	 */
-	public ArrayList<String> corporationType_GET(OvhCountryEnum country) throws IOException {
-		String qPath = "/newAccount/corporationType";
-		StringBuilder sb = path(qPath);
-		query(sb, "country", country);
-		String resp = execN(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
 	}
 }

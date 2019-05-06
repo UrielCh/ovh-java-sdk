@@ -26,18 +26,18 @@ public class OvhAllowedServices {
 	public String[] dedicatedCloud;
 
 	/**
-	 * list of blocks allowed to be connected to vrack
-	 *
-	 * canBeNull
-	 */
-	public String[] ip;
-
-	/**
 	 * list of dedicated servers allowed to be connected to vrack
 	 *
 	 * canBeNull
 	 */
 	public String[] dedicatedServer;
+
+	/**
+	 * list of blocks allowed to be connected to vrack
+	 *
+	 * canBeNull
+	 */
+	public String[] ip;
 
 	/**
 	 * list of dedicated connect links allowed to be connected to vrack

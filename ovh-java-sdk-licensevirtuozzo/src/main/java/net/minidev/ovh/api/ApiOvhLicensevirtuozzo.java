@@ -29,6 +29,21 @@ public class ApiOvhLicensevirtuozzo extends ApiOvhBase {
 	}
 
 	/**
+	 * Get the orderable Virtuozzo versions
+	 *
+	 * REST: GET /license/virtuozzo/orderableVersions
+	 * @param ip [required] Your license Ip
+	 */
+	public ArrayList<OvhVirtuozzoOrderConfiguration> orderableVersions_GET(String ip) throws IOException {
+		String qPath = "/license/virtuozzo/orderableVersions";
+		StringBuilder sb = path(qPath);
+		query(sb, "ip", ip);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t1);
+	}
+	private static TypeReference<ArrayList<OvhVirtuozzoOrderConfiguration>> t1 = new TypeReference<ArrayList<OvhVirtuozzoOrderConfiguration>>() {};
+
+	/**
 	 * List available services
 	 *
 	 * REST: GET /license/virtuozzo
@@ -37,9 +52,22 @@ public class ApiOvhLicensevirtuozzo extends ApiOvhBase {
 		String qPath = "/license/virtuozzo";
 		StringBuilder sb = path(qPath);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
+		return convertTo(resp, t2);
 	}
-	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
+	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};
+
+	/**
+	 * Terminate your service
+	 *
+	 * REST: POST /license/virtuozzo/{serviceName}/terminate
+	 * @param serviceName [required] The name of your Virtuozzo license
+	 */
+	public String serviceName_terminate_POST(String serviceName) throws IOException {
+		String qPath = "/license/virtuozzo/{serviceName}/terminate";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
 
 	/**
 	 * Get this object properties
@@ -69,9 +97,92 @@ public class ApiOvhLicensevirtuozzo extends ApiOvhBase {
 		query(sb, "action", action);
 		query(sb, "status", status);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
+		return convertTo(resp, t3);
 	}
-	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
+	private static TypeReference<ArrayList<Long>> t3 = new TypeReference<ArrayList<Long>>() {};
+
+	/**
+	 * Move this license to another Ip
+	 *
+	 * REST: POST /license/virtuozzo/{serviceName}/changeIp
+	 * @param destinationIp [required] The Ip on which you want to move this license
+	 * @param serviceName [required] The name of your Virtuozzo license
+	 */
+	public OvhTask serviceName_changeIp_POST(String serviceName, String destinationIp) throws IOException {
+		String qPath = "/license/virtuozzo/{serviceName}/changeIp";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "destinationIp", destinationIp);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, OvhTask.class);
+	}
+
+	/**
+	 * Will tell if the ip can accept the license
+	 *
+	 * REST: GET /license/virtuozzo/{serviceName}/canLicenseBeMovedTo
+	 * @param destinationIp [required] The Ip on which you want to move this license
+	 * @param serviceName [required] The name of your Virtuozzo license
+	 */
+	public OvhChangeIpStatus serviceName_canLicenseBeMovedTo_GET(String serviceName, String destinationIp) throws IOException {
+		String qPath = "/license/virtuozzo/{serviceName}/canLicenseBeMovedTo";
+		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "destinationIp", destinationIp);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhChangeIpStatus.class);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /license/virtuozzo/{serviceName}
+	 * @param serviceName [required] The name of your Virtuozzo license
+	 */
+	public OvhVirtuozzo serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/license/virtuozzo/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhVirtuozzo.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /license/virtuozzo/{serviceName}
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The name of your Virtuozzo license
+	 */
+	public void serviceName_PUT(String serviceName, OvhVirtuozzo body) throws IOException {
+		String qPath = "/license/virtuozzo/{serviceName}";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
+
+	/**
+	 * Get this object properties
+	 *
+	 * REST: GET /license/virtuozzo/{serviceName}/serviceInfos
+	 * @param serviceName [required] The name of your Virtuozzo license
+	 */
+	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
+		String qPath = "/license/virtuozzo/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhService.class);
+	}
+
+	/**
+	 * Alter this object properties
+	 *
+	 * REST: PUT /license/virtuozzo/{serviceName}/serviceInfos
+	 * @param body [required] New object properties
+	 * @param serviceName [required] The name of your Virtuozzo license
+	 */
+	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
+		String qPath = "/license/virtuozzo/{serviceName}/serviceInfos";
+		StringBuilder sb = path(qPath, serviceName);
+		exec(qPath, "PUT", sb.toString(), body);
+	}
 
 	/**
 	 * Returns an array of ips where the license can be moved to
@@ -83,20 +194,7 @@ public class ApiOvhLicensevirtuozzo extends ApiOvhBase {
 		String qPath = "/license/virtuozzo/{serviceName}/allowedDestinationIp";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Terminate your service
-	 *
-	 * REST: POST /license/virtuozzo/{serviceName}/terminate
-	 * @param serviceName [required] The name of your Virtuozzo license
-	 */
-	public String serviceName_terminate_POST(String serviceName) throws IOException {
-		String qPath = "/license/virtuozzo/{serviceName}/terminate";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, String.class);
+		return convertTo(resp, t2);
 	}
 
 	/**
@@ -139,43 +237,17 @@ public class ApiOvhLicensevirtuozzo extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		query(sb, "label", label);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
+		return convertTo(resp, t4);
 	}
-	private static TypeReference<ArrayList<OvhOptionLabel>> t3 = new TypeReference<ArrayList<OvhOptionLabel>>() {};
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /license/virtuozzo/{serviceName}/serviceInfos
-	 * @param serviceName [required] The name of your Virtuozzo license
-	 */
-	public OvhService serviceName_serviceInfos_GET(String serviceName) throws IOException {
-		String qPath = "/license/virtuozzo/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhService.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /license/virtuozzo/{serviceName}/serviceInfos
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The name of your Virtuozzo license
-	 */
-	public void serviceName_serviceInfos_PUT(String serviceName, OvhService body) throws IOException {
-		String qPath = "/license/virtuozzo/{serviceName}/serviceInfos";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
+	private static TypeReference<ArrayList<OvhOptionLabel>> t4 = new TypeReference<ArrayList<OvhOptionLabel>>() {};
 
 	/**
 	 * Confirm termination of your service
 	 *
 	 * REST: POST /license/virtuozzo/{serviceName}/confirmTermination
-	 * @param futureUse What next after your termination request
-	 * @param reason Reason of your termination request
-	 * @param commentary Commentary about your termination request
+	 * @param futureUse [required] What next after your termination request
+	 * @param reason [required] Reason of your termination request
+	 * @param commentary [required] Commentary about your termination request
 	 * @param token [required] The termination token sent by mail to the admin contact
 	 * @param serviceName [required] The name of your Virtuozzo license
 	 */
@@ -190,76 +262,4 @@ public class ApiOvhLicensevirtuozzo extends ApiOvhBase {
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
 	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /license/virtuozzo/{serviceName}
-	 * @param serviceName [required] The name of your Virtuozzo license
-	 */
-	public OvhVirtuozzo serviceName_GET(String serviceName) throws IOException {
-		String qPath = "/license/virtuozzo/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhVirtuozzo.class);
-	}
-
-	/**
-	 * Alter this object properties
-	 *
-	 * REST: PUT /license/virtuozzo/{serviceName}
-	 * @param body [required] New object properties
-	 * @param serviceName [required] The name of your Virtuozzo license
-	 */
-	public void serviceName_PUT(String serviceName, OvhVirtuozzo body) throws IOException {
-		String qPath = "/license/virtuozzo/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
-		exec(qPath, "PUT", sb.toString(), body);
-	}
-
-	/**
-	 * Will tell if the ip can accept the license
-	 *
-	 * REST: GET /license/virtuozzo/{serviceName}/canLicenseBeMovedTo
-	 * @param destinationIp [required] The Ip on which you want to move this license
-	 * @param serviceName [required] The name of your Virtuozzo license
-	 */
-	public OvhChangeIpStatus serviceName_canLicenseBeMovedTo_GET(String serviceName, String destinationIp) throws IOException {
-		String qPath = "/license/virtuozzo/{serviceName}/canLicenseBeMovedTo";
-		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "destinationIp", destinationIp);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhChangeIpStatus.class);
-	}
-
-	/**
-	 * Move this license to another Ip
-	 *
-	 * REST: POST /license/virtuozzo/{serviceName}/changeIp
-	 * @param destinationIp [required] The Ip on which you want to move this license
-	 * @param serviceName [required] The name of your Virtuozzo license
-	 */
-	public OvhTask serviceName_changeIp_POST(String serviceName, String destinationIp) throws IOException {
-		String qPath = "/license/virtuozzo/{serviceName}/changeIp";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "destinationIp", destinationIp);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, OvhTask.class);
-	}
-
-	/**
-	 * Get the orderable Virtuozzo versions
-	 *
-	 * REST: GET /license/virtuozzo/orderableVersions
-	 * @param ip [required] Your license Ip
-	 */
-	public ArrayList<OvhVirtuozzoOrderConfiguration> orderableVersions_GET(String ip) throws IOException {
-		String qPath = "/license/virtuozzo/orderableVersions";
-		StringBuilder sb = path(qPath);
-		query(sb, "ip", ip);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t4);
-	}
-	private static TypeReference<ArrayList<OvhVirtuozzoOrderConfiguration>> t4 = new TypeReference<ArrayList<OvhVirtuozzoOrderConfiguration>>() {};
 }

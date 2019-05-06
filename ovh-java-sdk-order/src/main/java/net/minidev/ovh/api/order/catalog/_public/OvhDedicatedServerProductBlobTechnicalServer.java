@@ -8,18 +8,18 @@ import net.minidev.ovh.api.order.catalog._public.OvhDedicatedServerProductBlobTe
  */
 public class OvhDedicatedServerProductBlobTechnicalServer {
 	/**
-	 * CPU properties
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhDedicatedServerProductBlobTechnicalCPU cpu;
-
-	/**
 	 * Dedicated server series
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String range;
+
+	/**
+	 * CPU properties
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhDedicatedServerProductBlobTechnicalCPU cpu;
 
 	/**
 	 * Frame properties

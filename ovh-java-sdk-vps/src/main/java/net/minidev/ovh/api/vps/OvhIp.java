@@ -23,12 +23,12 @@ public class OvhIp {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String reverse;
+	public OvhTypeEnum type;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public OvhTypeEnum type;
+	public String reverse;
 
 	/**
 	 * canBeNull && readOnly

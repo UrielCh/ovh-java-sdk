@@ -40,18 +40,18 @@ public class OvhAvailabilitiesRaw {
 	public Long orderedCheck;
 
 	/**
-	 * 24H count
-	 *
-	 * canBeNull
-	 */
-	public Long trueAvailable24H;
-
-	/**
 	 * Region where is located the product
 	 *
 	 * canBeNull
 	 */
 	public OvhAvailabilityRegionEnum zone;
+
+	/**
+	 * 24H count
+	 *
+	 * canBeNull
+	 */
+	public Long trueAvailable24H;
 
 	/**
 	 * Real stock (considering order in validating)

@@ -24,18 +24,18 @@ public class OvhOvhPabxHuntingQueue {
 	public Long queueId;
 
 	/**
-	 * The id of the OvhPabxSound played to caller when on hold
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long soundOnHold;
-
-	/**
 	 * The maximum waiting time (in seconds) in the queue
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long maxWaitTime;
+
+	/**
+	 * The id of the OvhPabxSound played to caller when on hold
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long soundOnHold;
 
 	/**
 	 * The additionnal parameter of the on closure action
@@ -87,18 +87,18 @@ public class OvhOvhPabxHuntingQueue {
 	public Boolean record;
 
 	/**
-	 * Action executed when there is no member in queue
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhOvhPabxQueueActionEnum actionOnClosure;
-
-	/**
 	 * The calls dispatching strategy
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhOvhPabxHuntingQueueStrategyEnum strategy;
+
+	/**
+	 * Action executed when there is no member in queue
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhOvhPabxQueueActionEnum actionOnClosure;
 
 	/**
 	 * The additionnal parameter of the overflow action

@@ -26,11 +26,11 @@ public class OvhDomain {
 	public Boolean isAliasDomain;
 
 	/**
-	 * List of aliases for this domain
+	 * Domain MX record configured in DNS
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String[] domainAliases;
+	public String[] mxRecord;
 
 	/**
 	 * Domain validation status
@@ -40,11 +40,11 @@ public class OvhDomain {
 	public Boolean domainValidated;
 
 	/**
-	 * Domain MX record configured in DNS
+	 * List of aliases for this domain
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String[] mxRecord;
+	public String[] domainAliases;
 
 	/**
 	 * Domain type

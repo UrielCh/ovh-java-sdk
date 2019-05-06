@@ -12,6 +12,13 @@ public class OvhNumberDetailedZone {
 	public String zipCode;
 
 	/**
+	 * The country of the zone
+	 *
+	 * canBeNull
+	 */
+	public OvhNumberCountryEnum country;
+
+	/**
 	 * The number's range of this zone
 	 *
 	 * canBeNull
@@ -24,13 +31,6 @@ public class OvhNumberDetailedZone {
 	 * canBeNull
 	 */
 	public OvhNumberDetailedZoneMatchingCriteriaEnum matchingCriteria;
-
-	/**
-	 * The country of the zone
-	 *
-	 * canBeNull
-	 */
-	public OvhNumberCountryEnum country;
 
 	/**
 	 * The city of the zone

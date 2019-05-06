@@ -36,16 +36,16 @@ public class OvhTask {
 	public OvhTaskStateEnum state;
 
 	/**
-	 * Task creation date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date startDate;
-
-	/**
 	 * Task id
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long taskId;
+
+	/**
+	 * Task creation date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date startDate;
 }

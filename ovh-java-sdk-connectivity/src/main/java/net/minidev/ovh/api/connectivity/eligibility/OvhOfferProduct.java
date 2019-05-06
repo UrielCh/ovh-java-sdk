@@ -33,18 +33,18 @@ public class OvhOfferProduct {
 	public OvhOfferProductProviderEnum provider;
 
 	/**
-	 * GRT (Guaranteed Restoration Time) available list
-	 *
-	 * canBeNull
-	 */
-	public String[] grt;
-
-	/**
 	 * Name
 	 *
 	 * canBeNull
 	 */
 	public String name;
+
+	/**
+	 * GRT (Guaranteed Restoration Time) available list
+	 *
+	 * canBeNull
+	 */
+	public String[] grt;
 
 	/**
 	 * Is the rates guaranteed ?

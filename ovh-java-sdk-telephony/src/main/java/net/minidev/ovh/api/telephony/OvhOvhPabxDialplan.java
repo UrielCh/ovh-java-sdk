@@ -30,12 +30,12 @@ public class OvhOvhPabxDialplan {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long dialplanId;
+	public Date lastUpdate;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Date lastUpdate;
+	public Long dialplanId;
 
 	/**
 	 * The dialplan name

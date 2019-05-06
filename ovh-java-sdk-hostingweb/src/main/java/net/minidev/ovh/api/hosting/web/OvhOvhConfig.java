@@ -54,13 +54,6 @@ public class OvhOvhConfig {
 	public Boolean historical;
 
 	/**
-	 * Configuration's id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long id;
-
-	/**
 	 * Configuration you want for http firewall
 	 *
 	 * canBeNull && readOnly
@@ -68,11 +61,11 @@ public class OvhOvhConfig {
 	public OvhHttpFirewallEnum httpFirewall;
 
 	/**
-	 * Version of engine you want
+	 * Configuration's id
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhEngineNameEnum engineName;
+	public Long id;
 
 	/**
 	 * When ovhconfig was created, or found for the first time, on the hosting servers
@@ -80,6 +73,13 @@ public class OvhOvhConfig {
 	 * canBeNull && readOnly
 	 */
 	public Date creationDate;
+
+	/**
+	 * Version of engine you want
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhEngineNameEnum engineName;
 
 	/**
 	 * The task ID working on this configuration

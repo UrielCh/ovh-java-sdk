@@ -7,12 +7,12 @@ public class OvhApplication {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String name;
+	public String applicationKey;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String applicationKey;
+	public String name;
 
 	/**
 	 * canBeNull && readOnly

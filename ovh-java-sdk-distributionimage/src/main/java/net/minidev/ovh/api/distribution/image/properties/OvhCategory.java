@@ -1,7 +1,7 @@
 package net.minidev.ovh.api.distribution.image.properties;
 
 /**
- * category
+ * Description not available
  */
 public enum OvhCategory {
 	none("none"),

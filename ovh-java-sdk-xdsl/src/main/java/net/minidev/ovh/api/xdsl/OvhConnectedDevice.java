@@ -8,13 +8,6 @@ import net.minidev.ovh.api.xdsl.xdslmodemconfig.OvhConnectedDeviceAddressSourceE
  */
 public class OvhConnectedDevice {
 	/**
-	 * Host name given by the device to the modem
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String hostName;
-
-	/**
 	 * On which interface is connected the device
 	 *
 	 * canBeNull && readOnly
@@ -22,11 +15,11 @@ public class OvhConnectedDevice {
 	public String interfaceType;
 
 	/**
-	 * MAC address of the device
+	 * Host name given by the device to the modem
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String macAddress;
+	public String hostName;
 
 	/**
 	 * How did the device got its IP address
@@ -34,6 +27,13 @@ public class OvhConnectedDevice {
 	 * canBeNull && readOnly
 	 */
 	public OvhConnectedDeviceAddressSourceEnum addressSource;
+
+	/**
+	 * MAC address of the device
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String macAddress;
 
 	/**
 	 * The IP address of the device
@@ -50,16 +50,16 @@ public class OvhConnectedDevice {
 	public Boolean active;
 
 	/**
-	 * The date time of the last update of thoses informations
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date informationDate;
-
-	/**
 	 * The remaining time in seconds of the DHCP lease of this device (-1 means infinite)
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long leaseTimeRemaining;
+
+	/**
+	 * The date time of the last update of thoses informations
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date informationDate;
 }

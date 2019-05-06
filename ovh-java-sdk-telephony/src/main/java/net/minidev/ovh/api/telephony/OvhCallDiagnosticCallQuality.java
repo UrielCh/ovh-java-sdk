@@ -49,18 +49,18 @@ public class OvhCallDiagnosticCallQuality {
 	public Long packets;
 
 	/**
-	 * Mean Opinion Score expressed in one number, from 1 to 5, 1 being the worst and 5 the best.
-	 *
-	 * canBeNull
-	 */
-	public Long mos;
-
-	/**
 	 * The max delay between two packet in the given direction flow
 	 *
 	 * canBeNull
 	 */
 	public Double maxDelay;
+
+	/**
+	 * Mean Opinion Score expressed in one number, from 1 to 5, 1 being the worst and 5 the best.
+	 *
+	 * canBeNull
+	 */
+	public Long mos;
 
 	/**
 	 * Codec used in this direction flow
@@ -70,18 +70,18 @@ public class OvhCallDiagnosticCallQuality {
 	public OvhCallDiagnosticCodecEnum codec;
 
 	/**
-	 * Number of packet RTP lost in the direction flow
-	 *
-	 * canBeNull
-	 */
-	public Long rtpLost;
-
-	/**
 	 * Variation in the delay of received packets. Smaller is better and less is more
 	 *
 	 * canBeNull
 	 */
 	public Double maxJitter;
+
+	/**
+	 * Number of packet RTP lost in the direction flow
+	 *
+	 * canBeNull
+	 */
+	public Long rtpLost;
 
 	/**
 	 * Identifier of the metric performance value

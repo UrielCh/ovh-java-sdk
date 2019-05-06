@@ -24,16 +24,16 @@ public class OvhNumber {
 	public String description;
 
 	/**
-	 * Parent of the service (if it is part of a pool)
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String partOfPool;
-
-	/**
 	 * Name of the service
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String serviceName;
+
+	/**
+	 * Parent of the service (if it is part of a pool)
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String partOfPool;
 }

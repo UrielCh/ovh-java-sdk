@@ -35,16 +35,16 @@ public class OvhResponderAccount {
 	public Date to;
 
 	/**
-	 * Content of responder
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String content;
-
-	/**
 	 * Name of account
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String account;
+
+	/**
+	 * Content of responder
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String content;
 }

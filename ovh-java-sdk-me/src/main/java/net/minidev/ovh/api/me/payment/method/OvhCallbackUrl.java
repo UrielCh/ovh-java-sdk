@@ -12,18 +12,18 @@ public class OvhCallbackUrl {
 	public String cancel;
 
 	/**
-	 * URL when payment method registration success
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String success;
-
-	/**
 	 * URL when registration failed
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String failure;
+
+	/**
+	 * URL when payment method registration success
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String success;
 
 	/**
 	 * URL when payment method is in validation

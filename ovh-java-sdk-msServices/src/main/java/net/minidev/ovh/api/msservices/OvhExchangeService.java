@@ -35,18 +35,18 @@ public class OvhExchangeService {
 	public Long maxReceiveSize;
 
 	/**
-	 * Expiration date of SSL certificate
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date sslExpirationDate;
-
-	/**
 	 * Service family name displayed
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String displayName;
+
+	/**
+	 * Expiration date of SSL certificate
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date sslExpirationDate;
 
 	/**
 	 * Exchange service name
@@ -63,16 +63,16 @@ public class OvhExchangeService {
 	public OvhServiceStateEnum state;
 
 	/**
-	 * Task pending id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long taskPendingId;
-
-	/**
 	 * Spam and Antivirus configuration
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhSpamAndVirusConfiguration spamAndVirusConfiguration;
+
+	/**
+	 * Task pending id
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long taskPendingId;
 }

@@ -7,18 +7,18 @@ import java.util.Date;
  */
 public class OvhIncident {
 	/**
-	 * Estimated end date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date endDate;
-
-	/**
 	 * Operator
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhOperatorTypeEnum[] operators;
+
+	/**
+	 * Estimated end date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date endDate;
 
 	/**
 	 * canBeNull && readOnly
@@ -40,18 +40,18 @@ public class OvhIncident {
 	public Long id;
 
 	/**
-	 * NRA list
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String[] nra;
-
-	/**
 	 * Estimated start date
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date creationDate;
+
+	/**
+	 * NRA list
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String[] nra;
 
 	/**
 	 * Task ID on travaux.ovh.com

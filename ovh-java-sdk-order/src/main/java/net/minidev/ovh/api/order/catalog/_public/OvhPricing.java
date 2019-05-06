@@ -88,18 +88,18 @@ public class OvhPricing {
 	public Boolean mustBeCompleted;
 
 	/**
-	 * Capacities of the Pricing, describes what the Pricing can be used for
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhGenericProductPricingCapacitiesEnum[] capacities;
-
-	/**
 	 * Length of the interval
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long interval;
+
+	/**
+	 * Capacities of the Pricing, describes what the Pricing can be used for
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhGenericProductPricingCapacitiesEnum[] capacities;
 
 	/**
 	 * Pricing strategy

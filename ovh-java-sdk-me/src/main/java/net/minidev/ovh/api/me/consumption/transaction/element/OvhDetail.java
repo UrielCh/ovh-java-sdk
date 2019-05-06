@@ -7,18 +7,18 @@ import net.minidev.ovh.api.me.consumption.OvhPrice;
  */
 public class OvhDetail {
 	/**
-	 * Unique ID associated to one service element
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String unique_id;
-
-	/**
 	 * Consumption quantity
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long quantity;
+
+	/**
+	 * Unique ID associated to one service element
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String unique_id;
 
 	/**
 	 * Consumption amount price

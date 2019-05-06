@@ -21,18 +21,18 @@ public class OvhTemplates {
 	public OvhBitFormatEnum bitFormat;
 
 	/**
-	 * This distribution supports the GUID Partition Table (GPT), providing up to 128 partitions that can have more than 2 TB
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean supportsGptLabel;
-
-	/**
 	 * Customizable template properties
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhTemplateOsProperties customization;
+
+	/**
+	 * This distribution supports the GUID Partition Table (GPT), providing up to 128 partitions that can have more than 2 TB
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean supportsGptLabel;
 
 	/**
 	 * list of all language available for this template
@@ -119,18 +119,18 @@ public class OvhTemplates {
 	public String templateName;
 
 	/**
-	 * This distribution supports installation using the distribution's native kernel instead of the recommended OVH kernel
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean supportsDistributionKernel;
-
-	/**
 	 * Date of last modification of the base image
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date lastModification;
+
+	/**
+	 * This distribution supports installation using the distribution's native kernel instead of the recommended OVH kernel
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean supportsDistributionKernel;
 
 	/**
 	 * this template family type

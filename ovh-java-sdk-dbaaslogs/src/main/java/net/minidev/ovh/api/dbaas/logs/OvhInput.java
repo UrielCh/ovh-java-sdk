@@ -14,18 +14,18 @@ public class OvhInput {
 	public String inputId;
 
 	/**
-	 * Associated Graylog stream
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String streamId;
-
-	/**
 	 * Indicate if input need to be restarted
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean isRestartRequired;
+
+	/**
+	 * Associated Graylog stream
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String streamId;
 
 	/**
 	 * Port

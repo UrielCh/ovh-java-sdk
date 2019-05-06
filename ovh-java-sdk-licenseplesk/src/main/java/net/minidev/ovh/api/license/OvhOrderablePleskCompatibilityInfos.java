@@ -12,12 +12,12 @@ public class OvhOrderablePleskCompatibilityInfos {
 	/**
 	 * canBeNull
 	 */
-	public OvhPleskApplicationSetEnum[] compliantApplicationSets;
+	public Boolean canHaveResellerManagement;
 
 	/**
 	 * canBeNull
 	 */
-	public Boolean canHaveResellerManagement;
+	public OvhPleskApplicationSetEnum[] compliantApplicationSets;
 
 	/**
 	 * canBeNull

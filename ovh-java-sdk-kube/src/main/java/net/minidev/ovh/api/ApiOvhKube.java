@@ -28,28 +28,27 @@ public class ApiOvhKube extends ApiOvhBase {
 	}
 
 	/**
-	 * Confirm termination of your service
+	 * Launch a contact change procedure
 	 *
-	 * REST: POST /kube/{serviceName}/confirmTermination
-	 * @param futureUse What next after your termination request
-	 * @param reason Reason of your termination request
-	 * @param commentary Commentary about your termination request
-	 * @param token [required] The termination token sent by mail to the admin contact
+	 * REST: POST /kube/{serviceName}/changeContact
+	 * @param contactAdmin [required] The contact to set as admin contact
+	 * @param contactTech [required] The contact to set as tech contact
+	 * @param contactBilling [required] The contact to set as billing contact
 	 * @param serviceName [required] Your managed Kubernetes cluster ID
 	 *
 	 * API beta
 	 */
-	public String serviceName_confirmTermination_POST(String serviceName, String commentary, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String token) throws IOException {
-		String qPath = "/kube/{serviceName}/confirmTermination";
+	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactBilling, String contactTech) throws IOException {
+		String qPath = "/kube/{serviceName}/changeContact";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "commentary", commentary);
-		addBody(o, "futureUse", futureUse);
-		addBody(o, "reason", reason);
-		addBody(o, "token", token);
+		addBody(o, "contactAdmin", contactAdmin);
+		addBody(o, "contactBilling", contactBilling);
+		addBody(o, "contactTech", contactTech);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, String.class);
+		return convertTo(resp, t1);
 	}
+	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
 
 	/**
 	 * Reset cluster: all Kubernetes data will be erased (pods, services, configuration, etc), nodes will be either deleted or reinstalled
@@ -68,21 +67,6 @@ public class ApiOvhKube extends ApiOvhBase {
 		addBody(o, "version", version);
 		addBody(o, "workerNodesPolicy", workerNodesPolicy);
 		exec(qPath, "POST", sb.toString(), o);
-	}
-
-	/**
-	 * Get kubeconfig file
-	 *
-	 * REST: GET /kube/{serviceName}/kubeconfig
-	 * @param serviceName [required] Cluster ID
-	 *
-	 * API beta
-	 */
-	public OvhKubeconfig serviceName_config_GET(String serviceName) throws IOException {
-		String qPath = "/kube/{serviceName}/kubeconfig";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhKubeconfig.class);
 	}
 
 	/**
@@ -148,27 +132,67 @@ public class ApiOvhKube extends ApiOvhBase {
 	}
 
 	/**
-	 * Launch a contact change procedure
+	 * Terminate your service
 	 *
-	 * REST: POST /kube/{serviceName}/changeContact
-	 * @param contactAdmin The contact to set as admin contact
-	 * @param contactTech The contact to set as tech contact
-	 * @param contactBilling The contact to set as billing contact
+	 * REST: POST /kube/{serviceName}/terminate
 	 * @param serviceName [required] Your managed Kubernetes cluster ID
 	 *
 	 * API beta
 	 */
-	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactBilling, String contactTech) throws IOException {
-		String qPath = "/kube/{serviceName}/changeContact";
+	public String serviceName_terminate_POST(String serviceName) throws IOException {
+		String qPath = "/kube/{serviceName}/terminate";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Change the update policy of your cluster
+	 *
+	 * REST: PUT /kube/{serviceName}/updatePolicy
+	 * @param serviceName [required] Cluster ID
+	 * @param updatePolicy [required] Update policy
+	 *
+	 * API beta
+	 */
+	public void serviceName_updatePolicy_PUT(String serviceName, OvhUpdatePolicy updatePolicy) throws IOException {
+		String qPath = "/kube/{serviceName}/updatePolicy";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "contactAdmin", contactAdmin);
-		addBody(o, "contactBilling", contactBilling);
-		addBody(o, "contactTech", contactTech);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t1);
+		addBody(o, "updatePolicy", updatePolicy);
+		exec(qPath, "PUT", sb.toString(), o);
 	}
-	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
+
+	/**
+	 * Get kubeconfig file
+	 *
+	 * REST: GET /kube/{serviceName}/kubeconfig
+	 * @param serviceName [required] Cluster ID
+	 *
+	 * API beta
+	 */
+	public OvhKubeconfig serviceName_config_GET(String serviceName) throws IOException {
+		String qPath = "/kube/{serviceName}/kubeconfig";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhKubeconfig.class);
+	}
+
+	/**
+	 * List your Public Cloud projects linked to your cluster
+	 *
+	 * REST: GET /kube/{serviceName}/publiccloud/project
+	 * @param serviceName [required] Cluster ID
+	 *
+	 * API beta
+	 */
+	public ArrayList<OvhPublicCloudProject> serviceName_publiccloud_project_GET(String serviceName) throws IOException {
+		String qPath = "/kube/{serviceName}/publiccloud/project";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+	private static TypeReference<ArrayList<OvhPublicCloudProject>> t2 = new TypeReference<ArrayList<OvhPublicCloudProject>>() {};
 
 	/**
 	 * List your nodes on Public Cloud
@@ -182,9 +206,9 @@ public class ApiOvhKube extends ApiOvhBase {
 		String qPath = "/kube/{serviceName}/publiccloud/node";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
+		return convertTo(resp, t3);
 	}
-	private static TypeReference<ArrayList<OvhNode>> t2 = new TypeReference<ArrayList<OvhNode>>() {};
+	private static TypeReference<ArrayList<OvhNode>> t3 = new TypeReference<ArrayList<OvhNode>>() {};
 
 	/**
 	 * Deploy a node for your cluster on Public Cloud
@@ -238,22 +262,6 @@ public class ApiOvhKube extends ApiOvhBase {
 	}
 
 	/**
-	 * List your Public Cloud projects linked to your cluster
-	 *
-	 * REST: GET /kube/{serviceName}/publiccloud/project
-	 * @param serviceName [required] Cluster ID
-	 *
-	 * API beta
-	 */
-	public ArrayList<OvhPublicCloudProject> serviceName_publiccloud_project_GET(String serviceName) throws IOException {
-		String qPath = "/kube/{serviceName}/publiccloud/project";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
-	}
-	private static TypeReference<ArrayList<OvhPublicCloudProject>> t3 = new TypeReference<ArrayList<OvhPublicCloudProject>>() {};
-
-	/**
 	 * Update cluster to the latest patch version
 	 *
 	 * REST: POST /kube/{serviceName}/update
@@ -268,35 +276,27 @@ public class ApiOvhKube extends ApiOvhBase {
 	}
 
 	/**
-	 * Terminate your service
+	 * Confirm termination of your service
 	 *
-	 * REST: POST /kube/{serviceName}/terminate
+	 * REST: POST /kube/{serviceName}/confirmTermination
+	 * @param futureUse [required] What next after your termination request
+	 * @param reason [required] Reason of your termination request
+	 * @param commentary [required] Commentary about your termination request
+	 * @param token [required] The termination token sent by mail to the admin contact
 	 * @param serviceName [required] Your managed Kubernetes cluster ID
 	 *
 	 * API beta
 	 */
-	public String serviceName_terminate_POST(String serviceName) throws IOException {
-		String qPath = "/kube/{serviceName}/terminate";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * Change the update policy of your cluster
-	 *
-	 * REST: PUT /kube/{serviceName}/updatePolicy
-	 * @param serviceName [required] Cluster ID
-	 * @param updatePolicy [required] Update policy
-	 *
-	 * API beta
-	 */
-	public void serviceName_updatePolicy_PUT(String serviceName, OvhUpdatePolicy updatePolicy) throws IOException {
-		String qPath = "/kube/{serviceName}/updatePolicy";
+	public String serviceName_confirmTermination_POST(String serviceName, String commentary, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String token) throws IOException {
+		String qPath = "/kube/{serviceName}/confirmTermination";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "updatePolicy", updatePolicy);
-		exec(qPath, "PUT", sb.toString(), o);
+		addBody(o, "commentary", commentary);
+		addBody(o, "futureUse", futureUse);
+		addBody(o, "reason", reason);
+		addBody(o, "token", token);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, String.class);
 	}
 
 	/**

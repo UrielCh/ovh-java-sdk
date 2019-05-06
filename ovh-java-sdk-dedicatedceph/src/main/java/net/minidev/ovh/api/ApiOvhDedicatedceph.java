@@ -39,6 +39,126 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 	private static TypeReference<ArrayList<String>> t1 = new TypeReference<ArrayList<String>>() {};
 
 	/**
+	 * Terminate your service
+	 *
+	 * REST: POST /dedicated/ceph/{serviceName}/terminate
+	 * @param serviceName [required] The internal ID of your ceph cluster
+	 *
+	 * API beta
+	 */
+	public String serviceName_terminate_POST(String serviceName) throws IOException {
+		String qPath = "/dedicated/ceph/{serviceName}/terminate";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Get cluster health
+	 *
+	 * REST: GET /dedicated/ceph/{serviceName}/health
+	 * @param serviceName [required] ID of cluster
+	 *
+	 * API beta
+	 */
+	public OvhResponse serviceName_health_GET(String serviceName) throws IOException {
+		String qPath = "/dedicated/ceph/{serviceName}/health";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhResponse.class);
+	}
+
+	/**
+	 * Delete a single ceph pool
+	 *
+	 * REST: DELETE /dedicated/ceph/{serviceName}/pool/{poolName}
+	 * @param serviceName [required] ID of cluster
+	 * @param poolName [required] name of ceph pool
+	 *
+	 * API beta
+	 */
+	public String serviceName_pool_poolName_DELETE(String serviceName, String poolName) throws IOException {
+		String qPath = "/dedicated/ceph/{serviceName}/pool/{poolName}";
+		StringBuilder sb = path(qPath, serviceName, poolName);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Get details about an existing ceph pool
+	 *
+	 * REST: GET /dedicated/ceph/{serviceName}/pool/{poolName}
+	 * @param serviceName [required] ID of cluster
+	 * @param poolName [required] name of pool
+	 *
+	 * API beta
+	 */
+	public OvhResponse serviceName_pool_poolName_GET(String serviceName, String poolName) throws IOException {
+		String qPath = "/dedicated/ceph/{serviceName}/pool/{poolName}";
+		StringBuilder sb = path(qPath, serviceName, poolName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhResponse.class);
+	}
+
+	/**
+	 * Create a new ceph pool
+	 *
+	 * REST: POST /dedicated/ceph/{serviceName}/pool
+	 * @param serviceName [required] ID of cluster
+	 * @param poolName [required] Name of new pool
+	 *
+	 * API beta
+	 */
+	public String serviceName_pool_POST(String serviceName, String poolName) throws IOException {
+		String qPath = "/dedicated/ceph/{serviceName}/pool";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "poolName", poolName);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Get list of all pools in a cluster
+	 *
+	 * REST: GET /dedicated/ceph/{serviceName}/pool
+	 * @param serviceName [required] ID of cluster
+	 *
+	 * API beta
+	 */
+	public ArrayList<OvhResponse> serviceName_pool_GET(String serviceName) throws IOException {
+		String qPath = "/dedicated/ceph/{serviceName}/pool";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+	private static TypeReference<ArrayList<OvhResponse>> t2 = new TypeReference<ArrayList<OvhResponse>>() {};
+
+	/**
+	 * Confirm termination of your service
+	 *
+	 * REST: POST /dedicated/ceph/{serviceName}/confirmTermination
+	 * @param futureUse [required] What next after your termination request
+	 * @param reason [required] Reason of your termination request
+	 * @param commentary [required] Commentary about your termination request
+	 * @param token [required] The termination token sent by mail to the admin contact
+	 * @param serviceName [required] The internal ID of your ceph cluster
+	 *
+	 * API beta
+	 */
+	public String serviceName_confirmTermination_POST(String serviceName, String commentary, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String token) throws IOException {
+		String qPath = "/dedicated/ceph/{serviceName}/confirmTermination";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "commentary", commentary);
+		addBody(o, "futureUse", futureUse);
+		addBody(o, "reason", reason);
+		addBody(o, "token", token);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, String.class);
+	}
+
+	/**
 	 * Get cluster details
 	 *
 	 * REST: GET /dedicated/ceph/{serviceName}
@@ -74,125 +194,6 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 	}
 
 	/**
-	 * Launch a contact change procedure
-	 *
-	 * REST: POST /dedicated/ceph/{serviceName}/changeContact
-	 * @param contactAdmin The contact to set as admin contact
-	 * @param contactTech The contact to set as tech contact
-	 * @param contactBilling The contact to set as billing contact
-	 * @param serviceName [required] The internal ID of your ceph cluster
-	 *
-	 * API beta
-	 */
-	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactBilling, String contactTech) throws IOException {
-		String qPath = "/dedicated/ceph/{serviceName}/changeContact";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "contactAdmin", contactAdmin);
-		addBody(o, "contactBilling", contactBilling);
-		addBody(o, "contactTech", contactTech);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t2);
-	}
-	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
-
-	/**
-	 * Create a new ceph pool
-	 *
-	 * REST: POST /dedicated/ceph/{serviceName}/pool
-	 * @param serviceName [required] ID of cluster
-	 * @param poolName [required] Name of new pool
-	 *
-	 * API beta
-	 */
-	public String serviceName_pool_POST(String serviceName, String poolName) throws IOException {
-		String qPath = "/dedicated/ceph/{serviceName}/pool";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "poolName", poolName);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * Get list of all pools in a cluster
-	 *
-	 * REST: GET /dedicated/ceph/{serviceName}/pool
-	 * @param serviceName [required] ID of cluster
-	 *
-	 * API beta
-	 */
-	public ArrayList<OvhResponse> serviceName_pool_GET(String serviceName) throws IOException {
-		String qPath = "/dedicated/ceph/{serviceName}/pool";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
-	}
-	private static TypeReference<ArrayList<OvhResponse>> t3 = new TypeReference<ArrayList<OvhResponse>>() {};
-
-	/**
-	 * Delete a single ceph pool
-	 *
-	 * REST: DELETE /dedicated/ceph/{serviceName}/pool/{poolName}
-	 * @param serviceName [required] ID of cluster
-	 * @param poolName [required] name of ceph pool
-	 *
-	 * API beta
-	 */
-	public String serviceName_pool_poolName_DELETE(String serviceName, String poolName) throws IOException {
-		String qPath = "/dedicated/ceph/{serviceName}/pool/{poolName}";
-		StringBuilder sb = path(qPath, serviceName, poolName);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * Get details about an existing ceph pool
-	 *
-	 * REST: GET /dedicated/ceph/{serviceName}/pool/{poolName}
-	 * @param serviceName [required] ID of cluster
-	 * @param poolName [required] name of pool
-	 *
-	 * API beta
-	 */
-	public OvhResponse serviceName_pool_poolName_GET(String serviceName, String poolName) throws IOException {
-		String qPath = "/dedicated/ceph/{serviceName}/pool/{poolName}";
-		StringBuilder sb = path(qPath, serviceName, poolName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhResponse.class);
-	}
-
-	/**
-	 * Terminate your service
-	 *
-	 * REST: POST /dedicated/ceph/{serviceName}/terminate
-	 * @param serviceName [required] The internal ID of your ceph cluster
-	 *
-	 * API beta
-	 */
-	public String serviceName_terminate_POST(String serviceName) throws IOException {
-		String qPath = "/dedicated/ceph/{serviceName}/terminate";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * Get cluster health
-	 *
-	 * REST: GET /dedicated/ceph/{serviceName}/health
-	 * @param serviceName [required] ID of cluster
-	 *
-	 * API beta
-	 */
-	public OvhResponse serviceName_health_GET(String serviceName) throws IOException {
-		String qPath = "/dedicated/ceph/{serviceName}/health";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhResponse.class);
-	}
-
-	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /dedicated/ceph/{serviceName}/serviceInfos
@@ -223,34 +224,68 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 	}
 
 	/**
-	 * List tasks in progress
+	 * Create a new ceph user
 	 *
-	 * REST: GET /dedicated/ceph/{serviceName}/task
+	 * REST: POST /dedicated/ceph/{serviceName}/user
 	 * @param serviceName [required] ID of cluster
+	 * @param userName [required] Name of new user
 	 *
 	 * API beta
 	 */
-	public ArrayList<OvhResponse> serviceName_task_GET(String serviceName) throws IOException {
-		String qPath = "/dedicated/ceph/{serviceName}/task";
+	public String serviceName_user_POST(String serviceName, String userName) throws IOException {
+		String qPath = "/dedicated/ceph/{serviceName}/user";
 		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "userName", userName);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, String.class);
 	}
 
 	/**
-	 * Get task details
+	 * Get list of all users in a cluster
 	 *
-	 * REST: GET /dedicated/ceph/{serviceName}/task/{taskId}
+	 * REST: GET /dedicated/ceph/{serviceName}/user
 	 * @param serviceName [required] ID of cluster
-	 * @param taskId [required] ID of task
 	 *
 	 * API beta
 	 */
-	public ArrayList<OvhResponse> serviceName_task_taskId_GET(String serviceName, String taskId) throws IOException {
-		String qPath = "/dedicated/ceph/{serviceName}/task/{taskId}";
-		StringBuilder sb = path(qPath, serviceName, taskId);
+	public ArrayList<OvhResponse> serviceName_user_GET(String serviceName) throws IOException {
+		String qPath = "/dedicated/ceph/{serviceName}/user";
+		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * Delete an existing single ceph user
+	 *
+	 * REST: DELETE /dedicated/ceph/{serviceName}/user/{userName}
+	 * @param userName [required] Name of ceph user
+	 * @param serviceName [required] ID of cluster
+	 *
+	 * API beta
+	 */
+	public String serviceName_user_userName_DELETE(String serviceName, String userName) throws IOException {
+		String qPath = "/dedicated/ceph/{serviceName}/user/{userName}";
+		StringBuilder sb = path(qPath, serviceName, userName);
+		String resp = exec(qPath, "DELETE", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Get details about a ceph user
+	 *
+	 * REST: GET /dedicated/ceph/{serviceName}/user/{userName}
+	 * @param userName [required] Name of ceph user
+	 * @param serviceName [required] ID of cluster
+	 *
+	 * API beta
+	 */
+	public OvhResponse serviceName_user_userName_GET(String serviceName, String userName) throws IOException {
+		String qPath = "/dedicated/ceph/{serviceName}/user/{userName}";
+		StringBuilder sb = path(qPath, serviceName, userName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, OvhResponse.class);
 	}
 
 	/**
@@ -283,7 +318,7 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 		String qPath = "/dedicated/ceph/{serviceName}/user/{userName}/pool";
 		StringBuilder sb = path(qPath, serviceName, userName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
+		return convertTo(resp, t2);
 	}
 
 	/**
@@ -335,92 +370,57 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 	}
 
 	/**
-	 * Delete an existing single ceph user
+	 * Launch a contact change procedure
 	 *
-	 * REST: DELETE /dedicated/ceph/{serviceName}/user/{userName}
-	 * @param userName [required] Name of ceph user
-	 * @param serviceName [required] ID of cluster
-	 *
-	 * API beta
-	 */
-	public String serviceName_user_userName_DELETE(String serviceName, String userName) throws IOException {
-		String qPath = "/dedicated/ceph/{serviceName}/user/{userName}";
-		StringBuilder sb = path(qPath, serviceName, userName);
-		String resp = exec(qPath, "DELETE", sb.toString(), null);
-		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * Get details about a ceph user
-	 *
-	 * REST: GET /dedicated/ceph/{serviceName}/user/{userName}
-	 * @param userName [required] Name of ceph user
-	 * @param serviceName [required] ID of cluster
-	 *
-	 * API beta
-	 */
-	public OvhResponse serviceName_user_userName_GET(String serviceName, String userName) throws IOException {
-		String qPath = "/dedicated/ceph/{serviceName}/user/{userName}";
-		StringBuilder sb = path(qPath, serviceName, userName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhResponse.class);
-	}
-
-	/**
-	 * Create a new ceph user
-	 *
-	 * REST: POST /dedicated/ceph/{serviceName}/user
-	 * @param serviceName [required] ID of cluster
-	 * @param userName [required] Name of new user
-	 *
-	 * API beta
-	 */
-	public String serviceName_user_POST(String serviceName, String userName) throws IOException {
-		String qPath = "/dedicated/ceph/{serviceName}/user";
-		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "userName", userName);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, String.class);
-	}
-
-	/**
-	 * Get list of all users in a cluster
-	 *
-	 * REST: GET /dedicated/ceph/{serviceName}/user
-	 * @param serviceName [required] ID of cluster
-	 *
-	 * API beta
-	 */
-	public ArrayList<OvhResponse> serviceName_user_GET(String serviceName) throws IOException {
-		String qPath = "/dedicated/ceph/{serviceName}/user";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
-	}
-
-	/**
-	 * Confirm termination of your service
-	 *
-	 * REST: POST /dedicated/ceph/{serviceName}/confirmTermination
-	 * @param futureUse What next after your termination request
-	 * @param reason Reason of your termination request
-	 * @param commentary Commentary about your termination request
-	 * @param token [required] The termination token sent by mail to the admin contact
+	 * REST: POST /dedicated/ceph/{serviceName}/changeContact
+	 * @param contactAdmin [required] The contact to set as admin contact
+	 * @param contactTech [required] The contact to set as tech contact
+	 * @param contactBilling [required] The contact to set as billing contact
 	 * @param serviceName [required] The internal ID of your ceph cluster
 	 *
 	 * API beta
 	 */
-	public String serviceName_confirmTermination_POST(String serviceName, String commentary, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String token) throws IOException {
-		String qPath = "/dedicated/ceph/{serviceName}/confirmTermination";
+	public ArrayList<Long> serviceName_changeContact_POST(String serviceName, String contactAdmin, String contactBilling, String contactTech) throws IOException {
+		String qPath = "/dedicated/ceph/{serviceName}/changeContact";
 		StringBuilder sb = path(qPath, serviceName);
 		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "commentary", commentary);
-		addBody(o, "futureUse", futureUse);
-		addBody(o, "reason", reason);
-		addBody(o, "token", token);
+		addBody(o, "contactAdmin", contactAdmin);
+		addBody(o, "contactBilling", contactBilling);
+		addBody(o, "contactTech", contactTech);
 		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, String.class);
+		return convertTo(resp, t3);
+	}
+	private static TypeReference<ArrayList<Long>> t3 = new TypeReference<ArrayList<Long>>() {};
+
+	/**
+	 * Get task details
+	 *
+	 * REST: GET /dedicated/ceph/{serviceName}/task/{taskId}
+	 * @param serviceName [required] ID of cluster
+	 * @param taskId [required] ID of task
+	 *
+	 * API beta
+	 */
+	public ArrayList<OvhResponse> serviceName_task_taskId_GET(String serviceName, String taskId) throws IOException {
+		String qPath = "/dedicated/ceph/{serviceName}/task/{taskId}";
+		StringBuilder sb = path(qPath, serviceName, taskId);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+
+	/**
+	 * List tasks in progress
+	 *
+	 * REST: GET /dedicated/ceph/{serviceName}/task
+	 * @param serviceName [required] ID of cluster
+	 *
+	 * API beta
+	 */
+	public ArrayList<OvhResponse> serviceName_task_GET(String serviceName) throws IOException {
+		String qPath = "/dedicated/ceph/{serviceName}/task";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
 	}
 
 	/**
@@ -485,6 +485,6 @@ public class ApiOvhDedicatedceph extends ApiOvhBase {
 		String qPath = "/dedicated/ceph/{serviceName}/acl";
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
+		return convertTo(resp, t2);
 	}
 }

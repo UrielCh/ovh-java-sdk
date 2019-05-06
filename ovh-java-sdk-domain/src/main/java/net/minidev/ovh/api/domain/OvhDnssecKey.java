@@ -23,13 +23,6 @@ public class OvhDnssecKey {
 	public Long id;
 
 	/**
-	 * Tag of the DNSSEC key
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long tag;
-
-	/**
 	 * Public key
 	 *
 	 * canBeNull && readOnly
@@ -37,11 +30,11 @@ public class OvhDnssecKey {
 	public String publicKey;
 
 	/**
-	 * Key status of the DNSSEC key
+	 * Tag of the DNSSEC key
 	 *
 	 * canBeNull && readOnly
 	 */
-	public OvhKeyStatusEnum status;
+	public Long tag;
 
 	/**
 	 * Algorithm number of the DNSSEC key
@@ -49,4 +42,11 @@ public class OvhDnssecKey {
 	 * canBeNull && readOnly
 	 */
 	public OvhKeyAlgorithmEnum algorithm;
+
+	/**
+	 * Key status of the DNSSEC key
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhKeyStatusEnum status;
 }

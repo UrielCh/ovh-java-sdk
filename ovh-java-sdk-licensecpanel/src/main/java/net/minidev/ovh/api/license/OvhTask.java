@@ -21,18 +21,18 @@ public class OvhTask {
 	public String name;
 
 	/**
-	 * When was this Task created
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date todoDate;
-
-	/**
 	 * This Task description
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhActionType action;
+
+	/**
+	 * When was this Task created
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date todoDate;
 
 	/**
 	 * When was this Task done

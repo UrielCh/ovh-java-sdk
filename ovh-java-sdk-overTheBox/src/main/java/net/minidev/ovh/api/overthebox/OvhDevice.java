@@ -28,18 +28,18 @@ public class OvhDevice {
 	public String publicIp;
 
 	/**
-	 * Version of the device
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String version;
-
-	/**
 	 * System version of the device
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String systemVersion;
+
+	/**
+	 * Version of the device
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String version;
 
 	/**
 	 * The id of the device

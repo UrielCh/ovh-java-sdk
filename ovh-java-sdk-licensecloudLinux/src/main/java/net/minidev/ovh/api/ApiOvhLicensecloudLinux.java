@@ -26,52 +26,15 @@ public class ApiOvhLicensecloudLinux extends ApiOvhBase {
 	}
 
 	/**
-	 * Get the orderable CloudLinux versions
+	 * Terminate your service
 	 *
-	 * REST: GET /license/cloudLinux/orderableVersions
-	 * @param ip [required] Your license Ip
-	 */
-	public ArrayList<OvhCloudLinuxOrderConfiguration> orderableVersions_GET(String ip) throws IOException {
-		String qPath = "/license/cloudLinux/orderableVersions";
-		StringBuilder sb = path(qPath);
-		query(sb, "ip", ip);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t1);
-	}
-	private static TypeReference<ArrayList<OvhCloudLinuxOrderConfiguration>> t1 = new TypeReference<ArrayList<OvhCloudLinuxOrderConfiguration>>() {};
-
-	/**
-	 * List available services
-	 *
-	 * REST: GET /license/cloudLinux
-	 */
-	public ArrayList<String> GET() throws IOException {
-		String qPath = "/license/cloudLinux";
-		StringBuilder sb = path(qPath);
-		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};
-
-	/**
-	 * Confirm termination of your service
-	 *
-	 * REST: POST /license/cloudLinux/{serviceName}/confirmTermination
-	 * @param futureUse What next after your termination request
-	 * @param reason Reason of your termination request
-	 * @param commentary Commentary about your termination request
-	 * @param token [required] The termination token sent by mail to the admin contact
+	 * REST: POST /license/cloudLinux/{serviceName}/terminate
 	 * @param serviceName [required] The name of your CloudLinux license
 	 */
-	public String serviceName_confirmTermination_POST(String serviceName, String commentary, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String token) throws IOException {
-		String qPath = "/license/cloudLinux/{serviceName}/confirmTermination";
+	public String serviceName_terminate_POST(String serviceName) throws IOException {
+		String qPath = "/license/cloudLinux/{serviceName}/terminate";
 		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "commentary", commentary);
-		addBody(o, "futureUse", futureUse);
-		addBody(o, "reason", reason);
-		addBody(o, "token", token);
-		String resp = exec(qPath, "POST", sb.toString(), o);
+		String resp = exec(qPath, "POST", sb.toString(), null);
 		return convertTo(resp, String.class);
 	}
 
@@ -89,9 +52,9 @@ public class ApiOvhLicensecloudLinux extends ApiOvhBase {
 		query(sb, "action", action);
 		query(sb, "status", status);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t3);
+		return convertTo(resp, t1);
 	}
-	private static TypeReference<ArrayList<Long>> t3 = new TypeReference<ArrayList<Long>>() {};
+	private static TypeReference<ArrayList<Long>> t1 = new TypeReference<ArrayList<Long>>() {};
 
 	/**
 	 * Get this object properties
@@ -108,6 +71,28 @@ public class ApiOvhLicensecloudLinux extends ApiOvhBase {
 	}
 
 	/**
+	 * Confirm termination of your service
+	 *
+	 * REST: POST /license/cloudLinux/{serviceName}/confirmTermination
+	 * @param futureUse [required] What next after your termination request
+	 * @param reason [required] Reason of your termination request
+	 * @param commentary [required] Commentary about your termination request
+	 * @param token [required] The termination token sent by mail to the admin contact
+	 * @param serviceName [required] The name of your CloudLinux license
+	 */
+	public String serviceName_confirmTermination_POST(String serviceName, String commentary, OvhTerminationFutureUseEnum futureUse, OvhTerminationReasonEnum reason, String token) throws IOException {
+		String qPath = "/license/cloudLinux/{serviceName}/confirmTermination";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "commentary", commentary);
+		addBody(o, "futureUse", futureUse);
+		addBody(o, "reason", reason);
+		addBody(o, "token", token);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, String.class);
+	}
+
+	/**
 	 * Get this object properties
 	 *
 	 * REST: GET /license/cloudLinux/{serviceName}
@@ -118,19 +103,6 @@ public class ApiOvhLicensecloudLinux extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		String resp = exec(qPath, "GET", sb.toString(), null);
 		return convertTo(resp, OvhCloudLinux.class);
-	}
-
-	/**
-	 * Terminate your service
-	 *
-	 * REST: POST /license/cloudLinux/{serviceName}/terminate
-	 * @param serviceName [required] The name of your CloudLinux license
-	 */
-	public String serviceName_terminate_POST(String serviceName) throws IOException {
-		String qPath = "/license/cloudLinux/{serviceName}/terminate";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, String.class);
 	}
 
 	/**
@@ -158,4 +130,32 @@ public class ApiOvhLicensecloudLinux extends ApiOvhBase {
 		StringBuilder sb = path(qPath, serviceName);
 		exec(qPath, "PUT", sb.toString(), body);
 	}
+
+	/**
+	 * List available services
+	 *
+	 * REST: GET /license/cloudLinux
+	 */
+	public ArrayList<String> GET() throws IOException {
+		String qPath = "/license/cloudLinux";
+		StringBuilder sb = path(qPath);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t2);
+	}
+	private static TypeReference<ArrayList<String>> t2 = new TypeReference<ArrayList<String>>() {};
+
+	/**
+	 * Get the orderable CloudLinux versions
+	 *
+	 * REST: GET /license/cloudLinux/orderableVersions
+	 * @param ip [required] Your license Ip
+	 */
+	public ArrayList<OvhCloudLinuxOrderConfiguration> orderableVersions_GET(String ip) throws IOException {
+		String qPath = "/license/cloudLinux/orderableVersions";
+		StringBuilder sb = path(qPath);
+		query(sb, "ip", ip);
+		String resp = exec(qPath, "GET", sb.toString(), null);
+		return convertTo(resp, t3);
+	}
+	private static TypeReference<ArrayList<OvhCloudLinuxOrderConfiguration>> t3 = new TypeReference<ArrayList<OvhCloudLinuxOrderConfiguration>>() {};
 }

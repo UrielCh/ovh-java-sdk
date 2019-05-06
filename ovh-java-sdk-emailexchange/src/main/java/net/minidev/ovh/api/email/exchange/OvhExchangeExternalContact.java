@@ -7,18 +7,18 @@ import java.util.Date;
  */
 public class OvhExchangeExternalContact {
 	/**
-	 * Contact last name
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String lastName;
-
-	/**
 	 * Contact first name
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String firstName;
+
+	/**
+	 * Contact last name
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String lastName;
 
 	/**
 	 * Hide the contact in Global Address List
@@ -49,13 +49,6 @@ public class OvhExchangeExternalContact {
 	public String externalEmailAddress;
 
 	/**
-	 * Contact id
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long id;
-
-	/**
 	 * Contact state
 	 *
 	 * canBeNull && readOnly
@@ -63,11 +56,11 @@ public class OvhExchangeExternalContact {
 	public OvhObjectStateEnum state;
 
 	/**
-	 * If specified, indicates to which organization this external contact belongs (Exchange 2010 only)
+	 * Contact id
 	 *
 	 * canBeNull && readOnly
 	 */
-	public String organization2010;
+	public Long id;
 
 	/**
 	 * Creation date
@@ -75,6 +68,13 @@ public class OvhExchangeExternalContact {
 	 * canBeNull && readOnly
 	 */
 	public Date creationDate;
+
+	/**
+	 * If specified, indicates to which organization this external contact belongs (Exchange 2010 only)
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String organization2010;
 
 	/**
 	 * Task pending id

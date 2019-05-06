@@ -19,16 +19,16 @@ public class OvhLocalSiteDetails {
 	public String zvmIp;
 
 	/**
-	 * Type of hosting for the local datacenter
-	 *
-	 * canBeNull
-	 */
-	public OvhSiteTypeEnum type;
-
-	/**
 	 * Installed version of Zerto
 	 *
 	 * canBeNull
 	 */
 	public String zertoVersion;
+
+	/**
+	 * Type of hosting for the local datacenter
+	 *
+	 * canBeNull
+	 */
+	public OvhSiteTypeEnum type;
 }

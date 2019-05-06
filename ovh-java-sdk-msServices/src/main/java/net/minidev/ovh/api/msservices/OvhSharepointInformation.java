@@ -54,18 +54,18 @@ public class OvhSharepointInformation {
 	public Boolean officeLicense;
 
 	/**
-	 * Sharepoint account state
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhObjectStateEnum state;
-
-	/**
 	 * Sharepoint account id
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long id;
+
+	/**
+	 * Sharepoint account state
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhObjectStateEnum state;
 
 	/**
 	 * The rights assigned to the sharepoint account

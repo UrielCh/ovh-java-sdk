@@ -63,18 +63,18 @@ public class OvhPublicFolder {
 	public String path;
 
 	/**
-	 * Quota for public folder in MB
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long quota;
-
-	/**
 	 * Access right for the guest users
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhPublicFolderRightTypeEnum anonymousPermission;
+
+	/**
+	 * Quota for public folder in MB
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long quota;
 
 	/**
 	 * Time for which public folder was modified for the last time by the user

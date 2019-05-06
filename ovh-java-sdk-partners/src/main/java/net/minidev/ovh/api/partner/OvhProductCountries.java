@@ -26,6 +26,13 @@ public class OvhProductCountries {
 	public Boolean brazil;
 
 	/**
+	 * Poland
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean poland;
+
+	/**
 	 * Portugal
 	 *
 	 * canBeNull && readOnly
@@ -38,13 +45,6 @@ public class OvhProductCountries {
 	 * canBeNull && readOnly
 	 */
 	public Boolean germany;
-
-	/**
-	 * Poland
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean poland;
 
 	/**
 	 * Netherlands
@@ -61,18 +61,18 @@ public class OvhProductCountries {
 	public Boolean lithuania;
 
 	/**
-	 * Senegal
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean senegal;
-
-	/**
 	 * Australia
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean australia;
+
+	/**
+	 * Senegal
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean senegal;
 
 	/**
 	 * Singapore
@@ -89,18 +89,18 @@ public class OvhProductCountries {
 	public Boolean canada;
 
 	/**
-	 * Tunisia
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean tunisia;
-
-	/**
 	 * UK
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean uk;
+
+	/**
+	 * Tunisia
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean tunisia;
 
 	/**
 	 * France

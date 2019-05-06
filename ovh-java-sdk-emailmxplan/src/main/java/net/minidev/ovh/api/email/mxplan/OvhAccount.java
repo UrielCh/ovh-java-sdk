@@ -25,13 +25,6 @@ public class OvhAccount {
 	public Boolean spamDetected;
 
 	/**
-	 * Ticket number of spam detection
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long spamTicketNumber;
-
-	/**
 	 * Last update
 	 *
 	 * canBeNull && readOnly
@@ -53,6 +46,13 @@ public class OvhAccount {
 	public String displayName;
 
 	/**
+	 * Ticket number of spam detection
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long spamTicketNumber;
+
+	/**
 	 * Account login
 	 *
 	 * canBeNull && readOnly
@@ -60,18 +60,18 @@ public class OvhAccount {
 	public String login;
 
 	/**
-	 * Spam and Antivirus configuration
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhSpamAndVirusConfiguration spamAndVirusConfiguration;
-
-	/**
 	 * Default email for this mailbox
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String primaryEmailAddress;
+
+	/**
+	 * Spam and Antivirus configuration
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhSpamAndVirusConfiguration spamAndVirusConfiguration;
 
 	/**
 	 * Hide account in Global Address List

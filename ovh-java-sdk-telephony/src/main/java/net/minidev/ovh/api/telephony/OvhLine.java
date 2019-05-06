@@ -5,11 +5,6 @@ package net.minidev.ovh.api.telephony;
  */
 public class OvhLine {
 	/**
-	 * canBeNull && readOnly
-	 */
-	public OvhTypeServiceEnum serviceType;
-
-	/**
 	 * The line offers
 	 *
 	 * canBeNull && readOnly
@@ -22,6 +17,11 @@ public class OvhLine {
 	 * canBeNull && readOnly
 	 */
 	public String[] offers;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public OvhTypeServiceEnum serviceType;
 
 	/**
 	 * Ability to manage SIP password on this service

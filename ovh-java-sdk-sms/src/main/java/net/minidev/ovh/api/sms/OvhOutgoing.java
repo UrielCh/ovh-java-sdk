@@ -12,6 +12,13 @@ public class OvhOutgoing {
 	public String receiver;
 
 	/**
+	 * Tariff code applied on the sms
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String tariffCode;
+
+	/**
 	 * canBeNull && readOnly
 	 */
 	public Long messageLength;
@@ -20,13 +27,6 @@ public class OvhOutgoing {
 	 * canBeNull && readOnly
 	 */
 	public Long deliveryReceipt;
-
-	/**
-	 * Tariff code applied on the sms
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String tariffCode;
 
 	/**
 	 * canBeNull && readOnly
@@ -61,12 +61,12 @@ public class OvhOutgoing {
 	/**
 	 * canBeNull && readOnly
 	 */
-	public String tag;
+	public Long differedDelivery;
 
 	/**
 	 * canBeNull && readOnly
 	 */
-	public Long differedDelivery;
+	public String tag;
 
 	/**
 	 * canBeNull && readOnly

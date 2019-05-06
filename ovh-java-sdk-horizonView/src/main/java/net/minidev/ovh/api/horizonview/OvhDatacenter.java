@@ -19,18 +19,18 @@ public class OvhDatacenter {
 	public String customerIntercoIP;
 
 	/**
-	 * Name of the datacenter
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String name;
-
-	/**
 	 * Datacenter ids
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long datacenterId;
+
+	/**
+	 * Name of the datacenter
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String name;
 
 	/**
 	 * Private network of the admin infrastructure

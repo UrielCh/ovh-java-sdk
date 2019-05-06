@@ -28,13 +28,6 @@ public class OvhVm {
 	public String vmwareTools;
 
 	/**
-	 * Current CPU performance, in MHz.
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long cpuUsed;
-
-	/**
 	 * Id of the virtual machine.
 	 *
 	 * canBeNull && readOnly
@@ -42,11 +35,11 @@ public class OvhVm {
 	public Long vmId;
 
 	/**
-	 * Memory size of the virtual machine, in MB
+	 * Current CPU performance, in MHz.
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Long memoryMax;
+	public Long cpuUsed;
 
 	/**
 	 * Amount of time for a write operation from the virtual disk. In millisecond
@@ -56,6 +49,13 @@ public class OvhVm {
 	public Double writeLatency;
 
 	/**
+	 * Memory size of the virtual machine, in MB
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long memoryMax;
+
+	/**
 	 * List of the networks link to this virtual machine
 	 *
 	 * canBeNull && readOnly
@@ -63,18 +63,18 @@ public class OvhVm {
 	public OvhVmNetwork[] networks;
 
 	/**
-	 * Current memory utilization, in MB
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long memoryUsed;
-
-	/**
 	 * Maximum CPU performance, in MHz.
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Double cpuMax;
+
+	/**
+	 * Current memory utilization, in MB
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long memoryUsed;
 
 	/**
 	 * Percentage of time that the virtual machine was ready, but could not get scheduled to run on the physical CPU. In percent
@@ -161,13 +161,6 @@ public class OvhVm {
 	public String vmwareToolsVersion;
 
 	/**
-	 * Number of processors in the virtual machine.
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long cpuNum;
-
-	/**
 	 * Amount of time for a read operation from the virtual disk. In millisecond
 	 *
 	 * canBeNull && readOnly
@@ -175,18 +168,11 @@ public class OvhVm {
 	public Double readLatency;
 
 	/**
-	 * Rate of writing data from the virtual disk. In KB/s
+	 * Number of processors in the virtual machine.
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Double writeRate;
-
-	/**
-	 * Time that the virtual machine was ready, but could not get scheduled to run on the physical CPU. In millisecond
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Double cpuReady;
+	public Long cpuNum;
 
 	/**
 	 * The index of the current VM in instanceUuids array starting from 1, so 1 means that it is the primary VM.
@@ -196,11 +182,18 @@ public class OvhVm {
 	public String roleFt;
 
 	/**
-	 * Number of packets received.
+	 * Time that the virtual machine was ready, but could not get scheduled to run on the physical CPU. In millisecond
 	 *
 	 * canBeNull && readOnly
 	 */
-	public Double netPacketRx;
+	public Double cpuReady;
+
+	/**
+	 * Rate of writing data from the virtual disk. In KB/s
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Double writeRate;
 
 	/**
 	 * List of filers in use by the virtual machine.
@@ -208,6 +201,13 @@ public class OvhVm {
 	 * canBeNull && readOnly
 	 */
 	public OvhVmFiler[] filers;
+
+	/**
+	 * Number of packets received.
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Double netPacketRx;
 
 	/**
 	 * Number of packets transmitted.

@@ -12,18 +12,18 @@ public class OvhPartnerKnowledges {
 	public Boolean forum;
 
 	/**
-	 * Other (specify)
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String other;
-
-	/**
 	 * OVH website
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean website;
+
+	/**
+	 * Other (specify)
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String other;
 
 	/**
 	 * Search engine
@@ -33,18 +33,18 @@ public class OvhPartnerKnowledges {
 	public Boolean searchEngine;
 
 	/**
-	 * Social Networks
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Boolean socialNetwork;
-
-	/**
 	 * Media
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean media;
+
+	/**
+	 * Social Networks
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Boolean socialNetwork;
 
 	/**
 	 * Events

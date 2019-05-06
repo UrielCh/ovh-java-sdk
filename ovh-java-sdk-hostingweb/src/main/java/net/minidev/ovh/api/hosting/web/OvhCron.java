@@ -43,16 +43,16 @@ public class OvhCron {
 	public String email;
 
 	/**
-	 * Cron status
-	 *
-	 * canBeNull && readOnly
-	 */
-	public OvhStatusEnum status;
-
-	/**
 	 * Frequency ( crontab format ) defined for the script ( minutes are ignored )
 	 *
 	 * canBeNull && readOnly
 	 */
 	public String frequency;
+
+	/**
+	 * Cron status
+	 *
+	 * canBeNull && readOnly
+	 */
+	public OvhStatusEnum status;
 }

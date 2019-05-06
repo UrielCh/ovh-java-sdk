@@ -41,17 +41,17 @@ public class OvhBankAccount {
 	/**
 	 * canBeNull && readOnly
 	 */
+	public Long id;
+
+	/**
+	 * canBeNull && readOnly
+	 */
 	public String ownerAddress;
 
 	/**
 	 * canBeNull && readOnly
 	 */
 	public Date mandateSignatureDate;
-
-	/**
-	 * canBeNull && readOnly
-	 */
-	public Long id;
 
 	/**
 	 * canBeNull && readOnly

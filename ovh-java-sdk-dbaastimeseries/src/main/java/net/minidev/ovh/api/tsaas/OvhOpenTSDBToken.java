@@ -3,7 +3,7 @@ package net.minidev.ovh.api.tsaas;
 import net.minidev.ovh.api.paas.timeseries.OvhTag;
 
 /**
- * OpenTSDBToken
+ * Description not available
  */
 public class OvhOpenTSDBToken {
 	/**

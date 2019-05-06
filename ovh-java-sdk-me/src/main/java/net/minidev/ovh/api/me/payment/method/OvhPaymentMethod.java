@@ -30,18 +30,18 @@ public class OvhPaymentMethod {
 	public String label;
 
 	/**
-	 * Associated billing contact ID
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Long billingContactId;
-
-	/**
 	 * Creation date
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Date creationDate;
+
+	/**
+	 * Associated billing contact ID
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Long billingContactId;
 
 	/**
 	 * Payment method type
@@ -87,16 +87,16 @@ public class OvhPaymentMethod {
 	public Date lastUpdate;
 
 	/**
-	 * Expiration date
-	 *
-	 * canBeNull && readOnly
-	 */
-	public Date expirationDate;
-
-	/**
 	 * Payment method status
 	 *
 	 * canBeNull && readOnly
 	 */
 	public OvhStatus status;
+
+	/**
+	 * Expiration date
+	 *
+	 * canBeNull && readOnly
+	 */
+	public Date expirationDate;
 }

@@ -1,7 +1,7 @@
 package net.minidev.ovh.api.dbaas.logs;
 
 /**
- * Graylog role
+ * Role
  */
 public class OvhRole {
 	/**

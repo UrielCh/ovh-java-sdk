@@ -27,10 +27,10 @@ public class ApiOvhVeeamveeamEnterprise extends ApiOvhBase {
 	 * Register Veeam Backup Server to Veeam Enterprise
 	 *
 	 * REST: POST /veeam/veeamEnterprise/{serviceName}/register
-	 * @param password [required] Your Veeam Backup And Replication associated password
-	 * @param username [required] Your Veeam Backup And Replication username
-	 * @param port [required] Your Veeam Backup And Replication Server Port
 	 * @param ip [required] Your Veeam Backup And Replication Server IP
+	 * @param port [required] Your Veeam Backup And Replication Server Port
+	 * @param username [required] Your Veeam Backup And Replication username
+	 * @param password [required] Your Veeam Backup And Replication associated password
 	 * @param serviceName [required] Domain of the service
 	 *
 	 * API beta
@@ -52,9 +52,9 @@ public class ApiOvhVeeamveeamEnterprise extends ApiOvhBase {
 	 * Confirm termination of your service
 	 *
 	 * REST: POST /veeam/veeamEnterprise/{serviceName}/confirmTermination
-	 * @param futureUse What next after your termination request
-	 * @param reason Reason of your termination request
-	 * @param commentary Commentary about your termination request
+	 * @param futureUse [required] What next after your termination request
+	 * @param reason [required] Reason of your termination request
+	 * @param commentary [required] Commentary about your termination request
 	 * @param token [required] The termination token sent by mail to the admin contact
 	 * @param serviceName [required] Domain of the service
 	 *
@@ -70,6 +70,45 @@ public class ApiOvhVeeamveeamEnterprise extends ApiOvhBase {
 		addBody(o, "token", token);
 		String resp = exec(qPath, "POST", sb.toString(), o);
 		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Terminate your service
+	 *
+	 * REST: POST /veeam/veeamEnterprise/{serviceName}/terminate
+	 * @param serviceName [required] Domain of the service
+	 *
+	 * API beta
+	 */
+	public String serviceName_terminate_POST(String serviceName) throws IOException {
+		String qPath = "/veeam/veeamEnterprise/{serviceName}/terminate";
+		StringBuilder sb = path(qPath, serviceName);
+		String resp = exec(qPath, "POST", sb.toString(), null);
+		return convertTo(resp, String.class);
+	}
+
+	/**
+	 * Update Veeam enterprise configuration
+	 *
+	 * REST: POST /veeam/veeamEnterprise/{serviceName}/update
+	 * @param username [required] Your Veeam Backup And Replication username
+	 * @param password [required] Your Veeam Backup And Replication associated password
+	 * @param ip [required] Your Veeam Backup And Replication Server IP
+	 * @param port [required] Your Veeam Backup And Replication Server Port
+	 * @param serviceName [required] Domain of the service
+	 *
+	 * API beta
+	 */
+	public ArrayList<OvhTask> serviceName_update_POST(String serviceName, String ip, String password, Long port, String username) throws IOException {
+		String qPath = "/veeam/veeamEnterprise/{serviceName}/update";
+		StringBuilder sb = path(qPath, serviceName);
+		HashMap<String, Object>o = new HashMap<String, Object>();
+		addBody(o, "ip", ip);
+		addBody(o, "password", password);
+		addBody(o, "port", port);
+		addBody(o, "username", username);
+		String resp = exec(qPath, "POST", sb.toString(), o);
+		return convertTo(resp, t1);
 	}
 
 	/**
@@ -103,43 +142,24 @@ public class ApiOvhVeeamveeamEnterprise extends ApiOvhBase {
 	}
 
 	/**
-	 * Update Veeam enterprise configuration
+	 * Tasks associated with Veeam Enterprise
 	 *
-	 * REST: POST /veeam/veeamEnterprise/{serviceName}/update
-	 * @param port [required] Your Veeam Backup And Replication Server Port
-	 * @param ip [required] Your Veeam Backup And Replication Server IP
-	 * @param password [required] Your Veeam Backup And Replication associated password
-	 * @param username [required] Your Veeam Backup And Replication username
+	 * REST: GET /veeam/veeamEnterprise/{serviceName}/task
+	 * @param name [required] Filter the value of name property (like)
+	 * @param state [required] Filter the value of state property (=)
 	 * @param serviceName [required] Domain of the service
 	 *
 	 * API beta
 	 */
-	public ArrayList<OvhTask> serviceName_update_POST(String serviceName, String ip, String password, Long port, String username) throws IOException {
-		String qPath = "/veeam/veeamEnterprise/{serviceName}/update";
+	public ArrayList<Long> serviceName_task_GET(String serviceName, String name, OvhTaskStateEnum state) throws IOException {
+		String qPath = "/veeam/veeamEnterprise/{serviceName}/task";
 		StringBuilder sb = path(qPath, serviceName);
-		HashMap<String, Object>o = new HashMap<String, Object>();
-		addBody(o, "ip", ip);
-		addBody(o, "password", password);
-		addBody(o, "port", port);
-		addBody(o, "username", username);
-		String resp = exec(qPath, "POST", sb.toString(), o);
-		return convertTo(resp, t1);
-	}
-
-	/**
-	 * Get this object properties
-	 *
-	 * REST: GET /veeam/veeamEnterprise/{serviceName}
-	 * @param serviceName [required] Domain of the service
-	 *
-	 * API beta
-	 */
-	public OvhAccount serviceName_GET(String serviceName) throws IOException {
-		String qPath = "/veeam/veeamEnterprise/{serviceName}";
-		StringBuilder sb = path(qPath, serviceName);
+		query(sb, "name", name);
+		query(sb, "state", state);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, OvhAccount.class);
+		return convertTo(resp, t2);
 	}
+	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
 
 	/**
 	 * Get this object properties
@@ -158,38 +178,18 @@ public class ApiOvhVeeamveeamEnterprise extends ApiOvhBase {
 	}
 
 	/**
-	 * Tasks associated with Veeam Enterprise
+	 * Get this object properties
 	 *
-	 * REST: GET /veeam/veeamEnterprise/{serviceName}/task
-	 * @param state [required] Filter the value of state property (=)
-	 * @param name [required] Filter the value of name property (like)
+	 * REST: GET /veeam/veeamEnterprise/{serviceName}
 	 * @param serviceName [required] Domain of the service
 	 *
 	 * API beta
 	 */
-	public ArrayList<Long> serviceName_task_GET(String serviceName, String name, OvhTaskStateEnum state) throws IOException {
-		String qPath = "/veeam/veeamEnterprise/{serviceName}/task";
+	public OvhAccount serviceName_GET(String serviceName) throws IOException {
+		String qPath = "/veeam/veeamEnterprise/{serviceName}";
 		StringBuilder sb = path(qPath, serviceName);
-		query(sb, "name", name);
-		query(sb, "state", state);
 		String resp = exec(qPath, "GET", sb.toString(), null);
-		return convertTo(resp, t2);
-	}
-	private static TypeReference<ArrayList<Long>> t2 = new TypeReference<ArrayList<Long>>() {};
-
-	/**
-	 * Terminate your service
-	 *
-	 * REST: POST /veeam/veeamEnterprise/{serviceName}/terminate
-	 * @param serviceName [required] Domain of the service
-	 *
-	 * API beta
-	 */
-	public String serviceName_terminate_POST(String serviceName) throws IOException {
-		String qPath = "/veeam/veeamEnterprise/{serviceName}/terminate";
-		StringBuilder sb = path(qPath, serviceName);
-		String resp = exec(qPath, "POST", sb.toString(), null);
-		return convertTo(resp, String.class);
+		return convertTo(resp, OvhAccount.class);
 	}
 
 	/**

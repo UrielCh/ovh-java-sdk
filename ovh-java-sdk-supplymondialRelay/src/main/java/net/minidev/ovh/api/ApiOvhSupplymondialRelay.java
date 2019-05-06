@@ -21,10 +21,10 @@ public class ApiOvhSupplymondialRelay extends ApiOvhBase {
 	 * Find the 10 nearest MondialRelay points from address or city.
 	 *
 	 * REST: POST /supply/mondialRelay
+	 * @param zipcode [required] Zip Code
 	 * @param city [required] City
 	 * @param address [required] Address
 	 * @param country [required] ISO country code
-	 * @param zipcode [required] Zip Code
 	 */
 	public OvhMondialRelayReturn POST(String address, String city, OvhCountryEnum country, String zipcode) throws IOException {
 		String qPath = "/supply/mondialRelay";

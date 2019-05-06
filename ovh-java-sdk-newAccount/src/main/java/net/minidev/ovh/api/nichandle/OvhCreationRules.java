@@ -72,12 +72,12 @@ public class OvhCreationRules {
 	/**
 	 * canBeNull
 	 */
-	public OvhCreationRule language;
+	public OvhCreationRule companyNationalIdentificationNumber;
 
 	/**
 	 * canBeNull
 	 */
-	public OvhCreationRule companyNationalIdentificationNumber;
+	public OvhCreationRule language;
 
 	/**
 	 * canBeNull
@@ -112,12 +112,12 @@ public class OvhCreationRules {
 	/**
 	 * canBeNull
 	 */
-	public OvhCreationRule email;
+	public OvhCreationRule ovhSubsidiary;
 
 	/**
 	 * canBeNull
 	 */
-	public OvhCreationRule ovhSubsidiary;
+	public OvhCreationRule email;
 
 	/**
 	 * canBeNull

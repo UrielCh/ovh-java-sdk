@@ -61,18 +61,18 @@ public class OvhDHCP {
 	public String defaultGateway;
 
 	/**
-	 * Last address of the pool assigned by the DHCP
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String endAddress;
-
-	/**
 	 * ID of the ongoing todo (NULL if none)
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Long taskId;
+
+	/**
+	 * Last address of the pool assigned by the DHCP
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String endAddress;
 
 	/**
 	 * State of the DHCP server of the modem

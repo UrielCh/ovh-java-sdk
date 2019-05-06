@@ -50,18 +50,18 @@ public class OvhDedicated {
 	public OvhSupportLevelEnum supportLevel;
 
 	/**
-	 * dedicated server reverse
-	 *
-	 * canBeNull && readOnly
-	 */
-	public String reverse;
-
-	/**
 	 * Icmp monitoring state
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean monitoring;
+
+	/**
+	 * dedicated server reverse
+	 *
+	 * canBeNull && readOnly
+	 */
+	public String reverse;
 
 	/**
 	 * your server id
@@ -88,16 +88,16 @@ public class OvhDedicated {
 	public OvhStateEnum state;
 
 	/**
-	 * canBeNull && readOnly
-	 */
-	public String rootDevice;
-
-	/**
 	 * Does this server have professional use option
 	 *
 	 * canBeNull && readOnly
 	 */
 	public Boolean professionalUse;
+
+	/**
+	 * canBeNull && readOnly
+	 */
+	public String rootDevice;
 
 	/**
 	 * dedicater server commercial range
