@@ -5,6 +5,21 @@
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/net.minidev/ovh-java-sdk/badge.svg?style=flat-square)](https://maven-badges.herokuapp.com/maven-central/net.minidev/ovh-java-sdk/)
 
 
+
+## Project on-hold
+
+Since every change from OVH API can break any existing code using this api, I prefert to give up this java wrapper.
+I have switch to typescript I'm converting all my existing code to use [api-ovh-node](https://github.com/UrielCh/api-ovh-node)
+
+A lot's of sample code are [available here](https://github.com/UrielCh/api-ovh-node/tree/master/samples)
+
+With this new api far is way more easy to read.
+
+
+-----
+
+## usage
+
 The complete java SDK for OVH services.
 
 Each service had his own java SDK. you can use each service independently:
